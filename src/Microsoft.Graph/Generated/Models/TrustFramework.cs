@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keySets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TrustFrameworkKeySet>? KeySets {
+            get { return BackingStore?.Get<List<TrustFrameworkKeySet>?>("keySets"); }
+            set { BackingStore?.Set("keySets", value); }
+        }
+#else
         public List<TrustFrameworkKeySet> KeySets {
             get { return BackingStore?.Get<List<TrustFrameworkKeySet>>("keySets"); }
             set { BackingStore?.Set("keySets", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The policies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TrustFrameworkPolicy>? Policies {
+            get { return BackingStore?.Get<List<TrustFrameworkPolicy>?>("policies"); }
+            set { BackingStore?.Set("policies", value); }
+        }
+#else
         public List<TrustFrameworkPolicy> Policies {
             get { return BackingStore?.Get<List<TrustFrameworkPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TrustFramework and sets the default values.
         /// </summary>

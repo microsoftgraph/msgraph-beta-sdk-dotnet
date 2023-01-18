@@ -91,7 +91,11 @@ namespace Microsoft.Graph.Beta.Branding {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public async Task<OrganizationalBranding?> GetAsync(Action<BrandingRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#else
         public async Task<OrganizationalBranding> GetAsync(Action<BrandingRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -105,7 +109,11 @@ namespace Microsoft.Graph.Beta.Branding {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public async Task<OrganizationalBranding?> PatchAsync(OrganizationalBranding body, Action<BrandingRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#else
         public async Task<OrganizationalBranding> PatchAsync(OrganizationalBranding body, Action<BrandingRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -118,7 +126,11 @@ namespace Microsoft.Graph.Beta.Branding {
         /// Get branding
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestInformation ToGetRequestInformation(Action<BrandingRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#else
         public RequestInformation ToGetRequestInformation(Action<BrandingRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+#endif
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -139,7 +151,11 @@ namespace Microsoft.Graph.Beta.Branding {
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestInformation ToPatchRequestInformation(OrganizationalBranding body, Action<BrandingRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#else
         public RequestInformation ToPatchRequestInformation(OrganizationalBranding body, Action<BrandingRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+#endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -161,11 +177,21 @@ namespace Microsoft.Graph.Beta.Branding {
         /// </summary>
         public class BrandingRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
+#endif
             /// <summary>Select properties to be returned</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+            [QueryParameter("%24select")]
+            public string[]? Select { get; set; }
+#else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
+#endif
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

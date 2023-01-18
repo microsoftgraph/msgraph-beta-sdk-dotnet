@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The parameters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SynchronizationJobApplicationParameters>? Parameters {
+            get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>?>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
+        }
+#else
         public List<SynchronizationJobApplicationParameters> Parameters {
             get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new provisionOnDemandPostRequestBody and sets the default values.
         /// </summary>

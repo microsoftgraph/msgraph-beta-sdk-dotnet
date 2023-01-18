@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable {
         /// <summary>The patch version for the current android app registration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PatchVersion {
+            get { return BackingStore?.Get<string?>("patchVersion"); }
+            set { BackingStore?.Set("patchVersion", value); }
+        }
+#else
         public string PatchVersion {
             get { return BackingStore?.Get<string>("patchVersion"); }
             set { BackingStore?.Set("patchVersion", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidManagedAppRegistration and sets the default values.
         /// </summary>

@@ -32,10 +32,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumLeadTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.</summary>
         public bool? SendConfirmationsToOwner {
             get { return BackingStore?.Get<bool?>("sendConfirmationsToOwner"); }

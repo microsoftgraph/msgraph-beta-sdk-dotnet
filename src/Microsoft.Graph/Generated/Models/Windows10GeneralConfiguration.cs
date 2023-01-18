@@ -32,10 +32,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appManagementMSIAlwaysInstallWithElevatedPrivileges", value); }
         }
         /// <summary>List of semi-colon delimited Package Family Names of Windows apps. Listed Windows apps are to be launched after logon.​</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AppManagementPackageFamilyNamesToLaunchAfterLogOn {
+            get { return BackingStore?.Get<List<string>?>("appManagementPackageFamilyNamesToLaunchAfterLogOn"); }
+            set { BackingStore?.Set("appManagementPackageFamilyNamesToLaunchAfterLogOn", value); }
+        }
+#else
         public List<string> AppManagementPackageFamilyNamesToLaunchAfterLogOn {
             get { return BackingStore?.Get<List<string>>("appManagementPackageFamilyNamesToLaunchAfterLogOn"); }
             set { BackingStore?.Set("appManagementPackageFamilyNamesToLaunchAfterLogOn", value); }
         }
+#endif
         /// <summary>State Management Setting.</summary>
         public StateManagementSetting? AppsAllowTrustedAppsSideloading {
             get { return BackingStore?.Get<StateManagementSetting?>("appsAllowTrustedAppsSideloading"); }
@@ -52,20 +59,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationAllowSecondaryDevice", value); }
         }
         /// <summary>Specifies the preferred domain among available domains in the Azure AD tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticationPreferredAzureADTenantDomainName {
+            get { return BackingStore?.Get<string?>("authenticationPreferredAzureADTenantDomainName"); }
+            set { BackingStore?.Set("authenticationPreferredAzureADTenantDomainName", value); }
+        }
+#else
         public string AuthenticationPreferredAzureADTenantDomainName {
             get { return BackingStore?.Get<string>("authenticationPreferredAzureADTenantDomainName"); }
             set { BackingStore?.Set("authenticationPreferredAzureADTenantDomainName", value); }
         }
+#endif
         /// <summary>Possible values of a property</summary>
         public Enablement? AuthenticationWebSignIn {
             get { return BackingStore?.Get<Enablement?>("authenticationWebSignIn"); }
             set { BackingStore?.Set("authenticationWebSignIn", value); }
         }
         /// <summary>Specify a list of allowed Bluetooth services and profiles in hex formatted strings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BluetoothAllowedServices {
+            get { return BackingStore?.Get<List<string>?>("bluetoothAllowedServices"); }
+            set { BackingStore?.Set("bluetoothAllowedServices", value); }
+        }
+#else
         public List<string> BluetoothAllowedServices {
             get { return BackingStore?.Get<List<string>>("bluetoothAllowedServices"); }
             set { BackingStore?.Set("bluetoothAllowedServices", value); }
         }
+#endif
         /// <summary>Whether or not to Block the user from using bluetooth advertising.</summary>
         public bool? BluetoothBlockAdvertising {
             get { return BackingStore?.Get<bool?>("bluetoothBlockAdvertising"); }
@@ -122,10 +143,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificatesBlockManualRootCertificateInstallation", value); }
         }
         /// <summary>Specifies the time zone to be applied to the device. This is the standard Windows name for the target time zone.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConfigureTimeZone {
+            get { return BackingStore?.Get<string?>("configureTimeZone"); }
+            set { BackingStore?.Set("configureTimeZone", value); }
+        }
+#else
         public string ConfigureTimeZone {
             get { return BackingStore?.Get<string>("configureTimeZone"); }
             set { BackingStore?.Set("configureTimeZone", value); }
         }
+#endif
         /// <summary>Whether or not to block Connected Devices Service which enables discovery and connection to other devices, remote messaging, remote app sessions and other cross-device experiences.</summary>
         public bool? ConnectedDevicesServiceBlocked {
             get { return BackingStore?.Get<bool?>("connectedDevicesServiceBlocked"); }
@@ -182,10 +210,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defenderDaysBeforeDeletingQuarantinedMalware", value); }
         }
         /// <summary>Gets or sets Defender’s actions to take on detected Malware per threat level.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions? DefenderDetectedMalwareActions {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions?>("defenderDetectedMalwareActions"); }
+            set { BackingStore?.Set("defenderDetectedMalwareActions", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions DefenderDetectedMalwareActions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions>("defenderDetectedMalwareActions"); }
             set { BackingStore?.Set("defenderDetectedMalwareActions", value); }
         }
+#endif
         /// <summary>When blocked, catch-up scans for scheduled full scans will be turned off.</summary>
         public bool? DefenderDisableCatchupFullScan {
             get { return BackingStore?.Get<bool?>("defenderDisableCatchupFullScan"); }
@@ -197,15 +232,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defenderDisableCatchupQuickScan", value); }
         }
         /// <summary>File extensions to exclude from scans and real time protection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefenderFileExtensionsToExclude {
+            get { return BackingStore?.Get<List<string>?>("defenderFileExtensionsToExclude"); }
+            set { BackingStore?.Set("defenderFileExtensionsToExclude", value); }
+        }
+#else
         public List<string> DefenderFileExtensionsToExclude {
             get { return BackingStore?.Get<List<string>>("defenderFileExtensionsToExclude"); }
             set { BackingStore?.Set("defenderFileExtensionsToExclude", value); }
         }
+#endif
         /// <summary>Files and folder to exclude from scans and real time protection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefenderFilesAndFoldersToExclude {
+            get { return BackingStore?.Get<List<string>?>("defenderFilesAndFoldersToExclude"); }
+            set { BackingStore?.Set("defenderFilesAndFoldersToExclude", value); }
+        }
+#else
         public List<string> DefenderFilesAndFoldersToExclude {
             get { return BackingStore?.Get<List<string>>("defenderFilesAndFoldersToExclude"); }
             set { BackingStore?.Set("defenderFilesAndFoldersToExclude", value); }
         }
+#endif
         /// <summary>Possible values for monitoring file activity.</summary>
         public Microsoft.Graph.Beta.Models.DefenderMonitorFileActivity? DefenderMonitorFileActivity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderMonitorFileActivity?>("defenderMonitorFileActivity"); }
@@ -222,10 +271,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defenderPotentiallyUnwantedAppActionSetting", value); }
         }
         /// <summary>Processes to exclude from scans and real time protection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefenderProcessesToExclude {
+            get { return BackingStore?.Get<List<string>?>("defenderProcessesToExclude"); }
+            set { BackingStore?.Set("defenderProcessesToExclude", value); }
+        }
+#else
         public List<string> DefenderProcessesToExclude {
             get { return BackingStore?.Get<List<string>>("defenderProcessesToExclude"); }
             set { BackingStore?.Set("defenderProcessesToExclude", value); }
         }
+#endif
         /// <summary>Possible values for prompting user for samples submission.</summary>
         public Microsoft.Graph.Beta.Models.DefenderPromptForSampleSubmission? DefenderPromptForSampleSubmission {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderPromptForSampleSubmission?>("defenderPromptForSampleSubmission"); }
@@ -347,15 +403,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("diagnosticsDataSubmissionMode", value); }
         }
         /// <summary>List of legacy applications that have GDI DPI Scaling turned off.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DisplayAppListWithGdiDPIScalingTurnedOff {
+            get { return BackingStore?.Get<List<string>?>("displayAppListWithGdiDPIScalingTurnedOff"); }
+            set { BackingStore?.Set("displayAppListWithGdiDPIScalingTurnedOff", value); }
+        }
+#else
         public List<string> DisplayAppListWithGdiDPIScalingTurnedOff {
             get { return BackingStore?.Get<List<string>>("displayAppListWithGdiDPIScalingTurnedOff"); }
             set { BackingStore?.Set("displayAppListWithGdiDPIScalingTurnedOff", value); }
         }
+#endif
         /// <summary>List of legacy applications that have GDI DPI Scaling turned on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DisplayAppListWithGdiDPIScalingTurnedOn {
+            get { return BackingStore?.Get<List<string>?>("displayAppListWithGdiDPIScalingTurnedOn"); }
+            set { BackingStore?.Set("displayAppListWithGdiDPIScalingTurnedOn", value); }
+        }
+#else
         public List<string> DisplayAppListWithGdiDPIScalingTurnedOn {
             get { return BackingStore?.Get<List<string>>("displayAppListWithGdiDPIScalingTurnedOn"); }
             set { BackingStore?.Set("displayAppListWithGdiDPIScalingTurnedOn", value); }
         }
+#endif
         /// <summary>Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.</summary>
         public bool? EdgeAllowStartPagesModification {
             get { return BackingStore?.Get<bool?>("edgeAllowStartPagesModification"); }
@@ -497,40 +567,75 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("edgeDisableFirstRunPage", value); }
         }
         /// <summary>Indicates the enterprise mode site list location. Could be a local file, local network or http location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EdgeEnterpriseModeSiteListLocation {
+            get { return BackingStore?.Get<string?>("edgeEnterpriseModeSiteListLocation"); }
+            set { BackingStore?.Set("edgeEnterpriseModeSiteListLocation", value); }
+        }
+#else
         public string EdgeEnterpriseModeSiteListLocation {
             get { return BackingStore?.Get<string>("edgeEnterpriseModeSiteListLocation"); }
             set { BackingStore?.Set("edgeEnterpriseModeSiteListLocation", value); }
         }
+#endif
         /// <summary>Generic visibility state.</summary>
         public VisibilitySetting? EdgeFavoritesBarVisibility {
             get { return BackingStore?.Get<VisibilitySetting?>("edgeFavoritesBarVisibility"); }
             set { BackingStore?.Set("edgeFavoritesBarVisibility", value); }
         }
         /// <summary>The location of the favorites list to provision. Could be a local file, local network or http location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EdgeFavoritesListLocation {
+            get { return BackingStore?.Get<string?>("edgeFavoritesListLocation"); }
+            set { BackingStore?.Set("edgeFavoritesListLocation", value); }
+        }
+#else
         public string EdgeFavoritesListLocation {
             get { return BackingStore?.Get<string>("edgeFavoritesListLocation"); }
             set { BackingStore?.Set("edgeFavoritesListLocation", value); }
         }
+#endif
         /// <summary>The first run URL for when Edge browser is opened for the first time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EdgeFirstRunUrl {
+            get { return BackingStore?.Get<string?>("edgeFirstRunUrl"); }
+            set { BackingStore?.Set("edgeFirstRunUrl", value); }
+        }
+#else
         public string EdgeFirstRunUrl {
             get { return BackingStore?.Get<string>("edgeFirstRunUrl"); }
             set { BackingStore?.Set("edgeFirstRunUrl", value); }
         }
+#endif
         /// <summary>Causes the Home button to either hide, load the default Start page, load a New tab page, or a custom URL</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration? EdgeHomeButtonConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration?>("edgeHomeButtonConfiguration"); }
+            set { BackingStore?.Set("edgeHomeButtonConfiguration", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration EdgeHomeButtonConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration>("edgeHomeButtonConfiguration"); }
             set { BackingStore?.Set("edgeHomeButtonConfiguration", value); }
         }
+#endif
         /// <summary>Enable the Home button configuration.</summary>
         public bool? EdgeHomeButtonConfigurationEnabled {
             get { return BackingStore?.Get<bool?>("edgeHomeButtonConfigurationEnabled"); }
             set { BackingStore?.Set("edgeHomeButtonConfigurationEnabled", value); }
         }
         /// <summary>The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EdgeHomepageUrls {
+            get { return BackingStore?.Get<List<string>?>("edgeHomepageUrls"); }
+            set { BackingStore?.Set("edgeHomepageUrls", value); }
+        }
+#else
         public List<string> EdgeHomepageUrls {
             get { return BackingStore?.Get<List<string>>("edgeHomepageUrls"); }
             set { BackingStore?.Set("edgeHomepageUrls", value); }
         }
+#endif
         /// <summary>Specify how the Microsoft Edge settings are restricted based on kiosk mode.</summary>
         public EdgeKioskModeRestrictionType? EdgeKioskModeRestriction {
             get { return BackingStore?.Get<EdgeKioskModeRestrictionType?>("edgeKioskModeRestriction"); }
@@ -542,10 +647,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("edgeKioskResetAfterIdleTimeInMinutes", value); }
         }
         /// <summary>Specify the page opened when new tabs are created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EdgeNewTabPageURL {
+            get { return BackingStore?.Get<string?>("edgeNewTabPageURL"); }
+            set { BackingStore?.Set("edgeNewTabPageURL", value); }
+        }
+#else
         public string EdgeNewTabPageURL {
             get { return BackingStore?.Get<string>("edgeNewTabPageURL"); }
             set { BackingStore?.Set("edgeNewTabPageURL", value); }
         }
+#endif
         /// <summary>Possible values for the EdgeOpensWith setting.</summary>
         public EdgeOpenOptions? EdgeOpensWith {
             get { return BackingStore?.Get<EdgeOpenOptions?>("edgeOpensWith"); }
@@ -557,20 +669,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("edgePreventCertificateErrorOverride", value); }
         }
         /// <summary>Specify the list of package family names of browser extensions that are required and cannot be turned off by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EdgeRequiredExtensionPackageFamilyNames {
+            get { return BackingStore?.Get<List<string>?>("edgeRequiredExtensionPackageFamilyNames"); }
+            set { BackingStore?.Set("edgeRequiredExtensionPackageFamilyNames", value); }
+        }
+#else
         public List<string> EdgeRequiredExtensionPackageFamilyNames {
             get { return BackingStore?.Get<List<string>>("edgeRequiredExtensionPackageFamilyNames"); }
             set { BackingStore?.Set("edgeRequiredExtensionPackageFamilyNames", value); }
         }
+#endif
         /// <summary>Indicates whether or not to Require the user to use the smart screen filter.</summary>
         public bool? EdgeRequireSmartScreen {
             get { return BackingStore?.Get<bool?>("edgeRequireSmartScreen"); }
             set { BackingStore?.Set("edgeRequireSmartScreen", value); }
         }
         /// <summary>Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdgeSearchEngineBase? EdgeSearchEngine {
+            get { return BackingStore?.Get<EdgeSearchEngineBase?>("edgeSearchEngine"); }
+            set { BackingStore?.Set("edgeSearchEngine", value); }
+        }
+#else
         public EdgeSearchEngineBase EdgeSearchEngine {
             get { return BackingStore?.Get<EdgeSearchEngineBase>("edgeSearchEngine"); }
             set { BackingStore?.Set("edgeSearchEngine", value); }
         }
+#endif
         /// <summary>Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.</summary>
         public bool? EdgeSendIntranetTrafficToInternetExplorer {
             get { return BackingStore?.Get<bool?>("edgeSendIntranetTrafficToInternetExplorer"); }
@@ -607,35 +733,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("energySaverPluggedInThresholdPercentage", value); }
         }
         /// <summary>Endpoint for discovering cloud printers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnterpriseCloudPrintDiscoveryEndPoint {
+            get { return BackingStore?.Get<string?>("enterpriseCloudPrintDiscoveryEndPoint"); }
+            set { BackingStore?.Set("enterpriseCloudPrintDiscoveryEndPoint", value); }
+        }
+#else
         public string EnterpriseCloudPrintDiscoveryEndPoint {
             get { return BackingStore?.Get<string>("enterpriseCloudPrintDiscoveryEndPoint"); }
             set { BackingStore?.Set("enterpriseCloudPrintDiscoveryEndPoint", value); }
         }
+#endif
         /// <summary>Maximum number of printers that should be queried from a discovery endpoint. This is a mobile only setting. Valid values 1 to 65535</summary>
         public int? EnterpriseCloudPrintDiscoveryMaxLimit {
             get { return BackingStore?.Get<int?>("enterpriseCloudPrintDiscoveryMaxLimit"); }
             set { BackingStore?.Set("enterpriseCloudPrintDiscoveryMaxLimit", value); }
         }
         /// <summary>OAuth resource URI for printer discovery service as configured in Azure portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier {
+            get { return BackingStore?.Get<string?>("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier"); }
+            set { BackingStore?.Set("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier", value); }
+        }
+#else
         public string EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier {
             get { return BackingStore?.Get<string>("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier"); }
             set { BackingStore?.Set("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier", value); }
         }
+#endif
         /// <summary>Authentication endpoint for acquiring OAuth tokens.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnterpriseCloudPrintOAuthAuthority {
+            get { return BackingStore?.Get<string?>("enterpriseCloudPrintOAuthAuthority"); }
+            set { BackingStore?.Set("enterpriseCloudPrintOAuthAuthority", value); }
+        }
+#else
         public string EnterpriseCloudPrintOAuthAuthority {
             get { return BackingStore?.Get<string>("enterpriseCloudPrintOAuthAuthority"); }
             set { BackingStore?.Set("enterpriseCloudPrintOAuthAuthority", value); }
         }
+#endif
         /// <summary>GUID of a client application authorized to retrieve OAuth tokens from the OAuth Authority.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnterpriseCloudPrintOAuthClientIdentifier {
+            get { return BackingStore?.Get<string?>("enterpriseCloudPrintOAuthClientIdentifier"); }
+            set { BackingStore?.Set("enterpriseCloudPrintOAuthClientIdentifier", value); }
+        }
+#else
         public string EnterpriseCloudPrintOAuthClientIdentifier {
             get { return BackingStore?.Get<string>("enterpriseCloudPrintOAuthClientIdentifier"); }
             set { BackingStore?.Set("enterpriseCloudPrintOAuthClientIdentifier", value); }
         }
+#endif
         /// <summary>OAuth resource URI for print service as configured in the Azure portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnterpriseCloudPrintResourceIdentifier {
+            get { return BackingStore?.Get<string?>("enterpriseCloudPrintResourceIdentifier"); }
+            set { BackingStore?.Set("enterpriseCloudPrintResourceIdentifier", value); }
+        }
+#else
         public string EnterpriseCloudPrintResourceIdentifier {
             get { return BackingStore?.Get<string>("enterpriseCloudPrintResourceIdentifier"); }
             set { BackingStore?.Set("enterpriseCloudPrintResourceIdentifier", value); }
         }
+#endif
         /// <summary>Indicates whether or not to enable device discovery UX.</summary>
         public bool? ExperienceBlockDeviceDiscovery {
             get { return BackingStore?.Get<bool?>("experienceBlockDeviceDiscovery"); }
@@ -762,20 +923,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("networkProxyApplySettingsDeviceWide", value); }
         }
         /// <summary>Address to the proxy auto-config (PAC) script you want to use.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkProxyAutomaticConfigurationUrl {
+            get { return BackingStore?.Get<string?>("networkProxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("networkProxyAutomaticConfigurationUrl", value); }
+        }
+#else
         public string NetworkProxyAutomaticConfigurationUrl {
             get { return BackingStore?.Get<string>("networkProxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("networkProxyAutomaticConfigurationUrl", value); }
         }
+#endif
         /// <summary>Disable automatic detection of settings. If enabled, the system will try to find the path to a proxy auto-config (PAC) script.</summary>
         public bool? NetworkProxyDisableAutoDetect {
             get { return BackingStore?.Get<bool?>("networkProxyDisableAutoDetect"); }
             set { BackingStore?.Set("networkProxyDisableAutoDetect", value); }
         }
         /// <summary>Specifies manual proxy server settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Windows10NetworkProxyServer? NetworkProxyServer {
+            get { return BackingStore?.Get<Windows10NetworkProxyServer?>("networkProxyServer"); }
+            set { BackingStore?.Set("networkProxyServer", value); }
+        }
+#else
         public Windows10NetworkProxyServer NetworkProxyServer {
             get { return BackingStore?.Get<Windows10NetworkProxyServer>("networkProxyServer"); }
             set { BackingStore?.Set("networkProxyServer", value); }
         }
+#endif
         /// <summary>Indicates whether or not to Block the user from using near field communication.</summary>
         public bool? NfcBlocked {
             get { return BackingStore?.Get<bool?>("nfcBlocked"); }
@@ -842,15 +1017,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>A http or https Url to a jpg, jpeg or png image that needs to be downloaded and used as the Desktop Image or a file Url to a local image on the file system that needs to used as the Desktop Image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PersonalizationDesktopImageUrl {
+            get { return BackingStore?.Get<string?>("personalizationDesktopImageUrl"); }
+            set { BackingStore?.Set("personalizationDesktopImageUrl", value); }
+        }
+#else
         public string PersonalizationDesktopImageUrl {
             get { return BackingStore?.Get<string>("personalizationDesktopImageUrl"); }
             set { BackingStore?.Set("personalizationDesktopImageUrl", value); }
         }
+#endif
         /// <summary>A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PersonalizationLockScreenImageUrl {
+            get { return BackingStore?.Get<string?>("personalizationLockScreenImageUrl"); }
+            set { BackingStore?.Set("personalizationLockScreenImageUrl", value); }
+        }
+#else
         public string PersonalizationLockScreenImageUrl {
             get { return BackingStore?.Get<string>("personalizationLockScreenImageUrl"); }
             set { BackingStore?.Set("personalizationLockScreenImageUrl", value); }
         }
+#endif
         /// <summary>Power action types</summary>
         public PowerActionType? PowerButtonActionOnBattery {
             get { return BackingStore?.Get<PowerActionType?>("powerButtonActionOnBattery"); }
@@ -897,20 +1086,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("printerBlockAddition", value); }
         }
         /// <summary>Name (network host name) of an installed printer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrinterDefaultName {
+            get { return BackingStore?.Get<string?>("printerDefaultName"); }
+            set { BackingStore?.Set("printerDefaultName", value); }
+        }
+#else
         public string PrinterDefaultName {
             get { return BackingStore?.Get<string>("printerDefaultName"); }
             set { BackingStore?.Set("printerDefaultName", value); }
         }
+#endif
         /// <summary>Automatically provision printers based on their names (network host names).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? PrinterNames {
+            get { return BackingStore?.Get<List<string>?>("printerNames"); }
+            set { BackingStore?.Set("printerNames", value); }
+        }
+#else
         public List<string> PrinterNames {
             get { return BackingStore?.Get<List<string>>("printerNames"); }
             set { BackingStore?.Set("printerNames", value); }
         }
+#endif
         /// <summary>Indicates a list of applications with their access control levels over privacy data categories, and/or the default access levels per category. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsPrivacyDataAccessControlItem>? PrivacyAccessControls {
+            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>?>("privacyAccessControls"); }
+            set { BackingStore?.Set("privacyAccessControls", value); }
+        }
+#else
         public List<WindowsPrivacyDataAccessControlItem> PrivacyAccessControls {
             get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>>("privacyAccessControls"); }
             set { BackingStore?.Set("privacyAccessControls", value); }
         }
+#endif
         /// <summary>State Management Setting.</summary>
         public StateManagementSetting? PrivacyAdvertisingId {
             get { return BackingStore?.Get<StateManagementSetting?>("privacyAdvertisingId"); }
@@ -1207,15 +1417,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startMenuHideUserTile", value); }
         }
         /// <summary>This policy setting allows you to import Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Edge app which looks for Edge local asset file. Edge local asset would not exist and cause Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? StartMenuLayoutEdgeAssetsXml {
+            get { return BackingStore?.Get<byte[]?>("startMenuLayoutEdgeAssetsXml"); }
+            set { BackingStore?.Set("startMenuLayoutEdgeAssetsXml", value); }
+        }
+#else
         public byte[] StartMenuLayoutEdgeAssetsXml {
             get { return BackingStore?.Get<byte[]>("startMenuLayoutEdgeAssetsXml"); }
             set { BackingStore?.Set("startMenuLayoutEdgeAssetsXml", value); }
         }
+#endif
         /// <summary>Allows admins to override the default Start menu layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in a UTF8 encoded byte array format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? StartMenuLayoutXml {
+            get { return BackingStore?.Get<byte[]?>("startMenuLayoutXml"); }
+            set { BackingStore?.Set("startMenuLayoutXml", value); }
+        }
+#else
         public byte[] StartMenuLayoutXml {
             get { return BackingStore?.Get<byte[]>("startMenuLayoutXml"); }
             set { BackingStore?.Set("startMenuLayoutXml", value); }
         }
+#endif
         /// <summary>Type of display modes for the start menu.</summary>
         public WindowsStartMenuModeType? StartMenuMode {
             get { return BackingStore?.Get<WindowsStartMenuModeType?>("startMenuMode"); }
@@ -1292,10 +1516,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageRestrictAppInstallToSystemVolume", value); }
         }
         /// <summary>Gets or sets the fully qualified domain name (FQDN) or IP address of a proxy server to forward Connected User Experiences and Telemetry requests.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SystemTelemetryProxyServer {
+            get { return BackingStore?.Get<string?>("systemTelemetryProxyServer"); }
+            set { BackingStore?.Set("systemTelemetryProxyServer", value); }
+        }
+#else
         public string SystemTelemetryProxyServer {
             get { return BackingStore?.Get<string>("systemTelemetryProxyServer"); }
             set { BackingStore?.Set("systemTelemetryProxyServer", value); }
         }
+#endif
         /// <summary>Specify whether non-administrators can use Task Manager to end tasks.</summary>
         public bool? TaskManagerBlockEndTask {
             get { return BackingStore?.Get<bool?>("taskManagerBlockEndTask"); }
@@ -1347,10 +1578,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wiFiScanInterval", value); }
         }
         /// <summary>Windows 10 force update schedule for Apps.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule? Windows10AppsForceUpdateSchedule {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule?>("windows10AppsForceUpdateSchedule"); }
+            set { BackingStore?.Set("windows10AppsForceUpdateSchedule", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule Windows10AppsForceUpdateSchedule {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10AppsForceUpdateSchedule>("windows10AppsForceUpdateSchedule"); }
             set { BackingStore?.Set("windows10AppsForceUpdateSchedule", value); }
         }
+#endif
         /// <summary>Allows IT admins to block experiences that are typically for consumers only, such as Start suggestions, Membership notifications, Post-OOBE app install and redirect tiles.</summary>
         public bool? WindowsSpotlightBlockConsumerSpecificFeatures {
             get { return BackingStore?.Get<bool?>("windowsSpotlightBlockConsumerSpecificFeatures"); }

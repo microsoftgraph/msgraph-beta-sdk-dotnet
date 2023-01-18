@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>For security, the password is always returned as null from a LIST or GET operation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Password {
+            get { return BackingStore?.Get<string?>("password"); }
+            set { BackingStore?.Set("password", value); }
+        }
+#else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PasswordAuthenticationMethod and sets the default values.
         /// </summary>

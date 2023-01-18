@@ -16,20 +16,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdditionalInfo {
+            get { return BackingStore?.Get<string?>("additionalInfo"); }
+            set { BackingStore?.Set("additionalInfo", value); }
+        }
+#else
         public string AdditionalInfo {
             get { return BackingStore?.Get<string>("additionalInfo"); }
             set { BackingStore?.Set("additionalInfo", value); }
         }
+#endif
         /// <summary>The unique identifier for the associated application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppId {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#endif
         /// <summary>Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CorrelationId {
+            get { return BackingStore?.Get<string?>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
+        }
+#else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#endif
         /// <summary>Date and time when the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? DetectedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("detectedDateTime"); }
@@ -41,40 +62,75 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detectionTimingType", value); }
         }
         /// <summary>Provides the IP address of the client from where the risk occurred.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddress {
+            get { return BackingStore?.Get<string?>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
+        }
+#else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#endif
         /// <summary>The unique identifier (GUID) for the key credential associated with the risk detection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? KeyIds {
+            get { return BackingStore?.Get<List<string>?>("keyIds"); }
+            set { BackingStore?.Set("keyIds", value); }
+        }
+#else
         public List<string> KeyIds {
             get { return BackingStore?.Get<List<string>>("keyIds"); }
             set { BackingStore?.Set("keyIds", value); }
         }
+#endif
         /// <summary>Date and time when the risk detection was last updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Location from where the sign-in was initiated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SignInLocation? Location {
+            get { return BackingStore?.Get<SignInLocation?>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#else
         public SignInLocation Location {
             get { return BackingStore?.Get<SignInLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#endif
         /// <summary>Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestId {
+            get { return BackingStore?.Get<string?>("requestId"); }
+            set { BackingStore?.Set("requestId", value); }
+        }
+#else
         public string RequestId {
             get { return BackingStore?.Get<string>("requestId"); }
             set { BackingStore?.Set("requestId", value); }
         }
+#endif
         /// <summary>Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
         public Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }
         }
         /// <summary>The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RiskEventType {
+            get { return BackingStore?.Get<string?>("riskEventType"); }
+            set { BackingStore?.Set("riskEventType", value); }
+        }
+#else
         public string RiskEventType {
             get { return BackingStore?.Get<string>("riskEventType"); }
             set { BackingStore?.Set("riskEventType", value); }
         }
+#endif
         /// <summary>Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.</summary>
         public Microsoft.Graph.Beta.Models.RiskLevel? RiskLevel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevel"); }
@@ -86,20 +142,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("riskState", value); }
         }
         /// <summary>The display name for the service principal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServicePrincipalDisplayName {
+            get { return BackingStore?.Get<string?>("servicePrincipalDisplayName"); }
+            set { BackingStore?.Set("servicePrincipalDisplayName", value); }
+        }
+#else
         public string ServicePrincipalDisplayName {
             get { return BackingStore?.Get<string>("servicePrincipalDisplayName"); }
             set { BackingStore?.Set("servicePrincipalDisplayName", value); }
         }
+#endif
         /// <summary>The unique identifier for the service principal. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServicePrincipalId {
+            get { return BackingStore?.Get<string?>("servicePrincipalId"); }
+            set { BackingStore?.Set("servicePrincipalId", value); }
+        }
+#else
         public string ServicePrincipalId {
             get { return BackingStore?.Get<string>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
+#endif
         /// <summary>Source of the risk detection. For example, identityProtection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Source {
+            get { return BackingStore?.Get<string?>("source"); }
+            set { BackingStore?.Set("source", value); }
+        }
+#else
         public string Source {
             get { return BackingStore?.Get<string>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#endif
         /// <summary>Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.</summary>
         public Microsoft.Graph.Beta.Models.TokenIssuerType? TokenIssuerType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TokenIssuerType?>("tokenIssuerType"); }

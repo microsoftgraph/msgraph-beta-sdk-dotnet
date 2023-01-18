@@ -22,25 +22,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("forceTls", value); }
         }
         /// <summary>The IP Address of the AirPrint destination.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddress {
+            get { return BackingStore?.Get<string?>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
+        }
+#else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The listening port of the AirPrint destination. If this key is not specified AirPrint will use the default port. Available in iOS 11.0 and later.</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
         /// <summary>The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/Canon_MG5300_series, printers/Xerox_Phaser_7600, ipp/print, Epson_IPP_Printer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourcePath {
+            get { return BackingStore?.Get<string?>("resourcePath"); }
+            set { BackingStore?.Set("resourcePath", value); }
+        }
+#else
         public string ResourcePath {
             get { return BackingStore?.Get<string>("resourcePath"); }
             set { BackingStore?.Set("resourcePath", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new airPrintDestination and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AttachmentContentProperties : ContentProperties, IParsable {
         /// <summary>The currentLabel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.CurrentLabel? CurrentLabel {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel?>("currentLabel"); }
+            set { BackingStore?.Set("currentLabel", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel"); }
             set { BackingStore?.Set("currentLabel", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AttachmentContentProperties and sets the default values.
         /// </summary>

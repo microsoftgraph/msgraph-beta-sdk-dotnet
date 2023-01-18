@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkPkcsCertificateProfile : AndroidForWorkCertificateProfileBase, IParsable {
         /// <summary>PKCS Certificate Template Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateTemplateName {
+            get { return BackingStore?.Get<string?>("certificateTemplateName"); }
+            set { BackingStore?.Set("certificateTemplateName", value); }
+        }
+#else
         public string CertificateTemplateName {
             get { return BackingStore?.Get<string>("certificateTemplateName"); }
             set { BackingStore?.Set("certificateTemplateName", value); }
         }
+#endif
         /// <summary>PKCS Certification Authority</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificationAuthority {
+            get { return BackingStore?.Get<string?>("certificationAuthority"); }
+            set { BackingStore?.Set("certificationAuthority", value); }
+        }
+#else
         public string CertificationAuthority {
             get { return BackingStore?.Get<string>("certificationAuthority"); }
             set { BackingStore?.Set("certificationAuthority", value); }
         }
+#endif
         /// <summary>PKCS Certification Authority Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificationAuthorityName {
+            get { return BackingStore?.Get<string?>("certificationAuthorityName"); }
+            set { BackingStore?.Set("certificationAuthorityName", value); }
+        }
+#else
         public string CertificationAuthorityName {
             get { return BackingStore?.Get<string>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
+#endif
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates {
+            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
+            set { BackingStore?.Set("managedDeviceCertificateStates", value); }
+        }
+#else
         public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
+#endif
         /// <summary>Custom String that defines the AAD Attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubjectAlternativeNameFormatString {
+            get { return BackingStore?.Get<string?>("subjectAlternativeNameFormatString"); }
+            set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
+        }
+#else
         public string SubjectAlternativeNameFormatString {
             get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidForWorkPkcsCertificateProfile and sets the default values.
         /// </summary>

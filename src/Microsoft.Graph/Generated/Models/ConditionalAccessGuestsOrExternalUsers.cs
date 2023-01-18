@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenant ids of the selected types of external users. It could be either all b2b tenant, or a collection of tenant ids. External tenants can be specified only when guestOrExternalUserTypes is not null or an empty string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessExternalTenants? ExternalTenants {
+            get { return BackingStore?.Get<ConditionalAccessExternalTenants?>("externalTenants"); }
+            set { BackingStore?.Set("externalTenants", value); }
+        }
+#else
         public ConditionalAccessExternalTenants ExternalTenants {
             get { return BackingStore?.Get<ConditionalAccessExternalTenants>("externalTenants"); }
             set { BackingStore?.Set("externalTenants", value); }
         }
+#endif
         /// <summary>The guestOrExternalUserTypes property</summary>
         public ConditionalAccessGuestOrExternalUserTypes? GuestOrExternalUserTypes {
             get { return BackingStore?.Get<ConditionalAccessGuestOrExternalUserTypes?>("guestOrExternalUserTypes"); }
             set { BackingStore?.Set("guestOrExternalUserTypes", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new conditionalAccessGuestsOrExternalUsers and sets the default values.
         /// </summary>

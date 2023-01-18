@@ -9,30 +9,58 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class ResourceOperation : Entity, IParsable {
         /// <summary>Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActionName {
+            get { return BackingStore?.Get<string?>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
+        }
+#else
         public string ActionName {
             get { return BackingStore?.Get<string>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
+#endif
         /// <summary>Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.</summary>
         public bool? EnabledForScopeValidation {
             get { return BackingStore?.Get<bool?>("enabledForScopeValidation"); }
             set { BackingStore?.Set("enabledForScopeValidation", value); }
         }
         /// <summary>Resource category to which this Operation belongs. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Resource {
+            get { return BackingStore?.Get<string?>("resource"); }
+            set { BackingStore?.Set("resource", value); }
+        }
+#else
         public string Resource {
             get { return BackingStore?.Get<string>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#endif
         /// <summary>Name of the Resource this operation is performed on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceName {
+            get { return BackingStore?.Get<string?>("resourceName"); }
+            set { BackingStore?.Set("resourceName", value); }
+        }
+#else
         public string ResourceName {
             get { return BackingStore?.Get<string>("resourceName"); }
             set { BackingStore?.Set("resourceName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

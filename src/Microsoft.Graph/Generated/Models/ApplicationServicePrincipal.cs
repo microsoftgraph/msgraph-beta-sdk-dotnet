@@ -12,22 +12,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The application property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Application? Application {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Application?>("application"); }
+            set { BackingStore?.Set("application", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Application Application {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Application>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The servicePrincipal property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ServicePrincipal? ServicePrincipal {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipal?>("servicePrincipal"); }
+            set { BackingStore?.Set("servicePrincipal", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ServicePrincipal ServicePrincipal {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipal>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new applicationServicePrincipal and sets the default values.
         /// </summary>

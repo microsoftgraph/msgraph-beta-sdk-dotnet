@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The default gateway is the path used to pass information when the destination is unknown to the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultGateway {
+            get { return BackingStore?.Get<string?>("defaultGateway"); }
+            set { BackingStore?.Set("defaultGateway", value); }
+        }
+#else
         public string DefaultGateway {
             get { return BackingStore?.Get<string>("defaultGateway"); }
             set { BackingStore?.Set("defaultGateway", value); }
         }
+#endif
         /// <summary>The network domain of the device, for example, contoso.com.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DomainName {
+            get { return BackingStore?.Get<string?>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
+        }
+#else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#endif
         /// <summary>The device name on a network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HostName {
+            get { return BackingStore?.Get<string?>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
+        }
+#else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#endif
         /// <summary>The IP address is a numerical label that uniquely identifies every device connected to the internet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddress {
+            get { return BackingStore?.Get<string?>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
+        }
+#else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#endif
         /// <summary>True if DHCP is enabled.</summary>
         public bool? IsDhcpEnabled {
             get { return BackingStore?.Get<bool?>("isDhcpEnabled"); }
@@ -44,25 +72,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isPCPortEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A primary DNS is the first point of contact for a device that translates the hostname into an IP address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrimaryDns {
+            get { return BackingStore?.Get<string?>("primaryDns"); }
+            set { BackingStore?.Set("primaryDns", value); }
+        }
+#else
         public string PrimaryDns {
             get { return BackingStore?.Get<string>("primaryDns"); }
             set { BackingStore?.Set("primaryDns", value); }
         }
+#endif
         /// <summary>A secondary DNS is used when the primary DNS is not available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SecondaryDns {
+            get { return BackingStore?.Get<string?>("secondaryDns"); }
+            set { BackingStore?.Set("secondaryDns", value); }
+        }
+#else
         public string SecondaryDns {
             get { return BackingStore?.Get<string>("secondaryDns"); }
             set { BackingStore?.Set("secondaryDns", value); }
         }
+#endif
         /// <summary>A subnet mask is a number that distinguishes the network address and the host address within an IP address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubnetMask {
+            get { return BackingStore?.Get<string?>("subnetMask"); }
+            set { BackingStore?.Set("subnetMask", value); }
+        }
+#else
         public string SubnetMask {
             get { return BackingStore?.Get<string>("subnetMask"); }
             set { BackingStore?.Set("subnetMask", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkNetworkConfiguration and sets the default values.
         /// </summary>

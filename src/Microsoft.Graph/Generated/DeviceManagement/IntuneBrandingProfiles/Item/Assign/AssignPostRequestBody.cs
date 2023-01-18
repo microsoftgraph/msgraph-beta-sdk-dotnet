@@ -13,10 +13,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.Assi
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IntuneBrandingProfileAssignment>? Assignments {
+            get { return BackingStore?.Get<List<IntuneBrandingProfileAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<IntuneBrandingProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<IntuneBrandingProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>

@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("daysUntilExternalUserDeletedAfterBlocked", value); }
         }
         /// <summary>One of None, BlockSignIn, or BlockSignInAndDelete.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalUserLifecycleAction {
+            get { return BackingStore?.Get<string?>("externalUserLifecycleAction"); }
+            set { BackingStore?.Set("externalUserLifecycleAction", value); }
+        }
+#else
         public string ExternalUserLifecycleAction {
             get { return BackingStore?.Get<string>("externalUserLifecycleAction"); }
             set { BackingStore?.Set("externalUserLifecycleAction", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

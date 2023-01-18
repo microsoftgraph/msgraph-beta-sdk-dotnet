@@ -29,15 +29,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("averageMaxCapacityPercentage", value); }
         }
         /// <summary>Build number of the operating system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsBuildNumber {
+            get { return BackingStore?.Get<string?>("osBuildNumber"); }
+            set { BackingStore?.Set("osBuildNumber", value); }
+        }
+#else
         public string OsBuildNumber {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
+#endif
         /// <summary>Version of the operating system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

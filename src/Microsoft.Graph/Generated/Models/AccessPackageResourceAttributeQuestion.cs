@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResourceAttributeQuestion : AccessPackageResourceAttributeSource, IParsable {
         /// <summary>The question asked in order to get the value of the attribute</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessPackageQuestion? Question {
+            get { return BackingStore?.Get<AccessPackageQuestion?>("question"); }
+            set { BackingStore?.Set("question", value); }
+        }
+#else
         public AccessPackageQuestion Question {
             get { return BackingStore?.Get<AccessPackageQuestion>("question"); }
             set { BackingStore?.Set("question", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AccessPackageResourceAttributeQuestion and sets the default values.
         /// </summary>

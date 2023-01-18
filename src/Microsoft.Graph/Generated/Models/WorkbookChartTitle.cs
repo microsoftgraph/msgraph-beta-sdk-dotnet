@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartTitle : Entity, IParsable {
         /// <summary>Represents the formatting of a chart title, which includes fill and font formatting. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartTitleFormat? Format {
+            get { return BackingStore?.Get<WorkbookChartTitleFormat?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public WorkbookChartTitleFormat Format {
             get { return BackingStore?.Get<WorkbookChartTitleFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>Boolean value representing if the chart title will overlay the chart or not.</summary>
         public bool? Overlay {
             get { return BackingStore?.Get<bool?>("overlay"); }
             set { BackingStore?.Set("overlay", value); }
         }
         /// <summary>Represents the title text of a chart.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Text {
+            get { return BackingStore?.Get<string?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>A boolean value the represents the visibility of a chart title object.</summary>
         public bool? Visible {
             get { return BackingStore?.Get<bool?>("visible"); }

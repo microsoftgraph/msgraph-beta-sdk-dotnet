@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ConnectorGroup : Entity, IParsable {
         /// <summary>The applications property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Application>? Applications {
+            get { return BackingStore?.Get<List<Application>?>("applications"); }
+            set { BackingStore?.Set("applications", value); }
+        }
+#else
         public List<Application> Applications {
             get { return BackingStore?.Get<List<Application>>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
+#endif
         /// <summary>The connectorGroupType property</summary>
         public Microsoft.Graph.Beta.Models.ConnectorGroupType? ConnectorGroupType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectorGroupType?>("connectorGroupType"); }
@@ -21,15 +28,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>The members property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Connector>? Members {
+            get { return BackingStore?.Get<List<Connector>?>("members"); }
+            set { BackingStore?.Set("members", value); }
+        }
+#else
         public List<Connector> Members {
             get { return BackingStore?.Get<List<Connector>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#endif
         /// <summary>The name associated with the connectorGroup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.</summary>
         public ConnectorGroupRegion? Region {
             get { return BackingStore?.Get<ConnectorGroupRegion?>("region"); }

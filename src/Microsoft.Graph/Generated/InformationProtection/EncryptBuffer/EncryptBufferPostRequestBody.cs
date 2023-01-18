@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The buffer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Buffer {
+            get { return BackingStore?.Get<byte[]?>("buffer"); }
+            set { BackingStore?.Set("buffer", value); }
+        }
+#else
         public byte[] Buffer {
             get { return BackingStore?.Get<byte[]>("buffer"); }
             set { BackingStore?.Set("buffer", value); }
         }
+#endif
         /// <summary>The labelId property</summary>
         public Guid? LabelId {
             get { return BackingStore?.Get<Guid?>("labelId"); }

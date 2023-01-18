@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.MuteAll {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientContext property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientContext {
+            get { return BackingStore?.Get<string?>("clientContext"); }
+            set { BackingStore?.Set("clientContext", value); }
+        }
+#else
         public string ClientContext {
             get { return BackingStore?.Get<string>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
+#endif
         /// <summary>The participants property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Participants {
+            get { return BackingStore?.Get<List<string>?>("participants"); }
+            set { BackingStore?.Set("participants", value); }
+        }
+#else
         public List<string> Participants {
             get { return BackingStore?.Get<List<string>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new muteAllPostRequestBody and sets the default values.
         /// </summary>

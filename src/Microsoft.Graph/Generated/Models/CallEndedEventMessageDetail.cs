@@ -16,20 +16,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("callEventType", value); }
         }
         /// <summary>Unique identifier of the call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CallId {
+            get { return BackingStore?.Get<string?>("callId"); }
+            set { BackingStore?.Set("callId", value); }
+        }
+#else
         public string CallId {
             get { return BackingStore?.Get<string>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
+#endif
         /// <summary>List of call participants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CallParticipantInfo>? CallParticipants {
+            get { return BackingStore?.Get<List<CallParticipantInfo>?>("callParticipants"); }
+            set { BackingStore?.Set("callParticipants", value); }
+        }
+#else
         public List<CallParticipantInfo> CallParticipants {
             get { return BackingStore?.Get<List<CallParticipantInfo>>("callParticipants"); }
             set { BackingStore?.Set("callParticipants", value); }
         }
+#endif
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CallEndedEventMessageDetail and sets the default values.
         /// </summary>

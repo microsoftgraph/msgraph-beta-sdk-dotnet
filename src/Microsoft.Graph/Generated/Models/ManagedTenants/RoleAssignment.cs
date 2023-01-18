@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The collection of roles assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RoleDefinition>? Roles {
+            get { return BackingStore?.Get<List<RoleDefinition>?>("roles"); }
+            set { BackingStore?.Set("roles", value); }
+        }
+#else
         public List<RoleDefinition> Roles {
             get { return BackingStore?.Get<List<RoleDefinition>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new roleAssignment and sets the default values.
         /// </summary>

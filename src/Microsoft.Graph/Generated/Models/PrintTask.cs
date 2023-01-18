@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PrintTask : Entity, IParsable {
         /// <summary>The definition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrintTaskDefinition? Definition {
+            get { return BackingStore?.Get<PrintTaskDefinition?>("definition"); }
+            set { BackingStore?.Set("definition", value); }
+        }
+#else
         public PrintTaskDefinition Definition {
             get { return BackingStore?.Get<PrintTaskDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#endif
         /// <summary>The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentUrl {
+            get { return BackingStore?.Get<string?>("parentUrl"); }
+            set { BackingStore?.Set("parentUrl", value); }
+        }
+#else
         public string ParentUrl {
             get { return BackingStore?.Get<string>("parentUrl"); }
             set { BackingStore?.Set("parentUrl", value); }
         }
+#endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrintTaskStatus? Status {
+            get { return BackingStore?.Get<PrintTaskStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public PrintTaskStatus Status {
             get { return BackingStore?.Get<PrintTaskStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>The trigger property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrintTaskTrigger? Trigger {
+            get { return BackingStore?.Get<PrintTaskTrigger?>("trigger"); }
+            set { BackingStore?.Set("trigger", value); }
+        }
+#else
         public PrintTaskTrigger Trigger {
             get { return BackingStore?.Get<PrintTaskTrigger>("trigger"); }
             set { BackingStore?.Set("trigger", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

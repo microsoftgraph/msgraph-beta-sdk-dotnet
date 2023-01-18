@@ -13,27 +13,55 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignmentState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssignmentState {
+            get { return BackingStore?.Get<string?>("assignmentState"); }
+            set { BackingStore?.Set("assignmentState", value); }
+        }
+#else
         public string AssignmentState {
             get { return BackingStore?.Get<string>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The decision property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Decision {
+            get { return BackingStore?.Get<string?>("decision"); }
+            set { BackingStore?.Set("decision", value); }
+        }
+#else
         public string Decision {
             get { return BackingStore?.Get<string>("decision"); }
             set { BackingStore?.Set("decision", value); }
         }
+#endif
         /// <summary>The reason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Reason {
+            get { return BackingStore?.Get<string?>("reason"); }
+            set { BackingStore?.Set("reason", value); }
+        }
+#else
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
+#endif
         /// <summary>The schedule property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GovernanceSchedule? Schedule {
+            get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
+        }
+#else
         public GovernanceSchedule Schedule {
             get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updateRequestPostRequestBody and sets the default values.
         /// </summary>

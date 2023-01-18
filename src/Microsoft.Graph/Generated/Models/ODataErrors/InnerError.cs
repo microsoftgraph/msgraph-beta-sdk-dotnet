@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client request Id as sent by the client application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientRequestId {
+            get { return BackingStore?.Get<string?>("client-request-id"); }
+            set { BackingStore?.Set("client-request-id", value); }
+        }
+#else
         public string ClientRequestId {
             get { return BackingStore?.Get<string>("client-request-id"); }
             set { BackingStore?.Set("client-request-id", value); }
         }
+#endif
         /// <summary>Date when the error occured.</summary>
         public DateTimeOffset? Date {
             get { return BackingStore?.Get<DateTimeOffset?>("date"); }
             set { BackingStore?.Set("date", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Request Id as tracked internally by the service</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestId {
+            get { return BackingStore?.Get<string?>("request-id"); }
+            set { BackingStore?.Set("request-id", value); }
+        }
+#else
         public string RequestId {
             get { return BackingStore?.Get<string>("request-id"); }
             set { BackingStore?.Set("request-id", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new InnerError and sets the default values.
         /// </summary>

@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365GroupsActivityCountsWithPeriod {
     public class GetOffice365GroupsActivityCountsWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Office365GroupsActivityCounts>? Value {
+            get { return BackingStore?.Get<List<Office365GroupsActivityCounts>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<Office365GroupsActivityCounts> Value {
             get { return BackingStore?.Get<List<Office365GroupsActivityCounts>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the capture device driver used by the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CaptureDeviceDriver {
+            get { return BackingStore?.Get<string?>("captureDeviceDriver"); }
+            set { BackingStore?.Set("captureDeviceDriver", value); }
+        }
+#else
         public string CaptureDeviceDriver {
             get { return BackingStore?.Get<string>("captureDeviceDriver"); }
             set { BackingStore?.Set("captureDeviceDriver", value); }
         }
+#endif
         /// <summary>Name of the capture device used by the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CaptureDeviceName {
+            get { return BackingStore?.Get<string?>("captureDeviceName"); }
+            set { BackingStore?.Set("captureDeviceName", value); }
+        }
+#else
         public string CaptureDeviceName {
             get { return BackingStore?.Get<string>("captureDeviceName"); }
             set { BackingStore?.Set("captureDeviceName", value); }
         }
+#endif
         /// <summary>Fraction of the call that the media endpoint detected the capture device was not working properly.</summary>
         public float? CaptureNotFunctioningEventRatio {
             get { return BackingStore?.Get<float?>("captureNotFunctioningEventRatio"); }
@@ -69,10 +83,17 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("micGlitchRate", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.</summary>
         public int? ReceivedNoiseLevel {
             get { return BackingStore?.Get<int?>("receivedNoiseLevel"); }
@@ -84,15 +105,29 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("receivedSignalLevel", value); }
         }
         /// <summary>Name of the render device driver used by the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RenderDeviceDriver {
+            get { return BackingStore?.Get<string?>("renderDeviceDriver"); }
+            set { BackingStore?.Set("renderDeviceDriver", value); }
+        }
+#else
         public string RenderDeviceDriver {
             get { return BackingStore?.Get<string>("renderDeviceDriver"); }
             set { BackingStore?.Set("renderDeviceDriver", value); }
         }
+#endif
         /// <summary>Name of the render device used by the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RenderDeviceName {
+            get { return BackingStore?.Get<string?>("renderDeviceName"); }
+            set { BackingStore?.Set("renderDeviceName", value); }
+        }
+#else
         public string RenderDeviceName {
             get { return BackingStore?.Get<string>("renderDeviceName"); }
             set { BackingStore?.Set("renderDeviceName", value); }
         }
+#endif
         /// <summary>Fraction of the call that media endpoint detected device render is muted.</summary>
         public float? RenderMuteEventRatio {
             get { return BackingStore?.Get<float?>("renderMuteEventRatio"); }

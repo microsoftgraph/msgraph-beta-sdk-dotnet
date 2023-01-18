@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartAxisFormat : Entity, IParsable {
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartFont? Font {
+            get { return BackingStore?.Get<WorkbookChartFont?>("font"); }
+            set { BackingStore?.Set("font", value); }
+        }
+#else
         public WorkbookChartFont Font {
             get { return BackingStore?.Get<WorkbookChartFont>("font"); }
             set { BackingStore?.Set("font", value); }
         }
+#endif
         /// <summary>Represents chart line formatting. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartLineFormat? Line {
+            get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
+            set { BackingStore?.Set("line", value); }
+        }
+#else
         public WorkbookChartLineFormat Line {
             get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
             set { BackingStore?.Set("line", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

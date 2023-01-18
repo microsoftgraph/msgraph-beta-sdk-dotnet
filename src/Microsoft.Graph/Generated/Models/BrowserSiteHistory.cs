@@ -22,30 +22,51 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The comment for the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Comment {
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.</summary>
         public BrowserSiteCompatibilityMode? CompatibilityMode {
             get { return BackingStore?.Get<BrowserSiteCompatibilityMode?>("compatibilityMode"); }
             set { BackingStore?.Set("compatibilityMode", value); }
         }
         /// <summary>The user who last modified the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.</summary>
         public BrowserSiteMergeType? MergeType {
             get { return BackingStore?.Get<BrowserSiteMergeType?>("mergeType"); }
             set { BackingStore?.Set("mergeType", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The date and time when the site was last published.</summary>
         public DateTimeOffset? PublishedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("publishedDateTime"); }

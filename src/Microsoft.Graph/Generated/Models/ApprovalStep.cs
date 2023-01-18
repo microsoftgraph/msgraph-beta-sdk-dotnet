@@ -11,35 +11,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignedToMe", value); }
         }
         /// <summary>The label provided by the policy creator to identify an approval step. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The justification associated with the approval step decision.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Justification {
+            get { return BackingStore?.Get<string?>("justification"); }
+            set { BackingStore?.Set("justification", value); }
+        }
+#else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#endif
         /// <summary>The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t reviewed. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? ReviewedBy {
+            get { return BackingStore?.Get<Identity?>("reviewedBy"); }
+            set { BackingStore?.Set("reviewedBy", value); }
+        }
+#else
         public Identity ReviewedBy {
             get { return BackingStore?.Get<Identity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
+#endif
         /// <summary>The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ReviewedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewedDateTime"); }
             set { BackingStore?.Set("reviewedDateTime", value); }
         }
         /// <summary>The result of this approval record. Possible values include: NotReviewed, Approved, Denied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReviewResult {
+            get { return BackingStore?.Get<string?>("reviewResult"); }
+            set { BackingStore?.Set("reviewResult", value); }
+        }
+#else
         public string ReviewResult {
             get { return BackingStore?.Get<string>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
+#endif
         /// <summary>The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

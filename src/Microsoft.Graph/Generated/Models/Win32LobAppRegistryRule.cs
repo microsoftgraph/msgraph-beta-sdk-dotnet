@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("check32BitOn64System", value); }
         }
         /// <summary>The registry comparison value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ComparisonValue {
+            get { return BackingStore?.Get<string?>("comparisonValue"); }
+            set { BackingStore?.Set("comparisonValue", value); }
+        }
+#else
         public string ComparisonValue {
             get { return BackingStore?.Get<string>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
+#endif
         /// <summary>The full path of the registry entry containing the value to detect.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KeyPath {
+            get { return BackingStore?.Get<string?>("keyPath"); }
+            set { BackingStore?.Set("keyPath", value); }
+        }
+#else
         public string KeyPath {
             get { return BackingStore?.Get<string>("keyPath"); }
             set { BackingStore?.Set("keyPath", value); }
         }
+#endif
         /// <summary>Contains all supported registry data detection type.</summary>
         public Win32LobAppRegistryRuleOperationType? OperationType {
             get { return BackingStore?.Get<Win32LobAppRegistryRuleOperationType?>("operationType"); }
@@ -31,10 +45,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The name of the registry value to detect.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ValueName {
+            get { return BackingStore?.Get<string?>("valueName"); }
+            set { BackingStore?.Set("valueName", value); }
+        }
+#else
         public string ValueName {
             get { return BackingStore?.Get<string>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Win32LobAppRegistryRule and sets the default values.
         /// </summary>

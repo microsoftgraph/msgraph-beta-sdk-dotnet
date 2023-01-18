@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The keyMaterial property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? KeyMaterial {
+            get { return BackingStore?.Get<byte[]?>("keyMaterial"); }
+            set { BackingStore?.Set("keyMaterial", value); }
+        }
+#else
         public byte[] KeyMaterial {
             get { return BackingStore?.Get<byte[]>("keyMaterial"); }
             set { BackingStore?.Set("keyMaterial", value); }
         }
+#endif
         /// <summary>The keyType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KeyType {
+            get { return BackingStore?.Get<string?>("keyType"); }
+            set { BackingStore?.Set("keyType", value); }
+        }
+#else
         public string KeyType {
             get { return BackingStore?.Get<string>("keyType"); }
             set { BackingStore?.Set("keyType", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceKey and sets the default values.
         /// </summary>

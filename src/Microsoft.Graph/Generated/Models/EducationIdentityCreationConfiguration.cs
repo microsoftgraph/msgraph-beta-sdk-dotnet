@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationIdentityCreationConfiguration : EducationIdentitySynchronizationConfiguration, IParsable {
         /// <summary>The userDomains property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationIdentityDomain>? UserDomains {
+            get { return BackingStore?.Get<List<EducationIdentityDomain>?>("userDomains"); }
+            set { BackingStore?.Set("userDomains", value); }
+        }
+#else
         public List<EducationIdentityDomain> UserDomains {
             get { return BackingStore?.Get<List<EducationIdentityDomain>>("userDomains"); }
             set { BackingStore?.Set("userDomains", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationIdentityCreationConfiguration and sets the default values.
         /// </summary>

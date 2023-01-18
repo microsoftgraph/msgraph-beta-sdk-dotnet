@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The createdBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedBy {
+            get { return BackingStore?.Get<string?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public string CreatedBy {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The createdByIdentity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedByIdentity {
+            get { return BackingStore?.Get<IdentitySet?>("createdByIdentity"); }
+            set { BackingStore?.Set("createdByIdentity", value); }
+        }
+#else
         public IdentitySet CreatedByIdentity {
             get { return BackingStore?.Get<IdentitySet>("createdByIdentity"); }
             set { BackingStore?.Set("createdByIdentity", value); }
         }
+#endif
         /// <summary>The createdTime property</summary>
         public DateTimeOffset? CreatedTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdTime"); }
             set { BackingStore?.Set("createdTime", value); }
         }
         /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The isDefault property</summary>
         public bool? IsDefault {
             get { return BackingStore?.Get<bool?>("isDefault"); }
@@ -44,50 +65,106 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isShared", value); }
         }
         /// <summary>The lastModifiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastModifiedBy {
+            get { return BackingStore?.Get<string?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public string LastModifiedBy {
             get { return BackingStore?.Get<string>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The lastModifiedByIdentity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedByIdentity {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedByIdentity"); }
+            set { BackingStore?.Set("lastModifiedByIdentity", value); }
+        }
+#else
         public IdentitySet LastModifiedByIdentity {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedByIdentity"); }
             set { BackingStore?.Set("lastModifiedByIdentity", value); }
         }
+#endif
         /// <summary>The lastModifiedTime property</summary>
         public DateTimeOffset? LastModifiedTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedTime"); }
             set { BackingStore?.Set("lastModifiedTime", value); }
         }
         /// <summary>The links property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public NotebookLinks? Links {
+            get { return BackingStore?.Get<NotebookLinks?>("links"); }
+            set { BackingStore?.Set("links", value); }
+        }
+#else
         public NotebookLinks Links {
             get { return BackingStore?.Get<NotebookLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The sectionGroupsUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SectionGroupsUrl {
+            get { return BackingStore?.Get<string?>("sectionGroupsUrl"); }
+            set { BackingStore?.Set("sectionGroupsUrl", value); }
+        }
+#else
         public string SectionGroupsUrl {
             get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
             set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
+#endif
         /// <summary>The sectionsUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SectionsUrl {
+            get { return BackingStore?.Get<string?>("sectionsUrl"); }
+            set { BackingStore?.Set("sectionsUrl", value); }
+        }
+#else
         public string SectionsUrl {
             get { return BackingStore?.Get<string>("sectionsUrl"); }
             set { BackingStore?.Set("sectionsUrl", value); }
         }
+#endif
         /// <summary>The self property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Self {
+            get { return BackingStore?.Get<string?>("self"); }
+            set { BackingStore?.Set("self", value); }
+        }
+#else
         public string Self {
             get { return BackingStore?.Get<string>("self"); }
             set { BackingStore?.Set("self", value); }
         }
+#endif
         /// <summary>The userRole property</summary>
         public OnenoteUserRole? UserRole {
             get { return BackingStore?.Get<OnenoteUserRole?>("userRole"); }

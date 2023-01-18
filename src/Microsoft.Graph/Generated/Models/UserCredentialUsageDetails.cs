@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Provides the failure reason for the corresponding reset or registration workflow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FailureReason {
+            get { return BackingStore?.Get<string?>("failureReason"); }
+            set { BackingStore?.Set("failureReason", value); }
+        }
+#else
         public string FailureReason {
             get { return BackingStore?.Get<string>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
         }
+#endif
         /// <summary>The feature property</summary>
         public FeatureType? Feature {
             get { return BackingStore?.Get<FeatureType?>("feature"); }
@@ -31,15 +38,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSuccess", value); }
         }
         /// <summary>User name of the user performing the reset or registration workflow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserDisplayName {
+            get { return BackingStore?.Get<string?>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
+        }
+#else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#endif
         /// <summary>User principal name of the user performing the reset or registration workflow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

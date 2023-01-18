@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MeetingAttendanceReport : Entity, IParsable {
         /// <summary>List of attendance records of an attendance report. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AttendanceRecord>? AttendanceRecords {
+            get { return BackingStore?.Get<List<AttendanceRecord>?>("attendanceRecords"); }
+            set { BackingStore?.Set("attendanceRecords", value); }
+        }
+#else
         public List<AttendanceRecord> AttendanceRecords {
             get { return BackingStore?.Get<List<AttendanceRecord>>("attendanceRecords"); }
             set { BackingStore?.Set("attendanceRecords", value); }
         }
+#endif
         /// <summary>UTC time when the meeting ended. Read-only.</summary>
         public DateTimeOffset? MeetingEndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("meetingEndDateTime"); }

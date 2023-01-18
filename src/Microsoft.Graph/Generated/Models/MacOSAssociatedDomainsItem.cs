@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The application identifier of the app to associate domains with.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplicationIdentifier {
+            get { return BackingStore?.Get<string?>("applicationIdentifier"); }
+            set { BackingStore?.Set("applicationIdentifier", value); }
+        }
+#else
         public string ApplicationIdentifier {
             get { return BackingStore?.Get<string>("applicationIdentifier"); }
             set { BackingStore?.Set("applicationIdentifier", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determines whether data should be downloaded directly or via a CDN.</summary>
@@ -27,15 +34,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("directDownloadsEnabled", value); }
         }
         /// <summary>The list of domains to associate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Domains {
+            get { return BackingStore?.Get<List<string>?>("domains"); }
+            set { BackingStore?.Set("domains", value); }
+        }
+#else
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new macOSAssociatedDomainsItem and sets the default values.
         /// </summary>

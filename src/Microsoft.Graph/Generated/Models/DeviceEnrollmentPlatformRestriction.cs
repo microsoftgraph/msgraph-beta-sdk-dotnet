@@ -17,30 +17,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Collection of blocked Manufacturers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BlockedManufacturers {
+            get { return BackingStore?.Get<List<string>?>("blockedManufacturers"); }
+            set { BackingStore?.Set("blockedManufacturers", value); }
+        }
+#else
         public List<string> BlockedManufacturers {
             get { return BackingStore?.Get<List<string>>("blockedManufacturers"); }
             set { BackingStore?.Set("blockedManufacturers", value); }
         }
+#endif
         /// <summary>Collection of blocked Skus.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BlockedSkus {
+            get { return BackingStore?.Get<List<string>?>("blockedSkus"); }
+            set { BackingStore?.Set("blockedSkus", value); }
+        }
+#else
         public List<string> BlockedSkus {
             get { return BackingStore?.Get<List<string>>("blockedSkus"); }
             set { BackingStore?.Set("blockedSkus", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Max OS version supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMaximumVersion {
+            get { return BackingStore?.Get<string?>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
+        }
+#else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#endif
         /// <summary>Min OS version supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMinimumVersion {
+            get { return BackingStore?.Get<string?>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
+        }
+#else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#endif
         /// <summary>Block personally owned devices from enrolling</summary>
         public bool? PersonalDeviceEnrollmentBlocked {
             get { return BackingStore?.Get<bool?>("personalDeviceEnrollmentBlocked"); }

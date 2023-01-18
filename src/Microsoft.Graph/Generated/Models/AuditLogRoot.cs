@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The directoryAudits property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryAudit>? DirectoryAudits {
+            get { return BackingStore?.Get<List<DirectoryAudit>?>("directoryAudits"); }
+            set { BackingStore?.Set("directoryAudits", value); }
+        }
+#else
         public List<DirectoryAudit> DirectoryAudits {
             get { return BackingStore?.Get<List<DirectoryAudit>>("directoryAudits"); }
             set { BackingStore?.Set("directoryAudits", value); }
         }
+#endif
         /// <summary>The directoryProvisioning property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ProvisioningObjectSummary>? DirectoryProvisioning {
+            get { return BackingStore?.Get<List<ProvisioningObjectSummary>?>("directoryProvisioning"); }
+            set { BackingStore?.Set("directoryProvisioning", value); }
+        }
+#else
         public List<ProvisioningObjectSummary> DirectoryProvisioning {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>>("directoryProvisioning"); }
             set { BackingStore?.Set("directoryProvisioning", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The provisioning property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ProvisioningObjectSummary>? Provisioning {
+            get { return BackingStore?.Get<List<ProvisioningObjectSummary>?>("provisioning"); }
+            set { BackingStore?.Set("provisioning", value); }
+        }
+#else
         public List<ProvisioningObjectSummary> Provisioning {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>>("provisioning"); }
             set { BackingStore?.Set("provisioning", value); }
         }
+#endif
         /// <summary>The signIns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SignIn>? SignIns {
+            get { return BackingStore?.Get<List<SignIn>?>("signIns"); }
+            set { BackingStore?.Set("signIns", value); }
+        }
+#else
         public List<SignIn> SignIns {
             get { return BackingStore?.Get<List<SignIn>>("signIns"); }
             set { BackingStore?.Set("signIns", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AuditLogRoot and sets the default values.
         /// </summary>

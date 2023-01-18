@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Field indicating the title of checklistItem.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>State indicating whether the item is checked off or not.</summary>
         public bool? IsChecked {
             get { return BackingStore?.Get<bool?>("isChecked"); }

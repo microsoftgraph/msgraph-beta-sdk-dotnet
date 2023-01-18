@@ -17,20 +17,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Extended Key Usage Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Extended Key Usage Object Identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ObjectIdentifier {
+            get { return BackingStore?.Get<string?>("objectIdentifier"); }
+            set { BackingStore?.Set("objectIdentifier", value); }
+        }
+#else
         public string ObjectIdentifier {
             get { return BackingStore?.Get<string>("objectIdentifier"); }
             set { BackingStore?.Set("objectIdentifier", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new extendedKeyUsage and sets the default values.
         /// </summary>

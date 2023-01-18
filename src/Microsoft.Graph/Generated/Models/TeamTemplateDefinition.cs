@@ -11,60 +11,130 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("audience", value); }
         }
         /// <summary>The categories property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Categories {
+            get { return BackingStore?.Get<List<string>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The iconUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IconUrl {
+            get { return BackingStore?.Get<string?>("iconUrl"); }
+            set { BackingStore?.Set("iconUrl", value); }
+        }
+#else
         public string IconUrl {
             get { return BackingStore?.Get<string>("iconUrl"); }
             set { BackingStore?.Set("iconUrl", value); }
         }
+#endif
         /// <summary>The languageTag property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LanguageTag {
+            get { return BackingStore?.Get<string?>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#else
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+#endif
         /// <summary>The lastModifiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The parentTemplateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentTemplateId {
+            get { return BackingStore?.Get<string?>("parentTemplateId"); }
+            set { BackingStore?.Set("parentTemplateId", value); }
+        }
+#else
         public string ParentTemplateId {
             get { return BackingStore?.Get<string>("parentTemplateId"); }
             set { BackingStore?.Set("parentTemplateId", value); }
         }
+#endif
         /// <summary>The publisherName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PublisherName {
+            get { return BackingStore?.Get<string?>("publisherName"); }
+            set { BackingStore?.Set("publisherName", value); }
+        }
+#else
         public string PublisherName {
             get { return BackingStore?.Get<string>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
+#endif
         /// <summary>The shortDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ShortDescription {
+            get { return BackingStore?.Get<string?>("shortDescription"); }
+            set { BackingStore?.Set("shortDescription", value); }
+        }
+#else
         public string ShortDescription {
             get { return BackingStore?.Get<string>("shortDescription"); }
             set { BackingStore?.Set("shortDescription", value); }
         }
+#endif
         /// <summary>The teamDefinition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Team? TeamDefinition {
+            get { return BackingStore?.Get<Team?>("teamDefinition"); }
+            set { BackingStore?.Set("teamDefinition", value); }
+        }
+#else
         public Team TeamDefinition {
             get { return BackingStore?.Get<Team>("teamDefinition"); }
             set { BackingStore?.Set("teamDefinition", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

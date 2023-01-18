@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class Windows : Entity, IParsable {
         /// <summary>Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.Updates? Updates {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates?>("updates"); }
+            set { BackingStore?.Set("updates", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.WindowsUpdates.Updates Updates {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates>("updates"); }
             set { BackingStore?.Set("updates", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

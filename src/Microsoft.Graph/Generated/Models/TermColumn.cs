@@ -20,25 +20,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The parentTerm property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Term? ParentTerm {
+            get { return BackingStore?.Get<Term?>("parentTerm"); }
+            set { BackingStore?.Set("parentTerm", value); }
+        }
+#else
         public Term ParentTerm {
             get { return BackingStore?.Get<Term>("parentTerm"); }
             set { BackingStore?.Set("parentTerm", value); }
         }
+#endif
         /// <summary>Specifies whether to display the entire term path or only the term label.</summary>
         public bool? ShowFullyQualifiedName {
             get { return BackingStore?.Get<bool?>("showFullyQualifiedName"); }
             set { BackingStore?.Set("showFullyQualifiedName", value); }
         }
         /// <summary>The termSet property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TermStore.Set? TermSet {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set?>("termSet"); }
+            set { BackingStore?.Set("termSet", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TermStore.Set TermSet {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set>("termSet"); }
             set { BackingStore?.Set("termSet", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new termColumn and sets the default values.
         /// </summary>

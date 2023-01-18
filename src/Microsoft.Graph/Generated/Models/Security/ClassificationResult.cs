@@ -24,15 +24,29 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("count", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The GUID of the discovered sensitive information type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SensitiveTypeId {
+            get { return BackingStore?.Get<string?>("sensitiveTypeId"); }
+            set { BackingStore?.Set("sensitiveTypeId", value); }
+        }
+#else
         public string SensitiveTypeId {
             get { return BackingStore?.Get<string>("sensitiveTypeId"); }
             set { BackingStore?.Set("sensitiveTypeId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new classificationResult and sets the default values.
         /// </summary>

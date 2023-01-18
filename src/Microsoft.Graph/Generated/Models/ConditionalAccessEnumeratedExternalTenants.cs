@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ConditionalAccessEnumeratedExternalTenants : ConditionalAccessExternalTenants, IParsable {
         /// <summary>Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Members {
+            get { return BackingStore?.Get<List<string>?>("members"); }
+            set { BackingStore?.Set("members", value); }
+        }
+#else
         public List<string> Members {
             get { return BackingStore?.Get<List<string>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ConditionalAccessEnumeratedExternalTenants and sets the default values.
         /// </summary>

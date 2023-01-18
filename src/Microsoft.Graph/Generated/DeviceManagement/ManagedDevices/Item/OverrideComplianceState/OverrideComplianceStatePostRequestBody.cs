@@ -20,10 +20,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.OverrideComp
             set { BackingStore?.Set("complianceState", value); }
         }
         /// <summary>The remediationUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RemediationUrl {
+            get { return BackingStore?.Get<string?>("remediationUrl"); }
+            set { BackingStore?.Set("remediationUrl", value); }
+        }
+#else
         public string RemediationUrl {
             get { return BackingStore?.Get<string>("remediationUrl"); }
             set { BackingStore?.Set("remediationUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new overrideComplianceStatePostRequestBody and sets the default values.
         /// </summary>

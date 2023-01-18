@@ -30,10 +30,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowCaptiveWebSheet", value); }
         }
         /// <summary>Determines whether all, some, or no non-native captive networking apps are allowed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SpecifiedCaptiveNetworkPlugins? AllowedCaptiveNetworkPlugins {
+            get { return BackingStore?.Get<SpecifiedCaptiveNetworkPlugins?>("allowedCaptiveNetworkPlugins"); }
+            set { BackingStore?.Set("allowedCaptiveNetworkPlugins", value); }
+        }
+#else
         public SpecifiedCaptiveNetworkPlugins AllowedCaptiveNetworkPlugins {
             get { return BackingStore?.Get<SpecifiedCaptiveNetworkPlugins>("allowedCaptiveNetworkPlugins"); }
             set { BackingStore?.Set("allowedCaptiveNetworkPlugins", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.</summary>
@@ -52,10 +59,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("natKeepAliveOffloadEnable", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The type of tunnels that will be present to the VPN client for configuration</summary>
         public VpnTunnelConfigurationType? TunnelConfiguration {
             get { return BackingStore?.Get<VpnTunnelConfigurationType?>("tunnelConfiguration"); }

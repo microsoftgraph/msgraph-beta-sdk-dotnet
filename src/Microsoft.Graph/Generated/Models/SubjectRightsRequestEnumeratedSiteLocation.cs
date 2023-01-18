@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SubjectRightsRequestEnumeratedSiteLocation : SubjectRightsRequestSiteLocation, IParsable {
         /// <summary>Collection of site URLs that should be included. Includes the URL of each site, for example, https://www.contoso.com/site1.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Urls {
+            get { return BackingStore?.Get<List<string>?>("urls"); }
+            set { BackingStore?.Set("urls", value); }
+        }
+#else
         public List<string> Urls {
             get { return BackingStore?.Get<List<string>>("urls"); }
             set { BackingStore?.Set("urls", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new SubjectRightsRequestEnumeratedSiteLocation and sets the default values.
         /// </summary>

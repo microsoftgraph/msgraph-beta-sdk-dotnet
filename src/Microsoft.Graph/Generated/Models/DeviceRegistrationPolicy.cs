@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceRegistrationPolicy : Entity, IParsable {
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AzureAdJoinPolicy? AzureADJoin {
+            get { return BackingStore?.Get<AzureAdJoinPolicy?>("azureADJoin"); }
+            set { BackingStore?.Set("azureADJoin", value); }
+        }
+#else
         public AzureAdJoinPolicy AzureADJoin {
             get { return BackingStore?.Get<AzureAdJoinPolicy>("azureADJoin"); }
             set { BackingStore?.Set("azureADJoin", value); }
         }
+#endif
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AzureADRegistrationPolicy? AzureADRegistration {
+            get { return BackingStore?.Get<AzureADRegistrationPolicy?>("azureADRegistration"); }
+            set { BackingStore?.Set("azureADRegistration", value); }
+        }
+#else
         public AzureADRegistrationPolicy AzureADRegistration {
             get { return BackingStore?.Get<AzureADRegistrationPolicy>("azureADRegistration"); }
             set { BackingStore?.Set("azureADRegistration", value); }
         }
+#endif
         /// <summary>The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The name of the device registration policy. It is always set to Device Registration Policy. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The multiFactorAuthConfiguration property</summary>
         public Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration? MultiFactorAuthConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration?>("multiFactorAuthConfiguration"); }

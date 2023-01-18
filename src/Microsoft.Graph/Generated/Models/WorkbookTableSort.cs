@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookTableSort : Entity, IParsable {
         /// <summary>The fields property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookSortField>? Fields {
+            get { return BackingStore?.Get<List<WorkbookSortField>?>("fields"); }
+            set { BackingStore?.Set("fields", value); }
+        }
+#else
         public List<WorkbookSortField> Fields {
             get { return BackingStore?.Get<List<WorkbookSortField>>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
+#endif
         /// <summary>Represents whether the casing impacted the last sort of the table. Read-only.</summary>
         public bool? MatchCase {
             get { return BackingStore?.Get<bool?>("matchCase"); }
             set { BackingStore?.Set("matchCase", value); }
         }
         /// <summary>Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Method {
+            get { return BackingStore?.Get<string?>("method"); }
+            set { BackingStore?.Set("method", value); }
+        }
+#else
         public string Method {
             get { return BackingStore?.Get<string>("method"); }
             set { BackingStore?.Set("method", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

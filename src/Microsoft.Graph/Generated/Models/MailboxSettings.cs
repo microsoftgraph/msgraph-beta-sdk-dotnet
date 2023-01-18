@@ -12,47 +12,96 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Folder ID of an archive folder for the user. Read only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ArchiveFolder {
+            get { return BackingStore?.Get<string?>("archiveFolder"); }
+            set { BackingStore?.Set("archiveFolder", value); }
+        }
+#else
         public string ArchiveFolder {
             get { return BackingStore?.Get<string>("archiveFolder"); }
             set { BackingStore?.Set("archiveFolder", value); }
         }
+#endif
         /// <summary>Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AutomaticRepliesSetting? AutomaticRepliesSetting {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutomaticRepliesSetting?>("automaticRepliesSetting"); }
+            set { BackingStore?.Set("automaticRepliesSetting", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AutomaticRepliesSetting AutomaticRepliesSetting {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutomaticRepliesSetting>("automaticRepliesSetting"); }
             set { BackingStore?.Set("automaticRepliesSetting", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date format for the user&apos;s mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DateFormat {
+            get { return BackingStore?.Get<string?>("dateFormat"); }
+            set { BackingStore?.Set("dateFormat", value); }
+        }
+#else
         public string DateFormat {
             get { return BackingStore?.Get<string>("dateFormat"); }
             set { BackingStore?.Set("dateFormat", value); }
         }
+#endif
         /// <summary>If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly. The default is sendToDelegateOnly.</summary>
         public Microsoft.Graph.Beta.Models.DelegateMeetingMessageDeliveryOptions? DelegateMeetingMessageDeliveryOptions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DelegateMeetingMessageDeliveryOptions?>("delegateMeetingMessageDeliveryOptions"); }
             set { BackingStore?.Set("delegateMeetingMessageDeliveryOptions", value); }
         }
         /// <summary>The locale information for the user, including the preferred language and country/region.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LocaleInfo? Language {
+            get { return BackingStore?.Get<LocaleInfo?>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#else
         public LocaleInfo Language {
             get { return BackingStore?.Get<LocaleInfo>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The time format for the user&apos;s mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeFormat {
+            get { return BackingStore?.Get<string?>("timeFormat"); }
+            set { BackingStore?.Set("timeFormat", value); }
+        }
+#else
         public string TimeFormat {
             get { return BackingStore?.Get<string>("timeFormat"); }
             set { BackingStore?.Set("timeFormat", value); }
         }
+#endif
         /// <summary>The default time zone for the user&apos;s mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeZone {
+            get { return BackingStore?.Get<string?>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
+        }
+#else
         public string TimeZone {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#endif
         /// <summary>The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.</summary>
         public Microsoft.Graph.Beta.Models.UserPurpose? UserPurpose {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserPurpose?>("userPurpose"); }
@@ -64,10 +113,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPurposeV2", value); }
         }
         /// <summary>The days of the week and hours in a specific time zone that the user works.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.WorkingHours? WorkingHours {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkingHours?>("workingHours"); }
+            set { BackingStore?.Set("workingHours", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.WorkingHours WorkingHours {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkingHours>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new mailboxSettings and sets the default values.
         /// </summary>

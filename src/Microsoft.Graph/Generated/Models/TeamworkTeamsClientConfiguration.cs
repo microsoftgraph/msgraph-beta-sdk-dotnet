@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamworkTeamsClientConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The configuration of the Microsoft Teams client user account for a device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkAccountConfiguration? AccountConfiguration {
+            get { return BackingStore?.Get<TeamworkAccountConfiguration?>("accountConfiguration"); }
+            set { BackingStore?.Set("accountConfiguration", value); }
+        }
+#else
         public TeamworkAccountConfiguration AccountConfiguration {
             get { return BackingStore?.Get<TeamworkAccountConfiguration>("accountConfiguration"); }
             set { BackingStore?.Set("accountConfiguration", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -19,15 +26,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The configuration of Microsoft Teams client features for a device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkFeaturesConfiguration? FeaturesConfiguration {
+            get { return BackingStore?.Get<TeamworkFeaturesConfiguration?>("featuresConfiguration"); }
+            set { BackingStore?.Set("featuresConfiguration", value); }
+        }
+#else
         public TeamworkFeaturesConfiguration FeaturesConfiguration {
             get { return BackingStore?.Get<TeamworkFeaturesConfiguration>("featuresConfiguration"); }
             set { BackingStore?.Set("featuresConfiguration", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkTeamsClientConfiguration and sets the default values.
         /// </summary>

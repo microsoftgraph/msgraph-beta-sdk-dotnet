@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Errors in json for the script for rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceComplianceScriptRuleError>? RuleErrors {
+            get { return BackingStore?.Get<List<DeviceComplianceScriptRuleError>?>("ruleErrors"); }
+            set { BackingStore?.Set("ruleErrors", value); }
+        }
+#else
         public List<DeviceComplianceScriptRuleError> RuleErrors {
             get { return BackingStore?.Get<List<DeviceComplianceScriptRuleError>>("ruleErrors"); }
             set { BackingStore?.Set("ruleErrors", value); }
         }
+#endif
         /// <summary>Parsed rules from json.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceComplianceScriptRule>? Rules {
+            get { return BackingStore?.Get<List<DeviceComplianceScriptRule>?>("rules"); }
+            set { BackingStore?.Set("rules", value); }
+        }
+#else
         public List<DeviceComplianceScriptRule> Rules {
             get { return BackingStore?.Get<List<DeviceComplianceScriptRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
+#endif
         /// <summary>Errors in json for the script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceComplianceScriptError>? ScriptErrors {
+            get { return BackingStore?.Get<List<DeviceComplianceScriptError>?>("scriptErrors"); }
+            set { BackingStore?.Set("scriptErrors", value); }
+        }
+#else
         public List<DeviceComplianceScriptError> ScriptErrors {
             get { return BackingStore?.Get<List<DeviceComplianceScriptError>>("scriptErrors"); }
             set { BackingStore?.Set("scriptErrors", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceComplianceScriptValidationResult and sets the default values.
         /// </summary>

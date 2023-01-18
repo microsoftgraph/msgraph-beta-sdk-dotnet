@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.Workbooks.Item.Copy {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The parentReference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemReference? ParentReference {
+            get { return BackingStore?.Get<ItemReference?>("parentReference"); }
+            set { BackingStore?.Set("parentReference", value); }
+        }
+#else
         public ItemReference ParentReference {
             get { return BackingStore?.Get<ItemReference>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new copyPostRequestBody and sets the default values.
         /// </summary>

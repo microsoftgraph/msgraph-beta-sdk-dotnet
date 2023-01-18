@@ -17,40 +17,82 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The data type of the property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DataType {
+            get { return BackingStore?.Get<string?>("dataType"); }
+            set { BackingStore?.Set("dataType", value); }
+        }
+#else
         public string DataType {
             get { return BackingStore?.Get<string>("dataType"); }
             set { BackingStore?.Set("dataType", value); }
         }
+#endif
         /// <summary>Indicates whether the property is a collection type or not.</summary>
         public bool? IsCollection {
             get { return BackingStore?.Get<bool?>("isCollection"); }
             set { BackingStore?.Set("isCollection", value); }
         }
         /// <summary>Name of the property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Regex string to do validation on the property value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PropertyRegexConstraint {
+            get { return BackingStore?.Get<string?>("propertyRegexConstraint"); }
+            set { BackingStore?.Set("propertyRegexConstraint", value); }
+        }
+#else
         public string PropertyRegexConstraint {
             get { return BackingStore?.Get<string>("propertyRegexConstraint"); }
             set { BackingStore?.Set("propertyRegexConstraint", value); }
         }
+#endif
         /// <summary>List of all supported operators on this property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AssignmentFilterOperator?>? SupportedOperators {
+            get { return BackingStore?.Get<List<AssignmentFilterOperator?>?>("supportedOperators"); }
+            set { BackingStore?.Set("supportedOperators", value); }
+        }
+#else
         public List<AssignmentFilterOperator?> SupportedOperators {
             get { return BackingStore?.Get<List<AssignmentFilterOperator?>>("supportedOperators"); }
             set { BackingStore?.Set("supportedOperators", value); }
         }
+#endif
         /// <summary>List of all supported values for this propery, empty if everything is supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SupportedValues {
+            get { return BackingStore?.Get<List<string>?>("supportedValues"); }
+            set { BackingStore?.Set("supportedValues", value); }
+        }
+#else
         public List<string> SupportedValues {
             get { return BackingStore?.Get<List<string>>("supportedValues"); }
             set { BackingStore?.Set("supportedValues", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignmentFilterSupportedProperty and sets the default values.
         /// </summary>

@@ -26,10 +26,17 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("siteCount", value); }
         }
         /// <summary>eDiscovery collection, commonly known as a search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection?>("sourceCollection"); }
+            set { BackingStore?.Set("sourceCollection", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
+#endif
         /// <summary>The estimated count of unindexed items for the collection.</summary>
         public long? UnindexedItemCount {
             get { return BackingStore?.Get<long?>("unindexedItemCount"); }

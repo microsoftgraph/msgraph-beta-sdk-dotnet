@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class HostSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureSubscriptionId {
+            get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
+        }
+#else
         public string AzureSubscriptionId {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
+#endif
         /// <summary>The azureTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureTenantId {
+            get { return BackingStore?.Get<string?>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
+        }
+#else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#endif
         /// <summary>The firstSeenDateTime property</summary>
         public DateTimeOffset? FirstSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The fqdn property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Fqdn {
+            get { return BackingStore?.Get<string?>("fqdn"); }
+            set { BackingStore?.Set("fqdn", value); }
+        }
+#else
         public string Fqdn {
             get { return BackingStore?.Get<string>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
+#endif
         /// <summary>The isAzureAdJoined property</summary>
         public bool? IsAzureAdJoined {
             get { return BackingStore?.Get<bool?>("isAzureAdJoined"); }
@@ -46,55 +67,125 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The logonUsers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LogonUser>? LogonUsers {
+            get { return BackingStore?.Get<List<LogonUser>?>("logonUsers"); }
+            set { BackingStore?.Set("logonUsers", value); }
+        }
+#else
         public List<LogonUser> LogonUsers {
             get { return BackingStore?.Get<List<LogonUser>>("logonUsers"); }
             set { BackingStore?.Set("logonUsers", value); }
         }
+#endif
         /// <summary>The netBiosName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetBiosName {
+            get { return BackingStore?.Get<string?>("netBiosName"); }
+            set { BackingStore?.Set("netBiosName", value); }
+        }
+#else
         public string NetBiosName {
             get { return BackingStore?.Get<string>("netBiosName"); }
             set { BackingStore?.Set("netBiosName", value); }
         }
+#endif
         /// <summary>The networkInterfaces property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<NetworkInterface>? NetworkInterfaces {
+            get { return BackingStore?.Get<List<NetworkInterface>?>("networkInterfaces"); }
+            set { BackingStore?.Set("networkInterfaces", value); }
+        }
+#else
         public List<NetworkInterface> NetworkInterfaces {
             get { return BackingStore?.Get<List<NetworkInterface>>("networkInterfaces"); }
             set { BackingStore?.Set("networkInterfaces", value); }
         }
+#endif
         /// <summary>The os property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Os {
+            get { return BackingStore?.Get<string?>("os"); }
+            set { BackingStore?.Set("os", value); }
+        }
+#else
         public string Os {
             get { return BackingStore?.Get<string>("os"); }
             set { BackingStore?.Set("os", value); }
         }
+#endif
         /// <summary>The osVersion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>The parentHost property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentHost {
+            get { return BackingStore?.Get<string?>("parentHost"); }
+            set { BackingStore?.Set("parentHost", value); }
+        }
+#else
         public string ParentHost {
             get { return BackingStore?.Get<string>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
+#endif
         /// <summary>The relatedHostIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RelatedHostIds {
+            get { return BackingStore?.Get<List<string>?>("relatedHostIds"); }
+            set { BackingStore?.Set("relatedHostIds", value); }
+        }
+#else
         public List<string> RelatedHostIds {
             get { return BackingStore?.Get<List<string>>("relatedHostIds"); }
             set { BackingStore?.Set("relatedHostIds", value); }
         }
+#endif
         /// <summary>The riskScore property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RiskScore {
+            get { return BackingStore?.Get<string?>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
+        }
+#else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#endif
         /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tags {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>The vendorInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SecurityVendorInformation? VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
+        }
+#else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

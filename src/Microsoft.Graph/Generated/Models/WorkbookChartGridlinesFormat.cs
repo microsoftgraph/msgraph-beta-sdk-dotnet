@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartGridlinesFormat : Entity, IParsable {
         /// <summary>Represents chart line formatting. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartLineFormat? Line {
+            get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
+            set { BackingStore?.Set("line", value); }
+        }
+#else
         public WorkbookChartLineFormat Line {
             get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
             set { BackingStore?.Set("line", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

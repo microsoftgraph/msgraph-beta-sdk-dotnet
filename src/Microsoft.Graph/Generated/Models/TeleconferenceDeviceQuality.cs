@@ -19,50 +19,106 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("callChainId", value); }
         }
         /// <summary>A geo-region where the service is deployed, such as ProdNoam.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CloudServiceDeploymentEnvironment {
+            get { return BackingStore?.Get<string?>("cloudServiceDeploymentEnvironment"); }
+            set { BackingStore?.Set("cloudServiceDeploymentEnvironment", value); }
+        }
+#else
         public string CloudServiceDeploymentEnvironment {
             get { return BackingStore?.Get<string>("cloudServiceDeploymentEnvironment"); }
             set { BackingStore?.Set("cloudServiceDeploymentEnvironment", value); }
         }
+#endif
         /// <summary>A unique deployment identifier assigned by Azure.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CloudServiceDeploymentId {
+            get { return BackingStore?.Get<string?>("cloudServiceDeploymentId"); }
+            set { BackingStore?.Set("cloudServiceDeploymentId", value); }
+        }
+#else
         public string CloudServiceDeploymentId {
             get { return BackingStore?.Get<string>("cloudServiceDeploymentId"); }
             set { BackingStore?.Set("cloudServiceDeploymentId", value); }
         }
+#endif
         /// <summary>The Azure deployed cloud service instance name, such as FrontEnd_IN_3.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CloudServiceInstanceName {
+            get { return BackingStore?.Get<string?>("cloudServiceInstanceName"); }
+            set { BackingStore?.Set("cloudServiceInstanceName", value); }
+        }
+#else
         public string CloudServiceInstanceName {
             get { return BackingStore?.Get<string>("cloudServiceInstanceName"); }
             set { BackingStore?.Set("cloudServiceInstanceName", value); }
         }
+#endif
         /// <summary>The Azure deployed cloud service name, such as contoso.cloudapp.net.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CloudServiceName {
+            get { return BackingStore?.Get<string?>("cloudServiceName"); }
+            set { BackingStore?.Set("cloudServiceName", value); }
+        }
+#else
         public string CloudServiceName {
             get { return BackingStore?.Get<string>("cloudServiceName"); }
             set { BackingStore?.Set("cloudServiceName", value); }
         }
+#endif
         /// <summary>Any additional description, such as VTC Bldg 30/21.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceDescription {
+            get { return BackingStore?.Get<string?>("deviceDescription"); }
+            set { BackingStore?.Set("deviceDescription", value); }
+        }
+#else
         public string DeviceDescription {
             get { return BackingStore?.Get<string>("deviceDescription"); }
             set { BackingStore?.Set("deviceDescription", value); }
         }
+#endif
         /// <summary>The user media agent name, such as Cisco SX80.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.</summary>
         public Guid? MediaLegId {
             get { return BackingStore?.Get<Guid?>("mediaLegId"); }
             set { BackingStore?.Set("mediaLegId", value); }
         }
         /// <summary>The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeleconferenceDeviceMediaQuality>? MediaQualityList {
+            get { return BackingStore?.Get<List<TeleconferenceDeviceMediaQuality>?>("mediaQualityList"); }
+            set { BackingStore?.Set("mediaQualityList", value); }
+        }
+#else
         public List<TeleconferenceDeviceMediaQuality> MediaQualityList {
             get { return BackingStore?.Get<List<TeleconferenceDeviceMediaQuality>>("mediaQualityList"); }
             set { BackingStore?.Set("mediaQualityList", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.</summary>
         public Guid? ParticipantId {
             get { return BackingStore?.Get<Guid?>("participantId"); }

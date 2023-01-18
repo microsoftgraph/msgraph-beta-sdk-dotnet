@@ -26,10 +26,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("conflictUserCount", value); }
         }
         /// <summary>The name of the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Number of devices had error.</summary>
         public int? ErrorDeviceCount {
             get { return BackingStore?.Get<int?>("errorDeviceCount"); }

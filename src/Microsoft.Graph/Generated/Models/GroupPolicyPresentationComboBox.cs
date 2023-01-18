@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationComboBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized default string displayed in the combo box. The default value is empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultValue {
+            get { return BackingStore?.Get<string?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
+        }
+#else
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#endif
         /// <summary>An unsigned integer that specifies the maximum number of text characters for the parameter. The default value is 1023.</summary>
         public long? MaxLength {
             get { return BackingStore?.Get<long?>("maxLength"); }
@@ -21,10 +28,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>Localized strings listed in the drop-down list of the combo box. The default value is empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Suggestions {
+            get { return BackingStore?.Get<List<string>?>("suggestions"); }
+            set { BackingStore?.Set("suggestions", value); }
+        }
+#else
         public List<string> Suggestions {
             get { return BackingStore?.Get<List<string>>("suggestions"); }
             set { BackingStore?.Set("suggestions", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new GroupPolicyPresentationComboBox and sets the default values.
         /// </summary>

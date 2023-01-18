@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>List of log folders.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? CustomLogFolders {
+            get { return BackingStore?.Get<List<string>?>("customLogFolders"); }
+            set { BackingStore?.Set("customLogFolders", value); }
+        }
+#else
         public List<string> CustomLogFolders {
             get { return BackingStore?.Get<List<string>>("customLogFolders"); }
             set { BackingStore?.Set("customLogFolders", value); }
         }
+#endif
         /// <summary>Error message if any during the upload process</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorMessage {
+            get { return BackingStore?.Get<string?>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
+        }
+#else
         public string ErrorMessage {
             get { return BackingStore?.Get<string>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
+#endif
         /// <summary>AppLogUploadStatus</summary>
         public AppLogUploadState? Status {
             get { return BackingStore?.Get<AppLogUploadState?>("status"); }

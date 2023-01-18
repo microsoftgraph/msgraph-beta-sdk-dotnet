@@ -16,30 +16,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("blocked", value); }
         }
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The gtin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Gtin {
+            get { return BackingStore?.Get<string?>("gtin"); }
+            set { BackingStore?.Set("gtin", value); }
+        }
+#else
         public string Gtin {
             get { return BackingStore?.Get<string>("gtin"); }
             set { BackingStore?.Set("gtin", value); }
         }
+#endif
         /// <summary>The inventory property</summary>
         public decimal? Inventory {
             get { return BackingStore?.Get<decimal?>("inventory"); }
             set { BackingStore?.Set("inventory", value); }
         }
         /// <summary>The itemCategory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ItemCategory? ItemCategory {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemCategory?>("itemCategory"); }
+            set { BackingStore?.Set("itemCategory", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ItemCategory ItemCategory {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemCategory>("itemCategory"); }
             set { BackingStore?.Set("itemCategory", value); }
         }
+#endif
         /// <summary>The itemCategoryCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ItemCategoryCode {
+            get { return BackingStore?.Get<string?>("itemCategoryCode"); }
+            set { BackingStore?.Set("itemCategoryCode", value); }
+        }
+#else
         public string ItemCategoryCode {
             get { return BackingStore?.Get<string>("itemCategoryCode"); }
             set { BackingStore?.Set("itemCategoryCode", value); }
         }
+#endif
         /// <summary>The itemCategoryId property</summary>
         public Guid? ItemCategoryId {
             get { return BackingStore?.Get<Guid?>("itemCategoryId"); }
@@ -51,35 +79,63 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Number {
+            get { return BackingStore?.Get<string?>("number"); }
+            set { BackingStore?.Set("number", value); }
+        }
+#else
         public string Number {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
+#endif
         /// <summary>The picture property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.Picture>? Picture {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>?>("picture"); }
+            set { BackingStore?.Set("picture", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.Picture> Picture {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
+#endif
         /// <summary>The priceIncludesTax property</summary>
         public bool? PriceIncludesTax {
             get { return BackingStore?.Get<bool?>("priceIncludesTax"); }
             set { BackingStore?.Set("priceIncludesTax", value); }
         }
         /// <summary>The taxGroupCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TaxGroupCode {
+            get { return BackingStore?.Get<string?>("taxGroupCode"); }
+            set { BackingStore?.Set("taxGroupCode", value); }
+        }
+#else
         public string TaxGroupCode {
             get { return BackingStore?.Get<string>("taxGroupCode"); }
             set { BackingStore?.Set("taxGroupCode", value); }
         }
+#endif
         /// <summary>The taxGroupId property</summary>
         public Guid? TaxGroupId {
             get { return BackingStore?.Get<Guid?>("taxGroupId"); }
             set { BackingStore?.Set("taxGroupId", value); }
         }
         /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>The unitCost property</summary>
         public decimal? UnitCost {
             get { return BackingStore?.Get<decimal?>("unitCost"); }

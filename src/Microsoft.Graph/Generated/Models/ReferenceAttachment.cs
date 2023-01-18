@@ -16,25 +16,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("permission", value); }
         }
         /// <summary>Applies to only a reference attachment of an image - URL to get a preview image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreviewUrl {
+            get { return BackingStore?.Get<string?>("previewUrl"); }
+            set { BackingStore?.Set("previewUrl", value); }
+        }
+#else
         public string PreviewUrl {
             get { return BackingStore?.Get<string>("previewUrl"); }
             set { BackingStore?.Set("previewUrl", value); }
         }
+#endif
         /// <summary>The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.</summary>
         public ReferenceAttachmentProvider? ProviderType {
             get { return BackingStore?.Get<ReferenceAttachmentProvider?>("providerType"); }
             set { BackingStore?.Set("providerType", value); }
         }
         /// <summary>URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SourceUrl {
+            get { return BackingStore?.Get<string?>("sourceUrl"); }
+            set { BackingStore?.Set("sourceUrl", value); }
+        }
+#else
         public string SourceUrl {
             get { return BackingStore?.Get<string>("sourceUrl"); }
             set { BackingStore?.Set("sourceUrl", value); }
         }
+#endif
         /// <summary>Applies to only a reference attachment of an image - URL to get a thumbnail image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ThumbnailUrl {
+            get { return BackingStore?.Get<string?>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
+        }
+#else
         public string ThumbnailUrl {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ReferenceAttachment and sets the default values.
         /// </summary>

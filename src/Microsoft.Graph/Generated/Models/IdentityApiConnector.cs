@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IdentityApiConnector : Entity, IParsable {
         /// <summary>The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ApiAuthenticationConfigurationBase? AuthenticationConfiguration {
+            get { return BackingStore?.Get<ApiAuthenticationConfigurationBase?>("authenticationConfiguration"); }
+            set { BackingStore?.Set("authenticationConfiguration", value); }
+        }
+#else
         public ApiAuthenticationConfigurationBase AuthenticationConfiguration {
             get { return BackingStore?.Get<ApiAuthenticationConfigurationBase>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
+#endif
         /// <summary>The name of the API connector.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The URL of the API endpoint to call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetUrl {
+            get { return BackingStore?.Get<string?>("targetUrl"); }
+            set { BackingStore?.Set("targetUrl", value); }
+        }
+#else
         public string TargetUrl {
             get { return BackingStore?.Get<string>("targetUrl"); }
             set { BackingStore?.Set("targetUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

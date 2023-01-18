@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Users.Item.SendMail {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Message property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Message? Message {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message?>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Message Message {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#endif
         /// <summary>The SaveToSentItems property</summary>
         public bool? SaveToSentItems {
             get { return BackingStore?.Get<bool?>("saveToSentItems"); }

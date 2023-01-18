@@ -82,10 +82,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("macOSCount", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Number of unknown device count.</summary>
         public int? UnknownCount {
             get { return BackingStore?.Get<int?>("unknownCount"); }

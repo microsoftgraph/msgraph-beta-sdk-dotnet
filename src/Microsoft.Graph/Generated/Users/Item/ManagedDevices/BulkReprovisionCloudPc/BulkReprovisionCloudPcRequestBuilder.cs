@@ -53,7 +53,11 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkReprovisionCloudPc 
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public async Task<CloudPcBulkRemoteActionResult?> PostAsync(BulkReprovisionCloudPcPostRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#else
         public async Task<CloudPcBulkRemoteActionResult> PostAsync(BulkReprovisionCloudPcPostRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,7 +71,11 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkReprovisionCloudPc 
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestInformation ToPostRequestInformation(BulkReprovisionCloudPcPostRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+#else
         public RequestInformation ToPostRequestInformation(BulkReprovisionCloudPcPostRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+#endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,

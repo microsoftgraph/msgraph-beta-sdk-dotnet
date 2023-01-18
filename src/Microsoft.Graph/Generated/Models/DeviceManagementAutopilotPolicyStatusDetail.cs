@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("complianceStatus", value); }
         }
         /// <summary>The friendly name of the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.</summary>
         public int? ErrorCode {
             get { return BackingStore?.Get<int?>("errorCode"); }

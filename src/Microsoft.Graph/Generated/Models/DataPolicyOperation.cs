@@ -21,20 +21,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The URL location to where data is being exported for export requests.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StorageLocation {
+            get { return BackingStore?.Get<string?>("storageLocation"); }
+            set { BackingStore?.Set("storageLocation", value); }
+        }
+#else
         public string StorageLocation {
             get { return BackingStore?.Get<string>("storageLocation"); }
             set { BackingStore?.Set("storageLocation", value); }
         }
+#endif
         /// <summary>Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? SubmittedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("submittedDateTime"); }
             set { BackingStore?.Set("submittedDateTime", value); }
         }
         /// <summary>The id for the user on whom the operation is performed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

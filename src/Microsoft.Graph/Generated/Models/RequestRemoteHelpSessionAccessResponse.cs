@@ -17,25 +17,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>AES encryption Initialization Vector for encrypting client messages sent to PubSub</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PubSubEncryption {
+            get { return BackingStore?.Get<string?>("pubSubEncryption"); }
+            set { BackingStore?.Set("pubSubEncryption", value); }
+        }
+#else
         public string PubSubEncryption {
             get { return BackingStore?.Get<string>("pubSubEncryption"); }
             set { BackingStore?.Set("pubSubEncryption", value); }
         }
+#endif
         /// <summary>The unique identifier for encrypting client messages sent to PubSub</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PubSubEncryptionKey {
+            get { return BackingStore?.Get<string?>("pubSubEncryptionKey"); }
+            set { BackingStore?.Set("pubSubEncryptionKey", value); }
+        }
+#else
         public string PubSubEncryptionKey {
             get { return BackingStore?.Get<string>("pubSubEncryptionKey"); }
             set { BackingStore?.Set("pubSubEncryptionKey", value); }
         }
+#endif
         /// <summary>The unique identifier for a session</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SessionKey {
+            get { return BackingStore?.Get<string?>("sessionKey"); }
+            set { BackingStore?.Set("sessionKey", value); }
+        }
+#else
         public string SessionKey {
             get { return BackingStore?.Get<string>("sessionKey"); }
             set { BackingStore?.Set("sessionKey", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new requestRemoteHelpSessionAccessResponse and sets the default values.
         /// </summary>

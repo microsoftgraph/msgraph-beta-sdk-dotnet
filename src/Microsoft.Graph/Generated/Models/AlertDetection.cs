@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The detectionType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DetectionType {
+            get { return BackingStore?.Get<string?>("detectionType"); }
+            set { BackingStore?.Set("detectionType", value); }
+        }
+#else
         public string DetectionType {
             get { return BackingStore?.Get<string>("detectionType"); }
             set { BackingStore?.Set("detectionType", value); }
         }
+#endif
         /// <summary>The method property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Method {
+            get { return BackingStore?.Get<string?>("method"); }
+            set { BackingStore?.Set("method", value); }
+        }
+#else
         public string Method {
             get { return BackingStore?.Get<string>("method"); }
             set { BackingStore?.Set("method", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new alertDetection and sets the default values.
         /// </summary>

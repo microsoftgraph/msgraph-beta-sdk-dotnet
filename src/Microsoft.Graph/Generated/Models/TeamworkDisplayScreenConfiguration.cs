@@ -34,10 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isScreensaverEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.</summary>
         public TimeSpan? ScreensaverTimeout {
             get { return BackingStore?.Get<TimeSpan?>("screensaverTimeout"); }

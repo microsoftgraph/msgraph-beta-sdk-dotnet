@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The policySetIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? PolicySetIds {
+            get { return BackingStore?.Get<List<string>?>("policySetIds"); }
+            set { BackingStore?.Set("policySetIds", value); }
+        }
+#else
         public List<string> PolicySetIds {
             get { return BackingStore?.Get<List<string>>("policySetIds"); }
             set { BackingStore?.Set("policySetIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new getPolicySetsPostRequestBody and sets the default values.
         /// </summary>

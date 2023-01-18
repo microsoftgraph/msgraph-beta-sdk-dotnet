@@ -26,10 +26,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isLobbyEnabled", value); }
         }
         /// <summary>The lobbyBypassSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.LobbyBypassSettings? LobbyBypassSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings?>("lobbyBypassSettings"); }
+            set { BackingStore?.Set("lobbyBypassSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.LobbyBypassSettings LobbyBypassSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings>("lobbyBypassSettings"); }
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ProtectOnlineMeetingAction and sets the default values.
         /// </summary>

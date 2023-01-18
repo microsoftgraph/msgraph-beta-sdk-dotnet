@@ -14,40 +14,82 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the visible name defined for the resource. Typically specified when the resource is created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>When type is set to Group, this indicates the group type.  Possible values are: unifiedGroups, azureAD, and unknownFutureValue</summary>
         public Microsoft.Graph.Beta.Models.GroupType? GroupType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupType?>("groupType"); }
             set { BackingStore?.Set("groupType", value); }
         }
         /// <summary>Indicates the unique ID of the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ModifiedProperty>? ModifiedProperties {
+            get { return BackingStore?.Get<List<ModifiedProperty>?>("modifiedProperties"); }
+            set { BackingStore?.Set("modifiedProperties", value); }
+        }
+#else
         public List<ModifiedProperty> ModifiedProperties {
             get { return BackingStore?.Get<List<ModifiedProperty>>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>When type is set to User, this includes the user name that initiated the action; null for other types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new targetResource and sets the default values.
         /// </summary>

@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expiryTime", value); }
         }
         /// <summary>The invitationDomain property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InvitationDomain {
+            get { return BackingStore?.Get<string?>("invitationDomain"); }
+            set { BackingStore?.Set("invitationDomain", value); }
+        }
+#else
         public string InvitationDomain {
             get { return BackingStore?.Get<string>("invitationDomain"); }
             set { BackingStore?.Set("invitationDomain", value); }
         }
+#endif
         /// <summary>The invitationStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InvitationStatus {
+            get { return BackingStore?.Get<string?>("invitationStatus"); }
+            set { BackingStore?.Set("invitationStatus", value); }
+        }
+#else
         public string InvitationStatus {
             get { return BackingStore?.Get<string>("invitationStatus"); }
             set { BackingStore?.Set("invitationStatus", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

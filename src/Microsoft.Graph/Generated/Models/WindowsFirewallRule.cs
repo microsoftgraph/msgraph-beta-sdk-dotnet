@@ -22,55 +22,111 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description of the rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the rule. Does not need to be unique.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>State Management Setting.</summary>
         public StateManagementSetting? EdgeTraversal {
             get { return BackingStore?.Get<StateManagementSetting?>("edgeTraversal"); }
             set { BackingStore?.Set("edgeTraversal", value); }
         }
         /// <summary>The full file path of an app that&apos;s affected by the firewall rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FilePath {
+            get { return BackingStore?.Get<string?>("filePath"); }
+            set { BackingStore?.Set("filePath", value); }
+        }
+#else
         public string FilePath {
             get { return BackingStore?.Get<string>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
+#endif
         /// <summary>Flags representing firewall rule interface types.</summary>
         public WindowsFirewallRuleInterfaceTypes? InterfaceTypes {
             get { return BackingStore?.Get<WindowsFirewallRuleInterfaceTypes?>("interfaceTypes"); }
             set { BackingStore?.Set("interfaceTypes", value); }
         }
         /// <summary>List of local addresses covered by the rule. Default is any address. Valid tokens include:&apos;&apos; indicates any local address. If present, this must be the only token included.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of &apos;start address - end address&apos; with no spaces included.An IPv6 address range in the format of &apos;start address - end address&apos; with no spaces included.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? LocalAddressRanges {
+            get { return BackingStore?.Get<List<string>?>("localAddressRanges"); }
+            set { BackingStore?.Set("localAddressRanges", value); }
+        }
+#else
         public List<string> LocalAddressRanges {
             get { return BackingStore?.Get<List<string>>("localAddressRanges"); }
             set { BackingStore?.Set("localAddressRanges", value); }
         }
+#endif
         /// <summary>List of local port ranges. For example, &apos;100-120&apos;, &apos;200&apos;, &apos;300-320&apos;. If not specified, the default is All.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? LocalPortRanges {
+            get { return BackingStore?.Get<List<string>?>("localPortRanges"); }
+            set { BackingStore?.Set("localPortRanges", value); }
+        }
+#else
         public List<string> LocalPortRanges {
             get { return BackingStore?.Get<List<string>>("localPortRanges"); }
             set { BackingStore?.Set("localPortRanges", value); }
         }
+#endif
         /// <summary>Specifies the list of authorized local users for the app container. This is a string in Security Descriptor Definition Language (SDDL) format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocalUserAuthorizations {
+            get { return BackingStore?.Get<string?>("localUserAuthorizations"); }
+            set { BackingStore?.Set("localUserAuthorizations", value); }
+        }
+#else
         public string LocalUserAuthorizations {
             get { return BackingStore?.Get<string>("localUserAuthorizations"); }
             set { BackingStore?.Set("localUserAuthorizations", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The package family name of a Microsoft Store application that&apos;s affected by the firewall rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PackageFamilyName {
+            get { return BackingStore?.Get<string?>("packageFamilyName"); }
+            set { BackingStore?.Set("packageFamilyName", value); }
+        }
+#else
         public string PackageFamilyName {
             get { return BackingStore?.Get<string>("packageFamilyName"); }
             set { BackingStore?.Set("packageFamilyName", value); }
         }
+#endif
         /// <summary>Flags representing which network profile types apply to a firewall rule.</summary>
         public WindowsFirewallRuleNetworkProfileTypes? ProfileTypes {
             get { return BackingStore?.Get<WindowsFirewallRuleNetworkProfileTypes?>("profileTypes"); }
@@ -82,20 +138,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>List of tokens specifying the remote addresses covered by the rule. Tokens are case insensitive. Default is any address. Valid tokens include:&apos;&apos; indicates any remote address. If present, this must be the only token included.&apos;Defaultgateway&apos;&apos;DHCP&apos;&apos;DNS&apos;&apos;WINS&apos;&apos;Intranet&apos; (supported on Windows versions 1809+)&apos;RmtIntranet&apos; (supported on Windows versions 1809+)&apos;Internet&apos; (supported on Windows versions 1809+)&apos;Ply2Renders&apos; (supported on Windows versions 1809+)&apos;LocalSubnet&apos; indicates any local address on the local subnet.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of &apos;start address - end address&apos; with no spaces included.An IPv6 address range in the format of &apos;start address - end address&apos; with no spaces included.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RemoteAddressRanges {
+            get { return BackingStore?.Get<List<string>?>("remoteAddressRanges"); }
+            set { BackingStore?.Set("remoteAddressRanges", value); }
+        }
+#else
         public List<string> RemoteAddressRanges {
             get { return BackingStore?.Get<List<string>>("remoteAddressRanges"); }
             set { BackingStore?.Set("remoteAddressRanges", value); }
         }
+#endif
         /// <summary>List of remote port ranges. For example, &apos;100-120&apos;, &apos;200&apos;, &apos;300-320&apos;. If not specified, the default is All.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RemotePortRanges {
+            get { return BackingStore?.Get<List<string>?>("remotePortRanges"); }
+            set { BackingStore?.Set("remotePortRanges", value); }
+        }
+#else
         public List<string> RemotePortRanges {
             get { return BackingStore?.Get<List<string>>("remotePortRanges"); }
             set { BackingStore?.Set("remotePortRanges", value); }
         }
+#endif
         /// <summary>The name used in cases when a service, not an application, is sending or receiving traffic.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServiceName {
+            get { return BackingStore?.Get<string?>("serviceName"); }
+            set { BackingStore?.Set("serviceName", value); }
+        }
+#else
         public string ServiceName {
             get { return BackingStore?.Get<string>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
         }
+#endif
         /// <summary>Firewall rule traffic directions.</summary>
         public WindowsFirewallRuleTrafficDirectionType? TrafficDirection {
             get { return BackingStore?.Get<WindowsFirewallRuleTrafficDirectionType?>("trafficDirection"); }

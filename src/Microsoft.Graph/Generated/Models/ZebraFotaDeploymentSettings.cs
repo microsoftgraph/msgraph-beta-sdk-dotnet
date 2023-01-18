@@ -28,10 +28,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("batteryRuleRequireCharger", value); }
         }
         /// <summary>Deploy update for devices with this model only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceModel {
+            get { return BackingStore?.Get<string?>("deviceModel"); }
+            set { BackingStore?.Set("deviceModel", value); }
+        }
+#else
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
+#endif
         /// <summary>Represents various network types for Zebra FOTA deployment.</summary>
         public ZebraFotaNetworkType? DownloadRuleNetworkType {
             get { return BackingStore?.Get<ZebraFotaNetworkType?>("downloadRuleNetworkType"); }
@@ -43,25 +50,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("downloadRuleStartDateTime", value); }
         }
         /// <summary>A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FirmwareTargetArtifactDescription {
+            get { return BackingStore?.Get<string?>("firmwareTargetArtifactDescription"); }
+            set { BackingStore?.Set("firmwareTargetArtifactDescription", value); }
+        }
+#else
         public string FirmwareTargetArtifactDescription {
             get { return BackingStore?.Get<string>("firmwareTargetArtifactDescription"); }
             set { BackingStore?.Set("firmwareTargetArtifactDescription", value); }
         }
+#endif
         /// <summary>Deployment&apos;s Board Support Package (BSP. E.g.: &apos;01.18.02.00&apos;). Required only for custom update type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FirmwareTargetBoardSupportPackageVersion {
+            get { return BackingStore?.Get<string?>("firmwareTargetBoardSupportPackageVersion"); }
+            set { BackingStore?.Set("firmwareTargetBoardSupportPackageVersion", value); }
+        }
+#else
         public string FirmwareTargetBoardSupportPackageVersion {
             get { return BackingStore?.Get<string>("firmwareTargetBoardSupportPackageVersion"); }
             set { BackingStore?.Set("firmwareTargetBoardSupportPackageVersion", value); }
         }
+#endif
         /// <summary>Target OS Version (e.g.: &apos;8.1.0&apos;). Required only for custom update type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FirmwareTargetOsVersion {
+            get { return BackingStore?.Get<string?>("firmwareTargetOsVersion"); }
+            set { BackingStore?.Set("firmwareTargetOsVersion", value); }
+        }
+#else
         public string FirmwareTargetOsVersion {
             get { return BackingStore?.Get<string>("firmwareTargetOsVersion"); }
             set { BackingStore?.Set("firmwareTargetOsVersion", value); }
         }
+#endif
         /// <summary>Target patch name (e.g.: &apos;U06&apos;). Required only for custom update type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FirmwareTargetPatch {
+            get { return BackingStore?.Get<string?>("firmwareTargetPatch"); }
+            set { BackingStore?.Set("firmwareTargetPatch", value); }
+        }
+#else
         public string FirmwareTargetPatch {
             get { return BackingStore?.Get<string>("firmwareTargetPatch"); }
             set { BackingStore?.Set("firmwareTargetPatch", value); }
         }
+#endif
         /// <summary>Date and time in device time zone when the install will start. Default - download startDate if configured, otherwise defaults to NOW. Ignored when deployment update type was set to auto.</summary>
         public DateTimeOffset? InstallRuleStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("installRuleStartDateTime"); }
@@ -78,10 +113,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("installRuleWindowStartTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.</summary>
         public int? ScheduleDurationInDays {
             get { return BackingStore?.Get<int?>("scheduleDurationInDays"); }

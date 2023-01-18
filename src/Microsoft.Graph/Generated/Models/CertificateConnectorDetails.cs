@@ -4,17 +4,34 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity used to retrieve information about Intune Certificate Connectors.
+    /// </summary>
     public class CertificateConnectorDetails : Entity, IParsable {
         /// <summary>Connector name (set during enrollment).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectorName {
+            get { return BackingStore?.Get<string?>("connectorName"); }
+            set { BackingStore?.Set("connectorName", value); }
+        }
+#else
         public string ConnectorName {
             get { return BackingStore?.Get<string>("connectorName"); }
             set { BackingStore?.Set("connectorName", value); }
         }
+#endif
         /// <summary>Version of the connector installed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectorVersion {
+            get { return BackingStore?.Get<string?>("connectorVersion"); }
+            set { BackingStore?.Set("connectorVersion", value); }
+        }
+#else
         public string ConnectorVersion {
             get { return BackingStore?.Get<string>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
+#endif
         /// <summary>Date/time when this connector was enrolled.</summary>
         public DateTimeOffset? EnrollmentDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("enrollmentDateTime"); }
@@ -26,10 +43,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastCheckinDateTime", value); }
         }
         /// <summary>Name of the machine hosting this connector service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MachineName {
+            get { return BackingStore?.Get<string?>("machineName"); }
+            set { BackingStore?.Set("machineName", value); }
+        }
+#else
         public string MachineName {
             get { return BackingStore?.Get<string>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

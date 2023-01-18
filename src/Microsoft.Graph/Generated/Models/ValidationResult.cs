@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The string containing the reason for why the rule passed or not. Read-only. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Message {
+            get { return BackingStore?.Get<string?>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+#else
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RuleName {
+            get { return BackingStore?.Get<string?>("ruleName"); }
+            set { BackingStore?.Set("ruleName", value); }
+        }
+#else
         public string RuleName {
             get { return BackingStore?.Get<string>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
+#endif
         /// <summary>Whether the password passed or failed the validation rule. Read-only. Not nullable.</summary>
         public bool? ValidationPassed {
             get { return BackingStore?.Get<bool?>("validationPassed"); }

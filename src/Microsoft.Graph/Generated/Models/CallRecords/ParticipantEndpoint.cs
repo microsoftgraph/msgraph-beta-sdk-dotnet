@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class ParticipantEndpoint : Endpoint, IParsable {
         /// <summary>The feedback provided by the user of this endpoint about the quality of the session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserFeedback? Feedback {
+            get { return BackingStore?.Get<UserFeedback?>("feedback"); }
+            set { BackingStore?.Set("feedback", value); }
+        }
+#else
         public UserFeedback Feedback {
             get { return BackingStore?.Get<UserFeedback>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
+#endif
         /// <summary>Identity associated with the endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? Identity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("identity"); }
+            set { BackingStore?.Set("identity", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet Identity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ParticipantEndpoint and sets the default values.
         /// </summary>

@@ -14,35 +14,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>MAC address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? MacAddresses {
+            get { return BackingStore?.Get<List<string>?>("macAddresses"); }
+            set { BackingStore?.Set("macAddresses", value); }
+        }
+#else
         public List<string> MacAddresses {
             get { return BackingStore?.Get<List<string>>("macAddresses"); }
             set { BackingStore?.Set("macAddresses", value); }
         }
+#endif
         /// <summary>Device manufacturer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>Devie model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Device serial number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SerialNumber {
+            get { return BackingStore?.Get<string?>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
+        }
+#else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#endif
         /// <summary>The unique identifier for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UniqueId {
+            get { return BackingStore?.Get<string?>("uniqueId"); }
+            set { BackingStore?.Set("uniqueId", value); }
+        }
+#else
         public string UniqueId {
             get { return BackingStore?.Get<string>("uniqueId"); }
             set { BackingStore?.Set("uniqueId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkHardwareDetail and sets the default values.
         /// </summary>

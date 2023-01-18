@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for Assignment Filter.
+    /// </summary>
     public class DeviceAndAppManagementAssignmentFilter : Entity, IParsable {
         /// <summary>Creation time of the Assignment Filter.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -11,40 +14,75 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the Assignment Filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>DisplayName of the Assignment Filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Last modified time of the Assignment Filter.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Associated assignments for a specific filter</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PayloadByFilter>? Payloads {
+            get { return BackingStore?.Get<List<PayloadByFilter>?>("payloads"); }
+            set { BackingStore?.Set("payloads", value); }
+        }
+#else
         public List<PayloadByFilter> Payloads {
             get { return BackingStore?.Get<List<PayloadByFilter>>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
+#endif
         /// <summary>Supported platform types.</summary>
         public DevicePlatformType? Platform {
             get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>RoleScopeTags of the Assignment Filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTags {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTags"); }
+            set { BackingStore?.Set("roleScopeTags", value); }
+        }
+#else
         public List<string> RoleScopeTags {
             get { return BackingStore?.Get<List<string>>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
+#endif
         /// <summary>Rule definition of the Assignment Filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Rule {
+            get { return BackingStore?.Get<string?>("rule"); }
+            set { BackingStore?.Set("rule", value); }
+        }
+#else
         public string Rule {
             get { return BackingStore?.Get<string>("rule"); }
             set { BackingStore?.Set("rule", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

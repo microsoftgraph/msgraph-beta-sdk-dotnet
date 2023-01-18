@@ -52,7 +52,11 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.Checkin {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public async Task PostAsync(CheckinPostRequestBody body, Action<CheckinRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#else
         public async Task PostAsync(CheckinPostRequestBody body, Action<CheckinRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,7 +70,11 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.Checkin {
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestInformation ToPostRequestInformation(CheckinPostRequestBody body, Action<CheckinRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+#else
         public RequestInformation ToPostRequestInformation(CheckinPostRequestBody body, Action<CheckinRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+#endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,

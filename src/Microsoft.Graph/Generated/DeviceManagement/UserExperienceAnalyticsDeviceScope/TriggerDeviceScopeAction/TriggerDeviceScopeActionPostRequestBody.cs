@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScope.TriggerDeviceScopeAction {
     public class TriggerDeviceScopeActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActionName {
+            get { return BackingStore?.Get<string?>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
+        }
+#else
         public string ActionName {
             get { return BackingStore?.Get<string>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -19,10 +26,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceScopeId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceScopeId {
+            get { return BackingStore?.Get<string?>("deviceScopeId"); }
+            set { BackingStore?.Set("deviceScopeId", value); }
+        }
+#else
         public string DeviceScopeId {
             get { return BackingStore?.Get<string>("deviceScopeId"); }
             set { BackingStore?.Set("deviceScopeId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new triggerDeviceScopeActionPostRequestBody and sets the default values.
         /// </summary>

@@ -20,25 +20,53 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The carrierUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CarrierUrl {
+            get { return BackingStore?.Get<string?>("carrierUrl"); }
+            set { BackingStore?.Set("carrierUrl", value); }
+        }
+#else
         public string CarrierUrl {
             get { return BackingStore?.Get<string>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
+#endif
         /// <summary>The deprovisionReason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeprovisionReason {
+            get { return BackingStore?.Get<string?>("deprovisionReason"); }
+            set { BackingStore?.Set("deprovisionReason", value); }
+        }
+#else
         public string DeprovisionReason {
             get { return BackingStore?.Get<string>("deprovisionReason"); }
             set { BackingStore?.Set("deprovisionReason", value); }
         }
+#endif
         /// <summary>The deviceIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DeviceIds {
+            get { return BackingStore?.Get<List<string>?>("deviceIds"); }
+            set { BackingStore?.Set("deviceIds", value); }
+        }
+#else
         public List<string> DeviceIds {
             get { return BackingStore?.Get<List<string>>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
+#endif
         /// <summary>The deviceName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>The keepEnrollmentData property</summary>
         public bool? KeepEnrollmentData {
             get { return BackingStore?.Get<bool?>("keepEnrollmentData"); }
@@ -50,20 +78,41 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction {
             set { BackingStore?.Set("keepUserData", value); }
         }
         /// <summary>The notificationBody property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationBody {
+            get { return BackingStore?.Get<string?>("notificationBody"); }
+            set { BackingStore?.Set("notificationBody", value); }
+        }
+#else
         public string NotificationBody {
             get { return BackingStore?.Get<string>("notificationBody"); }
             set { BackingStore?.Set("notificationBody", value); }
         }
+#endif
         /// <summary>The notificationTitle property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationTitle {
+            get { return BackingStore?.Get<string?>("notificationTitle"); }
+            set { BackingStore?.Set("notificationTitle", value); }
+        }
+#else
         public string NotificationTitle {
             get { return BackingStore?.Get<string>("notificationTitle"); }
             set { BackingStore?.Set("notificationTitle", value); }
         }
+#endif
         /// <summary>The organizationalUnitPath property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OrganizationalUnitPath {
+            get { return BackingStore?.Get<string?>("organizationalUnitPath"); }
+            set { BackingStore?.Set("organizationalUnitPath", value); }
+        }
+#else
         public string OrganizationalUnitPath {
             get { return BackingStore?.Get<string>("organizationalUnitPath"); }
             set { BackingStore?.Set("organizationalUnitPath", value); }
         }
+#endif
         /// <summary>The persistEsimDataPlan property</summary>
         public bool? PersistEsimDataPlan {
             get { return BackingStore?.Get<bool?>("persistEsimDataPlan"); }

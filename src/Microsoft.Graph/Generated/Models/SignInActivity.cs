@@ -19,25 +19,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastNonInteractiveSignInDateTime", value); }
         }
         /// <summary>Request identifier of the last non-interactive sign-in performed by this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastNonInteractiveSignInRequestId {
+            get { return BackingStore?.Get<string?>("lastNonInteractiveSignInRequestId"); }
+            set { BackingStore?.Set("lastNonInteractiveSignInRequestId", value); }
+        }
+#else
         public string LastNonInteractiveSignInRequestId {
             get { return BackingStore?.Get<string>("lastNonInteractiveSignInRequestId"); }
             set { BackingStore?.Set("lastNonInteractiveSignInRequestId", value); }
         }
+#endif
         /// <summary>The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: &apos;2014-01-01T00:00:00Z&apos;. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.</summary>
         public DateTimeOffset? LastSignInDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSignInDateTime"); }
             set { BackingStore?.Set("lastSignInDateTime", value); }
         }
         /// <summary>Request identifier of the last interactive sign-in performed by this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastSignInRequestId {
+            get { return BackingStore?.Get<string?>("lastSignInRequestId"); }
+            set { BackingStore?.Set("lastSignInRequestId", value); }
+        }
+#else
         public string LastSignInRequestId {
             get { return BackingStore?.Get<string>("lastSignInRequestId"); }
             set { BackingStore?.Set("lastSignInRequestId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new signInActivity and sets the default values.
         /// </summary>

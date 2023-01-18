@@ -21,20 +21,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appsBlockYouTube", value); }
         }
         /// <summary>List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? AppsHideList {
+            get { return BackingStore?.Get<List<AppListItem>?>("appsHideList"); }
+            set { BackingStore?.Set("appsHideList", value); }
+        }
+#else
         public List<AppListItem> AppsHideList {
             get { return BackingStore?.Get<List<AppListItem>>("appsHideList"); }
             set { BackingStore?.Set("appsHideList", value); }
         }
+#endif
         /// <summary>List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? AppsInstallAllowList {
+            get { return BackingStore?.Get<List<AppListItem>?>("appsInstallAllowList"); }
+            set { BackingStore?.Set("appsInstallAllowList", value); }
+        }
+#else
         public List<AppListItem> AppsInstallAllowList {
             get { return BackingStore?.Get<List<AppListItem>>("appsInstallAllowList"); }
             set { BackingStore?.Set("appsInstallAllowList", value); }
         }
+#endif
         /// <summary>List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? AppsLaunchBlockList {
+            get { return BackingStore?.Get<List<AppListItem>?>("appsLaunchBlockList"); }
+            set { BackingStore?.Set("appsLaunchBlockList", value); }
+        }
+#else
         public List<AppListItem> AppsLaunchBlockList {
             get { return BackingStore?.Get<List<AppListItem>>("appsLaunchBlockList"); }
             set { BackingStore?.Set("appsLaunchBlockList", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block Bluetooth.</summary>
         public bool? BluetoothBlocked {
             get { return BackingStore?.Get<bool?>("bluetoothBlocked"); }
@@ -71,10 +92,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? CompliantAppsList {
+            get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
+            set { BackingStore?.Set("compliantAppsList", value); }
+        }
+#else
         public List<AppListItem> CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block changing date and time while in KNOX Mode.</summary>
         public bool? DateAndTimeBlockChanges {
             get { return BackingStore?.Get<bool?>("dateAndTimeBlockChanges"); }
@@ -106,10 +134,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("googlePlayStoreBlocked", value); }
         }
         /// <summary>A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? KioskModeApps {
+            get { return BackingStore?.Get<List<AppListItem>?>("kioskModeApps"); }
+            set { BackingStore?.Set("kioskModeApps", value); }
+        }
+#else
         public List<AppListItem> KioskModeApps {
             get { return BackingStore?.Get<List<AppListItem>>("kioskModeApps"); }
             set { BackingStore?.Set("kioskModeApps", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block the screen sleep button while in Kiosk Mode.</summary>
         public bool? KioskModeBlockSleepButton {
             get { return BackingStore?.Get<bool?>("kioskModeBlockSleepButton"); }

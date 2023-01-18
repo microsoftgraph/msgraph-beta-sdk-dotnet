@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Describes the error, if any, for the current stage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PublicError? Error {
+            get { return BackingStore?.Get<PublicError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public PublicError Error {
             get { return BackingStore?.Get<PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.</summary>
         public SubjectRightsRequestStage? Stage {
             get { return BackingStore?.Get<SubjectRightsRequestStage?>("stage"); }

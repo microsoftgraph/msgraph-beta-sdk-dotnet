@@ -11,25 +11,53 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The description of the workflowTemplate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkflowExecutionConditions? ExecutionConditions {
+            get { return BackingStore?.Get<WorkflowExecutionConditions?>("executionConditions"); }
+            set { BackingStore?.Set("executionConditions", value); }
+        }
+#else
         public WorkflowExecutionConditions ExecutionConditions {
             get { return BackingStore?.Get<WorkflowExecutionConditions>("executionConditions"); }
             set { BackingStore?.Set("executionConditions", value); }
         }
+#endif
         /// <summary>Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TaskObject>? Tasks {
+            get { return BackingStore?.Get<List<TaskObject>?>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#else
         public List<TaskObject> Tasks {
             get { return BackingStore?.Get<List<TaskObject>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

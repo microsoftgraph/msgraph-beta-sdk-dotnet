@@ -14,40 +14,82 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clickAction property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClickAction {
+            get { return BackingStore?.Get<string?>("clickAction"); }
+            set { BackingStore?.Set("clickAction", value); }
+        }
+#else
         public string ClickAction {
             get { return BackingStore?.Get<string>("clickAction"); }
             set { BackingStore?.Set("clickAction", value); }
         }
+#endif
         /// <summary>The clickDateTime property</summary>
         public DateTimeOffset? ClickDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("clickDateTime"); }
             set { BackingStore?.Set("clickDateTime", value); }
         }
         /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The sourceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SourceId {
+            get { return BackingStore?.Get<string?>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#else
         public string SourceId {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
+#endif
         /// <summary>The uriDomain property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UriDomain {
+            get { return BackingStore?.Get<string?>("uriDomain"); }
+            set { BackingStore?.Set("uriDomain", value); }
+        }
+#else
         public string UriDomain {
             get { return BackingStore?.Get<string>("uriDomain"); }
             set { BackingStore?.Set("uriDomain", value); }
         }
+#endif
         /// <summary>The verdict property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Verdict {
+            get { return BackingStore?.Get<string?>("verdict"); }
+            set { BackingStore?.Set("verdict", value); }
+        }
+#else
         public string Verdict {
             get { return BackingStore?.Get<string>("verdict"); }
             set { BackingStore?.Set("verdict", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new uriClickSecurityState and sets the default values.
         /// </summary>

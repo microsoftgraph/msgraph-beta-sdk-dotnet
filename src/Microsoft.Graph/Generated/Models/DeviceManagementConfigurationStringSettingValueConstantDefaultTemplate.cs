@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate : DeviceManagementConfigurationStringSettingValueDefaultTemplate, IParsable {
         /// <summary>Default Constant Value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConstantValue {
+            get { return BackingStore?.Get<string?>("constantValue"); }
+            set { BackingStore?.Set("constantValue", value); }
+        }
+#else
         public string ConstantValue {
             get { return BackingStore?.Get<string>("constantValue"); }
             set { BackingStore?.Set("constantValue", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate and sets the default values.
         /// </summary>

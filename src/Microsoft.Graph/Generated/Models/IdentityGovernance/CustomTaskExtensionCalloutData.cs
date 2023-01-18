@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class CustomTaskExtensionCalloutData : CustomExtensionData, IParsable {
         /// <summary>The subject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.User? Subject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.User Subject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>The task property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject? TaskObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject?>("task"); }
+            set { BackingStore?.Set("task", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject TaskObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
+#endif
         /// <summary>The taskProcessingresult property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult? TaskProcessingresult {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult?>("taskProcessingresult"); }
+            set { BackingStore?.Set("taskProcessingresult", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult TaskProcessingresult {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingresult"); }
             set { BackingStore?.Set("taskProcessingresult", value); }
         }
+#endif
         /// <summary>The workflow property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow? Workflow {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow?>("workflow"); }
+            set { BackingStore?.Set("workflow", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow Workflow {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>("workflow"); }
             set { BackingStore?.Set("workflow", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CustomTaskExtensionCalloutData and sets the default values.
         /// </summary>

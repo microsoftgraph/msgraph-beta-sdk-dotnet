@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceManagementConfigurationSettingTemplate : Entity, IParsable {
         /// <summary>List of related Setting Definitions</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationSettingDefinition>? SettingDefinitions {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>?>("settingDefinitions"); }
+            set { BackingStore?.Set("settingDefinitions", value); }
+        }
+#else
         public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
+#endif
         /// <summary>Setting Instance Template</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationSettingInstanceTemplate? SettingInstanceTemplate {
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplate?>("settingInstanceTemplate"); }
+            set { BackingStore?.Set("settingInstanceTemplate", value); }
+        }
+#else
         public DeviceManagementConfigurationSettingInstanceTemplate SettingInstanceTemplate {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplate>("settingInstanceTemplate"); }
             set { BackingStore?.Set("settingInstanceTemplate", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

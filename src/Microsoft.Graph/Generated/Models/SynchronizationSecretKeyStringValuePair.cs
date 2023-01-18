@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("key", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The value of the secret.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Value {
+            get { return BackingStore?.Get<string?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new synchronizationSecretKeyStringValuePair and sets the default values.
         /// </summary>

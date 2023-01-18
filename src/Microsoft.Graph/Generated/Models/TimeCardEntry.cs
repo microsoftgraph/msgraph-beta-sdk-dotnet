@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of breaks associated with the timeCard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TimeCardBreak>? Breaks {
+            get { return BackingStore?.Get<List<TimeCardBreak>?>("breaks"); }
+            set { BackingStore?.Set("breaks", value); }
+        }
+#else
         public List<TimeCardBreak> Breaks {
             get { return BackingStore?.Get<List<TimeCardBreak>>("breaks"); }
             set { BackingStore?.Set("breaks", value); }
         }
+#endif
         /// <summary>The clock-in event of the timeCard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeCardEvent? ClockInEvent {
+            get { return BackingStore?.Get<TimeCardEvent?>("clockInEvent"); }
+            set { BackingStore?.Set("clockInEvent", value); }
+        }
+#else
         public TimeCardEvent ClockInEvent {
             get { return BackingStore?.Get<TimeCardEvent>("clockInEvent"); }
             set { BackingStore?.Set("clockInEvent", value); }
         }
+#endif
         /// <summary>The clock-out event of the timeCard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeCardEvent? ClockOutEvent {
+            get { return BackingStore?.Get<TimeCardEvent?>("clockOutEvent"); }
+            set { BackingStore?.Set("clockOutEvent", value); }
+        }
+#else
         public TimeCardEvent ClockOutEvent {
             get { return BackingStore?.Get<TimeCardEvent>("clockOutEvent"); }
             set { BackingStore?.Set("clockOutEvent", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new timeCardEntry and sets the default values.
         /// </summary>

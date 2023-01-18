@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dayOfMonth", value); }
         }
         /// <summary>A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DayOfWeekObject?>? DaysOfWeek {
+            get { return BackingStore?.Get<List<DayOfWeekObject?>?>("daysOfWeek"); }
+            set { BackingStore?.Set("daysOfWeek", value); }
+        }
+#else
         public List<DayOfWeekObject?> DaysOfWeek {
             get { return BackingStore?.Get<List<DayOfWeekObject?>>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
+#endif
         /// <summary>The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.</summary>
         public DayOfWeekObject? FirstDayOfWeek {
             get { return BackingStore?.Get<DayOfWeekObject?>("firstDayOfWeek"); }
@@ -44,10 +51,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("month", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.</summary>
         public RecurrencePatternType? Type {
             get { return BackingStore?.Get<RecurrencePatternType?>("type"); }

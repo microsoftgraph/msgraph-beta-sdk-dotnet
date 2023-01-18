@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
     public class Relation : Entity, IParsable {
         /// <summary>The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Term? FromTerm {
+            get { return BackingStore?.Get<Term?>("fromTerm"); }
+            set { BackingStore?.Set("fromTerm", value); }
+        }
+#else
         public Term FromTerm {
             get { return BackingStore?.Get<Term>("fromTerm"); }
             set { BackingStore?.Set("fromTerm", value); }
         }
+#endif
         /// <summary>The type of relation. Possible values are: pin, reuse.</summary>
         public RelationType? Relationship {
             get { return BackingStore?.Get<RelationType?>("relationship"); }
             set { BackingStore?.Set("relationship", value); }
         }
         /// <summary>The [set] in which the relation is relevant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TermStore.Set? Set {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set?>("set"); }
+            set { BackingStore?.Set("set", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TermStore.Set Set {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set>("set"); }
             set { BackingStore?.Set("set", value); }
         }
+#endif
         /// <summary>The to [term] of the relation. The term to which the relationship is defined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Term? ToTerm {
+            get { return BackingStore?.Get<Term?>("toTerm"); }
+            set { BackingStore?.Set("toTerm", value); }
+        }
+#else
         public Term ToTerm {
             get { return BackingStore?.Get<Term>("toTerm"); }
             set { BackingStore?.Set("toTerm", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

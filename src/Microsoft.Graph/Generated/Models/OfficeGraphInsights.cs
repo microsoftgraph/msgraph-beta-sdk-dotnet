@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OfficeGraphInsights : Entity, IParsable {
         /// <summary>Access this property from the derived type itemInsights.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SharedInsight>? Shared {
+            get { return BackingStore?.Get<List<SharedInsight>?>("shared"); }
+            set { BackingStore?.Set("shared", value); }
+        }
+#else
         public List<SharedInsight> Shared {
             get { return BackingStore?.Get<List<SharedInsight>>("shared"); }
             set { BackingStore?.Set("shared", value); }
         }
+#endif
         /// <summary>Access this property from the derived type itemInsights.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.Trending>? Trending {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Trending>?>("trending"); }
+            set { BackingStore?.Set("trending", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.Trending> Trending {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Trending>>("trending"); }
             set { BackingStore?.Set("trending", value); }
         }
+#endif
         /// <summary>Access this property from the derived type itemInsights.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UsedInsight>? Used {
+            get { return BackingStore?.Get<List<UsedInsight>?>("used"); }
+            set { BackingStore?.Set("used", value); }
+        }
+#else
         public List<UsedInsight> Used {
             get { return BackingStore?.Get<List<UsedInsight>>("used"); }
             set { BackingStore?.Set("used", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

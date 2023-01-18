@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.UpdatePr
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The officeConfigurationPolicyIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? OfficeConfigurationPolicyIds {
+            get { return BackingStore?.Get<List<string>?>("officeConfigurationPolicyIds"); }
+            set { BackingStore?.Set("officeConfigurationPolicyIds", value); }
+        }
+#else
         public List<string> OfficeConfigurationPolicyIds {
             get { return BackingStore?.Get<List<string>>("officeConfigurationPolicyIds"); }
             set { BackingStore?.Set("officeConfigurationPolicyIds", value); }
         }
+#endif
         /// <summary>The officeConfigurationPriorities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<int?>? OfficeConfigurationPriorities {
+            get { return BackingStore?.Get<List<int?>?>("officeConfigurationPriorities"); }
+            set { BackingStore?.Set("officeConfigurationPriorities", value); }
+        }
+#else
         public List<int?> OfficeConfigurationPriorities {
             get { return BackingStore?.Get<List<int?>>("officeConfigurationPriorities"); }
             set { BackingStore?.Set("officeConfigurationPriorities", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updatePrioritiesPostRequestBody and sets the default values.
         /// </summary>

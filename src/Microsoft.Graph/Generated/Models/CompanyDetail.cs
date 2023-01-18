@@ -12,42 +12,91 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Address of the company.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PhysicalAddress? Address {
+            get { return BackingStore?.Get<PhysicalAddress?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public PhysicalAddress Address {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Department Name within a company.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Department {
+            get { return BackingStore?.Get<string?>("department"); }
+            set { BackingStore?.Set("department", value); }
+        }
+#else
         public string Department {
             get { return BackingStore?.Get<string>("department"); }
             set { BackingStore?.Set("department", value); }
         }
+#endif
         /// <summary>Company name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Office Location of the person referred to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OfficeLocation {
+            get { return BackingStore?.Get<string?>("officeLocation"); }
+            set { BackingStore?.Set("officeLocation", value); }
+        }
+#else
         public string OfficeLocation {
             get { return BackingStore?.Get<string>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
+#endif
         /// <summary>Pronunciation guide for the company name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Pronunciation {
+            get { return BackingStore?.Get<string?>("pronunciation"); }
+            set { BackingStore?.Set("pronunciation", value); }
+        }
+#else
         public string Pronunciation {
             get { return BackingStore?.Get<string>("pronunciation"); }
             set { BackingStore?.Set("pronunciation", value); }
         }
+#endif
         /// <summary>Link to the company home page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new companyDetail and sets the default values.
         /// </summary>

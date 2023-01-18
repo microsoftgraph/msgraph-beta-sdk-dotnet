@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Definition of the test object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ObjectDefinition? Definition {
+            get { return BackingStore?.Get<ObjectDefinition?>("definition"); }
+            set { BackingStore?.Set("definition", value); }
+        }
+#else
         public ObjectDefinition Definition {
             get { return BackingStore?.Get<ObjectDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Property values of the test object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<StringKeyObjectValuePair>? Properties {
+            get { return BackingStore?.Get<List<StringKeyObjectValuePair>?>("properties"); }
+            set { BackingStore?.Set("properties", value); }
+        }
+#else
         public List<StringKeyObjectValuePair> Properties {
             get { return BackingStore?.Get<List<StringKeyObjectValuePair>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new expressionInputObject and sets the default values.
         /// </summary>

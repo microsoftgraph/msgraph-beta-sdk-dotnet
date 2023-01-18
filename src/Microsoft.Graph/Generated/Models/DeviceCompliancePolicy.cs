@@ -9,65 +9,135 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceCompliancePolicy : Entity, IParsable {
         /// <summary>The collection of assignments for this compliance policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceCompliancePolicyAssignment>? Assignments {
+            get { return BackingStore?.Get<List<DeviceCompliancePolicyAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<DeviceCompliancePolicyAssignment> Assignments {
             get { return BackingStore?.Get<List<DeviceCompliancePolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Compliance Setting State Device Summary</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SettingStateDeviceSummary>? DeviceSettingStateSummaries {
+            get { return BackingStore?.Get<List<SettingStateDeviceSummary>?>("deviceSettingStateSummaries"); }
+            set { BackingStore?.Set("deviceSettingStateSummaries", value); }
+        }
+#else
         public List<SettingStateDeviceSummary> DeviceSettingStateSummaries {
             get { return BackingStore?.Get<List<SettingStateDeviceSummary>>("deviceSettingStateSummaries"); }
             set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
+#endif
         /// <summary>List of DeviceComplianceDeviceStatus.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceComplianceDeviceStatus>? DeviceStatuses {
+            get { return BackingStore?.Get<List<DeviceComplianceDeviceStatus>?>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
+        }
+#else
         public List<DeviceComplianceDeviceStatus> DeviceStatuses {
             get { return BackingStore?.Get<List<DeviceComplianceDeviceStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
+#endif
         /// <summary>Device compliance devices status overview</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceComplianceDeviceOverview? DeviceStatusOverview {
+            get { return BackingStore?.Get<DeviceComplianceDeviceOverview?>("deviceStatusOverview"); }
+            set { BackingStore?.Set("deviceStatusOverview", value); }
+        }
+#else
         public DeviceComplianceDeviceOverview DeviceStatusOverview {
             get { return BackingStore?.Get<DeviceComplianceDeviceOverview>("deviceStatusOverview"); }
             set { BackingStore?.Set("deviceStatusOverview", value); }
         }
+#endif
         /// <summary>Admin provided name of the device configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>The list of scheduled action for this rule</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceComplianceScheduledActionForRule>? ScheduledActionsForRule {
+            get { return BackingStore?.Get<List<DeviceComplianceScheduledActionForRule>?>("scheduledActionsForRule"); }
+            set { BackingStore?.Set("scheduledActionsForRule", value); }
+        }
+#else
         public List<DeviceComplianceScheduledActionForRule> ScheduledActionsForRule {
             get { return BackingStore?.Get<List<DeviceComplianceScheduledActionForRule>>("scheduledActionsForRule"); }
             set { BackingStore?.Set("scheduledActionsForRule", value); }
         }
+#endif
         /// <summary>List of DeviceComplianceUserStatus.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceComplianceUserStatus>? UserStatuses {
+            get { return BackingStore?.Get<List<DeviceComplianceUserStatus>?>("userStatuses"); }
+            set { BackingStore?.Set("userStatuses", value); }
+        }
+#else
         public List<DeviceComplianceUserStatus> UserStatuses {
             get { return BackingStore?.Get<List<DeviceComplianceUserStatus>>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
+#endif
         /// <summary>Device compliance users status overview</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceComplianceUserOverview? UserStatusOverview {
+            get { return BackingStore?.Get<DeviceComplianceUserOverview?>("userStatusOverview"); }
+            set { BackingStore?.Set("userStatusOverview", value); }
+        }
+#else
         public DeviceComplianceUserOverview UserStatusOverview {
             get { return BackingStore?.Get<DeviceComplianceUserOverview>("userStatusOverview"); }
             set { BackingStore?.Set("userStatusOverview", value); }
         }
+#endif
         /// <summary>Version of the device configuration.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }

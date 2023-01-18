@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The conditions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessConditionSet? Conditions {
+            get { return BackingStore?.Get<ConditionalAccessConditionSet?>("conditions"); }
+            set { BackingStore?.Set("conditions", value); }
+        }
+#else
         public ConditionalAccessConditionSet Conditions {
             get { return BackingStore?.Get<ConditionalAccessConditionSet>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
+#endif
         /// <summary>Represents grant controls that must be fulfilled for the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessGrantControls? GrantControls {
+            get { return BackingStore?.Get<ConditionalAccessGrantControls?>("grantControls"); }
+            set { BackingStore?.Set("grantControls", value); }
+        }
+#else
         public ConditionalAccessGrantControls GrantControls {
             get { return BackingStore?.Get<ConditionalAccessGrantControls>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Represents a complex type of session controls that is enforced after sign-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessSessionControls? SessionControls {
+            get { return BackingStore?.Get<ConditionalAccessSessionControls?>("sessionControls"); }
+            set { BackingStore?.Set("sessionControls", value); }
+        }
+#else
         public ConditionalAccessSessionControls SessionControls {
             get { return BackingStore?.Get<ConditionalAccessSessionControls>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new conditionalAccessPolicyDetail and sets the default values.
         /// </summary>

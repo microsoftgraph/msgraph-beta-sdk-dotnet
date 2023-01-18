@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Primary domain name of an Azure AD tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultDomainName {
+            get { return BackingStore?.Get<string?>("defaultDomainName"); }
+            set { BackingStore?.Set("defaultDomainName", value); }
+        }
+#else
         public string DefaultDomainName {
             get { return BackingStore?.Get<string>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
+#endif
         /// <summary>Display name of an Azure AD tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Name shown to users that sign in to an Azure AD tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FederationBrandName {
+            get { return BackingStore?.Get<string?>("federationBrandName"); }
+            set { BackingStore?.Set("federationBrandName", value); }
+        }
+#else
         public string FederationBrandName {
             get { return BackingStore?.Get<string>("federationBrandName"); }
             set { BackingStore?.Set("federationBrandName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Unique identifier of an Azure AD tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new tenantInformation and sets the default values.
         /// </summary>

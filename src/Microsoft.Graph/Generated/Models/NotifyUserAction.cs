@@ -11,25 +11,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("actionLastModifiedDateTime", value); }
         }
         /// <summary>The emailText property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailText {
+            get { return BackingStore?.Get<string?>("emailText"); }
+            set { BackingStore?.Set("emailText", value); }
+        }
+#else
         public string EmailText {
             get { return BackingStore?.Get<string>("emailText"); }
             set { BackingStore?.Set("emailText", value); }
         }
+#endif
         /// <summary>The overrideOption property</summary>
         public Microsoft.Graph.Beta.Models.OverrideOption? OverrideOption {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OverrideOption?>("overrideOption"); }
             set { BackingStore?.Set("overrideOption", value); }
         }
         /// <summary>The policyTip property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyTip {
+            get { return BackingStore?.Get<string?>("policyTip"); }
+            set { BackingStore?.Set("policyTip", value); }
+        }
+#else
         public string PolicyTip {
             get { return BackingStore?.Get<string>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
+#endif
         /// <summary>The recipients property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Recipients {
+            get { return BackingStore?.Get<List<string>?>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
+        }
+#else
         public List<string> Recipients {
             get { return BackingStore?.Get<List<string>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

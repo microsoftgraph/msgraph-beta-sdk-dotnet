@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryNoncustodialDataSource : DataSourceContainer, IParsable {
         /// <summary>User source or SharePoint site data source as non-custodial data source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.DataSource? DataSource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSource?>("dataSource"); }
+            set { BackingStore?.Set("dataSource", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.DataSource DataSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSource>("dataSource"); }
             set { BackingStore?.Set("dataSource", value); }
         }
+#endif
         /// <summary>Operation entity that represents the latest indexing for the non-custodial data source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoveryIndexOperation? LastIndexOperation {
+            get { return BackingStore?.Get<EdiscoveryIndexOperation?>("lastIndexOperation"); }
+            set { BackingStore?.Set("lastIndexOperation", value); }
+        }
+#else
         public EdiscoveryIndexOperation LastIndexOperation {
             get { return BackingStore?.Get<EdiscoveryIndexOperation>("lastIndexOperation"); }
             set { BackingStore?.Set("lastIndexOperation", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EdiscoveryNoncustodialDataSource and sets the default values.
         /// </summary>

@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn&apos;t say in chats)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ComplianceUrl {
+            get { return BackingStore?.Get<string?>("complianceUrl"); }
+            set { BackingStore?.Set("complianceUrl", value); }
+        }
+#else
         public string ComplianceUrl {
             get { return BackingStore?.Get<string>("complianceUrl"); }
             set { BackingStore?.Set("complianceUrl", value); }
         }
+#endif
         /// <summary>Explanatory text shown to the sender of the message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GeneralText {
+            get { return BackingStore?.Get<string?>("generalText"); }
+            set { BackingStore?.Set("generalText", value); }
+        }
+#else
         public string GeneralText {
             get { return BackingStore?.Get<string>("generalText"); }
             set { BackingStore?.Set("generalText", value); }
         }
+#endif
         /// <summary>The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include &apos;Credit Card Number&apos; and &apos;Social Security Number&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? MatchedConditionDescriptions {
+            get { return BackingStore?.Get<List<string>?>("matchedConditionDescriptions"); }
+            set { BackingStore?.Set("matchedConditionDescriptions", value); }
+        }
+#else
         public List<string> MatchedConditionDescriptions {
             get { return BackingStore?.Get<List<string>>("matchedConditionDescriptions"); }
             set { BackingStore?.Set("matchedConditionDescriptions", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new chatMessagePolicyViolationPolicyTip and sets the default values.
         /// </summary>

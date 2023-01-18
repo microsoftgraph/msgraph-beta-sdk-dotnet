@@ -17,20 +17,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Link {
+            get { return BackingStore?.Get<string?>("link"); }
+            set { BackingStore?.Set("link", value); }
+        }
+#else
         public string Link {
             get { return BackingStore?.Get<string>("link"); }
             set { BackingStore?.Set("link", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Text {
+            get { return BackingStore?.Get<string?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceManagementTroubleshootingErrorResource and sets the default values.
         /// </summary>

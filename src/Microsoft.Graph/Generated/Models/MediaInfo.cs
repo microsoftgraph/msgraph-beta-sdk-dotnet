@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Optional, used to uniquely identity the resource. If passed the prompt uri will be cached against this resourceId as key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceId {
+            get { return BackingStore?.Get<string?>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
+        }
+#else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#endif
         /// <summary>Path to the prompt to be played. Currently only Wave file (.wav) format, single-channel, 16-bit samples with a 16,000 (16KHz) sampling rate is only supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Uri {
+            get { return BackingStore?.Get<string?>("uri"); }
+            set { BackingStore?.Set("uri", value); }
+        }
+#else
         public string Uri {
             get { return BackingStore?.Get<string>("uri"); }
             set { BackingStore?.Set("uri", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new mediaInfo and sets the default values.
         /// </summary>

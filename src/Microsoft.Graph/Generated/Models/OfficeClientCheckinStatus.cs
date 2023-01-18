@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>List of policies delivered to the device as last checkin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AppliedPolicies {
+            get { return BackingStore?.Get<List<string>?>("appliedPolicies"); }
+            set { BackingStore?.Set("appliedPolicies", value); }
+        }
+#else
         public List<string> AppliedPolicies {
             get { return BackingStore?.Get<List<string>>("appliedPolicies"); }
             set { BackingStore?.Set("appliedPolicies", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Last device check-in time in UTC.</summary>
@@ -24,40 +31,89 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("checkinDateTime", value); }
         }
         /// <summary>Device name trying to check-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>Device platform trying to check-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DevicePlatform {
+            get { return BackingStore?.Get<string?>("devicePlatform"); }
+            set { BackingStore?.Set("devicePlatform", value); }
+        }
+#else
         public string DevicePlatform {
             get { return BackingStore?.Get<string>("devicePlatform"); }
             set { BackingStore?.Set("devicePlatform", value); }
         }
+#endif
         /// <summary>Device platform version trying to check-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DevicePlatformVersion {
+            get { return BackingStore?.Get<string?>("devicePlatformVersion"); }
+            set { BackingStore?.Set("devicePlatformVersion", value); }
+        }
+#else
         public string DevicePlatformVersion {
             get { return BackingStore?.Get<string>("devicePlatformVersion"); }
             set { BackingStore?.Set("devicePlatformVersion", value); }
         }
+#endif
         /// <summary>Error message if any associated for the last checkin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorMessage {
+            get { return BackingStore?.Get<string?>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
+        }
+#else
         public string ErrorMessage {
             get { return BackingStore?.Get<string>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>User identifier using the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>User principal name using the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>If the last checkin was successful.</summary>
         public bool? WasSuccessful {
             get { return BackingStore?.Get<bool?>("wasSuccessful"); }

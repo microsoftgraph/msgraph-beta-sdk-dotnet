@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TextWebPart : WebPart, IParsable {
         /// <summary>The HTML string in text web part.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InnerHtml {
+            get { return BackingStore?.Get<string?>("innerHtml"); }
+            set { BackingStore?.Set("innerHtml", value); }
+        }
+#else
         public string InnerHtml {
             get { return BackingStore?.Get<string>("innerHtml"); }
             set { BackingStore?.Set("innerHtml", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TextWebPart and sets the default values.
         /// </summary>

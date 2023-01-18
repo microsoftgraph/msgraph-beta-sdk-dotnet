@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Dismiss {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The userIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? UserIds {
+            get { return BackingStore?.Get<List<string>?>("userIds"); }
+            set { BackingStore?.Set("userIds", value); }
+        }
+#else
         public List<string> UserIds {
             get { return BackingStore?.Get<List<string>>("userIds"); }
             set { BackingStore?.Set("userIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new dismissPostRequestBody and sets the default values.
         /// </summary>

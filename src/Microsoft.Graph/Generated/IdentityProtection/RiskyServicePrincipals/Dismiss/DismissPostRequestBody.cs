@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The servicePrincipalIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ServicePrincipalIds {
+            get { return BackingStore?.Get<List<string>?>("servicePrincipalIds"); }
+            set { BackingStore?.Set("servicePrincipalIds", value); }
+        }
+#else
         public List<string> ServicePrincipalIds {
             get { return BackingStore?.Get<List<string>>("servicePrincipalIds"); }
             set { BackingStore?.Set("servicePrincipalIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new dismissPostRequestBody and sets the default values.
         /// </summary>

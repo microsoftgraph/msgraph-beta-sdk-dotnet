@@ -9,10 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceManagementScriptUserState : Entity, IParsable {
         /// <summary>List of run states for this script across all devices of specific user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementScriptDeviceState>? DeviceRunStates {
+            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>?>("deviceRunStates"); }
+            set { BackingStore?.Set("deviceRunStates", value); }
+        }
+#else
         public List<DeviceManagementScriptDeviceState> DeviceRunStates {
             get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
+#endif
         /// <summary>Error device count for specific user.</summary>
         public int? ErrorDeviceCount {
             get { return BackingStore?.Get<int?>("errorDeviceCount"); }
@@ -24,10 +31,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("successDeviceCount", value); }
         }
         /// <summary>User principle name of specific user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

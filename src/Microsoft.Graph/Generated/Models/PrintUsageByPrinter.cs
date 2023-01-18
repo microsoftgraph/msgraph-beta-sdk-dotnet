@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PrintUsageByPrinter : PrintUsage, IParsable {
         /// <summary>The printerId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrinterId {
+            get { return BackingStore?.Get<string?>("printerId"); }
+            set { BackingStore?.Set("printerId", value); }
+        }
+#else
         public string PrinterId {
             get { return BackingStore?.Get<string>("printerId"); }
             set { BackingStore?.Set("printerId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The resource entity display name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>A list of modified properties.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcAuditProperty>? ModifiedProperties {
+            get { return BackingStore?.Get<List<CloudPcAuditProperty>?>("modifiedProperties"); }
+            set { BackingStore?.Set("modifiedProperties", value); }
+        }
+#else
         public List<CloudPcAuditProperty> ModifiedProperties {
             get { return BackingStore?.Get<List<CloudPcAuditProperty>>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The ID of the audit resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceId {
+            get { return BackingStore?.Get<string?>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
+        }
+#else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#endif
         /// <summary>The type of the audit resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new cloudPcAuditResource and sets the default values.
         /// </summary>

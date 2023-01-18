@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MacAppIdentifier : MobileAppIdentifier, IParsable {
         /// <summary>The identifier for an app, as specified in the app store.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BundleId {
+            get { return BackingStore?.Get<string?>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
+        }
+#else
         public string BundleId {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MacAppIdentifier and sets the default values.
         /// </summary>

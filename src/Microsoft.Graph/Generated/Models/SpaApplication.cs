@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RedirectUris {
+            get { return BackingStore?.Get<List<string>?>("redirectUris"); }
+            set { BackingStore?.Set("redirectUris", value); }
+        }
+#else
         public List<string> RedirectUris {
             get { return BackingStore?.Get<List<string>>("redirectUris"); }
             set { BackingStore?.Set("redirectUris", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new spaApplication and sets the default values.
         /// </summary>

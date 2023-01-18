@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Hashes of the file&apos;s binary content, if available. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Hashes? Hashes {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Hashes?>("hashes"); }
+            set { BackingStore?.Set("hashes", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Hashes Hashes {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Hashes>("hashes"); }
             set { BackingStore?.Set("hashes", value); }
         }
+#endif
         /// <summary>The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MimeType {
+            get { return BackingStore?.Get<string?>("mimeType"); }
+            set { BackingStore?.Set("mimeType", value); }
+        }
+#else
         public string MimeType {
             get { return BackingStore?.Get<string>("mimeType"); }
             set { BackingStore?.Set("mimeType", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The processingMetadata property</summary>
         public bool? ProcessingMetadata {
             get { return BackingStore?.Get<bool?>("processingMetadata"); }

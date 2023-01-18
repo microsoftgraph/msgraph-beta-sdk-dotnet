@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RecommendLabelAction : InformationProtectionAction, IParsable {
         /// <summary>Actions to take if the label is accepted by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<InformationProtectionAction>? Actions {
+            get { return BackingStore?.Get<List<InformationProtectionAction>?>("actions"); }
+            set { BackingStore?.Set("actions", value); }
+        }
+#else
         public List<InformationProtectionAction> Actions {
             get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
+#endif
         /// <summary>The actionSource property</summary>
         public Microsoft.Graph.Beta.Models.ActionSource? ActionSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionSource?>("actionSource"); }
             set { BackingStore?.Set("actionSource", value); }
         }
         /// <summary>The label that is being recommended.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LabelDetails? Label {
+            get { return BackingStore?.Get<LabelDetails?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#else
         public LabelDetails Label {
             get { return BackingStore?.Get<LabelDetails>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#endif
         /// <summary>The sensitive information type GUIDs that caused the recommendation to be given.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Guid?>? ResponsibleSensitiveTypeIds {
+            get { return BackingStore?.Get<List<Guid?>?>("responsibleSensitiveTypeIds"); }
+            set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
+        }
+#else
         public List<Guid?> ResponsibleSensitiveTypeIds {
             get { return BackingStore?.Get<List<Guid?>>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new RecommendLabelAction and sets the default values.
         /// </summary>

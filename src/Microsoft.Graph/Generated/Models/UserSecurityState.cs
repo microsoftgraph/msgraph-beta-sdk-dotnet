@@ -7,15 +7,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UserSecurityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>AAD User object identifier (GUID) - represents the physical/multi-account user entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AadUserId {
+            get { return BackingStore?.Get<string?>("aadUserId"); }
+            set { BackingStore?.Set("aadUserId", value); }
+        }
+#else
         public string AadUserId {
             get { return BackingStore?.Get<string>("aadUserId"); }
             set { BackingStore?.Set("aadUserId", value); }
         }
+#endif
         /// <summary>Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccountName {
+            get { return BackingStore?.Get<string?>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
+        }
+#else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -24,10 +38,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>NetBIOS/Active Directory domain of user account (that is, domain/account format).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DomainName {
+            get { return BackingStore?.Get<string?>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
+        }
+#else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#endif
         /// <summary>For email-related alerts - user account&apos;s email &apos;role&apos;. Possible values are: unknown, sender, recipient.</summary>
         public Microsoft.Graph.Beta.Models.EmailRole? EmailRole {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailRole?>("emailRole"); }
@@ -44,50 +65,99 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("logonDateTime", value); }
         }
         /// <summary>User sign-in ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LogonId {
+            get { return BackingStore?.Get<string?>("logonId"); }
+            set { BackingStore?.Set("logonId", value); }
+        }
+#else
         public string LogonId {
             get { return BackingStore?.Get<string>("logonId"); }
             set { BackingStore?.Set("logonId", value); }
         }
+#endif
         /// <summary>IP Address the sign-in request originated from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LogonIp {
+            get { return BackingStore?.Get<string?>("logonIp"); }
+            set { BackingStore?.Set("logonIp", value); }
+        }
+#else
         public string LogonIp {
             get { return BackingStore?.Get<string>("logonIp"); }
             set { BackingStore?.Set("logonIp", value); }
         }
+#endif
         /// <summary>Location (by IP address mapping) associated with a user sign-in event by this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LogonLocation {
+            get { return BackingStore?.Get<string?>("logonLocation"); }
+            set { BackingStore?.Set("logonLocation", value); }
+        }
+#else
         public string LogonLocation {
             get { return BackingStore?.Get<string>("logonLocation"); }
             set { BackingStore?.Set("logonLocation", value); }
         }
+#endif
         /// <summary>Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
         public Microsoft.Graph.Beta.Models.LogonType? LogonType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LogonType?>("logonType"); }
             set { BackingStore?.Set("logonType", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Active Directory (on-premises) Security Identifier (SID) of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnPremisesSecurityIdentifier {
+            get { return BackingStore?.Get<string?>("onPremisesSecurityIdentifier"); }
+            set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
+        }
+#else
         public string OnPremisesSecurityIdentifier {
             get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
+#endif
         /// <summary>Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RiskScore {
+            get { return BackingStore?.Get<string?>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
+        }
+#else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#endif
         /// <summary>User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
         public UserAccountSecurityType? UserAccountType {
             get { return BackingStore?.Get<UserAccountSecurityType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }
         }
         /// <summary>User sign-in name - internet format: (user account name)@(user account DNS domain name).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new userSecurityState and sets the default values.
         /// </summary>

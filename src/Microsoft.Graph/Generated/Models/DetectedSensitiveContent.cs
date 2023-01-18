@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         /// <summary>The classificationAttributes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ClassificationAttribute>? ClassificationAttributes {
+            get { return BackingStore?.Get<List<ClassificationAttribute>?>("classificationAttributes"); }
+            set { BackingStore?.Set("classificationAttributes", value); }
+        }
+#else
         public List<ClassificationAttribute> ClassificationAttributes {
             get { return BackingStore?.Get<List<ClassificationAttribute>>("classificationAttributes"); }
             set { BackingStore?.Set("classificationAttributes", value); }
         }
+#endif
         /// <summary>The classificationMethod property</summary>
         public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationMethod?>("classificationMethod"); }
             set { BackingStore?.Set("classificationMethod", value); }
         }
         /// <summary>The matches property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SensitiveContentLocation>? Matches {
+            get { return BackingStore?.Get<List<SensitiveContentLocation>?>("matches"); }
+            set { BackingStore?.Set("matches", value); }
+        }
+#else
         public List<SensitiveContentLocation> Matches {
             get { return BackingStore?.Get<List<SensitiveContentLocation>>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
+#endif
         /// <summary>The scope property</summary>
         public SensitiveTypeScope? Scope {
             get { return BackingStore?.Get<SensitiveTypeScope?>("scope"); }

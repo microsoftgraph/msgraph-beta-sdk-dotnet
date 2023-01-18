@@ -10,25 +10,53 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class RetrieveRemoteHelpSessionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>ACS Group Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AcsGroupId {
+            get { return BackingStore?.Get<string?>("acsGroupId"); }
+            set { BackingStore?.Set("acsGroupId", value); }
+        }
+#else
         public string AcsGroupId {
             get { return BackingStore?.Get<string>("acsGroupId"); }
             set { BackingStore?.Set("acsGroupId", value); }
         }
+#endif
         /// <summary>Helper ACS User Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AcsHelperUserId {
+            get { return BackingStore?.Get<string?>("acsHelperUserId"); }
+            set { BackingStore?.Set("acsHelperUserId", value); }
+        }
+#else
         public string AcsHelperUserId {
             get { return BackingStore?.Get<string>("acsHelperUserId"); }
             set { BackingStore?.Set("acsHelperUserId", value); }
         }
+#endif
         /// <summary>Helper ACS User Token</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AcsHelperUserToken {
+            get { return BackingStore?.Get<string?>("acsHelperUserToken"); }
+            set { BackingStore?.Set("acsHelperUserToken", value); }
+        }
+#else
         public string AcsHelperUserToken {
             get { return BackingStore?.Get<string>("acsHelperUserToken"); }
             set { BackingStore?.Set("acsHelperUserToken", value); }
         }
+#endif
         /// <summary>Sharer ACS User Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AcsSharerUserId {
+            get { return BackingStore?.Get<string?>("acsSharerUserId"); }
+            set { BackingStore?.Set("acsSharerUserId", value); }
+        }
+#else
         public string AcsSharerUserId {
             get { return BackingStore?.Get<string>("acsSharerUserId"); }
             set { BackingStore?.Set("acsSharerUserId", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -37,35 +65,70 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Android Device Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Azure Pubsub Group Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PubSubGroupId {
+            get { return BackingStore?.Get<string?>("pubSubGroupId"); }
+            set { BackingStore?.Set("pubSubGroupId", value); }
+        }
+#else
         public string PubSubGroupId {
             get { return BackingStore?.Get<string>("pubSubGroupId"); }
             set { BackingStore?.Set("pubSubGroupId", value); }
         }
+#endif
         /// <summary>Azure Pubsub Group Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PubSubHelperAccessUri {
+            get { return BackingStore?.Get<string?>("pubSubHelperAccessUri"); }
+            set { BackingStore?.Set("pubSubHelperAccessUri", value); }
+        }
+#else
         public string PubSubHelperAccessUri {
             get { return BackingStore?.Get<string>("pubSubHelperAccessUri"); }
             set { BackingStore?.Set("pubSubHelperAccessUri", value); }
         }
+#endif
         /// <summary>Azure Pubsub Session Expiration Date Time.</summary>
         public DateTimeOffset? SessionExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("sessionExpirationDateTime"); }
             set { BackingStore?.Set("sessionExpirationDateTime", value); }
         }
         /// <summary>The unique identifier for a session</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SessionKey {
+            get { return BackingStore?.Get<string?>("sessionKey"); }
+            set { BackingStore?.Set("sessionKey", value); }
+        }
+#else
         public string SessionKey {
             get { return BackingStore?.Get<string>("sessionKey"); }
             set { BackingStore?.Set("sessionKey", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new retrieveRemoteHelpSessionResponse and sets the default values.
         /// </summary>

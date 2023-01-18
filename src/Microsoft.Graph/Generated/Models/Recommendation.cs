@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Recommendation : Entity, IParsable {
         /// <summary>The actionSteps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ActionStep>? ActionSteps {
+            get { return BackingStore?.Get<List<ActionStep>?>("actionSteps"); }
+            set { BackingStore?.Set("actionSteps", value); }
+        }
+#else
         public List<ActionStep> ActionSteps {
             get { return BackingStore?.Get<List<ActionStep>>("actionSteps"); }
             set { BackingStore?.Set("actionSteps", value); }
         }
+#endif
         /// <summary>The benefits property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Benefits {
+            get { return BackingStore?.Get<string?>("benefits"); }
+            set { BackingStore?.Set("benefits", value); }
+        }
+#else
         public string Benefits {
             get { return BackingStore?.Get<string>("benefits"); }
             set { BackingStore?.Set("benefits", value); }
         }
+#endif
         /// <summary>The category property</summary>
         public RecommendationCategory? Category {
             get { return BackingStore?.Get<RecommendationCategory?>("category"); }
@@ -26,40 +40,75 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The impactedResources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RecommendationResource>? ImpactedResources {
+            get { return BackingStore?.Get<List<RecommendationResource>?>("impactedResources"); }
+            set { BackingStore?.Set("impactedResources", value); }
+        }
+#else
         public List<RecommendationResource> ImpactedResources {
             get { return BackingStore?.Get<List<RecommendationResource>>("impactedResources"); }
             set { BackingStore?.Set("impactedResources", value); }
         }
+#endif
         /// <summary>The impactStartDateTime property</summary>
         public DateTimeOffset? ImpactStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("impactStartDateTime"); }
             set { BackingStore?.Set("impactStartDateTime", value); }
         }
         /// <summary>The impactType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ImpactType {
+            get { return BackingStore?.Get<string?>("impactType"); }
+            set { BackingStore?.Set("impactType", value); }
+        }
+#else
         public string ImpactType {
             get { return BackingStore?.Get<string>("impactType"); }
             set { BackingStore?.Set("impactType", value); }
         }
+#endif
         /// <summary>The insights property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Insights {
+            get { return BackingStore?.Get<string?>("insights"); }
+            set { BackingStore?.Set("insights", value); }
+        }
+#else
         public string Insights {
             get { return BackingStore?.Get<string>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
+#endif
         /// <summary>The lastCheckedDateTime property</summary>
         public DateTimeOffset? LastCheckedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckedDateTime"); }
             set { BackingStore?.Set("lastCheckedDateTime", value); }
         }
         /// <summary>The lastModifiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastModifiedBy {
+            get { return BackingStore?.Get<string?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public string LastModifiedBy {
             get { return BackingStore?.Get<string>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

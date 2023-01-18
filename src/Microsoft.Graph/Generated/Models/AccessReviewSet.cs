@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewSet : Entity, IParsable {
         /// <summary>Represents an Azure AD access review decision on an instance of a review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewInstanceDecisionItem>? Decisions {
+            get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>?>("decisions"); }
+            set { BackingStore?.Set("decisions", value); }
+        }
+#else
         public List<AccessReviewInstanceDecisionItem> Decisions {
             get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
+#endif
         /// <summary>Represents the template and scheduling for an access review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewScheduleDefinition>? Definitions {
+            get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>?>("definitions"); }
+            set { BackingStore?.Set("definitions", value); }
+        }
+#else
         public List<AccessReviewScheduleDefinition> Definitions {
             get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
+#endif
         /// <summary>Represents a collection of access review history data and the scopes used to collect that data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewHistoryDefinition>? HistoryDefinitions {
+            get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>?>("historyDefinitions"); }
+            set { BackingStore?.Set("historyDefinitions", value); }
+        }
+#else
         public List<AccessReviewHistoryDefinition> HistoryDefinitions {
             get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>>("historyDefinitions"); }
             set { BackingStore?.Set("historyDefinitions", value); }
         }
+#endif
         /// <summary>Resource that enables administrators to manage directory-level access review policies in their tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessReviewPolicy? Policy {
+            get { return BackingStore?.Get<AccessReviewPolicy?>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#else
         public AccessReviewPolicy Policy {
             get { return BackingStore?.Get<AccessReviewPolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

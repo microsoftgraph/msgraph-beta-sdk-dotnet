@@ -9,10 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class UserInstallStateSummary : Entity, IParsable {
         /// <summary>The install state of the eBook.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceInstallState>? DeviceStates {
+            get { return BackingStore?.Get<List<DeviceInstallState>?>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
+        }
+#else
         public List<DeviceInstallState> DeviceStates {
             get { return BackingStore?.Get<List<DeviceInstallState>>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#endif
         /// <summary>Failed Device Count.</summary>
         public int? FailedDeviceCount {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
@@ -29,10 +36,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>User name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserName {
+            get { return BackingStore?.Get<string?>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
+#else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

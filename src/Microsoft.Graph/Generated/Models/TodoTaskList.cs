@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TodoTaskList : Entity, IParsable {
         /// <summary>The name of the task list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The collection of open extensions defined for the task list. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Extension>? Extensions {
+            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#endif
         /// <summary>True if the user is owner of the given task list.</summary>
         public bool? IsOwner {
             get { return BackingStore?.Get<bool?>("isOwner"); }
@@ -26,10 +40,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isShared", value); }
         }
         /// <summary>The tasks in this task list. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TodoTask>? Tasks {
+            get { return BackingStore?.Get<List<TodoTask>?>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#else
         public List<TodoTask> Tasks {
             get { return BackingStore?.Get<List<TodoTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#endif
         /// <summary>The wellknownListName property</summary>
         public Microsoft.Graph.Beta.Models.WellknownListName? WellknownListName {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WellknownListName?>("wellknownListName"); }

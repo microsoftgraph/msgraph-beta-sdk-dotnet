@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PrintService : Entity, IParsable {
         /// <summary>Endpoints that can be used to access the service. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintServiceEndpoint>? Endpoints {
+            get { return BackingStore?.Get<List<PrintServiceEndpoint>?>("endpoints"); }
+            set { BackingStore?.Set("endpoints", value); }
+        }
+#else
         public List<PrintServiceEndpoint> Endpoints {
             get { return BackingStore?.Get<List<PrintServiceEndpoint>>("endpoints"); }
             set { BackingStore?.Set("endpoints", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

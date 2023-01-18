@@ -17,22 +17,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserSet>? AllowedRequestors {
+            get { return BackingStore?.Get<List<UserSet>?>("allowedRequestors"); }
+            set { BackingStore?.Set("allowedRequestors", value); }
+        }
+#else
         public List<UserSet> AllowedRequestors {
             get { return BackingStore?.Get<List<UserSet>>("allowedRequestors"); }
             set { BackingStore?.Set("allowedRequestors", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScopeType {
+            get { return BackingStore?.Get<string?>("scopeType"); }
+            set { BackingStore?.Set("scopeType", value); }
+        }
+#else
         public string ScopeType {
             get { return BackingStore?.Get<string>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new requestorSettings and sets the default values.
         /// </summary>

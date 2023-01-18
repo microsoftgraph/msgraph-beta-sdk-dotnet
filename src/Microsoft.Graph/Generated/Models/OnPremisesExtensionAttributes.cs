@@ -14,85 +14,197 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>First customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute1 {
+            get { return BackingStore?.Get<string?>("extensionAttribute1"); }
+            set { BackingStore?.Set("extensionAttribute1", value); }
+        }
+#else
         public string ExtensionAttribute1 {
             get { return BackingStore?.Get<string>("extensionAttribute1"); }
             set { BackingStore?.Set("extensionAttribute1", value); }
         }
+#endif
         /// <summary>Tenth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute10 {
+            get { return BackingStore?.Get<string?>("extensionAttribute10"); }
+            set { BackingStore?.Set("extensionAttribute10", value); }
+        }
+#else
         public string ExtensionAttribute10 {
             get { return BackingStore?.Get<string>("extensionAttribute10"); }
             set { BackingStore?.Set("extensionAttribute10", value); }
         }
+#endif
         /// <summary>Eleventh customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute11 {
+            get { return BackingStore?.Get<string?>("extensionAttribute11"); }
+            set { BackingStore?.Set("extensionAttribute11", value); }
+        }
+#else
         public string ExtensionAttribute11 {
             get { return BackingStore?.Get<string>("extensionAttribute11"); }
             set { BackingStore?.Set("extensionAttribute11", value); }
         }
+#endif
         /// <summary>Twelfth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute12 {
+            get { return BackingStore?.Get<string?>("extensionAttribute12"); }
+            set { BackingStore?.Set("extensionAttribute12", value); }
+        }
+#else
         public string ExtensionAttribute12 {
             get { return BackingStore?.Get<string>("extensionAttribute12"); }
             set { BackingStore?.Set("extensionAttribute12", value); }
         }
+#endif
         /// <summary>Thirteenth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute13 {
+            get { return BackingStore?.Get<string?>("extensionAttribute13"); }
+            set { BackingStore?.Set("extensionAttribute13", value); }
+        }
+#else
         public string ExtensionAttribute13 {
             get { return BackingStore?.Get<string>("extensionAttribute13"); }
             set { BackingStore?.Set("extensionAttribute13", value); }
         }
+#endif
         /// <summary>Fourteenth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute14 {
+            get { return BackingStore?.Get<string?>("extensionAttribute14"); }
+            set { BackingStore?.Set("extensionAttribute14", value); }
+        }
+#else
         public string ExtensionAttribute14 {
             get { return BackingStore?.Get<string>("extensionAttribute14"); }
             set { BackingStore?.Set("extensionAttribute14", value); }
         }
+#endif
         /// <summary>Fifteenth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute15 {
+            get { return BackingStore?.Get<string?>("extensionAttribute15"); }
+            set { BackingStore?.Set("extensionAttribute15", value); }
+        }
+#else
         public string ExtensionAttribute15 {
             get { return BackingStore?.Get<string>("extensionAttribute15"); }
             set { BackingStore?.Set("extensionAttribute15", value); }
         }
+#endif
         /// <summary>Second customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute2 {
+            get { return BackingStore?.Get<string?>("extensionAttribute2"); }
+            set { BackingStore?.Set("extensionAttribute2", value); }
+        }
+#else
         public string ExtensionAttribute2 {
             get { return BackingStore?.Get<string>("extensionAttribute2"); }
             set { BackingStore?.Set("extensionAttribute2", value); }
         }
+#endif
         /// <summary>Third customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute3 {
+            get { return BackingStore?.Get<string?>("extensionAttribute3"); }
+            set { BackingStore?.Set("extensionAttribute3", value); }
+        }
+#else
         public string ExtensionAttribute3 {
             get { return BackingStore?.Get<string>("extensionAttribute3"); }
             set { BackingStore?.Set("extensionAttribute3", value); }
         }
+#endif
         /// <summary>Fourth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute4 {
+            get { return BackingStore?.Get<string?>("extensionAttribute4"); }
+            set { BackingStore?.Set("extensionAttribute4", value); }
+        }
+#else
         public string ExtensionAttribute4 {
             get { return BackingStore?.Get<string>("extensionAttribute4"); }
             set { BackingStore?.Set("extensionAttribute4", value); }
         }
+#endif
         /// <summary>Fifth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute5 {
+            get { return BackingStore?.Get<string?>("extensionAttribute5"); }
+            set { BackingStore?.Set("extensionAttribute5", value); }
+        }
+#else
         public string ExtensionAttribute5 {
             get { return BackingStore?.Get<string>("extensionAttribute5"); }
             set { BackingStore?.Set("extensionAttribute5", value); }
         }
+#endif
         /// <summary>Sixth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute6 {
+            get { return BackingStore?.Get<string?>("extensionAttribute6"); }
+            set { BackingStore?.Set("extensionAttribute6", value); }
+        }
+#else
         public string ExtensionAttribute6 {
             get { return BackingStore?.Get<string>("extensionAttribute6"); }
             set { BackingStore?.Set("extensionAttribute6", value); }
         }
+#endif
         /// <summary>Seventh customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute7 {
+            get { return BackingStore?.Get<string?>("extensionAttribute7"); }
+            set { BackingStore?.Set("extensionAttribute7", value); }
+        }
+#else
         public string ExtensionAttribute7 {
             get { return BackingStore?.Get<string>("extensionAttribute7"); }
             set { BackingStore?.Set("extensionAttribute7", value); }
         }
+#endif
         /// <summary>Eighth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute8 {
+            get { return BackingStore?.Get<string?>("extensionAttribute8"); }
+            set { BackingStore?.Set("extensionAttribute8", value); }
+        }
+#else
         public string ExtensionAttribute8 {
             get { return BackingStore?.Get<string>("extensionAttribute8"); }
             set { BackingStore?.Set("extensionAttribute8", value); }
         }
+#endif
         /// <summary>Ninth customizable extension attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionAttribute9 {
+            get { return BackingStore?.Get<string?>("extensionAttribute9"); }
+            set { BackingStore?.Set("extensionAttribute9", value); }
+        }
+#else
         public string ExtensionAttribute9 {
             get { return BackingStore?.Get<string>("extensionAttribute9"); }
             set { BackingStore?.Set("extensionAttribute9", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new onPremisesExtensionAttributes and sets the default values.
         /// </summary>

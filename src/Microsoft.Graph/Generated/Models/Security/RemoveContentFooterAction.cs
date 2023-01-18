@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RemoveContentFooterAction : InformationProtectionAction, IParsable {
         /// <summary>The name of the UI element of the footer to be removed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? UiElementNames {
+            get { return BackingStore?.Get<List<string>?>("uiElementNames"); }
+            set { BackingStore?.Set("uiElementNames", value); }
+        }
+#else
         public List<string> UiElementNames {
             get { return BackingStore?.Get<List<string>>("uiElementNames"); }
             set { BackingStore?.Set("uiElementNames", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new RemoveContentFooterAction and sets the default values.
         /// </summary>

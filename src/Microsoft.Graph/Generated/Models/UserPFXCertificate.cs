@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity that encapsulates all information required for a user&apos;s PFX certificates.
+    /// </summary>
     public class UserPFXCertificate : Entity, IParsable {
         /// <summary>Date/time when this PFX certificate was imported.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -11,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Encrypted PFX blob.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? EncryptedPfxBlob {
+            get { return BackingStore?.Get<byte[]?>("encryptedPfxBlob"); }
+            set { BackingStore?.Set("encryptedPfxBlob", value); }
+        }
+#else
         public byte[] EncryptedPfxBlob {
             get { return BackingStore?.Get<byte[]>("encryptedPfxBlob"); }
             set { BackingStore?.Set("encryptedPfxBlob", value); }
         }
+#endif
         /// <summary>Encrypted PFX password.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EncryptedPfxPassword {
+            get { return BackingStore?.Get<string?>("encryptedPfxPassword"); }
+            set { BackingStore?.Set("encryptedPfxPassword", value); }
+        }
+#else
         public string EncryptedPfxPassword {
             get { return BackingStore?.Get<string>("encryptedPfxPassword"); }
             set { BackingStore?.Set("encryptedPfxPassword", value); }
         }
+#endif
         /// <summary>Certificate&apos;s validity expiration date/time.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
@@ -31,10 +48,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("intendedPurpose", value); }
         }
         /// <summary>Name of the key (within the provider) used to encrypt the blob.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KeyName {
+            get { return BackingStore?.Get<string?>("keyName"); }
+            set { BackingStore?.Set("keyName", value); }
+        }
+#else
         public string KeyName {
             get { return BackingStore?.Get<string>("keyName"); }
             set { BackingStore?.Set("keyName", value); }
         }
+#endif
         /// <summary>Date/time when this PFX certificate was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -46,25 +70,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("paddingScheme", value); }
         }
         /// <summary>Crypto provider used to encrypt this blob.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProviderName {
+            get { return BackingStore?.Get<string?>("providerName"); }
+            set { BackingStore?.Set("providerName", value); }
+        }
+#else
         public string ProviderName {
             get { return BackingStore?.Get<string>("providerName"); }
             set { BackingStore?.Set("providerName", value); }
         }
+#endif
         /// <summary>Certificate&apos;s validity start date/time.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>SHA-1 thumbprint of the PFX certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Thumbprint {
+            get { return BackingStore?.Get<string?>("thumbprint"); }
+            set { BackingStore?.Set("thumbprint", value); }
+        }
+#else
         public string Thumbprint {
             get { return BackingStore?.Get<string>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
+#endif
         /// <summary>User Principal Name of the PFX certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

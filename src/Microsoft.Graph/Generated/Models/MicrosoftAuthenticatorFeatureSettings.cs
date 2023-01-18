@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determines whether the user&apos;s Authenticator app will show them the client app they are signing into.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuthenticationMethodFeatureConfiguration? DisplayAppInformationRequiredState {
+            get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("displayAppInformationRequiredState"); }
+            set { BackingStore?.Set("displayAppInformationRequiredState", value); }
+        }
+#else
         public AuthenticationMethodFeatureConfiguration DisplayAppInformationRequiredState {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("displayAppInformationRequiredState"); }
             set { BackingStore?.Set("displayAppInformationRequiredState", value); }
         }
+#endif
         /// <summary>Determines whether the user&apos;s Authenticator app will show them the geographic location of where the authentication request originated from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuthenticationMethodFeatureConfiguration? DisplayLocationInformationRequiredState {
+            get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("displayLocationInformationRequiredState"); }
+            set { BackingStore?.Set("displayLocationInformationRequiredState", value); }
+        }
+#else
         public AuthenticationMethodFeatureConfiguration DisplayLocationInformationRequiredState {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("displayLocationInformationRequiredState"); }
             set { BackingStore?.Set("displayLocationInformationRequiredState", value); }
         }
+#endif
         /// <summary>Specifies whether the user needs to enter a number in the Authenticator app from the login screen to complete their login. Value is ignored for phone sign-in notifications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuthenticationMethodFeatureConfiguration? NumberMatchingRequiredState {
+            get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("numberMatchingRequiredState"); }
+            set { BackingStore?.Set("numberMatchingRequiredState", value); }
+        }
+#else
         public AuthenticationMethodFeatureConfiguration NumberMatchingRequiredState {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("numberMatchingRequiredState"); }
             set { BackingStore?.Set("numberMatchingRequiredState", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new microsoftAuthenticatorFeatureSettings and sets the default values.
         /// </summary>

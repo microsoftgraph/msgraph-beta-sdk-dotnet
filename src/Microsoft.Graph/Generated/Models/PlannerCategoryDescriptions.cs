@@ -14,135 +14,317 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The label associated with Category 1</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category1 {
+            get { return BackingStore?.Get<string?>("category1"); }
+            set { BackingStore?.Set("category1", value); }
+        }
+#else
         public string Category1 {
             get { return BackingStore?.Get<string>("category1"); }
             set { BackingStore?.Set("category1", value); }
         }
+#endif
         /// <summary>The label associated with Category 10</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category10 {
+            get { return BackingStore?.Get<string?>("category10"); }
+            set { BackingStore?.Set("category10", value); }
+        }
+#else
         public string Category10 {
             get { return BackingStore?.Get<string>("category10"); }
             set { BackingStore?.Set("category10", value); }
         }
+#endif
         /// <summary>The label associated with Category 11</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category11 {
+            get { return BackingStore?.Get<string?>("category11"); }
+            set { BackingStore?.Set("category11", value); }
+        }
+#else
         public string Category11 {
             get { return BackingStore?.Get<string>("category11"); }
             set { BackingStore?.Set("category11", value); }
         }
+#endif
         /// <summary>The label associated with Category 12</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category12 {
+            get { return BackingStore?.Get<string?>("category12"); }
+            set { BackingStore?.Set("category12", value); }
+        }
+#else
         public string Category12 {
             get { return BackingStore?.Get<string>("category12"); }
             set { BackingStore?.Set("category12", value); }
         }
+#endif
         /// <summary>The label associated with Category 13</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category13 {
+            get { return BackingStore?.Get<string?>("category13"); }
+            set { BackingStore?.Set("category13", value); }
+        }
+#else
         public string Category13 {
             get { return BackingStore?.Get<string>("category13"); }
             set { BackingStore?.Set("category13", value); }
         }
+#endif
         /// <summary>The label associated with Category 14</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category14 {
+            get { return BackingStore?.Get<string?>("category14"); }
+            set { BackingStore?.Set("category14", value); }
+        }
+#else
         public string Category14 {
             get { return BackingStore?.Get<string>("category14"); }
             set { BackingStore?.Set("category14", value); }
         }
+#endif
         /// <summary>The label associated with Category 15</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category15 {
+            get { return BackingStore?.Get<string?>("category15"); }
+            set { BackingStore?.Set("category15", value); }
+        }
+#else
         public string Category15 {
             get { return BackingStore?.Get<string>("category15"); }
             set { BackingStore?.Set("category15", value); }
         }
+#endif
         /// <summary>The label associated with Category 16</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category16 {
+            get { return BackingStore?.Get<string?>("category16"); }
+            set { BackingStore?.Set("category16", value); }
+        }
+#else
         public string Category16 {
             get { return BackingStore?.Get<string>("category16"); }
             set { BackingStore?.Set("category16", value); }
         }
+#endif
         /// <summary>The label associated with Category 17</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category17 {
+            get { return BackingStore?.Get<string?>("category17"); }
+            set { BackingStore?.Set("category17", value); }
+        }
+#else
         public string Category17 {
             get { return BackingStore?.Get<string>("category17"); }
             set { BackingStore?.Set("category17", value); }
         }
+#endif
         /// <summary>The label associated with Category 18</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category18 {
+            get { return BackingStore?.Get<string?>("category18"); }
+            set { BackingStore?.Set("category18", value); }
+        }
+#else
         public string Category18 {
             get { return BackingStore?.Get<string>("category18"); }
             set { BackingStore?.Set("category18", value); }
         }
+#endif
         /// <summary>The label associated with Category 19</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category19 {
+            get { return BackingStore?.Get<string?>("category19"); }
+            set { BackingStore?.Set("category19", value); }
+        }
+#else
         public string Category19 {
             get { return BackingStore?.Get<string>("category19"); }
             set { BackingStore?.Set("category19", value); }
         }
+#endif
         /// <summary>The label associated with Category 2</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category2 {
+            get { return BackingStore?.Get<string?>("category2"); }
+            set { BackingStore?.Set("category2", value); }
+        }
+#else
         public string Category2 {
             get { return BackingStore?.Get<string>("category2"); }
             set { BackingStore?.Set("category2", value); }
         }
+#endif
         /// <summary>The label associated with Category 20</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category20 {
+            get { return BackingStore?.Get<string?>("category20"); }
+            set { BackingStore?.Set("category20", value); }
+        }
+#else
         public string Category20 {
             get { return BackingStore?.Get<string>("category20"); }
             set { BackingStore?.Set("category20", value); }
         }
+#endif
         /// <summary>The label associated with Category 21</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category21 {
+            get { return BackingStore?.Get<string?>("category21"); }
+            set { BackingStore?.Set("category21", value); }
+        }
+#else
         public string Category21 {
             get { return BackingStore?.Get<string>("category21"); }
             set { BackingStore?.Set("category21", value); }
         }
+#endif
         /// <summary>The label associated with Category 22</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category22 {
+            get { return BackingStore?.Get<string?>("category22"); }
+            set { BackingStore?.Set("category22", value); }
+        }
+#else
         public string Category22 {
             get { return BackingStore?.Get<string>("category22"); }
             set { BackingStore?.Set("category22", value); }
         }
+#endif
         /// <summary>The label associated with Category 23</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category23 {
+            get { return BackingStore?.Get<string?>("category23"); }
+            set { BackingStore?.Set("category23", value); }
+        }
+#else
         public string Category23 {
             get { return BackingStore?.Get<string>("category23"); }
             set { BackingStore?.Set("category23", value); }
         }
+#endif
         /// <summary>The label associated with Category 24</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category24 {
+            get { return BackingStore?.Get<string?>("category24"); }
+            set { BackingStore?.Set("category24", value); }
+        }
+#else
         public string Category24 {
             get { return BackingStore?.Get<string>("category24"); }
             set { BackingStore?.Set("category24", value); }
         }
+#endif
         /// <summary>The label associated with Category 25</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category25 {
+            get { return BackingStore?.Get<string?>("category25"); }
+            set { BackingStore?.Set("category25", value); }
+        }
+#else
         public string Category25 {
             get { return BackingStore?.Get<string>("category25"); }
             set { BackingStore?.Set("category25", value); }
         }
+#endif
         /// <summary>The label associated with Category 3</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category3 {
+            get { return BackingStore?.Get<string?>("category3"); }
+            set { BackingStore?.Set("category3", value); }
+        }
+#else
         public string Category3 {
             get { return BackingStore?.Get<string>("category3"); }
             set { BackingStore?.Set("category3", value); }
         }
+#endif
         /// <summary>The label associated with Category 4</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category4 {
+            get { return BackingStore?.Get<string?>("category4"); }
+            set { BackingStore?.Set("category4", value); }
+        }
+#else
         public string Category4 {
             get { return BackingStore?.Get<string>("category4"); }
             set { BackingStore?.Set("category4", value); }
         }
+#endif
         /// <summary>The label associated with Category 5</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category5 {
+            get { return BackingStore?.Get<string?>("category5"); }
+            set { BackingStore?.Set("category5", value); }
+        }
+#else
         public string Category5 {
             get { return BackingStore?.Get<string>("category5"); }
             set { BackingStore?.Set("category5", value); }
         }
+#endif
         /// <summary>The label associated with Category 6</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category6 {
+            get { return BackingStore?.Get<string?>("category6"); }
+            set { BackingStore?.Set("category6", value); }
+        }
+#else
         public string Category6 {
             get { return BackingStore?.Get<string>("category6"); }
             set { BackingStore?.Set("category6", value); }
         }
+#endif
         /// <summary>The label associated with Category 7</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category7 {
+            get { return BackingStore?.Get<string?>("category7"); }
+            set { BackingStore?.Set("category7", value); }
+        }
+#else
         public string Category7 {
             get { return BackingStore?.Get<string>("category7"); }
             set { BackingStore?.Set("category7", value); }
         }
+#endif
         /// <summary>The label associated with Category 8</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category8 {
+            get { return BackingStore?.Get<string?>("category8"); }
+            set { BackingStore?.Set("category8", value); }
+        }
+#else
         public string Category8 {
             get { return BackingStore?.Get<string>("category8"); }
             set { BackingStore?.Set("category8", value); }
         }
+#endif
         /// <summary>The label associated with Category 9</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category9 {
+            get { return BackingStore?.Get<string?>("category9"); }
+            set { BackingStore?.Set("category9", value); }
+        }
+#else
         public string Category9 {
             get { return BackingStore?.Get<string>("category9"); }
             set { BackingStore?.Set("category9", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new plannerCategoryDescriptions and sets the default values.
         /// </summary>

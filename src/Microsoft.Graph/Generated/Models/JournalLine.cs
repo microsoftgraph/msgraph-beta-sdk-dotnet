@@ -7,50 +7,99 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class JournalLine : Entity, IParsable {
         /// <summary>The account property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Account? Account {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account?>("account"); }
+            set { BackingStore?.Set("account", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Account Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
             set { BackingStore?.Set("account", value); }
         }
+#endif
         /// <summary>The accountId property</summary>
         public Guid? AccountId {
             get { return BackingStore?.Get<Guid?>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
         /// <summary>The accountNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccountNumber {
+            get { return BackingStore?.Get<string?>("accountNumber"); }
+            set { BackingStore?.Set("accountNumber", value); }
+        }
+#else
         public string AccountNumber {
             get { return BackingStore?.Get<string>("accountNumber"); }
             set { BackingStore?.Set("accountNumber", value); }
         }
+#endif
         /// <summary>The amount property</summary>
         public decimal? Amount {
             get { return BackingStore?.Get<decimal?>("amount"); }
             set { BackingStore?.Set("amount", value); }
         }
         /// <summary>The comment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Comment {
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The documentNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DocumentNumber {
+            get { return BackingStore?.Get<string?>("documentNumber"); }
+            set { BackingStore?.Set("documentNumber", value); }
+        }
+#else
         public string DocumentNumber {
             get { return BackingStore?.Get<string>("documentNumber"); }
             set { BackingStore?.Set("documentNumber", value); }
         }
+#endif
         /// <summary>The externalDocumentNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalDocumentNumber {
+            get { return BackingStore?.Get<string?>("externalDocumentNumber"); }
+            set { BackingStore?.Set("externalDocumentNumber", value); }
+        }
+#else
         public string ExternalDocumentNumber {
             get { return BackingStore?.Get<string>("externalDocumentNumber"); }
             set { BackingStore?.Set("externalDocumentNumber", value); }
         }
+#endif
         /// <summary>The journalDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JournalDisplayName {
+            get { return BackingStore?.Get<string?>("journalDisplayName"); }
+            set { BackingStore?.Set("journalDisplayName", value); }
+        }
+#else
         public string JournalDisplayName {
             get { return BackingStore?.Get<string>("journalDisplayName"); }
             set { BackingStore?.Set("journalDisplayName", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

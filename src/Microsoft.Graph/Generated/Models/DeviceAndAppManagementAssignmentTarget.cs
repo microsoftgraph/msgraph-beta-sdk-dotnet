@@ -17,20 +17,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Id of the filter for the target assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceAndAppManagementAssignmentFilterId {
+            get { return BackingStore?.Get<string?>("deviceAndAppManagementAssignmentFilterId"); }
+            set { BackingStore?.Set("deviceAndAppManagementAssignmentFilterId", value); }
+        }
+#else
         public string DeviceAndAppManagementAssignmentFilterId {
             get { return BackingStore?.Get<string>("deviceAndAppManagementAssignmentFilterId"); }
             set { BackingStore?.Set("deviceAndAppManagementAssignmentFilterId", value); }
         }
+#endif
         /// <summary>Represents type of the assignment filter.</summary>
         public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType? DeviceAndAppManagementAssignmentFilterType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType?>("deviceAndAppManagementAssignmentFilterType"); }
             set { BackingStore?.Set("deviceAndAppManagementAssignmentFilterType", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceAndAppManagementAssignmentTarget and sets the default values.
         /// </summary>

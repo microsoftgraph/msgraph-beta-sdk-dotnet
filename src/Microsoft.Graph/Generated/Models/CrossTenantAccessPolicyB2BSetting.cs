@@ -12,22 +12,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The list of applications targeted with your cross-tenant access policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CrossTenantAccessPolicyTargetConfiguration? Applications {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration?>("applications"); }
+            set { BackingStore?.Set("applications", value); }
+        }
+#else
         public CrossTenantAccessPolicyTargetConfiguration Applications {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The list of users and groups targeted with your cross-tenant access policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CrossTenantAccessPolicyTargetConfiguration? UsersAndGroups {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration?>("usersAndGroups"); }
+            set { BackingStore?.Set("usersAndGroups", value); }
+        }
+#else
         public CrossTenantAccessPolicyTargetConfiguration UsersAndGroups {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>("usersAndGroups"); }
             set { BackingStore?.Set("usersAndGroups", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyB2BSetting and sets the default values.
         /// </summary>

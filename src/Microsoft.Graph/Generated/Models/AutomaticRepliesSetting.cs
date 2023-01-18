@@ -19,30 +19,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalAudience", value); }
         }
         /// <summary>The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalReplyMessage {
+            get { return BackingStore?.Get<string?>("externalReplyMessage"); }
+            set { BackingStore?.Set("externalReplyMessage", value); }
+        }
+#else
         public string ExternalReplyMessage {
             get { return BackingStore?.Get<string>("externalReplyMessage"); }
             set { BackingStore?.Set("externalReplyMessage", value); }
         }
+#endif
         /// <summary>The automatic reply to send to the audience internal to the signed-in user&apos;s organization, if Status is AlwaysEnabled or Scheduled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InternalReplyMessage {
+            get { return BackingStore?.Get<string?>("internalReplyMessage"); }
+            set { BackingStore?.Set("internalReplyMessage", value); }
+        }
+#else
         public string InternalReplyMessage {
             get { return BackingStore?.Get<string>("internalReplyMessage"); }
             set { BackingStore?.Set("internalReplyMessage", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The date and time that automatic replies are set to end, if Status is set to Scheduled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? ScheduledEndDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledEndDateTime"); }
+            set { BackingStore?.Set("scheduledEndDateTime", value); }
+        }
+#else
         public DateTimeTimeZone ScheduledEndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledEndDateTime"); }
             set { BackingStore?.Set("scheduledEndDateTime", value); }
         }
+#endif
         /// <summary>The date and time that automatic replies are set to begin, if Status is set to Scheduled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? ScheduledStartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledStartDateTime"); }
+            set { BackingStore?.Set("scheduledStartDateTime", value); }
+        }
+#else
         public DateTimeTimeZone ScheduledStartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledStartDateTime"); }
             set { BackingStore?.Set("scheduledStartDateTime", value); }
         }
+#endif
         /// <summary>Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.</summary>
         public AutomaticRepliesStatus? Status {
             get { return BackingStore?.Get<AutomaticRepliesStatus?>("status"); }

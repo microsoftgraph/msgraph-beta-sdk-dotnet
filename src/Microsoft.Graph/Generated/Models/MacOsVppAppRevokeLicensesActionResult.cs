@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("actionFailureReason", value); }
         }
         /// <summary>Action name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActionName {
+            get { return BackingStore?.Get<string?>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
+        }
+#else
         public string ActionName {
             get { return BackingStore?.Get<string>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
+#endif
         /// <summary>The actionState property</summary>
         public Microsoft.Graph.Beta.Models.ActionState? ActionState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }
@@ -42,15 +49,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>DeviceId associated with the action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Time the action was initiated</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
@@ -62,10 +83,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalLicensesCount", value); }
         }
         /// <summary>UserId associated with the action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new macOsVppAppRevokeLicensesActionResult and sets the default values.
         /// </summary>

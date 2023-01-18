@@ -7,20 +7,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Office365ActiveUserDetail : Entity, IParsable {
         /// <summary>All the products assigned for the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AssignedProducts {
+            get { return BackingStore?.Get<List<string>?>("assignedProducts"); }
+            set { BackingStore?.Set("assignedProducts", value); }
+        }
+#else
         public List<string> AssignedProducts {
             get { return BackingStore?.Get<List<string>>("assignedProducts"); }
             set { BackingStore?.Set("assignedProducts", value); }
         }
+#endif
         /// <summary>The date when the delete operation happened. Default value is &apos;null&apos; when the user has not been deleted.</summary>
         public Date? DeletedDate {
             get { return BackingStore?.Get<Date?>("deletedDate"); }
             set { BackingStore?.Set("deletedDate", value); }
         }
         /// <summary>The name displayed in the address book for the user. This is usually the combination of the user&apos;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The date when user last read or sent email.</summary>
         public Date? ExchangeLastActivityDate {
             get { return BackingStore?.Get<Date?>("exchangeLastActivityDate"); }
@@ -112,10 +126,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("teamsLicenseAssignDate", value); }
         }
         /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>The date when user last posted, read, or liked message.</summary>
         public Date? YammerLastActivityDate {
             get { return BackingStore?.Get<Date?>("yammerLastActivityDate"); }

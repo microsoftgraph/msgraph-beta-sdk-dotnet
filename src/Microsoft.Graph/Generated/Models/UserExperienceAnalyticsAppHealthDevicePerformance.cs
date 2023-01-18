@@ -29,30 +29,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceAppHealthScore", value); }
         }
         /// <summary>The overall app health status of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceAppHealthStatus {
+            get { return BackingStore?.Get<string?>("deviceAppHealthStatus"); }
+            set { BackingStore?.Set("deviceAppHealthStatus", value); }
+        }
+#else
         public string DeviceAppHealthStatus {
             get { return BackingStore?.Get<string>("deviceAppHealthStatus"); }
             set { BackingStore?.Set("deviceAppHealthStatus", value); }
         }
+#endif
         /// <summary>The name of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceDisplayName {
+            get { return BackingStore?.Get<string?>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
+        }
+#else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#endif
         /// <summary>The id of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The manufacturer name of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceManufacturer {
+            get { return BackingStore?.Get<string?>("deviceManufacturer"); }
+            set { BackingStore?.Set("deviceManufacturer", value); }
+        }
+#else
         public string DeviceManufacturer {
             get { return BackingStore?.Get<string>("deviceManufacturer"); }
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
+#endif
         /// <summary>The model name of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceModel {
+            get { return BackingStore?.Get<string?>("deviceModel"); }
+            set { BackingStore?.Set("deviceModel", value); }
+        }
+#else
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
+#endif
         /// <summary>The healthStatus property</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }

@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamInfo : Entity, IParsable {
         /// <summary>The name of the team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The team property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Team? Team {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team?>("team"); }
+            set { BackingStore?.Set("team", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Team Team {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>("team"); }
             set { BackingStore?.Set("team", value); }
         }
+#endif
         /// <summary>The ID of the Azure Active Directory tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

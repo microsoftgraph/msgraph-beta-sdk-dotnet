@@ -56,10 +56,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("browserBlockSingleWordEntryOnIntranetSites", value); }
         }
         /// <summary>The enterprise mode site list location. Could be a local file, local network or http location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BrowserEnterpriseModeSiteListLocation {
+            get { return BackingStore?.Get<string?>("browserEnterpriseModeSiteListLocation"); }
+            set { BackingStore?.Set("browserEnterpriseModeSiteListLocation", value); }
+        }
+#else
         public string BrowserEnterpriseModeSiteListLocation {
             get { return BackingStore?.Get<string>("browserEnterpriseModeSiteListLocation"); }
             set { BackingStore?.Set("browserEnterpriseModeSiteListLocation", value); }
         }
+#endif
         /// <summary>Possible values for internet site security level.</summary>
         public InternetSiteSecurityLevel? BrowserInternetSecurityLevel {
             get { return BackingStore?.Get<InternetSiteSecurityLevel?>("browserInternetSecurityLevel"); }
@@ -71,10 +78,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("browserIntranetSecurityLevel", value); }
         }
         /// <summary>The logging report location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BrowserLoggingReportLocation {
+            get { return BackingStore?.Get<string?>("browserLoggingReportLocation"); }
+            set { BackingStore?.Set("browserLoggingReportLocation", value); }
+        }
+#else
         public string BrowserLoggingReportLocation {
             get { return BackingStore?.Get<string>("browserLoggingReportLocation"); }
             set { BackingStore?.Set("browserLoggingReportLocation", value); }
         }
+#endif
         /// <summary>Indicates whether or not to require a firewall.</summary>
         public bool? BrowserRequireFirewall {
             get { return BackingStore?.Get<bool?>("browserRequireFirewall"); }
@@ -176,10 +190,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userAccountControlSettings", value); }
         }
         /// <summary>The work folders url.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WorkFoldersUrl {
+            get { return BackingStore?.Get<string?>("workFoldersUrl"); }
+            set { BackingStore?.Set("workFoldersUrl", value); }
+        }
+#else
         public string WorkFoldersUrl {
             get { return BackingStore?.Get<string>("workFoldersUrl"); }
             set { BackingStore?.Set("workFoldersUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Windows81GeneralConfiguration and sets the default values.
         /// </summary>

@@ -22,25 +22,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The posting date of the update.</summary>
         public DateTimeOffset? PostingDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("postingDateTime"); }
             set { BackingStore?.Set("postingDateTime", value); }
         }
         /// <summary>The version of the update.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductVersion {
+            get { return BackingStore?.Get<string?>("productVersion"); }
+            set { BackingStore?.Set("productVersion", value); }
+        }
+#else
         public string ProductVersion {
             get { return BackingStore?.Get<string>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
+#endif
         /// <summary>List of supported devices for the update.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SupportedDevices {
+            get { return BackingStore?.Get<List<string>?>("supportedDevices"); }
+            set { BackingStore?.Set("supportedDevices", value); }
+        }
+#else
         public List<string> SupportedDevices {
             get { return BackingStore?.Get<List<string>>("supportedDevices"); }
             set { BackingStore?.Set("supportedDevices", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new iosAvailableUpdateVersion and sets the default values.
         /// </summary>

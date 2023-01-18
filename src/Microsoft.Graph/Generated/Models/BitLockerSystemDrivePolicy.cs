@@ -27,30 +27,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumPinLength", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Enable pre-boot recovery message and Url. If requireStartupAuthentication is false, this value does not affect.</summary>
         public bool? PrebootRecoveryEnableMessageAndUrl {
             get { return BackingStore?.Get<bool?>("prebootRecoveryEnableMessageAndUrl"); }
             set { BackingStore?.Set("prebootRecoveryEnableMessageAndUrl", value); }
         }
         /// <summary>Defines a custom recovery message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrebootRecoveryMessage {
+            get { return BackingStore?.Get<string?>("prebootRecoveryMessage"); }
+            set { BackingStore?.Set("prebootRecoveryMessage", value); }
+        }
+#else
         public string PrebootRecoveryMessage {
             get { return BackingStore?.Get<string>("prebootRecoveryMessage"); }
             set { BackingStore?.Set("prebootRecoveryMessage", value); }
         }
+#endif
         /// <summary>Defines a custom recovery URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrebootRecoveryUrl {
+            get { return BackingStore?.Get<string?>("prebootRecoveryUrl"); }
+            set { BackingStore?.Set("prebootRecoveryUrl", value); }
+        }
+#else
         public string PrebootRecoveryUrl {
             get { return BackingStore?.Get<string>("prebootRecoveryUrl"); }
             set { BackingStore?.Set("prebootRecoveryUrl", value); }
         }
+#endif
         /// <summary>Allows to recover BitLocker encrypted operating system drives in the absence of the required startup key information. This policy setting is applied when you turn on BitLocker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BitLockerRecoveryOptions? RecoveryOptions {
+            get { return BackingStore?.Get<BitLockerRecoveryOptions?>("recoveryOptions"); }
+            set { BackingStore?.Set("recoveryOptions", value); }
+        }
+#else
         public BitLockerRecoveryOptions RecoveryOptions {
             get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
+#endif
         /// <summary>Indicates whether to allow BitLocker without a compatible TPM (requires a password or a startup key on a USB flash drive).</summary>
         public bool? StartupAuthenticationBlockWithoutTpmChip {
             get { return BackingStore?.Get<bool?>("startupAuthenticationBlockWithoutTpmChip"); }

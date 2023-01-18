@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Ad
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentType {
+            get { return BackingStore?.Get<string?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#else
         public string ContentType {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new addCopyPostRequestBody and sets the default values.
         /// </summary>

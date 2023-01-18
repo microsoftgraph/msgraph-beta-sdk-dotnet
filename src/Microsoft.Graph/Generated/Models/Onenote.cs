@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Onenote : Entity, IParsable {
         /// <summary>The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Notebook>? Notebooks {
+            get { return BackingStore?.Get<List<Notebook>?>("notebooks"); }
+            set { BackingStore?.Set("notebooks", value); }
+        }
+#else
         public List<Notebook> Notebooks {
             get { return BackingStore?.Get<List<Notebook>>("notebooks"); }
             set { BackingStore?.Set("notebooks", value); }
         }
+#endif
         /// <summary>The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnenoteOperation>? Operations {
+            get { return BackingStore?.Get<List<OnenoteOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<OnenoteOperation> Operations {
             get { return BackingStore?.Get<List<OnenoteOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnenotePage>? Pages {
+            get { return BackingStore?.Get<List<OnenotePage>?>("pages"); }
+            set { BackingStore?.Set("pages", value); }
+        }
+#else
         public List<OnenotePage> Pages {
             get { return BackingStore?.Get<List<OnenotePage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
+#endif
         /// <summary>The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnenoteResource>? Resources {
+            get { return BackingStore?.Get<List<OnenoteResource>?>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#else
         public List<OnenoteResource> Resources {
             get { return BackingStore?.Get<List<OnenoteResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#endif
         /// <summary>The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SectionGroup>? SectionGroups {
+            get { return BackingStore?.Get<List<SectionGroup>?>("sectionGroups"); }
+            set { BackingStore?.Set("sectionGroups", value); }
+        }
+#else
         public List<SectionGroup> SectionGroups {
             get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
+#endif
         /// <summary>The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnenoteSection>? Sections {
+            get { return BackingStore?.Get<List<OnenoteSection>?>("sections"); }
+            set { BackingStore?.Set("sections", value); }
+        }
+#else
         public List<OnenoteSection> Sections {
             get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

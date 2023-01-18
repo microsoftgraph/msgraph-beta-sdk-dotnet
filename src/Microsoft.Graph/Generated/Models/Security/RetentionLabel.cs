@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("behaviorDuringRetentionPeriod", value); }
         }
         /// <summary>Represents the user who created the retentionLabel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>Represents the date and time in which the retentionLabel is created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -31,55 +38,111 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("defaultRecordBehavior", value); }
         }
         /// <summary>Provides label information for the admin. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DescriptionForAdmins {
+            get { return BackingStore?.Get<string?>("descriptionForAdmins"); }
+            set { BackingStore?.Set("descriptionForAdmins", value); }
+        }
+#else
         public string DescriptionForAdmins {
             get { return BackingStore?.Get<string>("descriptionForAdmins"); }
             set { BackingStore?.Set("descriptionForAdmins", value); }
         }
+#endif
         /// <summary>Provides the label information for the user. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DescriptionForUsers {
+            get { return BackingStore?.Get<string?>("descriptionForUsers"); }
+            set { BackingStore?.Set("descriptionForUsers", value); }
+        }
+#else
         public string DescriptionForUsers {
             get { return BackingStore?.Get<string>("descriptionForUsers"); }
             set { BackingStore?.Set("descriptionForUsers", value); }
         }
+#endif
         /// <summary>Unique string that defines a label name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Review stages during which reviewers are notified to determine whether a document must be deleted or retained.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DispositionReviewStage>? DispositionReviewStages {
+            get { return BackingStore?.Get<List<DispositionReviewStage>?>("dispositionReviewStages"); }
+            set { BackingStore?.Set("dispositionReviewStages", value); }
+        }
+#else
         public List<DispositionReviewStage> DispositionReviewStages {
             get { return BackingStore?.Get<List<DispositionReviewStage>>("dispositionReviewStages"); }
             set { BackingStore?.Set("dispositionReviewStages", value); }
         }
+#endif
         /// <summary>Specifies whether the label is currently being used.</summary>
         public bool? IsInUse {
             get { return BackingStore?.Get<bool?>("isInUse"); }
             set { BackingStore?.Set("isInUse", value); }
         }
         /// <summary>Specifies the replacement label to be applied automatically after the retention period of the current label ends.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LabelToBeApplied {
+            get { return BackingStore?.Get<string?>("labelToBeApplied"); }
+            set { BackingStore?.Set("labelToBeApplied", value); }
+        }
+#else
         public string LabelToBeApplied {
             get { return BackingStore?.Get<string>("labelToBeApplied"); }
             set { BackingStore?.Set("labelToBeApplied", value); }
         }
+#endif
         /// <summary>The user who last modified the retentionLabel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The latest date time when the retentionLabel was modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Specifies the number of days to retain the content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.RetentionDuration? RetentionDuration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionDuration?>("retentionDuration"); }
+            set { BackingStore?.Set("retentionDuration", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.RetentionDuration RetentionDuration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionDuration>("retentionDuration"); }
             set { BackingStore?.Set("retentionDuration", value); }
         }
+#endif
         /// <summary>The retentionEventType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.RetentionEventType? RetentionEventType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType?>("retentionEventType"); }
+            set { BackingStore?.Set("retentionEventType", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.RetentionEventType RetentionEventType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType>("retentionEventType"); }
             set { BackingStore?.Set("retentionEventType", value); }
         }
+#endif
         /// <summary>Specifies whether the retention duration is calculated from the content creation date, labeled date, or last modification date. The possible values are: dateLabeled, dateCreated, dateModified, dateOfEvent, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.RetentionTrigger? RetentionTrigger {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionTrigger?>("retentionTrigger"); }

@@ -9,20 +9,34 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceConfigurationGroupAssignment : Entity, IParsable {
         /// <summary>The navigation link to the Device Configuration being targeted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceConfiguration? DeviceConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfiguration?>("deviceConfiguration"); }
+            set { BackingStore?.Set("deviceConfiguration", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceConfiguration DeviceConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfiguration>("deviceConfiguration"); }
             set { BackingStore?.Set("deviceConfiguration", value); }
         }
+#endif
         /// <summary>Indicates if this group is should be excluded. Defaults that the group should be included</summary>
         public bool? ExcludeGroup {
             get { return BackingStore?.Get<bool?>("excludeGroup"); }
             set { BackingStore?.Set("excludeGroup", value); }
         }
         /// <summary>The Id of the AAD group we are targeting the device configuration to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetGroupId {
+            get { return BackingStore?.Get<string?>("targetGroupId"); }
+            set { BackingStore?.Set("targetGroupId", value); }
+        }
+#else
         public string TargetGroupId {
             get { return BackingStore?.Get<string>("targetGroupId"); }
             set { BackingStore?.Set("targetGroupId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

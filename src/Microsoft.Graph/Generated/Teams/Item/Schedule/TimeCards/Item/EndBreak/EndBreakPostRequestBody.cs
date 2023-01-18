@@ -20,10 +20,17 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The notes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Notes {
+            get { return BackingStore?.Get<ItemBody?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#else
         public ItemBody Notes {
             get { return BackingStore?.Get<ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new endBreakPostRequestBody and sets the default values.
         /// </summary>

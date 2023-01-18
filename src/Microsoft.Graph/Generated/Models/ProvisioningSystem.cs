@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ProvisioningSystem : Identity, IParsable {
         /// <summary>Details of the system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DetailsInfo? Details {
+            get { return BackingStore?.Get<DetailsInfo?>("details"); }
+            set { BackingStore?.Set("details", value); }
+        }
+#else
         public DetailsInfo Details {
             get { return BackingStore?.Get<DetailsInfo>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ProvisioningSystem and sets the default values.
         /// </summary>

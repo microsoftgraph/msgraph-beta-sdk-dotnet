@@ -6,50 +6,99 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationRubric : Entity, IParsable {
         /// <summary>The user who created this resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of this rubric.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationItemBody? Description {
+            get { return BackingStore?.Get<EducationItemBody?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public EducationItemBody Description {
             get { return BackingStore?.Get<EducationItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The name of this rubric.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationAssignmentGradeType? Grading {
+            get { return BackingStore?.Get<EducationAssignmentGradeType?>("grading"); }
+            set { BackingStore?.Set("grading", value); }
+        }
+#else
         public EducationAssignmentGradeType Grading {
             get { return BackingStore?.Get<EducationAssignmentGradeType>("grading"); }
             set { BackingStore?.Set("grading", value); }
         }
+#endif
         /// <summary>The last user to modify the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The collection of levels making up this rubric.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RubricLevel>? Levels {
+            get { return BackingStore?.Get<List<RubricLevel>?>("levels"); }
+            set { BackingStore?.Set("levels", value); }
+        }
+#else
         public List<RubricLevel> Levels {
             get { return BackingStore?.Get<List<RubricLevel>>("levels"); }
             set { BackingStore?.Set("levels", value); }
         }
+#endif
         /// <summary>The collection of qualities making up this rubric.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RubricQuality>? Qualities {
+            get { return BackingStore?.Get<List<RubricQuality>?>("qualities"); }
+            set { BackingStore?.Set("qualities", value); }
+        }
+#else
         public List<RubricQuality> Qualities {
             get { return BackingStore?.Get<List<RubricQuality>>("qualities"); }
             set { BackingStore?.Set("qualities", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

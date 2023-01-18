@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.count", value); }
         }
         /// <summary>The OdataNextLink property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataNextLink {
+            get { return BackingStore?.Get<string?>("@odata.nextLink"); }
+            set { BackingStore?.Set("@odata.nextLink", value); }
+        }
+#else
         public string OdataNextLink {
             get { return BackingStore?.Get<string>("@odata.nextLink"); }
             set { BackingStore?.Set("@odata.nextLink", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new BaseCollectionPaginationCountResponse and sets the default values.
         /// </summary>

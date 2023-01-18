@@ -14,55 +14,118 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The connectingIP property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectingIP {
+            get { return BackingStore?.Get<string?>("connectingIP"); }
+            set { BackingStore?.Set("connectingIP", value); }
+        }
+#else
         public string ConnectingIP {
             get { return BackingStore?.Get<string>("connectingIP"); }
             set { BackingStore?.Set("connectingIP", value); }
         }
+#endif
         /// <summary>The deliveryAction property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeliveryAction {
+            get { return BackingStore?.Get<string?>("deliveryAction"); }
+            set { BackingStore?.Set("deliveryAction", value); }
+        }
+#else
         public string DeliveryAction {
             get { return BackingStore?.Get<string>("deliveryAction"); }
             set { BackingStore?.Set("deliveryAction", value); }
         }
+#endif
         /// <summary>The deliveryLocation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeliveryLocation {
+            get { return BackingStore?.Get<string?>("deliveryLocation"); }
+            set { BackingStore?.Set("deliveryLocation", value); }
+        }
+#else
         public string DeliveryLocation {
             get { return BackingStore?.Get<string>("deliveryLocation"); }
             set { BackingStore?.Set("deliveryLocation", value); }
         }
+#endif
         /// <summary>The directionality property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Directionality {
+            get { return BackingStore?.Get<string?>("directionality"); }
+            set { BackingStore?.Set("directionality", value); }
+        }
+#else
         public string Directionality {
             get { return BackingStore?.Get<string>("directionality"); }
             set { BackingStore?.Set("directionality", value); }
         }
+#endif
         /// <summary>The internetMessageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InternetMessageId {
+            get { return BackingStore?.Get<string?>("internetMessageId"); }
+            set { BackingStore?.Set("internetMessageId", value); }
+        }
+#else
         public string InternetMessageId {
             get { return BackingStore?.Get<string>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
+#endif
         /// <summary>The messageFingerprint property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MessageFingerprint {
+            get { return BackingStore?.Get<string?>("messageFingerprint"); }
+            set { BackingStore?.Set("messageFingerprint", value); }
+        }
+#else
         public string MessageFingerprint {
             get { return BackingStore?.Get<string>("messageFingerprint"); }
             set { BackingStore?.Set("messageFingerprint", value); }
         }
+#endif
         /// <summary>The messageReceivedDateTime property</summary>
         public DateTimeOffset? MessageReceivedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("messageReceivedDateTime"); }
             set { BackingStore?.Set("messageReceivedDateTime", value); }
         }
         /// <summary>The messageSubject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MessageSubject {
+            get { return BackingStore?.Get<string?>("messageSubject"); }
+            set { BackingStore?.Set("messageSubject", value); }
+        }
+#else
         public string MessageSubject {
             get { return BackingStore?.Get<string>("messageSubject"); }
             set { BackingStore?.Set("messageSubject", value); }
         }
+#endif
         /// <summary>The networkMessageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkMessageId {
+            get { return BackingStore?.Get<string?>("networkMessageId"); }
+            set { BackingStore?.Set("networkMessageId", value); }
+        }
+#else
         public string NetworkMessageId {
             get { return BackingStore?.Get<string>("networkMessageId"); }
             set { BackingStore?.Set("networkMessageId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new messageSecurityState and sets the default values.
         /// </summary>

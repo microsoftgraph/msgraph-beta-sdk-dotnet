@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Users and groups of users that are excluded from being prompted to set up the authentication method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExcludeTarget>? ExcludeTargets {
+            get { return BackingStore?.Get<List<ExcludeTarget>?>("excludeTargets"); }
+            set { BackingStore?.Set("excludeTargets", value); }
+        }
+#else
         public List<ExcludeTarget> ExcludeTargets {
             get { return BackingStore?.Get<List<ExcludeTarget>>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
+#endif
         /// <summary>Users and groups of users that are prompted to set up the authentication method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationMethodsRegistrationCampaignIncludeTarget>? IncludeTargets {
+            get { return BackingStore?.Get<List<AuthenticationMethodsRegistrationCampaignIncludeTarget>?>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
+        }
+#else
         public List<AuthenticationMethodsRegistrationCampaignIncludeTarget> IncludeTargets {
             get { return BackingStore?.Get<List<AuthenticationMethodsRegistrationCampaignIncludeTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Specifies the number of days that the user sees a prompt again if they select &apos;Not now&apos; and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is &apos;0&apos; – The user is prompted during every MFA attempt.</summary>
         public int? SnoozeDurationInDays {
             get { return BackingStore?.Get<int?>("snoozeDurationInDays"); }

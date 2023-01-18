@@ -7,35 +7,70 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PersonAward : ItemFacet, IParsable {
         /// <summary>Descpription of the award or honor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Name of the award or honor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The date that the award or honor was granted.</summary>
         public Date? IssuedDate {
             get { return BackingStore?.Get<Date?>("issuedDate"); }
             set { BackingStore?.Set("issuedDate", value); }
         }
         /// <summary>Authority which granted the award or honor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IssuingAuthority {
+            get { return BackingStore?.Get<string?>("issuingAuthority"); }
+            set { BackingStore?.Set("issuingAuthority", value); }
+        }
+#else
         public string IssuingAuthority {
             get { return BackingStore?.Get<string>("issuingAuthority"); }
             set { BackingStore?.Set("issuingAuthority", value); }
         }
+#endif
         /// <summary>URL referencing a thumbnail of the award or honor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ThumbnailUrl {
+            get { return BackingStore?.Get<string?>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
+        }
+#else
         public string ThumbnailUrl {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
+#endif
         /// <summary>URL referencing the award or honor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PersonAward and sets the default values.
         /// </summary>

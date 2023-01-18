@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookRangeBorder : Entity, IParsable {
         /// <summary>HTML color code representing the color of the border line, of the form #RRGGBB (e.g. &apos;FFA500&apos;) or as a named HTML color (e.g. &apos;orange&apos;).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Color {
+            get { return BackingStore?.Get<string?>("color"); }
+            set { BackingStore?.Set("color", value); }
+        }
+#else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#endif
         /// <summary>Constant value that indicates the specific side of the border. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SideIndex {
+            get { return BackingStore?.Get<string?>("sideIndex"); }
+            set { BackingStore?.Set("sideIndex", value); }
+        }
+#else
         public string SideIndex {
             get { return BackingStore?.Get<string>("sideIndex"); }
             set { BackingStore?.Set("sideIndex", value); }
         }
+#endif
         /// <summary>One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Style {
+            get { return BackingStore?.Get<string?>("style"); }
+            set { BackingStore?.Set("style", value); }
+        }
+#else
         public string Style {
             get { return BackingStore?.Get<string>("style"); }
             set { BackingStore?.Set("style", value); }
         }
+#endif
         /// <summary>Specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Weight {
+            get { return BackingStore?.Get<string?>("weight"); }
+            set { BackingStore?.Set("weight", value); }
+        }
+#else
         public string Weight {
             get { return BackingStore?.Get<string>("weight"); }
             set { BackingStore?.Set("weight", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

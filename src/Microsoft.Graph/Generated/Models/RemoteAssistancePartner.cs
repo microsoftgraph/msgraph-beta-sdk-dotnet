@@ -4,12 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
+    /// </summary>
     public class RemoteAssistancePartner : Entity, IParsable {
         /// <summary>Display name of the partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Timestamp of the last request sent to Intune by the TEM partner.</summary>
         public DateTimeOffset? LastConnectionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastConnectionDateTime"); }
@@ -26,10 +36,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>URL of the partner&apos;s onboarding portal, where an administrator can configure their Remote Assistance service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnboardingUrl {
+            get { return BackingStore?.Get<string?>("onboardingUrl"); }
+            set { BackingStore?.Set("onboardingUrl", value); }
+        }
+#else
         public string OnboardingUrl {
             get { return BackingStore?.Get<string>("onboardingUrl"); }
             set { BackingStore?.Set("onboardingUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

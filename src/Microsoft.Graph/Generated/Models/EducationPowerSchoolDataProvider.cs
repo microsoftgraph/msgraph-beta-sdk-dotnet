@@ -11,35 +11,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowTeachersInMultipleSchools", value); }
         }
         /// <summary>The client ID used to connect to PowerSchool.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientId {
+            get { return BackingStore?.Get<string?>("clientId"); }
+            set { BackingStore?.Set("clientId", value); }
+        }
+#else
         public string ClientId {
             get { return BackingStore?.Get<string>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
+#endif
         /// <summary>The client secret to authenticate the connection to the PowerSchool instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientSecret {
+            get { return BackingStore?.Get<string?>("clientSecret"); }
+            set { BackingStore?.Set("clientSecret", value); }
+        }
+#else
         public string ClientSecret {
             get { return BackingStore?.Get<string>("clientSecret"); }
             set { BackingStore?.Set("clientSecret", value); }
         }
+#endif
         /// <summary>The connection URL to the PowerSchool instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectionUrl {
+            get { return BackingStore?.Get<string?>("connectionUrl"); }
+            set { BackingStore?.Set("connectionUrl", value); }
+        }
+#else
         public string ConnectionUrl {
             get { return BackingStore?.Get<string>("connectionUrl"); }
             set { BackingStore?.Set("connectionUrl", value); }
         }
+#endif
         /// <summary>Optional customization to be applied to the synchronization profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationSynchronizationCustomizations? Customizations {
+            get { return BackingStore?.Get<EducationSynchronizationCustomizations?>("customizations"); }
+            set { BackingStore?.Set("customizations", value); }
+        }
+#else
         public EducationSynchronizationCustomizations Customizations {
             get { return BackingStore?.Get<EducationSynchronizationCustomizations>("customizations"); }
             set { BackingStore?.Set("customizations", value); }
         }
+#endif
         /// <summary>The list of schools to sync.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SchoolsIds {
+            get { return BackingStore?.Get<List<string>?>("schoolsIds"); }
+            set { BackingStore?.Set("schoolsIds", value); }
+        }
+#else
         public List<string> SchoolsIds {
             get { return BackingStore?.Get<List<string>>("schoolsIds"); }
             set { BackingStore?.Set("schoolsIds", value); }
         }
+#endif
         /// <summary>The school year to sync.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SchoolYear {
+            get { return BackingStore?.Get<string?>("schoolYear"); }
+            set { BackingStore?.Set("schoolYear", value); }
+        }
+#else
         public string SchoolYear {
             get { return BackingStore?.Get<string>("schoolYear"); }
             set { BackingStore?.Set("schoolYear", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationPowerSchoolDataProvider and sets the default values.
         /// </summary>

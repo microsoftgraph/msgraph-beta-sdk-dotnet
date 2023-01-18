@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The newTemplateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NewTemplateId {
+            get { return BackingStore?.Get<string?>("newTemplateId"); }
+            set { BackingStore?.Set("newTemplateId", value); }
+        }
+#else
         public string NewTemplateId {
             get { return BackingStore?.Get<string>("newTemplateId"); }
             set { BackingStore?.Set("newTemplateId", value); }
         }
+#endif
         /// <summary>The preserveCustomValues property</summary>
         public bool? PreserveCustomValues {
             get { return BackingStore?.Get<bool?>("preserveCustomValues"); }

@@ -15,25 +15,53 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentClassifications property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ContentClassification>? ContentClassifications {
+            get { return BackingStore?.Get<List<ContentClassification>?>("contentClassifications"); }
+            set { BackingStore?.Set("contentClassifications", value); }
+        }
+#else
         public List<ContentClassification> ContentClassifications {
             get { return BackingStore?.Get<List<ContentClassification>>("contentClassifications"); }
             set { BackingStore?.Set("contentClassifications", value); }
         }
+#endif
         /// <summary>The sensitiveTypeIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SensitiveTypeIds {
+            get { return BackingStore?.Get<List<string>?>("sensitiveTypeIds"); }
+            set { BackingStore?.Set("sensitiveTypeIds", value); }
+        }
+#else
         public List<string> SensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
+#endif
         /// <summary>The text property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Text {
+            get { return BackingStore?.Get<string?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>The timeoutInMs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeoutInMs {
+            get { return BackingStore?.Get<string?>("timeoutInMs"); }
+            set { BackingStore?.Set("timeoutInMs", value); }
+        }
+#else
         public string TimeoutInMs {
             get { return BackingStore?.Get<string>("timeoutInMs"); }
             set { BackingStore?.Set("timeoutInMs", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new classifyExactMatchesPostRequestBody and sets the default values.
         /// </summary>

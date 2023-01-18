@@ -9,30 +9,51 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class SecurityBaselineDeviceState : Entity, IParsable {
         /// <summary>Display name of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceDisplayName {
+            get { return BackingStore?.Get<string?>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
+        }
+#else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#endif
         /// <summary>Last modified date time of the policy report</summary>
         public DateTimeOffset? LastReportedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>Intune device id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>Security Baseline Compliance State</summary>
         public SecurityBaselineComplianceState? State {
             get { return BackingStore?.Get<SecurityBaselineComplianceState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User Principal Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

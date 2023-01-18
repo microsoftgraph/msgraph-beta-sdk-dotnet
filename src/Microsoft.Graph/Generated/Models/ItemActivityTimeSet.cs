@@ -24,10 +24,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("observedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>When the observation was recorded on the service.</summary>
         public DateTimeOffset? RecordedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("recordedDateTime"); }

@@ -4,12 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics metric for work from anywhere report
+    /// </summary>
     public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable {
         /// <summary>The work from anywhere metric devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserExperienceAnalyticsWorkFromAnywhereDevice>? MetricDevices {
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>?>("metricDevices"); }
+            set { BackingStore?.Set("metricDevices", value); }
+        }
+#else
         public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>>("metricDevices"); }
             set { BackingStore?.Set("metricDevices", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

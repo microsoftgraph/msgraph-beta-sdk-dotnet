@@ -4,32 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// CartToClassAssociation for associating device carts with classrooms.
+    /// </summary>
     public class CartToClassAssociation : Entity, IParsable {
         /// <summary>Identifiers of classrooms to be associated with device carts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ClassroomIds {
+            get { return BackingStore?.Get<List<string>?>("classroomIds"); }
+            set { BackingStore?.Set("classroomIds", value); }
+        }
+#else
         public List<string> ClassroomIds {
             get { return BackingStore?.Get<List<string>>("classroomIds"); }
             set { BackingStore?.Set("classroomIds", value); }
         }
+#endif
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the CartToClassAssociation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Identifiers of device carts to be associated with classes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DeviceCartIds {
+            get { return BackingStore?.Get<List<string>?>("deviceCartIds"); }
+            set { BackingStore?.Set("deviceCartIds", value); }
+        }
+#else
         public List<string> DeviceCartIds {
             get { return BackingStore?.Get<List<string>>("deviceCartIds"); }
             set { BackingStore?.Set("deviceCartIds", value); }
         }
+#endif
         /// <summary>Admin provided name of the device configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class AzureADDevice : UpdatableAsset, IParsable {
         /// <summary>Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAssetEnrollment>? Enrollments {
+            get { return BackingStore?.Get<List<UpdatableAssetEnrollment>?>("enrollments"); }
+            set { BackingStore?.Set("enrollments", value); }
+        }
+#else
         public List<UpdatableAssetEnrollment> Enrollments {
             get { return BackingStore?.Get<List<UpdatableAssetEnrollment>>("enrollments"); }
             set { BackingStore?.Set("enrollments", value); }
         }
+#endif
         /// <summary>Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAssetError>? Errors {
+            get { return BackingStore?.Get<List<UpdatableAssetError>?>("errors"); }
+            set { BackingStore?.Set("errors", value); }
+        }
+#else
         public List<UpdatableAssetError> Errors {
             get { return BackingStore?.Get<List<UpdatableAssetError>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AzureADDevice and sets the default values.
         /// </summary>

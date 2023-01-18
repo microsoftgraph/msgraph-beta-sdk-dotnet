@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>User who did the grading.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? GradedBy {
+            get { return BackingStore?.Get<IdentitySet?>("gradedBy"); }
+            set { BackingStore?.Set("gradedBy", value); }
+        }
+#else
         public IdentitySet GradedBy {
             get { return BackingStore?.Get<IdentitySet>("gradedBy"); }
             set { BackingStore?.Set("gradedBy", value); }
         }
+#endif
         /// <summary>Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? GradedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("gradedDateTime"); }
             set { BackingStore?.Set("gradedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new educationAssignmentGrade and sets the default values.
         /// </summary>

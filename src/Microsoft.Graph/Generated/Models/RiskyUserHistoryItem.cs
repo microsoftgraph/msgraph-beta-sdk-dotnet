@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RiskyUserHistoryItem : RiskyUser, IParsable {
         /// <summary>The activity related to user risk level change.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RiskUserActivity? Activity {
+            get { return BackingStore?.Get<RiskUserActivity?>("activity"); }
+            set { BackingStore?.Set("activity", value); }
+        }
+#else
         public RiskUserActivity Activity {
             get { return BackingStore?.Get<RiskUserActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#endif
         /// <summary>The ID of actor that does the operation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InitiatedBy {
+            get { return BackingStore?.Get<string?>("initiatedBy"); }
+            set { BackingStore?.Set("initiatedBy", value); }
+        }
+#else
         public string InitiatedBy {
             get { return BackingStore?.Get<string>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
+#endif
         /// <summary>The ID of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Fido2CombinationConfiguration : AuthenticationCombinationConfiguration, IParsable {
         /// <summary>A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedAAGUIDs {
+            get { return BackingStore?.Get<List<string>?>("allowedAAGUIDs"); }
+            set { BackingStore?.Set("allowedAAGUIDs", value); }
+        }
+#else
         public List<string> AllowedAAGUIDs {
             get { return BackingStore?.Get<List<string>>("allowedAAGUIDs"); }
             set { BackingStore?.Set("allowedAAGUIDs", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Fido2CombinationConfiguration and sets the default values.
         /// </summary>

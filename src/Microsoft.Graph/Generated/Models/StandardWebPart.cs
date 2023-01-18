@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class StandardWebPart : WebPart, IParsable {
         /// <summary>Data of the webPart.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WebPartData? Data {
+            get { return BackingStore?.Get<WebPartData?>("data"); }
+            set { BackingStore?.Set("data", value); }
+        }
+#else
         public WebPartData Data {
             get { return BackingStore?.Get<WebPartData>("data"); }
             set { BackingStore?.Set("data", value); }
         }
+#endif
         /// <summary>A Guid which indicates the type of the webParts</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebPartType {
+            get { return BackingStore?.Get<string?>("webPartType"); }
+            set { BackingStore?.Set("webPartType", value); }
+        }
+#else
         public string WebPartType {
             get { return BackingStore?.Get<string>("webPartType"); }
             set { BackingStore?.Set("webPartType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new StandardWebPart and sets the default values.
         /// </summary>

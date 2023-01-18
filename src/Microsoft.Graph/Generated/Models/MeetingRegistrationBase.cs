@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedRegistrant", value); }
         }
         /// <summary>Registrants of the online meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MeetingRegistrantBase>? Registrants {
+            get { return BackingStore?.Get<List<MeetingRegistrantBase>?>("registrants"); }
+            set { BackingStore?.Set("registrants", value); }
+        }
+#else
         public List<MeetingRegistrantBase> Registrants {
             get { return BackingStore?.Get<List<MeetingRegistrantBase>>("registrants"); }
             set { BackingStore?.Set("registrants", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

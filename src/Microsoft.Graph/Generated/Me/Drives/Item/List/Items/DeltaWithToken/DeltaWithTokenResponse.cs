@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Drives.Item.List.Items.DeltaWithToken {
     public class DeltaWithTokenResponse : BaseDeltaFunctionResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ListItem>? Value {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ListItem>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ListItem> Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ListItem>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

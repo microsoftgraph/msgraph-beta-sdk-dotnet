@@ -8,10 +8,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.Calls.Item.Answer {
     public class AnswerPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The acceptedModalities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Modality?>? AcceptedModalities {
+            get { return BackingStore?.Get<List<Modality?>?>("acceptedModalities"); }
+            set { BackingStore?.Set("acceptedModalities", value); }
+        }
+#else
         public List<Modality?> AcceptedModalities {
             get { return BackingStore?.Get<List<Modality?>>("acceptedModalities"); }
             set { BackingStore?.Set("acceptedModalities", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -20,20 +27,41 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Answer {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callbackUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CallbackUri {
+            get { return BackingStore?.Get<string?>("callbackUri"); }
+            set { BackingStore?.Set("callbackUri", value); }
+        }
+#else
         public string CallbackUri {
             get { return BackingStore?.Get<string>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
+#endif
         /// <summary>The callOptions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IncomingCallOptions? CallOptions {
+            get { return BackingStore?.Get<IncomingCallOptions?>("callOptions"); }
+            set { BackingStore?.Set("callOptions", value); }
+        }
+#else
         public IncomingCallOptions CallOptions {
             get { return BackingStore?.Get<IncomingCallOptions>("callOptions"); }
             set { BackingStore?.Set("callOptions", value); }
         }
+#endif
         /// <summary>The mediaConfig property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaConfig? MediaConfig {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaConfig?>("mediaConfig"); }
+            set { BackingStore?.Set("mediaConfig", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaConfig MediaConfig {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaConfig>("mediaConfig"); }
             set { BackingStore?.Set("mediaConfig", value); }
         }
+#endif
         /// <summary>The participantCapacity property</summary>
         public int? ParticipantCapacity {
             get { return BackingStore?.Get<int?>("participantCapacity"); }

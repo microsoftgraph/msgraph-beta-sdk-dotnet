@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The collection of criteria for this rubric quality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RubricCriterion>? Criteria {
+            get { return BackingStore?.Get<List<RubricCriterion>?>("criteria"); }
+            set { BackingStore?.Set("criteria", value); }
+        }
+#else
         public List<RubricCriterion> Criteria {
             get { return BackingStore?.Get<List<RubricCriterion>>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
+#endif
         /// <summary>The description of this rubric quality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationItemBody? Description {
+            get { return BackingStore?.Get<EducationItemBody?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public EducationItemBody Description {
             get { return BackingStore?.Get<EducationItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The name of this rubric quality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The ID of this resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QualityId {
+            get { return BackingStore?.Get<string?>("qualityId"); }
+            set { BackingStore?.Set("qualityId", value); }
+        }
+#else
         public string QualityId {
             get { return BackingStore?.Get<string>("qualityId"); }
             set { BackingStore?.Set("qualityId", value); }
         }
+#endif
         /// <summary>If present, a numerical weight for this quality.  Weights must add up to 100.</summary>
         public float? Weight {
             get { return BackingStore?.Get<float?>("weight"); }

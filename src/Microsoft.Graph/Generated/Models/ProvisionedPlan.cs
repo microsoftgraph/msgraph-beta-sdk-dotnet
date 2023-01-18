@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>For example, &apos;Enabled&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CapabilityStatus {
+            get { return BackingStore?.Get<string?>("capabilityStatus"); }
+            set { BackingStore?.Set("capabilityStatus", value); }
+        }
+#else
         public string CapabilityStatus {
             get { return BackingStore?.Get<string>("capabilityStatus"); }
             set { BackingStore?.Set("capabilityStatus", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>For example, &apos;Success&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProvisioningStatus {
+            get { return BackingStore?.Get<string?>("provisioningStatus"); }
+            set { BackingStore?.Set("provisioningStatus", value); }
+        }
+#else
         public string ProvisioningStatus {
             get { return BackingStore?.Get<string>("provisioningStatus"); }
             set { BackingStore?.Set("provisioningStatus", value); }
         }
+#endif
         /// <summary>The name of the service; for example, &apos;AccessControlS2S&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Service {
+            get { return BackingStore?.Get<string?>("service"); }
+            set { BackingStore?.Set("service", value); }
+        }
+#else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new provisionedPlan and sets the default values.
         /// </summary>

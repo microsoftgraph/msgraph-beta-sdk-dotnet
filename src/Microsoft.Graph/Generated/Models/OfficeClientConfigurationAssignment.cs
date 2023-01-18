@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OfficeClientConfigurationAssignment : Entity, IParsable {
         /// <summary>The target assignment defined by the admin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OfficeConfigurationAssignmentTarget? Target {
+            get { return BackingStore?.Get<OfficeConfigurationAssignmentTarget?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public OfficeConfigurationAssignmentTarget Target {
             get { return BackingStore?.Get<OfficeConfigurationAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

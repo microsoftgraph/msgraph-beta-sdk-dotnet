@@ -17,15 +17,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("endMonthYear", value); }
         }
         /// <summary>The institution property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public InstitutionData? Institution {
+            get { return BackingStore?.Get<InstitutionData?>("institution"); }
+            set { BackingStore?.Set("institution", value); }
+        }
+#else
         public InstitutionData Institution {
             get { return BackingStore?.Get<InstitutionData>("institution"); }
             set { BackingStore?.Set("institution", value); }
         }
+#endif
         /// <summary>The program property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationalActivityDetail? Program {
+            get { return BackingStore?.Get<EducationalActivityDetail?>("program"); }
+            set { BackingStore?.Set("program", value); }
+        }
+#else
         public EducationalActivityDetail Program {
             get { return BackingStore?.Get<EducationalActivityDetail>("program"); }
             set { BackingStore?.Set("program", value); }
         }
+#endif
         /// <summary>The month and year the user commenced the activity referenced.</summary>
         public Date? StartMonthYear {
             get { return BackingStore?.Get<Date?>("startMonthYear"); }

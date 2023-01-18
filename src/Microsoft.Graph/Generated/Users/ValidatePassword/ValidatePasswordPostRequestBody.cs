@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Users.ValidatePassword {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The password property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Password {
+            get { return BackingStore?.Get<string?>("password"); }
+            set { BackingStore?.Set("password", value); }
+        }
+#else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new validatePasswordPostRequestBody and sets the default values.
         /// </summary>

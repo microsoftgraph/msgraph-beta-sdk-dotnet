@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Process : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccountName {
+            get { return BackingStore?.Get<string?>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
+        }
+#else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -19,20 +26,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The full process invocation commandline including all parameters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CommandLine {
+            get { return BackingStore?.Get<string?>("commandLine"); }
+            set { BackingStore?.Set("commandLine", value); }
+        }
+#else
         public string CommandLine {
             get { return BackingStore?.Get<string>("commandLine"); }
             set { BackingStore?.Set("commandLine", value); }
         }
+#endif
         /// <summary>Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Complex type containing file hashes (cryptographic and location-sensitive).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.FileHash? FileHash {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileHash?>("fileHash"); }
+            set { BackingStore?.Set("fileHash", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.FileHash FileHash {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileHash>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
+#endif
         /// <summary>The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.</summary>
         public ProcessIntegrityLevel? IntegrityLevel {
             get { return BackingStore?.Get<ProcessIntegrityLevel?>("integrityLevel"); }
@@ -44,15 +65,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isElevated", value); }
         }
         /// <summary>The name of the process&apos; Image file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ParentProcessCreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("parentProcessCreatedDateTime"); }
@@ -64,15 +99,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("parentProcessId", value); }
         }
         /// <summary>The name of the image file of the parent process.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentProcessName {
+            get { return BackingStore?.Get<string?>("parentProcessName"); }
+            set { BackingStore?.Set("parentProcessName", value); }
+        }
+#else
         public string ParentProcessName {
             get { return BackingStore?.Get<string>("parentProcessName"); }
             set { BackingStore?.Set("parentProcessName", value); }
         }
+#endif
         /// <summary>Full path, including filename.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Path {
+            get { return BackingStore?.Get<string?>("path"); }
+            set { BackingStore?.Set("path", value); }
+        }
+#else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#endif
         /// <summary>The Process ID (PID) of the process.</summary>
         public int? ProcessId {
             get { return BackingStore?.Get<int?>("processId"); }

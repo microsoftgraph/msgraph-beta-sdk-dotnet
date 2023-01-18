@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicyEnablementRule : UnifiedRoleManagementPolicyRule, IParsable {
         /// <summary>The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EnabledRules {
+            get { return BackingStore?.Get<List<string>?>("enabledRules"); }
+            set { BackingStore?.Set("enabledRules", value); }
+        }
+#else
         public List<string> EnabledRules {
             get { return BackingStore?.Get<List<string>>("enabledRules"); }
             set { BackingStore?.Set("enabledRules", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new UnifiedRoleManagementPolicyEnablementRule and sets the default values.
         /// </summary>

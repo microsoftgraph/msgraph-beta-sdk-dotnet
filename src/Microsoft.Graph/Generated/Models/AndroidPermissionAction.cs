@@ -22,15 +22,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Android permission string, defined in the official Android documentation.  Example &apos;android.permission.READ_CONTACTS&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Permission {
+            get { return BackingStore?.Get<string?>("permission"); }
+            set { BackingStore?.Set("permission", value); }
+        }
+#else
         public string Permission {
             get { return BackingStore?.Get<string>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new androidPermissionAction and sets the default values.
         /// </summary>

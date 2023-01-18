@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics device startup history entity contains device boot performance history details.
+    /// </summary>
     public class UserExperienceAnalyticsDeviceStartupHistory : Entity, IParsable {
         /// <summary>The user experience analytics device core boot time in milliseconds.</summary>
         public int? CoreBootTimeInMs {
@@ -16,10 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("coreLoginTimeInMs", value); }
         }
         /// <summary>The user experience analytics device id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The user experience analytics device feature update time in milliseconds.</summary>
         public int? FeatureUpdateBootTimeInMs {
             get { return BackingStore?.Get<int?>("featureUpdateBootTimeInMs"); }
@@ -46,10 +56,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isFirstLogin", value); }
         }
         /// <summary>The user experience analytics device boot record&apos;s operating system version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystemVersion {
+            get { return BackingStore?.Get<string?>("operatingSystemVersion"); }
+            set { BackingStore?.Set("operatingSystemVersion", value); }
+        }
+#else
         public string OperatingSystemVersion {
             get { return BackingStore?.Get<string>("operatingSystemVersion"); }
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
+#endif
         /// <summary>The user experience analytics responsive desktop time in milliseconds.</summary>
         public int? ResponsiveDesktopTimeInMs {
             get { return BackingStore?.Get<int?>("responsiveDesktopTimeInMs"); }
@@ -61,15 +78,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("restartCategory", value); }
         }
         /// <summary>OS restart fault bucket. The fault bucket is used to find additional information about a system crash.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RestartFaultBucket {
+            get { return BackingStore?.Get<string?>("restartFaultBucket"); }
+            set { BackingStore?.Set("restartFaultBucket", value); }
+        }
+#else
         public string RestartFaultBucket {
             get { return BackingStore?.Get<string>("restartFaultBucket"); }
             set { BackingStore?.Set("restartFaultBucket", value); }
         }
+#endif
         /// <summary>OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RestartStopCode {
+            get { return BackingStore?.Get<string?>("restartStopCode"); }
+            set { BackingStore?.Set("restartStopCode", value); }
+        }
+#else
         public string RestartStopCode {
             get { return BackingStore?.Get<string>("restartStopCode"); }
             set { BackingStore?.Set("restartStopCode", value); }
         }
+#endif
         /// <summary>The user experience analytics device boot start time.</summary>
         public DateTimeOffset? StartTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startTime"); }

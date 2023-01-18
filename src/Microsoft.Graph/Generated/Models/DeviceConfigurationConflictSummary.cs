@@ -4,17 +4,34 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Conflict summary for a set of device configuration policies.
+    /// </summary>
     public class DeviceConfigurationConflictSummary : Entity, IParsable {
         /// <summary>The set of policies in conflict with the given setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SettingSource>? ConflictingDeviceConfigurations {
+            get { return BackingStore?.Get<List<SettingSource>?>("conflictingDeviceConfigurations"); }
+            set { BackingStore?.Set("conflictingDeviceConfigurations", value); }
+        }
+#else
         public List<SettingSource> ConflictingDeviceConfigurations {
             get { return BackingStore?.Get<List<SettingSource>>("conflictingDeviceConfigurations"); }
             set { BackingStore?.Set("conflictingDeviceConfigurations", value); }
         }
+#endif
         /// <summary>The set of settings in conflict with the given policies</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ContributingSettings {
+            get { return BackingStore?.Get<List<string>?>("contributingSettings"); }
+            set { BackingStore?.Set("contributingSettings", value); }
+        }
+#else
         public List<string> ContributingSettings {
             get { return BackingStore?.Get<List<string>>("contributingSettings"); }
             set { BackingStore?.Set("contributingSettings", value); }
         }
+#endif
         /// <summary>The count of checkins impacted by the conflicting policies and settings</summary>
         public int? DeviceCheckinsImpacted {
             get { return BackingStore?.Get<int?>("deviceCheckinsImpacted"); }

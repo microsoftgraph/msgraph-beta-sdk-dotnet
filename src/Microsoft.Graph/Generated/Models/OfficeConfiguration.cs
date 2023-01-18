@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of office Client configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OfficeClientConfiguration>? ClientConfigurations {
+            get { return BackingStore?.Get<List<OfficeClientConfiguration>?>("clientConfigurations"); }
+            set { BackingStore?.Set("clientConfigurations", value); }
+        }
+#else
         public List<OfficeClientConfiguration> ClientConfigurations {
             get { return BackingStore?.Get<List<OfficeClientConfiguration>>("clientConfigurations"); }
             set { BackingStore?.Set("clientConfigurations", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>List of office Client check-in status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OfficeClientCheckinStatus>? TenantCheckinStatuses {
+            get { return BackingStore?.Get<List<OfficeClientCheckinStatus>?>("tenantCheckinStatuses"); }
+            set { BackingStore?.Set("tenantCheckinStatuses", value); }
+        }
+#else
         public List<OfficeClientCheckinStatus> TenantCheckinStatuses {
             get { return BackingStore?.Get<List<OfficeClientCheckinStatus>>("tenantCheckinStatuses"); }
             set { BackingStore?.Set("tenantCheckinStatuses", value); }
         }
+#endif
         /// <summary>Entity that describes tenant check-in statues</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OfficeUserCheckinSummary? TenantUserCheckinSummary {
+            get { return BackingStore?.Get<OfficeUserCheckinSummary?>("tenantUserCheckinSummary"); }
+            set { BackingStore?.Set("tenantUserCheckinSummary", value); }
+        }
+#else
         public OfficeUserCheckinSummary TenantUserCheckinSummary {
             get { return BackingStore?.Get<OfficeUserCheckinSummary>("tenantUserCheckinSummary"); }
             set { BackingStore?.Set("tenantUserCheckinSummary", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OfficeConfiguration and sets the default values.
         /// </summary>

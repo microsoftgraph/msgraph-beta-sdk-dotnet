@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Groups.EvaluateDynamicMembership {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The memberId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MemberId {
+            get { return BackingStore?.Get<string?>("memberId"); }
+            set { BackingStore?.Set("memberId", value); }
+        }
+#else
         public string MemberId {
             get { return BackingStore?.Get<string>("memberId"); }
             set { BackingStore?.Set("memberId", value); }
         }
+#endif
         /// <summary>The membershipRule property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MembershipRule {
+            get { return BackingStore?.Get<string?>("membershipRule"); }
+            set { BackingStore?.Set("membershipRule", value); }
+        }
+#else
         public string MembershipRule {
             get { return BackingStore?.Get<string>("membershipRule"); }
             set { BackingStore?.Set("membershipRule", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new evaluateDynamicMembershipPostRequestBody and sets the default values.
         /// </summary>

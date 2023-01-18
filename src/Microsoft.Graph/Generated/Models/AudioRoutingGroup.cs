@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AudioRoutingGroup : Entity, IParsable {
         /// <summary>List of receiving participant ids.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Receivers {
+            get { return BackingStore?.Get<List<string>?>("receivers"); }
+            set { BackingStore?.Set("receivers", value); }
+        }
+#else
         public List<string> Receivers {
             get { return BackingStore?.Get<List<string>>("receivers"); }
             set { BackingStore?.Set("receivers", value); }
         }
+#endif
         /// <summary>The routingMode property</summary>
         public Microsoft.Graph.Beta.Models.RoutingMode? RoutingMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoutingMode?>("routingMode"); }
             set { BackingStore?.Set("routingMode", value); }
         }
         /// <summary>List of source participant ids.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Sources {
+            get { return BackingStore?.Get<List<string>?>("sources"); }
+            set { BackingStore?.Set("sources", value); }
+        }
+#else
         public List<string> Sources {
             get { return BackingStore?.Get<List<string>>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

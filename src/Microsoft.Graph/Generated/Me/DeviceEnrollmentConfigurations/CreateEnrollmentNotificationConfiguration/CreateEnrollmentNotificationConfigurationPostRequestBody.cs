@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.CreateEnrollmen
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceEnrollmentNotificationConfigurations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceEnrollmentConfiguration>? DeviceEnrollmentNotificationConfigurations {
+            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>?>("deviceEnrollmentNotificationConfigurations"); }
+            set { BackingStore?.Set("deviceEnrollmentNotificationConfigurations", value); }
+        }
+#else
         public List<DeviceEnrollmentConfiguration> DeviceEnrollmentNotificationConfigurations {
             get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>("deviceEnrollmentNotificationConfigurations"); }
             set { BackingStore?.Set("deviceEnrollmentNotificationConfigurations", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new createEnrollmentNotificationConfigurationPostRequestBody and sets the default values.
         /// </summary>

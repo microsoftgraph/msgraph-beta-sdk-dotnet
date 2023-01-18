@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SamlOrWsFedExternalDomainFederation : SamlOrWsFedProvider, IParsable {
         /// <summary>Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExternalDomainName>? Domains {
+            get { return BackingStore?.Get<List<ExternalDomainName>?>("domains"); }
+            set { BackingStore?.Set("domains", value); }
+        }
+#else
         public List<ExternalDomainName> Domains {
             get { return BackingStore?.Get<List<ExternalDomainName>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new SamlOrWsFedExternalDomainFederation and sets the default values.
         /// </summary>

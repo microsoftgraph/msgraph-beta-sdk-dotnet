@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class B2xIdentityUserFlow : IdentityUserFlow, IParsable {
         /// <summary>Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserFlowApiConnectorConfiguration? ApiConnectorConfiguration {
+            get { return BackingStore?.Get<UserFlowApiConnectorConfiguration?>("apiConnectorConfiguration"); }
+            set { BackingStore?.Set("apiConnectorConfiguration", value); }
+        }
+#else
         public UserFlowApiConnectorConfiguration ApiConnectorConfiguration {
             get { return BackingStore?.Get<UserFlowApiConnectorConfiguration>("apiConnectorConfiguration"); }
             set { BackingStore?.Set("apiConnectorConfiguration", value); }
         }
+#endif
         /// <summary>The identityProviders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentityProvider>? IdentityProviders {
+            get { return BackingStore?.Get<List<IdentityProvider>?>("identityProviders"); }
+            set { BackingStore?.Set("identityProviders", value); }
+        }
+#else
         public List<IdentityProvider> IdentityProviders {
             get { return BackingStore?.Get<List<IdentityProvider>>("identityProviders"); }
             set { BackingStore?.Set("identityProviders", value); }
         }
+#endif
         /// <summary>The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserFlowLanguageConfiguration>? Languages {
+            get { return BackingStore?.Get<List<UserFlowLanguageConfiguration>?>("languages"); }
+            set { BackingStore?.Set("languages", value); }
+        }
+#else
         public List<UserFlowLanguageConfiguration> Languages {
             get { return BackingStore?.Get<List<UserFlowLanguageConfiguration>>("languages"); }
             set { BackingStore?.Set("languages", value); }
         }
+#endif
         /// <summary>The user attribute assignments included in the user flow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentityUserFlowAttributeAssignment>? UserAttributeAssignments {
+            get { return BackingStore?.Get<List<IdentityUserFlowAttributeAssignment>?>("userAttributeAssignments"); }
+            set { BackingStore?.Set("userAttributeAssignments", value); }
+        }
+#else
         public List<IdentityUserFlowAttributeAssignment> UserAttributeAssignments {
             get { return BackingStore?.Get<List<IdentityUserFlowAttributeAssignment>>("userAttributeAssignments"); }
             set { BackingStore?.Set("userAttributeAssignments", value); }
         }
+#endif
         /// <summary>The userFlowIdentityProviders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentityProviderBase>? UserFlowIdentityProviders {
+            get { return BackingStore?.Get<List<IdentityProviderBase>?>("userFlowIdentityProviders"); }
+            set { BackingStore?.Set("userFlowIdentityProviders", value); }
+        }
+#else
         public List<IdentityProviderBase> UserFlowIdentityProviders {
             get { return BackingStore?.Get<List<IdentityProviderBase>>("userFlowIdentityProviders"); }
             set { BackingStore?.Set("userFlowIdentityProviders", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

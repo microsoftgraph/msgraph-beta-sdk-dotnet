@@ -37,10 +37,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("blockDeviceSetupRetryByUser", value); }
         }
         /// <summary>Set custom error message to show upon installation failure</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomErrorMessage {
+            get { return BackingStore?.Get<string?>("customErrorMessage"); }
+            set { BackingStore?.Set("customErrorMessage", value); }
+        }
+#else
         public string CustomErrorMessage {
             get { return BackingStore?.Get<string>("customErrorMessage"); }
             set { BackingStore?.Set("customErrorMessage", value); }
         }
+#endif
         /// <summary>Show or hide installation progress to user</summary>
         public bool? HideInstallationProgress {
             get { return BackingStore?.Get<bool?>("hideInstallationProgress"); }
@@ -52,10 +59,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("installProgressTimeoutInMinutes", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new windowsEnrollmentStatusScreenSettings and sets the default values.
         /// </summary>

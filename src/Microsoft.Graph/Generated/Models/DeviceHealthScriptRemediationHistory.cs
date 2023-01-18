@@ -17,20 +17,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of devices remediated by the device health script on the given date.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceHealthScriptRemediationHistoryData>? HistoryData {
+            get { return BackingStore?.Get<List<DeviceHealthScriptRemediationHistoryData>?>("historyData"); }
+            set { BackingStore?.Set("historyData", value); }
+        }
+#else
         public List<DeviceHealthScriptRemediationHistoryData> HistoryData {
             get { return BackingStore?.Get<List<DeviceHealthScriptRemediationHistoryData>>("historyData"); }
             set { BackingStore?.Set("historyData", value); }
         }
+#endif
         /// <summary>The date on which the results history is calculated for the healthscript.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceHealthScriptRemediationHistory and sets the default values.
         /// </summary>

@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WinGetApp : MobileApp, IParsable {
         /// <summary>The install experience settings associated with this application, which are used to ensure the desired install experiences on the target device are taken into account. This includes the account type (System or User) that actions should be run as on target devices. Required at creation time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WinGetAppInstallExperience? InstallExperience {
+            get { return BackingStore?.Get<WinGetAppInstallExperience?>("installExperience"); }
+            set { BackingStore?.Set("installExperience", value); }
+        }
+#else
         public WinGetAppInstallExperience InstallExperience {
             get { return BackingStore?.Get<WinGetAppInstallExperience>("installExperience"); }
             set { BackingStore?.Set("installExperience", value); }
         }
+#endif
         /// <summary>Hash of package metadata properties used to validate that the application matches the metadata in the source repository.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManifestHash {
+            get { return BackingStore?.Get<string?>("manifestHash"); }
+            set { BackingStore?.Set("manifestHash", value); }
+        }
+#else
         public string ManifestHash {
             get { return BackingStore?.Get<string>("manifestHash"); }
             set { BackingStore?.Set("manifestHash", value); }
         }
+#endif
         /// <summary>The PackageIdentifier from the WinGet source repository REST API. This also maps to the Id when using the WinGet client command line application. Required at creation time, cannot be modified on existing objects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PackageIdentifier {
+            get { return BackingStore?.Get<string?>("packageIdentifier"); }
+            set { BackingStore?.Set("packageIdentifier", value); }
+        }
+#else
         public string PackageIdentifier {
             get { return BackingStore?.Get<string>("packageIdentifier"); }
             set { BackingStore?.Set("packageIdentifier", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WinGetApp and sets the default values.
         /// </summary>

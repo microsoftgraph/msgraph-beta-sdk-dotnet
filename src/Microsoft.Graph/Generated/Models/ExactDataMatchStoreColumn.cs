@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ignoredDelimiters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IgnoredDelimiters {
+            get { return BackingStore?.Get<List<string>?>("ignoredDelimiters"); }
+            set { BackingStore?.Set("ignoredDelimiters", value); }
+        }
+#else
         public List<string> IgnoredDelimiters {
             get { return BackingStore?.Get<List<string>>("ignoredDelimiters"); }
             set { BackingStore?.Set("ignoredDelimiters", value); }
         }
+#endif
         /// <summary>The isCaseInsensitive property</summary>
         public bool? IsCaseInsensitive {
             get { return BackingStore?.Get<bool?>("isCaseInsensitive"); }
@@ -29,15 +36,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new exactDataMatchStoreColumn and sets the default values.
         /// </summary>

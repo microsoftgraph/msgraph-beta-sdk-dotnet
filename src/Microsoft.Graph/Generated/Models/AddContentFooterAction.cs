@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alignment", value); }
         }
         /// <summary>Color of the font to use for the footer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FontColor {
+            get { return BackingStore?.Get<string?>("fontColor"); }
+            set { BackingStore?.Set("fontColor", value); }
+        }
+#else
         public string FontColor {
             get { return BackingStore?.Get<string>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
+#endif
         /// <summary>Name of the font to use for the footer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FontName {
+            get { return BackingStore?.Get<string?>("fontName"); }
+            set { BackingStore?.Set("fontName", value); }
+        }
+#else
         public string FontName {
             get { return BackingStore?.Get<string>("fontName"); }
             set { BackingStore?.Set("fontName", value); }
         }
+#endif
         /// <summary>Font size to use for the footer.</summary>
         public int? FontSize {
             get { return BackingStore?.Get<int?>("fontSize"); }
@@ -31,15 +45,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("margin", value); }
         }
         /// <summary>The contents of the footer itself.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Text {
+            get { return BackingStore?.Get<string?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>The name of the UI element where the footer should be placed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UiElementName {
+            get { return BackingStore?.Get<string?>("uiElementName"); }
+            set { BackingStore?.Set("uiElementName", value); }
+        }
+#else
         public string UiElementName {
             get { return BackingStore?.Get<string>("uiElementName"); }
             set { BackingStore?.Set("uiElementName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AddContentFooterAction and sets the default values.
         /// </summary>

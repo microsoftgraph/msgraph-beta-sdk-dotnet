@@ -26,10 +26,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("processingStatus", value); }
         }
         /// <summary>The unique identifier of the associated run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RunId {
+            get { return BackingStore?.Get<string?>("runId"); }
+            set { BackingStore?.Set("runId", value); }
+        }
+#else
         public string RunId {
             get { return BackingStore?.Get<string>("runId"); }
             set { BackingStore?.Set("runId", value); }
         }
+#endif
         /// <summary>The date time that the associated run started. Value is null if the run has not started.</summary>
         public DateTimeOffset? StartedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
@@ -41,20 +48,41 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("successfulUsersCount", value); }
         }
         /// <summary>The taskDefinition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition? TaskDefinition {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition?>("taskDefinition"); }
+            set { BackingStore?.Set("taskDefinition", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition TaskDefinition {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition>("taskDefinition"); }
             set { BackingStore?.Set("taskDefinition", value); }
         }
+#endif
         /// <summary>The task property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject? TaskObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject?>("task"); }
+            set { BackingStore?.Set("task", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject TaskObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
+#endif
         /// <summary>The related lifecycle workflow taskProcessingResults.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TaskProcessingResult>? TaskProcessingResults {
+            get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
+            set { BackingStore?.Set("taskProcessingResults", value); }
+        }
+#else
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
+#endif
         /// <summary>The total number of users in the run execution for which the associated task was scheduled to execute.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? TotalUsersCount {
             get { return BackingStore?.Get<int?>("totalUsersCount"); }

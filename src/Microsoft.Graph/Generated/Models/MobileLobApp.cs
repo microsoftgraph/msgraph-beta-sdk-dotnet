@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MobileLobApp : MobileApp, IParsable {
         /// <summary>The internal committed content version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CommittedContentVersion {
+            get { return BackingStore?.Get<string?>("committedContentVersion"); }
+            set { BackingStore?.Set("committedContentVersion", value); }
+        }
+#else
         public string CommittedContentVersion {
             get { return BackingStore?.Get<string>("committedContentVersion"); }
             set { BackingStore?.Set("committedContentVersion", value); }
         }
+#endif
         /// <summary>The list of content versions for this app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppContent>? ContentVersions {
+            get { return BackingStore?.Get<List<MobileAppContent>?>("contentVersions"); }
+            set { BackingStore?.Set("contentVersions", value); }
+        }
+#else
         public List<MobileAppContent> ContentVersions {
             get { return BackingStore?.Get<List<MobileAppContent>>("contentVersions"); }
             set { BackingStore?.Set("contentVersions", value); }
         }
+#endif
         /// <summary>The name of the main Lob application file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>The total size, including all uploaded files.</summary>
         public long? Size {
             get { return BackingStore?.Get<long?>("size"); }

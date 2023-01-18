@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable {
         /// <summary>mdm app configuration Base64 binary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? EncodedSettingXml {
+            get { return BackingStore?.Get<byte[]?>("encodedSettingXml"); }
+            set { BackingStore?.Set("encodedSettingXml", value); }
+        }
+#else
         public byte[] EncodedSettingXml {
             get { return BackingStore?.Get<byte[]>("encodedSettingXml"); }
             set { BackingStore?.Set("encodedSettingXml", value); }
         }
+#endif
         /// <summary>app configuration setting items.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppConfigurationSettingItem>? Settings {
+            get { return BackingStore?.Get<List<AppConfigurationSettingItem>?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public List<AppConfigurationSettingItem> Settings {
             get { return BackingStore?.Get<List<AppConfigurationSettingItem>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IosMobileAppConfiguration and sets the default values.
         /// </summary>

@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class WorkloadActionDeploymentStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The unique identifier for the workload action. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActionId {
+            get { return BackingStore?.Get<string?>("actionId"); }
+            set { BackingStore?.Set("actionId", value); }
+        }
+#else
         public string ActionId {
             get { return BackingStore?.Get<string>("actionId"); }
             set { BackingStore?.Set("actionId", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -19,40 +26,75 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of any policy that was created by applying the workload action. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeployedPolicyId {
+            get { return BackingStore?.Get<string?>("deployedPolicyId"); }
+            set { BackingStore?.Set("deployedPolicyId", value); }
+        }
+#else
         public string DeployedPolicyId {
             get { return BackingStore?.Get<string>("deployedPolicyId"); }
             set { BackingStore?.Set("deployedPolicyId", value); }
         }
+#endif
         /// <summary>The detailed information for exceptions that occur when deploying the workload action. Optional. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.GenericError? Error {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GenericError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.GenericError Error {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GenericError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>The excludeGroups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludeGroups {
+            get { return BackingStore?.Get<List<string>?>("excludeGroups"); }
+            set { BackingStore?.Set("excludeGroups", value); }
+        }
+#else
         public List<string> ExcludeGroups {
             get { return BackingStore?.Get<List<string>>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
+#endif
         /// <summary>The includeAllUsers property</summary>
         public bool? IncludeAllUsers {
             get { return BackingStore?.Get<bool?>("includeAllUsers"); }
             set { BackingStore?.Set("includeAllUsers", value); }
         }
         /// <summary>The includeGroups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IncludeGroups {
+            get { return BackingStore?.Get<List<string>?>("includeGroups"); }
+            set { BackingStore?.Set("includeGroups", value); }
+        }
+#else
         public List<string> IncludeGroups {
             get { return BackingStore?.Get<List<string>>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
+#endif
         /// <summary>The date and time the workload action was last deployed. Optional.</summary>
         public DateTimeOffset? LastDeploymentDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastDeploymentDateTime"); }
             set { BackingStore?.Set("lastDeploymentDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public WorkloadActionStatus? Status {
             get { return BackingStore?.Get<WorkloadActionStatus?>("status"); }

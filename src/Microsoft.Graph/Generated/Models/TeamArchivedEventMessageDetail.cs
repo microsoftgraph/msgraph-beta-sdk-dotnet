@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamArchivedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>Unique identifier of the team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TeamId {
+            get { return BackingStore?.Get<string?>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
+        }
+#else
         public string TeamId {
             get { return BackingStore?.Get<string>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TeamArchivedEventMessageDetail and sets the default values.
         /// </summary>

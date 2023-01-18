@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationStrengthPolicy : Entity, IParsable {
         /// <summary>A collection of authentication method modes that are required be used to satify this authentication strength.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationMethodModes?>? AllowedCombinations {
+            get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("allowedCombinations"); }
+            set { BackingStore?.Set("allowedCombinations", value); }
+        }
+#else
         public List<AuthenticationMethodModes?> AllowedCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
+#endif
         /// <summary>Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationCombinationConfiguration>? CombinationConfigurations {
+            get { return BackingStore?.Get<List<AuthenticationCombinationConfiguration>?>("combinationConfigurations"); }
+            set { BackingStore?.Set("combinationConfigurations", value); }
+        }
+#else
         public List<AuthenticationCombinationConfiguration> CombinationConfigurations {
             get { return BackingStore?.Get<List<AuthenticationCombinationConfiguration>>("combinationConfigurations"); }
             set { BackingStore?.Set("combinationConfigurations", value); }
         }
+#endif
         /// <summary>The datetime when this policy was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The human-readable description of this policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The datetime when this policy was last modified.</summary>
         public DateTimeOffset? ModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }

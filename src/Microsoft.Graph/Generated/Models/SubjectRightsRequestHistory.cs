@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identity of the user who changed the  subject rights request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? ChangedBy {
+            get { return BackingStore?.Get<IdentitySet?>("changedBy"); }
+            set { BackingStore?.Set("changedBy", value); }
+        }
+#else
         public IdentitySet ChangedBy {
             get { return BackingStore?.Get<IdentitySet>("changedBy"); }
             set { BackingStore?.Set("changedBy", value); }
         }
+#endif
         /// <summary>Data and time when the entity was changed.</summary>
         public DateTimeOffset? EventDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.</summary>
         public SubjectRightsRequestStage? Stage {
             get { return BackingStore?.Get<SubjectRightsRequestStage?>("stage"); }
@@ -39,10 +53,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("stageStatus", value); }
         }
         /// <summary>Type of history.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new subjectRightsRequestHistory and sets the default values.
         /// </summary>

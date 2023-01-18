@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Post : OutlookItem, IParsable {
         /// <summary>The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Attachment>? Attachments {
+            get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
+            set { BackingStore?.Set("attachments", value); }
+        }
+#else
         public List<Attachment> Attachments {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#endif
         /// <summary>The contents of the post. This is a default property. This property can be null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Body {
+            get { return BackingStore?.Get<ItemBody?>("body"); }
+            set { BackingStore?.Set("body", value); }
+        }
+#else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#endif
         /// <summary>Unique ID of the conversation. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConversationId {
+            get { return BackingStore?.Get<string?>("conversationId"); }
+            set { BackingStore?.Set("conversationId", value); }
+        }
+#else
         public string ConversationId {
             get { return BackingStore?.Get<string>("conversationId"); }
             set { BackingStore?.Set("conversationId", value); }
         }
+#endif
         /// <summary>Unique ID of the conversation thread. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConversationThreadId {
+            get { return BackingStore?.Get<string?>("conversationThreadId"); }
+            set { BackingStore?.Set("conversationThreadId", value); }
+        }
+#else
         public string ConversationThreadId {
             get { return BackingStore?.Get<string>("conversationThreadId"); }
             set { BackingStore?.Set("conversationThreadId", value); }
         }
+#endif
         /// <summary>The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Extension>? Extensions {
+            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#endif
         /// <summary>The from property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Recipient? From {
+            get { return BackingStore?.Get<Recipient?>("from"); }
+            set { BackingStore?.Set("from", value); }
+        }
+#else
         public Recipient From {
             get { return BackingStore?.Get<Recipient>("from"); }
             set { BackingStore?.Set("from", value); }
         }
+#endif
         /// <summary>Indicates whether the post has at least one attachment. This is a default property.</summary>
         public bool? HasAttachments {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
@@ -46,40 +88,82 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("importance", value); }
         }
         /// <summary>The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Post? InReplyTo {
+            get { return BackingStore?.Get<Post?>("inReplyTo"); }
+            set { BackingStore?.Set("inReplyTo", value); }
+        }
+#else
         public Post InReplyTo {
             get { return BackingStore?.Get<Post>("inReplyTo"); }
             set { BackingStore?.Set("inReplyTo", value); }
         }
+#endif
         /// <summary>The mentions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Mention>? Mentions {
+            get { return BackingStore?.Get<List<Mention>?>("mentions"); }
+            set { BackingStore?.Set("mentions", value); }
+        }
+#else
         public List<Mention> Mentions {
             get { return BackingStore?.Get<List<Mention>>("mentions"); }
             set { BackingStore?.Set("mentions", value); }
         }
+#endif
         /// <summary>The collection of multi-value extended properties defined for the post. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
+        }
+#else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#endif
         /// <summary>Conversation participants that were added to the thread as part of this post.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? NewParticipants {
+            get { return BackingStore?.Get<List<Recipient>?>("newParticipants"); }
+            set { BackingStore?.Set("newParticipants", value); }
+        }
+#else
         public List<Recipient> NewParticipants {
             get { return BackingStore?.Get<List<Recipient>>("newParticipants"); }
             set { BackingStore?.Set("newParticipants", value); }
         }
+#endif
         /// <summary>Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ReceivedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTime"); }
             set { BackingStore?.Set("receivedDateTime", value); }
         }
         /// <summary>Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Recipient? Sender {
+            get { return BackingStore?.Get<Recipient?>("sender"); }
+            set { BackingStore?.Set("sender", value); }
+        }
+#else
         public Recipient Sender {
             get { return BackingStore?.Get<Recipient>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
+#endif
         /// <summary>The collection of single-value extended properties defined for the post. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Post and sets the default values.
         /// </summary>

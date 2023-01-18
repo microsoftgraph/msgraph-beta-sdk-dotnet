@@ -12,37 +12,72 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticationMethod {
+            get { return BackingStore?.Get<string?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
+        }
+#else
         public string AuthenticationMethod {
             get { return BackingStore?.Get<string>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
+#endif
         /// <summary>Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticationMethodDetail {
+            get { return BackingStore?.Get<string?>("authenticationMethodDetail"); }
+            set { BackingStore?.Set("authenticationMethodDetail", value); }
+        }
+#else
         public string AuthenticationMethodDetail {
             get { return BackingStore?.Get<string>("authenticationMethodDetail"); }
             set { BackingStore?.Set("authenticationMethodDetail", value); }
         }
+#endif
         /// <summary>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? AuthenticationStepDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("authenticationStepDateTime"); }
             set { BackingStore?.Set("authenticationStepDateTime", value); }
         }
         /// <summary>The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticationStepRequirement {
+            get { return BackingStore?.Get<string?>("authenticationStepRequirement"); }
+            set { BackingStore?.Set("authenticationStepRequirement", value); }
+        }
+#else
         public string AuthenticationStepRequirement {
             get { return BackingStore?.Get<string>("authenticationStepRequirement"); }
             set { BackingStore?.Set("authenticationStepRequirement", value); }
         }
+#endif
         /// <summary>Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticationStepResultDetail {
+            get { return BackingStore?.Get<string?>("authenticationStepResultDetail"); }
+            set { BackingStore?.Set("authenticationStepResultDetail", value); }
+        }
+#else
         public string AuthenticationStepResultDetail {
             get { return BackingStore?.Get<string>("authenticationStepResultDetail"); }
             set { BackingStore?.Set("authenticationStepResultDetail", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Indicates the status of the authentication step. Possible values: succeeded, failed.</summary>
         public bool? Succeeded {
             get { return BackingStore?.Get<bool?>("succeeded"); }

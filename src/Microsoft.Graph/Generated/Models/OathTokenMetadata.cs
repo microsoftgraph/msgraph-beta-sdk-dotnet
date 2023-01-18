@@ -19,30 +19,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The manufacturer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>The manufacturerProperties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValue>? ManufacturerProperties {
+            get { return BackingStore?.Get<List<KeyValue>?>("manufacturerProperties"); }
+            set { BackingStore?.Set("manufacturerProperties", value); }
+        }
+#else
         public List<KeyValue> ManufacturerProperties {
             get { return BackingStore?.Get<List<KeyValue>>("manufacturerProperties"); }
             set { BackingStore?.Set("manufacturerProperties", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The serialNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SerialNumber {
+            get { return BackingStore?.Get<string?>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
+        }
+#else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#endif
         /// <summary>The tokenType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TokenType {
+            get { return BackingStore?.Get<string?>("tokenType"); }
+            set { BackingStore?.Set("tokenType", value); }
+        }
+#else
         public string TokenType {
             get { return BackingStore?.Get<string>("tokenType"); }
             set { BackingStore?.Set("tokenType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new oathTokenMetadata and sets the default values.
         /// </summary>

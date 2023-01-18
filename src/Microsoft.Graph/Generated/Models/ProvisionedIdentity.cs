@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ProvisionedIdentity : Identity, IParsable {
         /// <summary>Details of the identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DetailsInfo? Details {
+            get { return BackingStore?.Get<DetailsInfo?>("details"); }
+            set { BackingStore?.Set("details", value); }
+        }
+#else
         public DetailsInfo Details {
             get { return BackingStore?.Get<DetailsInfo>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#endif
         /// <summary>Type of identity that has been provisioned, such as &apos;user&apos; or &apos;group&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityType {
+            get { return BackingStore?.Get<string?>("identityType"); }
+            set { BackingStore?.Set("identityType", value); }
+        }
+#else
         public string IdentityType {
             get { return BackingStore?.Get<string>("identityType"); }
             set { BackingStore?.Set("identityType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ProvisionedIdentity and sets the default values.
         /// </summary>

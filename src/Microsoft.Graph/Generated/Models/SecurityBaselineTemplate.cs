@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SecurityBaselineTemplate : DeviceManagementTemplate, IParsable {
         /// <summary>The security baseline per category device state summary</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SecurityBaselineCategoryStateSummary>? CategoryDeviceStateSummaries {
+            get { return BackingStore?.Get<List<SecurityBaselineCategoryStateSummary>?>("categoryDeviceStateSummaries"); }
+            set { BackingStore?.Set("categoryDeviceStateSummaries", value); }
+        }
+#else
         public List<SecurityBaselineCategoryStateSummary> CategoryDeviceStateSummaries {
             get { return BackingStore?.Get<List<SecurityBaselineCategoryStateSummary>>("categoryDeviceStateSummaries"); }
             set { BackingStore?.Set("categoryDeviceStateSummaries", value); }
         }
+#endif
         /// <summary>The security baseline device states</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SecurityBaselineDeviceState>? DeviceStates {
+            get { return BackingStore?.Get<List<SecurityBaselineDeviceState>?>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
+        }
+#else
         public List<SecurityBaselineDeviceState> DeviceStates {
             get { return BackingStore?.Get<List<SecurityBaselineDeviceState>>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#endif
         /// <summary>The security baseline device state summary</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SecurityBaselineStateSummary? DeviceStateSummary {
+            get { return BackingStore?.Get<SecurityBaselineStateSummary?>("deviceStateSummary"); }
+            set { BackingStore?.Set("deviceStateSummary", value); }
+        }
+#else
         public SecurityBaselineStateSummary DeviceStateSummary {
             get { return BackingStore?.Get<SecurityBaselineStateSummary>("deviceStateSummary"); }
             set { BackingStore?.Set("deviceStateSummary", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new SecurityBaselineTemplate and sets the default values.
         /// </summary>

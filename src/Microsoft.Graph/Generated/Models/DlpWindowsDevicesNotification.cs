@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DlpWindowsDevicesNotification : DlpNotification, IParsable {
         /// <summary>The contentName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentName {
+            get { return BackingStore?.Get<string?>("contentName"); }
+            set { BackingStore?.Set("contentName", value); }
+        }
+#else
         public string ContentName {
             get { return BackingStore?.Get<string>("contentName"); }
             set { BackingStore?.Set("contentName", value); }
         }
+#endif
         /// <summary>The lastModfiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastModfiedBy {
+            get { return BackingStore?.Get<string?>("lastModfiedBy"); }
+            set { BackingStore?.Set("lastModfiedBy", value); }
+        }
+#else
         public string LastModfiedBy {
             get { return BackingStore?.Get<string>("lastModfiedBy"); }
             set { BackingStore?.Set("lastModfiedBy", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DlpWindowsDevicesNotification and sets the default values.
         /// </summary>

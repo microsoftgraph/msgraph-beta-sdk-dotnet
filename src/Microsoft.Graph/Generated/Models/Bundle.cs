@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>If the bundle is an [album][], then the album property is included</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Album? Album {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Album?>("album"); }
+            set { BackingStore?.Set("album", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Album Album {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Album>("album"); }
             set { BackingStore?.Set("album", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of children contained immediately within this container.</summary>
@@ -24,10 +31,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("childCount", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new bundle and sets the default values.
         /// </summary>

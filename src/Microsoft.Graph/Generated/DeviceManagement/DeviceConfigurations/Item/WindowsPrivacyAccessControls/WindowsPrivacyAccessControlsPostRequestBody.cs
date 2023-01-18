@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Window
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The windowsPrivacyAccessControls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsPrivacyDataAccessControlItem>? WindowsPrivacyAccessControls {
+            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>?>("windowsPrivacyAccessControls"); }
+            set { BackingStore?.Set("windowsPrivacyAccessControls", value); }
+        }
+#else
         public List<WindowsPrivacyDataAccessControlItem> WindowsPrivacyAccessControls {
             get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>>("windowsPrivacyAccessControls"); }
             set { BackingStore?.Set("windowsPrivacyAccessControls", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new windowsPrivacyAccessControlsPostRequestBody and sets the default values.
         /// </summary>

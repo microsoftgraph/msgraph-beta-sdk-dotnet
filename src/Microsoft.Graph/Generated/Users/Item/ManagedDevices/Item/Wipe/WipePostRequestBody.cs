@@ -24,10 +24,17 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Wipe {
             set { BackingStore?.Set("keepUserData", value); }
         }
         /// <summary>The macOsUnlockCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MacOsUnlockCode {
+            get { return BackingStore?.Get<string?>("macOsUnlockCode"); }
+            set { BackingStore?.Set("macOsUnlockCode", value); }
+        }
+#else
         public string MacOsUnlockCode {
             get { return BackingStore?.Get<string>("macOsUnlockCode"); }
             set { BackingStore?.Set("macOsUnlockCode", value); }
         }
+#endif
         /// <summary>The persistEsimDataPlan property</summary>
         public bool? PersistEsimDataPlan {
             get { return BackingStore?.Get<bool?>("persistEsimDataPlan"); }

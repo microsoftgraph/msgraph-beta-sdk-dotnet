@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The entity (user, application, team, or channel) that was @mentioned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessageMentionedIdentitySet? Mentioned {
+            get { return BackingStore?.Get<ChatMessageMentionedIdentitySet?>("mentioned"); }
+            set { BackingStore?.Set("mentioned", value); }
+        }
+#else
         public ChatMessageMentionedIdentitySet Mentioned {
             get { return BackingStore?.Get<ChatMessageMentionedIdentitySet>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
+#endif
         /// <summary>String used to represent the mention. For example, a user&apos;s display name, a team name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MentionText {
+            get { return BackingStore?.Get<string?>("mentionText"); }
+            set { BackingStore?.Set("mentionText", value); }
+        }
+#else
         public string MentionText {
             get { return BackingStore?.Get<string>("mentionText"); }
             set { BackingStore?.Set("mentionText", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new chatMessageMention and sets the default values.
         /// </summary>

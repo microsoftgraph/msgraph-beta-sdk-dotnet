@@ -4,12 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The Group Policy Object file uploaded by admin.
+    /// </summary>
     public class GroupPolicyObjectFile : Entity, IParsable {
         /// <summary>The Group Policy Object file content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Content {
+            get { return BackingStore?.Get<string?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public string Content {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The date and time at which the GroupPolicy was first uploaded.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -26,15 +36,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The distinguished name of the OU.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OuDistinguishedName {
+            get { return BackingStore?.Get<string?>("ouDistinguishedName"); }
+            set { BackingStore?.Set("ouDistinguishedName", value); }
+        }
+#else
         public string OuDistinguishedName {
             get { return BackingStore?.Get<string>("ouDistinguishedName"); }
             set { BackingStore?.Set("ouDistinguishedName", value); }
         }
+#endif
         /// <summary>The list of scope tags for the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

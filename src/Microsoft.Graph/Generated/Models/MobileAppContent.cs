@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MobileAppContent : Entity, IParsable {
         /// <summary>The collection of contained apps in a MobileLobApp acting as a package.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileContainedApp>? ContainedApps {
+            get { return BackingStore?.Get<List<MobileContainedApp>?>("containedApps"); }
+            set { BackingStore?.Set("containedApps", value); }
+        }
+#else
         public List<MobileContainedApp> ContainedApps {
             get { return BackingStore?.Get<List<MobileContainedApp>>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
+#endif
         /// <summary>The list of files for this app content version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppContentFile>? Files {
+            get { return BackingStore?.Get<List<MobileAppContentFile>?>("files"); }
+            set { BackingStore?.Set("files", value); }
+        }
+#else
         public List<MobileAppContentFile> Files {
             get { return BackingStore?.Get<List<MobileAppContentFile>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

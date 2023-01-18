@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>Identifier for resource used for deployment to a group</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SourceId {
+            get { return BackingStore?.Get<string?>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#else
         public string SourceId {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
+#endif
         /// <summary>The assignment target for the Windows Autopilot deployment profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceAndAppManagementAssignmentTarget? Target {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public DeviceAndAppManagementAssignmentTarget Target {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

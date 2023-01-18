@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EnrollmentTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Azure AD device identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>Possible ways of adding a mobile device to management.</summary>
         public DeviceEnrollmentType? EnrollmentType {
             get { return BackingStore?.Get<DeviceEnrollmentType?>("enrollmentType"); }
@@ -21,30 +28,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("failureCategory", value); }
         }
         /// <summary>Detailed failure reason.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FailureReason {
+            get { return BackingStore?.Get<string?>("failureReason"); }
+            set { BackingStore?.Set("failureReason", value); }
+        }
+#else
         public string FailureReason {
             get { return BackingStore?.Get<string>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
         }
+#endif
         /// <summary>Device identifier created or collected by Intune.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceIdentifier {
+            get { return BackingStore?.Get<string?>("managedDeviceIdentifier"); }
+            set { BackingStore?.Set("managedDeviceIdentifier", value); }
+        }
+#else
         public string ManagedDeviceIdentifier {
             get { return BackingStore?.Get<string>("managedDeviceIdentifier"); }
             set { BackingStore?.Set("managedDeviceIdentifier", value); }
         }
+#endif
         /// <summary>Operating System.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystem {
+            get { return BackingStore?.Get<string?>("operatingSystem"); }
+            set { BackingStore?.Set("operatingSystem", value); }
+        }
+#else
         public string OperatingSystem {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
+#endif
         /// <summary>OS Version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

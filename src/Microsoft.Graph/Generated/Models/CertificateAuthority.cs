@@ -14,40 +14,82 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Required. The base64 encoded string representing the public certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Certificate {
+            get { return BackingStore?.Get<byte[]?>("certificate"); }
+            set { BackingStore?.Set("certificate", value); }
+        }
+#else
         public byte[] Certificate {
             get { return BackingStore?.Get<byte[]>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
+#endif
         /// <summary>The URL of the certificate revocation list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateRevocationListUrl {
+            get { return BackingStore?.Get<string?>("certificateRevocationListUrl"); }
+            set { BackingStore?.Set("certificateRevocationListUrl", value); }
+        }
+#else
         public string CertificateRevocationListUrl {
             get { return BackingStore?.Get<string>("certificateRevocationListUrl"); }
             set { BackingStore?.Set("certificateRevocationListUrl", value); }
         }
+#endif
         /// <summary>The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeltaCertificateRevocationListUrl {
+            get { return BackingStore?.Get<string?>("deltaCertificateRevocationListUrl"); }
+            set { BackingStore?.Set("deltaCertificateRevocationListUrl", value); }
+        }
+#else
         public string DeltaCertificateRevocationListUrl {
             get { return BackingStore?.Get<string>("deltaCertificateRevocationListUrl"); }
             set { BackingStore?.Set("deltaCertificateRevocationListUrl", value); }
         }
+#endif
         /// <summary>Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.</summary>
         public bool? IsRootAuthority {
             get { return BackingStore?.Get<bool?>("isRootAuthority"); }
             set { BackingStore?.Set("isRootAuthority", value); }
         }
         /// <summary>The issuer of the certificate, calculated from the certificate value. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Issuer {
+            get { return BackingStore?.Get<string?>("issuer"); }
+            set { BackingStore?.Set("issuer", value); }
+        }
+#else
         public string Issuer {
             get { return BackingStore?.Get<string>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
+#endif
         /// <summary>The subject key identifier of the certificate, calculated from the certificate value. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IssuerSki {
+            get { return BackingStore?.Get<string?>("issuerSki"); }
+            set { BackingStore?.Set("issuerSki", value); }
+        }
+#else
         public string IssuerSki {
             get { return BackingStore?.Get<string>("issuerSki"); }
             set { BackingStore?.Set("issuerSki", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new certificateAuthority and sets the default values.
         /// </summary>

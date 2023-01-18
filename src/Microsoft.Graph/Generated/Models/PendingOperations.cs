@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A property that indicates that an operation that might update the binary content of a file is pending completion.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PendingContentUpdate? PendingContentUpdate {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PendingContentUpdate?>("pendingContentUpdate"); }
+            set { BackingStore?.Set("pendingContentUpdate", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PendingContentUpdate PendingContentUpdate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PendingContentUpdate>("pendingContentUpdate"); }
             set { BackingStore?.Set("pendingContentUpdate", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new pendingOperations and sets the default values.
         /// </summary>

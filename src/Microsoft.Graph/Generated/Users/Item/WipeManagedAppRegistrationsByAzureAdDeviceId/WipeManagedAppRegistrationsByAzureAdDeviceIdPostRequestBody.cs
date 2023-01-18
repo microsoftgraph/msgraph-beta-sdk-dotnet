@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationsByAzureAdDe
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The azureAdDeviceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureAdDeviceId {
+            get { return BackingStore?.Get<string?>("azureAdDeviceId"); }
+            set { BackingStore?.Set("azureAdDeviceId", value); }
+        }
+#else
         public string AzureAdDeviceId {
             get { return BackingStore?.Get<string>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>

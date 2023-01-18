@@ -16,20 +16,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The external partner ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PartnerId {
+            get { return BackingStore?.Get<string?>("partnerId"); }
+            set { BackingStore?.Set("partnerId", value); }
+        }
+#else
         public string PartnerId {
             get { return BackingStore?.Get<string>("partnerId"); }
             set { BackingStore?.Set("partnerId", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public CloudPcExternalPartnerStatus? Status {
             get { return BackingStore?.Get<CloudPcExternalPartnerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Status details message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StatusDetails {
+            get { return BackingStore?.Get<string?>("statusDetails"); }
+            set { BackingStore?.Set("statusDetails", value); }
+        }
+#else
         public string StatusDetails {
             get { return BackingStore?.Get<string>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

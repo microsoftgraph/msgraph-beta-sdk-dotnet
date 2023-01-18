@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartCustomExtensionHandler : OnTokenIssuanceStartHandler, IParsable {
         /// <summary>The customExtension property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OnTokenIssuanceStartCustomExtension? CustomExtension {
+            get { return BackingStore?.Get<OnTokenIssuanceStartCustomExtension?>("customExtension"); }
+            set { BackingStore?.Set("customExtension", value); }
+        }
+#else
         public OnTokenIssuanceStartCustomExtension CustomExtension {
             get { return BackingStore?.Get<OnTokenIssuanceStartCustomExtension>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OnTokenIssuanceStartCustomExtensionHandler and sets the default values.
         /// </summary>

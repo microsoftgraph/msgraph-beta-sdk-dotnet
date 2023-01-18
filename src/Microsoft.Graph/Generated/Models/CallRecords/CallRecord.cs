@@ -11,35 +11,70 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Meeting URL associated to the call. May not be available for a peerToPeer call record type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JoinWebUrl {
+            get { return BackingStore?.Get<string?>("joinWebUrl"); }
+            set { BackingStore?.Set("joinWebUrl", value); }
+        }
+#else
         public string JoinWebUrl {
             get { return BackingStore?.Get<string>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
+#endif
         /// <summary>UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Modality?>? Modalities {
+            get { return BackingStore?.Get<List<Modality?>?>("modalities"); }
+            set { BackingStore?.Set("modalities", value); }
+        }
+#else
         public List<Modality?> Modalities {
             get { return BackingStore?.Get<List<Modality?>>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
+#endif
         /// <summary>The organizing party&apos;s identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? Organizer {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("organizer"); }
+            set { BackingStore?.Set("organizer", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet Organizer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
+#endif
         /// <summary>List of distinct identities involved in the call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.IdentitySet>? Participants {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentitySet>?>("participants"); }
+            set { BackingStore?.Set("participants", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.IdentitySet> Participants {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentitySet>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#endif
         /// <summary>List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Session>? Sessions {
+            get { return BackingStore?.Get<List<Session>?>("sessions"); }
+            set { BackingStore?.Set("sessions", value); }
+        }
+#else
         public List<Session> Sessions {
             get { return BackingStore?.Get<List<Session>>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
+#endif
         /// <summary>UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }

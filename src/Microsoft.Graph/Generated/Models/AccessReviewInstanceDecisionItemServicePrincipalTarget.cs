@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewInstanceDecisionItemServicePrincipalTarget : AccessReviewInstanceDecisionItemTarget, IParsable {
         /// <summary>The appId for the service principal entity being reviewed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppId {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#endif
         /// <summary>The display name of the service principal whose access is being reviewed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServicePrincipalDisplayName {
+            get { return BackingStore?.Get<string?>("servicePrincipalDisplayName"); }
+            set { BackingStore?.Set("servicePrincipalDisplayName", value); }
+        }
+#else
         public string ServicePrincipalDisplayName {
             get { return BackingStore?.Get<string>("servicePrincipalDisplayName"); }
             set { BackingStore?.Set("servicePrincipalDisplayName", value); }
         }
+#endif
         /// <summary>The servicePrincipalId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServicePrincipalId {
+            get { return BackingStore?.Get<string?>("servicePrincipalId"); }
+            set { BackingStore?.Set("servicePrincipalId", value); }
+        }
+#else
         public string ServicePrincipalId {
             get { return BackingStore?.Get<string>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AccessReviewInstanceDecisionItemServicePrincipalTarget and sets the default values.
         /// </summary>

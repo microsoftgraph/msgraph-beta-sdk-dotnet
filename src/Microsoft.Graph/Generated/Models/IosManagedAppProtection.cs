@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AllowedIosDeviceModels {
+            get { return BackingStore?.Get<string?>("allowedIosDeviceModels"); }
+            set { BackingStore?.Set("allowedIosDeviceModels", value); }
+        }
+#else
         public string AllowedIosDeviceModels {
             get { return BackingStore?.Get<string>("allowedIosDeviceModels"); }
             set { BackingStore?.Set("allowedIosDeviceModels", value); }
         }
+#endif
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfIosDeviceModelNotAllowed"); }
@@ -21,45 +28,87 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appDataEncryptionType", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedMobileApp>? Apps {
+            get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
+            set { BackingStore?.Set("apps", value); }
+        }
+#else
         public List<ManagedMobileApp> Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
+#endif
         /// <summary>A custom browser protocol to open weblink on iOS.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomBrowserProtocol {
+            get { return BackingStore?.Get<string?>("customBrowserProtocol"); }
+            set { BackingStore?.Set("customBrowserProtocol", value); }
+        }
+#else
         public string CustomBrowserProtocol {
             get { return BackingStore?.Get<string>("customBrowserProtocol"); }
             set { BackingStore?.Set("customBrowserProtocol", value); }
         }
+#endif
         /// <summary>Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomDialerAppProtocol {
+            get { return BackingStore?.Get<string?>("customDialerAppProtocol"); }
+            set { BackingStore?.Set("customDialerAppProtocol", value); }
+        }
+#else
         public string CustomDialerAppProtocol {
             get { return BackingStore?.Get<string>("customDialerAppProtocol"); }
             set { BackingStore?.Set("customDialerAppProtocol", value); }
         }
+#endif
         /// <summary>Count of apps to which the current policy is deployed.</summary>
         public int? DeployedAppCount {
             get { return BackingStore?.Get<int?>("deployedAppCount"); }
             set { BackingStore?.Set("deployedAppCount", value); }
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagedAppPolicyDeploymentSummary? DeploymentSummary {
+            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
+            set { BackingStore?.Set("deploymentSummary", value); }
+        }
+#else
         public ManagedAppPolicyDeploymentSummary DeploymentSummary {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
+#endif
         /// <summary>Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.</summary>
         public bool? DisableProtectionOfManagedOutboundOpenInData {
             get { return BackingStore?.Get<bool?>("disableProtectionOfManagedOutboundOpenInData"); }
             set { BackingStore?.Set("disableProtectionOfManagedOutboundOpenInData", value); }
         }
         /// <summary>Apps in this list will be exempt from the policy and will be able to receive data from managed apps.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? ExemptedAppProtocols {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("exemptedAppProtocols"); }
+            set { BackingStore?.Set("exemptedAppProtocols", value); }
+        }
+#else
         public List<KeyValuePair> ExemptedAppProtocols {
             get { return BackingStore?.Get<List<KeyValuePair>>("exemptedAppProtocols"); }
             set { BackingStore?.Set("exemptedAppProtocols", value); }
         }
+#endif
         /// <summary>A list of custom urls that are allowed to invocate an unmanaged app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExemptedUniversalLinks {
+            get { return BackingStore?.Get<List<string>?>("exemptedUniversalLinks"); }
+            set { BackingStore?.Set("exemptedUniversalLinks", value); }
+        }
+#else
         public List<string> ExemptedUniversalLinks {
             get { return BackingStore?.Get<List<string>>("exemptedUniversalLinks"); }
             set { BackingStore?.Set("exemptedUniversalLinks", value); }
         }
+#endif
         /// <summary>Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.</summary>
         public bool? FaceIdBlocked {
             get { return BackingStore?.Get<bool?>("faceIdBlocked"); }
@@ -71,25 +120,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("filterOpenInToOnlyManagedApps", value); }
         }
         /// <summary>A list of custom urls that are allowed to invocate a managed app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ManagedUniversalLinks {
+            get { return BackingStore?.Get<List<string>?>("managedUniversalLinks"); }
+            set { BackingStore?.Set("managedUniversalLinks", value); }
+        }
+#else
         public List<string> ManagedUniversalLinks {
             get { return BackingStore?.Get<List<string>>("managedUniversalLinks"); }
             set { BackingStore?.Set("managedUniversalLinks", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumRequiredSdkVersion {
+            get { return BackingStore?.Get<string?>("minimumRequiredSdkVersion"); }
+            set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
+        }
+#else
         public string MinimumRequiredSdkVersion {
             get { return BackingStore?.Get<string>("minimumRequiredSdkVersion"); }
             set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWarningSdkVersion {
+            get { return BackingStore?.Get<string?>("minimumWarningSdkVersion"); }
+            set { BackingStore?.Set("minimumWarningSdkVersion", value); }
+        }
+#else
         public string MinimumWarningSdkVersion {
             get { return BackingStore?.Get<string>("minimumWarningSdkVersion"); }
             set { BackingStore?.Set("minimumWarningSdkVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWipeSdkVersion {
+            get { return BackingStore?.Get<string?>("minimumWipeSdkVersion"); }
+            set { BackingStore?.Set("minimumWipeSdkVersion", value); }
+        }
+#else
         public string MinimumWipeSdkVersion {
             get { return BackingStore?.Get<string>("minimumWipeSdkVersion"); }
             set { BackingStore?.Set("minimumWipeSdkVersion", value); }
         }
+#endif
         /// <summary>Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.</summary>
         public bool? ProtectInboundDataFromUnknownSources {
             get { return BackingStore?.Get<bool?>("protectInboundDataFromUnknownSources"); }

@@ -6,55 +6,118 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageSubject : Entity, IParsable {
         /// <summary>The altSecId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AltSecId {
+            get { return BackingStore?.Get<string?>("altSecId"); }
+            set { BackingStore?.Set("altSecId", value); }
+        }
+#else
         public string AltSecId {
             get { return BackingStore?.Get<string>("altSecId"); }
             set { BackingStore?.Set("altSecId", value); }
         }
+#endif
         /// <summary>The connected organization of the subject. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ConnectedOrganization? ConnectedOrganization {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectedOrganization?>("connectedOrganization"); }
+            set { BackingStore?.Set("connectedOrganization", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ConnectedOrganization ConnectedOrganization {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectedOrganization>("connectedOrganization"); }
             set { BackingStore?.Set("connectedOrganization", value); }
         }
+#endif
         /// <summary>The identifier of the connected organization of the subject.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectedOrganizationId {
+            get { return BackingStore?.Get<string?>("connectedOrganizationId"); }
+            set { BackingStore?.Set("connectedOrganizationId", value); }
+        }
+#else
         public string ConnectedOrganizationId {
             get { return BackingStore?.Get<string>("connectedOrganizationId"); }
             set { BackingStore?.Set("connectedOrganizationId", value); }
         }
+#endif
         /// <summary>The display name of the subject.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The email address of the subject.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#endif
         /// <summary>The object identifier of the subject. null if the subject is not yet a user in the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ObjectId {
+            get { return BackingStore?.Get<string?>("objectId"); }
+            set { BackingStore?.Set("objectId", value); }
+        }
+#else
         public string ObjectId {
             get { return BackingStore?.Get<string>("objectId"); }
             set { BackingStore?.Set("objectId", value); }
         }
+#endif
         /// <summary>The onPremisesSecurityIdentifier property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnPremisesSecurityIdentifier {
+            get { return BackingStore?.Get<string?>("onPremisesSecurityIdentifier"); }
+            set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
+        }
+#else
         public string OnPremisesSecurityIdentifier {
             get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
+#endif
         /// <summary>The principal name, if known, of the subject.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrincipalName {
+            get { return BackingStore?.Get<string?>("principalName"); }
+            set { BackingStore?.Set("principalName", value); }
+        }
+#else
         public string PrincipalName {
             get { return BackingStore?.Get<string>("principalName"); }
             set { BackingStore?.Set("principalName", value); }
         }
+#endif
         /// <summary>The subjectLifecycle property</summary>
         public AccessPackageSubjectLifecycle? SubjectLifecycle {
             get { return BackingStore?.Get<AccessPackageSubjectLifecycle?>("subjectLifecycle"); }
             set { BackingStore?.Set("subjectLifecycle", value); }
         }
         /// <summary>The resource type of the subject.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

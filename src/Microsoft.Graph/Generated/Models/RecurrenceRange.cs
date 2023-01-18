@@ -25,15 +25,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("numberOfOccurrences", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecurrenceTimeZone {
+            get { return BackingStore?.Get<string?>("recurrenceTimeZone"); }
+            set { BackingStore?.Set("recurrenceTimeZone", value); }
+        }
+#else
         public string RecurrenceTimeZone {
             get { return BackingStore?.Get<string>("recurrenceTimeZone"); }
             set { BackingStore?.Set("recurrenceTimeZone", value); }
         }
+#endif
         /// <summary>The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.</summary>
         public Date? StartDate {
             get { return BackingStore?.Get<Date?>("startDate"); }

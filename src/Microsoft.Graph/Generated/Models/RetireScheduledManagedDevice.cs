@@ -22,45 +22,87 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("complianceState", value); }
         }
         /// <summary>Device Compliance PolicyId</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceCompliancePolicyId {
+            get { return BackingStore?.Get<string?>("deviceCompliancePolicyId"); }
+            set { BackingStore?.Set("deviceCompliancePolicyId", value); }
+        }
+#else
         public string DeviceCompliancePolicyId {
             get { return BackingStore?.Get<string>("deviceCompliancePolicyId"); }
             set { BackingStore?.Set("deviceCompliancePolicyId", value); }
         }
+#endif
         /// <summary>Device Compliance Policy Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceCompliancePolicyName {
+            get { return BackingStore?.Get<string?>("deviceCompliancePolicyName"); }
+            set { BackingStore?.Set("deviceCompliancePolicyName", value); }
+        }
+#else
         public string DeviceCompliancePolicyName {
             get { return BackingStore?.Get<string>("deviceCompliancePolicyName"); }
             set { BackingStore?.Set("deviceCompliancePolicyName", value); }
         }
+#endif
         /// <summary>Device type.</summary>
         public Microsoft.Graph.Beta.Models.DeviceType? DeviceType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceType?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>Key of the entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>Managed DeviceId</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>Managed Device Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceName {
+            get { return BackingStore?.Get<string?>("managedDeviceName"); }
+            set { BackingStore?.Set("managedDeviceName", value); }
+        }
+#else
         public string ManagedDeviceName {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
+#endif
         /// <summary>Management agent type.</summary>
         public ManagementAgentType? ManagementAgent {
             get { return BackingStore?.Get<ManagementAgentType?>("managementAgent"); }
             set { BackingStore?.Set("managementAgent", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Owner type of device.</summary>
         public ManagedDeviceOwnerType? OwnerType {
             get { return BackingStore?.Get<ManagedDeviceOwnerType?>("ownerType"); }
@@ -72,10 +114,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("retireAfterDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new retireScheduledManagedDevice and sets the default values.
         /// </summary>

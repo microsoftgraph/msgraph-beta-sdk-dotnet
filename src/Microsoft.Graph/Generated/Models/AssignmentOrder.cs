@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A list of identityUserFlowAttribute IDs provided to determine the order in which attributes should be collected within a user flow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Order {
+            get { return BackingStore?.Get<List<string>?>("order"); }
+            set { BackingStore?.Set("order", value); }
+        }
+#else
         public List<string> Order {
             get { return BackingStore?.Get<List<string>>("order"); }
             set { BackingStore?.Set("order", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignmentOrder and sets the default values.
         /// </summary>

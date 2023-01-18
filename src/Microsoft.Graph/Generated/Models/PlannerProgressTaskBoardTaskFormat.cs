@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerProgressTaskBoardTaskFormat : PlannerDelta, IParsable {
         /// <summary>Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OrderHint {
+            get { return BackingStore?.Get<string?>("orderHint"); }
+            set { BackingStore?.Set("orderHint", value); }
+        }
+#else
         public string OrderHint {
             get { return BackingStore?.Get<string>("orderHint"); }
             set { BackingStore?.Set("orderHint", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

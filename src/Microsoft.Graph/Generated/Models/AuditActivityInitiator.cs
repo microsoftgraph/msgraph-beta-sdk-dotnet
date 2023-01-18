@@ -12,22 +12,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AppIdentity? App {
+            get { return BackingStore?.Get<AppIdentity?>("app"); }
+            set { BackingStore?.Set("app", value); }
+        }
+#else
         public AppIdentity App {
             get { return BackingStore?.Get<AppIdentity>("app"); }
             set { BackingStore?.Set("app", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuditUserIdentity? User {
+            get { return BackingStore?.Get<AuditUserIdentity?>("user"); }
+            set { BackingStore?.Set("user", value); }
+        }
+#else
         public AuditUserIdentity User {
             get { return BackingStore?.Get<AuditUserIdentity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new auditActivityInitiator and sets the default values.
         /// </summary>

@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowMailForwarding", value); }
         }
         /// <summary>The decryptionRightsManagementTemplateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DecryptionRightsManagementTemplateId {
+            get { return BackingStore?.Get<string?>("decryptionRightsManagementTemplateId"); }
+            set { BackingStore?.Set("decryptionRightsManagementTemplateId", value); }
+        }
+#else
         public string DecryptionRightsManagementTemplateId {
             get { return BackingStore?.Get<string>("decryptionRightsManagementTemplateId"); }
             set { BackingStore?.Set("decryptionRightsManagementTemplateId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EncryptWithUserDefinedRights and sets the default values.
         /// </summary>

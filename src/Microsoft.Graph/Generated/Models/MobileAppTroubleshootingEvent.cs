@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MobileAppTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Intune application identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplicationId {
+            get { return BackingStore?.Get<string?>("applicationId"); }
+            set { BackingStore?.Set("applicationId", value); }
+        }
+#else
         public string ApplicationId {
             get { return BackingStore?.Get<string>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
+#endif
         /// <summary>The collection property of AppLogUploadRequest.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppLogCollectionRequest>? AppLogCollectionRequests {
+            get { return BackingStore?.Get<List<AppLogCollectionRequest>?>("appLogCollectionRequests"); }
+            set { BackingStore?.Set("appLogCollectionRequests", value); }
+        }
+#else
         public List<AppLogCollectionRequest> AppLogCollectionRequests {
             get { return BackingStore?.Get<List<AppLogCollectionRequest>>("appLogCollectionRequests"); }
             set { BackingStore?.Set("appLogCollectionRequests", value); }
         }
+#endif
         /// <summary>Intune Mobile Application Troubleshooting History Item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppTroubleshootingHistoryItem>? History {
+            get { return BackingStore?.Get<List<MobileAppTroubleshootingHistoryItem>?>("history"); }
+            set { BackingStore?.Set("history", value); }
+        }
+#else
         public List<MobileAppTroubleshootingHistoryItem> History {
             get { return BackingStore?.Get<List<MobileAppTroubleshootingHistoryItem>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
+#endif
         /// <summary>Device identifier created or collected by Intune.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceIdentifier {
+            get { return BackingStore?.Get<string?>("managedDeviceIdentifier"); }
+            set { BackingStore?.Set("managedDeviceIdentifier", value); }
+        }
+#else
         public string ManagedDeviceIdentifier {
             get { return BackingStore?.Get<string>("managedDeviceIdentifier"); }
             set { BackingStore?.Set("managedDeviceIdentifier", value); }
         }
+#endif
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

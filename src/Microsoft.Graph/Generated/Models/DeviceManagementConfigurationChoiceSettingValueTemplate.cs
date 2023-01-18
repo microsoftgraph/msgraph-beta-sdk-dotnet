@@ -17,30 +17,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Choice Setting Value Default Template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationChoiceSettingValueDefaultTemplate? DefaultValue {
+            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
+        }
+#else
         public DeviceManagementConfigurationChoiceSettingValueDefaultTemplate DefaultValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Recommended definition override.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate? RecommendedValueDefinition {
+            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate?>("recommendedValueDefinition"); }
+            set { BackingStore?.Set("recommendedValueDefinition", value); }
+        }
+#else
         public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RecommendedValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
             set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
+#endif
         /// <summary>Required definition override.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate? RequiredValueDefinition {
+            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate?>("requiredValueDefinition"); }
+            set { BackingStore?.Set("requiredValueDefinition", value); }
+        }
+#else
         public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RequiredValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("requiredValueDefinition"); }
             set { BackingStore?.Set("requiredValueDefinition", value); }
         }
+#endif
         /// <summary>Setting Value Template Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingValueTemplateId {
+            get { return BackingStore?.Get<string?>("settingValueTemplateId"); }
+            set { BackingStore?.Set("settingValueTemplateId", value); }
+        }
+#else
         public string SettingValueTemplateId {
             get { return BackingStore?.Get<string>("settingValueTemplateId"); }
             set { BackingStore?.Set("settingValueTemplateId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationChoiceSettingValueTemplate and sets the default values.
         /// </summary>

@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("check32BitOn64System", value); }
         }
         /// <summary>The file or folder comparison value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ComparisonValue {
+            get { return BackingStore?.Get<string?>("comparisonValue"); }
+            set { BackingStore?.Set("comparisonValue", value); }
+        }
+#else
         public string ComparisonValue {
             get { return BackingStore?.Get<string>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
+#endif
         /// <summary>The file or folder name to look up.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileOrFolderName {
+            get { return BackingStore?.Get<string?>("fileOrFolderName"); }
+            set { BackingStore?.Set("fileOrFolderName", value); }
+        }
+#else
         public string FileOrFolderName {
             get { return BackingStore?.Get<string>("fileOrFolderName"); }
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
+#endif
         /// <summary>Contains all supported file system detection type.</summary>
         public Win32LobAppFileSystemOperationType? OperationType {
             get { return BackingStore?.Get<Win32LobAppFileSystemOperationType?>("operationType"); }
@@ -31,10 +45,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The file or folder path to look up.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Path {
+            get { return BackingStore?.Get<string?>("path"); }
+            set { BackingStore?.Set("path", value); }
+        }
+#else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Win32LobAppFileSystemRule and sets the default values.
         /// </summary>

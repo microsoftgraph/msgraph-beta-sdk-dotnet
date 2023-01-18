@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Default value to be used in case the source property was evaluated to null. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultValue {
+            get { return BackingStore?.Get<string?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
+        }
+#else
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#endif
         /// <summary>For internal use only.</summary>
         public bool? ExportMissingReferences {
             get { return BackingStore?.Get<bool?>("exportMissingReferences"); }
@@ -39,20 +46,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("matchingPriority", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Defines how a value should be extracted (or transformed) from the source object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AttributeMappingSource? Source {
+            get { return BackingStore?.Get<AttributeMappingSource?>("source"); }
+            set { BackingStore?.Set("source", value); }
+        }
+#else
         public AttributeMappingSource Source {
             get { return BackingStore?.Get<AttributeMappingSource>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#endif
         /// <summary>Name of the attribute on the target object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetAttributeName {
+            get { return BackingStore?.Get<string?>("targetAttributeName"); }
+            set { BackingStore?.Set("targetAttributeName", value); }
+        }
+#else
         public string TargetAttributeName {
             get { return BackingStore?.Get<string>("targetAttributeName"); }
             set { BackingStore?.Set("targetAttributeName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new attributeMapping and sets the default values.
         /// </summary>

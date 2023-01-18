@@ -11,20 +11,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowNewTimeProposals", value); }
         }
         /// <summary>If the meeting update changes the meeting end time, this property specifies the previous meeting end time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? PreviousEndDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("previousEndDateTime"); }
+            set { BackingStore?.Set("previousEndDateTime", value); }
+        }
+#else
         public DateTimeTimeZone PreviousEndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("previousEndDateTime"); }
             set { BackingStore?.Set("previousEndDateTime", value); }
         }
+#endif
         /// <summary>If the meeting update changes the meeting location, this property specifies the previous meeting location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Location? PreviousLocation {
+            get { return BackingStore?.Get<Location?>("previousLocation"); }
+            set { BackingStore?.Set("previousLocation", value); }
+        }
+#else
         public Location PreviousLocation {
             get { return BackingStore?.Get<Location>("previousLocation"); }
             set { BackingStore?.Set("previousLocation", value); }
         }
+#endif
         /// <summary>If the meeting update changes the meeting start time, this property specifies the previous meeting start time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? PreviousStartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("previousStartDateTime"); }
+            set { BackingStore?.Set("previousStartDateTime", value); }
+        }
+#else
         public DateTimeTimeZone PreviousStartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("previousStartDateTime"); }
             set { BackingStore?.Set("previousStartDateTime", value); }
         }
+#endif
         /// <summary>Set to true if the sender would like the invitee to send a response to the requested meeting.</summary>
         public bool? ResponseRequested {
             get { return BackingStore?.Get<bool?>("responseRequested"); }

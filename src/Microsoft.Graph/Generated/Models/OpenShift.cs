@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OpenShift : ChangeTrackedEntity, IParsable {
         /// <summary>An unpublished open shift.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OpenShiftItem? DraftOpenShift {
+            get { return BackingStore?.Get<OpenShiftItem?>("draftOpenShift"); }
+            set { BackingStore?.Set("draftOpenShift", value); }
+        }
+#else
         public OpenShiftItem DraftOpenShift {
             get { return BackingStore?.Get<OpenShiftItem>("draftOpenShift"); }
             set { BackingStore?.Set("draftOpenShift", value); }
         }
+#endif
         /// <summary>The isStagedForDeletion property</summary>
         public bool? IsStagedForDeletion {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
         }
         /// <summary>ID for the scheduling group that the open shift belongs to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SchedulingGroupId {
+            get { return BackingStore?.Get<string?>("schedulingGroupId"); }
+            set { BackingStore?.Set("schedulingGroupId", value); }
+        }
+#else
         public string SchedulingGroupId {
             get { return BackingStore?.Get<string>("schedulingGroupId"); }
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
+#endif
         /// <summary>A published open shift.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OpenShiftItem? SharedOpenShift {
+            get { return BackingStore?.Get<OpenShiftItem?>("sharedOpenShift"); }
+            set { BackingStore?.Set("sharedOpenShift", value); }
+        }
+#else
         public OpenShiftItem SharedOpenShift {
             get { return BackingStore?.Get<OpenShiftItem>("sharedOpenShift"); }
             set { BackingStore?.Set("sharedOpenShift", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OpenShift and sets the default values.
         /// </summary>

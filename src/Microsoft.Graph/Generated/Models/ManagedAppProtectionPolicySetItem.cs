@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppProtectionPolicySetItem : PolicySetItem, IParsable {
         /// <summary>TargetedAppManagementLevels of the ManagedAppPolicySetItem.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetedAppManagementLevels {
+            get { return BackingStore?.Get<string?>("targetedAppManagementLevels"); }
+            set { BackingStore?.Set("targetedAppManagementLevels", value); }
+        }
+#else
         public string TargetedAppManagementLevels {
             get { return BackingStore?.Get<string>("targetedAppManagementLevels"); }
             set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ManagedAppProtectionPolicySetItem and sets the default values.
         /// </summary>

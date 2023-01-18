@@ -32,20 +32,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("batteryLevelPercentage", value); }
         }
         /// <summary>The serial number of the device’s current battery</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BatterySerialNumber {
+            get { return BackingStore?.Get<string?>("batterySerialNumber"); }
+            set { BackingStore?.Set("batterySerialNumber", value); }
+        }
+#else
         public string BatterySerialNumber {
             get { return BackingStore?.Get<string>("batterySerialNumber"); }
             set { BackingStore?.Set("batterySerialNumber", value); }
         }
+#endif
         /// <summary>Cellular technology of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CellularTechnology {
+            get { return BackingStore?.Get<string?>("cellularTechnology"); }
+            set { BackingStore?.Set("cellularTechnology", value); }
+        }
+#else
         public string CellularTechnology {
             get { return BackingStore?.Get<string>("cellularTechnology"); }
             set { BackingStore?.Set("cellularTechnology", value); }
         }
+#endif
         /// <summary>Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceFullQualifiedDomainName {
+            get { return BackingStore?.Get<string?>("deviceFullQualifiedDomainName"); }
+            set { BackingStore?.Set("deviceFullQualifiedDomainName", value); }
+        }
+#else
         public string DeviceFullQualifiedDomainName {
             get { return BackingStore?.Get<string>("deviceFullQualifiedDomainName"); }
             set { BackingStore?.Set("deviceFullQualifiedDomainName", value); }
         }
+#endif
         /// <summary>The deviceGuardLocalSystemAuthorityCredentialGuardState property</summary>
         public Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState?>("deviceGuardLocalSystemAuthorityCredentialGuardState"); }
@@ -67,35 +88,63 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceLicensingLastErrorCode", value); }
         }
         /// <summary>Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceLicensingLastErrorDescription {
+            get { return BackingStore?.Get<string?>("deviceLicensingLastErrorDescription"); }
+            set { BackingStore?.Set("deviceLicensingLastErrorDescription", value); }
+        }
+#else
         public string DeviceLicensingLastErrorDescription {
             get { return BackingStore?.Get<string>("deviceLicensingLastErrorDescription"); }
             set { BackingStore?.Set("deviceLicensingLastErrorDescription", value); }
         }
+#endif
         /// <summary>Indicates the device licensing status after Windows device based subscription has been enabled.</summary>
         public Microsoft.Graph.Beta.Models.DeviceLicensingStatus? DeviceLicensingStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceLicensingStatus?>("deviceLicensingStatus"); }
             set { BackingStore?.Set("deviceLicensingStatus", value); }
         }
         /// <summary>eSIM identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EsimIdentifier {
+            get { return BackingStore?.Get<string?>("esimIdentifier"); }
+            set { BackingStore?.Set("esimIdentifier", value); }
+        }
+#else
         public string EsimIdentifier {
             get { return BackingStore?.Get<string>("esimIdentifier"); }
             set { BackingStore?.Set("esimIdentifier", value); }
         }
+#endif
         /// <summary>Free storage space of the device.</summary>
         public long? FreeStorageSpace {
             get { return BackingStore?.Get<long?>("freeStorageSpace"); }
             set { BackingStore?.Set("freeStorageSpace", value); }
         }
         /// <summary>IMEI</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Imei {
+            get { return BackingStore?.Get<string?>("imei"); }
+            set { BackingStore?.Set("imei", value); }
+        }
+#else
         public string Imei {
             get { return BackingStore?.Get<string>("imei"); }
             set { BackingStore?.Set("imei", value); }
         }
+#endif
         /// <summary>IPAddressV4</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddressV4 {
+            get { return BackingStore?.Get<string?>("ipAddressV4"); }
+            set { BackingStore?.Set("ipAddressV4", value); }
+        }
+#else
         public string IpAddressV4 {
             get { return BackingStore?.Get<string>("ipAddressV4"); }
             set { BackingStore?.Set("ipAddressV4", value); }
         }
+#endif
         /// <summary>Encryption status of the device</summary>
         public bool? IsEncrypted {
             get { return BackingStore?.Get<bool?>("isEncrypted"); }
@@ -112,115 +161,248 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSupervised", value); }
         }
         /// <summary>Manufacturer of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>MEID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Meid {
+            get { return BackingStore?.Get<string?>("meid"); }
+            set { BackingStore?.Set("meid", value); }
+        }
+#else
         public string Meid {
             get { return BackingStore?.Get<string>("meid"); }
             set { BackingStore?.Set("meid", value); }
         }
+#endif
         /// <summary>Model of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>String that specifies the OS edition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystemEdition {
+            get { return BackingStore?.Get<string?>("operatingSystemEdition"); }
+            set { BackingStore?.Set("operatingSystemEdition", value); }
+        }
+#else
         public string OperatingSystemEdition {
             get { return BackingStore?.Get<string>("operatingSystemEdition"); }
             set { BackingStore?.Set("operatingSystemEdition", value); }
         }
+#endif
         /// <summary>Operating system language of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystemLanguage {
+            get { return BackingStore?.Get<string?>("operatingSystemLanguage"); }
+            set { BackingStore?.Set("operatingSystemLanguage", value); }
+        }
+#else
         public string OperatingSystemLanguage {
             get { return BackingStore?.Get<string>("operatingSystemLanguage"); }
             set { BackingStore?.Set("operatingSystemLanguage", value); }
         }
+#endif
         /// <summary>Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647</summary>
         public int? OperatingSystemProductType {
             get { return BackingStore?.Get<int?>("operatingSystemProductType"); }
             set { BackingStore?.Set("operatingSystemProductType", value); }
         }
         /// <summary>Operating System Build Number on Android device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsBuildNumber {
+            get { return BackingStore?.Get<string?>("osBuildNumber"); }
+            set { BackingStore?.Set("osBuildNumber", value); }
+        }
+#else
         public string OsBuildNumber {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
+#endif
         /// <summary>Phone number of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PhoneNumber {
+            get { return BackingStore?.Get<string?>("phoneNumber"); }
+            set { BackingStore?.Set("phoneNumber", value); }
+        }
+#else
         public string PhoneNumber {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
+#endif
         /// <summary>The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductName {
+            get { return BackingStore?.Get<string?>("productName"); }
+            set { BackingStore?.Set("productName", value); }
+        }
+#else
         public string ProductName {
             get { return BackingStore?.Get<string>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
+#endif
         /// <summary>The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647</summary>
         public int? ResidentUsersCount {
             get { return BackingStore?.Get<int?>("residentUsersCount"); }
             set { BackingStore?.Set("residentUsersCount", value); }
         }
         /// <summary>Serial number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SerialNumber {
+            get { return BackingStore?.Get<string?>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
+        }
+#else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#endif
         /// <summary>All users on the shared Apple device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SharedAppleDeviceUser>? SharedDeviceCachedUsers {
+            get { return BackingStore?.Get<List<SharedAppleDeviceUser>?>("sharedDeviceCachedUsers"); }
+            set { BackingStore?.Set("sharedDeviceCachedUsers", value); }
+        }
+#else
         public List<SharedAppleDeviceUser> SharedDeviceCachedUsers {
             get { return BackingStore?.Get<List<SharedAppleDeviceUser>>("sharedDeviceCachedUsers"); }
             set { BackingStore?.Set("sharedDeviceCachedUsers", value); }
         }
+#endif
         /// <summary>SubnetAddress</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubnetAddress {
+            get { return BackingStore?.Get<string?>("subnetAddress"); }
+            set { BackingStore?.Set("subnetAddress", value); }
+        }
+#else
         public string SubnetAddress {
             get { return BackingStore?.Get<string>("subnetAddress"); }
             set { BackingStore?.Set("subnetAddress", value); }
         }
+#endif
         /// <summary>Subscriber carrier of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubscriberCarrier {
+            get { return BackingStore?.Get<string?>("subscriberCarrier"); }
+            set { BackingStore?.Set("subscriberCarrier", value); }
+        }
+#else
         public string SubscriberCarrier {
             get { return BackingStore?.Get<string>("subscriberCarrier"); }
             set { BackingStore?.Set("subscriberCarrier", value); }
         }
+#endif
         /// <summary>BIOS version as reported by SMBIOS</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SystemManagementBIOSVersion {
+            get { return BackingStore?.Get<string?>("systemManagementBIOSVersion"); }
+            set { BackingStore?.Set("systemManagementBIOSVersion", value); }
+        }
+#else
         public string SystemManagementBIOSVersion {
             get { return BackingStore?.Get<string>("systemManagementBIOSVersion"); }
             set { BackingStore?.Set("systemManagementBIOSVersion", value); }
         }
+#endif
         /// <summary>Total storage space of the device.</summary>
         public long? TotalStorageSpace {
             get { return BackingStore?.Get<long?>("totalStorageSpace"); }
             set { BackingStore?.Set("totalStorageSpace", value); }
         }
         /// <summary>The identifying information that uniquely names the TPM manufacturer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TpmManufacturer {
+            get { return BackingStore?.Get<string?>("tpmManufacturer"); }
+            set { BackingStore?.Set("tpmManufacturer", value); }
+        }
+#else
         public string TpmManufacturer {
             get { return BackingStore?.Get<string>("tpmManufacturer"); }
             set { BackingStore?.Set("tpmManufacturer", value); }
         }
+#endif
         /// <summary>String that specifies the specification version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TpmSpecificationVersion {
+            get { return BackingStore?.Get<string?>("tpmSpecificationVersion"); }
+            set { BackingStore?.Set("tpmSpecificationVersion", value); }
+        }
+#else
         public string TpmSpecificationVersion {
             get { return BackingStore?.Get<string>("tpmSpecificationVersion"); }
             set { BackingStore?.Set("tpmSpecificationVersion", value); }
         }
+#endif
         /// <summary>The version of the TPM, as specified by the manufacturer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TpmVersion {
+            get { return BackingStore?.Get<string?>("tpmVersion"); }
+            set { BackingStore?.Set("tpmVersion", value); }
+        }
+#else
         public string TpmVersion {
             get { return BackingStore?.Get<string>("tpmVersion"); }
             set { BackingStore?.Set("tpmVersion", value); }
         }
+#endif
         /// <summary>WiFi MAC address of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WifiMac {
+            get { return BackingStore?.Get<string?>("wifiMac"); }
+            set { BackingStore?.Set("wifiMac", value); }
+        }
+#else
         public string WifiMac {
             get { return BackingStore?.Get<string>("wifiMac"); }
             set { BackingStore?.Set("wifiMac", value); }
         }
+#endif
         /// <summary>A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? WiredIPv4Addresses {
+            get { return BackingStore?.Get<List<string>?>("wiredIPv4Addresses"); }
+            set { BackingStore?.Set("wiredIPv4Addresses", value); }
+        }
+#else
         public List<string> WiredIPv4Addresses {
             get { return BackingStore?.Get<List<string>>("wiredIPv4Addresses"); }
             set { BackingStore?.Set("wiredIPv4Addresses", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new hardwareInformation and sets the default values.
         /// </summary>

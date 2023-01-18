@@ -72,11 +72,15 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from governanceRoleAssignmentRequests
+        /// Delete entity from governanceRoleAssignmentRequests by key (id)
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public async Task DeleteAsync(Action<GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#else
         public async Task DeleteAsync(Action<GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -85,11 +89,15 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from governanceRoleAssignmentRequests by key
+        /// Get entity from governanceRoleAssignmentRequests by key (id)
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public async Task<GovernanceRoleAssignmentRequest?> GetAsync(Action<GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#else
         public async Task<GovernanceRoleAssignmentRequest> GetAsync(Action<GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -98,12 +106,16 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequest>(requestInfo, GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in governanceRoleAssignmentRequests
+        /// Update entity in governanceRoleAssignmentRequests by key (id)
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public async Task<GovernanceRoleAssignmentRequest?> PatchAsync(GovernanceRoleAssignmentRequest body, Action<GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#else
         public async Task<GovernanceRoleAssignmentRequest> PatchAsync(GovernanceRoleAssignmentRequest body, Action<GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -113,10 +125,14 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequest>(requestInfo, GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from governanceRoleAssignmentRequests
+        /// Delete entity from governanceRoleAssignmentRequests by key (id)
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestInformation ToDeleteRequestInformation(Action<GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#else
         public RequestInformation ToDeleteRequestInformation(Action<GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
+#endif
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
                 UrlTemplate = UrlTemplate,
@@ -131,10 +147,14 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from governanceRoleAssignmentRequests by key
+        /// Get entity from governanceRoleAssignmentRequests by key (id)
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestInformation ToGetRequestInformation(Action<GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#else
         public RequestInformation ToGetRequestInformation(Action<GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+#endif
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -151,11 +171,15 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in governanceRoleAssignmentRequests
+        /// Update entity in governanceRoleAssignmentRequests by key (id)
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestInformation ToPatchRequestInformation(GovernanceRoleAssignmentRequest body, Action<GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#else
         public RequestInformation ToPatchRequestInformation(GovernanceRoleAssignmentRequest body, Action<GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+#endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -189,15 +213,25 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             }
         }
         /// <summary>
-        /// Get entity from governanceRoleAssignmentRequests by key
+        /// Get entity from governanceRoleAssignmentRequests by key (id)
         /// </summary>
         public class GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
+#endif
             /// <summary>Select properties to be returned</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+            [QueryParameter("%24select")]
+            public string[]? Select { get; set; }
+#else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
+#endif
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

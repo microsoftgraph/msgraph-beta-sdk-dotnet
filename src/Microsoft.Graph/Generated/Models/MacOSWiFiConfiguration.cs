@@ -16,25 +16,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Network Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkName {
+            get { return BackingStore?.Get<string?>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
+        }
+#else
         public string NetworkName {
             get { return BackingStore?.Get<string>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
+#endif
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreSharedKey {
+            get { return BackingStore?.Get<string?>("preSharedKey"); }
+            set { BackingStore?.Set("preSharedKey", value); }
+        }
+#else
         public string PreSharedKey {
             get { return BackingStore?.Get<string>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
+#endif
         /// <summary>URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProxyAutomaticConfigurationUrl {
+            get { return BackingStore?.Get<string?>("proxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
+        }
+#else
         public string ProxyAutomaticConfigurationUrl {
             get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
+#endif
         /// <summary>IP Address or DNS hostname of the proxy server when manual configuration is selected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProxyManualAddress {
+            get { return BackingStore?.Get<string?>("proxyManualAddress"); }
+            set { BackingStore?.Set("proxyManualAddress", value); }
+        }
+#else
         public string ProxyManualAddress {
             get { return BackingStore?.Get<string>("proxyManualAddress"); }
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
+#endif
         /// <summary>Port of the proxy server when manual configuration is selected.</summary>
         public int? ProxyManualPort {
             get { return BackingStore?.Get<int?>("proxyManualPort"); }
@@ -46,10 +74,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("proxySettings", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Ssid {
+            get { return BackingStore?.Get<string?>("ssid"); }
+            set { BackingStore?.Set("ssid", value); }
+        }
+#else
         public string Ssid {
             get { return BackingStore?.Get<string>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
+#endif
         /// <summary>Wi-Fi Security Types.</summary>
         public Microsoft.Graph.Beta.Models.WiFiSecurityType? WiFiSecurityType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiSecurityType?>("wiFiSecurityType"); }

@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The decisionMakerCriteria property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernanceCriteria>? DecisionMakerCriteria {
+            get { return BackingStore?.Get<List<GovernanceCriteria>?>("decisionMakerCriteria"); }
+            set { BackingStore?.Set("decisionMakerCriteria", value); }
+        }
+#else
         public List<GovernanceCriteria> DecisionMakerCriteria {
             get { return BackingStore?.Get<List<GovernanceCriteria>>("decisionMakerCriteria"); }
             set { BackingStore?.Set("decisionMakerCriteria", value); }
         }
+#endif
         /// <summary>The notificationPolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GovernanceNotificationPolicy? NotificationPolicy {
+            get { return BackingStore?.Get<GovernanceNotificationPolicy?>("notificationPolicy"); }
+            set { BackingStore?.Set("notificationPolicy", value); }
+        }
+#else
         public GovernanceNotificationPolicy NotificationPolicy {
             get { return BackingStore?.Get<GovernanceNotificationPolicy>("notificationPolicy"); }
             set { BackingStore?.Set("notificationPolicy", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new governancePolicy and sets the default values.
         /// </summary>

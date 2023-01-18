@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleEligibilitySchedule : UnifiedRoleScheduleBase, IParsable {
         /// <summary>Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MemberType {
+            get { return BackingStore?.Get<string?>("memberType"); }
+            set { BackingStore?.Set("memberType", value); }
+        }
+#else
         public string MemberType {
             get { return BackingStore?.Get<string>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
+#endif
         /// <summary>The schedule object of the eligible role assignment request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestSchedule? ScheduleInfo {
+            get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
+            set { BackingStore?.Set("scheduleInfo", value); }
+        }
+#else
         public RequestSchedule ScheduleInfo {
             get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

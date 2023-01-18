@@ -6,40 +6,89 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Invitation : Entity, IParsable {
         /// <summary>The user created as part of the invitation creation. Read-Only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public User? InvitedUser {
+            get { return BackingStore?.Get<User?>("invitedUser"); }
+            set { BackingStore?.Set("invitedUser", value); }
+        }
+#else
         public User InvitedUser {
             get { return BackingStore?.Get<User>("invitedUser"); }
             set { BackingStore?.Set("invitedUser", value); }
         }
+#endif
         /// <summary>The display name of the user being invited.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InvitedUserDisplayName {
+            get { return BackingStore?.Get<string?>("invitedUserDisplayName"); }
+            set { BackingStore?.Set("invitedUserDisplayName", value); }
+        }
+#else
         public string InvitedUserDisplayName {
             get { return BackingStore?.Get<string>("invitedUserDisplayName"); }
             set { BackingStore?.Set("invitedUserDisplayName", value); }
         }
+#endif
         /// <summary>The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&amp;)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InvitedUserEmailAddress {
+            get { return BackingStore?.Get<string?>("invitedUserEmailAddress"); }
+            set { BackingStore?.Set("invitedUserEmailAddress", value); }
+        }
+#else
         public string InvitedUserEmailAddress {
             get { return BackingStore?.Get<string>("invitedUserEmailAddress"); }
             set { BackingStore?.Set("invitedUserEmailAddress", value); }
         }
+#endif
         /// <summary>Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.InvitedUserMessageInfo? InvitedUserMessageInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InvitedUserMessageInfo?>("invitedUserMessageInfo"); }
+            set { BackingStore?.Set("invitedUserMessageInfo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.InvitedUserMessageInfo InvitedUserMessageInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InvitedUserMessageInfo>("invitedUserMessageInfo"); }
             set { BackingStore?.Set("invitedUserMessageInfo", value); }
         }
+#endif
         /// <summary>The userType of the user being invited. By default, this is Guest. You can invite as Member if you&apos;re are company administrator. The default is false.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InvitedUserType {
+            get { return BackingStore?.Get<string?>("invitedUserType"); }
+            set { BackingStore?.Set("invitedUserType", value); }
+        }
+#else
         public string InvitedUserType {
             get { return BackingStore?.Get<string>("invitedUserType"); }
             set { BackingStore?.Set("invitedUserType", value); }
         }
+#endif
         /// <summary>The URL the user can use to redeem their invitation. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InviteRedeemUrl {
+            get { return BackingStore?.Get<string?>("inviteRedeemUrl"); }
+            set { BackingStore?.Set("inviteRedeemUrl", value); }
+        }
+#else
         public string InviteRedeemUrl {
             get { return BackingStore?.Get<string>("inviteRedeemUrl"); }
             set { BackingStore?.Set("inviteRedeemUrl", value); }
         }
+#endif
         /// <summary>The URL user should be redirected to once the invitation is redeemed. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InviteRedirectUrl {
+            get { return BackingStore?.Get<string?>("inviteRedirectUrl"); }
+            set { BackingStore?.Set("inviteRedirectUrl", value); }
+        }
+#else
         public string InviteRedirectUrl {
             get { return BackingStore?.Get<string>("inviteRedirectUrl"); }
             set { BackingStore?.Set("inviteRedirectUrl", value); }
         }
+#endif
         /// <summary>Reset the user&apos;s redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user (Preview).</summary>
         public bool? ResetRedemption {
             get { return BackingStore?.Get<bool?>("resetRedemption"); }
@@ -51,10 +100,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sendInvitationMessage", value); }
         }
         /// <summary>The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

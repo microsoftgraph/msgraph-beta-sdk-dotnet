@@ -17,15 +17,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidDeviceOwnerKioskModeHomeScreenItem? Item {
+            get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeHomeScreenItem?>("item"); }
+            set { BackingStore?.Set("item", value); }
+        }
+#else
         public AndroidDeviceOwnerKioskModeHomeScreenItem Item {
             get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeHomeScreenItem>("item"); }
             set { BackingStore?.Set("item", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Position of the item on the grid. Valid values 0 to 9999999</summary>
         public int? Position {
             get { return BackingStore?.Get<int?>("position"); }

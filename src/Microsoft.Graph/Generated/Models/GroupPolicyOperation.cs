@@ -24,10 +24,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>The group policy operation status detail.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StatusDetails {
+            get { return BackingStore?.Get<string?>("statusDetails"); }
+            set { BackingStore?.Set("statusDetails", value); }
+        }
+#else
         public string StatusDetails {
             get { return BackingStore?.Get<string>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

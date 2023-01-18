@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eapType", value); }
         }
         /// <summary>Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidForWorkCertificateProfileBase? IdentityCertificateForClientAuthentication {
+            get { return BackingStore?.Get<AndroidForWorkCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
+            set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
+        }
+#else
         public AndroidForWorkCertificateProfileBase IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<AndroidForWorkCertificateProfileBase>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
+#endif
         /// <summary>Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
         public NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEapTtls {
             get { return BackingStore?.Get<NonEapAuthenticationMethodForEapTtlsType?>("innerAuthenticationProtocolForEapTtls"); }
@@ -31,20 +38,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("innerAuthenticationProtocolForPeap", value); }
         }
         /// <summary>Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS or PEAP. The String provided here is used to mask the username of individual users when they attempt to connect to Wi-Fi network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OuterIdentityPrivacyTemporaryValue {
+            get { return BackingStore?.Get<string?>("outerIdentityPrivacyTemporaryValue"); }
+            set { BackingStore?.Set("outerIdentityPrivacyTemporaryValue", value); }
+        }
+#else
         public string OuterIdentityPrivacyTemporaryValue {
             get { return BackingStore?.Get<string>("outerIdentityPrivacyTemporaryValue"); }
             set { BackingStore?.Set("outerIdentityPrivacyTemporaryValue", value); }
         }
+#endif
         /// <summary>Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidForWorkTrustedRootCertificate? RootCertificateForServerValidation {
+            get { return BackingStore?.Get<AndroidForWorkTrustedRootCertificate?>("rootCertificateForServerValidation"); }
+            set { BackingStore?.Set("rootCertificateForServerValidation", value); }
+        }
+#else
         public AndroidForWorkTrustedRootCertificate RootCertificateForServerValidation {
             get { return BackingStore?.Get<AndroidForWorkTrustedRootCertificate>("rootCertificateForServerValidation"); }
             set { BackingStore?.Set("rootCertificateForServerValidation", value); }
         }
+#endif
         /// <summary>Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users&apos; devices when they connect to this Wi-Fi network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TrustedServerCertificateNames {
+            get { return BackingStore?.Get<List<string>?>("trustedServerCertificateNames"); }
+            set { BackingStore?.Set("trustedServerCertificateNames", value); }
+        }
+#else
         public List<string> TrustedServerCertificateNames {
             get { return BackingStore?.Get<List<string>>("trustedServerCertificateNames"); }
             set { BackingStore?.Set("trustedServerCertificateNames", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidForWorkEnterpriseWiFiConfiguration and sets the default values.
         /// </summary>

@@ -8,10 +8,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.CallRecords.GetPstnCallsWithFromDateTimeWithToDateTime {
     public class GetPstnCallsWithFromDateTimeWithToDateTimeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PstnCallLogRow>? Value {
+            get { return BackingStore?.Get<List<PstnCallLogRow>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<PstnCallLogRow> Value {
             get { return BackingStore?.Get<List<PstnCallLogRow>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

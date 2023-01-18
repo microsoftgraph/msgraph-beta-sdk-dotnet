@@ -7,30 +7,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CustomCalloutExtension : Entity, IParsable {
         /// <summary>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CustomExtensionAuthenticationConfiguration? AuthenticationConfiguration {
+            get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration?>("authenticationConfiguration"); }
+            set { BackingStore?.Set("authenticationConfiguration", value); }
+        }
+#else
         public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration {
             get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
+#endif
         /// <summary>HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CustomExtensionClientConfiguration? ClientConfiguration {
+            get { return BackingStore?.Get<CustomExtensionClientConfiguration?>("clientConfiguration"); }
+            set { BackingStore?.Set("clientConfiguration", value); }
+        }
+#else
         public CustomExtensionClientConfiguration ClientConfiguration {
             get { return BackingStore?.Get<CustomExtensionClientConfiguration>("clientConfiguration"); }
             set { BackingStore?.Set("clientConfiguration", value); }
         }
+#endif
         /// <summary>Description for the customCalloutExtension object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Display name for the customCalloutExtension object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The type and details for configuring the endpoint to call the logic app&apos;s workflow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CustomExtensionEndpointConfiguration? EndpointConfiguration {
+            get { return BackingStore?.Get<CustomExtensionEndpointConfiguration?>("endpointConfiguration"); }
+            set { BackingStore?.Set("endpointConfiguration", value); }
+        }
+#else
         public CustomExtensionEndpointConfiguration EndpointConfiguration {
             get { return BackingStore?.Get<CustomExtensionEndpointConfiguration>("endpointConfiguration"); }
             set { BackingStore?.Set("endpointConfiguration", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

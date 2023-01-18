@@ -13,17 +13,31 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceConfigurationAssignment>? Assignments {
+            get { return BackingStore?.Get<List<DeviceConfigurationAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<DeviceConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceConfigurationGroupAssignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceConfigurationGroupAssignment>? DeviceConfigurationGroupAssignments {
+            get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>?>("deviceConfigurationGroupAssignments"); }
+            set { BackingStore?.Set("deviceConfigurationGroupAssignments", value); }
+        }
+#else
         public List<DeviceConfigurationGroupAssignment> DeviceConfigurationGroupAssignments {
             get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>>("deviceConfigurationGroupAssignments"); }
             set { BackingStore?.Set("deviceConfigurationGroupAssignments", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.
         /// </summary>

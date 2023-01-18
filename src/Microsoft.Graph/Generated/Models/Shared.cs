@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The identity of the owner of the shared item. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Owner {
+            get { return BackingStore?.Get<IdentitySet?>("owner"); }
+            set { BackingStore?.Set("owner", value); }
+        }
+#else
         public IdentitySet Owner {
             get { return BackingStore?.Get<IdentitySet>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#endif
         /// <summary>Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Scope {
+            get { return BackingStore?.Get<string?>("scope"); }
+            set { BackingStore?.Set("scope", value); }
+        }
+#else
         public string Scope {
             get { return BackingStore?.Get<string>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
+#endif
         /// <summary>The identity of the user who shared the item. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? SharedBy {
+            get { return BackingStore?.Get<IdentitySet?>("sharedBy"); }
+            set { BackingStore?.Set("sharedBy", value); }
+        }
+#else
         public IdentitySet SharedBy {
             get { return BackingStore?.Get<IdentitySet>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
+#endif
         /// <summary>The UTC date and time when the item was shared. Read-only.</summary>
         public DateTimeOffset? SharedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("sharedDateTime"); }

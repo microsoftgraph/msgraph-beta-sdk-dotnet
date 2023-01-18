@@ -13,10 +13,17 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.UnenrollAss
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAsset>? Assets {
+            get { return BackingStore?.Get<List<UpdatableAsset>?>("assets"); }
+            set { BackingStore?.Set("assets", value); }
+        }
+#else
         public List<UpdatableAsset> Assets {
             get { return BackingStore?.Get<List<UpdatableAsset>>("assets"); }
             set { BackingStore?.Set("assets", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The updateCategory property</summary>

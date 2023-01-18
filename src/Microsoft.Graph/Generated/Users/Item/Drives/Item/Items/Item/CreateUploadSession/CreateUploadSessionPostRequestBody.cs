@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.CreateUploadSes
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The item property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DriveItemUploadableProperties? Item {
+            get { return BackingStore?.Get<DriveItemUploadableProperties?>("item"); }
+            set { BackingStore?.Set("item", value); }
+        }
+#else
         public DriveItemUploadableProperties Item {
             get { return BackingStore?.Get<DriveItemUploadableProperties>("item"); }
             set { BackingStore?.Set("item", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new createUploadSessionPostRequestBody and sets the default values.
         /// </summary>

@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dataType", value); }
         }
         /// <summary>The description of the user flow attribute that&apos;s shown to the user at the time of sign-up.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the user flow attribute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The userFlowAttributeType property</summary>
         public IdentityUserFlowAttributeType? UserFlowAttributeType {
             get { return BackingStore?.Get<IdentityUserFlowAttributeType?>("userFlowAttributeType"); }

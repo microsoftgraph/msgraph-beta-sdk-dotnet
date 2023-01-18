@@ -11,30 +11,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("classificationMethod", value); }
         }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The publisherName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PublisherName {
+            get { return BackingStore?.Get<string?>("publisherName"); }
+            set { BackingStore?.Set("publisherName", value); }
+        }
+#else
         public string PublisherName {
             get { return BackingStore?.Get<string>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
+#endif
         /// <summary>The rulePackageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RulePackageId {
+            get { return BackingStore?.Get<string?>("rulePackageId"); }
+            set { BackingStore?.Set("rulePackageId", value); }
+        }
+#else
         public string RulePackageId {
             get { return BackingStore?.Get<string>("rulePackageId"); }
             set { BackingStore?.Set("rulePackageId", value); }
         }
+#endif
         /// <summary>The rulePackageType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RulePackageType {
+            get { return BackingStore?.Get<string?>("rulePackageType"); }
+            set { BackingStore?.Set("rulePackageType", value); }
+        }
+#else
         public string RulePackageType {
             get { return BackingStore?.Get<string>("rulePackageType"); }
             set { BackingStore?.Set("rulePackageType", value); }
         }
+#endif
         /// <summary>The scope property</summary>
         public SensitiveTypeScope? Scope {
             get { return BackingStore?.Get<SensitiveTypeScope?>("scope"); }
@@ -46,10 +81,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sensitiveTypeSource", value); }
         }
         /// <summary>The state property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? State {
+            get { return BackingStore?.Get<string?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

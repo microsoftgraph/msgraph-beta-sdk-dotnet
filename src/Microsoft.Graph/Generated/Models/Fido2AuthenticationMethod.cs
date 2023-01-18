@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Fido2AuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AaGuid {
+            get { return BackingStore?.Get<string?>("aaGuid"); }
+            set { BackingStore?.Set("aaGuid", value); }
+        }
+#else
         public string AaGuid {
             get { return BackingStore?.Get<string>("aaGuid"); }
             set { BackingStore?.Set("aaGuid", value); }
         }
+#endif
         /// <summary>The attestation certificate(s) attached to this security key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AttestationCertificates {
+            get { return BackingStore?.Get<List<string>?>("attestationCertificates"); }
+            set { BackingStore?.Set("attestationCertificates", value); }
+        }
+#else
         public List<string> AttestationCertificates {
             get { return BackingStore?.Get<List<string>>("attestationCertificates"); }
             set { BackingStore?.Set("attestationCertificates", value); }
         }
+#endif
         /// <summary>The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AttestationLevel? AttestationLevel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttestationLevel?>("attestationLevel"); }
@@ -31,15 +45,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The display name of the key as given by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The manufacturer-assigned model of the FIDO2 security key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Fido2AuthenticationMethod and sets the default values.
         /// </summary>

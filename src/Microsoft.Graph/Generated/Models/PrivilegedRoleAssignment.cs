@@ -16,25 +16,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isElevated", value); }
         }
         /// <summary>Result message set by the service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResultMessage {
+            get { return BackingStore?.Get<string?>("resultMessage"); }
+            set { BackingStore?.Set("resultMessage", value); }
+        }
+#else
         public string ResultMessage {
             get { return BackingStore?.Get<string>("resultMessage"); }
             set { BackingStore?.Set("resultMessage", value); }
         }
+#endif
         /// <summary>Role identifier. In GUID string format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleId {
+            get { return BackingStore?.Get<string?>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
+        }
+#else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. The associated role information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrivilegedRole? RoleInfo {
+            get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
+            set { BackingStore?.Set("roleInfo", value); }
+        }
+#else
         public PrivilegedRole RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
+#endif
         /// <summary>User identifier. In GUID string format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

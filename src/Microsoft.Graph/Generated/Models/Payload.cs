@@ -16,30 +16,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("complexity", value); }
         }
         /// <summary>The createdBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EmailIdentity? CreatedBy {
+            get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public EmailIdentity CreatedBy {
             get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The detail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PayloadDetail? Detail {
+            get { return BackingStore?.Get<PayloadDetail?>("detail"); }
+            set { BackingStore?.Set("detail", value); }
+        }
+#else
         public PayloadDetail Detail {
             get { return BackingStore?.Get<PayloadDetail>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The industry property</summary>
         public PayloadIndustry? Industry {
             get { return BackingStore?.Get<PayloadIndustry?>("industry"); }
@@ -61,25 +89,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isCurrentEvent", value); }
         }
         /// <summary>The language property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Language {
+            get { return BackingStore?.Get<string?>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#else
         public string Language {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+#endif
         /// <summary>The lastModifiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EmailIdentity? LastModifiedBy {
+            get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public EmailIdentity LastModifiedBy {
             get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The payloadTags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? PayloadTags {
+            get { return BackingStore?.Get<List<string>?>("payloadTags"); }
+            set { BackingStore?.Set("payloadTags", value); }
+        }
+#else
         public List<string> PayloadTags {
             get { return BackingStore?.Get<List<string>>("payloadTags"); }
             set { BackingStore?.Set("payloadTags", value); }
         }
+#endif
         /// <summary>The platform property</summary>
         public PayloadDeliveryPlatform? Platform {
             get { return BackingStore?.Get<PayloadDeliveryPlatform?>("platform"); }

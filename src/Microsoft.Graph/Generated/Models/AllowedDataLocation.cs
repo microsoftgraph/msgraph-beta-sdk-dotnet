@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AllowedDataLocation : Entity, IParsable {
         /// <summary>The appId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppId {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#endif
         /// <summary>The domain property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Domain {
+            get { return BackingStore?.Get<string?>("domain"); }
+            set { BackingStore?.Set("domain", value); }
+        }
+#else
         public string Domain {
             get { return BackingStore?.Get<string>("domain"); }
             set { BackingStore?.Set("domain", value); }
         }
+#endif
         /// <summary>The isDefault property</summary>
         public bool? IsDefault {
             get { return BackingStore?.Get<bool?>("isDefault"); }
             set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>The location property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Location {
+            get { return BackingStore?.Get<string?>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#else
         public string Location {
             get { return BackingStore?.Get<string>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

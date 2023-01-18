@@ -6,40 +6,89 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamsTab : Entity, IParsable {
         /// <summary>Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamsTabConfiguration? Configuration {
+            get { return BackingStore?.Get<TeamsTabConfiguration?>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
+        }
+#else
         public TeamsTabConfiguration Configuration {
             get { return BackingStore?.Get<TeamsTabConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
+#endif
         /// <summary>Name of the tab.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The messageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MessageId {
+            get { return BackingStore?.Get<string?>("messageId"); }
+            set { BackingStore?.Set("messageId", value); }
+        }
+#else
         public string MessageId {
             get { return BackingStore?.Get<string>("messageId"); }
             set { BackingStore?.Set("messageId", value); }
         }
+#endif
         /// <summary>Index of the order used for sorting tabs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SortOrderIndex {
+            get { return BackingStore?.Get<string?>("sortOrderIndex"); }
+            set { BackingStore?.Set("sortOrderIndex", value); }
+        }
+#else
         public string SortOrderIndex {
             get { return BackingStore?.Get<string>("sortOrderIndex"); }
             set { BackingStore?.Set("sortOrderIndex", value); }
         }
+#endif
         /// <summary>The application that is linked to the tab.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TeamsApp? TeamsApp {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp?>("teamsApp"); }
+            set { BackingStore?.Set("teamsApp", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TeamsApp TeamsApp {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp>("teamsApp"); }
             set { BackingStore?.Set("teamsApp", value); }
         }
+#endif
         /// <summary>The teamsAppId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TeamsAppId {
+            get { return BackingStore?.Get<string?>("teamsAppId"); }
+            set { BackingStore?.Set("teamsAppId", value); }
+        }
+#else
         public string TeamsAppId {
             get { return BackingStore?.Get<string>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
+#endif
         /// <summary>Deep link URL of the tab instance. Read only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

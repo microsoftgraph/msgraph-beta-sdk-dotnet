@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Settings governing conditions to monitor and automated actions to take.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MonitoringSettings? Monitoring {
+            get { return BackingStore?.Get<MonitoringSettings?>("monitoring"); }
+            set { BackingStore?.Set("monitoring", value); }
+        }
+#else
         public MonitoringSettings Monitoring {
             get { return BackingStore?.Get<MonitoringSettings>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Settings governing how the content is rolled out.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RolloutSettings? Rollout {
+            get { return BackingStore?.Get<RolloutSettings?>("rollout"); }
+            set { BackingStore?.Set("rollout", value); }
+        }
+#else
         public RolloutSettings Rollout {
             get { return BackingStore?.Get<RolloutSettings>("rollout"); }
             set { BackingStore?.Set("rollout", value); }
         }
+#endif
         /// <summary>Settings governing safeguard holds on offering content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SafeguardSettings? Safeguard {
+            get { return BackingStore?.Get<SafeguardSettings?>("safeguard"); }
+            set { BackingStore?.Set("safeguard", value); }
+        }
+#else
         public SafeguardSettings Safeguard {
             get { return BackingStore?.Get<SafeguardSettings>("safeguard"); }
             set { BackingStore?.Set("safeguard", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deploymentSettings and sets the default values.
         /// </summary>

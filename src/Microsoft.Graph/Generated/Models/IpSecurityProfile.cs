@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IpSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ActivityGroupNames {
+            get { return BackingStore?.Get<List<string>?>("activityGroupNames"); }
+            set { BackingStore?.Set("activityGroupNames", value); }
+        }
+#else
         public List<string> ActivityGroupNames {
             get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
             set { BackingStore?.Set("activityGroupNames", value); }
         }
+#endif
         /// <summary>The address property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Address {
+            get { return BackingStore?.Get<string?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public string Address {
             get { return BackingStore?.Get<string>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>The azureSubscriptionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureSubscriptionId {
+            get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
+        }
+#else
         public string AzureSubscriptionId {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
+#endif
         /// <summary>The azureTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureTenantId {
+            get { return BackingStore?.Get<string?>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
+        }
+#else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#endif
         /// <summary>The countHits property</summary>
         public int? CountHits {
             get { return BackingStore?.Get<int?>("countHits"); }
@@ -41,35 +69,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The ipCategories property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IpCategory>? IpCategories {
+            get { return BackingStore?.Get<List<IpCategory>?>("ipCategories"); }
+            set { BackingStore?.Set("ipCategories", value); }
+        }
+#else
         public List<IpCategory> IpCategories {
             get { return BackingStore?.Get<List<IpCategory>>("ipCategories"); }
             set { BackingStore?.Set("ipCategories", value); }
         }
+#endif
         /// <summary>The ipReferenceData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.IpReferenceData>? IpReferenceData {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpReferenceData>?>("ipReferenceData"); }
+            set { BackingStore?.Set("ipReferenceData", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.IpReferenceData> IpReferenceData {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpReferenceData>>("ipReferenceData"); }
             set { BackingStore?.Set("ipReferenceData", value); }
         }
+#endif
         /// <summary>The lastSeenDateTime property</summary>
         public DateTimeOffset? LastSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The riskScore property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RiskScore {
+            get { return BackingStore?.Get<string?>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
+        }
+#else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#endif
         /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tags {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>The vendorInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SecurityVendorInformation? VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
+        }
+#else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

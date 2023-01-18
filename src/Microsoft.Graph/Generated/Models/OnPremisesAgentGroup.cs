@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesAgentGroup : Entity, IParsable {
         /// <summary>List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnPremisesAgent>? Agents {
+            get { return BackingStore?.Get<List<OnPremisesAgent>?>("agents"); }
+            set { BackingStore?.Set("agents", value); }
+        }
+#else
         public List<OnPremisesAgent> Agents {
             get { return BackingStore?.Get<List<OnPremisesAgent>>("agents"); }
             set { BackingStore?.Set("agents", value); }
         }
+#endif
         /// <summary>Display name of the onPremisesAgentGroup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.</summary>
         public bool? IsDefault {
             get { return BackingStore?.Get<bool?>("isDefault"); }
             set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PublishedResource>? PublishedResources {
+            get { return BackingStore?.Get<List<PublishedResource>?>("publishedResources"); }
+            set { BackingStore?.Set("publishedResources", value); }
+        }
+#else
         public List<PublishedResource> PublishedResources {
             get { return BackingStore?.Get<List<PublishedResource>>("publishedResources"); }
             set { BackingStore?.Set("publishedResources", value); }
         }
+#endif
         /// <summary>The publishingType property</summary>
         public OnPremisesPublishingType? PublishingType {
             get { return BackingStore?.Get<OnPremisesPublishingType?>("publishingType"); }

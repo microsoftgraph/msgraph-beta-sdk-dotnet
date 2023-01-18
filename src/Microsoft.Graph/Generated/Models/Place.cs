@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Place : Entity, IParsable {
         /// <summary>The street address of the place.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PhysicalAddress? Address {
+            get { return BackingStore?.Get<PhysicalAddress?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public PhysicalAddress Address {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>The name associated with the place.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Specifies the place location in latitude, longitude and (optionally) altitude coordinates.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OutlookGeoCoordinates? GeoCoordinates {
+            get { return BackingStore?.Get<OutlookGeoCoordinates?>("geoCoordinates"); }
+            set { BackingStore?.Set("geoCoordinates", value); }
+        }
+#else
         public OutlookGeoCoordinates GeoCoordinates {
             get { return BackingStore?.Get<OutlookGeoCoordinates>("geoCoordinates"); }
             set { BackingStore?.Set("geoCoordinates", value); }
         }
+#endif
         /// <summary>The phone number of the place.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Phone {
+            get { return BackingStore?.Get<string?>("phone"); }
+            set { BackingStore?.Set("phone", value); }
+        }
+#else
         public string Phone {
             get { return BackingStore?.Get<string>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -17,75 +17,159 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Current value of setting on device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CurrentValue {
+            get { return BackingStore?.Get<string?>("currentValue"); }
+            set { BackingStore?.Set("currentValue", value); }
+        }
+#else
         public string CurrentValue {
             get { return BackingStore?.Get<string>("currentValue"); }
             set { BackingStore?.Set("currentValue", value); }
         }
+#endif
         /// <summary>Error code for the setting</summary>
         public long? ErrorCode {
             get { return BackingStore?.Get<long?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Error description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorDescription {
+            get { return BackingStore?.Get<string?>("errorDescription"); }
+            set { BackingStore?.Set("errorDescription", value); }
+        }
+#else
         public string ErrorDescription {
             get { return BackingStore?.Get<string>("errorDescription"); }
             set { BackingStore?.Set("errorDescription", value); }
         }
+#endif
         /// <summary>Name of setting instance that is being reported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InstanceDisplayName {
+            get { return BackingStore?.Get<string?>("instanceDisplayName"); }
+            set { BackingStore?.Set("instanceDisplayName", value); }
+        }
+#else
         public string InstanceDisplayName {
             get { return BackingStore?.Get<string>("instanceDisplayName"); }
             set { BackingStore?.Set("instanceDisplayName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The setting that is being reported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Setting {
+            get { return BackingStore?.Get<string?>("setting"); }
+            set { BackingStore?.Set("setting", value); }
+        }
+#else
         public string Setting {
             get { return BackingStore?.Get<string>("setting"); }
             set { BackingStore?.Set("setting", value); }
         }
+#endif
         /// <summary>SettingInstanceId</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingInstanceId {
+            get { return BackingStore?.Get<string?>("settingInstanceId"); }
+            set { BackingStore?.Set("settingInstanceId", value); }
+        }
+#else
         public string SettingInstanceId {
             get { return BackingStore?.Get<string>("settingInstanceId"); }
             set { BackingStore?.Set("settingInstanceId", value); }
         }
+#endif
         /// <summary>Localized/user friendly setting name that is being reported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingName {
+            get { return BackingStore?.Get<string?>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
+        }
+#else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#endif
         /// <summary>Contributing policies</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SettingSource>? Sources {
+            get { return BackingStore?.Get<List<SettingSource>?>("sources"); }
+            set { BackingStore?.Set("sources", value); }
+        }
+#else
         public List<SettingSource> Sources {
             get { return BackingStore?.Get<List<SettingSource>>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public ComplianceStatus? State {
             get { return BackingStore?.Get<ComplianceStatus?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>UserEmail</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserEmail {
+            get { return BackingStore?.Get<string?>("userEmail"); }
+            set { BackingStore?.Set("userEmail", value); }
+        }
+#else
         public string UserEmail {
             get { return BackingStore?.Get<string>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
+#endif
         /// <summary>UserId</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>UserName</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserName {
+            get { return BackingStore?.Get<string?>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
+#else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#endif
         /// <summary>UserPrincipalName.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceCompliancePolicySettingState and sets the default values.
         /// </summary>

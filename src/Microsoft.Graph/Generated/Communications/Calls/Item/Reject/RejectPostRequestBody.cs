@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Reject {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callbackUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CallbackUri {
+            get { return BackingStore?.Get<string?>("callbackUri"); }
+            set { BackingStore?.Set("callbackUri", value); }
+        }
+#else
         public string CallbackUri {
             get { return BackingStore?.Get<string>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
+#endif
         /// <summary>The reason property</summary>
         public RejectReason? Reason {
             get { return BackingStore?.Get<RejectReason?>("reason"); }

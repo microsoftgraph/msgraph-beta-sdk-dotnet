@@ -9,25 +9,53 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MobileAppInstallStatus : Entity, IParsable {
         /// <summary>The navigation link to the mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MobileApp? App {
+            get { return BackingStore?.Get<MobileApp?>("app"); }
+            set { BackingStore?.Set("app", value); }
+        }
+#else
         public MobileApp App {
             get { return BackingStore?.Get<MobileApp>("app"); }
             set { BackingStore?.Set("app", value); }
         }
+#endif
         /// <summary>Device ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>Device name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>Human readable version of the application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayVersion {
+            get { return BackingStore?.Get<string?>("displayVersion"); }
+            set { BackingStore?.Set("displayVersion", value); }
+        }
+#else
         public string DisplayVersion {
             get { return BackingStore?.Get<string>("displayVersion"); }
             set { BackingStore?.Set("displayVersion", value); }
         }
+#endif
         /// <summary>The error code for install or uninstall failures.</summary>
         public int? ErrorCode {
             get { return BackingStore?.Get<int?>("errorCode"); }
@@ -54,25 +82,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mobileAppInstallStatusValue", value); }
         }
         /// <summary>OS Description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsDescription {
+            get { return BackingStore?.Get<string?>("osDescription"); }
+            set { BackingStore?.Set("osDescription", value); }
+        }
+#else
         public string OsDescription {
             get { return BackingStore?.Get<string>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
+#endif
         /// <summary>OS Version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>Device User Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserName {
+            get { return BackingStore?.Get<string?>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
+#else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#endif
         /// <summary>User Principal Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

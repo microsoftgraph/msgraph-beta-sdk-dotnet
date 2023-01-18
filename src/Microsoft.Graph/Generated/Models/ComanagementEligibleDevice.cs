@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("clientRegistrationStatus", value); }
         }
         /// <summary>DeviceName</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>Device type.</summary>
         public Microsoft.Graph.Beta.Models.DeviceType? DeviceType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceType?>("deviceType"); }
@@ -39,70 +46,147 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managementState", value); }
         }
         /// <summary>Manufacturer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>MDMStatus</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MdmStatus {
+            get { return BackingStore?.Get<string?>("mdmStatus"); }
+            set { BackingStore?.Set("mdmStatus", value); }
+        }
+#else
         public string MdmStatus {
             get { return BackingStore?.Get<string>("mdmStatus"); }
             set { BackingStore?.Set("mdmStatus", value); }
         }
+#endif
         /// <summary>Model</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>OSDescription</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsDescription {
+            get { return BackingStore?.Get<string?>("osDescription"); }
+            set { BackingStore?.Set("osDescription", value); }
+        }
+#else
         public string OsDescription {
             get { return BackingStore?.Get<string>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
+#endif
         /// <summary>OSVersion</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>Owner type of device.</summary>
         public Microsoft.Graph.Beta.Models.OwnerType? OwnerType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OwnerType?>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>ReferenceId</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReferenceId {
+            get { return BackingStore?.Get<string?>("referenceId"); }
+            set { BackingStore?.Set("referenceId", value); }
+        }
+#else
         public string ReferenceId {
             get { return BackingStore?.Get<string>("referenceId"); }
             set { BackingStore?.Set("referenceId", value); }
         }
+#endif
         /// <summary>SerialNumber</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SerialNumber {
+            get { return BackingStore?.Get<string?>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
+        }
+#else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public ComanagementEligibleType? Status {
             get { return BackingStore?.Get<ComanagementEligibleType?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>UPN</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Upn {
+            get { return BackingStore?.Get<string?>("upn"); }
+            set { BackingStore?.Set("upn", value); }
+        }
+#else
         public string Upn {
             get { return BackingStore?.Get<string>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
+#endif
         /// <summary>UserEmail</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserEmail {
+            get { return BackingStore?.Get<string?>("userEmail"); }
+            set { BackingStore?.Set("userEmail", value); }
+        }
+#else
         public string UserEmail {
             get { return BackingStore?.Get<string>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
+#endif
         /// <summary>UserId</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>UserName</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserName {
+            get { return BackingStore?.Get<string?>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
+#else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

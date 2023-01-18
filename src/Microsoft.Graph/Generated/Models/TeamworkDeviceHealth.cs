@@ -6,50 +6,99 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamworkDeviceHealth : Entity, IParsable {
         /// <summary>The connection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkConnection? Connection {
+            get { return BackingStore?.Get<TeamworkConnection?>("connection"); }
+            set { BackingStore?.Set("connection", value); }
+        }
+#else
         public TeamworkConnection Connection {
             get { return BackingStore?.Get<TeamworkConnection>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
+#endif
         /// <summary>Identity of the user who created the device health document.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The UTC date and time when the device health document was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Health details about the device hardware.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkHardwareHealth? HardwareHealth {
+            get { return BackingStore?.Get<TeamworkHardwareHealth?>("hardwareHealth"); }
+            set { BackingStore?.Set("hardwareHealth", value); }
+        }
+#else
         public TeamworkHardwareHealth HardwareHealth {
             get { return BackingStore?.Get<TeamworkHardwareHealth>("hardwareHealth"); }
             set { BackingStore?.Set("hardwareHealth", value); }
         }
+#endif
         /// <summary>Identity of the user who last modified the device health details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The UTC date and time when the device health detail was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The login status of Microsoft Teams, Skype for Business, and Exchange.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkLoginStatus? LoginStatus {
+            get { return BackingStore?.Get<TeamworkLoginStatus?>("loginStatus"); }
+            set { BackingStore?.Set("loginStatus", value); }
+        }
+#else
         public TeamworkLoginStatus LoginStatus {
             get { return BackingStore?.Get<TeamworkLoginStatus>("loginStatus"); }
             set { BackingStore?.Set("loginStatus", value); }
         }
+#endif
         /// <summary>Health details about all peripherals (for example, speaker and microphone) attached to a device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheralsHealth? PeripheralsHealth {
+            get { return BackingStore?.Get<TeamworkPeripheralsHealth?>("peripheralsHealth"); }
+            set { BackingStore?.Set("peripheralsHealth", value); }
+        }
+#else
         public TeamworkPeripheralsHealth PeripheralsHealth {
             get { return BackingStore?.Get<TeamworkPeripheralsHealth>("peripheralsHealth"); }
             set { BackingStore?.Set("peripheralsHealth", value); }
         }
+#endif
         /// <summary>Software updates available for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkSoftwareUpdateHealth? SoftwareUpdateHealth {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth?>("softwareUpdateHealth"); }
+            set { BackingStore?.Set("softwareUpdateHealth", value); }
+        }
+#else
         public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth>("softwareUpdateHealth"); }
             set { BackingStore?.Set("softwareUpdateHealth", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

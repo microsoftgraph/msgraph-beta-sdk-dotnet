@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UserScopeTeamsAppInstallation : TeamsAppInstallation, IParsable {
         /// <summary>The chat between the user and Teams app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Chat? Chat {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Chat?>("chat"); }
+            set { BackingStore?.Set("chat", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Chat Chat {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Chat>("chat"); }
             set { BackingStore?.Set("chat", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new UserScopeTeamsAppInstallation and sets the default values.
         /// </summary>

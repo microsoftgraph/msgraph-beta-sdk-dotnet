@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationStringSettingValue : DeviceManagementConfigurationSimpleSettingValue, IParsable {
         /// <summary>Value of the string setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Value {
+            get { return BackingStore?.Get<string?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationStringSettingValue and sets the default values.
         /// </summary>

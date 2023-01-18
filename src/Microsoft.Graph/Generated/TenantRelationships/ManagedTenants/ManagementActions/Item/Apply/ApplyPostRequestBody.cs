@@ -14,35 +14,70 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The excludeGroups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludeGroups {
+            get { return BackingStore?.Get<List<string>?>("excludeGroups"); }
+            set { BackingStore?.Set("excludeGroups", value); }
+        }
+#else
         public List<string> ExcludeGroups {
             get { return BackingStore?.Get<List<string>>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
+#endif
         /// <summary>The includeAllUsers property</summary>
         public bool? IncludeAllUsers {
             get { return BackingStore?.Get<bool?>("includeAllUsers"); }
             set { BackingStore?.Set("includeAllUsers", value); }
         }
         /// <summary>The includeGroups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IncludeGroups {
+            get { return BackingStore?.Get<List<string>?>("includeGroups"); }
+            set { BackingStore?.Set("includeGroups", value); }
+        }
+#else
         public List<string> IncludeGroups {
             get { return BackingStore?.Get<List<string>>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
+#endif
         /// <summary>The managementTemplateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateId {
+            get { return BackingStore?.Get<string?>("managementTemplateId"); }
+            set { BackingStore?.Set("managementTemplateId", value); }
+        }
+#else
         public string ManagementTemplateId {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
+#endif
         /// <summary>The tenantGroupId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantGroupId {
+            get { return BackingStore?.Get<string?>("tenantGroupId"); }
+            set { BackingStore?.Set("tenantGroupId", value); }
+        }
+#else
         public string TenantGroupId {
             get { return BackingStore?.Get<string>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
+#endif
         /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new applyPostRequestBody and sets the default values.
         /// </summary>

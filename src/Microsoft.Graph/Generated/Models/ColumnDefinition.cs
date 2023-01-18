@@ -6,75 +6,159 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ColumnDefinition : Entity, IParsable {
         /// <summary>This column stores boolean values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BooleanColumn? Boolean {
+            get { return BackingStore?.Get<BooleanColumn?>("boolean"); }
+            set { BackingStore?.Set("boolean", value); }
+        }
+#else
         public BooleanColumn Boolean {
             get { return BackingStore?.Get<BooleanColumn>("boolean"); }
             set { BackingStore?.Set("boolean", value); }
         }
+#endif
         /// <summary>This column&apos;s data is calculated based on other columns.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CalculatedColumn? Calculated {
+            get { return BackingStore?.Get<CalculatedColumn?>("calculated"); }
+            set { BackingStore?.Set("calculated", value); }
+        }
+#else
         public CalculatedColumn Calculated {
             get { return BackingStore?.Get<CalculatedColumn>("calculated"); }
             set { BackingStore?.Set("calculated", value); }
         }
+#endif
         /// <summary>This column stores data from a list of choices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChoiceColumn? Choice {
+            get { return BackingStore?.Get<ChoiceColumn?>("choice"); }
+            set { BackingStore?.Set("choice", value); }
+        }
+#else
         public ChoiceColumn Choice {
             get { return BackingStore?.Get<ChoiceColumn>("choice"); }
             set { BackingStore?.Set("choice", value); }
         }
+#endif
         /// <summary>For site columns, the name of the group this column belongs to. Helps organize related columns.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ColumnGroup {
+            get { return BackingStore?.Get<string?>("columnGroup"); }
+            set { BackingStore?.Set("columnGroup", value); }
+        }
+#else
         public string ColumnGroup {
             get { return BackingStore?.Get<string>("columnGroup"); }
             set { BackingStore?.Set("columnGroup", value); }
         }
+#endif
         /// <summary>This column stores content approval status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ContentApprovalStatusColumn? ContentApprovalStatus {
+            get { return BackingStore?.Get<ContentApprovalStatusColumn?>("contentApprovalStatus"); }
+            set { BackingStore?.Set("contentApprovalStatus", value); }
+        }
+#else
         public ContentApprovalStatusColumn ContentApprovalStatus {
             get { return BackingStore?.Get<ContentApprovalStatusColumn>("contentApprovalStatus"); }
             set { BackingStore?.Set("contentApprovalStatus", value); }
         }
+#endif
         /// <summary>This column stores currency values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CurrencyColumn? Currency {
+            get { return BackingStore?.Get<CurrencyColumn?>("currency"); }
+            set { BackingStore?.Set("currency", value); }
+        }
+#else
         public CurrencyColumn Currency {
             get { return BackingStore?.Get<CurrencyColumn>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
+#endif
         /// <summary>This column stores DateTime values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeColumn? DateTime {
+            get { return BackingStore?.Get<DateTimeColumn?>("dateTime"); }
+            set { BackingStore?.Set("dateTime", value); }
+        }
+#else
         public DateTimeColumn DateTime {
             get { return BackingStore?.Get<DateTimeColumn>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
+#endif
         /// <summary>The default value for this column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DefaultColumnValue? DefaultValue {
+            get { return BackingStore?.Get<DefaultColumnValue?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
+        }
+#else
         public DefaultColumnValue DefaultValue {
             get { return BackingStore?.Get<DefaultColumnValue>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#endif
         /// <summary>The user-facing description of the column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The user-facing name of the column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>If true, no two list items may have the same value for this column.</summary>
         public bool? EnforceUniqueValues {
             get { return BackingStore?.Get<bool?>("enforceUniqueValues"); }
             set { BackingStore?.Set("enforceUniqueValues", value); }
         }
         /// <summary>This column stores a geolocation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GeolocationColumn? Geolocation {
+            get { return BackingStore?.Get<GeolocationColumn?>("geolocation"); }
+            set { BackingStore?.Set("geolocation", value); }
+        }
+#else
         public GeolocationColumn Geolocation {
             get { return BackingStore?.Get<GeolocationColumn>("geolocation"); }
             set { BackingStore?.Set("geolocation", value); }
         }
+#endif
         /// <summary>Specifies whether the column is displayed in the user interface.</summary>
         public bool? Hidden {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>This column stores hyperlink or picture values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public HyperlinkOrPictureColumn? HyperlinkOrPicture {
+            get { return BackingStore?.Get<HyperlinkOrPictureColumn?>("hyperlinkOrPicture"); }
+            set { BackingStore?.Set("hyperlinkOrPicture", value); }
+        }
+#else
         public HyperlinkOrPictureColumn HyperlinkOrPicture {
             get { return BackingStore?.Get<HyperlinkOrPictureColumn>("hyperlinkOrPicture"); }
             set { BackingStore?.Set("hyperlinkOrPicture", value); }
         }
+#endif
         /// <summary>Specifies whether the column values can used for sorting and searching.</summary>
         public bool? Indexed {
             get { return BackingStore?.Get<bool?>("indexed"); }
@@ -96,25 +180,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSealed", value); }
         }
         /// <summary>This column&apos;s data is looked up from another source in the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LookupColumn? Lookup {
+            get { return BackingStore?.Get<LookupColumn?>("lookup"); }
+            set { BackingStore?.Set("lookup", value); }
+        }
+#else
         public LookupColumn Lookup {
             get { return BackingStore?.Get<LookupColumn>("lookup"); }
             set { BackingStore?.Set("lookup", value); }
         }
+#endif
         /// <summary>The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>This column stores number values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public NumberColumn? Number {
+            get { return BackingStore?.Get<NumberColumn?>("number"); }
+            set { BackingStore?.Set("number", value); }
+        }
+#else
         public NumberColumn Number {
             get { return BackingStore?.Get<NumberColumn>("number"); }
             set { BackingStore?.Set("number", value); }
         }
+#endif
         /// <summary>This column stores Person or Group values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PersonOrGroupColumn? PersonOrGroup {
+            get { return BackingStore?.Get<PersonOrGroupColumn?>("personOrGroup"); }
+            set { BackingStore?.Set("personOrGroup", value); }
+        }
+#else
         public PersonOrGroupColumn PersonOrGroup {
             get { return BackingStore?.Get<PersonOrGroupColumn>("personOrGroup"); }
             set { BackingStore?.Set("personOrGroup", value); }
         }
+#endif
         /// <summary>If true, changes to this column will be propagated to lists that implement the column.</summary>
         public bool? PropagateChanges {
             get { return BackingStore?.Get<bool?>("propagateChanges"); }
@@ -131,40 +243,82 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>The source column for content type column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ColumnDefinition? SourceColumn {
+            get { return BackingStore?.Get<ColumnDefinition?>("sourceColumn"); }
+            set { BackingStore?.Set("sourceColumn", value); }
+        }
+#else
         public ColumnDefinition SourceColumn {
             get { return BackingStore?.Get<ColumnDefinition>("sourceColumn"); }
             set { BackingStore?.Set("sourceColumn", value); }
         }
+#endif
         /// <summary>ContentType from which this column is inherited from. Used only to fetch contentTypes columns.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ContentTypeInfo? SourceContentType {
+            get { return BackingStore?.Get<ContentTypeInfo?>("sourceContentType"); }
+            set { BackingStore?.Set("sourceContentType", value); }
+        }
+#else
         public ContentTypeInfo SourceContentType {
             get { return BackingStore?.Get<ContentTypeInfo>("sourceContentType"); }
             set { BackingStore?.Set("sourceContentType", value); }
         }
+#endif
         /// <summary>This column stores taxonomy terms.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TermColumn? Term {
+            get { return BackingStore?.Get<TermColumn?>("term"); }
+            set { BackingStore?.Set("term", value); }
+        }
+#else
         public TermColumn Term {
             get { return BackingStore?.Get<TermColumn>("term"); }
             set { BackingStore?.Set("term", value); }
         }
+#endif
         /// <summary>This column stores text values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TextColumn? Text {
+            get { return BackingStore?.Get<TextColumn?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public TextColumn Text {
             get { return BackingStore?.Get<TextColumn>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>This column stores thumbnail values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ThumbnailColumn? Thumbnail {
+            get { return BackingStore?.Get<ThumbnailColumn?>("thumbnail"); }
+            set { BackingStore?.Set("thumbnail", value); }
+        }
+#else
         public ThumbnailColumn Thumbnail {
             get { return BackingStore?.Get<ThumbnailColumn>("thumbnail"); }
             set { BackingStore?.Set("thumbnail", value); }
         }
+#endif
         /// <summary>For site columns, the type of column. Read-only.</summary>
         public ColumnTypes? Type {
             get { return BackingStore?.Get<ColumnTypes?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>This column stores validation formula and message for the column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ColumnValidation? Validation {
+            get { return BackingStore?.Get<ColumnValidation?>("validation"); }
+            set { BackingStore?.Set("validation", value); }
+        }
+#else
         public ColumnValidation Validation {
             get { return BackingStore?.Get<ColumnValidation>("validation"); }
             set { BackingStore?.Set("validation", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

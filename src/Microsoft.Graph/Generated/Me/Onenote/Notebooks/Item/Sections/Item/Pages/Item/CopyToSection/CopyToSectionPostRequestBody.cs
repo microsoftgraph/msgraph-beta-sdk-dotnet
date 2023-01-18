@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks.Item.Sections.Item.Pages.Ite
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupId {
+            get { return BackingStore?.Get<string?>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
+        }
+#else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#endif
         /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The siteCollectionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SiteCollectionId {
+            get { return BackingStore?.Get<string?>("siteCollectionId"); }
+            set { BackingStore?.Set("siteCollectionId", value); }
+        }
+#else
         public string SiteCollectionId {
             get { return BackingStore?.Get<string>("siteCollectionId"); }
             set { BackingStore?.Set("siteCollectionId", value); }
         }
+#endif
         /// <summary>The siteId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SiteId {
+            get { return BackingStore?.Get<string?>("siteId"); }
+            set { BackingStore?.Set("siteId", value); }
+        }
+#else
         public string SiteId {
             get { return BackingStore?.Get<string>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new copyToSectionPostRequestBody and sets the default values.
         /// </summary>

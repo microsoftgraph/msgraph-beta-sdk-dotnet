@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("approvalOnElevation", value); }
         }
         /// <summary>List of Approval ids, if approval is required for activation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ApproverIds {
+            get { return BackingStore?.Get<List<string>?>("approverIds"); }
+            set { BackingStore?.Set("approverIds", value); }
+        }
+#else
         public List<string> ApproverIds {
             get { return BackingStore?.Get<List<string>>("approverIds"); }
             set { BackingStore?.Set("approverIds", value); }
         }
+#endif
         /// <summary>The duration when the role is activated.</summary>
         public TimeSpan? ElevationDuration {
             get { return BackingStore?.Get<TimeSpan?>("elevationDuration"); }

@@ -14,50 +14,113 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier of the drive instance that contains the item. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DriveId {
+            get { return BackingStore?.Get<string?>("driveId"); }
+            set { BackingStore?.Set("driveId", value); }
+        }
+#else
         public string DriveId {
             get { return BackingStore?.Get<string>("driveId"); }
             set { BackingStore?.Set("driveId", value); }
         }
+#endif
         /// <summary>Identifies the type of drive. See [drive][] resource for values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DriveType {
+            get { return BackingStore?.Get<string?>("driveType"); }
+            set { BackingStore?.Set("driveType", value); }
+        }
+#else
         public string DriveType {
             get { return BackingStore?.Get<string>("driveType"); }
             set { BackingStore?.Set("driveType", value); }
         }
+#endif
         /// <summary>Unique identifier of the item in the drive. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The name of the item being referenced. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Path that can be used to navigate to the item. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Path {
+            get { return BackingStore?.Get<string?>("path"); }
+            set { BackingStore?.Set("path", value); }
+        }
+#else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#endif
         /// <summary>A unique identifier for a shared resource that can be accessed via the [Shares][] API.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ShareId {
+            get { return BackingStore?.Get<string?>("shareId"); }
+            set { BackingStore?.Set("shareId", value); }
+        }
+#else
         public string ShareId {
             get { return BackingStore?.Get<string>("shareId"); }
             set { BackingStore?.Set("shareId", value); }
         }
+#endif
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SharepointIds? SharepointIds {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds?>("sharepointIds"); }
+            set { BackingStore?.Set("sharepointIds", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }
         }
+#endif
         /// <summary>For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SiteId {
+            get { return BackingStore?.Get<string?>("siteId"); }
+            set { BackingStore?.Set("siteId", value); }
+        }
+#else
         public string SiteId {
             get { return BackingStore?.Get<string>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new itemReference and sets the default values.
         /// </summary>

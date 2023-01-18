@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RegistryKeyEvidence : AlertEvidence, IParsable {
         /// <summary>Registry hive of the key that the recorded action was applied to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RegistryHive {
+            get { return BackingStore?.Get<string?>("registryHive"); }
+            set { BackingStore?.Set("registryHive", value); }
+        }
+#else
         public string RegistryHive {
             get { return BackingStore?.Get<string>("registryHive"); }
             set { BackingStore?.Set("registryHive", value); }
         }
+#endif
         /// <summary>Registry key that the recorded action was applied to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RegistryKey {
+            get { return BackingStore?.Get<string?>("registryKey"); }
+            set { BackingStore?.Set("registryKey", value); }
+        }
+#else
         public string RegistryKey {
             get { return BackingStore?.Get<string>("registryKey"); }
             set { BackingStore?.Set("registryKey", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

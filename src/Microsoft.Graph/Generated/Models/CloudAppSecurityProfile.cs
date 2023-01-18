@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudAppSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureSubscriptionId {
+            get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
+        }
+#else
         public string AzureSubscriptionId {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
+#endif
         /// <summary>The azureTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureTenantId {
+            get { return BackingStore?.Get<string?>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
+        }
+#else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The deploymentPackageUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeploymentPackageUrl {
+            get { return BackingStore?.Get<string?>("deploymentPackageUrl"); }
+            set { BackingStore?.Set("deploymentPackageUrl", value); }
+        }
+#else
         public string DeploymentPackageUrl {
             get { return BackingStore?.Get<string>("deploymentPackageUrl"); }
             set { BackingStore?.Set("deploymentPackageUrl", value); }
         }
+#endif
         /// <summary>The destinationServiceName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DestinationServiceName {
+            get { return BackingStore?.Get<string?>("destinationServiceName"); }
+            set { BackingStore?.Set("destinationServiceName", value); }
+        }
+#else
         public string DestinationServiceName {
             get { return BackingStore?.Get<string>("destinationServiceName"); }
             set { BackingStore?.Set("destinationServiceName", value); }
         }
+#endif
         /// <summary>The isSigned property</summary>
         public bool? IsSigned {
             get { return BackingStore?.Get<bool?>("isSigned"); }
@@ -41,55 +69,118 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The manifest property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manifest {
+            get { return BackingStore?.Get<string?>("manifest"); }
+            set { BackingStore?.Set("manifest", value); }
+        }
+#else
         public string Manifest {
             get { return BackingStore?.Get<string>("manifest"); }
             set { BackingStore?.Set("manifest", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The permissionsRequired property</summary>
         public ApplicationPermissionsRequired? PermissionsRequired {
             get { return BackingStore?.Get<ApplicationPermissionsRequired?>("permissionsRequired"); }
             set { BackingStore?.Set("permissionsRequired", value); }
         }
         /// <summary>The platform property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Platform {
+            get { return BackingStore?.Get<string?>("platform"); }
+            set { BackingStore?.Set("platform", value); }
+        }
+#else
         public string Platform {
             get { return BackingStore?.Get<string>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
+#endif
         /// <summary>The policyName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyName {
+            get { return BackingStore?.Get<string?>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
+        }
+#else
         public string PolicyName {
             get { return BackingStore?.Get<string>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
+#endif
         /// <summary>The publisher property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Publisher {
+            get { return BackingStore?.Get<string?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+#else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#endif
         /// <summary>The riskScore property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RiskScore {
+            get { return BackingStore?.Get<string?>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
+        }
+#else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#endif
         /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tags {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>The vendorInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SecurityVendorInformation? VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
+        }
+#else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

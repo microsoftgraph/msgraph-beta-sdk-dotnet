@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Opens the page in the OneNote native client if it&apos;s installed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ExternalLink? OneNoteClientUrl {
+            get { return BackingStore?.Get<ExternalLink?>("oneNoteClientUrl"); }
+            set { BackingStore?.Set("oneNoteClientUrl", value); }
+        }
+#else
         public ExternalLink OneNoteClientUrl {
             get { return BackingStore?.Get<ExternalLink>("oneNoteClientUrl"); }
             set { BackingStore?.Set("oneNoteClientUrl", value); }
         }
+#endif
         /// <summary>Opens the page in OneNote on the web.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ExternalLink? OneNoteWebUrl {
+            get { return BackingStore?.Get<ExternalLink?>("oneNoteWebUrl"); }
+            set { BackingStore?.Set("oneNoteWebUrl", value); }
+        }
+#else
         public ExternalLink OneNoteWebUrl {
             get { return BackingStore?.Get<ExternalLink>("oneNoteWebUrl"); }
             set { BackingStore?.Set("oneNoteWebUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new pageLinks and sets the default values.
         /// </summary>

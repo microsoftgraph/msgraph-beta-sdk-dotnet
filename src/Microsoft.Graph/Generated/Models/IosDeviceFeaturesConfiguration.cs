@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase, IParsable {
         /// <summary>Asset tag information for the device, displayed on the login window and lock screen.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssetTagTemplate {
+            get { return BackingStore?.Get<string?>("assetTagTemplate"); }
+            set { BackingStore?.Set("assetTagTemplate", value); }
+        }
+#else
         public string AssetTagTemplate {
             get { return BackingStore?.Get<string>("assetTagTemplate"); }
             set { BackingStore?.Set("assetTagTemplate", value); }
         }
+#endif
         /// <summary>Gets or sets iOS Web Content Filter settings, supervised mode only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosWebContentFilterBase? ContentFilterSettings {
+            get { return BackingStore?.Get<IosWebContentFilterBase?>("contentFilterSettings"); }
+            set { BackingStore?.Set("contentFilterSettings", value); }
+        }
+#else
         public IosWebContentFilterBase ContentFilterSettings {
             get { return BackingStore?.Get<IosWebContentFilterBase>("contentFilterSettings"); }
             set { BackingStore?.Set("contentFilterSettings", value); }
         }
+#endif
         /// <summary>A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IosHomeScreenItem>? HomeScreenDockIcons {
+            get { return BackingStore?.Get<List<IosHomeScreenItem>?>("homeScreenDockIcons"); }
+            set { BackingStore?.Set("homeScreenDockIcons", value); }
+        }
+#else
         public List<IosHomeScreenItem> HomeScreenDockIcons {
             get { return BackingStore?.Get<List<IosHomeScreenItem>>("homeScreenDockIcons"); }
             set { BackingStore?.Set("homeScreenDockIcons", value); }
         }
+#endif
         /// <summary>Gets or sets the number of rows to render when configuring iOS home screen layout settings. If this value is configured, homeScreenGridWidth must be configured as well.</summary>
         public int? HomeScreenGridHeight {
             get { return BackingStore?.Get<int?>("homeScreenGridHeight"); }
@@ -31,55 +52,118 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("homeScreenGridWidth", value); }
         }
         /// <summary>A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IosHomeScreenPage>? HomeScreenPages {
+            get { return BackingStore?.Get<List<IosHomeScreenPage>?>("homeScreenPages"); }
+            set { BackingStore?.Set("homeScreenPages", value); }
+        }
+#else
         public List<IosHomeScreenPage> HomeScreenPages {
             get { return BackingStore?.Get<List<IosHomeScreenPage>>("homeScreenPages"); }
             set { BackingStore?.Set("homeScreenPages", value); }
         }
+#endif
         /// <summary>Identity Certificate for the renewal of Kerberos ticket used in single sign-on settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosCertificateProfileBase? IdentityCertificateForClientAuthentication {
+            get { return BackingStore?.Get<IosCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
+            set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
+        }
+#else
         public IosCertificateProfileBase IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
+#endif
         /// <summary>Gets or sets a single sign-on extension profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IosSingleSignOnExtension? IosSingleSignOnExtension {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosSingleSignOnExtension?>("iosSingleSignOnExtension"); }
+            set { BackingStore?.Set("iosSingleSignOnExtension", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IosSingleSignOnExtension IosSingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosSingleSignOnExtension>("iosSingleSignOnExtension"); }
             set { BackingStore?.Set("iosSingleSignOnExtension", value); }
         }
+#endif
         /// <summary>A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LockScreenFootnote {
+            get { return BackingStore?.Get<string?>("lockScreenFootnote"); }
+            set { BackingStore?.Set("lockScreenFootnote", value); }
+        }
+#else
         public string LockScreenFootnote {
             get { return BackingStore?.Get<string>("lockScreenFootnote"); }
             set { BackingStore?.Set("lockScreenFootnote", value); }
         }
+#endif
         /// <summary>Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IosNotificationSettings>? NotificationSettings {
+            get { return BackingStore?.Get<List<IosNotificationSettings>?>("notificationSettings"); }
+            set { BackingStore?.Set("notificationSettings", value); }
+        }
+#else
         public List<IosNotificationSettings> NotificationSettings {
             get { return BackingStore?.Get<List<IosNotificationSettings>>("notificationSettings"); }
             set { BackingStore?.Set("notificationSettings", value); }
         }
+#endif
         /// <summary>Gets or sets a single sign-on extension profile. Deprecated: use IOSSingleSignOnExtension instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SingleSignOnExtension? SingleSignOnExtension {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension?>("singleSignOnExtension"); }
+            set { BackingStore?.Set("singleSignOnExtension", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SingleSignOnExtension SingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension>("singleSignOnExtension"); }
             set { BackingStore?.Set("singleSignOnExtension", value); }
         }
+#endif
         /// <summary>PKINIT Certificate for the authentication with single sign-on extension settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosCertificateProfileBase? SingleSignOnExtensionPkinitCertificate {
+            get { return BackingStore?.Get<IosCertificateProfileBase?>("singleSignOnExtensionPkinitCertificate"); }
+            set { BackingStore?.Set("singleSignOnExtensionPkinitCertificate", value); }
+        }
+#else
         public IosCertificateProfileBase SingleSignOnExtensionPkinitCertificate {
             get { return BackingStore?.Get<IosCertificateProfileBase>("singleSignOnExtensionPkinitCertificate"); }
             set { BackingStore?.Set("singleSignOnExtensionPkinitCertificate", value); }
         }
+#endif
         /// <summary>The Kerberos login settings that enable apps on receiving devices to authenticate smoothly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosSingleSignOnSettings? SingleSignOnSettings {
+            get { return BackingStore?.Get<IosSingleSignOnSettings?>("singleSignOnSettings"); }
+            set { BackingStore?.Set("singleSignOnSettings", value); }
+        }
+#else
         public IosSingleSignOnSettings SingleSignOnSettings {
             get { return BackingStore?.Get<IosSingleSignOnSettings>("singleSignOnSettings"); }
             set { BackingStore?.Set("singleSignOnSettings", value); }
         }
+#endif
         /// <summary>An enum type for wallpaper display location specifier.</summary>
         public IosWallpaperDisplayLocation? WallpaperDisplayLocation {
             get { return BackingStore?.Get<IosWallpaperDisplayLocation?>("wallpaperDisplayLocation"); }
             set { BackingStore?.Set("wallpaperDisplayLocation", value); }
         }
         /// <summary>A wallpaper image must be in either PNG or JPEG format. It requires a supervised device with iOS 8 or later version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MimeContent? WallpaperImage {
+            get { return BackingStore?.Get<MimeContent?>("wallpaperImage"); }
+            set { BackingStore?.Set("wallpaperImage", value); }
+        }
+#else
         public MimeContent WallpaperImage {
             get { return BackingStore?.Get<MimeContent>("wallpaperImage"); }
             set { BackingStore?.Set("wallpaperImage", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IosDeviceFeaturesConfiguration and sets the default values.
         /// </summary>

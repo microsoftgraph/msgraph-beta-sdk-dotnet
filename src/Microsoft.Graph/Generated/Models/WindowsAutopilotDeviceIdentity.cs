@@ -9,25 +9,53 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class WindowsAutopilotDeviceIdentity : Entity, IParsable {
         /// <summary>Addressable user name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AddressableUserName {
+            get { return BackingStore?.Get<string?>("addressableUserName"); }
+            set { BackingStore?.Set("addressableUserName", value); }
+        }
+#else
         public string AddressableUserName {
             get { return BackingStore?.Get<string>("addressableUserName"); }
             set { BackingStore?.Set("addressableUserName", value); }
         }
+#endif
         /// <summary>AAD Device ID - to be deprecated</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureActiveDirectoryDeviceId {
+            get { return BackingStore?.Get<string?>("azureActiveDirectoryDeviceId"); }
+            set { BackingStore?.Set("azureActiveDirectoryDeviceId", value); }
+        }
+#else
         public string AzureActiveDirectoryDeviceId {
             get { return BackingStore?.Get<string>("azureActiveDirectoryDeviceId"); }
             set { BackingStore?.Set("azureActiveDirectoryDeviceId", value); }
         }
+#endif
         /// <summary>AAD Device ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureAdDeviceId {
+            get { return BackingStore?.Get<string?>("azureAdDeviceId"); }
+            set { BackingStore?.Set("azureAdDeviceId", value); }
+        }
+#else
         public string AzureAdDeviceId {
             get { return BackingStore?.Get<string>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
+#endif
         /// <summary>Deployment profile currently assigned to the Windows autopilot device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsAutopilotDeploymentProfile? DeploymentProfile {
+            get { return BackingStore?.Get<WindowsAutopilotDeploymentProfile?>("deploymentProfile"); }
+            set { BackingStore?.Set("deploymentProfile", value); }
+        }
+#else
         public WindowsAutopilotDeploymentProfile DeploymentProfile {
             get { return BackingStore?.Get<WindowsAutopilotDeploymentProfile>("deploymentProfile"); }
             set { BackingStore?.Set("deploymentProfile", value); }
         }
+#endif
         /// <summary>Profile set time of the Windows autopilot device.</summary>
         public DateTimeOffset? DeploymentProfileAssignedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("deploymentProfileAssignedDateTime"); }
@@ -44,70 +72,147 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deploymentProfileAssignmentStatus", value); }
         }
         /// <summary>Surface Hub Device Account Password</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceAccountPassword {
+            get { return BackingStore?.Get<string?>("deviceAccountPassword"); }
+            set { BackingStore?.Set("deviceAccountPassword", value); }
+        }
+#else
         public string DeviceAccountPassword {
             get { return BackingStore?.Get<string>("deviceAccountPassword"); }
             set { BackingStore?.Set("deviceAccountPassword", value); }
         }
+#endif
         /// <summary>Surface Hub Device Account Upn</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceAccountUpn {
+            get { return BackingStore?.Get<string?>("deviceAccountUpn"); }
+            set { BackingStore?.Set("deviceAccountUpn", value); }
+        }
+#else
         public string DeviceAccountUpn {
             get { return BackingStore?.Get<string>("deviceAccountUpn"); }
             set { BackingStore?.Set("deviceAccountUpn", value); }
         }
+#endif
         /// <summary>Surface Hub Device Friendly Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceFriendlyName {
+            get { return BackingStore?.Get<string?>("deviceFriendlyName"); }
+            set { BackingStore?.Set("deviceFriendlyName", value); }
+        }
+#else
         public string DeviceFriendlyName {
             get { return BackingStore?.Get<string>("deviceFriendlyName"); }
             set { BackingStore?.Set("deviceFriendlyName", value); }
         }
+#endif
         /// <summary>Display Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The enrollmentState property</summary>
         public Microsoft.Graph.Beta.Models.EnrollmentState? EnrollmentState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentState?>("enrollmentState"); }
             set { BackingStore?.Set("enrollmentState", value); }
         }
         /// <summary>Group Tag of the Windows autopilot device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupTag {
+            get { return BackingStore?.Get<string?>("groupTag"); }
+            set { BackingStore?.Set("groupTag", value); }
+        }
+#else
         public string GroupTag {
             get { return BackingStore?.Get<string>("groupTag"); }
             set { BackingStore?.Set("groupTag", value); }
         }
+#endif
         /// <summary>Deployment profile intended to be assigned to the Windows autopilot device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsAutopilotDeploymentProfile? IntendedDeploymentProfile {
+            get { return BackingStore?.Get<WindowsAutopilotDeploymentProfile?>("intendedDeploymentProfile"); }
+            set { BackingStore?.Set("intendedDeploymentProfile", value); }
+        }
+#else
         public WindowsAutopilotDeploymentProfile IntendedDeploymentProfile {
             get { return BackingStore?.Get<WindowsAutopilotDeploymentProfile>("intendedDeploymentProfile"); }
             set { BackingStore?.Set("intendedDeploymentProfile", value); }
         }
+#endif
         /// <summary>Intune Last Contacted Date Time of the Windows autopilot device.</summary>
         public DateTimeOffset? LastContactedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastContactedDateTime"); }
             set { BackingStore?.Set("lastContactedDateTime", value); }
         }
         /// <summary>Managed Device ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>Oem manufacturer of the Windows autopilot device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>Model name of the Windows autopilot device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>Product Key of the Windows autopilot device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductKey {
+            get { return BackingStore?.Get<string?>("productKey"); }
+            set { BackingStore?.Set("productKey", value); }
+        }
+#else
         public string ProductKey {
             get { return BackingStore?.Get<string>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
+#endif
         /// <summary>Purchase Order Identifier of the Windows autopilot device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PurchaseOrderIdentifier {
+            get { return BackingStore?.Get<string?>("purchaseOrderIdentifier"); }
+            set { BackingStore?.Set("purchaseOrderIdentifier", value); }
+        }
+#else
         public string PurchaseOrderIdentifier {
             get { return BackingStore?.Get<string>("purchaseOrderIdentifier"); }
             set { BackingStore?.Set("purchaseOrderIdentifier", value); }
         }
+#endif
         /// <summary>Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.</summary>
         public WindowsAutopilotDeviceRemediationState? RemediationState {
             get { return BackingStore?.Get<WindowsAutopilotDeviceRemediationState?>("remediationState"); }
@@ -119,30 +224,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("remediationStateLastModifiedDateTime", value); }
         }
         /// <summary>Resource Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceName {
+            get { return BackingStore?.Get<string?>("resourceName"); }
+            set { BackingStore?.Set("resourceName", value); }
+        }
+#else
         public string ResourceName {
             get { return BackingStore?.Get<string>("resourceName"); }
             set { BackingStore?.Set("resourceName", value); }
         }
+#endif
         /// <summary>Serial number of the Windows autopilot device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SerialNumber {
+            get { return BackingStore?.Get<string?>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
+        }
+#else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#endif
         /// <summary>SKU Number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SkuNumber {
+            get { return BackingStore?.Get<string?>("skuNumber"); }
+            set { BackingStore?.Set("skuNumber", value); }
+        }
+#else
         public string SkuNumber {
             get { return BackingStore?.Get<string>("skuNumber"); }
             set { BackingStore?.Set("skuNumber", value); }
         }
+#endif
         /// <summary>System Family</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SystemFamily {
+            get { return BackingStore?.Get<string?>("systemFamily"); }
+            set { BackingStore?.Set("systemFamily", value); }
+        }
+#else
         public string SystemFamily {
             get { return BackingStore?.Get<string>("systemFamily"); }
             set { BackingStore?.Set("systemFamily", value); }
         }
+#endif
         /// <summary>User Principal Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

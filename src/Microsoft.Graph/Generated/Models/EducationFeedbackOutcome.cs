@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationFeedbackOutcome : EducationOutcome, IParsable {
         /// <summary>Teacher&apos;s written feedback to the student.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationFeedback? Feedback {
+            get { return BackingStore?.Get<EducationFeedback?>("feedback"); }
+            set { BackingStore?.Set("feedback", value); }
+        }
+#else
         public EducationFeedback Feedback {
             get { return BackingStore?.Get<EducationFeedback>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
+#endif
         /// <summary>A copy of the feedback property that is made when the grade is released to the student.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationFeedback? PublishedFeedback {
+            get { return BackingStore?.Get<EducationFeedback?>("publishedFeedback"); }
+            set { BackingStore?.Set("publishedFeedback", value); }
+        }
+#else
         public EducationFeedback PublishedFeedback {
             get { return BackingStore?.Get<EducationFeedback>("publishedFeedback"); }
             set { BackingStore?.Set("publishedFeedback", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationFeedbackOutcome and sets the default values.
         /// </summary>

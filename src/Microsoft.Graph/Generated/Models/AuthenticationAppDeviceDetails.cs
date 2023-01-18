@@ -12,32 +12,67 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The version of the client authentication app used during the authentication step.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppVersion {
+            get { return BackingStore?.Get<string?>("appVersion"); }
+            set { BackingStore?.Set("appVersion", value); }
+        }
+#else
         public string AppVersion {
             get { return BackingStore?.Get<string>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the client authentication app used during the authentication step.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientApp {
+            get { return BackingStore?.Get<string?>("clientApp"); }
+            set { BackingStore?.Set("clientApp", value); }
+        }
+#else
         public string ClientApp {
             get { return BackingStore?.Get<string>("clientApp"); }
             set { BackingStore?.Set("clientApp", value); }
         }
+#endif
         /// <summary>ID of the device used during the authentication step.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The operating system running on the device used for the authentication step.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystem {
+            get { return BackingStore?.Get<string?>("operatingSystem"); }
+            set { BackingStore?.Set("operatingSystem", value); }
+        }
+#else
         public string OperatingSystem {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new authenticationAppDeviceDetails and sets the default values.
         /// </summary>

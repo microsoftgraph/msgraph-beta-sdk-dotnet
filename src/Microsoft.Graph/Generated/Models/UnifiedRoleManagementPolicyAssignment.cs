@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicyAssignment : Entity, IParsable {
         /// <summary>The policy that&apos;s associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UnifiedRoleManagementPolicy? Policy {
+            get { return BackingStore?.Get<UnifiedRoleManagementPolicy?>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#else
         public UnifiedRoleManagementPolicy Policy {
             get { return BackingStore?.Get<UnifiedRoleManagementPolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
+#endif
         /// <summary>The id of the policy. Inherited from entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyId {
+            get { return BackingStore?.Get<string?>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#else
         public string PolicyId {
             get { return BackingStore?.Get<string>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
+#endif
         /// <summary>The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleDefinitionId {
+            get { return BackingStore?.Get<string?>("roleDefinitionId"); }
+            set { BackingStore?.Set("roleDefinitionId", value); }
+        }
+#else
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
+#endif
         /// <summary>The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScopeId {
+            get { return BackingStore?.Get<string?>("scopeId"); }
+            set { BackingStore?.Set("scopeId", value); }
+        }
+#else
         public string ScopeId {
             get { return BackingStore?.Get<string>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
+#endif
         /// <summary>The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScopeType {
+            get { return BackingStore?.Get<string?>("scopeType"); }
+            set { BackingStore?.Set("scopeType", value); }
+        }
+#else
         public string ScopeType {
             get { return BackingStore?.Get<string>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

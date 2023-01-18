@@ -11,50 +11,113 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowNewTimeProposals", value); }
         }
         /// <summary>The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Attachment>? Attachments {
+            get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
+            set { BackingStore?.Set("attachments", value); }
+        }
+#else
         public List<Attachment> Attachments {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#endif
         /// <summary>The collection of attendees for the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Attendee>? Attendees {
+            get { return BackingStore?.Get<List<Attendee>?>("attendees"); }
+            set { BackingStore?.Set("attendees", value); }
+        }
+#else
         public List<Attendee> Attendees {
             get { return BackingStore?.Get<List<Attendee>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
+#endif
         /// <summary>The body of the message associated with the event. It can be in HTML or text format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Body {
+            get { return BackingStore?.Get<ItemBody?>("body"); }
+            set { BackingStore?.Set("body", value); }
+        }
+#else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#endif
         /// <summary>The preview of the message associated with the event. It is in text format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BodyPreview {
+            get { return BackingStore?.Get<string?>("bodyPreview"); }
+            set { BackingStore?.Set("bodyPreview", value); }
+        }
+#else
         public string BodyPreview {
             get { return BackingStore?.Get<string>("bodyPreview"); }
             set { BackingStore?.Set("bodyPreview", value); }
         }
+#endif
         /// <summary>The calendar that contains the event. Navigation property. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Calendar? Calendar {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Calendar?>("calendar"); }
+            set { BackingStore?.Set("calendar", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Calendar Calendar {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Calendar>("calendar"); }
             set { BackingStore?.Set("calendar", value); }
         }
+#endif
         /// <summary>Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? CancelledOccurrences {
+            get { return BackingStore?.Get<List<string>?>("cancelledOccurrences"); }
+            set { BackingStore?.Set("cancelledOccurrences", value); }
+        }
+#else
         public List<string> CancelledOccurrences {
             get { return BackingStore?.Get<List<string>>("cancelledOccurrences"); }
             set { BackingStore?.Set("cancelledOccurrences", value); }
         }
+#endif
         /// <summary>The date, time, and time zone that the event ends. By default, the end time is in UTC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? End {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
+            set { BackingStore?.Set("end", value); }
+        }
+#else
         public DateTimeTimeZone End {
             get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
             set { BackingStore?.Set("end", value); }
         }
+#endif
         /// <summary>The exceptionOccurrences property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Event>? ExceptionOccurrences {
+            get { return BackingStore?.Get<List<Event>?>("exceptionOccurrences"); }
+            set { BackingStore?.Set("exceptionOccurrences", value); }
+        }
+#else
         public List<Event> ExceptionOccurrences {
             get { return BackingStore?.Get<List<Event>>("exceptionOccurrences"); }
             set { BackingStore?.Set("exceptionOccurrences", value); }
         }
+#endif
         /// <summary>The collection of open extensions defined for the event. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Extension>? Extensions {
+            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#endif
         /// <summary>Set to true if the event has attachments.</summary>
         public bool? HasAttachments {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
@@ -71,10 +134,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("importance", value); }
         }
         /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Event>? Instances {
+            get { return BackingStore?.Get<List<Event>?>("instances"); }
+            set { BackingStore?.Set("instances", value); }
+        }
+#else
         public List<Event> Instances {
             get { return BackingStore?.Get<List<Event>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
+#endif
         /// <summary>The isAllDay property</summary>
         public bool? IsAllDay {
             get { return BackingStore?.Get<bool?>("isAllDay"); }
@@ -106,65 +176,135 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isReminderOn", value); }
         }
         /// <summary>The location property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Location? Location {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location?>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Location Location {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#endif
         /// <summary>The locations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.Location>? Locations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Location>?>("locations"); }
+            set { BackingStore?.Set("locations", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.Location> Locations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Location>>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
+#endif
         /// <summary>The collection of multi-value extended properties defined for the event. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
+        }
+#else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#endif
         /// <summary>The occurrenceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OccurrenceId {
+            get { return BackingStore?.Get<string?>("occurrenceId"); }
+            set { BackingStore?.Set("occurrenceId", value); }
+        }
+#else
         public string OccurrenceId {
             get { return BackingStore?.Get<string>("occurrenceId"); }
             set { BackingStore?.Set("occurrenceId", value); }
         }
+#endif
         /// <summary>The onlineMeeting property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OnlineMeetingInfo? OnlineMeeting {
+            get { return BackingStore?.Get<OnlineMeetingInfo?>("onlineMeeting"); }
+            set { BackingStore?.Set("onlineMeeting", value); }
+        }
+#else
         public OnlineMeetingInfo OnlineMeeting {
             get { return BackingStore?.Get<OnlineMeetingInfo>("onlineMeeting"); }
             set { BackingStore?.Set("onlineMeeting", value); }
         }
+#endif
         /// <summary>The onlineMeetingProvider property</summary>
         public OnlineMeetingProviderType? OnlineMeetingProvider {
             get { return BackingStore?.Get<OnlineMeetingProviderType?>("onlineMeetingProvider"); }
             set { BackingStore?.Set("onlineMeetingProvider", value); }
         }
         /// <summary>The onlineMeetingUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnlineMeetingUrl {
+            get { return BackingStore?.Get<string?>("onlineMeetingUrl"); }
+            set { BackingStore?.Set("onlineMeetingUrl", value); }
+        }
+#else
         public string OnlineMeetingUrl {
             get { return BackingStore?.Get<string>("onlineMeetingUrl"); }
             set { BackingStore?.Set("onlineMeetingUrl", value); }
         }
+#endif
         /// <summary>The organizer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Recipient? Organizer {
+            get { return BackingStore?.Get<Recipient?>("organizer"); }
+            set { BackingStore?.Set("organizer", value); }
+        }
+#else
         public Recipient Organizer {
             get { return BackingStore?.Get<Recipient>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
+#endif
         /// <summary>The originalEndTimeZone property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OriginalEndTimeZone {
+            get { return BackingStore?.Get<string?>("originalEndTimeZone"); }
+            set { BackingStore?.Set("originalEndTimeZone", value); }
+        }
+#else
         public string OriginalEndTimeZone {
             get { return BackingStore?.Get<string>("originalEndTimeZone"); }
             set { BackingStore?.Set("originalEndTimeZone", value); }
         }
+#endif
         /// <summary>The originalStart property</summary>
         public DateTimeOffset? OriginalStart {
             get { return BackingStore?.Get<DateTimeOffset?>("originalStart"); }
             set { BackingStore?.Set("originalStart", value); }
         }
         /// <summary>The originalStartTimeZone property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OriginalStartTimeZone {
+            get { return BackingStore?.Get<string?>("originalStartTimeZone"); }
+            set { BackingStore?.Set("originalStartTimeZone", value); }
+        }
+#else
         public string OriginalStartTimeZone {
             get { return BackingStore?.Get<string>("originalStartTimeZone"); }
             set { BackingStore?.Set("originalStartTimeZone", value); }
         }
+#endif
         /// <summary>The recurrence property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PatternedRecurrence? Recurrence {
+            get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
+        }
+#else
         public PatternedRecurrence Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
+#endif
         /// <summary>The reminderMinutesBeforeStart property</summary>
         public int? ReminderMinutesBeforeStart {
             get { return BackingStore?.Get<int?>("reminderMinutesBeforeStart"); }
@@ -176,60 +316,116 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("responseRequested", value); }
         }
         /// <summary>The responseStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ResponseStatus? ResponseStatus {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponseStatus?>("responseStatus"); }
+            set { BackingStore?.Set("responseStatus", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ResponseStatus ResponseStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponseStatus>("responseStatus"); }
             set { BackingStore?.Set("responseStatus", value); }
         }
+#endif
         /// <summary>The sensitivity property</summary>
         public Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Sensitivity?>("sensitivity"); }
             set { BackingStore?.Set("sensitivity", value); }
         }
         /// <summary>The seriesMasterId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SeriesMasterId {
+            get { return BackingStore?.Get<string?>("seriesMasterId"); }
+            set { BackingStore?.Set("seriesMasterId", value); }
+        }
+#else
         public string SeriesMasterId {
             get { return BackingStore?.Get<string>("seriesMasterId"); }
             set { BackingStore?.Set("seriesMasterId", value); }
         }
+#endif
         /// <summary>The showAs property</summary>
         public FreeBusyStatus? ShowAs {
             get { return BackingStore?.Get<FreeBusyStatus?>("showAs"); }
             set { BackingStore?.Set("showAs", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the event. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#endif
         /// <summary>The start property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? Start {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
+            set { BackingStore?.Set("start", value); }
+        }
+#else
         public DateTimeTimeZone Start {
             get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
             set { BackingStore?.Set("start", value); }
         }
+#endif
         /// <summary>The subject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>The transactionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TransactionId {
+            get { return BackingStore?.Get<string?>("transactionId"); }
+            set { BackingStore?.Set("transactionId", value); }
+        }
+#else
         public string TransactionId {
             get { return BackingStore?.Get<string>("transactionId"); }
             set { BackingStore?.Set("transactionId", value); }
         }
+#endif
         /// <summary>The type property</summary>
         public EventType? Type {
             get { return BackingStore?.Get<EventType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The uid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Uid {
+            get { return BackingStore?.Get<string?>("uid"); }
+            set { BackingStore?.Set("uid", value); }
+        }
+#else
         public string Uid {
             get { return BackingStore?.Get<string>("uid"); }
             set { BackingStore?.Set("uid", value); }
         }
+#endif
         /// <summary>The webLink property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebLink {
+            get { return BackingStore?.Get<string?>("webLink"); }
+            set { BackingStore?.Set("webLink", value); }
+        }
+#else
         public string WebLink {
             get { return BackingStore?.Get<string>("webLink"); }
             set { BackingStore?.Set("webLink", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Event and sets the default values.
         /// </summary>

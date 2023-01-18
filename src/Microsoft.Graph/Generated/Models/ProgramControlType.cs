@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ProgramControlType : Entity, IParsable {
         /// <summary>The controlTypeGroupId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ControlTypeGroupId {
+            get { return BackingStore?.Get<string?>("controlTypeGroupId"); }
+            set { BackingStore?.Set("controlTypeGroupId", value); }
+        }
+#else
         public string ControlTypeGroupId {
             get { return BackingStore?.Get<string>("controlTypeGroupId"); }
             set { BackingStore?.Set("controlTypeGroupId", value); }
         }
+#endif
         /// <summary>The name of the program control type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,95 +6,214 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ApiApplication? Api {
+            get { return BackingStore?.Get<ApiApplication?>("api"); }
+            set { BackingStore?.Set("api", value); }
+        }
+#else
         public ApiApplication Api {
             get { return BackingStore?.Get<ApiApplication>("api"); }
             set { BackingStore?.Set("api", value); }
         }
+#endif
         /// <summary>The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppId {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#endif
         /// <summary>The appManagementPolicy applied to this application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppManagementPolicy>? AppManagementPolicies {
+            get { return BackingStore?.Get<List<AppManagementPolicy>?>("appManagementPolicies"); }
+            set { BackingStore?.Set("appManagementPolicies", value); }
+        }
+#else
         public List<AppManagementPolicy> AppManagementPolicies {
             get { return BackingStore?.Get<List<AppManagementPolicy>>("appManagementPolicies"); }
             set { BackingStore?.Set("appManagementPolicies", value); }
         }
+#endif
         /// <summary>The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppRole>? AppRoles {
+            get { return BackingStore?.Get<List<AppRole>?>("appRoles"); }
+            set { BackingStore?.Set("appRoles", value); }
+        }
+#else
         public List<AppRole> AppRoles {
             get { return BackingStore?.Get<List<AppRole>>("appRoles"); }
             set { BackingStore?.Set("appRoles", value); }
         }
+#endif
         /// <summary>Specifies the certification status of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Certification? Certification {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Certification?>("certification"); }
+            set { BackingStore?.Set("certification", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Certification Certification {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Certification>("certification"); }
             set { BackingStore?.Set("certification", value); }
         }
+#endif
         /// <summary>The connectorGroup the application is using with Azure AD Application Proxy. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ConnectorGroup? ConnectorGroup {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectorGroup?>("connectorGroup"); }
+            set { BackingStore?.Set("connectorGroup", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ConnectorGroup ConnectorGroup {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectorGroup>("connectorGroup"); }
             set { BackingStore?.Set("connectorGroup", value); }
         }
+#endif
         /// <summary>The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Supports $filter (/$count eq 0, /$count ne 0). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DirectoryObject? CreatedOnBehalfOf {
+            get { return BackingStore?.Get<DirectoryObject?>("createdOnBehalfOf"); }
+            set { BackingStore?.Set("createdOnBehalfOf", value); }
+        }
+#else
         public DirectoryObject CreatedOnBehalfOf {
             get { return BackingStore?.Get<DirectoryObject>("createdOnBehalfOf"); }
             set { BackingStore?.Set("createdOnBehalfOf", value); }
         }
+#endif
         /// <summary>The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultRedirectUri {
+            get { return BackingStore?.Get<string?>("defaultRedirectUri"); }
+            set { BackingStore?.Set("defaultRedirectUri", value); }
+        }
+#else
         public string DefaultRedirectUri {
             get { return BackingStore?.Get<string>("defaultRedirectUri"); }
             set { BackingStore?.Set("defaultRedirectUri", value); }
         }
+#endif
         /// <summary>Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisabledByMicrosoftStatus {
+            get { return BackingStore?.Get<string?>("disabledByMicrosoftStatus"); }
+            set { BackingStore?.Set("disabledByMicrosoftStatus", value); }
+        }
+#else
         public string DisabledByMicrosoftStatus {
             get { return BackingStore?.Get<string>("disabledByMicrosoftStatus"); }
             set { BackingStore?.Set("disabledByMicrosoftStatus", value); }
         }
+#endif
         /// <summary>The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExtensionProperty>? ExtensionProperties {
+            get { return BackingStore?.Get<List<ExtensionProperty>?>("extensionProperties"); }
+            set { BackingStore?.Set("extensionProperties", value); }
+        }
+#else
         public List<ExtensionProperty> ExtensionProperties {
             get { return BackingStore?.Get<List<ExtensionProperty>>("extensionProperties"); }
             set { BackingStore?.Set("extensionProperties", value); }
         }
+#endif
         /// <summary>Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<FederatedIdentityCredential>? FederatedIdentityCredentials {
+            get { return BackingStore?.Get<List<FederatedIdentityCredential>?>("federatedIdentityCredentials"); }
+            set { BackingStore?.Set("federatedIdentityCredentials", value); }
+        }
+#else
         public List<FederatedIdentityCredential> FederatedIdentityCredentials {
             get { return BackingStore?.Get<List<FederatedIdentityCredential>>("federatedIdentityCredentials"); }
             set { BackingStore?.Set("federatedIdentityCredentials", value); }
         }
+#endif
         /// <summary>Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupMembershipClaims {
+            get { return BackingStore?.Get<string?>("groupMembershipClaims"); }
+            set { BackingStore?.Set("groupMembershipClaims", value); }
+        }
+#else
         public string GroupMembershipClaims {
             get { return BackingStore?.Get<string>("groupMembershipClaims"); }
             set { BackingStore?.Set("groupMembershipClaims", value); }
         }
+#endif
         /// <summary>The homeRealmDiscoveryPolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<HomeRealmDiscoveryPolicy>? HomeRealmDiscoveryPolicies {
+            get { return BackingStore?.Get<List<HomeRealmDiscoveryPolicy>?>("homeRealmDiscoveryPolicies"); }
+            set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
+        }
+#else
         public List<HomeRealmDiscoveryPolicy> HomeRealmDiscoveryPolicies {
             get { return BackingStore?.Get<List<HomeRealmDiscoveryPolicy>>("homeRealmDiscoveryPolicies"); }
             set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
         }
+#endif
         /// <summary>Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you&apos;ll reference in your API&apos;s code, and it must be globally unique. You can use the default value provided, which is in the form api://&lt;application-client-id&gt;, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IdentifierUris {
+            get { return BackingStore?.Get<List<string>?>("identifierUris"); }
+            set { BackingStore?.Set("identifierUris", value); }
+        }
+#else
         public List<string> IdentifierUris {
             get { return BackingStore?.Get<List<string>>("identifierUris"); }
             set { BackingStore?.Set("identifierUris", value); }
         }
+#endif
         /// <summary>Basic profile information of the application, such as it&apos;s marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public InformationalUrl? Info {
+            get { return BackingStore?.Get<InformationalUrl?>("info"); }
+            set { BackingStore?.Set("info", value); }
+        }
+#else
         public InformationalUrl Info {
             get { return BackingStore?.Get<InformationalUrl>("info"); }
             set { BackingStore?.Set("info", value); }
         }
+#endif
         /// <summary>Specifies whether this application supports device authentication without a user. The default is false.</summary>
         public bool? IsDeviceOnlyAuthSupported {
             get { return BackingStore?.Get<bool?>("isDeviceOnlyAuthSupported"); }
@@ -106,137 +225,312 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isFallbackPublicClient", value); }
         }
         /// <summary>The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyCredential>? KeyCredentials {
+            get { return BackingStore?.Get<List<KeyCredential>?>("keyCredentials"); }
+            set { BackingStore?.Set("keyCredentials", value); }
+        }
+#else
         public List<KeyCredential> KeyCredentials {
             get { return BackingStore?.Get<List<KeyCredential>>("keyCredentials"); }
             set { BackingStore?.Set("keyCredentials", value); }
         }
+#endif
         /// <summary>The main logo for the application. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Logo {
+            get { return BackingStore?.Get<byte[]?>("logo"); }
+            set { BackingStore?.Set("logo", value); }
+        }
+#else
         public byte[] Logo {
             get { return BackingStore?.Get<byte[]>("logo"); }
             set { BackingStore?.Set("logo", value); }
         }
+#endif
         /// <summary>Notes relevant for the management of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Notes {
+            get { return BackingStore?.Get<string?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#else
         public string Notes {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#endif
         /// <summary>Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.OnPremisesPublishing? OnPremisesPublishing {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesPublishing?>("onPremisesPublishing"); }
+            set { BackingStore?.Set("onPremisesPublishing", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.OnPremisesPublishing OnPremisesPublishing {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesPublishing>("onPremisesPublishing"); }
             set { BackingStore?.Set("onPremisesPublishing", value); }
         }
+#endif
         /// <summary>Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.OptionalClaims? OptionalClaims {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OptionalClaims?>("optionalClaims"); }
+            set { BackingStore?.Set("optionalClaims", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.OptionalClaims OptionalClaims {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OptionalClaims>("optionalClaims"); }
             set { BackingStore?.Set("optionalClaims", value); }
         }
+#endif
         /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? Owners {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("owners"); }
+            set { BackingStore?.Set("owners", value); }
+        }
+#else
         public List<DirectoryObject> Owners {
             get { return BackingStore?.Get<List<DirectoryObject>>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
+#endif
         /// <summary>Specifies parental control settings for an application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ParentalControlSettings? ParentalControlSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ParentalControlSettings?>("parentalControlSettings"); }
+            set { BackingStore?.Set("parentalControlSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ParentalControlSettings ParentalControlSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ParentalControlSettings>("parentalControlSettings"); }
             set { BackingStore?.Set("parentalControlSettings", value); }
         }
+#endif
         /// <summary>The collection of password credentials associated with the application. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PasswordCredential>? PasswordCredentials {
+            get { return BackingStore?.Get<List<PasswordCredential>?>("passwordCredentials"); }
+            set { BackingStore?.Set("passwordCredentials", value); }
+        }
+#else
         public List<PasswordCredential> PasswordCredentials {
             get { return BackingStore?.Get<List<PasswordCredential>>("passwordCredentials"); }
             set { BackingStore?.Set("passwordCredentials", value); }
         }
+#endif
         /// <summary>Specifies settings for installed clients such as desktop or mobile devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PublicClientApplication? PublicClient {
+            get { return BackingStore?.Get<PublicClientApplication?>("publicClient"); }
+            set { BackingStore?.Set("publicClient", value); }
+        }
+#else
         public PublicClientApplication PublicClient {
             get { return BackingStore?.Get<PublicClientApplication>("publicClient"); }
             set { BackingStore?.Set("publicClient", value); }
         }
+#endif
         /// <summary>The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PublisherDomain {
+            get { return BackingStore?.Get<string?>("publisherDomain"); }
+            set { BackingStore?.Set("publisherDomain", value); }
+        }
+#else
         public string PublisherDomain {
             get { return BackingStore?.Get<string>("publisherDomain"); }
             set { BackingStore?.Set("publisherDomain", value); }
         }
+#endif
         /// <summary>Specifies whether this application requires Azure AD to verify the signed authentication requests.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.RequestSignatureVerification? RequestSignatureVerification {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSignatureVerification?>("requestSignatureVerification"); }
+            set { BackingStore?.Set("requestSignatureVerification", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.RequestSignatureVerification RequestSignatureVerification {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSignatureVerification>("requestSignatureVerification"); }
             set { BackingStore?.Set("requestSignatureVerification", value); }
         }
+#endif
         /// <summary>Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.RequiredResourceAccess>? RequiredResourceAccess {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RequiredResourceAccess>?>("requiredResourceAccess"); }
+            set { BackingStore?.Set("requiredResourceAccess", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.RequiredResourceAccess> RequiredResourceAccess {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RequiredResourceAccess>>("requiredResourceAccess"); }
             set { BackingStore?.Set("requiredResourceAccess", value); }
         }
+#endif
         /// <summary>The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SamlMetadataUrl {
+            get { return BackingStore?.Get<string?>("samlMetadataUrl"); }
+            set { BackingStore?.Set("samlMetadataUrl", value); }
+        }
+#else
         public string SamlMetadataUrl {
             get { return BackingStore?.Get<string>("samlMetadataUrl"); }
             set { BackingStore?.Set("samlMetadataUrl", value); }
         }
+#endif
         /// <summary>References application or service contact information from a Service or Asset Management database. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServiceManagementReference {
+            get { return BackingStore?.Get<string?>("serviceManagementReference"); }
+            set { BackingStore?.Set("serviceManagementReference", value); }
+        }
+#else
         public string ServiceManagementReference {
             get { return BackingStore?.Get<string>("serviceManagementReference"); }
             set { BackingStore?.Set("serviceManagementReference", value); }
         }
+#endif
         /// <summary>Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration? ServicePrincipalLockConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration?>("servicePrincipalLockConfiguration"); }
+            set { BackingStore?.Set("servicePrincipalLockConfiguration", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration ServicePrincipalLockConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration"); }
             set { BackingStore?.Set("servicePrincipalLockConfiguration", value); }
         }
+#endif
         /// <summary>Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SignInAudience {
+            get { return BackingStore?.Get<string?>("signInAudience"); }
+            set { BackingStore?.Set("signInAudience", value); }
+        }
+#else
         public string SignInAudience {
             get { return BackingStore?.Get<string>("signInAudience"); }
             set { BackingStore?.Set("signInAudience", value); }
         }
+#endif
         /// <summary>Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SpaApplication? Spa {
+            get { return BackingStore?.Get<SpaApplication?>("spa"); }
+            set { BackingStore?.Set("spa", value); }
+        }
+#else
         public SpaApplication Spa {
             get { return BackingStore?.Get<SpaApplication>("spa"); }
             set { BackingStore?.Set("spa", value); }
         }
+#endif
         /// <summary>The synchronization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Synchronization? Synchronization {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Synchronization?>("synchronization"); }
+            set { BackingStore?.Set("synchronization", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Synchronization Synchronization {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Synchronization>("synchronization"); }
             set { BackingStore?.Set("synchronization", value); }
         }
+#endif
         /// <summary>Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tags {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</summary>
         public Guid? TokenEncryptionKeyId {
             get { return BackingStore?.Get<Guid?>("tokenEncryptionKeyId"); }
             set { BackingStore?.Set("tokenEncryptionKeyId", value); }
         }
         /// <summary>The tokenIssuancePolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TokenIssuancePolicy>? TokenIssuancePolicies {
+            get { return BackingStore?.Get<List<TokenIssuancePolicy>?>("tokenIssuancePolicies"); }
+            set { BackingStore?.Set("tokenIssuancePolicies", value); }
+        }
+#else
         public List<TokenIssuancePolicy> TokenIssuancePolicies {
             get { return BackingStore?.Get<List<TokenIssuancePolicy>>("tokenIssuancePolicies"); }
             set { BackingStore?.Set("tokenIssuancePolicies", value); }
         }
+#endif
         /// <summary>The tokenLifetimePolicies assigned to this application. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TokenLifetimePolicy>? TokenLifetimePolicies {
+            get { return BackingStore?.Get<List<TokenLifetimePolicy>?>("tokenLifetimePolicies"); }
+            set { BackingStore?.Set("tokenLifetimePolicies", value); }
+        }
+#else
         public List<TokenLifetimePolicy> TokenLifetimePolicies {
             get { return BackingStore?.Get<List<TokenLifetimePolicy>>("tokenLifetimePolicies"); }
             set { BackingStore?.Set("tokenLifetimePolicies", value); }
         }
+#endif
         /// <summary>The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UniqueName {
+            get { return BackingStore?.Get<string?>("uniqueName"); }
+            set { BackingStore?.Set("uniqueName", value); }
+        }
+#else
         public string UniqueName {
             get { return BackingStore?.Get<string>("uniqueName"); }
             set { BackingStore?.Set("uniqueName", value); }
         }
+#endif
         /// <summary>Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.VerifiedPublisher? VerifiedPublisher {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiedPublisher?>("verifiedPublisher"); }
+            set { BackingStore?.Set("verifiedPublisher", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.VerifiedPublisher VerifiedPublisher {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiedPublisher>("verifiedPublisher"); }
             set { BackingStore?.Set("verifiedPublisher", value); }
         }
+#endif
         /// <summary>Specifies settings for a web application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WebApplication? Web {
+            get { return BackingStore?.Get<WebApplication?>("web"); }
+            set { BackingStore?.Set("web", value); }
+        }
+#else
         public WebApplication Web {
             get { return BackingStore?.Get<WebApplication>("web"); }
             set { BackingStore?.Set("web", value); }
         }
+#endif
         /// <summary>Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsApplication? Windows {
+            get { return BackingStore?.Get<WindowsApplication?>("windows"); }
+            set { BackingStore?.Set("windows", value); }
+        }
+#else
         public WindowsApplication Windows {
             get { return BackingStore?.Get<WindowsApplication>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
+#endif
         /// <summary>
-        /// Instantiates a new Application and sets the default values.
+        /// Instantiates a new application and sets the default values.
         /// </summary>
         public Application() : base() {
             OdataType = "#microsoft.graph.application";

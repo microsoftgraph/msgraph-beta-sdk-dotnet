@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicy : TenantRelationshipAccessPolicyBase, IParsable {
         /// <summary>Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedCloudEndpoints {
+            get { return BackingStore?.Get<List<string>?>("allowedCloudEndpoints"); }
+            set { BackingStore?.Set("allowedCloudEndpoints", value); }
+        }
+#else
         public List<string> AllowedCloudEndpoints {
             get { return BackingStore?.Get<List<string>>("allowedCloudEndpoints"); }
             set { BackingStore?.Set("allowedCloudEndpoints", value); }
         }
+#endif
         /// <summary>Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CrossTenantAccessPolicyConfigurationDefault? Default {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyConfigurationDefault?>("default"); }
+            set { BackingStore?.Set("default", value); }
+        }
+#else
         public CrossTenantAccessPolicyConfigurationDefault Default {
             get { return BackingStore?.Get<CrossTenantAccessPolicyConfigurationDefault>("default"); }
             set { BackingStore?.Set("default", value); }
         }
+#endif
         /// <summary>Defines partner-specific configurations for external Azure Active Directory organizations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CrossTenantAccessPolicyConfigurationPartner>? Partners {
+            get { return BackingStore?.Get<List<CrossTenantAccessPolicyConfigurationPartner>?>("partners"); }
+            set { BackingStore?.Set("partners", value); }
+        }
+#else
         public List<CrossTenantAccessPolicyConfigurationPartner> Partners {
             get { return BackingStore?.Get<List<CrossTenantAccessPolicyConfigurationPartner>>("partners"); }
             set { BackingStore?.Set("partners", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CrossTenantAccessPolicy and sets the default values.
         /// </summary>

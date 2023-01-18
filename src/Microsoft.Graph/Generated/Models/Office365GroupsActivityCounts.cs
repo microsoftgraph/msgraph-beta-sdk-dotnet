@@ -17,10 +17,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reportDate", value); }
         }
         /// <summary>The number of days the report covers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReportPeriod {
+            get { return BackingStore?.Get<string?>("reportPeriod"); }
+            set { BackingStore?.Set("reportPeriod", value); }
+        }
+#else
         public string ReportPeriod {
             get { return BackingStore?.Get<string>("reportPeriod"); }
             set { BackingStore?.Set("reportPeriod", value); }
         }
+#endif
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate {
             get { return BackingStore?.Get<Date?>("reportRefreshDate"); }

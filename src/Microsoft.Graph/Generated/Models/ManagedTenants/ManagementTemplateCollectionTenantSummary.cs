@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("completeUsersCount", value); }
         }
         /// <summary>The createdByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -61,30 +68,58 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("isComplete", value); }
         }
         /// <summary>The lastActionByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplateCollectionDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateCollectionDisplayName {
+            get { return BackingStore?.Get<string?>("managementTemplateCollectionDisplayName"); }
+            set { BackingStore?.Set("managementTemplateCollectionDisplayName", value); }
+        }
+#else
         public string ManagementTemplateCollectionDisplayName {
             get { return BackingStore?.Get<string>("managementTemplateCollectionDisplayName"); }
             set { BackingStore?.Set("managementTemplateCollectionDisplayName", value); }
         }
+#endif
         /// <summary>The managementTemplateCollectionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateCollectionId {
+            get { return BackingStore?.Get<string?>("managementTemplateCollectionId"); }
+            set { BackingStore?.Set("managementTemplateCollectionId", value); }
+        }
+#else
         public string ManagementTemplateCollectionId {
             get { return BackingStore?.Get<string>("managementTemplateCollectionId"); }
             set { BackingStore?.Set("managementTemplateCollectionId", value); }
         }
+#endif
         /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

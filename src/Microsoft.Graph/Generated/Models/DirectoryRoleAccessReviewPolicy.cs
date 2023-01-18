@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DirectoryRoleAccessReviewPolicy : Entity, IParsable {
         /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessReviewScheduleSettings? Settings {
+            get { return BackingStore?.Get<AccessReviewScheduleSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public AccessReviewScheduleSettings Settings {
             get { return BackingStore?.Get<AccessReviewScheduleSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

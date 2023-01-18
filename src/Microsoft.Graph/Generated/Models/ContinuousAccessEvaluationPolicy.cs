@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ContinuousAccessEvaluationPolicy : Entity, IParsable {
         /// <summary>Continuous access evaluation automatically blocks access to resources and applications in near real time when a user&apos;s access is removed or a client IP address changes. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The value is always Continuous Access Evaluation. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Groups {
+            get { return BackingStore?.Get<List<string>?>("groups"); }
+            set { BackingStore?.Set("groups", value); }
+        }
+#else
         public List<string> Groups {
             get { return BackingStore?.Get<List<string>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
+#endif
         /// <summary>true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
@@ -31,10 +52,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("migrate", value); }
         }
         /// <summary>The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Users {
+            get { return BackingStore?.Get<List<string>?>("users"); }
+            set { BackingStore?.Set("users", value); }
+        }
+#else
         public List<string> Users {
             get { return BackingStore?.Get<List<string>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

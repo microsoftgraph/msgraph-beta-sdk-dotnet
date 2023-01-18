@@ -15,22 +15,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The value of work from anywhere autopilot devices summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserExperienceAnalyticsAutopilotDevicesSummary? AutopilotDevicesSummary {
+            get { return BackingStore?.Get<UserExperienceAnalyticsAutopilotDevicesSummary?>("autopilotDevicesSummary"); }
+            set { BackingStore?.Set("autopilotDevicesSummary", value); }
+        }
+#else
         public UserExperienceAnalyticsAutopilotDevicesSummary AutopilotDevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsAutopilotDevicesSummary>("autopilotDevicesSummary"); }
             set { BackingStore?.Set("autopilotDevicesSummary", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The user experience analytics work from anywhere Cloud Identity devices summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserExperienceAnalyticsCloudIdentityDevicesSummary? CloudIdentityDevicesSummary {
+            get { return BackingStore?.Get<UserExperienceAnalyticsCloudIdentityDevicesSummary?>("cloudIdentityDevicesSummary"); }
+            set { BackingStore?.Set("cloudIdentityDevicesSummary", value); }
+        }
+#else
         public UserExperienceAnalyticsCloudIdentityDevicesSummary CloudIdentityDevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudIdentityDevicesSummary>("cloudIdentityDevicesSummary"); }
             set { BackingStore?.Set("cloudIdentityDevicesSummary", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere Cloud management devices summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserExperienceAnalyticsCloudManagementDevicesSummary? CloudManagementDevicesSummary {
+            get { return BackingStore?.Get<UserExperienceAnalyticsCloudManagementDevicesSummary?>("cloudManagementDevicesSummary"); }
+            set { BackingStore?.Set("cloudManagementDevicesSummary", value); }
+        }
+#else
         public UserExperienceAnalyticsCloudManagementDevicesSummary CloudManagementDevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudManagementDevicesSummary>("cloudManagementDevicesSummary"); }
             set { BackingStore?.Set("cloudManagementDevicesSummary", value); }
         }
+#endif
         /// <summary>Total number of co-managed devices. Valid values -2147483648 to 2147483647</summary>
         public int? CoManagedDevices {
             get { return BackingStore?.Get<int?>("coManagedDevices"); }
@@ -57,10 +78,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("intuneDevices", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Total count of tenant attach devices. Valid values -2147483648 to 2147483647</summary>
         public int? TenantAttachDevices {
             get { return BackingStore?.Get<int?>("tenantAttachDevices"); }
@@ -82,10 +110,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windows10Devices", value); }
         }
         /// <summary>The user experience analytics work from anywhere Windows 10 devices summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserExperienceAnalyticsWindows10DevicesSummary? Windows10DevicesSummary {
+            get { return BackingStore?.Get<UserExperienceAnalyticsWindows10DevicesSummary?>("windows10DevicesSummary"); }
+            set { BackingStore?.Set("windows10DevicesSummary", value); }
+        }
+#else
         public UserExperienceAnalyticsWindows10DevicesSummary Windows10DevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsWindows10DevicesSummary>("windows10DevicesSummary"); }
             set { BackingStore?.Set("windows10DevicesSummary", value); }
         }
+#endif
         /// <summary>The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647</summary>
         public int? Windows10DevicesWithoutTenantAttach {
             get { return BackingStore?.Get<int?>("windows10DevicesWithoutTenantAttach"); }

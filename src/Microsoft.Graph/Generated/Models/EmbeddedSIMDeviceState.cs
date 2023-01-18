@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Device name to which the subscription was provisioned e.g. DESKTOP-JOE</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>The time the embedded SIM device last checked in. Updated service side.</summary>
         public DateTimeOffset? LastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
@@ -34,20 +41,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>String description of the provisioning state.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StateDetails {
+            get { return BackingStore?.Get<string?>("stateDetails"); }
+            set { BackingStore?.Set("stateDetails", value); }
+        }
+#else
         public string StateDetails {
             get { return BackingStore?.Get<string>("stateDetails"); }
             set { BackingStore?.Set("stateDetails", value); }
         }
+#endif
         /// <summary>The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UniversalIntegratedCircuitCardIdentifier {
+            get { return BackingStore?.Get<string?>("universalIntegratedCircuitCardIdentifier"); }
+            set { BackingStore?.Set("universalIntegratedCircuitCardIdentifier", value); }
+        }
+#else
         public string UniversalIntegratedCircuitCardIdentifier {
             get { return BackingStore?.Get<string>("universalIntegratedCircuitCardIdentifier"); }
             set { BackingStore?.Set("universalIntegratedCircuitCardIdentifier", value); }
         }
+#endif
         /// <summary>Username which the subscription was provisioned to e.g. joe@contoso.com</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserName {
+            get { return BackingStore?.Get<string?>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
+#else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,40 +6,75 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagedTenantTicketingEndpoint : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The emailAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailAddress {
+            get { return BackingStore?.Get<string?>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
+        }
+#else
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#endif
         /// <summary>The lastActionByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The phoneNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PhoneNumber {
+            get { return BackingStore?.Get<string?>("phoneNumber"); }
+            set { BackingStore?.Set("phoneNumber", value); }
+        }
+#else
         public string PhoneNumber {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

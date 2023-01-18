@@ -8,10 +8,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.SendActivityNotification {
     public class SendActivityNotificationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivityType {
+            get { return BackingStore?.Get<string?>("activityType"); }
+            set { BackingStore?.Set("activityType", value); }
+        }
+#else
         public string ActivityType {
             get { return BackingStore?.Get<string>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -25,25 +32,53 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             set { BackingStore?.Set("chainId", value); }
         }
         /// <summary>The previewText property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? PreviewText {
+            get { return BackingStore?.Get<ItemBody?>("previewText"); }
+            set { BackingStore?.Set("previewText", value); }
+        }
+#else
         public ItemBody PreviewText {
             get { return BackingStore?.Get<ItemBody>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
+#endif
         /// <summary>The recipient property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkNotificationRecipient? Recipient {
+            get { return BackingStore?.Get<TeamworkNotificationRecipient?>("recipient"); }
+            set { BackingStore?.Set("recipient", value); }
+        }
+#else
         public TeamworkNotificationRecipient Recipient {
             get { return BackingStore?.Get<TeamworkNotificationRecipient>("recipient"); }
             set { BackingStore?.Set("recipient", value); }
         }
+#endif
         /// <summary>The templateParameters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? TemplateParameters {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("templateParameters"); }
+            set { BackingStore?.Set("templateParameters", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.KeyValuePair> TemplateParameters {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("templateParameters"); }
             set { BackingStore?.Set("templateParameters", value); }
         }
+#endif
         /// <summary>The topic property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkActivityTopic? Topic {
+            get { return BackingStore?.Get<TeamworkActivityTopic?>("topic"); }
+            set { BackingStore?.Set("topic", value); }
+        }
+#else
         public TeamworkActivityTopic Topic {
             get { return BackingStore?.Get<TeamworkActivityTopic>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new sendActivityNotificationPostRequestBody and sets the default values.
         /// </summary>

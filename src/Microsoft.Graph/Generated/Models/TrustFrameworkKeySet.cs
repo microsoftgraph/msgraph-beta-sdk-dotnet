@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TrustFrameworkKeySet : Entity, IParsable {
         /// <summary>A collection of the keys.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TrustFrameworkKey>? Keys {
+            get { return BackingStore?.Get<List<TrustFrameworkKey>?>("keys"); }
+            set { BackingStore?.Set("keys", value); }
+        }
+#else
         public List<TrustFrameworkKey> Keys {
             get { return BackingStore?.Get<List<TrustFrameworkKey>>("keys"); }
             set { BackingStore?.Set("keys", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

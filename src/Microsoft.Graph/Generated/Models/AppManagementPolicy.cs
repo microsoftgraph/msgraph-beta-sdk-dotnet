@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AppManagementPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? AppliesTo {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
+        }
+#else
         public List<DirectoryObject> AppliesTo {
             get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
+#endif
         /// <summary>The isEnabled property</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The restrictions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AppManagementConfiguration? Restrictions {
+            get { return BackingStore?.Get<AppManagementConfiguration?>("restrictions"); }
+            set { BackingStore?.Set("restrictions", value); }
+        }
+#else
         public AppManagementConfiguration Restrictions {
             get { return BackingStore?.Get<AppManagementConfiguration>("restrictions"); }
             set { BackingStore?.Set("restrictions", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AppManagementPolicy and sets the default values.
         /// </summary>

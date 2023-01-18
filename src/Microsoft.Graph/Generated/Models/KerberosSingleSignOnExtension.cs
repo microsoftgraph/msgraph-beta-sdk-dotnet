@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class KerberosSingleSignOnExtension : SingleSignOnExtension, IParsable {
         /// <summary>Gets or sets the Active Directory site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActiveDirectorySiteCode {
+            get { return BackingStore?.Get<string?>("activeDirectorySiteCode"); }
+            set { BackingStore?.Set("activeDirectorySiteCode", value); }
+        }
+#else
         public string ActiveDirectorySiteCode {
             get { return BackingStore?.Get<string>("activeDirectorySiteCode"); }
             set { BackingStore?.Set("activeDirectorySiteCode", value); }
         }
+#endif
         /// <summary>Enables or disables whether the Kerberos extension can automatically determine its site name.</summary>
         public bool? BlockActiveDirectorySiteAutoDiscovery {
             get { return BackingStore?.Get<bool?>("blockActiveDirectorySiteAutoDiscovery"); }
@@ -21,25 +28,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("blockAutomaticLogin", value); }
         }
         /// <summary>Gets or sets the Generic Security Services name of the Kerberos cache to use for this profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CacheName {
+            get { return BackingStore?.Get<string?>("cacheName"); }
+            set { BackingStore?.Set("cacheName", value); }
+        }
+#else
         public string CacheName {
             get { return BackingStore?.Get<string>("cacheName"); }
             set { BackingStore?.Set("cacheName", value); }
         }
+#endif
         /// <summary>Gets or sets a list of app Bundle IDs allowed to access the Kerberos Ticket Granting Ticket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? CredentialBundleIdAccessControlList {
+            get { return BackingStore?.Get<List<string>?>("credentialBundleIdAccessControlList"); }
+            set { BackingStore?.Set("credentialBundleIdAccessControlList", value); }
+        }
+#else
         public List<string> CredentialBundleIdAccessControlList {
             get { return BackingStore?.Get<List<string>>("credentialBundleIdAccessControlList"); }
             set { BackingStore?.Set("credentialBundleIdAccessControlList", value); }
         }
+#endif
         /// <summary>Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DomainRealms {
+            get { return BackingStore?.Get<List<string>?>("domainRealms"); }
+            set { BackingStore?.Set("domainRealms", value); }
+        }
+#else
         public List<string> DomainRealms {
             get { return BackingStore?.Get<List<string>>("domainRealms"); }
             set { BackingStore?.Set("domainRealms", value); }
         }
+#endif
         /// <summary>Gets or sets a list of hosts or domain names for which the app extension performs SSO.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Domains {
+            get { return BackingStore?.Get<List<string>?>("domains"); }
+            set { BackingStore?.Set("domains", value); }
+        }
+#else
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#endif
         /// <summary>When true, this profile&apos;s realm will be selected as the default. Necessary if multiple Kerberos-type profiles are configured.</summary>
         public bool? IsDefaultRealm {
             get { return BackingStore?.Get<bool?>("isDefaultRealm"); }
@@ -51,10 +86,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passwordBlockModification", value); }
         }
         /// <summary>Gets or sets the URL that the user will be sent to when they initiate a password change.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PasswordChangeUrl {
+            get { return BackingStore?.Get<string?>("passwordChangeUrl"); }
+            set { BackingStore?.Set("passwordChangeUrl", value); }
+        }
+#else
         public string PasswordChangeUrl {
             get { return BackingStore?.Get<string>("passwordChangeUrl"); }
             set { BackingStore?.Set("passwordChangeUrl", value); }
         }
+#endif
         /// <summary>Enables or disables password syncing. This won&apos;t affect users logged in with a mobile account on macOS.</summary>
         public bool? PasswordEnableLocalSync {
             get { return BackingStore?.Get<bool?>("passwordEnableLocalSync"); }
@@ -91,25 +133,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passwordRequireActiveDirectoryComplexity", value); }
         }
         /// <summary>Gets or sets a description of the password complexity requirements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PasswordRequirementsDescription {
+            get { return BackingStore?.Get<string?>("passwordRequirementsDescription"); }
+            set { BackingStore?.Set("passwordRequirementsDescription", value); }
+        }
+#else
         public string PasswordRequirementsDescription {
             get { return BackingStore?.Get<string>("passwordRequirementsDescription"); }
             set { BackingStore?.Set("passwordRequirementsDescription", value); }
         }
+#endif
         /// <summary>Gets or sets the case-sensitive realm name for this profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Realm {
+            get { return BackingStore?.Get<string?>("realm"); }
+            set { BackingStore?.Set("realm", value); }
+        }
+#else
         public string Realm {
             get { return BackingStore?.Get<string>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
+#endif
         /// <summary>Gets or sets whether to require authentication via Touch ID, Face ID, or a passcode to access the keychain entry.</summary>
         public bool? RequireUserPresence {
             get { return BackingStore?.Get<bool?>("requireUserPresence"); }
             set { BackingStore?.Set("requireUserPresence", value); }
         }
         /// <summary>Gets or sets the principle user name to use for this profile. The realm name does not need to be included.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new KerberosSingleSignOnExtension and sets the default values.
         /// </summary>

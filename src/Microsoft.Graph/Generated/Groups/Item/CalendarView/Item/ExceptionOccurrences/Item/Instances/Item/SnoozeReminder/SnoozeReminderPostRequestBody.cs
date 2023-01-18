@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.ExceptionOccurrence
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The NewReminderTime property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? NewReminderTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("newReminderTime"); }
+            set { BackingStore?.Set("newReminderTime", value); }
+        }
+#else
         public DateTimeTimeZone NewReminderTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("newReminderTime"); }
             set { BackingStore?.Set("newReminderTime", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new snoozeReminderPostRequestBody and sets the default values.
         /// </summary>

@@ -36,20 +36,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Organization name used when onboarding Android for Work</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OwnerOrganizationName {
+            get { return BackingStore?.Get<string?>("ownerOrganizationName"); }
+            set { BackingStore?.Set("ownerOrganizationName", value); }
+        }
+#else
         public string OwnerOrganizationName {
             get { return BackingStore?.Get<string>("ownerOrganizationName"); }
             set { BackingStore?.Set("ownerOrganizationName", value); }
         }
+#endif
         /// <summary>Owner UPN that created the enterprise</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OwnerUserPrincipalName {
+            get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
+            set { BackingStore?.Set("ownerUserPrincipalName", value); }
+        }
+#else
         public string OwnerUserPrincipalName {
             get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
+#endif
         /// <summary>Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to &apos;Targeted&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TargetGroupIds {
+            get { return BackingStore?.Get<List<string>?>("targetGroupIds"); }
+            set { BackingStore?.Set("targetGroupIds", value); }
+        }
+#else
         public List<string> TargetGroupIds {
             get { return BackingStore?.Get<List<string>>("targetGroupIds"); }
             set { BackingStore?.Set("targetGroupIds", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365ActiveUserDetailWithPeriod {
     public class GetOffice365ActiveUserDetailWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Office365ActiveUserDetail>? Value {
+            get { return BackingStore?.Get<List<Office365ActiveUserDetail>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<Office365ActiveUserDetail> Value {
             get { return BackingStore?.Get<List<Office365ActiveUserDetail>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

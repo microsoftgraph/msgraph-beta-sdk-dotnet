@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingAbstractImplementationConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of value which means not configured for the setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedAbstractImplementationDefinitionIds {
+            get { return BackingStore?.Get<List<string>?>("allowedAbstractImplementationDefinitionIds"); }
+            set { BackingStore?.Set("allowedAbstractImplementationDefinitionIds", value); }
+        }
+#else
         public List<string> AllowedAbstractImplementationDefinitionIds {
             get { return BackingStore?.Get<List<string>>("allowedAbstractImplementationDefinitionIds"); }
             set { BackingStore?.Set("allowedAbstractImplementationDefinitionIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementSettingAbstractImplementationConstraint and sets the default values.
         /// </summary>

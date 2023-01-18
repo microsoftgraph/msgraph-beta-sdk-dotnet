@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cameras property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamworkPeripheral>? Cameras {
+            get { return BackingStore?.Get<List<TeamworkPeripheral>?>("cameras"); }
+            set { BackingStore?.Set("cameras", value); }
+        }
+#else
         public List<TeamworkPeripheral> Cameras {
             get { return BackingStore?.Get<List<TeamworkPeripheral>>("cameras"); }
             set { BackingStore?.Set("cameras", value); }
         }
+#endif
         /// <summary>The configuration for the content camera.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkContentCameraConfiguration? ContentCameraConfiguration {
+            get { return BackingStore?.Get<TeamworkContentCameraConfiguration?>("contentCameraConfiguration"); }
+            set { BackingStore?.Set("contentCameraConfiguration", value); }
+        }
+#else
         public TeamworkContentCameraConfiguration ContentCameraConfiguration {
             get { return BackingStore?.Get<TeamworkContentCameraConfiguration>("contentCameraConfiguration"); }
             set { BackingStore?.Set("contentCameraConfiguration", value); }
         }
+#endif
         /// <summary>The defaultContentCamera property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheral? DefaultContentCamera {
+            get { return BackingStore?.Get<TeamworkPeripheral?>("defaultContentCamera"); }
+            set { BackingStore?.Set("defaultContentCamera", value); }
+        }
+#else
         public TeamworkPeripheral DefaultContentCamera {
             get { return BackingStore?.Get<TeamworkPeripheral>("defaultContentCamera"); }
             set { BackingStore?.Set("defaultContentCamera", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkCameraConfiguration and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TenantAdmin {
     public class Sharepoint : Entity, IParsable {
         /// <summary>Represents the tenant-level settings for SharePoint and OneDrive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TenantAdmin.Settings? Settings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Settings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TenantAdmin.Settings Settings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Settings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

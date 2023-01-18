@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Ids {
+            get { return BackingStore?.Get<List<string>?>("ids"); }
+            set { BackingStore?.Set("ids", value); }
+        }
+#else
         public List<string> Ids {
             get { return BackingStore?.Get<List<string>>("ids"); }
             set { BackingStore?.Set("ids", value); }
         }
+#endif
         /// <summary>The types property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Types {
+            get { return BackingStore?.Get<List<string>?>("types"); }
+            set { BackingStore?.Set("types", value); }
+        }
+#else
         public List<string> Types {
             get { return BackingStore?.Get<List<string>>("types"); }
             set { BackingStore?.Set("types", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new getByIdsPostRequestBody and sets the default values.
         /// </summary>

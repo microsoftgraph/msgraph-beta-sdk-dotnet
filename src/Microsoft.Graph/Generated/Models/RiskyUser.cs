@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RiskyUser : Entity, IParsable {
         /// <summary>The history property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RiskyUserHistoryItem>? History {
+            get { return BackingStore?.Get<List<RiskyUserHistoryItem>?>("history"); }
+            set { BackingStore?.Set("history", value); }
+        }
+#else
         public List<RiskyUserHistoryItem> History {
             get { return BackingStore?.Get<List<RiskyUserHistoryItem>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
+#endif
         /// <summary>Indicates whether the user is deleted. Possible values are: true, false.</summary>
         public bool? IsDeleted {
             get { return BackingStore?.Get<bool?>("isDeleted"); }
@@ -41,15 +48,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("riskState", value); }
         }
         /// <summary>Risky user display name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserDisplayName {
+            get { return BackingStore?.Get<string?>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
+        }
+#else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#endif
         /// <summary>Risky user principal name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

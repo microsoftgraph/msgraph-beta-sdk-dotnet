@@ -19,30 +19,58 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The remediationStatus property</summary>
         public EvidenceRemediationStatus? RemediationStatus {
             get { return BackingStore?.Get<EvidenceRemediationStatus?>("remediationStatus"); }
             set { BackingStore?.Set("remediationStatus", value); }
         }
         /// <summary>Details about the remediation status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RemediationStatusDetails {
+            get { return BackingStore?.Get<string?>("remediationStatusDetails"); }
+            set { BackingStore?.Set("remediationStatusDetails", value); }
+        }
+#else
         public string RemediationStatusDetails {
             get { return BackingStore?.Get<string>("remediationStatusDetails"); }
             set { BackingStore?.Set("remediationStatusDetails", value); }
         }
+#endif
         /// <summary>The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role &apos;Attacker&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EvidenceRole?>? Roles {
+            get { return BackingStore?.Get<List<EvidenceRole?>?>("roles"); }
+            set { BackingStore?.Set("roles", value); }
+        }
+#else
         public List<EvidenceRole?> Roles {
             get { return BackingStore?.Get<List<EvidenceRole?>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#endif
         /// <summary>Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tags {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>The verdict property</summary>
         public EvidenceVerdict? Verdict {
             get { return BackingStore?.Get<EvidenceVerdict?>("verdict"); }

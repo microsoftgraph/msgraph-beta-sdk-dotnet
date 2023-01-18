@@ -9,10 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceHealthScriptDeviceState : Entity, IParsable {
         /// <summary>A list of the assignment filter ids used for health script applicability evaluation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AssignmentFilterIds {
+            get { return BackingStore?.Get<List<string>?>("assignmentFilterIds"); }
+            set { BackingStore?.Set("assignmentFilterIds", value); }
+        }
+#else
         public List<string> AssignmentFilterIds {
             get { return BackingStore?.Get<List<string>>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
+#endif
         /// <summary>Indicates the type of execution status of the device management script.</summary>
         public RunState? DetectionState {
             get { return BackingStore?.Get<RunState?>("detectionState"); }
@@ -34,35 +41,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The managed device on which the device health script executed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ManagedDevice? ManagedDevice {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice?>("managedDevice"); }
+            set { BackingStore?.Set("managedDevice", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>("managedDevice"); }
             set { BackingStore?.Set("managedDevice", value); }
         }
+#endif
         /// <summary>Error from the detection script after remediation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PostRemediationDetectionScriptError {
+            get { return BackingStore?.Get<string?>("postRemediationDetectionScriptError"); }
+            set { BackingStore?.Set("postRemediationDetectionScriptError", value); }
+        }
+#else
         public string PostRemediationDetectionScriptError {
             get { return BackingStore?.Get<string>("postRemediationDetectionScriptError"); }
             set { BackingStore?.Set("postRemediationDetectionScriptError", value); }
         }
+#endif
         /// <summary>Detection script output after remediation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PostRemediationDetectionScriptOutput {
+            get { return BackingStore?.Get<string?>("postRemediationDetectionScriptOutput"); }
+            set { BackingStore?.Set("postRemediationDetectionScriptOutput", value); }
+        }
+#else
         public string PostRemediationDetectionScriptOutput {
             get { return BackingStore?.Get<string>("postRemediationDetectionScriptOutput"); }
             set { BackingStore?.Set("postRemediationDetectionScriptOutput", value); }
         }
+#endif
         /// <summary>Error from the detection script before remediation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreRemediationDetectionScriptError {
+            get { return BackingStore?.Get<string?>("preRemediationDetectionScriptError"); }
+            set { BackingStore?.Set("preRemediationDetectionScriptError", value); }
+        }
+#else
         public string PreRemediationDetectionScriptError {
             get { return BackingStore?.Get<string>("preRemediationDetectionScriptError"); }
             set { BackingStore?.Set("preRemediationDetectionScriptError", value); }
         }
+#endif
         /// <summary>Output of the detection script before remediation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreRemediationDetectionScriptOutput {
+            get { return BackingStore?.Get<string?>("preRemediationDetectionScriptOutput"); }
+            set { BackingStore?.Set("preRemediationDetectionScriptOutput", value); }
+        }
+#else
         public string PreRemediationDetectionScriptOutput {
             get { return BackingStore?.Get<string>("preRemediationDetectionScriptOutput"); }
             set { BackingStore?.Set("preRemediationDetectionScriptOutput", value); }
         }
+#endif
         /// <summary>Error output of the remediation script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RemediationScriptError {
+            get { return BackingStore?.Get<string?>("remediationScriptError"); }
+            set { BackingStore?.Set("remediationScriptError", value); }
+        }
+#else
         public string RemediationScriptError {
             get { return BackingStore?.Get<string>("remediationScriptError"); }
             set { BackingStore?.Set("remediationScriptError", value); }
         }
+#endif
         /// <summary>Indicates the type of execution status of the device management script.</summary>
         public Microsoft.Graph.Beta.Models.RemediationState? RemediationState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemediationState?>("remediationState"); }

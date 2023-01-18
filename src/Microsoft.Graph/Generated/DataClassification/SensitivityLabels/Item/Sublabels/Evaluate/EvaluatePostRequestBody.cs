@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Item.Sublabe
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The currentLabel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.CurrentLabel? CurrentLabel {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel?>("currentLabel"); }
+            set { BackingStore?.Set("currentLabel", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel"); }
             set { BackingStore?.Set("currentLabel", value); }
         }
+#endif
         /// <summary>The discoveredSensitiveTypes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DiscoveredSensitiveType>? DiscoveredSensitiveTypes {
+            get { return BackingStore?.Get<List<DiscoveredSensitiveType>?>("discoveredSensitiveTypes"); }
+            set { BackingStore?.Set("discoveredSensitiveTypes", value); }
+        }
+#else
         public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes {
             get { return BackingStore?.Get<List<DiscoveredSensitiveType>>("discoveredSensitiveTypes"); }
             set { BackingStore?.Set("discoveredSensitiveTypes", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new evaluatePostRequestBody and sets the default values.
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesDirectorySynchronization : Entity, IParsable {
         /// <summary>Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OnPremisesDirectorySynchronizationConfiguration? Configuration {
+            get { return BackingStore?.Get<OnPremisesDirectorySynchronizationConfiguration?>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
+        }
+#else
         public OnPremisesDirectorySynchronizationConfiguration Configuration {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
+#endif
         /// <summary>The features property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OnPremisesDirectorySynchronizationFeature? Features {
+            get { return BackingStore?.Get<OnPremisesDirectorySynchronizationFeature?>("features"); }
+            set { BackingStore?.Set("features", value); }
+        }
+#else
         public OnPremisesDirectorySynchronizationFeature Features {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationFeature>("features"); }
             set { BackingStore?.Set("features", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

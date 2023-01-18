@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable {
         /// <summary>Choice Setting Value Template</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationChoiceSettingValueTemplate? ChoiceSettingValueTemplate {
+            get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueTemplate?>("choiceSettingValueTemplate"); }
+            set { BackingStore?.Set("choiceSettingValueTemplate", value); }
+        }
+#else
         public DeviceManagementConfigurationChoiceSettingValueTemplate ChoiceSettingValueTemplate {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueTemplate>("choiceSettingValueTemplate"); }
             set { BackingStore?.Set("choiceSettingValueTemplate", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationChoiceSettingInstanceTemplate and sets the default values.
         /// </summary>

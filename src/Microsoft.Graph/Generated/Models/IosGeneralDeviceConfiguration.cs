@@ -81,10 +81,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appRemovalBlocked", value); }
         }
         /// <summary>Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? AppsSingleAppModeList {
+            get { return BackingStore?.Get<List<AppListItem>?>("appsSingleAppModeList"); }
+            set { BackingStore?.Set("appsSingleAppModeList", value); }
+        }
+#else
         public List<AppListItem> AppsSingleAppModeList {
             get { return BackingStore?.Get<List<AppListItem>>("appsSingleAppModeList"); }
             set { BackingStore?.Set("appsSingleAppModeList", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block the automatic downloading of apps purchased on other devices when the device is in supervised mode (iOS 9.0 and later).</summary>
         public bool? AppStoreBlockAutomaticDownloads {
             get { return BackingStore?.Get<bool?>("appStoreBlockAutomaticDownloads"); }
@@ -111,10 +118,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appStoreRequirePassword", value); }
         }
         /// <summary>List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? AppsVisibilityList {
+            get { return BackingStore?.Get<List<AppListItem>?>("appsVisibilityList"); }
+            set { BackingStore?.Set("appsVisibilityList", value); }
+        }
+#else
         public List<AppListItem> AppsVisibilityList {
             get { return BackingStore?.Get<List<AppListItem>>("appsVisibilityList"); }
             set { BackingStore?.Set("appsVisibilityList", value); }
         }
+#endif
         /// <summary>Possible values of the compliance app list.</summary>
         public AppListType? AppsVisibilityListType {
             get { return BackingStore?.Get<AppListType?>("appsVisibilityListType"); }
@@ -216,10 +230,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? CompliantAppsList {
+            get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
+            set { BackingStore?.Set("compliantAppsList", value); }
+        }
+#else
         public List<AppListItem> CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block the user from installing configuration profiles and certificates interactively when the device is in supervised mode.</summary>
         public bool? ConfigurationProfileBlockChanges {
             get { return BackingStore?.Get<bool?>("configurationProfileBlockChanges"); }
@@ -286,10 +307,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("documentsBlockUnmanagedDocumentsInManagedApps", value); }
         }
         /// <summary>An email address lacking a suffix that matches any of these strings will be considered out-of-domain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EmailInDomainSuffixes {
+            get { return BackingStore?.Get<List<string>?>("emailInDomainSuffixes"); }
+            set { BackingStore?.Set("emailInDomainSuffixes", value); }
+        }
+#else
         public List<string> EmailInDomainSuffixes {
             get { return BackingStore?.Get<List<string>>("emailInDomainSuffixes"); }
             set { BackingStore?.Set("emailInDomainSuffixes", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block the user from trusting an enterprise app.</summary>
         public bool? EnterpriseAppBlockTrust {
             get { return BackingStore?.Get<bool?>("enterpriseAppBlockTrust"); }
@@ -531,10 +559,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kioskModeAllowZoomSettings", value); }
         }
         /// <summary>URL in the app store to the app to use for kiosk mode. Use if KioskModeManagedAppId is not known.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskModeAppStoreUrl {
+            get { return BackingStore?.Get<string?>("kioskModeAppStoreUrl"); }
+            set { BackingStore?.Set("kioskModeAppStoreUrl", value); }
+        }
+#else
         public string KioskModeAppStoreUrl {
             get { return BackingStore?.Get<string>("kioskModeAppStoreUrl"); }
             set { BackingStore?.Set("kioskModeAppStoreUrl", value); }
         }
+#endif
         /// <summary>App source options for iOS kiosk mode.</summary>
         public IosKioskModeAppType? KioskModeAppType {
             get { return BackingStore?.Get<IosKioskModeAppType?>("kioskModeAppType"); }
@@ -571,20 +606,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kioskModeBlockVolumeButtons", value); }
         }
         /// <summary>ID for built-in apps to use for kiosk mode. Used when KioskModeManagedAppId and KioskModeAppStoreUrl are not set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskModeBuiltInAppId {
+            get { return BackingStore?.Get<string?>("kioskModeBuiltInAppId"); }
+            set { BackingStore?.Set("kioskModeBuiltInAppId", value); }
+        }
+#else
         public string KioskModeBuiltInAppId {
             get { return BackingStore?.Get<string>("kioskModeBuiltInAppId"); }
             set { BackingStore?.Set("kioskModeBuiltInAppId", value); }
         }
+#endif
         /// <summary>Indicates whether or not to enable voice control in kiosk mode.</summary>
         public bool? KioskModeEnableVoiceControl {
             get { return BackingStore?.Get<bool?>("kioskModeEnableVoiceControl"); }
             set { BackingStore?.Set("kioskModeEnableVoiceControl", value); }
         }
         /// <summary>Managed app id of the app to use for kiosk mode. If KioskModeManagedAppId is specified then KioskModeAppStoreUrl will be ignored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskModeManagedAppId {
+            get { return BackingStore?.Get<string?>("kioskModeManagedAppId"); }
+            set { BackingStore?.Set("kioskModeManagedAppId", value); }
+        }
+#else
         public string KioskModeManagedAppId {
             get { return BackingStore?.Get<string>("kioskModeManagedAppId"); }
             set { BackingStore?.Set("kioskModeManagedAppId", value); }
         }
+#endif
         /// <summary>Indicates whether or not to require assistive touch while in kiosk mode.</summary>
         public bool? KioskModeRequireAssistiveTouch {
             get { return BackingStore?.Get<bool?>("kioskModeRequireAssistiveTouch"); }
@@ -641,60 +690,130 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mediaContentRatingApps", value); }
         }
         /// <summary>Media content rating settings for Australia</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaContentRatingAustralia? MediaContentRatingAustralia {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingAustralia?>("mediaContentRatingAustralia"); }
+            set { BackingStore?.Set("mediaContentRatingAustralia", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaContentRatingAustralia MediaContentRatingAustralia {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingAustralia>("mediaContentRatingAustralia"); }
             set { BackingStore?.Set("mediaContentRatingAustralia", value); }
         }
+#endif
         /// <summary>Media content rating settings for Canada</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaContentRatingCanada? MediaContentRatingCanada {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingCanada?>("mediaContentRatingCanada"); }
+            set { BackingStore?.Set("mediaContentRatingCanada", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaContentRatingCanada MediaContentRatingCanada {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingCanada>("mediaContentRatingCanada"); }
             set { BackingStore?.Set("mediaContentRatingCanada", value); }
         }
+#endif
         /// <summary>Media content rating settings for France</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaContentRatingFrance? MediaContentRatingFrance {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingFrance?>("mediaContentRatingFrance"); }
+            set { BackingStore?.Set("mediaContentRatingFrance", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaContentRatingFrance MediaContentRatingFrance {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingFrance>("mediaContentRatingFrance"); }
             set { BackingStore?.Set("mediaContentRatingFrance", value); }
         }
+#endif
         /// <summary>Media content rating settings for Germany</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaContentRatingGermany? MediaContentRatingGermany {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingGermany?>("mediaContentRatingGermany"); }
+            set { BackingStore?.Set("mediaContentRatingGermany", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaContentRatingGermany MediaContentRatingGermany {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingGermany>("mediaContentRatingGermany"); }
             set { BackingStore?.Set("mediaContentRatingGermany", value); }
         }
+#endif
         /// <summary>Media content rating settings for Ireland</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaContentRatingIreland? MediaContentRatingIreland {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingIreland?>("mediaContentRatingIreland"); }
+            set { BackingStore?.Set("mediaContentRatingIreland", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaContentRatingIreland MediaContentRatingIreland {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingIreland>("mediaContentRatingIreland"); }
             set { BackingStore?.Set("mediaContentRatingIreland", value); }
         }
+#endif
         /// <summary>Media content rating settings for Japan</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaContentRatingJapan? MediaContentRatingJapan {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingJapan?>("mediaContentRatingJapan"); }
+            set { BackingStore?.Set("mediaContentRatingJapan", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaContentRatingJapan MediaContentRatingJapan {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingJapan>("mediaContentRatingJapan"); }
             set { BackingStore?.Set("mediaContentRatingJapan", value); }
         }
+#endif
         /// <summary>Media content rating settings for New Zealand</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaContentRatingNewZealand? MediaContentRatingNewZealand {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingNewZealand?>("mediaContentRatingNewZealand"); }
+            set { BackingStore?.Set("mediaContentRatingNewZealand", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaContentRatingNewZealand MediaContentRatingNewZealand {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingNewZealand>("mediaContentRatingNewZealand"); }
             set { BackingStore?.Set("mediaContentRatingNewZealand", value); }
         }
+#endif
         /// <summary>Media content rating settings for United Kingdom</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaContentRatingUnitedKingdom? MediaContentRatingUnitedKingdom {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingUnitedKingdom?>("mediaContentRatingUnitedKingdom"); }
+            set { BackingStore?.Set("mediaContentRatingUnitedKingdom", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaContentRatingUnitedKingdom MediaContentRatingUnitedKingdom {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingUnitedKingdom>("mediaContentRatingUnitedKingdom"); }
             set { BackingStore?.Set("mediaContentRatingUnitedKingdom", value); }
         }
+#endif
         /// <summary>Media content rating settings for United States</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaContentRatingUnitedStates? MediaContentRatingUnitedStates {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingUnitedStates?>("mediaContentRatingUnitedStates"); }
+            set { BackingStore?.Set("mediaContentRatingUnitedStates", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaContentRatingUnitedStates MediaContentRatingUnitedStates {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaContentRatingUnitedStates>("mediaContentRatingUnitedStates"); }
             set { BackingStore?.Set("mediaContentRatingUnitedStates", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block the user from using the Messages app on the supervised device.</summary>
         public bool? MessagesBlocked {
             get { return BackingStore?.Get<bool?>("messagesBlocked"); }
             set { BackingStore?.Set("messagesBlocked", value); }
         }
         /// <summary>List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IosNetworkUsageRule>? NetworkUsageRules {
+            get { return BackingStore?.Get<List<IosNetworkUsageRule>?>("networkUsageRules"); }
+            set { BackingStore?.Set("networkUsageRules", value); }
+        }
+#else
         public List<IosNetworkUsageRule> NetworkUsageRules {
             get { return BackingStore?.Get<List<IosNetworkUsageRule>>("networkUsageRules"); }
             set { BackingStore?.Set("networkUsageRules", value); }
         }
+#endif
         /// <summary>Disable NFC to prevent devices from pairing with other NFC-enabled devices. Available for iOS/iPadOS devices running 14.2 and later.</summary>
         public bool? NfcBlocked {
             get { return BackingStore?.Get<bool?>("nfcBlocked"); }
@@ -841,15 +960,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("safariCookieSettings", value); }
         }
         /// <summary>URLs matching the patterns listed here will be considered managed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SafariManagedDomains {
+            get { return BackingStore?.Get<List<string>?>("safariManagedDomains"); }
+            set { BackingStore?.Set("safariManagedDomains", value); }
+        }
+#else
         public List<string> SafariManagedDomains {
             get { return BackingStore?.Get<List<string>>("safariManagedDomains"); }
             set { BackingStore?.Set("safariManagedDomains", value); }
         }
+#endif
         /// <summary>Users can save passwords in Safari only from URLs matching the patterns listed here. Applies to devices in supervised mode (iOS 9.3 and later).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SafariPasswordAutoFillDomains {
+            get { return BackingStore?.Get<List<string>?>("safariPasswordAutoFillDomains"); }
+            set { BackingStore?.Set("safariPasswordAutoFillDomains", value); }
+        }
+#else
         public List<string> SafariPasswordAutoFillDomains {
             get { return BackingStore?.Get<List<string>>("safariPasswordAutoFillDomains"); }
             set { BackingStore?.Set("safariPasswordAutoFillDomains", value); }
         }
+#endif
         /// <summary>Indicates whether or not to require fraud warning in Safari.</summary>
         public bool? SafariRequireFraudWarning {
             get { return BackingStore?.Get<bool?>("safariRequireFraudWarning"); }

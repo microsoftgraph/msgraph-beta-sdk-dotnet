@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class Segment : Entity, IParsable {
         /// <summary>Endpoint that answered this segment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Endpoint? Callee {
+            get { return BackingStore?.Get<Endpoint?>("callee"); }
+            set { BackingStore?.Set("callee", value); }
+        }
+#else
         public Endpoint Callee {
             get { return BackingStore?.Get<Endpoint>("callee"); }
             set { BackingStore?.Set("callee", value); }
         }
+#endif
         /// <summary>Endpoint that initiated this segment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Endpoint? Caller {
+            get { return BackingStore?.Get<Endpoint?>("caller"); }
+            set { BackingStore?.Set("caller", value); }
+        }
+#else
         public Endpoint Caller {
             get { return BackingStore?.Get<Endpoint>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
+#endif
         /// <summary>UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Failure information associated with the segment if it failed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.CallRecords.FailureInfo? FailureInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo?>("failureInfo"); }
+            set { BackingStore?.Set("failureInfo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.CallRecords.FailureInfo FailureInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo>("failureInfo"); }
             set { BackingStore?.Set("failureInfo", value); }
         }
+#endif
         /// <summary>Media associated with this segment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.CallRecords.Media>? Media {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Media>?>("media"); }
+            set { BackingStore?.Set("media", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.CallRecords.Media> Media {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Media>>("media"); }
             set { BackingStore?.Set("media", value); }
         }
+#endif
         /// <summary>UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }

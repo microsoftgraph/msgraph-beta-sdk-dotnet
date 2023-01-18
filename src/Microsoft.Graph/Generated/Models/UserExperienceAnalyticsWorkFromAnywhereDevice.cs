@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("autoPilotRegistered", value); }
         }
         /// <summary>The user experience work from anywhere azure Ad device Id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureAdDeviceId {
+            get { return BackingStore?.Get<string?>("azureAdDeviceId"); }
+            set { BackingStore?.Set("azureAdDeviceId", value); }
+        }
+#else
         public string AzureAdDeviceId {
             get { return BackingStore?.Get<string>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere device&apos;s azure Ad joinType.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureAdJoinType {
+            get { return BackingStore?.Get<string?>("azureAdJoinType"); }
+            set { BackingStore?.Set("azureAdJoinType", value); }
+        }
+#else
         public string AzureAdJoinType {
             get { return BackingStore?.Get<string>("azureAdJoinType"); }
             set { BackingStore?.Set("azureAdJoinType", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere device&apos;s azureAdRegistered.</summary>
         public bool? AzureAdRegistered {
             get { return BackingStore?.Get<bool?>("azureAdRegistered"); }
@@ -54,15 +68,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("compliancePolicySetToIntune", value); }
         }
         /// <summary>The user experience work from anywhere device Id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The work from anywhere device&apos;s name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>The healthStatus property</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
@@ -74,45 +102,87 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isCloudManagedGatewayEnabled", value); }
         }
         /// <summary>The user experience work from anywhere management agent of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedBy {
+            get { return BackingStore?.Get<string?>("managedBy"); }
+            set { BackingStore?.Set("managedBy", value); }
+        }
+#else
         public string ManagedBy {
             get { return BackingStore?.Get<string>("managedBy"); }
             set { BackingStore?.Set("managedBy", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere device&apos;s manufacturer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere device&apos;s model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere device, Is OS check failed for device to upgrade to the latest version of windows.</summary>
         public bool? OsCheckFailed {
             get { return BackingStore?.Get<bool?>("osCheckFailed"); }
             set { BackingStore?.Set("osCheckFailed", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s OS Description.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsDescription {
+            get { return BackingStore?.Get<string?>("osDescription"); }
+            set { BackingStore?.Set("osDescription", value); }
+        }
+#else
         public string OsDescription {
             get { return BackingStore?.Get<string>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere device&apos;s OS Version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere device&apos;s otherWorkloadsSetToIntune.</summary>
         public bool? OtherWorkloadsSetToIntune {
             get { return BackingStore?.Get<bool?>("otherWorkloadsSetToIntune"); }
             set { BackingStore?.Set("otherWorkloadsSetToIntune", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s ownership.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Ownership {
+            get { return BackingStore?.Get<string?>("ownership"); }
+            set { BackingStore?.Set("ownership", value); }
+        }
+#else
         public string Ownership {
             get { return BackingStore?.Get<string>("ownership"); }
             set { BackingStore?.Set("ownership", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere device, Is processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows.</summary>
         public bool? Processor64BitCheckFailed {
             get { return BackingStore?.Get<bool?>("processor64BitCheckFailed"); }
@@ -144,10 +214,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("secureBootCheckFailed", value); }
         }
         /// <summary>The user experience work from anywhere device&apos;s serial number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SerialNumber {
+            get { return BackingStore?.Get<string?>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
+        }
+#else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#endif
         /// <summary>The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.</summary>
         public bool? StorageCheckFailed {
             get { return BackingStore?.Get<bool?>("storageCheckFailed"); }

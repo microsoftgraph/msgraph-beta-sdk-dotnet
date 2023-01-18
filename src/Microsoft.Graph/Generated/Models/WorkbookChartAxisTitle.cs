@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartAxisTitle : Entity, IParsable {
         /// <summary>Represents the formatting of chart axis title. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartAxisTitleFormat? Format {
+            get { return BackingStore?.Get<WorkbookChartAxisTitleFormat?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public WorkbookChartAxisTitleFormat Format {
             get { return BackingStore?.Get<WorkbookChartAxisTitleFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>Represents the axis title.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Text {
+            get { return BackingStore?.Get<string?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>A boolean that specifies the visibility of an axis title.</summary>
         public bool? Visible {
             get { return BackingStore?.Get<bool?>("visible"); }

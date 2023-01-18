@@ -6,35 +6,70 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoverySearch : Search, IParsable {
         /// <summary>Adds an additional source to the eDiscovery search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DataSource>? AdditionalSources {
+            get { return BackingStore?.Get<List<DataSource>?>("additionalSources"); }
+            set { BackingStore?.Set("additionalSources", value); }
+        }
+#else
         public List<DataSource> AdditionalSources {
             get { return BackingStore?.Get<List<DataSource>>("additionalSources"); }
             set { BackingStore?.Set("additionalSources", value); }
         }
+#endif
         /// <summary>Adds the results of the eDiscovery search to the specified reviewSet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoveryAddToReviewSetOperation? AddToReviewSetOperation {
+            get { return BackingStore?.Get<EdiscoveryAddToReviewSetOperation?>("addToReviewSetOperation"); }
+            set { BackingStore?.Set("addToReviewSetOperation", value); }
+        }
+#else
         public EdiscoveryAddToReviewSetOperation AddToReviewSetOperation {
             get { return BackingStore?.Get<EdiscoveryAddToReviewSetOperation>("addToReviewSetOperation"); }
             set { BackingStore?.Set("addToReviewSetOperation", value); }
         }
+#endif
         /// <summary>Custodian sources that are included in the eDiscovery search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DataSource>? CustodianSources {
+            get { return BackingStore?.Get<List<DataSource>?>("custodianSources"); }
+            set { BackingStore?.Set("custodianSources", value); }
+        }
+#else
         public List<DataSource> CustodianSources {
             get { return BackingStore?.Get<List<DataSource>>("custodianSources"); }
             set { BackingStore?.Set("custodianSources", value); }
         }
+#endif
         /// <summary>When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.</summary>
         public Microsoft.Graph.Beta.Models.Security.DataSourceScopes? DataSourceScopes {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSourceScopes?>("dataSourceScopes"); }
             set { BackingStore?.Set("dataSourceScopes", value); }
         }
         /// <summary>The last estimate operation associated with the eDiscovery search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoveryEstimateOperation? LastEstimateStatisticsOperation {
+            get { return BackingStore?.Get<EdiscoveryEstimateOperation?>("lastEstimateStatisticsOperation"); }
+            set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
+        }
+#else
         public EdiscoveryEstimateOperation LastEstimateStatisticsOperation {
             get { return BackingStore?.Get<EdiscoveryEstimateOperation>("lastEstimateStatisticsOperation"); }
             set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
         }
+#endif
         /// <summary>noncustodialDataSource sources that are included in the eDiscovery search</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryNoncustodialDataSource>? NoncustodialSources {
+            get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>?>("noncustodialSources"); }
+            set { BackingStore?.Set("noncustodialSources", value); }
+        }
+#else
         public List<EdiscoveryNoncustodialDataSource> NoncustodialSources {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>("noncustodialSources"); }
             set { BackingStore?.Set("noncustodialSources", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EdiscoverySearch and sets the default values.
         /// </summary>

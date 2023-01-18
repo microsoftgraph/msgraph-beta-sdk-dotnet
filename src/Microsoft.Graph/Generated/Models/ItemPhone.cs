@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemPhone : ItemFacet, IParsable {
         /// <summary>Friendly name the user has assigned this phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Phone number provided by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Number {
+            get { return BackingStore?.Get<string?>("number"); }
+            set { BackingStore?.Set("number", value); }
+        }
+#else
         public string Number {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
+#endif
         /// <summary>The type property</summary>
         public PhoneType? Type {
             get { return BackingStore?.Get<PhoneType?>("type"); }

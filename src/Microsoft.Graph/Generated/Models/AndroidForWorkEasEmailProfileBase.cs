@@ -21,15 +21,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("emailAddressSource", value); }
         }
         /// <summary>Exchange location (URL) that the mail app connects to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HostName {
+            get { return BackingStore?.Get<string?>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
+        }
+#else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#endif
         /// <summary>Identity certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidForWorkCertificateProfileBase? IdentityCertificate {
+            get { return BackingStore?.Get<AndroidForWorkCertificateProfileBase?>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
+        }
+#else
         public AndroidForWorkCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<AndroidForWorkCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#endif
         /// <summary>Indicates whether or not to use SSL.</summary>
         public bool? RequireSsl {
             get { return BackingStore?.Get<bool?>("requireSsl"); }

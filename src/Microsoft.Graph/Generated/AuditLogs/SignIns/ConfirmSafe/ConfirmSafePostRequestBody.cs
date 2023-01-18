@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The requestIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RequestIds {
+            get { return BackingStore?.Get<List<string>?>("requestIds"); }
+            set { BackingStore?.Set("requestIds", value); }
+        }
+#else
         public List<string> RequestIds {
             get { return BackingStore?.Get<List<string>>("requestIds"); }
             set { BackingStore?.Set("requestIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new confirmSafePostRequestBody and sets the default values.
         /// </summary>

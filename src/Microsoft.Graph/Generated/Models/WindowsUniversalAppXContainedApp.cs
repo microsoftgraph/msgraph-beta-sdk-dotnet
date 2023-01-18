@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsUniversalAppXContainedApp : MobileContainedApp, IParsable {
         /// <summary>The app user model ID of the contained app of a WindowsUniversalAppX app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppUserModelId {
+            get { return BackingStore?.Get<string?>("appUserModelId"); }
+            set { BackingStore?.Set("appUserModelId", value); }
+        }
+#else
         public string AppUserModelId {
             get { return BackingStore?.Get<string>("appUserModelId"); }
             set { BackingStore?.Set("appUserModelId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsUniversalAppXContainedApp and sets the default values.
         /// </summary>

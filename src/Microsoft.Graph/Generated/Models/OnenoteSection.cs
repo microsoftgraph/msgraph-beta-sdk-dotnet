@@ -11,30 +11,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it&apos;s installed. The oneNoteWebURL link opens the section in OneNote on the web.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SectionLinks? Links {
+            get { return BackingStore?.Get<SectionLinks?>("links"); }
+            set { BackingStore?.Set("links", value); }
+        }
+#else
         public SectionLinks Links {
             get { return BackingStore?.Get<SectionLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+#endif
         /// <summary>The collection of pages in the section.  Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnenotePage>? Pages {
+            get { return BackingStore?.Get<List<OnenotePage>?>("pages"); }
+            set { BackingStore?.Set("pages", value); }
+        }
+#else
         public List<OnenotePage> Pages {
             get { return BackingStore?.Get<List<OnenotePage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
+#endif
         /// <summary>The pages endpoint where you can get details for all the pages in the section. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PagesUrl {
+            get { return BackingStore?.Get<string?>("pagesUrl"); }
+            set { BackingStore?.Set("pagesUrl", value); }
+        }
+#else
         public string PagesUrl {
             get { return BackingStore?.Get<string>("pagesUrl"); }
             set { BackingStore?.Set("pagesUrl", value); }
         }
+#endif
         /// <summary>The notebook that contains the section.  Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Notebook? ParentNotebook {
+            get { return BackingStore?.Get<Notebook?>("parentNotebook"); }
+            set { BackingStore?.Set("parentNotebook", value); }
+        }
+#else
         public Notebook ParentNotebook {
             get { return BackingStore?.Get<Notebook>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
+#endif
         /// <summary>The section group that contains the section.  Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SectionGroup? ParentSectionGroup {
+            get { return BackingStore?.Get<SectionGroup?>("parentSectionGroup"); }
+            set { BackingStore?.Set("parentSectionGroup", value); }
+        }
+#else
         public SectionGroup ParentSectionGroup {
             get { return BackingStore?.Get<SectionGroup>("parentSectionGroup"); }
             set { BackingStore?.Set("parentSectionGroup", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new onenoteSection and sets the default values.
         /// </summary>

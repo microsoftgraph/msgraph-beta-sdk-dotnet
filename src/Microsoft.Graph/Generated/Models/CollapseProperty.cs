@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Fields {
+            get { return BackingStore?.Get<List<string>?>("fields"); }
+            set { BackingStore?.Set("fields", value); }
+        }
+#else
         public List<string> Fields {
             get { return BackingStore?.Get<List<string>>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
+#endif
         /// <summary>Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.</summary>
         public int? Limit {
             get { return BackingStore?.Get<int?>("limit"); }
             set { BackingStore?.Set("limit", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new collapseProperty and sets the default values.
         /// </summary>

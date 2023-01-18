@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for the source image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The ID of the source image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The display name of subscription that hosts the source image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubscriptionDisplayName {
+            get { return BackingStore?.Get<string?>("subscriptionDisplayName"); }
+            set { BackingStore?.Set("subscriptionDisplayName", value); }
+        }
+#else
         public string SubscriptionDisplayName {
             get { return BackingStore?.Get<string>("subscriptionDisplayName"); }
             set { BackingStore?.Set("subscriptionDisplayName", value); }
         }
+#endif
         /// <summary>The ID of subscription that hosts the source image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubscriptionId {
+            get { return BackingStore?.Get<string?>("subscriptionId"); }
+            set { BackingStore?.Set("subscriptionId", value); }
+        }
+#else
         public string SubscriptionId {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new cloudPcSourceDeviceImage and sets the default values.
         /// </summary>

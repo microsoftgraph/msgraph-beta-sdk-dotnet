@@ -11,25 +11,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("aggregatedEventDateTime", value); }
         }
         /// <summary>Name of the application that the user signed in to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppDisplayName {
+            get { return BackingStore?.Get<string?>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
+        }
+#else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#endif
         /// <summary>ID of the application that the user signed in to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppId {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#endif
         /// <summary>Count of sign-ins made by the application.</summary>
         public long? SignInCount {
             get { return BackingStore?.Get<long?>("signInCount"); }
             set { BackingStore?.Set("signInCount", value); }
         }
         /// <summary>Details of the sign-in status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SignInStatus? Status {
+            get { return BackingStore?.Get<SignInStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public SignInStatus Status {
             get { return BackingStore?.Get<SignInStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

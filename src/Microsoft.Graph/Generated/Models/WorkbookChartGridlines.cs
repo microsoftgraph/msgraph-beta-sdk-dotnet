@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartGridlines : Entity, IParsable {
         /// <summary>Represents the formatting of chart gridlines. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartGridlinesFormat? Format {
+            get { return BackingStore?.Get<WorkbookChartGridlinesFormat?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public WorkbookChartGridlinesFormat Format {
             get { return BackingStore?.Get<WorkbookChartGridlinesFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>Boolean value representing if the axis gridlines are visible or not.</summary>
         public bool? Visible {
             get { return BackingStore?.Get<bool?>("visible"); }

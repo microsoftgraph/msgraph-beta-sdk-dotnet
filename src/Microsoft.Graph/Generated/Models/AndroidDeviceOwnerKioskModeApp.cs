@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeApp : AndroidDeviceOwnerKioskModeFolderItem, IParsable {
         /// <summary>Class name of application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClassName {
+            get { return BackingStore?.Get<string?>("className"); }
+            set { BackingStore?.Set("className", value); }
+        }
+#else
         public string ClassName {
             get { return BackingStore?.Get<string>("className"); }
             set { BackingStore?.Set("className", value); }
         }
+#endif
         /// <summary>Package name of application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Package {
+            get { return BackingStore?.Get<string?>("package"); }
+            set { BackingStore?.Set("package", value); }
+        }
+#else
         public string Package {
             get { return BackingStore?.Get<string>("package"); }
             set { BackingStore?.Set("package", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerKioskModeApp and sets the default values.
         /// </summary>

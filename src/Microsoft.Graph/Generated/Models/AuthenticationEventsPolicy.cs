@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationEventsPolicy : Entity, IParsable {
         /// <summary>A list of applicable actions to be taken on sign-up.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationListener>? OnSignupStart {
+            get { return BackingStore?.Get<List<AuthenticationListener>?>("onSignupStart"); }
+            set { BackingStore?.Set("onSignupStart", value); }
+        }
+#else
         public List<AuthenticationListener> OnSignupStart {
             get { return BackingStore?.Get<List<AuthenticationListener>>("onSignupStart"); }
             set { BackingStore?.Set("onSignupStart", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

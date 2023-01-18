@@ -6,40 +6,75 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ConditionalAccessPolicy : Entity, IParsable {
         /// <summary>The conditions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessConditionSet? Conditions {
+            get { return BackingStore?.Get<ConditionalAccessConditionSet?>("conditions"); }
+            set { BackingStore?.Set("conditions", value); }
+        }
+#else
         public ConditionalAccessConditionSet Conditions {
             get { return BackingStore?.Get<ConditionalAccessConditionSet>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Not used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Specifies a display name for the conditionalAccessPolicy object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Specifies the grant controls that must be fulfilled to pass the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessGrantControls? GrantControls {
+            get { return BackingStore?.Get<ConditionalAccessGrantControls?>("grantControls"); }
+            set { BackingStore?.Set("grantControls", value); }
+        }
+#else
         public ConditionalAccessGrantControls GrantControls {
             get { return BackingStore?.Get<ConditionalAccessGrantControls>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.</summary>
         public DateTimeOffset? ModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>Specifies the session controls that are enforced after sign-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessSessionControls? SessionControls {
+            get { return BackingStore?.Get<ConditionalAccessSessionControls?>("sessionControls"); }
+            set { BackingStore?.Set("sessionControls", value); }
+        }
+#else
         public ConditionalAccessSessionControls SessionControls {
             get { return BackingStore?.Get<ConditionalAccessSessionControls>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public ConditionalAccessPolicyState? State {
             get { return BackingStore?.Get<ConditionalAccessPolicyState?>("state"); }

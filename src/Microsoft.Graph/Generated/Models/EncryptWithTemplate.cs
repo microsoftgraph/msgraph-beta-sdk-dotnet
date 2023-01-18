@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("availableForEncryption", value); }
         }
         /// <summary>The templateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TemplateId {
+            get { return BackingStore?.Get<string?>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
+        }
+#else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EncryptWithTemplate and sets the default values.
         /// </summary>

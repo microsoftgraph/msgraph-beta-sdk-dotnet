@@ -11,45 +11,94 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("childFolderCount", value); }
         }
         /// <summary>The collection of child folders in the mailFolder.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MailFolder>? ChildFolders {
+            get { return BackingStore?.Get<List<MailFolder>?>("childFolders"); }
+            set { BackingStore?.Set("childFolders", value); }
+        }
+#else
         public List<MailFolder> ChildFolders {
             get { return BackingStore?.Get<List<MailFolder>>("childFolders"); }
             set { BackingStore?.Set("childFolders", value); }
         }
+#endif
         /// <summary>The mailFolder&apos;s display name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.</summary>
         public bool? IsHidden {
             get { return BackingStore?.Get<bool?>("isHidden"); }
             set { BackingStore?.Set("isHidden", value); }
         }
         /// <summary>The collection of rules that apply to the user&apos;s Inbox folder.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MessageRule>? MessageRules {
+            get { return BackingStore?.Get<List<MessageRule>?>("messageRules"); }
+            set { BackingStore?.Set("messageRules", value); }
+        }
+#else
         public List<MessageRule> MessageRules {
             get { return BackingStore?.Get<List<MessageRule>>("messageRules"); }
             set { BackingStore?.Set("messageRules", value); }
         }
+#endif
         /// <summary>The collection of messages in the mailFolder.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Message>? Messages {
+            get { return BackingStore?.Get<List<Message>?>("messages"); }
+            set { BackingStore?.Set("messages", value); }
+        }
+#else
         public List<Message> Messages {
             get { return BackingStore?.Get<List<Message>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
+#endif
         /// <summary>The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
+        }
+#else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#endif
         /// <summary>The unique identifier for the mailFolder&apos;s parent mailFolder.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentFolderId {
+            get { return BackingStore?.Get<string?>("parentFolderId"); }
+            set { BackingStore?.Set("parentFolderId", value); }
+        }
+#else
         public string ParentFolderId {
             get { return BackingStore?.Get<string>("parentFolderId"); }
             set { BackingStore?.Set("parentFolderId", value); }
         }
+#endif
         /// <summary>The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#endif
         /// <summary>The number of items in the mailFolder.</summary>
         public int? TotalItemCount {
             get { return BackingStore?.Get<int?>("totalItemCount"); }
@@ -61,15 +110,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unreadItemCount", value); }
         }
         /// <summary>The userConfigurations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserConfiguration>? UserConfigurations {
+            get { return BackingStore?.Get<List<UserConfiguration>?>("userConfigurations"); }
+            set { BackingStore?.Set("userConfigurations", value); }
+        }
+#else
         public List<UserConfiguration> UserConfigurations {
             get { return BackingStore?.Get<List<UserConfiguration>>("userConfigurations"); }
             set { BackingStore?.Set("userConfigurations", value); }
         }
+#endif
         /// <summary>The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WellKnownName {
+            get { return BackingStore?.Get<string?>("wellKnownName"); }
+            set { BackingStore?.Set("wellKnownName", value); }
+        }
+#else
         public string WellKnownName {
             get { return BackingStore?.Get<string>("wellKnownName"); }
             set { BackingStore?.Set("wellKnownName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

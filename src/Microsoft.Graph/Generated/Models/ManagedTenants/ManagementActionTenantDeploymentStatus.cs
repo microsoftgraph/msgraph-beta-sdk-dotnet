@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementActionTenantDeploymentStatus : Entity, IParsable {
         /// <summary>The collection of deployment status for each instance of a management action. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementActionDeploymentStatus>? Statuses {
+            get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>?>("statuses"); }
+            set { BackingStore?.Set("statuses", value); }
+        }
+#else
         public List<ManagementActionDeploymentStatus> Statuses {
             get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>>("statuses"); }
             set { BackingStore?.Set("statuses", value); }
         }
+#endif
         /// <summary>The identifier for the tenant group that is associated with the management action. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantGroupId {
+            get { return BackingStore?.Get<string?>("tenantGroupId"); }
+            set { BackingStore?.Set("tenantGroupId", value); }
+        }
+#else
         public string TenantGroupId {
             get { return BackingStore?.Get<string>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
+#endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -7,15 +7,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class LogonUser : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Domain of user account used to logon.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccountDomain {
+            get { return BackingStore?.Get<string?>("accountDomain"); }
+            set { BackingStore?.Set("accountDomain", value); }
+        }
+#else
         public string AccountDomain {
             get { return BackingStore?.Get<string>("accountDomain"); }
             set { BackingStore?.Set("accountDomain", value); }
         }
+#endif
         /// <summary>Account name of user account used to logon.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccountName {
+            get { return BackingStore?.Get<string?>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
+        }
+#else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#endif
         /// <summary>User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
         public UserAccountSecurityType? AccountType {
             get { return BackingStore?.Get<UserAccountSecurityType?>("accountType"); }
@@ -39,20 +53,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>User logon ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LogonId {
+            get { return BackingStore?.Get<string?>("logonId"); }
+            set { BackingStore?.Set("logonId", value); }
+        }
+#else
         public string LogonId {
             get { return BackingStore?.Get<string>("logonId"); }
             set { BackingStore?.Set("logonId", value); }
         }
+#endif
         /// <summary>Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LogonType?>? LogonTypes {
+            get { return BackingStore?.Get<List<LogonType?>?>("logonTypes"); }
+            set { BackingStore?.Set("logonTypes", value); }
+        }
+#else
         public List<LogonType?> LogonTypes {
             get { return BackingStore?.Get<List<LogonType?>>("logonTypes"); }
             set { BackingStore?.Set("logonTypes", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new logonUser and sets the default values.
         /// </summary>

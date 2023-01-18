@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.CopyToDefau
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The destinationFileName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DestinationFileName {
+            get { return BackingStore?.Get<string?>("destinationFileName"); }
+            set { BackingStore?.Set("destinationFileName", value); }
+        }
+#else
         public string DestinationFileName {
             get { return BackingStore?.Get<string>("destinationFileName"); }
             set { BackingStore?.Set("destinationFileName", value); }
         }
+#endif
         /// <summary>The sourceFile property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemReference? SourceFile {
+            get { return BackingStore?.Get<ItemReference?>("sourceFile"); }
+            set { BackingStore?.Set("sourceFile", value); }
+        }
+#else
         public ItemReference SourceFile {
             get { return BackingStore?.Get<ItemReference>("sourceFile"); }
             set { BackingStore?.Set("sourceFile", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new copyToDefaultContentLocationPostRequestBody and sets the default values.
         /// </summary>

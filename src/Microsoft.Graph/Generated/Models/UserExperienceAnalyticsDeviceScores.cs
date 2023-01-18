@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics device scores entity consolidates the various endpoint analytics scores.
+    /// </summary>
     public class UserExperienceAnalyticsDeviceScores : Entity, IParsable {
         /// <summary>The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? AppReliabilityScore {
@@ -16,10 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("batteryHealthScore", value); }
         }
         /// <summary>The user experience analytics device name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? EndpointAnalyticsScore {
             get { return BackingStore?.Get<double?>("endpointAnalyticsScore"); }
@@ -31,15 +41,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The user experience analytics device manufacturer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>The user experience analytics device model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? StartupPerformanceScore {
             get { return BackingStore?.Get<double?>("startupPerformanceScore"); }

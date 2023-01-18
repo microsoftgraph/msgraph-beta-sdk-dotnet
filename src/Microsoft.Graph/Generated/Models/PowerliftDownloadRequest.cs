@@ -17,15 +17,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of files to download</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Files {
+            get { return BackingStore?.Get<List<string>?>("files"); }
+            set { BackingStore?.Set("files", value); }
+        }
+#else
         public List<string> Files {
             get { return BackingStore?.Get<List<string>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The unique id for the request</summary>
         public Guid? PowerliftId {
             get { return BackingStore?.Get<Guid?>("powerliftId"); }

@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WinGetAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>The install time settings to apply for this app assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WinGetAppInstallTimeSettings? InstallTimeSettings {
+            get { return BackingStore?.Get<WinGetAppInstallTimeSettings?>("installTimeSettings"); }
+            set { BackingStore?.Set("installTimeSettings", value); }
+        }
+#else
         public WinGetAppInstallTimeSettings InstallTimeSettings {
             get { return BackingStore?.Get<WinGetAppInstallTimeSettings>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
+#endif
         /// <summary>Contains value for notification status.</summary>
         public WinGetAppNotification? Notifications {
             get { return BackingStore?.Get<WinGetAppNotification?>("notifications"); }
             set { BackingStore?.Set("notifications", value); }
         }
         /// <summary>The reboot settings to apply for this app assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WinGetAppRestartSettings? RestartSettings {
+            get { return BackingStore?.Get<WinGetAppRestartSettings?>("restartSettings"); }
+            set { BackingStore?.Set("restartSettings", value); }
+        }
+#else
         public WinGetAppRestartSettings RestartSettings {
             get { return BackingStore?.Get<WinGetAppRestartSettings>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WinGetAppAssignmentSettings and sets the default values.
         /// </summary>

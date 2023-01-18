@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A list of all the Intune managed device IDs that completed the bulk action with a failure.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? FailedDeviceIds {
+            get { return BackingStore?.Get<List<string>?>("failedDeviceIds"); }
+            set { BackingStore?.Set("failedDeviceIds", value); }
+        }
+#else
         public List<string> FailedDeviceIds {
             get { return BackingStore?.Get<List<string>>("failedDeviceIds"); }
             set { BackingStore?.Set("failedDeviceIds", value); }
         }
+#endif
         /// <summary>A list of all the Intune managed device IDs that were not found when the bulk action was attempted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? NotFoundDeviceIds {
+            get { return BackingStore?.Get<List<string>?>("notFoundDeviceIds"); }
+            set { BackingStore?.Set("notFoundDeviceIds", value); }
+        }
+#else
         public List<string> NotFoundDeviceIds {
             get { return BackingStore?.Get<List<string>>("notFoundDeviceIds"); }
             set { BackingStore?.Set("notFoundDeviceIds", value); }
         }
+#endif
         /// <summary>A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? NotSupportedDeviceIds {
+            get { return BackingStore?.Get<List<string>?>("notSupportedDeviceIds"); }
+            set { BackingStore?.Set("notSupportedDeviceIds", value); }
+        }
+#else
         public List<string> NotSupportedDeviceIds {
             get { return BackingStore?.Get<List<string>>("notSupportedDeviceIds"); }
             set { BackingStore?.Set("notSupportedDeviceIds", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A list of all the Intune managed device IDs that completed the bulk action successfully.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SuccessfulDeviceIds {
+            get { return BackingStore?.Get<List<string>?>("successfulDeviceIds"); }
+            set { BackingStore?.Set("successfulDeviceIds", value); }
+        }
+#else
         public List<string> SuccessfulDeviceIds {
             get { return BackingStore?.Get<List<string>>("successfulDeviceIds"); }
             set { BackingStore?.Set("successfulDeviceIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new cloudPcBulkRemoteActionResult and sets the default values.
         /// </summary>

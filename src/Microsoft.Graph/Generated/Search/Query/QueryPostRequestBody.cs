@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Search.Query {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The requests property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SearchRequest>? Requests {
+            get { return BackingStore?.Get<List<SearchRequest>?>("requests"); }
+            set { BackingStore?.Set("requests", value); }
+        }
+#else
         public List<SearchRequest> Requests {
             get { return BackingStore?.Get<List<SearchRequest>>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new queryPostRequestBody and sets the default values.
         /// </summary>

@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifier of parent setting/ parent setting option dependent on</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DependentOn {
+            get { return BackingStore?.Get<string?>("dependentOn"); }
+            set { BackingStore?.Set("dependentOn", value); }
+        }
+#else
         public string DependentOn {
             get { return BackingStore?.Get<string>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Identifier of parent setting/ parent setting id dependent on</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentSettingId {
+            get { return BackingStore?.Get<string?>("parentSettingId"); }
+            set { BackingStore?.Set("parentSettingId", value); }
+        }
+#else
         public string ParentSettingId {
             get { return BackingStore?.Get<string>("parentSettingId"); }
             set { BackingStore?.Set("parentSettingId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationDependentOn and sets the default values.
         /// </summary>

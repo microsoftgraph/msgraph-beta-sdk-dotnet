@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TimeOffItem : ScheduleEntity, IParsable {
         /// <summary>ID of the timeOffReason for this timeOffItem. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeOffReasonId {
+            get { return BackingStore?.Get<string?>("timeOffReasonId"); }
+            set { BackingStore?.Set("timeOffReasonId", value); }
+        }
+#else
         public string TimeOffReasonId {
             get { return BackingStore?.Get<string>("timeOffReasonId"); }
             set { BackingStore?.Set("timeOffReasonId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

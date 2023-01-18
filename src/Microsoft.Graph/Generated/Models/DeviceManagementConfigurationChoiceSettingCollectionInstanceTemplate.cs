@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowUnmanagedValues", value); }
         }
         /// <summary>Choice Setting Collection Value Template</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationChoiceSettingValueTemplate>? ChoiceSettingCollectionValueTemplate {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValueTemplate>?>("choiceSettingCollectionValueTemplate"); }
+            set { BackingStore?.Set("choiceSettingCollectionValueTemplate", value); }
+        }
+#else
         public List<DeviceManagementConfigurationChoiceSettingValueTemplate> ChoiceSettingCollectionValueTemplate {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValueTemplate>>("choiceSettingCollectionValueTemplate"); }
             set { BackingStore?.Set("choiceSettingCollectionValueTemplate", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate and sets the default values.
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhone81CompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Maximum Windows Phone version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMaximumVersion {
+            get { return BackingStore?.Get<string?>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
+        }
+#else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#endif
         /// <summary>Minimum Windows Phone version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMinimumVersion {
+            get { return BackingStore?.Get<string?>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
+        }
+#else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#endif
         /// <summary>Whether or not to block syncing the calendar.</summary>
         public bool? PasswordBlockSimple {
             get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }

@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.CreateDeviceLogCollectionR
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The templateType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceLogCollectionRequest? TemplateType {
+            get { return BackingStore?.Get<DeviceLogCollectionRequest?>("templateType"); }
+            set { BackingStore?.Set("templateType", value); }
+        }
+#else
         public DeviceLogCollectionRequest TemplateType {
             get { return BackingStore?.Get<DeviceLogCollectionRequest>("templateType"); }
             set { BackingStore?.Set("templateType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new createDeviceLogCollectionRequestPostRequestBody and sets the default values.
         /// </summary>

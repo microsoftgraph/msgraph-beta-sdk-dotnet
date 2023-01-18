@@ -7,65 +7,121 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SalesCreditMemo : Entity, IParsable {
         /// <summary>The billingPostalAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PostalAddressType? BillingPostalAddress {
+            get { return BackingStore?.Get<PostalAddressType?>("billingPostalAddress"); }
+            set { BackingStore?.Set("billingPostalAddress", value); }
+        }
+#else
         public PostalAddressType BillingPostalAddress {
             get { return BackingStore?.Get<PostalAddressType>("billingPostalAddress"); }
             set { BackingStore?.Set("billingPostalAddress", value); }
         }
+#endif
         /// <summary>The billToCustomerId property</summary>
         public Guid? BillToCustomerId {
             get { return BackingStore?.Get<Guid?>("billToCustomerId"); }
             set { BackingStore?.Set("billToCustomerId", value); }
         }
         /// <summary>The billToCustomerNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BillToCustomerNumber {
+            get { return BackingStore?.Get<string?>("billToCustomerNumber"); }
+            set { BackingStore?.Set("billToCustomerNumber", value); }
+        }
+#else
         public string BillToCustomerNumber {
             get { return BackingStore?.Get<string>("billToCustomerNumber"); }
             set { BackingStore?.Set("billToCustomerNumber", value); }
         }
+#endif
         /// <summary>The billToName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BillToName {
+            get { return BackingStore?.Get<string?>("billToName"); }
+            set { BackingStore?.Set("billToName", value); }
+        }
+#else
         public string BillToName {
             get { return BackingStore?.Get<string>("billToName"); }
             set { BackingStore?.Set("billToName", value); }
         }
+#endif
         /// <summary>The creditMemoDate property</summary>
         public Date? CreditMemoDate {
             get { return BackingStore?.Get<Date?>("creditMemoDate"); }
             set { BackingStore?.Set("creditMemoDate", value); }
         }
         /// <summary>The currency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Currency? Currency {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency?>("currency"); }
+            set { BackingStore?.Set("currency", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Currency Currency {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
+#endif
         /// <summary>The currencyCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CurrencyCode {
+            get { return BackingStore?.Get<string?>("currencyCode"); }
+            set { BackingStore?.Set("currencyCode", value); }
+        }
+#else
         public string CurrencyCode {
             get { return BackingStore?.Get<string>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
+#endif
         /// <summary>The currencyId property</summary>
         public Guid? CurrencyId {
             get { return BackingStore?.Get<Guid?>("currencyId"); }
             set { BackingStore?.Set("currencyId", value); }
         }
         /// <summary>The customer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Customer? Customer {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer?>("customer"); }
+            set { BackingStore?.Set("customer", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Customer Customer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer>("customer"); }
             set { BackingStore?.Set("customer", value); }
         }
+#endif
         /// <summary>The customerId property</summary>
         public Guid? CustomerId {
             get { return BackingStore?.Get<Guid?>("customerId"); }
             set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>The customerName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomerName {
+            get { return BackingStore?.Get<string?>("customerName"); }
+            set { BackingStore?.Set("customerName", value); }
+        }
+#else
         public string CustomerName {
             get { return BackingStore?.Get<string>("customerName"); }
             set { BackingStore?.Set("customerName", value); }
         }
+#endif
         /// <summary>The customerNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomerNumber {
+            get { return BackingStore?.Get<string?>("customerNumber"); }
+            set { BackingStore?.Set("customerNumber", value); }
+        }
+#else
         public string CustomerNumber {
             get { return BackingStore?.Get<string>("customerNumber"); }
             set { BackingStore?.Set("customerNumber", value); }
         }
+#endif
         /// <summary>The discountAmount property</summary>
         public decimal? DiscountAmount {
             get { return BackingStore?.Get<decimal?>("discountAmount"); }
@@ -82,75 +138,145 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dueDate", value); }
         }
         /// <summary>The email property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#endif
         /// <summary>The externalDocumentNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalDocumentNumber {
+            get { return BackingStore?.Get<string?>("externalDocumentNumber"); }
+            set { BackingStore?.Set("externalDocumentNumber", value); }
+        }
+#else
         public string ExternalDocumentNumber {
             get { return BackingStore?.Get<string>("externalDocumentNumber"); }
             set { BackingStore?.Set("externalDocumentNumber", value); }
         }
+#endif
         /// <summary>The invoiceId property</summary>
         public Guid? InvoiceId {
             get { return BackingStore?.Get<Guid?>("invoiceId"); }
             set { BackingStore?.Set("invoiceId", value); }
         }
         /// <summary>The invoiceNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InvoiceNumber {
+            get { return BackingStore?.Get<string?>("invoiceNumber"); }
+            set { BackingStore?.Set("invoiceNumber", value); }
+        }
+#else
         public string InvoiceNumber {
             get { return BackingStore?.Get<string>("invoiceNumber"); }
             set { BackingStore?.Set("invoiceNumber", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Number {
+            get { return BackingStore?.Get<string?>("number"); }
+            set { BackingStore?.Set("number", value); }
+        }
+#else
         public string Number {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
+#endif
         /// <summary>The paymentTerm property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PaymentTerm? PaymentTerm {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentTerm?>("paymentTerm"); }
+            set { BackingStore?.Set("paymentTerm", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PaymentTerm PaymentTerm {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentTerm>("paymentTerm"); }
             set { BackingStore?.Set("paymentTerm", value); }
         }
+#endif
         /// <summary>The paymentTermsId property</summary>
         public Guid? PaymentTermsId {
             get { return BackingStore?.Get<Guid?>("paymentTermsId"); }
             set { BackingStore?.Set("paymentTermsId", value); }
         }
         /// <summary>The phoneNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PhoneNumber {
+            get { return BackingStore?.Get<string?>("phoneNumber"); }
+            set { BackingStore?.Set("phoneNumber", value); }
+        }
+#else
         public string PhoneNumber {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
+#endif
         /// <summary>The pricesIncludeTax property</summary>
         public bool? PricesIncludeTax {
             get { return BackingStore?.Get<bool?>("pricesIncludeTax"); }
             set { BackingStore?.Set("pricesIncludeTax", value); }
         }
         /// <summary>The salesCreditMemoLines property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SalesCreditMemoLine>? SalesCreditMemoLines {
+            get { return BackingStore?.Get<List<SalesCreditMemoLine>?>("salesCreditMemoLines"); }
+            set { BackingStore?.Set("salesCreditMemoLines", value); }
+        }
+#else
         public List<SalesCreditMemoLine> SalesCreditMemoLines {
             get { return BackingStore?.Get<List<SalesCreditMemoLine>>("salesCreditMemoLines"); }
             set { BackingStore?.Set("salesCreditMemoLines", value); }
         }
+#endif
         /// <summary>The salesperson property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Salesperson {
+            get { return BackingStore?.Get<string?>("salesperson"); }
+            set { BackingStore?.Set("salesperson", value); }
+        }
+#else
         public string Salesperson {
             get { return BackingStore?.Get<string>("salesperson"); }
             set { BackingStore?.Set("salesperson", value); }
         }
+#endif
         /// <summary>The sellingPostalAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PostalAddressType? SellingPostalAddress {
+            get { return BackingStore?.Get<PostalAddressType?>("sellingPostalAddress"); }
+            set { BackingStore?.Set("sellingPostalAddress", value); }
+        }
+#else
         public PostalAddressType SellingPostalAddress {
             get { return BackingStore?.Get<PostalAddressType>("sellingPostalAddress"); }
             set { BackingStore?.Set("sellingPostalAddress", value); }
         }
+#endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>The totalAmountExcludingTax property</summary>
         public decimal? TotalAmountExcludingTax {
             get { return BackingStore?.Get<decimal?>("totalAmountExcludingTax"); }

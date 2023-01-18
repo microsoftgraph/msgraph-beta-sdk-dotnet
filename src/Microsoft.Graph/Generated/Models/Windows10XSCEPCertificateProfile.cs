@@ -21,15 +21,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateValidityPeriodValue", value); }
         }
         /// <summary>Extended Key Usage (EKU) settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExtendedKeyUsage>? ExtendedKeyUsages {
+            get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
+            set { BackingStore?.Set("extendedKeyUsages", value); }
+        }
+#else
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
+#endif
         /// <summary>SCEP Hash Algorithm.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<HashAlgorithms?>? HashAlgorithm {
+            get { return BackingStore?.Get<List<HashAlgorithms?>?>("hashAlgorithm"); }
+            set { BackingStore?.Set("hashAlgorithm", value); }
+        }
+#else
         public List<HashAlgorithms?> HashAlgorithm {
             get { return BackingStore?.Get<List<HashAlgorithms?>>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
+#endif
         /// <summary>Key Size Options.</summary>
         public Microsoft.Graph.Beta.Models.KeySize? KeySize {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeySize?>("keySize"); }
@@ -56,20 +70,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rootCertificateId", value); }
         }
         /// <summary>SCEP Server Url(s).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ScepServerUrls {
+            get { return BackingStore?.Get<List<string>?>("scepServerUrls"); }
+            set { BackingStore?.Set("scepServerUrls", value); }
+        }
+#else
         public List<string> ScepServerUrls {
             get { return BackingStore?.Get<List<string>>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
+#endif
         /// <summary>Custom AAD Attributes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Windows10XCustomSubjectAlternativeName>? SubjectAlternativeNameFormats {
+            get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>?>("subjectAlternativeNameFormats"); }
+            set { BackingStore?.Set("subjectAlternativeNameFormats", value); }
+        }
+#else
         public List<Windows10XCustomSubjectAlternativeName> SubjectAlternativeNameFormats {
             get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>>("subjectAlternativeNameFormats"); }
             set { BackingStore?.Set("subjectAlternativeNameFormats", value); }
         }
+#endif
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubjectNameFormatString {
+            get { return BackingStore?.Get<string?>("subjectNameFormatString"); }
+            set { BackingStore?.Set("subjectNameFormatString", value); }
+        }
+#else
         public string SubjectNameFormatString {
             get { return BackingStore?.Get<string>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Windows10XSCEPCertificateProfile and sets the default values.
         /// </summary>

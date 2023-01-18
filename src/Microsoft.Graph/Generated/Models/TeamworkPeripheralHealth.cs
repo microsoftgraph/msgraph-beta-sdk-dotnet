@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The connected state and time since the peripheral device was connected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkConnection? Connection {
+            get { return BackingStore?.Get<TeamworkConnection?>("connection"); }
+            set { BackingStore?.Set("connection", value); }
+        }
+#else
         public TeamworkConnection Connection {
             get { return BackingStore?.Get<TeamworkConnection>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
+#endif
         /// <summary>True if the peripheral is optional. Used for health computation.</summary>
         public bool? IsOptional {
             get { return BackingStore?.Get<bool?>("isOptional"); }
             set { BackingStore?.Set("isOptional", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The peripheral property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheral? Peripheral {
+            get { return BackingStore?.Get<TeamworkPeripheral?>("peripheral"); }
+            set { BackingStore?.Set("peripheral", value); }
+        }
+#else
         public TeamworkPeripheral Peripheral {
             get { return BackingStore?.Get<TeamworkPeripheral>("peripheral"); }
             set { BackingStore?.Set("peripheral", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkPeripheralHealth and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class CredentialUserRegistrationsSummaryCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CredentialUserRegistrationsSummary>? Value {
+            get { return BackingStore?.Get<List<CredentialUserRegistrationsSummary>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<CredentialUserRegistrationsSummary> Value {
             get { return BackingStore?.Get<List<CredentialUserRegistrationsSummary>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

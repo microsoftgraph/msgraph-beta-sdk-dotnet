@@ -6,50 +6,113 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Command : Entity, IParsable {
         /// <summary>The appServiceName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppServiceName {
+            get { return BackingStore?.Get<string?>("appServiceName"); }
+            set { BackingStore?.Set("appServiceName", value); }
+        }
+#else
         public string AppServiceName {
             get { return BackingStore?.Get<string>("appServiceName"); }
             set { BackingStore?.Set("appServiceName", value); }
         }
+#endif
         /// <summary>The error property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Error {
+            get { return BackingStore?.Get<string?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public string Error {
             get { return BackingStore?.Get<string>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>The packageFamilyName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PackageFamilyName {
+            get { return BackingStore?.Get<string?>("packageFamilyName"); }
+            set { BackingStore?.Set("packageFamilyName", value); }
+        }
+#else
         public string PackageFamilyName {
             get { return BackingStore?.Get<string>("packageFamilyName"); }
             set { BackingStore?.Set("packageFamilyName", value); }
         }
+#endif
         /// <summary>The payload property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PayloadRequest? Payload {
+            get { return BackingStore?.Get<PayloadRequest?>("payload"); }
+            set { BackingStore?.Set("payload", value); }
+        }
+#else
         public PayloadRequest Payload {
             get { return BackingStore?.Get<PayloadRequest>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
+#endif
         /// <summary>The permissionTicket property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PermissionTicket {
+            get { return BackingStore?.Get<string?>("permissionTicket"); }
+            set { BackingStore?.Set("permissionTicket", value); }
+        }
+#else
         public string PermissionTicket {
             get { return BackingStore?.Get<string>("permissionTicket"); }
             set { BackingStore?.Set("permissionTicket", value); }
         }
+#endif
         /// <summary>The postBackUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PostBackUri {
+            get { return BackingStore?.Get<string?>("postBackUri"); }
+            set { BackingStore?.Set("postBackUri", value); }
+        }
+#else
         public string PostBackUri {
             get { return BackingStore?.Get<string>("postBackUri"); }
             set { BackingStore?.Set("postBackUri", value); }
         }
+#endif
         /// <summary>The responsepayload property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PayloadResponse? Responsepayload {
+            get { return BackingStore?.Get<PayloadResponse?>("responsepayload"); }
+            set { BackingStore?.Set("responsepayload", value); }
+        }
+#else
         public PayloadResponse Responsepayload {
             get { return BackingStore?.Get<PayloadResponse>("responsepayload"); }
             set { BackingStore?.Set("responsepayload", value); }
         }
+#endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -8,10 +8,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.CallRecords.GetDirectRoutingCallsWithFromDateTimeWithToDateTime {
     public class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectRoutingLogRow>? Value {
+            get { return BackingStore?.Get<List<DirectRoutingLogRow>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<DirectRoutingLogRow> Value {
             get { return BackingStore?.Get<List<DirectRoutingLogRow>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

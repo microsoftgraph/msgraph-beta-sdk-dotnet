@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureCommunicationServicesUserIdentity : Identity, IParsable {
         /// <summary>The Azure Communication Services resource ID associated with the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureCommunicationServicesResourceId {
+            get { return BackingStore?.Get<string?>("azureCommunicationServicesResourceId"); }
+            set { BackingStore?.Set("azureCommunicationServicesResourceId", value); }
+        }
+#else
         public string AzureCommunicationServicesResourceId {
             get { return BackingStore?.Get<string>("azureCommunicationServicesResourceId"); }
             set { BackingStore?.Set("azureCommunicationServicesResourceId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AzureCommunicationServicesUserIdentity and sets the default values.
         /// </summary>

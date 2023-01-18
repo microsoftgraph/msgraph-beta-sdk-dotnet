@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class NdesConnector : Entity, IParsable {
         /// <summary>The build version of the Ndes Connector.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectorVersion {
+            get { return BackingStore?.Get<string?>("connectorVersion"); }
+            set { BackingStore?.Set("connectorVersion", value); }
+        }
+#else
         public string ConnectorVersion {
             get { return BackingStore?.Get<string>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
+#endif
         /// <summary>The friendly name of the Ndes Connector.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Timestamp when on-prem certificate connector was enrolled in Intune.</summary>
         public DateTimeOffset? EnrolledDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("enrolledDateTime"); }
@@ -29,15 +43,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastConnectionDateTime", value); }
         }
         /// <summary>Name of the machine running on-prem certificate connector service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MachineName {
+            get { return BackingStore?.Get<string?>("machineName"); }
+            set { BackingStore?.Set("machineName", value); }
+        }
+#else
         public string MachineName {
             get { return BackingStore?.Get<string>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
+#endif
         /// <summary>List of Scope Tags for this Entity instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>The current status of the Ndes Connector.</summary>
         public NdesConnectorState? State {
             get { return BackingStore?.Get<NdesConnectorState?>("state"); }

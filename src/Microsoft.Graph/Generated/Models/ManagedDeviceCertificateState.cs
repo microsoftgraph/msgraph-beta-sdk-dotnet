@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ManagedDeviceCertificateState : Entity, IParsable {
         /// <summary>Extended key usage</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateEnhancedKeyUsage {
+            get { return BackingStore?.Get<string?>("certificateEnhancedKeyUsage"); }
+            set { BackingStore?.Set("certificateEnhancedKeyUsage", value); }
+        }
+#else
         public string CertificateEnhancedKeyUsage {
             get { return BackingStore?.Get<string>("certificateEnhancedKeyUsage"); }
             set { BackingStore?.Set("certificateEnhancedKeyUsage", value); }
         }
+#endif
         /// <summary>Error code</summary>
         public int? CertificateErrorCode {
             get { return BackingStore?.Get<int?>("certificateErrorCode"); }
@@ -31,10 +38,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateIssuanceState", value); }
         }
         /// <summary>Issuer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateIssuer {
+            get { return BackingStore?.Get<string?>("certificateIssuer"); }
+            set { BackingStore?.Set("certificateIssuer", value); }
+        }
+#else
         public string CertificateIssuer {
             get { return BackingStore?.Get<string>("certificateIssuer"); }
             set { BackingStore?.Set("certificateIssuer", value); }
         }
+#endif
         /// <summary>Key length</summary>
         public int? CertificateKeyLength {
             get { return BackingStore?.Get<int?>("certificateKeyLength"); }
@@ -56,45 +70,80 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateLastIssuanceStateChangedDateTime", value); }
         }
         /// <summary>Certificate profile display name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateProfileDisplayName {
+            get { return BackingStore?.Get<string?>("certificateProfileDisplayName"); }
+            set { BackingStore?.Set("certificateProfileDisplayName", value); }
+        }
+#else
         public string CertificateProfileDisplayName {
             get { return BackingStore?.Get<string>("certificateProfileDisplayName"); }
             set { BackingStore?.Set("certificateProfileDisplayName", value); }
         }
+#endif
         /// <summary>Certificate Revocation Status.</summary>
         public CertificateRevocationStatus? CertificateRevokeStatus {
             get { return BackingStore?.Get<CertificateRevocationStatus?>("certificateRevokeStatus"); }
             set { BackingStore?.Set("certificateRevokeStatus", value); }
         }
         /// <summary>Serial number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateSerialNumber {
+            get { return BackingStore?.Get<string?>("certificateSerialNumber"); }
+            set { BackingStore?.Set("certificateSerialNumber", value); }
+        }
+#else
         public string CertificateSerialNumber {
             get { return BackingStore?.Get<string>("certificateSerialNumber"); }
             set { BackingStore?.Set("certificateSerialNumber", value); }
         }
+#endif
         /// <summary>Subject Alternative Name Options.</summary>
         public SubjectAlternativeNameType? CertificateSubjectAlternativeNameFormat {
             get { return BackingStore?.Get<SubjectAlternativeNameType?>("certificateSubjectAlternativeNameFormat"); }
             set { BackingStore?.Set("certificateSubjectAlternativeNameFormat", value); }
         }
         /// <summary>Subject alternative name format string for custom formats</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateSubjectAlternativeNameFormatString {
+            get { return BackingStore?.Get<string?>("certificateSubjectAlternativeNameFormatString"); }
+            set { BackingStore?.Set("certificateSubjectAlternativeNameFormatString", value); }
+        }
+#else
         public string CertificateSubjectAlternativeNameFormatString {
             get { return BackingStore?.Get<string>("certificateSubjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("certificateSubjectAlternativeNameFormatString", value); }
         }
+#endif
         /// <summary>Subject Name Format Options.</summary>
         public SubjectNameFormat? CertificateSubjectNameFormat {
             get { return BackingStore?.Get<SubjectNameFormat?>("certificateSubjectNameFormat"); }
             set { BackingStore?.Set("certificateSubjectNameFormat", value); }
         }
         /// <summary>Subject name format string for custom subject name formats</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateSubjectNameFormatString {
+            get { return BackingStore?.Get<string?>("certificateSubjectNameFormatString"); }
+            set { BackingStore?.Set("certificateSubjectNameFormatString", value); }
+        }
+#else
         public string CertificateSubjectNameFormatString {
             get { return BackingStore?.Get<string>("certificateSubjectNameFormatString"); }
             set { BackingStore?.Set("certificateSubjectNameFormatString", value); }
         }
+#endif
         /// <summary>Thumbprint</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateThumbprint {
+            get { return BackingStore?.Get<string?>("certificateThumbprint"); }
+            set { BackingStore?.Set("certificateThumbprint", value); }
+        }
+#else
         public string CertificateThumbprint {
             get { return BackingStore?.Get<string>("certificateThumbprint"); }
             set { BackingStore?.Set("certificateThumbprint", value); }
         }
+#endif
         /// <summary>Validity period</summary>
         public int? CertificateValidityPeriod {
             get { return BackingStore?.Get<int?>("certificateValidityPeriod"); }
@@ -106,10 +155,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateValidityPeriodUnits", value); }
         }
         /// <summary>Device display name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceDisplayName {
+            get { return BackingStore?.Get<string?>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
+        }
+#else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#endif
         /// <summary>Supported platform types.</summary>
         public DevicePlatformType? DevicePlatform {
             get { return BackingStore?.Get<DevicePlatformType?>("devicePlatform"); }
@@ -121,10 +177,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastCertificateStateChangeDateTime", value); }
         }
         /// <summary>User display name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserDisplayName {
+            get { return BackingStore?.Get<string?>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
+        }
+#else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

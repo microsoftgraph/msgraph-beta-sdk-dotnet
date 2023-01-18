@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportD
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The importedDeviceIdentities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ImportedDeviceIdentity>? ImportedDeviceIdentities {
+            get { return BackingStore?.Get<List<ImportedDeviceIdentity>?>("importedDeviceIdentities"); }
+            set { BackingStore?.Set("importedDeviceIdentities", value); }
+        }
+#else
         public List<ImportedDeviceIdentity> ImportedDeviceIdentities {
             get { return BackingStore?.Get<List<ImportedDeviceIdentity>>("importedDeviceIdentities"); }
             set { BackingStore?.Set("importedDeviceIdentities", value); }
         }
+#endif
         /// <summary>The overwriteImportedDeviceIdentities property</summary>
         public bool? OverwriteImportedDeviceIdentities {
             get { return BackingStore?.Get<bool?>("overwriteImportedDeviceIdentities"); }

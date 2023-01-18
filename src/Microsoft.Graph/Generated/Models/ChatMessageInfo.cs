@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ChatMessageInfo : Entity, IParsable {
         /// <summary>Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Body {
+            get { return BackingStore?.Get<ItemBody?>("body"); }
+            set { BackingStore?.Set("body", value); }
+        }
+#else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#endif
         /// <summary>Date time object representing the time at which message was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EventMessageDetail? EventDetail {
+            get { return BackingStore?.Get<EventMessageDetail?>("eventDetail"); }
+            set { BackingStore?.Set("eventDetail", value); }
+        }
+#else
         public EventMessageDetail EventDetail {
             get { return BackingStore?.Get<EventMessageDetail>("eventDetail"); }
             set { BackingStore?.Set("eventDetail", value); }
         }
+#endif
         /// <summary>Information about the sender of the message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessageFromIdentitySet? From {
+            get { return BackingStore?.Get<ChatMessageFromIdentitySet?>("from"); }
+            set { BackingStore?.Set("from", value); }
+        }
+#else
         public ChatMessageFromIdentitySet From {
             get { return BackingStore?.Get<ChatMessageFromIdentitySet>("from"); }
             set { BackingStore?.Set("from", value); }
         }
+#endif
         /// <summary>If set to true, the original message has been deleted.</summary>
         public bool? IsDeleted {
             get { return BackingStore?.Get<bool?>("isDeleted"); }

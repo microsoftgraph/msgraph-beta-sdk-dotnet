@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EventMessageResponse : EventMessage, IParsable {
         /// <summary>The proposedNewTime property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeSlot? ProposedNewTime {
+            get { return BackingStore?.Get<TimeSlot?>("proposedNewTime"); }
+            set { BackingStore?.Set("proposedNewTime", value); }
+        }
+#else
         public TimeSlot ProposedNewTime {
             get { return BackingStore?.Get<TimeSlot>("proposedNewTime"); }
             set { BackingStore?.Set("proposedNewTime", value); }
         }
+#endif
         /// <summary>The responseType property</summary>
         public Microsoft.Graph.Beta.Models.ResponseType? ResponseType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponseType?>("responseType"); }

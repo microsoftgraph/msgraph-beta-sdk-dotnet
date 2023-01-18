@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class InformationProtection : Entity, IParsable {
         /// <summary>Read the Microsoft Purview Information Protection policy settings for the user or organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public InformationProtectionPolicySetting? LabelPolicySettings {
+            get { return BackingStore?.Get<InformationProtectionPolicySetting?>("labelPolicySettings"); }
+            set { BackingStore?.Set("labelPolicySettings", value); }
+        }
+#else
         public InformationProtectionPolicySetting LabelPolicySettings {
             get { return BackingStore?.Get<InformationProtectionPolicySetting>("labelPolicySettings"); }
             set { BackingStore?.Set("labelPolicySettings", value); }
         }
+#endif
         /// <summary>Read the Microsoft Purview Information Protection labels for the user or organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SensitivityLabel>? SensitivityLabels {
+            get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
+            set { BackingStore?.Set("sensitivityLabels", value); }
+        }
+#else
         public List<SensitivityLabel> SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

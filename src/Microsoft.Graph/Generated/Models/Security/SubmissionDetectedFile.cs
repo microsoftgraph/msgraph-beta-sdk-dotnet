@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The file hash.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileHash {
+            get { return BackingStore?.Get<string?>("fileHash"); }
+            set { BackingStore?.Set("fileHash", value); }
+        }
+#else
         public string FileHash {
             get { return BackingStore?.Get<string>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
+#endif
         /// <summary>The file name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new submissionDetectedFile and sets the default values.
         /// </summary>

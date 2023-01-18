@@ -14,40 +14,89 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Device information associated with the callee endpoint of this media.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceInfo? CalleeDevice {
+            get { return BackingStore?.Get<DeviceInfo?>("calleeDevice"); }
+            set { BackingStore?.Set("calleeDevice", value); }
+        }
+#else
         public DeviceInfo CalleeDevice {
             get { return BackingStore?.Get<DeviceInfo>("calleeDevice"); }
             set { BackingStore?.Set("calleeDevice", value); }
         }
+#endif
         /// <summary>Network information associated with the callee endpoint of this media.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public NetworkInfo? CalleeNetwork {
+            get { return BackingStore?.Get<NetworkInfo?>("calleeNetwork"); }
+            set { BackingStore?.Set("calleeNetwork", value); }
+        }
+#else
         public NetworkInfo CalleeNetwork {
             get { return BackingStore?.Get<NetworkInfo>("calleeNetwork"); }
             set { BackingStore?.Set("calleeNetwork", value); }
         }
+#endif
         /// <summary>Device information associated with the caller endpoint of this media.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceInfo? CallerDevice {
+            get { return BackingStore?.Get<DeviceInfo?>("callerDevice"); }
+            set { BackingStore?.Set("callerDevice", value); }
+        }
+#else
         public DeviceInfo CallerDevice {
             get { return BackingStore?.Get<DeviceInfo>("callerDevice"); }
             set { BackingStore?.Set("callerDevice", value); }
         }
+#endif
         /// <summary>Network information associated with the caller endpoint of this media.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public NetworkInfo? CallerNetwork {
+            get { return BackingStore?.Get<NetworkInfo?>("callerNetwork"); }
+            set { BackingStore?.Set("callerNetwork", value); }
+        }
+#else
         public NetworkInfo CallerNetwork {
             get { return BackingStore?.Get<NetworkInfo>("callerNetwork"); }
             set { BackingStore?.Set("callerNetwork", value); }
         }
+#endif
         /// <summary>How the media was identified during media negotiation stage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Label {
+            get { return BackingStore?.Get<string?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#else
         public string Label {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Network streams associated with this media.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MediaStream>? Streams {
+            get { return BackingStore?.Get<List<MediaStream>?>("streams"); }
+            set { BackingStore?.Set("streams", value); }
+        }
+#else
         public List<MediaStream> Streams {
             get { return BackingStore?.Get<List<MediaStream>>("streams"); }
             set { BackingStore?.Set("streams", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new media and sets the default values.
         /// </summary>

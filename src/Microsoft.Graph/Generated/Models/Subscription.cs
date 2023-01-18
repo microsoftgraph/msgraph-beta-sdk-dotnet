@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Subscription : Entity, IParsable {
         /// <summary>Optional. Identifier of the application used to create the subscription. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplicationId {
+            get { return BackingStore?.Get<string?>("applicationId"); }
+            set { BackingStore?.Set("applicationId", value); }
+        }
+#else
         public string ApplicationId {
             get { return BackingStore?.Get<string>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
+#endif
         /// <summary>Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChangeType {
+            get { return BackingStore?.Get<string?>("changeType"); }
+            set { BackingStore?.Set("changeType", value); }
+        }
+#else
         public string ChangeType {
             get { return BackingStore?.Get<string>("changeType"); }
             set { BackingStore?.Set("changeType", value); }
         }
+#endif
         /// <summary>Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientState {
+            get { return BackingStore?.Get<string?>("clientState"); }
+            set { BackingStore?.Set("clientState", value); }
+        }
+#else
         public string ClientState {
             get { return BackingStore?.Get<string>("clientState"); }
             set { BackingStore?.Set("clientState", value); }
         }
+#endif
         /// <summary>Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatorId {
+            get { return BackingStore?.Get<string?>("creatorId"); }
+            set { BackingStore?.Set("creatorId", value); }
+        }
+#else
         public string CreatorId {
             get { return BackingStore?.Get<string>("creatorId"); }
             set { BackingStore?.Set("creatorId", value); }
         }
+#endif
         /// <summary>Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EncryptionCertificate {
+            get { return BackingStore?.Get<string?>("encryptionCertificate"); }
+            set { BackingStore?.Set("encryptionCertificate", value); }
+        }
+#else
         public string EncryptionCertificate {
             get { return BackingStore?.Get<string>("encryptionCertificate"); }
             set { BackingStore?.Set("encryptionCertificate", value); }
         }
+#endif
         /// <summary>Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Required when includeResourceData is true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EncryptionCertificateId {
+            get { return BackingStore?.Get<string?>("encryptionCertificateId"); }
+            set { BackingStore?.Set("encryptionCertificateId", value); }
+        }
+#else
         public string EncryptionCertificateId {
             get { return BackingStore?.Get<string>("encryptionCertificateId"); }
             set { BackingStore?.Set("encryptionCertificateId", value); }
         }
+#endif
         /// <summary>Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
@@ -46,40 +88,89 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("includeResourceData", value); }
         }
         /// <summary>Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LatestSupportedTlsVersion {
+            get { return BackingStore?.Get<string?>("latestSupportedTlsVersion"); }
+            set { BackingStore?.Set("latestSupportedTlsVersion", value); }
+        }
+#else
         public string LatestSupportedTlsVersion {
             get { return BackingStore?.Get<string>("latestSupportedTlsVersion"); }
             set { BackingStore?.Set("latestSupportedTlsVersion", value); }
         }
+#endif
         /// <summary>Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LifecycleNotificationUrl {
+            get { return BackingStore?.Get<string?>("lifecycleNotificationUrl"); }
+            set { BackingStore?.Set("lifecycleNotificationUrl", value); }
+        }
+#else
         public string LifecycleNotificationUrl {
             get { return BackingStore?.Get<string>("lifecycleNotificationUrl"); }
             set { BackingStore?.Set("lifecycleNotificationUrl", value); }
         }
+#endif
         /// <summary>Optional. Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationContentType {
+            get { return BackingStore?.Get<string?>("notificationContentType"); }
+            set { BackingStore?.Set("notificationContentType", value); }
+        }
+#else
         public string NotificationContentType {
             get { return BackingStore?.Get<string>("notificationContentType"); }
             set { BackingStore?.Set("notificationContentType", value); }
         }
+#endif
         /// <summary>Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationQueryOptions {
+            get { return BackingStore?.Get<string?>("notificationQueryOptions"); }
+            set { BackingStore?.Set("notificationQueryOptions", value); }
+        }
+#else
         public string NotificationQueryOptions {
             get { return BackingStore?.Get<string>("notificationQueryOptions"); }
             set { BackingStore?.Set("notificationQueryOptions", value); }
         }
+#endif
         /// <summary>Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationUrl {
+            get { return BackingStore?.Get<string?>("notificationUrl"); }
+            set { BackingStore?.Set("notificationUrl", value); }
+        }
+#else
         public string NotificationUrl {
             get { return BackingStore?.Get<string>("notificationUrl"); }
             set { BackingStore?.Set("notificationUrl", value); }
         }
+#endif
         /// <summary>Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationUrlAppId {
+            get { return BackingStore?.Get<string?>("notificationUrlAppId"); }
+            set { BackingStore?.Set("notificationUrlAppId", value); }
+        }
+#else
         public string NotificationUrlAppId {
             get { return BackingStore?.Get<string>("notificationUrlAppId"); }
             set { BackingStore?.Set("notificationUrlAppId", value); }
         }
+#endif
         /// <summary>Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Resource {
+            get { return BackingStore?.Get<string?>("resource"); }
+            set { BackingStore?.Set("resource", value); }
+        }
+#else
         public string Resource {
             get { return BackingStore?.Get<string>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

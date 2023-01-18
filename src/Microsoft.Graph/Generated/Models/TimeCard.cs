@@ -6,45 +6,87 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TimeCard : ChangeTrackedEntity, IParsable {
         /// <summary>The list of breaks associated with the timeCard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TimeCardBreak>? Breaks {
+            get { return BackingStore?.Get<List<TimeCardBreak>?>("breaks"); }
+            set { BackingStore?.Set("breaks", value); }
+        }
+#else
         public List<TimeCardBreak> Breaks {
             get { return BackingStore?.Get<List<TimeCardBreak>>("breaks"); }
             set { BackingStore?.Set("breaks", value); }
         }
+#endif
         /// <summary>The clock-in event of the timeCard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeCardEvent? ClockInEvent {
+            get { return BackingStore?.Get<TimeCardEvent?>("clockInEvent"); }
+            set { BackingStore?.Set("clockInEvent", value); }
+        }
+#else
         public TimeCardEvent ClockInEvent {
             get { return BackingStore?.Get<TimeCardEvent>("clockInEvent"); }
             set { BackingStore?.Set("clockInEvent", value); }
         }
+#endif
         /// <summary>The clock-out event of the timeCard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeCardEvent? ClockOutEvent {
+            get { return BackingStore?.Get<TimeCardEvent?>("clockOutEvent"); }
+            set { BackingStore?.Set("clockOutEvent", value); }
+        }
+#else
         public TimeCardEvent ClockOutEvent {
             get { return BackingStore?.Get<TimeCardEvent>("clockOutEvent"); }
             set { BackingStore?.Set("clockOutEvent", value); }
         }
+#endif
         /// <summary>Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ConfirmedBy? ConfirmedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfirmedBy?>("confirmedBy"); }
             set { BackingStore?.Set("confirmedBy", value); }
         }
         /// <summary>Notes about the timeCard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Notes {
+            get { return BackingStore?.Get<ItemBody?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#else
         public ItemBody Notes {
             get { return BackingStore?.Get<ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#endif
         /// <summary>The original timeCardEntry of the timeCard, before user edits.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeCardEntry? OriginalEntry {
+            get { return BackingStore?.Get<TimeCardEntry?>("originalEntry"); }
+            set { BackingStore?.Set("originalEntry", value); }
+        }
+#else
         public TimeCardEntry OriginalEntry {
             get { return BackingStore?.Get<TimeCardEntry>("originalEntry"); }
             set { BackingStore?.Set("originalEntry", value); }
         }
+#endif
         /// <summary>The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.</summary>
         public TimeCardState? State {
             get { return BackingStore?.Get<TimeCardState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User ID to which  the timeCard belongs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TimeCard and sets the default values.
         /// </summary>

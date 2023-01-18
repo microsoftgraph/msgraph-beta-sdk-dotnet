@@ -7,37 +7,72 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById {
     public class UpdateAudienceByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addExclusions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AddExclusions {
+            get { return BackingStore?.Get<List<string>?>("addExclusions"); }
+            set { BackingStore?.Set("addExclusions", value); }
+        }
+#else
         public List<string> AddExclusions {
             get { return BackingStore?.Get<List<string>>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The addMembers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AddMembers {
+            get { return BackingStore?.Get<List<string>?>("addMembers"); }
+            set { BackingStore?.Set("addMembers", value); }
+        }
+#else
         public List<string> AddMembers {
             get { return BackingStore?.Get<List<string>>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The memberEntityType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MemberEntityType {
+            get { return BackingStore?.Get<string?>("memberEntityType"); }
+            set { BackingStore?.Set("memberEntityType", value); }
+        }
+#else
         public string MemberEntityType {
             get { return BackingStore?.Get<string>("memberEntityType"); }
             set { BackingStore?.Set("memberEntityType", value); }
         }
+#endif
         /// <summary>The removeExclusions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RemoveExclusions {
+            get { return BackingStore?.Get<List<string>?>("removeExclusions"); }
+            set { BackingStore?.Set("removeExclusions", value); }
+        }
+#else
         public List<string> RemoveExclusions {
             get { return BackingStore?.Get<List<string>>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
+#endif
         /// <summary>The removeMembers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RemoveMembers {
+            get { return BackingStore?.Get<List<string>?>("removeMembers"); }
+            set { BackingStore?.Set("removeMembers", value); }
+        }
+#else
         public List<string> RemoveMembers {
             get { return BackingStore?.Get<List<string>>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updateAudienceByIdPostRequestBody and sets the default values.
         /// </summary>

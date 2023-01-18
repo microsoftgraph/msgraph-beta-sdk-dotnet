@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ChatRenamedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>The updated name of the chat.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChatDisplayName {
+            get { return BackingStore?.Get<string?>("chatDisplayName"); }
+            set { BackingStore?.Set("chatDisplayName", value); }
+        }
+#else
         public string ChatDisplayName {
             get { return BackingStore?.Get<string>("chatDisplayName"); }
             set { BackingStore?.Set("chatDisplayName", value); }
         }
+#endif
         /// <summary>Unique identifier of the chat.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChatId {
+            get { return BackingStore?.Get<string?>("chatId"); }
+            set { BackingStore?.Set("chatId", value); }
+        }
+#else
         public string ChatId {
             get { return BackingStore?.Get<string>("chatId"); }
             set { BackingStore?.Set("chatId", value); }
         }
+#endif
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ChatRenamedEventMessageDetail and sets the default values.
         /// </summary>

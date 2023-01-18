@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchSessionBase : ExactMatchJobBase, IParsable {
         /// <summary>The dataStoreId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DataStoreId {
+            get { return BackingStore?.Get<string?>("dataStoreId"); }
+            set { BackingStore?.Set("dataStoreId", value); }
+        }
+#else
         public string DataStoreId {
             get { return BackingStore?.Get<string>("dataStoreId"); }
             set { BackingStore?.Set("dataStoreId", value); }
         }
+#endif
         /// <summary>The processingCompletionDateTime property</summary>
         public DateTimeOffset? ProcessingCompletionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("processingCompletionDateTime"); }
@@ -26,10 +33,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("remainingJobCount", value); }
         }
         /// <summary>The state property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? State {
+            get { return BackingStore?.Get<string?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>The totalBlockCount property</summary>
         public int? TotalBlockCount {
             get { return BackingStore?.Get<int?>("totalBlockCount"); }

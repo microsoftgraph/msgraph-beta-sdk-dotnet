@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookRangeFill : Entity, IParsable {
         /// <summary>HTML color code representing the color of the border line, of the form #RRGGBB (e.g. &apos;FFA500&apos;) or as a named HTML color (e.g. &apos;orange&apos;)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Color {
+            get { return BackingStore?.Get<string?>("color"); }
+            set { BackingStore?.Set("color", value); }
+        }
+#else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

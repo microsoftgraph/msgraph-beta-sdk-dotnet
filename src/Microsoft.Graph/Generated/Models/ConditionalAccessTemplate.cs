@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ConditionalAccessTemplate : Entity, IParsable {
         /// <summary>The user-friendly name of the template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The details property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessPolicyDetail? Details {
+            get { return BackingStore?.Get<ConditionalAccessPolicyDetail?>("details"); }
+            set { BackingStore?.Set("details", value); }
+        }
+#else
         public ConditionalAccessPolicyDetail Details {
             get { return BackingStore?.Get<ConditionalAccessPolicyDetail>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#endif
         /// <summary>The user-friendly name of the template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The scenarios property</summary>
         public TemplateScenarios? Scenarios {
             get { return BackingStore?.Get<TemplateScenarios?>("scenarios"); }

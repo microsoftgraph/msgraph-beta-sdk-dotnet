@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RuleId {
+            get { return BackingStore?.Get<string?>("ruleId"); }
+            set { BackingStore?.Set("ruleId", value); }
+        }
+#else
         public string RuleId {
             get { return BackingStore?.Get<string>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
+#endif
         /// <summary>The identifiers of one or more objects to which a synchronizationJob is to be applied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SynchronizationJobSubject>? Subjects {
+            get { return BackingStore?.Get<List<SynchronizationJobSubject>?>("subjects"); }
+            set { BackingStore?.Set("subjects", value); }
+        }
+#else
         public List<SynchronizationJobSubject> Subjects {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new synchronizationJobApplicationParameters and sets the default values.
         /// </summary>

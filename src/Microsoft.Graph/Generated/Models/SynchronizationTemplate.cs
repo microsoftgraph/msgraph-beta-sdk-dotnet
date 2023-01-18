@@ -16,30 +16,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("default", value); }
         }
         /// <summary>Description of the template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>true if this template should appear in the collection of templates available for the application instance (service principal).</summary>
         public bool? Discoverable {
             get { return BackingStore?.Get<bool?>("discoverable"); }
             set { BackingStore?.Set("discoverable", value); }
         }
         /// <summary>One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FactoryTag {
+            get { return BackingStore?.Get<string?>("factoryTag"); }
+            set { BackingStore?.Set("factoryTag", value); }
+        }
+#else
         public string FactoryTag {
             get { return BackingStore?.Get<string>("factoryTag"); }
             set { BackingStore?.Set("factoryTag", value); }
         }
+#endif
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MetadataEntry>? Metadata {
+            get { return BackingStore?.Get<List<MetadataEntry>?>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
+        }
+#else
         public List<MetadataEntry> Metadata {
             get { return BackingStore?.Get<List<MetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+#endif
         /// <summary>Default synchronization schema for the jobs based on this template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationSchema? Schema {
+            get { return BackingStore?.Get<SynchronizationSchema?>("schema"); }
+            set { BackingStore?.Set("schema", value); }
+        }
+#else
         public SynchronizationSchema Schema {
             get { return BackingStore?.Get<SynchronizationSchema>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

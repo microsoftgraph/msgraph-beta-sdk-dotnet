@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("childSelectability", value); }
         }
         /// <summary>Returns the tags that are a child of a tag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryReviewTag>? ChildTags {
+            get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("childTags"); }
+            set { BackingStore?.Set("childTags", value); }
+        }
+#else
         public List<EdiscoveryReviewTag> ChildTags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
+#endif
         /// <summary>Returns the parent tag of the specified tag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoveryReviewTag? Parent {
+            get { return BackingStore?.Get<EdiscoveryReviewTag?>("parent"); }
+            set { BackingStore?.Set("parent", value); }
+        }
+#else
         public EdiscoveryReviewTag Parent {
             get { return BackingStore?.Get<EdiscoveryReviewTag>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EdiscoveryReviewTag and sets the default values.
         /// </summary>

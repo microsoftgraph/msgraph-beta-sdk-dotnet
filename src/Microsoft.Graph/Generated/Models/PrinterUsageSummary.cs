@@ -24,35 +24,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("incompleteJobCount", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The printer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DirectoryObject? Printer {
+            get { return BackingStore?.Get<DirectoryObject?>("printer"); }
+            set { BackingStore?.Set("printer", value); }
+        }
+#else
         public DirectoryObject Printer {
             get { return BackingStore?.Get<DirectoryObject>("printer"); }
             set { BackingStore?.Set("printer", value); }
         }
+#endif
         /// <summary>The printerDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrinterDisplayName {
+            get { return BackingStore?.Get<string?>("printerDisplayName"); }
+            set { BackingStore?.Set("printerDisplayName", value); }
+        }
+#else
         public string PrinterDisplayName {
             get { return BackingStore?.Get<string>("printerDisplayName"); }
             set { BackingStore?.Set("printerDisplayName", value); }
         }
+#endif
         /// <summary>The printerId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrinterId {
+            get { return BackingStore?.Get<string?>("printerId"); }
+            set { BackingStore?.Set("printerId", value); }
+        }
+#else
         public string PrinterId {
             get { return BackingStore?.Get<string>("printerId"); }
             set { BackingStore?.Set("printerId", value); }
         }
+#endif
         /// <summary>The printerManufacturer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrinterManufacturer {
+            get { return BackingStore?.Get<string?>("printerManufacturer"); }
+            set { BackingStore?.Set("printerManufacturer", value); }
+        }
+#else
         public string PrinterManufacturer {
             get { return BackingStore?.Get<string>("printerManufacturer"); }
             set { BackingStore?.Set("printerManufacturer", value); }
         }
+#endif
         /// <summary>The printerModel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrinterModel {
+            get { return BackingStore?.Get<string?>("printerModel"); }
+            set { BackingStore?.Set("printerModel", value); }
+        }
+#else
         public string PrinterModel {
             get { return BackingStore?.Get<string>("printerModel"); }
             set { BackingStore?.Set("printerModel", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new printerUsageSummary and sets the default values.
         /// </summary>

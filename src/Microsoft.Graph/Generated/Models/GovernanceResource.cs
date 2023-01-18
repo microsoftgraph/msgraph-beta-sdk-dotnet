@@ -6,60 +6,130 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GovernanceResource : Entity, IParsable {
         /// <summary>The display name of the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The external id of the resource, representing its original id in the external system. For example, a subscription resource&apos;s external id can be &apos;/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalId {
+            get { return BackingStore?.Get<string?>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
+        }
+#else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#endif
         /// <summary>Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GovernanceResource? Parent {
+            get { return BackingStore?.Get<GovernanceResource?>("parent"); }
+            set { BackingStore?.Set("parent", value); }
+        }
+#else
         public GovernanceResource Parent {
             get { return BackingStore?.Get<GovernanceResource>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
+#endif
         /// <summary>Represents the date time when the resource is registered in PIM.</summary>
         public DateTimeOffset? RegisteredDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("registeredDateTime"); }
             set { BackingStore?.Set("registeredDateTime", value); }
         }
         /// <summary>The externalId of the resource&apos;s root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RegisteredRoot {
+            get { return BackingStore?.Get<string?>("registeredRoot"); }
+            set { BackingStore?.Set("registeredRoot", value); }
+        }
+#else
         public string RegisteredRoot {
             get { return BackingStore?.Get<string>("registeredRoot"); }
             set { BackingStore?.Set("registeredRoot", value); }
         }
+#endif
         /// <summary>The collection of role assignment requests for the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernanceRoleAssignmentRequest>? RoleAssignmentRequests {
+            get { return BackingStore?.Get<List<GovernanceRoleAssignmentRequest>?>("roleAssignmentRequests"); }
+            set { BackingStore?.Set("roleAssignmentRequests", value); }
+        }
+#else
         public List<GovernanceRoleAssignmentRequest> RoleAssignmentRequests {
             get { return BackingStore?.Get<List<GovernanceRoleAssignmentRequest>>("roleAssignmentRequests"); }
             set { BackingStore?.Set("roleAssignmentRequests", value); }
         }
+#endif
         /// <summary>The collection of role assignments for the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernanceRoleAssignment>? RoleAssignments {
+            get { return BackingStore?.Get<List<GovernanceRoleAssignment>?>("roleAssignments"); }
+            set { BackingStore?.Set("roleAssignments", value); }
+        }
+#else
         public List<GovernanceRoleAssignment> RoleAssignments {
             get { return BackingStore?.Get<List<GovernanceRoleAssignment>>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
+#endif
         /// <summary>The collection of role defintions for the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernanceRoleDefinition>? RoleDefinitions {
+            get { return BackingStore?.Get<List<GovernanceRoleDefinition>?>("roleDefinitions"); }
+            set { BackingStore?.Set("roleDefinitions", value); }
+        }
+#else
         public List<GovernanceRoleDefinition> RoleDefinitions {
             get { return BackingStore?.Get<List<GovernanceRoleDefinition>>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
+#endif
         /// <summary>The collection of role settings for the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernanceRoleSetting>? RoleSettings {
+            get { return BackingStore?.Get<List<GovernanceRoleSetting>?>("roleSettings"); }
+            set { BackingStore?.Set("roleSettings", value); }
+        }
+#else
         public List<GovernanceRoleSetting> RoleSettings {
             get { return BackingStore?.Get<List<GovernanceRoleSetting>>("roleSettings"); }
             set { BackingStore?.Set("roleSettings", value); }
         }
+#endif
         /// <summary>The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>Required. Resource type. For example, for Azure resources, the type could be &apos;Subscription&apos;, &apos;ResourceGroup&apos;, &apos;Microsoft.Sql/server&apos;, etc.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -8,32 +8,60 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
     public class UpdatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addedPolicySetItems property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PolicySetItem>? AddedPolicySetItems {
+            get { return BackingStore?.Get<List<PolicySetItem>?>("addedPolicySetItems"); }
+            set { BackingStore?.Set("addedPolicySetItems", value); }
+        }
+#else
         public List<PolicySetItem> AddedPolicySetItems {
             get { return BackingStore?.Get<List<PolicySetItem>>("addedPolicySetItems"); }
             set { BackingStore?.Set("addedPolicySetItems", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PolicySetAssignment>? Assignments {
+            get { return BackingStore?.Get<List<PolicySetAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<PolicySetAssignment> Assignments {
             get { return BackingStore?.Get<List<PolicySetAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deletedPolicySetItems property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DeletedPolicySetItems {
+            get { return BackingStore?.Get<List<string>?>("deletedPolicySetItems"); }
+            set { BackingStore?.Set("deletedPolicySetItems", value); }
+        }
+#else
         public List<string> DeletedPolicySetItems {
             get { return BackingStore?.Get<List<string>>("deletedPolicySetItems"); }
             set { BackingStore?.Set("deletedPolicySetItems", value); }
         }
+#endif
         /// <summary>The updatedPolicySetItems property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PolicySetItem>? UpdatedPolicySetItems {
+            get { return BackingStore?.Get<List<PolicySetItem>?>("updatedPolicySetItems"); }
+            set { BackingStore?.Set("updatedPolicySetItems", value); }
+        }
+#else
         public List<PolicySetItem> UpdatedPolicySetItems {
             get { return BackingStore?.Get<List<PolicySetItem>>("updatedPolicySetItems"); }
             set { BackingStore?.Set("updatedPolicySetItems", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updatePostRequestBody and sets the default values.
         /// </summary>

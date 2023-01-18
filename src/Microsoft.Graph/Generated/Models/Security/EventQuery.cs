@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The query property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Query {
+            get { return BackingStore?.Get<string?>("query"); }
+            set { BackingStore?.Set("query", value); }
+        }
+#else
         public string Query {
             get { return BackingStore?.Get<string>("query"); }
             set { BackingStore?.Set("query", value); }
         }
+#endif
         /// <summary>The queryType property</summary>
         public Microsoft.Graph.Beta.Models.Security.QueryType? QueryType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.QueryType?>("queryType"); }

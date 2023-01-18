@@ -6,40 +6,75 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Room : Place, IParsable {
         /// <summary>Specifies the name of the audio device in the room.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AudioDeviceName {
+            get { return BackingStore?.Get<string?>("audioDeviceName"); }
+            set { BackingStore?.Set("audioDeviceName", value); }
+        }
+#else
         public string AudioDeviceName {
             get { return BackingStore?.Get<string>("audioDeviceName"); }
             set { BackingStore?.Set("audioDeviceName", value); }
         }
+#endif
         /// <summary>Type of room. Possible values are standard, and reserved.</summary>
         public Microsoft.Graph.Beta.Models.BookingType? BookingType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingType?>("bookingType"); }
             set { BackingStore?.Set("bookingType", value); }
         }
         /// <summary>Specifies the building name or building number that the room is in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Building {
+            get { return BackingStore?.Get<string?>("building"); }
+            set { BackingStore?.Set("building", value); }
+        }
+#else
         public string Building {
             get { return BackingStore?.Get<string>("building"); }
             set { BackingStore?.Set("building", value); }
         }
+#endif
         /// <summary>Specifies the capacity of the room.</summary>
         public int? Capacity {
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
         }
         /// <summary>Specifies the name of the display device in the room.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayDeviceName {
+            get { return BackingStore?.Get<string?>("displayDeviceName"); }
+            set { BackingStore?.Set("displayDeviceName", value); }
+        }
+#else
         public string DisplayDeviceName {
             get { return BackingStore?.Get<string>("displayDeviceName"); }
             set { BackingStore?.Set("displayDeviceName", value); }
         }
+#endif
         /// <summary>Email address of the room.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailAddress {
+            get { return BackingStore?.Get<string?>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
+        }
+#else
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#endif
         /// <summary>Specifies a descriptive label for the floor, for example, P.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FloorLabel {
+            get { return BackingStore?.Get<string?>("floorLabel"); }
+            set { BackingStore?.Set("floorLabel", value); }
+        }
+#else
         public string FloorLabel {
             get { return BackingStore?.Get<string>("floorLabel"); }
             set { BackingStore?.Set("floorLabel", value); }
         }
+#endif
         /// <summary>Specifies the floor number that the room is on.</summary>
         public int? FloorNumber {
             get { return BackingStore?.Get<int?>("floorNumber"); }
@@ -51,25 +86,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isWheelChairAccessible", value); }
         }
         /// <summary>Specifies a descriptive label for the room, for example, a number or name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Label {
+            get { return BackingStore?.Get<string?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#else
         public string Label {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#endif
         /// <summary>Specifies a nickname for the room, for example, &apos;conf room&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Nickname {
+            get { return BackingStore?.Get<string?>("nickname"); }
+            set { BackingStore?.Set("nickname", value); }
+        }
+#else
         public string Nickname {
             get { return BackingStore?.Get<string>("nickname"); }
             set { BackingStore?.Set("nickname", value); }
         }
+#endif
         /// <summary>Specifies additional features of the room, for example, details like the type of view or furniture type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tags {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>Specifies the name of the video device in the room.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VideoDeviceName {
+            get { return BackingStore?.Get<string?>("videoDeviceName"); }
+            set { BackingStore?.Set("videoDeviceName", value); }
+        }
+#else
         public string VideoDeviceName {
             get { return BackingStore?.Get<string>("videoDeviceName"); }
             set { BackingStore?.Set("videoDeviceName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Room and sets the default values.
         /// </summary>

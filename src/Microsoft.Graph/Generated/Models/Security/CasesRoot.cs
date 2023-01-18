@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class CasesRoot : Entity, IParsable {
         /// <summary>The ediscoveryCases property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryCase>? EdiscoveryCases {
+            get { return BackingStore?.Get<List<EdiscoveryCase>?>("ediscoveryCases"); }
+            set { BackingStore?.Set("ediscoveryCases", value); }
+        }
+#else
         public List<EdiscoveryCase> EdiscoveryCases {
             get { return BackingStore?.Get<List<EdiscoveryCase>>("ediscoveryCases"); }
             set { BackingStore?.Set("ediscoveryCases", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -15,20 +15,41 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The data property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CustomTaskExtensionCallbackData? Data {
+            get { return BackingStore?.Get<CustomTaskExtensionCallbackData?>("data"); }
+            set { BackingStore?.Set("data", value); }
+        }
+#else
         public CustomTaskExtensionCallbackData Data {
             get { return BackingStore?.Get<CustomTaskExtensionCallbackData>("data"); }
             set { BackingStore?.Set("data", value); }
         }
+#endif
         /// <summary>The source property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Source {
+            get { return BackingStore?.Get<string?>("source"); }
+            set { BackingStore?.Set("source", value); }
+        }
+#else
         public string Source {
             get { return BackingStore?.Get<string>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#endif
         /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new resumePostRequestBody and sets the default values.
         /// </summary>

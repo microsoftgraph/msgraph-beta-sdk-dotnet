@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultLifetimeInMinutes", value); }
         }
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationMethodTarget>? IncludeTargets {
+            get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
+        }
+#else
         public List<AuthenticationMethodTarget> IncludeTargets {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
+#endif
         /// <summary>If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or reusable.</summary>
         public bool? IsUsableOnce {
             get { return BackingStore?.Get<bool?>("isUsableOnce"); }

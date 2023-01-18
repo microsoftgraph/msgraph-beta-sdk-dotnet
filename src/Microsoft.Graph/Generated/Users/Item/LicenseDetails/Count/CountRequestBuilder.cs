@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails.Count {
         public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/licenseDetails/$count";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/licenseDetails/$count{?%24search,%24filter}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails.Count {
         public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/licenseDetails/$count";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/licenseDetails/$count{?%24search,%24filter}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -50,7 +50,11 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails.Count {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public async Task<int??> GetAsync(Action<CountRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#else
         public async Task<int?> GetAsync(Action<CountRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -62,7 +66,11 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails.Count {
         /// Get the number of the resource
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestInformation ToGetRequestInformation(Action<CountRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#else
         public RequestInformation ToGetRequestInformation(Action<CountRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+#endif
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -72,10 +80,32 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails.Count {
             if (requestConfiguration != null) {
                 var requestConfig = new CountRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Get the number of the resource
+        /// </summary>
+        public class CountRequestBuilderGetQueryParameters {
+            /// <summary>Filter items by property values</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+            [QueryParameter("%24filter")]
+            public string? Filter { get; set; }
+#else
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
+#endif
+            /// <summary>Search items by search phrases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+            [QueryParameter("%24search")]
+            public string? Search { get; set; }
+#else
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
+#endif
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -85,6 +115,8 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails.Count {
             public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
+            /// <summary>Request query parameters</summary>
+            public CountRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CountRequestBuilderGetQueryParameters();
             /// <summary>
             /// Instantiates a new CountRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>

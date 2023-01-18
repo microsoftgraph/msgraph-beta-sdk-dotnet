@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class MailboxEvidence : AlertEvidence, IParsable {
         /// <summary>The name associated with the mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The primary email address of the mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrimaryAddress {
+            get { return BackingStore?.Get<string?>("primaryAddress"); }
+            set { BackingStore?.Set("primaryAddress", value); }
+        }
+#else
         public string PrimaryAddress {
             get { return BackingStore?.Get<string>("primaryAddress"); }
             set { BackingStore?.Set("primaryAddress", value); }
         }
+#endif
         /// <summary>The user account of the mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.UserAccount? UserAccount {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount?>("userAccount"); }
+            set { BackingStore?.Set("userAccount", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.UserAccount UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount>("userAccount"); }
             set { BackingStore?.Set("userAccount", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

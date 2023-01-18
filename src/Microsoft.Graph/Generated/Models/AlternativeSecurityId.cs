@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>For internal use only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityProvider {
+            get { return BackingStore?.Get<string?>("identityProvider"); }
+            set { BackingStore?.Set("identityProvider", value); }
+        }
+#else
         public string IdentityProvider {
             get { return BackingStore?.Get<string>("identityProvider"); }
             set { BackingStore?.Set("identityProvider", value); }
         }
+#endif
         /// <summary>For internal use only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Key {
+            get { return BackingStore?.Get<byte[]?>("key"); }
+            set { BackingStore?.Set("key", value); }
+        }
+#else
         public byte[] Key {
             get { return BackingStore?.Get<byte[]>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>For internal use only</summary>
         public int? Type {
             get { return BackingStore?.Get<int?>("type"); }

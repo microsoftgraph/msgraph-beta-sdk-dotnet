@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Defines the original user query string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OriginalQueryString {
+            get { return BackingStore?.Get<string?>("originalQueryString"); }
+            set { BackingStore?.Set("originalQueryString", value); }
+        }
+#else
         public string OriginalQueryString {
             get { return BackingStore?.Get<string>("originalQueryString"); }
             set { BackingStore?.Set("originalQueryString", value); }
         }
+#endif
         /// <summary>Defines the details of alteration information for the spelling correction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SearchAlteration? QueryAlteration {
+            get { return BackingStore?.Get<SearchAlteration?>("queryAlteration"); }
+            set { BackingStore?.Set("queryAlteration", value); }
+        }
+#else
         public SearchAlteration QueryAlteration {
             get { return BackingStore?.Get<SearchAlteration>("queryAlteration"); }
             set { BackingStore?.Set("queryAlteration", value); }
         }
+#endif
         /// <summary>Defines the type of the spelling correction. Possible values are suggestion, modification.</summary>
         public SearchAlterationType? QueryAlterationType {
             get { return BackingStore?.Get<SearchAlterationType?>("queryAlterationType"); }

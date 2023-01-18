@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Register {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The externalId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalId {
+            get { return BackingStore?.Get<string?>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
+        }
+#else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new registerPostRequestBody and sets the default values.
         /// </summary>

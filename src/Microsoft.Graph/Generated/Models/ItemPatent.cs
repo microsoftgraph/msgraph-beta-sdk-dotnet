@@ -7,15 +7,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemPatent : ItemFacet, IParsable {
         /// <summary>Descpription of the patent or filing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Title of the patent or filing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Indicates the patent is pending.</summary>
         public bool? IsPending {
             get { return BackingStore?.Get<bool?>("isPending"); }
@@ -27,20 +41,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("issuedDate", value); }
         }
         /// <summary>Authority which granted the patent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IssuingAuthority {
+            get { return BackingStore?.Get<string?>("issuingAuthority"); }
+            set { BackingStore?.Set("issuingAuthority", value); }
+        }
+#else
         public string IssuingAuthority {
             get { return BackingStore?.Get<string>("issuingAuthority"); }
             set { BackingStore?.Set("issuingAuthority", value); }
         }
+#endif
         /// <summary>The patent number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Number {
+            get { return BackingStore?.Get<string?>("number"); }
+            set { BackingStore?.Set("number", value); }
+        }
+#else
         public string Number {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
+#endif
         /// <summary>URL referencing the patent or filing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ItemPatent and sets the default values.
         /// </summary>

@@ -24,20 +24,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumCount", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrefixFilter {
+            get { return BackingStore?.Get<string?>("prefixFilter"); }
+            set { BackingStore?.Set("prefixFilter", value); }
+        }
+#else
         public string PrefixFilter {
             get { return BackingStore?.Get<string>("prefixFilter"); }
             set { BackingStore?.Set("prefixFilter", value); }
         }
+#endif
         /// <summary>Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BucketAggregationRange>? Ranges {
+            get { return BackingStore?.Get<List<BucketAggregationRange>?>("ranges"); }
+            set { BackingStore?.Set("ranges", value); }
+        }
+#else
         public List<BucketAggregationRange> Ranges {
             get { return BackingStore?.Get<List<BucketAggregationRange>>("ranges"); }
             set { BackingStore?.Set("ranges", value); }
         }
+#endif
         /// <summary>The sortBy property</summary>
         public BucketAggregationSortProperty? SortBy {
             get { return BackingStore?.Get<BucketAggregationSortProperty?>("sortBy"); }

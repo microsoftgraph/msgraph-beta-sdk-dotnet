@@ -14,30 +14,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Error details, if expression evaluation resulted in an error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PublicError? Error {
+            get { return BackingStore?.Get<PublicError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public PublicError Error {
             get { return BackingStore?.Get<PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>A collection of values produced by the evaluation of the expression.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EvaluationResult {
+            get { return BackingStore?.Get<List<string>?>("evaluationResult"); }
+            set { BackingStore?.Set("evaluationResult", value); }
+        }
+#else
         public List<string> EvaluationResult {
             get { return BackingStore?.Get<List<string>>("evaluationResult"); }
             set { BackingStore?.Set("evaluationResult", value); }
         }
+#endif
         /// <summary>true if the evaluation was successful.</summary>
         public bool? EvaluationSucceeded {
             get { return BackingStore?.Get<bool?>("evaluationSucceeded"); }
             set { BackingStore?.Set("evaluationSucceeded", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>An attributeMappingSource object representing the parsed expression.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AttributeMappingSource? ParsedExpression {
+            get { return BackingStore?.Get<AttributeMappingSource?>("parsedExpression"); }
+            set { BackingStore?.Set("parsedExpression", value); }
+        }
+#else
         public AttributeMappingSource ParsedExpression {
             get { return BackingStore?.Get<AttributeMappingSource>("parsedExpression"); }
             set { BackingStore?.Set("parsedExpression", value); }
         }
+#endif
         /// <summary>true if the expression was parsed successfully.</summary>
         public bool? ParsingSucceeded {
             get { return BackingStore?.Get<bool?>("parsingSucceeded"); }

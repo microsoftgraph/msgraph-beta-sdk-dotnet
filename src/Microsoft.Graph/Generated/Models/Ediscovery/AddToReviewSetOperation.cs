@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class AddToReviewSetOperation : CaseOperation, IParsable {
         /// <summary>The review set to which items matching the source collection query are added to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet? ReviewSet {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet?>("reviewSet"); }
+            set { BackingStore?.Set("reviewSet", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
+#endif
         /// <summary>The sourceCollection that items are being added from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection?>("sourceCollection"); }
+            set { BackingStore?.Set("sourceCollection", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

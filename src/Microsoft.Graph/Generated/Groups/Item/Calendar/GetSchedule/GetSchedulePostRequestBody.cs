@@ -20,20 +20,41 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.GetSchedule {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The EndTime property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? EndTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("endTime"); }
+            set { BackingStore?.Set("endTime", value); }
+        }
+#else
         public DateTimeTimeZone EndTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("endTime"); }
             set { BackingStore?.Set("endTime", value); }
         }
+#endif
         /// <summary>The Schedules property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Schedules {
+            get { return BackingStore?.Get<List<string>?>("schedules"); }
+            set { BackingStore?.Set("schedules", value); }
+        }
+#else
         public List<string> Schedules {
             get { return BackingStore?.Get<List<string>>("schedules"); }
             set { BackingStore?.Set("schedules", value); }
         }
+#endif
         /// <summary>The StartTime property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? StartTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("startTime"); }
+            set { BackingStore?.Set("startTime", value); }
+        }
+#else
         public DateTimeTimeZone StartTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startTime"); }
             set { BackingStore?.Set("startTime", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new getSchedulePostRequestBody and sets the default values.
         /// </summary>

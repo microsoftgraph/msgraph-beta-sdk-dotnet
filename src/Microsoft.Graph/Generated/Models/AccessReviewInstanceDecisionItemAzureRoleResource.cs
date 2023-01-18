@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewInstanceDecisionItemAzureRoleResource : AccessReviewInstanceDecisionItemResource, IParsable {
         /// <summary>Details of the scope this role is associated with.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessReviewInstanceDecisionItemResource? Scope {
+            get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource?>("scope"); }
+            set { BackingStore?.Set("scope", value); }
+        }
+#else
         public AccessReviewInstanceDecisionItemResource Scope {
             get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AccessReviewInstanceDecisionItemAzureRoleResource and sets the default values.
         /// </summary>

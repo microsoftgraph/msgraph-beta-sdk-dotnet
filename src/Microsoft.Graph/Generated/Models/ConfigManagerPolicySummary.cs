@@ -37,10 +37,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("nonCompliantDeviceCount", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The number of devices that have acknowledged the policy but are pending evaluation.</summary>
         public int? PendingDeviceCount {
             get { return BackingStore?.Get<int?>("pendingDeviceCount"); }

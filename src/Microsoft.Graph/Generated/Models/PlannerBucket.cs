@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerBucket : PlannerDelta, IParsable {
         /// <summary>Contains information about the origin of the bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerBucketCreation? CreationSource {
+            get { return BackingStore?.Get<PlannerBucketCreation?>("creationSource"); }
+            set { BackingStore?.Set("creationSource", value); }
+        }
+#else
         public PlannerBucketCreation CreationSource {
             get { return BackingStore?.Get<PlannerBucketCreation>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
+#endif
         /// <summary>Name of the bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Hint used to order items of this type in a list view. The format is defined as outlined here.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OrderHint {
+            get { return BackingStore?.Get<string?>("orderHint"); }
+            set { BackingStore?.Set("orderHint", value); }
+        }
+#else
         public string OrderHint {
             get { return BackingStore?.Get<string>("orderHint"); }
             set { BackingStore?.Set("orderHint", value); }
         }
+#endif
         /// <summary>Plan ID to which the bucket belongs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PlanId {
+            get { return BackingStore?.Get<string?>("planId"); }
+            set { BackingStore?.Set("planId", value); }
+        }
+#else
         public string PlanId {
             get { return BackingStore?.Get<string>("planId"); }
             set { BackingStore?.Set("planId", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. The collection of tasks in the bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerTask>? Tasks {
+            get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#else
         public List<PlannerTask> Tasks {
             get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

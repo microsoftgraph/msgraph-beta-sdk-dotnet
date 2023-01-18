@@ -9,20 +9,34 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class VulnerableManagedDevice : Entity, IParsable {
         /// <summary>The device name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The last sync date.</summary>
         public DateTimeOffset? LastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The Intune managed device ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

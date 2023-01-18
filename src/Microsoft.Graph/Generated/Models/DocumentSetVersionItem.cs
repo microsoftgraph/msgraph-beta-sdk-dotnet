@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ItemId {
+            get { return BackingStore?.Get<string?>("itemId"); }
+            set { BackingStore?.Set("itemId", value); }
+        }
+#else
         public string ItemId {
             get { return BackingStore?.Get<string>("itemId"); }
             set { BackingStore?.Set("itemId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The title of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>The version ID of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VersionId {
+            get { return BackingStore?.Get<string?>("versionId"); }
+            set { BackingStore?.Set("versionId", value); }
+        }
+#else
         public string VersionId {
             get { return BackingStore?.Get<string>("versionId"); }
             set { BackingStore?.Set("versionId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new documentSetVersionItem and sets the default values.
         /// </summary>

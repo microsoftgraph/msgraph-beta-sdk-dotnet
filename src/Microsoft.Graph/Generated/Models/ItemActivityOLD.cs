@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemActivityOLD : Entity, IParsable {
         /// <summary>The action property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemActionSet? Action {
+            get { return BackingStore?.Get<ItemActionSet?>("action"); }
+            set { BackingStore?.Set("action", value); }
+        }
+#else
         public ItemActionSet Action {
             get { return BackingStore?.Get<ItemActionSet>("action"); }
             set { BackingStore?.Set("action", value); }
         }
+#endif
         /// <summary>The actor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Actor {
+            get { return BackingStore?.Get<IdentitySet?>("actor"); }
+            set { BackingStore?.Set("actor", value); }
+        }
+#else
         public IdentitySet Actor {
             get { return BackingStore?.Get<IdentitySet>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
+#endif
         /// <summary>The driveItem property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DriveItem? DriveItem {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("driveItem"); }
+            set { BackingStore?.Set("driveItem", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
+#endif
         /// <summary>The listItem property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ListItem? ListItem {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem?>("listItem"); }
+            set { BackingStore?.Set("listItem", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ListItem ListItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem>("listItem"); }
             set { BackingStore?.Set("listItem", value); }
         }
+#endif
         /// <summary>The times property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemActivityTimeSet? Times {
+            get { return BackingStore?.Get<ItemActivityTimeSet?>("times"); }
+            set { BackingStore?.Set("times", value); }
+        }
+#else
         public ItemActivityTimeSet Times {
             get { return BackingStore?.Get<ItemActivityTimeSet>("times"); }
             set { BackingStore?.Set("times", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

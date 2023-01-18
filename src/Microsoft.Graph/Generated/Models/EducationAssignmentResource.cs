@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("distributeForStudentWork", value); }
         }
         /// <summary>Resource object that has been associated with this assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationResource? Resource {
+            get { return BackingStore?.Get<EducationResource?>("resource"); }
+            set { BackingStore?.Set("resource", value); }
+        }
+#else
         public EducationResource Resource {
             get { return BackingStore?.Get<EducationResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

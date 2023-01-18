@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? GroupBy {
+            get { return BackingStore?.Get<List<string>?>("groupBy"); }
+            set { BackingStore?.Set("groupBy", value); }
+        }
+#else
         public List<string> GroupBy {
             get { return BackingStore?.Get<List<string>>("groupBy"); }
             set { BackingStore?.Set("groupBy", value); }
         }
+#endif
         /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The orderBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? OrderBy {
+            get { return BackingStore?.Get<List<string>?>("orderBy"); }
+            set { BackingStore?.Set("orderBy", value); }
+        }
+#else
         public List<string> OrderBy {
             get { return BackingStore?.Get<List<string>>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
+#endif
         /// <summary>The search property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Search {
+            get { return BackingStore?.Get<string?>("search"); }
+            set { BackingStore?.Set("search", value); }
+        }
+#else
         public string Search {
             get { return BackingStore?.Get<string>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#endif
         /// <summary>The select property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Select {
+            get { return BackingStore?.Get<List<string>?>("select"); }
+            set { BackingStore?.Set("select", value); }
+        }
+#else
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }
             set { BackingStore?.Set("select", value); }
         }
+#endif
         /// <summary>The skip property</summary>
         public int? Skip {
             get { return BackingStore?.Get<int?>("skip"); }

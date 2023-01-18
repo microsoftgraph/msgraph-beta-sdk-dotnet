@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DirectorySettingTemplate : DirectoryObject, IParsable {
         /// <summary>Description of the template. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Display name of the template. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SettingTemplateValue>? Values {
+            get { return BackingStore?.Get<List<SettingTemplateValue>?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public List<SettingTemplateValue> Values {
             get { return BackingStore?.Get<List<SettingTemplateValue>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DirectorySettingTemplate and sets the default values.
         /// </summary>

@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Users.Item.GetMailTips {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The EmailAddresses property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EmailAddresses {
+            get { return BackingStore?.Get<List<string>?>("emailAddresses"); }
+            set { BackingStore?.Set("emailAddresses", value); }
+        }
+#else
         public List<string> EmailAddresses {
             get { return BackingStore?.Get<List<string>>("emailAddresses"); }
             set { BackingStore?.Set("emailAddresses", value); }
         }
+#endif
         /// <summary>The MailTipsOptions property</summary>
         public MailTipsType? MailTipsOptions {
             get { return BackingStore?.Get<MailTipsType?>("mailTipsOptions"); }

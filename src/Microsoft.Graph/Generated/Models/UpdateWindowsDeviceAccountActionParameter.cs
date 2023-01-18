@@ -19,35 +19,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("calendarSyncEnabled", value); }
         }
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsDeviceAccount? DeviceAccount {
+            get { return BackingStore?.Get<WindowsDeviceAccount?>("deviceAccount"); }
+            set { BackingStore?.Set("deviceAccount", value); }
+        }
+#else
         public WindowsDeviceAccount DeviceAccount {
             get { return BackingStore?.Get<WindowsDeviceAccount>("deviceAccount"); }
             set { BackingStore?.Set("deviceAccount", value); }
         }
+#endif
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceAccountEmail {
+            get { return BackingStore?.Get<string?>("deviceAccountEmail"); }
+            set { BackingStore?.Set("deviceAccountEmail", value); }
+        }
+#else
         public string DeviceAccountEmail {
             get { return BackingStore?.Get<string>("deviceAccountEmail"); }
             set { BackingStore?.Set("deviceAccountEmail", value); }
         }
+#endif
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExchangeServer {
+            get { return BackingStore?.Get<string?>("exchangeServer"); }
+            set { BackingStore?.Set("exchangeServer", value); }
+        }
+#else
         public string ExchangeServer {
             get { return BackingStore?.Get<string>("exchangeServer"); }
             set { BackingStore?.Set("exchangeServer", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Not yet documented</summary>
         public bool? PasswordRotationEnabled {
             get { return BackingStore?.Get<bool?>("passwordRotationEnabled"); }
             set { BackingStore?.Set("passwordRotationEnabled", value); }
         }
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SessionInitiationProtocalAddress {
+            get { return BackingStore?.Get<string?>("sessionInitiationProtocalAddress"); }
+            set { BackingStore?.Set("sessionInitiationProtocalAddress", value); }
+        }
+#else
         public string SessionInitiationProtocalAddress {
             get { return BackingStore?.Get<string>("sessionInitiationProtocalAddress"); }
             set { BackingStore?.Set("sessionInitiationProtocalAddress", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updateWindowsDeviceAccountActionParameter and sets the default values.
         /// </summary>

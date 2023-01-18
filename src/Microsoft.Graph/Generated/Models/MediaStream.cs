@@ -19,30 +19,51 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("direction", value); }
         }
         /// <summary>The media stream label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Label {
+            get { return BackingStore?.Get<string?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#else
         public string Label {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#endif
         /// <summary>The mediaType property</summary>
         public Modality? MediaType {
             get { return BackingStore?.Get<Modality?>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Indicates whether the media is muted by the server.</summary>
         public bool? ServerMuted {
             get { return BackingStore?.Get<bool?>("serverMuted"); }
             set { BackingStore?.Set("serverMuted", value); }
         }
         /// <summary>The source ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SourceId {
+            get { return BackingStore?.Get<string?>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#else
         public string SourceId {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new mediaStream and sets the default values.
         /// </summary>

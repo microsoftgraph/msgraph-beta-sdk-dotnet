@@ -15,22 +15,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>MobieApp identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplicationId {
+            get { return BackingStore?.Get<string?>("applicationId"); }
+            set { BackingStore?.Set("applicationId", value); }
+        }
+#else
         public string ApplicationId {
             get { return BackingStore?.Get<string>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The admin provided or imported title of the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Human readable version of the application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayVersion {
+            get { return BackingStore?.Get<string?>("displayVersion"); }
+            set { BackingStore?.Set("displayVersion", value); }
+        }
+#else
         public string DisplayVersion {
             get { return BackingStore?.Get<string>("displayVersion"); }
             set { BackingStore?.Set("displayVersion", value); }
         }
+#endif
         /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
         public ResultantAppState? InstallState {
             get { return BackingStore?.Get<ResultantAppState?>("installState"); }
@@ -42,15 +63,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mobileAppIntent", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The supported platforms for the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppSupportedDeviceType>? SupportedDeviceTypes {
+            get { return BackingStore?.Get<List<MobileAppSupportedDeviceType>?>("supportedDeviceTypes"); }
+            set { BackingStore?.Set("supportedDeviceTypes", value); }
+        }
+#else
         public List<MobileAppSupportedDeviceType> SupportedDeviceTypes {
             get { return BackingStore?.Get<List<MobileAppSupportedDeviceType>>("supportedDeviceTypes"); }
             set { BackingStore?.Set("supportedDeviceTypes", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new mobileAppIntentAndStateDetail and sets the default values.
         /// </summary>

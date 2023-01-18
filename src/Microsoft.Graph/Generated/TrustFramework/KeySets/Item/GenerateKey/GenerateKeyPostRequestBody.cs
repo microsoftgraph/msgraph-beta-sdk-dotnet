@@ -19,20 +19,34 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey {
             set { BackingStore?.Set("exp", value); }
         }
         /// <summary>The kty property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Kty {
+            get { return BackingStore?.Get<string?>("kty"); }
+            set { BackingStore?.Set("kty", value); }
+        }
+#else
         public string Kty {
             get { return BackingStore?.Get<string>("kty"); }
             set { BackingStore?.Set("kty", value); }
         }
+#endif
         /// <summary>The nbf property</summary>
         public long? Nbf {
             get { return BackingStore?.Get<long?>("nbf"); }
             set { BackingStore?.Set("nbf", value); }
         }
         /// <summary>The use property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Use {
+            get { return BackingStore?.Get<string?>("use"); }
+            set { BackingStore?.Set("use", value); }
+        }
+#else
         public string Use {
             get { return BackingStore?.Get<string>("use"); }
             set { BackingStore?.Set("use", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new generateKeyPostRequestBody and sets the default values.
         /// </summary>

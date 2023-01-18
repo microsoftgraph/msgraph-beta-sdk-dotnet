@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client ID used to connect to the provider.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientId {
+            get { return BackingStore?.Get<string?>("clientId"); }
+            set { BackingStore?.Set("clientId", value); }
+        }
+#else
         public string ClientId {
             get { return BackingStore?.Get<string>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
+#endif
         /// <summary>Client secret to authenticate the connection to the provider.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientSecret {
+            get { return BackingStore?.Get<string?>("clientSecret"); }
+            set { BackingStore?.Set("clientSecret", value); }
+        }
+#else
         public string ClientSecret {
             get { return BackingStore?.Get<string>("clientSecret"); }
             set { BackingStore?.Set("clientSecret", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new educationSynchronizationConnectionSettings and sets the default values.
         /// </summary>

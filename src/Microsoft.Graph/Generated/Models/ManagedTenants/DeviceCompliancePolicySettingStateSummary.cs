@@ -21,15 +21,29 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>The identifer for the Microsoft Intune account. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IntuneAccountId {
+            get { return BackingStore?.Get<string?>("intuneAccountId"); }
+            set { BackingStore?.Set("intuneAccountId", value); }
+        }
+#else
         public string IntuneAccountId {
             get { return BackingStore?.Get<string>("intuneAccountId"); }
             set { BackingStore?.Set("intuneAccountId", value); }
         }
+#endif
         /// <summary>The identifier for the Intune setting. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IntuneSettingId {
+            get { return BackingStore?.Get<string?>("intuneSettingId"); }
+            set { BackingStore?.Set("intuneSettingId", value); }
+        }
+#else
         public string IntuneSettingId {
             get { return BackingStore?.Get<string>("intuneSettingId"); }
             set { BackingStore?.Set("intuneSettingId", value); }
         }
+#endif
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
@@ -46,30 +60,58 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("pendingDeviceCount", value); }
         }
         /// <summary>The type for the device compliance policy. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyType {
+            get { return BackingStore?.Get<string?>("policyType"); }
+            set { BackingStore?.Set("policyType", value); }
+        }
+#else
         public string PolicyType {
             get { return BackingStore?.Get<string>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
+#endif
         /// <summary>The name for the setting within the device compliance policy. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingName {
+            get { return BackingStore?.Get<string?>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
+        }
+#else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#endif
         /// <summary>The number of devices in a succeeded state. Optional. Read-only.</summary>
         public int? SucceededDeviceCount {
             get { return BackingStore?.Get<int?>("succeededDeviceCount"); }
             set { BackingStore?.Set("succeededDeviceCount", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantDisplayName {
+            get { return BackingStore?.Get<string?>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
+        }
+#else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

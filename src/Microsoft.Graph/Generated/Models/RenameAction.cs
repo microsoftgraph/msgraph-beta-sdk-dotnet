@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The new name of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NewName {
+            get { return BackingStore?.Get<string?>("newName"); }
+            set { BackingStore?.Set("newName", value); }
+        }
+#else
         public string NewName {
             get { return BackingStore?.Get<string>("newName"); }
             set { BackingStore?.Set("newName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The previous name of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OldName {
+            get { return BackingStore?.Get<string?>("oldName"); }
+            set { BackingStore?.Set("oldName", value); }
+        }
+#else
         public string OldName {
             get { return BackingStore?.Get<string>("oldName"); }
             set { BackingStore?.Set("oldName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new renameAction and sets the default values.
         /// </summary>

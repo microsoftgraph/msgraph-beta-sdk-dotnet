@@ -26,10 +26,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestDurationInDays", value); }
         }
         /// <summary>Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewReviewerScope>? Reviewers {
+            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
+            set { BackingStore?.Set("reviewers", value); }
+        }
+#else
         public List<AccessReviewReviewerScope> Reviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
+#endif
         /// <summary>Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }

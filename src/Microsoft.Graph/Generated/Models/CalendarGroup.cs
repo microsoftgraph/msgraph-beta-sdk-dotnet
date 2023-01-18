@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CalendarGroup : Entity, IParsable {
         /// <summary>The calendars in the calendar group. Navigation property. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Calendar>? Calendars {
+            get { return BackingStore?.Get<List<Calendar>?>("calendars"); }
+            set { BackingStore?.Set("calendars", value); }
+        }
+#else
         public List<Calendar> Calendars {
             get { return BackingStore?.Get<List<Calendar>>("calendars"); }
             set { BackingStore?.Set("calendars", value); }
         }
+#endif
         /// <summary>Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChangeKey {
+            get { return BackingStore?.Get<string?>("changeKey"); }
+            set { BackingStore?.Set("changeKey", value); }
+        }
+#else
         public string ChangeKey {
             get { return BackingStore?.Get<string>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
+#endif
         /// <summary>The class identifier. Read-only.</summary>
         public Guid? ClassId {
             get { return BackingStore?.Get<Guid?>("classId"); }
             set { BackingStore?.Set("classId", value); }
         }
         /// <summary>The group name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

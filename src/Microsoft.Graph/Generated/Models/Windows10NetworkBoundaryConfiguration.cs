@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows10NetworkBoundaryConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Windows Network Isolation Policy</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy? WindowsNetworkIsolationPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy?>("windowsNetworkIsolationPolicy"); }
+            set { BackingStore?.Set("windowsNetworkIsolationPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy WindowsNetworkIsolationPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy>("windowsNetworkIsolationPolicy"); }
             set { BackingStore?.Set("windowsNetworkIsolationPolicy", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Windows10NetworkBoundaryConfiguration and sets the default values.
         /// </summary>

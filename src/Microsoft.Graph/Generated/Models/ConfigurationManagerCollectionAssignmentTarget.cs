@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ConfigurationManagerCollectionAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable {
         /// <summary>The collection Id that is the target of the assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CollectionId {
+            get { return BackingStore?.Get<string?>("collectionId"); }
+            set { BackingStore?.Set("collectionId", value); }
+        }
+#else
         public string CollectionId {
             get { return BackingStore?.Get<string>("collectionId"); }
             set { BackingStore?.Set("collectionId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ConfigurationManagerCollectionAssignmentTarget and sets the default values.
         /// </summary>

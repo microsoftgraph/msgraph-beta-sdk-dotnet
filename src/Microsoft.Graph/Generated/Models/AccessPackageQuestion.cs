@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>ID of the question.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>Specifies whether the requestor is allowed to edit answers to questions.</summary>
         public bool? IsAnswerEditable {
             get { return BackingStore?.Get<bool?>("isAnswerEditable"); }
@@ -29,20 +36,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Relative position of this question when displaying a list of questions to the requestor.</summary>
         public int? Sequence {
             get { return BackingStore?.Get<int?>("sequence"); }
             set { BackingStore?.Set("sequence", value); }
         }
         /// <summary>The text of the question to show to the requestor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessPackageLocalizedContent? Text {
+            get { return BackingStore?.Get<AccessPackageLocalizedContent?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public AccessPackageLocalizedContent Text {
             get { return BackingStore?.Get<AccessPackageLocalizedContent>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new accessPackageQuestion and sets the default values.
         /// </summary>

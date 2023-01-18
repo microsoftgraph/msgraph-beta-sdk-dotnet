@@ -7,20 +7,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Presence.SetPresence {
     public class SetPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Activity {
+            get { return BackingStore?.Get<string?>("activity"); }
+            set { BackingStore?.Set("activity", value); }
+        }
+#else
         public string Activity {
             get { return BackingStore?.Get<string>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The availability property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Availability {
+            get { return BackingStore?.Get<string?>("availability"); }
+            set { BackingStore?.Set("availability", value); }
+        }
+#else
         public string Availability {
             get { return BackingStore?.Get<string>("availability"); }
             set { BackingStore?.Set("availability", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expirationDuration property</summary>
@@ -29,10 +43,17 @@ namespace Microsoft.Graph.Beta.Me.Presence.SetPresence {
             set { BackingStore?.Set("expirationDuration", value); }
         }
         /// <summary>The sessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SessionId {
+            get { return BackingStore?.Get<string?>("sessionId"); }
+            set { BackingStore?.Set("sessionId", value); }
+        }
+#else
         public string SessionId {
             get { return BackingStore?.Get<string>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new setPresencePostRequestBody and sets the default values.
         /// </summary>

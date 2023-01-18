@@ -16,25 +16,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Network Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkName {
+            get { return BackingStore?.Get<string?>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
+        }
+#else
         public string NetworkName {
             get { return BackingStore?.Get<string>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
+#endif
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreSharedKey {
+            get { return BackingStore?.Get<string?>("preSharedKey"); }
+            set { BackingStore?.Set("preSharedKey", value); }
+        }
+#else
         public string PreSharedKey {
             get { return BackingStore?.Get<string>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
+#endif
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
         public bool? PreSharedKeyIsSet {
             get { return BackingStore?.Get<bool?>("preSharedKeyIsSet"); }
             set { BackingStore?.Set("preSharedKeyIsSet", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Ssid {
+            get { return BackingStore?.Get<string?>("ssid"); }
+            set { BackingStore?.Set("ssid", value); }
+        }
+#else
         public string Ssid {
             get { return BackingStore?.Get<string>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
+#endif
         /// <summary>Wi-Fi Security Types for AOSP Device Owner.</summary>
         public AospDeviceOwnerWiFiSecurityType? WiFiSecurityType {
             get { return BackingStore?.Get<AospDeviceOwnerWiFiSecurityType?>("wiFiSecurityType"); }

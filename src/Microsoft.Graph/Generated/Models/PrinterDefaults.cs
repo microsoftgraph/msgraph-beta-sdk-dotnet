@@ -19,20 +19,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("colorMode", value); }
         }
         /// <summary>The default content (MIME) type to use when processing documents.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentType {
+            get { return BackingStore?.Get<string?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#else
         public string ContentType {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#endif
         /// <summary>The default number of copies printed per job.</summary>
         public int? CopiesPerJob {
             get { return BackingStore?.Get<int?>("copiesPerJob"); }
             set { BackingStore?.Set("copiesPerJob", value); }
         }
         /// <summary>The documentMimeType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DocumentMimeType {
+            get { return BackingStore?.Get<string?>("documentMimeType"); }
+            set { BackingStore?.Set("documentMimeType", value); }
+        }
+#else
         public string DocumentMimeType {
             get { return BackingStore?.Get<string>("documentMimeType"); }
             set { BackingStore?.Set("documentMimeType", value); }
         }
+#endif
         /// <summary>The default resolution in DPI to use when printing the job.</summary>
         public int? Dpi {
             get { return BackingStore?.Get<int?>("dpi"); }
@@ -49,55 +63,104 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("duplexMode", value); }
         }
         /// <summary>The default set of finishings to apply to print jobs. Valid values are described in the following table.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintFinishing?>? Finishings {
+            get { return BackingStore?.Get<List<PrintFinishing?>?>("finishings"); }
+            set { BackingStore?.Set("finishings", value); }
+        }
+#else
         public List<PrintFinishing?> Finishings {
             get { return BackingStore?.Get<List<PrintFinishing?>>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
+#endif
         /// <summary>The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.</summary>
         public bool? FitPdfToPage {
             get { return BackingStore?.Get<bool?>("fitPdfToPage"); }
             set { BackingStore?.Set("fitPdfToPage", value); }
         }
         /// <summary>The default input bin that serves as the paper source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InputBin {
+            get { return BackingStore?.Get<string?>("inputBin"); }
+            set { BackingStore?.Set("inputBin", value); }
+        }
+#else
         public string InputBin {
             get { return BackingStore?.Get<string>("inputBin"); }
             set { BackingStore?.Set("inputBin", value); }
         }
+#endif
         /// <summary>The default media (such as paper) color to print the document on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MediaColor {
+            get { return BackingStore?.Get<string?>("mediaColor"); }
+            set { BackingStore?.Set("mediaColor", value); }
+        }
+#else
         public string MediaColor {
             get { return BackingStore?.Get<string>("mediaColor"); }
             set { BackingStore?.Set("mediaColor", value); }
         }
+#endif
         /// <summary>The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MediaSize {
+            get { return BackingStore?.Get<string?>("mediaSize"); }
+            set { BackingStore?.Set("mediaSize", value); }
+        }
+#else
         public string MediaSize {
             get { return BackingStore?.Get<string>("mediaSize"); }
             set { BackingStore?.Set("mediaSize", value); }
         }
+#endif
         /// <summary>The default media (such as paper) type to print the document on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MediaType {
+            get { return BackingStore?.Get<string?>("mediaType"); }
+            set { BackingStore?.Set("mediaType", value); }
+        }
+#else
         public string MediaType {
             get { return BackingStore?.Get<string>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+#endif
         /// <summary>The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.</summary>
         public PrintMultipageLayout? MultipageLayout {
             get { return BackingStore?.Get<PrintMultipageLayout?>("multipageLayout"); }
             set { BackingStore?.Set("multipageLayout", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The default orientation to use when printing the document. Valid values are described in the following table.</summary>
         public PrintOrientation? Orientation {
             get { return BackingStore?.Get<PrintOrientation?>("orientation"); }
             set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>The default output bin to place completed prints into. See the printer&apos;s capabilities for a list of supported output bins.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OutputBin {
+            get { return BackingStore?.Get<string?>("outputBin"); }
+            set { BackingStore?.Set("outputBin", value); }
+        }
+#else
         public string OutputBin {
             get { return BackingStore?.Get<string>("outputBin"); }
             set { BackingStore?.Set("outputBin", value); }
         }
+#endif
         /// <summary>The default number of document pages to print on each sheet.</summary>
         public int? PagesPerSheet {
             get { return BackingStore?.Get<int?>("pagesPerSheet"); }

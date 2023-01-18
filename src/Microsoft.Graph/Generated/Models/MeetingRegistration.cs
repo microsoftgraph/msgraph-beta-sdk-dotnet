@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MeetingRegistration : MeetingRegistrationBase, IParsable {
         /// <summary>Custom registration questions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MeetingRegistrationQuestion>? CustomQuestions {
+            get { return BackingStore?.Get<List<MeetingRegistrationQuestion>?>("customQuestions"); }
+            set { BackingStore?.Set("customQuestions", value); }
+        }
+#else
         public List<MeetingRegistrationQuestion> CustomQuestions {
             get { return BackingStore?.Get<List<MeetingRegistrationQuestion>>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
+#endif
         /// <summary>The description of the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The meeting end time in UTC.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
@@ -26,25 +40,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registrationPageViewCount", value); }
         }
         /// <summary>The URL of the registration page. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RegistrationPageWebUrl {
+            get { return BackingStore?.Get<string?>("registrationPageWebUrl"); }
+            set { BackingStore?.Set("registrationPageWebUrl", value); }
+        }
+#else
         public string RegistrationPageWebUrl {
             get { return BackingStore?.Get<string>("registrationPageWebUrl"); }
             set { BackingStore?.Set("registrationPageWebUrl", value); }
         }
+#endif
         /// <summary>The meeting speaker&apos;s information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MeetingSpeaker>? Speakers {
+            get { return BackingStore?.Get<List<MeetingSpeaker>?>("speakers"); }
+            set { BackingStore?.Set("speakers", value); }
+        }
+#else
         public List<MeetingSpeaker> Speakers {
             get { return BackingStore?.Get<List<MeetingSpeaker>>("speakers"); }
             set { BackingStore?.Set("speakers", value); }
         }
+#endif
         /// <summary>The meeting start time in UTC.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The subject of the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MeetingRegistration and sets the default values.
         /// </summary>

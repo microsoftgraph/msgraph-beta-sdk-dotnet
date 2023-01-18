@@ -11,20 +11,34 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("appId", value); }
         }
         /// <summary>Name of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Identifier of the instance of the Software as a Service (SaaS) application.</summary>
         public long? InstanceId {
             get { return BackingStore?.Get<long?>("instanceId"); }
             set { BackingStore?.Set("instanceId", value); }
         }
         /// <summary>Name of the instance of the SaaS application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InstanceName {
+            get { return BackingStore?.Get<string?>("instanceName"); }
+            set { BackingStore?.Set("instanceName", value); }
+        }
+#else
         public string InstanceName {
             get { return BackingStore?.Get<string>("instanceName"); }
             set { BackingStore?.Set("instanceName", value); }
         }
+#endif
         /// <summary>The identifier of the SaaS application.</summary>
         public long? SaasAppId {
             get { return BackingStore?.Get<long?>("saasAppId"); }

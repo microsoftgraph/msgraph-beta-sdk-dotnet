@@ -17,35 +17,70 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contents of the uploaded ADML file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Content {
+            get { return BackingStore?.Get<byte[]?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The file name of the uploaded ADML file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>Key of the entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The language code of the uploaded ADML file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LanguageCode {
+            get { return BackingStore?.Get<string?>("languageCode"); }
+            set { BackingStore?.Set("languageCode", value); }
+        }
+#else
         public string LanguageCode {
             get { return BackingStore?.Get<string>("languageCode"); }
             set { BackingStore?.Set("languageCode", value); }
         }
+#endif
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new groupPolicyUploadedLanguageFile and sets the default values.
         /// </summary>

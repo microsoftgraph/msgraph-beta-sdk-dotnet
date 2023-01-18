@@ -9,75 +9,152 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class ManagedEBook : Entity, IParsable {
         /// <summary>The list of assignments for this eBook.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedEBookAssignment>? Assignments {
+            get { return BackingStore?.Get<List<ManagedEBookAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<ManagedEBookAssignment> Assignments {
             get { return BackingStore?.Get<List<ManagedEBookAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>The list of categories for this eBook.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedEBookCategory>? Categories {
+            get { return BackingStore?.Get<List<ManagedEBookCategory>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<ManagedEBookCategory> Categories {
             get { return BackingStore?.Get<List<ManagedEBookCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>The date and time when the eBook file was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The list of installation states for this eBook.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceInstallState>? DeviceStates {
+            get { return BackingStore?.Get<List<DeviceInstallState>?>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
+        }
+#else
         public List<DeviceInstallState> DeviceStates {
             get { return BackingStore?.Get<List<DeviceInstallState>>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#endif
         /// <summary>Name of the eBook.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The more information Url.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InformationUrl {
+            get { return BackingStore?.Get<string?>("informationUrl"); }
+            set { BackingStore?.Set("informationUrl", value); }
+        }
+#else
         public string InformationUrl {
             get { return BackingStore?.Get<string>("informationUrl"); }
             set { BackingStore?.Set("informationUrl", value); }
         }
+#endif
         /// <summary>Mobile App Install Summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EBookInstallSummary? InstallSummary {
+            get { return BackingStore?.Get<EBookInstallSummary?>("installSummary"); }
+            set { BackingStore?.Set("installSummary", value); }
+        }
+#else
         public EBookInstallSummary InstallSummary {
             get { return BackingStore?.Get<EBookInstallSummary>("installSummary"); }
             set { BackingStore?.Set("installSummary", value); }
         }
+#endif
         /// <summary>Book cover.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MimeContent? LargeCover {
+            get { return BackingStore?.Get<MimeContent?>("largeCover"); }
+            set { BackingStore?.Set("largeCover", value); }
+        }
+#else
         public MimeContent LargeCover {
             get { return BackingStore?.Get<MimeContent>("largeCover"); }
             set { BackingStore?.Set("largeCover", value); }
         }
+#endif
         /// <summary>The date and time when the eBook was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The privacy statement Url.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrivacyInformationUrl {
+            get { return BackingStore?.Get<string?>("privacyInformationUrl"); }
+            set { BackingStore?.Set("privacyInformationUrl", value); }
+        }
+#else
         public string PrivacyInformationUrl {
             get { return BackingStore?.Get<string>("privacyInformationUrl"); }
             set { BackingStore?.Set("privacyInformationUrl", value); }
         }
+#endif
         /// <summary>The date and time when the eBook was published.</summary>
         public DateTimeOffset? PublishedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("publishedDateTime"); }
             set { BackingStore?.Set("publishedDateTime", value); }
         }
         /// <summary>Publisher.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Publisher {
+            get { return BackingStore?.Get<string?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+#else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#endif
         /// <summary>The list of installation states for this eBook.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserInstallStateSummary>? UserStateSummary {
+            get { return BackingStore?.Get<List<UserInstallStateSummary>?>("userStateSummary"); }
+            set { BackingStore?.Set("userStateSummary", value); }
+        }
+#else
         public List<UserInstallStateSummary> UserStateSummary {
             get { return BackingStore?.Get<List<UserInstallStateSummary>>("userStateSummary"); }
             set { BackingStore?.Set("userStateSummary", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

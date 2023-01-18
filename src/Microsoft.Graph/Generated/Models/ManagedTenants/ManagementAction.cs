@@ -11,30 +11,58 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The description for the management action. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name for the management action. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The reference for the management template used to generate the management action. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReferenceTemplateId {
+            get { return BackingStore?.Get<string?>("referenceTemplateId"); }
+            set { BackingStore?.Set("referenceTemplateId", value); }
+        }
+#else
         public string ReferenceTemplateId {
             get { return BackingStore?.Get<string>("referenceTemplateId"); }
             set { BackingStore?.Set("referenceTemplateId", value); }
         }
+#endif
         /// <summary>The referenceTemplateVersion property</summary>
         public int? ReferenceTemplateVersion {
             get { return BackingStore?.Get<int?>("referenceTemplateVersion"); }
             set { BackingStore?.Set("referenceTemplateVersion", value); }
         }
         /// <summary>The collection of workload actions associated with the management action. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkloadAction>? WorkloadActions {
+            get { return BackingStore?.Get<List<WorkloadAction>?>("workloadActions"); }
+            set { BackingStore?.Set("workloadActions", value); }
+        }
+#else
         public List<WorkloadAction> WorkloadActions {
             get { return BackingStore?.Get<List<WorkloadAction>>("workloadActions"); }
             set { BackingStore?.Set("workloadActions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

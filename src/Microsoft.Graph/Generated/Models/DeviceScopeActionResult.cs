@@ -17,25 +17,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceScopeAction {
+            get { return BackingStore?.Get<string?>("deviceScopeAction"); }
+            set { BackingStore?.Set("deviceScopeAction", value); }
+        }
+#else
         public string DeviceScopeAction {
             get { return BackingStore?.Get<string>("deviceScopeAction"); }
             set { BackingStore?.Set("deviceScopeAction", value); }
         }
+#endif
         /// <summary>The unique identifier of the device scope the action was triggered on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceScopeId {
+            get { return BackingStore?.Get<string?>("deviceScopeId"); }
+            set { BackingStore?.Set("deviceScopeId", value); }
+        }
+#else
         public string DeviceScopeId {
             get { return BackingStore?.Get<string>("deviceScopeId"); }
             set { BackingStore?.Set("deviceScopeId", value); }
         }
+#endif
         /// <summary>The message indicates the reason the device scope action failed to trigger.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FailedMessage {
+            get { return BackingStore?.Get<string?>("failedMessage"); }
+            set { BackingStore?.Set("failedMessage", value); }
+        }
+#else
         public string FailedMessage {
             get { return BackingStore?.Get<string>("failedMessage"); }
             set { BackingStore?.Set("failedMessage", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Indicates the status of the attempted device scope action</summary>
         public DeviceScopeActionStatus? Status {
             get { return BackingStore?.Get<DeviceScopeActionStatus?>("status"); }

@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemActivity : Entity, IParsable {
         /// <summary>An item was accessed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessAction? Access {
+            get { return BackingStore?.Get<AccessAction?>("access"); }
+            set { BackingStore?.Set("access", value); }
+        }
+#else
         public AccessAction Access {
             get { return BackingStore?.Get<AccessAction>("access"); }
             set { BackingStore?.Set("access", value); }
         }
+#endif
         /// <summary>The activityDateTime property</summary>
         public DateTimeOffset? ActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Identity of who performed the action. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Actor {
+            get { return BackingStore?.Get<IdentitySet?>("actor"); }
+            set { BackingStore?.Set("actor", value); }
+        }
+#else
         public IdentitySet Actor {
             get { return BackingStore?.Get<IdentitySet>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
+#endif
         /// <summary>Exposes the driveItem that was the target of this activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DriveItem? DriveItem {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("driveItem"); }
+            set { BackingStore?.Set("driveItem", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

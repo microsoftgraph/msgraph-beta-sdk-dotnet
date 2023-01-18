@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AgreementAcceptance : Entity, IParsable {
         /// <summary>ID of the agreement file accepted by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AgreementFileId {
+            get { return BackingStore?.Get<string?>("agreementFileId"); }
+            set { BackingStore?.Set("agreementFileId", value); }
+        }
+#else
         public string AgreementFileId {
             get { return BackingStore?.Get<string>("agreementFileId"); }
             set { BackingStore?.Set("agreementFileId", value); }
         }
+#endif
         /// <summary>ID of the agreement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AgreementId {
+            get { return BackingStore?.Get<string?>("agreementId"); }
+            set { BackingStore?.Set("agreementId", value); }
+        }
+#else
         public string AgreementId {
             get { return BackingStore?.Get<string>("agreementId"); }
             set { BackingStore?.Set("agreementId", value); }
         }
+#endif
         /// <summary>The display name of the device used for accepting the agreement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceDisplayName {
+            get { return BackingStore?.Get<string?>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
+        }
+#else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#endif
         /// <summary>The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The operating system used for accepting the agreement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceOSType {
+            get { return BackingStore?.Get<string?>("deviceOSType"); }
+            set { BackingStore?.Set("deviceOSType", value); }
+        }
+#else
         public string DeviceOSType {
             get { return BackingStore?.Get<string>("deviceOSType"); }
             set { BackingStore?.Set("deviceOSType", value); }
         }
+#endif
         /// <summary>The operating system version of the device used for accepting the agreement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceOSVersion {
+            get { return BackingStore?.Get<string?>("deviceOSVersion"); }
+            set { BackingStore?.Set("deviceOSVersion", value); }
+        }
+#else
         public string DeviceOSVersion {
             get { return BackingStore?.Get<string>("deviceOSVersion"); }
             set { BackingStore?.Set("deviceOSVersion", value); }
         }
+#endif
         /// <summary>The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
@@ -51,25 +93,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Display name of the user when the acceptance was recorded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserDisplayName {
+            get { return BackingStore?.Get<string?>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
+        }
+#else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#endif
         /// <summary>Email of the user when the acceptance was recorded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserEmail {
+            get { return BackingStore?.Get<string?>("userEmail"); }
+            set { BackingStore?.Set("userEmail", value); }
+        }
+#else
         public string UserEmail {
             get { return BackingStore?.Get<string>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
+#endif
         /// <summary>ID of the user who accepted the agreement. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>UPN of the user when the acceptance was recorded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

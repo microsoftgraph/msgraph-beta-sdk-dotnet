@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResourceRole : Entity, IParsable {
         /// <summary>The accessPackageResource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessPackageResource? AccessPackageResource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource?>("accessPackageResource"); }
+            set { BackingStore?.Set("accessPackageResource", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResource"); }
             set { BackingStore?.Set("accessPackageResource", value); }
         }
+#endif
         /// <summary>A description for the resource role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the resource role such as the role defined by the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OriginId {
+            get { return BackingStore?.Get<string?>("originId"); }
+            set { BackingStore?.Set("originId", value); }
+        }
+#else
         public string OriginId {
             get { return BackingStore?.Get<string>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
+#endif
         /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OriginSystem {
+            get { return BackingStore?.Get<string?>("originSystem"); }
+            set { BackingStore?.Set("originSystem", value); }
+        }
+#else
         public string OriginSystem {
             get { return BackingStore?.Get<string>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

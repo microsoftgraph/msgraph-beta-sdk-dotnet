@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class TenantCustomizedInformation : Entity, IParsable {
         /// <summary>The collection of contacts for the managed tenant. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TenantContactInformation>? Contacts {
+            get { return BackingStore?.Get<List<TenantContactInformation>?>("contacts"); }
+            set { BackingStore?.Set("contacts", value); }
+        }
+#else
         public List<TenantContactInformation> Contacts {
             get { return BackingStore?.Get<List<TenantContactInformation>>("contacts"); }
             set { BackingStore?.Set("contacts", value); }
         }
+#endif
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>The website for the managed tenant. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Website {
+            get { return BackingStore?.Get<string?>("website"); }
+            set { BackingStore?.Set("website", value); }
+        }
+#else
         public string Website {
             get { return BackingStore?.Get<string>("website"); }
             set { BackingStore?.Set("website", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -9,20 +9,34 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MacOSSoftwareUpdateStateSummary : Entity, IParsable {
         /// <summary>Human readable name of the software update</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Last date time the report for this device and product key was updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Product key of the software update.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductKey {
+            get { return BackingStore?.Get<string?>("productKey"); }
+            set { BackingStore?.Set("productKey", value); }
+        }
+#else
         public string ProductKey {
             get { return BackingStore?.Get<string>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
+#endif
         /// <summary>MacOS Software Update State</summary>
         public MacOSSoftwareUpdateState? State {
             get { return BackingStore?.Get<MacOSSoftwareUpdateState?>("state"); }
@@ -34,10 +48,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>Version of the software update</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UpdateVersion {
+            get { return BackingStore?.Get<string?>("updateVersion"); }
+            set { BackingStore?.Set("updateVersion", value); }
+        }
+#else
         public string UpdateVersion {
             get { return BackingStore?.Get<string>("updateVersion"); }
             set { BackingStore?.Set("updateVersion", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

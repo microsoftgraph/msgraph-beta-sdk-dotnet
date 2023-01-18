@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Note : OutlookItem, IParsable {
         /// <summary>The attachments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Attachment>? Attachments {
+            get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
+            set { BackingStore?.Set("attachments", value); }
+        }
+#else
         public List<Attachment> Attachments {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#endif
         /// <summary>The body property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Body {
+            get { return BackingStore?.Get<ItemBody?>("body"); }
+            set { BackingStore?.Set("body", value); }
+        }
+#else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#endif
         /// <summary>The extensions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Extension>? Extensions {
+            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#endif
         /// <summary>The hasAttachments property</summary>
         public bool? HasAttachments {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
@@ -31,20 +52,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isDeleted", value); }
         }
         /// <summary>The multiValueExtendedProperties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
+        }
+#else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#endif
         /// <summary>The singleValueExtendedProperties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#endif
         /// <summary>The subject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Note and sets the default values.
         /// </summary>

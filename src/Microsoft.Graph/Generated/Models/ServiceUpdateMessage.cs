@@ -11,20 +11,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("actionRequiredByDateTime", value); }
         }
         /// <summary>A collection of serviceAnnouncementAttachments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServiceAnnouncementAttachment>? Attachments {
+            get { return BackingStore?.Get<List<ServiceAnnouncementAttachment>?>("attachments"); }
+            set { BackingStore?.Set("attachments", value); }
+        }
+#else
         public List<ServiceAnnouncementAttachment> Attachments {
             get { return BackingStore?.Get<List<ServiceAnnouncementAttachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#endif
         /// <summary>The zip file of all attachments for a message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? AttachmentsArchive {
+            get { return BackingStore?.Get<byte[]?>("attachmentsArchive"); }
+            set { BackingStore?.Set("attachmentsArchive", value); }
+        }
+#else
         public byte[] AttachmentsArchive {
             get { return BackingStore?.Get<byte[]>("attachmentsArchive"); }
             set { BackingStore?.Set("attachmentsArchive", value); }
         }
+#endif
         /// <summary>The body property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Body {
+            get { return BackingStore?.Get<ItemBody?>("body"); }
+            set { BackingStore?.Set("body", value); }
+        }
+#else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#endif
         /// <summary>The category property</summary>
         public ServiceUpdateCategory? Category {
             get { return BackingStore?.Get<ServiceUpdateCategory?>("category"); }
@@ -41,25 +62,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isMajorChange", value); }
         }
         /// <summary>The affected services by the service message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Services {
+            get { return BackingStore?.Get<List<string>?>("services"); }
+            set { BackingStore?.Set("services", value); }
+        }
+#else
         public List<string> Services {
             get { return BackingStore?.Get<List<string>>("services"); }
             set { BackingStore?.Set("services", value); }
         }
+#endif
         /// <summary>The severity property</summary>
         public ServiceUpdateSeverity? Severity {
             get { return BackingStore?.Get<ServiceUpdateSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tags {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ServiceUpdateMessageViewpoint? ViewPoint {
+            get { return BackingStore?.Get<ServiceUpdateMessageViewpoint?>("viewPoint"); }
+            set { BackingStore?.Set("viewPoint", value); }
+        }
+#else
         public ServiceUpdateMessageViewpoint ViewPoint {
             get { return BackingStore?.Get<ServiceUpdateMessageViewpoint>("viewPoint"); }
             set { BackingStore?.Set("viewPoint", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ServiceUpdateMessage and sets the default values.
         /// </summary>

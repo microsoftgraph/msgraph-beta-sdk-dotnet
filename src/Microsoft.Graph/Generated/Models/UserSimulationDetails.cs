@@ -39,30 +39,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isCompromised", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.</summary>
         public DateTimeOffset? ReportedPhishDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("reportedPhishDateTime"); }
             set { BackingStore?.Set("reportedPhishDateTime", value); }
         }
         /// <summary>List of simulation events of a user in the attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserSimulationEventInfo>? SimulationEvents {
+            get { return BackingStore?.Get<List<UserSimulationEventInfo>?>("simulationEvents"); }
+            set { BackingStore?.Set("simulationEvents", value); }
+        }
+#else
         public List<UserSimulationEventInfo> SimulationEvents {
             get { return BackingStore?.Get<List<UserSimulationEventInfo>>("simulationEvents"); }
             set { BackingStore?.Set("simulationEvents", value); }
         }
+#endif
         /// <summary>The user in an attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AttackSimulationUser? SimulationUser {
+            get { return BackingStore?.Get<AttackSimulationUser?>("simulationUser"); }
+            set { BackingStore?.Set("simulationUser", value); }
+        }
+#else
         public AttackSimulationUser SimulationUser {
             get { return BackingStore?.Get<AttackSimulationUser>("simulationUser"); }
             set { BackingStore?.Set("simulationUser", value); }
         }
+#endif
         /// <summary>List of training events of a user in the attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserTrainingEventInfo>? TrainingEvents {
+            get { return BackingStore?.Get<List<UserTrainingEventInfo>?>("trainingEvents"); }
+            set { BackingStore?.Set("trainingEvents", value); }
+        }
+#else
         public List<UserTrainingEventInfo> TrainingEvents {
             get { return BackingStore?.Get<List<UserTrainingEventInfo>>("trainingEvents"); }
             set { BackingStore?.Set("trainingEvents", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new userSimulationDetails and sets the default values.
         /// </summary>

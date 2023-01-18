@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationCertificateId", value); }
         }
         /// <summary>Custom XML commands that configures the VPN connection. (UTF8 byte encoding)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? CustomXml {
+            get { return BackingStore?.Get<byte[]?>("customXml"); }
+            set { BackingStore?.Set("customXml", value); }
+        }
+#else
         public byte[] CustomXml {
             get { return BackingStore?.Get<byte[]>("customXml"); }
             set { BackingStore?.Set("customXml", value); }
         }
+#endif
         /// <summary>Custom Xml file name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomXmlFileName {
+            get { return BackingStore?.Get<string?>("customXmlFileName"); }
+            set { BackingStore?.Set("customXmlFileName", value); }
+        }
+#else
         public string CustomXmlFileName {
             get { return BackingStore?.Get<string>("customXmlFileName"); }
             set { BackingStore?.Set("customXmlFileName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Windows10XWifiConfiguration and sets the default values.
         /// </summary>

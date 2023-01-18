@@ -12,42 +12,91 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Audiences {
+            get { return BackingStore?.Get<List<string>?>("audiences"); }
+            set { BackingStore?.Set("audiences", value); }
+        }
+#else
         public List<string> Audiences {
             get { return BackingStore?.Get<List<string>>("audiences"); }
             set { BackingStore?.Set("audiences", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DataVersion {
+            get { return BackingStore?.Get<string?>("dataVersion"); }
+            set { BackingStore?.Set("dataVersion", value); }
+        }
+#else
         public string DataVersion {
             get { return BackingStore?.Get<string>("dataVersion"); }
             set { BackingStore?.Set("dataVersion", value); }
         }
+#endif
         /// <summary>Description of the web part.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Properties bag of the web part.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Json? Properties {
+            get { return BackingStore?.Get<Json?>("properties"); }
+            set { BackingStore?.Set("properties", value); }
+        }
+#else
         public Json Properties {
             get { return BackingStore?.Get<Json>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#endif
         /// <summary>Contains collections of data that can be processed by server side services like search index and link fixup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ServerProcessedContent? ServerProcessedContent {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServerProcessedContent?>("serverProcessedContent"); }
+            set { BackingStore?.Set("serverProcessedContent", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ServerProcessedContent ServerProcessedContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServerProcessedContent>("serverProcessedContent"); }
             set { BackingStore?.Set("serverProcessedContent", value); }
         }
+#endif
         /// <summary>Title of the web part.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new webPartData and sets the default values.
         /// </summary>

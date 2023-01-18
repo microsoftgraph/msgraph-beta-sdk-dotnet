@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcProvisioningPolicyAssignment : Entity, IParsable {
         /// <summary>The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CloudPcManagementAssignmentTarget? Target {
+            get { return BackingStore?.Get<CloudPcManagementAssignmentTarget?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public CloudPcManagementAssignmentTarget Target {
             get { return BackingStore?.Get<CloudPcManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

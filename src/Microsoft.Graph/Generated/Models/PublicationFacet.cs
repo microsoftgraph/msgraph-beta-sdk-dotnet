@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The state of publication for this document. Either published or checkout. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Level {
+            get { return BackingStore?.Get<string?>("level"); }
+            set { BackingStore?.Set("level", value); }
+        }
+#else
         public string Level {
             get { return BackingStore?.Get<string>("level"); }
             set { BackingStore?.Set("level", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The unique identifier for the version that is visible to the current caller. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VersionId {
+            get { return BackingStore?.Get<string?>("versionId"); }
+            set { BackingStore?.Set("versionId", value); }
+        }
+#else
         public string VersionId {
             get { return BackingStore?.Get<string>("versionId"); }
             set { BackingStore?.Set("versionId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new publicationFacet and sets the default values.
         /// </summary>

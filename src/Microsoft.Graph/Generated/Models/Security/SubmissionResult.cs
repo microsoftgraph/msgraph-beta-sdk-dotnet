@@ -24,20 +24,41 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>Specifies the files detected by Microsoft in the submitted emails.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SubmissionDetectedFile>? DetectedFiles {
+            get { return BackingStore?.Get<List<SubmissionDetectedFile>?>("detectedFiles"); }
+            set { BackingStore?.Set("detectedFiles", value); }
+        }
+#else
         public List<SubmissionDetectedFile> DetectedFiles {
             get { return BackingStore?.Get<List<SubmissionDetectedFile>>("detectedFiles"); }
             set { BackingStore?.Set("detectedFiles", value); }
         }
+#endif
         /// <summary>Specifes the URLs detected by Microsoft in the submitted email.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DetectedUrls {
+            get { return BackingStore?.Get<List<string>?>("detectedUrls"); }
+            set { BackingStore?.Set("detectedUrls", value); }
+        }
+#else
         public List<string> DetectedUrls {
             get { return BackingStore?.Get<List<string>>("detectedUrls"); }
             set { BackingStore?.Set("detectedUrls", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Specifies the setting for user mailbox denoted by a comma-separated string.</summary>
         public Microsoft.Graph.Beta.Models.Security.UserMailboxSetting? UserMailboxSetting {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserMailboxSetting?>("userMailboxSetting"); }

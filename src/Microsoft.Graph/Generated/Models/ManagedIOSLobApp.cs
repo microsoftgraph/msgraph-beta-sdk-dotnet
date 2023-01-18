@@ -6,40 +6,82 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ManagedIOSLobApp : ManagedMobileLobApp, IParsable {
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosDeviceType? ApplicableDeviceType {
+            get { return BackingStore?.Get<IosDeviceType?>("applicableDeviceType"); }
+            set { BackingStore?.Set("applicableDeviceType", value); }
+        }
+#else
         public IosDeviceType ApplicableDeviceType {
             get { return BackingStore?.Get<IosDeviceType>("applicableDeviceType"); }
             set { BackingStore?.Set("applicableDeviceType", value); }
         }
+#endif
         /// <summary>The build number of managed iOS Line of Business (LoB) app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BuildNumber {
+            get { return BackingStore?.Get<string?>("buildNumber"); }
+            set { BackingStore?.Set("buildNumber", value); }
+        }
+#else
         public string BuildNumber {
             get { return BackingStore?.Get<string>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
+#endif
         /// <summary>The Identity Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BundleId {
+            get { return BackingStore?.Get<string?>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
+        }
+#else
         public string BundleId {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
+#endif
         /// <summary>The expiration time.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The identity version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityVersion {
+            get { return BackingStore?.Get<string?>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
+        }
+#else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#endif
         /// <summary>The value for the minimum applicable operating system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+            get { return BackingStore?.Get<IosMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
+        }
+#else
         public IosMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#endif
         /// <summary>The version number of managed iOS Line of Business (LoB) app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VersionNumber {
+            get { return BackingStore?.Get<string?>("versionNumber"); }
+            set { BackingStore?.Set("versionNumber", value); }
+        }
+#else
         public string VersionNumber {
             get { return BackingStore?.Get<string>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ManagedIOSLobApp and sets the default values.
         /// </summary>

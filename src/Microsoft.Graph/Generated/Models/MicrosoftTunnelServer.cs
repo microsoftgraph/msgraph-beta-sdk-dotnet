@@ -9,25 +9,46 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MicrosoftTunnelServer : Entity, IParsable {
         /// <summary>The digest of the current agent image running on this server</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AgentImageDigest {
+            get { return BackingStore?.Get<string?>("agentImageDigest"); }
+            set { BackingStore?.Set("agentImageDigest", value); }
+        }
+#else
         public string AgentImageDigest {
             get { return BackingStore?.Get<string>("agentImageDigest"); }
             set { BackingStore?.Set("agentImageDigest", value); }
         }
+#endif
         /// <summary>The display name for the server. This property is required when a server is created and cannot be cleared during updates.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Indicates when the server last checked in</summary>
         public DateTimeOffset? LastCheckinDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckinDateTime"); }
             set { BackingStore?.Set("lastCheckinDateTime", value); }
         }
         /// <summary>The digest of the current server image running on this server</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServerImageDigest {
+            get { return BackingStore?.Get<string?>("serverImageDigest"); }
+            set { BackingStore?.Set("serverImageDigest", value); }
+        }
+#else
         public string ServerImageDigest {
             get { return BackingStore?.Get<string>("serverImageDigest"); }
             set { BackingStore?.Set("serverImageDigest", value); }
         }
+#endif
         /// <summary>Enum of possible MicrosoftTunnelServer health status types</summary>
         public MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus {
             get { return BackingStore?.Get<MicrosoftTunnelServerHealthStatus?>("tunnelServerHealthStatus"); }

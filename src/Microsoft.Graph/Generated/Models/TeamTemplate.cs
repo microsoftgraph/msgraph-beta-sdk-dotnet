@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamTemplate : Entity, IParsable {
         /// <summary>The definitions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamTemplateDefinition>? Definitions {
+            get { return BackingStore?.Get<List<TeamTemplateDefinition>?>("definitions"); }
+            set { BackingStore?.Set("definitions", value); }
+        }
+#else
         public List<TeamTemplateDefinition> Definitions {
             get { return BackingStore?.Get<List<TeamTemplateDefinition>>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

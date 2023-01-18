@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskDesktopApp : WindowsKioskAppBase, IParsable {
         /// <summary>Define the DesktopApplicationID of the app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DesktopApplicationId {
+            get { return BackingStore?.Get<string?>("desktopApplicationId"); }
+            set { BackingStore?.Set("desktopApplicationId", value); }
+        }
+#else
         public string DesktopApplicationId {
             get { return BackingStore?.Get<string>("desktopApplicationId"); }
             set { BackingStore?.Set("desktopApplicationId", value); }
         }
+#endif
         /// <summary>Define the DesktopApplicationLinkPath of the app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DesktopApplicationLinkPath {
+            get { return BackingStore?.Get<string?>("desktopApplicationLinkPath"); }
+            set { BackingStore?.Set("desktopApplicationLinkPath", value); }
+        }
+#else
         public string DesktopApplicationLinkPath {
             get { return BackingStore?.Get<string>("desktopApplicationLinkPath"); }
             set { BackingStore?.Set("desktopApplicationLinkPath", value); }
         }
+#endif
         /// <summary>Define the path of a desktop app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Path {
+            get { return BackingStore?.Get<string?>("path"); }
+            set { BackingStore?.Set("path", value); }
+        }
+#else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsKioskDesktopApp and sets the default values.
         /// </summary>

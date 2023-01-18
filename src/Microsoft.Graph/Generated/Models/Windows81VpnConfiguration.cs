@@ -21,15 +21,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enableSplitTunneling", value); }
         }
         /// <summary>Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LoginGroupOrDomain {
+            get { return BackingStore?.Get<string?>("loginGroupOrDomain"); }
+            set { BackingStore?.Set("loginGroupOrDomain", value); }
+        }
+#else
         public string LoginGroupOrDomain {
             get { return BackingStore?.Get<string>("loginGroupOrDomain"); }
             set { BackingStore?.Set("loginGroupOrDomain", value); }
         }
+#endif
         /// <summary>Proxy Server.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Windows81VpnProxyServer? ProxyServer {
+            get { return BackingStore?.Get<Windows81VpnProxyServer?>("proxyServer"); }
+            set { BackingStore?.Set("proxyServer", value); }
+        }
+#else
         public Windows81VpnProxyServer ProxyServer {
             get { return BackingStore?.Get<Windows81VpnProxyServer>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Windows81VpnConfiguration and sets the default values.
         /// </summary>

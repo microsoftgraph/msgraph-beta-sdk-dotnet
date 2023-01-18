@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MarkContent : LabelActionBase, IParsable {
         /// <summary>The fontColor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FontColor {
+            get { return BackingStore?.Get<string?>("fontColor"); }
+            set { BackingStore?.Set("fontColor", value); }
+        }
+#else
         public string FontColor {
             get { return BackingStore?.Get<string>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
+#endif
         /// <summary>The fontSize property</summary>
         public long? FontSize {
             get { return BackingStore?.Get<long?>("fontSize"); }
             set { BackingStore?.Set("fontSize", value); }
         }
         /// <summary>The text property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Text {
+            get { return BackingStore?.Get<string?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MarkContent and sets the default values.
         /// </summary>

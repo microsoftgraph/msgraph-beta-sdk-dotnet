@@ -14,35 +14,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Last IPv4 address associated with this NIC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpV4Address {
+            get { return BackingStore?.Get<string?>("ipV4Address"); }
+            set { BackingStore?.Set("ipV4Address", value); }
+        }
+#else
         public string IpV4Address {
             get { return BackingStore?.Get<string>("ipV4Address"); }
             set { BackingStore?.Set("ipV4Address", value); }
         }
+#endif
         /// <summary>Last Public (aka global) IPv6 address associated with this NIC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpV6Address {
+            get { return BackingStore?.Get<string?>("ipV6Address"); }
+            set { BackingStore?.Set("ipV6Address", value); }
+        }
+#else
         public string IpV6Address {
             get { return BackingStore?.Get<string>("ipV6Address"); }
             set { BackingStore?.Set("ipV6Address", value); }
         }
+#endif
         /// <summary>Last local (link-local or site-local) IPv6 address associated with this NIC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocalIpV6Address {
+            get { return BackingStore?.Get<string?>("localIpV6Address"); }
+            set { BackingStore?.Set("localIpV6Address", value); }
+        }
+#else
         public string LocalIpV6Address {
             get { return BackingStore?.Get<string>("localIpV6Address"); }
             set { BackingStore?.Set("localIpV6Address", value); }
         }
+#endif
         /// <summary>MAC address of the NIC on this host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MacAddress {
+            get { return BackingStore?.Get<string?>("macAddress"); }
+            set { BackingStore?.Set("macAddress", value); }
+        }
+#else
         public string MacAddress {
             get { return BackingStore?.Get<string>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new networkInterface and sets the default values.
         /// </summary>

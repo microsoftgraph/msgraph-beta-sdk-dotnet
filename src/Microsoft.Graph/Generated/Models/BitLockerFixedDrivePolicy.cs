@@ -22,15 +22,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BitLockerRecoveryOptions? RecoveryOptions {
+            get { return BackingStore?.Get<BitLockerRecoveryOptions?>("recoveryOptions"); }
+            set { BackingStore?.Set("recoveryOptions", value); }
+        }
+#else
         public BitLockerRecoveryOptions RecoveryOptions {
             get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
+#endif
         /// <summary>This policy setting determines whether BitLocker protection is required for fixed data drives to be writable on a computer.</summary>
         public bool? RequireEncryptionForWriteAccess {
             get { return BackingStore?.Get<bool?>("requireEncryptionForWriteAccess"); }

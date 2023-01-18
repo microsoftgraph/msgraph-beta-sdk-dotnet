@@ -6,60 +6,137 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class List : BaseItem, IParsable {
         /// <summary>The recent activities that took place within this list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ItemActivityOLD>? Activities {
+            get { return BackingStore?.Get<List<ItemActivityOLD>?>("activities"); }
+            set { BackingStore?.Set("activities", value); }
+        }
+#else
         public List<ItemActivityOLD> Activities {
             get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#endif
         /// <summary>The columns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ColumnDefinition>? Columns {
+            get { return BackingStore?.Get<List<ColumnDefinition>?>("columns"); }
+            set { BackingStore?.Set("columns", value); }
+        }
+#else
         public List<ColumnDefinition> Columns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#endif
         /// <summary>The contentTypes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ContentType>? ContentTypes {
+            get { return BackingStore?.Get<List<ContentType>?>("contentTypes"); }
+            set { BackingStore?.Set("contentTypes", value); }
+        }
+#else
         public List<ContentType> ContentTypes {
             get { return BackingStore?.Get<List<ContentType>>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
+#endif
         /// <summary>The displayable title of the list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Drive? Drive {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive?>("drive"); }
+            set { BackingStore?.Set("drive", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Drive Drive {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive>("drive"); }
             set { BackingStore?.Set("drive", value); }
         }
+#endif
         /// <summary>All items contained in the list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ListItem>? Items {
+            get { return BackingStore?.Get<List<ListItem>?>("items"); }
+            set { BackingStore?.Set("items", value); }
+        }
+#else
         public List<ListItem> Items {
             get { return BackingStore?.Get<List<ListItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#endif
         /// <summary>Provides additional details about the list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ListInfo? List_prop {
+            get { return BackingStore?.Get<ListInfo?>("list"); }
+            set { BackingStore?.Set("list", value); }
+        }
+#else
         public ListInfo List_prop {
             get { return BackingStore?.Get<ListInfo>("list"); }
             set { BackingStore?.Set("list", value); }
         }
+#endif
         /// <summary>The collection of long running operations for the list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RichLongRunningOperation>? Operations {
+            get { return BackingStore?.Get<List<RichLongRunningOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<RichLongRunningOperation> Operations {
             get { return BackingStore?.Get<List<RichLongRunningOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>The sharepointIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SharepointIds? SharepointIds {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds?>("sharepointIds"); }
+            set { BackingStore?.Set("sharepointIds", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }
         }
+#endif
         /// <summary>The set of subscriptions on the list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Subscription>? Subscriptions {
+            get { return BackingStore?.Get<List<Subscription>?>("subscriptions"); }
+            set { BackingStore?.Set("subscriptions", value); }
+        }
+#else
         public List<Subscription> Subscriptions {
             get { return BackingStore?.Get<List<Subscription>>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
+#endif
         /// <summary>If present, indicates that this is a system-managed list. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SystemFacet? System {
+            get { return BackingStore?.Get<SystemFacet?>("system"); }
+            set { BackingStore?.Set("system", value); }
+        }
+#else
         public SystemFacet System {
             get { return BackingStore?.Get<SystemFacet>("system"); }
             set { BackingStore?.Set("system", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new list and sets the default values.
         /// </summary>

@@ -12,42 +12,84 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ApplicationEnforcedRestrictionsSessionControl? ApplicationEnforcedRestrictions {
+            get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl?>("applicationEnforcedRestrictions"); }
+            set { BackingStore?.Set("applicationEnforcedRestrictions", value); }
+        }
+#else
         public ApplicationEnforcedRestrictionsSessionControl ApplicationEnforcedRestrictions {
             get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl>("applicationEnforcedRestrictions"); }
             set { BackingStore?.Set("applicationEnforcedRestrictions", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Session control to apply cloud app security.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CloudAppSecuritySessionControl? CloudAppSecurity {
+            get { return BackingStore?.Get<CloudAppSecuritySessionControl?>("cloudAppSecurity"); }
+            set { BackingStore?.Set("cloudAppSecurity", value); }
+        }
+#else
         public CloudAppSecuritySessionControl CloudAppSecurity {
             get { return BackingStore?.Get<CloudAppSecuritySessionControl>("cloudAppSecurity"); }
             set { BackingStore?.Set("cloudAppSecurity", value); }
         }
+#endif
         /// <summary>Session control for continuous access evaluation settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ContinuousAccessEvaluationSessionControl? ContinuousAccessEvaluation {
+            get { return BackingStore?.Get<ContinuousAccessEvaluationSessionControl?>("continuousAccessEvaluation"); }
+            set { BackingStore?.Set("continuousAccessEvaluation", value); }
+        }
+#else
         public ContinuousAccessEvaluationSessionControl ContinuousAccessEvaluation {
             get { return BackingStore?.Get<ContinuousAccessEvaluationSessionControl>("continuousAccessEvaluation"); }
             set { BackingStore?.Set("continuousAccessEvaluation", value); }
         }
+#endif
         /// <summary>Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.</summary>
         public bool? DisableResilienceDefaults {
             get { return BackingStore?.Get<bool?>("disableResilienceDefaults"); }
             set { BackingStore?.Set("disableResilienceDefaults", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PersistentBrowserSessionControl? PersistentBrowser {
+            get { return BackingStore?.Get<PersistentBrowserSessionControl?>("persistentBrowser"); }
+            set { BackingStore?.Set("persistentBrowser", value); }
+        }
+#else
         public PersistentBrowserSessionControl PersistentBrowser {
             get { return BackingStore?.Get<PersistentBrowserSessionControl>("persistentBrowser"); }
             set { BackingStore?.Set("persistentBrowser", value); }
         }
+#endif
         /// <summary>Session control to enforce signin frequency.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SignInFrequencySessionControl? SignInFrequency {
+            get { return BackingStore?.Get<SignInFrequencySessionControl?>("signInFrequency"); }
+            set { BackingStore?.Set("signInFrequency", value); }
+        }
+#else
         public SignInFrequencySessionControl SignInFrequency {
             get { return BackingStore?.Get<SignInFrequencySessionControl>("signInFrequency"); }
             set { BackingStore?.Set("signInFrequency", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new conditionalAccessSessionControls and sets the default values.
         /// </summary>

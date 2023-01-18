@@ -12,67 +12,151 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Applications and user actions included in and excluded from the policy. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessApplications? Applications {
+            get { return BackingStore?.Get<ConditionalAccessApplications?>("applications"); }
+            set { BackingStore?.Set("applications", value); }
+        }
+#else
         public ConditionalAccessApplications Applications {
             get { return BackingStore?.Get<ConditionalAccessApplications>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessClientApplications? ClientApplications {
+            get { return BackingStore?.Get<ConditionalAccessClientApplications?>("clientApplications"); }
+            set { BackingStore?.Set("clientApplications", value); }
+        }
+#else
         public ConditionalAccessClientApplications ClientApplications {
             get { return BackingStore?.Get<ConditionalAccessClientApplications>("clientApplications"); }
             set { BackingStore?.Set("clientApplications", value); }
         }
+#endif
         /// <summary>Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConditionalAccessClientApp?>? ClientAppTypes {
+            get { return BackingStore?.Get<List<ConditionalAccessClientApp?>?>("clientAppTypes"); }
+            set { BackingStore?.Set("clientAppTypes", value); }
+        }
+#else
         public List<ConditionalAccessClientApp?> ClientAppTypes {
             get { return BackingStore?.Get<List<ConditionalAccessClientApp?>>("clientAppTypes"); }
             set { BackingStore?.Set("clientAppTypes", value); }
         }
+#endif
         /// <summary>Devices in the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessDevices? Devices {
+            get { return BackingStore?.Get<ConditionalAccessDevices?>("devices"); }
+            set { BackingStore?.Set("devices", value); }
+        }
+#else
         public ConditionalAccessDevices Devices {
             get { return BackingStore?.Get<ConditionalAccessDevices>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
+#endif
         /// <summary>Device states in the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessDeviceStates? DeviceStates {
+            get { return BackingStore?.Get<ConditionalAccessDeviceStates?>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
+        }
+#else
         public ConditionalAccessDeviceStates DeviceStates {
             get { return BackingStore?.Get<ConditionalAccessDeviceStates>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#endif
         /// <summary>Locations included in and excluded from the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessLocations? Locations {
+            get { return BackingStore?.Get<ConditionalAccessLocations?>("locations"); }
+            set { BackingStore?.Set("locations", value); }
+        }
+#else
         public ConditionalAccessLocations Locations {
             get { return BackingStore?.Get<ConditionalAccessLocations>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Platforms included in and excluded from the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessPlatforms? Platforms {
+            get { return BackingStore?.Get<ConditionalAccessPlatforms?>("platforms"); }
+            set { BackingStore?.Set("platforms", value); }
+        }
+#else
         public ConditionalAccessPlatforms Platforms {
             get { return BackingStore?.Get<ConditionalAccessPlatforms>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
+#endif
         /// <summary>Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RiskLevel?>? ServicePrincipalRiskLevels {
+            get { return BackingStore?.Get<List<RiskLevel?>?>("servicePrincipalRiskLevels"); }
+            set { BackingStore?.Set("servicePrincipalRiskLevels", value); }
+        }
+#else
         public List<RiskLevel?> ServicePrincipalRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>>("servicePrincipalRiskLevels"); }
             set { BackingStore?.Set("servicePrincipalRiskLevels", value); }
         }
+#endif
         /// <summary>Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RiskLevel?>? SignInRiskLevels {
+            get { return BackingStore?.Get<List<RiskLevel?>?>("signInRiskLevels"); }
+            set { BackingStore?.Set("signInRiskLevels", value); }
+        }
+#else
         public List<RiskLevel?> SignInRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>>("signInRiskLevels"); }
             set { BackingStore?.Set("signInRiskLevels", value); }
         }
+#endif
         /// <summary>User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RiskLevel?>? UserRiskLevels {
+            get { return BackingStore?.Get<List<RiskLevel?>?>("userRiskLevels"); }
+            set { BackingStore?.Set("userRiskLevels", value); }
+        }
+#else
         public List<RiskLevel?> UserRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>>("userRiskLevels"); }
             set { BackingStore?.Set("userRiskLevels", value); }
         }
+#endif
         /// <summary>Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessUsers? Users {
+            get { return BackingStore?.Get<ConditionalAccessUsers?>("users"); }
+            set { BackingStore?.Set("users", value); }
+        }
+#else
         public ConditionalAccessUsers Users {
             get { return BackingStore?.Get<ConditionalAccessUsers>("users"); }
             set { BackingStore?.Set("users", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new conditionalAccessConditionSet and sets the default values.
         /// </summary>

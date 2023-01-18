@@ -31,20 +31,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeZone {
+            get { return BackingStore?.Get<string?>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
+        }
+#else
         public string TimeZone {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#endif
         /// <summary>True means the staff member&apos;s availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member&apos;s workingHours property setting.</summary>
         public bool? UseBusinessHours {
             get { return BackingStore?.Get<bool?>("useBusinessHours"); }
             set { BackingStore?.Set("useBusinessHours", value); }
         }
         /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingWorkHours>? WorkingHours {
+            get { return BackingStore?.Get<List<BookingWorkHours>?>("workingHours"); }
+            set { BackingStore?.Set("workingHours", value); }
+        }
+#else
         public List<BookingWorkHours> WorkingHours {
             get { return BackingStore?.Get<List<BookingWorkHours>>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

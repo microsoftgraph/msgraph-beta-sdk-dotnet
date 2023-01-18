@@ -11,20 +11,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activeUserCount", value); }
         }
         /// <summary>Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AverageComparativeScore>? AverageComparativeScores {
+            get { return BackingStore?.Get<List<AverageComparativeScore>?>("averageComparativeScores"); }
+            set { BackingStore?.Set("averageComparativeScores", value); }
+        }
+#else
         public List<AverageComparativeScore> AverageComparativeScores {
             get { return BackingStore?.Get<List<AverageComparativeScore>>("averageComparativeScores"); }
             set { BackingStore?.Set("averageComparativeScores", value); }
         }
+#endif
         /// <summary>GUID string for tenant ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureTenantId {
+            get { return BackingStore?.Get<string?>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
+        }
+#else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#endif
         /// <summary>Contains tenant scores for a set of controls.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ControlScore>? ControlScores {
+            get { return BackingStore?.Get<List<ControlScore>?>("controlScores"); }
+            set { BackingStore?.Set("controlScores", value); }
+        }
+#else
         public List<ControlScore> ControlScores {
             get { return BackingStore?.Get<List<ControlScore>>("controlScores"); }
             set { BackingStore?.Set("controlScores", value); }
         }
+#endif
         /// <summary>The date when the entity is created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -36,10 +57,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("currentScore", value); }
         }
         /// <summary>Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EnabledServices {
+            get { return BackingStore?.Get<List<string>?>("enabledServices"); }
+            set { BackingStore?.Set("enabledServices", value); }
+        }
+#else
         public List<string> EnabledServices {
             get { return BackingStore?.Get<List<string>>("enabledServices"); }
             set { BackingStore?.Set("enabledServices", value); }
         }
+#endif
         /// <summary>Licensed user count of the given tenant.</summary>
         public int? LicensedUserCount {
             get { return BackingStore?.Get<int?>("licensedUserCount"); }
@@ -51,10 +79,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maxScore", value); }
         }
         /// <summary>The vendorInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SecurityVendorInformation? VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
+        }
+#else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedRole : Entity, IParsable {
         /// <summary>The assignments for this role. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrivilegedRoleAssignment>? Assignments {
+            get { return BackingStore?.Get<List<PrivilegedRoleAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<PrivilegedRoleAssignment> Assignments {
             get { return BackingStore?.Get<List<PrivilegedRoleAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Role name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The settings for this role. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrivilegedRoleSettings? Settings {
+            get { return BackingStore?.Get<PrivilegedRoleSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public PrivilegedRoleSettings Settings {
             get { return BackingStore?.Get<PrivilegedRoleSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>The summary information for this role. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrivilegedRoleSummary? Summary {
+            get { return BackingStore?.Get<PrivilegedRoleSummary?>("summary"); }
+            set { BackingStore?.Set("summary", value); }
+        }
+#else
         public PrivilegedRoleSummary Summary {
             get { return BackingStore?.Get<PrivilegedRoleSummary>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

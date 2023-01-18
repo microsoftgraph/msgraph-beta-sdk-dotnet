@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosEduDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>The Trusted Root and PFX certificates for Device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosEduCertificateSettings? DeviceCertificateSettings {
+            get { return BackingStore?.Get<IosEduCertificateSettings?>("deviceCertificateSettings"); }
+            set { BackingStore?.Set("deviceCertificateSettings", value); }
+        }
+#else
         public IosEduCertificateSettings DeviceCertificateSettings {
             get { return BackingStore?.Get<IosEduCertificateSettings>("deviceCertificateSettings"); }
             set { BackingStore?.Set("deviceCertificateSettings", value); }
         }
+#endif
         /// <summary>The Trusted Root and PFX certificates for Student</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosEduCertificateSettings? StudentCertificateSettings {
+            get { return BackingStore?.Get<IosEduCertificateSettings?>("studentCertificateSettings"); }
+            set { BackingStore?.Set("studentCertificateSettings", value); }
+        }
+#else
         public IosEduCertificateSettings StudentCertificateSettings {
             get { return BackingStore?.Get<IosEduCertificateSettings>("studentCertificateSettings"); }
             set { BackingStore?.Set("studentCertificateSettings", value); }
         }
+#endif
         /// <summary>Trusted Root and PFX certificates for iOS EDU.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosEduCertificateSettings? TeacherCertificateSettings {
+            get { return BackingStore?.Get<IosEduCertificateSettings?>("teacherCertificateSettings"); }
+            set { BackingStore?.Set("teacherCertificateSettings", value); }
+        }
+#else
         public IosEduCertificateSettings TeacherCertificateSettings {
             get { return BackingStore?.Get<IosEduCertificateSettings>("teacherCertificateSettings"); }
             set { BackingStore?.Set("teacherCertificateSettings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IosEduDeviceConfiguration and sets the default values.
         /// </summary>

@@ -9,40 +9,89 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class SecurityBaselineSettingState : Entity, IParsable {
         /// <summary>The policies that contribute to this setting instance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SecurityBaselineContributingPolicy>? ContributingPolicies {
+            get { return BackingStore?.Get<List<SecurityBaselineContributingPolicy>?>("contributingPolicies"); }
+            set { BackingStore?.Set("contributingPolicies", value); }
+        }
+#else
         public List<SecurityBaselineContributingPolicy> ContributingPolicies {
             get { return BackingStore?.Get<List<SecurityBaselineContributingPolicy>>("contributingPolicies"); }
             set { BackingStore?.Set("contributingPolicies", value); }
         }
+#endif
         /// <summary>The error code if the setting is in error state</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorCode {
+            get { return BackingStore?.Get<string?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
+        }
+#else
         public string ErrorCode {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
+#endif
         /// <summary>The setting category id which this setting belongs to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingCategoryId {
+            get { return BackingStore?.Get<string?>("settingCategoryId"); }
+            set { BackingStore?.Set("settingCategoryId", value); }
+        }
+#else
         public string SettingCategoryId {
             get { return BackingStore?.Get<string>("settingCategoryId"); }
             set { BackingStore?.Set("settingCategoryId", value); }
         }
+#endif
         /// <summary>The setting category name which this setting belongs to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingCategoryName {
+            get { return BackingStore?.Get<string?>("settingCategoryName"); }
+            set { BackingStore?.Set("settingCategoryName", value); }
+        }
+#else
         public string SettingCategoryName {
             get { return BackingStore?.Get<string>("settingCategoryName"); }
             set { BackingStore?.Set("settingCategoryName", value); }
         }
+#endif
         /// <summary>The setting id guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingId {
+            get { return BackingStore?.Get<string?>("settingId"); }
+            set { BackingStore?.Set("settingId", value); }
+        }
+#else
         public string SettingId {
             get { return BackingStore?.Get<string>("settingId"); }
             set { BackingStore?.Set("settingId", value); }
         }
+#endif
         /// <summary>The setting name that is being reported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingName {
+            get { return BackingStore?.Get<string?>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
+        }
+#else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#endif
         /// <summary>The policies that contribute to this setting instance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SettingSource>? SourcePolicies {
+            get { return BackingStore?.Get<List<SettingSource>?>("sourcePolicies"); }
+            set { BackingStore?.Set("sourcePolicies", value); }
+        }
+#else
         public List<SettingSource> SourcePolicies {
             get { return BackingStore?.Get<List<SettingSource>>("sourcePolicies"); }
             set { BackingStore?.Set("sourcePolicies", value); }
         }
+#endif
         /// <summary>Security Baseline Compliance State</summary>
         public SecurityBaselineComplianceState? State {
             get { return BackingStore?.Get<SecurityBaselineComplianceState?>("state"); }

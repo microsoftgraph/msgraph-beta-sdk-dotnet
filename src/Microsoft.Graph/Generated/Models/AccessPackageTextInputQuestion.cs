@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSingleLineQuestion", value); }
         }
         /// <summary>This is the regex pattern that the corresponding text answer must follow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RegexPattern {
+            get { return BackingStore?.Get<string?>("regexPattern"); }
+            set { BackingStore?.Set("regexPattern", value); }
+        }
+#else
         public string RegexPattern {
             get { return BackingStore?.Get<string>("regexPattern"); }
             set { BackingStore?.Set("regexPattern", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AccessPackageTextInputQuestion and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Edge : Entity, IParsable {
         /// <summary>A container for Internet Explorer mode resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.InternetExplorerMode? InternetExplorerMode {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InternetExplorerMode?>("internetExplorerMode"); }
+            set { BackingStore?.Set("internetExplorerMode", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.InternetExplorerMode InternetExplorerMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InternetExplorerMode>("internetExplorerMode"); }
             set { BackingStore?.Set("internetExplorerMode", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

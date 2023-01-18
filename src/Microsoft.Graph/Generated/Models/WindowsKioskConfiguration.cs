@@ -11,20 +11,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("edgeKioskEnablePublicBrowsing", value); }
         }
         /// <summary>Specify URLs that the kiosk browser is allowed to navigate to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? KioskBrowserBlockedUrlExceptions {
+            get { return BackingStore?.Get<List<string>?>("kioskBrowserBlockedUrlExceptions"); }
+            set { BackingStore?.Set("kioskBrowserBlockedUrlExceptions", value); }
+        }
+#else
         public List<string> KioskBrowserBlockedUrlExceptions {
             get { return BackingStore?.Get<List<string>>("kioskBrowserBlockedUrlExceptions"); }
             set { BackingStore?.Set("kioskBrowserBlockedUrlExceptions", value); }
         }
+#endif
         /// <summary>Specify URLs that the kiosk browsers should not navigate to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? KioskBrowserBlockedURLs {
+            get { return BackingStore?.Get<List<string>?>("kioskBrowserBlockedURLs"); }
+            set { BackingStore?.Set("kioskBrowserBlockedURLs", value); }
+        }
+#else
         public List<string> KioskBrowserBlockedURLs {
             get { return BackingStore?.Get<List<string>>("kioskBrowserBlockedURLs"); }
             set { BackingStore?.Set("kioskBrowserBlockedURLs", value); }
         }
+#endif
         /// <summary>Specify the default URL the browser should navigate to on launch.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskBrowserDefaultUrl {
+            get { return BackingStore?.Get<string?>("kioskBrowserDefaultUrl"); }
+            set { BackingStore?.Set("kioskBrowserDefaultUrl", value); }
+        }
+#else
         public string KioskBrowserDefaultUrl {
             get { return BackingStore?.Get<string>("kioskBrowserDefaultUrl"); }
             set { BackingStore?.Set("kioskBrowserDefaultUrl", value); }
         }
+#endif
         /// <summary>Enable the kiosk browser&apos;s end session button. By default, the end session button is disabled.</summary>
         public bool? KioskBrowserEnableEndSessionButton {
             get { return BackingStore?.Get<bool?>("kioskBrowserEnableEndSessionButton"); }
@@ -46,15 +67,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kioskBrowserRestartOnIdleTimeInMinutes", value); }
         }
         /// <summary>This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsKioskProfile>? KioskProfiles {
+            get { return BackingStore?.Get<List<WindowsKioskProfile>?>("kioskProfiles"); }
+            set { BackingStore?.Set("kioskProfiles", value); }
+        }
+#else
         public List<WindowsKioskProfile> KioskProfiles {
             get { return BackingStore?.Get<List<WindowsKioskProfile>>("kioskProfiles"); }
             set { BackingStore?.Set("kioskProfiles", value); }
         }
+#endif
         /// <summary>force update schedule for Kiosk devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule? WindowsKioskForceUpdateSchedule {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule?>("windowsKioskForceUpdateSchedule"); }
+            set { BackingStore?.Set("windowsKioskForceUpdateSchedule", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule WindowsKioskForceUpdateSchedule {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule>("windowsKioskForceUpdateSchedule"); }
             set { BackingStore?.Set("windowsKioskForceUpdateSchedule", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsKioskConfiguration and sets the default values.
         /// </summary>

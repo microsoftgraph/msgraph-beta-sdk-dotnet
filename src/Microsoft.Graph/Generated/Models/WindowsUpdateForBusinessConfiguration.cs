@@ -47,10 +47,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deliveryOptimizationMode", value); }
         }
         /// <summary>Windows update for business configuration device states. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsUpdateState>? DeviceUpdateStates {
+            get { return BackingStore?.Get<List<WindowsUpdateState>?>("deviceUpdateStates"); }
+            set { BackingStore?.Set("deviceUpdateStates", value); }
+        }
+#else
         public List<WindowsUpdateState> DeviceUpdateStates {
             get { return BackingStore?.Get<List<WindowsUpdateState>>("deviceUpdateStates"); }
             set { BackingStore?.Set("deviceUpdateStates", value); }
         }
+#endif
         /// <summary>When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.</summary>
         public bool? DriversExcluded {
             get { return BackingStore?.Get<bool?>("driversExcluded"); }
@@ -107,10 +114,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("featureUpdatesWillBeRolledBack", value); }
         }
         /// <summary>The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsUpdateInstallScheduleType? InstallationSchedule {
+            get { return BackingStore?.Get<WindowsUpdateInstallScheduleType?>("installationSchedule"); }
+            set { BackingStore?.Set("installationSchedule", value); }
+        }
+#else
         public WindowsUpdateInstallScheduleType InstallationSchedule {
             get { return BackingStore?.Get<WindowsUpdateInstallScheduleType>("installationSchedule"); }
             set { BackingStore?.Set("installationSchedule", value); }
         }
+#endif
         /// <summary>When TRUE, allows Microsoft Update Service. When FALSE, does not allow Microsoft Update Service. Returned by default. Query parameters are not supported.</summary>
         public bool? MicrosoftUpdateServiceAllowed {
             get { return BackingStore?.Get<bool?>("microsoftUpdateServiceAllowed"); }

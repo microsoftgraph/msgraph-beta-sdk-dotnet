@@ -13,17 +13,31 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The appProvisioningConfigurationGroupAssignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppProvisioningConfigGroupAssignment>? AppProvisioningConfigurationGroupAssignments {
+            get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>?>("appProvisioningConfigurationGroupAssignments"); }
+            set { BackingStore?.Set("appProvisioningConfigurationGroupAssignments", value); }
+        }
+#else
         public List<MobileAppProvisioningConfigGroupAssignment> AppProvisioningConfigurationGroupAssignments {
             get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>("appProvisioningConfigurationGroupAssignments"); }
             set { BackingStore?.Set("appProvisioningConfigurationGroupAssignments", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The iOSLobAppProvisioningConfigAssignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IosLobAppProvisioningConfigurationAssignment>? IOSLobAppProvisioningConfigAssignments {
+            get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>?>("iOSLobAppProvisioningConfigAssignments"); }
+            set { BackingStore?.Set("iOSLobAppProvisioningConfigAssignments", value); }
+        }
+#else
         public List<IosLobAppProvisioningConfigurationAssignment> IOSLobAppProvisioningConfigAssignments {
             get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>("iOSLobAppProvisioningConfigAssignments"); }
             set { BackingStore?.Set("iOSLobAppProvisioningConfigAssignments", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.
         /// </summary>

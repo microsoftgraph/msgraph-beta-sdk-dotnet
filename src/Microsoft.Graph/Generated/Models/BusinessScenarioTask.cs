@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BusinessScenarioTask : PlannerTask, IParsable {
         /// <summary>Scenario-specific properties of the task. externalObjectId and externalBucketId properties must be specified when creating a task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.BusinessScenarioProperties? BusinessScenarioProperties {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BusinessScenarioProperties?>("businessScenarioProperties"); }
+            set { BackingStore?.Set("businessScenarioProperties", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.BusinessScenarioProperties BusinessScenarioProperties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BusinessScenarioProperties>("businessScenarioProperties"); }
             set { BackingStore?.Set("businessScenarioProperties", value); }
         }
+#endif
         /// <summary>Target of the task that specifies where the task should be placed. Must be specified when creating a task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BusinessScenarioTaskTargetBase? Target {
+            get { return BackingStore?.Get<BusinessScenarioTaskTargetBase?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public BusinessScenarioTaskTargetBase Target {
             get { return BackingStore?.Get<BusinessScenarioTaskTargetBase>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

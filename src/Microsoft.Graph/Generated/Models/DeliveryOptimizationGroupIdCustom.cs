@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationGroupIdCustom : DeliveryOptimizationGroupIdSource, IParsable {
         /// <summary>Specifies an arbitrary group ID that the device belongs to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupIdCustom {
+            get { return BackingStore?.Get<string?>("groupIdCustom"); }
+            set { BackingStore?.Set("groupIdCustom", value); }
+        }
+#else
         public string GroupIdCustom {
             get { return BackingStore?.Get<string>("groupIdCustom"); }
             set { BackingStore?.Set("groupIdCustom", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeliveryOptimizationGroupIdCustom and sets the default values.
         /// </summary>

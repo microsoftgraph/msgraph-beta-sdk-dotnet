@@ -11,25 +11,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
         /// <summary>The list of apps expected to be installed by the DMG.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSIncludedApp>? IncludedApps {
+            get { return BackingStore?.Get<List<MacOSIncludedApp>?>("includedApps"); }
+            set { BackingStore?.Set("includedApps", value); }
+        }
+#else
         public List<MacOSIncludedApp> IncludedApps {
             get { return BackingStore?.Get<List<MacOSIncludedApp>>("includedApps"); }
             set { BackingStore?.Set("includedApps", value); }
         }
+#endif
         /// <summary>The value for the minimum applicable operating system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MacOSMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+            get { return BackingStore?.Get<MacOSMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
+        }
+#else
         public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<MacOSMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#endif
         /// <summary>The primary CFBundleIdentifier of the DMG.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrimaryBundleId {
+            get { return BackingStore?.Get<string?>("primaryBundleId"); }
+            set { BackingStore?.Set("primaryBundleId", value); }
+        }
+#else
         public string PrimaryBundleId {
             get { return BackingStore?.Get<string>("primaryBundleId"); }
             set { BackingStore?.Set("primaryBundleId", value); }
         }
+#endif
         /// <summary>The primary CFBundleVersion of the DMG.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrimaryBundleVersion {
+            get { return BackingStore?.Get<string?>("primaryBundleVersion"); }
+            set { BackingStore?.Set("primaryBundleVersion", value); }
+        }
+#else
         public string PrimaryBundleVersion {
             get { return BackingStore?.Get<string>("primaryBundleVersion"); }
             set { BackingStore?.Set("primaryBundleVersion", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MacOSDmgApp and sets the default values.
         /// </summary>

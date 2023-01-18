@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ConditionalAccessPolicyCoverage : Entity, IParsable {
         /// <summary>The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConditionalAccessPolicyState {
+            get { return BackingStore?.Get<string?>("conditionalAccessPolicyState"); }
+            set { BackingStore?.Set("conditionalAccessPolicyState", value); }
+        }
+#else
         public string ConditionalAccessPolicyState {
             get { return BackingStore?.Get<string>("conditionalAccessPolicyState"); }
             set { BackingStore?.Set("conditionalAccessPolicyState", value); }
         }
+#endif
         /// <summary>The date and time the conditional access policy was last modified. Required. Read-only.</summary>
         public DateTimeOffset? LatestPolicyModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("latestPolicyModifiedDateTime"); }
@@ -21,10 +28,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("requiresDeviceCompliance", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantDisplayName {
+            get { return BackingStore?.Get<string?>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
+        }
+#else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

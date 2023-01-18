@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the lower bound from which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? From {
+            get { return BackingStore?.Get<string?>("from"); }
+            set { BackingStore?.Set("from", value); }
+        }
+#else
         public string From {
             get { return BackingStore?.Get<string>("from"); }
             set { BackingStore?.Set("from", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Defines the upper bound up to which to compute the aggregation. This can be a numeric value or a string representation of a date using the YYYY-MM-DDTHH:mm:ss.sssZ format. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? To {
+            get { return BackingStore?.Get<string?>("to"); }
+            set { BackingStore?.Set("to", value); }
+        }
+#else
         public string To {
             get { return BackingStore?.Get<string>("to"); }
             set { BackingStore?.Set("to", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new bucketAggregationRange and sets the default values.
         /// </summary>

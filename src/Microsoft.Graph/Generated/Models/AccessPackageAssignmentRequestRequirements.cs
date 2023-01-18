@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Answers that have already been provided.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageAnswer>? ExistingAnswers {
+            get { return BackingStore?.Get<List<AccessPackageAnswer>?>("existingAnswers"); }
+            set { BackingStore?.Set("existingAnswers", value); }
+        }
+#else
         public List<AccessPackageAnswer> ExistingAnswers {
             get { return BackingStore?.Get<List<AccessPackageAnswer>>("existingAnswers"); }
             set { BackingStore?.Set("existingAnswers", value); }
         }
+#endif
         /// <summary>Indicates whether a request must be approved by an approver.</summary>
         public bool? IsApprovalRequired {
             get { return BackingStore?.Get<bool?>("isApprovalRequired"); }
@@ -39,35 +46,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isRequestorJustificationRequired", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The description of the policy that the user is trying to request access using.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyDescription {
+            get { return BackingStore?.Get<string?>("policyDescription"); }
+            set { BackingStore?.Set("policyDescription", value); }
+        }
+#else
         public string PolicyDescription {
             get { return BackingStore?.Get<string>("policyDescription"); }
             set { BackingStore?.Set("policyDescription", value); }
         }
+#endif
         /// <summary>The display name of the policy that the user is trying to request access using.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyDisplayName {
+            get { return BackingStore?.Get<string?>("policyDisplayName"); }
+            set { BackingStore?.Set("policyDisplayName", value); }
+        }
+#else
         public string PolicyDisplayName {
             get { return BackingStore?.Get<string>("policyDisplayName"); }
             set { BackingStore?.Set("policyDisplayName", value); }
         }
+#endif
         /// <summary>The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyId {
+            get { return BackingStore?.Get<string?>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#else
         public string PolicyId {
             get { return BackingStore?.Get<string>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
+#endif
         /// <summary>Questions that are configured on the policy. The questions can be required or optional; callers can determine whether a question is required or optional based on the isRequired property on accessPackageQuestion.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageQuestion>? Questions {
+            get { return BackingStore?.Get<List<AccessPackageQuestion>?>("questions"); }
+            set { BackingStore?.Set("questions", value); }
+        }
+#else
         public List<AccessPackageQuestion> Questions {
             get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
+#endif
         /// <summary>Schedule restrictions enforced, if any.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestSchedule? Schedule {
+            get { return BackingStore?.Get<RequestSchedule?>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
+        }
+#else
         public RequestSchedule Schedule {
             get { return BackingStore?.Get<RequestSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new accessPackageAssignmentRequestRequirements and sets the default values.
         /// </summary>

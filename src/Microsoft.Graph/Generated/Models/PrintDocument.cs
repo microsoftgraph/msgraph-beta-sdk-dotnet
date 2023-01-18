@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PrintDocument : Entity, IParsable {
         /// <summary>The configuration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrinterDocumentConfiguration? Configuration {
+            get { return BackingStore?.Get<PrinterDocumentConfiguration?>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
+        }
+#else
         public PrinterDocumentConfiguration Configuration {
             get { return BackingStore?.Get<PrinterDocumentConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
+#endif
         /// <summary>The document&apos;s content (MIME) type. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentType {
+            get { return BackingStore?.Get<string?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#else
         public string ContentType {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#endif
         /// <summary>The document&apos;s name. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The downloadedDateTime property</summary>
         public DateTimeOffset? DownloadedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("downloadedDateTime"); }

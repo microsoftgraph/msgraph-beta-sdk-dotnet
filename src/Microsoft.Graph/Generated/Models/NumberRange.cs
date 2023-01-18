@@ -22,10 +22,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lowerNumber", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Upper number.</summary>
         public int? UpperNumber {
             get { return BackingStore?.Get<int?>("upperNumber"); }

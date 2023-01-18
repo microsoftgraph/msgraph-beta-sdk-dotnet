@@ -19,30 +19,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("hive", value); }
         }
         /// <summary>Current (i.e. changed) registry key (excludes HIVE).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Key {
+            get { return BackingStore?.Get<string?>("key"); }
+            set { BackingStore?.Set("key", value); }
+        }
+#else
         public string Key {
             get { return BackingStore?.Get<string>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Previous (i.e. before changed) registry key (excludes HIVE).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OldKey {
+            get { return BackingStore?.Get<string?>("oldKey"); }
+            set { BackingStore?.Set("oldKey", value); }
+        }
+#else
         public string OldKey {
             get { return BackingStore?.Get<string>("oldKey"); }
             set { BackingStore?.Set("oldKey", value); }
         }
+#endif
         /// <summary>Previous (i.e. before changed) registry key value data (contents).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OldValueData {
+            get { return BackingStore?.Get<string?>("oldValueData"); }
+            set { BackingStore?.Set("oldValueData", value); }
+        }
+#else
         public string OldValueData {
             get { return BackingStore?.Get<string>("oldValueData"); }
             set { BackingStore?.Set("oldValueData", value); }
         }
+#endif
         /// <summary>Previous (i.e. before changed) registry key value name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OldValueName {
+            get { return BackingStore?.Get<string?>("oldValueName"); }
+            set { BackingStore?.Set("oldValueName", value); }
+        }
+#else
         public string OldValueName {
             get { return BackingStore?.Get<string>("oldValueName"); }
             set { BackingStore?.Set("oldValueName", value); }
         }
+#endif
         /// <summary>Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.</summary>
         public RegistryOperation? Operation {
             get { return BackingStore?.Get<RegistryOperation?>("operation"); }
@@ -54,15 +89,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("processId", value); }
         }
         /// <summary>Current (i.e. changed) registry key value data (contents).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ValueData {
+            get { return BackingStore?.Get<string?>("valueData"); }
+            set { BackingStore?.Set("valueData", value); }
+        }
+#else
         public string ValueData {
             get { return BackingStore?.Get<string>("valueData"); }
             set { BackingStore?.Set("valueData", value); }
         }
+#endif
         /// <summary>Current (i.e. changed) registry key value name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ValueName {
+            get { return BackingStore?.Get<string?>("valueName"); }
+            set { BackingStore?.Set("valueName", value); }
+        }
+#else
         public string ValueName {
             get { return BackingStore?.Get<string>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
+#endif
         /// <summary>Registry key value type REG_BINARY REG_DWORD REG_DWORD_LITTLE_ENDIAN REG_DWORD_BIG_ENDIANREG_EXPAND_SZ REG_LINK REG_MULTI_SZ REG_NONE REG_QWORD REG_QWORD_LITTLE_ENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.</summary>
         public RegistryValueType? ValueType {
             get { return BackingStore?.Get<RegistryValueType?>("valueType"); }

@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingGroupDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
         /// <summary>Dependent child settings to this group of settings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ChildIds {
+            get { return BackingStore?.Get<List<string>?>("childIds"); }
+            set { BackingStore?.Set("childIds", value); }
+        }
+#else
         public List<string> ChildIds {
             get { return BackingStore?.Get<List<string>>("childIds"); }
             set { BackingStore?.Set("childIds", value); }
         }
+#endif
         /// <summary>List of child settings that depend on this setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>?>("dependedOnBy"); }
+            set { BackingStore?.Set("dependedOnBy", value); }
+        }
+#else
         public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
+#endif
         /// <summary>List of Dependencies for the setting group</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationDependentOn>? DependentOn {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>?>("dependentOn"); }
+            set { BackingStore?.Set("dependentOn", value); }
+        }
+#else
         public List<DeviceManagementConfigurationDependentOn> DependentOn {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

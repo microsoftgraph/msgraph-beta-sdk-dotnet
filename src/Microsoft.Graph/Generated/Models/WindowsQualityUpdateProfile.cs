@@ -4,52 +4,104 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Quality Update Profile
+    /// </summary>
     public class WindowsQualityUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsQualityUpdateProfileAssignment>? Assignments {
+            get { return BackingStore?.Get<List<WindowsQualityUpdateProfileAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<WindowsQualityUpdateProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<WindowsQualityUpdateProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>The date time that the profile was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Friendly display name of the quality update profile deployable content</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeployableContentDisplayName {
+            get { return BackingStore?.Get<string?>("deployableContentDisplayName"); }
+            set { BackingStore?.Set("deployableContentDisplayName", value); }
+        }
+#else
         public string DeployableContentDisplayName {
             get { return BackingStore?.Get<string>("deployableContentDisplayName"); }
             set { BackingStore?.Set("deployableContentDisplayName", value); }
         }
+#endif
         /// <summary>The description of the profile which is specified by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name for the profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Expedited update settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ExpeditedWindowsQualityUpdateSettings? ExpeditedUpdateSettings {
+            get { return BackingStore?.Get<ExpeditedWindowsQualityUpdateSettings?>("expeditedUpdateSettings"); }
+            set { BackingStore?.Set("expeditedUpdateSettings", value); }
+        }
+#else
         public ExpeditedWindowsQualityUpdateSettings ExpeditedUpdateSettings {
             get { return BackingStore?.Get<ExpeditedWindowsQualityUpdateSettings>("expeditedUpdateSettings"); }
             set { BackingStore?.Set("expeditedUpdateSettings", value); }
         }
+#endif
         /// <summary>The date time that the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Friendly release date to display for a Quality Update release</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReleaseDateDisplayName {
+            get { return BackingStore?.Get<string?>("releaseDateDisplayName"); }
+            set { BackingStore?.Set("releaseDateDisplayName", value); }
+        }
+#else
         public string ReleaseDateDisplayName {
             get { return BackingStore?.Get<string>("releaseDateDisplayName"); }
             set { BackingStore?.Set("releaseDateDisplayName", value); }
         }
+#endif
         /// <summary>List of Scope Tags for this Quality Update entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

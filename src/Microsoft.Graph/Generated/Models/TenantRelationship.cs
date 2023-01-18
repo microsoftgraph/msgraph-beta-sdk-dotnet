@@ -15,25 +15,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The customer who has a delegated admin relationship with a Microsoft partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DelegatedAdminCustomer>? DelegatedAdminCustomers {
+            get { return BackingStore?.Get<List<DelegatedAdminCustomer>?>("delegatedAdminCustomers"); }
+            set { BackingStore?.Set("delegatedAdminCustomers", value); }
+        }
+#else
         public List<DelegatedAdminCustomer> DelegatedAdminCustomers {
             get { return BackingStore?.Get<List<DelegatedAdminCustomer>>("delegatedAdminCustomers"); }
             set { BackingStore?.Set("delegatedAdminCustomers", value); }
         }
+#endif
         /// <summary>The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DelegatedAdminRelationship>? DelegatedAdminRelationships {
+            get { return BackingStore?.Get<List<DelegatedAdminRelationship>?>("delegatedAdminRelationships"); }
+            set { BackingStore?.Set("delegatedAdminRelationships", value); }
+        }
+#else
         public List<DelegatedAdminRelationship> DelegatedAdminRelationships {
             get { return BackingStore?.Get<List<DelegatedAdminRelationship>>("delegatedAdminRelationships"); }
             set { BackingStore?.Set("delegatedAdminRelationships", value); }
         }
+#endif
         /// <summary>The operations available to interact with the multi-tenant management platform.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagedTenant? ManagedTenants {
+            get { return BackingStore?.Get<ManagedTenant?>("managedTenants"); }
+            set { BackingStore?.Set("managedTenants", value); }
+        }
+#else
         public ManagedTenant ManagedTenants {
             get { return BackingStore?.Get<ManagedTenant>("managedTenants"); }
             set { BackingStore?.Set("managedTenants", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TenantRelationship and sets the default values.
         /// </summary>

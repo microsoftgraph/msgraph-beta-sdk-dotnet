@@ -13,10 +13,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignedAccessMultiModeProfiles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsAssignedAccessProfile>? AssignedAccessMultiModeProfiles {
+            get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>?>("assignedAccessMultiModeProfiles"); }
+            set { BackingStore?.Set("assignedAccessMultiModeProfiles", value); }
+        }
+#else
         public List<WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles {
             get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>>("assignedAccessMultiModeProfiles"); }
             set { BackingStore?.Set("assignedAccessMultiModeProfiles", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>

@@ -6,102 +6,221 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OrgContact : DirectoryObject, IParsable {
         /// <summary>Postal addresses for this organizational contact. For now a contact can only have one physical address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PhysicalOfficeAddress>? Addresses {
+            get { return BackingStore?.Get<List<PhysicalOfficeAddress>?>("addresses"); }
+            set { BackingStore?.Set("addresses", value); }
+        }
+#else
         public List<PhysicalOfficeAddress> Addresses {
             get { return BackingStore?.Get<List<PhysicalOfficeAddress>>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
+#endif
         /// <summary>Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CompanyName {
+            get { return BackingStore?.Get<string?>("companyName"); }
+            set { BackingStore?.Set("companyName", value); }
+        }
+#else
         public string CompanyName {
             get { return BackingStore?.Get<string>("companyName"); }
             set { BackingStore?.Set("companyName", value); }
         }
+#endif
         /// <summary>The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Department {
+            get { return BackingStore?.Get<string?>("department"); }
+            set { BackingStore?.Set("department", value); }
+        }
+#else
         public string Department {
             get { return BackingStore?.Get<string>("department"); }
             set { BackingStore?.Set("department", value); }
         }
+#endif
         /// <summary>The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? DirectReports {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("directReports"); }
+            set { BackingStore?.Set("directReports", value); }
+        }
+#else
         public List<DirectoryObject> DirectReports {
             get { return BackingStore?.Get<List<DirectoryObject>>("directReports"); }
             set { BackingStore?.Set("directReports", value); }
         }
+#endif
         /// <summary>Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GivenName {
+            get { return BackingStore?.Get<string?>("givenName"); }
+            set { BackingStore?.Set("givenName", value); }
+        }
+#else
         public string GivenName {
             get { return BackingStore?.Get<string>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
+#endif
         /// <summary>Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JobTitle {
+            get { return BackingStore?.Get<string?>("jobTitle"); }
+            set { BackingStore?.Set("jobTitle", value); }
+        }
+#else
         public string JobTitle {
             get { return BackingStore?.Get<string>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
+#endif
         /// <summary>The SMTP address for the contact, for example, &apos;jeff@contoso.onmicrosoft.com&apos;. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Mail {
+            get { return BackingStore?.Get<string?>("mail"); }
+            set { BackingStore?.Set("mail", value); }
+        }
+#else
         public string Mail {
             get { return BackingStore?.Get<string>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
+#endif
         /// <summary>Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MailNickname {
+            get { return BackingStore?.Get<string?>("mailNickname"); }
+            set { BackingStore?.Set("mailNickname", value); }
+        }
+#else
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
+#endif
         /// <summary>The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DirectoryObject? Manager {
+            get { return BackingStore?.Get<DirectoryObject?>("manager"); }
+            set { BackingStore?.Set("manager", value); }
+        }
+#else
         public DirectoryObject Manager {
             get { return BackingStore?.Get<DirectoryObject>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
+#endif
         /// <summary>Groups that this contact is a member of. Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? MemberOf {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("memberOf"); }
+            set { BackingStore?.Set("memberOf", value); }
+        }
+#else
         public List<DirectoryObject> MemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
+#endif
         /// <summary>Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).</summary>
         public DateTimeOffset? OnPremisesLastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
         }
         /// <summary>List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not for category and propertyCausingError), /$count eq 0, /$count ne 0.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnPremisesProvisioningError>? OnPremisesProvisioningErrors {
+            get { return BackingStore?.Get<List<OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
+            set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
+        }
+#else
         public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors {
             get { return BackingStore?.Get<List<OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
+#endif
         /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq for null values).</summary>
         public bool? OnPremisesSyncEnabled {
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
         }
         /// <summary>List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Phone>? Phones {
+            get { return BackingStore?.Get<List<Phone>?>("phones"); }
+            set { BackingStore?.Set("phones", value); }
+        }
+#else
         public List<Phone> Phones {
             get { return BackingStore?.Get<List<Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
+#endif
         /// <summary>For example: &apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ProxyAddresses {
+            get { return BackingStore?.Get<List<string>?>("proxyAddresses"); }
+            set { BackingStore?.Set("proxyAddresses", value); }
+        }
+#else
         public List<string> ProxyAddresses {
             get { return BackingStore?.Get<List<string>>("proxyAddresses"); }
             set { BackingStore?.Set("proxyAddresses", value); }
         }
+#endif
         /// <summary>Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Surname {
+            get { return BackingStore?.Get<string?>("surname"); }
+            set { BackingStore?.Set("surname", value); }
+        }
+#else
         public string Surname {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
+#endif
         /// <summary>The transitiveMemberOf property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? TransitiveMemberOf {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMemberOf"); }
+            set { BackingStore?.Set("transitiveMemberOf", value); }
+        }
+#else
         public List<DirectoryObject> TransitiveMemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
+#endif
         /// <summary>The transitive reports for a contact. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? TransitiveReports {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveReports"); }
+            set { BackingStore?.Set("transitiveReports", value); }
+        }
+#else
         public List<DirectoryObject> TransitiveReports {
             get { return BackingStore?.Get<List<DirectoryObject>>("transitiveReports"); }
             set { BackingStore?.Set("transitiveReports", value); }
         }
+#endif
         /// <summary>
-        /// Instantiates a new OrgContact and sets the default values.
+        /// Instantiates a new orgContact and sets the default values.
         /// </summary>
         public OrgContact() : base() {
             OdataType = "#microsoft.graph.orgContact";

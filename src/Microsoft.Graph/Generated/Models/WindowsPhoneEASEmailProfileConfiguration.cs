@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhoneEASEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable {
         /// <summary>Account name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccountName {
+            get { return BackingStore?.Get<string?>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
+        }
+#else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#endif
         /// <summary>Value indicating whether this policy only applies to Windows 8.1. This property is read-only.</summary>
         public bool? ApplyOnlyToWindowsPhone81 {
             get { return BackingStore?.Get<bool?>("applyOnlyToWindowsPhone81"); }
@@ -31,10 +38,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("emailSyncSchedule", value); }
         }
         /// <summary>Exchange location that (URL) that the native mail app connects to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HostName {
+            get { return BackingStore?.Get<string?>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
+        }
+#else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#endif
         /// <summary>Indicates whether or not to use SSL.</summary>
         public bool? RequireSsl {
             get { return BackingStore?.Get<bool?>("requireSsl"); }

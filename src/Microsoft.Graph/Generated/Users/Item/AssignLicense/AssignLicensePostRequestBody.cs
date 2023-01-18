@@ -13,17 +13,31 @@ namespace Microsoft.Graph.Beta.Users.Item.AssignLicense {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The addLicenses property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AssignedLicense>? AddLicenses {
+            get { return BackingStore?.Get<List<AssignedLicense>?>("addLicenses"); }
+            set { BackingStore?.Set("addLicenses", value); }
+        }
+#else
         public List<AssignedLicense> AddLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>>("addLicenses"); }
             set { BackingStore?.Set("addLicenses", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The removeLicenses property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Guid?>? RemoveLicenses {
+            get { return BackingStore?.Get<List<Guid?>?>("removeLicenses"); }
+            set { BackingStore?.Set("removeLicenses", value); }
+        }
+#else
         public List<Guid?> RemoveLicenses {
             get { return BackingStore?.Get<List<Guid?>>("removeLicenses"); }
             set { BackingStore?.Set("removeLicenses", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignLicensePostRequestBody and sets the default values.
         /// </summary>

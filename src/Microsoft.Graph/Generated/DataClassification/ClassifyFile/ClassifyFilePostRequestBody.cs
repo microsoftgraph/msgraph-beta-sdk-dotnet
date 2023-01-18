@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The file property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? File {
+            get { return BackingStore?.Get<byte[]?>("file"); }
+            set { BackingStore?.Set("file", value); }
+        }
+#else
         public byte[] File {
             get { return BackingStore?.Get<byte[]>("file"); }
             set { BackingStore?.Set("file", value); }
         }
+#endif
         /// <summary>The sensitiveTypeIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SensitiveTypeIds {
+            get { return BackingStore?.Get<List<string>?>("sensitiveTypeIds"); }
+            set { BackingStore?.Set("sensitiveTypeIds", value); }
+        }
+#else
         public List<string> SensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new classifyFilePostRequestBody and sets the default values.
         /// </summary>

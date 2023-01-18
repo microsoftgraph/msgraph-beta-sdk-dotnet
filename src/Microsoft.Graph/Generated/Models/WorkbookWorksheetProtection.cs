@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookWorksheetProtection : Entity, IParsable {
         /// <summary>Sheet protection options. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookWorksheetProtectionOptions? Options {
+            get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions?>("options"); }
+            set { BackingStore?.Set("options", value); }
+        }
+#else
         public WorkbookWorksheetProtectionOptions Options {
             get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions>("options"); }
             set { BackingStore?.Set("options", value); }
         }
+#endif
         /// <summary>Indicates if the worksheet is protected.  Read-only.</summary>
         public bool? Protected {
             get { return BackingStore?.Get<bool?>("protected"); }

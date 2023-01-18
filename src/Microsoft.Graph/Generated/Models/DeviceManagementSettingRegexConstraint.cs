@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingRegexConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The RegEx pattern to match against</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Regex {
+            get { return BackingStore?.Get<string?>("regex"); }
+            set { BackingStore?.Set("regex", value); }
+        }
+#else
         public string Regex {
             get { return BackingStore?.Get<string>("regex"); }
             set { BackingStore?.Set("regex", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementSettingRegexConstraint and sets the default values.
         /// </summary>

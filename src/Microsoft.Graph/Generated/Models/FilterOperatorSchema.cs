@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("multivaluedComparisonType", value); }
         }
         /// <summary>Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AttributeType?>? SupportedAttributeTypes {
+            get { return BackingStore?.Get<List<AttributeType?>?>("supportedAttributeTypes"); }
+            set { BackingStore?.Set("supportedAttributeTypes", value); }
+        }
+#else
         public List<AttributeType?> SupportedAttributeTypes {
             get { return BackingStore?.Get<List<AttributeType?>>("supportedAttributeTypes"); }
             set { BackingStore?.Set("supportedAttributeTypes", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

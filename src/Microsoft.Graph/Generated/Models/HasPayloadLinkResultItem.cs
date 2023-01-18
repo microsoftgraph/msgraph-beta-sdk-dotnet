@@ -17,30 +17,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Exception information indicates if check for this item was successful or not.Empty string for no error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Error {
+            get { return BackingStore?.Get<string?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public string Error {
             get { return BackingStore?.Get<string>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>Indicate whether a payload has any link or not.</summary>
         public bool? HasLink {
             get { return BackingStore?.Get<bool?>("hasLink"); }
             set { BackingStore?.Set("hasLink", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Key of the Payload, In the format of Guid.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PayloadId {
+            get { return BackingStore?.Get<string?>("payloadId"); }
+            set { BackingStore?.Set("payloadId", value); }
+        }
+#else
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
+#endif
         /// <summary>The reason where the link comes from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceAndAppManagementAssignmentSource?>? Sources {
+            get { return BackingStore?.Get<List<DeviceAndAppManagementAssignmentSource?>?>("sources"); }
+            set { BackingStore?.Set("sources", value); }
+        }
+#else
         public List<DeviceAndAppManagementAssignmentSource?> Sources {
             get { return BackingStore?.Get<List<DeviceAndAppManagementAssignmentSource?>>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new hasPayloadLinkResultItem and sets the default values.
         /// </summary>

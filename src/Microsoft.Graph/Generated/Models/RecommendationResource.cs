@@ -11,45 +11,94 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("addedDateTime", value); }
         }
         /// <summary>The additionalDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValue>? AdditionalDetails {
+            get { return BackingStore?.Get<List<KeyValue>?>("additionalDetails"); }
+            set { BackingStore?.Set("additionalDetails", value); }
+        }
+#else
         public List<KeyValue> AdditionalDetails {
             get { return BackingStore?.Get<List<KeyValue>>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
+#endif
         /// <summary>The apiUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApiUrl {
+            get { return BackingStore?.Get<string?>("apiUrl"); }
+            set { BackingStore?.Set("apiUrl", value); }
+        }
+#else
         public string ApiUrl {
             get { return BackingStore?.Get<string>("apiUrl"); }
             set { BackingStore?.Set("apiUrl", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The owner property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Owner {
+            get { return BackingStore?.Get<string?>("owner"); }
+            set { BackingStore?.Set("owner", value); }
+        }
+#else
         public string Owner {
             get { return BackingStore?.Get<string>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#endif
         /// <summary>The portalUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PortalUrl {
+            get { return BackingStore?.Get<string?>("portalUrl"); }
+            set { BackingStore?.Set("portalUrl", value); }
+        }
+#else
         public string PortalUrl {
             get { return BackingStore?.Get<string>("portalUrl"); }
             set { BackingStore?.Set("portalUrl", value); }
         }
+#endif
         /// <summary>The rank property</summary>
         public int? Rank {
             get { return BackingStore?.Get<int?>("rank"); }
             set { BackingStore?.Set("rank", value); }
         }
         /// <summary>The recommendationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecommendationId {
+            get { return BackingStore?.Get<string?>("recommendationId"); }
+            set { BackingStore?.Set("recommendationId", value); }
+        }
+#else
         public string RecommendationId {
             get { return BackingStore?.Get<string>("recommendationId"); }
             set { BackingStore?.Set("recommendationId", value); }
         }
+#endif
         /// <summary>The resourceType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceType {
+            get { return BackingStore?.Get<string?>("resourceType"); }
+            set { BackingStore?.Set("resourceType", value); }
+        }
+#else
         public string ResourceType {
             get { return BackingStore?.Get<string>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public RecommendationStatus? Status {
             get { return BackingStore?.Get<RecommendationStatus?>("status"); }

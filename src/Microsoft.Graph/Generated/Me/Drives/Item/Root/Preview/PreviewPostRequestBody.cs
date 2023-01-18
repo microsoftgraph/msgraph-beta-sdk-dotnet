@@ -24,15 +24,29 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.Preview {
             set { BackingStore?.Set("chromeless", value); }
         }
         /// <summary>The page property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Page {
+            get { return BackingStore?.Get<string?>("page"); }
+            set { BackingStore?.Set("page", value); }
+        }
+#else
         public string Page {
             get { return BackingStore?.Get<string>("page"); }
             set { BackingStore?.Set("page", value); }
         }
+#endif
         /// <summary>The viewer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Viewer {
+            get { return BackingStore?.Get<string?>("viewer"); }
+            set { BackingStore?.Set("viewer", value); }
+        }
+#else
         public string Viewer {
             get { return BackingStore?.Get<string>("viewer"); }
             set { BackingStore?.Set("viewer", value); }
         }
+#endif
         /// <summary>The zoom property</summary>
         public double? Zoom {
             get { return BackingStore?.Get<double?>("zoom"); }

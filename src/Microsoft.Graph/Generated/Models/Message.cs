@@ -6,55 +6,125 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Message : OutlookItem, IParsable {
         /// <summary>The fileAttachment and itemAttachment attachments for the message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Attachment>? Attachments {
+            get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
+            set { BackingStore?.Set("attachments", value); }
+        }
+#else
         public List<Attachment> Attachments {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#endif
         /// <summary>The Bcc: recipients for the message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? BccRecipients {
+            get { return BackingStore?.Get<List<Recipient>?>("bccRecipients"); }
+            set { BackingStore?.Set("bccRecipients", value); }
+        }
+#else
         public List<Recipient> BccRecipients {
             get { return BackingStore?.Get<List<Recipient>>("bccRecipients"); }
             set { BackingStore?.Set("bccRecipients", value); }
         }
+#endif
         /// <summary>The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Body {
+            get { return BackingStore?.Get<ItemBody?>("body"); }
+            set { BackingStore?.Set("body", value); }
+        }
+#else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#endif
         /// <summary>The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BodyPreview {
+            get { return BackingStore?.Get<string?>("bodyPreview"); }
+            set { BackingStore?.Set("bodyPreview", value); }
+        }
+#else
         public string BodyPreview {
             get { return BackingStore?.Get<string>("bodyPreview"); }
             set { BackingStore?.Set("bodyPreview", value); }
         }
+#endif
         /// <summary>The Cc: recipients for the message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? CcRecipients {
+            get { return BackingStore?.Get<List<Recipient>?>("ccRecipients"); }
+            set { BackingStore?.Set("ccRecipients", value); }
+        }
+#else
         public List<Recipient> CcRecipients {
             get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
+#endif
         /// <summary>The ID of the conversation the email belongs to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConversationId {
+            get { return BackingStore?.Get<string?>("conversationId"); }
+            set { BackingStore?.Set("conversationId", value); }
+        }
+#else
         public string ConversationId {
             get { return BackingStore?.Get<string>("conversationId"); }
             set { BackingStore?.Set("conversationId", value); }
         }
+#endif
         /// <summary>Indicates the position of the message within the conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? ConversationIndex {
+            get { return BackingStore?.Get<byte[]?>("conversationIndex"); }
+            set { BackingStore?.Set("conversationIndex", value); }
+        }
+#else
         public byte[] ConversationIndex {
             get { return BackingStore?.Get<byte[]>("conversationIndex"); }
             set { BackingStore?.Set("conversationIndex", value); }
         }
+#endif
         /// <summary>The collection of open extensions defined for the message. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Extension>? Extensions {
+            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#endif
         /// <summary>The flag value that indicates the status, start date, due date, or completion date for the message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public FollowupFlag? Flag {
+            get { return BackingStore?.Get<FollowupFlag?>("flag"); }
+            set { BackingStore?.Set("flag", value); }
+        }
+#else
         public FollowupFlag Flag {
             get { return BackingStore?.Get<FollowupFlag>("flag"); }
             set { BackingStore?.Set("flag", value); }
         }
+#endif
         /// <summary>The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Recipient? From {
+            get { return BackingStore?.Get<Recipient?>("from"); }
+            set { BackingStore?.Set("from", value); }
+        }
+#else
         public Recipient From {
             get { return BackingStore?.Get<Recipient>("from"); }
             set { BackingStore?.Set("from", value); }
         }
+#endif
         /// <summary>Indicates whether the message has attachments. This property doesn&apos;t include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as &lt;IMG src=&apos;cid:image001.jpg@01D26CD8.6C05F070&apos;&gt;.</summary>
         public bool? HasAttachments {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
@@ -71,15 +141,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("inferenceClassification", value); }
         }
         /// <summary>The internetMessageHeaders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<InternetMessageHeader>? InternetMessageHeaders {
+            get { return BackingStore?.Get<List<InternetMessageHeader>?>("internetMessageHeaders"); }
+            set { BackingStore?.Set("internetMessageHeaders", value); }
+        }
+#else
         public List<InternetMessageHeader> InternetMessageHeaders {
             get { return BackingStore?.Get<List<InternetMessageHeader>>("internetMessageHeaders"); }
             set { BackingStore?.Set("internetMessageHeaders", value); }
         }
+#endif
         /// <summary>The internetMessageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InternetMessageId {
+            get { return BackingStore?.Get<string?>("internetMessageId"); }
+            set { BackingStore?.Set("internetMessageId", value); }
+        }
+#else
         public string InternetMessageId {
             get { return BackingStore?.Get<string>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
+#endif
         /// <summary>The isDeliveryReceiptRequested property</summary>
         public bool? IsDeliveryReceiptRequested {
             get { return BackingStore?.Get<bool?>("isDeliveryReceiptRequested"); }
@@ -101,80 +185,164 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isReadReceiptRequested", value); }
         }
         /// <summary>A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Mention>? Mentions {
+            get { return BackingStore?.Get<List<Mention>?>("mentions"); }
+            set { BackingStore?.Set("mentions", value); }
+        }
+#else
         public List<Mention> Mentions {
             get { return BackingStore?.Get<List<Mention>>("mentions"); }
             set { BackingStore?.Set("mentions", value); }
         }
+#endif
         /// <summary>The mentionsPreview property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MentionsPreview? MentionsPreview {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MentionsPreview?>("mentionsPreview"); }
+            set { BackingStore?.Set("mentionsPreview", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MentionsPreview MentionsPreview {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MentionsPreview>("mentionsPreview"); }
             set { BackingStore?.Set("mentionsPreview", value); }
         }
+#endif
         /// <summary>The collection of multi-value extended properties defined for the message. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
+        }
+#else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#endif
         /// <summary>The parentFolderId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentFolderId {
+            get { return BackingStore?.Get<string?>("parentFolderId"); }
+            set { BackingStore?.Set("parentFolderId", value); }
+        }
+#else
         public string ParentFolderId {
             get { return BackingStore?.Get<string>("parentFolderId"); }
             set { BackingStore?.Set("parentFolderId", value); }
         }
+#endif
         /// <summary>The receivedDateTime property</summary>
         public DateTimeOffset? ReceivedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTime"); }
             set { BackingStore?.Set("receivedDateTime", value); }
         }
         /// <summary>The replyTo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? ReplyTo {
+            get { return BackingStore?.Get<List<Recipient>?>("replyTo"); }
+            set { BackingStore?.Set("replyTo", value); }
+        }
+#else
         public List<Recipient> ReplyTo {
             get { return BackingStore?.Get<List<Recipient>>("replyTo"); }
             set { BackingStore?.Set("replyTo", value); }
         }
+#endif
         /// <summary>The sender property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Recipient? Sender {
+            get { return BackingStore?.Get<Recipient?>("sender"); }
+            set { BackingStore?.Set("sender", value); }
+        }
+#else
         public Recipient Sender {
             get { return BackingStore?.Get<Recipient>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
+#endif
         /// <summary>The sentDateTime property</summary>
         public DateTimeOffset? SentDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("sentDateTime"); }
             set { BackingStore?.Set("sentDateTime", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the message. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#endif
         /// <summary>The subject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>The toRecipients property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? ToRecipients {
+            get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
+            set { BackingStore?.Set("toRecipients", value); }
+        }
+#else
         public List<Recipient> ToRecipients {
             get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
+#endif
         /// <summary>The uniqueBody property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? UniqueBody {
+            get { return BackingStore?.Get<ItemBody?>("uniqueBody"); }
+            set { BackingStore?.Set("uniqueBody", value); }
+        }
+#else
         public ItemBody UniqueBody {
             get { return BackingStore?.Get<ItemBody>("uniqueBody"); }
             set { BackingStore?.Set("uniqueBody", value); }
         }
+#endif
         /// <summary>The unsubscribeData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? UnsubscribeData {
+            get { return BackingStore?.Get<List<string>?>("unsubscribeData"); }
+            set { BackingStore?.Set("unsubscribeData", value); }
+        }
+#else
         public List<string> UnsubscribeData {
             get { return BackingStore?.Get<List<string>>("unsubscribeData"); }
             set { BackingStore?.Set("unsubscribeData", value); }
         }
+#endif
         /// <summary>The unsubscribeEnabled property</summary>
         public bool? UnsubscribeEnabled {
             get { return BackingStore?.Get<bool?>("unsubscribeEnabled"); }
             set { BackingStore?.Set("unsubscribeEnabled", value); }
         }
         /// <summary>The webLink property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebLink {
+            get { return BackingStore?.Get<string?>("webLink"); }
+            set { BackingStore?.Set("webLink", value); }
+        }
+#else
         public string WebLink {
             get { return BackingStore?.Get<string>("webLink"); }
             set { BackingStore?.Set("webLink", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Message and sets the default values.
         /// </summary>

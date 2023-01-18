@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceManagementSettingInstance : Entity, IParsable {
         /// <summary>The ID of the setting definition for this instance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefinitionId {
+            get { return BackingStore?.Get<string?>("definitionId"); }
+            set { BackingStore?.Set("definitionId", value); }
+        }
+#else
         public string DefinitionId {
             get { return BackingStore?.Get<string>("definitionId"); }
             set { BackingStore?.Set("definitionId", value); }
         }
+#endif
         /// <summary>JSON representation of the value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ValueJson {
+            get { return BackingStore?.Get<string?>("valueJson"); }
+            set { BackingStore?.Set("valueJson", value); }
+        }
+#else
         public string ValueJson {
             get { return BackingStore?.Get<string>("valueJson"); }
             set { BackingStore?.Set("valueJson", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

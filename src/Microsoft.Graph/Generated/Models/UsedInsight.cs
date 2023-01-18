@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UsedInsight : Entity, IParsable {
         /// <summary>Information about when the item was last viewed or modified by the user. Read only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UsageDetails? LastUsed {
+            get { return BackingStore?.Get<UsageDetails?>("lastUsed"); }
+            set { BackingStore?.Set("lastUsed", value); }
+        }
+#else
         public UsageDetails LastUsed {
             get { return BackingStore?.Get<UsageDetails>("lastUsed"); }
             set { BackingStore?.Set("lastUsed", value); }
         }
+#endif
         /// <summary>Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Entity? Resource {
+            get { return BackingStore?.Get<Entity?>("resource"); }
+            set { BackingStore?.Set("resource", value); }
+        }
+#else
         public Entity Resource {
             get { return BackingStore?.Get<Entity>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#endif
         /// <summary>Reference properties of the used document, such as the url and type of the document. Read-only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ResourceReference? ResourceReference {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference?>("resourceReference"); }
+            set { BackingStore?.Set("resourceReference", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ResourceReference ResourceReference {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference>("resourceReference"); }
             set { BackingStore?.Set("resourceReference", value); }
         }
+#endif
         /// <summary>Properties that you can use to visualize the document in your experience. Read-only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ResourceVisualization? ResourceVisualization {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceVisualization?>("resourceVisualization"); }
+            set { BackingStore?.Set("resourceVisualization", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ResourceVisualization ResourceVisualization {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceVisualization>("resourceVisualization"); }
             set { BackingStore?.Set("resourceVisualization", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

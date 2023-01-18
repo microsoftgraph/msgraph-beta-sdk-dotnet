@@ -44,10 +44,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The user experience analytics device name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>The diskType property</summary>
         public Microsoft.Graph.Beta.Models.DiskType? DiskType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiskType?>("diskType"); }
@@ -74,25 +81,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("loginScore", value); }
         }
         /// <summary>The user experience analytics device manufacturer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>The user experience analytics device model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? ModelStartupPerformanceScore {
             get { return BackingStore?.Get<double?>("modelStartupPerformanceScore"); }
             set { BackingStore?.Set("modelStartupPerformanceScore", value); }
         }
         /// <summary>The user experience analytics device Operating System version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystemVersion {
+            get { return BackingStore?.Get<string?>("operatingSystemVersion"); }
+            set { BackingStore?.Set("operatingSystemVersion", value); }
+        }
+#else
         public string OperatingSystemVersion {
             get { return BackingStore?.Get<string>("operatingSystemVersion"); }
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
+#endif
         /// <summary>The user experience analytics responsive desktop time in milliseconds.</summary>
         public int? ResponsiveDesktopTimeInMs {
             get { return BackingStore?.Get<int?>("responsiveDesktopTimeInMs"); }

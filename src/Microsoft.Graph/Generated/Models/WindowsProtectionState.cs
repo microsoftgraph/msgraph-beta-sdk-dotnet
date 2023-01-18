@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>Current anti malware version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AntiMalwareVersion {
+            get { return BackingStore?.Get<string?>("antiMalwareVersion"); }
+            set { BackingStore?.Set("antiMalwareVersion", value); }
+        }
+#else
         public string AntiMalwareVersion {
             get { return BackingStore?.Get<string>("antiMalwareVersion"); }
             set { BackingStore?.Set("antiMalwareVersion", value); }
         }
+#endif
         /// <summary>Device malware list</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsDeviceMalwareState>? DetectedMalwareState {
+            get { return BackingStore?.Get<List<WindowsDeviceMalwareState>?>("detectedMalwareState"); }
+            set { BackingStore?.Set("detectedMalwareState", value); }
+        }
+#else
         public List<WindowsDeviceMalwareState> DetectedMalwareState {
             get { return BackingStore?.Get<List<WindowsDeviceMalwareState>>("detectedMalwareState"); }
             set { BackingStore?.Set("detectedMalwareState", value); }
         }
+#endif
         /// <summary>Computer&apos;s state (like clean or pending full scan or pending reboot etc). Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.</summary>
         public WindowsDeviceHealthState? DeviceState {
             get { return BackingStore?.Get<WindowsDeviceHealthState?>("deviceState"); }
             set { BackingStore?.Set("deviceState", value); }
         }
         /// <summary>Current endpoint protection engine&apos;s version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EngineVersion {
+            get { return BackingStore?.Get<string?>("engineVersion"); }
+            set { BackingStore?.Set("engineVersion", value); }
+        }
+#else
         public string EngineVersion {
             get { return BackingStore?.Get<string>("engineVersion"); }
             set { BackingStore?.Set("engineVersion", value); }
         }
+#endif
         /// <summary>Full scan overdue or not?</summary>
         public bool? FullScanOverdue {
             get { return BackingStore?.Get<bool?>("fullScanOverdue"); }
@@ -46,20 +67,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastFullScanDateTime", value); }
         }
         /// <summary>Last full scan signature version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastFullScanSignatureVersion {
+            get { return BackingStore?.Get<string?>("lastFullScanSignatureVersion"); }
+            set { BackingStore?.Set("lastFullScanSignatureVersion", value); }
+        }
+#else
         public string LastFullScanSignatureVersion {
             get { return BackingStore?.Get<string>("lastFullScanSignatureVersion"); }
             set { BackingStore?.Set("lastFullScanSignatureVersion", value); }
         }
+#endif
         /// <summary>Last quick scan datetime</summary>
         public DateTimeOffset? LastQuickScanDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastQuickScanDateTime"); }
             set { BackingStore?.Set("lastQuickScanDateTime", value); }
         }
         /// <summary>Last quick scan signature version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastQuickScanSignatureVersion {
+            get { return BackingStore?.Get<string?>("lastQuickScanSignatureVersion"); }
+            set { BackingStore?.Set("lastQuickScanSignatureVersion", value); }
+        }
+#else
         public string LastQuickScanSignatureVersion {
             get { return BackingStore?.Get<string>("lastQuickScanSignatureVersion"); }
             set { BackingStore?.Set("lastQuickScanSignatureVersion", value); }
         }
+#endif
         /// <summary>Last device health status reported time</summary>
         public DateTimeOffset? LastReportedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
@@ -101,10 +136,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("signatureUpdateOverdue", value); }
         }
         /// <summary>Current malware definitions version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SignatureVersion {
+            get { return BackingStore?.Get<string?>("signatureVersion"); }
+            set { BackingStore?.Set("signatureVersion", value); }
+        }
+#else
         public string SignatureVersion {
             get { return BackingStore?.Get<string>("signatureVersion"); }
             set { BackingStore?.Set("signatureVersion", value); }
         }
+#endif
         /// <summary>Indicates whether the Windows Defender tamper protection feature is enabled.</summary>
         public bool? TamperProtectionEnabled {
             get { return BackingStore?.Get<bool?>("tamperProtectionEnabled"); }

@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementIntent : Entity, IParsable {
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>A flag indicating whether the management intent is global. Required. Read-only.</summary>
         public bool? IsGlobal {
             get { return BackingStore?.Get<bool?>("isGlobal"); }
             set { BackingStore?.Set("isGlobal", value); }
         }
         /// <summary>The collection of management templates associated with the management intent. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateDetailedInfo>? ManagementTemplates {
+            get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>?>("managementTemplates"); }
+            set { BackingStore?.Set("managementTemplates", value); }
+        }
+#else
         public List<ManagementTemplateDetailedInfo> ManagementTemplates {
             get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

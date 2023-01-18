@@ -21,45 +21,101 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValue>? CustomData {
+            get { return BackingStore?.Get<List<KeyValue>?>("customData"); }
+            set { BackingStore?.Set("customData", value); }
+        }
+#else
         public List<KeyValue> CustomData {
             get { return BackingStore?.Get<List<KeyValue>>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
+#endif
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? CustomKeyValueData {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("customKeyValueData"); }
+            set { BackingStore?.Set("customKeyValueData", value); }
+        }
+#else
         public List<KeyValuePair> CustomKeyValueData {
             get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
+#endif
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings {
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
+            set { BackingStore?.Set("derivedCredentialSettings", value); }
+        }
+#else
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
+#endif
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidDeviceOwnerCertificateProfileBase? IdentityCertificate {
+            get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase?>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
+        }
+#else
         public AndroidDeviceOwnerCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#endif
         /// <summary>Microsoft Tunnel site ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MicrosoftTunnelSiteId {
+            get { return BackingStore?.Get<string?>("microsoftTunnelSiteId"); }
+            set { BackingStore?.Set("microsoftTunnelSiteId", value); }
+        }
+#else
         public string MicrosoftTunnelSiteId {
             get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
+#endif
         /// <summary>Proxy server.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public VpnProxyServer? ProxyServer {
+            get { return BackingStore?.Get<VpnProxyServer?>("proxyServer"); }
+            set { BackingStore?.Set("proxyServer", value); }
+        }
+#else
         public VpnProxyServer ProxyServer {
             get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
+#endif
         /// <summary>Targeted mobile apps. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? TargetedMobileApps {
+            get { return BackingStore?.Get<List<AppListItem>?>("targetedMobileApps"); }
+            set { BackingStore?.Set("targetedMobileApps", value); }
+        }
+#else
         public List<AppListItem> TargetedMobileApps {
             get { return BackingStore?.Get<List<AppListItem>>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
+#endif
         /// <summary>Targeted App package IDs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TargetedPackageIds {
+            get { return BackingStore?.Get<List<string>?>("targetedPackageIds"); }
+            set { BackingStore?.Set("targetedPackageIds", value); }
+        }
+#else
         public List<string> TargetedPackageIds {
             get { return BackingStore?.Get<List<string>>("targetedPackageIds"); }
             set { BackingStore?.Set("targetedPackageIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerVpnConfiguration and sets the default values.
         /// </summary>

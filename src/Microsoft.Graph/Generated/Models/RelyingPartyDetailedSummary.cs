@@ -16,30 +16,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("migrationStatus", value); }
         }
         /// <summary>Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? MigrationValidationDetails {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("migrationValidationDetails"); }
+            set { BackingStore?.Set("migrationValidationDetails", value); }
+        }
+#else
         public List<KeyValuePair> MigrationValidationDetails {
             get { return BackingStore?.Get<List<KeyValuePair>>("migrationValidationDetails"); }
             set { BackingStore?.Set("migrationValidationDetails", value); }
         }
+#endif
         /// <summary>This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RelyingPartyId {
+            get { return BackingStore?.Get<string?>("relyingPartyId"); }
+            set { BackingStore?.Set("relyingPartyId", value); }
+        }
+#else
         public string RelyingPartyId {
             get { return BackingStore?.Get<string>("relyingPartyId"); }
             set { BackingStore?.Set("relyingPartyId", value); }
         }
+#endif
         /// <summary>Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RelyingPartyName {
+            get { return BackingStore?.Get<string?>("relyingPartyName"); }
+            set { BackingStore?.Set("relyingPartyName", value); }
+        }
+#else
         public string RelyingPartyName {
             get { return BackingStore?.Get<string>("relyingPartyName"); }
             set { BackingStore?.Set("relyingPartyName", value); }
         }
+#endif
         /// <summary>Specifies where the relying party expects to receive the token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ReplyUrls {
+            get { return BackingStore?.Get<List<string>?>("replyUrls"); }
+            set { BackingStore?.Set("replyUrls", value); }
+        }
+#else
         public List<string> ReplyUrls {
             get { return BackingStore?.Get<List<string>>("replyUrls"); }
             set { BackingStore?.Set("replyUrls", value); }
         }
+#endif
         /// <summary>Uniquely identifies the Active Directory forest.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServiceId {
+            get { return BackingStore?.Get<string?>("serviceId"); }
+            set { BackingStore?.Set("serviceId", value); }
+        }
+#else
         public string ServiceId {
             get { return BackingStore?.Get<string>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
+#endif
         /// <summary>Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.</summary>
         public double? SignInSuccessRate {
             get { return BackingStore?.Get<double?>("signInSuccessRate"); }

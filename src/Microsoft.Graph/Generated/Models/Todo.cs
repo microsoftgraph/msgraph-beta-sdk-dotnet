@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Todo : Entity, IParsable {
         /// <summary>The task lists in the users mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TodoTaskList>? Lists {
+            get { return BackingStore?.Get<List<TodoTaskList>?>("lists"); }
+            set { BackingStore?.Set("lists", value); }
+        }
+#else
         public List<TodoTaskList> Lists {
             get { return BackingStore?.Get<List<TodoTaskList>>("lists"); }
             set { BackingStore?.Set("lists", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

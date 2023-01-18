@@ -15,22 +15,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Address to the proxy server. Specify an address in the format [&apos;:&apos;]</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Address {
+            get { return BackingStore?.Get<string?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public string Address {
             get { return BackingStore?.Get<string>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Exceptions {
+            get { return BackingStore?.Get<List<string>?>("exceptions"); }
+            set { BackingStore?.Set("exceptions", value); }
+        }
+#else
         public List<string> Exceptions {
             get { return BackingStore?.Get<List<string>>("exceptions"); }
             set { BackingStore?.Set("exceptions", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Specifies whether the proxy server should be used for local (intranet) addresses.</summary>
         public bool? UseForLocalAddresses {
             get { return BackingStore?.Get<bool?>("useForLocalAddresses"); }

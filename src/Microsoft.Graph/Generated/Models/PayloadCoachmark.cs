@@ -14,40 +14,82 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The coachmarkLocation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.CoachmarkLocation? CoachmarkLocation {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CoachmarkLocation?>("coachmarkLocation"); }
+            set { BackingStore?.Set("coachmarkLocation", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.CoachmarkLocation CoachmarkLocation {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CoachmarkLocation>("coachmarkLocation"); }
             set { BackingStore?.Set("coachmarkLocation", value); }
         }
+#endif
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The indicator property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Indicator {
+            get { return BackingStore?.Get<string?>("indicator"); }
+            set { BackingStore?.Set("indicator", value); }
+        }
+#else
         public string Indicator {
             get { return BackingStore?.Get<string>("indicator"); }
             set { BackingStore?.Set("indicator", value); }
         }
+#endif
         /// <summary>The isValid property</summary>
         public bool? IsValid {
             get { return BackingStore?.Get<bool?>("isValid"); }
             set { BackingStore?.Set("isValid", value); }
         }
         /// <summary>The language property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Language {
+            get { return BackingStore?.Get<string?>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#else
         public string Language {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The order property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Order {
+            get { return BackingStore?.Get<string?>("order"); }
+            set { BackingStore?.Set("order", value); }
+        }
+#else
         public string Order {
             get { return BackingStore?.Get<string>("order"); }
             set { BackingStore?.Set("order", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new payloadCoachmark and sets the default values.
         /// </summary>

@@ -6,50 +6,106 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ProgramControl : Entity, IParsable {
         /// <summary>The controlId of the control, in particular the identifier of an access review. Required on create.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ControlId {
+            get { return BackingStore?.Get<string?>("controlId"); }
+            set { BackingStore?.Set("controlId", value); }
+        }
+#else
         public string ControlId {
             get { return BackingStore?.Get<string>("controlId"); }
             set { BackingStore?.Set("controlId", value); }
         }
+#endif
         /// <summary>The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ControlTypeId {
+            get { return BackingStore?.Get<string?>("controlTypeId"); }
+            set { BackingStore?.Set("controlTypeId", value); }
+        }
+#else
         public string ControlTypeId {
             get { return BackingStore?.Get<string>("controlTypeId"); }
             set { BackingStore?.Set("controlTypeId", value); }
         }
+#endif
         /// <summary>The creation date and time of the program control.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The name of the control.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The user who created the program control.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserIdentity? Owner {
+            get { return BackingStore?.Get<UserIdentity?>("owner"); }
+            set { BackingStore?.Set("owner", value); }
+        }
+#else
         public UserIdentity Owner {
             get { return BackingStore?.Get<UserIdentity>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#endif
         /// <summary>The program this control is part of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Program? Program {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Program?>("program"); }
+            set { BackingStore?.Set("program", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Program Program {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Program>("program"); }
             set { BackingStore?.Set("program", value); }
         }
+#endif
         /// <summary>The programId of the program this control is a part of. Required on create.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProgramId {
+            get { return BackingStore?.Get<string?>("programId"); }
+            set { BackingStore?.Set("programId", value); }
+        }
+#else
         public string ProgramId {
             get { return BackingStore?.Get<string>("programId"); }
             set { BackingStore?.Set("programId", value); }
         }
+#endif
         /// <summary>The resource, a group or an app, targeted by this program control&apos;s access review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ProgramResource? Resource {
+            get { return BackingStore?.Get<ProgramResource?>("resource"); }
+            set { BackingStore?.Set("resource", value); }
+        }
+#else
         public ProgramResource Resource {
             get { return BackingStore?.Get<ProgramResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#endif
         /// <summary>The life cycle status of the control.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

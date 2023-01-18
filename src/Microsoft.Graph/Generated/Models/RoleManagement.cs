@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cloudPC property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RbacApplicationMultiple? CloudPC {
+            get { return BackingStore?.Get<RbacApplicationMultiple?>("cloudPC"); }
+            set { BackingStore?.Set("cloudPC", value); }
+        }
+#else
         public RbacApplicationMultiple CloudPC {
             get { return BackingStore?.Get<RbacApplicationMultiple>("cloudPC"); }
             set { BackingStore?.Set("cloudPC", value); }
         }
+#endif
         /// <summary>The RbacApplication for Device Management</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RbacApplicationMultiple? DeviceManagement {
+            get { return BackingStore?.Get<RbacApplicationMultiple?>("deviceManagement"); }
+            set { BackingStore?.Set("deviceManagement", value); }
+        }
+#else
         public RbacApplicationMultiple DeviceManagement {
             get { return BackingStore?.Get<RbacApplicationMultiple>("deviceManagement"); }
             set { BackingStore?.Set("deviceManagement", value); }
         }
+#endif
         /// <summary>The directory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RbacApplication? Directory {
+            get { return BackingStore?.Get<RbacApplication?>("directory"); }
+            set { BackingStore?.Set("directory", value); }
+        }
+#else
         public RbacApplication Directory {
             get { return BackingStore?.Get<RbacApplication>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
+#endif
         /// <summary>The RbacApplication for Entitlement Management</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RbacApplication? EntitlementManagement {
+            get { return BackingStore?.Get<RbacApplication?>("entitlementManagement"); }
+            set { BackingStore?.Set("entitlementManagement", value); }
+        }
+#else
         public RbacApplication EntitlementManagement {
             get { return BackingStore?.Get<RbacApplication>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new RoleManagement and sets the default values.
         /// </summary>

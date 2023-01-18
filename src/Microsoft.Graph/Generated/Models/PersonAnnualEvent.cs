@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("date", value); }
         }
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The type property</summary>
         public PersonAnnualEventType? Type {
             get { return BackingStore?.Get<PersonAnnualEventType?>("type"); }

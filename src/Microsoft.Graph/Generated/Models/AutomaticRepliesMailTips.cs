@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The automatic reply message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Message {
+            get { return BackingStore?.Get<string?>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+#else
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#endif
         /// <summary>The language that the automatic reply message is in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LocaleInfo? MessageLanguage {
+            get { return BackingStore?.Get<LocaleInfo?>("messageLanguage"); }
+            set { BackingStore?.Set("messageLanguage", value); }
+        }
+#else
         public LocaleInfo MessageLanguage {
             get { return BackingStore?.Get<LocaleInfo>("messageLanguage"); }
             set { BackingStore?.Set("messageLanguage", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The date and time that automatic replies are set to end.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? ScheduledEndTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledEndTime"); }
+            set { BackingStore?.Set("scheduledEndTime", value); }
+        }
+#else
         public DateTimeTimeZone ScheduledEndTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledEndTime"); }
             set { BackingStore?.Set("scheduledEndTime", value); }
         }
+#endif
         /// <summary>The date and time that automatic replies are set to begin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? ScheduledStartTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledStartTime"); }
+            set { BackingStore?.Set("scheduledStartTime", value); }
+        }
+#else
         public DateTimeTimeZone ScheduledStartTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledStartTime"); }
             set { BackingStore?.Set("scheduledStartTime", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new automaticRepliesMailTips and sets the default values.
         /// </summary>

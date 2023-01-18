@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationSourceKind", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Information about the publication process that created this task. This field is deprecated and clients should move to using the new inheritance model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerTeamsPublicationInfo? TeamsPublicationInfo {
+            get { return BackingStore?.Get<PlannerTeamsPublicationInfo?>("teamsPublicationInfo"); }
+            set { BackingStore?.Set("teamsPublicationInfo", value); }
+        }
+#else
         public PlannerTeamsPublicationInfo TeamsPublicationInfo {
             get { return BackingStore?.Get<PlannerTeamsPublicationInfo>("teamsPublicationInfo"); }
             set { BackingStore?.Set("teamsPublicationInfo", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new plannerTaskCreation and sets the default values.
         /// </summary>

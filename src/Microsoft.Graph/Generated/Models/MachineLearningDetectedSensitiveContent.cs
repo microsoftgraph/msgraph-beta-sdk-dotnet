@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("matchTolerance", value); }
         }
         /// <summary>The modelVersion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ModelVersion {
+            get { return BackingStore?.Get<string?>("modelVersion"); }
+            set { BackingStore?.Set("modelVersion", value); }
+        }
+#else
         public string ModelVersion {
             get { return BackingStore?.Get<string>("modelVersion"); }
             set { BackingStore?.Set("modelVersion", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DomainDnsSrvRecord : DomainDnsRecord, IParsable {
         /// <summary>Value to use when configuring the Target property of the SRV record at the DNS host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NameTarget {
+            get { return BackingStore?.Get<string?>("nameTarget"); }
+            set { BackingStore?.Set("nameTarget", value); }
+        }
+#else
         public string NameTarget {
             get { return BackingStore?.Get<string>("nameTarget"); }
             set { BackingStore?.Set("nameTarget", value); }
         }
+#endif
         /// <summary>Value to use when configuring the port property of the SRV record at the DNS host.</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }
@@ -21,15 +28,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Value to use when configuring the protocol property of the SRV record at the DNS host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Protocol {
+            get { return BackingStore?.Get<string?>("protocol"); }
+            set { BackingStore?.Set("protocol", value); }
+        }
+#else
         public string Protocol {
             get { return BackingStore?.Get<string>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
+#endif
         /// <summary>Value to use when configuring the service property of the SRV record at the DNS host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Service {
+            get { return BackingStore?.Get<string?>("service"); }
+            set { BackingStore?.Set("service", value); }
+        }
+#else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#endif
         /// <summary>Value to use when configuring the weight property of the SRV record at the DNS host.</summary>
         public int? Weight {
             get { return BackingStore?.Get<int?>("weight"); }

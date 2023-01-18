@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description for the template parameter. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name for the template parameter. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JsonAllowedValues {
+            get { return BackingStore?.Get<string?>("jsonAllowedValues"); }
+            set { BackingStore?.Set("jsonAllowedValues", value); }
+        }
+#else
         public string JsonAllowedValues {
             get { return BackingStore?.Get<string>("jsonAllowedValues"); }
             set { BackingStore?.Set("jsonAllowedValues", value); }
         }
+#endif
         /// <summary>The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JsonDefaultValue {
+            get { return BackingStore?.Get<string?>("jsonDefaultValue"); }
+            set { BackingStore?.Set("jsonDefaultValue", value); }
+        }
+#else
         public string JsonDefaultValue {
             get { return BackingStore?.Get<string>("jsonDefaultValue"); }
             set { BackingStore?.Set("jsonDefaultValue", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The valueType property</summary>
         public ManagementParameterValueType? ValueType {
             get { return BackingStore?.Get<ManagementParameterValueType?>("valueType"); }

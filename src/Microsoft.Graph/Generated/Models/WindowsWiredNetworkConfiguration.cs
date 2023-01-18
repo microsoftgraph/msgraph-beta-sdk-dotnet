@@ -61,10 +61,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("forceFIPSCompliance", value); }
         }
         /// <summary>Specify identity certificate for client authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsCertificateProfileBase? IdentityCertificateForClientAuthentication {
+            get { return BackingStore?.Get<WindowsCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
+            set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
+        }
+#else
         public WindowsCertificateProfileBase IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<WindowsCertificateProfileBase>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
+#endif
         /// <summary>Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
         public NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEAPTTLS {
             get { return BackingStore?.Get<NonEapAuthenticationMethodForEapTtlsType?>("innerAuthenticationProtocolForEAPTTLS"); }
@@ -81,10 +88,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maximumEAPOLStartMessages", value); }
         }
         /// <summary>Specify the string to replace usernames for privacy when using EAP TTLS or PEAP.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OuterIdentityPrivacyTemporaryValue {
+            get { return BackingStore?.Get<string?>("outerIdentityPrivacyTemporaryValue"); }
+            set { BackingStore?.Set("outerIdentityPrivacyTemporaryValue", value); }
+        }
+#else
         public string OuterIdentityPrivacyTemporaryValue {
             get { return BackingStore?.Get<string>("outerIdentityPrivacyTemporaryValue"); }
             set { BackingStore?.Set("outerIdentityPrivacyTemporaryValue", value); }
         }
+#endif
         /// <summary>When TRUE, enables verification of server&apos;s identity by validating the certificate when EAP type is selected as PEAP. When FALSE, the certificate is not validated. Default value is TRUE.</summary>
         public bool? PerformServerValidation {
             get { return BackingStore?.Get<bool?>("performServerValidation"); }
@@ -96,35 +110,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requireCryptographicBinding", value); }
         }
         /// <summary>Specify root certificate for client validation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Windows81TrustedRootCertificate? RootCertificateForClientValidation {
+            get { return BackingStore?.Get<Windows81TrustedRootCertificate?>("rootCertificateForClientValidation"); }
+            set { BackingStore?.Set("rootCertificateForClientValidation", value); }
+        }
+#else
         public Windows81TrustedRootCertificate RootCertificateForClientValidation {
             get { return BackingStore?.Get<Windows81TrustedRootCertificate>("rootCertificateForClientValidation"); }
             set { BackingStore?.Set("rootCertificateForClientValidation", value); }
         }
+#endif
         /// <summary>Specify root certificates for server validation. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Windows81TrustedRootCertificate>? RootCertificatesForServerValidation {
+            get { return BackingStore?.Get<List<Windows81TrustedRootCertificate>?>("rootCertificatesForServerValidation"); }
+            set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
+        }
+#else
         public List<Windows81TrustedRootCertificate> RootCertificatesForServerValidation {
             get { return BackingStore?.Get<List<Windows81TrustedRootCertificate>>("rootCertificatesForServerValidation"); }
             set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
         }
+#endif
         /// <summary>Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.</summary>
         public WiredNetworkAuthenticationMethod? SecondaryAuthenticationMethod {
             get { return BackingStore?.Get<WiredNetworkAuthenticationMethod?>("secondaryAuthenticationMethod"); }
             set { BackingStore?.Set("secondaryAuthenticationMethod", value); }
         }
         /// <summary>Specify secondary identity certificate for client authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsCertificateProfileBase? SecondaryIdentityCertificateForClientAuthentication {
+            get { return BackingStore?.Get<WindowsCertificateProfileBase?>("secondaryIdentityCertificateForClientAuthentication"); }
+            set { BackingStore?.Set("secondaryIdentityCertificateForClientAuthentication", value); }
+        }
+#else
         public WindowsCertificateProfileBase SecondaryIdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<WindowsCertificateProfileBase>("secondaryIdentityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("secondaryIdentityCertificateForClientAuthentication", value); }
         }
+#endif
         /// <summary>Specify secondary root certificate for client validation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Windows81TrustedRootCertificate? SecondaryRootCertificateForClientValidation {
+            get { return BackingStore?.Get<Windows81TrustedRootCertificate?>("secondaryRootCertificateForClientValidation"); }
+            set { BackingStore?.Set("secondaryRootCertificateForClientValidation", value); }
+        }
+#else
         public Windows81TrustedRootCertificate SecondaryRootCertificateForClientValidation {
             get { return BackingStore?.Get<Windows81TrustedRootCertificate>("secondaryRootCertificateForClientValidation"); }
             set { BackingStore?.Set("secondaryRootCertificateForClientValidation", value); }
         }
+#endif
         /// <summary>Specify trusted server certificate names.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TrustedServerCertificateNames {
+            get { return BackingStore?.Get<List<string>?>("trustedServerCertificateNames"); }
+            set { BackingStore?.Set("trustedServerCertificateNames", value); }
+        }
+#else
         public List<string> TrustedServerCertificateNames {
             get { return BackingStore?.Get<List<string>>("trustedServerCertificateNames"); }
             set { BackingStore?.Set("trustedServerCertificateNames", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsWiredNetworkConfiguration and sets the default values.
         /// </summary>

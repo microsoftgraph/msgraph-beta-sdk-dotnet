@@ -14,35 +14,70 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name of the training.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
         public TrainingStatus? LatestTrainingStatus {
             get { return BackingStore?.Get<TrainingStatus?>("latestTrainingStatus"); }
             set { BackingStore?.Set("latestTrainingStatus", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Event details of the training when it was assigned to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserTrainingContentEventInfo? TrainingAssignedProperties {
+            get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingAssignedProperties"); }
+            set { BackingStore?.Set("trainingAssignedProperties", value); }
+        }
+#else
         public UserTrainingContentEventInfo TrainingAssignedProperties {
             get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingAssignedProperties"); }
             set { BackingStore?.Set("trainingAssignedProperties", value); }
         }
+#endif
         /// <summary>Event details of the training when it was completed by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserTrainingContentEventInfo? TrainingCompletedProperties {
+            get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingCompletedProperties"); }
+            set { BackingStore?.Set("trainingCompletedProperties", value); }
+        }
+#else
         public UserTrainingContentEventInfo TrainingCompletedProperties {
             get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingCompletedProperties"); }
             set { BackingStore?.Set("trainingCompletedProperties", value); }
         }
+#endif
         /// <summary>Event details of the training when it was updated/in-progress by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserTrainingContentEventInfo? TrainingUpdatedProperties {
+            get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingUpdatedProperties"); }
+            set { BackingStore?.Set("trainingUpdatedProperties", value); }
+        }
+#else
         public UserTrainingContentEventInfo TrainingUpdatedProperties {
             get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingUpdatedProperties"); }
             set { BackingStore?.Set("trainingUpdatedProperties", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new userTrainingEventInfo and sets the default values.
         /// </summary>

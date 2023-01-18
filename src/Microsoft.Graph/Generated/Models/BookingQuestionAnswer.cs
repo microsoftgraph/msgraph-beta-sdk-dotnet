@@ -12,20 +12,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The answer given by the user in case the answerInputType is text.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Answer {
+            get { return BackingStore?.Get<string?>("answer"); }
+            set { BackingStore?.Set("answer", value); }
+        }
+#else
         public string Answer {
             get { return BackingStore?.Get<string>("answer"); }
             set { BackingStore?.Set("answer", value); }
         }
+#endif
         /// <summary>The expected answer type. The possible values are: text, radioButton, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnswerInputType?>("answerInputType"); }
             set { BackingStore?.Set("answerInputType", value); }
         }
         /// <summary>In case the answerInputType is radioButton, this will consists of a list of possible answer values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AnswerOptions {
+            get { return BackingStore?.Get<List<string>?>("answerOptions"); }
+            set { BackingStore?.Set("answerOptions", value); }
+        }
+#else
         public List<string> AnswerOptions {
             get { return BackingStore?.Get<List<string>>("answerOptions"); }
             set { BackingStore?.Set("answerOptions", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether it is mandatory to answer the custom question.</summary>
@@ -34,25 +48,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The question.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Question {
+            get { return BackingStore?.Get<string?>("question"); }
+            set { BackingStore?.Set("question", value); }
+        }
+#else
         public string Question {
             get { return BackingStore?.Get<string>("question"); }
             set { BackingStore?.Set("question", value); }
         }
+#endif
         /// <summary>The ID of the custom question.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QuestionId {
+            get { return BackingStore?.Get<string?>("questionId"); }
+            set { BackingStore?.Set("questionId", value); }
+        }
+#else
         public string QuestionId {
             get { return BackingStore?.Get<string>("questionId"); }
             set { BackingStore?.Set("questionId", value); }
         }
+#endif
         /// <summary>The answers selected by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SelectedOptions {
+            get { return BackingStore?.Get<List<string>?>("selectedOptions"); }
+            set { BackingStore?.Set("selectedOptions", value); }
+        }
+#else
         public List<string> SelectedOptions {
             get { return BackingStore?.Get<List<string>>("selectedOptions"); }
             set { BackingStore?.Set("selectedOptions", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new bookingQuestionAnswer and sets the default values.
         /// </summary>

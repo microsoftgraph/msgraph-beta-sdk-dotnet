@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AppleManagedIdentityProvider : IdentityProviderBase, IParsable {
         /// <summary>The certificate data which is a long string of text from the certificate, can be null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateData {
+            get { return BackingStore?.Get<string?>("certificateData"); }
+            set { BackingStore?.Set("certificateData", value); }
+        }
+#else
         public string CertificateData {
             get { return BackingStore?.Get<string>("certificateData"); }
             set { BackingStore?.Set("certificateData", value); }
         }
+#endif
         /// <summary>The Apple developer identifier. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeveloperId {
+            get { return BackingStore?.Get<string?>("developerId"); }
+            set { BackingStore?.Set("developerId", value); }
+        }
+#else
         public string DeveloperId {
             get { return BackingStore?.Get<string>("developerId"); }
             set { BackingStore?.Set("developerId", value); }
         }
+#endif
         /// <summary>The Apple key identifier. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KeyId {
+            get { return BackingStore?.Get<string?>("keyId"); }
+            set { BackingStore?.Set("keyId", value); }
+        }
+#else
         public string KeyId {
             get { return BackingStore?.Get<string>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
+#endif
         /// <summary>The Apple service identifier. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServiceId {
+            get { return BackingStore?.Get<string?>("serviceId"); }
+            set { BackingStore?.Set("serviceId", value); }
+        }
+#else
         public string ServiceId {
             get { return BackingStore?.Get<string>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AppleManagedIdentityProvider and sets the default values.
         /// </summary>

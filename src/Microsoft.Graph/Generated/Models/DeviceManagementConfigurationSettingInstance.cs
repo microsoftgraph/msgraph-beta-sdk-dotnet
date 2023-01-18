@@ -17,20 +17,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Setting Definition Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingDefinitionId {
+            get { return BackingStore?.Get<string?>("settingDefinitionId"); }
+            set { BackingStore?.Set("settingDefinitionId", value); }
+        }
+#else
         public string SettingDefinitionId {
             get { return BackingStore?.Get<string>("settingDefinitionId"); }
             set { BackingStore?.Set("settingDefinitionId", value); }
         }
+#endif
         /// <summary>Setting Instance Template Reference</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationSettingInstanceTemplateReference? SettingInstanceTemplateReference {
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplateReference?>("settingInstanceTemplateReference"); }
+            set { BackingStore?.Set("settingInstanceTemplateReference", value); }
+        }
+#else
         public DeviceManagementConfigurationSettingInstanceTemplateReference SettingInstanceTemplateReference {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplateReference>("settingInstanceTemplateReference"); }
             set { BackingStore?.Set("settingInstanceTemplateReference", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingInstance and sets the default values.
         /// </summary>

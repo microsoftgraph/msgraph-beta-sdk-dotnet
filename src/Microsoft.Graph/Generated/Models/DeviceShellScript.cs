@@ -4,12 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Intune will provide customer the ability to run their Shell scripts on the enrolled Mac OS devices. The script can be run once or periodically.
+    /// </summary>
     public class DeviceShellScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementScriptAssignment>? Assignments {
+            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<DeviceManagementScriptAssignment> Assignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Does not notify the user a script is being executed</summary>
         public bool? BlockExecutionNotifications {
             get { return BackingStore?.Get<bool?>("blockExecutionNotifications"); }
@@ -21,35 +31,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Optional description for the device management script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>List of run states for this script across all devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementScriptDeviceState>? DeviceRunStates {
+            get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>?>("deviceRunStates"); }
+            set { BackingStore?.Set("deviceRunStates", value); }
+        }
+#else
         public List<DeviceManagementScriptDeviceState> DeviceRunStates {
             get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
+#endif
         /// <summary>Name of the device management script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The interval for script to run. If not defined the script will run once</summary>
         public TimeSpan? ExecutionFrequency {
             get { return BackingStore?.Get<TimeSpan?>("executionFrequency"); }
             set { BackingStore?.Set("executionFrequency", value); }
         }
         /// <summary>Script file name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>The list of group assignments for the device management script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementScriptGroupAssignment>? GroupAssignments {
+            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>?>("groupAssignments"); }
+            set { BackingStore?.Set("groupAssignments", value); }
+        }
+#else
         public List<DeviceManagementScriptGroupAssignment> GroupAssignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
+#endif
         /// <summary>The date and time the device management script was last modified. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -61,30 +106,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("retryCount", value); }
         }
         /// <summary>List of Scope Tag IDs for this PowerShellScript instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>Indicates the type of execution context the app runs in.</summary>
         public RunAsAccountType? RunAsAccount {
             get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>Run summary for device management script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementScriptRunSummary? RunSummary {
+            get { return BackingStore?.Get<DeviceManagementScriptRunSummary?>("runSummary"); }
+            set { BackingStore?.Set("runSummary", value); }
+        }
+#else
         public DeviceManagementScriptRunSummary RunSummary {
             get { return BackingStore?.Get<DeviceManagementScriptRunSummary>("runSummary"); }
             set { BackingStore?.Set("runSummary", value); }
         }
+#endif
         /// <summary>The script content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? ScriptContent {
+            get { return BackingStore?.Get<byte[]?>("scriptContent"); }
+            set { BackingStore?.Set("scriptContent", value); }
+        }
+#else
         public byte[] ScriptContent {
             get { return BackingStore?.Get<byte[]>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
+#endif
         /// <summary>List of run states for this script across all users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementScriptUserState>? UserRunStates {
+            get { return BackingStore?.Get<List<DeviceManagementScriptUserState>?>("userRunStates"); }
+            set { BackingStore?.Set("userRunStates", value); }
+        }
+#else
         public List<DeviceManagementScriptUserState> UserRunStates {
             get { return BackingStore?.Get<List<DeviceManagementScriptUserState>>("userRunStates"); }
             set { BackingStore?.Set("userRunStates", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

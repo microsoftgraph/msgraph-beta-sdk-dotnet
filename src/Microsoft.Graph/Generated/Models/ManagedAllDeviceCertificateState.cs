@@ -11,20 +11,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateExpirationDateTime", value); }
         }
         /// <summary>Enhanced Key Usage</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateExtendedKeyUsages {
+            get { return BackingStore?.Get<string?>("certificateExtendedKeyUsages"); }
+            set { BackingStore?.Set("certificateExtendedKeyUsages", value); }
+        }
+#else
         public string CertificateExtendedKeyUsages {
             get { return BackingStore?.Get<string>("certificateExtendedKeyUsages"); }
             set { BackingStore?.Set("certificateExtendedKeyUsages", value); }
         }
+#endif
         /// <summary>Issuance date</summary>
         public DateTimeOffset? CertificateIssuanceDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("certificateIssuanceDateTime"); }
             set { BackingStore?.Set("certificateIssuanceDateTime", value); }
         }
         /// <summary>Issuer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateIssuerName {
+            get { return BackingStore?.Get<string?>("certificateIssuerName"); }
+            set { BackingStore?.Set("certificateIssuerName", value); }
+        }
+#else
         public string CertificateIssuerName {
             get { return BackingStore?.Get<string>("certificateIssuerName"); }
             set { BackingStore?.Set("certificateIssuerName", value); }
         }
+#endif
         /// <summary>Key Usage</summary>
         public int? CertificateKeyUsages {
             get { return BackingStore?.Get<int?>("certificateKeyUsages"); }
@@ -41,30 +55,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateRevokeStatusLastChangeDateTime", value); }
         }
         /// <summary>Serial number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateSerialNumber {
+            get { return BackingStore?.Get<string?>("certificateSerialNumber"); }
+            set { BackingStore?.Set("certificateSerialNumber", value); }
+        }
+#else
         public string CertificateSerialNumber {
             get { return BackingStore?.Get<string>("certificateSerialNumber"); }
             set { BackingStore?.Set("certificateSerialNumber", value); }
         }
+#endif
         /// <summary>Certificate subject name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateSubjectName {
+            get { return BackingStore?.Get<string?>("certificateSubjectName"); }
+            set { BackingStore?.Set("certificateSubjectName", value); }
+        }
+#else
         public string CertificateSubjectName {
             get { return BackingStore?.Get<string>("certificateSubjectName"); }
             set { BackingStore?.Set("certificateSubjectName", value); }
         }
+#endif
         /// <summary>Thumbprint</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateThumbprint {
+            get { return BackingStore?.Get<string?>("certificateThumbprint"); }
+            set { BackingStore?.Set("certificateThumbprint", value); }
+        }
+#else
         public string CertificateThumbprint {
             get { return BackingStore?.Get<string>("certificateThumbprint"); }
             set { BackingStore?.Set("certificateThumbprint", value); }
         }
+#endif
         /// <summary>Device display name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceDisplayName {
+            get { return BackingStore?.Get<string?>("managedDeviceDisplayName"); }
+            set { BackingStore?.Set("managedDeviceDisplayName", value); }
+        }
+#else
         public string ManagedDeviceDisplayName {
             get { return BackingStore?.Get<string>("managedDeviceDisplayName"); }
             set { BackingStore?.Set("managedDeviceDisplayName", value); }
         }
+#endif
         /// <summary>User principal name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

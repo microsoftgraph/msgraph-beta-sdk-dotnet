@@ -12,17 +12,31 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Uploa
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The appleId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppleId {
+            get { return BackingStore?.Get<string?>("appleId"); }
+            set { BackingStore?.Set("appleId", value); }
+        }
+#else
         public string AppleId {
             get { return BackingStore?.Get<string>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The depToken property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DepToken {
+            get { return BackingStore?.Get<string?>("depToken"); }
+            set { BackingStore?.Set("depToken", value); }
+        }
+#else
         public string DepToken {
             get { return BackingStore?.Get<string>("depToken"); }
             set { BackingStore?.Set("depToken", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new uploadDepTokenPostRequestBody and sets the default values.
         /// </summary>

@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class InformationProtection : Entity, IParsable {
         /// <summary>The bitlocker property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Bitlocker? Bitlocker {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Bitlocker?>("bitlocker"); }
+            set { BackingStore?.Set("bitlocker", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Bitlocker Bitlocker {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Bitlocker>("bitlocker"); }
             set { BackingStore?.Set("bitlocker", value); }
         }
+#endif
         /// <summary>The dataLossPreventionPolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DataLossPreventionPolicy>? DataLossPreventionPolicies {
+            get { return BackingStore?.Get<List<DataLossPreventionPolicy>?>("dataLossPreventionPolicies"); }
+            set { BackingStore?.Set("dataLossPreventionPolicies", value); }
+        }
+#else
         public List<DataLossPreventionPolicy> DataLossPreventionPolicies {
             get { return BackingStore?.Get<List<DataLossPreventionPolicy>>("dataLossPreventionPolicies"); }
             set { BackingStore?.Set("dataLossPreventionPolicies", value); }
         }
+#endif
         /// <summary>The policy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public InformationProtectionPolicy? Policy {
+            get { return BackingStore?.Get<InformationProtectionPolicy?>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#else
         public InformationProtectionPolicy Policy {
             get { return BackingStore?.Get<InformationProtectionPolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
+#endif
         /// <summary>The sensitivityLabels property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SensitivityLabel>? SensitivityLabels {
+            get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
+            set { BackingStore?.Set("sensitivityLabels", value); }
+        }
+#else
         public List<SensitivityLabel> SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
+#endif
         /// <summary>The sensitivityPolicySettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SensitivityPolicySettings? SensitivityPolicySettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityPolicySettings?>("sensitivityPolicySettings"); }
+            set { BackingStore?.Set("sensitivityPolicySettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SensitivityPolicySettings SensitivityPolicySettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>("sensitivityPolicySettings"); }
             set { BackingStore?.Set("sensitivityPolicySettings", value); }
         }
+#endif
         /// <summary>The threatAssessmentRequests property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ThreatAssessmentRequest>? ThreatAssessmentRequests {
+            get { return BackingStore?.Get<List<ThreatAssessmentRequest>?>("threatAssessmentRequests"); }
+            set { BackingStore?.Set("threatAssessmentRequests", value); }
+        }
+#else
         public List<ThreatAssessmentRequest> ThreatAssessmentRequests {
             get { return BackingStore?.Get<List<ThreatAssessmentRequest>>("threatAssessmentRequests"); }
             set { BackingStore?.Set("threatAssessmentRequests", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

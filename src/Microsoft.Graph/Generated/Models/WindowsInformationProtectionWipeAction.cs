@@ -19,25 +19,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Targeted device Mac address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetedDeviceMacAddress {
+            get { return BackingStore?.Get<string?>("targetedDeviceMacAddress"); }
+            set { BackingStore?.Set("targetedDeviceMacAddress", value); }
+        }
+#else
         public string TargetedDeviceMacAddress {
             get { return BackingStore?.Get<string>("targetedDeviceMacAddress"); }
             set { BackingStore?.Set("targetedDeviceMacAddress", value); }
         }
+#endif
         /// <summary>Targeted device name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetedDeviceName {
+            get { return BackingStore?.Get<string?>("targetedDeviceName"); }
+            set { BackingStore?.Set("targetedDeviceName", value); }
+        }
+#else
         public string TargetedDeviceName {
             get { return BackingStore?.Get<string>("targetedDeviceName"); }
             set { BackingStore?.Set("targetedDeviceName", value); }
         }
+#endif
         /// <summary>The DeviceRegistrationId being targeted by this wipe action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetedDeviceRegistrationId {
+            get { return BackingStore?.Get<string?>("targetedDeviceRegistrationId"); }
+            set { BackingStore?.Set("targetedDeviceRegistrationId", value); }
+        }
+#else
         public string TargetedDeviceRegistrationId {
             get { return BackingStore?.Get<string>("targetedDeviceRegistrationId"); }
             set { BackingStore?.Set("targetedDeviceRegistrationId", value); }
         }
+#endif
         /// <summary>The UserId being targeted by this wipe action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetedUserId {
+            get { return BackingStore?.Get<string?>("targetedUserId"); }
+            set { BackingStore?.Set("targetedUserId", value); }
+        }
+#else
         public string TargetedUserId {
             get { return BackingStore?.Get<string>("targetedUserId"); }
             set { BackingStore?.Set("targetedUserId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

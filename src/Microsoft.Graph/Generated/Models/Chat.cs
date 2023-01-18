@@ -16,75 +16,166 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>A collection of all the apps in the chat. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamsAppInstallation>? InstalledApps {
+            get { return BackingStore?.Get<List<TeamsAppInstallation>?>("installedApps"); }
+            set { BackingStore?.Set("installedApps", value); }
+        }
+#else
         public List<TeamsAppInstallation> InstalledApps {
             get { return BackingStore?.Get<List<TeamsAppInstallation>>("installedApps"); }
             set { BackingStore?.Set("installedApps", value); }
         }
+#endif
         /// <summary>Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessageInfo? LastMessagePreview {
+            get { return BackingStore?.Get<ChatMessageInfo?>("lastMessagePreview"); }
+            set { BackingStore?.Set("lastMessagePreview", value); }
+        }
+#else
         public ChatMessageInfo LastMessagePreview {
             get { return BackingStore?.Get<ChatMessageInfo>("lastMessagePreview"); }
             set { BackingStore?.Set("lastMessagePreview", value); }
         }
+#endif
         /// <summary>Date and time at which the chat was renamed or list of members were last changed. Read-only.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>A collection of all the members in the chat. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConversationMember>? Members {
+            get { return BackingStore?.Get<List<ConversationMember>?>("members"); }
+            set { BackingStore?.Set("members", value); }
+        }
+#else
         public List<ConversationMember> Members {
             get { return BackingStore?.Get<List<ConversationMember>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#endif
         /// <summary>A collection of all the messages in the chat. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ChatMessage>? Messages {
+            get { return BackingStore?.Get<List<ChatMessage>?>("messages"); }
+            set { BackingStore?.Set("messages", value); }
+        }
+#else
         public List<ChatMessage> Messages {
             get { return BackingStore?.Get<List<ChatMessage>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
+#endif
         /// <summary>Represents details about an online meeting. If the chat isn&apos;t associated with an online meeting, the property is empty. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkOnlineMeetingInfo? OnlineMeetingInfo {
+            get { return BackingStore?.Get<TeamworkOnlineMeetingInfo?>("onlineMeetingInfo"); }
+            set { BackingStore?.Set("onlineMeetingInfo", value); }
+        }
+#else
         public TeamworkOnlineMeetingInfo OnlineMeetingInfo {
             get { return BackingStore?.Get<TeamworkOnlineMeetingInfo>("onlineMeetingInfo"); }
             set { BackingStore?.Set("onlineMeetingInfo", value); }
         }
+#endif
         /// <summary>A collection of all the Teams async operations that ran or are running on the chat. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamsAsyncOperation>? Operations {
+            get { return BackingStore?.Get<List<TeamsAsyncOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<TeamsAsyncOperation> Operations {
             get { return BackingStore?.Get<List<TeamsAsyncOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>A collection of permissions granted to apps for the chat.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ResourceSpecificPermissionGrant>? PermissionGrants {
+            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>?>("permissionGrants"); }
+            set { BackingStore?.Set("permissionGrants", value); }
+        }
+#else
         public List<ResourceSpecificPermissionGrant> PermissionGrants {
             get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>("permissionGrants"); }
             set { BackingStore?.Set("permissionGrants", value); }
         }
+#endif
         /// <summary>A collection of all the pinned messages in the chat. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PinnedChatMessageInfo>? PinnedMessages {
+            get { return BackingStore?.Get<List<PinnedChatMessageInfo>?>("pinnedMessages"); }
+            set { BackingStore?.Set("pinnedMessages", value); }
+        }
+#else
         public List<PinnedChatMessageInfo> PinnedMessages {
             get { return BackingStore?.Get<List<PinnedChatMessageInfo>>("pinnedMessages"); }
             set { BackingStore?.Set("pinnedMessages", value); }
         }
+#endif
         /// <summary>A collection of all the tabs in the chat. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamsTab>? Tabs {
+            get { return BackingStore?.Get<List<TeamsTab>?>("tabs"); }
+            set { BackingStore?.Set("tabs", value); }
+        }
+#else
         public List<TeamsTab> Tabs {
             get { return BackingStore?.Get<List<TeamsTab>>("tabs"); }
             set { BackingStore?.Set("tabs", value); }
         }
+#endif
         /// <summary>The identifier of the tenant in which the chat was created. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>(Optional) Subject or topic for the chat. Only available for group chats.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Topic {
+            get { return BackingStore?.Get<string?>("topic"); }
+            set { BackingStore?.Set("topic", value); }
+        }
+#else
         public string Topic {
             get { return BackingStore?.Get<string>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
+#endif
         /// <summary>Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatViewpoint? Viewpoint {
+            get { return BackingStore?.Get<ChatViewpoint?>("viewpoint"); }
+            set { BackingStore?.Set("viewpoint", value); }
+        }
+#else
         public ChatViewpoint Viewpoint {
             get { return BackingStore?.Get<ChatViewpoint>("viewpoint"); }
             set { BackingStore?.Set("viewpoint", value); }
         }
+#endif
         /// <summary>The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OmaSettingBase64 : OmaSetting, IParsable {
         /// <summary>File name associated with the Value property (.cer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>Value. (Base64 encoded string)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Value {
+            get { return BackingStore?.Get<string?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OmaSettingBase64 and sets the default values.
         /// </summary>

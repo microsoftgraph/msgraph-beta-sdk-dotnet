@@ -12,15 +12,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("azureOperationalInsightsBlockTelemetry", value); }
         }
         /// <summary>The Azure Operational Insights workspace id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureOperationalInsightsWorkspaceId {
+            get { return BackingStore?.Get<string?>("azureOperationalInsightsWorkspaceId"); }
+            set { BackingStore?.Set("azureOperationalInsightsWorkspaceId", value); }
+        }
+#else
         public string AzureOperationalInsightsWorkspaceId {
             get { return BackingStore?.Get<string>("azureOperationalInsightsWorkspaceId"); }
             set { BackingStore?.Set("azureOperationalInsightsWorkspaceId", value); }
         }
+#endif
         /// <summary>The Azure Operational Insights Workspace key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureOperationalInsightsWorkspaceKey {
+            get { return BackingStore?.Get<string?>("azureOperationalInsightsWorkspaceKey"); }
+            set { BackingStore?.Set("azureOperationalInsightsWorkspaceKey", value); }
+        }
+#else
         public string AzureOperationalInsightsWorkspaceKey {
             get { return BackingStore?.Get<string>("azureOperationalInsightsWorkspaceKey"); }
             set { BackingStore?.Set("azureOperationalInsightsWorkspaceKey", value); }
         }
+#endif
         /// <summary>Specifies whether to automatically launch the Connect app whenever a projection is initiated.</summary>
         public bool? ConnectAppBlockAutoLaunch {
             get { return BackingStore?.Get<bool?>("connectAppBlockAutoLaunch"); }
@@ -92,10 +106,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settingsSleepTimeoutInMinutes", value); }
         }
         /// <summary>The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WelcomeScreenBackgroundImageUrl {
+            get { return BackingStore?.Get<string?>("welcomeScreenBackgroundImageUrl"); }
+            set { BackingStore?.Set("welcomeScreenBackgroundImageUrl", value); }
+        }
+#else
         public string WelcomeScreenBackgroundImageUrl {
             get { return BackingStore?.Get<string>("welcomeScreenBackgroundImageUrl"); }
             set { BackingStore?.Set("welcomeScreenBackgroundImageUrl", value); }
         }
+#endif
         /// <summary>Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.</summary>
         public bool? WelcomeScreenBlockAutomaticWakeUp {
             get { return BackingStore?.Get<bool?>("welcomeScreenBlockAutomaticWakeUp"); }

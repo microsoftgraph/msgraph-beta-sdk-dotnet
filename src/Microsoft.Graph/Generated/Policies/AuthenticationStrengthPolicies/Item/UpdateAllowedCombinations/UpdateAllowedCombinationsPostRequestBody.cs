@@ -13,10 +13,17 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Upda
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The allowedCombinations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>? AllowedCombinations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>?>("allowedCombinations"); }
+            set { BackingStore?.Set("allowedCombinations", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> AllowedCombinations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>

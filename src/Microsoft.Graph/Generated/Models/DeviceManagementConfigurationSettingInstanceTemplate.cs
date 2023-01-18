@@ -22,20 +22,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Setting Definition Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingDefinitionId {
+            get { return BackingStore?.Get<string?>("settingDefinitionId"); }
+            set { BackingStore?.Set("settingDefinitionId", value); }
+        }
+#else
         public string SettingDefinitionId {
             get { return BackingStore?.Get<string>("settingDefinitionId"); }
             set { BackingStore?.Set("settingDefinitionId", value); }
         }
+#endif
         /// <summary>Setting Instance Template Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingInstanceTemplateId {
+            get { return BackingStore?.Get<string?>("settingInstanceTemplateId"); }
+            set { BackingStore?.Set("settingInstanceTemplateId", value); }
+        }
+#else
         public string SettingInstanceTemplateId {
             get { return BackingStore?.Get<string>("settingInstanceTemplateId"); }
             set { BackingStore?.Set("settingInstanceTemplateId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingInstanceTemplate and sets the default values.
         /// </summary>

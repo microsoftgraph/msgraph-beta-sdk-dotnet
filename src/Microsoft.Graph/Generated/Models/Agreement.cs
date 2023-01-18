@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Agreement : Entity, IParsable {
         /// <summary>Read-only. Information about acceptances of this agreement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AgreementAcceptance>? Acceptances {
+            get { return BackingStore?.Get<List<AgreementAcceptance>?>("acceptances"); }
+            set { BackingStore?.Set("acceptances", value); }
+        }
+#else
         public List<AgreementAcceptance> Acceptances {
             get { return BackingStore?.Get<List<AgreementAcceptance>>("acceptances"); }
             set { BackingStore?.Set("acceptances", value); }
         }
+#endif
         /// <summary>Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Default PDF linked to this agreement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AgreementFile? File {
+            get { return BackingStore?.Get<AgreementFile?>("file"); }
+            set { BackingStore?.Set("file", value); }
+        }
+#else
         public AgreementFile File {
             get { return BackingStore?.Get<AgreementFile>("file"); }
             set { BackingStore?.Set("file", value); }
         }
+#endif
         /// <summary>PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AgreementFileLocalization>? Files {
+            get { return BackingStore?.Get<List<AgreementFileLocalization>?>("files"); }
+            set { BackingStore?.Set("files", value); }
+        }
+#else
         public List<AgreementFileLocalization> Files {
             get { return BackingStore?.Get<List<AgreementFileLocalization>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
+#endif
         /// <summary>This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven&apos;t already done so. Supports $filter (eq).</summary>
         public bool? IsPerDeviceAcceptanceRequired {
             get { return BackingStore?.Get<bool?>("isPerDeviceAcceptanceRequired"); }
@@ -36,10 +64,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isViewingBeforeAcceptanceRequired", value); }
         }
         /// <summary>Expiration schedule and frequency of agreement for all users.  Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TermsExpiration? TermsExpiration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsExpiration?>("termsExpiration"); }
+            set { BackingStore?.Set("termsExpiration", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TermsExpiration TermsExpiration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsExpiration>("termsExpiration"); }
             set { BackingStore?.Set("termsExpiration", value); }
         }
+#endif
         /// <summary>The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations.</summary>
         public TimeSpan? UserReacceptRequiredFrequency {
             get { return BackingStore?.Get<TimeSpan?>("userReacceptRequiredFrequency"); }

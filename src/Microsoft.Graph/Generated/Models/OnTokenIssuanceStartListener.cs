@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartListener : AuthenticationEventListener, IParsable {
         /// <summary>The handler property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OnTokenIssuanceStartHandler? Handler {
+            get { return BackingStore?.Get<OnTokenIssuanceStartHandler?>("handler"); }
+            set { BackingStore?.Set("handler", value); }
+        }
+#else
         public OnTokenIssuanceStartHandler Handler {
             get { return BackingStore?.Get<OnTokenIssuanceStartHandler>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OnTokenIssuanceStartListener and sets the default values.
         /// </summary>

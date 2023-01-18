@@ -4,17 +4,34 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Schema describing an Android for Work application&apos;s custom configurations.
+    /// </summary>
     public class AndroidForWorkAppConfigurationSchema : Entity, IParsable {
         /// <summary>UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? ExampleJson {
+            get { return BackingStore?.Get<byte[]?>("exampleJson"); }
+            set { BackingStore?.Set("exampleJson", value); }
+        }
+#else
         public byte[] ExampleJson {
             get { return BackingStore?.Get<byte[]>("exampleJson"); }
             set { BackingStore?.Set("exampleJson", value); }
         }
+#endif
         /// <summary>Collection of items each representing a named configuration option in the schema</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidForWorkAppConfigurationSchemaItem>? SchemaItems {
+            get { return BackingStore?.Get<List<AndroidForWorkAppConfigurationSchemaItem>?>("schemaItems"); }
+            set { BackingStore?.Set("schemaItems", value); }
+        }
+#else
         public List<AndroidForWorkAppConfigurationSchemaItem> SchemaItems {
             get { return BackingStore?.Get<List<AndroidForWorkAppConfigurationSchemaItem>>("schemaItems"); }
             set { BackingStore?.Set("schemaItems", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

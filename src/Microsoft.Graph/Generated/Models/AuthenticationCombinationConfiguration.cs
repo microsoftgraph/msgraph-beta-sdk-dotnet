@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationCombinationConfiguration : Entity, IParsable {
         /// <summary>Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that&apos;s defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is &apos;fido2&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationMethodModes?>? AppliesToCombinations {
+            get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("appliesToCombinations"); }
+            set { BackingStore?.Set("appliesToCombinations", value); }
+        }
+#else
         public List<AuthenticationMethodModes?> AppliesToCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("appliesToCombinations"); }
             set { BackingStore?.Set("appliesToCombinations", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classificationResults property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ClassificationResult>? ClassificationResults {
+            get { return BackingStore?.Get<List<ClassificationResult>?>("classificationResults"); }
+            set { BackingStore?.Set("classificationResults", value); }
+        }
+#else
         public List<ClassificationResult> ClassificationResults {
             get { return BackingStore?.Get<List<ClassificationResult>>("classificationResults"); }
             set { BackingStore?.Set("classificationResults", value); }
         }
+#endif
         /// <summary>The contentInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.ContentInfo? ContentInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo?>("contentInfo"); }
+            set { BackingStore?.Set("contentInfo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.ContentInfo ContentInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new evaluateClassificationResultsPostRequestBody and sets the default values.
         /// </summary>

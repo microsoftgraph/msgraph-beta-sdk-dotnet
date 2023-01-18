@@ -24,15 +24,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The reaction in the modified message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessageReaction? Reaction {
+            get { return BackingStore?.Get<ChatMessageReaction?>("reaction"); }
+            set { BackingStore?.Set("reaction", value); }
+        }
+#else
         public ChatMessageReaction Reaction {
             get { return BackingStore?.Get<ChatMessageReaction>("reaction"); }
             set { BackingStore?.Set("reaction", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new chatMessageHistoryItem and sets the default values.
         /// </summary>

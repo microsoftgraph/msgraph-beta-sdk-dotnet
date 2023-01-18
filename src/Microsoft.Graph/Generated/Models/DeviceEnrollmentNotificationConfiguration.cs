@@ -11,20 +11,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("brandingOptions", value); }
         }
         /// <summary>DefaultLocale for the Enrollment Notification</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultLocale {
+            get { return BackingStore?.Get<string?>("defaultLocale"); }
+            set { BackingStore?.Set("defaultLocale", value); }
+        }
+#else
         public string DefaultLocale {
             get { return BackingStore?.Get<string>("defaultLocale"); }
             set { BackingStore?.Set("defaultLocale", value); }
         }
+#endif
         /// <summary>Notification Message Template Id</summary>
         public Guid? NotificationMessageTemplateId {
             get { return BackingStore?.Get<Guid?>("notificationMessageTemplateId"); }
             set { BackingStore?.Set("notificationMessageTemplateId", value); }
         }
         /// <summary>The list of notification data -</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? NotificationTemplates {
+            get { return BackingStore?.Get<List<string>?>("notificationTemplates"); }
+            set { BackingStore?.Set("notificationTemplates", value); }
+        }
+#else
         public List<string> NotificationTemplates {
             get { return BackingStore?.Get<List<string>>("notificationTemplates"); }
             set { BackingStore?.Set("notificationTemplates", value); }
         }
+#endif
         /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
         public EnrollmentRestrictionPlatformType? PlatformType {
             get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>("platformType"); }

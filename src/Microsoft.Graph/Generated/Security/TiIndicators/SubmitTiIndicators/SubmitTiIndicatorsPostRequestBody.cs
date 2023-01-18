@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TiIndicator>? Value {
+            get { return BackingStore?.Get<List<TiIndicator>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<TiIndicator> Value {
             get { return BackingStore?.Get<List<TiIndicator>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new submitTiIndicatorsPostRequestBody and sets the default values.
         /// </summary>

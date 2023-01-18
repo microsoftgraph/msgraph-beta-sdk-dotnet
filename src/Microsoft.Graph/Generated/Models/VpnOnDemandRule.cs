@@ -22,50 +22,99 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>DNS Search Domains.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DnsSearchDomains {
+            get { return BackingStore?.Get<List<string>?>("dnsSearchDomains"); }
+            set { BackingStore?.Set("dnsSearchDomains", value); }
+        }
+#else
         public List<string> DnsSearchDomains {
             get { return BackingStore?.Get<List<string>>("dnsSearchDomains"); }
             set { BackingStore?.Set("dnsSearchDomains", value); }
         }
+#endif
         /// <summary>DNS Search Server Address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DnsServerAddressMatch {
+            get { return BackingStore?.Get<List<string>?>("dnsServerAddressMatch"); }
+            set { BackingStore?.Set("dnsServerAddressMatch", value); }
+        }
+#else
         public List<string> DnsServerAddressMatch {
             get { return BackingStore?.Get<List<string>>("dnsServerAddressMatch"); }
             set { BackingStore?.Set("dnsServerAddressMatch", value); }
         }
+#endif
         /// <summary>VPN On-Demand Rule Connection Domain Action.</summary>
         public VpnOnDemandRuleConnectionDomainAction? DomainAction {
             get { return BackingStore?.Get<VpnOnDemandRuleConnectionDomainAction?>("domainAction"); }
             set { BackingStore?.Set("domainAction", value); }
         }
         /// <summary>Domains (Only applicable when Action is evaluate connection).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Domains {
+            get { return BackingStore?.Get<List<string>?>("domains"); }
+            set { BackingStore?.Set("domains", value); }
+        }
+#else
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#endif
         /// <summary>VPN On-Demand Rule Connection network interface type.</summary>
         public VpnOnDemandRuleInterfaceTypeMatch? InterfaceTypeMatch {
             get { return BackingStore?.Get<VpnOnDemandRuleInterfaceTypeMatch?>("interfaceTypeMatch"); }
             set { BackingStore?.Set("interfaceTypeMatch", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProbeRequiredUrl {
+            get { return BackingStore?.Get<string?>("probeRequiredUrl"); }
+            set { BackingStore?.Set("probeRequiredUrl", value); }
+        }
+#else
         public string ProbeRequiredUrl {
             get { return BackingStore?.Get<string>("probeRequiredUrl"); }
             set { BackingStore?.Set("probeRequiredUrl", value); }
         }
+#endif
         /// <summary>A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProbeUrl {
+            get { return BackingStore?.Get<string?>("probeUrl"); }
+            set { BackingStore?.Set("probeUrl", value); }
+        }
+#else
         public string ProbeUrl {
             get { return BackingStore?.Get<string>("probeUrl"); }
             set { BackingStore?.Set("probeUrl", value); }
         }
+#endif
         /// <summary>Network Service Set Identifiers (SSIDs).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Ssids {
+            get { return BackingStore?.Get<List<string>?>("ssids"); }
+            set { BackingStore?.Set("ssids", value); }
+        }
+#else
         public List<string> Ssids {
             get { return BackingStore?.Get<List<string>>("ssids"); }
             set { BackingStore?.Set("ssids", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new vpnOnDemandRule and sets the default values.
         /// </summary>

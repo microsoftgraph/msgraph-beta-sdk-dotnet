@@ -39,25 +39,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The interval for recurrence, such as monthly or quarterly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecurrenceType {
+            get { return BackingStore?.Get<string?>("recurrenceType"); }
+            set { BackingStore?.Set("recurrenceType", value); }
+        }
+#else
         public string RecurrenceType {
             get { return BackingStore?.Get<string>("recurrenceType"); }
             set { BackingStore?.Set("recurrenceType", value); }
         }
+#endif
         /// <summary>If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserSet>? Reviewers {
+            get { return BackingStore?.Get<List<UserSet>?>("reviewers"); }
+            set { BackingStore?.Set("reviewers", value); }
+        }
+#else
         public List<UserSet> Reviewers {
             get { return BackingStore?.Get<List<UserSet>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
+#endif
         /// <summary>Who should be asked to do the review, either Self or Reviewers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReviewerType {
+            get { return BackingStore?.Get<string?>("reviewerType"); }
+            set { BackingStore?.Set("reviewerType", value); }
+        }
+#else
         public string ReviewerType {
             get { return BackingStore?.Get<string>("reviewerType"); }
             set { BackingStore?.Set("reviewerType", value); }
         }
+#endif
         /// <summary>When the first review should start.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }

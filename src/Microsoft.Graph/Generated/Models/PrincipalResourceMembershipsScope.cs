@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PrincipalResourceMembershipsScope : AccessReviewScope, IParsable {
         /// <summary>Defines the scopes of the principals whose access to resources are reviewed in the access review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewScope>? PrincipalScopes {
+            get { return BackingStore?.Get<List<AccessReviewScope>?>("principalScopes"); }
+            set { BackingStore?.Set("principalScopes", value); }
+        }
+#else
         public List<AccessReviewScope> PrincipalScopes {
             get { return BackingStore?.Get<List<AccessReviewScope>>("principalScopes"); }
             set { BackingStore?.Set("principalScopes", value); }
         }
+#endif
         /// <summary>Defines the scopes of the resources for which access is reviewed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewScope>? ResourceScopes {
+            get { return BackingStore?.Get<List<AccessReviewScope>?>("resourceScopes"); }
+            set { BackingStore?.Set("resourceScopes", value); }
+        }
+#else
         public List<AccessReviewScope> ResourceScopes {
             get { return BackingStore?.Get<List<AccessReviewScope>>("resourceScopes"); }
             set { BackingStore?.Set("resourceScopes", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PrincipalResourceMembershipsScope and sets the default values.
         /// </summary>

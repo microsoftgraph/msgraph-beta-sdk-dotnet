@@ -15,30 +15,51 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The days of the week on which the user works.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DayOfWeekObject?>? DaysOfWeek {
+            get { return BackingStore?.Get<List<DayOfWeekObject?>?>("daysOfWeek"); }
+            set { BackingStore?.Set("daysOfWeek", value); }
+        }
+#else
         public List<DayOfWeekObject?> DaysOfWeek {
             get { return BackingStore?.Get<List<DayOfWeekObject?>>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
+#endif
         /// <summary>The time of the day that the user stops working.</summary>
         public Time? EndTime {
             get { return BackingStore?.Get<Time?>("endTime"); }
             set { BackingStore?.Set("endTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The time of the day that the user starts working.</summary>
         public Time? StartTime {
             get { return BackingStore?.Get<Time?>("startTime"); }
             set { BackingStore?.Set("startTime", value); }
         }
         /// <summary>The time zone to which the working hours apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeZoneBase? TimeZone {
+            get { return BackingStore?.Get<TimeZoneBase?>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
+        }
+#else
         public TimeZoneBase TimeZone {
             get { return BackingStore?.Get<TimeZoneBase>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new workingHours and sets the default values.
         /// </summary>

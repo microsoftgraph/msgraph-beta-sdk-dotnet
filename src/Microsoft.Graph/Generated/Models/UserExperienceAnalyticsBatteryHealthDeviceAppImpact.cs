@@ -9,30 +9,58 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class UserExperienceAnalyticsBatteryHealthDeviceAppImpact : Entity, IParsable {
         /// <summary>User friendly display name for the app. Eg: Outlook</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppDisplayName {
+            get { return BackingStore?.Get<string?>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
+        }
+#else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#endif
         /// <summary>App name. Eg: oltk.exe</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppName {
+            get { return BackingStore?.Get<string?>("appName"); }
+            set { BackingStore?.Set("appName", value); }
+        }
+#else
         public string AppName {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
+#endif
         /// <summary>App publisher. Eg: Microsoft Corporation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppPublisher {
+            get { return BackingStore?.Get<string?>("appPublisher"); }
+            set { BackingStore?.Set("appPublisher", value); }
+        }
+#else
         public string AppPublisher {
             get { return BackingStore?.Get<string>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
+#endif
         /// <summary>The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? BatteryUsagePercentage {
             get { return BackingStore?.Get<double?>("batteryUsagePercentage"); }
             set { BackingStore?.Set("batteryUsagePercentage", value); }
         }
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>true if the user had active interaction with the app.</summary>
         public bool? IsForegroundApp {
             get { return BackingStore?.Get<bool?>("isForegroundApp"); }

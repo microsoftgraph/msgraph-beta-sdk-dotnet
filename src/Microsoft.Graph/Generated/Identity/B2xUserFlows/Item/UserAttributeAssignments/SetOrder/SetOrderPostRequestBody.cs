@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignmen
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The newAssignmentOrder property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AssignmentOrder? NewAssignmentOrder {
+            get { return BackingStore?.Get<AssignmentOrder?>("newAssignmentOrder"); }
+            set { BackingStore?.Set("newAssignmentOrder", value); }
+        }
+#else
         public AssignmentOrder NewAssignmentOrder {
             get { return BackingStore?.Get<AssignmentOrder>("newAssignmentOrder"); }
             set { BackingStore?.Set("newAssignmentOrder", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new setOrderPostRequestBody and sets the default values.
         /// </summary>

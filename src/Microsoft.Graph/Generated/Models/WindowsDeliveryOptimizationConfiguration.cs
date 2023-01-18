@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("backgroundDownloadFromHttpDelayInSeconds", value); }
         }
         /// <summary>Specifies foreground and background bandwidth usage using percentages, absolutes, or hours.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeliveryOptimizationBandwidth? BandwidthMode {
+            get { return BackingStore?.Get<DeliveryOptimizationBandwidth?>("bandwidthMode"); }
+            set { BackingStore?.Set("bandwidthMode", value); }
+        }
+#else
         public DeliveryOptimizationBandwidth BandwidthMode {
             get { return BackingStore?.Get<DeliveryOptimizationBandwidth>("bandwidthMode"); }
             set { BackingStore?.Set("bandwidthMode", value); }
         }
+#endif
         /// <summary>Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a background download. Valid values 0 to 2592000.</summary>
         public int? CacheServerBackgroundDownloadFallbackToHttpDelayInSeconds {
             get { return BackingStore?.Get<int?>("cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds"); }
@@ -26,10 +33,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("cacheServerForegroundDownloadFallbackToHttpDelayInSeconds", value); }
         }
         /// <summary>Specifies cache servers host names.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? CacheServerHostNames {
+            get { return BackingStore?.Get<List<string>?>("cacheServerHostNames"); }
+            set { BackingStore?.Set("cacheServerHostNames", value); }
+        }
+#else
         public List<string> CacheServerHostNames {
             get { return BackingStore?.Get<List<string>>("cacheServerHostNames"); }
             set { BackingStore?.Set("cacheServerHostNames", value); }
         }
+#endif
         /// <summary>Delivery optimization mode for peer distribution</summary>
         public WindowsDeliveryOptimizationMode? DeliveryOptimizationMode {
             get { return BackingStore?.Get<WindowsDeliveryOptimizationMode?>("deliveryOptimizationMode"); }
@@ -41,20 +55,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("foregroundDownloadFromHttpDelayInSeconds", value); }
         }
         /// <summary>Specifies to restrict peer selection to a specfic source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeliveryOptimizationGroupIdSource? GroupIdSource {
+            get { return BackingStore?.Get<DeliveryOptimizationGroupIdSource?>("groupIdSource"); }
+            set { BackingStore?.Set("groupIdSource", value); }
+        }
+#else
         public DeliveryOptimizationGroupIdSource GroupIdSource {
             get { return BackingStore?.Get<DeliveryOptimizationGroupIdSource>("groupIdSource"); }
             set { BackingStore?.Set("groupIdSource", value); }
         }
+#endif
         /// <summary>Specifies the maximum time in days that each file is held in the Delivery Optimization cache after downloading successfully (0-3650). Valid values 0 to 3650</summary>
         public int? MaximumCacheAgeInDays {
             get { return BackingStore?.Get<int?>("maximumCacheAgeInDays"); }
             set { BackingStore?.Set("maximumCacheAgeInDays", value); }
         }
         /// <summary>Specifies the maximum cache size that Delivery Optimization either as a percentage or in GB.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeliveryOptimizationMaxCacheSize? MaximumCacheSize {
+            get { return BackingStore?.Get<DeliveryOptimizationMaxCacheSize?>("maximumCacheSize"); }
+            set { BackingStore?.Set("maximumCacheSize", value); }
+        }
+#else
         public DeliveryOptimizationMaxCacheSize MaximumCacheSize {
             get { return BackingStore?.Get<DeliveryOptimizationMaxCacheSize>("maximumCacheSize"); }
             set { BackingStore?.Set("maximumCacheSize", value); }
         }
+#endif
         /// <summary>Specifies the minimum battery percentage to allow the device to upload data (0-100). Valid values 0 to 100</summary>
         public int? MinimumBatteryPercentageAllowedToUpload {
             get { return BackingStore?.Get<int?>("minimumBatteryPercentageAllowedToUpload"); }
@@ -76,10 +104,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumRamAllowedToPeerInGigabytes", value); }
         }
         /// <summary>Specifies the drive that Delivery Optimization should use for its cache.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ModifyCacheLocation {
+            get { return BackingStore?.Get<string?>("modifyCacheLocation"); }
+            set { BackingStore?.Set("modifyCacheLocation", value); }
+        }
+#else
         public string ModifyCacheLocation {
             get { return BackingStore?.Get<string>("modifyCacheLocation"); }
             set { BackingStore?.Set("modifyCacheLocation", value); }
         }
+#endif
         /// <summary>Values to restrict peer selection by.</summary>
         public DeliveryOptimizationRestrictPeerSelectionByOptions? RestrictPeerSelectionBy {
             get { return BackingStore?.Get<DeliveryOptimizationRestrictPeerSelectionByOptions?>("restrictPeerSelectionBy"); }

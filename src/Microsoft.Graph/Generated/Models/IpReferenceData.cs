@@ -19,35 +19,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The city property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? City {
+            get { return BackingStore?.Get<string?>("city"); }
+            set { BackingStore?.Set("city", value); }
+        }
+#else
         public string City {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
+#endif
         /// <summary>The countryOrRegionCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountryOrRegionCode {
+            get { return BackingStore?.Get<string?>("countryOrRegionCode"); }
+            set { BackingStore?.Set("countryOrRegionCode", value); }
+        }
+#else
         public string CountryOrRegionCode {
             get { return BackingStore?.Get<string>("countryOrRegionCode"); }
             set { BackingStore?.Set("countryOrRegionCode", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The organization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Organization {
+            get { return BackingStore?.Get<string?>("organization"); }
+            set { BackingStore?.Set("organization", value); }
+        }
+#else
         public string Organization {
             get { return BackingStore?.Get<string>("organization"); }
             set { BackingStore?.Set("organization", value); }
         }
+#endif
         /// <summary>The state property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? State {
+            get { return BackingStore?.Get<string?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>The vendor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Vendor {
+            get { return BackingStore?.Get<string?>("vendor"); }
+            set { BackingStore?.Set("vendor", value); }
+        }
+#else
         public string Vendor {
             get { return BackingStore?.Get<string>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ipReferenceData and sets the default values.
         /// </summary>

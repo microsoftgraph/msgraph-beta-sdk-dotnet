@@ -21,25 +21,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("advancedThreatProtectionDiagnosticDataCollection", value); }
         }
         /// <summary>A list of file extensions to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AdvancedThreatProtectionExcludedExtensions {
+            get { return BackingStore?.Get<List<string>?>("advancedThreatProtectionExcludedExtensions"); }
+            set { BackingStore?.Set("advancedThreatProtectionExcludedExtensions", value); }
+        }
+#else
         public List<string> AdvancedThreatProtectionExcludedExtensions {
             get { return BackingStore?.Get<List<string>>("advancedThreatProtectionExcludedExtensions"); }
             set { BackingStore?.Set("advancedThreatProtectionExcludedExtensions", value); }
         }
+#endif
         /// <summary>A list of paths to files to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AdvancedThreatProtectionExcludedFiles {
+            get { return BackingStore?.Get<List<string>?>("advancedThreatProtectionExcludedFiles"); }
+            set { BackingStore?.Set("advancedThreatProtectionExcludedFiles", value); }
+        }
+#else
         public List<string> AdvancedThreatProtectionExcludedFiles {
             get { return BackingStore?.Get<List<string>>("advancedThreatProtectionExcludedFiles"); }
             set { BackingStore?.Set("advancedThreatProtectionExcludedFiles", value); }
         }
+#endif
         /// <summary>A list of paths to folders to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AdvancedThreatProtectionExcludedFolders {
+            get { return BackingStore?.Get<List<string>?>("advancedThreatProtectionExcludedFolders"); }
+            set { BackingStore?.Set("advancedThreatProtectionExcludedFolders", value); }
+        }
+#else
         public List<string> AdvancedThreatProtectionExcludedFolders {
             get { return BackingStore?.Get<List<string>>("advancedThreatProtectionExcludedFolders"); }
             set { BackingStore?.Set("advancedThreatProtectionExcludedFolders", value); }
         }
+#endif
         /// <summary>A list of process names to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AdvancedThreatProtectionExcludedProcesses {
+            get { return BackingStore?.Get<List<string>?>("advancedThreatProtectionExcludedProcesses"); }
+            set { BackingStore?.Set("advancedThreatProtectionExcludedProcesses", value); }
+        }
+#else
         public List<string> AdvancedThreatProtectionExcludedProcesses {
             get { return BackingStore?.Get<List<string>>("advancedThreatProtectionExcludedProcesses"); }
             set { BackingStore?.Set("advancedThreatProtectionExcludedProcesses", value); }
         }
+#endif
         /// <summary>Possible values of a property</summary>
         public Enablement? AdvancedThreatProtectionRealTime {
             get { return BackingStore?.Get<Enablement?>("advancedThreatProtectionRealTime"); }
@@ -66,25 +94,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileVaultHidePersonalRecoveryKey", value); }
         }
         /// <summary>Required if selected recovery key type(s) include InstitutionalRecoveryKey. The DER Encoded certificate file used to set an institutional recovery key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? FileVaultInstitutionalRecoveryKeyCertificate {
+            get { return BackingStore?.Get<byte[]?>("fileVaultInstitutionalRecoveryKeyCertificate"); }
+            set { BackingStore?.Set("fileVaultInstitutionalRecoveryKeyCertificate", value); }
+        }
+#else
         public byte[] FileVaultInstitutionalRecoveryKeyCertificate {
             get { return BackingStore?.Get<byte[]>("fileVaultInstitutionalRecoveryKeyCertificate"); }
             set { BackingStore?.Set("fileVaultInstitutionalRecoveryKeyCertificate", value); }
         }
+#endif
         /// <summary>File name of the institutional recovery key certificate to display in UI. (.der).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileVaultInstitutionalRecoveryKeyCertificateFileName {
+            get { return BackingStore?.Get<string?>("fileVaultInstitutionalRecoveryKeyCertificateFileName"); }
+            set { BackingStore?.Set("fileVaultInstitutionalRecoveryKeyCertificateFileName", value); }
+        }
+#else
         public string FileVaultInstitutionalRecoveryKeyCertificateFileName {
             get { return BackingStore?.Get<string>("fileVaultInstitutionalRecoveryKeyCertificateFileName"); }
             set { BackingStore?.Set("fileVaultInstitutionalRecoveryKeyCertificateFileName", value); }
         }
+#endif
         /// <summary>Optional. When using the Defer option, this is the maximum number of times the user can ignore prompts to enable FileVault before FileVault will be required for the user to sign in. If set to -1, it will always prompt to enable FileVault until FileVault is enabled, though it will allow the user to bypass enabling FileVault. Setting this to 0 will disable the feature.</summary>
         public int? FileVaultNumberOfTimesUserCanIgnore {
             get { return BackingStore?.Get<int?>("fileVaultNumberOfTimesUserCanIgnore"); }
             set { BackingStore?.Set("fileVaultNumberOfTimesUserCanIgnore", value); }
         }
         /// <summary>Required if selected recovery key type(s) include PersonalRecoveryKey. A short message displayed to the user that explains how they can retrieve their personal recovery key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileVaultPersonalRecoveryKeyHelpMessage {
+            get { return BackingStore?.Get<string?>("fileVaultPersonalRecoveryKeyHelpMessage"); }
+            set { BackingStore?.Set("fileVaultPersonalRecoveryKeyHelpMessage", value); }
+        }
+#else
         public string FileVaultPersonalRecoveryKeyHelpMessage {
             get { return BackingStore?.Get<string>("fileVaultPersonalRecoveryKeyHelpMessage"); }
             set { BackingStore?.Set("fileVaultPersonalRecoveryKeyHelpMessage", value); }
         }
+#endif
         /// <summary>Optional. If selected recovery key type(s) include PersonalRecoveryKey, the frequency to rotate that key, in months.</summary>
         public int? FileVaultPersonalRecoveryKeyRotationInMonths {
             get { return BackingStore?.Get<int?>("fileVaultPersonalRecoveryKeyRotationInMonths"); }
@@ -96,10 +145,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileVaultSelectedRecoveryKeyTypes", value); }
         }
         /// <summary>List of applications with firewall settings. Firewall settings for applications not on this list are determined by the user. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSFirewallApplication>? FirewallApplications {
+            get { return BackingStore?.Get<List<MacOSFirewallApplication>?>("firewallApplications"); }
+            set { BackingStore?.Set("firewallApplications", value); }
+        }
+#else
         public List<MacOSFirewallApplication> FirewallApplications {
             get { return BackingStore?.Get<List<MacOSFirewallApplication>>("firewallApplications"); }
             set { BackingStore?.Set("firewallApplications", value); }
         }
+#endif
         /// <summary>Corresponds to the &apos;Block all incoming connections&apos; option.</summary>
         public bool? FirewallBlockAllIncoming {
             get { return BackingStore?.Get<bool?>("firewallBlockAllIncoming"); }

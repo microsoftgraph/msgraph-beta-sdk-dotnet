@@ -22,15 +22,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certExpiryTime", value); }
         }
         /// <summary>Version of certificate connector</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectorVersion {
+            get { return BackingStore?.Get<string?>("connectorVersion"); }
+            set { BackingStore?.Set("connectorVersion", value); }
+        }
+#else
         public string ConnectorVersion {
             get { return BackingStore?.Get<string>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
+#endif
         /// <summary>Certificate connector enrollment error</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnrollmentError {
+            get { return BackingStore?.Get<string?>("enrollmentError"); }
+            set { BackingStore?.Set("enrollmentError", value); }
+        }
+#else
         public string EnrollmentError {
             get { return BackingStore?.Get<string>("enrollmentError"); }
             set { BackingStore?.Set("enrollmentError", value); }
         }
+#endif
         /// <summary>Last time certificate connector connected</summary>
         public DateTimeOffset? LastConnectorConnectionTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastConnectorConnectionTime"); }
@@ -42,10 +56,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastUploadVersion", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Certificate connector status</summary>
         public int? Status {
             get { return BackingStore?.Get<int?>("status"); }

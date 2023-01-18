@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the notebook.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? LastAccessedTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessedTime"); }
             set { BackingStore?.Set("lastAccessedTime", value); }
         }
         /// <summary>Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote client, if it&apos;s installed. The oneNoteWebURL link opens the notebook in OneNote on the web.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RecentNotebookLinks? Links {
+            get { return BackingStore?.Get<RecentNotebookLinks?>("links"); }
+            set { BackingStore?.Set("links", value); }
+        }
+#else
         public RecentNotebookLinks Links {
             get { return BackingStore?.Get<RecentNotebookLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.</summary>
         public OnenoteSourceService? SourceService {
             get { return BackingStore?.Get<OnenoteSourceService?>("sourceService"); }

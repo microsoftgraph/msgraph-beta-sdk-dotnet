@@ -20,15 +20,29 @@ namespace Microsoft.Graph.Beta.Chats.Item.MarkChatUnreadForUser {
             set { BackingStore?.Set("lastMessageReadDateTime", value); }
         }
         /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>The user property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkUserIdentity? User {
+            get { return BackingStore?.Get<TeamworkUserIdentity?>("user"); }
+            set { BackingStore?.Set("user", value); }
+        }
+#else
         public TeamworkUserIdentity User {
             get { return BackingStore?.Get<TeamworkUserIdentity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new markChatUnreadForUserPostRequestBody and sets the default values.
         /// </summary>

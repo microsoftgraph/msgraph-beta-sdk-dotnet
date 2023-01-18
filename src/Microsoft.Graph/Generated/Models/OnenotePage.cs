@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable {
         /// <summary>The page&apos;s HTML content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Content {
+            get { return BackingStore?.Get<byte[]?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The URL for the page&apos;s HTML content.  Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentUrl {
+            get { return BackingStore?.Get<string?>("contentUrl"); }
+            set { BackingStore?.Set("contentUrl", value); }
+        }
+#else
         public string ContentUrl {
             get { return BackingStore?.Get<string>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
+#endif
         /// <summary>The unique identifier of the application that created the page. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByAppId {
+            get { return BackingStore?.Get<string?>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#else
         public string CreatedByAppId {
             get { return BackingStore?.Get<string>("createdByAppId"); }
             set { BackingStore?.Set("createdByAppId", value); }
         }
+#endif
         /// <summary>The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -31,35 +52,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("level", value); }
         }
         /// <summary>Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it &apos;s installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PageLinks? Links {
+            get { return BackingStore?.Get<PageLinks?>("links"); }
+            set { BackingStore?.Set("links", value); }
+        }
+#else
         public PageLinks Links {
             get { return BackingStore?.Get<PageLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+#endif
         /// <summary>The order of the page within its parent section. Read-only.</summary>
         public int? Order {
             get { return BackingStore?.Get<int?>("order"); }
             set { BackingStore?.Set("order", value); }
         }
         /// <summary>The notebook that contains the page.  Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Notebook? ParentNotebook {
+            get { return BackingStore?.Get<Notebook?>("parentNotebook"); }
+            set { BackingStore?.Set("parentNotebook", value); }
+        }
+#else
         public Notebook ParentNotebook {
             get { return BackingStore?.Get<Notebook>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
+#endif
         /// <summary>The section that contains the page. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OnenoteSection? ParentSection {
+            get { return BackingStore?.Get<OnenoteSection?>("parentSection"); }
+            set { BackingStore?.Set("parentSection", value); }
+        }
+#else
         public OnenoteSection ParentSection {
             get { return BackingStore?.Get<OnenoteSection>("parentSection"); }
             set { BackingStore?.Set("parentSection", value); }
         }
+#endif
         /// <summary>The title of the page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>The userTags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? UserTags {
+            get { return BackingStore?.Get<List<string>?>("userTags"); }
+            set { BackingStore?.Set("userTags", value); }
+        }
+#else
         public List<string> UserTags {
             get { return BackingStore?.Get<List<string>>("userTags"); }
             set { BackingStore?.Set("userTags", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new onenotePage and sets the default values.
         /// </summary>

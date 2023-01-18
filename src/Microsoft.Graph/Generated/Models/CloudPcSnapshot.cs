@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcSnapshot : Entity, IParsable {
         /// <summary>The unique identifier for the Cloud PC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CloudPcId {
+            get { return BackingStore?.Get<string?>("cloudPcId"); }
+            set { BackingStore?.Set("cloudPcId", value); }
+        }
+#else
         public string CloudPcId {
             get { return BackingStore?.Get<string>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
+#endif
         /// <summary>The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

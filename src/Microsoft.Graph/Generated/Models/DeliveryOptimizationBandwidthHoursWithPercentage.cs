@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationBandwidthHoursWithPercentage : DeliveryOptimizationBandwidth, IParsable {
         /// <summary>Background download percentage hours.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeliveryOptimizationBandwidthBusinessHoursLimit? BandwidthBackgroundPercentageHours {
+            get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit?>("bandwidthBackgroundPercentageHours"); }
+            set { BackingStore?.Set("bandwidthBackgroundPercentageHours", value); }
+        }
+#else
         public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthBackgroundPercentageHours {
             get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit>("bandwidthBackgroundPercentageHours"); }
             set { BackingStore?.Set("bandwidthBackgroundPercentageHours", value); }
         }
+#endif
         /// <summary>Foreground download percentage hours.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeliveryOptimizationBandwidthBusinessHoursLimit? BandwidthForegroundPercentageHours {
+            get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit?>("bandwidthForegroundPercentageHours"); }
+            set { BackingStore?.Set("bandwidthForegroundPercentageHours", value); }
+        }
+#else
         public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthForegroundPercentageHours {
             get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit>("bandwidthForegroundPercentageHours"); }
             set { BackingStore?.Set("bandwidthForegroundPercentageHours", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeliveryOptimizationBandwidthHoursWithPercentage and sets the default values.
         /// </summary>

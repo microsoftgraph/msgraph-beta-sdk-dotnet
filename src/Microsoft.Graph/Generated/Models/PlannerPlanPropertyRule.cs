@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerPlanPropertyRule : PlannerPropertyRule, IParsable {
         /// <summary>The buckets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Buckets {
+            get { return BackingStore?.Get<List<string>?>("buckets"); }
+            set { BackingStore?.Set("buckets", value); }
+        }
+#else
         public List<string> Buckets {
             get { return BackingStore?.Get<List<string>>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
+#endif
         /// <summary>The categoryDescriptions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerFieldRules? CategoryDescriptions {
+            get { return BackingStore?.Get<PlannerFieldRules?>("categoryDescriptions"); }
+            set { BackingStore?.Set("categoryDescriptions", value); }
+        }
+#else
         public PlannerFieldRules CategoryDescriptions {
             get { return BackingStore?.Get<PlannerFieldRules>("categoryDescriptions"); }
             set { BackingStore?.Set("categoryDescriptions", value); }
         }
+#endif
         /// <summary>The tasks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tasks {
+            get { return BackingStore?.Get<List<string>?>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#else
         public List<string> Tasks {
             get { return BackingStore?.Get<List<string>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#endif
         /// <summary>The title property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerFieldRules? Title {
+            get { return BackingStore?.Get<PlannerFieldRules?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public PlannerFieldRules Title {
             get { return BackingStore?.Get<PlannerFieldRules>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PlannerPlanPropertyRule and sets the default values.
         /// </summary>

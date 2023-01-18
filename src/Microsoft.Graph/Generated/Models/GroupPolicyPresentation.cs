@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class GroupPolicyPresentation : Entity, IParsable {
         /// <summary>The group policy definition associated with the presentation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyDefinition? Definition {
+            get { return BackingStore?.Get<GroupPolicyDefinition?>("definition"); }
+            set { BackingStore?.Set("definition", value); }
+        }
+#else
         public GroupPolicyDefinition Definition {
             get { return BackingStore?.Get<GroupPolicyDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#endif
         /// <summary>Localized text label for any presentation entity. The default value is empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Label {
+            get { return BackingStore?.Get<string?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#else
         public string Label {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#endif
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

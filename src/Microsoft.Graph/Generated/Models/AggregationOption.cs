@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The bucketDefinition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BucketAggregationDefinition? BucketDefinition {
+            get { return BackingStore?.Get<BucketAggregationDefinition?>("bucketDefinition"); }
+            set { BackingStore?.Set("bucketDefinition", value); }
+        }
+#else
         public BucketAggregationDefinition BucketDefinition {
             get { return BackingStore?.Get<BucketAggregationDefinition>("bucketDefinition"); }
             set { BackingStore?.Set("bucketDefinition", value); }
         }
+#endif
         /// <summary>Computes aggregation on the field while the field exists in current entity type. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Field {
+            get { return BackingStore?.Get<string?>("field"); }
+            set { BackingStore?.Set("field", value); }
+        }
+#else
         public string Field {
             get { return BackingStore?.Get<string>("field"); }
             set { BackingStore?.Set("field", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.</summary>
         public int? Size {
             get { return BackingStore?.Get<int?>("size"); }

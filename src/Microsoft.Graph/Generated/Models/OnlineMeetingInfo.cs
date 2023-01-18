@@ -14,40 +14,89 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ID of the conference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConferenceId {
+            get { return BackingStore?.Get<string?>("conferenceId"); }
+            set { BackingStore?.Set("conferenceId", value); }
+        }
+#else
         public string ConferenceId {
             get { return BackingStore?.Get<string>("conferenceId"); }
             set { BackingStore?.Set("conferenceId", value); }
         }
+#endif
         /// <summary>The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JoinUrl {
+            get { return BackingStore?.Get<string?>("joinUrl"); }
+            set { BackingStore?.Set("joinUrl", value); }
+        }
+#else
         public string JoinUrl {
             get { return BackingStore?.Get<string>("joinUrl"); }
             set { BackingStore?.Set("joinUrl", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>All of the phone numbers associated with this conference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Phone>? Phones {
+            get { return BackingStore?.Get<List<Phone>?>("phones"); }
+            set { BackingStore?.Set("phones", value); }
+        }
+#else
         public List<Phone> Phones {
             get { return BackingStore?.Get<List<Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
+#endif
         /// <summary>The pre-formatted quickdial for this call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QuickDial {
+            get { return BackingStore?.Get<string?>("quickDial"); }
+            set { BackingStore?.Set("quickDial", value); }
+        }
+#else
         public string QuickDial {
             get { return BackingStore?.Get<string>("quickDial"); }
             set { BackingStore?.Set("quickDial", value); }
         }
+#endif
         /// <summary>The toll free numbers that can be used to join the conference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TollFreeNumbers {
+            get { return BackingStore?.Get<List<string>?>("tollFreeNumbers"); }
+            set { BackingStore?.Set("tollFreeNumbers", value); }
+        }
+#else
         public List<string> TollFreeNumbers {
             get { return BackingStore?.Get<List<string>>("tollFreeNumbers"); }
             set { BackingStore?.Set("tollFreeNumbers", value); }
         }
+#endif
         /// <summary>The toll number that can be used to join the conference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TollNumber {
+            get { return BackingStore?.Get<string?>("tollNumber"); }
+            set { BackingStore?.Set("tollNumber", value); }
+        }
+#else
         public string TollNumber {
             get { return BackingStore?.Get<string>("tollNumber"); }
             set { BackingStore?.Set("tollNumber", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new onlineMeetingInfo and sets the default values.
         /// </summary>

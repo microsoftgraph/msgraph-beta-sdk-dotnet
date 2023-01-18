@@ -15,32 +15,67 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>List of additional warranty offers. This collection can contain a maximum of 100 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WarrantyOffer>? AdditionalWarranties {
+            get { return BackingStore?.Get<List<WarrantyOffer>?>("additionalWarranties"); }
+            set { BackingStore?.Set("additionalWarranties", value); }
+        }
+#else
         public List<WarrantyOffer> AdditionalWarranties {
             get { return BackingStore?.Get<List<WarrantyOffer>>("additionalWarranties"); }
             set { BackingStore?.Set("additionalWarranties", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of base warranty offers. This collection can contain a maximum of 100 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WarrantyOffer>? BaseWarranties {
+            get { return BackingStore?.Get<List<WarrantyOffer>?>("baseWarranties"); }
+            set { BackingStore?.Set("baseWarranties", value); }
+        }
+#else
         public List<WarrantyOffer> BaseWarranties {
             get { return BackingStore?.Get<List<WarrantyOffer>>("baseWarranties"); }
             set { BackingStore?.Set("baseWarranties", value); }
         }
+#endif
         /// <summary>Device configuration page URL</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceConfigurationUrl {
+            get { return BackingStore?.Get<string?>("deviceConfigurationUrl"); }
+            set { BackingStore?.Set("deviceConfigurationUrl", value); }
+        }
+#else
         public string DeviceConfigurationUrl {
             get { return BackingStore?.Get<string>("deviceConfigurationUrl"); }
             set { BackingStore?.Set("deviceConfigurationUrl", value); }
         }
+#endif
         /// <summary>Device warranty page URL</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceWarrantyUrl {
+            get { return BackingStore?.Get<string?>("deviceWarrantyUrl"); }
+            set { BackingStore?.Set("deviceWarrantyUrl", value); }
+        }
+#else
         public string DeviceWarrantyUrl {
             get { return BackingStore?.Get<string>("deviceWarrantyUrl"); }
             set { BackingStore?.Set("deviceWarrantyUrl", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new oemWarranty and sets the default values.
         /// </summary>

@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerExternalBucketSource : PlannerBucketCreation, IParsable {
         /// <summary>Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like &apos;com.constoso.customerSupport&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContextScenarioId {
+            get { return BackingStore?.Get<string?>("contextScenarioId"); }
+            set { BackingStore?.Set("contextScenarioId", value); }
+        }
+#else
         public string ContextScenarioId {
             get { return BackingStore?.Get<string>("contextScenarioId"); }
             set { BackingStore?.Set("contextScenarioId", value); }
         }
+#endif
         /// <summary>Nullable. The id of the external entity&apos;s containing entity or context.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalContextId {
+            get { return BackingStore?.Get<string?>("externalContextId"); }
+            set { BackingStore?.Set("externalContextId", value); }
+        }
+#else
         public string ExternalContextId {
             get { return BackingStore?.Get<string>("externalContextId"); }
             set { BackingStore?.Set("externalContextId", value); }
         }
+#endif
         /// <summary>Nullable. The id of the entity that an external service associates with a bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalObjectId {
+            get { return BackingStore?.Get<string?>("externalObjectId"); }
+            set { BackingStore?.Set("externalObjectId", value); }
+        }
+#else
         public string ExternalObjectId {
             get { return BackingStore?.Get<string>("externalObjectId"); }
             set { BackingStore?.Set("externalObjectId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PlannerExternalBucketSource and sets the default values.
         /// </summary>

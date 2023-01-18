@@ -26,25 +26,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedEmailProfileRequired", value); }
         }
         /// <summary>Maximum IOS build version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMaximumBuildVersion {
+            get { return BackingStore?.Get<string?>("osMaximumBuildVersion"); }
+            set { BackingStore?.Set("osMaximumBuildVersion", value); }
+        }
+#else
         public string OsMaximumBuildVersion {
             get { return BackingStore?.Get<string>("osMaximumBuildVersion"); }
             set { BackingStore?.Set("osMaximumBuildVersion", value); }
         }
+#endif
         /// <summary>Maximum IOS version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMaximumVersion {
+            get { return BackingStore?.Get<string?>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
+        }
+#else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#endif
         /// <summary>Minimum IOS build version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMinimumBuildVersion {
+            get { return BackingStore?.Get<string?>("osMinimumBuildVersion"); }
+            set { BackingStore?.Set("osMinimumBuildVersion", value); }
+        }
+#else
         public string OsMinimumBuildVersion {
             get { return BackingStore?.Get<string>("osMinimumBuildVersion"); }
             set { BackingStore?.Set("osMinimumBuildVersion", value); }
         }
+#endif
         /// <summary>Minimum IOS version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMinimumVersion {
+            get { return BackingStore?.Get<string?>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
+        }
+#else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block simple passcodes.</summary>
         public bool? PasscodeBlockSimple {
             get { return BackingStore?.Get<bool?>("passcodeBlockSimple"); }
@@ -91,10 +119,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passcodeRequiredType", value); }
         }
         /// <summary>Require the device to not have the specified apps installed. This collection can contain a maximum of 100 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? RestrictedApps {
+            get { return BackingStore?.Get<List<AppListItem>?>("restrictedApps"); }
+            set { BackingStore?.Set("restrictedApps", value); }
+        }
+#else
         public List<AppListItem> RestrictedApps {
             get { return BackingStore?.Get<List<AppListItem>>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
+#endif
         /// <summary>Devices must not be jailbroken or rooted.</summary>
         public bool? SecurityBlockJailbrokenDevices {
             get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }

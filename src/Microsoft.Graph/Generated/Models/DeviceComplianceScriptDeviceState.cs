@@ -29,20 +29,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The managed device on which the device compliance script executed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ManagedDevice? ManagedDevice {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice?>("managedDevice"); }
+            set { BackingStore?.Set("managedDevice", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>("managedDevice"); }
             set { BackingStore?.Set("managedDevice", value); }
         }
+#endif
         /// <summary>Error from the detection script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScriptError {
+            get { return BackingStore?.Get<string?>("scriptError"); }
+            set { BackingStore?.Set("scriptError", value); }
+        }
+#else
         public string ScriptError {
             get { return BackingStore?.Get<string>("scriptError"); }
             set { BackingStore?.Set("scriptError", value); }
         }
+#endif
         /// <summary>Output of the detection script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScriptOutput {
+            get { return BackingStore?.Get<string?>("scriptOutput"); }
+            set { BackingStore?.Set("scriptOutput", value); }
+        }
+#else
         public string ScriptOutput {
             get { return BackingStore?.Get<string>("scriptOutput"); }
             set { BackingStore?.Set("scriptOutput", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

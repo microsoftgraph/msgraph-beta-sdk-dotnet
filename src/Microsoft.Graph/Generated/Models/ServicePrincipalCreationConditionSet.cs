@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
         /// <summary>The applicationIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ApplicationIds {
+            get { return BackingStore?.Get<List<string>?>("applicationIds"); }
+            set { BackingStore?.Set("applicationIds", value); }
+        }
+#else
         public List<string> ApplicationIds {
             get { return BackingStore?.Get<List<string>>("applicationIds"); }
             set { BackingStore?.Set("applicationIds", value); }
         }
+#endif
         /// <summary>The applicationPublisherIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ApplicationPublisherIds {
+            get { return BackingStore?.Get<List<string>?>("applicationPublisherIds"); }
+            set { BackingStore?.Set("applicationPublisherIds", value); }
+        }
+#else
         public List<string> ApplicationPublisherIds {
             get { return BackingStore?.Get<List<string>>("applicationPublisherIds"); }
             set { BackingStore?.Set("applicationPublisherIds", value); }
         }
+#endif
         /// <summary>The applicationsFromVerifiedPublisherOnly property</summary>
         public bool? ApplicationsFromVerifiedPublisherOnly {
             get { return BackingStore?.Get<bool?>("applicationsFromVerifiedPublisherOnly"); }
             set { BackingStore?.Set("applicationsFromVerifiedPublisherOnly", value); }
         }
         /// <summary>The applicationTenantIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ApplicationTenantIds {
+            get { return BackingStore?.Get<List<string>?>("applicationTenantIds"); }
+            set { BackingStore?.Set("applicationTenantIds", value); }
+        }
+#else
         public List<string> ApplicationTenantIds {
             get { return BackingStore?.Get<List<string>>("applicationTenantIds"); }
             set { BackingStore?.Set("applicationTenantIds", value); }
         }
+#endif
         /// <summary>The certifiedApplicationsOnly property</summary>
         public bool? CertifiedApplicationsOnly {
             get { return BackingStore?.Get<bool?>("certifiedApplicationsOnly"); }

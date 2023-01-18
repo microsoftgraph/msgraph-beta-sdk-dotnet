@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("format", value); }
         }
         /// <summary>Identifier used for Azure Information Protection Analytics.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Identifier {
+            get { return BackingStore?.Get<string?>("identifier"); }
+            set { BackingStore?.Set("identifier", value); }
+        }
+#else
         public string Identifier {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
+#endif
         /// <summary>Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? Metadata {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
+        }
+#else
         public List<KeyValuePair> Metadata {
             get { return BackingStore?.Get<List<KeyValuePair>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public ContentState? State {
             get { return BackingStore?.Get<ContentState?>("state"); }

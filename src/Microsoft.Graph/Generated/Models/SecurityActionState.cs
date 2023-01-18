@@ -12,17 +12,31 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppId {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.</summary>
         public OperationStatus? Status {
             get { return BackingStore?.Get<OperationStatus?>("status"); }
@@ -34,10 +48,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("updatedDateTime", value); }
         }
         /// <summary>The user principal name of the signed-in user that submitted an update (PATCH) to the action. The user should be extracted from the auth token and not entered manually by the calling application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? User {
+            get { return BackingStore?.Get<string?>("user"); }
+            set { BackingStore?.Set("user", value); }
+        }
+#else
         public string User {
             get { return BackingStore?.Get<string>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new securityActionState and sets the default values.
         /// </summary>

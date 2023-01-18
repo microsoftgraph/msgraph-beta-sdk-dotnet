@@ -8,10 +8,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues {
     public class UpdateDefinitionValuesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The added property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyDefinitionValue>? Added {
+            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("added"); }
+            set { BackingStore?.Set("added", value); }
+        }
+#else
         public List<GroupPolicyDefinitionValue> Added {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("added"); }
             set { BackingStore?.Set("added", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -20,15 +27,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deletedIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DeletedIds {
+            get { return BackingStore?.Get<List<string>?>("deletedIds"); }
+            set { BackingStore?.Set("deletedIds", value); }
+        }
+#else
         public List<string> DeletedIds {
             get { return BackingStore?.Get<List<string>>("deletedIds"); }
             set { BackingStore?.Set("deletedIds", value); }
         }
+#endif
         /// <summary>The updated property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyDefinitionValue>? Updated {
+            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("updated"); }
+            set { BackingStore?.Set("updated", value); }
+        }
+#else
         public List<GroupPolicyDefinitionValue> Updated {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("updated"); }
             set { BackingStore?.Set("updated", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updateDefinitionValuesPostRequestBody and sets the default values.
         /// </summary>

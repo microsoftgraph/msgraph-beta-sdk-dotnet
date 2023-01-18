@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("mfaAndSsprCapableUserCount", value); }
         }
         /// <summary>The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MfaConditionalAccessPolicyState {
+            get { return BackingStore?.Get<string?>("mfaConditionalAccessPolicyState"); }
+            set { BackingStore?.Set("mfaConditionalAccessPolicyState", value); }
+        }
+#else
         public string MfaConditionalAccessPolicyState {
             get { return BackingStore?.Get<string>("mfaConditionalAccessPolicyState"); }
             set { BackingStore?.Set("mfaConditionalAccessPolicyState", value); }
         }
+#endif
         /// <summary>The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.</summary>
         public int? MfaExcludedUserCount {
             get { return BackingStore?.Get<int?>("mfaExcludedUserCount"); }
@@ -46,15 +53,29 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("ssprRegisteredUserCount", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantDisplayName {
+            get { return BackingStore?.Get<string?>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
+        }
+#else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>The total number of users in the given managed tenant. Optional. Read-only.</summary>
         public int? TotalUserCount {
             get { return BackingStore?.Get<int?>("totalUserCount"); }

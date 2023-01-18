@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>Constraint information for one or more locations that the client requests for the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LocationConstraintItem>? Locations {
+            get { return BackingStore?.Get<List<LocationConstraintItem>?>("locations"); }
+            set { BackingStore?.Set("locations", value); }
+        }
+#else
         public List<LocationConstraintItem> Locations {
             get { return BackingStore?.Get<List<LocationConstraintItem>>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The client requests the service to suggest one or more meeting locations.</summary>
         public bool? SuggestLocation {
             get { return BackingStore?.Get<bool?>("suggestLocation"); }

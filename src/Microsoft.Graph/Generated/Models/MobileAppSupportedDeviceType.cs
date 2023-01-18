@@ -17,20 +17,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Maximum OS version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MaximumOperatingSystemVersion {
+            get { return BackingStore?.Get<string?>("maximumOperatingSystemVersion"); }
+            set { BackingStore?.Set("maximumOperatingSystemVersion", value); }
+        }
+#else
         public string MaximumOperatingSystemVersion {
             get { return BackingStore?.Get<string>("maximumOperatingSystemVersion"); }
             set { BackingStore?.Set("maximumOperatingSystemVersion", value); }
         }
+#endif
         /// <summary>Minimum OS version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumOperatingSystemVersion {
+            get { return BackingStore?.Get<string?>("minimumOperatingSystemVersion"); }
+            set { BackingStore?.Set("minimumOperatingSystemVersion", value); }
+        }
+#else
         public string MinimumOperatingSystemVersion {
             get { return BackingStore?.Get<string>("minimumOperatingSystemVersion"); }
             set { BackingStore?.Set("minimumOperatingSystemVersion", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Device type.</summary>
         public DeviceType? Type {
             get { return BackingStore?.Get<DeviceType?>("type"); }

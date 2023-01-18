@@ -14,40 +14,89 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of caller that&apos;s the target of the policy rule. Allowed values are: None, Admin, EndUser.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Caller {
+            get { return BackingStore?.Get<string?>("caller"); }
+            set { BackingStore?.Set("caller", value); }
+        }
+#else
         public string Caller {
             get { return BackingStore?.Get<string>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
+#endif
         /// <summary>The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EnforcedSettings {
+            get { return BackingStore?.Get<List<string>?>("enforcedSettings"); }
+            set { BackingStore?.Set("enforcedSettings", value); }
+        }
+#else
         public List<string> EnforcedSettings {
             get { return BackingStore?.Get<List<string>>("enforcedSettings"); }
             set { BackingStore?.Set("enforcedSettings", value); }
         }
+#endif
         /// <summary>The list of role settings that can be inherited by child scopes. Use All for all settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? InheritableSettings {
+            get { return BackingStore?.Get<List<string>?>("inheritableSettings"); }
+            set { BackingStore?.Set("inheritableSettings", value); }
+        }
+#else
         public List<string> InheritableSettings {
             get { return BackingStore?.Get<List<string>>("inheritableSettings"); }
             set { BackingStore?.Set("inheritableSettings", value); }
         }
+#endif
         /// <summary>The role assignment type that&apos;s the target of policy rule. Allowed values are: Eligibility, Assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Level {
+            get { return BackingStore?.Get<string?>("level"); }
+            set { BackingStore?.Set("level", value); }
+        }
+#else
         public string Level {
             get { return BackingStore?.Get<string>("level"); }
             set { BackingStore?.Set("level", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Operations {
+            get { return BackingStore?.Get<List<string>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<string> Operations {
             get { return BackingStore?.Get<List<string>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>The targetObjects property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? TargetObjects {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("targetObjects"); }
+            set { BackingStore?.Set("targetObjects", value); }
+        }
+#else
         public List<DirectoryObject> TargetObjects {
             get { return BackingStore?.Get<List<DirectoryObject>>("targetObjects"); }
             set { BackingStore?.Set("targetObjects", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new unifiedRoleManagementPolicyRuleTarget and sets the default values.
         /// </summary>

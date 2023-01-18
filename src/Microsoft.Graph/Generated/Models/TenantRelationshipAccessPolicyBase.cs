@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TenantRelationshipAccessPolicyBase : PolicyBase, IParsable {
         /// <summary>The definition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Definition {
+            get { return BackingStore?.Get<List<string>?>("definition"); }
+            set { BackingStore?.Set("definition", value); }
+        }
+#else
         public List<string> Definition {
             get { return BackingStore?.Get<List<string>>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TenantRelationshipAccessPolicyBase and sets the default values.
         /// </summary>

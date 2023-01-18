@@ -14,50 +14,99 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The color that the user interface should display for the label, if configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Color {
+            get { return BackingStore?.Get<string?>("color"); }
+            set { BackingStore?.Set("color", value); }
+        }
+#else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#endif
         /// <summary>The admin-defined description for the label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The label ID is a globally unique identifier (GUID).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.</summary>
         public bool? IsActive {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The plaintext name of the label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The parent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ParentLabelDetails? Parent {
+            get { return BackingStore?.Get<ParentLabelDetails?>("parent"); }
+            set { BackingStore?.Set("parent", value); }
+        }
+#else
         public ParentLabelDetails Parent {
             get { return BackingStore?.Get<ParentLabelDetails>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
+#endif
         /// <summary>The sensitivity value of the label, where lower is less sensitive.</summary>
         public int? Sensitivity {
             get { return BackingStore?.Get<int?>("sensitivity"); }
             set { BackingStore?.Set("sensitivity", value); }
         }
         /// <summary>The tooltip that should be displayed for the label in a user interface.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Tooltip {
+            get { return BackingStore?.Get<string?>("tooltip"); }
+            set { BackingStore?.Set("tooltip", value); }
+        }
+#else
         public string Tooltip {
             get { return BackingStore?.Get<string>("tooltip"); }
             set { BackingStore?.Set("tooltip", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new parentLabelDetails and sets the default values.
         /// </summary>

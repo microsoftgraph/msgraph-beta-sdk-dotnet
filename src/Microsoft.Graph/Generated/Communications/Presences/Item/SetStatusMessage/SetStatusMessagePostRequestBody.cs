@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.SetStatusMessage {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The statusMessage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PresenceStatusMessage? StatusMessage {
+            get { return BackingStore?.Get<PresenceStatusMessage?>("statusMessage"); }
+            set { BackingStore?.Set("statusMessage", value); }
+        }
+#else
         public PresenceStatusMessage StatusMessage {
             get { return BackingStore?.Get<PresenceStatusMessage>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new setStatusMessagePostRequestBody and sets the default values.
         /// </summary>

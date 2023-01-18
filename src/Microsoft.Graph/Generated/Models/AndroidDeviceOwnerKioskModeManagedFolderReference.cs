@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeManagedFolderReference : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable {
         /// <summary>Unique identifier for the folder</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FolderIdentifier {
+            get { return BackingStore?.Get<string?>("folderIdentifier"); }
+            set { BackingStore?.Set("folderIdentifier", value); }
+        }
+#else
         public string FolderIdentifier {
             get { return BackingStore?.Get<string>("folderIdentifier"); }
             set { BackingStore?.Set("folderIdentifier", value); }
         }
+#endif
         /// <summary>Name of the folder</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FolderName {
+            get { return BackingStore?.Get<string?>("folderName"); }
+            set { BackingStore?.Set("folderName", value); }
+        }
+#else
         public string FolderName {
             get { return BackingStore?.Get<string>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory, IParsable {
         /// <summary>The settings this category contains</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementSettingInstance>? RecommendedSettings {
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("recommendedSettings"); }
+            set { BackingStore?.Set("recommendedSettings", value); }
+        }
+#else
         public List<DeviceManagementSettingInstance> RecommendedSettings {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("recommendedSettings"); }
             set { BackingStore?.Set("recommendedSettings", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

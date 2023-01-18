@@ -21,10 +21,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("mailboxCount", value); }
         }
         /// <summary>eDiscovery search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoverySearch? Search {
+            get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
+            set { BackingStore?.Set("search", value); }
+        }
+#else
         public EdiscoverySearch Search {
             get { return BackingStore?.Get<EdiscoverySearch>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#endif
         /// <summary>The number of mailboxes that had search hits.</summary>
         public int? SiteCount {
             get { return BackingStore?.Get<int?>("siteCount"); }

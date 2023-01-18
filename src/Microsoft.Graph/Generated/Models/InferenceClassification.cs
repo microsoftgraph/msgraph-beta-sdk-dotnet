@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class InferenceClassification : Entity, IParsable {
         /// <summary>A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<InferenceClassificationOverride>? Overrides {
+            get { return BackingStore?.Get<List<InferenceClassificationOverride>?>("overrides"); }
+            set { BackingStore?.Set("overrides", value); }
+        }
+#else
         public List<InferenceClassificationOverride> Overrides {
             get { return BackingStore?.Get<List<InferenceClassificationOverride>>("overrides"); }
             set { BackingStore?.Set("overrides", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

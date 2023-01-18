@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The timeSeries property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeSeriesParameter? TimeSeries {
+            get { return BackingStore?.Get<TimeSeriesParameter?>("timeSeries"); }
+            set { BackingStore?.Set("timeSeries", value); }
+        }
+#else
         public TimeSeriesParameter TimeSeries {
             get { return BackingStore?.Get<TimeSeriesParameter>("timeSeries"); }
             set { BackingStore?.Set("timeSeries", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new getHealthMetricTimeSeriesPostRequestBody and sets the default values.
         /// </summary>

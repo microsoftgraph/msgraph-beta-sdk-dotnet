@@ -15,25 +15,53 @@ namespace Microsoft.Graph.Beta.Drive.Root.Invite {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expirationDateTime property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExpirationDateTime {
+            get { return BackingStore?.Get<string?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
+        }
+#else
         public string ExpirationDateTime {
             get { return BackingStore?.Get<string>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
+#endif
         /// <summary>The message property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Message {
+            get { return BackingStore?.Get<string?>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+#else
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#endif
         /// <summary>The password property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Password {
+            get { return BackingStore?.Get<string?>("password"); }
+            set { BackingStore?.Set("password", value); }
+        }
+#else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#endif
         /// <summary>The recipients property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DriveRecipient>? Recipients {
+            get { return BackingStore?.Get<List<DriveRecipient>?>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
+        }
+#else
         public List<DriveRecipient> Recipients {
             get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#endif
         /// <summary>The requireSignIn property</summary>
         public bool? RequireSignIn {
             get { return BackingStore?.Get<bool?>("requireSignIn"); }
@@ -45,10 +73,17 @@ namespace Microsoft.Graph.Beta.Drive.Root.Invite {
             set { BackingStore?.Set("retainInheritedPermissions", value); }
         }
         /// <summary>The roles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Roles {
+            get { return BackingStore?.Get<List<string>?>("roles"); }
+            set { BackingStore?.Set("roles", value); }
+        }
+#else
         public List<string> Roles {
             get { return BackingStore?.Get<List<string>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#endif
         /// <summary>The sendInvitation property</summary>
         public bool? SendInvitation {
             get { return BackingStore?.Get<bool?>("sendInvitation"); }

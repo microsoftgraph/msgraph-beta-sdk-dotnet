@@ -6,80 +6,171 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Organization : DirectoryObject, IParsable {
         /// <summary>The collection of service plans associated with the tenant. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AssignedPlan>? AssignedPlans {
+            get { return BackingStore?.Get<List<AssignedPlan>?>("assignedPlans"); }
+            set { BackingStore?.Set("assignedPlans", value); }
+        }
+#else
         public List<AssignedPlan> AssignedPlans {
             get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
+#endif
         /// <summary>Resource to manage the default branding for the organization. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OrganizationalBranding? Branding {
+            get { return BackingStore?.Get<OrganizationalBranding?>("branding"); }
+            set { BackingStore?.Set("branding", value); }
+        }
+#else
         public OrganizationalBranding Branding {
             get { return BackingStore?.Get<OrganizationalBranding>("branding"); }
             set { BackingStore?.Set("branding", value); }
         }
+#endif
         /// <summary>Telephone number for the organization. Although this is a string collection, only one number can be set for this property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BusinessPhones {
+            get { return BackingStore?.Get<List<string>?>("businessPhones"); }
+            set { BackingStore?.Set("businessPhones", value); }
+        }
+#else
         public List<string> BusinessPhones {
             get { return BackingStore?.Get<List<string>>("businessPhones"); }
             set { BackingStore?.Set("businessPhones", value); }
         }
+#endif
         /// <summary>Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>? CertificateBasedAuthConfiguration {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>?>("certificateBasedAuthConfiguration"); }
+            set { BackingStore?.Set("certificateBasedAuthConfiguration", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration> CertificateBasedAuthConfiguration {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>>("certificateBasedAuthConfiguration"); }
             set { BackingStore?.Set("certificateBasedAuthConfiguration", value); }
         }
+#endif
         /// <summary>Certificate connector setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.CertificateConnectorSetting? CertificateConnectorSetting {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateConnectorSetting?>("certificateConnectorSetting"); }
+            set { BackingStore?.Set("certificateConnectorSetting", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.CertificateConnectorSetting CertificateConnectorSetting {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateConnectorSetting>("certificateConnectorSetting"); }
             set { BackingStore?.Set("certificateConnectorSetting", value); }
         }
+#endif
         /// <summary>City name of the address for the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? City {
+            get { return BackingStore?.Get<string?>("city"); }
+            set { BackingStore?.Set("city", value); }
+        }
+#else
         public string City {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
+#endif
         /// <summary>Country/region name of the address for the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Country {
+            get { return BackingStore?.Get<string?>("country"); }
+            set { BackingStore?.Set("country", value); }
+        }
+#else
         public string Country {
             get { return BackingStore?.Get<string>("country"); }
             set { BackingStore?.Set("country", value); }
         }
+#endif
         /// <summary>Country or region abbreviation for the organization in ISO 3166-2 format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountryLetterCode {
+            get { return BackingStore?.Get<string?>("countryLetterCode"); }
+            set { BackingStore?.Set("countryLetterCode", value); }
+        }
+#else
         public string CountryLetterCode {
             get { return BackingStore?.Get<string>("countryLetterCode"); }
             set { BackingStore?.Set("countryLetterCode", value); }
         }
+#endif
         /// <summary>Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Two-letter ISO 3166 country code indicating the default service usage location of an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultUsageLocation {
+            get { return BackingStore?.Get<string?>("defaultUsageLocation"); }
+            set { BackingStore?.Set("defaultUsageLocation", value); }
+        }
+#else
         public string DefaultUsageLocation {
             get { return BackingStore?.Get<string>("defaultUsageLocation"); }
             set { BackingStore?.Set("defaultUsageLocation", value); }
         }
+#endif
         /// <summary>The directory size quota information of an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DirectorySizeQuota? DirectorySizeQuota {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectorySizeQuota?>("directorySizeQuota"); }
+            set { BackingStore?.Set("directorySizeQuota", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DirectorySizeQuota DirectorySizeQuota {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectorySizeQuota>("directorySizeQuota"); }
             set { BackingStore?.Set("directorySizeQuota", value); }
         }
+#endif
         /// <summary>The display name for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The collection of open extensions defined for the organization resource. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Extension>? Extensions {
+            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#endif
         /// <summary>true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.</summary>
         public bool? IsMultipleDataLocationsForServicesEnabled {
             get { return BackingStore?.Get<bool?>("isMultipleDataLocationsForServicesEnabled"); }
             set { BackingStore?.Set("isMultipleDataLocationsForServicesEnabled", value); }
         }
         /// <summary>Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? MarketingNotificationEmails {
+            get { return BackingStore?.Get<List<string>?>("marketingNotificationEmails"); }
+            set { BackingStore?.Set("marketingNotificationEmails", value); }
+        }
+#else
         public List<string> MarketingNotificationEmails {
             get { return BackingStore?.Get<List<string>>("marketingNotificationEmails"); }
             set { BackingStore?.Set("marketingNotificationEmails", value); }
         }
+#endif
         /// <summary>Mobile device management authority.</summary>
         public MdmAuthority? MobileDeviceManagementAuthority {
             get { return BackingStore?.Get<MdmAuthority?>("mobileDeviceManagementAuthority"); }
@@ -101,60 +192,137 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("partnerTenantType", value); }
         }
         /// <summary>Postal code of the address for the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PostalCode {
+            get { return BackingStore?.Get<string?>("postalCode"); }
+            set { BackingStore?.Set("postalCode", value); }
+        }
+#else
         public string PostalCode {
             get { return BackingStore?.Get<string>("postalCode"); }
             set { BackingStore?.Set("postalCode", value); }
         }
+#endif
         /// <summary>The preferred language for the organization. Should follow ISO 639-1 Code; for example en.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreferredLanguage {
+            get { return BackingStore?.Get<string?>("preferredLanguage"); }
+            set { BackingStore?.Set("preferredLanguage", value); }
+        }
+#else
         public string PreferredLanguage {
             get { return BackingStore?.Get<string>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
+#endif
         /// <summary>The privacy profile of an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PrivacyProfile? PrivacyProfile {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivacyProfile?>("privacyProfile"); }
+            set { BackingStore?.Set("privacyProfile", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PrivacyProfile PrivacyProfile {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivacyProfile>("privacyProfile"); }
             set { BackingStore?.Set("privacyProfile", value); }
         }
+#endif
         /// <summary>Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ProvisionedPlan>? ProvisionedPlans {
+            get { return BackingStore?.Get<List<ProvisionedPlan>?>("provisionedPlans"); }
+            set { BackingStore?.Set("provisionedPlans", value); }
+        }
+#else
         public List<ProvisionedPlan> ProvisionedPlans {
             get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
+#endif
         /// <summary>The securityComplianceNotificationMails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SecurityComplianceNotificationMails {
+            get { return BackingStore?.Get<List<string>?>("securityComplianceNotificationMails"); }
+            set { BackingStore?.Set("securityComplianceNotificationMails", value); }
+        }
+#else
         public List<string> SecurityComplianceNotificationMails {
             get { return BackingStore?.Get<List<string>>("securityComplianceNotificationMails"); }
             set { BackingStore?.Set("securityComplianceNotificationMails", value); }
         }
+#endif
         /// <summary>The securityComplianceNotificationPhones property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SecurityComplianceNotificationPhones {
+            get { return BackingStore?.Get<List<string>?>("securityComplianceNotificationPhones"); }
+            set { BackingStore?.Set("securityComplianceNotificationPhones", value); }
+        }
+#else
         public List<string> SecurityComplianceNotificationPhones {
             get { return BackingStore?.Get<List<string>>("securityComplianceNotificationPhones"); }
             set { BackingStore?.Set("securityComplianceNotificationPhones", value); }
         }
+#endif
         /// <summary>Retrieve the properties and relationships of organizationSettings object. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OrganizationSettings? Settings {
+            get { return BackingStore?.Get<OrganizationSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public OrganizationSettings Settings {
             get { return BackingStore?.Get<OrganizationSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>State name of the address for the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? State {
+            get { return BackingStore?.Get<string?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>Street name of the address for organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Street {
+            get { return BackingStore?.Get<string?>("street"); }
+            set { BackingStore?.Set("street", value); }
+        }
+#else
         public string Street {
             get { return BackingStore?.Get<string>("street"); }
             set { BackingStore?.Set("street", value); }
         }
+#endif
         /// <summary>Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TechnicalNotificationMails {
+            get { return BackingStore?.Get<List<string>?>("technicalNotificationMails"); }
+            set { BackingStore?.Set("technicalNotificationMails", value); }
+        }
+#else
         public List<string> TechnicalNotificationMails {
             get { return BackingStore?.Get<List<string>>("technicalNotificationMails"); }
             set { BackingStore?.Set("technicalNotificationMails", value); }
         }
+#endif
         /// <summary>The collection of domains associated with this tenant. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<VerifiedDomain>? VerifiedDomains {
+            get { return BackingStore?.Get<List<VerifiedDomain>?>("verifiedDomains"); }
+            set { BackingStore?.Set("verifiedDomains", value); }
+        }
+#else
         public List<VerifiedDomain> VerifiedDomains {
             get { return BackingStore?.Get<List<VerifiedDomain>>("verifiedDomains"); }
             set { BackingStore?.Set("verifiedDomains", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Organization and sets the default values.
         /// </summary>

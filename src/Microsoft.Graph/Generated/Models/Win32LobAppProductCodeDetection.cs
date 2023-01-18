@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppProductCodeDetection : Win32LobAppDetection, IParsable {
         /// <summary>The product code of Win32 Line of Business (LoB) app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductCode {
+            get { return BackingStore?.Get<string?>("productCode"); }
+            set { BackingStore?.Set("productCode", value); }
+        }
+#else
         public string ProductCode {
             get { return BackingStore?.Get<string>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
+#endif
         /// <summary>The product version of Win32 Line of Business (LoB) app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductVersion {
+            get { return BackingStore?.Get<string?>("productVersion"); }
+            set { BackingStore?.Set("productVersion", value); }
+        }
+#else
         public string ProductVersion {
             get { return BackingStore?.Get<string>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
+#endif
         /// <summary>Contains properties for detection operator.</summary>
         public Win32LobAppDetectionOperator? ProductVersionOperator {
             get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("productVersionOperator"); }

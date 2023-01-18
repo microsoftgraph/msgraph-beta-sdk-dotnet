@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class LicenseDetails : Entity, IParsable {
         /// <summary>Information about the service plans assigned with the license. Read-only, Not nullable</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServicePlanInfo>? ServicePlans {
+            get { return BackingStore?.Get<List<ServicePlanInfo>?>("servicePlans"); }
+            set { BackingStore?.Set("servicePlans", value); }
+        }
+#else
         public List<ServicePlanInfo> ServicePlans {
             get { return BackingStore?.Get<List<ServicePlanInfo>>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
+#endif
         /// <summary>Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only</summary>
         public Guid? SkuId {
             get { return BackingStore?.Get<Guid?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: &apos;AAD_Premium&apos;. Read-only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SkuPartNumber {
+            get { return BackingStore?.Get<string?>("skuPartNumber"); }
+            set { BackingStore?.Set("skuPartNumber", value); }
+        }
+#else
         public string SkuPartNumber {
             get { return BackingStore?.Get<string>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

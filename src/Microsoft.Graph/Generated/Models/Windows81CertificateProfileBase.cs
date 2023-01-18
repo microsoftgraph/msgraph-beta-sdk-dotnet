@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows81CertificateProfileBase : WindowsCertificateProfileBase, IParsable {
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames {
+            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
+            set { BackingStore?.Set("customSubjectAlternativeNames", value); }
+        }
+#else
         public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
+#endif
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExtendedKeyUsage>? ExtendedKeyUsages {
+            get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
+            set { BackingStore?.Set("extendedKeyUsages", value); }
+        }
+#else
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Windows81CertificateProfileBase and sets the default values.
         /// </summary>

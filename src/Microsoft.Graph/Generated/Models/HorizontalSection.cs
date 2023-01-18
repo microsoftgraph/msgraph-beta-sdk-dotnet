@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class HorizontalSection : Entity, IParsable {
         /// <summary>The set of vertical columns in this section.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<HorizontalSectionColumn>? Columns {
+            get { return BackingStore?.Get<List<HorizontalSectionColumn>?>("columns"); }
+            set { BackingStore?.Set("columns", value); }
+        }
+#else
         public List<HorizontalSectionColumn> Columns {
             get { return BackingStore?.Get<List<HorizontalSectionColumn>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#endif
         /// <summary>Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.</summary>
         public SectionEmphasisType? Emphasis {
             get { return BackingStore?.Get<SectionEmphasisType?>("emphasis"); }

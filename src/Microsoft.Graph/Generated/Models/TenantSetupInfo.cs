@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TenantSetupInfo : Entity, IParsable {
         /// <summary>The defaultRolesSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrivilegedRoleSettings? DefaultRolesSettings {
+            get { return BackingStore?.Get<PrivilegedRoleSettings?>("defaultRolesSettings"); }
+            set { BackingStore?.Set("defaultRolesSettings", value); }
+        }
+#else
         public PrivilegedRoleSettings DefaultRolesSettings {
             get { return BackingStore?.Get<PrivilegedRoleSettings>("defaultRolesSettings"); }
             set { BackingStore?.Set("defaultRolesSettings", value); }
         }
+#endif
         /// <summary>The firstTimeSetup property</summary>
         public bool? FirstTimeSetup {
             get { return BackingStore?.Get<bool?>("firstTimeSetup"); }
             set { BackingStore?.Set("firstTimeSetup", value); }
         }
         /// <summary>The relevantRolesSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RelevantRolesSettings {
+            get { return BackingStore?.Get<List<string>?>("relevantRolesSettings"); }
+            set { BackingStore?.Set("relevantRolesSettings", value); }
+        }
+#else
         public List<string> RelevantRolesSettings {
             get { return BackingStore?.Get<List<string>>("relevantRolesSettings"); }
             set { BackingStore?.Set("relevantRolesSettings", value); }
         }
+#endif
         /// <summary>The setupStatus property</summary>
         public Microsoft.Graph.Beta.Models.SetupStatus? SetupStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SetupStatus?>("setupStatus"); }
@@ -31,10 +45,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skipSetup", value); }
         }
         /// <summary>The userRolesActions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserRolesActions {
+            get { return BackingStore?.Get<string?>("userRolesActions"); }
+            set { BackingStore?.Set("userRolesActions", value); }
+        }
+#else
         public string UserRolesActions {
             get { return BackingStore?.Get<string>("userRolesActions"); }
             set { BackingStore?.Set("userRolesActions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

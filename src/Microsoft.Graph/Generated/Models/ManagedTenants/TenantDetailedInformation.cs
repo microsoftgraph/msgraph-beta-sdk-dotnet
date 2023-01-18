@@ -6,55 +6,125 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class TenantDetailedInformation : Entity, IParsable {
         /// <summary>The city where the managed tenant is located. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? City {
+            get { return BackingStore?.Get<string?>("city"); }
+            set { BackingStore?.Set("city", value); }
+        }
+#else
         public string City {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
+#endif
         /// <summary>The code for the country where the managed tenant is located. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountryCode {
+            get { return BackingStore?.Get<string?>("countryCode"); }
+            set { BackingStore?.Set("countryCode", value); }
+        }
+#else
         public string CountryCode {
             get { return BackingStore?.Get<string>("countryCode"); }
             set { BackingStore?.Set("countryCode", value); }
         }
+#endif
         /// <summary>The name for the country where the managed tenant is located. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountryName {
+            get { return BackingStore?.Get<string?>("countryName"); }
+            set { BackingStore?.Set("countryName", value); }
+        }
+#else
         public string CountryName {
             get { return BackingStore?.Get<string>("countryName"); }
             set { BackingStore?.Set("countryName", value); }
         }
+#endif
         /// <summary>The default domain name for the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultDomainName {
+            get { return BackingStore?.Get<string?>("defaultDomainName"); }
+            set { BackingStore?.Set("defaultDomainName", value); }
+        }
+#else
         public string DefaultDomainName {
             get { return BackingStore?.Get<string>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
+#endif
         /// <summary>The display name for the managed tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The business industry associated with the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IndustryName {
+            get { return BackingStore?.Get<string?>("industryName"); }
+            set { BackingStore?.Set("industryName", value); }
+        }
+#else
         public string IndustryName {
             get { return BackingStore?.Get<string>("industryName"); }
             set { BackingStore?.Set("industryName", value); }
         }
+#endif
         /// <summary>The region where the managed tenant is located. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Region {
+            get { return BackingStore?.Get<string?>("region"); }
+            set { BackingStore?.Set("region", value); }
+        }
+#else
         public string Region {
             get { return BackingStore?.Get<string>("region"); }
             set { BackingStore?.Set("region", value); }
         }
+#endif
         /// <summary>The business segment associated with the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SegmentName {
+            get { return BackingStore?.Get<string?>("segmentName"); }
+            set { BackingStore?.Set("segmentName", value); }
+        }
+#else
         public string SegmentName {
             get { return BackingStore?.Get<string>("segmentName"); }
             set { BackingStore?.Set("segmentName", value); }
         }
+#endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>The vertical associated with the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VerticalName {
+            get { return BackingStore?.Get<string?>("verticalName"); }
+            set { BackingStore?.Set("verticalName", value); }
+        }
+#else
         public string VerticalName {
             get { return BackingStore?.Get<string>("verticalName"); }
             set { BackingStore?.Set("verticalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

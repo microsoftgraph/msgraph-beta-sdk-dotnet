@@ -11,190 +11,421 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accountEnabled", value); }
         }
         /// <summary>The licenses that are assigned to the user. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AssignedLicense>? AssignedLicenses {
+            get { return BackingStore?.Get<List<AssignedLicense>?>("assignedLicenses"); }
+            set { BackingStore?.Set("assignedLicenses", value); }
+        }
+#else
         public List<AssignedLicense> AssignedLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
+#endif
         /// <summary>The plans that are assigned to the user. Read-only. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AssignedPlan>? AssignedPlans {
+            get { return BackingStore?.Get<List<AssignedPlan>?>("assignedPlans"); }
+            set { BackingStore?.Set("assignedPlans", value); }
+        }
+#else
         public List<AssignedPlan> AssignedPlans {
             get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
+#endif
         /// <summary>List of assignments for the user. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationAssignment>? Assignments {
+            get { return BackingStore?.Get<List<EducationAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<EducationAssignment> Assignments {
             get { return BackingStore?.Get<List<EducationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BusinessPhones {
+            get { return BackingStore?.Get<List<string>?>("businessPhones"); }
+            set { BackingStore?.Set("businessPhones", value); }
+        }
+#else
         public List<string> BusinessPhones {
             get { return BackingStore?.Get<List<string>>("businessPhones"); }
             set { BackingStore?.Set("businessPhones", value); }
         }
+#endif
         /// <summary>Classes to which the user belongs. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationClass>? Classes {
+            get { return BackingStore?.Get<List<EducationClass>?>("classes"); }
+            set { BackingStore?.Set("classes", value); }
+        }
+#else
         public List<EducationClass> Classes {
             get { return BackingStore?.Get<List<EducationClass>>("classes"); }
             set { BackingStore?.Set("classes", value); }
         }
+#endif
         /// <summary>Entity who created the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The name for the department in which the user works. Supports /$filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Department {
+            get { return BackingStore?.Get<string?>("department"); }
+            set { BackingStore?.Set("department", value); }
+        }
+#else
         public string Department {
             get { return BackingStore?.Get<string>("department"); }
             set { BackingStore?.Set("department", value); }
         }
+#endif
         /// <summary>The name displayed in the address book for the user. Supports $filter and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.</summary>
         public EducationExternalSource? ExternalSource {
             get { return BackingStore?.Get<EducationExternalSource?>("externalSource"); }
             set { BackingStore?.Set("externalSource", value); }
         }
         /// <summary>The name of the external source this resources was generated from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalSourceDetail {
+            get { return BackingStore?.Get<string?>("externalSourceDetail"); }
+            set { BackingStore?.Set("externalSourceDetail", value); }
+        }
+#else
         public string ExternalSourceDetail {
             get { return BackingStore?.Get<string>("externalSourceDetail"); }
             set { BackingStore?.Set("externalSourceDetail", value); }
         }
+#endif
         /// <summary>The given name (first name) of the user. Supports /$filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GivenName {
+            get { return BackingStore?.Get<string?>("givenName"); }
+            set { BackingStore?.Set("givenName", value); }
+        }
+#else
         public string GivenName {
             get { return BackingStore?.Get<string>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
+#endif
         /// <summary>The SMTP address for the user; for example, &apos;jeff@contoso.onmicrosoft.com&apos;. Read-Only. Supports /$filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Mail {
+            get { return BackingStore?.Get<string?>("mail"); }
+            set { BackingStore?.Set("mail", value); }
+        }
+#else
         public string Mail {
             get { return BackingStore?.Get<string>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
+#endif
         /// <summary>Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PhysicalAddress? MailingAddress {
+            get { return BackingStore?.Get<PhysicalAddress?>("mailingAddress"); }
+            set { BackingStore?.Set("mailingAddress", value); }
+        }
+#else
         public PhysicalAddress MailingAddress {
             get { return BackingStore?.Get<PhysicalAddress>("mailingAddress"); }
             set { BackingStore?.Set("mailingAddress", value); }
         }
+#endif
         /// <summary>The mail alias for the user. This property must be specified when a user is created. Supports /$filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MailNickname {
+            get { return BackingStore?.Get<string?>("mailNickname"); }
+            set { BackingStore?.Set("mailNickname", value); }
+        }
+#else
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
+#endif
         /// <summary>The middle name of user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MiddleName {
+            get { return BackingStore?.Get<string?>("middleName"); }
+            set { BackingStore?.Set("middleName", value); }
+        }
+#else
         public string MiddleName {
             get { return BackingStore?.Get<string>("middleName"); }
             set { BackingStore?.Set("middleName", value); }
         }
+#endif
         /// <summary>The primary cellular telephone number for the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MobilePhone {
+            get { return BackingStore?.Get<string?>("mobilePhone"); }
+            set { BackingStore?.Set("mobilePhone", value); }
+        }
+#else
         public string MobilePhone {
             get { return BackingStore?.Get<string>("mobilePhone"); }
             set { BackingStore?.Set("mobilePhone", value); }
         }
+#endif
         /// <summary>The officeLocation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OfficeLocation {
+            get { return BackingStore?.Get<string?>("officeLocation"); }
+            set { BackingStore?.Set("officeLocation", value); }
+        }
+#else
         public string OfficeLocation {
             get { return BackingStore?.Get<string>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
+#endif
         /// <summary>Additional information used to associate the AAD user with it&apos;s Active Directory counterpart.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationOnPremisesInfo? OnPremisesInfo {
+            get { return BackingStore?.Get<EducationOnPremisesInfo?>("onPremisesInfo"); }
+            set { BackingStore?.Set("onPremisesInfo", value); }
+        }
+#else
         public EducationOnPremisesInfo OnPremisesInfo {
             get { return BackingStore?.Get<EducationOnPremisesInfo>("onPremisesInfo"); }
             set { BackingStore?.Set("onPremisesInfo", value); }
         }
+#endif
         /// <summary>Specifies password policies for the user. See standard [user] resource for additional details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PasswordPolicies {
+            get { return BackingStore?.Get<string?>("passwordPolicies"); }
+            set { BackingStore?.Set("passwordPolicies", value); }
+        }
+#else
         public string PasswordPolicies {
             get { return BackingStore?.Get<string>("passwordPolicies"); }
             set { BackingStore?.Set("passwordPolicies", value); }
         }
+#endif
         /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. See standard [user] resource for additional details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PasswordProfile? PasswordProfile {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordProfile?>("passwordProfile"); }
+            set { BackingStore?.Set("passwordProfile", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PasswordProfile PasswordProfile {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordProfile>("passwordProfile"); }
             set { BackingStore?.Set("passwordProfile", value); }
         }
+#endif
         /// <summary>The preferred language for the user. Should follow ISO 639-1 Code; for example, &apos;en-US&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreferredLanguage {
+            get { return BackingStore?.Get<string?>("preferredLanguage"); }
+            set { BackingStore?.Set("preferredLanguage", value); }
+        }
+#else
         public string PreferredLanguage {
             get { return BackingStore?.Get<string>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
+#endif
         /// <summary>The primaryRole property</summary>
         public EducationUserRole? PrimaryRole {
             get { return BackingStore?.Get<EducationUserRole?>("primaryRole"); }
             set { BackingStore?.Set("primaryRole", value); }
         }
         /// <summary>The plans that are provisioned for the user. Read-only. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ProvisionedPlan>? ProvisionedPlans {
+            get { return BackingStore?.Get<List<ProvisionedPlan>?>("provisionedPlans"); }
+            set { BackingStore?.Set("provisionedPlans", value); }
+        }
+#else
         public List<ProvisionedPlan> ProvisionedPlans {
             get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
+#endif
         /// <summary>The refreshTokensValidFromDateTime property</summary>
         public DateTimeOffset? RefreshTokensValidFromDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("refreshTokensValidFromDateTime"); }
             set { BackingStore?.Set("refreshTokensValidFromDateTime", value); }
         }
         /// <summary>Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RelatedContact>? RelatedContacts {
+            get { return BackingStore?.Get<List<RelatedContact>?>("relatedContacts"); }
+            set { BackingStore?.Set("relatedContacts", value); }
+        }
+#else
         public List<RelatedContact> RelatedContacts {
             get { return BackingStore?.Get<List<RelatedContact>>("relatedContacts"); }
             set { BackingStore?.Set("relatedContacts", value); }
         }
+#endif
         /// <summary>Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PhysicalAddress? ResidenceAddress {
+            get { return BackingStore?.Get<PhysicalAddress?>("residenceAddress"); }
+            set { BackingStore?.Set("residenceAddress", value); }
+        }
+#else
         public PhysicalAddress ResidenceAddress {
             get { return BackingStore?.Get<PhysicalAddress>("residenceAddress"); }
             set { BackingStore?.Set("residenceAddress", value); }
         }
+#endif
         /// <summary>When set, the grading rubric attached to the assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationRubric>? Rubrics {
+            get { return BackingStore?.Get<List<EducationRubric>?>("rubrics"); }
+            set { BackingStore?.Set("rubrics", value); }
+        }
+#else
         public List<EducationRubric> Rubrics {
             get { return BackingStore?.Get<List<EducationRubric>>("rubrics"); }
             set { BackingStore?.Set("rubrics", value); }
         }
+#endif
         /// <summary>Schools to which the user belongs. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationSchool>? Schools {
+            get { return BackingStore?.Get<List<EducationSchool>?>("schools"); }
+            set { BackingStore?.Set("schools", value); }
+        }
+#else
         public List<EducationSchool> Schools {
             get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
+#endif
         /// <summary>The showInAddressList property</summary>
         public bool? ShowInAddressList {
             get { return BackingStore?.Get<bool?>("showInAddressList"); }
             set { BackingStore?.Set("showInAddressList", value); }
         }
         /// <summary>If the primary role is student, this block will contain student specific data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationStudent? Student {
+            get { return BackingStore?.Get<EducationStudent?>("student"); }
+            set { BackingStore?.Set("student", value); }
+        }
+#else
         public EducationStudent Student {
             get { return BackingStore?.Get<EducationStudent>("student"); }
             set { BackingStore?.Set("student", value); }
         }
+#endif
         /// <summary>The user&apos;s surname (family name or last name). Supports /$filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Surname {
+            get { return BackingStore?.Get<string?>("surname"); }
+            set { BackingStore?.Set("surname", value); }
+        }
+#else
         public string Surname {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
+#endif
         /// <summary>Classes for which the user is a teacher.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationClass>? TaughtClasses {
+            get { return BackingStore?.Get<List<EducationClass>?>("taughtClasses"); }
+            set { BackingStore?.Set("taughtClasses", value); }
+        }
+#else
         public List<EducationClass> TaughtClasses {
             get { return BackingStore?.Get<List<EducationClass>>("taughtClasses"); }
             set { BackingStore?.Set("taughtClasses", value); }
         }
+#endif
         /// <summary>If the primary role is teacher, this block will contain teacher specific data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationTeacher? Teacher {
+            get { return BackingStore?.Get<EducationTeacher?>("teacher"); }
+            set { BackingStore?.Set("teacher", value); }
+        }
+#else
         public EducationTeacher Teacher {
             get { return BackingStore?.Get<EducationTeacher>("teacher"); }
             set { BackingStore?.Set("teacher", value); }
         }
+#endif
         /// <summary>A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UsageLocation {
+            get { return BackingStore?.Get<string?>("usageLocation"); }
+            set { BackingStore?.Set("usageLocation", value); }
+        }
+#else
         public string UsageLocation {
             get { return BackingStore?.Get<string>("usageLocation"); }
             set { BackingStore?.Set("usageLocation", value); }
         }
+#endif
         /// <summary>The user property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.User? User {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("user"); }
+            set { BackingStore?.Set("user", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.User User {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#endif
         /// <summary>The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>A string value that can be used to classify user types in your directory, such as &apos;Member&apos; and &apos;Guest&apos;. Supports /$filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserType {
+            get { return BackingStore?.Get<string?>("userType"); }
+            set { BackingStore?.Set("userType", value); }
+        }
+#else
         public string UserType {
             get { return BackingStore?.Get<string>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

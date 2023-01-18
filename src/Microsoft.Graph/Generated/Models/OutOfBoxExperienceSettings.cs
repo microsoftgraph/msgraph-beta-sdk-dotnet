@@ -37,10 +37,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("hidePrivacySettings", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>If set, then skip the keyboard selection page if Language and Region are set</summary>
         public bool? SkipKeyboardSelectionPage {
             get { return BackingStore?.Get<bool?>("skipKeyboardSelectionPage"); }

@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAssignmentRequest : Entity, IParsable {
         /// <summary>The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessPackage? AccessPackage {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage?>("accessPackage"); }
+            set { BackingStore?.Set("accessPackage", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackage"); }
             set { BackingStore?.Set("accessPackage", value); }
         }
+#endif
         /// <summary>For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessPackageAssignment? AccessPackageAssignment {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageAssignment?>("accessPackageAssignment"); }
+            set { BackingStore?.Set("accessPackageAssignment", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessPackageAssignment AccessPackageAssignment {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageAssignment>("accessPackageAssignment"); }
             set { BackingStore?.Set("accessPackageAssignment", value); }
         }
+#endif
         /// <summary>Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageAnswer>? Answers {
+            get { return BackingStore?.Get<List<AccessPackageAnswer>?>("answers"); }
+            set { BackingStore?.Set("answers", value); }
+        }
+#else
         public List<AccessPackageAnswer> Answers {
             get { return BackingStore?.Get<List<AccessPackageAnswer>>("answers"); }
             set { BackingStore?.Set("answers", value); }
         }
+#endif
         /// <summary>The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CompletedDate {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDate"); }
@@ -31,10 +52,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>A collection of custom workflow extension instances being run on an assignment request. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CustomExtensionHandlerInstance>? CustomExtensionHandlerInstances {
+            get { return BackingStore?.Get<List<CustomExtensionHandlerInstance>?>("customExtensionHandlerInstances"); }
+            set { BackingStore?.Set("customExtensionHandlerInstances", value); }
+        }
+#else
         public List<CustomExtensionHandlerInstance> CustomExtensionHandlerInstances {
             get { return BackingStore?.Get<List<CustomExtensionHandlerInstance>>("customExtensionHandlerInstances"); }
             set { BackingStore?.Set("customExtensionHandlerInstances", value); }
         }
+#endif
         /// <summary>The expirationDateTime property</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
@@ -46,35 +74,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isValidationOnly", value); }
         }
         /// <summary>The requestor&apos;s supplied justification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Justification {
+            get { return BackingStore?.Get<string?>("justification"); }
+            set { BackingStore?.Set("justification", value); }
+        }
+#else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#endif
         /// <summary>The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessPackageSubject? Requestor {
+            get { return BackingStore?.Get<AccessPackageSubject?>("requestor"); }
+            set { BackingStore?.Set("requestor", value); }
+        }
+#else
         public AccessPackageSubject Requestor {
             get { return BackingStore?.Get<AccessPackageSubject>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
+#endif
         /// <summary>One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestState {
+            get { return BackingStore?.Get<string?>("requestState"); }
+            set { BackingStore?.Set("requestState", value); }
+        }
+#else
         public string RequestState {
             get { return BackingStore?.Get<string>("requestState"); }
             set { BackingStore?.Set("requestState", value); }
         }
+#endif
         /// <summary>More information on the request processing status. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestStatus {
+            get { return BackingStore?.Get<string?>("requestStatus"); }
+            set { BackingStore?.Set("requestStatus", value); }
+        }
+#else
         public string RequestStatus {
             get { return BackingStore?.Get<string>("requestStatus"); }
             set { BackingStore?.Set("requestStatus", value); }
         }
+#endif
         /// <summary>One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestType {
+            get { return BackingStore?.Get<string?>("requestType"); }
+            set { BackingStore?.Set("requestType", value); }
+        }
+#else
         public string RequestType {
             get { return BackingStore?.Get<string>("requestType"); }
             set { BackingStore?.Set("requestType", value); }
         }
+#endif
         /// <summary>The range of dates that access is to be assigned to the requestor. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestSchedule? Schedule {
+            get { return BackingStore?.Get<RequestSchedule?>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
+        }
+#else
         public RequestSchedule Schedule {
             get { return BackingStore?.Get<RequestSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

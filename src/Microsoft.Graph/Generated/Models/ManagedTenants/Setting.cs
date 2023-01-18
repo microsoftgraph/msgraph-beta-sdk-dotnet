@@ -14,30 +14,58 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for the setting. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The value for the setting serialized as string of JSON. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JsonValue {
+            get { return BackingStore?.Get<string?>("jsonValue"); }
+            set { BackingStore?.Set("jsonValue", value); }
+        }
+#else
         public string JsonValue {
             get { return BackingStore?.Get<string>("jsonValue"); }
             set { BackingStore?.Set("jsonValue", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.</summary>
         public bool? OverwriteAllowed {
             get { return BackingStore?.Get<bool?>("overwriteAllowed"); }
             set { BackingStore?.Set("overwriteAllowed", value); }
         }
         /// <summary>The settingId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingId {
+            get { return BackingStore?.Get<string?>("settingId"); }
+            set { BackingStore?.Set("settingId", value); }
+        }
+#else
         public string SettingId {
             get { return BackingStore?.Get<string>("settingId"); }
             set { BackingStore?.Set("settingId", value); }
         }
+#endif
         /// <summary>The valueType property</summary>
         public ManagementParameterValueType? ValueType {
             get { return BackingStore?.Get<ManagementParameterValueType?>("valueType"); }

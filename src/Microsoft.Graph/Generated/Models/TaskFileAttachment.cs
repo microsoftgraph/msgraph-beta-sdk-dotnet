@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TaskFileAttachment : AttachmentBase, IParsable {
         /// <summary>The base64-encoded contents of the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? ContentBytes {
+            get { return BackingStore?.Get<byte[]?>("contentBytes"); }
+            set { BackingStore?.Set("contentBytes", value); }
+        }
+#else
         public byte[] ContentBytes {
             get { return BackingStore?.Get<byte[]>("contentBytes"); }
             set { BackingStore?.Set("contentBytes", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TaskFileAttachment and sets the default values.
         /// </summary>

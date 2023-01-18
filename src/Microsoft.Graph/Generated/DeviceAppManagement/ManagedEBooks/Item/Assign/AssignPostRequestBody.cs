@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Assign {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedEBookAssignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedEBookAssignment>? ManagedEBookAssignments {
+            get { return BackingStore?.Get<List<ManagedEBookAssignment>?>("managedEBookAssignments"); }
+            set { BackingStore?.Set("managedEBookAssignments", value); }
+        }
+#else
         public List<ManagedEBookAssignment> ManagedEBookAssignments {
             get { return BackingStore?.Get<List<ManagedEBookAssignment>>("managedEBookAssignments"); }
             set { BackingStore?.Set("managedEBookAssignments", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.
         /// </summary>

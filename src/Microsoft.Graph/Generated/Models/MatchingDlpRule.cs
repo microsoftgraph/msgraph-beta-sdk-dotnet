@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MatchingDlpRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DlpActionInfo>? Actions {
+            get { return BackingStore?.Get<List<DlpActionInfo>?>("actions"); }
+            set { BackingStore?.Set("actions", value); }
+        }
+#else
         public List<DlpActionInfo> Actions {
             get { return BackingStore?.Get<List<DlpActionInfo>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -24,40 +31,75 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isMostRestrictive", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The policyId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyId {
+            get { return BackingStore?.Get<string?>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#else
         public string PolicyId {
             get { return BackingStore?.Get<string>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
+#endif
         /// <summary>The policyName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyName {
+            get { return BackingStore?.Get<string?>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
+        }
+#else
         public string PolicyName {
             get { return BackingStore?.Get<string>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
+#endif
         /// <summary>The priority property</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The ruleId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RuleId {
+            get { return BackingStore?.Get<string?>("ruleId"); }
+            set { BackingStore?.Set("ruleId", value); }
+        }
+#else
         public string RuleId {
             get { return BackingStore?.Get<string>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
+#endif
         /// <summary>The ruleMode property</summary>
         public Microsoft.Graph.Beta.Models.RuleMode? RuleMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RuleMode?>("ruleMode"); }
             set { BackingStore?.Set("ruleMode", value); }
         }
         /// <summary>The ruleName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RuleName {
+            get { return BackingStore?.Get<string?>("ruleName"); }
+            set { BackingStore?.Set("ruleName", value); }
+        }
+#else
         public string RuleName {
             get { return BackingStore?.Get<string>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new matchingDlpRule and sets the default values.
         /// </summary>

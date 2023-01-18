@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowDeviceHealthMonitoring", value); }
         }
         /// <summary>Specifies custom set of events collected from the device where health monitoring is enabled</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConfigDeviceHealthMonitoringCustomScope {
+            get { return BackingStore?.Get<string?>("configDeviceHealthMonitoringCustomScope"); }
+            set { BackingStore?.Set("configDeviceHealthMonitoringCustomScope", value); }
+        }
+#else
         public string ConfigDeviceHealthMonitoringCustomScope {
             get { return BackingStore?.Get<string>("configDeviceHealthMonitoringCustomScope"); }
             set { BackingStore?.Set("configDeviceHealthMonitoringCustomScope", value); }
         }
+#endif
         /// <summary>Device health monitoring scope</summary>
         public WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope {
             get { return BackingStore?.Get<WindowsHealthMonitoringScope?>("configDeviceHealthMonitoringScope"); }

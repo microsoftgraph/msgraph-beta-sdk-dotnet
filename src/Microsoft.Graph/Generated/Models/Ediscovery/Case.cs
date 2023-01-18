@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class Case : Entity, IParsable {
         /// <summary>The user who closed the case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? ClosedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("closedBy"); }
+            set { BackingStore?.Set("closedBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet ClosedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("closedBy"); }
             set { BackingStore?.Set("closedBy", value); }
         }
+#endif
         /// <summary>The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ClosedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("closedDateTime"); }
@@ -21,75 +28,159 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Returns a list of case custodian objects for this case.  Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Custodian>? Custodians {
+            get { return BackingStore?.Get<List<Custodian>?>("custodians"); }
+            set { BackingStore?.Set("custodians", value); }
+        }
+#else
         public List<Custodian> Custodians {
             get { return BackingStore?.Get<List<Custodian>>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
+#endif
         /// <summary>The case description.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The case name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The external case number for customer reference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalId {
+            get { return BackingStore?.Get<string?>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
+        }
+#else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#endif
         /// <summary>The last user who modified the entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Returns a list of case legalHold objects for this case.  Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LegalHold>? LegalHolds {
+            get { return BackingStore?.Get<List<LegalHold>?>("legalHolds"); }
+            set { BackingStore?.Set("legalHolds", value); }
+        }
+#else
         public List<LegalHold> LegalHolds {
             get { return BackingStore?.Get<List<LegalHold>>("legalHolds"); }
             set { BackingStore?.Set("legalHolds", value); }
         }
+#endif
         /// <summary>Returns a list of case noncustodialDataSource objects for this case.  Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<NoncustodialDataSource>? NoncustodialDataSources {
+            get { return BackingStore?.Get<List<NoncustodialDataSource>?>("noncustodialDataSources"); }
+            set { BackingStore?.Set("noncustodialDataSources", value); }
+        }
+#else
         public List<NoncustodialDataSource> NoncustodialDataSources {
             get { return BackingStore?.Get<List<NoncustodialDataSource>>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
+#endif
         /// <summary>Returns a list of case operation objects for this case. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CaseOperation>? Operations {
+            get { return BackingStore?.Get<List<CaseOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<CaseOperation> Operations {
             get { return BackingStore?.Get<List<CaseOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>Returns a list of reviewSet objects in the case. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ReviewSet>? ReviewSets {
+            get { return BackingStore?.Get<List<ReviewSet>?>("reviewSets"); }
+            set { BackingStore?.Set("reviewSets", value); }
+        }
+#else
         public List<ReviewSet> ReviewSets {
             get { return BackingStore?.Get<List<ReviewSet>>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
+#endif
         /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CaseSettings? Settings {
+            get { return BackingStore?.Get<CaseSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public CaseSettings Settings {
             get { return BackingStore?.Get<CaseSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>Returns a list of sourceCollection objects associated with this case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SourceCollection>? SourceCollections {
+            get { return BackingStore?.Get<List<SourceCollection>?>("sourceCollections"); }
+            set { BackingStore?.Set("sourceCollections", value); }
+        }
+#else
         public List<SourceCollection> SourceCollections {
             get { return BackingStore?.Get<List<SourceCollection>>("sourceCollections"); }
             set { BackingStore?.Set("sourceCollections", value); }
         }
+#endif
         /// <summary>The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.</summary>
         public CaseStatus? Status {
             get { return BackingStore?.Get<CaseStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Returns a list of tag objects associated to this case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Tag>? Tags {
+            get { return BackingStore?.Get<List<Tag>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<Tag> Tags {
             get { return BackingStore?.Get<List<Tag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

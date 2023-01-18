@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementTemplateStepDeployment : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The error property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GraphAPIErrorDetails? Error {
+            get { return BackingStore?.Get<GraphAPIErrorDetails?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public GraphAPIErrorDetails Error {
             get { return BackingStore?.Get<GraphAPIErrorDetails>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>The lastActionByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
@@ -36,15 +57,29 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The templateStepVersion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagementTemplateStepVersion? TemplateStepVersion {
+            get { return BackingStore?.Get<ManagementTemplateStepVersion?>("templateStepVersion"); }
+            set { BackingStore?.Set("templateStepVersion", value); }
+        }
+#else
         public ManagementTemplateStepVersion TemplateStepVersion {
             get { return BackingStore?.Get<ManagementTemplateStepVersion>("templateStepVersion"); }
             set { BackingStore?.Set("templateStepVersion", value); }
         }
+#endif
         /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

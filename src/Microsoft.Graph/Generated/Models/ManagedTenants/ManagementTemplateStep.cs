@@ -6,65 +6,121 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementTemplateStep : Entity, IParsable {
         /// <summary>The acceptedVersion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagementTemplateStepVersion? AcceptedVersion {
+            get { return BackingStore?.Get<ManagementTemplateStepVersion?>("acceptedVersion"); }
+            set { BackingStore?.Set("acceptedVersion", value); }
+        }
+#else
         public ManagementTemplateStepVersion AcceptedVersion {
             get { return BackingStore?.Get<ManagementTemplateStepVersion>("acceptedVersion"); }
             set { BackingStore?.Set("acceptedVersion", value); }
         }
+#endif
         /// <summary>The category property</summary>
         public ManagementCategory? Category {
             get { return BackingStore?.Get<ManagementCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The createdByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The lastActionByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplate property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate? ManagementTemplate {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate?>("managementTemplate"); }
+            set { BackingStore?.Set("managementTemplate", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate ManagementTemplate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>("managementTemplate"); }
             set { BackingStore?.Set("managementTemplate", value); }
         }
+#endif
         /// <summary>The portalLink property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ActionUrl? PortalLink {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl?>("portalLink"); }
+            set { BackingStore?.Set("portalLink", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ActionUrl PortalLink {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl>("portalLink"); }
             set { BackingStore?.Set("portalLink", value); }
         }
+#endif
         /// <summary>The priority property</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The versions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateStepVersion>? Versions {
+            get { return BackingStore?.Get<List<ManagementTemplateStepVersion>?>("versions"); }
+            set { BackingStore?.Set("versions", value); }
+        }
+#else
         public List<ManagementTemplateStepVersion> Versions {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

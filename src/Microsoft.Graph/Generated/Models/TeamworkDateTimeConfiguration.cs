@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date format for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DateFormat {
+            get { return BackingStore?.Get<string?>("dateFormat"); }
+            set { BackingStore?.Set("dateFormat", value); }
+        }
+#else
         public string DateFormat {
             get { return BackingStore?.Get<string>("dateFormat"); }
             set { BackingStore?.Set("dateFormat", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The time of the day when the device is turned off.</summary>
         public Time? OfficeHoursEndTime {
             get { return BackingStore?.Get<Time?>("officeHoursEndTime"); }
@@ -35,15 +49,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("officeHoursStartTime", value); }
         }
         /// <summary>The time format for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeFormat {
+            get { return BackingStore?.Get<string?>("timeFormat"); }
+            set { BackingStore?.Set("timeFormat", value); }
+        }
+#else
         public string TimeFormat {
             get { return BackingStore?.Get<string>("timeFormat"); }
             set { BackingStore?.Set("timeFormat", value); }
         }
+#endif
         /// <summary>The time zone to which the office hours apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeZone {
+            get { return BackingStore?.Get<string?>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
+        }
+#else
         public string TimeZone {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkDateTimeConfiguration and sets the default values.
         /// </summary>

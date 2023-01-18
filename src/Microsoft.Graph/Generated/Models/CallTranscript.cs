@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CallTranscript : Entity, IParsable {
         /// <summary>A field representing the content of the transcript. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Content {
+            get { return BackingStore?.Get<byte[]?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>Date and time at which the transcript was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

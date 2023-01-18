@@ -16,25 +16,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastDeliveredDateTime", value); }
         }
         /// <summary>A short summary from the body of the latest post in this conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Preview {
+            get { return BackingStore?.Get<string?>("preview"); }
+            set { BackingStore?.Set("preview", value); }
+        }
+#else
         public string Preview {
             get { return BackingStore?.Get<string>("preview"); }
             set { BackingStore?.Set("preview", value); }
         }
+#endif
         /// <summary>A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConversationThread>? Threads {
+            get { return BackingStore?.Get<List<ConversationThread>?>("threads"); }
+            set { BackingStore?.Set("threads", value); }
+        }
+#else
         public List<ConversationThread> Threads {
             get { return BackingStore?.Get<List<ConversationThread>>("threads"); }
             set { BackingStore?.Set("threads", value); }
         }
+#endif
         /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Topic {
+            get { return BackingStore?.Get<string?>("topic"); }
+            set { BackingStore?.Set("topic", value); }
+        }
+#else
         public string Topic {
             get { return BackingStore?.Get<string>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
+#endif
         /// <summary>All the users that sent a message to this Conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? UniqueSenders {
+            get { return BackingStore?.Get<List<string>?>("uniqueSenders"); }
+            set { BackingStore?.Set("uniqueSenders", value); }
+        }
+#else
         public List<string> UniqueSenders {
             get { return BackingStore?.Get<List<string>>("uniqueSenders"); }
             set { BackingStore?.Set("uniqueSenders", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

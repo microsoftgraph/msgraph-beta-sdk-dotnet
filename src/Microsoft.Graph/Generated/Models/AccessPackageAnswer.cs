@@ -12,22 +12,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The question the answer is for. Required and Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessPackageQuestion? AnsweredQuestion {
+            get { return BackingStore?.Get<AccessPackageQuestion?>("answeredQuestion"); }
+            set { BackingStore?.Set("answeredQuestion", value); }
+        }
+#else
         public AccessPackageQuestion AnsweredQuestion {
             get { return BackingStore?.Get<AccessPackageQuestion>("answeredQuestion"); }
             set { BackingStore?.Set("answeredQuestion", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display value of the answer. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayValue {
+            get { return BackingStore?.Get<string?>("displayValue"); }
+            set { BackingStore?.Set("displayValue", value); }
+        }
+#else
         public string DisplayValue {
             get { return BackingStore?.Get<string>("displayValue"); }
             set { BackingStore?.Set("displayValue", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new accessPackageAnswer and sets the default values.
         /// </summary>

@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The riskEventTypes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RiskEventTypes {
+            get { return BackingStore?.Get<List<string>?>("riskEventTypes"); }
+            set { BackingStore?.Set("riskEventTypes", value); }
+        }
+#else
         public List<string> RiskEventTypes {
             get { return BackingStore?.Get<List<string>>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new riskServicePrincipalActivity and sets the default values.
         /// </summary>

@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The InputIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? InputIds {
+            get { return BackingStore?.Get<List<string>?>("inputIds"); }
+            set { BackingStore?.Set("inputIds", value); }
+        }
+#else
         public List<string> InputIds {
             get { return BackingStore?.Get<List<string>>("inputIds"); }
             set { BackingStore?.Set("inputIds", value); }
         }
+#endif
         /// <summary>The SourceIdType property</summary>
         public ExchangeIdFormat? SourceIdType {
             get { return BackingStore?.Get<ExchangeIdFormat?>("sourceIdType"); }

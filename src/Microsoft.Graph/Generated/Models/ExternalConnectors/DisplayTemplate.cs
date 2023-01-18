@@ -14,30 +14,58 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The layout property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Json? Layout {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("layout"); }
+            set { BackingStore?.Set("layout", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Json Layout {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Specifies additional rules for selecting this display template based on the item schema. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PropertyRule>? Rules {
+            get { return BackingStore?.Get<List<PropertyRule>?>("rules"); }
+            set { BackingStore?.Set("rules", value); }
+        }
+#else
         public List<PropertyRule> Rules {
             get { return BackingStore?.Get<List<PropertyRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new displayTemplate and sets the default values.
         /// </summary>

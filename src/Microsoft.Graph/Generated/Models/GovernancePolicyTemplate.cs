@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GovernancePolicyTemplate : Entity, IParsable {
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The policy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GovernancePolicy? Policy {
+            get { return BackingStore?.Get<GovernancePolicy?>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#else
         public GovernancePolicy Policy {
             get { return BackingStore?.Get<GovernancePolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
+#endif
         /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BusinessFlowSettings? Settings {
+            get { return BackingStore?.Get<BusinessFlowSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public BusinessFlowSettings Settings {
             get { return BackingStore?.Get<BusinessFlowSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

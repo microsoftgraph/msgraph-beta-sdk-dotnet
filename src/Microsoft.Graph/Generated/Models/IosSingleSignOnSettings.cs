@@ -15,37 +15,79 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? AllowedAppsList {
+            get { return BackingStore?.Get<List<AppListItem>?>("allowedAppsList"); }
+            set { BackingStore?.Set("allowedAppsList", value); }
+        }
+#else
         public List<AppListItem> AllowedAppsList {
             get { return BackingStore?.Get<List<AppListItem>>("allowedAppsList"); }
             set { BackingStore?.Set("allowedAppsList", value); }
         }
+#endif
         /// <summary>List of HTTP URLs that must be matched in order to use this login. With iOS 9.0 or later, a wildcard characters may be used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedUrls {
+            get { return BackingStore?.Get<List<string>?>("allowedUrls"); }
+            set { BackingStore?.Set("allowedUrls", value); }
+        }
+#else
         public List<string> AllowedUrls {
             get { return BackingStore?.Get<List<string>>("allowedUrls"); }
             set { BackingStore?.Set("allowedUrls", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name of login settings shown on the receiving device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>A Kerberos principal name. If not provided, the user is prompted for one during profile installation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KerberosPrincipalName {
+            get { return BackingStore?.Get<string?>("kerberosPrincipalName"); }
+            set { BackingStore?.Set("kerberosPrincipalName", value); }
+        }
+#else
         public string KerberosPrincipalName {
             get { return BackingStore?.Get<string>("kerberosPrincipalName"); }
             set { BackingStore?.Set("kerberosPrincipalName", value); }
         }
+#endif
         /// <summary>A Kerberos realm name. Case sensitive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KerberosRealm {
+            get { return BackingStore?.Get<string?>("kerberosRealm"); }
+            set { BackingStore?.Set("kerberosRealm", value); }
+        }
+#else
         public string KerberosRealm {
             get { return BackingStore?.Get<string>("kerberosRealm"); }
             set { BackingStore?.Set("kerberosRealm", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new iosSingleSignOnSettings and sets the default values.
         /// </summary>

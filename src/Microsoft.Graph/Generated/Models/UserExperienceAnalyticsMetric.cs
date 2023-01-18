@@ -9,10 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class UserExperienceAnalyticsMetric : Entity, IParsable {
         /// <summary>The unit of the user experience analytics metric.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Unit {
+            get { return BackingStore?.Get<string?>("unit"); }
+            set { BackingStore?.Set("unit", value); }
+        }
+#else
         public string Unit {
             get { return BackingStore?.Get<string>("unit"); }
             set { BackingStore?.Set("unit", value); }
         }
+#endif
         /// <summary>The value of the user experience analytics metric.</summary>
         public double? Value {
             get { return BackingStore?.Get<double?>("value"); }

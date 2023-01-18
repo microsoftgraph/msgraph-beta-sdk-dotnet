@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataDeltaLink property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataDeltaLink {
+            get { return BackingStore?.Get<string?>("@odata.deltaLink"); }
+            set { BackingStore?.Set("@odata.deltaLink", value); }
+        }
+#else
         public string OdataDeltaLink {
             get { return BackingStore?.Get<string>("@odata.deltaLink"); }
             set { BackingStore?.Set("@odata.deltaLink", value); }
         }
+#endif
         /// <summary>The OdataNextLink property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataNextLink {
+            get { return BackingStore?.Get<string?>("@odata.nextLink"); }
+            set { BackingStore?.Set("@odata.nextLink", value); }
+        }
+#else
         public string OdataNextLink {
             get { return BackingStore?.Get<string>("@odata.nextLink"); }
             set { BackingStore?.Set("@odata.nextLink", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new BaseDeltaFunctionResponse and sets the default values.
         /// </summary>

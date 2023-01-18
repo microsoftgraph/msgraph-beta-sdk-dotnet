@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingProfileConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The source of the entity</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Source {
+            get { return BackingStore?.Get<string?>("source"); }
+            set { BackingStore?.Set("source", value); }
+        }
+#else
         public string Source {
             get { return BackingStore?.Get<string>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#endif
         /// <summary>A collection of types this entity carries</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Types {
+            get { return BackingStore?.Get<List<string>?>("types"); }
+            set { BackingStore?.Set("types", value); }
+        }
+#else
         public List<string> Types {
             get { return BackingStore?.Get<List<string>>("types"); }
             set { BackingStore?.Set("types", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementSettingProfileConstraint and sets the default values.
         /// </summary>

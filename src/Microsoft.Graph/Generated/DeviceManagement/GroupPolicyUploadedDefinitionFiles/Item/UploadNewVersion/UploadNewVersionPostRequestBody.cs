@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The content property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Content {
+            get { return BackingStore?.Get<byte[]?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The groupPolicyUploadedLanguageFiles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyUploadedLanguageFile>? GroupPolicyUploadedLanguageFiles {
+            get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>?>("groupPolicyUploadedLanguageFiles"); }
+            set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
+        }
+#else
         public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles {
             get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>("groupPolicyUploadedLanguageFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new uploadNewVersionPostRequestBody and sets the default values.
         /// </summary>

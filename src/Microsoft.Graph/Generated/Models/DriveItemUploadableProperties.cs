@@ -14,30 +14,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.</summary>
         public long? FileSize {
             get { return BackingStore?.Get<long?>("fileSize"); }
             set { BackingStore?.Set("fileSize", value); }
         }
         /// <summary>File system information on client. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.FileSystemInfo? FileSystemInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileSystemInfo?>("fileSystemInfo"); }
+            set { BackingStore?.Set("fileSystemInfo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.FileSystemInfo FileSystemInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileSystemInfo>("fileSystemInfo"); }
             set { BackingStore?.Set("fileSystemInfo", value); }
         }
+#endif
         /// <summary>The name of the item (filename and extension). Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new driveItemUploadableProperties and sets the default values.
         /// </summary>

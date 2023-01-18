@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class X509CertificateRuleCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<X509CertificateRule>? Value {
+            get { return BackingStore?.Get<List<X509CertificateRule>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<X509CertificateRule> Value {
             get { return BackingStore?.Get<List<X509CertificateRule>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

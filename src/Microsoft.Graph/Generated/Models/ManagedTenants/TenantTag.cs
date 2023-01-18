@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class TenantTag : Entity, IParsable {
         /// <summary>The identifier for the account that created the tenant tag. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The date and time when the tenant tag was created. Required. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -21,30 +28,58 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("deletedDateTime", value); }
         }
         /// <summary>The description for the tenant tag. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name for the tenant tag. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The identifier for the account that lasted on the tenant tag. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The date and time the last action was performed against the tenant tag. Optional. Read-only.</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The collection of managed tenants associated with the tenant tag. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TenantInfo>? Tenants {
+            get { return BackingStore?.Get<List<TenantInfo>?>("tenants"); }
+            set { BackingStore?.Set("tenants", value); }
+        }
+#else
         public List<TenantInfo> Tenants {
             get { return BackingStore?.Get<List<TenantInfo>>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

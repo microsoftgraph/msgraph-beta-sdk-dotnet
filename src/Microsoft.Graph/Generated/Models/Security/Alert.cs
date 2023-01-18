@@ -6,80 +6,150 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class Alert : Entity, IParsable {
         /// <summary>The adversary or activity group that is associated with this alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActorDisplayName {
+            get { return BackingStore?.Get<string?>("actorDisplayName"); }
+            set { BackingStore?.Set("actorDisplayName", value); }
+        }
+#else
         public string ActorDisplayName {
             get { return BackingStore?.Get<string>("actorDisplayName"); }
             set { BackingStore?.Set("actorDisplayName", value); }
         }
+#endif
         /// <summary>URL for the alert page in the Microsoft 365 Defender portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlertWebUrl {
+            get { return BackingStore?.Get<string?>("alertWebUrl"); }
+            set { BackingStore?.Set("alertWebUrl", value); }
+        }
+#else
         public string AlertWebUrl {
             get { return BackingStore?.Get<string>("alertWebUrl"); }
             set { BackingStore?.Set("alertWebUrl", value); }
         }
+#endif
         /// <summary>Owner of the alert, or null if no owner is assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssignedTo {
+            get { return BackingStore?.Get<string?>("assignedTo"); }
+            set { BackingStore?.Set("assignedTo", value); }
+        }
+#else
         public string AssignedTo {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
+#endif
         /// <summary>The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category {
+            get { return BackingStore?.Get<string?>("category"); }
+            set { BackingStore?.Set("category", value); }
+        }
+#else
         public string Category {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
+#endif
         /// <summary>Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.</summary>
         public AlertClassification? Classification {
             get { return BackingStore?.Get<AlertClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>Array of comments created by the Security Operations (SecOps) team during the alert management process.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AlertComment>? Comments {
+            get { return BackingStore?.Get<List<AlertComment>?>("comments"); }
+            set { BackingStore?.Set("comments", value); }
+        }
+#else
         public List<AlertComment> Comments {
             get { return BackingStore?.Get<List<AlertComment>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
+#endif
         /// <summary>Time when Microsoft 365 Defender created the alert.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>String value describing each alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Detection technology or sensor that identified the notable component or activity.</summary>
         public Microsoft.Graph.Beta.Models.Security.DetectionSource? DetectionSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetectionSource?>("detectionSource"); }
             set { BackingStore?.Set("detectionSource", value); }
         }
         /// <summary>The ID of the detector that triggered the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DetectorId {
+            get { return BackingStore?.Get<string?>("detectorId"); }
+            set { BackingStore?.Set("detectorId", value); }
+        }
+#else
         public string DetectorId {
             get { return BackingStore?.Get<string>("detectorId"); }
             set { BackingStore?.Set("detectorId", value); }
         }
+#endif
         /// <summary>Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public AlertDetermination? Determination {
             get { return BackingStore?.Get<AlertDetermination?>("determination"); }
             set { BackingStore?.Set("determination", value); }
         }
         /// <summary>Collection of evidence related to the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AlertEvidence>? Evidence {
+            get { return BackingStore?.Get<List<AlertEvidence>?>("evidence"); }
+            set { BackingStore?.Set("evidence", value); }
+        }
+#else
         public List<AlertEvidence> Evidence {
             get { return BackingStore?.Get<List<AlertEvidence>>("evidence"); }
             set { BackingStore?.Set("evidence", value); }
         }
+#endif
         /// <summary>The earliest activity associated with the alert.</summary>
         public DateTimeOffset? FirstActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstActivityDateTime"); }
             set { BackingStore?.Set("firstActivityDateTime", value); }
         }
         /// <summary>Unique identifier to represent the incident this alert resource is associated with.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IncidentId {
+            get { return BackingStore?.Get<string?>("incidentId"); }
+            set { BackingStore?.Set("incidentId", value); }
+        }
+#else
         public string IncidentId {
             get { return BackingStore?.Get<string>("incidentId"); }
             set { BackingStore?.Set("incidentId", value); }
         }
+#endif
         /// <summary>URL for the incident page in the Microsoft 365 Defender portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IncidentWebUrl {
+            get { return BackingStore?.Get<string?>("incidentWebUrl"); }
+            set { BackingStore?.Set("incidentWebUrl", value); }
+        }
+#else
         public string IncidentWebUrl {
             get { return BackingStore?.Get<string>("incidentWebUrl"); }
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
+#endif
         /// <summary>The oldest activity associated with the alert.</summary>
         public DateTimeOffset? LastActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActivityDateTime"); }
@@ -91,20 +161,41 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
         /// <summary>The attack techniques, as aligned with the MITRE ATT&amp;CK framework.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? MitreTechniques {
+            get { return BackingStore?.Get<List<string>?>("mitreTechniques"); }
+            set { BackingStore?.Set("mitreTechniques", value); }
+        }
+#else
         public List<string> MitreTechniques {
             get { return BackingStore?.Get<List<string>>("mitreTechniques"); }
             set { BackingStore?.Set("mitreTechniques", value); }
         }
+#endif
         /// <summary>The ID of the alert as it appears in the security provider product that generated the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProviderAlertId {
+            get { return BackingStore?.Get<string?>("providerAlertId"); }
+            set { BackingStore?.Set("providerAlertId", value); }
+        }
+#else
         public string ProviderAlertId {
             get { return BackingStore?.Get<string>("providerAlertId"); }
             set { BackingStore?.Set("providerAlertId", value); }
         }
+#endif
         /// <summary>Recommended response and remediation actions to take in the event this alert was generated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecommendedActions {
+            get { return BackingStore?.Get<string?>("recommendedActions"); }
+            set { BackingStore?.Set("recommendedActions", value); }
+        }
+#else
         public string RecommendedActions {
             get { return BackingStore?.Get<string>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
+#endif
         /// <summary>Time when the alert was resolved.</summary>
         public DateTimeOffset? ResolvedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("resolvedDateTime"); }
@@ -126,25 +217,53 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The Azure Active Directory tenant the alert was created in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>The threat associated with this alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ThreatDisplayName {
+            get { return BackingStore?.Get<string?>("threatDisplayName"); }
+            set { BackingStore?.Set("threatDisplayName", value); }
+        }
+#else
         public string ThreatDisplayName {
             get { return BackingStore?.Get<string>("threatDisplayName"); }
             set { BackingStore?.Set("threatDisplayName", value); }
         }
+#endif
         /// <summary>Threat family associated with this alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ThreatFamilyName {
+            get { return BackingStore?.Get<string?>("threatFamilyName"); }
+            set { BackingStore?.Set("threatFamilyName", value); }
+        }
+#else
         public string ThreatFamilyName {
             get { return BackingStore?.Get<string>("threatFamilyName"); }
             set { BackingStore?.Set("threatFamilyName", value); }
         }
+#endif
         /// <summary>Brief identifying string value describing the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

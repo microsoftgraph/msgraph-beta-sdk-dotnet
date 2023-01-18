@@ -13,22 +13,43 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.ValidateCr
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The applicationIdentifier property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplicationIdentifier {
+            get { return BackingStore?.Get<string?>("applicationIdentifier"); }
+            set { BackingStore?.Set("applicationIdentifier", value); }
+        }
+#else
         public string ApplicationIdentifier {
             get { return BackingStore?.Get<string>("applicationIdentifier"); }
             set { BackingStore?.Set("applicationIdentifier", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The credentials property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SynchronizationSecretKeyStringValuePair>? Credentials {
+            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("credentials"); }
+            set { BackingStore?.Set("credentials", value); }
+        }
+#else
         public List<SynchronizationSecretKeyStringValuePair> Credentials {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
+#endif
         /// <summary>The templateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TemplateId {
+            get { return BackingStore?.Get<string?>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
+        }
+#else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#endif
         /// <summary>The useSavedCredentials property</summary>
         public bool? UseSavedCredentials {
             get { return BackingStore?.Get<bool?>("useSavedCredentials"); }

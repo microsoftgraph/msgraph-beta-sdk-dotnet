@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Additional details in case of error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdditionalDetails {
+            get { return BackingStore?.Get<string?>("additionalDetails"); }
+            set { BackingStore?.Set("additionalDetails", value); }
+        }
+#else
         public string AdditionalDetails {
             get { return BackingStore?.Get<string>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue</summary>
@@ -24,25 +31,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("errorCategory", value); }
         }
         /// <summary>Unique error code if any occurred. Learn more</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorCode {
+            get { return BackingStore?.Get<string?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
+        }
+#else
         public string ErrorCode {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Summarizes the status and describes why the status happened.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Reason {
+            get { return BackingStore?.Get<string?>("reason"); }
+            set { BackingStore?.Set("reason", value); }
+        }
+#else
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
+#endif
         /// <summary>Provides the resolution for the corresponding error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecommendedAction {
+            get { return BackingStore?.Get<string?>("recommendedAction"); }
+            set { BackingStore?.Set("recommendedAction", value); }
+        }
+#else
         public string RecommendedAction {
             get { return BackingStore?.Get<string>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new provisioningErrorInfo and sets the default values.
         /// </summary>

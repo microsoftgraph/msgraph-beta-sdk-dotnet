@@ -12,37 +12,79 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Optional. JSON object used to represent an icon which represents the application used to generate the activity</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ImageInfo? Attribution {
+            get { return BackingStore?.Get<ImageInfo?>("attribution"); }
+            set { BackingStore?.Set("attribution", value); }
+        }
+#else
         public ImageInfo Attribution {
             get { return BackingStore?.Get<ImageInfo>("attribution"); }
             set { BackingStore?.Set("attribution", value); }
         }
+#endif
         /// <summary>Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BackgroundColor {
+            get { return BackingStore?.Get<string?>("backgroundColor"); }
+            set { BackingStore?.Set("backgroundColor", value); }
+        }
+#else
         public string BackgroundColor {
             get { return BackingStore?.Get<string>("backgroundColor"); }
             set { BackingStore?.Set("backgroundColor", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Json? Content {
+            get { return BackingStore?.Get<Json?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public Json Content {
             get { return BackingStore?.Get<Json>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>Optional. Longer text description of the user&apos;s unique activity (example: document name, first sentence, and/or metadata)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Required. Short text description of the user&apos;s unique activity (for example, document name in cases where an activity refers to document creation)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayText {
+            get { return BackingStore?.Get<string?>("displayText"); }
+            set { BackingStore?.Set("displayText", value); }
+        }
+#else
         public string DisplayText {
             get { return BackingStore?.Get<string>("displayText"); }
             set { BackingStore?.Set("displayText", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new visualInfo and sets the default values.
         /// </summary>

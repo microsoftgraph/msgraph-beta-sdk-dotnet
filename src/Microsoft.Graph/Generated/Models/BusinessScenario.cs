@@ -6,45 +6,87 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BusinessScenario : Entity, IParsable {
         /// <summary>The identity of the user who created the scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The date and time when the scenario was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Display name of the scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The identity of the user who last modified the scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The date and time when the scenario was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Identifiers of applications that are authorized to work with this scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? OwnerAppIds {
+            get { return BackingStore?.Get<List<string>?>("ownerAppIds"); }
+            set { BackingStore?.Set("ownerAppIds", value); }
+        }
+#else
         public List<string> OwnerAppIds {
             get { return BackingStore?.Get<List<string>>("ownerAppIds"); }
             set { BackingStore?.Set("ownerAppIds", value); }
         }
+#endif
         /// <summary>Planner content related to the scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BusinessScenarioPlanner? Planner {
+            get { return BackingStore?.Get<BusinessScenarioPlanner?>("planner"); }
+            set { BackingStore?.Set("planner", value); }
+        }
+#else
         public BusinessScenarioPlanner Planner {
             get { return BackingStore?.Get<BusinessScenarioPlanner>("planner"); }
             set { BackingStore?.Set("planner", value); }
         }
+#endif
         /// <summary>Unique name of the scenario. To avoid conflicts, the recommended value for the unique name is a reverse domain name format, owned by the author of the scenario. For example, a scenario authored by Contoso.com would have a unique name that starts with com.contoso.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UniqueName {
+            get { return BackingStore?.Get<string?>("uniqueName"); }
+            set { BackingStore?.Set("uniqueName", value); }
+        }
+#else
         public string UniqueName {
             get { return BackingStore?.Get<string>("uniqueName"); }
             set { BackingStore?.Set("uniqueName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The credentials property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Credential>? Credentials {
+            get { return BackingStore?.Get<List<Credential>?>("credentials"); }
+            set { BackingStore?.Set("credentials", value); }
+        }
+#else
         public List<Credential> Credentials {
             get { return BackingStore?.Get<List<Credential>>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
+#endif
         /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updatePasswordSingleSignOnCredentialsPostRequestBody and sets the default values.
         /// </summary>

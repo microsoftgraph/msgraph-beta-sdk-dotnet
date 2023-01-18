@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceAndAppManagementRoleAssignment : RoleAssignment, IParsable {
         /// <summary>The list of ids of role member security groups. These are IDs from Azure Active Directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Members {
+            get { return BackingStore?.Get<List<string>?>("members"); }
+            set { BackingStore?.Set("members", value); }
+        }
+#else
         public List<string> Members {
             get { return BackingStore?.Get<List<string>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#endif
         /// <summary>The set of Role Scope Tags defined on the Role Assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RoleScopeTag>? RoleScopeTags {
+            get { return BackingStore?.Get<List<RoleScopeTag>?>("roleScopeTags"); }
+            set { BackingStore?.Set("roleScopeTags", value); }
+        }
+#else
         public List<RoleScopeTag> RoleScopeTags {
             get { return BackingStore?.Get<List<RoleScopeTag>>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

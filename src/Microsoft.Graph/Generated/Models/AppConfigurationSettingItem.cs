@@ -15,27 +15,48 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>app configuration key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppConfigKey {
+            get { return BackingStore?.Get<string?>("appConfigKey"); }
+            set { BackingStore?.Set("appConfigKey", value); }
+        }
+#else
         public string AppConfigKey {
             get { return BackingStore?.Get<string>("appConfigKey"); }
             set { BackingStore?.Set("appConfigKey", value); }
         }
+#endif
         /// <summary>App configuration key types.</summary>
         public MdmAppConfigKeyType? AppConfigKeyType {
             get { return BackingStore?.Get<MdmAppConfigKeyType?>("appConfigKeyType"); }
             set { BackingStore?.Set("appConfigKeyType", value); }
         }
         /// <summary>app configuration key value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppConfigKeyValue {
+            get { return BackingStore?.Get<string?>("appConfigKeyValue"); }
+            set { BackingStore?.Set("appConfigKeyValue", value); }
+        }
+#else
         public string AppConfigKeyValue {
             get { return BackingStore?.Get<string>("appConfigKeyValue"); }
             set { BackingStore?.Set("appConfigKeyValue", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new appConfigurationSettingItem and sets the default values.
         /// </summary>

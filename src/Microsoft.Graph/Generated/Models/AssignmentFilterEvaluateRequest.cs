@@ -17,30 +17,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Order the devices should be sorted in. Default is ascending on device name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? OrderBy {
+            get { return BackingStore?.Get<List<string>?>("orderBy"); }
+            set { BackingStore?.Set("orderBy", value); }
+        }
+#else
         public List<string> OrderBy {
             get { return BackingStore?.Get<List<string>>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
+#endif
         /// <summary>Supported platform types.</summary>
         public DevicePlatformType? Platform {
             get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Rule definition of the Assignment Filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Rule {
+            get { return BackingStore?.Get<string?>("rule"); }
+            set { BackingStore?.Set("rule", value); }
+        }
+#else
         public string Rule {
             get { return BackingStore?.Get<string>("rule"); }
             set { BackingStore?.Set("rule", value); }
         }
+#endif
         /// <summary>Search keyword applied to scope found devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Search {
+            get { return BackingStore?.Get<string?>("search"); }
+            set { BackingStore?.Set("search", value); }
+        }
+#else
         public string Search {
             get { return BackingStore?.Get<string>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#endif
         /// <summary>Number of records to skip. Default value is 0</summary>
         public int? Skip {
             get { return BackingStore?.Get<int?>("skip"); }

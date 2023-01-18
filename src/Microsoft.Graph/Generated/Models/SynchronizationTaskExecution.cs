@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationTaskExecution : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Identifier of the job run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivityIdentifier {
+            get { return BackingStore?.Get<string?>("activityIdentifier"); }
+            set { BackingStore?.Set("activityIdentifier", value); }
+        }
+#else
         public string ActivityIdentifier {
             get { return BackingStore?.Get<string>("activityIdentifier"); }
             set { BackingStore?.Set("activityIdentifier", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -64,15 +71,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("countImportedReferenceDeltas", value); }
         }
         /// <summary>If an error was encountered, contains a synchronizationError object with details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationError? Error {
+            get { return BackingStore?.Get<SynchronizationError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public SynchronizationError Error {
             get { return BackingStore?.Get<SynchronizationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public SynchronizationTaskExecutionResult? State {
             get { return BackingStore?.Get<SynchronizationTaskExecutionResult?>("state"); }

@@ -19,55 +19,111 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The isEndpointProtectionEnabled property</summary>
         public bool? IsEndpointProtectionEnabled {
             get { return BackingStore?.Get<bool?>("isEndpointProtectionEnabled"); }
             set { BackingStore?.Set("isEndpointProtectionEnabled", value); }
         }
         /// <summary>The labelActions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LabelActionBase>? LabelActions {
+            get { return BackingStore?.Get<List<LabelActionBase>?>("labelActions"); }
+            set { BackingStore?.Set("labelActions", value); }
+        }
+#else
         public List<LabelActionBase> LabelActions {
             get { return BackingStore?.Get<List<LabelActionBase>>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The policyTip property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyTip {
+            get { return BackingStore?.Get<string?>("policyTip"); }
+            set { BackingStore?.Set("policyTip", value); }
+        }
+#else
         public string PolicyTip {
             get { return BackingStore?.Get<string>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
+#endif
         /// <summary>The priority property</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The toolTip property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ToolTip {
+            get { return BackingStore?.Get<string?>("toolTip"); }
+            set { BackingStore?.Set("toolTip", value); }
+        }
+#else
         public string ToolTip {
             get { return BackingStore?.Get<string>("toolTip"); }
             set { BackingStore?.Set("toolTip", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new matchingLabel and sets the default values.
         /// </summary>

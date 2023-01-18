@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerGlobalProxyDirect : AndroidDeviceOwnerGlobalProxy, IParsable {
         /// <summary>The excluded hosts</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludedHosts {
+            get { return BackingStore?.Get<List<string>?>("excludedHosts"); }
+            set { BackingStore?.Set("excludedHosts", value); }
+        }
+#else
         public List<string> ExcludedHosts {
             get { return BackingStore?.Get<List<string>>("excludedHosts"); }
             set { BackingStore?.Set("excludedHosts", value); }
         }
+#endif
         /// <summary>The host name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Host {
+            get { return BackingStore?.Get<string?>("host"); }
+            set { BackingStore?.Set("host", value); }
+        }
+#else
         public string Host {
             get { return BackingStore?.Get<string>("host"); }
             set { BackingStore?.Set("host", value); }
         }
+#endif
         /// <summary>The port</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }

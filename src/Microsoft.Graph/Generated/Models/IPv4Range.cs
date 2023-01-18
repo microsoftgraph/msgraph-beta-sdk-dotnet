@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IPv4Range : IpRange, IParsable {
         /// <summary>Lower address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LowerAddress {
+            get { return BackingStore?.Get<string?>("lowerAddress"); }
+            set { BackingStore?.Set("lowerAddress", value); }
+        }
+#else
         public string LowerAddress {
             get { return BackingStore?.Get<string>("lowerAddress"); }
             set { BackingStore?.Set("lowerAddress", value); }
         }
+#endif
         /// <summary>Upper address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UpperAddress {
+            get { return BackingStore?.Get<string?>("upperAddress"); }
+            set { BackingStore?.Set("upperAddress", value); }
+        }
+#else
         public string UpperAddress {
             get { return BackingStore?.Get<string>("upperAddress"); }
             set { BackingStore?.Set("upperAddress", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IPv4Range and sets the default values.
         /// </summary>

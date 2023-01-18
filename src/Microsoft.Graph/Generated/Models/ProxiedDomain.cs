@@ -17,20 +17,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The IP address or FQDN</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddressOrFQDN {
+            get { return BackingStore?.Get<string?>("ipAddressOrFQDN"); }
+            set { BackingStore?.Set("ipAddressOrFQDN", value); }
+        }
+#else
         public string IpAddressOrFQDN {
             get { return BackingStore?.Get<string>("ipAddressOrFQDN"); }
             set { BackingStore?.Set("ipAddressOrFQDN", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Proxy IP or FQDN</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Proxy {
+            get { return BackingStore?.Get<string?>("proxy"); }
+            set { BackingStore?.Set("proxy", value); }
+        }
+#else
         public string Proxy {
             get { return BackingStore?.Get<string>("proxy"); }
             set { BackingStore?.Set("proxy", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new proxiedDomain and sets the default values.
         /// </summary>

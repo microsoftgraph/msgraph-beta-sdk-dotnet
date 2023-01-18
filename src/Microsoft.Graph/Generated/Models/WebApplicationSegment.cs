@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WebApplicationSegment : ApplicationSegment, IParsable {
         /// <summary>The alternateUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlternateUrl {
+            get { return BackingStore?.Get<string?>("alternateUrl"); }
+            set { BackingStore?.Set("alternateUrl", value); }
+        }
+#else
         public string AlternateUrl {
             get { return BackingStore?.Get<string>("alternateUrl"); }
             set { BackingStore?.Set("alternateUrl", value); }
         }
+#endif
         /// <summary>The corsConfigurations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CorsConfiguration_v2>? CorsConfigurations {
+            get { return BackingStore?.Get<List<CorsConfiguration_v2>?>("corsConfigurations"); }
+            set { BackingStore?.Set("corsConfigurations", value); }
+        }
+#else
         public List<CorsConfiguration_v2> CorsConfigurations {
             get { return BackingStore?.Get<List<CorsConfiguration_v2>>("corsConfigurations"); }
             set { BackingStore?.Set("corsConfigurations", value); }
         }
+#endif
         /// <summary>The externalUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalUrl {
+            get { return BackingStore?.Get<string?>("externalUrl"); }
+            set { BackingStore?.Set("externalUrl", value); }
+        }
+#else
         public string ExternalUrl {
             get { return BackingStore?.Get<string>("externalUrl"); }
             set { BackingStore?.Set("externalUrl", value); }
         }
+#endif
         /// <summary>The internalUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InternalUrl {
+            get { return BackingStore?.Get<string?>("internalUrl"); }
+            set { BackingStore?.Set("internalUrl", value); }
+        }
+#else
         public string InternalUrl {
             get { return BackingStore?.Get<string>("internalUrl"); }
             set { BackingStore?.Set("internalUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WebApplicationSegment and sets the default values.
         /// </summary>

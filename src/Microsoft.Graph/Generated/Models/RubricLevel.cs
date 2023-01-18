@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description of this rubric level.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationItemBody? Description {
+            get { return BackingStore?.Get<EducationItemBody?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public EducationItemBody Description {
             get { return BackingStore?.Get<EducationItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The name of this rubric level.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationAssignmentGradeType? Grading {
+            get { return BackingStore?.Get<EducationAssignmentGradeType?>("grading"); }
+            set { BackingStore?.Set("grading", value); }
+        }
+#else
         public EducationAssignmentGradeType Grading {
             get { return BackingStore?.Get<EducationAssignmentGradeType>("grading"); }
             set { BackingStore?.Set("grading", value); }
         }
+#endif
         /// <summary>The ID of this resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LevelId {
+            get { return BackingStore?.Get<string?>("levelId"); }
+            set { BackingStore?.Set("levelId", value); }
+        }
+#else
         public string LevelId {
             get { return BackingStore?.Get<string>("levelId"); }
             set { BackingStore?.Set("levelId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new rubricLevel and sets the default values.
         /// </summary>

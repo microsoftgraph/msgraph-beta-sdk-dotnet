@@ -17,20 +17,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Friendly name for track.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TrackAlias {
+            get { return BackingStore?.Get<string?>("trackAlias"); }
+            set { BackingStore?.Set("trackAlias", value); }
+        }
+#else
         public string TrackAlias {
             get { return BackingStore?.Get<string>("trackAlias"); }
             set { BackingStore?.Set("trackAlias", value); }
         }
+#endif
         /// <summary>Unique track identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TrackId {
+            get { return BackingStore?.Get<string?>("trackId"); }
+            set { BackingStore?.Set("trackId", value); }
+        }
+#else
         public string TrackId {
             get { return BackingStore?.Get<string>("trackId"); }
             set { BackingStore?.Set("trackId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new androidManagedStoreAppTrack and sets the default values.
         /// </summary>

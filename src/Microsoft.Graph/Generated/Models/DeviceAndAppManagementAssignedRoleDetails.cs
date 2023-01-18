@@ -17,20 +17,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleAssignmentIds {
+            get { return BackingStore?.Get<List<string>?>("roleAssignmentIds"); }
+            set { BackingStore?.Set("roleAssignmentIds", value); }
+        }
+#else
         public List<string> RoleAssignmentIds {
             get { return BackingStore?.Get<List<string>>("roleAssignmentIds"); }
             set { BackingStore?.Set("roleAssignmentIds", value); }
         }
+#endif
         /// <summary>Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleDefinitionIds {
+            get { return BackingStore?.Get<List<string>?>("roleDefinitionIds"); }
+            set { BackingStore?.Set("roleDefinitionIds", value); }
+        }
+#else
         public List<string> RoleDefinitionIds {
             get { return BackingStore?.Get<List<string>>("roleDefinitionIds"); }
             set { BackingStore?.Set("roleDefinitionIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceAndAppManagementAssignedRoleDetails and sets the default values.
         /// </summary>

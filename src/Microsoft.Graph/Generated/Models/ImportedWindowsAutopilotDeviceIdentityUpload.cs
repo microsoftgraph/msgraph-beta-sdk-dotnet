@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTimeUtc", value); }
         }
         /// <summary>Collection of all Autopilot devices as a part of this upload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ImportedWindowsAutopilotDeviceIdentity>? DeviceIdentities {
+            get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>?>("deviceIdentities"); }
+            set { BackingStore?.Set("deviceIdentities", value); }
+        }
+#else
         public List<ImportedWindowsAutopilotDeviceIdentity> DeviceIdentities {
             get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>("deviceIdentities"); }
             set { BackingStore?.Set("deviceIdentities", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public ImportedWindowsAutopilotDeviceIdentityUploadStatus? Status {
             get { return BackingStore?.Get<ImportedWindowsAutopilotDeviceIdentityUploadStatus?>("status"); }

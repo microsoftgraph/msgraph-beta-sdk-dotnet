@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MembershipOutlierInsight : GovernanceInsight, IParsable {
         /// <summary>Navigation link to the container directory object. For example, to a group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DirectoryObject? Container {
+            get { return BackingStore?.Get<DirectoryObject?>("container"); }
+            set { BackingStore?.Set("container", value); }
+        }
+#else
         public DirectoryObject Container {
             get { return BackingStore?.Get<DirectoryObject>("container"); }
             set { BackingStore?.Set("container", value); }
         }
+#endif
         /// <summary>Indicates the identifier of the container, for example, a group ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContainerId {
+            get { return BackingStore?.Get<string?>("containerId"); }
+            set { BackingStore?.Set("containerId", value); }
+        }
+#else
         public string ContainerId {
             get { return BackingStore?.Get<string>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
         }
+#endif
         /// <summary>Navigation link to a member object. For example, to a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DirectoryObject? Member {
+            get { return BackingStore?.Get<DirectoryObject?>("member"); }
+            set { BackingStore?.Set("member", value); }
+        }
+#else
         public DirectoryObject Member {
             get { return BackingStore?.Get<DirectoryObject>("member"); }
             set { BackingStore?.Set("member", value); }
         }
+#endif
         /// <summary>Indicates the identifier of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MemberId {
+            get { return BackingStore?.Get<string?>("memberId"); }
+            set { BackingStore?.Set("memberId", value); }
+        }
+#else
         public string MemberId {
             get { return BackingStore?.Get<string>("memberId"); }
             set { BackingStore?.Set("memberId", value); }
         }
+#endif
         /// <summary>The outlierContainerType property</summary>
         public Microsoft.Graph.Beta.Models.OutlierContainerType? OutlierContainerType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutlierContainerType?>("outlierContainerType"); }

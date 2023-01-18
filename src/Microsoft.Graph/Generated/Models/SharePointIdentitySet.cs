@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SharePointIdentitySet : IdentitySet, IParsable {
         /// <summary>The group associated with this action. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? Group {
+            get { return BackingStore?.Get<Identity?>("group"); }
+            set { BackingStore?.Set("group", value); }
+        }
+#else
         public Identity Group {
             get { return BackingStore?.Get<Identity>("group"); }
             set { BackingStore?.Set("group", value); }
         }
+#endif
         /// <summary>The SharePoint group associated with this action. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SharePointIdentity? SiteGroup {
+            get { return BackingStore?.Get<SharePointIdentity?>("siteGroup"); }
+            set { BackingStore?.Set("siteGroup", value); }
+        }
+#else
         public SharePointIdentity SiteGroup {
             get { return BackingStore?.Get<SharePointIdentity>("siteGroup"); }
             set { BackingStore?.Set("siteGroup", value); }
         }
+#endif
         /// <summary>The SharePoint user associated with this action. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SharePointIdentity? SiteUser {
+            get { return BackingStore?.Get<SharePointIdentity?>("siteUser"); }
+            set { BackingStore?.Set("siteUser", value); }
+        }
+#else
         public SharePointIdentity SiteUser {
             get { return BackingStore?.Get<SharePointIdentity>("siteUser"); }
             set { BackingStore?.Set("siteUser", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new SharePointIdentitySet and sets the default values.
         /// </summary>

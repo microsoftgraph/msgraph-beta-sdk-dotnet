@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WebApp : MobileApp, IParsable {
         /// <summary>The web app URL. This property cannot be PATCHed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppUrl {
+            get { return BackingStore?.Get<string?>("appUrl"); }
+            set { BackingStore?.Set("appUrl", value); }
+        }
+#else
         public string AppUrl {
             get { return BackingStore?.Get<string>("appUrl"); }
             set { BackingStore?.Set("appUrl", value); }
         }
+#endif
         /// <summary>Whether or not to use managed browser. This property is only applicable for Android and IOS.</summary>
         public bool? UseManagedBrowser {
             get { return BackingStore?.Get<bool?>("useManagedBrowser"); }

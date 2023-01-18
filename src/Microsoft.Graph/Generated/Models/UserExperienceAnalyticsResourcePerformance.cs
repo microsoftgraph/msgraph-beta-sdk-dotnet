@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics resource performance entity.
+    /// </summary>
     public class UserExperienceAnalyticsResourcePerformance : Entity, IParsable {
         /// <summary>AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100</summary>
         public int? AverageSpikeTimeScore {
@@ -31,30 +34,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The id of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The name of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>Resource performance score of a specific device. Valid values 0 to 100</summary>
         public int? DeviceResourcePerformanceScore {
             get { return BackingStore?.Get<int?>("deviceResourcePerformanceScore"); }
             set { BackingStore?.Set("deviceResourcePerformanceScore", value); }
         }
         /// <summary>The user experience analytics device manufacturer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>The user experience analytics device model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>RAM spike time in percentage. Valid values 0 to 100</summary>
         public double? RamSpikeTimePercentage {
             get { return BackingStore?.Get<double?>("ramSpikeTimePercentage"); }

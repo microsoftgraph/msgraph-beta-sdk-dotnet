@@ -11,95 +11,200 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ActivityGroupNames {
+            get { return BackingStore?.Get<List<string>?>("activityGroupNames"); }
+            set { BackingStore?.Set("activityGroupNames", value); }
+        }
+#else
         public List<string> ActivityGroupNames {
             get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
             set { BackingStore?.Set("activityGroupNames", value); }
         }
+#endif
         /// <summary>A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdditionalInformation {
+            get { return BackingStore?.Get<string?>("additionalInformation"); }
+            set { BackingStore?.Set("additionalInformation", value); }
+        }
+#else
         public string AdditionalInformation {
             get { return BackingStore?.Get<string>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
+#endif
         /// <summary>Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureTenantId {
+            get { return BackingStore?.Get<string?>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
+        }
+#else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#endif
         /// <summary>An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.</summary>
         public int? Confidence {
             get { return BackingStore?.Get<int?>("confidence"); }
             set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>Brief description (100 characters or less) of the threat represented by the indicator. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.</summary>
         public Microsoft.Graph.Beta.Models.DiamondModel? DiamondModel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiamondModel?>("diamondModel"); }
             set { BackingStore?.Set("diamondModel", value); }
         }
         /// <summary>The domainName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DomainName {
+            get { return BackingStore?.Get<string?>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
+        }
+#else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#endif
         /// <summary>The emailEncoding property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailEncoding {
+            get { return BackingStore?.Get<string?>("emailEncoding"); }
+            set { BackingStore?.Set("emailEncoding", value); }
+        }
+#else
         public string EmailEncoding {
             get { return BackingStore?.Get<string>("emailEncoding"); }
             set { BackingStore?.Set("emailEncoding", value); }
         }
+#endif
         /// <summary>The emailLanguage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailLanguage {
+            get { return BackingStore?.Get<string?>("emailLanguage"); }
+            set { BackingStore?.Set("emailLanguage", value); }
+        }
+#else
         public string EmailLanguage {
             get { return BackingStore?.Get<string>("emailLanguage"); }
             set { BackingStore?.Set("emailLanguage", value); }
         }
+#endif
         /// <summary>The emailRecipient property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailRecipient {
+            get { return BackingStore?.Get<string?>("emailRecipient"); }
+            set { BackingStore?.Set("emailRecipient", value); }
+        }
+#else
         public string EmailRecipient {
             get { return BackingStore?.Get<string>("emailRecipient"); }
             set { BackingStore?.Set("emailRecipient", value); }
         }
+#endif
         /// <summary>The emailSenderAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailSenderAddress {
+            get { return BackingStore?.Get<string?>("emailSenderAddress"); }
+            set { BackingStore?.Set("emailSenderAddress", value); }
+        }
+#else
         public string EmailSenderAddress {
             get { return BackingStore?.Get<string>("emailSenderAddress"); }
             set { BackingStore?.Set("emailSenderAddress", value); }
         }
+#endif
         /// <summary>The emailSenderName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailSenderName {
+            get { return BackingStore?.Get<string?>("emailSenderName"); }
+            set { BackingStore?.Set("emailSenderName", value); }
+        }
+#else
         public string EmailSenderName {
             get { return BackingStore?.Get<string>("emailSenderName"); }
             set { BackingStore?.Set("emailSenderName", value); }
         }
+#endif
         /// <summary>The emailSourceDomain property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailSourceDomain {
+            get { return BackingStore?.Get<string?>("emailSourceDomain"); }
+            set { BackingStore?.Set("emailSourceDomain", value); }
+        }
+#else
         public string EmailSourceDomain {
             get { return BackingStore?.Get<string>("emailSourceDomain"); }
             set { BackingStore?.Set("emailSourceDomain", value); }
         }
+#endif
         /// <summary>The emailSourceIpAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailSourceIpAddress {
+            get { return BackingStore?.Get<string?>("emailSourceIpAddress"); }
+            set { BackingStore?.Set("emailSourceIpAddress", value); }
+        }
+#else
         public string EmailSourceIpAddress {
             get { return BackingStore?.Get<string>("emailSourceIpAddress"); }
             set { BackingStore?.Set("emailSourceIpAddress", value); }
         }
+#endif
         /// <summary>The emailSubject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailSubject {
+            get { return BackingStore?.Get<string?>("emailSubject"); }
+            set { BackingStore?.Set("emailSubject", value); }
+        }
+#else
         public string EmailSubject {
             get { return BackingStore?.Get<string>("emailSubject"); }
             set { BackingStore?.Set("emailSubject", value); }
         }
+#endif
         /// <summary>The emailXMailer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailXMailer {
+            get { return BackingStore?.Get<string?>("emailXMailer"); }
+            set { BackingStore?.Set("emailXMailer", value); }
+        }
+#else
         public string EmailXMailer {
             get { return BackingStore?.Get<string>("emailXMailer"); }
             set { BackingStore?.Set("emailXMailer", value); }
         }
+#endif
         /// <summary>DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalId {
+            get { return BackingStore?.Get<string?>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
+        }
+#else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#endif
         /// <summary>The fileCompileDateTime property</summary>
         public DateTimeOffset? FileCompileDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("fileCompileDateTime"); }
@@ -116,40 +221,82 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileHashType", value); }
         }
         /// <summary>The fileHashValue property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileHashValue {
+            get { return BackingStore?.Get<string?>("fileHashValue"); }
+            set { BackingStore?.Set("fileHashValue", value); }
+        }
+#else
         public string FileHashValue {
             get { return BackingStore?.Get<string>("fileHashValue"); }
             set { BackingStore?.Set("fileHashValue", value); }
         }
+#endif
         /// <summary>The fileMutexName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileMutexName {
+            get { return BackingStore?.Get<string?>("fileMutexName"); }
+            set { BackingStore?.Set("fileMutexName", value); }
+        }
+#else
         public string FileMutexName {
             get { return BackingStore?.Get<string>("fileMutexName"); }
             set { BackingStore?.Set("fileMutexName", value); }
         }
+#endif
         /// <summary>The fileName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>The filePacker property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FilePacker {
+            get { return BackingStore?.Get<string?>("filePacker"); }
+            set { BackingStore?.Set("filePacker", value); }
+        }
+#else
         public string FilePacker {
             get { return BackingStore?.Get<string>("filePacker"); }
             set { BackingStore?.Set("filePacker", value); }
         }
+#endif
         /// <summary>The filePath property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FilePath {
+            get { return BackingStore?.Get<string?>("filePath"); }
+            set { BackingStore?.Set("filePath", value); }
+        }
+#else
         public string FilePath {
             get { return BackingStore?.Get<string>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
+#endif
         /// <summary>The fileSize property</summary>
         public long? FileSize {
             get { return BackingStore?.Get<long?>("fileSize"); }
             set { BackingStore?.Set("fileSize", value); }
         }
         /// <summary>The fileType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileType {
+            get { return BackingStore?.Get<string?>("fileType"); }
+            set { BackingStore?.Set("fileType", value); }
+        }
+#else
         public string FileType {
             get { return BackingStore?.Get<string>("fileType"); }
             set { BackingStore?.Set("fileType", value); }
         }
+#endif
         /// <summary>Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? IngestedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("ingestedDateTime"); }
@@ -161,65 +308,128 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? KillChain {
+            get { return BackingStore?.Get<List<string>?>("killChain"); }
+            set { BackingStore?.Set("killChain", value); }
+        }
+#else
         public List<string> KillChain {
             get { return BackingStore?.Get<List<string>>("killChain"); }
             set { BackingStore?.Set("killChain", value); }
         }
+#endif
         /// <summary>Scenarios in which the indicator may cause false positives. This should be human-readable text.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KnownFalsePositives {
+            get { return BackingStore?.Get<string?>("knownFalsePositives"); }
+            set { BackingStore?.Set("knownFalsePositives", value); }
+        }
+#else
         public string KnownFalsePositives {
             get { return BackingStore?.Get<string>("knownFalsePositives"); }
             set { BackingStore?.Set("knownFalsePositives", value); }
         }
+#endif
         /// <summary>The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastReportedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? MalwareFamilyNames {
+            get { return BackingStore?.Get<List<string>?>("malwareFamilyNames"); }
+            set { BackingStore?.Set("malwareFamilyNames", value); }
+        }
+#else
         public List<string> MalwareFamilyNames {
             get { return BackingStore?.Get<List<string>>("malwareFamilyNames"); }
             set { BackingStore?.Set("malwareFamilyNames", value); }
         }
+#endif
         /// <summary>The networkCidrBlock property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkCidrBlock {
+            get { return BackingStore?.Get<string?>("networkCidrBlock"); }
+            set { BackingStore?.Set("networkCidrBlock", value); }
+        }
+#else
         public string NetworkCidrBlock {
             get { return BackingStore?.Get<string>("networkCidrBlock"); }
             set { BackingStore?.Set("networkCidrBlock", value); }
         }
+#endif
         /// <summary>The networkDestinationAsn property</summary>
         public long? NetworkDestinationAsn {
             get { return BackingStore?.Get<long?>("networkDestinationAsn"); }
             set { BackingStore?.Set("networkDestinationAsn", value); }
         }
         /// <summary>The networkDestinationCidrBlock property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkDestinationCidrBlock {
+            get { return BackingStore?.Get<string?>("networkDestinationCidrBlock"); }
+            set { BackingStore?.Set("networkDestinationCidrBlock", value); }
+        }
+#else
         public string NetworkDestinationCidrBlock {
             get { return BackingStore?.Get<string>("networkDestinationCidrBlock"); }
             set { BackingStore?.Set("networkDestinationCidrBlock", value); }
         }
+#endif
         /// <summary>The networkDestinationIPv4 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkDestinationIPv4 {
+            get { return BackingStore?.Get<string?>("networkDestinationIPv4"); }
+            set { BackingStore?.Set("networkDestinationIPv4", value); }
+        }
+#else
         public string NetworkDestinationIPv4 {
             get { return BackingStore?.Get<string>("networkDestinationIPv4"); }
             set { BackingStore?.Set("networkDestinationIPv4", value); }
         }
+#endif
         /// <summary>The networkDestinationIPv6 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkDestinationIPv6 {
+            get { return BackingStore?.Get<string?>("networkDestinationIPv6"); }
+            set { BackingStore?.Set("networkDestinationIPv6", value); }
+        }
+#else
         public string NetworkDestinationIPv6 {
             get { return BackingStore?.Get<string>("networkDestinationIPv6"); }
             set { BackingStore?.Set("networkDestinationIPv6", value); }
         }
+#endif
         /// <summary>The networkDestinationPort property</summary>
         public int? NetworkDestinationPort {
             get { return BackingStore?.Get<int?>("networkDestinationPort"); }
             set { BackingStore?.Set("networkDestinationPort", value); }
         }
         /// <summary>The networkIPv4 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkIPv4 {
+            get { return BackingStore?.Get<string?>("networkIPv4"); }
+            set { BackingStore?.Set("networkIPv4", value); }
+        }
+#else
         public string NetworkIPv4 {
             get { return BackingStore?.Get<string>("networkIPv4"); }
             set { BackingStore?.Set("networkIPv4", value); }
         }
+#endif
         /// <summary>The networkIPv6 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkIPv6 {
+            get { return BackingStore?.Get<string?>("networkIPv6"); }
+            set { BackingStore?.Set("networkIPv6", value); }
+        }
+#else
         public string NetworkIPv6 {
             get { return BackingStore?.Get<string>("networkIPv6"); }
             set { BackingStore?.Set("networkIPv6", value); }
         }
+#endif
         /// <summary>The networkPort property</summary>
         public int? NetworkPort {
             get { return BackingStore?.Get<int?>("networkPort"); }
@@ -236,20 +446,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("networkSourceAsn", value); }
         }
         /// <summary>The networkSourceCidrBlock property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkSourceCidrBlock {
+            get { return BackingStore?.Get<string?>("networkSourceCidrBlock"); }
+            set { BackingStore?.Set("networkSourceCidrBlock", value); }
+        }
+#else
         public string NetworkSourceCidrBlock {
             get { return BackingStore?.Get<string>("networkSourceCidrBlock"); }
             set { BackingStore?.Set("networkSourceCidrBlock", value); }
         }
+#endif
         /// <summary>The networkSourceIPv4 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkSourceIPv4 {
+            get { return BackingStore?.Get<string?>("networkSourceIPv4"); }
+            set { BackingStore?.Set("networkSourceIPv4", value); }
+        }
+#else
         public string NetworkSourceIPv4 {
             get { return BackingStore?.Get<string>("networkSourceIPv4"); }
             set { BackingStore?.Set("networkSourceIPv4", value); }
         }
+#endif
         /// <summary>The networkSourceIPv6 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkSourceIPv6 {
+            get { return BackingStore?.Get<string?>("networkSourceIPv6"); }
+            set { BackingStore?.Set("networkSourceIPv6", value); }
+        }
+#else
         public string NetworkSourceIPv6 {
             get { return BackingStore?.Get<string>("networkSourceIPv6"); }
             set { BackingStore?.Set("networkSourceIPv6", value); }
         }
+#endif
         /// <summary>The networkSourcePort property</summary>
         public int? NetworkSourcePort {
             get { return BackingStore?.Get<int?>("networkSourcePort"); }
@@ -266,35 +497,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>A JSON array of strings that stores arbitrary tags/keywords.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tags {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetProduct {
+            get { return BackingStore?.Get<string?>("targetProduct"); }
+            set { BackingStore?.Set("targetProduct", value); }
+        }
+#else
         public string TargetProduct {
             get { return BackingStore?.Get<string>("targetProduct"); }
             set { BackingStore?.Set("targetProduct", value); }
         }
+#endif
         /// <summary>Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ThreatType {
+            get { return BackingStore?.Get<string?>("threatType"); }
+            set { BackingStore?.Set("threatType", value); }
+        }
+#else
         public string ThreatType {
             get { return BackingStore?.Get<string>("threatType"); }
             set { BackingStore?.Set("threatType", value); }
         }
+#endif
         /// <summary>Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.</summary>
         public Microsoft.Graph.Beta.Models.TlpLevel? TlpLevel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TlpLevel?>("tlpLevel"); }
             set { BackingStore?.Set("tlpLevel", value); }
         }
         /// <summary>The url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Url {
+            get { return BackingStore?.Get<string?>("url"); }
+            set { BackingStore?.Set("url", value); }
+        }
+#else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#endif
         /// <summary>The userAgent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserAgent {
+            get { return BackingStore?.Get<string?>("userAgent"); }
+            set { BackingStore?.Set("userAgent", value); }
+        }
+#else
         public string UserAgent {
             get { return BackingStore?.Get<string>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

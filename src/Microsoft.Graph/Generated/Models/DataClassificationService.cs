@@ -6,50 +6,113 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DataClassificationService : Entity, IParsable {
         /// <summary>The classifyFileJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<JobResponseBase>? ClassifyFileJobs {
+            get { return BackingStore?.Get<List<JobResponseBase>?>("classifyFileJobs"); }
+            set { BackingStore?.Set("classifyFileJobs", value); }
+        }
+#else
         public List<JobResponseBase> ClassifyFileJobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("classifyFileJobs"); }
             set { BackingStore?.Set("classifyFileJobs", value); }
         }
+#endif
         /// <summary>The classifyTextJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<JobResponseBase>? ClassifyTextJobs {
+            get { return BackingStore?.Get<List<JobResponseBase>?>("classifyTextJobs"); }
+            set { BackingStore?.Set("classifyTextJobs", value); }
+        }
+#else
         public List<JobResponseBase> ClassifyTextJobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("classifyTextJobs"); }
             set { BackingStore?.Set("classifyTextJobs", value); }
         }
+#endif
         /// <summary>The evaluateDlpPoliciesJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<JobResponseBase>? EvaluateDlpPoliciesJobs {
+            get { return BackingStore?.Get<List<JobResponseBase>?>("evaluateDlpPoliciesJobs"); }
+            set { BackingStore?.Set("evaluateDlpPoliciesJobs", value); }
+        }
+#else
         public List<JobResponseBase> EvaluateDlpPoliciesJobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("evaluateDlpPoliciesJobs"); }
             set { BackingStore?.Set("evaluateDlpPoliciesJobs", value); }
         }
+#endif
         /// <summary>The evaluateLabelJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<JobResponseBase>? EvaluateLabelJobs {
+            get { return BackingStore?.Get<List<JobResponseBase>?>("evaluateLabelJobs"); }
+            set { BackingStore?.Set("evaluateLabelJobs", value); }
+        }
+#else
         public List<JobResponseBase> EvaluateLabelJobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("evaluateLabelJobs"); }
             set { BackingStore?.Set("evaluateLabelJobs", value); }
         }
+#endif
         /// <summary>The exactMatchDataStores property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExactMatchDataStore>? ExactMatchDataStores {
+            get { return BackingStore?.Get<List<ExactMatchDataStore>?>("exactMatchDataStores"); }
+            set { BackingStore?.Set("exactMatchDataStores", value); }
+        }
+#else
         public List<ExactMatchDataStore> ExactMatchDataStores {
             get { return BackingStore?.Get<List<ExactMatchDataStore>>("exactMatchDataStores"); }
             set { BackingStore?.Set("exactMatchDataStores", value); }
         }
+#endif
         /// <summary>The exactMatchUploadAgents property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExactMatchUploadAgent>? ExactMatchUploadAgents {
+            get { return BackingStore?.Get<List<ExactMatchUploadAgent>?>("exactMatchUploadAgents"); }
+            set { BackingStore?.Set("exactMatchUploadAgents", value); }
+        }
+#else
         public List<ExactMatchUploadAgent> ExactMatchUploadAgents {
             get { return BackingStore?.Get<List<ExactMatchUploadAgent>>("exactMatchUploadAgents"); }
             set { BackingStore?.Set("exactMatchUploadAgents", value); }
         }
+#endif
         /// <summary>The jobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<JobResponseBase>? Jobs {
+            get { return BackingStore?.Get<List<JobResponseBase>?>("jobs"); }
+            set { BackingStore?.Set("jobs", value); }
+        }
+#else
         public List<JobResponseBase> Jobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
+#endif
         /// <summary>The sensitiveTypes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SensitiveType>? SensitiveTypes {
+            get { return BackingStore?.Get<List<SensitiveType>?>("sensitiveTypes"); }
+            set { BackingStore?.Set("sensitiveTypes", value); }
+        }
+#else
         public List<SensitiveType> SensitiveTypes {
             get { return BackingStore?.Get<List<SensitiveType>>("sensitiveTypes"); }
             set { BackingStore?.Set("sensitiveTypes", value); }
         }
+#endif
         /// <summary>The sensitivityLabels property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SensitivityLabel>? SensitivityLabels {
+            get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
+            set { BackingStore?.Set("sensitivityLabels", value); }
+        }
+#else
         public List<SensitivityLabel> SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

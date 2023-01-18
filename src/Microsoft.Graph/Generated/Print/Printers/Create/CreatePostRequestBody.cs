@@ -15,40 +15,82 @@ namespace Microsoft.Graph.Beta.Print.Printers.Create {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The certificateSigningRequest property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrintCertificateSigningRequest? CertificateSigningRequest {
+            get { return BackingStore?.Get<PrintCertificateSigningRequest?>("certificateSigningRequest"); }
+            set { BackingStore?.Set("certificateSigningRequest", value); }
+        }
+#else
         public PrintCertificateSigningRequest CertificateSigningRequest {
             get { return BackingStore?.Get<PrintCertificateSigningRequest>("certificateSigningRequest"); }
             set { BackingStore?.Set("certificateSigningRequest", value); }
         }
+#endif
         /// <summary>The connectorId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectorId {
+            get { return BackingStore?.Get<string?>("connectorId"); }
+            set { BackingStore?.Set("connectorId", value); }
+        }
+#else
         public string ConnectorId {
             get { return BackingStore?.Get<string>("connectorId"); }
             set { BackingStore?.Set("connectorId", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The hasPhysicalDevice property</summary>
         public bool? HasPhysicalDevice {
             get { return BackingStore?.Get<bool?>("hasPhysicalDevice"); }
             set { BackingStore?.Set("hasPhysicalDevice", value); }
         }
         /// <summary>The manufacturer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>The model property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>The physicalDeviceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PhysicalDeviceId {
+            get { return BackingStore?.Get<string?>("physicalDeviceId"); }
+            set { BackingStore?.Set("physicalDeviceId", value); }
+        }
+#else
         public string PhysicalDeviceId {
             get { return BackingStore?.Get<string>("physicalDeviceId"); }
             set { BackingStore?.Set("physicalDeviceId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new createPostRequestBody and sets the default values.
         /// </summary>

@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosVppEBook : ManagedEBook, IParsable {
         /// <summary>The Apple ID associated with Vpp token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppleId {
+            get { return BackingStore?.Get<string?>("appleId"); }
+            set { BackingStore?.Set("appleId", value); }
+        }
+#else
         public string AppleId {
             get { return BackingStore?.Get<string>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
+#endif
         /// <summary>Genres.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Genres {
+            get { return BackingStore?.Get<List<string>?>("genres"); }
+            set { BackingStore?.Set("genres", value); }
+        }
+#else
         public List<string> Genres {
             get { return BackingStore?.Get<List<string>>("genres"); }
             set { BackingStore?.Set("genres", value); }
         }
+#endif
         /// <summary>Language.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Language {
+            get { return BackingStore?.Get<string?>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#else
         public string Language {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+#endif
         /// <summary>List of Scope Tags for this Entity instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>Seller.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Seller {
+            get { return BackingStore?.Get<string?>("seller"); }
+            set { BackingStore?.Set("seller", value); }
+        }
+#else
         public string Seller {
             get { return BackingStore?.Get<string>("seller"); }
             set { BackingStore?.Set("seller", value); }
         }
+#endif
         /// <summary>Total license count.</summary>
         public int? TotalLicenseCount {
             get { return BackingStore?.Get<int?>("totalLicenseCount"); }
@@ -41,10 +76,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>The Vpp token&apos;s organization name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VppOrganizationName {
+            get { return BackingStore?.Get<string?>("vppOrganizationName"); }
+            set { BackingStore?.Set("vppOrganizationName", value); }
+        }
+#else
         public string VppOrganizationName {
             get { return BackingStore?.Get<string>("vppOrganizationName"); }
             set { BackingStore?.Set("vppOrganizationName", value); }
         }
+#endif
         /// <summary>The Vpp token ID.</summary>
         public Guid? VppTokenId {
             get { return BackingStore?.Get<Guid?>("vppTokenId"); }

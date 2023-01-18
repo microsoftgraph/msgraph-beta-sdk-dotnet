@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Cancel {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Comment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Comment {
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new cancelPostRequestBody and sets the default values.
         /// </summary>

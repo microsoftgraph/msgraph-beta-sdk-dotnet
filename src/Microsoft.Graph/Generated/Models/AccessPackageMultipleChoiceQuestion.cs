@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowsMultipleSelection", value); }
         }
         /// <summary>List of answer choices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageAnswerChoice>? Choices {
+            get { return BackingStore?.Get<List<AccessPackageAnswerChoice>?>("choices"); }
+            set { BackingStore?.Set("choices", value); }
+        }
+#else
         public List<AccessPackageAnswerChoice> Choices {
             get { return BackingStore?.Get<List<AccessPackageAnswerChoice>>("choices"); }
             set { BackingStore?.Set("choices", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AccessPackageMultipleChoiceQuestion and sets the default values.
         /// </summary>

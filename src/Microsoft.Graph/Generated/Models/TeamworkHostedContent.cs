@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamworkHostedContent : Entity, IParsable {
         /// <summary>Write only. Bytes for the hosted content (such as images).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? ContentBytes {
+            get { return BackingStore?.Get<byte[]?>("contentBytes"); }
+            set { BackingStore?.Set("contentBytes", value); }
+        }
+#else
         public byte[] ContentBytes {
             get { return BackingStore?.Get<byte[]>("contentBytes"); }
             set { BackingStore?.Set("contentBytes", value); }
         }
+#endif
         /// <summary>Write only. Content type, such as image/png, image/jpg.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentType {
+            get { return BackingStore?.Get<string?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#else
         public string ContentType {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

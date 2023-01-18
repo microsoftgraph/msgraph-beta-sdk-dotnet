@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosHomeScreenApp : IosHomeScreenItem, IParsable {
         /// <summary>BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BundleID {
+            get { return BackingStore?.Get<string?>("bundleID"); }
+            set { BackingStore?.Set("bundleID", value); }
+        }
+#else
         public string BundleID {
             get { return BackingStore?.Get<string>("bundleID"); }
             set { BackingStore?.Set("bundleID", value); }
         }
+#endif
         /// <summary>When true, the bundle ID will be handled as a URL for a web clip.</summary>
         public bool? IsWebClip {
             get { return BackingStore?.Get<bool?>("isWebClip"); }

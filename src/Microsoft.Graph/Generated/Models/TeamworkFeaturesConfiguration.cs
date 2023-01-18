@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Email address to send logs and feedback.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailToSendLogsAndFeedback {
+            get { return BackingStore?.Get<string?>("emailToSendLogsAndFeedback"); }
+            set { BackingStore?.Set("emailToSendLogsAndFeedback", value); }
+        }
+#else
         public string EmailToSendLogsAndFeedback {
             get { return BackingStore?.Get<string>("emailToSendLogsAndFeedback"); }
             set { BackingStore?.Set("emailToSendLogsAndFeedback", value); }
         }
+#endif
         /// <summary>True if auto screen shared is enabled.</summary>
         public bool? IsAutoScreenShareEnabled {
             get { return BackingStore?.Get<bool?>("isAutoScreenShareEnabled"); }
@@ -39,10 +46,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSendLogsAndFeedbackEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkFeaturesConfiguration and sets the default values.
         /// </summary>

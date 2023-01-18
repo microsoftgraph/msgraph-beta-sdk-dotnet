@@ -12,47 +12,89 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Content types allowed in document set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ContentTypeInfo>? AllowedContentTypes {
+            get { return BackingStore?.Get<List<ContentTypeInfo>?>("allowedContentTypes"); }
+            set { BackingStore?.Set("allowedContentTypes", value); }
+        }
+#else
         public List<ContentTypeInfo> AllowedContentTypes {
             get { return BackingStore?.Get<List<ContentTypeInfo>>("allowedContentTypes"); }
             set { BackingStore?.Set("allowedContentTypes", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Default contents of document set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DocumentSetContent>? DefaultContents {
+            get { return BackingStore?.Get<List<DocumentSetContent>?>("defaultContents"); }
+            set { BackingStore?.Set("defaultContents", value); }
+        }
+#else
         public List<DocumentSetContent> DefaultContents {
             get { return BackingStore?.Get<List<DocumentSetContent>>("defaultContents"); }
             set { BackingStore?.Set("defaultContents", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Indicates whether to add the name of the document set to each file name.</summary>
         public bool? PropagateWelcomePageChanges {
             get { return BackingStore?.Get<bool?>("propagateWelcomePageChanges"); }
             set { BackingStore?.Set("propagateWelcomePageChanges", value); }
         }
         /// <summary>The sharedColumns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ColumnDefinition>? SharedColumns {
+            get { return BackingStore?.Get<List<ColumnDefinition>?>("sharedColumns"); }
+            set { BackingStore?.Set("sharedColumns", value); }
+        }
+#else
         public List<ColumnDefinition> SharedColumns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("sharedColumns"); }
             set { BackingStore?.Set("sharedColumns", value); }
         }
+#endif
         /// <summary>Add the name of the Document Set to each file name.</summary>
         public bool? ShouldPrefixNameToFile {
             get { return BackingStore?.Get<bool?>("shouldPrefixNameToFile"); }
             set { BackingStore?.Set("shouldPrefixNameToFile", value); }
         }
         /// <summary>The welcomePageColumns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ColumnDefinition>? WelcomePageColumns {
+            get { return BackingStore?.Get<List<ColumnDefinition>?>("welcomePageColumns"); }
+            set { BackingStore?.Set("welcomePageColumns", value); }
+        }
+#else
         public List<ColumnDefinition> WelcomePageColumns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("welcomePageColumns"); }
             set { BackingStore?.Set("welcomePageColumns", value); }
         }
+#endif
         /// <summary>Welcome page absolute URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WelcomePageUrl {
+            get { return BackingStore?.Get<string?>("welcomePageUrl"); }
+            set { BackingStore?.Set("welcomePageUrl", value); }
+        }
+#else
         public string WelcomePageUrl {
             get { return BackingStore?.Get<string>("welcomePageUrl"); }
             set { BackingStore?.Set("welcomePageUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new documentSet and sets the default values.
         /// </summary>

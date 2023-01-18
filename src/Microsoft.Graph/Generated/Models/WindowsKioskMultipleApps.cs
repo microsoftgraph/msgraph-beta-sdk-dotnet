@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowAccessToDownloadsFolder", value); }
         }
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu. This collection can contain a maximum of 128 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsKioskAppBase>? Apps {
+            get { return BackingStore?.Get<List<WindowsKioskAppBase>?>("apps"); }
+            set { BackingStore?.Set("apps", value); }
+        }
+#else
         public List<WindowsKioskAppBase> Apps {
             get { return BackingStore?.Get<List<WindowsKioskAppBase>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
+#endif
         /// <summary>This setting indicates that desktop apps are allowed. Default to true.</summary>
         public bool? DisallowDesktopApps {
             get { return BackingStore?.Get<bool?>("disallowDesktopApps"); }
@@ -26,10 +33,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("showTaskBar", value); }
         }
         /// <summary>Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? StartMenuLayoutXml {
+            get { return BackingStore?.Get<byte[]?>("startMenuLayoutXml"); }
+            set { BackingStore?.Set("startMenuLayoutXml", value); }
+        }
+#else
         public byte[] StartMenuLayoutXml {
             get { return BackingStore?.Get<byte[]>("startMenuLayoutXml"); }
             set { BackingStore?.Set("startMenuLayoutXml", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsKioskMultipleApps and sets the default values.
         /// </summary>

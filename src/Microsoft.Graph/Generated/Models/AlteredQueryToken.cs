@@ -19,20 +19,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("length", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Defines the offset of a changed segment.</summary>
         public int? Offset {
             get { return BackingStore?.Get<int?>("offset"); }
             set { BackingStore?.Set("offset", value); }
         }
         /// <summary>Represents the corrected segment string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Suggestion {
+            get { return BackingStore?.Get<string?>("suggestion"); }
+            set { BackingStore?.Set("suggestion", value); }
+        }
+#else
         public string Suggestion {
             get { return BackingStore?.Get<string>("suggestion"); }
             set { BackingStore?.Set("suggestion", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new alteredQueryToken and sets the default values.
         /// </summary>

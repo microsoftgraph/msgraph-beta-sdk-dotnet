@@ -6,60 +6,130 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryCase : Case, IParsable {
         /// <summary>The user who closed the case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? ClosedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("closedBy"); }
+            set { BackingStore?.Set("closedBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet ClosedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("closedBy"); }
             set { BackingStore?.Set("closedBy", value); }
         }
+#endif
         /// <summary>The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ClosedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("closedDateTime"); }
             set { BackingStore?.Set("closedDateTime", value); }
         }
         /// <summary>Returns a list of case ediscoveryCustodian objects for this case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryCustodian>? Custodians {
+            get { return BackingStore?.Get<List<EdiscoveryCustodian>?>("custodians"); }
+            set { BackingStore?.Set("custodians", value); }
+        }
+#else
         public List<EdiscoveryCustodian> Custodians {
             get { return BackingStore?.Get<List<EdiscoveryCustodian>>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
+#endif
         /// <summary>The external case number for customer reference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalId {
+            get { return BackingStore?.Get<string?>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
+        }
+#else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#endif
         /// <summary>Returns a list of case eDiscoveryHoldPolicy objects for this case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryHoldPolicy>? LegalHolds {
+            get { return BackingStore?.Get<List<EdiscoveryHoldPolicy>?>("legalHolds"); }
+            set { BackingStore?.Set("legalHolds", value); }
+        }
+#else
         public List<EdiscoveryHoldPolicy> LegalHolds {
             get { return BackingStore?.Get<List<EdiscoveryHoldPolicy>>("legalHolds"); }
             set { BackingStore?.Set("legalHolds", value); }
         }
+#endif
         /// <summary>Returns a list of case ediscoveryNoncustodialDataSource objects for this case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryNoncustodialDataSource>? NoncustodialDataSources {
+            get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>?>("noncustodialDataSources"); }
+            set { BackingStore?.Set("noncustodialDataSources", value); }
+        }
+#else
         public List<EdiscoveryNoncustodialDataSource> NoncustodialDataSources {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
+#endif
         /// <summary>Returns a list of case caseOperation objects for this case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CaseOperation>? Operations {
+            get { return BackingStore?.Get<List<CaseOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<CaseOperation> Operations {
             get { return BackingStore?.Get<List<CaseOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>Returns a list of eDiscoveryReviewSet objects in the case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryReviewSet>? ReviewSets {
+            get { return BackingStore?.Get<List<EdiscoveryReviewSet>?>("reviewSets"); }
+            set { BackingStore?.Set("reviewSets", value); }
+        }
+#else
         public List<EdiscoveryReviewSet> ReviewSets {
             get { return BackingStore?.Get<List<EdiscoveryReviewSet>>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
+#endif
         /// <summary>Returns a list of eDiscoverySearch objects associated with this case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoverySearch>? Searches {
+            get { return BackingStore?.Get<List<EdiscoverySearch>?>("searches"); }
+            set { BackingStore?.Set("searches", value); }
+        }
+#else
         public List<EdiscoverySearch> Searches {
             get { return BackingStore?.Get<List<EdiscoverySearch>>("searches"); }
             set { BackingStore?.Set("searches", value); }
         }
+#endif
         /// <summary>Returns a list of eDIscoverySettings objects in the case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoveryCaseSettings? Settings {
+            get { return BackingStore?.Get<EdiscoveryCaseSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public EdiscoveryCaseSettings Settings {
             get { return BackingStore?.Get<EdiscoveryCaseSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>Returns a list of ediscoveryReviewTag objects associated to this case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryReviewTag>? Tags {
+            get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<EdiscoveryReviewTag> Tags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EdiscoveryCase and sets the default values.
         /// </summary>

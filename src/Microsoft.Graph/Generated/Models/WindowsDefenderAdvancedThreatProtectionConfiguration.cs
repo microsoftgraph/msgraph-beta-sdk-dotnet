@@ -11,25 +11,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("advancedThreatProtectionAutoPopulateOnboardingBlob", value); }
         }
         /// <summary>Windows Defender AdvancedThreatProtection Offboarding Blob.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdvancedThreatProtectionOffboardingBlob {
+            get { return BackingStore?.Get<string?>("advancedThreatProtectionOffboardingBlob"); }
+            set { BackingStore?.Set("advancedThreatProtectionOffboardingBlob", value); }
+        }
+#else
         public string AdvancedThreatProtectionOffboardingBlob {
             get { return BackingStore?.Get<string>("advancedThreatProtectionOffboardingBlob"); }
             set { BackingStore?.Set("advancedThreatProtectionOffboardingBlob", value); }
         }
+#endif
         /// <summary>Name of the file from which AdvancedThreatProtectionOffboardingBlob was obtained.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdvancedThreatProtectionOffboardingFilename {
+            get { return BackingStore?.Get<string?>("advancedThreatProtectionOffboardingFilename"); }
+            set { BackingStore?.Set("advancedThreatProtectionOffboardingFilename", value); }
+        }
+#else
         public string AdvancedThreatProtectionOffboardingFilename {
             get { return BackingStore?.Get<string>("advancedThreatProtectionOffboardingFilename"); }
             set { BackingStore?.Set("advancedThreatProtectionOffboardingFilename", value); }
         }
+#endif
         /// <summary>Windows Defender AdvancedThreatProtection Onboarding Blob.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdvancedThreatProtectionOnboardingBlob {
+            get { return BackingStore?.Get<string?>("advancedThreatProtectionOnboardingBlob"); }
+            set { BackingStore?.Set("advancedThreatProtectionOnboardingBlob", value); }
+        }
+#else
         public string AdvancedThreatProtectionOnboardingBlob {
             get { return BackingStore?.Get<string>("advancedThreatProtectionOnboardingBlob"); }
             set { BackingStore?.Set("advancedThreatProtectionOnboardingBlob", value); }
         }
+#endif
         /// <summary>Name of the file from which AdvancedThreatProtectionOnboardingBlob was obtained.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdvancedThreatProtectionOnboardingFilename {
+            get { return BackingStore?.Get<string?>("advancedThreatProtectionOnboardingFilename"); }
+            set { BackingStore?.Set("advancedThreatProtectionOnboardingFilename", value); }
+        }
+#else
         public string AdvancedThreatProtectionOnboardingFilename {
             get { return BackingStore?.Get<string>("advancedThreatProtectionOnboardingFilename"); }
             set { BackingStore?.Set("advancedThreatProtectionOnboardingFilename", value); }
         }
+#endif
         /// <summary>Windows Defender AdvancedThreatProtection &apos;Allow Sample Sharing&apos; Rule</summary>
         public bool? AllowSampleSharing {
             get { return BackingStore?.Get<bool?>("allowSampleSharing"); }

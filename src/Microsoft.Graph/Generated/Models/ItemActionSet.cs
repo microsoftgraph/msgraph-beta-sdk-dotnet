@@ -14,60 +14,137 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A comment was added to the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CommentAction? Comment {
+            get { return BackingStore?.Get<CommentAction?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public CommentAction Comment {
             get { return BackingStore?.Get<CommentAction>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>An item was created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CreateAction? Create {
+            get { return BackingStore?.Get<CreateAction?>("create"); }
+            set { BackingStore?.Set("create", value); }
+        }
+#else
         public CreateAction Create {
             get { return BackingStore?.Get<CreateAction>("create"); }
             set { BackingStore?.Set("create", value); }
         }
+#endif
         /// <summary>An item was deleted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeleteAction? Delete {
+            get { return BackingStore?.Get<DeleteAction?>("delete"); }
+            set { BackingStore?.Set("delete", value); }
+        }
+#else
         public DeleteAction Delete {
             get { return BackingStore?.Get<DeleteAction>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
+#endif
         /// <summary>An item was edited.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EditAction? Edit {
+            get { return BackingStore?.Get<EditAction?>("edit"); }
+            set { BackingStore?.Set("edit", value); }
+        }
+#else
         public EditAction Edit {
             get { return BackingStore?.Get<EditAction>("edit"); }
             set { BackingStore?.Set("edit", value); }
         }
+#endif
         /// <summary>A user was mentioned in the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MentionAction? Mention {
+            get { return BackingStore?.Get<MentionAction?>("mention"); }
+            set { BackingStore?.Set("mention", value); }
+        }
+#else
         public MentionAction Mention {
             get { return BackingStore?.Get<MentionAction>("mention"); }
             set { BackingStore?.Set("mention", value); }
         }
+#endif
         /// <summary>An item was moved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MoveAction? Move {
+            get { return BackingStore?.Get<MoveAction?>("move"); }
+            set { BackingStore?.Set("move", value); }
+        }
+#else
         public MoveAction Move {
             get { return BackingStore?.Get<MoveAction>("move"); }
             set { BackingStore?.Set("move", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>An item was renamed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RenameAction? Rename {
+            get { return BackingStore?.Get<RenameAction?>("rename"); }
+            set { BackingStore?.Set("rename", value); }
+        }
+#else
         public RenameAction Rename {
             get { return BackingStore?.Get<RenameAction>("rename"); }
             set { BackingStore?.Set("rename", value); }
         }
+#endif
         /// <summary>An item was restored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RestoreAction? Restore {
+            get { return BackingStore?.Get<RestoreAction?>("restore"); }
+            set { BackingStore?.Set("restore", value); }
+        }
+#else
         public RestoreAction Restore {
             get { return BackingStore?.Get<RestoreAction>("restore"); }
             set { BackingStore?.Set("restore", value); }
         }
+#endif
         /// <summary>An item was shared.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ShareAction? Share {
+            get { return BackingStore?.Get<ShareAction?>("share"); }
+            set { BackingStore?.Set("share", value); }
+        }
+#else
         public ShareAction Share {
             get { return BackingStore?.Get<ShareAction>("share"); }
             set { BackingStore?.Set("share", value); }
         }
+#endif
         /// <summary>An item was versioned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public VersionAction? Version {
+            get { return BackingStore?.Get<VersionAction?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public VersionAction Version {
             get { return BackingStore?.Get<VersionAction>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new itemActionSet and sets the default values.
         /// </summary>

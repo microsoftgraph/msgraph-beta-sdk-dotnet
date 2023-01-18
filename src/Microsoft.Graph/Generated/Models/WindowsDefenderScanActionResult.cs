@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsDefenderScanActionResult : DeviceActionResult, IParsable {
         /// <summary>Scan type either full scan or quick scan</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScanType {
+            get { return BackingStore?.Get<string?>("scanType"); }
+            set { BackingStore?.Set("scanType", value); }
+        }
+#else
         public string ScanType {
             get { return BackingStore?.Get<string>("scanType"); }
             set { BackingStore?.Set("scanType", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

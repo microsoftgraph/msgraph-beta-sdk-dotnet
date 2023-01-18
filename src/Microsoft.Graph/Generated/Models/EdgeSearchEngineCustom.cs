@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EdgeSearchEngineCustom : EdgeSearchEngineBase, IParsable {
         /// <summary>Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EdgeSearchEngineOpenSearchXmlUrl {
+            get { return BackingStore?.Get<string?>("edgeSearchEngineOpenSearchXmlUrl"); }
+            set { BackingStore?.Set("edgeSearchEngineOpenSearchXmlUrl", value); }
+        }
+#else
         public string EdgeSearchEngineOpenSearchXmlUrl {
             get { return BackingStore?.Get<string>("edgeSearchEngineOpenSearchXmlUrl"); }
             set { BackingStore?.Set("edgeSearchEngineOpenSearchXmlUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EdgeSearchEngineCustom and sets the default values.
         /// </summary>

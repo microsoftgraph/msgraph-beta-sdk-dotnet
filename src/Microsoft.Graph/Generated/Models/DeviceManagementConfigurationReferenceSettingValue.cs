@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationReferenceSettingValue : DeviceManagementConfigurationStringSettingValue, IParsable {
         /// <summary>A note that admin can use to put some contextual information</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Note {
+            get { return BackingStore?.Get<string?>("note"); }
+            set { BackingStore?.Set("note", value); }
+        }
+#else
         public string Note {
             get { return BackingStore?.Get<string>("note"); }
             set { BackingStore?.Set("note", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationReferenceSettingValue and sets the default values.
         /// </summary>

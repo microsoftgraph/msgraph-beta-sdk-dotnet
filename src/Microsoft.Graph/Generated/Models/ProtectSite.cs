@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>The conditionalAccessProtectionLevelId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConditionalAccessProtectionLevelId {
+            get { return BackingStore?.Get<string?>("conditionalAccessProtectionLevelId"); }
+            set { BackingStore?.Set("conditionalAccessProtectionLevelId", value); }
+        }
+#else
         public string ConditionalAccessProtectionLevelId {
             get { return BackingStore?.Get<string>("conditionalAccessProtectionLevelId"); }
             set { BackingStore?.Set("conditionalAccessProtectionLevelId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ProtectSite and sets the default values.
         /// </summary>

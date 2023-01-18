@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargeted
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceConfigurationIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DeviceConfigurationIds {
+            get { return BackingStore?.Get<List<string>?>("deviceConfigurationIds"); }
+            set { BackingStore?.Set("deviceConfigurationIds", value); }
+        }
+#else
         public List<string> DeviceConfigurationIds {
             get { return BackingStore?.Get<List<string>>("deviceConfigurationIds"); }
             set { BackingStore?.Set("deviceConfigurationIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new getTargetedUsersAndDevicesPostRequestBody and sets the default values.
         /// </summary>

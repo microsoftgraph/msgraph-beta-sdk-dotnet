@@ -15,20 +15,41 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endDateTime property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? EndDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
+        }
+#else
         public DateTimeTimeZone EndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
+#endif
         /// <summary>The staffIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? StaffIds {
+            get { return BackingStore?.Get<List<string>?>("staffIds"); }
+            set { BackingStore?.Set("staffIds", value); }
+        }
+#else
         public List<string> StaffIds {
             get { return BackingStore?.Get<List<string>>("staffIds"); }
             set { BackingStore?.Set("staffIds", value); }
         }
+#endif
         /// <summary>The startDateTime property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? StartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
+        }
+#else
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new getStaffAvailabilityPostRequestBody and sets the default values.
         /// </summary>

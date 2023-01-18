@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isExpeditable", value); }
         }
         /// <summary>Knowledge base article id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KbArticleId {
+            get { return BackingStore?.Get<string?>("kbArticleId"); }
+            set { BackingStore?.Set("kbArticleId", value); }
+        }
+#else
         public string KbArticleId {
             get { return BackingStore?.Get<string>("kbArticleId"); }
             set { BackingStore?.Set("kbArticleId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsQualityUpdateCatalogItem and sets the default values.
         /// </summary>

@@ -15,20 +15,41 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The revision property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Revision {
+            get { return BackingStore?.Get<string?>("revision"); }
+            set { BackingStore?.Set("revision", value); }
+        }
+#else
         public string Revision {
             get { return BackingStore?.Get<string>("revision"); }
             set { BackingStore?.Set("revision", value); }
         }
+#endif
         /// <summary>The sharedCookies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BrowserSharedCookie>? SharedCookies {
+            get { return BackingStore?.Get<List<BrowserSharedCookie>?>("sharedCookies"); }
+            set { BackingStore?.Set("sharedCookies", value); }
+        }
+#else
         public List<BrowserSharedCookie> SharedCookies {
             get { return BackingStore?.Get<List<BrowserSharedCookie>>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
+#endif
         /// <summary>The sites property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BrowserSite>? Sites {
+            get { return BackingStore?.Get<List<BrowserSite>?>("sites"); }
+            set { BackingStore?.Set("sites", value); }
+        }
+#else
         public List<BrowserSite> Sites {
             get { return BackingStore?.Get<List<BrowserSite>>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new publishPostRequestBody and sets the default values.
         /// </summary>

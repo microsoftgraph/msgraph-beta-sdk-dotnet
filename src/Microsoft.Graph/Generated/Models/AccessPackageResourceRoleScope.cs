@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResourceRoleScope : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceRole? AccessPackageResourceRole {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole?>("accessPackageResourceRole"); }
+            set { BackingStore?.Set("accessPackageResourceRole", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRole"); }
             set { BackingStore?.Set("accessPackageResourceRole", value); }
         }
+#endif
         /// <summary>The accessPackageResourceScope property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceScope? AccessPackageResourceScope {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope?>("accessPackageResourceScope"); }
+            set { BackingStore?.Set("accessPackageResourceScope", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>("accessPackageResourceScope"); }
             set { BackingStore?.Set("accessPackageResourceScope", value); }
         }
+#endif
         /// <summary>The createdBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedBy {
+            get { return BackingStore?.Get<string?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public string CreatedBy {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The modifiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ModifiedBy {
+            get { return BackingStore?.Get<string?>("modifiedBy"); }
+            set { BackingStore?.Set("modifiedBy", value); }
+        }
+#else
         public string ModifiedBy {
             get { return BackingStore?.Get<string>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }

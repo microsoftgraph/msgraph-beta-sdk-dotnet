@@ -16,25 +16,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The file or folder detection value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DetectionValue {
+            get { return BackingStore?.Get<string?>("detectionValue"); }
+            set { BackingStore?.Set("detectionValue", value); }
+        }
+#else
         public string DetectionValue {
             get { return BackingStore?.Get<string>("detectionValue"); }
             set { BackingStore?.Set("detectionValue", value); }
         }
+#endif
         /// <summary>The file or folder name to detect Win32 Line of Business (LoB) app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileOrFolderName {
+            get { return BackingStore?.Get<string?>("fileOrFolderName"); }
+            set { BackingStore?.Set("fileOrFolderName", value); }
+        }
+#else
         public string FileOrFolderName {
             get { return BackingStore?.Get<string>("fileOrFolderName"); }
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
+#endif
         /// <summary>Contains properties for detection operator.</summary>
         public Win32LobAppDetectionOperator? Operator {
             get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The file or folder path to detect Win32 Line of Business (LoB) app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Path {
+            get { return BackingStore?.Get<string?>("path"); }
+            set { BackingStore?.Set("path", value); }
+        }
+#else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Win32LobAppFileSystemDetection and sets the default values.
         /// </summary>

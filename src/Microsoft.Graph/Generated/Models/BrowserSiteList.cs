@@ -9,50 +9,99 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class BrowserSiteList : Entity, IParsable {
         /// <summary>The description of the site list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The name of the site list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The user who last modified the site list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The date and time when the site list was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The user who published the site list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? PublishedBy {
+            get { return BackingStore?.Get<IdentitySet?>("publishedBy"); }
+            set { BackingStore?.Set("publishedBy", value); }
+        }
+#else
         public IdentitySet PublishedBy {
             get { return BackingStore?.Get<IdentitySet>("publishedBy"); }
             set { BackingStore?.Set("publishedBy", value); }
         }
+#endif
         /// <summary>The date and time when the site list was published.</summary>
         public DateTimeOffset? PublishedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("publishedDateTime"); }
             set { BackingStore?.Set("publishedDateTime", value); }
         }
         /// <summary>The current revision of the site list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Revision {
+            get { return BackingStore?.Get<string?>("revision"); }
+            set { BackingStore?.Set("revision", value); }
+        }
+#else
         public string Revision {
             get { return BackingStore?.Get<string>("revision"); }
             set { BackingStore?.Set("revision", value); }
         }
+#endif
         /// <summary>A collection of shared cookies defined for the site list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BrowserSharedCookie>? SharedCookies {
+            get { return BackingStore?.Get<List<BrowserSharedCookie>?>("sharedCookies"); }
+            set { BackingStore?.Set("sharedCookies", value); }
+        }
+#else
         public List<BrowserSharedCookie> SharedCookies {
             get { return BackingStore?.Get<List<BrowserSharedCookie>>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
+#endif
         /// <summary>A collection of sites defined for the site list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BrowserSite>? Sites {
+            get { return BackingStore?.Get<List<BrowserSite>?>("sites"); }
+            set { BackingStore?.Set("sites", value); }
+        }
+#else
         public List<BrowserSite> Sites {
             get { return BackingStore?.Get<List<BrowserSite>>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public BrowserSiteListStatus? Status {
             get { return BackingStore?.Get<BrowserSiteListStatus?>("status"); }

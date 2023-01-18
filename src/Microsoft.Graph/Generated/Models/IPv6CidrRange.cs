@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IPv6CidrRange : IpRange, IParsable {
         /// <summary>IPv6 address in CIDR notation. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CidrAddress {
+            get { return BackingStore?.Get<string?>("cidrAddress"); }
+            set { BackingStore?.Set("cidrAddress", value); }
+        }
+#else
         public string CidrAddress {
             get { return BackingStore?.Get<string>("cidrAddress"); }
             set { BackingStore?.Set("cidrAddress", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IPv6CidrRange and sets the default values.
         /// </summary>

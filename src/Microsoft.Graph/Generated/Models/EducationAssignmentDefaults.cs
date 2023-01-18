@@ -22,10 +22,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dueTime", value); }
         }
         /// <summary>Default Teams channel to which notifications will be sent. Default value is null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationChannelUrl {
+            get { return BackingStore?.Get<string?>("notificationChannelUrl"); }
+            set { BackingStore?.Set("notificationChannelUrl", value); }
+        }
+#else
         public string NotificationChannelUrl {
             get { return BackingStore?.Get<string>("notificationChannelUrl"); }
             set { BackingStore?.Set("notificationChannelUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

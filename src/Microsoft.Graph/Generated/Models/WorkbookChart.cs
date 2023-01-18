@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChart : Entity, IParsable {
         /// <summary>Represents chart axes. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartAxes? Axes {
+            get { return BackingStore?.Get<WorkbookChartAxes?>("axes"); }
+            set { BackingStore?.Set("axes", value); }
+        }
+#else
         public WorkbookChartAxes Axes {
             get { return BackingStore?.Get<WorkbookChartAxes>("axes"); }
             set { BackingStore?.Set("axes", value); }
         }
+#endif
         /// <summary>Represents the datalabels on the chart. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartDataLabels? DataLabels {
+            get { return BackingStore?.Get<WorkbookChartDataLabels?>("dataLabels"); }
+            set { BackingStore?.Set("dataLabels", value); }
+        }
+#else
         public WorkbookChartDataLabels DataLabels {
             get { return BackingStore?.Get<WorkbookChartDataLabels>("dataLabels"); }
             set { BackingStore?.Set("dataLabels", value); }
         }
+#endif
         /// <summary>Encapsulates the format properties for the chart area. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartAreaFormat? Format {
+            get { return BackingStore?.Get<WorkbookChartAreaFormat?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public WorkbookChartAreaFormat Format {
             get { return BackingStore?.Get<WorkbookChartAreaFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>Represents the height, in points, of the chart object.</summary>
         public double? Height {
             get { return BackingStore?.Get<double?>("height"); }
@@ -31,25 +52,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("left", value); }
         }
         /// <summary>Represents the legend for the chart. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartLegend? Legend {
+            get { return BackingStore?.Get<WorkbookChartLegend?>("legend"); }
+            set { BackingStore?.Set("legend", value); }
+        }
+#else
         public WorkbookChartLegend Legend {
             get { return BackingStore?.Get<WorkbookChartLegend>("legend"); }
             set { BackingStore?.Set("legend", value); }
         }
+#endif
         /// <summary>Represents the name of a chart object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Represents either a single series or collection of series in the chart. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookChartSeries>? Series {
+            get { return BackingStore?.Get<List<WorkbookChartSeries>?>("series"); }
+            set { BackingStore?.Set("series", value); }
+        }
+#else
         public List<WorkbookChartSeries> Series {
             get { return BackingStore?.Get<List<WorkbookChartSeries>>("series"); }
             set { BackingStore?.Set("series", value); }
         }
+#endif
         /// <summary>Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartTitle? Title {
+            get { return BackingStore?.Get<WorkbookChartTitle?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public WorkbookChartTitle Title {
             get { return BackingStore?.Get<WorkbookChartTitle>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).</summary>
         public double? Top {
             get { return BackingStore?.Get<double?>("top"); }
@@ -61,10 +110,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("width", value); }
         }
         /// <summary>The worksheet containing the current chart. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookWorksheet? Worksheet {
+            get { return BackingStore?.Get<WorkbookWorksheet?>("worksheet"); }
+            set { BackingStore?.Set("worksheet", value); }
+        }
+#else
         public WorkbookWorksheet Worksheet {
             get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

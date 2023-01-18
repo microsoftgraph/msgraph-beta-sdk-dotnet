@@ -6,45 +6,94 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsIdentitySet : IdentitySet, IParsable {
         /// <summary>The application instance associated with this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? ApplicationInstance {
+            get { return BackingStore?.Get<Identity?>("applicationInstance"); }
+            set { BackingStore?.Set("applicationInstance", value); }
+        }
+#else
         public Identity ApplicationInstance {
             get { return BackingStore?.Get<Identity>("applicationInstance"); }
             set { BackingStore?.Set("applicationInstance", value); }
         }
+#endif
         /// <summary>An identity the participant would like to present itself as to the other participants in the call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? AssertedIdentity {
+            get { return BackingStore?.Get<Identity?>("assertedIdentity"); }
+            set { BackingStore?.Set("assertedIdentity", value); }
+        }
+#else
         public Identity AssertedIdentity {
             get { return BackingStore?.Get<Identity>("assertedIdentity"); }
             set { BackingStore?.Set("assertedIdentity", value); }
         }
+#endif
         /// <summary>The Azure Communication Services user associated with this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? AzureCommunicationServicesUser {
+            get { return BackingStore?.Get<Identity?>("azureCommunicationServicesUser"); }
+            set { BackingStore?.Set("azureCommunicationServicesUser", value); }
+        }
+#else
         public Identity AzureCommunicationServicesUser {
             get { return BackingStore?.Get<Identity>("azureCommunicationServicesUser"); }
             set { BackingStore?.Set("azureCommunicationServicesUser", value); }
         }
+#endif
         /// <summary>The encrypted user associated with this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? Encrypted {
+            get { return BackingStore?.Get<Identity?>("encrypted"); }
+            set { BackingStore?.Set("encrypted", value); }
+        }
+#else
         public Identity Encrypted {
             get { return BackingStore?.Get<Identity>("encrypted"); }
             set { BackingStore?.Set("encrypted", value); }
         }
+#endif
         /// <summary>Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.EndpointType? EndpointType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>("endpointType"); }
             set { BackingStore?.Set("endpointType", value); }
         }
         /// <summary>The guest user associated with this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? Guest {
+            get { return BackingStore?.Get<Identity?>("guest"); }
+            set { BackingStore?.Set("guest", value); }
+        }
+#else
         public Identity Guest {
             get { return BackingStore?.Get<Identity>("guest"); }
             set { BackingStore?.Set("guest", value); }
         }
+#endif
         /// <summary>The Skype for Business On-Premises user associated with this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? OnPremises {
+            get { return BackingStore?.Get<Identity?>("onPremises"); }
+            set { BackingStore?.Set("onPremises", value); }
+        }
+#else
         public Identity OnPremises {
             get { return BackingStore?.Get<Identity>("onPremises"); }
             set { BackingStore?.Set("onPremises", value); }
         }
+#endif
         /// <summary>Inherited from identitySet. The phone user associated with this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? Phone {
+            get { return BackingStore?.Get<Identity?>("phone"); }
+            set { BackingStore?.Set("phone", value); }
+        }
+#else
         public Identity Phone {
             get { return BackingStore?.Get<Identity>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CommunicationsIdentitySet and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ExternalActivity : Entity, IParsable {
         /// <summary>Represents an identity used to identify who is responsible for the activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? PerformedBy {
+            get { return BackingStore?.Get<Identity?>("performedBy"); }
+            set { BackingStore?.Set("performedBy", value); }
+        }
+#else
         public Identity PerformedBy {
             get { return BackingStore?.Get<Identity>("performedBy"); }
             set { BackingStore?.Set("performedBy", value); }
         }
+#endif
         /// <summary>When the particular activity occurred.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }

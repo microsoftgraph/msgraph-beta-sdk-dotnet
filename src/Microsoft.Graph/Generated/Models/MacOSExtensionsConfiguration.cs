@@ -6,35 +6,70 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MacOSExtensionsConfiguration : DeviceConfiguration, IParsable {
         /// <summary>All kernel extensions validly signed by the team identifiers in this list will be allowed to load.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? KernelExtensionAllowedTeamIdentifiers {
+            get { return BackingStore?.Get<List<string>?>("kernelExtensionAllowedTeamIdentifiers"); }
+            set { BackingStore?.Set("kernelExtensionAllowedTeamIdentifiers", value); }
+        }
+#else
         public List<string> KernelExtensionAllowedTeamIdentifiers {
             get { return BackingStore?.Get<List<string>>("kernelExtensionAllowedTeamIdentifiers"); }
             set { BackingStore?.Set("kernelExtensionAllowedTeamIdentifiers", value); }
         }
+#endif
         /// <summary>If set to true, users can approve additional kernel extensions not explicitly allowed by configurations profiles.</summary>
         public bool? KernelExtensionOverridesAllowed {
             get { return BackingStore?.Get<bool?>("kernelExtensionOverridesAllowed"); }
             set { BackingStore?.Set("kernelExtensionOverridesAllowed", value); }
         }
         /// <summary>A list of kernel extensions that will be allowed to load. . This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSKernelExtension>? KernelExtensionsAllowed {
+            get { return BackingStore?.Get<List<MacOSKernelExtension>?>("kernelExtensionsAllowed"); }
+            set { BackingStore?.Set("kernelExtensionsAllowed", value); }
+        }
+#else
         public List<MacOSKernelExtension> KernelExtensionsAllowed {
             get { return BackingStore?.Get<List<MacOSKernelExtension>>("kernelExtensionsAllowed"); }
             set { BackingStore?.Set("kernelExtensionsAllowed", value); }
         }
+#endif
         /// <summary>Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSSystemExtension>? SystemExtensionsAllowed {
+            get { return BackingStore?.Get<List<MacOSSystemExtension>?>("systemExtensionsAllowed"); }
+            set { BackingStore?.Set("systemExtensionsAllowed", value); }
+        }
+#else
         public List<MacOSSystemExtension> SystemExtensionsAllowed {
             get { return BackingStore?.Get<List<MacOSSystemExtension>>("systemExtensionsAllowed"); }
             set { BackingStore?.Set("systemExtensionsAllowed", value); }
         }
+#endif
         /// <summary>Gets or sets a list of allowed team identifiers. Any system extension signed with any of the specified team identifiers will be approved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SystemExtensionsAllowedTeamIdentifiers {
+            get { return BackingStore?.Get<List<string>?>("systemExtensionsAllowedTeamIdentifiers"); }
+            set { BackingStore?.Set("systemExtensionsAllowedTeamIdentifiers", value); }
+        }
+#else
         public List<string> SystemExtensionsAllowedTeamIdentifiers {
             get { return BackingStore?.Get<List<string>>("systemExtensionsAllowedTeamIdentifiers"); }
             set { BackingStore?.Set("systemExtensionsAllowedTeamIdentifiers", value); }
         }
+#endif
         /// <summary>Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSSystemExtensionTypeMapping>? SystemExtensionsAllowedTypes {
+            get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>?>("systemExtensionsAllowedTypes"); }
+            set { BackingStore?.Set("systemExtensionsAllowedTypes", value); }
+        }
+#else
         public List<MacOSSystemExtensionTypeMapping> SystemExtensionsAllowedTypes {
             get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>>("systemExtensionsAllowedTypes"); }
             set { BackingStore?.Set("systemExtensionsAllowedTypes", value); }
         }
+#endif
         /// <summary>Gets or sets whether to allow the user to approve additional system extensions not explicitly allowed by configuration profiles.</summary>
         public bool? SystemExtensionsBlockOverride {
             get { return BackingStore?.Get<bool?>("systemExtensionsBlockOverride"); }

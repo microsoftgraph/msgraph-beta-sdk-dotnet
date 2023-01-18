@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyCategory : Entity, IParsable {
         /// <summary>The children categories</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyCategory>? Children {
+            get { return BackingStore?.Get<List<GroupPolicyCategory>?>("children"); }
+            set { BackingStore?.Set("children", value); }
+        }
+#else
         public List<GroupPolicyCategory> Children {
             get { return BackingStore?.Get<List<GroupPolicyCategory>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
+#endif
         /// <summary>The id of the definition file the category came from</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyDefinitionFile? DefinitionFile {
+            get { return BackingStore?.Get<GroupPolicyDefinitionFile?>("definitionFile"); }
+            set { BackingStore?.Set("definitionFile", value); }
+        }
+#else
         public GroupPolicyDefinitionFile DefinitionFile {
             get { return BackingStore?.Get<GroupPolicyDefinitionFile>("definitionFile"); }
             set { BackingStore?.Set("definitionFile", value); }
         }
+#endif
         /// <summary>The immediate GroupPolicyDefinition children of the category</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyDefinition>? Definitions {
+            get { return BackingStore?.Get<List<GroupPolicyDefinition>?>("definitions"); }
+            set { BackingStore?.Set("definitions", value); }
+        }
+#else
         public List<GroupPolicyDefinition> Definitions {
             get { return BackingStore?.Get<List<GroupPolicyDefinition>>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
+#endif
         /// <summary>The string id of the category&apos;s display name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Category Ingestion source</summary>
         public Microsoft.Graph.Beta.Models.IngestionSource? IngestionSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IngestionSource?>("ingestionSource"); }
@@ -41,10 +69,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The parent category</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyCategory? Parent {
+            get { return BackingStore?.Get<GroupPolicyCategory?>("parent"); }
+            set { BackingStore?.Set("parent", value); }
+        }
+#else
         public GroupPolicyCategory Parent {
             get { return BackingStore?.Get<GroupPolicyCategory>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

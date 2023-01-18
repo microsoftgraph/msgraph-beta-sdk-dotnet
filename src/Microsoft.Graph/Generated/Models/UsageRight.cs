@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UsageRight : Entity, IParsable {
         /// <summary>Product id corresponding to the usage right.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CatalogId {
+            get { return BackingStore?.Get<string?>("catalogId"); }
+            set { BackingStore?.Set("catalogId", value); }
+        }
+#else
         public string CatalogId {
             get { return BackingStore?.Get<string>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
+#endif
         /// <summary>Identifier of the service corresponding to the usage right.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServiceIdentifier {
+            get { return BackingStore?.Get<string?>("serviceIdentifier"); }
+            set { BackingStore?.Set("serviceIdentifier", value); }
+        }
+#else
         public string ServiceIdentifier {
             get { return BackingStore?.Get<string>("serviceIdentifier"); }
             set { BackingStore?.Set("serviceIdentifier", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public UsageRightState? State {
             get { return BackingStore?.Get<UsageRightState?>("state"); }

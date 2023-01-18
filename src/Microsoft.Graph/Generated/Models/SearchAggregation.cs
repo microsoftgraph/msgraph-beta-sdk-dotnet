@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Defines the actual buckets of the computed aggregation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SearchBucket>? Buckets {
+            get { return BackingStore?.Get<List<SearchBucket>?>("buckets"); }
+            set { BackingStore?.Set("buckets", value); }
+        }
+#else
         public List<SearchBucket> Buckets {
             get { return BackingStore?.Get<List<SearchBucket>>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
+#endif
         /// <summary>Defines on which field the aggregation was computed on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Field {
+            get { return BackingStore?.Get<string?>("field"); }
+            set { BackingStore?.Set("field", value); }
+        }
+#else
         public string Field {
             get { return BackingStore?.Get<string>("field"); }
             set { BackingStore?.Set("field", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new searchAggregation and sets the default values.
         /// </summary>

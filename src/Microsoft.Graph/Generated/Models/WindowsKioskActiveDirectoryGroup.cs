@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskActiveDirectoryGroup : WindowsKioskUser, IParsable {
         /// <summary>The name of the AD group that will be locked to this kiosk configuration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupName {
+            get { return BackingStore?.Get<string?>("groupName"); }
+            set { BackingStore?.Set("groupName", value); }
+        }
+#else
         public string GroupName {
             get { return BackingStore?.Get<string>("groupName"); }
             set { BackingStore?.Set("groupName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsKioskActiveDirectoryGroup and sets the default values.
         /// </summary>

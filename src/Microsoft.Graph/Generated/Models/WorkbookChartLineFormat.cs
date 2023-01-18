@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartLineFormat : Entity, IParsable {
         /// <summary>HTML color code representing the color of lines in the chart.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Color {
+            get { return BackingStore?.Get<string?>("color"); }
+            set { BackingStore?.Set("color", value); }
+        }
+#else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

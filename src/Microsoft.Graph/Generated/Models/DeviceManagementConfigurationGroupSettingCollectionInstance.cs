@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationGroupSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable {
         /// <summary>A collection of GroupSetting values</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationGroupSettingValue>? GroupSettingCollectionValue {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValue>?>("groupSettingCollectionValue"); }
+            set { BackingStore?.Set("groupSettingCollectionValue", value); }
+        }
+#else
         public List<DeviceManagementConfigurationGroupSettingValue> GroupSettingCollectionValue {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValue>>("groupSettingCollectionValue"); }
             set { BackingStore?.Set("groupSettingCollectionValue", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationGroupSettingCollectionInstance and sets the default values.
         /// </summary>

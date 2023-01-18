@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("completedUnits", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The time of a progress observation as an offset in minutes from UTC.</summary>
         public DateTimeOffset? ProgressObservationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("progressObservationDateTime"); }
@@ -34,10 +41,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalUnits", value); }
         }
         /// <summary>An optional description of the units.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Units {
+            get { return BackingStore?.Get<string?>("units"); }
+            set { BackingStore?.Set("units", value); }
+        }
+#else
         public string Units {
             get { return BackingStore?.Get<string>("units"); }
             set { BackingStore?.Set("units", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new synchronizationProgress and sets the default values.
         /// </summary>

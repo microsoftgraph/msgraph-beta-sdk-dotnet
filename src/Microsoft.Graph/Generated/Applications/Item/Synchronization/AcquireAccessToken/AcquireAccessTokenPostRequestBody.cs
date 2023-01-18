@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.AcquireAccessTo
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The credentials property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SynchronizationSecretKeyStringValuePair>? Credentials {
+            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("credentials"); }
+            set { BackingStore?.Set("credentials", value); }
+        }
+#else
         public List<SynchronizationSecretKeyStringValuePair> Credentials {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new acquireAccessTokenPostRequestBody and sets the default values.
         /// </summary>

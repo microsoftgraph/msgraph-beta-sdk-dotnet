@@ -24,25 +24,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the lookup source column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ColumnName {
+            get { return BackingStore?.Get<string?>("columnName"); }
+            set { BackingStore?.Set("columnName", value); }
+        }
+#else
         public string ColumnName {
             get { return BackingStore?.Get<string>("columnName"); }
             set { BackingStore?.Set("columnName", value); }
         }
+#endif
         /// <summary>The unique identifier of the lookup source list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ListId {
+            get { return BackingStore?.Get<string?>("listId"); }
+            set { BackingStore?.Set("listId", value); }
+        }
+#else
         public string ListId {
             get { return BackingStore?.Get<string>("listId"); }
             set { BackingStore?.Set("listId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrimaryLookupColumnId {
+            get { return BackingStore?.Get<string?>("primaryLookupColumnId"); }
+            set { BackingStore?.Set("primaryLookupColumnId", value); }
+        }
+#else
         public string PrimaryLookupColumnId {
             get { return BackingStore?.Get<string>("primaryLookupColumnId"); }
             set { BackingStore?.Set("primaryLookupColumnId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new lookupColumn and sets the default values.
         /// </summary>

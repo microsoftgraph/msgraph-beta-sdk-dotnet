@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartDataLabels : Entity, IParsable {
         /// <summary>Represents the format of chart data labels, which includes fill and font formatting. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartDataLabelFormat? Format {
+            get { return BackingStore?.Get<WorkbookChartDataLabelFormat?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public WorkbookChartDataLabelFormat Format {
             get { return BackingStore?.Get<WorkbookChartDataLabelFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Position {
+            get { return BackingStore?.Get<string?>("position"); }
+            set { BackingStore?.Set("position", value); }
+        }
+#else
         public string Position {
             get { return BackingStore?.Get<string>("position"); }
             set { BackingStore?.Set("position", value); }
         }
+#endif
         /// <summary>String representing the separator used for the data labels on a chart.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Separator {
+            get { return BackingStore?.Get<string?>("separator"); }
+            set { BackingStore?.Set("separator", value); }
+        }
+#else
         public string Separator {
             get { return BackingStore?.Get<string>("separator"); }
             set { BackingStore?.Set("separator", value); }
         }
+#endif
         /// <summary>Boolean value representing if the data label bubble size is visible or not.</summary>
         public bool? ShowBubbleSize {
             get { return BackingStore?.Get<bool?>("showBubbleSize"); }

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class LanguageProficiency : ItemFacet, IParsable {
         /// <summary>Contains the long-form name for the language.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The proficiency property</summary>
         public LanguageProficiencyLevel? Proficiency {
             get { return BackingStore?.Get<LanguageProficiencyLevel?>("proficiency"); }
@@ -26,15 +33,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("spoken", value); }
         }
         /// <summary>Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Tag {
+            get { return BackingStore?.Get<string?>("tag"); }
+            set { BackingStore?.Set("tag", value); }
+        }
+#else
         public string Tag {
             get { return BackingStore?.Get<string>("tag"); }
             set { BackingStore?.Set("tag", value); }
         }
+#endif
         /// <summary>The thumbnailUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ThumbnailUrl {
+            get { return BackingStore?.Get<string?>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
+        }
+#else
         public string ThumbnailUrl {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
+#endif
         /// <summary>Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
         public LanguageProficiencyLevel? Written {
             get { return BackingStore?.Get<LanguageProficiencyLevel?>("written"); }

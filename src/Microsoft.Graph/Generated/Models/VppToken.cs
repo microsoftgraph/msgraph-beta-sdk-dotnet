@@ -9,10 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class VppToken : Entity, IParsable {
         /// <summary>The apple Id associated with the given Apple Volume Purchase Program Token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppleId {
+            get { return BackingStore?.Get<string?>("appleId"); }
+            set { BackingStore?.Set("appleId", value); }
+        }
+#else
         public string AppleId {
             get { return BackingStore?.Get<string>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
+#endif
         /// <summary>Whether or not apps for the VPP token will be automatically updated.</summary>
         public bool? AutomaticallyUpdateApps {
             get { return BackingStore?.Get<bool?>("automaticallyUpdateApps"); }
@@ -24,20 +31,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("claimTokenManagementFromExternalMdm", value); }
         }
         /// <summary>Whether or not apps for the VPP token will be automatically updated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountryOrRegion {
+            get { return BackingStore?.Get<string?>("countryOrRegion"); }
+            set { BackingStore?.Set("countryOrRegion", value); }
+        }
+#else
         public string CountryOrRegion {
             get { return BackingStore?.Get<string>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
+#endif
         /// <summary>Consent granted for data sharing with the Apple Volume Purchase Program.</summary>
         public bool? DataSharingConsentGranted {
             get { return BackingStore?.Get<bool?>("dataSharingConsentGranted"); }
             set { BackingStore?.Set("dataSharingConsentGranted", value); }
         }
         /// <summary>An admin specified token friendly name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The expiration date time of the Apple Volume Purchase Program Token.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
@@ -59,35 +80,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSyncStatus", value); }
         }
         /// <summary>Token location returned from Apple VPP.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocationName {
+            get { return BackingStore?.Get<string?>("locationName"); }
+            set { BackingStore?.Set("locationName", value); }
+        }
+#else
         public string LocationName {
             get { return BackingStore?.Get<string>("locationName"); }
             set { BackingStore?.Set("locationName", value); }
         }
+#endif
         /// <summary>The organization associated with the Apple Volume Purchase Program Token</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OrganizationName {
+            get { return BackingStore?.Get<string?>("organizationName"); }
+            set { BackingStore?.Set("organizationName", value); }
+        }
+#else
         public string OrganizationName {
             get { return BackingStore?.Get<string>("organizationName"); }
             set { BackingStore?.Set("organizationName", value); }
         }
+#endif
         /// <summary>Role Scope Tags IDs assigned to this entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>Possible states associated with an Apple Volume Purchase Program token.</summary>
         public VppTokenState? State {
             get { return BackingStore?.Get<VppTokenState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Token {
+            get { return BackingStore?.Get<string?>("token"); }
+            set { BackingStore?.Set("token", value); }
+        }
+#else
         public string Token {
             get { return BackingStore?.Get<string>("token"); }
             set { BackingStore?.Set("token", value); }
         }
+#endif
         /// <summary>The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<VppTokenActionResult>? TokenActionResults {
+            get { return BackingStore?.Get<List<VppTokenActionResult>?>("tokenActionResults"); }
+            set { BackingStore?.Set("tokenActionResults", value); }
+        }
+#else
         public List<VppTokenActionResult> TokenActionResults {
             get { return BackingStore?.Get<List<VppTokenActionResult>>("tokenActionResults"); }
             set { BackingStore?.Set("tokenActionResults", value); }
         }
+#endif
         /// <summary>Possible types of an Apple Volume Purchase Program token.</summary>
         public Microsoft.Graph.Beta.Models.VppTokenAccountType? VppTokenAccountType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VppTokenAccountType?>("vppTokenAccountType"); }

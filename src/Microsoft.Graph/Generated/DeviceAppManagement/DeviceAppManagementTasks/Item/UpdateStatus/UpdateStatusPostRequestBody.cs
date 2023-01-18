@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The note property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Note {
+            get { return BackingStore?.Get<string?>("note"); }
+            set { BackingStore?.Set("note", value); }
+        }
+#else
         public string Note {
             get { return BackingStore?.Get<string>("note"); }
             set { BackingStore?.Set("note", value); }
         }
+#endif
         /// <summary>Device app management task status.</summary>
         public DeviceAppManagementTaskStatus? Status {
             get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>("status"); }

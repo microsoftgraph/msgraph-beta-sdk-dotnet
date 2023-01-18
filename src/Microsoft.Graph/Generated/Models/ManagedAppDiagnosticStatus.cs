@@ -17,25 +17,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Instruction on how to mitigate a failed validation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MitigationInstruction {
+            get { return BackingStore?.Get<string?>("mitigationInstruction"); }
+            set { BackingStore?.Set("mitigationInstruction", value); }
+        }
+#else
         public string MitigationInstruction {
             get { return BackingStore?.Get<string>("mitigationInstruction"); }
             set { BackingStore?.Set("mitigationInstruction", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The state of the operation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? State {
+            get { return BackingStore?.Get<string?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>The validation friendly name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ValidationName {
+            get { return BackingStore?.Get<string?>("validationName"); }
+            set { BackingStore?.Set("validationName", value); }
+        }
+#else
         public string ValidationName {
             get { return BackingStore?.Get<string>("validationName"); }
             set { BackingStore?.Set("validationName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new managedAppDiagnosticStatus and sets the default values.
         /// </summary>

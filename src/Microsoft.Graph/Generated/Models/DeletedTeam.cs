@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeletedTeam : Entity, IParsable {
         /// <summary>The channels those are either shared with this deleted team or created in this deleted team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Channel>? Channels {
+            get { return BackingStore?.Get<List<Channel>?>("channels"); }
+            set { BackingStore?.Set("channels", value); }
+        }
+#else
         public List<Channel> Channels {
             get { return BackingStore?.Get<List<Channel>>("channels"); }
             set { BackingStore?.Set("channels", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

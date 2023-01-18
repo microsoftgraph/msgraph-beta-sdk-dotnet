@@ -16,25 +16,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The registry detection value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DetectionValue {
+            get { return BackingStore?.Get<string?>("detectionValue"); }
+            set { BackingStore?.Set("detectionValue", value); }
+        }
+#else
         public string DetectionValue {
             get { return BackingStore?.Get<string>("detectionValue"); }
             set { BackingStore?.Set("detectionValue", value); }
         }
+#endif
         /// <summary>The registry key path to detect Win32 Line of Business (LoB) app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KeyPath {
+            get { return BackingStore?.Get<string?>("keyPath"); }
+            set { BackingStore?.Set("keyPath", value); }
+        }
+#else
         public string KeyPath {
             get { return BackingStore?.Get<string>("keyPath"); }
             set { BackingStore?.Set("keyPath", value); }
         }
+#endif
         /// <summary>Contains properties for detection operator.</summary>
         public Win32LobAppDetectionOperator? Operator {
             get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The registry value name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ValueName {
+            get { return BackingStore?.Get<string?>("valueName"); }
+            set { BackingStore?.Set("valueName", value); }
+        }
+#else
         public string ValueName {
             get { return BackingStore?.Get<string>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Win32LobAppRegistryDetection and sets the default values.
         /// </summary>

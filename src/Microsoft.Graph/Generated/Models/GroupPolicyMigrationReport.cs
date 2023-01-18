@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The Group Policy migration report.
+    /// </summary>
     public class GroupPolicyMigrationReport : Entity, IParsable {
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -11,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The name of Group Policy Object from the GPO Xml Content</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
         public DateTimeOffset? GroupPolicyCreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("groupPolicyCreatedDateTime"); }
@@ -31,10 +41,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("groupPolicyObjectId", value); }
         }
         /// <summary>A list of group policy settings to MDM/Intune mappings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicySettingMapping>? GroupPolicySettingMappings {
+            get { return BackingStore?.Get<List<GroupPolicySettingMapping>?>("groupPolicySettingMappings"); }
+            set { BackingStore?.Set("groupPolicySettingMappings", value); }
+        }
+#else
         public List<GroupPolicySettingMapping> GroupPolicySettingMappings {
             get { return BackingStore?.Get<List<GroupPolicySettingMapping>>("groupPolicySettingMappings"); }
             set { BackingStore?.Set("groupPolicySettingMappings", value); }
         }
+#endif
         /// <summary>The date and time at which the GroupPolicyMigrationReport was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -46,15 +63,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("migrationReadiness", value); }
         }
         /// <summary>The distinguished name of the OU.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OuDistinguishedName {
+            get { return BackingStore?.Get<string?>("ouDistinguishedName"); }
+            set { BackingStore?.Set("ouDistinguishedName", value); }
+        }
+#else
         public string OuDistinguishedName {
             get { return BackingStore?.Get<string>("ouDistinguishedName"); }
             set { BackingStore?.Set("ouDistinguishedName", value); }
         }
+#endif
         /// <summary>The list of scope tags for the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>The number of Group Policy Settings supported by Intune.</summary>
         public int? SupportedSettingsCount {
             get { return BackingStore?.Get<int?>("supportedSettingsCount"); }
@@ -76,10 +107,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalSettingsCount", value); }
         }
         /// <summary>A list of unsupported group policy extensions inside the Group Policy Object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnsupportedGroupPolicyExtension>? UnsupportedGroupPolicyExtensions {
+            get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>?>("unsupportedGroupPolicyExtensions"); }
+            set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
+        }
+#else
         public List<UnsupportedGroupPolicyExtension> UnsupportedGroupPolicyExtensions {
             get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>>("unsupportedGroupPolicyExtensions"); }
             set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

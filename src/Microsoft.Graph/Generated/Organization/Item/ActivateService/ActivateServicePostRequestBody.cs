@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Organization.Item.ActivateService {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The service property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Service {
+            get { return BackingStore?.Get<string?>("service"); }
+            set { BackingStore?.Set("service", value); }
+        }
+#else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#endif
         /// <summary>The servicePlanId property</summary>
         public Guid? ServicePlanId {
             get { return BackingStore?.Get<Guid?>("servicePlanId"); }

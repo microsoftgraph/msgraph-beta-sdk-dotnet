@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CredentialUserRegistrationDetails : Entity, IParsable {
         /// <summary>Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RegistrationAuthMethod?>? AuthMethods {
+            get { return BackingStore?.Get<List<RegistrationAuthMethod?>?>("authMethods"); }
+            set { BackingStore?.Set("authMethods", value); }
+        }
+#else
         public List<RegistrationAuthMethod?> AuthMethods {
             get { return BackingStore?.Get<List<RegistrationAuthMethod?>>("authMethods"); }
             set { BackingStore?.Set("authMethods", value); }
         }
+#endif
         /// <summary>Indicates whether the user is ready to perform self-service password reset or MFA.</summary>
         public bool? IsCapable {
             get { return BackingStore?.Get<bool?>("isCapable"); }
@@ -31,15 +38,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isRegistered", value); }
         }
         /// <summary>Provides the user name of the corresponding user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserDisplayName {
+            get { return BackingStore?.Get<string?>("userDisplayName"); }
+            set { BackingStore?.Set("userDisplayName", value); }
+        }
+#else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#endif
         /// <summary>Provides the user principal name of the corresponding user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Shift : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this shift that is viewable by managers. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ShiftItem? DraftShift {
+            get { return BackingStore?.Get<ShiftItem?>("draftShift"); }
+            set { BackingStore?.Set("draftShift", value); }
+        }
+#else
         public ShiftItem DraftShift {
             get { return BackingStore?.Get<ShiftItem>("draftShift"); }
             set { BackingStore?.Set("draftShift", value); }
         }
+#endif
         /// <summary>The isStagedForDeletion property</summary>
         public bool? IsStagedForDeletion {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
         }
         /// <summary>The schedulingGroupId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SchedulingGroupId {
+            get { return BackingStore?.Get<string?>("schedulingGroupId"); }
+            set { BackingStore?.Set("schedulingGroupId", value); }
+        }
+#else
         public string SchedulingGroupId {
             get { return BackingStore?.Get<string>("schedulingGroupId"); }
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
+#endif
         /// <summary>The sharedShift property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ShiftItem? SharedShift {
+            get { return BackingStore?.Get<ShiftItem?>("sharedShift"); }
+            set { BackingStore?.Set("sharedShift", value); }
+        }
+#else
         public ShiftItem SharedShift {
             get { return BackingStore?.Get<ShiftItem>("sharedShift"); }
             set { BackingStore?.Set("sharedShift", value); }
         }
+#endif
         /// <summary>The userId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Shift and sets the default values.
         /// </summary>

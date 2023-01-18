@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminCustomer : Entity, IParsable {
         /// <summary>The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DelegatedAdminServiceManagementDetail>? ServiceManagementDetails {
+            get { return BackingStore?.Get<List<DelegatedAdminServiceManagementDetail>?>("serviceManagementDetails"); }
+            set { BackingStore?.Set("serviceManagementDetails", value); }
+        }
+#else
         public List<DelegatedAdminServiceManagementDetail> ServiceManagementDetails {
             get { return BackingStore?.Get<List<DelegatedAdminServiceManagementDetail>>("serviceManagementDetails"); }
             set { BackingStore?.Set("serviceManagementDetails", value); }
         }
+#endif
         /// <summary>The Azure AD-assigned tenant ID of the customer. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

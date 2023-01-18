@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Content type information of the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ContentTypeInfo? ContentType {
+            get { return BackingStore?.Get<ContentTypeInfo?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#else
         public ContentTypeInfo ContentType {
             get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#endif
         /// <summary>Name of the file in resource folder that should be added as a default content or a template in the document set</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>Folder name in which the file will be placed when a new document set is created in the library.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FolderName {
+            get { return BackingStore?.Get<string?>("folderName"); }
+            set { BackingStore?.Set("folderName", value); }
+        }
+#else
         public string FolderName {
             get { return BackingStore?.Get<string>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new documentSetContent and sets the default values.
         /// </summary>

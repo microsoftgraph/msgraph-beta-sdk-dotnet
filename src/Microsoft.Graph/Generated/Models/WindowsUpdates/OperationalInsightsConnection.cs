@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class OperationalInsightsConnection : ResourceConnection, IParsable {
         /// <summary>The name of the Azure resource group that contains the Log Analytics workspace.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureResourceGroupName {
+            get { return BackingStore?.Get<string?>("azureResourceGroupName"); }
+            set { BackingStore?.Set("azureResourceGroupName", value); }
+        }
+#else
         public string AzureResourceGroupName {
             get { return BackingStore?.Get<string>("azureResourceGroupName"); }
             set { BackingStore?.Set("azureResourceGroupName", value); }
         }
+#endif
         /// <summary>The Azure subscription ID that contains the Log Analytics workspace.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureSubscriptionId {
+            get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
+        }
+#else
         public string AzureSubscriptionId {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
+#endif
         /// <summary>The name of the Log Analytics workspace.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WorkspaceName {
+            get { return BackingStore?.Get<string?>("workspaceName"); }
+            set { BackingStore?.Set("workspaceName", value); }
+        }
+#else
         public string WorkspaceName {
             get { return BackingStore?.Get<string>("workspaceName"); }
             set { BackingStore?.Set("workspaceName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OperationalInsightsConnection and sets the default values.
         /// </summary>

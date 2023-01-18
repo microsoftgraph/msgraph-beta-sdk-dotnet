@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AppConsentApprovalRoute : Entity, IParsable {
         /// <summary>A collection of userConsentRequest objects for a specific application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppConsentRequest>? AppConsentRequests {
+            get { return BackingStore?.Get<List<AppConsentRequest>?>("appConsentRequests"); }
+            set { BackingStore?.Set("appConsentRequests", value); }
+        }
+#else
         public List<AppConsentRequest> AppConsentRequests {
             get { return BackingStore?.Get<List<AppConsentRequest>>("appConsentRequests"); }
             set { BackingStore?.Set("appConsentRequests", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

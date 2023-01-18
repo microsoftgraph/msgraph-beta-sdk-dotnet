@@ -14,35 +14,70 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managementActionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementActionId {
+            get { return BackingStore?.Get<string?>("managementActionId"); }
+            set { BackingStore?.Set("managementActionId", value); }
+        }
+#else
         public string ManagementActionId {
             get { return BackingStore?.Get<string>("managementActionId"); }
             set { BackingStore?.Set("managementActionId", value); }
         }
+#endif
         /// <summary>The managementTemplateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateId {
+            get { return BackingStore?.Get<string?>("managementTemplateId"); }
+            set { BackingStore?.Set("managementTemplateId", value); }
+        }
+#else
         public string ManagementTemplateId {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
+#endif
         /// <summary>The managementTemplateVersion property</summary>
         public int? ManagementTemplateVersion {
             get { return BackingStore?.Get<int?>("managementTemplateVersion"); }
             set { BackingStore?.Set("managementTemplateVersion", value); }
         }
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>The tenantGroupId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantGroupId {
+            get { return BackingStore?.Get<string?>("tenantGroupId"); }
+            set { BackingStore?.Set("tenantGroupId", value); }
+        }
+#else
         public string TenantGroupId {
             get { return BackingStore?.Get<string>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
+#endif
         /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new changeDeploymentStatusPostRequestBody and sets the default values.
         /// </summary>

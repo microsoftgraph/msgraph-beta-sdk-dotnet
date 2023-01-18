@@ -27,10 +27,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.</summary>
         public bool? RequireEncryptionForWriteAccess {
             get { return BackingStore?.Get<bool?>("requireEncryptionForWriteAccess"); }

@@ -9,10 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MobileAppContentFile : Entity, IParsable {
         /// <summary>The Azure Storage URI.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureStorageUri {
+            get { return BackingStore?.Get<string?>("azureStorageUri"); }
+            set { BackingStore?.Set("azureStorageUri", value); }
+        }
+#else
         public string AzureStorageUri {
             get { return BackingStore?.Get<string>("azureStorageUri"); }
             set { BackingStore?.Set("azureStorageUri", value); }
         }
+#endif
         /// <summary>The time the Azure storage Uri expires.</summary>
         public DateTimeOffset? AzureStorageUriExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("azureStorageUriExpirationDateTime"); }
@@ -39,15 +46,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isFrameworkFile", value); }
         }
         /// <summary>The manifest information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Manifest {
+            get { return BackingStore?.Get<byte[]?>("manifest"); }
+            set { BackingStore?.Set("manifest", value); }
+        }
+#else
         public byte[] Manifest {
             get { return BackingStore?.Get<byte[]>("manifest"); }
             set { BackingStore?.Set("manifest", value); }
         }
+#endif
         /// <summary>the file name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The size of the file prior to encryption.</summary>
         public long? Size {
             get { return BackingStore?.Get<long?>("size"); }

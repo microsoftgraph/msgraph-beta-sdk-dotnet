@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalUserCount", value); }
         }
         /// <summary>A collection of registration count and status information for users in your tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserRegistrationCount>? UserRegistrationCounts {
+            get { return BackingStore?.Get<List<UserRegistrationCount>?>("userRegistrationCounts"); }
+            set { BackingStore?.Set("userRegistrationCounts", value); }
+        }
+#else
         public List<UserRegistrationCount> UserRegistrationCounts {
             get { return BackingStore?.Get<List<UserRegistrationCount>>("userRegistrationCounts"); }
             set { BackingStore?.Set("userRegistrationCounts", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

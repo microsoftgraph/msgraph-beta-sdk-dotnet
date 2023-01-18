@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.MarkChatReadForUser {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>The user property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkUserIdentity? User {
+            get { return BackingStore?.Get<TeamworkUserIdentity?>("user"); }
+            set { BackingStore?.Set("user", value); }
+        }
+#else
         public TeamworkUserIdentity User {
             get { return BackingStore?.Get<TeamworkUserIdentity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new markChatReadForUserPostRequestBody and sets the default values.
         /// </summary>

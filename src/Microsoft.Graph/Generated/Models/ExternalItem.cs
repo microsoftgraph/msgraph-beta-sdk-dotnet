@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ExternalItem : Entity, IParsable {
         /// <summary>The acl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.Acl>? Acl {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Acl>?>("acl"); }
+            set { BackingStore?.Set("acl", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.Acl> Acl {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Acl>>("acl"); }
             set { BackingStore?.Set("acl", value); }
         }
+#endif
         /// <summary>The content property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ExternalItemContent? Content {
+            get { return BackingStore?.Get<ExternalItemContent?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public ExternalItemContent Content {
             get { return BackingStore?.Get<ExternalItemContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The properties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Properties? Properties {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Properties?>("properties"); }
+            set { BackingStore?.Set("properties", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Properties Properties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Properties>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

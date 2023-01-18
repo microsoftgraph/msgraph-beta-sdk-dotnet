@@ -22,10 +22,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deadlineDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Whether the local device time or UTC time should be used when determining the deadline times.</summary>
         public bool? UseLocalTime {
             get { return BackingStore?.Get<bool?>("useLocalTime"); }

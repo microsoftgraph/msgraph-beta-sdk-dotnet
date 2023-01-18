@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SharedInsight : Entity, IParsable {
         /// <summary>Details about the shared item. Read only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SharingDetail? LastShared {
+            get { return BackingStore?.Get<SharingDetail?>("lastShared"); }
+            set { BackingStore?.Set("lastShared", value); }
+        }
+#else
         public SharingDetail LastShared {
             get { return BackingStore?.Get<SharingDetail>("lastShared"); }
             set { BackingStore?.Set("lastShared", value); }
         }
+#endif
         /// <summary>The lastSharedMethod property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Entity? LastSharedMethod {
+            get { return BackingStore?.Get<Entity?>("lastSharedMethod"); }
+            set { BackingStore?.Set("lastSharedMethod", value); }
+        }
+#else
         public Entity LastSharedMethod {
             get { return BackingStore?.Get<Entity>("lastSharedMethod"); }
             set { BackingStore?.Set("lastSharedMethod", value); }
         }
+#endif
         /// <summary>Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Entity? Resource {
+            get { return BackingStore?.Get<Entity?>("resource"); }
+            set { BackingStore?.Set("resource", value); }
+        }
+#else
         public Entity Resource {
             get { return BackingStore?.Get<Entity>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#endif
         /// <summary>Reference properties of the shared document, such as the url and type of the document. Read-only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ResourceReference? ResourceReference {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference?>("resourceReference"); }
+            set { BackingStore?.Set("resourceReference", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ResourceReference ResourceReference {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference>("resourceReference"); }
             set { BackingStore?.Set("resourceReference", value); }
         }
+#endif
         /// <summary>Properties that you can use to visualize the document in your experience. Read-only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ResourceVisualization? ResourceVisualization {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceVisualization?>("resourceVisualization"); }
+            set { BackingStore?.Set("resourceVisualization", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ResourceVisualization ResourceVisualization {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceVisualization>("resourceVisualization"); }
             set { BackingStore?.Set("resourceVisualization", value); }
         }
+#endif
         /// <summary>The sharingHistory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SharingDetail>? SharingHistory {
+            get { return BackingStore?.Get<List<SharingDetail>?>("sharingHistory"); }
+            set { BackingStore?.Set("sharingHistory", value); }
+        }
+#else
         public List<SharingDetail> SharingHistory {
             get { return BackingStore?.Get<List<SharingDetail>>("sharingHistory"); }
             set { BackingStore?.Set("sharingHistory", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

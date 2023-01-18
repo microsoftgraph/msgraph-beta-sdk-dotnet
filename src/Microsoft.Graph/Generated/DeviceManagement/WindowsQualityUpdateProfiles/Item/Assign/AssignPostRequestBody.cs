@@ -13,10 +13,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsQualityUpdateProfileAssignment>? Assignments {
+            get { return BackingStore?.Get<List<WindowsQualityUpdateProfileAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<WindowsQualityUpdateProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<WindowsQualityUpdateProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>

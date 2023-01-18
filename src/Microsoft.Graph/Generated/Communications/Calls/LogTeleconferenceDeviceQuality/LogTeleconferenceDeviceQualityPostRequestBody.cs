@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Communications.Calls.LogTeleconferenceDeviceQuali
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The quality property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeleconferenceDeviceQuality? Quality {
+            get { return BackingStore?.Get<TeleconferenceDeviceQuality?>("quality"); }
+            set { BackingStore?.Set("quality", value); }
+        }
+#else
         public TeleconferenceDeviceQuality Quality {
             get { return BackingStore?.Get<TeleconferenceDeviceQuality>("quality"); }
             set { BackingStore?.Set("quality", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new logTeleconferenceDeviceQualityPostRequestBody and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class InternetExplorerMode : Entity, IParsable {
         /// <summary>A collection of site lists to support Internet Explorer mode.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BrowserSiteList>? SiteLists {
+            get { return BackingStore?.Get<List<BrowserSiteList>?>("siteLists"); }
+            set { BackingStore?.Set("siteLists", value); }
+        }
+#else
         public List<BrowserSiteList> SiteLists {
             get { return BackingStore?.Get<List<BrowserSiteList>>("siteLists"); }
             set { BackingStore?.Set("siteLists", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The logInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LogInformation {
+            get { return BackingStore?.Get<string?>("logInformation"); }
+            set { BackingStore?.Set("logInformation", value); }
+        }
+#else
         public string LogInformation {
             get { return BackingStore?.Get<string>("logInformation"); }
             set { BackingStore?.Set("logInformation", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new addUserInputLogPostRequestBody and sets the default values.
         /// </summary>

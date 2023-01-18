@@ -19,40 +19,82 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("actionState", value); }
         }
         /// <summary>Intune device name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceDisplayName {
+            get { return BackingStore?.Get<string?>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
+        }
+#else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#endif
         /// <summary>IMEI of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceIMEI {
+            get { return BackingStore?.Get<string?>("deviceIMEI"); }
+            set { BackingStore?.Set("deviceIMEI", value); }
+        }
+#else
         public string DeviceIMEI {
             get { return BackingStore?.Get<string>("deviceIMEI"); }
             set { BackingStore?.Set("deviceIMEI", value); }
         }
+#endif
         /// <summary>Upn of the device owner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceOwnerUserPrincipalName {
+            get { return BackingStore?.Get<string?>("deviceOwnerUserPrincipalName"); }
+            set { BackingStore?.Set("deviceOwnerUserPrincipalName", value); }
+        }
+#else
         public string DeviceOwnerUserPrincipalName {
             get { return BackingStore?.Get<string>("deviceOwnerUserPrincipalName"); }
             set { BackingStore?.Set("deviceOwnerUserPrincipalName", value); }
         }
+#endif
         /// <summary>User who initiated the device action, format is UPN.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InitiatedByUserPrincipalName {
+            get { return BackingStore?.Get<string?>("initiatedByUserPrincipalName"); }
+            set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
+        }
+#else
         public string InitiatedByUserPrincipalName {
             get { return BackingStore?.Get<string>("initiatedByUserPrincipalName"); }
             set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
+#endif
         /// <summary>Action target.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>Time when the action was issued, given in UTC.</summary>
         public DateTimeOffset? RequestDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
             set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>[deprecated] Please use InitiatedByUserPrincipalName instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserName {
+            get { return BackingStore?.Get<string?>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
+#else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

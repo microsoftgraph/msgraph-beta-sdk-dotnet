@@ -6,40 +6,75 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EnterpriseCodeSigningCertificate : Entity, IParsable {
         /// <summary>The Windows Enterprise Code-Signing Certificate in the raw data format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Content {
+            get { return BackingStore?.Get<byte[]?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The Cert Expiration Date.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The Issuer value for the cert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Issuer {
+            get { return BackingStore?.Get<string?>("issuer"); }
+            set { BackingStore?.Set("issuer", value); }
+        }
+#else
         public string Issuer {
             get { return BackingStore?.Get<string>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
+#endif
         /// <summary>The Issuer Name for the cert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IssuerName {
+            get { return BackingStore?.Get<string?>("issuerName"); }
+            set { BackingStore?.Set("issuerName", value); }
+        }
+#else
         public string IssuerName {
             get { return BackingStore?.Get<string>("issuerName"); }
             set { BackingStore?.Set("issuerName", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public CertificateStatus? Status {
             get { return BackingStore?.Get<CertificateStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The Subject Value for the cert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>The Subject Name for the cert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubjectName {
+            get { return BackingStore?.Get<string?>("subjectName"); }
+            set { BackingStore?.Set("subjectName", value); }
+        }
+#else
         public string SubjectName {
             get { return BackingStore?.Get<string>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
+#endif
         /// <summary>The date time of CodeSigning Cert when it is uploaded.</summary>
         public DateTimeOffset? UploadDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("uploadDateTime"); }

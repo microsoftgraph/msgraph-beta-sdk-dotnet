@@ -19,25 +19,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.</summary>
         public int? RecurrenceCount {
             get { return BackingStore?.Get<int?>("recurrenceCount"); }
             set { BackingStore?.Set("recurrenceCount", value); }
         }
         /// <summary>How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecurrenceEndType {
+            get { return BackingStore?.Get<string?>("recurrenceEndType"); }
+            set { BackingStore?.Set("recurrenceEndType", value); }
+        }
+#else
         public string RecurrenceEndType {
             get { return BackingStore?.Get<string>("recurrenceEndType"); }
             set { BackingStore?.Set("recurrenceEndType", value); }
         }
+#endif
         /// <summary>The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecurrenceType {
+            get { return BackingStore?.Get<string?>("recurrenceType"); }
+            set { BackingStore?.Set("recurrenceType", value); }
+        }
+#else
         public string RecurrenceType {
             get { return BackingStore?.Get<string>("recurrenceType"); }
             set { BackingStore?.Set("recurrenceType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new accessReviewRecurrenceSettings and sets the default values.
         /// </summary>

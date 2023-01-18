@@ -22,35 +22,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("comparisonResult", value); }
         }
         /// <summary>JSON representation of current intent (or) template setting&apos;s value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CurrentValueJson {
+            get { return BackingStore?.Get<string?>("currentValueJson"); }
+            set { BackingStore?.Set("currentValueJson", value); }
+        }
+#else
         public string CurrentValueJson {
             get { return BackingStore?.Get<string>("currentValueJson"); }
             set { BackingStore?.Set("currentValueJson", value); }
         }
+#endif
         /// <summary>The ID of the setting definition for this instance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefinitionId {
+            get { return BackingStore?.Get<string?>("definitionId"); }
+            set { BackingStore?.Set("definitionId", value); }
+        }
+#else
         public string DefinitionId {
             get { return BackingStore?.Get<string>("definitionId"); }
             set { BackingStore?.Set("definitionId", value); }
         }
+#endif
         /// <summary>The setting&apos;s display name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The setting ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>JSON representation of new template setting&apos;s value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NewValueJson {
+            get { return BackingStore?.Get<string?>("newValueJson"); }
+            set { BackingStore?.Set("newValueJson", value); }
+        }
+#else
         public string NewValueJson {
             get { return BackingStore?.Get<string>("newValueJson"); }
             set { BackingStore?.Set("newValueJson", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceManagementSettingComparison and sets the default values.
         /// </summary>

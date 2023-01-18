@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("acceptingJobs", value); }
         }
         /// <summary>The connectors that are associated with the printer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintConnector>? Connectors {
+            get { return BackingStore?.Get<List<PrintConnector>?>("connectors"); }
+            set { BackingStore?.Set("connectors", value); }
+        }
+#else
         public List<PrintConnector> Connectors {
             get { return BackingStore?.Get<List<PrintConnector>>("connectors"); }
             set { BackingStore?.Set("connectors", value); }
         }
+#endif
         /// <summary>True if the printer has a physical device for printing. Read-only.</summary>
         public bool? HasPhysicalDevice {
             get { return BackingStore?.Get<bool?>("hasPhysicalDevice"); }
@@ -36,20 +43,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registeredDateTime", value); }
         }
         /// <summary>The share property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrinterShare? Share {
+            get { return BackingStore?.Get<PrinterShare?>("share"); }
+            set { BackingStore?.Set("share", value); }
+        }
+#else
         public PrinterShare Share {
             get { return BackingStore?.Get<PrinterShare>("share"); }
             set { BackingStore?.Set("share", value); }
         }
+#endif
         /// <summary>The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrinterShare>? Shares {
+            get { return BackingStore?.Get<List<PrinterShare>?>("shares"); }
+            set { BackingStore?.Set("shares", value); }
+        }
+#else
         public List<PrinterShare> Shares {
             get { return BackingStore?.Get<List<PrinterShare>>("shares"); }
             set { BackingStore?.Set("shares", value); }
         }
+#endif
         /// <summary>A list of task triggers that are associated with the printer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintTaskTrigger>? TaskTriggers {
+            get { return BackingStore?.Get<List<PrintTaskTrigger>?>("taskTriggers"); }
+            set { BackingStore?.Set("taskTriggers", value); }
+        }
+#else
         public List<PrintTaskTrigger> TaskTriggers {
             get { return BackingStore?.Get<List<PrintTaskTrigger>>("taskTriggers"); }
             set { BackingStore?.Set("taskTriggers", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new printer and sets the default values.
         /// </summary>

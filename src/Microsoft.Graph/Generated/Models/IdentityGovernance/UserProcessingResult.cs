@@ -31,15 +31,29 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("startedDateTime", value); }
         }
         /// <summary>The subject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.User? Subject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.User Subject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>The associated individual task execution.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TaskProcessingResult>? TaskProcessingResults {
+            get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
+            set { BackingStore?.Set("taskProcessingResults", value); }
+        }
+#else
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
+#endif
         /// <summary>The total number of tasks that in the workflow execution.</summary>
         public int? TotalTasksCount {
             get { return BackingStore?.Get<int?>("totalTasksCount"); }

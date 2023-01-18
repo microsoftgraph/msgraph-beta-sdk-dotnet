@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkReprovision
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedDeviceIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ManagedDeviceIds {
+            get { return BackingStore?.Get<List<string>?>("managedDeviceIds"); }
+            set { BackingStore?.Set("managedDeviceIds", value); }
+        }
+#else
         public List<string> ManagedDeviceIds {
             get { return BackingStore?.Get<List<string>>("managedDeviceIds"); }
             set { BackingStore?.Set("managedDeviceIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new bulkReprovisionCloudPcPostRequestBody and sets the default values.
         /// </summary>

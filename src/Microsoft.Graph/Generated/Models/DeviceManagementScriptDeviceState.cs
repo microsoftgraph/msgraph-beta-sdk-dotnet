@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Error description corresponding to erroneous execution of the device management script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorDescription {
+            get { return BackingStore?.Get<string?>("errorDescription"); }
+            set { BackingStore?.Set("errorDescription", value); }
+        }
+#else
         public string ErrorDescription {
             get { return BackingStore?.Get<string>("errorDescription"); }
             set { BackingStore?.Set("errorDescription", value); }
         }
+#endif
         /// <summary>Latest time the device management script executes.</summary>
         public DateTimeOffset? LastStateUpdateDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastStateUpdateDateTime"); }
             set { BackingStore?.Set("lastStateUpdateDateTime", value); }
         }
         /// <summary>The managed devices that executes the device management script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ManagedDevice? ManagedDevice {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice?>("managedDevice"); }
+            set { BackingStore?.Set("managedDevice", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>("managedDevice"); }
             set { BackingStore?.Set("managedDevice", value); }
         }
+#endif
         /// <summary>Details of execution output.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResultMessage {
+            get { return BackingStore?.Get<string?>("resultMessage"); }
+            set { BackingStore?.Set("resultMessage", value); }
+        }
+#else
         public string ResultMessage {
             get { return BackingStore?.Get<string>("resultMessage"); }
             set { BackingStore?.Set("resultMessage", value); }
         }
+#endif
         /// <summary>Indicates the type of execution status of the device management script.</summary>
         public Microsoft.Graph.Beta.Models.RunState? RunState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>("runState"); }

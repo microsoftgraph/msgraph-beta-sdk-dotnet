@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationLinkResource : EducationResource, IParsable {
         /// <summary>URL to the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Link {
+            get { return BackingStore?.Get<string?>("link"); }
+            set { BackingStore?.Set("link", value); }
+        }
+#else
         public string Link {
             get { return BackingStore?.Get<string>("link"); }
             set { BackingStore?.Set("link", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationLinkResource and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationExcelResource : EducationResource, IParsable {
         /// <summary>Pointer to the Excel file object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileUrl {
+            get { return BackingStore?.Get<string?>("fileUrl"); }
+            set { BackingStore?.Set("fileUrl", value); }
+        }
+#else
         public string FileUrl {
             get { return BackingStore?.Get<string>("fileUrl"); }
             set { BackingStore?.Set("fileUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationExcelResource and sets the default values.
         /// </summary>

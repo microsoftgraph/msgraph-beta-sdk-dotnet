@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The workflow property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow? Workflow {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow?>("workflow"); }
+            set { BackingStore?.Set("workflow", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow Workflow {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>("workflow"); }
             set { BackingStore?.Set("workflow", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new createNewVersionPostRequestBody and sets the default values.
         /// </summary>

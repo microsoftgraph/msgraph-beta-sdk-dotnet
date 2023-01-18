@@ -39,10 +39,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("needsOsUpdateCount", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Count of devices scheduled for Co-Management enrollment. Valid values 0 to 9999999</summary>
         public int? ScheduledForEnrollmentCount {
             get { return BackingStore?.Get<int?>("scheduledForEnrollmentCount"); }

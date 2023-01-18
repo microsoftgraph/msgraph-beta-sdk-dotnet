@@ -14,35 +14,70 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Browser {
+            get { return BackingStore?.Get<string?>("browser"); }
+            set { BackingStore?.Set("browser", value); }
+        }
+#else
         public string Browser {
             get { return BackingStore?.Get<string>("browser"); }
             set { BackingStore?.Set("browser", value); }
         }
+#endif
         /// <summary>Date and time of the simulation event by a user in an attack simulation and training campaign.</summary>
         public DateTimeOffset? EventDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Name of the simulation event by a user in an attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EventName {
+            get { return BackingStore?.Get<string?>("eventName"); }
+            set { BackingStore?.Set("eventName", value); }
+        }
+#else
         public string EventName {
             get { return BackingStore?.Get<string>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
         }
+#endif
         /// <summary>IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddress {
+            get { return BackingStore?.Get<string?>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
+        }
+#else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsPlatformDeviceDetails {
+            get { return BackingStore?.Get<string?>("osPlatformDeviceDetails"); }
+            set { BackingStore?.Set("osPlatformDeviceDetails", value); }
+        }
+#else
         public string OsPlatformDeviceDetails {
             get { return BackingStore?.Get<string>("osPlatformDeviceDetails"); }
             set { BackingStore?.Set("osPlatformDeviceDetails", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new userSimulationEventInfo and sets the default values.
         /// </summary>

@@ -56,10 +56,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? CompliantAppsList {
+            get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
+            set { BackingStore?.Set("compliantAppsList", value); }
+        }
+#else
         public List<AppListItem> CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
+#endif
         /// <summary>Indicates whether or not to allow content caching.</summary>
         public bool? ContentCachingBlocked {
             get { return BackingStore?.Get<bool?>("contentCachingBlocked"); }
@@ -71,10 +78,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("definitionLookupBlocked", value); }
         }
         /// <summary>An email address lacking a suffix that matches any of these strings will be considered out-of-domain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EmailInDomainSuffixes {
+            get { return BackingStore?.Get<List<string>?>("emailInDomainSuffixes"); }
+            set { BackingStore?.Set("emailInDomainSuffixes", value); }
+        }
+#else
         public List<string> EmailInDomainSuffixes {
             get { return BackingStore?.Get<List<string>>("emailInDomainSuffixes"); }
             set { BackingStore?.Set("emailInDomainSuffixes", value); }
         }
+#endif
         /// <summary>TRUE disables the reset option on supervised devices. FALSE enables the reset option on supervised devices. Available for devices running macOS versions 12.0 and later.</summary>
         public bool? EraseContentAndSettingsBlocked {
             get { return BackingStore?.Get<bool?>("eraseContentAndSettingsBlocked"); }
@@ -246,10 +260,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>List of privacy preference policy controls. This collection can contain a maximum of 10000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSPrivacyAccessControlItem>? PrivacyAccessControls {
+            get { return BackingStore?.Get<List<MacOSPrivacyAccessControlItem>?>("privacyAccessControls"); }
+            set { BackingStore?.Set("privacyAccessControls", value); }
+        }
+#else
         public List<MacOSPrivacyAccessControlItem> PrivacyAccessControls {
             get { return BackingStore?.Get<List<MacOSPrivacyAccessControlItem>>("privacyAccessControls"); }
             set { BackingStore?.Set("privacyAccessControls", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block the user from using Auto fill in Safari.</summary>
         public bool? SafariBlockAutofill {
             get { return BackingStore?.Get<bool?>("safariBlockAutofill"); }

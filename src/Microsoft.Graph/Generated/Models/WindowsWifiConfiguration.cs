@@ -31,25 +31,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("meteredConnectionLimit", value); }
         }
         /// <summary>Specify the network configuration name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkName {
+            get { return BackingStore?.Get<string?>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
+        }
+#else
         public string NetworkName {
             get { return BackingStore?.Get<string>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
+#endif
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreSharedKey {
+            get { return BackingStore?.Get<string?>("preSharedKey"); }
+            set { BackingStore?.Set("preSharedKey", value); }
+        }
+#else
         public string PreSharedKey {
             get { return BackingStore?.Get<string>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
+#endif
         /// <summary>Specify the URL for the proxy server configuration script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProxyAutomaticConfigurationUrl {
+            get { return BackingStore?.Get<string?>("proxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
+        }
+#else
         public string ProxyAutomaticConfigurationUrl {
             get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
+#endif
         /// <summary>Specify the IP address for the proxy server.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProxyManualAddress {
+            get { return BackingStore?.Get<string?>("proxyManualAddress"); }
+            set { BackingStore?.Set("proxyManualAddress", value); }
+        }
+#else
         public string ProxyManualAddress {
             get { return BackingStore?.Get<string>("proxyManualAddress"); }
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
+#endif
         /// <summary>Specify the port for the proxy server.</summary>
         public int? ProxyManualPort {
             get { return BackingStore?.Get<int?>("proxyManualPort"); }
@@ -61,10 +89,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("proxySetting", value); }
         }
         /// <summary>Specify the SSID of the wifi connection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Ssid {
+            get { return BackingStore?.Get<string?>("ssid"); }
+            set { BackingStore?.Set("ssid", value); }
+        }
+#else
         public string Ssid {
             get { return BackingStore?.Get<string>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
+#endif
         /// <summary>Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.</summary>
         public Microsoft.Graph.Beta.Models.WiFiSecurityType? WifiSecurityType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiSecurityType?>("wifiSecurityType"); }

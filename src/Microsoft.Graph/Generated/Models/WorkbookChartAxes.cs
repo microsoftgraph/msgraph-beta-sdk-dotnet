@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartAxes : Entity, IParsable {
         /// <summary>Represents the category axis in a chart. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartAxis? CategoryAxis {
+            get { return BackingStore?.Get<WorkbookChartAxis?>("categoryAxis"); }
+            set { BackingStore?.Set("categoryAxis", value); }
+        }
+#else
         public WorkbookChartAxis CategoryAxis {
             get { return BackingStore?.Get<WorkbookChartAxis>("categoryAxis"); }
             set { BackingStore?.Set("categoryAxis", value); }
         }
+#endif
         /// <summary>Represents the series axis of a 3-dimensional chart. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartAxis? SeriesAxis {
+            get { return BackingStore?.Get<WorkbookChartAxis?>("seriesAxis"); }
+            set { BackingStore?.Set("seriesAxis", value); }
+        }
+#else
         public WorkbookChartAxis SeriesAxis {
             get { return BackingStore?.Get<WorkbookChartAxis>("seriesAxis"); }
             set { BackingStore?.Set("seriesAxis", value); }
         }
+#endif
         /// <summary>Represents the value axis in an axis. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartAxis? ValueAxis {
+            get { return BackingStore?.Get<WorkbookChartAxis?>("valueAxis"); }
+            set { BackingStore?.Set("valueAxis", value); }
+        }
+#else
         public WorkbookChartAxis ValueAxis {
             get { return BackingStore?.Get<WorkbookChartAxis>("valueAxis"); }
             set { BackingStore?.Set("valueAxis", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

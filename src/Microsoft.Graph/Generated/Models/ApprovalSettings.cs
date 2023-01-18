@@ -12,15 +12,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApprovalMode {
+            get { return BackingStore?.Get<string?>("approvalMode"); }
+            set { BackingStore?.Set("approvalMode", value); }
+        }
+#else
         public string ApprovalMode {
             get { return BackingStore?.Get<string>("approvalMode"); }
             set { BackingStore?.Set("approvalMode", value); }
         }
+#endif
         /// <summary>If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ApprovalStage>? ApprovalStages {
+            get { return BackingStore?.Get<List<ApprovalStage>?>("approvalStages"); }
+            set { BackingStore?.Set("approvalStages", value); }
+        }
+#else
         public List<ApprovalStage> ApprovalStages {
             get { return BackingStore?.Get<List<ApprovalStage>>("approvalStages"); }
             set { BackingStore?.Set("approvalStages", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether approval is required for requests in this policy.</summary>
@@ -39,10 +53,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isRequestorJustificationRequired", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new approvalSettings and sets the default values.
         /// </summary>

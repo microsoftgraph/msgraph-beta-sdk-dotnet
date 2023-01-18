@@ -11,40 +11,82 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>Compliance URL of the mobility management application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ComplianceUrl {
+            get { return BackingStore?.Get<string?>("complianceUrl"); }
+            set { BackingStore?.Set("complianceUrl", value); }
+        }
+#else
         public string ComplianceUrl {
             get { return BackingStore?.Get<string>("complianceUrl"); }
             set { BackingStore?.Set("complianceUrl", value); }
         }
+#endif
         /// <summary>Description of the mobility management application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Discovery URL of the mobility management application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DiscoveryUrl {
+            get { return BackingStore?.Get<string?>("discoveryUrl"); }
+            set { BackingStore?.Set("discoveryUrl", value); }
+        }
+#else
         public string DiscoveryUrl {
             get { return BackingStore?.Get<string>("discoveryUrl"); }
             set { BackingStore?.Set("discoveryUrl", value); }
         }
+#endif
         /// <summary>Display name of the mobility management application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Azure AD groups under the scope of the mobility management application if appliesTo is selected</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Group>? IncludedGroups {
+            get { return BackingStore?.Get<List<Group>?>("includedGroups"); }
+            set { BackingStore?.Set("includedGroups", value); }
+        }
+#else
         public List<Group> IncludedGroups {
             get { return BackingStore?.Get<List<Group>>("includedGroups"); }
             set { BackingStore?.Set("includedGroups", value); }
         }
+#endif
         /// <summary>Whether policy is valid. Invalid policies may not be updated and should be deleted.</summary>
         public bool? IsValid {
             get { return BackingStore?.Get<bool?>("isValid"); }
             set { BackingStore?.Set("isValid", value); }
         }
         /// <summary>Terms of Use URL of the mobility management application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TermsOfUseUrl {
+            get { return BackingStore?.Get<string?>("termsOfUseUrl"); }
+            set { BackingStore?.Set("termsOfUseUrl", value); }
+        }
+#else
         public string TermsOfUseUrl {
             get { return BackingStore?.Get<string>("termsOfUseUrl"); }
             set { BackingStore?.Set("termsOfUseUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

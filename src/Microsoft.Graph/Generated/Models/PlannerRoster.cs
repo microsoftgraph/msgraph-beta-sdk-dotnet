@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerRoster : Entity, IParsable {
         /// <summary>Retrieves the members of the plannerRoster.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerRosterMember>? Members {
+            get { return BackingStore?.Get<List<PlannerRosterMember>?>("members"); }
+            set { BackingStore?.Set("members", value); }
+        }
+#else
         public List<PlannerRosterMember> Members {
             get { return BackingStore?.Get<List<PlannerRosterMember>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#endif
         /// <summary>Retrieves the plans contained by the plannerRoster.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerPlan>? Plans {
+            get { return BackingStore?.Get<List<PlannerPlan>?>("plans"); }
+            set { BackingStore?.Set("plans", value); }
+        }
+#else
         public List<PlannerPlan> Plans {
             get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

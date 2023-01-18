@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookApplication : Entity, IParsable {
         /// <summary>Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CalculationMode {
+            get { return BackingStore?.Get<string?>("calculationMode"); }
+            set { BackingStore?.Set("calculationMode", value); }
+        }
+#else
         public string CalculationMode {
             get { return BackingStore?.Get<string>("calculationMode"); }
             set { BackingStore?.Set("calculationMode", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

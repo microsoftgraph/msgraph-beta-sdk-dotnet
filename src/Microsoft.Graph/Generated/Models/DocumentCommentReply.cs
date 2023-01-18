@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DocumentCommentReply : Entity, IParsable {
         /// <summary>The content property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Content {
+            get { return BackingStore?.Get<string?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public string Content {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The location property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Location {
+            get { return BackingStore?.Get<string?>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#else
         public string Location {
             get { return BackingStore?.Get<string>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

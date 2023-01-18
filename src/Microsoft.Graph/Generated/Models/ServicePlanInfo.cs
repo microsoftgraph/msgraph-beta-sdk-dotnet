@@ -12,32 +12,60 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppliesTo {
+            get { return BackingStore?.Get<string?>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
+        }
+#else
         public string AppliesTo {
             get { return BackingStore?.Get<string>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProvisioningStatus {
+            get { return BackingStore?.Get<string?>("provisioningStatus"); }
+            set { BackingStore?.Set("provisioningStatus", value); }
+        }
+#else
         public string ProvisioningStatus {
             get { return BackingStore?.Get<string>("provisioningStatus"); }
             set { BackingStore?.Set("provisioningStatus", value); }
         }
+#endif
         /// <summary>The unique identifier of the service plan.</summary>
         public Guid? ServicePlanId {
             get { return BackingStore?.Get<Guid?>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
         /// <summary>The name of the service plan.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServicePlanName {
+            get { return BackingStore?.Get<string?>("servicePlanName"); }
+            set { BackingStore?.Set("servicePlanName", value); }
+        }
+#else
         public string ServicePlanName {
             get { return BackingStore?.Get<string>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new servicePlanInfo and sets the default values.
         /// </summary>

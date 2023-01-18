@@ -6,45 +6,94 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OfficeClientConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OfficeClientConfigurationAssignment>? Assignments {
+            get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<OfficeClientConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>List of office Client check-in status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OfficeClientCheckinStatus>? CheckinStatuses {
+            get { return BackingStore?.Get<List<OfficeClientCheckinStatus>?>("checkinStatuses"); }
+            set { BackingStore?.Set("checkinStatuses", value); }
+        }
+#else
         public List<OfficeClientCheckinStatus> CheckinStatuses {
             get { return BackingStore?.Get<List<OfficeClientCheckinStatus>>("checkinStatuses"); }
             set { BackingStore?.Set("checkinStatuses", value); }
         }
+#endif
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Admin provided description of the office client configuration policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Policy settings JSON string in binary format, these values cannot be changed by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? PolicyPayload {
+            get { return BackingStore?.Get<byte[]?>("policyPayload"); }
+            set { BackingStore?.Set("policyPayload", value); }
+        }
+#else
         public byte[] PolicyPayload {
             get { return BackingStore?.Get<byte[]>("policyPayload"); }
             set { BackingStore?.Set("policyPayload", value); }
         }
+#endif
         /// <summary>Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>User check-in summary for the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OfficeUserCheckinSummary? UserCheckinSummary {
+            get { return BackingStore?.Get<OfficeUserCheckinSummary?>("userCheckinSummary"); }
+            set { BackingStore?.Set("userCheckinSummary", value); }
+        }
+#else
         public OfficeUserCheckinSummary UserCheckinSummary {
             get { return BackingStore?.Get<OfficeUserCheckinSummary>("userCheckinSummary"); }
             set { BackingStore?.Set("userCheckinSummary", value); }
         }
+#endif
         /// <summary>Preference settings JSON string in binary format, these values can be overridden by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? UserPreferencePayload {
+            get { return BackingStore?.Get<byte[]?>("userPreferencePayload"); }
+            set { BackingStore?.Set("userPreferencePayload", value); }
+        }
+#else
         public byte[] UserPreferencePayload {
             get { return BackingStore?.Get<byte[]>("userPreferencePayload"); }
             set { BackingStore?.Set("userPreferencePayload", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

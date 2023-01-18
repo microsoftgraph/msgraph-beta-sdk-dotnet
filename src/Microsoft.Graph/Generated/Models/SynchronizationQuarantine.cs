@@ -19,20 +19,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("currentBegan", value); }
         }
         /// <summary>Describes the error(s) that occurred when putting the synchronization job into quarantine.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationError? Error {
+            get { return BackingStore?.Get<SynchronizationError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public SynchronizationError Error {
             get { return BackingStore?.Get<SynchronizationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? NextAttempt {
             get { return BackingStore?.Get<DateTimeOffset?>("nextAttempt"); }
             set { BackingStore?.Set("nextAttempt", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The reason property</summary>
         public QuarantineReason? Reason {
             get { return BackingStore?.Get<QuarantineReason?>("reason"); }

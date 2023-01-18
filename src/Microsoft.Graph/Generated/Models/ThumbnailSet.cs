@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ThumbnailSet : Entity, IParsable {
         /// <summary>A 1920x1920 scaled thumbnail.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Thumbnail? Large {
+            get { return BackingStore?.Get<Thumbnail?>("large"); }
+            set { BackingStore?.Set("large", value); }
+        }
+#else
         public Thumbnail Large {
             get { return BackingStore?.Get<Thumbnail>("large"); }
             set { BackingStore?.Set("large", value); }
         }
+#endif
         /// <summary>A 176x176 scaled thumbnail.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Thumbnail? Medium {
+            get { return BackingStore?.Get<Thumbnail?>("medium"); }
+            set { BackingStore?.Set("medium", value); }
+        }
+#else
         public Thumbnail Medium {
             get { return BackingStore?.Get<Thumbnail>("medium"); }
             set { BackingStore?.Set("medium", value); }
         }
+#endif
         /// <summary>A 48x48 cropped thumbnail.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Thumbnail? Small {
+            get { return BackingStore?.Get<Thumbnail?>("small"); }
+            set { BackingStore?.Set("small", value); }
+        }
+#else
         public Thumbnail Small {
             get { return BackingStore?.Get<Thumbnail>("small"); }
             set { BackingStore?.Set("small", value); }
         }
+#endif
         /// <summary>A custom thumbnail image or the original image used to generate other thumbnails.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Thumbnail? Source {
+            get { return BackingStore?.Get<Thumbnail?>("source"); }
+            set { BackingStore?.Set("source", value); }
+        }
+#else
         public Thumbnail Source {
             get { return BackingStore?.Get<Thumbnail>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

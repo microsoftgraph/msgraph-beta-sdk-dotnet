@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ChannelMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable {
         /// <summary>The unique identifier for the channel whose members should receive the notification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChannelId {
+            get { return BackingStore?.Get<string?>("channelId"); }
+            set { BackingStore?.Set("channelId", value); }
+        }
+#else
         public string ChannelId {
             get { return BackingStore?.Get<string>("channelId"); }
             set { BackingStore?.Set("channelId", value); }
         }
+#endif
         /// <summary>The unique identifier for the team under which the channel resides.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TeamId {
+            get { return BackingStore?.Get<string?>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
+        }
+#else
         public string TeamId {
             get { return BackingStore?.Get<string>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ChannelMembersNotificationRecipient and sets the default values.
         /// </summary>

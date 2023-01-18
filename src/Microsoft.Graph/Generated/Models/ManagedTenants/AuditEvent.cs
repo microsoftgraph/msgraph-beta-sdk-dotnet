@@ -6,70 +6,154 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class AuditEvent : Entity, IParsable {
         /// <summary>A string which uniquely represents the operation that occurred. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Activity {
+            get { return BackingStore?.Get<string?>("activity"); }
+            set { BackingStore?.Set("activity", value); }
+        }
+#else
         public string Activity {
             get { return BackingStore?.Get<string>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#endif
         /// <summary>The time when the activity ocurred. Required. Read-only.</summary>
         public DateTimeOffset? ActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>The identifier of the activity request that made the audit event. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivityId {
+            get { return BackingStore?.Get<string?>("activityId"); }
+            set { BackingStore?.Set("activityId", value); }
+        }
+#else
         public string ActivityId {
             get { return BackingStore?.Get<string>("activityId"); }
             set { BackingStore?.Set("activityId", value); }
         }
+#endif
         /// <summary>A category which represents a logical grouping of activities. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category {
+            get { return BackingStore?.Get<string?>("category"); }
+            set { BackingStore?.Set("category", value); }
+        }
+#else
         public string Category {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
+#endif
         /// <summary>The HTTP verb that was used when making the API request. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HttpVerb {
+            get { return BackingStore?.Get<string?>("httpVerb"); }
+            set { BackingStore?.Set("httpVerb", value); }
+        }
+#else
         public string HttpVerb {
             get { return BackingStore?.Get<string>("httpVerb"); }
             set { BackingStore?.Set("httpVerb", value); }
         }
+#endif
         /// <summary>The identifier of the app that was used to make the request. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InitiatedByAppId {
+            get { return BackingStore?.Get<string?>("initiatedByAppId"); }
+            set { BackingStore?.Set("initiatedByAppId", value); }
+        }
+#else
         public string InitiatedByAppId {
             get { return BackingStore?.Get<string>("initiatedByAppId"); }
             set { BackingStore?.Set("initiatedByAppId", value); }
         }
+#endif
         /// <summary>The UPN of the user who initiated the activity. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InitiatedByUpn {
+            get { return BackingStore?.Get<string?>("initiatedByUpn"); }
+            set { BackingStore?.Set("initiatedByUpn", value); }
+        }
+#else
         public string InitiatedByUpn {
             get { return BackingStore?.Get<string>("initiatedByUpn"); }
             set { BackingStore?.Set("initiatedByUpn", value); }
         }
+#endif
         /// <summary>The identifier of the user who initiated the activity. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InitiatedByUserId {
+            get { return BackingStore?.Get<string?>("initiatedByUserId"); }
+            set { BackingStore?.Set("initiatedByUserId", value); }
+        }
+#else
         public string InitiatedByUserId {
             get { return BackingStore?.Get<string>("initiatedByUserId"); }
             set { BackingStore?.Set("initiatedByUserId", value); }
         }
+#endif
         /// <summary>The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddress {
+            get { return BackingStore?.Get<string?>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
+        }
+#else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#endif
         /// <summary>The raw HTTP request body. Some sensitive information may be removed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestBody {
+            get { return BackingStore?.Get<string?>("requestBody"); }
+            set { BackingStore?.Set("requestBody", value); }
+        }
+#else
         public string RequestBody {
             get { return BackingStore?.Get<string>("requestBody"); }
             set { BackingStore?.Set("requestBody", value); }
         }
+#endif
         /// <summary>The raw HTTP request URL. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestUrl {
+            get { return BackingStore?.Get<string?>("requestUrl"); }
+            set { BackingStore?.Set("requestUrl", value); }
+        }
+#else
         public string RequestUrl {
             get { return BackingStore?.Get<string>("requestUrl"); }
             set { BackingStore?.Set("requestUrl", value); }
         }
+#endif
         /// <summary>The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantIds {
+            get { return BackingStore?.Get<string?>("tenantIds"); }
+            set { BackingStore?.Set("tenantIds", value); }
+        }
+#else
         public string TenantIds {
             get { return BackingStore?.Get<string>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
         }
+#endif
         /// <summary>The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantNames {
+            get { return BackingStore?.Get<string?>("tenantNames"); }
+            set { BackingStore?.Set("tenantNames", value); }
+        }
+#else
         public string TenantNames {
             get { return BackingStore?.Get<string>("tenantNames"); }
             set { BackingStore?.Set("tenantNames", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

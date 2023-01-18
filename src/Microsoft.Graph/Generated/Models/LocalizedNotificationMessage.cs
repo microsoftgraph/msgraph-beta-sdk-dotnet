@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The Locale for which this message is destined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Locale {
+            get { return BackingStore?.Get<string?>("locale"); }
+            set { BackingStore?.Set("locale", value); }
+        }
+#else
         public string Locale {
             get { return BackingStore?.Get<string>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
+#endif
         /// <summary>The Message Template content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MessageTemplate {
+            get { return BackingStore?.Get<string?>("messageTemplate"); }
+            set { BackingStore?.Set("messageTemplate", value); }
+        }
+#else
         public string MessageTemplate {
             get { return BackingStore?.Get<string>("messageTemplate"); }
             set { BackingStore?.Set("messageTemplate", value); }
         }
+#endif
         /// <summary>The Message Template Subject.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

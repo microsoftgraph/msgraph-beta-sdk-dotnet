@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("adminShowHostInfo", value); }
         }
         /// <summary>Gets or sets a list that maps apps to their associated domains. Application identifiers must be unique. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSAssociatedDomainsItem>? AppAssociatedDomains {
+            get { return BackingStore?.Get<List<MacOSAssociatedDomainsItem>?>("appAssociatedDomains"); }
+            set { BackingStore?.Set("appAssociatedDomains", value); }
+        }
+#else
         public List<MacOSAssociatedDomainsItem> AppAssociatedDomains {
             get { return BackingStore?.Get<List<MacOSAssociatedDomainsItem>>("appAssociatedDomains"); }
             set { BackingStore?.Set("appAssociatedDomains", value); }
         }
+#endif
         /// <summary>DEPRECATED: use appAssociatedDomains instead. Gets or sets a list that maps apps to their associated domains. The key should match the app&apos;s ID, and the value should be a string in the form of &apos;service:domain&apos; where domain is a fully qualified hostname (e.g. webcredentials:example.com). This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? AssociatedDomains {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("associatedDomains"); }
+            set { BackingStore?.Set("associatedDomains", value); }
+        }
+#else
         public List<KeyValuePair> AssociatedDomains {
             get { return BackingStore?.Get<List<KeyValuePair>>("associatedDomains"); }
             set { BackingStore?.Set("associatedDomains", value); }
         }
+#endif
         /// <summary>Whether to show the name and password dialog or a list of users on the login window.</summary>
         public bool? AuthorizedUsersListHidden {
             get { return BackingStore?.Get<bool?>("authorizedUsersListHidden"); }
@@ -51,10 +65,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authorizedUsersListShowOtherManagedUsers", value); }
         }
         /// <summary>List of applications, files, folders, and other items to launch when the user logs in. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSLaunchItem>? AutoLaunchItems {
+            get { return BackingStore?.Get<List<MacOSLaunchItem>?>("autoLaunchItems"); }
+            set { BackingStore?.Set("autoLaunchItems", value); }
+        }
+#else
         public List<MacOSLaunchItem> AutoLaunchItems {
             get { return BackingStore?.Get<List<MacOSLaunchItem>>("autoLaunchItems"); }
             set { BackingStore?.Set("autoLaunchItems", value); }
         }
+#endif
         /// <summary>Whether the Other user will disregard use of the console special user name.</summary>
         public bool? ConsoleAccessDisabled {
             get { return BackingStore?.Get<bool?>("consoleAccessDisabled"); }
@@ -66,20 +87,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentCachingBlockDeletion", value); }
         }
         /// <summary>A list of custom IP ranges content caches will use to listen for clients. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IpRange>? ContentCachingClientListenRanges {
+            get { return BackingStore?.Get<List<IpRange>?>("contentCachingClientListenRanges"); }
+            set { BackingStore?.Set("contentCachingClientListenRanges", value); }
+        }
+#else
         public List<IpRange> ContentCachingClientListenRanges {
             get { return BackingStore?.Get<List<IpRange>>("contentCachingClientListenRanges"); }
             set { BackingStore?.Set("contentCachingClientListenRanges", value); }
         }
+#endif
         /// <summary>Determines which clients a content cache will serve.</summary>
         public MacOSContentCachingClientPolicy? ContentCachingClientPolicy {
             get { return BackingStore?.Get<MacOSContentCachingClientPolicy?>("contentCachingClientPolicy"); }
             set { BackingStore?.Set("contentCachingClientPolicy", value); }
         }
         /// <summary>The path to the directory used to store cached content. The value must be (or end with) /Library/Application Support/Apple/AssetCache/Data</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentCachingDataPath {
+            get { return BackingStore?.Get<string?>("contentCachingDataPath"); }
+            set { BackingStore?.Set("contentCachingDataPath", value); }
+        }
+#else
         public string ContentCachingDataPath {
             get { return BackingStore?.Get<string>("contentCachingDataPath"); }
             set { BackingStore?.Set("contentCachingDataPath", value); }
         }
+#endif
         /// <summary>Disables internet connection sharing.</summary>
         public bool? ContentCachingDisableConnectionSharing {
             get { return BackingStore?.Get<bool?>("contentCachingDisableConnectionSharing"); }
@@ -111,25 +146,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentCachingMaxSizeBytes", value); }
         }
         /// <summary>A list of IP addresses representing parent content caches.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ContentCachingParents {
+            get { return BackingStore?.Get<List<string>?>("contentCachingParents"); }
+            set { BackingStore?.Set("contentCachingParents", value); }
+        }
+#else
         public List<string> ContentCachingParents {
             get { return BackingStore?.Get<List<string>>("contentCachingParents"); }
             set { BackingStore?.Set("contentCachingParents", value); }
         }
+#endif
         /// <summary>Determines how content caches select a parent cache.</summary>
         public MacOSContentCachingParentSelectionPolicy? ContentCachingParentSelectionPolicy {
             get { return BackingStore?.Get<MacOSContentCachingParentSelectionPolicy?>("contentCachingParentSelectionPolicy"); }
             set { BackingStore?.Set("contentCachingParentSelectionPolicy", value); }
         }
         /// <summary>A list of custom IP ranges content caches will use to query for content from peers caches. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IpRange>? ContentCachingPeerFilterRanges {
+            get { return BackingStore?.Get<List<IpRange>?>("contentCachingPeerFilterRanges"); }
+            set { BackingStore?.Set("contentCachingPeerFilterRanges", value); }
+        }
+#else
         public List<IpRange> ContentCachingPeerFilterRanges {
             get { return BackingStore?.Get<List<IpRange>>("contentCachingPeerFilterRanges"); }
             set { BackingStore?.Set("contentCachingPeerFilterRanges", value); }
         }
+#endif
         /// <summary>A list of custom IP ranges content caches will use to listen for peer caches. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IpRange>? ContentCachingPeerListenRanges {
+            get { return BackingStore?.Get<List<IpRange>?>("contentCachingPeerListenRanges"); }
+            set { BackingStore?.Set("contentCachingPeerListenRanges", value); }
+        }
+#else
         public List<IpRange> ContentCachingPeerListenRanges {
             get { return BackingStore?.Get<List<IpRange>>("contentCachingPeerListenRanges"); }
             set { BackingStore?.Set("contentCachingPeerListenRanges", value); }
         }
+#endif
         /// <summary>Determines which content caches other content caches will peer with.</summary>
         public MacOSContentCachingPeerPolicy? ContentCachingPeerPolicy {
             get { return BackingStore?.Get<MacOSContentCachingPeerPolicy?>("contentCachingPeerPolicy"); }
@@ -141,10 +197,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentCachingPort", value); }
         }
         /// <summary>A list of custom IP ranges that Apple&apos;s content caching service should use to match clients to content caches. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IpRange>? ContentCachingPublicRanges {
+            get { return BackingStore?.Get<List<IpRange>?>("contentCachingPublicRanges"); }
+            set { BackingStore?.Set("contentCachingPublicRanges", value); }
+        }
+#else
         public List<IpRange> ContentCachingPublicRanges {
             get { return BackingStore?.Get<List<IpRange>>("contentCachingPublicRanges"); }
             set { BackingStore?.Set("contentCachingPublicRanges", value); }
         }
+#endif
         /// <summary>Display content caching alerts as system notifications.</summary>
         public bool? ContentCachingShowAlerts {
             get { return BackingStore?.Get<bool?>("contentCachingShowAlerts"); }
@@ -156,20 +219,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentCachingType", value); }
         }
         /// <summary>Custom text to be displayed on the login window.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LoginWindowText {
+            get { return BackingStore?.Get<string?>("loginWindowText"); }
+            set { BackingStore?.Set("loginWindowText", value); }
+        }
+#else
         public string LoginWindowText {
             get { return BackingStore?.Get<string>("loginWindowText"); }
             set { BackingStore?.Set("loginWindowText", value); }
         }
+#endif
         /// <summary>Whether the Log Out menu item on the login window will be disabled while the user is logged in.</summary>
         public bool? LogOutDisabledWhileLoggedIn {
             get { return BackingStore?.Get<bool?>("logOutDisabledWhileLoggedIn"); }
             set { BackingStore?.Set("logOutDisabledWhileLoggedIn", value); }
         }
         /// <summary>Gets or sets a single sign-on extension profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension? MacOSSingleSignOnExtension {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension?>("macOSSingleSignOnExtension"); }
+            set { BackingStore?.Set("macOSSingleSignOnExtension", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension MacOSSingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension>("macOSSingleSignOnExtension"); }
             set { BackingStore?.Set("macOSSingleSignOnExtension", value); }
         }
+#endif
         /// <summary>Whether the Power Off menu item on the login window will be disabled while the user is logged in.</summary>
         public bool? PowerOffDisabledWhileLoggedIn {
             get { return BackingStore?.Get<bool?>("powerOffDisabledWhileLoggedIn"); }
@@ -201,15 +278,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shutDownDisabledWhileLoggedIn", value); }
         }
         /// <summary>Gets or sets a single sign-on extension profile. Deprecated: use MacOSSingleSignOnExtension instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SingleSignOnExtension? SingleSignOnExtension {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension?>("singleSignOnExtension"); }
+            set { BackingStore?.Set("singleSignOnExtension", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SingleSignOnExtension SingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension>("singleSignOnExtension"); }
             set { BackingStore?.Set("singleSignOnExtension", value); }
         }
+#endif
         /// <summary>PKINIT Certificate for the authentication with single sign-on extensions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MacOSCertificateProfileBase? SingleSignOnExtensionPkinitCertificate {
+            get { return BackingStore?.Get<MacOSCertificateProfileBase?>("singleSignOnExtensionPkinitCertificate"); }
+            set { BackingStore?.Set("singleSignOnExtensionPkinitCertificate", value); }
+        }
+#else
         public MacOSCertificateProfileBase SingleSignOnExtensionPkinitCertificate {
             get { return BackingStore?.Get<MacOSCertificateProfileBase>("singleSignOnExtensionPkinitCertificate"); }
             set { BackingStore?.Set("singleSignOnExtensionPkinitCertificate", value); }
         }
+#endif
         /// <summary>Whether to hide the Sleep menu item on the login window.</summary>
         public bool? SleepDisabled {
             get { return BackingStore?.Get<bool?>("sleepDisabled"); }

@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier of the [driveItem][] that is the cover of the album.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CoverImageItemId {
+            get { return BackingStore?.Get<string?>("coverImageItemId"); }
+            set { BackingStore?.Set("coverImageItemId", value); }
+        }
+#else
         public string CoverImageItemId {
             get { return BackingStore?.Get<string>("coverImageItemId"); }
             set { BackingStore?.Set("coverImageItemId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new album and sets the default values.
         /// </summary>

@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BusinessScenarioPlanner : Entity, IParsable {
         /// <summary>The configuration of Planner plans that will be created for the scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerPlanConfiguration? PlanConfiguration {
+            get { return BackingStore?.Get<PlannerPlanConfiguration?>("planConfiguration"); }
+            set { BackingStore?.Set("planConfiguration", value); }
+        }
+#else
         public PlannerPlanConfiguration PlanConfiguration {
             get { return BackingStore?.Get<PlannerPlanConfiguration>("planConfiguration"); }
             set { BackingStore?.Set("planConfiguration", value); }
         }
+#endif
         /// <summary>The configuration of Planner tasks that will be created for the scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerTaskConfiguration? TaskConfiguration {
+            get { return BackingStore?.Get<PlannerTaskConfiguration?>("taskConfiguration"); }
+            set { BackingStore?.Set("taskConfiguration", value); }
+        }
+#else
         public PlannerTaskConfiguration TaskConfiguration {
             get { return BackingStore?.Get<PlannerTaskConfiguration>("taskConfiguration"); }
             set { BackingStore?.Set("taskConfiguration", value); }
         }
+#endif
         /// <summary>The Planner tasks for the scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BusinessScenarioTask>? Tasks {
+            get { return BackingStore?.Get<List<BusinessScenarioTask>?>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#else
         public List<BusinessScenarioTask> Tasks {
             get { return BackingStore?.Get<List<BusinessScenarioTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

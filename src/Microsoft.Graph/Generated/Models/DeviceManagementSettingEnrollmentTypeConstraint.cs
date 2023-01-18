@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingEnrollmentTypeConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of enrollment types</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EnrollmentTypes {
+            get { return BackingStore?.Get<List<string>?>("enrollmentTypes"); }
+            set { BackingStore?.Set("enrollmentTypes", value); }
+        }
+#else
         public List<string> EnrollmentTypes {
             get { return BackingStore?.Get<List<string>>("enrollmentTypes"); }
             set { BackingStore?.Set("enrollmentTypes", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementSettingEnrollmentTypeConstraint and sets the default values.
         /// </summary>

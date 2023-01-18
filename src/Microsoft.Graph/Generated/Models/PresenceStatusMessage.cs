@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Time in which the status message expires.If not provided, the status message does not expire.expiryDateTime.dateTime should not include time zone.expiryDateTime is not available when requesting presence of another user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? ExpiryDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("expiryDateTime"); }
+            set { BackingStore?.Set("expiryDateTime", value); }
+        }
+#else
         public DateTimeTimeZone ExpiryDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
+#endif
         /// <summary>Status message item. The only supported format currently is message.contentType = &apos;text&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Message {
+            get { return BackingStore?.Get<ItemBody?>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+#else
         public ItemBody Message {
             get { return BackingStore?.Get<ItemBody>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.</summary>
         public DateTimeOffset? PublishedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("publishedDateTime"); }

@@ -4,57 +4,109 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Feature Update Profile
+    /// </summary>
     public class WindowsFeatureUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsFeatureUpdateProfileAssignment>? Assignments {
+            get { return BackingStore?.Get<List<WindowsFeatureUpdateProfileAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<WindowsFeatureUpdateProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<WindowsFeatureUpdateProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>The date time that the profile was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Friendly display name of the quality update profile deployable content</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeployableContentDisplayName {
+            get { return BackingStore?.Get<string?>("deployableContentDisplayName"); }
+            set { BackingStore?.Set("deployableContentDisplayName", value); }
+        }
+#else
         public string DeployableContentDisplayName {
             get { return BackingStore?.Get<string>("deployableContentDisplayName"); }
             set { BackingStore?.Set("deployableContentDisplayName", value); }
         }
+#endif
         /// <summary>The description of the profile which is specified by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The last supported date for a feature update</summary>
         public DateTimeOffset? EndOfSupportDate {
             get { return BackingStore?.Get<DateTimeOffset?>("endOfSupportDate"); }
             set { BackingStore?.Set("endOfSupportDate", value); }
         }
         /// <summary>The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FeatureUpdateVersion {
+            get { return BackingStore?.Get<string?>("featureUpdateVersion"); }
+            set { BackingStore?.Set("featureUpdateVersion", value); }
+        }
+#else
         public string FeatureUpdateVersion {
             get { return BackingStore?.Get<string>("featureUpdateVersion"); }
             set { BackingStore?.Set("featureUpdateVersion", value); }
         }
+#endif
         /// <summary>The date time that the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Feature Update entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsUpdateRolloutSettings? RolloutSettings {
+            get { return BackingStore?.Get<WindowsUpdateRolloutSettings?>("rolloutSettings"); }
+            set { BackingStore?.Set("rolloutSettings", value); }
+        }
+#else
         public WindowsUpdateRolloutSettings RolloutSettings {
             get { return BackingStore?.Get<WindowsUpdateRolloutSettings>("rolloutSettings"); }
             set { BackingStore?.Set("rolloutSettings", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

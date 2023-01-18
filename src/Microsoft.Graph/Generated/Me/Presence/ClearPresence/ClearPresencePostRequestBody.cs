@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Me.Presence.ClearPresence {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The sessionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SessionId {
+            get { return BackingStore?.Get<string?>("sessionId"); }
+            set { BackingStore?.Set("sessionId", value); }
+        }
+#else
         public string SessionId {
             get { return BackingStore?.Get<string>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new clearPresencePostRequestBody and sets the default values.
         /// </summary>

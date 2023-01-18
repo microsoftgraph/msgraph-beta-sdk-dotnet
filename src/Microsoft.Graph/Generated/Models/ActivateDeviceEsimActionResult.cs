@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ActivateDeviceEsimActionResult : DeviceActionResult, IParsable {
         /// <summary>Carrier Url to activate the device eSIM</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CarrierUrl {
+            get { return BackingStore?.Get<string?>("carrierUrl"); }
+            set { BackingStore?.Set("carrierUrl", value); }
+        }
+#else
         public string CarrierUrl {
             get { return BackingStore?.Get<string>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

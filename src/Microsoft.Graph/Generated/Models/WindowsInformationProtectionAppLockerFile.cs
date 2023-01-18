@@ -9,25 +9,53 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class WindowsInformationProtectionAppLockerFile : Entity, IParsable {
         /// <summary>The friendly name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>File as a byte array</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? File {
+            get { return BackingStore?.Get<byte[]?>("file"); }
+            set { BackingStore?.Set("file", value); }
+        }
+#else
         public byte[] File {
             get { return BackingStore?.Get<byte[]>("file"); }
             set { BackingStore?.Set("file", value); }
         }
+#endif
         /// <summary>SHA256 hash of the file</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileHash {
+            get { return BackingStore?.Get<string?>("fileHash"); }
+            set { BackingStore?.Set("fileHash", value); }
+        }
+#else
         public string FileHash {
             get { return BackingStore?.Get<string>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
+#endif
         /// <summary>Version of the entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

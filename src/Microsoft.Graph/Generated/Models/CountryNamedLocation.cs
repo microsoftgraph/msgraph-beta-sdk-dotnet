@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CountryNamedLocation : NamedLocation, IParsable {
         /// <summary>List of countries and/or regions in two-letter format specified by ISO 3166-2.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? CountriesAndRegions {
+            get { return BackingStore?.Get<List<string>?>("countriesAndRegions"); }
+            set { BackingStore?.Set("countriesAndRegions", value); }
+        }
+#else
         public List<string> CountriesAndRegions {
             get { return BackingStore?.Get<List<string>>("countriesAndRegions"); }
             set { BackingStore?.Set("countriesAndRegions", value); }
         }
+#endif
         /// <summary>Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress (default) and authenticatorAppGps.</summary>
         public CountryLookupMethodType? CountryLookupMethod {
             get { return BackingStore?.Get<CountryLookupMethodType?>("countryLookupMethod"); }

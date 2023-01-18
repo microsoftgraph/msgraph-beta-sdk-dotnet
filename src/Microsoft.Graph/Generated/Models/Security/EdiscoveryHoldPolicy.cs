@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryHoldPolicy : PolicyBase, IParsable {
         /// <summary>KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentQuery {
+            get { return BackingStore?.Get<string?>("contentQuery"); }
+            set { BackingStore?.Set("contentQuery", value); }
+        }
+#else
         public string ContentQuery {
             get { return BackingStore?.Get<string>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
+#endif
         /// <summary>Lists any errors that happened while placing the hold.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Errors {
+            get { return BackingStore?.Get<List<string>?>("errors"); }
+            set { BackingStore?.Set("errors", value); }
+        }
+#else
         public List<string> Errors {
             get { return BackingStore?.Get<List<string>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
+#endif
         /// <summary>Indicates whether the hold is enabled and actively holding content.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Data sources that represent SharePoint sites.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SiteSource>? SiteSources {
+            get { return BackingStore?.Get<List<SiteSource>?>("siteSources"); }
+            set { BackingStore?.Set("siteSources", value); }
+        }
+#else
         public List<SiteSource> SiteSources {
             get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
+#endif
         /// <summary>Data sources that represent Exchange mailboxes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserSource>? UserSources {
+            get { return BackingStore?.Get<List<UserSource>?>("userSources"); }
+            set { BackingStore?.Set("userSources", value); }
+        }
+#else
         public List<UserSource> UserSources {
             get { return BackingStore?.Get<List<UserSource>>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EdiscoveryHoldPolicy and sets the default values.
         /// </summary>

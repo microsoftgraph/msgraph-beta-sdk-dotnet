@@ -11,25 +11,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>Identity of the user who created the device operation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The UTC date and time when the device operation was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Error details are available only in case of a failed status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OperationError? Error {
+            get { return BackingStore?.Get<OperationError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public OperationError Error {
             get { return BackingStore?.Get<OperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>Identity of the user who last modified the device operation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastActionBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastActionBy"); }
+            set { BackingStore?.Set("lastActionBy", value); }
+        }
+#else
         public IdentitySet LastActionBy {
             get { return BackingStore?.Get<IdentitySet>("lastActionBy"); }
             set { BackingStore?.Set("lastActionBy", value); }
         }
+#endif
         /// <summary>The UTC date and time when the device operation was last modified.</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
@@ -46,10 +67,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startedDateTime", value); }
         }
         /// <summary>The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

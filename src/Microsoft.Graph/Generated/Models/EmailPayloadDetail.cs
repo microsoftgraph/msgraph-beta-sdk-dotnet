@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EmailPayloadDetail : PayloadDetail, IParsable {
         /// <summary>The fromEmail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FromEmail {
+            get { return BackingStore?.Get<string?>("fromEmail"); }
+            set { BackingStore?.Set("fromEmail", value); }
+        }
+#else
         public string FromEmail {
             get { return BackingStore?.Get<string>("fromEmail"); }
             set { BackingStore?.Set("fromEmail", value); }
         }
+#endif
         /// <summary>The fromName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FromName {
+            get { return BackingStore?.Get<string?>("fromName"); }
+            set { BackingStore?.Set("fromName", value); }
+        }
+#else
         public string FromName {
             get { return BackingStore?.Get<string>("fromName"); }
             set { BackingStore?.Set("fromName", value); }
         }
+#endif
         /// <summary>The isExternalSender property</summary>
         public bool? IsExternalSender {
             get { return BackingStore?.Get<bool?>("isExternalSender"); }
             set { BackingStore?.Set("isExternalSender", value); }
         }
         /// <summary>The subject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EmailPayloadDetail and sets the default values.
         /// </summary>

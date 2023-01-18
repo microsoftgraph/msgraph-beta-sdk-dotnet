@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayAs {
+            get { return BackingStore?.Get<string?>("displayAs"); }
+            set { BackingStore?.Set("displayAs", value); }
+        }
+#else
         public string DisplayAs {
             get { return BackingStore?.Get<string>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
+#endif
         /// <summary>Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Format {
+            get { return BackingStore?.Get<string?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public string Format {
             get { return BackingStore?.Get<string>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new dateTimeColumn and sets the default values.
         /// </summary>

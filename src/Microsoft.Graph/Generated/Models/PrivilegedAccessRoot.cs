@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccessRoot : Entity, IParsable {
         /// <summary>The group property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrivilegedAccessGroup? Group {
+            get { return BackingStore?.Get<PrivilegedAccessGroup?>("group"); }
+            set { BackingStore?.Set("group", value); }
+        }
+#else
         public PrivilegedAccessGroup Group {
             get { return BackingStore?.Get<PrivilegedAccessGroup>("group"); }
             set { BackingStore?.Set("group", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

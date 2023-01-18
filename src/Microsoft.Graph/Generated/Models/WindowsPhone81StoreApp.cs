@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhone81StoreApp : MobileApp, IParsable {
         /// <summary>The Windows Phone 8.1 app store URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppStoreUrl {
+            get { return BackingStore?.Get<string?>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
+        }
+#else
         public string AppStoreUrl {
             get { return BackingStore?.Get<string>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsPhone81StoreApp and sets the default values.
         /// </summary>

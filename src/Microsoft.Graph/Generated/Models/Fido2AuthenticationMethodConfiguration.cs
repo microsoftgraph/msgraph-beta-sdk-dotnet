@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationMethodTarget>? IncludeTargets {
+            get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
+        }
+#else
         public List<AuthenticationMethodTarget> IncludeTargets {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
+#endif
         /// <summary>Determines whether attestation must be enforced for FIDO2 security key registration.</summary>
         public bool? IsAttestationEnforced {
             get { return BackingStore?.Get<bool?>("isAttestationEnforced"); }
@@ -21,10 +28,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSelfServiceRegistrationAllowed", value); }
         }
         /// <summary>Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Fido2KeyRestrictions? KeyRestrictions {
+            get { return BackingStore?.Get<Fido2KeyRestrictions?>("keyRestrictions"); }
+            set { BackingStore?.Set("keyRestrictions", value); }
+        }
+#else
         public Fido2KeyRestrictions KeyRestrictions {
             get { return BackingStore?.Get<Fido2KeyRestrictions>("keyRestrictions"); }
             set { BackingStore?.Set("keyRestrictions", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Fido2AuthenticationMethodConfiguration and sets the default values.
         /// </summary>

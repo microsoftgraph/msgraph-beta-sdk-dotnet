@@ -26,15 +26,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("earlyLaunchAntiMalwareDriverEnabled", value); }
         }
         /// <summary>Maximum Windows Phone version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMaximumVersion {
+            get { return BackingStore?.Get<string?>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
+        }
+#else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#endif
         /// <summary>Minimum Windows Phone version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMinimumVersion {
+            get { return BackingStore?.Get<string?>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
+        }
+#else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#endif
         /// <summary>Whether or not to block syncing the calendar.</summary>
         public bool? PasswordBlockSimple {
             get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }
@@ -91,10 +105,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>The valid operating system build ranges on Windows devices. This collection can contain a maximum of 10000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OperatingSystemVersionRange>? ValidOperatingSystemBuildRanges {
+            get { return BackingStore?.Get<List<OperatingSystemVersionRange>?>("validOperatingSystemBuildRanges"); }
+            set { BackingStore?.Set("validOperatingSystemBuildRanges", value); }
+        }
+#else
         public List<OperatingSystemVersionRange> ValidOperatingSystemBuildRanges {
             get { return BackingStore?.Get<List<OperatingSystemVersionRange>>("validOperatingSystemBuildRanges"); }
             set { BackingStore?.Set("validOperatingSystemBuildRanges", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Windows10MobileCompliancePolicy and sets the default values.
         /// </summary>

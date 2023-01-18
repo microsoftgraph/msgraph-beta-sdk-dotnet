@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateUpdateResult {
+            get { return BackingStore?.Get<string?>("certificateUpdateResult"); }
+            set { BackingStore?.Set("certificateUpdateResult", value); }
+        }
+#else
         public string CertificateUpdateResult {
             get { return BackingStore?.Get<string>("certificateUpdateResult"); }
             set { BackingStore?.Set("certificateUpdateResult", value); }
         }
+#endif
         /// <summary>Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.</summary>
         public DateTimeOffset? LastRunDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRunDateTime"); }
             set { BackingStore?.Set("lastRunDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new signingCertificateUpdateStatus and sets the default values.
         /// </summary>

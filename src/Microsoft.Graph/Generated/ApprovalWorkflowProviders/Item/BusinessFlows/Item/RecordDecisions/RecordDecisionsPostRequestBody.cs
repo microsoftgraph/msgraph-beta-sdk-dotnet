@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows.Item
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The justification property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Justification {
+            get { return BackingStore?.Get<string?>("justification"); }
+            set { BackingStore?.Set("justification", value); }
+        }
+#else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#endif
         /// <summary>The reviewResult property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReviewResult {
+            get { return BackingStore?.Get<string?>("reviewResult"); }
+            set { BackingStore?.Set("reviewResult", value); }
+        }
+#else
         public string ReviewResult {
             get { return BackingStore?.Get<string>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new recordDecisionsPostRequestBody and sets the default values.
         /// </summary>

@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The comment text.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Comment {
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>The person or app name that submitted the comment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByDisplayName {
+            get { return BackingStore?.Get<string?>("createdByDisplayName"); }
+            set { BackingStore?.Set("createdByDisplayName", value); }
+        }
+#else
         public string CreatedByDisplayName {
             get { return BackingStore?.Get<string>("createdByDisplayName"); }
             set { BackingStore?.Set("createdByDisplayName", value); }
         }
+#endif
         /// <summary>The time when the comment was submitted.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new alertComment and sets the default values.
         /// </summary>

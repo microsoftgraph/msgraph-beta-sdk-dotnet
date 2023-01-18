@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class CaseSettings : Entity, IParsable {
         /// <summary>The OCR (Optical Character Recognition) settings for the case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OcrSettings? Ocr {
+            get { return BackingStore?.Get<OcrSettings?>("ocr"); }
+            set { BackingStore?.Set("ocr", value); }
+        }
+#else
         public OcrSettings Ocr {
             get { return BackingStore?.Get<OcrSettings>("ocr"); }
             set { BackingStore?.Set("ocr", value); }
         }
+#endif
         /// <summary>The redundancy (near duplicate and email threading) detection settings for the case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RedundancyDetectionSettings? RedundancyDetection {
+            get { return BackingStore?.Get<RedundancyDetectionSettings?>("redundancyDetection"); }
+            set { BackingStore?.Set("redundancyDetection", value); }
+        }
+#else
         public RedundancyDetectionSettings RedundancyDetection {
             get { return BackingStore?.Get<RedundancyDetectionSettings>("redundancyDetection"); }
             set { BackingStore?.Set("redundancyDetection", value); }
         }
+#endif
         /// <summary>The Topic Modeling (Themes) settings for the case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TopicModelingSettings? TopicModeling {
+            get { return BackingStore?.Get<TopicModelingSettings?>("topicModeling"); }
+            set { BackingStore?.Set("topicModeling", value); }
+        }
+#else
         public TopicModelingSettings TopicModeling {
             get { return BackingStore?.Get<TopicModelingSettings>("topicModeling"); }
             set { BackingStore?.Set("topicModeling", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
     public class Store : Entity, IParsable {
         /// <summary>Default language of the term store.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultLanguageTag {
+            get { return BackingStore?.Get<string?>("defaultLanguageTag"); }
+            set { BackingStore?.Set("defaultLanguageTag", value); }
+        }
+#else
         public string DefaultLanguageTag {
             get { return BackingStore?.Get<string>("defaultLanguageTag"); }
             set { BackingStore?.Set("defaultLanguageTag", value); }
         }
+#endif
         /// <summary>Collection of all groups available in the term store.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Group>? Groups {
+            get { return BackingStore?.Get<List<Group>?>("groups"); }
+            set { BackingStore?.Set("groups", value); }
+        }
+#else
         public List<Group> Groups {
             get { return BackingStore?.Get<List<Group>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
+#endif
         /// <summary>List of languages for the term store.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? LanguageTags {
+            get { return BackingStore?.Get<List<string>?>("languageTags"); }
+            set { BackingStore?.Set("languageTags", value); }
+        }
+#else
         public List<string> LanguageTags {
             get { return BackingStore?.Get<List<string>>("languageTags"); }
             set { BackingStore?.Set("languageTags", value); }
         }
+#endif
         /// <summary>Collection of all sets available in the term store.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Set>? Sets {
+            get { return BackingStore?.Get<List<Set>?>("sets"); }
+            set { BackingStore?.Set("sets", value); }
+        }
+#else
         public List<Set> Sets {
             get { return BackingStore?.Get<List<Set>>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

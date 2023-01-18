@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceEnrollmentPlatformRestrictionConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>Restrictions based on platform, platform operating system version, and device ownership</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceEnrollmentPlatformRestriction? PlatformRestriction {
+            get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("platformRestriction"); }
+            set { BackingStore?.Set("platformRestriction", value); }
+        }
+#else
         public DeviceEnrollmentPlatformRestriction PlatformRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("platformRestriction"); }
             set { BackingStore?.Set("platformRestriction", value); }
         }
+#endif
         /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
         public EnrollmentRestrictionPlatformType? PlatformType {
             get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>("platformType"); }

@@ -6,80 +6,185 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualEndpoint : Entity, IParsable {
         /// <summary>Cloud PC audit event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcAuditEvent>? AuditEvents {
+            get { return BackingStore?.Get<List<CloudPcAuditEvent>?>("auditEvents"); }
+            set { BackingStore?.Set("auditEvents", value); }
+        }
+#else
         public List<CloudPcAuditEvent> AuditEvents {
             get { return BackingStore?.Get<List<CloudPcAuditEvent>>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
+#endif
         /// <summary>Cloud managed virtual desktops.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPC>? CloudPCs {
+            get { return BackingStore?.Get<List<CloudPC>?>("cloudPCs"); }
+            set { BackingStore?.Set("cloudPCs", value); }
+        }
+#else
         public List<CloudPC> CloudPCs {
             get { return BackingStore?.Get<List<CloudPC>>("cloudPCs"); }
             set { BackingStore?.Set("cloudPCs", value); }
         }
+#endif
         /// <summary>Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CloudPcCrossCloudGovernmentOrganizationMapping? CrossCloudGovernmentOrganizationMapping {
+            get { return BackingStore?.Get<CloudPcCrossCloudGovernmentOrganizationMapping?>("crossCloudGovernmentOrganizationMapping"); }
+            set { BackingStore?.Set("crossCloudGovernmentOrganizationMapping", value); }
+        }
+#else
         public CloudPcCrossCloudGovernmentOrganizationMapping CrossCloudGovernmentOrganizationMapping {
             get { return BackingStore?.Get<CloudPcCrossCloudGovernmentOrganizationMapping>("crossCloudGovernmentOrganizationMapping"); }
             set { BackingStore?.Set("crossCloudGovernmentOrganizationMapping", value); }
         }
+#endif
         /// <summary>The image resource on Cloud PC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcDeviceImage>? DeviceImages {
+            get { return BackingStore?.Get<List<CloudPcDeviceImage>?>("deviceImages"); }
+            set { BackingStore?.Set("deviceImages", value); }
+        }
+#else
         public List<CloudPcDeviceImage> DeviceImages {
             get { return BackingStore?.Get<List<CloudPcDeviceImage>>("deviceImages"); }
             set { BackingStore?.Set("deviceImages", value); }
         }
+#endif
         /// <summary>The external partner settings on a Cloud PC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcExternalPartnerSetting>? ExternalPartnerSettings {
+            get { return BackingStore?.Get<List<CloudPcExternalPartnerSetting>?>("externalPartnerSettings"); }
+            set { BackingStore?.Set("externalPartnerSettings", value); }
+        }
+#else
         public List<CloudPcExternalPartnerSetting> ExternalPartnerSettings {
             get { return BackingStore?.Get<List<CloudPcExternalPartnerSetting>>("externalPartnerSettings"); }
             set { BackingStore?.Set("externalPartnerSettings", value); }
         }
+#endif
         /// <summary>The gallery image resource on Cloud PC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcGalleryImage>? GalleryImages {
+            get { return BackingStore?.Get<List<CloudPcGalleryImage>?>("galleryImages"); }
+            set { BackingStore?.Set("galleryImages", value); }
+        }
+#else
         public List<CloudPcGalleryImage> GalleryImages {
             get { return BackingStore?.Get<List<CloudPcGalleryImage>>("galleryImages"); }
             set { BackingStore?.Set("galleryImages", value); }
         }
+#endif
         /// <summary>A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcOnPremisesConnection>? OnPremisesConnections {
+            get { return BackingStore?.Get<List<CloudPcOnPremisesConnection>?>("onPremisesConnections"); }
+            set { BackingStore?.Set("onPremisesConnections", value); }
+        }
+#else
         public List<CloudPcOnPremisesConnection> OnPremisesConnections {
             get { return BackingStore?.Get<List<CloudPcOnPremisesConnection>>("onPremisesConnections"); }
             set { BackingStore?.Set("onPremisesConnections", value); }
         }
+#endif
         /// <summary>The Cloud PC organization settings for a tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CloudPcOrganizationSettings? OrganizationSettings {
+            get { return BackingStore?.Get<CloudPcOrganizationSettings?>("organizationSettings"); }
+            set { BackingStore?.Set("organizationSettings", value); }
+        }
+#else
         public CloudPcOrganizationSettings OrganizationSettings {
             get { return BackingStore?.Get<CloudPcOrganizationSettings>("organizationSettings"); }
             set { BackingStore?.Set("organizationSettings", value); }
         }
+#endif
         /// <summary>Cloud PC provisioning policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcProvisioningPolicy>? ProvisioningPolicies {
+            get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>?>("provisioningPolicies"); }
+            set { BackingStore?.Set("provisioningPolicies", value); }
+        }
+#else
         public List<CloudPcProvisioningPolicy> ProvisioningPolicies {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>>("provisioningPolicies"); }
             set { BackingStore?.Set("provisioningPolicies", value); }
         }
+#endif
         /// <summary>Cloud PC related reports.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CloudPcReports? Reports {
+            get { return BackingStore?.Get<CloudPcReports?>("reports"); }
+            set { BackingStore?.Set("reports", value); }
+        }
+#else
         public CloudPcReports Reports {
             get { return BackingStore?.Get<CloudPcReports>("reports"); }
             set { BackingStore?.Set("reports", value); }
         }
+#endif
         /// <summary>Cloud PC service plans.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcServicePlan>? ServicePlans {
+            get { return BackingStore?.Get<List<CloudPcServicePlan>?>("servicePlans"); }
+            set { BackingStore?.Set("servicePlans", value); }
+        }
+#else
         public List<CloudPcServicePlan> ServicePlans {
             get { return BackingStore?.Get<List<CloudPcServicePlan>>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
+#endif
         /// <summary>The sharedUseServicePlans property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcSharedUseServicePlan>? SharedUseServicePlans {
+            get { return BackingStore?.Get<List<CloudPcSharedUseServicePlan>?>("sharedUseServicePlans"); }
+            set { BackingStore?.Set("sharedUseServicePlans", value); }
+        }
+#else
         public List<CloudPcSharedUseServicePlan> SharedUseServicePlans {
             get { return BackingStore?.Get<List<CloudPcSharedUseServicePlan>>("sharedUseServicePlans"); }
             set { BackingStore?.Set("sharedUseServicePlans", value); }
         }
+#endif
         /// <summary>Cloud PC snapshots.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcSnapshot>? Snapshots {
+            get { return BackingStore?.Get<List<CloudPcSnapshot>?>("snapshots"); }
+            set { BackingStore?.Set("snapshots", value); }
+        }
+#else
         public List<CloudPcSnapshot> Snapshots {
             get { return BackingStore?.Get<List<CloudPcSnapshot>>("snapshots"); }
             set { BackingStore?.Set("snapshots", value); }
         }
+#endif
         /// <summary>Cloud PC supported regions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcSupportedRegion>? SupportedRegions {
+            get { return BackingStore?.Get<List<CloudPcSupportedRegion>?>("supportedRegions"); }
+            set { BackingStore?.Set("supportedRegions", value); }
+        }
+#else
         public List<CloudPcSupportedRegion> SupportedRegions {
             get { return BackingStore?.Get<List<CloudPcSupportedRegion>>("supportedRegions"); }
             set { BackingStore?.Set("supportedRegions", value); }
         }
+#endif
         /// <summary>Cloud PC user settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcUserSetting>? UserSettings {
+            get { return BackingStore?.Get<List<CloudPcUserSetting>?>("userSettings"); }
+            set { BackingStore?.Set("userSettings", value); }
+        }
+#else
         public List<CloudPcUserSetting> UserSettings {
             get { return BackingStore?.Get<List<CloudPcUserSetting>>("userSettings"); }
             set { BackingStore?.Set("userSettings", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

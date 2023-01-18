@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("advancedThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Condition statement id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConditionStatementId {
+            get { return BackingStore?.Get<string?>("conditionStatementId"); }
+            set { BackingStore?.Set("conditionStatementId", value); }
+        }
+#else
         public string ConditionStatementId {
             get { return BackingStore?.Get<string>("conditionStatementId"); }
             set { BackingStore?.Set("conditionStatementId", value); }
         }
+#endif
         /// <summary>Require that devices have enabled device threat protection.</summary>
         public bool? DeviceThreatProtectionEnabled {
             get { return BackingStore?.Get<bool?>("deviceThreatProtectionEnabled"); }
@@ -26,20 +33,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Minimum Android security patch level.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinAndroidSecurityPatchLevel {
+            get { return BackingStore?.Get<string?>("minAndroidSecurityPatchLevel"); }
+            set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
+        }
+#else
         public string MinAndroidSecurityPatchLevel {
             get { return BackingStore?.Get<string>("minAndroidSecurityPatchLevel"); }
             set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
         }
+#endif
         /// <summary>Maximum Android version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMaximumVersion {
+            get { return BackingStore?.Get<string?>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
+        }
+#else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#endif
         /// <summary>Minimum Android version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMinimumVersion {
+            get { return BackingStore?.Get<string?>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
+        }
+#else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#endif
         /// <summary>Number of days before the password expires. Valid values 1 to 365</summary>
         public int? PasswordExpirationDays {
             get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
@@ -81,10 +109,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requiredPasswordComplexity", value); }
         }
         /// <summary>Require the device to not have the specified apps installed. This collection can contain a maximum of 100 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? RestrictedApps {
+            get { return BackingStore?.Get<List<AppListItem>?>("restrictedApps"); }
+            set { BackingStore?.Set("restrictedApps", value); }
+        }
+#else
         public List<AppListItem> RestrictedApps {
             get { return BackingStore?.Get<List<AppListItem>>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
+#endif
         /// <summary>Block device administrator managed devices.</summary>
         public bool? SecurityBlockDeviceAdministratorManagedDevices {
             get { return BackingStore?.Get<bool?>("securityBlockDeviceAdministratorManagedDevices"); }

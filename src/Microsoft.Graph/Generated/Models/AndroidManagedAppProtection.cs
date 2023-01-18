@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AllowedAndroidDeviceManufacturers {
+            get { return BackingStore?.Get<string?>("allowedAndroidDeviceManufacturers"); }
+            set { BackingStore?.Set("allowedAndroidDeviceManufacturers", value); }
+        }
+#else
         public string AllowedAndroidDeviceManufacturers {
             get { return BackingStore?.Get<string>("allowedAndroidDeviceManufacturers"); }
             set { BackingStore?.Set("allowedAndroidDeviceManufacturers", value); }
         }
+#endif
         /// <summary>List of device models allowed, as a string, for the managed app to work.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedAndroidDeviceModels {
+            get { return BackingStore?.Get<List<string>?>("allowedAndroidDeviceModels"); }
+            set { BackingStore?.Set("allowedAndroidDeviceModels", value); }
+        }
+#else
         public List<string> AllowedAndroidDeviceModels {
             get { return BackingStore?.Get<List<string>>("allowedAndroidDeviceModels"); }
             set { BackingStore?.Set("allowedAndroidDeviceModels", value); }
         }
+#endif
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceManufacturerNotAllowed {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidDeviceManufacturerNotAllowed"); }
@@ -56,15 +70,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanMedium", value); }
         }
         /// <summary>If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? ApprovedKeyboards {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("approvedKeyboards"); }
+            set { BackingStore?.Set("approvedKeyboards", value); }
+        }
+#else
         public List<KeyValuePair> ApprovedKeyboards {
             get { return BackingStore?.Get<List<KeyValuePair>>("approvedKeyboards"); }
             set { BackingStore?.Set("approvedKeyboards", value); }
         }
+#endif
         /// <summary>List of apps to which the policy is deployed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedMobileApp>? Apps {
+            get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
+            set { BackingStore?.Set("apps", value); }
+        }
+#else
         public List<ManagedMobileApp> Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
+#endif
         /// <summary>Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.</summary>
         public bool? BiometricAuthenticationBlocked {
             get { return BackingStore?.Get<bool?>("biometricAuthenticationBlocked"); }
@@ -81,35 +109,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectToVpnOnLaunch", value); }
         }
         /// <summary>Friendly name of the preferred custom browser to open weblink on Android.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomBrowserDisplayName {
+            get { return BackingStore?.Get<string?>("customBrowserDisplayName"); }
+            set { BackingStore?.Set("customBrowserDisplayName", value); }
+        }
+#else
         public string CustomBrowserDisplayName {
             get { return BackingStore?.Get<string>("customBrowserDisplayName"); }
             set { BackingStore?.Set("customBrowserDisplayName", value); }
         }
+#endif
         /// <summary>Unique identifier of a custom browser to open weblink on Android.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomBrowserPackageId {
+            get { return BackingStore?.Get<string?>("customBrowserPackageId"); }
+            set { BackingStore?.Set("customBrowserPackageId", value); }
+        }
+#else
         public string CustomBrowserPackageId {
             get { return BackingStore?.Get<string>("customBrowserPackageId"); }
             set { BackingStore?.Set("customBrowserPackageId", value); }
         }
+#endif
         /// <summary>Friendly name of a custom dialer app to click-to-open a phone number on Android.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomDialerAppDisplayName {
+            get { return BackingStore?.Get<string?>("customDialerAppDisplayName"); }
+            set { BackingStore?.Set("customDialerAppDisplayName", value); }
+        }
+#else
         public string CustomDialerAppDisplayName {
             get { return BackingStore?.Get<string>("customDialerAppDisplayName"); }
             set { BackingStore?.Set("customDialerAppDisplayName", value); }
         }
+#endif
         /// <summary>PackageId of a custom dialer app to click-to-open a phone number on Android.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomDialerAppPackageId {
+            get { return BackingStore?.Get<string?>("customDialerAppPackageId"); }
+            set { BackingStore?.Set("customDialerAppPackageId", value); }
+        }
+#else
         public string CustomDialerAppPackageId {
             get { return BackingStore?.Get<string>("customDialerAppPackageId"); }
             set { BackingStore?.Set("customDialerAppPackageId", value); }
         }
+#endif
         /// <summary>Count of apps to which the current policy is deployed.</summary>
         public int? DeployedAppCount {
             get { return BackingStore?.Get<int?>("deployedAppCount"); }
             set { BackingStore?.Set("deployedAppCount", value); }
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagedAppPolicyDeploymentSummary? DeploymentSummary {
+            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
+            set { BackingStore?.Set("deploymentSummary", value); }
+        }
+#else
         public ManagedAppPolicyDeploymentSummary DeploymentSummary {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
+#endif
         /// <summary>Defines if any kind of lock must be required on android device</summary>
         public bool? DeviceLockRequired {
             get { return BackingStore?.Get<bool?>("deviceLockRequired"); }
@@ -126,10 +189,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("encryptAppData", value); }
         }
         /// <summary>App packages in this list will be exempt from the policy and will be able to receive data from managed apps.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? ExemptedAppPackages {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("exemptedAppPackages"); }
+            set { BackingStore?.Set("exemptedAppPackages", value); }
+        }
+#else
         public List<KeyValuePair> ExemptedAppPackages {
             get { return BackingStore?.Get<List<KeyValuePair>>("exemptedAppPackages"); }
             set { BackingStore?.Set("exemptedAppPackages", value); }
         }
+#endif
         /// <summary>If null, this setting will be ignored. If false both fingerprints and biometrics will not be enabled. If true, both fingerprints and biometrics will be enabled.</summary>
         public bool? FingerprintAndBiometricEnabled {
             get { return BackingStore?.Get<bool?>("fingerprintAndBiometricEnabled"); }
@@ -141,35 +211,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("keyboardsRestricted", value); }
         }
         /// <summary>Minimum version of the Company portal that must be installed on the device or app access will be blocked</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumRequiredCompanyPortalVersion {
+            get { return BackingStore?.Get<string?>("minimumRequiredCompanyPortalVersion"); }
+            set { BackingStore?.Set("minimumRequiredCompanyPortalVersion", value); }
+        }
+#else
         public string MinimumRequiredCompanyPortalVersion {
             get { return BackingStore?.Get<string>("minimumRequiredCompanyPortalVersion"); }
             set { BackingStore?.Set("minimumRequiredCompanyPortalVersion", value); }
         }
+#endif
         /// <summary>Define the oldest required Android security patch level a user can have to gain secure access to the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumRequiredPatchVersion {
+            get { return BackingStore?.Get<string?>("minimumRequiredPatchVersion"); }
+            set { BackingStore?.Set("minimumRequiredPatchVersion", value); }
+        }
+#else
         public string MinimumRequiredPatchVersion {
             get { return BackingStore?.Get<string>("minimumRequiredPatchVersion"); }
             set { BackingStore?.Set("minimumRequiredPatchVersion", value); }
         }
+#endif
         /// <summary>Minimum version of the Company portal that must be installed on the device or the user will receive a warning</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWarningCompanyPortalVersion {
+            get { return BackingStore?.Get<string?>("minimumWarningCompanyPortalVersion"); }
+            set { BackingStore?.Set("minimumWarningCompanyPortalVersion", value); }
+        }
+#else
         public string MinimumWarningCompanyPortalVersion {
             get { return BackingStore?.Get<string>("minimumWarningCompanyPortalVersion"); }
             set { BackingStore?.Set("minimumWarningCompanyPortalVersion", value); }
         }
+#endif
         /// <summary>Define the oldest recommended Android security patch level a user can have for secure access to the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWarningPatchVersion {
+            get { return BackingStore?.Get<string?>("minimumWarningPatchVersion"); }
+            set { BackingStore?.Set("minimumWarningPatchVersion", value); }
+        }
+#else
         public string MinimumWarningPatchVersion {
             get { return BackingStore?.Get<string>("minimumWarningPatchVersion"); }
             set { BackingStore?.Set("minimumWarningPatchVersion", value); }
         }
+#endif
         /// <summary>Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWipeCompanyPortalVersion {
+            get { return BackingStore?.Get<string?>("minimumWipeCompanyPortalVersion"); }
+            set { BackingStore?.Set("minimumWipeCompanyPortalVersion", value); }
+        }
+#else
         public string MinimumWipeCompanyPortalVersion {
             get { return BackingStore?.Get<string>("minimumWipeCompanyPortalVersion"); }
             set { BackingStore?.Set("minimumWipeCompanyPortalVersion", value); }
         }
+#endif
         /// <summary>Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWipePatchVersion {
+            get { return BackingStore?.Get<string?>("minimumWipePatchVersion"); }
+            set { BackingStore?.Set("minimumWipePatchVersion", value); }
+        }
+#else
         public string MinimumWipePatchVersion {
             get { return BackingStore?.Get<string>("minimumWipePatchVersion"); }
             set { BackingStore?.Set("minimumWipePatchVersion", value); }
         }
+#endif
         /// <summary>Require user to apply Class 3 Biometrics on their Android device.</summary>
         public bool? RequireClass3Biometrics {
             get { return BackingStore?.Get<bool?>("requireClass3Biometrics"); }

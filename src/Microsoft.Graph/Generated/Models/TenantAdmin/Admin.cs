@@ -15,35 +15,77 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A container for Microsoft Edge resources. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Edge? Edge {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Edge?>("edge"); }
+            set { BackingStore?.Set("edge", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Edge Edge {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Edge>("edge"); }
             set { BackingStore?.Set("edge", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A container for administrative resources to manage reports.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AdminReportSettings? ReportSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminReportSettings?>("reportSettings"); }
+            set { BackingStore?.Set("reportSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AdminReportSettings ReportSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminReportSettings>("reportSettings"); }
             set { BackingStore?.Set("reportSettings", value); }
         }
+#endif
         /// <summary>A container for service communications resources. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ServiceAnnouncement? ServiceAnnouncement {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceAnnouncement?>("serviceAnnouncement"); }
+            set { BackingStore?.Set("serviceAnnouncement", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ServiceAnnouncement ServiceAnnouncement {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceAnnouncement>("serviceAnnouncement"); }
             set { BackingStore?.Set("serviceAnnouncement", value); }
         }
+#endif
         /// <summary>A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint? Sharepoint {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint?>("sharepoint"); }
+            set { BackingStore?.Set("sharepoint", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint Sharepoint {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint>("sharepoint"); }
             set { BackingStore?.Set("sharepoint", value); }
         }
+#endif
         /// <summary>A container for all Windows Update for Business deployment service functionality. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.Windows? Windows {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows?>("windows"); }
+            set { BackingStore?.Set("windows", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.WindowsUpdates.Windows Windows {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Admin and sets the default values.
         /// </summary>

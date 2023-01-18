@@ -14,30 +14,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents expression which has been evaluated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Expression {
+            get { return BackingStore?.Get<string?>("expression"); }
+            set { BackingStore?.Set("expression", value); }
+        }
+#else
         public string Expression {
             get { return BackingStore?.Get<string>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
+#endif
         /// <summary>Represents the details of the evaluation of the expression.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExpressionEvaluationDetails>? ExpressionEvaluationDetails_prop {
+            get { return BackingStore?.Get<List<ExpressionEvaluationDetails>?>("expressionEvaluationDetails"); }
+            set { BackingStore?.Set("expressionEvaluationDetails", value); }
+        }
+#else
         public List<ExpressionEvaluationDetails> ExpressionEvaluationDetails_prop {
             get { return BackingStore?.Get<List<ExpressionEvaluationDetails>>("expressionEvaluationDetails"); }
             set { BackingStore?.Set("expressionEvaluationDetails", value); }
         }
+#endif
         /// <summary>Represents the value of the result of the current expression.</summary>
         public bool? ExpressionResult {
             get { return BackingStore?.Get<bool?>("expressionResult"); }
             set { BackingStore?.Set("expressionResult", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Defines the name of the property and the value of that property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PropertyToEvaluate? PropertyToEvaluate {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PropertyToEvaluate?>("propertyToEvaluate"); }
+            set { BackingStore?.Set("propertyToEvaluate", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PropertyToEvaluate PropertyToEvaluate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PropertyToEvaluate>("propertyToEvaluate"); }
             set { BackingStore?.Set("propertyToEvaluate", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new expressionEvaluationDetails and sets the default values.
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryFile : FileObject, IParsable {
         /// <summary>Custodians associated with the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoveryCustodian? Custodian {
+            get { return BackingStore?.Get<EdiscoveryCustodian?>("custodian"); }
+            set { BackingStore?.Set("custodian", value); }
+        }
+#else
         public EdiscoveryCustodian Custodian {
             get { return BackingStore?.Get<EdiscoveryCustodian>("custodian"); }
             set { BackingStore?.Set("custodian", value); }
         }
+#endif
         /// <summary>Tags associated with the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryReviewTag>? Tags {
+            get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<EdiscoveryReviewTag> Tags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -9,30 +9,58 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceManagementTroubleshootingEvent : Entity, IParsable {
         /// <summary>A set of string key and string value pairs which provides additional information on the Troubleshooting event</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? AdditionalInformation {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("additionalInformation"); }
+            set { BackingStore?.Set("additionalInformation", value); }
+        }
+#else
         public List<KeyValuePair> AdditionalInformation {
             get { return BackingStore?.Get<List<KeyValuePair>>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
+#endif
         /// <summary>Id used for tracing the failure in the service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CorrelationId {
+            get { return BackingStore?.Get<string?>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
+        }
+#else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#endif
         /// <summary>Time when the event occurred .</summary>
         public DateTimeOffset? EventDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Event Name corresponding to the Troubleshooting Event. It is an Optional field</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EventName {
+            get { return BackingStore?.Get<string?>("eventName"); }
+            set { BackingStore?.Set("eventName", value); }
+        }
+#else
         public string EventName {
             get { return BackingStore?.Get<string>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
         }
+#endif
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails {
+            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails?>("troubleshootingErrorDetails"); }
+            set { BackingStore?.Set("troubleshootingErrorDetails", value); }
+        }
+#else
         public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails {
             get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

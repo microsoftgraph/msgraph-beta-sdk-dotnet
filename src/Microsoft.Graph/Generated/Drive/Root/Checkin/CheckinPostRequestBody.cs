@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Drive.Root.Checkin {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The checkInAs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CheckInAs {
+            get { return BackingStore?.Get<string?>("checkInAs"); }
+            set { BackingStore?.Set("checkInAs", value); }
+        }
+#else
         public string CheckInAs {
             get { return BackingStore?.Get<string>("checkInAs"); }
             set { BackingStore?.Set("checkInAs", value); }
         }
+#endif
         /// <summary>The comment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Comment {
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new checkinPostRequestBody and sets the default values.
         /// </summary>

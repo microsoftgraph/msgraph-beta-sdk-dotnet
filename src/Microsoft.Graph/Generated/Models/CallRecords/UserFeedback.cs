@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The rating property</summary>
         public UserFeedbackRating? Rating {
             get { return BackingStore?.Get<UserFeedbackRating?>("rating"); }
             set { BackingStore?.Set("rating", value); }
         }
         /// <summary>The feedback text provided by the user of this endpoint for the session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Text {
+            get { return BackingStore?.Get<string?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>The set of feedback tokens provided by the user of this endpoint for the session. This is a set of Boolean properties. The property names should not be relied upon since they may change depending on what tokens are offered to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public FeedbackTokenSet? Tokens {
+            get { return BackingStore?.Get<FeedbackTokenSet?>("tokens"); }
+            set { BackingStore?.Set("tokens", value); }
+        }
+#else
         public FeedbackTokenSet Tokens {
             get { return BackingStore?.Get<FeedbackTokenSet>("tokens"); }
             set { BackingStore?.Set("tokens", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new userFeedback and sets the default values.
         /// </summary>

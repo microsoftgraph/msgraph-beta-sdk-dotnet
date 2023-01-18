@@ -7,47 +7,96 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class IdentityGovernance : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The accessReviews property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessReviewSet? AccessReviews {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewSet?>("accessReviews"); }
+            set { BackingStore?.Set("accessReviews", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessReviewSet AccessReviews {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewSet>("accessReviews"); }
             set { BackingStore?.Set("accessReviews", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The appConsent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AppConsentApprovalRoute? AppConsent {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute?>("appConsent"); }
+            set { BackingStore?.Set("appConsent", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AppConsentApprovalRoute AppConsent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>("appConsent"); }
             set { BackingStore?.Set("appConsent", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The entitlementManagement property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.EntitlementManagement? EntitlementManagement {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EntitlementManagement?>("entitlementManagement"); }
+            set { BackingStore?.Set("entitlementManagement", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.EntitlementManagement EntitlementManagement {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EntitlementManagement>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
+#endif
         /// <summary>The lifecycleWorkflows property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LifecycleWorkflowsContainer? LifecycleWorkflows {
+            get { return BackingStore?.Get<LifecycleWorkflowsContainer?>("lifecycleWorkflows"); }
+            set { BackingStore?.Set("lifecycleWorkflows", value); }
+        }
+#else
         public LifecycleWorkflowsContainer LifecycleWorkflows {
             get { return BackingStore?.Get<LifecycleWorkflowsContainer>("lifecycleWorkflows"); }
             set { BackingStore?.Set("lifecycleWorkflows", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The privilegedAccess property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PrivilegedAccessRoot? PrivilegedAccess {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot?>("privilegedAccess"); }
+            set { BackingStore?.Set("privilegedAccess", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PrivilegedAccessRoot PrivilegedAccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>("privilegedAccess"); }
             set { BackingStore?.Set("privilegedAccess", value); }
         }
+#endif
         /// <summary>The termsOfUse property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TermsOfUseContainer? TermsOfUse {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsOfUseContainer?>("termsOfUse"); }
+            set { BackingStore?.Set("termsOfUse", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TermsOfUseContainer TermsOfUse {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsOfUseContainer>("termsOfUse"); }
             set { BackingStore?.Set("termsOfUse", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IdentityGovernance and sets the default values.
         /// </summary>

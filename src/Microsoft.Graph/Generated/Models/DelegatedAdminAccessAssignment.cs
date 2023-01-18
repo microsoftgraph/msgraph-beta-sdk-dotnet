@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminAccessAssignment : Entity, IParsable {
         /// <summary>The accessContainer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DelegatedAdminAccessContainer? AccessContainer {
+            get { return BackingStore?.Get<DelegatedAdminAccessContainer?>("accessContainer"); }
+            set { BackingStore?.Set("accessContainer", value); }
+        }
+#else
         public DelegatedAdminAccessContainer AccessContainer {
             get { return BackingStore?.Get<DelegatedAdminAccessContainer>("accessContainer"); }
             set { BackingStore?.Set("accessContainer", value); }
         }
+#endif
         /// <summary>The accessDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DelegatedAdminAccessDetails? AccessDetails {
+            get { return BackingStore?.Get<DelegatedAdminAccessDetails?>("accessDetails"); }
+            set { BackingStore?.Set("accessDetails", value); }
+        }
+#else
         public DelegatedAdminAccessDetails AccessDetails {
             get { return BackingStore?.Get<DelegatedAdminAccessDetails>("accessDetails"); }
             set { BackingStore?.Set("accessDetails", value); }
         }
+#endif
         /// <summary>The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

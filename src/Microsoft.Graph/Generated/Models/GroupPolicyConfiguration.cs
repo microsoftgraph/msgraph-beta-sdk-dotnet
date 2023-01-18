@@ -9,30 +9,58 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class GroupPolicyConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyConfigurationAssignment>? Assignments {
+            get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<GroupPolicyConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>The date and time the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The list of enabled or disabled group policy definition values for the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyDefinitionValue>? DefinitionValues {
+            get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("definitionValues"); }
+            set { BackingStore?.Set("definitionValues", value); }
+        }
+#else
         public List<GroupPolicyDefinitionValue> DefinitionValues {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("definitionValues"); }
             set { BackingStore?.Set("definitionValues", value); }
         }
+#endif
         /// <summary>User provided description for the resource object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>User provided name for the resource object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -44,10 +72,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("policyConfigurationIngestionType", value); }
         }
         /// <summary>The list of scope tags for the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

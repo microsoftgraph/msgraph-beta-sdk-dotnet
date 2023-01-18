@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SitePage : BaseItem, IParsable {
         /// <summary>Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.CanvasLayout? CanvasLayout {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CanvasLayout?>("canvasLayout"); }
+            set { BackingStore?.Set("canvasLayout", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.CanvasLayout CanvasLayout {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CanvasLayout>("canvasLayout"); }
             set { BackingStore?.Set("canvasLayout", value); }
         }
+#endif
         /// <summary>Inherited from baseItem.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ContentTypeInfo? ContentType {
+            get { return BackingStore?.Get<ContentTypeInfo?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#else
         public ContentTypeInfo ContentType {
             get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#endif
         /// <summary>The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.</summary>
         public PageLayoutType? PageLayout {
             get { return BackingStore?.Get<PageLayoutType?>("pageLayout"); }
@@ -26,15 +40,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("promotionKind", value); }
         }
         /// <summary>The publishing status and the MM.mm version of the page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PublicationFacet? PublishingState {
+            get { return BackingStore?.Get<PublicationFacet?>("publishingState"); }
+            set { BackingStore?.Set("publishingState", value); }
+        }
+#else
         public PublicationFacet PublishingState {
             get { return BackingStore?.Get<PublicationFacet>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
+#endif
         /// <summary>Reactions information for the page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ReactionsFacet? Reactions {
+            get { return BackingStore?.Get<ReactionsFacet?>("reactions"); }
+            set { BackingStore?.Set("reactions", value); }
+        }
+#else
         public ReactionsFacet Reactions {
             get { return BackingStore?.Get<ReactionsFacet>("reactions"); }
             set { BackingStore?.Set("reactions", value); }
         }
+#endif
         /// <summary>Determines whether or not to show comments at the bottom of the page.</summary>
         public bool? ShowComments {
             get { return BackingStore?.Get<bool?>("showComments"); }
@@ -46,25 +74,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("showRecommendedPages", value); }
         }
         /// <summary>Url of the sitePage&apos;s thumbnail image</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ThumbnailWebUrl {
+            get { return BackingStore?.Get<string?>("thumbnailWebUrl"); }
+            set { BackingStore?.Set("thumbnailWebUrl", value); }
+        }
+#else
         public string ThumbnailWebUrl {
             get { return BackingStore?.Get<string>("thumbnailWebUrl"); }
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
+#endif
         /// <summary>Title of the sitePage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>Title area on the SharePoint page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TitleArea? TitleArea {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TitleArea?>("titleArea"); }
+            set { BackingStore?.Set("titleArea", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TitleArea TitleArea {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TitleArea>("titleArea"); }
             set { BackingStore?.Set("titleArea", value); }
         }
+#endif
         /// <summary>Collection of webparts on the SharePoint page</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WebPart>? WebParts {
+            get { return BackingStore?.Get<List<WebPart>?>("webParts"); }
+            set { BackingStore?.Set("webParts", value); }
+        }
+#else
         public List<WebPart> WebParts {
             get { return BackingStore?.Get<List<WebPart>>("webParts"); }
             set { BackingStore?.Set("webParts", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new sitePage and sets the default values.
         /// </summary>

@@ -6,80 +6,157 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsInformationProtection : ManagedAppPolicy, IParsable {
         /// <summary>Navigation property to list of security groups targeted for policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TargetedManagedAppPolicyAssignment>? Assignments {
+            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<TargetedManagedAppPolicyAssignment> Assignments {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Specifies whether to allow Azure RMS encryption for WIP</summary>
         public bool? AzureRightsManagementServicesAllowed {
             get { return BackingStore?.Get<bool?>("azureRightsManagementServicesAllowed"); }
             set { BackingStore?.Set("azureRightsManagementServicesAllowed", value); }
         }
         /// <summary>Specifies a recovery certificate that can be used for data recovery of encrypted files. This is the same as the data recovery agent(DRA) certificate for encrypting file system(EFS)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsInformationProtectionDataRecoveryCertificate? DataRecoveryCertificate {
+            get { return BackingStore?.Get<WindowsInformationProtectionDataRecoveryCertificate?>("dataRecoveryCertificate"); }
+            set { BackingStore?.Set("dataRecoveryCertificate", value); }
+        }
+#else
         public WindowsInformationProtectionDataRecoveryCertificate DataRecoveryCertificate {
             get { return BackingStore?.Get<WindowsInformationProtectionDataRecoveryCertificate>("dataRecoveryCertificate"); }
             set { BackingStore?.Set("dataRecoveryCertificate", value); }
         }
+#endif
         /// <summary>Possible values for WIP Protection enforcement levels</summary>
         public WindowsInformationProtectionEnforcementLevel? EnforcementLevel {
             get { return BackingStore?.Get<WindowsInformationProtectionEnforcementLevel?>("enforcementLevel"); }
             set { BackingStore?.Set("enforcementLevel", value); }
         }
         /// <summary>Primary enterprise domain</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnterpriseDomain {
+            get { return BackingStore?.Get<string?>("enterpriseDomain"); }
+            set { BackingStore?.Set("enterpriseDomain", value); }
+        }
+#else
         public string EnterpriseDomain {
             get { return BackingStore?.Get<string>("enterpriseDomain"); }
             set { BackingStore?.Set("enterpriseDomain", value); }
         }
+#endif
         /// <summary>This is the comma-separated list of internal proxy servers. For example, &apos;157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59&apos;. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionResourceCollection>? EnterpriseInternalProxyServers {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("enterpriseInternalProxyServers"); }
+            set { BackingStore?.Set("enterpriseInternalProxyServers", value); }
+        }
+#else
         public List<WindowsInformationProtectionResourceCollection> EnterpriseInternalProxyServers {
             get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("enterpriseInternalProxyServers"); }
             set { BackingStore?.Set("enterpriseInternalProxyServers", value); }
         }
+#endif
         /// <summary>Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionIPRangeCollection>? EnterpriseIPRanges {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionIPRangeCollection>?>("enterpriseIPRanges"); }
+            set { BackingStore?.Set("enterpriseIPRanges", value); }
+        }
+#else
         public List<WindowsInformationProtectionIPRangeCollection> EnterpriseIPRanges {
             get { return BackingStore?.Get<List<WindowsInformationProtectionIPRangeCollection>>("enterpriseIPRanges"); }
             set { BackingStore?.Set("enterpriseIPRanges", value); }
         }
+#endif
         /// <summary>Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false</summary>
         public bool? EnterpriseIPRangesAreAuthoritative {
             get { return BackingStore?.Get<bool?>("enterpriseIPRangesAreAuthoritative"); }
             set { BackingStore?.Set("enterpriseIPRangesAreAuthoritative", value); }
         }
         /// <summary>This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionResourceCollection>? EnterpriseNetworkDomainNames {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("enterpriseNetworkDomainNames"); }
+            set { BackingStore?.Set("enterpriseNetworkDomainNames", value); }
+        }
+#else
         public List<WindowsInformationProtectionResourceCollection> EnterpriseNetworkDomainNames {
             get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("enterpriseNetworkDomainNames"); }
             set { BackingStore?.Set("enterpriseNetworkDomainNames", value); }
         }
+#endif
         /// <summary>List of enterprise domains to be protected</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionResourceCollection>? EnterpriseProtectedDomainNames {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("enterpriseProtectedDomainNames"); }
+            set { BackingStore?.Set("enterpriseProtectedDomainNames", value); }
+        }
+#else
         public List<WindowsInformationProtectionResourceCollection> EnterpriseProtectedDomainNames {
             get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("enterpriseProtectedDomainNames"); }
             set { BackingStore?.Set("enterpriseProtectedDomainNames", value); }
         }
+#endif
         /// <summary>Contains a list of Enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionProxiedDomainCollection>? EnterpriseProxiedDomains {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionProxiedDomainCollection>?>("enterpriseProxiedDomains"); }
+            set { BackingStore?.Set("enterpriseProxiedDomains", value); }
+        }
+#else
         public List<WindowsInformationProtectionProxiedDomainCollection> EnterpriseProxiedDomains {
             get { return BackingStore?.Get<List<WindowsInformationProtectionProxiedDomainCollection>>("enterpriseProxiedDomains"); }
             set { BackingStore?.Set("enterpriseProxiedDomains", value); }
         }
+#endif
         /// <summary>This is a list of proxy servers. Any server not on this list is considered non-enterprise</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionResourceCollection>? EnterpriseProxyServers {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("enterpriseProxyServers"); }
+            set { BackingStore?.Set("enterpriseProxyServers", value); }
+        }
+#else
         public List<WindowsInformationProtectionResourceCollection> EnterpriseProxyServers {
             get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("enterpriseProxyServers"); }
             set { BackingStore?.Set("enterpriseProxyServers", value); }
         }
+#endif
         /// <summary>Boolean value that tells the client to accept the configured list of proxies and not try to detect other work proxies. Default is false</summary>
         public bool? EnterpriseProxyServersAreAuthoritative {
             get { return BackingStore?.Get<bool?>("enterpriseProxyServersAreAuthoritative"); }
             set { BackingStore?.Set("enterpriseProxyServersAreAuthoritative", value); }
         }
         /// <summary>Another way to input exempt apps through xml files</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionAppLockerFile>? ExemptAppLockerFiles {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLockerFile>?>("exemptAppLockerFiles"); }
+            set { BackingStore?.Set("exemptAppLockerFiles", value); }
+        }
+#else
         public List<WindowsInformationProtectionAppLockerFile> ExemptAppLockerFiles {
             get { return BackingStore?.Get<List<WindowsInformationProtectionAppLockerFile>>("exemptAppLockerFiles"); }
             set { BackingStore?.Set("exemptAppLockerFiles", value); }
         }
+#endif
         /// <summary>Exempt applications can also access enterprise data, but the data handled by those applications are not protected. This is because some critical enterprise applications may have compatibility problems with encrypted data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionApp>? ExemptApps {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionApp>?>("exemptApps"); }
+            set { BackingStore?.Set("exemptApps", value); }
+        }
+#else
         public List<WindowsInformationProtectionApp> ExemptApps {
             get { return BackingStore?.Get<List<WindowsInformationProtectionApp>>("exemptApps"); }
             set { BackingStore?.Set("exemptApps", value); }
         }
+#endif
         /// <summary>Determines whether overlays are added to icons for WIP protected files in Explorer and enterprise only app tiles in the Start menu. Starting in Windows 10, version 1703 this setting also configures the visibility of the WIP icon in the title bar of a WIP-protected app</summary>
         public bool? IconsVisible {
             get { return BackingStore?.Get<bool?>("iconsVisible"); }
@@ -96,20 +173,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>List of domain names that can used for work or personal resource</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionResourceCollection>? NeutralDomainResources {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("neutralDomainResources"); }
+            set { BackingStore?.Set("neutralDomainResources", value); }
+        }
+#else
         public List<WindowsInformationProtectionResourceCollection> NeutralDomainResources {
             get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("neutralDomainResources"); }
             set { BackingStore?.Set("neutralDomainResources", value); }
         }
+#endif
         /// <summary>Another way to input protected apps through xml files</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionAppLockerFile>? ProtectedAppLockerFiles {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionAppLockerFile>?>("protectedAppLockerFiles"); }
+            set { BackingStore?.Set("protectedAppLockerFiles", value); }
+        }
+#else
         public List<WindowsInformationProtectionAppLockerFile> ProtectedAppLockerFiles {
             get { return BackingStore?.Get<List<WindowsInformationProtectionAppLockerFile>>("protectedAppLockerFiles"); }
             set { BackingStore?.Set("protectedAppLockerFiles", value); }
         }
+#endif
         /// <summary>Protected applications can access enterprise data and the data handled by those applications are protected with encryption</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionApp>? ProtectedApps {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionApp>?>("protectedApps"); }
+            set { BackingStore?.Set("protectedApps", value); }
+        }
+#else
         public List<WindowsInformationProtectionApp> ProtectedApps {
             get { return BackingStore?.Get<List<WindowsInformationProtectionApp>>("protectedApps"); }
             set { BackingStore?.Set("protectedApps", value); }
         }
+#endif
         /// <summary>Specifies whether the protection under lock feature (also known as encrypt under pin) should be configured</summary>
         public bool? ProtectionUnderLockConfigRequired {
             get { return BackingStore?.Get<bool?>("protectionUnderLockConfigRequired"); }
@@ -126,10 +224,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rightsManagementServicesTemplateId", value); }
         }
         /// <summary>Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionResourceCollection>? SmbAutoEncryptedFileExtensions {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>?>("smbAutoEncryptedFileExtensions"); }
+            set { BackingStore?.Set("smbAutoEncryptedFileExtensions", value); }
+        }
+#else
         public List<WindowsInformationProtectionResourceCollection> SmbAutoEncryptedFileExtensions {
             get { return BackingStore?.Get<List<WindowsInformationProtectionResourceCollection>>("smbAutoEncryptedFileExtensions"); }
             set { BackingStore?.Set("smbAutoEncryptedFileExtensions", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsInformationProtection and sets the default values.
         /// </summary>

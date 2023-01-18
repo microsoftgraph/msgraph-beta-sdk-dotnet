@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Specifies whether to target users, groups, or applications with this rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CrossTenantAccessPolicyTarget>? Targets {
+            get { return BackingStore?.Get<List<CrossTenantAccessPolicyTarget>?>("targets"); }
+            set { BackingStore?.Set("targets", value); }
+        }
+#else
         public List<CrossTenantAccessPolicyTarget> Targets {
             get { return BackingStore?.Get<List<CrossTenantAccessPolicyTarget>>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyTargetConfiguration and sets the default values.
         /// </summary>

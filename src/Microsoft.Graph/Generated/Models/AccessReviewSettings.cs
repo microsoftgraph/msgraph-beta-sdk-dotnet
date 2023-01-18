@@ -32,10 +32,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("autoReviewEnabled", value); }
         }
         /// <summary>Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AutoReviewSettings? AutoReviewSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoReviewSettings?>("autoReviewSettings"); }
+            set { BackingStore?.Set("autoReviewSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AutoReviewSettings AutoReviewSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoReviewSettings>("autoReviewSettings"); }
             set { BackingStore?.Set("autoReviewSettings", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether reviewers are required to provide a justification when reviewing access.</summary>
@@ -49,15 +56,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mailNotificationsEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Detailed settings for recurrence.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessReviewRecurrenceSettings? RecurrenceSettings {
+            get { return BackingStore?.Get<AccessReviewRecurrenceSettings?>("recurrenceSettings"); }
+            set { BackingStore?.Set("recurrenceSettings", value); }
+        }
+#else
         public AccessReviewRecurrenceSettings RecurrenceSettings {
             get { return BackingStore?.Get<AccessReviewRecurrenceSettings>("recurrenceSettings"); }
             set { BackingStore?.Set("recurrenceSettings", value); }
         }
+#endif
         /// <summary>Indicates whether sending reminder emails to reviewers is enabled.</summary>
         public bool? RemindersEnabled {
             get { return BackingStore?.Get<bool?>("remindersEnabled"); }

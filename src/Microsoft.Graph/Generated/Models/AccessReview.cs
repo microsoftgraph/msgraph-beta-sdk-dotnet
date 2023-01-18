@@ -6,75 +6,159 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReview : Entity, IParsable {
         /// <summary>The business flow template identifier. Required on create.  This value is case sensitive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BusinessFlowTemplateId {
+            get { return BackingStore?.Get<string?>("businessFlowTemplateId"); }
+            set { BackingStore?.Set("businessFlowTemplateId", value); }
+        }
+#else
         public string BusinessFlowTemplateId {
             get { return BackingStore?.Get<string>("businessFlowTemplateId"); }
             set { BackingStore?.Set("businessFlowTemplateId", value); }
         }
+#endif
         /// <summary>The user who created this review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserIdentity? CreatedBy {
+            get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public UserIdentity CreatedBy {
             get { return BackingStore?.Get<UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The collection of decisions for this access review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewDecision>? Decisions {
+            get { return BackingStore?.Get<List<AccessReviewDecision>?>("decisions"); }
+            set { BackingStore?.Set("decisions", value); }
+        }
+#else
         public List<AccessReviewDecision> Decisions {
             get { return BackingStore?.Get<List<AccessReviewDecision>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
+#endif
         /// <summary>The description provided by the access review creator, to show to the reviewers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The access review name. Required on create.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The collection of access reviews instances past, present and future, if this object is a recurring access review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReview>? Instances {
+            get { return BackingStore?.Get<List<AccessReview>?>("instances"); }
+            set { BackingStore?.Set("instances", value); }
+        }
+#else
         public List<AccessReview> Instances {
             get { return BackingStore?.Get<List<AccessReview>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
+#endif
         /// <summary>The collection of decisions for the caller, if the caller is a reviewer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewDecision>? MyDecisions {
+            get { return BackingStore?.Get<List<AccessReviewDecision>?>("myDecisions"); }
+            set { BackingStore?.Set("myDecisions", value); }
+        }
+#else
         public List<AccessReviewDecision> MyDecisions {
             get { return BackingStore?.Get<List<AccessReviewDecision>>("myDecisions"); }
             set { BackingStore?.Set("myDecisions", value); }
         }
+#endif
         /// <summary>The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? ReviewedEntity {
+            get { return BackingStore?.Get<Identity?>("reviewedEntity"); }
+            set { BackingStore?.Set("reviewedEntity", value); }
+        }
+#else
         public Identity ReviewedEntity {
             get { return BackingStore?.Get<Identity>("reviewedEntity"); }
             set { BackingStore?.Set("reviewedEntity", value); }
         }
+#endif
         /// <summary>The collection of reviewers for an access review, if access review reviewerType is of type delegated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewReviewer>? Reviewers {
+            get { return BackingStore?.Get<List<AccessReviewReviewer>?>("reviewers"); }
+            set { BackingStore?.Set("reviewers", value); }
+        }
+#else
         public List<AccessReviewReviewer> Reviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewer>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
+#endif
         /// <summary>The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReviewerType {
+            get { return BackingStore?.Get<string?>("reviewerType"); }
+            set { BackingStore?.Set("reviewerType", value); }
+        }
+#else
         public string ReviewerType {
             get { return BackingStore?.Get<string>("reviewerType"); }
             set { BackingStore?.Set("reviewerType", value); }
         }
+#endif
         /// <summary>The settings of an accessReview, see type definition below.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessReviewSettings? Settings {
+            get { return BackingStore?.Get<AccessReviewSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public AccessReviewSettings Settings {
             get { return BackingStore?.Get<AccessReviewSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

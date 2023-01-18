@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppStatusRaw : ManagedAppStatus, IParsable {
         /// <summary>Status report content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Json? Content {
+            get { return BackingStore?.Get<Json?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public Json Content {
             get { return BackingStore?.Get<Json>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ManagedAppStatusRaw and sets the default values.
         /// </summary>

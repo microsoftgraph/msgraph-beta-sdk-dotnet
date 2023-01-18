@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthoredNote : Entity, IParsable {
         /// <summary>Identity information about the note&apos;s author.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? Author {
+            get { return BackingStore?.Get<Identity?>("author"); }
+            set { BackingStore?.Set("author", value); }
+        }
+#else
         public Identity Author {
             get { return BackingStore?.Get<Identity>("author"); }
             set { BackingStore?.Set("author", value); }
         }
+#endif
         /// <summary>The content of the note.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Content {
+            get { return BackingStore?.Get<ItemBody?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public ItemBody Content {
             get { return BackingStore?.Get<ItemBody>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

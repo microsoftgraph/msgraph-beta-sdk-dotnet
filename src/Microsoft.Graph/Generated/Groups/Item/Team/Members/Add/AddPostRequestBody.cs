@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Members.Add {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The values property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConversationMember>? Values {
+            get { return BackingStore?.Get<List<ConversationMember>?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public List<ConversationMember> Values {
             get { return BackingStore?.Get<List<ConversationMember>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new addPostRequestBody and sets the default values.
         /// </summary>

@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("daysWithoutContactBeforeUnenroll", value); }
         }
         /// <summary>Enrollment url for the MDM</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MdmEnrollmentUrl {
+            get { return BackingStore?.Get<string?>("mdmEnrollmentUrl"); }
+            set { BackingStore?.Set("mdmEnrollmentUrl", value); }
+        }
+#else
         public string MdmEnrollmentUrl {
             get { return BackingStore?.Get<string>("mdmEnrollmentUrl"); }
             set { BackingStore?.Set("mdmEnrollmentUrl", value); }
         }
+#endif
         /// <summary>Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 &lt;= X &lt;= 999.</summary>
         public int? MinutesOfInactivityBeforeDeviceLock {
             get { return BackingStore?.Get<int?>("minutesOfInactivityBeforeDeviceLock"); }

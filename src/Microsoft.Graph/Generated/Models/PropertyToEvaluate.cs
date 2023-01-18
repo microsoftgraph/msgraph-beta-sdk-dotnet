@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Provides the property name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PropertyName {
+            get { return BackingStore?.Get<string?>("propertyName"); }
+            set { BackingStore?.Set("propertyName", value); }
+        }
+#else
         public string PropertyName {
             get { return BackingStore?.Get<string>("propertyName"); }
             set { BackingStore?.Set("propertyName", value); }
         }
+#endif
         /// <summary>Provides the property value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PropertyValue {
+            get { return BackingStore?.Get<string?>("propertyValue"); }
+            set { BackingStore?.Set("propertyValue", value); }
+        }
+#else
         public string PropertyValue {
             get { return BackingStore?.Get<string>("propertyValue"); }
             set { BackingStore?.Set("propertyValue", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new propertyToEvaluate and sets the default values.
         /// </summary>

@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>ID of the timeCardBreak.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BreakId {
+            get { return BackingStore?.Get<string?>("breakId"); }
+            set { BackingStore?.Set("breakId", value); }
+        }
+#else
         public string BreakId {
             get { return BackingStore?.Get<string>("breakId"); }
             set { BackingStore?.Set("breakId", value); }
         }
+#endif
         /// <summary>The start event of the timeCardBreak.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeCardEvent? End {
+            get { return BackingStore?.Get<TimeCardEvent?>("end"); }
+            set { BackingStore?.Set("end", value); }
+        }
+#else
         public TimeCardEvent End {
             get { return BackingStore?.Get<TimeCardEvent>("end"); }
             set { BackingStore?.Set("end", value); }
         }
+#endif
         /// <summary>Notes about the timeCardBreak.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Notes {
+            get { return BackingStore?.Get<ItemBody?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#else
         public ItemBody Notes {
             get { return BackingStore?.Get<ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The start property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeCardEvent? Start {
+            get { return BackingStore?.Get<TimeCardEvent?>("start"); }
+            set { BackingStore?.Set("start", value); }
+        }
+#else
         public TimeCardEvent Start {
             get { return BackingStore?.Get<TimeCardEvent>("start"); }
             set { BackingStore?.Set("start", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new timeCardBreak and sets the default values.
         /// </summary>

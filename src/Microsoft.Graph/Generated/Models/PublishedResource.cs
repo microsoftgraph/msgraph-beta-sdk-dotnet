@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PublishedResource : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnPremisesAgentGroup>? AgentGroups {
+            get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
+            set { BackingStore?.Set("agentGroups", value); }
+        }
+#else
         public List<OnPremisesAgentGroup> AgentGroups {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
+#endif
         /// <summary>Display Name of the publishedResource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The publishingType property</summary>
         public OnPremisesPublishingType? PublishingType {
             get { return BackingStore?.Get<OnPremisesPublishingType?>("publishingType"); }
             set { BackingStore?.Set("publishingType", value); }
         }
         /// <summary>Name of the publishedResource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceName {
+            get { return BackingStore?.Get<string?>("resourceName"); }
+            set { BackingStore?.Set("resourceName", value); }
+        }
+#else
         public string ResourceName {
             get { return BackingStore?.Get<string>("resourceName"); }
             set { BackingStore?.Set("resourceName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

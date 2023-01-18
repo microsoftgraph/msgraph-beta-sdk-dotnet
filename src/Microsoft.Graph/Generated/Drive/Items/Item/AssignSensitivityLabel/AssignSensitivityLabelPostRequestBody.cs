@@ -20,15 +20,29 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.AssignSensitivityLabel {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The justificationText property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JustificationText {
+            get { return BackingStore?.Get<string?>("justificationText"); }
+            set { BackingStore?.Set("justificationText", value); }
+        }
+#else
         public string JustificationText {
             get { return BackingStore?.Get<string>("justificationText"); }
             set { BackingStore?.Set("justificationText", value); }
         }
+#endif
         /// <summary>The sensitivityLabelId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SensitivityLabelId {
+            get { return BackingStore?.Get<string?>("sensitivityLabelId"); }
+            set { BackingStore?.Set("sensitivityLabelId", value); }
+        }
+#else
         public string SensitivityLabelId {
             get { return BackingStore?.Get<string>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignSensitivityLabelPostRequestBody and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SwapShiftsChangeRequest : OfferShiftRequest, IParsable {
         /// <summary>Shift ID for the recipient user with whom the request is to swap.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecipientShiftId {
+            get { return BackingStore?.Get<string?>("recipientShiftId"); }
+            set { BackingStore?.Set("recipientShiftId", value); }
+        }
+#else
         public string RecipientShiftId {
             get { return BackingStore?.Get<string>("recipientShiftId"); }
             set { BackingStore?.Set("recipientShiftId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new SwapShiftsChangeRequest and sets the default values.
         /// </summary>

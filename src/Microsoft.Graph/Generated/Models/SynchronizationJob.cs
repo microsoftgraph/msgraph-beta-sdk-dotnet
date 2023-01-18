@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationJob : Entity, IParsable {
         /// <summary>Schedule used to run the job. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationSchedule? Schedule {
+            get { return BackingStore?.Get<SynchronizationSchedule?>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
+        }
+#else
         public SynchronizationSchedule Schedule {
             get { return BackingStore?.Get<SynchronizationSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#endif
         /// <summary>The synchronization schema configured for the job.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationSchema? Schema {
+            get { return BackingStore?.Get<SynchronizationSchema?>("schema"); }
+            set { BackingStore?.Set("schema", value); }
+        }
+#else
         public SynchronizationSchema Schema {
             get { return BackingStore?.Get<SynchronizationSchema>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
+#endif
         /// <summary>Status of the job, which includes when the job was last run, current job state, and errors.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationStatus? Status {
+            get { return BackingStore?.Get<SynchronizationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public SynchronizationStatus Status {
             get { return BackingStore?.Get<SynchronizationStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>Settings associated with the job. Some settings are inherited from the template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? SynchronizationJobSettings {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("synchronizationJobSettings"); }
+            set { BackingStore?.Set("synchronizationJobSettings", value); }
+        }
+#else
         public List<KeyValuePair> SynchronizationJobSettings {
             get { return BackingStore?.Get<List<KeyValuePair>>("synchronizationJobSettings"); }
             set { BackingStore?.Set("synchronizationJobSettings", value); }
         }
+#endif
         /// <summary>Identifier of the synchronization template this job is based on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TemplateId {
+            get { return BackingStore?.Get<string?>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
+        }
+#else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

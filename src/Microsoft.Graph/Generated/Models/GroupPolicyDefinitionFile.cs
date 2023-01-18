@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyDefinitionFile : Entity, IParsable {
         /// <summary>The group policy definitions associated with the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyDefinition>? Definitions {
+            get { return BackingStore?.Get<List<GroupPolicyDefinition>?>("definitions"); }
+            set { BackingStore?.Set("definitions", value); }
+        }
+#else
         public List<GroupPolicyDefinition> Definitions {
             get { return BackingStore?.Get<List<GroupPolicyDefinition>>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
+#endif
         /// <summary>The localized description of the policy settings in the ADMX file. The default value is empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The localized friendly name of the ADMX file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The file name of the ADMX file without the path. For example: edge.admx</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>The supported language codes for the ADMX file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? LanguageCodes {
+            get { return BackingStore?.Get<List<string>?>("languageCodes"); }
+            set { BackingStore?.Set("languageCodes", value); }
+        }
+#else
         public List<string> LanguageCodes {
             get { return BackingStore?.Get<List<string>>("languageCodes"); }
             set { BackingStore?.Set("languageCodes", value); }
         }
+#endif
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -41,20 +76,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("policyType", value); }
         }
         /// <summary>The revision version associated with the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Revision {
+            get { return BackingStore?.Get<string?>("revision"); }
+            set { BackingStore?.Set("revision", value); }
+        }
+#else
         public string Revision {
             get { return BackingStore?.Get<string>("revision"); }
             set { BackingStore?.Set("revision", value); }
         }
+#endif
         /// <summary>Specifies the URI used to identify the namespace within the ADMX file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetNamespace {
+            get { return BackingStore?.Get<string?>("targetNamespace"); }
+            set { BackingStore?.Set("targetNamespace", value); }
+        }
+#else
         public string TargetNamespace {
             get { return BackingStore?.Get<string>("targetNamespace"); }
             set { BackingStore?.Set("targetNamespace", value); }
         }
+#endif
         /// <summary>Specifies the logical name that refers to the namespace within the ADMX file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetPrefix {
+            get { return BackingStore?.Get<string?>("targetPrefix"); }
+            set { BackingStore?.Set("targetPrefix", value); }
+        }
+#else
         public string TargetPrefix {
             get { return BackingStore?.Get<string>("targetPrefix"); }
             set { BackingStore?.Set("targetPrefix", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

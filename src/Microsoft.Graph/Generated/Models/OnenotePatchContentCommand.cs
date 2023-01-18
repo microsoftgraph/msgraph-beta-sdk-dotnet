@@ -19,25 +19,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a &apos;Commands&apos; part.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Content {
+            get { return BackingStore?.Get<string?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public string Content {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The location to add the supplied content, relative to the target element. Possible values are: after (default) or before.</summary>
         public OnenotePatchInsertPosition? Position {
             get { return BackingStore?.Get<OnenotePatchInsertPosition?>("position"); }
             set { BackingStore?.Set("position", value); }
         }
         /// <summary>The element to update. Must be the #&lt;data-id&gt; or the generated {id} of the element, or the body or title keyword.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Target {
+            get { return BackingStore?.Get<string?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public string Target {
             get { return BackingStore?.Get<string>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new onenotePatchContentCommand and sets the default values.
         /// </summary>

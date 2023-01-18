@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TokenMeetingInfo : MeetingInfo, IParsable {
         /// <summary>The token used to join the call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Token {
+            get { return BackingStore?.Get<string?>("token"); }
+            set { BackingStore?.Set("token", value); }
+        }
+#else
         public string Token {
             get { return BackingStore?.Get<string>("token"); }
             set { BackingStore?.Set("token", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TokenMeetingInfo and sets the default values.
         /// </summary>

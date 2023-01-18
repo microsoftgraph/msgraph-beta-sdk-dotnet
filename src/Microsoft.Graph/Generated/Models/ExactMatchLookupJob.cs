@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchLookupJob : ExactMatchJobBase, IParsable {
         /// <summary>The matchingRows property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LookupResultRow>? MatchingRows {
+            get { return BackingStore?.Get<List<LookupResultRow>?>("matchingRows"); }
+            set { BackingStore?.Set("matchingRows", value); }
+        }
+#else
         public List<LookupResultRow> MatchingRows {
             get { return BackingStore?.Get<List<LookupResultRow>>("matchingRows"); }
             set { BackingStore?.Set("matchingRows", value); }
         }
+#endif
         /// <summary>The state property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? State {
+            get { return BackingStore?.Get<string?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ExactMatchLookupJob and sets the default values.
         /// </summary>

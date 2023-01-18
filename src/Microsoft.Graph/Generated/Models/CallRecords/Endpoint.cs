@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>User-agent reported by this endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.CallRecords.UserAgent? UserAgent {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.UserAgent?>("userAgent"); }
+            set { BackingStore?.Set("userAgent", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.CallRecords.UserAgent UserAgent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.UserAgent>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new endpoint and sets the default values.
         /// </summary>

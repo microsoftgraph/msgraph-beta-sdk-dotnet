@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The data (payload) for the operation. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Data {
+            get { return BackingStore?.Get<string?>("data"); }
+            set { BackingStore?.Set("data", value); }
+        }
+#else
         public string Data {
             get { return BackingStore?.Get<string>("data"); }
             set { BackingStore?.Set("data", value); }
         }
+#endif
         /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

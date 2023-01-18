@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsMobileMSI : MobileLobApp, IParsable {
         /// <summary>The command line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CommandLine {
+            get { return BackingStore?.Get<string?>("commandLine"); }
+            set { BackingStore?.Set("commandLine", value); }
+        }
+#else
         public string CommandLine {
             get { return BackingStore?.Get<string>("commandLine"); }
             set { BackingStore?.Set("commandLine", value); }
         }
+#endif
         /// <summary>The identity version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityVersion {
+            get { return BackingStore?.Get<string?>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
+        }
+#else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#endif
         /// <summary>A boolean to control whether the app&apos;s version will be used to detect the app after it is installed on a device. Set this to true for Windows Mobile MSI Line of Business (LoB) apps that use a self update feature.</summary>
         public bool? IgnoreVersionDetection {
             get { return BackingStore?.Get<bool?>("ignoreVersionDetection"); }
             set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
         /// <summary>The product code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductCode {
+            get { return BackingStore?.Get<string?>("productCode"); }
+            set { BackingStore?.Set("productCode", value); }
+        }
+#else
         public string ProductCode {
             get { return BackingStore?.Get<string>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
+#endif
         /// <summary>The product version of Windows Mobile MSI Line of Business (LoB) app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductVersion {
+            get { return BackingStore?.Get<string?>("productVersion"); }
+            set { BackingStore?.Set("productVersion", value); }
+        }
+#else
         public string ProductVersion {
             get { return BackingStore?.Get<string>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
+#endif
         /// <summary>Indicates whether to install a dual-mode MSI in the device context. If true, app will be installed for all users. If false, app will be installed per-user. If null, service will use the MSI package&apos;s default install context. In case of dual-mode MSI, this default will be per-user.  Cannot be set for non-dual-mode apps.  Cannot be changed after initial creation of the application.</summary>
         public bool? UseDeviceContext {
             get { return BackingStore?.Get<bool?>("useDeviceContext"); }

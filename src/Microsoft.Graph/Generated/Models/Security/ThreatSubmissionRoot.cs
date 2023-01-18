@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ThreatSubmissionRoot : Entity, IParsable {
         /// <summary>The emailThreats property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EmailThreatSubmission>? EmailThreats {
+            get { return BackingStore?.Get<List<EmailThreatSubmission>?>("emailThreats"); }
+            set { BackingStore?.Set("emailThreats", value); }
+        }
+#else
         public List<EmailThreatSubmission> EmailThreats {
             get { return BackingStore?.Get<List<EmailThreatSubmission>>("emailThreats"); }
             set { BackingStore?.Set("emailThreats", value); }
         }
+#endif
         /// <summary>The emailThreatSubmissionPolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EmailThreatSubmissionPolicy>? EmailThreatSubmissionPolicies {
+            get { return BackingStore?.Get<List<EmailThreatSubmissionPolicy>?>("emailThreatSubmissionPolicies"); }
+            set { BackingStore?.Set("emailThreatSubmissionPolicies", value); }
+        }
+#else
         public List<EmailThreatSubmissionPolicy> EmailThreatSubmissionPolicies {
             get { return BackingStore?.Get<List<EmailThreatSubmissionPolicy>>("emailThreatSubmissionPolicies"); }
             set { BackingStore?.Set("emailThreatSubmissionPolicies", value); }
         }
+#endif
         /// <summary>The fileThreats property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<FileThreatSubmission>? FileThreats {
+            get { return BackingStore?.Get<List<FileThreatSubmission>?>("fileThreats"); }
+            set { BackingStore?.Set("fileThreats", value); }
+        }
+#else
         public List<FileThreatSubmission> FileThreats {
             get { return BackingStore?.Get<List<FileThreatSubmission>>("fileThreats"); }
             set { BackingStore?.Set("fileThreats", value); }
         }
+#endif
         /// <summary>The urlThreats property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UrlThreatSubmission>? UrlThreats {
+            get { return BackingStore?.Get<List<UrlThreatSubmission>?>("urlThreats"); }
+            set { BackingStore?.Set("urlThreats", value); }
+        }
+#else
         public List<UrlThreatSubmission> UrlThreats {
             get { return BackingStore?.Get<List<UrlThreatSubmission>>("urlThreats"); }
             set { BackingStore?.Set("urlThreats", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

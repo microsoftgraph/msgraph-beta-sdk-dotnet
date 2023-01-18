@@ -12,27 +12,48 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SearchAggregation>? Aggregations {
+            get { return BackingStore?.Get<List<SearchAggregation>?>("aggregations"); }
+            set { BackingStore?.Set("aggregations", value); }
+        }
+#else
         public List<SearchAggregation> Aggregations {
             get { return BackingStore?.Get<List<SearchAggregation>>("aggregations"); }
             set { BackingStore?.Set("aggregations", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the search results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SearchHit>? Hits {
+            get { return BackingStore?.Get<List<SearchHit>?>("hits"); }
+            set { BackingStore?.Set("hits", value); }
+        }
+#else
         public List<SearchHit> Hits {
             get { return BackingStore?.Get<List<SearchHit>>("hits"); }
             set { BackingStore?.Set("hits", value); }
         }
+#endif
         /// <summary>Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.</summary>
         public bool? MoreResultsAvailable {
             get { return BackingStore?.Get<bool?>("moreResultsAvailable"); }
             set { BackingStore?.Set("moreResultsAvailable", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.</summary>
         public int? Total {
             get { return BackingStore?.Get<int?>("total"); }

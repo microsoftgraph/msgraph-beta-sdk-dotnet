@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("intent", value); }
         }
         /// <summary>Settings of the MobileAppPolicySetItem.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MobileAppAssignmentSettings? Settings {
+            get { return BackingStore?.Get<MobileAppAssignmentSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public MobileAppAssignmentSettings Settings {
             get { return BackingStore?.Get<MobileAppAssignmentSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MobileAppPolicySetItem and sets the default values.
         /// </summary>

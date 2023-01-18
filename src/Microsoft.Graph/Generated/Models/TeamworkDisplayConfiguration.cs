@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of configured displays. Applicable only for Microsoft Teams Rooms devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamworkConfiguredPeripheral>? ConfiguredDisplays {
+            get { return BackingStore?.Get<List<TeamworkConfiguredPeripheral>?>("configuredDisplays"); }
+            set { BackingStore?.Set("configuredDisplays", value); }
+        }
+#else
         public List<TeamworkConfiguredPeripheral> ConfiguredDisplays {
             get { return BackingStore?.Get<List<TeamworkConfiguredPeripheral>>("configuredDisplays"); }
             set { BackingStore?.Set("configuredDisplays", value); }
         }
+#endif
         /// <summary>Total number of connected displays, including the inbuilt display. Applicable only for Teams Rooms devices.</summary>
         public int? DisplayCount {
             get { return BackingStore?.Get<int?>("displayCount"); }
             set { BackingStore?.Set("displayCount", value); }
         }
         /// <summary>Configuration for the inbuilt display. Not applicable for Teams Rooms devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkDisplayScreenConfiguration? InBuiltDisplayScreenConfiguration {
+            get { return BackingStore?.Get<TeamworkDisplayScreenConfiguration?>("inBuiltDisplayScreenConfiguration"); }
+            set { BackingStore?.Set("inBuiltDisplayScreenConfiguration", value); }
+        }
+#else
         public TeamworkDisplayScreenConfiguration InBuiltDisplayScreenConfiguration {
             get { return BackingStore?.Get<TeamworkDisplayScreenConfiguration>("inBuiltDisplayScreenConfiguration"); }
             set { BackingStore?.Set("inBuiltDisplayScreenConfiguration", value); }
         }
+#endif
         /// <summary>True if content duplication is allowed. Applicable only for Teams Rooms devices.</summary>
         public bool? IsContentDuplicationAllowed {
             get { return BackingStore?.Get<bool?>("isContentDuplicationAllowed"); }
@@ -39,10 +53,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isDualDisplayModeEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkDisplayConfiguration and sets the default values.
         /// </summary>

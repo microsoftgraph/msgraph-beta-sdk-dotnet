@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class FeatureUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable {
         /// <summary>The version of the feature update. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new FeatureUpdateCatalogEntry and sets the default values.
         /// </summary>

@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bindStatus", value); }
         }
         /// <summary>Company codes for AndroidManagedStoreAccountEnterpriseSettings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidEnrollmentCompanyCode>? CompanyCodes {
+            get { return BackingStore?.Get<List<AndroidEnrollmentCompanyCode>?>("companyCodes"); }
+            set { BackingStore?.Set("companyCodes", value); }
+        }
+#else
         public List<AndroidEnrollmentCompanyCode> CompanyCodes {
             get { return BackingStore?.Get<List<AndroidEnrollmentCompanyCode>>("companyCodes"); }
             set { BackingStore?.Set("companyCodes", value); }
         }
+#endif
         /// <summary>Indicates if this account is flighting for Android Device Owner Management with CloudDPC.</summary>
         public bool? DeviceOwnerManagementEnabled {
             get { return BackingStore?.Get<bool?>("deviceOwnerManagementEnabled"); }
@@ -46,25 +53,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Initial scope tags for MGP apps</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ManagedGooglePlayInitialScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("managedGooglePlayInitialScopeTagIds"); }
+            set { BackingStore?.Set("managedGooglePlayInitialScopeTagIds", value); }
+        }
+#else
         public List<string> ManagedGooglePlayInitialScopeTagIds {
             get { return BackingStore?.Get<List<string>>("managedGooglePlayInitialScopeTagIds"); }
             set { BackingStore?.Set("managedGooglePlayInitialScopeTagIds", value); }
         }
+#endif
         /// <summary>Organization name used when onboarding Android Enterprise</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OwnerOrganizationName {
+            get { return BackingStore?.Get<string?>("ownerOrganizationName"); }
+            set { BackingStore?.Set("ownerOrganizationName", value); }
+        }
+#else
         public string OwnerOrganizationName {
             get { return BackingStore?.Get<string>("ownerOrganizationName"); }
             set { BackingStore?.Set("ownerOrganizationName", value); }
         }
+#endif
         /// <summary>Owner UPN that created the enterprise</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OwnerUserPrincipalName {
+            get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
+            set { BackingStore?.Set("ownerUserPrincipalName", value); }
+        }
+#else
         public string OwnerUserPrincipalName {
             get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
+#endif
         /// <summary>Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to &apos;Targeted&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TargetGroupIds {
+            get { return BackingStore?.Get<List<string>?>("targetGroupIds"); }
+            set { BackingStore?.Set("targetGroupIds", value); }
+        }
+#else
         public List<string> TargetGroupIds {
             get { return BackingStore?.Get<List<string>>("targetGroupIds"); }
             set { BackingStore?.Set("targetGroupIds", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

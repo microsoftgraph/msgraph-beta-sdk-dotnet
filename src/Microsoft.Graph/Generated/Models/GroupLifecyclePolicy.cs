@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupLifecyclePolicy : Entity, IParsable {
         /// <summary>List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlternateNotificationEmails {
+            get { return BackingStore?.Get<string?>("alternateNotificationEmails"); }
+            set { BackingStore?.Set("alternateNotificationEmails", value); }
+        }
+#else
         public string AlternateNotificationEmails {
             get { return BackingStore?.Get<string>("alternateNotificationEmails"); }
             set { BackingStore?.Set("alternateNotificationEmails", value); }
         }
+#endif
         /// <summary>Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.</summary>
         public int? GroupLifetimeInDays {
             get { return BackingStore?.Get<int?>("groupLifetimeInDays"); }
             set { BackingStore?.Set("groupLifetimeInDays", value); }
         }
         /// <summary>The group type for which the expiration policy applies. Possible values are All, Selected or None.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedGroupTypes {
+            get { return BackingStore?.Get<string?>("managedGroupTypes"); }
+            set { BackingStore?.Set("managedGroupTypes", value); }
+        }
+#else
         public string ManagedGroupTypes {
             get { return BackingStore?.Get<string>("managedGroupTypes"); }
             set { BackingStore?.Set("managedGroupTypes", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -9,10 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceAppManagementTask : Entity, IParsable {
         /// <summary>The name or email of the admin this task is assigned to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssignedTo {
+            get { return BackingStore?.Get<string?>("assignedTo"); }
+            set { BackingStore?.Set("assignedTo", value); }
+        }
+#else
         public string AssignedTo {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
+#endif
         /// <summary>Device app management task category.</summary>
         public DeviceAppManagementTaskCategory? Category {
             get { return BackingStore?.Get<DeviceAppManagementTaskCategory?>("category"); }
@@ -24,25 +31,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The email address of the creator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Creator {
+            get { return BackingStore?.Get<string?>("creator"); }
+            set { BackingStore?.Set("creator", value); }
+        }
+#else
         public string Creator {
             get { return BackingStore?.Get<string>("creator"); }
             set { BackingStore?.Set("creator", value); }
         }
+#endif
         /// <summary>Notes from the creator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatorNotes {
+            get { return BackingStore?.Get<string?>("creatorNotes"); }
+            set { BackingStore?.Set("creatorNotes", value); }
+        }
+#else
         public string CreatorNotes {
             get { return BackingStore?.Get<string>("creatorNotes"); }
             set { BackingStore?.Set("creatorNotes", value); }
         }
+#endif
         /// <summary>The description.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The due date.</summary>
         public DateTimeOffset? DueDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }

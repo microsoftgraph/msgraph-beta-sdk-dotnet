@@ -12,22 +12,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is &apos;Yes&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthDetail {
+            get { return BackingStore?.Get<string?>("authDetail"); }
+            set { BackingStore?.Set("authDetail", value); }
+        }
+#else
         public string AuthDetail {
             get { return BackingStore?.Get<string>("authDetail"); }
             set { BackingStore?.Set("authDetail", value); }
         }
+#endif
         /// <summary>Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is &apos;Yes&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthMethod {
+            get { return BackingStore?.Get<string?>("authMethod"); }
+            set { BackingStore?.Set("authMethod", value); }
+        }
+#else
         public string AuthMethod {
             get { return BackingStore?.Get<string>("authMethod"); }
             set { BackingStore?.Set("authMethod", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new mfaDetail and sets the default values.
         /// </summary>

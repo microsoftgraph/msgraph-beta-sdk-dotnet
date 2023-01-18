@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppConfiguration : ManagedAppPolicy, IParsable {
         /// <summary>A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? CustomSettings {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("customSettings"); }
+            set { BackingStore?.Set("customSettings", value); }
+        }
+#else
         public List<KeyValuePair> CustomSettings {
             get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ManagedAppConfiguration and sets the default values.
         /// </summary>

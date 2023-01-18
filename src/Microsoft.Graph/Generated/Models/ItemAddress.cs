@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemAddress : ItemFacet, IParsable {
         /// <summary>The detail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PhysicalAddress? Detail {
+            get { return BackingStore?.Get<PhysicalAddress?>("detail"); }
+            set { BackingStore?.Set("detail", value); }
+        }
+#else
         public PhysicalAddress Detail {
             get { return BackingStore?.Get<PhysicalAddress>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
+#endif
         /// <summary>Friendly name the user has assigned to this address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The geocoordinates of the address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.GeoCoordinates? GeoCoordinates {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates?>("geoCoordinates"); }
+            set { BackingStore?.Set("geoCoordinates", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.GeoCoordinates GeoCoordinates {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates>("geoCoordinates"); }
             set { BackingStore?.Set("geoCoordinates", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ItemAddress and sets the default values.
         /// </summary>

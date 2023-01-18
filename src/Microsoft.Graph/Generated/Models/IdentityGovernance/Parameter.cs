@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the parameter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The values of the parameter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Values {
+            get { return BackingStore?.Get<List<string>?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public List<string> Values {
             get { return BackingStore?.Get<List<string>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>The valueType property</summary>
         public Microsoft.Graph.Beta.Models.IdentityGovernance.ValueTypeObject? ValueTypeObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.ValueTypeObject?>("valueType"); }

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementReports : Entity, IParsable {
         /// <summary>Entity representing the configuration of a cached report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementCachedReportConfiguration>? CachedReportConfigurations {
+            get { return BackingStore?.Get<List<DeviceManagementCachedReportConfiguration>?>("cachedReportConfigurations"); }
+            set { BackingStore?.Set("cachedReportConfigurations", value); }
+        }
+#else
         public List<DeviceManagementCachedReportConfiguration> CachedReportConfigurations {
             get { return BackingStore?.Get<List<DeviceManagementCachedReportConfiguration>>("cachedReportConfigurations"); }
             set { BackingStore?.Set("cachedReportConfigurations", value); }
         }
+#endif
         /// <summary>Entity representing a job to export a report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementExportJob>? ExportJobs {
+            get { return BackingStore?.Get<List<DeviceManagementExportJob>?>("exportJobs"); }
+            set { BackingStore?.Set("exportJobs", value); }
+        }
+#else
         public List<DeviceManagementExportJob> ExportJobs {
             get { return BackingStore?.Get<List<DeviceManagementExportJob>>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookOperation : Entity, IParsable {
         /// <summary>The error returned by the operation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookOperationError? Error {
+            get { return BackingStore?.Get<WorkbookOperationError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public WorkbookOperationError Error {
             get { return BackingStore?.Get<WorkbookOperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>The resource URI for the result.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceLocation {
+            get { return BackingStore?.Get<string?>("resourceLocation"); }
+            set { BackingStore?.Set("resourceLocation", value); }
+        }
+#else
         public string ResourceLocation {
             get { return BackingStore?.Get<string>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public WorkbookOperationStatus? Status {
             get { return BackingStore?.Get<WorkbookOperationStatus?>("status"); }

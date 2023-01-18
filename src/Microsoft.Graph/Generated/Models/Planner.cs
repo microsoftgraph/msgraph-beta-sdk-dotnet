@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Planner : Entity, IParsable {
         /// <summary>Read-only. Nullable. Returns a collection of the specified buckets</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerBucket>? Buckets {
+            get { return BackingStore?.Get<List<PlannerBucket>?>("buckets"); }
+            set { BackingStore?.Set("buckets", value); }
+        }
+#else
         public List<PlannerBucket> Buckets {
             get { return BackingStore?.Get<List<PlannerBucket>>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified plans</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerPlan>? Plans {
+            get { return BackingStore?.Get<List<PlannerPlan>?>("plans"); }
+            set { BackingStore?.Set("plans", value); }
+        }
+#else
         public List<PlannerPlan> Plans {
             get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified rosters</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerRoster>? Rosters {
+            get { return BackingStore?.Get<List<PlannerRoster>?>("rosters"); }
+            set { BackingStore?.Set("rosters", value); }
+        }
+#else
         public List<PlannerRoster> Rosters {
             get { return BackingStore?.Get<List<PlannerRoster>>("rosters"); }
             set { BackingStore?.Set("rosters", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified tasks</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerTask>? Tasks {
+            get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#else
         public List<PlannerTask> Tasks {
             get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,100 +6,191 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Vendor : Entity, IParsable {
         /// <summary>The address property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PostalAddressType? Address {
+            get { return BackingStore?.Get<PostalAddressType?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public PostalAddressType Address {
             get { return BackingStore?.Get<PostalAddressType>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>The balance property</summary>
         public decimal? Balance {
             get { return BackingStore?.Get<decimal?>("balance"); }
             set { BackingStore?.Set("balance", value); }
         }
         /// <summary>The blocked property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Blocked {
+            get { return BackingStore?.Get<string?>("blocked"); }
+            set { BackingStore?.Set("blocked", value); }
+        }
+#else
         public string Blocked {
             get { return BackingStore?.Get<string>("blocked"); }
             set { BackingStore?.Set("blocked", value); }
         }
+#endif
         /// <summary>The currency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Currency? Currency {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency?>("currency"); }
+            set { BackingStore?.Set("currency", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Currency Currency {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
+#endif
         /// <summary>The currencyCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CurrencyCode {
+            get { return BackingStore?.Get<string?>("currencyCode"); }
+            set { BackingStore?.Set("currencyCode", value); }
+        }
+#else
         public string CurrencyCode {
             get { return BackingStore?.Get<string>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
+#endif
         /// <summary>The currencyId property</summary>
         public Guid? CurrencyId {
             get { return BackingStore?.Get<Guid?>("currencyId"); }
             set { BackingStore?.Set("currencyId", value); }
         }
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The email property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Number {
+            get { return BackingStore?.Get<string?>("number"); }
+            set { BackingStore?.Set("number", value); }
+        }
+#else
         public string Number {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
+#endif
         /// <summary>The paymentMethod property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PaymentMethod? PaymentMethod {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentMethod?>("paymentMethod"); }
+            set { BackingStore?.Set("paymentMethod", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PaymentMethod PaymentMethod {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentMethod>("paymentMethod"); }
             set { BackingStore?.Set("paymentMethod", value); }
         }
+#endif
         /// <summary>The paymentMethodId property</summary>
         public Guid? PaymentMethodId {
             get { return BackingStore?.Get<Guid?>("paymentMethodId"); }
             set { BackingStore?.Set("paymentMethodId", value); }
         }
         /// <summary>The paymentTerm property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PaymentTerm? PaymentTerm {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentTerm?>("paymentTerm"); }
+            set { BackingStore?.Set("paymentTerm", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PaymentTerm PaymentTerm {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PaymentTerm>("paymentTerm"); }
             set { BackingStore?.Set("paymentTerm", value); }
         }
+#endif
         /// <summary>The paymentTermsId property</summary>
         public Guid? PaymentTermsId {
             get { return BackingStore?.Get<Guid?>("paymentTermsId"); }
             set { BackingStore?.Set("paymentTermsId", value); }
         }
         /// <summary>The phoneNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PhoneNumber {
+            get { return BackingStore?.Get<string?>("phoneNumber"); }
+            set { BackingStore?.Set("phoneNumber", value); }
+        }
+#else
         public string PhoneNumber {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
+#endif
         /// <summary>The picture property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.Picture>? Picture {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>?>("picture"); }
+            set { BackingStore?.Set("picture", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.Picture> Picture {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
+#endif
         /// <summary>The taxLiable property</summary>
         public bool? TaxLiable {
             get { return BackingStore?.Get<bool?>("taxLiable"); }
             set { BackingStore?.Set("taxLiable", value); }
         }
         /// <summary>The taxRegistrationNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TaxRegistrationNumber {
+            get { return BackingStore?.Get<string?>("taxRegistrationNumber"); }
+            set { BackingStore?.Set("taxRegistrationNumber", value); }
+        }
+#else
         public string TaxRegistrationNumber {
             get { return BackingStore?.Get<string>("taxRegistrationNumber"); }
             set { BackingStore?.Set("taxRegistrationNumber", value); }
         }
+#endif
         /// <summary>The website property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Website {
+            get { return BackingStore?.Get<string?>("website"); }
+            set { BackingStore?.Set("website", value); }
+        }
+#else
         public string Website {
             get { return BackingStore?.Get<string>("website"); }
             set { BackingStore?.Set("website", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

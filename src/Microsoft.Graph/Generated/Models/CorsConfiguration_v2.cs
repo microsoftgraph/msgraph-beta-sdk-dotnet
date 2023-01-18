@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CorsConfiguration_v2 : Entity, IParsable {
         /// <summary>The allowedHeaders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedHeaders {
+            get { return BackingStore?.Get<List<string>?>("allowedHeaders"); }
+            set { BackingStore?.Set("allowedHeaders", value); }
+        }
+#else
         public List<string> AllowedHeaders {
             get { return BackingStore?.Get<List<string>>("allowedHeaders"); }
             set { BackingStore?.Set("allowedHeaders", value); }
         }
+#endif
         /// <summary>The allowedMethods property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedMethods {
+            get { return BackingStore?.Get<List<string>?>("allowedMethods"); }
+            set { BackingStore?.Set("allowedMethods", value); }
+        }
+#else
         public List<string> AllowedMethods {
             get { return BackingStore?.Get<List<string>>("allowedMethods"); }
             set { BackingStore?.Set("allowedMethods", value); }
         }
+#endif
         /// <summary>The allowedOrigins property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedOrigins {
+            get { return BackingStore?.Get<List<string>?>("allowedOrigins"); }
+            set { BackingStore?.Set("allowedOrigins", value); }
+        }
+#else
         public List<string> AllowedOrigins {
             get { return BackingStore?.Get<List<string>>("allowedOrigins"); }
             set { BackingStore?.Set("allowedOrigins", value); }
         }
+#endif
         /// <summary>The maxAgeInSeconds property</summary>
         public int? MaxAgeInSeconds {
             get { return BackingStore?.Get<int?>("maxAgeInSeconds"); }
             set { BackingStore?.Set("maxAgeInSeconds", value); }
         }
         /// <summary>The resource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Resource {
+            get { return BackingStore?.Get<string?>("resource"); }
+            set { BackingStore?.Set("resource", value); }
+        }
+#else
         public string Resource {
             get { return BackingStore?.Get<string>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -9,25 +9,53 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MacOSSoftwareUpdateAccountSummary : Entity, IParsable {
         /// <summary>Summary of the updates by category.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSSoftwareUpdateCategorySummary>? CategorySummaries {
+            get { return BackingStore?.Get<List<MacOSSoftwareUpdateCategorySummary>?>("categorySummaries"); }
+            set { BackingStore?.Set("categorySummaries", value); }
+        }
+#else
         public List<MacOSSoftwareUpdateCategorySummary> CategorySummaries {
             get { return BackingStore?.Get<List<MacOSSoftwareUpdateCategorySummary>>("categorySummaries"); }
             set { BackingStore?.Set("categorySummaries", value); }
         }
+#endif
         /// <summary>The device ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The device name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>The name of the report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Number of failed updates on the device.</summary>
         public int? FailedUpdateCount {
             get { return BackingStore?.Get<int?>("failedUpdateCount"); }
@@ -39,10 +67,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The OS version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>Number of successful updates on the device.</summary>
         public int? SuccessfulUpdateCount {
             get { return BackingStore?.Get<int?>("successfulUpdateCount"); }
@@ -54,15 +89,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalUpdateCount", value); }
         }
         /// <summary>The user ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>The user principal name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

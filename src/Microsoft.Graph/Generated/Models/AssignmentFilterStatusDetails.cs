@@ -17,35 +17,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Device properties used for filter evaluation during device check-in time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? DeviceProperties {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("deviceProperties"); }
+            set { BackingStore?.Set("deviceProperties", value); }
+        }
+#else
         public List<KeyValuePair> DeviceProperties {
             get { return BackingStore?.Get<List<KeyValuePair>>("deviceProperties"); }
             set { BackingStore?.Set("deviceProperties", value); }
         }
+#endif
         /// <summary>Evaluation result summaries for each filter associated to device and payload</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AssignmentFilterEvaluationSummary>? EvalutionSummaries {
+            get { return BackingStore?.Get<List<AssignmentFilterEvaluationSummary>?>("evalutionSummaries"); }
+            set { BackingStore?.Set("evalutionSummaries", value); }
+        }
+#else
         public List<AssignmentFilterEvaluationSummary> EvalutionSummaries {
             get { return BackingStore?.Get<List<AssignmentFilterEvaluationSummary>>("evalutionSummaries"); }
             set { BackingStore?.Set("evalutionSummaries", value); }
         }
+#endif
         /// <summary>Unique identifier for the device object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Unique identifier for payload object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PayloadId {
+            get { return BackingStore?.Get<string?>("payloadId"); }
+            set { BackingStore?.Set("payloadId", value); }
+        }
+#else
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
+#endif
         /// <summary>Unique identifier for UserId object. Can be null</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignmentFilterStatusDetails and sets the default values.
         /// </summary>

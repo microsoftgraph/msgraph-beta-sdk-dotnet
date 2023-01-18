@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class AppleUserInitiatedEnrollmentProfile : Entity, IParsable {
         /// <summary>The list of assignments for this profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppleEnrollmentProfileAssignment>? Assignments {
+            get { return BackingStore?.Get<List<AppleEnrollmentProfileAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<AppleEnrollmentProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<AppleEnrollmentProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>List of available enrollment type options</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppleOwnerTypeEnrollmentType>? AvailableEnrollmentTypeOptions {
+            get { return BackingStore?.Get<List<AppleOwnerTypeEnrollmentType>?>("availableEnrollmentTypeOptions"); }
+            set { BackingStore?.Set("availableEnrollmentTypeOptions", value); }
+        }
+#else
         public List<AppleOwnerTypeEnrollmentType> AvailableEnrollmentTypeOptions {
             get { return BackingStore?.Get<List<AppleOwnerTypeEnrollmentType>>("availableEnrollmentTypeOptions"); }
             set { BackingStore?.Set("availableEnrollmentTypeOptions", value); }
         }
+#endif
         /// <summary>Profile creation time</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -29,15 +43,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultEnrollmentType", value); }
         }
         /// <summary>Description of the profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Name of the profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Profile last modified time</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

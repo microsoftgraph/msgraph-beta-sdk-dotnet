@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationIntegerSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable {
         /// <summary>Integer Setting Value Default Template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate? DefaultValue {
+            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
+        }
+#else
         public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate DefaultValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#endif
         /// <summary>Recommended value definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RecommendedValueDefinition {
+            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate?>("recommendedValueDefinition"); }
+            set { BackingStore?.Set("recommendedValueDefinition", value); }
+        }
+#else
         public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RecommendedValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
             set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
+#endif
         /// <summary>Required value definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RequiredValueDefinition {
+            get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate?>("requiredValueDefinition"); }
+            set { BackingStore?.Set("requiredValueDefinition", value); }
+        }
+#else
         public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RequiredValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("requiredValueDefinition"); }
             set { BackingStore?.Set("requiredValueDefinition", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationIntegerSettingValueTemplate and sets the default values.
         /// </summary>

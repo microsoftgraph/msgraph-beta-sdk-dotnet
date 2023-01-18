@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("advancedBitLockerStates", value); }
         }
         /// <summary>Device name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>Device type.</summary>
         public DeviceTypes? DeviceType {
             get { return BackingStore?.Get<DeviceTypes?>("deviceType"); }
@@ -44,25 +51,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileVaultStates", value); }
         }
         /// <summary>Operating system version of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>Policy Details</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EncryptionReportPolicyDetails>? PolicyDetails {
+            get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>?>("policyDetails"); }
+            set { BackingStore?.Set("policyDetails", value); }
+        }
+#else
         public List<EncryptionReportPolicyDetails> PolicyDetails {
             get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>>("policyDetails"); }
             set { BackingStore?.Set("policyDetails", value); }
         }
+#endif
         /// <summary>Device TPM Version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TpmSpecificationVersion {
+            get { return BackingStore?.Get<string?>("tpmSpecificationVersion"); }
+            set { BackingStore?.Set("tpmSpecificationVersion", value); }
+        }
+#else
         public string TpmSpecificationVersion {
             get { return BackingStore?.Get<string>("tpmSpecificationVersion"); }
             set { BackingStore?.Set("tpmSpecificationVersion", value); }
         }
+#endif
         /// <summary>User name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

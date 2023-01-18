@@ -11,25 +11,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Connection name displayed to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectionName {
+            get { return BackingStore?.Get<string?>("connectionName"); }
+            set { BackingStore?.Set("connectionName", value); }
+        }
+#else
         public string ConnectionName {
             get { return BackingStore?.Get<string>("connectionName"); }
             set { BackingStore?.Set("connectionName", value); }
         }
+#endif
         /// <summary>Realm when connection type is set to Pulse Secure.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Realm {
+            get { return BackingStore?.Get<string?>("realm"); }
+            set { BackingStore?.Set("realm", value); }
+        }
+#else
         public string Realm {
             get { return BackingStore?.Get<string>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
+#endif
         /// <summary>Role when connection type is set to Pulse Secure.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Role {
+            get { return BackingStore?.Get<string?>("role"); }
+            set { BackingStore?.Set("role", value); }
+        }
+#else
         public string Role {
             get { return BackingStore?.Get<string>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#endif
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<VpnServer>? Servers {
+            get { return BackingStore?.Get<List<VpnServer>?>("servers"); }
+            set { BackingStore?.Set("servers", value); }
+        }
+#else
         public List<VpnServer> Servers {
             get { return BackingStore?.Get<List<VpnServer>>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new VpnConfiguration and sets the default values.
         /// </summary>

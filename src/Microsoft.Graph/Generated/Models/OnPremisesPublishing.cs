@@ -12,20 +12,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlternateUrl {
+            get { return BackingStore?.Get<string?>("alternateUrl"); }
+            set { BackingStore?.Set("alternateUrl", value); }
+        }
+#else
         public string AlternateUrl {
             get { return BackingStore?.Get<string>("alternateUrl"); }
             set { BackingStore?.Set("alternateUrl", value); }
         }
+#endif
         /// <summary>The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is &apos;Backend Timeout&apos;. Default value is default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplicationServerTimeout {
+            get { return BackingStore?.Get<string?>("applicationServerTimeout"); }
+            set { BackingStore?.Set("applicationServerTimeout", value); }
+        }
+#else
         public string ApplicationServerTimeout {
             get { return BackingStore?.Get<string>("applicationServerTimeout"); }
             set { BackingStore?.Set("applicationServerTimeout", value); }
         }
+#endif
         /// <summary>Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplicationType {
+            get { return BackingStore?.Get<string?>("applicationType"); }
+            set { BackingStore?.Set("applicationType", value); }
+        }
+#else
         public string ApplicationType {
             get { return BackingStore?.Get<string>("applicationType"); }
             set { BackingStore?.Set("applicationType", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.</summary>
@@ -34,15 +55,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalAuthenticationType", value); }
         }
         /// <summary>The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalUrl {
+            get { return BackingStore?.Get<string?>("externalUrl"); }
+            set { BackingStore?.Set("externalUrl", value); }
+        }
+#else
         public string ExternalUrl {
             get { return BackingStore?.Get<string>("externalUrl"); }
             set { BackingStore?.Set("externalUrl", value); }
         }
+#endif
         /// <summary>The internal url of the application. For example, https://intranet/.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InternalUrl {
+            get { return BackingStore?.Get<string?>("internalUrl"); }
+            set { BackingStore?.Set("internalUrl", value); }
+        }
+#else
         public string InternalUrl {
             get { return BackingStore?.Get<string>("internalUrl"); }
             set { BackingStore?.Set("internalUrl", value); }
         }
+#endif
         /// <summary>Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.</summary>
         public bool? IsBackendCertificateValidationEnabled {
             get { return BackingStore?.Get<bool?>("isBackendCertificateValidationEnabled"); }
@@ -84,45 +119,94 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isTranslateLinksInBodyEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Represents the application segment collection for an on-premises wildcard application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnPremisesApplicationSegment>? OnPremisesApplicationSegments {
+            get { return BackingStore?.Get<List<OnPremisesApplicationSegment>?>("onPremisesApplicationSegments"); }
+            set { BackingStore?.Set("onPremisesApplicationSegments", value); }
+        }
+#else
         public List<OnPremisesApplicationSegment> OnPremisesApplicationSegments {
             get { return BackingStore?.Get<List<OnPremisesApplicationSegment>>("onPremisesApplicationSegments"); }
             set { BackingStore?.Set("onPremisesApplicationSegments", value); }
         }
+#endif
         /// <summary>The segmentsConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SegmentConfiguration? SegmentsConfiguration {
+            get { return BackingStore?.Get<SegmentConfiguration?>("segmentsConfiguration"); }
+            set { BackingStore?.Set("segmentsConfiguration", value); }
+        }
+#else
         public SegmentConfiguration SegmentsConfiguration {
             get { return BackingStore?.Get<SegmentConfiguration>("segmentsConfiguration"); }
             set { BackingStore?.Set("segmentsConfiguration", value); }
         }
+#endif
         /// <summary>Represents the single sign-on configuration for the on-premises application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OnPremisesPublishingSingleSignOn? SingleSignOnSettings {
+            get { return BackingStore?.Get<OnPremisesPublishingSingleSignOn?>("singleSignOnSettings"); }
+            set { BackingStore?.Set("singleSignOnSettings", value); }
+        }
+#else
         public OnPremisesPublishingSingleSignOn SingleSignOnSettings {
             get { return BackingStore?.Get<OnPremisesPublishingSingleSignOn>("singleSignOnSettings"); }
             set { BackingStore?.Set("singleSignOnSettings", value); }
         }
+#endif
         /// <summary>The useAlternateUrlForTranslationAndRedirect property</summary>
         public bool? UseAlternateUrlForTranslationAndRedirect {
             get { return BackingStore?.Get<bool?>("useAlternateUrlForTranslationAndRedirect"); }
             set { BackingStore?.Set("useAlternateUrlForTranslationAndRedirect", value); }
         }
         /// <summary>Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata? VerifiedCustomDomainCertificatesMetadata {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata?>("verifiedCustomDomainCertificatesMetadata"); }
+            set { BackingStore?.Set("verifiedCustomDomainCertificatesMetadata", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata VerifiedCustomDomainCertificatesMetadata {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>("verifiedCustomDomainCertificatesMetadata"); }
             set { BackingStore?.Set("verifiedCustomDomainCertificatesMetadata", value); }
         }
+#endif
         /// <summary>The associated key credential for the custom domain used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public KeyCredential? VerifiedCustomDomainKeyCredential {
+            get { return BackingStore?.Get<KeyCredential?>("verifiedCustomDomainKeyCredential"); }
+            set { BackingStore?.Set("verifiedCustomDomainKeyCredential", value); }
+        }
+#else
         public KeyCredential VerifiedCustomDomainKeyCredential {
             get { return BackingStore?.Get<KeyCredential>("verifiedCustomDomainKeyCredential"); }
             set { BackingStore?.Set("verifiedCustomDomainKeyCredential", value); }
         }
+#endif
         /// <summary>The associated password credential for the custom domain used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PasswordCredential? VerifiedCustomDomainPasswordCredential {
+            get { return BackingStore?.Get<PasswordCredential?>("verifiedCustomDomainPasswordCredential"); }
+            set { BackingStore?.Set("verifiedCustomDomainPasswordCredential", value); }
+        }
+#else
         public PasswordCredential VerifiedCustomDomainPasswordCredential {
             get { return BackingStore?.Get<PasswordCredential>("verifiedCustomDomainPasswordCredential"); }
             set { BackingStore?.Set("verifiedCustomDomainPasswordCredential", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new onPremisesPublishing and sets the default values.
         /// </summary>

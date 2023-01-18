@@ -21,25 +21,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("endpointSecurityPolicyProfile", value); }
         }
         /// <summary>Information about the mitigation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Insights {
+            get { return BackingStore?.Get<string?>("insights"); }
+            set { BackingStore?.Set("insights", value); }
+        }
+#else
         public string Insights {
             get { return BackingStore?.Get<string>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
+#endif
         /// <summary>The intended settings and their values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? IntendedSettings {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("intendedSettings"); }
+            set { BackingStore?.Set("intendedSettings", value); }
+        }
+#else
         public List<KeyValuePair> IntendedSettings {
             get { return BackingStore?.Get<List<KeyValuePair>>("intendedSettings"); }
             set { BackingStore?.Set("intendedSettings", value); }
         }
+#endif
         /// <summary>The number of vulnerable devices. Valid values 0 to 65536</summary>
         public int? ManagedDeviceCount {
             get { return BackingStore?.Get<int?>("managedDeviceCount"); }
             set { BackingStore?.Set("managedDeviceCount", value); }
         }
         /// <summary>The vulnerable managed devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<VulnerableManagedDevice>? ManagedDevices {
+            get { return BackingStore?.Get<List<VulnerableManagedDevice>?>("managedDevices"); }
+            set { BackingStore?.Set("managedDevices", value); }
+        }
+#else
         public List<VulnerableManagedDevice> ManagedDevices {
             get { return BackingStore?.Get<List<VulnerableManagedDevice>>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new SecurityConfigurationTask and sets the default values.
         /// </summary>

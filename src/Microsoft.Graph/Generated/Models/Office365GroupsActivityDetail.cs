@@ -27,20 +27,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalMemberCount", value); }
         }
         /// <summary>The display name of the group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupDisplayName {
+            get { return BackingStore?.Get<string?>("groupDisplayName"); }
+            set { BackingStore?.Set("groupDisplayName", value); }
+        }
+#else
         public string GroupDisplayName {
             get { return BackingStore?.Get<string>("groupDisplayName"); }
             set { BackingStore?.Set("groupDisplayName", value); }
         }
+#endif
         /// <summary>The group id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupId {
+            get { return BackingStore?.Get<string?>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
+        }
+#else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#endif
         /// <summary>The group type. Possible values are: Public or Private.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupType {
+            get { return BackingStore?.Get<string?>("groupType"); }
+            set { BackingStore?.Set("groupType", value); }
+        }
+#else
         public string GroupType {
             get { return BackingStore?.Get<string>("groupType"); }
             set { BackingStore?.Set("groupType", value); }
         }
+#endif
         /// <summary>Whether this user has been deleted or soft deleted.</summary>
         public bool? IsDeleted {
             get { return BackingStore?.Get<bool?>("isDeleted"); }
@@ -57,15 +78,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("memberCount", value); }
         }
         /// <summary>The group owner principal name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OwnerPrincipalName {
+            get { return BackingStore?.Get<string?>("ownerPrincipalName"); }
+            set { BackingStore?.Set("ownerPrincipalName", value); }
+        }
+#else
         public string OwnerPrincipalName {
             get { return BackingStore?.Get<string>("ownerPrincipalName"); }
             set { BackingStore?.Set("ownerPrincipalName", value); }
         }
+#endif
         /// <summary>The number of days the report covers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReportPeriod {
+            get { return BackingStore?.Get<string?>("reportPeriod"); }
+            set { BackingStore?.Set("reportPeriod", value); }
+        }
+#else
         public string ReportPeriod {
             get { return BackingStore?.Get<string>("reportPeriod"); }
             set { BackingStore?.Set("reportPeriod", value); }
         }
+#endif
         /// <summary>The latest date of the content.</summary>
         public Date? ReportRefreshDate {
             get { return BackingStore?.Get<Date?>("reportRefreshDate"); }

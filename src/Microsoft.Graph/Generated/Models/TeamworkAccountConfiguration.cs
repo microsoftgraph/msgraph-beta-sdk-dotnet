@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The account used to sync the calendar.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkOnPremisesCalendarSyncConfiguration? OnPremisesCalendarSyncConfiguration {
+            get { return BackingStore?.Get<TeamworkOnPremisesCalendarSyncConfiguration?>("onPremisesCalendarSyncConfiguration"); }
+            set { BackingStore?.Set("onPremisesCalendarSyncConfiguration", value); }
+        }
+#else
         public TeamworkOnPremisesCalendarSyncConfiguration OnPremisesCalendarSyncConfiguration {
             get { return BackingStore?.Get<TeamworkOnPremisesCalendarSyncConfiguration>("onPremisesCalendarSyncConfiguration"); }
             set { BackingStore?.Set("onPremisesCalendarSyncConfiguration", value); }
         }
+#endif
         /// <summary>The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.</summary>
         public TeamworkSupportedClient? SupportedClient {
             get { return BackingStore?.Get<TeamworkSupportedClient?>("supportedClient"); }

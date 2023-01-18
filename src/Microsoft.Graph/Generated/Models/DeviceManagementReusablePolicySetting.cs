@@ -14,40 +14,75 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>reusable setting description supplied by user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>reusable setting display name supplied by user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>date and time when reusable setting was last modified. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>configuration policies referencing the current reusable setting. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationPolicy>? ReferencingConfigurationPolicies {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>?>("referencingConfigurationPolicies"); }
+            set { BackingStore?.Set("referencingConfigurationPolicies", value); }
+        }
+#else
         public List<DeviceManagementConfigurationPolicy> ReferencingConfigurationPolicies {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>>("referencingConfigurationPolicies"); }
             set { BackingStore?.Set("referencingConfigurationPolicies", value); }
         }
+#endif
         /// <summary>count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.</summary>
         public int? ReferencingConfigurationPolicyCount {
             get { return BackingStore?.Get<int?>("referencingConfigurationPolicyCount"); }
             set { BackingStore?.Set("referencingConfigurationPolicyCount", value); }
         }
         /// <summary>setting definition id associated with this reusable setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingDefinitionId {
+            get { return BackingStore?.Get<string?>("settingDefinitionId"); }
+            set { BackingStore?.Set("settingDefinitionId", value); }
+        }
+#else
         public string SettingDefinitionId {
             get { return BackingStore?.Get<string>("settingDefinitionId"); }
             set { BackingStore?.Set("settingDefinitionId", value); }
         }
+#endif
         /// <summary>reusable setting configuration instance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementConfigurationSettingInstance? SettingInstance {
+            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance?>("settingInstance"); }
+            set { BackingStore?.Set("settingInstance", value); }
+        }
+#else
         public DeviceManagementConfigurationSettingInstance SettingInstance {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>("settingInstance"); }
             set { BackingStore?.Set("settingInstance", value); }
         }
+#endif
         /// <summary>version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }

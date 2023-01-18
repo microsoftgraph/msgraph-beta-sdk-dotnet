@@ -17,25 +17,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IntegratedCircuitCardIdentifier {
+            get { return BackingStore?.Get<string?>("integratedCircuitCardIdentifier"); }
+            set { BackingStore?.Set("integratedCircuitCardIdentifier", value); }
+        }
+#else
         public string IntegratedCircuitCardIdentifier {
             get { return BackingStore?.Get<string>("integratedCircuitCardIdentifier"); }
             set { BackingStore?.Set("integratedCircuitCardIdentifier", value); }
         }
+#endif
         /// <summary>The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MatchingIdentifier {
+            get { return BackingStore?.Get<string?>("matchingIdentifier"); }
+            set { BackingStore?.Set("matchingIdentifier", value); }
+        }
+#else
         public string MatchingIdentifier {
             get { return BackingStore?.Get<string>("matchingIdentifier"); }
             set { BackingStore?.Set("matchingIdentifier", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SmdpPlusServerAddress {
+            get { return BackingStore?.Get<string?>("smdpPlusServerAddress"); }
+            set { BackingStore?.Set("smdpPlusServerAddress", value); }
+        }
+#else
         public string SmdpPlusServerAddress {
             get { return BackingStore?.Get<string>("smdpPlusServerAddress"); }
             set { BackingStore?.Set("smdpPlusServerAddress", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new embeddedSIMActivationCode and sets the default values.
         /// </summary>

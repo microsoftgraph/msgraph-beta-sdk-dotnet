@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The Apple Id associated with the given Apple Volume Purchase Program Token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppleId {
+            get { return BackingStore?.Get<string?>("appleId"); }
+            set { BackingStore?.Set("appleId", value); }
+        }
+#else
         public string AppleId {
             get { return BackingStore?.Get<string>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
+#endif
         /// <summary>The number of VPP licenses available.</summary>
         public int? AvailableLicenseCount {
             get { return BackingStore?.Get<int?>("availableLicenseCount"); }
@@ -27,25 +34,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The organization associated with the Apple Volume Purchase Program Token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OrganizationName {
+            get { return BackingStore?.Get<string?>("organizationName"); }
+            set { BackingStore?.Set("organizationName", value); }
+        }
+#else
         public string OrganizationName {
             get { return BackingStore?.Get<string>("organizationName"); }
             set { BackingStore?.Set("organizationName", value); }
         }
+#endif
         /// <summary>The number of VPP licenses in use.</summary>
         public int? UsedLicenseCount {
             get { return BackingStore?.Get<int?>("usedLicenseCount"); }
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>Identifier of the VPP token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VppTokenId {
+            get { return BackingStore?.Get<string?>("vppTokenId"); }
+            set { BackingStore?.Set("vppTokenId", value); }
+        }
+#else
         public string VppTokenId {
             get { return BackingStore?.Get<string>("vppTokenId"); }
             set { BackingStore?.Set("vppTokenId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new vppTokenLicenseSummary and sets the default values.
         /// </summary>

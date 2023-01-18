@@ -17,25 +17,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of driver Ids where the action is failed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? FailedDriverIds {
+            get { return BackingStore?.Get<List<string>?>("failedDriverIds"); }
+            set { BackingStore?.Set("failedDriverIds", value); }
+        }
+#else
         public List<string> FailedDriverIds {
             get { return BackingStore?.Get<List<string>>("failedDriverIds"); }
             set { BackingStore?.Set("failedDriverIds", value); }
         }
+#endif
         /// <summary>List of driver Ids that are not found.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? NotFoundDriverIds {
+            get { return BackingStore?.Get<List<string>?>("notFoundDriverIds"); }
+            set { BackingStore?.Set("notFoundDriverIds", value); }
+        }
+#else
         public List<string> NotFoundDriverIds {
             get { return BackingStore?.Get<List<string>>("notFoundDriverIds"); }
             set { BackingStore?.Set("notFoundDriverIds", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>List of driver Ids where the action is successful.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SuccessfulDriverIds {
+            get { return BackingStore?.Get<List<string>?>("successfulDriverIds"); }
+            set { BackingStore?.Set("successfulDriverIds", value); }
+        }
+#else
         public List<string> SuccessfulDriverIds {
             get { return BackingStore?.Get<List<string>>("successfulDriverIds"); }
             set { BackingStore?.Set("successfulDriverIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new bulkDriverActionResult and sets the default values.
         /// </summary>

@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesAgent : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnPremisesAgentGroup>? AgentGroups {
+            get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
+            set { BackingStore?.Set("agentGroups", value); }
+        }
+#else
         public List<OnPremisesAgentGroup> AgentGroups {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
+#endif
         /// <summary>The external IP address as detected by the service for the agent machine. Read-only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalIp {
+            get { return BackingStore?.Get<string?>("externalIp"); }
+            set { BackingStore?.Set("externalIp", value); }
+        }
+#else
         public string ExternalIp {
             get { return BackingStore?.Get<string>("externalIp"); }
             set { BackingStore?.Set("externalIp", value); }
         }
+#endif
         /// <summary>The name of the machine that the aggent is running on. Read-only</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MachineName {
+            get { return BackingStore?.Get<string?>("machineName"); }
+            set { BackingStore?.Set("machineName", value); }
+        }
+#else
         public string MachineName {
             get { return BackingStore?.Get<string>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public AgentStatus? Status {
             get { return BackingStore?.Get<AgentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The supportedPublishingTypes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnPremisesPublishingType?>? SupportedPublishingTypes {
+            get { return BackingStore?.Get<List<OnPremisesPublishingType?>?>("supportedPublishingTypes"); }
+            set { BackingStore?.Set("supportedPublishingTypes", value); }
+        }
+#else
         public List<OnPremisesPublishingType?> SupportedPublishingTypes {
             get { return BackingStore?.Get<List<OnPremisesPublishingType?>>("supportedPublishingTypes"); }
             set { BackingStore?.Set("supportedPublishingTypes", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

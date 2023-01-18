@@ -17,15 +17,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activeHoursStart", value); }
         }
         /// <summary>If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CustomUpdateTimeWindow>? CustomUpdateTimeWindows {
+            get { return BackingStore?.Get<List<CustomUpdateTimeWindow>?>("customUpdateTimeWindows"); }
+            set { BackingStore?.Set("customUpdateTimeWindows", value); }
+        }
+#else
         public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
+#endif
         /// <summary>If left unspecified, devices will update to the latest version of the OS.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DesiredOsVersion {
+            get { return BackingStore?.Get<string?>("desiredOsVersion"); }
+            set { BackingStore?.Set("desiredOsVersion", value); }
+        }
+#else
         public string DesiredOsVersion {
             get { return BackingStore?.Get<string>("desiredOsVersion"); }
             set { BackingStore?.Set("desiredOsVersion", value); }
         }
+#endif
         /// <summary>Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive</summary>
         public int? EnforcedSoftwareUpdateDelayInDays {
             get { return BackingStore?.Get<int?>("enforcedSoftwareUpdateDelayInDays"); }
@@ -37,10 +51,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DayOfWeekObject?>? ScheduledInstallDays {
+            get { return BackingStore?.Get<List<DayOfWeekObject?>?>("scheduledInstallDays"); }
+            set { BackingStore?.Set("scheduledInstallDays", value); }
+        }
+#else
         public List<DayOfWeekObject?> ScheduledInstallDays {
             get { return BackingStore?.Get<List<DayOfWeekObject?>>("scheduledInstallDays"); }
             set { BackingStore?.Set("scheduledInstallDays", value); }
         }
+#endif
         /// <summary>Update schedule type for iOS software updates.</summary>
         public IosSoftwareUpdateScheduleType? UpdateScheduleType {
             get { return BackingStore?.Get<IosSoftwareUpdateScheduleType?>("updateScheduleType"); }

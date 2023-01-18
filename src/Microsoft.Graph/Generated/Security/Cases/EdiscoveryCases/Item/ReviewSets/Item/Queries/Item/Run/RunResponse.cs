@@ -8,10 +8,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.Run {
     public class RunResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryFile>? Value {
+            get { return BackingStore?.Get<List<EdiscoveryFile>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<EdiscoveryFile> Value {
             get { return BackingStore?.Get<List<EdiscoveryFile>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

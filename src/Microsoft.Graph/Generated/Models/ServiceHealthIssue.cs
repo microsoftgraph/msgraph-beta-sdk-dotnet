@@ -11,20 +11,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>The feature name of the service issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Feature {
+            get { return BackingStore?.Get<string?>("feature"); }
+            set { BackingStore?.Set("feature", value); }
+        }
+#else
         public string Feature {
             get { return BackingStore?.Get<string>("feature"); }
             set { BackingStore?.Set("feature", value); }
         }
+#endif
         /// <summary>The feature group name of the service issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FeatureGroup {
+            get { return BackingStore?.Get<string?>("featureGroup"); }
+            set { BackingStore?.Set("featureGroup", value); }
+        }
+#else
         public string FeatureGroup {
             get { return BackingStore?.Get<string>("featureGroup"); }
             set { BackingStore?.Set("featureGroup", value); }
         }
+#endif
         /// <summary>The description of the service issue impact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ImpactDescription {
+            get { return BackingStore?.Get<string?>("impactDescription"); }
+            set { BackingStore?.Set("impactDescription", value); }
+        }
+#else
         public string ImpactDescription {
             get { return BackingStore?.Get<string>("impactDescription"); }
             set { BackingStore?.Set("impactDescription", value); }
         }
+#endif
         /// <summary>Indicates whether the issue is resolved.</summary>
         public bool? IsResolved {
             get { return BackingStore?.Get<bool?>("isResolved"); }
@@ -36,15 +57,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("origin", value); }
         }
         /// <summary>Collection of historical posts for the service issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServiceHealthIssuePost>? Posts {
+            get { return BackingStore?.Get<List<ServiceHealthIssuePost>?>("posts"); }
+            set { BackingStore?.Set("posts", value); }
+        }
+#else
         public List<ServiceHealthIssuePost> Posts {
             get { return BackingStore?.Get<List<ServiceHealthIssuePost>>("posts"); }
             set { BackingStore?.Set("posts", value); }
         }
+#endif
         /// <summary>Indicates the service affected by the issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Service {
+            get { return BackingStore?.Get<string?>("service"); }
+            set { BackingStore?.Set("service", value); }
+        }
+#else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public ServiceHealthStatus? Status {
             get { return BackingStore?.Get<ServiceHealthStatus?>("status"); }

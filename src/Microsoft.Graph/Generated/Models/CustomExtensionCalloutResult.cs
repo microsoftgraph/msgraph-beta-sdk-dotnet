@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("calloutDateTime", value); }
         }
         /// <summary>The customExtensionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomExtensionId {
+            get { return BackingStore?.Get<string?>("customExtensionId"); }
+            set { BackingStore?.Set("customExtensionId", value); }
+        }
+#else
         public string CustomExtensionId {
             get { return BackingStore?.Get<string>("customExtensionId"); }
             set { BackingStore?.Set("customExtensionId", value); }
         }
+#endif
         /// <summary>The errorCode property</summary>
         public int? ErrorCode {
             get { return BackingStore?.Get<int?>("errorCode"); }

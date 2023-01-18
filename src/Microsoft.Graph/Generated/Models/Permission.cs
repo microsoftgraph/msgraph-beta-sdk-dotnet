@@ -11,55 +11,118 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The grantedTo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? GrantedTo {
+            get { return BackingStore?.Get<IdentitySet?>("grantedTo"); }
+            set { BackingStore?.Set("grantedTo", value); }
+        }
+#else
         public IdentitySet GrantedTo {
             get { return BackingStore?.Get<IdentitySet>("grantedTo"); }
             set { BackingStore?.Set("grantedTo", value); }
         }
+#endif
         /// <summary>The grantedToIdentities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentitySet>? GrantedToIdentities {
+            get { return BackingStore?.Get<List<IdentitySet>?>("grantedToIdentities"); }
+            set { BackingStore?.Set("grantedToIdentities", value); }
+        }
+#else
         public List<IdentitySet> GrantedToIdentities {
             get { return BackingStore?.Get<List<IdentitySet>>("grantedToIdentities"); }
             set { BackingStore?.Set("grantedToIdentities", value); }
         }
+#endif
         /// <summary>For link type permissions, the details of the users to whom permission was granted. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SharePointIdentitySet>? GrantedToIdentitiesV2 {
+            get { return BackingStore?.Get<List<SharePointIdentitySet>?>("grantedToIdentitiesV2"); }
+            set { BackingStore?.Set("grantedToIdentitiesV2", value); }
+        }
+#else
         public List<SharePointIdentitySet> GrantedToIdentitiesV2 {
             get { return BackingStore?.Get<List<SharePointIdentitySet>>("grantedToIdentitiesV2"); }
             set { BackingStore?.Set("grantedToIdentitiesV2", value); }
         }
+#endif
         /// <summary>For user type permissions, the details of the users and applications for this permission. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SharePointIdentitySet? GrantedToV2 {
+            get { return BackingStore?.Get<SharePointIdentitySet?>("grantedToV2"); }
+            set { BackingStore?.Set("grantedToV2", value); }
+        }
+#else
         public SharePointIdentitySet GrantedToV2 {
             get { return BackingStore?.Get<SharePointIdentitySet>("grantedToV2"); }
             set { BackingStore?.Set("grantedToV2", value); }
         }
+#endif
         /// <summary>Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only.</summary>
         public bool? HasPassword {
             get { return BackingStore?.Get<bool?>("hasPassword"); }
             set { BackingStore?.Set("hasPassword", value); }
         }
         /// <summary>Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemReference? InheritedFrom {
+            get { return BackingStore?.Get<ItemReference?>("inheritedFrom"); }
+            set { BackingStore?.Set("inheritedFrom", value); }
+        }
+#else
         public ItemReference InheritedFrom {
             get { return BackingStore?.Get<ItemReference>("inheritedFrom"); }
             set { BackingStore?.Set("inheritedFrom", value); }
         }
+#endif
         /// <summary>Details of any associated sharing invitation for this permission. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SharingInvitation? Invitation {
+            get { return BackingStore?.Get<SharingInvitation?>("invitation"); }
+            set { BackingStore?.Set("invitation", value); }
+        }
+#else
         public SharingInvitation Invitation {
             get { return BackingStore?.Get<SharingInvitation>("invitation"); }
             set { BackingStore?.Set("invitation", value); }
         }
+#endif
         /// <summary>Provides the link details of the current permission, if it is a link type permissions. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SharingLink? Link {
+            get { return BackingStore?.Get<SharingLink?>("link"); }
+            set { BackingStore?.Set("link", value); }
+        }
+#else
         public SharingLink Link {
             get { return BackingStore?.Get<SharingLink>("link"); }
             set { BackingStore?.Set("link", value); }
         }
+#endif
         /// <summary>The type of permission, for example, read. See below for the full list of roles. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Roles {
+            get { return BackingStore?.Get<List<string>?>("roles"); }
+            set { BackingStore?.Set("roles", value); }
+        }
+#else
         public List<string> Roles {
             get { return BackingStore?.Get<List<string>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#endif
         /// <summary>A unique token that can be used to access this shared item via the [shares API][]. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ShareId {
+            get { return BackingStore?.Get<string?>("shareId"); }
+            set { BackingStore?.Set("shareId", value); }
+        }
+#else
         public string ShareId {
             get { return BackingStore?.Get<string>("shareId"); }
             set { BackingStore?.Set("shareId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

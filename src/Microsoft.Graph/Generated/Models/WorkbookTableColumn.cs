@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookTableColumn : Entity, IParsable {
         /// <summary>Retrieve the filter applied to the column. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookFilter? Filter {
+            get { return BackingStore?.Get<WorkbookFilter?>("filter"); }
+            set { BackingStore?.Set("filter", value); }
+        }
+#else
         public WorkbookFilter Filter {
             get { return BackingStore?.Get<WorkbookFilter>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
+#endif
         /// <summary>Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.</summary>
         public int? Index {
             get { return BackingStore?.Get<int?>("index"); }
             set { BackingStore?.Set("index", value); }
         }
         /// <summary>Returns the name of the table column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Json? Values {
+            get { return BackingStore?.Get<Json?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public Json Values {
             get { return BackingStore?.Get<Json>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

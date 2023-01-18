@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnenoteResource : OnenoteEntityBaseModel, IParsable {
         /// <summary>The content property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Content {
+            get { return BackingStore?.Get<byte[]?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The contentUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentUrl {
+            get { return BackingStore?.Get<string?>("contentUrl"); }
+            set { BackingStore?.Set("contentUrl", value); }
+        }
+#else
         public string ContentUrl {
             get { return BackingStore?.Get<string>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OnenoteResource and sets the default values.
         /// </summary>

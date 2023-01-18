@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesPublishingProfile : Entity, IParsable {
         /// <summary>List of existing onPremisesAgentGroup objects. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnPremisesAgentGroup>? AgentGroups {
+            get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
+            set { BackingStore?.Set("agentGroups", value); }
+        }
+#else
         public List<OnPremisesAgentGroup> AgentGroups {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
+#endif
         /// <summary>List of existing onPremisesAgent objects. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnPremisesAgent>? Agents {
+            get { return BackingStore?.Get<List<OnPremisesAgent>?>("agents"); }
+            set { BackingStore?.Set("agents", value); }
+        }
+#else
         public List<OnPremisesAgent> Agents {
             get { return BackingStore?.Get<List<OnPremisesAgent>>("agents"); }
             set { BackingStore?.Set("agents", value); }
         }
+#endif
         /// <summary>List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConnectorGroup>? ConnectorGroups {
+            get { return BackingStore?.Get<List<ConnectorGroup>?>("connectorGroups"); }
+            set { BackingStore?.Set("connectorGroups", value); }
+        }
+#else
         public List<ConnectorGroup> ConnectorGroups {
             get { return BackingStore?.Get<List<ConnectorGroup>>("connectorGroups"); }
             set { BackingStore?.Set("connectorGroups", value); }
         }
+#endif
         /// <summary>List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Connector>? Connectors {
+            get { return BackingStore?.Get<List<Connector>?>("connectors"); }
+            set { BackingStore?.Set("connectors", value); }
+        }
+#else
         public List<Connector> Connectors {
             get { return BackingStore?.Get<List<Connector>>("connectors"); }
             set { BackingStore?.Set("connectors", value); }
         }
+#endif
         /// <summary>Represents a hybridAgentUpdaterConfiguration object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration? HybridAgentUpdaterConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration?>("hybridAgentUpdaterConfiguration"); }
+            set { BackingStore?.Set("hybridAgentUpdaterConfiguration", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration HybridAgentUpdaterConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>("hybridAgentUpdaterConfiguration"); }
             set { BackingStore?.Set("hybridAgentUpdaterConfiguration", value); }
         }
+#endif
         /// <summary>The isDefaultAccessEnabled property</summary>
         public bool? IsDefaultAccessEnabled {
             get { return BackingStore?.Get<bool?>("isDefaultAccessEnabled"); }
@@ -41,10 +76,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>List of existing publishedResource objects. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PublishedResource>? PublishedResources {
+            get { return BackingStore?.Get<List<PublishedResource>?>("publishedResources"); }
+            set { BackingStore?.Set("publishedResources", value); }
+        }
+#else
         public List<PublishedResource> PublishedResources {
             get { return BackingStore?.Get<List<PublishedResource>>("publishedResources"); }
             set { BackingStore?.Set("publishedResources", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

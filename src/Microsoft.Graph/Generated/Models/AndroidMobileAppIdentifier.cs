@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidMobileAppIdentifier : MobileAppIdentifier, IParsable {
         /// <summary>The identifier for an app, as specified in the play store.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PackageId {
+            get { return BackingStore?.Get<string?>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
+        }
+#else
         public string PackageId {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidMobileAppIdentifier and sets the default values.
         /// </summary>

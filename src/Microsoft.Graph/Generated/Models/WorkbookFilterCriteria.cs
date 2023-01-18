@@ -14,50 +14,113 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The color property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Color {
+            get { return BackingStore?.Get<string?>("color"); }
+            set { BackingStore?.Set("color", value); }
+        }
+#else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#endif
         /// <summary>The criterion1 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Criterion1 {
+            get { return BackingStore?.Get<string?>("criterion1"); }
+            set { BackingStore?.Set("criterion1", value); }
+        }
+#else
         public string Criterion1 {
             get { return BackingStore?.Get<string>("criterion1"); }
             set { BackingStore?.Set("criterion1", value); }
         }
+#endif
         /// <summary>The criterion2 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Criterion2 {
+            get { return BackingStore?.Get<string?>("criterion2"); }
+            set { BackingStore?.Set("criterion2", value); }
+        }
+#else
         public string Criterion2 {
             get { return BackingStore?.Get<string>("criterion2"); }
             set { BackingStore?.Set("criterion2", value); }
         }
+#endif
         /// <summary>The dynamicCriteria property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DynamicCriteria {
+            get { return BackingStore?.Get<string?>("dynamicCriteria"); }
+            set { BackingStore?.Set("dynamicCriteria", value); }
+        }
+#else
         public string DynamicCriteria {
             get { return BackingStore?.Get<string>("dynamicCriteria"); }
             set { BackingStore?.Set("dynamicCriteria", value); }
         }
+#endif
         /// <summary>The filterOn property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FilterOn {
+            get { return BackingStore?.Get<string?>("filterOn"); }
+            set { BackingStore?.Set("filterOn", value); }
+        }
+#else
         public string FilterOn {
             get { return BackingStore?.Get<string>("filterOn"); }
             set { BackingStore?.Set("filterOn", value); }
         }
+#endif
         /// <summary>The icon property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookIcon? Icon {
+            get { return BackingStore?.Get<WorkbookIcon?>("icon"); }
+            set { BackingStore?.Set("icon", value); }
+        }
+#else
         public WorkbookIcon Icon {
             get { return BackingStore?.Get<WorkbookIcon>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The operator property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Operator {
+            get { return BackingStore?.Get<string?>("operator"); }
+            set { BackingStore?.Set("operator", value); }
+        }
+#else
         public string Operator {
             get { return BackingStore?.Get<string>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
+#endif
         /// <summary>The values property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Json? Values {
+            get { return BackingStore?.Get<Json?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public Json Values {
             get { return BackingStore?.Get<Json>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new workbookFilterCriteria and sets the default values.
         /// </summary>

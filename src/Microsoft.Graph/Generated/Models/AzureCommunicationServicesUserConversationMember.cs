@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureCommunicationServicesUserConversationMember : ConversationMember, IParsable {
         /// <summary>The azureCommunicationServicesId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureCommunicationServicesId {
+            get { return BackingStore?.Get<string?>("azureCommunicationServicesId"); }
+            set { BackingStore?.Set("azureCommunicationServicesId", value); }
+        }
+#else
         public string AzureCommunicationServicesId {
             get { return BackingStore?.Get<string>("azureCommunicationServicesId"); }
             set { BackingStore?.Set("azureCommunicationServicesId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AzureCommunicationServicesUserConversationMember and sets the default values.
         /// </summary>

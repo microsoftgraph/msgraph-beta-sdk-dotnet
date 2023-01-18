@@ -64,10 +64,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("groupWriteBackEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Used to indicate on-premise password synchronization is enabled.</summary>
         public bool? PasswordSyncEnabled {
             get { return BackingStore?.Get<bool?>("passwordSyncEnabled"); }

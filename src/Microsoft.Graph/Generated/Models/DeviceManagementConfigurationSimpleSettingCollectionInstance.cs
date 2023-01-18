@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSimpleSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable {
         /// <summary>Simple setting collection instance value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationSimpleSettingValue>? SimpleSettingCollectionValue {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSimpleSettingValue>?>("simpleSettingCollectionValue"); }
+            set { BackingStore?.Set("simpleSettingCollectionValue", value); }
+        }
+#else
         public List<DeviceManagementConfigurationSimpleSettingValue> SimpleSettingCollectionValue {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSimpleSettingValue>>("simpleSettingCollectionValue"); }
             set { BackingStore?.Set("simpleSettingCollectionValue", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationSimpleSettingCollectionInstance and sets the default values.
         /// </summary>

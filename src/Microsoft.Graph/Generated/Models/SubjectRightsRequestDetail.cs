@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("excludedItemCount", value); }
         }
         /// <summary>Count of items per insight.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? InsightCounts {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("insightCounts"); }
+            set { BackingStore?.Set("insightCounts", value); }
+        }
+#else
         public List<KeyValuePair> InsightCounts {
             get { return BackingStore?.Get<List<KeyValuePair>>("insightCounts"); }
             set { BackingStore?.Set("insightCounts", value); }
         }
+#endif
         /// <summary>Count of items found.</summary>
         public long? ItemCount {
             get { return BackingStore?.Get<long?>("itemCount"); }
@@ -34,15 +41,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("itemNeedReview", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? ProductItemCounts {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("productItemCounts"); }
+            set { BackingStore?.Set("productItemCounts", value); }
+        }
+#else
         public List<KeyValuePair> ProductItemCounts {
             get { return BackingStore?.Get<List<KeyValuePair>>("productItemCounts"); }
             set { BackingStore?.Set("productItemCounts", value); }
         }
+#endif
         /// <summary>Count of items signed off by the administrator.</summary>
         public long? SignedOffItemCount {
             get { return BackingStore?.Get<long?>("signedOffItemCount"); }

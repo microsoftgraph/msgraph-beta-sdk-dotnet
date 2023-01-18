@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expression property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Expression {
+            get { return BackingStore?.Get<string?>("expression"); }
+            set { BackingStore?.Set("expression", value); }
+        }
+#else
         public string Expression {
             get { return BackingStore?.Get<string>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The parameters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<StringKeyAttributeMappingSourceValuePair>? Parameters {
+            get { return BackingStore?.Get<List<StringKeyAttributeMappingSourceValuePair>?>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
+        }
+#else
         public List<StringKeyAttributeMappingSourceValuePair> Parameters {
             get { return BackingStore?.Get<List<StringKeyAttributeMappingSourceValuePair>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
+#endif
         /// <summary>The type property</summary>
         public AttributeMappingSourceType? Type {
             get { return BackingStore?.Get<AttributeMappingSourceType?>("type"); }

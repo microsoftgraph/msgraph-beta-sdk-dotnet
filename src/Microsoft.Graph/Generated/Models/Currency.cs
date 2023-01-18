@@ -6,35 +6,63 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Currency : Entity, IParsable {
         /// <summary>The amountDecimalPlaces property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AmountDecimalPlaces {
+            get { return BackingStore?.Get<string?>("amountDecimalPlaces"); }
+            set { BackingStore?.Set("amountDecimalPlaces", value); }
+        }
+#else
         public string AmountDecimalPlaces {
             get { return BackingStore?.Get<string>("amountDecimalPlaces"); }
             set { BackingStore?.Set("amountDecimalPlaces", value); }
         }
+#endif
         /// <summary>The amountRoundingPrecision property</summary>
         public decimal? AmountRoundingPrecision {
             get { return BackingStore?.Get<decimal?>("amountRoundingPrecision"); }
             set { BackingStore?.Set("amountRoundingPrecision", value); }
         }
         /// <summary>The code property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Code {
+            get { return BackingStore?.Get<string?>("code"); }
+            set { BackingStore?.Set("code", value); }
+        }
+#else
         public string Code {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The symbol property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Symbol {
+            get { return BackingStore?.Get<string?>("symbol"); }
+            set { BackingStore?.Set("symbol", value); }
+        }
+#else
         public string Symbol {
             get { return BackingStore?.Get<string>("symbol"); }
             set { BackingStore?.Set("symbol", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

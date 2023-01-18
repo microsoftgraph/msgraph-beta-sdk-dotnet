@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConditionalAccessDevicePlatform?>? ExcludePlatforms {
+            get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>?>("excludePlatforms"); }
+            set { BackingStore?.Set("excludePlatforms", value); }
+        }
+#else
         public List<ConditionalAccessDevicePlatform?> ExcludePlatforms {
             get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>>("excludePlatforms"); }
             set { BackingStore?.Set("excludePlatforms", value); }
         }
+#endif
         /// <summary>Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue,linux``.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConditionalAccessDevicePlatform?>? IncludePlatforms {
+            get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>?>("includePlatforms"); }
+            set { BackingStore?.Set("includePlatforms", value); }
+        }
+#else
         public List<ConditionalAccessDevicePlatform?> IncludePlatforms {
             get { return BackingStore?.Get<List<ConditionalAccessDevicePlatform?>>("includePlatforms"); }
             set { BackingStore?.Set("includePlatforms", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new conditionalAccessPlatforms and sets the default values.
         /// </summary>

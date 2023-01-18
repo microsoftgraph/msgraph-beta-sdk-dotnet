@@ -12,32 +12,67 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The attributes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AttributeDefinition>? Attributes {
+            get { return BackingStore?.Get<List<AttributeDefinition>?>("attributes"); }
+            set { BackingStore?.Set("attributes", value); }
+        }
+#else
         public List<AttributeDefinition> Attributes {
             get { return BackingStore?.Get<List<AttributeDefinition>>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MetadataEntry>? Metadata {
+            get { return BackingStore?.Get<List<MetadataEntry>?>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
+        }
+#else
         public List<MetadataEntry> Metadata {
             get { return BackingStore?.Get<List<MetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The supportedApis property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SupportedApis {
+            get { return BackingStore?.Get<List<string>?>("supportedApis"); }
+            set { BackingStore?.Set("supportedApis", value); }
+        }
+#else
         public List<string> SupportedApis {
             get { return BackingStore?.Get<List<string>>("supportedApis"); }
             set { BackingStore?.Set("supportedApis", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new objectDefinition and sets the default values.
         /// </summary>

@@ -11,25 +11,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("configurationDeployedUserCount", value); }
         }
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedAppPolicyDeploymentSummaryPerApp>? ConfigurationDeploymentSummaryPerApp {
+            get { return BackingStore?.Get<List<ManagedAppPolicyDeploymentSummaryPerApp>?>("configurationDeploymentSummaryPerApp"); }
+            set { BackingStore?.Set("configurationDeploymentSummaryPerApp", value); }
+        }
+#else
         public List<ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp {
             get { return BackingStore?.Get<List<ManagedAppPolicyDeploymentSummaryPerApp>>("configurationDeploymentSummaryPerApp"); }
             set { BackingStore?.Set("configurationDeploymentSummaryPerApp", value); }
         }
+#endif
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Not yet documented</summary>
         public DateTimeOffset? LastRefreshTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshTime"); }
             set { BackingStore?.Set("lastRefreshTime", value); }
         }
         /// <summary>Version of the entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

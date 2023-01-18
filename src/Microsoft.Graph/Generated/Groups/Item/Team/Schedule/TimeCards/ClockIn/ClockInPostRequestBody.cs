@@ -20,15 +20,29 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.ClockIn {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The notes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Notes {
+            get { return BackingStore?.Get<ItemBody?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#else
         public ItemBody Notes {
             get { return BackingStore?.Get<ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#endif
         /// <summary>The onBehalfOfUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnBehalfOfUserId {
+            get { return BackingStore?.Get<string?>("onBehalfOfUserId"); }
+            set { BackingStore?.Set("onBehalfOfUserId", value); }
+        }
+#else
         public string OnBehalfOfUserId {
             get { return BackingStore?.Get<string>("onBehalfOfUserId"); }
             set { BackingStore?.Set("onBehalfOfUserId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new clockInPostRequestBody and sets the default values.
         /// </summary>

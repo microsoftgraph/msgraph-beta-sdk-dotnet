@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The frequency of an event. Do not specify for a one-time access review.  For access reviews: Do not specify this property for a one-time access review.   Only interval, dayOfMonth, and type (weekly, absoluteMonthly) properties of recurrencePattern are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RecurrencePattern? Pattern {
+            get { return BackingStore?.Get<RecurrencePattern?>("pattern"); }
+            set { BackingStore?.Set("pattern", value); }
+        }
+#else
         public RecurrencePattern Pattern {
             get { return BackingStore?.Get<RecurrencePattern>("pattern"); }
             set { BackingStore?.Set("pattern", value); }
         }
+#endif
         /// <summary>The duration of an event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RecurrenceRange? Range {
+            get { return BackingStore?.Get<RecurrenceRange?>("range"); }
+            set { BackingStore?.Set("range", value); }
+        }
+#else
         public RecurrenceRange Range {
             get { return BackingStore?.Get<RecurrenceRange>("range"); }
             set { BackingStore?.Set("range", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new patternedRecurrence and sets the default values.
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class IpEvidence : AlertEvidence, IParsable {
         /// <summary>The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountryLetterCode {
+            get { return BackingStore?.Get<string?>("countryLetterCode"); }
+            set { BackingStore?.Set("countryLetterCode", value); }
+        }
+#else
         public string CountryLetterCode {
             get { return BackingStore?.Get<string>("countryLetterCode"); }
             set { BackingStore?.Set("countryLetterCode", value); }
         }
+#endif
         /// <summary>The value of the IP Address, can be either in V4 address or V6 address format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddress {
+            get { return BackingStore?.Get<string?>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
+        }
+#else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

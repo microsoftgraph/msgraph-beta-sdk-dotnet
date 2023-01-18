@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>ID of the selected level for this quality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ColumnId {
+            get { return BackingStore?.Get<string?>("columnId"); }
+            set { BackingStore?.Set("columnId", value); }
+        }
+#else
         public string ColumnId {
             get { return BackingStore?.Get<string>("columnId"); }
             set { BackingStore?.Set("columnId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>ID of the associated quality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QualityId {
+            get { return BackingStore?.Get<string?>("qualityId"); }
+            set { BackingStore?.Set("qualityId", value); }
+        }
+#else
         public string QualityId {
             get { return BackingStore?.Get<string>("qualityId"); }
             set { BackingStore?.Set("qualityId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new rubricQualitySelectedColumnModel and sets the default values.
         /// </summary>

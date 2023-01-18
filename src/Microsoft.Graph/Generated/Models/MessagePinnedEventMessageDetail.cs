@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MessagePinnedEventMessageDetail and sets the default values.
         /// </summary>

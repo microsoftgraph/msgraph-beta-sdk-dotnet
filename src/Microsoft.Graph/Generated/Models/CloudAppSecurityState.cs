@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Destination IP Address of the connection to the cloud application/service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DestinationServiceIp {
+            get { return BackingStore?.Get<string?>("destinationServiceIp"); }
+            set { BackingStore?.Set("destinationServiceIp", value); }
+        }
+#else
         public string DestinationServiceIp {
             get { return BackingStore?.Get<string>("destinationServiceIp"); }
             set { BackingStore?.Set("destinationServiceIp", value); }
         }
+#endif
         /// <summary>Cloud application/service name (for example &apos;Salesforce&apos;, &apos;DropBox&apos;, etc.).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DestinationServiceName {
+            get { return BackingStore?.Get<string?>("destinationServiceName"); }
+            set { BackingStore?.Set("destinationServiceName", value); }
+        }
+#else
         public string DestinationServiceName {
             get { return BackingStore?.Get<string>("destinationServiceName"); }
             set { BackingStore?.Set("destinationServiceName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RiskScore {
+            get { return BackingStore?.Get<string?>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
+        }
+#else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new cloudAppSecurityState and sets the default values.
         /// </summary>

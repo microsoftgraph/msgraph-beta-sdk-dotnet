@@ -9,25 +9,53 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MobileAppRelationship : Entity, IParsable {
         /// <summary>The target mobile app&apos;s display name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetDisplayName {
+            get { return BackingStore?.Get<string?>("targetDisplayName"); }
+            set { BackingStore?.Set("targetDisplayName", value); }
+        }
+#else
         public string TargetDisplayName {
             get { return BackingStore?.Get<string>("targetDisplayName"); }
             set { BackingStore?.Set("targetDisplayName", value); }
         }
+#endif
         /// <summary>The target mobile app&apos;s display version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetDisplayVersion {
+            get { return BackingStore?.Get<string?>("targetDisplayVersion"); }
+            set { BackingStore?.Set("targetDisplayVersion", value); }
+        }
+#else
         public string TargetDisplayVersion {
             get { return BackingStore?.Get<string>("targetDisplayVersion"); }
             set { BackingStore?.Set("targetDisplayVersion", value); }
         }
+#endif
         /// <summary>The target mobile app&apos;s app id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetId {
+            get { return BackingStore?.Get<string?>("targetId"); }
+            set { BackingStore?.Set("targetId", value); }
+        }
+#else
         public string TargetId {
             get { return BackingStore?.Get<string>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
         }
+#endif
         /// <summary>The target mobile app&apos;s publisher.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetPublisher {
+            get { return BackingStore?.Get<string?>("targetPublisher"); }
+            set { BackingStore?.Set("targetPublisher", value); }
+        }
+#else
         public string TargetPublisher {
             get { return BackingStore?.Get<string>("targetPublisher"); }
             set { BackingStore?.Set("targetPublisher", value); }
         }
+#endif
         /// <summary>Indicates whether the target of a relationship is the parent or the child in the relationship.</summary>
         public MobileAppRelationshipType? TargetType {
             get { return BackingStore?.Get<MobileAppRelationshipType?>("targetType"); }

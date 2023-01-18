@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UrlAssessmentRequest : ThreatAssessmentRequest, IParsable {
         /// <summary>The URL string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Url {
+            get { return BackingStore?.Get<string?>("url"); }
+            set { BackingStore?.Set("url", value); }
+        }
+#else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new UrlAssessmentRequest and sets the default values.
         /// </summary>

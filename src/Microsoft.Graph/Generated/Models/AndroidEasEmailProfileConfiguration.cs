@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidEasEmailProfileConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccountName {
+            get { return BackingStore?.Get<string?>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
+        }
+#else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#endif
         /// <summary>Exchange Active Sync authentication method.</summary>
         public EasAuthenticationMethod? AuthenticationMethod {
             get { return BackingStore?.Get<EasAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomDomainName {
+            get { return BackingStore?.Get<string?>("customDomainName"); }
+            set { BackingStore?.Set("customDomainName", value); }
+        }
+#else
         public string CustomDomainName {
             get { return BackingStore?.Get<string>("customDomainName"); }
             set { BackingStore?.Set("customDomainName", value); }
         }
+#endif
         /// <summary>Possible values for email sync duration.</summary>
         public EmailSyncDuration? DurationOfEmailToSync {
             get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
@@ -36,15 +50,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("emailSyncSchedule", value); }
         }
         /// <summary>Exchange location (URL) that the native mail app connects to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HostName {
+            get { return BackingStore?.Get<string?>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
+        }
+#else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#endif
         /// <summary>Identity certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidCertificateProfileBase? IdentityCertificate {
+            get { return BackingStore?.Get<AndroidCertificateProfileBase?>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
+        }
+#else
         public AndroidCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<AndroidCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#endif
         /// <summary>Indicates whether or not to use S/MIME certificate.</summary>
         public bool? RequireSmime {
             get { return BackingStore?.Get<bool?>("requireSmime"); }
@@ -56,10 +84,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requireSsl", value); }
         }
         /// <summary>S/MIME signing certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidCertificateProfileBase? SmimeSigningCertificate {
+            get { return BackingStore?.Get<AndroidCertificateProfileBase?>("smimeSigningCertificate"); }
+            set { BackingStore?.Set("smimeSigningCertificate", value); }
+        }
+#else
         public AndroidCertificateProfileBase SmimeSigningCertificate {
             get { return BackingStore?.Get<AndroidCertificateProfileBase>("smimeSigningCertificate"); }
             set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
+#endif
         /// <summary>Toggles syncing the calendar. If set to false calendar is turned off on the device.</summary>
         public bool? SyncCalendar {
             get { return BackingStore?.Get<bool?>("syncCalendar"); }

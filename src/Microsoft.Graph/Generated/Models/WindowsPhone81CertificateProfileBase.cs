@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateValidityPeriodValue", value); }
         }
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExtendedKeyUsage>? ExtendedKeyUsages {
+            get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
+            set { BackingStore?.Set("extendedKeyUsages", value); }
+        }
+#else
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
+#endif
         /// <summary>Key Storage Provider (KSP) Import Options.</summary>
         public KeyStorageProviderOption? KeyStorageProvider {
             get { return BackingStore?.Get<KeyStorageProviderOption?>("keyStorageProvider"); }

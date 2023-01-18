@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrintOperationStatus? Status {
+            get { return BackingStore?.Get<PrintOperationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public PrintOperationStatus Status {
             get { return BackingStore?.Get<PrintOperationStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

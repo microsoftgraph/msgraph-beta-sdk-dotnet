@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MacOSSoftwareUpdateCategorySummary : Entity, IParsable {
         /// <summary>The device ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The name of the report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Number of failed updates on the device</summary>
         public int? FailedUpdateCount {
             get { return BackingStore?.Get<int?>("failedUpdateCount"); }
@@ -44,15 +58,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>Summary of the update states.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSSoftwareUpdateStateSummary>? UpdateStateSummaries {
+            get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>?>("updateStateSummaries"); }
+            set { BackingStore?.Set("updateStateSummaries", value); }
+        }
+#else
         public List<MacOSSoftwareUpdateStateSummary> UpdateStateSummaries {
             get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>>("updateStateSummaries"); }
             set { BackingStore?.Set("updateStateSummaries", value); }
         }
+#endif
         /// <summary>The user ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

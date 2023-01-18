@@ -14,40 +14,89 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The conference id of the online meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConferenceId {
+            get { return BackingStore?.Get<string?>("conferenceId"); }
+            set { BackingStore?.Set("conferenceId", value); }
+        }
+#else
         public string ConferenceId {
             get { return BackingStore?.Get<string>("conferenceId"); }
             set { BackingStore?.Set("conferenceId", value); }
         }
+#endif
         /// <summary>A URL to the externally-accessible web page that contains dial-in information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DialinUrl {
+            get { return BackingStore?.Get<string?>("dialinUrl"); }
+            set { BackingStore?.Set("dialinUrl", value); }
+        }
+#else
         public string DialinUrl {
             get { return BackingStore?.Get<string>("dialinUrl"); }
             set { BackingStore?.Set("dialinUrl", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The tollFreeNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TollFreeNumber {
+            get { return BackingStore?.Get<string?>("tollFreeNumber"); }
+            set { BackingStore?.Set("tollFreeNumber", value); }
+        }
+#else
         public string TollFreeNumber {
             get { return BackingStore?.Get<string>("tollFreeNumber"); }
             set { BackingStore?.Set("tollFreeNumber", value); }
         }
+#endif
         /// <summary>List of toll-free numbers that are displayed in the meeting invite.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TollFreeNumbers {
+            get { return BackingStore?.Get<List<string>?>("tollFreeNumbers"); }
+            set { BackingStore?.Set("tollFreeNumbers", value); }
+        }
+#else
         public List<string> TollFreeNumbers {
             get { return BackingStore?.Get<List<string>>("tollFreeNumbers"); }
             set { BackingStore?.Set("tollFreeNumbers", value); }
         }
+#endif
         /// <summary>The tollNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TollNumber {
+            get { return BackingStore?.Get<string?>("tollNumber"); }
+            set { BackingStore?.Set("tollNumber", value); }
+        }
+#else
         public string TollNumber {
             get { return BackingStore?.Get<string>("tollNumber"); }
             set { BackingStore?.Set("tollNumber", value); }
         }
+#endif
         /// <summary>List of toll numbers that are displayed in the meeting invite.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TollNumbers {
+            get { return BackingStore?.Get<List<string>?>("tollNumbers"); }
+            set { BackingStore?.Set("tollNumbers", value); }
+        }
+#else
         public List<string> TollNumbers {
             get { return BackingStore?.Get<List<string>>("tollNumbers"); }
             set { BackingStore?.Set("tollNumbers", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new audioConferencing and sets the default values.
         /// </summary>

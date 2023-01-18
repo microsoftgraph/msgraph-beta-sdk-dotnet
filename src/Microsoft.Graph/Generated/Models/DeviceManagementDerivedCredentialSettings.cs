@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementDerivedCredentialSettings : Entity, IParsable {
         /// <summary>The display name for the profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HelpUrl {
+            get { return BackingStore?.Get<string?>("helpUrl"); }
+            set { BackingStore?.Set("helpUrl", value); }
+        }
+#else
         public string HelpUrl {
             get { return BackingStore?.Get<string>("helpUrl"); }
             set { BackingStore?.Set("helpUrl", value); }
         }
+#endif
         /// <summary>Supported values for the derived credential issuer.</summary>
         public DeviceManagementDerivedCredentialIssuer? Issuer {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialIssuer?>("issuer"); }

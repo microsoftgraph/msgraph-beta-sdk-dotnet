@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartPoint : Entity, IParsable {
         /// <summary>Encapsulates the format properties chart point. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartPointFormat? Format {
+            get { return BackingStore?.Get<WorkbookChartPointFormat?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public WorkbookChartPointFormat Format {
             get { return BackingStore?.Get<WorkbookChartPointFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>Returns the value of a chart point. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Json? Value {
+            get { return BackingStore?.Get<Json?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public Json Value {
             get { return BackingStore?.Get<Json>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ClassificationError : ClassifcationErrorBase, IParsable {
         /// <summary>The details property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ClassifcationErrorBase>? Details {
+            get { return BackingStore?.Get<List<ClassifcationErrorBase>?>("details"); }
+            set { BackingStore?.Set("details", value); }
+        }
+#else
         public List<ClassifcationErrorBase> Details {
             get { return BackingStore?.Get<List<ClassifcationErrorBase>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

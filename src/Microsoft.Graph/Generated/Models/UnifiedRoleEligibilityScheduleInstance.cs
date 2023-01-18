@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Membership type of the assignment. It can either be Inherited, Direct, or Group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MemberType {
+            get { return BackingStore?.Get<string?>("memberType"); }
+            set { BackingStore?.Set("memberType", value); }
+        }
+#else
         public string MemberType {
             get { return BackingStore?.Get<string>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
+#endif
         /// <summary>Identifier of the parent roleEligibilitySchedule for this instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleEligibilityScheduleId {
+            get { return BackingStore?.Get<string?>("roleEligibilityScheduleId"); }
+            set { BackingStore?.Set("roleEligibilityScheduleId", value); }
+        }
+#else
         public string RoleEligibilityScheduleId {
             get { return BackingStore?.Get<string>("roleEligibilityScheduleId"); }
             set { BackingStore?.Set("roleEligibilityScheduleId", value); }
         }
+#endif
         /// <summary>Time that the roleEligibilityScheduleInstance will start.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }

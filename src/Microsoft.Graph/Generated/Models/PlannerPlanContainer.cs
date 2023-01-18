@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of the resource that contains the plan. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContainerId {
+            get { return BackingStore?.Get<string?>("containerId"); }
+            set { BackingStore?.Set("containerId", value); }
+        }
+#else
         public string ContainerId {
             get { return BackingStore?.Get<string>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project. Optional.</summary>
         public PlannerContainerType? Type {
             get { return BackingStore?.Get<PlannerContainerType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The full canonical URL of the container. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Url {
+            get { return BackingStore?.Get<string?>("url"); }
+            set { BackingStore?.Set("url", value); }
+        }
+#else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new plannerPlanContainer and sets the default values.
         /// </summary>

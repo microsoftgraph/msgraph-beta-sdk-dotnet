@@ -6,75 +6,173 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ReportRoot : Entity, IParsable {
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>? ApplicationSignInDetailedSummary {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>?>("applicationSignInDetailedSummary"); }
+            set { BackingStore?.Set("applicationSignInDetailedSummary", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary> ApplicationSignInDetailedSummary {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>>("applicationSignInDetailedSummary"); }
             set { BackingStore?.Set("applicationSignInDetailedSummary", value); }
         }
+#endif
         /// <summary>Container for navigation properties for Azure AD authentication methods resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuthenticationMethodsRoot? AuthenticationMethods {
+            get { return BackingStore?.Get<AuthenticationMethodsRoot?>("authenticationMethods"); }
+            set { BackingStore?.Set("authenticationMethods", value); }
+        }
+#else
         public AuthenticationMethodsRoot AuthenticationMethods {
             get { return BackingStore?.Get<AuthenticationMethodsRoot>("authenticationMethods"); }
             set { BackingStore?.Set("authenticationMethods", value); }
         }
+#endif
         /// <summary>Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>? CredentialUserRegistrationDetails {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>?>("credentialUserRegistrationDetails"); }
+            set { BackingStore?.Set("credentialUserRegistrationDetails", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails> CredentialUserRegistrationDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>>("credentialUserRegistrationDetails"); }
             set { BackingStore?.Set("credentialUserRegistrationDetails", value); }
         }
+#endif
         /// <summary>The dailyPrintUsage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintUsage>? DailyPrintUsage {
+            get { return BackingStore?.Get<List<PrintUsage>?>("dailyPrintUsage"); }
+            set { BackingStore?.Set("dailyPrintUsage", value); }
+        }
+#else
         public List<PrintUsage> DailyPrintUsage {
             get { return BackingStore?.Get<List<PrintUsage>>("dailyPrintUsage"); }
             set { BackingStore?.Set("dailyPrintUsage", value); }
         }
+#endif
         /// <summary>The dailyPrintUsageByPrinter property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintUsageByPrinter>? DailyPrintUsageByPrinter {
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("dailyPrintUsageByPrinter"); }
+            set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
+        }
+#else
         public List<PrintUsageByPrinter> DailyPrintUsageByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
+#endif
         /// <summary>The dailyPrintUsageByUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintUsageByUser>? DailyPrintUsageByUser {
+            get { return BackingStore?.Get<List<PrintUsageByUser>?>("dailyPrintUsageByUser"); }
+            set { BackingStore?.Set("dailyPrintUsageByUser", value); }
+        }
+#else
         public List<PrintUsageByUser> DailyPrintUsageByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageByUser"); }
             set { BackingStore?.Set("dailyPrintUsageByUser", value); }
         }
+#endif
         /// <summary>The dailyPrintUsageSummariesByPrinter property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintUsageByPrinter>? DailyPrintUsageSummariesByPrinter {
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("dailyPrintUsageSummariesByPrinter"); }
+            set { BackingStore?.Set("dailyPrintUsageSummariesByPrinter", value); }
+        }
+#else
         public List<PrintUsageByPrinter> DailyPrintUsageSummariesByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageSummariesByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageSummariesByPrinter", value); }
         }
+#endif
         /// <summary>The dailyPrintUsageSummariesByUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintUsageByUser>? DailyPrintUsageSummariesByUser {
+            get { return BackingStore?.Get<List<PrintUsageByUser>?>("dailyPrintUsageSummariesByUser"); }
+            set { BackingStore?.Set("dailyPrintUsageSummariesByUser", value); }
+        }
+#else
         public List<PrintUsageByUser> DailyPrintUsageSummariesByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageSummariesByUser"); }
             set { BackingStore?.Set("dailyPrintUsageSummariesByUser", value); }
         }
+#endif
         /// <summary>The monthlyPrintUsageByPrinter property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintUsageByPrinter>? MonthlyPrintUsageByPrinter {
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("monthlyPrintUsageByPrinter"); }
+            set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
+        }
+#else
         public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
+#endif
         /// <summary>The monthlyPrintUsageByUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintUsageByUser>? MonthlyPrintUsageByUser {
+            get { return BackingStore?.Get<List<PrintUsageByUser>?>("monthlyPrintUsageByUser"); }
+            set { BackingStore?.Set("monthlyPrintUsageByUser", value); }
+        }
+#else
         public List<PrintUsageByUser> MonthlyPrintUsageByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageByUser", value); }
         }
+#endif
         /// <summary>The monthlyPrintUsageSummariesByPrinter property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintUsageByPrinter>? MonthlyPrintUsageSummariesByPrinter {
+            get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("monthlyPrintUsageSummariesByPrinter"); }
+            set { BackingStore?.Set("monthlyPrintUsageSummariesByPrinter", value); }
+        }
+#else
         public List<PrintUsageByPrinter> MonthlyPrintUsageSummariesByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageSummariesByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageSummariesByPrinter", value); }
         }
+#endif
         /// <summary>The monthlyPrintUsageSummariesByUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintUsageByUser>? MonthlyPrintUsageSummariesByUser {
+            get { return BackingStore?.Get<List<PrintUsageByUser>?>("monthlyPrintUsageSummariesByUser"); }
+            set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
+        }
+#else
         public List<PrintUsageByUser> MonthlyPrintUsageSummariesByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageSummariesByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
         }
+#endif
         /// <summary>Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SecurityReportsRoot? Security {
+            get { return BackingStore?.Get<SecurityReportsRoot?>("security"); }
+            set { BackingStore?.Set("security", value); }
+        }
+#else
         public SecurityReportsRoot Security {
             get { return BackingStore?.Get<SecurityReportsRoot>("security"); }
             set { BackingStore?.Set("security", value); }
         }
+#endif
         /// <summary>Represents the self-service password reset (SSPR) usage for a given tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>? UserCredentialUsageDetails {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>?>("userCredentialUsageDetails"); }
+            set { BackingStore?.Set("userCredentialUsageDetails", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails> UserCredentialUsageDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>>("userCredentialUsageDetails"); }
             set { BackingStore?.Set("userCredentialUsageDetails", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

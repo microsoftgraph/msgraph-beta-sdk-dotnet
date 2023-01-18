@@ -6,50 +6,99 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicy : Entity, IParsable {
         /// <summary>Description for the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Display name for the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnifiedRoleManagementPolicyRule>? EffectiveRules {
+            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>?>("effectiveRules"); }
+            set { BackingStore?.Set("effectiveRules", value); }
+        }
+#else
         public List<UnifiedRoleManagementPolicyRule> EffectiveRules {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>("effectiveRules"); }
             set { BackingStore?.Set("effectiveRules", value); }
         }
+#endif
         /// <summary>This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).</summary>
         public bool? IsOrganizationDefault {
             get { return BackingStore?.Get<bool?>("isOrganizationDefault"); }
             set { BackingStore?.Set("isOrganizationDefault", value); }
         }
         /// <summary>The identity who last modified the role setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? LastModifiedBy {
+            get { return BackingStore?.Get<Identity?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public Identity LastModifiedBy {
             get { return BackingStore?.Get<Identity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The time when the role setting was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The collection of rules like approval rules and expiration rules. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnifiedRoleManagementPolicyRule>? Rules {
+            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>?>("rules"); }
+            set { BackingStore?.Set("rules", value); }
+        }
+#else
         public List<UnifiedRoleManagementPolicyRule> Rules {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
+#endif
         /// <summary>The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScopeId {
+            get { return BackingStore?.Get<string?>("scopeId"); }
+            set { BackingStore?.Set("scopeId", value); }
+        }
+#else
         public string ScopeId {
             get { return BackingStore?.Get<string>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
+#endif
         /// <summary>The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScopeType {
+            get { return BackingStore?.Get<string?>("scopeType"); }
+            set { BackingStore?.Set("scopeType", value); }
+        }
+#else
         public string ScopeType {
             get { return BackingStore?.Get<string>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
