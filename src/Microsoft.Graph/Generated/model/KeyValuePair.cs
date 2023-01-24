@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets name.
-        /// Name for this key-value pair
+        /// Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets value.
-        /// Value for this key-value pair
+        /// Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
         /// </summary>
         [JsonPropertyName("value")]
         public string Value { get; set; }

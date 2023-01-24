@@ -29,24 +29,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets fromEmail.
+        /// Email address of the user.
         /// </summary>
         [JsonPropertyName("fromEmail")]
         public string FromEmail { get; set; }
     
         /// <summary>
         /// Gets or sets fromName.
+        /// Display name of the user.
         /// </summary>
         [JsonPropertyName("fromName")]
         public string FromName { get; set; }
     
         /// <summary>
         /// Gets or sets isExternalSender.
+        /// Indicates whether the sender is not from the user's organization.
         /// </summary>
         [JsonPropertyName("isExternalSender")]
         public bool? IsExternalSender { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
+        /// The subject of the email address sent to the user.
         /// </summary>
         [JsonPropertyName("subject")]
         public string Subject { get; set; }

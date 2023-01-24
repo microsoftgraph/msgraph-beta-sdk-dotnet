@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets automatic user consent settings.
+        /// Determines the default configuration for automatic user consent settings. inboundAllowed and outboundAllowed will always be false and cannot be updated in the default configuration. Read only.
+        /// </summary>
+        [JsonPropertyName("automaticUserConsentSettings")]
+        public InboundOutboundPolicyConfiguration AutomaticUserConsentSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets b2b collaboration inbound.
         /// Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
         /// </summary>

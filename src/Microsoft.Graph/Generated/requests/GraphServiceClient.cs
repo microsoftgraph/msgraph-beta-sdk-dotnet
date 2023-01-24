@@ -73,17 +73,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceWorkbooks request builder.
-        /// </summary>
-        public virtual IGraphServiceWorkbooksCollectionRequestBuilder Workbooks
-        {
-            get
-            {
-                return new GraphServiceWorkbooksCollectionRequestBuilder(this.BaseUrl + "/workbooks", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
         public virtual IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects

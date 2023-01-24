@@ -23,30 +23,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last action date time.
+        /// The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastActionDateTime")]
         public DateTimeOffset? LastActionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets resource location.
+        /// URI of the resource that the operation is performed on.
         /// </summary>
         [JsonPropertyName("resourceLocation")]
         public string ResourceLocation { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public LongRunningOperationStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets status detail.
+        /// Details about the status of the operation.
         /// </summary>
         [JsonPropertyName("statusDetail")]
         public string StatusDetail { get; set; }

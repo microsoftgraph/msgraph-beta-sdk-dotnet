@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new CrossTenantAccessPolicyConfigurationPartnerRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for IdentitySynchronization.
+        /// </summary>
+        /// <returns>The <see cref="ICrossTenantIdentitySyncPolicyPartnerRequestBuilder"/>.</returns>
+        public ICrossTenantIdentitySyncPolicyPartnerRequestBuilder IdentitySynchronization
+        {
+            get
+            {
+                return new CrossTenantIdentitySyncPolicyPartnerRequestBuilder(this.AppendSegmentToRequestUrl("identitySynchronization"), this.Client);
+            }
+        }
+    
     }
 }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// The interface IDirectoryImpactedResourcesCollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(InterfaceConverter<DirectoryImpactedResourcesCollectionPage>))]
-    public interface IDirectoryImpactedResourcesCollectionPage : ICollectionPage<RecommendationResource>
+    public interface IDirectoryImpactedResourcesCollectionPage : ICollectionPage<ImpactedResource>
     {
         /// <summary>
         /// Gets the next page <see cref="IDirectoryImpactedResourcesCollectionRequest"/> instance.

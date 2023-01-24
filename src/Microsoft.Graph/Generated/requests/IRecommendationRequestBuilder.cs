@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IRecommendationRequestBuilder.
     /// </summary>
-    public partial interface IRecommendationRequestBuilder : IEntityRequestBuilder
+    public partial interface IRecommendationRequestBuilder : IRecommendationBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
@@ -30,12 +30,6 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         new IRecommendationRequest Request(IEnumerable<Option> options);
-    
-        /// <summary>
-        /// Gets the request builder for ImpactedResources.
-        /// </summary>
-        /// <returns>The <see cref="IRecommendationImpactedResourcesCollectionRequestBuilder"/>.</returns>
-        IRecommendationImpactedResourcesCollectionRequestBuilder ImpactedResources { get; }
     
         /// <summary>
         /// Gets the request builder for RecommendationComplete.

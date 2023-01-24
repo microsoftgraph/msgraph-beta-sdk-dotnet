@@ -79,18 +79,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets duration in days.
+        /// Simulation duration in days.
         /// </summary>
         [JsonPropertyName("durationInDays")]
         public Int32? DurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets excluded account target.
+        /// Users excluded from the simulation.
         /// </summary>
         [JsonPropertyName("excludedAccountTarget")]
         public AccountTargetContent ExcludedAccountTarget { get; set; }
     
         /// <summary>
         /// Gets or sets included account target.
+        /// Users targeted in the simulation.
         /// </summary>
         [JsonPropertyName("includedAccountTarget")]
         public AccountTargetContent IncludedAccountTarget { get; set; }
@@ -146,6 +149,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets payload.
+        /// The payload associated with a simulation during its creation.
         /// </summary>
         [JsonPropertyName("payload")]
         public Payload Payload { get; set; }

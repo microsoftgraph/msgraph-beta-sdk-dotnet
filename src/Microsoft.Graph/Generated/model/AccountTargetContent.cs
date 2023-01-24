@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets type.
+        /// The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.
         /// </summary>
         [JsonPropertyName("type")]
         public AccountTargetContentType? Type { get; set; }

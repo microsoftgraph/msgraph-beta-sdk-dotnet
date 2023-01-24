@@ -23,36 +23,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets coachmarkLocation.
+        /// The coachmark location.
         /// </summary>
         [JsonPropertyName("coachmarkLocation")]
         public CoachmarkLocation CoachmarkLocation { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description about the coachmark.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets indicator.
+        /// The coachmark indicator.
         /// </summary>
         [JsonPropertyName("indicator")]
         public string Indicator { get; set; }
     
         /// <summary>
         /// Gets or sets isValid.
+        /// Indicates whether the coachmark is valid or not.
         /// </summary>
         [JsonPropertyName("isValid")]
         public bool? IsValid { get; set; }
     
         /// <summary>
         /// Gets or sets language.
+        /// The coachmark language.
         /// </summary>
         [JsonPropertyName("language")]
         public string Language { get; set; }
     
         /// <summary>
         /// Gets or sets order.
+        /// The coachmark order.
         /// </summary>
         [JsonPropertyName("order")]
         public string Order { get; set; }

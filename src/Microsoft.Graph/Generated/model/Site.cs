@@ -70,6 +70,12 @@ namespace Microsoft.Graph
         public SiteCollection SiteCollection { get; set; }
     
         /// <summary>
+        /// Gets or sets information protection.
+        /// </summary>
+        [JsonPropertyName("informationProtection")]
+        public InformationProtection InformationProtection { get; set; }
+    
+        /// <summary>
         /// Gets or sets analytics.
         /// Analytics about the view activities that took place in this site.
         /// </summary>

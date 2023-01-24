@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ISiteRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for InformationProtection.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionRequestBuilder"/>.</returns>
+        IInformationProtectionRequestBuilder InformationProtection { get; }
+
+        /// <summary>
         /// Gets the request builder for Analytics.
         /// </summary>
         /// <returns>The <see cref="IItemAnalyticsWithReferenceRequestBuilder"/>.</returns>

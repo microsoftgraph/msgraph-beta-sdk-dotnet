@@ -244,18 +244,6 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Recommendation recommendationToInitialize)
         {
 
-            if (recommendationToInitialize != null)
-            {
-                if (recommendationToInitialize.ImpactedResources != null && recommendationToInitialize.ImpactedResources.CurrentPage != null)
-                {
-                    recommendationToInitialize.ImpactedResources.InitializeNextPageRequest(this.Client, recommendationToInitialize.ImpactedResourcesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    recommendationToInitialize.ImpactedResources.AdditionalData = recommendationToInitialize.AdditionalData;
-                }
-
-            }
-
-
         }
     }
 }

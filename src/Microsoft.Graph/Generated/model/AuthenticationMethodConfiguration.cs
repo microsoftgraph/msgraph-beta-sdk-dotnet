@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets exclude targets.
+        /// Groups of users that are excluded from a policy.
+        /// </summary>
+        [JsonPropertyName("excludeTargets")]
+        public IEnumerable<ExcludeTarget> ExcludeTargets { get; set; }
+    
+        /// <summary>
         /// Gets or sets state.
         /// The state of the policy. Possible values are: enabled, disabled.
         /// </summary>

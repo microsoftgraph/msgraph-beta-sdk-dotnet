@@ -105,6 +105,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IColumnDefinitionRequestBuilder"/>.</returns>
         IColumnDefinitionRequestBuilder ExternalColumns  { get; }
         /// <summary>
+        /// Gets the request builder for InformationProtection.
+        /// 
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionRequestBuilder"/>.</returns>
+        IInformationProtectionRequestBuilder InformationProtection  { get; }
+        /// <summary>
         /// Gets the request builder for Items.
         /// Used to address any item contained in this site. This collection cannot be enumerated.
         /// </summary>

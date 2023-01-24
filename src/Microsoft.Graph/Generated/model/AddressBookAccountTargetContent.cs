@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accountTargetEmails.
+        /// List of user emails targeted for an attack simulation training campaign.
         /// </summary>
         [JsonPropertyName("accountTargetEmails")]
         public IEnumerable<string> AccountTargetEmails { get; set; }

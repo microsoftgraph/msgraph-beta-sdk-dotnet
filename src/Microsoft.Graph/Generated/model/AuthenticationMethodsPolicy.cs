@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Authentication Methods Policy.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AuthenticationMethodsPolicy>))]
     public partial class AuthenticationMethodsPolicy : Entity
     {
     
@@ -40,6 +41,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policy migration state.
+        /// The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authenication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
+        /// </summary>
+        [JsonPropertyName("policyMigrationState")]
+        public AuthenticationMethodsPolicyMigrationState? PolicyMigrationState { get; set; }
     
         /// <summary>
         /// Gets or sets policy version.

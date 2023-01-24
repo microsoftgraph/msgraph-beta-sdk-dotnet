@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets customKeyIdentifier.
-        /// Custom key identifier
+        /// A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
         /// </summary>
         [JsonPropertyName("customKeyIdentifier")]
         public byte[] CustomKeyIdentifier { get; set; }
