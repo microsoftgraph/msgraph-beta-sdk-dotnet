@@ -52,7 +52,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -69,7 +71,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<DeviceCompliancePolicySettingStateSummary?> GetAsync(Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<DeviceCompliancePolicySettingStateSummary> GetAsync(Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -87,7 +91,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<DeviceCompliancePolicySettingStateSummary?> PatchAsync(DeviceCompliancePolicySettingStateSummary body, Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<DeviceCompliancePolicySettingStateSummary> PatchAsync(DeviceCompliancePolicySettingStateSummary body, Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -104,7 +110,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -126,7 +134,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -151,7 +161,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(DeviceCompliancePolicySettingStateSummary body, Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(DeviceCompliancePolicySettingStateSummary body, Action<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -193,16 +205,20 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         public class DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

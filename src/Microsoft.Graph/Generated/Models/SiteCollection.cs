@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The geographic region code for where this site collection resides. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DataLocationCode {
             get { return BackingStore?.Get<string?>("dataLocationCode"); }
             set { BackingStore?.Set("dataLocationCode", value); }
         }
+#nullable restore
 #else
         public string DataLocationCode {
             get { return BackingStore?.Get<string>("dataLocationCode"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The hostname for the site collection. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Hostname {
             get { return BackingStore?.Get<string?>("hostname"); }
             set { BackingStore?.Set("hostname", value); }
         }
+#nullable restore
 #else
         public string Hostname {
             get { return BackingStore?.Get<string>("hostname"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If present, indicates that this is a root site collection in SharePoint. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Root? Root {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Root?>("root"); }
             set { BackingStore?.Set("root", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Root Root {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Root>("root"); }

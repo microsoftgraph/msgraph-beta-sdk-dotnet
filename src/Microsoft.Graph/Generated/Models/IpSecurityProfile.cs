@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IpSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ActivityGroupNames {
             get { return BackingStore?.Get<List<string>?>("activityGroupNames"); }
             set { BackingStore?.Set("activityGroupNames", value); }
         }
+#nullable restore
 #else
         public List<string> ActivityGroupNames {
             get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Address {
             get { return BackingStore?.Get<string?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#nullable restore
 #else
         public string Address {
             get { return BackingStore?.Get<string>("address"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The azureSubscriptionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureSubscriptionId {
             get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
+#nullable restore
 #else
         public string AzureSubscriptionId {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The azureTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureTenantId {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#nullable restore
 #else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ipCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IpCategory>? IpCategories {
             get { return BackingStore?.Get<List<IpCategory>?>("ipCategories"); }
             set { BackingStore?.Set("ipCategories", value); }
         }
+#nullable restore
 #else
         public List<IpCategory> IpCategories {
             get { return BackingStore?.Get<List<IpCategory>>("ipCategories"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ipReferenceData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.IpReferenceData>? IpReferenceData {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpReferenceData>?>("ipReferenceData"); }
             set { BackingStore?.Set("ipReferenceData", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.IpReferenceData> IpReferenceData {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IpReferenceData>>("ipReferenceData"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The riskScore property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RiskScore {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#nullable restore
 #else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Tags {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#nullable restore
 #else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SecurityVendorInformation? VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#nullable restore
 #else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }

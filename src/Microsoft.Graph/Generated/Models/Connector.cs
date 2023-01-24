@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Connector : Entity, IParsable {
         /// <summary>The external IP address as detected by the the connector server. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalIp {
             get { return BackingStore?.Get<string?>("externalIp"); }
             set { BackingStore?.Set("externalIp", value); }
         }
+#nullable restore
 #else
         public string ExternalIp {
             get { return BackingStore?.Get<string>("externalIp"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The machine name the connector is installed and running on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MachineName {
             get { return BackingStore?.Get<string?>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
+#nullable restore
 #else
         public string MachineName {
             get { return BackingStore?.Get<string>("machineName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The connectorGroup that the connector is a member of. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConnectorGroup>? MemberOf {
             get { return BackingStore?.Get<List<ConnectorGroup>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
+#nullable restore
 #else
         public List<ConnectorGroup> MemberOf {
             get { return BackingStore?.Get<List<ConnectorGroup>>("memberOf"); }

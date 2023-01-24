@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApprovalWorkflowProvider : Entity, IParsable {
         /// <summary>The businessFlows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BusinessFlow>? BusinessFlows {
             get { return BackingStore?.Get<List<BusinessFlow>?>("businessFlows"); }
             set { BackingStore?.Set("businessFlows", value); }
         }
+#nullable restore
 #else
         public List<BusinessFlow> BusinessFlows {
             get { return BackingStore?.Get<List<BusinessFlow>>("businessFlows"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The businessFlowsWithRequestsAwaitingMyDecision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BusinessFlow>? BusinessFlowsWithRequestsAwaitingMyDecision {
             get { return BackingStore?.Get<List<BusinessFlow>?>("businessFlowsWithRequestsAwaitingMyDecision"); }
             set { BackingStore?.Set("businessFlowsWithRequestsAwaitingMyDecision", value); }
         }
+#nullable restore
 #else
         public List<BusinessFlow> BusinessFlowsWithRequestsAwaitingMyDecision {
             get { return BackingStore?.Get<List<BusinessFlow>>("businessFlowsWithRequestsAwaitingMyDecision"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policyTemplates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GovernancePolicyTemplate>? PolicyTemplates {
             get { return BackingStore?.Get<List<GovernancePolicyTemplate>?>("policyTemplates"); }
             set { BackingStore?.Set("policyTemplates", value); }
         }
+#nullable restore
 #else
         public List<GovernancePolicyTemplate> PolicyTemplates {
             get { return BackingStore?.Get<List<GovernancePolicyTemplate>>("policyTemplates"); }

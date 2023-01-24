@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>DisplayName of the PolicySetItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Tags of the guided deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? GuidedDeploymentTags {
             get { return BackingStore?.Get<List<string>?>("guidedDeploymentTags"); }
             set { BackingStore?.Set("guidedDeploymentTags", value); }
         }
+#nullable restore
 #else
         public List<string> GuidedDeploymentTags {
             get { return BackingStore?.Get<List<string>>("guidedDeploymentTags"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>policySetType of the PolicySetItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ItemType {
             get { return BackingStore?.Get<string?>("itemType"); }
             set { BackingStore?.Set("itemType", value); }
         }
+#nullable restore
 #else
         public string ItemType {
             get { return BackingStore?.Get<string>("itemType"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>PayloadId of the PolicySetItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PayloadId {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
+#nullable restore
 #else
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }

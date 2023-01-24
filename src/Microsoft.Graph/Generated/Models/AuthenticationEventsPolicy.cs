@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationEventsPolicy : Entity, IParsable {
         /// <summary>A list of applicable actions to be taken on sign-up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationListener>? OnSignupStart {
             get { return BackingStore?.Get<List<AuthenticationListener>?>("onSignupStart"); }
             set { BackingStore?.Set("onSignupStart", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationListener> OnSignupStart {
             get { return BackingStore?.Get<List<AuthenticationListener>>("onSignupStart"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsAppHealthOSVersionPerformanceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserExperienceAnalyticsAppHealthOSVersionPerformance>? Value {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthOSVersionPerformance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<UserExperienceAnalyticsAppHealthOSVersionPerformance> Value {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsAppHealthOSVersionPerformance>>("value"); }

@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkEnrollmentProfile : Entity, IParsable {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountId {
             get { return BackingStore?.Get<string?>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
+#nullable restore
 #else
         public string AccountId {
             get { return BackingStore?.Get<string>("accountId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Description for the enrollment profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name for the enrollment profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>String used to generate a QR code for the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QrCodeContent {
             get { return BackingStore?.Get<string?>("qrCodeContent"); }
             set { BackingStore?.Set("qrCodeContent", value); }
         }
+#nullable restore
 #else
         public string QrCodeContent {
             get { return BackingStore?.Get<string>("qrCodeContent"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>String used to generate a QR code for the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MimeContent? QrCodeImage {
             get { return BackingStore?.Get<MimeContent?>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
+#nullable restore
 #else
         public MimeContent QrCodeImage {
             get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Value of the most recently created token for this enrollment profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TokenValue {
             get { return BackingStore?.Get<string?>("tokenValue"); }
             set { BackingStore?.Set("tokenValue", value); }
         }
+#nullable restore
 #else
         public string TokenValue {
             get { return BackingStore?.Get<string>("tokenValue"); }

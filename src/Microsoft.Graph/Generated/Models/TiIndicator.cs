@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ActivityGroupNames {
             get { return BackingStore?.Get<List<string>?>("activityGroupNames"); }
             set { BackingStore?.Set("activityGroupNames", value); }
         }
+#nullable restore
 #else
         public List<string> ActivityGroupNames {
             get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdditionalInformation {
             get { return BackingStore?.Get<string?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
+#nullable restore
 #else
         public string AdditionalInformation {
             get { return BackingStore?.Get<string>("additionalInformation"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureTenantId {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#nullable restore
 #else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Brief description (100 characters or less) of the threat represented by the indicator. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The domainName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DomainName {
             get { return BackingStore?.Get<string?>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#nullable restore
 #else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The emailEncoding property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailEncoding {
             get { return BackingStore?.Get<string?>("emailEncoding"); }
             set { BackingStore?.Set("emailEncoding", value); }
         }
+#nullable restore
 #else
         public string EmailEncoding {
             get { return BackingStore?.Get<string>("emailEncoding"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The emailLanguage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailLanguage {
             get { return BackingStore?.Get<string?>("emailLanguage"); }
             set { BackingStore?.Set("emailLanguage", value); }
         }
+#nullable restore
 #else
         public string EmailLanguage {
             get { return BackingStore?.Get<string>("emailLanguage"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The emailRecipient property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailRecipient {
             get { return BackingStore?.Get<string?>("emailRecipient"); }
             set { BackingStore?.Set("emailRecipient", value); }
         }
+#nullable restore
 #else
         public string EmailRecipient {
             get { return BackingStore?.Get<string>("emailRecipient"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The emailSenderAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailSenderAddress {
             get { return BackingStore?.Get<string?>("emailSenderAddress"); }
             set { BackingStore?.Set("emailSenderAddress", value); }
         }
+#nullable restore
 #else
         public string EmailSenderAddress {
             get { return BackingStore?.Get<string>("emailSenderAddress"); }
@@ -130,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The emailSenderName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailSenderName {
             get { return BackingStore?.Get<string?>("emailSenderName"); }
             set { BackingStore?.Set("emailSenderName", value); }
         }
+#nullable restore
 #else
         public string EmailSenderName {
             get { return BackingStore?.Get<string>("emailSenderName"); }
@@ -142,10 +162,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The emailSourceDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailSourceDomain {
             get { return BackingStore?.Get<string?>("emailSourceDomain"); }
             set { BackingStore?.Set("emailSourceDomain", value); }
         }
+#nullable restore
 #else
         public string EmailSourceDomain {
             get { return BackingStore?.Get<string>("emailSourceDomain"); }
@@ -154,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The emailSourceIpAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailSourceIpAddress {
             get { return BackingStore?.Get<string?>("emailSourceIpAddress"); }
             set { BackingStore?.Set("emailSourceIpAddress", value); }
         }
+#nullable restore
 #else
         public string EmailSourceIpAddress {
             get { return BackingStore?.Get<string>("emailSourceIpAddress"); }
@@ -166,10 +190,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The emailSubject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailSubject {
             get { return BackingStore?.Get<string?>("emailSubject"); }
             set { BackingStore?.Set("emailSubject", value); }
         }
+#nullable restore
 #else
         public string EmailSubject {
             get { return BackingStore?.Get<string>("emailSubject"); }
@@ -178,10 +204,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The emailXMailer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailXMailer {
             get { return BackingStore?.Get<string?>("emailXMailer"); }
             set { BackingStore?.Set("emailXMailer", value); }
         }
+#nullable restore
 #else
         public string EmailXMailer {
             get { return BackingStore?.Get<string>("emailXMailer"); }
@@ -195,10 +223,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalId {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#nullable restore
 #else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
@@ -222,10 +252,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The fileHashValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileHashValue {
             get { return BackingStore?.Get<string?>("fileHashValue"); }
             set { BackingStore?.Set("fileHashValue", value); }
         }
+#nullable restore
 #else
         public string FileHashValue {
             get { return BackingStore?.Get<string>("fileHashValue"); }
@@ -234,10 +266,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The fileMutexName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileMutexName {
             get { return BackingStore?.Get<string?>("fileMutexName"); }
             set { BackingStore?.Set("fileMutexName", value); }
         }
+#nullable restore
 #else
         public string FileMutexName {
             get { return BackingStore?.Get<string>("fileMutexName"); }
@@ -246,10 +280,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The fileName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileName {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#nullable restore
 #else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
@@ -258,10 +294,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The filePacker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FilePacker {
             get { return BackingStore?.Get<string?>("filePacker"); }
             set { BackingStore?.Set("filePacker", value); }
         }
+#nullable restore
 #else
         public string FilePacker {
             get { return BackingStore?.Get<string>("filePacker"); }
@@ -270,10 +308,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The filePath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FilePath {
             get { return BackingStore?.Get<string?>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
+#nullable restore
 #else
         public string FilePath {
             get { return BackingStore?.Get<string>("filePath"); }
@@ -287,10 +327,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The fileType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileType {
             get { return BackingStore?.Get<string?>("fileType"); }
             set { BackingStore?.Set("fileType", value); }
         }
+#nullable restore
 #else
         public string FileType {
             get { return BackingStore?.Get<string>("fileType"); }
@@ -309,10 +351,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? KillChain {
             get { return BackingStore?.Get<List<string>?>("killChain"); }
             set { BackingStore?.Set("killChain", value); }
         }
+#nullable restore
 #else
         public List<string> KillChain {
             get { return BackingStore?.Get<List<string>>("killChain"); }
@@ -321,10 +365,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Scenarios in which the indicator may cause false positives. This should be human-readable text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KnownFalsePositives {
             get { return BackingStore?.Get<string?>("knownFalsePositives"); }
             set { BackingStore?.Set("knownFalsePositives", value); }
         }
+#nullable restore
 #else
         public string KnownFalsePositives {
             get { return BackingStore?.Get<string>("knownFalsePositives"); }
@@ -338,10 +384,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? MalwareFamilyNames {
             get { return BackingStore?.Get<List<string>?>("malwareFamilyNames"); }
             set { BackingStore?.Set("malwareFamilyNames", value); }
         }
+#nullable restore
 #else
         public List<string> MalwareFamilyNames {
             get { return BackingStore?.Get<List<string>>("malwareFamilyNames"); }
@@ -350,10 +398,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The networkCidrBlock property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkCidrBlock {
             get { return BackingStore?.Get<string?>("networkCidrBlock"); }
             set { BackingStore?.Set("networkCidrBlock", value); }
         }
+#nullable restore
 #else
         public string NetworkCidrBlock {
             get { return BackingStore?.Get<string>("networkCidrBlock"); }
@@ -367,10 +417,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The networkDestinationCidrBlock property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkDestinationCidrBlock {
             get { return BackingStore?.Get<string?>("networkDestinationCidrBlock"); }
             set { BackingStore?.Set("networkDestinationCidrBlock", value); }
         }
+#nullable restore
 #else
         public string NetworkDestinationCidrBlock {
             get { return BackingStore?.Get<string>("networkDestinationCidrBlock"); }
@@ -379,10 +431,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The networkDestinationIPv4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkDestinationIPv4 {
             get { return BackingStore?.Get<string?>("networkDestinationIPv4"); }
             set { BackingStore?.Set("networkDestinationIPv4", value); }
         }
+#nullable restore
 #else
         public string NetworkDestinationIPv4 {
             get { return BackingStore?.Get<string>("networkDestinationIPv4"); }
@@ -391,10 +445,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The networkDestinationIPv6 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkDestinationIPv6 {
             get { return BackingStore?.Get<string?>("networkDestinationIPv6"); }
             set { BackingStore?.Set("networkDestinationIPv6", value); }
         }
+#nullable restore
 #else
         public string NetworkDestinationIPv6 {
             get { return BackingStore?.Get<string>("networkDestinationIPv6"); }
@@ -408,10 +464,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The networkIPv4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkIPv4 {
             get { return BackingStore?.Get<string?>("networkIPv4"); }
             set { BackingStore?.Set("networkIPv4", value); }
         }
+#nullable restore
 #else
         public string NetworkIPv4 {
             get { return BackingStore?.Get<string>("networkIPv4"); }
@@ -420,10 +478,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The networkIPv6 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkIPv6 {
             get { return BackingStore?.Get<string?>("networkIPv6"); }
             set { BackingStore?.Set("networkIPv6", value); }
         }
+#nullable restore
 #else
         public string NetworkIPv6 {
             get { return BackingStore?.Get<string>("networkIPv6"); }
@@ -447,10 +507,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The networkSourceCidrBlock property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkSourceCidrBlock {
             get { return BackingStore?.Get<string?>("networkSourceCidrBlock"); }
             set { BackingStore?.Set("networkSourceCidrBlock", value); }
         }
+#nullable restore
 #else
         public string NetworkSourceCidrBlock {
             get { return BackingStore?.Get<string>("networkSourceCidrBlock"); }
@@ -459,10 +521,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The networkSourceIPv4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkSourceIPv4 {
             get { return BackingStore?.Get<string?>("networkSourceIPv4"); }
             set { BackingStore?.Set("networkSourceIPv4", value); }
         }
+#nullable restore
 #else
         public string NetworkSourceIPv4 {
             get { return BackingStore?.Get<string>("networkSourceIPv4"); }
@@ -471,10 +535,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The networkSourceIPv6 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkSourceIPv6 {
             get { return BackingStore?.Get<string?>("networkSourceIPv6"); }
             set { BackingStore?.Set("networkSourceIPv6", value); }
         }
+#nullable restore
 #else
         public string NetworkSourceIPv6 {
             get { return BackingStore?.Get<string>("networkSourceIPv6"); }
@@ -498,10 +564,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A JSON array of strings that stores arbitrary tags/keywords.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Tags {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#nullable restore
 #else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
@@ -510,10 +578,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetProduct {
             get { return BackingStore?.Get<string?>("targetProduct"); }
             set { BackingStore?.Set("targetProduct", value); }
         }
+#nullable restore
 #else
         public string TargetProduct {
             get { return BackingStore?.Get<string>("targetProduct"); }
@@ -522,10 +592,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ThreatType {
             get { return BackingStore?.Get<string?>("threatType"); }
             set { BackingStore?.Set("threatType", value); }
         }
+#nullable restore
 #else
         public string ThreatType {
             get { return BackingStore?.Get<string>("threatType"); }
@@ -539,10 +611,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Url {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#nullable restore
 #else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
@@ -551,10 +625,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The userAgent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserAgent {
             get { return BackingStore?.Get<string?>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
+#nullable restore
 #else
         public string UserAgent {
             get { return BackingStore?.Get<string>("userAgent"); }

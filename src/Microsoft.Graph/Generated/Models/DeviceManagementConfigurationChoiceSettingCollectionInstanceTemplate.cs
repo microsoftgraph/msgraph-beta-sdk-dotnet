@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Choice Setting Collection Value Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationChoiceSettingValueTemplate>? ChoiceSettingCollectionValueTemplate {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValueTemplate>?>("choiceSettingCollectionValueTemplate"); }
             set { BackingStore?.Set("choiceSettingCollectionValueTemplate", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationChoiceSettingValueTemplate> ChoiceSettingCollectionValueTemplate {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValueTemplate>>("choiceSettingCollectionValueTemplate"); }

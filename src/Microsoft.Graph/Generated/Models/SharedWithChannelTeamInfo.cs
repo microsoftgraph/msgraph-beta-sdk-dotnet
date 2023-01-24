@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SharedWithChannelTeamInfo : TeamInfo, IParsable {
         /// <summary>A collection of team members who have access to the shared channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConversationMember>? AllowedMembers {
             get { return BackingStore?.Get<List<ConversationMember>?>("allowedMembers"); }
             set { BackingStore?.Set("allowedMembers", value); }
         }
+#nullable restore
 #else
         public List<ConversationMember> AllowedMembers {
             get { return BackingStore?.Get<List<ConversationMember>>("allowedMembers"); }

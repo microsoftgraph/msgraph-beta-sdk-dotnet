@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The label provided by the policy creator to identify an approval step. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The justification associated with the approval step decision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Justification {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#nullable restore
 #else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t reviewed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? ReviewedBy {
             get { return BackingStore?.Get<Identity?>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
+#nullable restore
 #else
         public Identity ReviewedBy {
             get { return BackingStore?.Get<Identity>("reviewedBy"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The result of this approval record. Possible values include: NotReviewed, Approved, Denied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReviewResult {
             get { return BackingStore?.Get<string?>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
+#nullable restore
 #else
         public string ReviewResult {
             get { return BackingStore?.Get<string>("reviewResult"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Status {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }

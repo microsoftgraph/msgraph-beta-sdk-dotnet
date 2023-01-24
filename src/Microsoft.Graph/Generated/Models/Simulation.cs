@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Unique identifier for the attack simulation automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AutomationId {
             get { return BackingStore?.Get<string?>("automationId"); }
             set { BackingStore?.Set("automationId", value); }
         }
+#nullable restore
 #else
         public string AutomationId {
             get { return BackingStore?.Get<string>("automationId"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identity of the user who created the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EmailIdentity? CreatedBy {
             get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public EmailIdentity CreatedBy {
             get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Description of the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -63,39 +69,45 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name of the attack simulation and training campaign. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The durationInDays property</summary>
+        /// <summary>Simulation duration in days.</summary>
         public int? DurationInDays {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
         }
-        /// <summary>The excludedAccountTarget property</summary>
+        /// <summary>Users excluded from the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccountTargetContent? ExcludedAccountTarget {
             get { return BackingStore?.Get<AccountTargetContent?>("excludedAccountTarget"); }
             set { BackingStore?.Set("excludedAccountTarget", value); }
         }
+#nullable restore
 #else
         public AccountTargetContent ExcludedAccountTarget {
             get { return BackingStore?.Get<AccountTargetContent>("excludedAccountTarget"); }
             set { BackingStore?.Set("excludedAccountTarget", value); }
         }
 #endif
-        /// <summary>The includedAccountTarget property</summary>
+        /// <summary>Users targeted in the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccountTargetContent? IncludedAccountTarget {
             get { return BackingStore?.Get<AccountTargetContent?>("includedAccountTarget"); }
             set { BackingStore?.Set("includedAccountTarget", value); }
         }
+#nullable restore
 #else
         public AccountTargetContent IncludedAccountTarget {
             get { return BackingStore?.Get<AccountTargetContent>("includedAccountTarget"); }
@@ -109,10 +121,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identity of the user who most recently modified the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EmailIdentity? LastModifiedBy {
             get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public EmailIdentity LastModifiedBy {
             get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
@@ -129,12 +143,14 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("launchDateTime"); }
             set { BackingStore?.Set("launchDateTime", value); }
         }
-        /// <summary>The payload property</summary>
+        /// <summary>The payload associated with a simulation during its creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Payload? Payload {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Payload?>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Payload Payload {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Payload>("payload"); }
@@ -148,10 +164,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Report of the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SimulationReport? Report {
             get { return BackingStore?.Get<SimulationReport?>("report"); }
             set { BackingStore?.Set("report", value); }
         }
+#nullable restore
 #else
         public SimulationReport Report {
             get { return BackingStore?.Get<SimulationReport>("report"); }

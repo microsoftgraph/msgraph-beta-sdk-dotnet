@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConnectorGroup : Entity, IParsable {
         /// <summary>The applications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Application>? Applications {
             get { return BackingStore?.Get<List<Application>?>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
+#nullable restore
 #else
         public List<Application> Applications {
             get { return BackingStore?.Get<List<Application>>("applications"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The members property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Connector>? Members {
             get { return BackingStore?.Get<List<Connector>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#nullable restore
 #else
         public List<Connector> Members {
             get { return BackingStore?.Get<List<Connector>>("members"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name associated with the connectorGroup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SimulationEventCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SimulationEvent>? Value {
             get { return BackingStore?.Get<List<SimulationEvent>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<SimulationEvent> Value {
             get { return BackingStore?.Get<List<SimulationEvent>>("value"); }

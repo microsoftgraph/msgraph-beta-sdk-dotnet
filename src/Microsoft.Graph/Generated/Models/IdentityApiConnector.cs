@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IdentityApiConnector : Entity, IParsable {
         /// <summary>The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ApiAuthenticationConfigurationBase? AuthenticationConfiguration {
             get { return BackingStore?.Get<ApiAuthenticationConfigurationBase?>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
+#nullable restore
 #else
         public ApiAuthenticationConfigurationBase AuthenticationConfiguration {
             get { return BackingStore?.Get<ApiAuthenticationConfigurationBase>("authenticationConfiguration"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the API connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL of the API endpoint to call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetUrl {
             get { return BackingStore?.Get<string?>("targetUrl"); }
             set { BackingStore?.Set("targetUrl", value); }
         }
+#nullable restore
 #else
         public string TargetUrl {
             get { return BackingStore?.Get<string>("targetUrl"); }

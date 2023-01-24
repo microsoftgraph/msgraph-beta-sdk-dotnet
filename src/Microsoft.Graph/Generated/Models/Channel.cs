@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Optional textual description for the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The email address for sending messages to the channel. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Email {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#nullable restore
 #else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Metadata for the location where the channel&apos;s files are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DriveItem? FilesFolder {
             get { return BackingStore?.Get<DriveItem?>("filesFolder"); }
             set { BackingStore?.Set("filesFolder", value); }
         }
+#nullable restore
 #else
         public DriveItem FilesFolder {
             get { return BackingStore?.Get<DriveItem>("filesFolder"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of membership records associated with the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConversationMember>? Members {
             get { return BackingStore?.Get<List<ConversationMember>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#nullable restore
 #else
         public List<ConversationMember> Members {
             get { return BackingStore?.Get<List<ConversationMember>>("members"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of all the messages in the channel. A navigation property. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ChatMessage>? Messages {
             get { return BackingStore?.Get<List<ChatMessage>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
+#nullable restore
 #else
         public List<ChatMessage> Messages {
             get { return BackingStore?.Get<List<ChatMessage>>("messages"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ChannelModerationSettings? ModerationSettings {
             get { return BackingStore?.Get<ChannelModerationSettings?>("moderationSettings"); }
             set { BackingStore?.Set("moderationSettings", value); }
         }
+#nullable restore
 #else
         public ChannelModerationSettings ModerationSettings {
             get { return BackingStore?.Get<ChannelModerationSettings>("moderationSettings"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of teams with which a channel is shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SharedWithChannelTeamInfo>? SharedWithTeams {
             get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>?>("sharedWithTeams"); }
             set { BackingStore?.Set("sharedWithTeams", value); }
         }
+#nullable restore
 #else
         public List<SharedWithChannelTeamInfo> SharedWithTeams {
             get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>>("sharedWithTeams"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ChannelSummary? Summary {
             get { return BackingStore?.Get<ChannelSummary?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
+#nullable restore
 #else
         public ChannelSummary Summary {
             get { return BackingStore?.Get<ChannelSummary>("summary"); }
@@ -130,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamsTab>? Tabs {
             get { return BackingStore?.Get<List<TeamsTab>?>("tabs"); }
             set { BackingStore?.Set("tabs", value); }
         }
+#nullable restore
 #else
         public List<TeamsTab> Tabs {
             get { return BackingStore?.Get<List<TeamsTab>>("tabs"); }
@@ -142,10 +162,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the Azure Active Directory tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -154,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

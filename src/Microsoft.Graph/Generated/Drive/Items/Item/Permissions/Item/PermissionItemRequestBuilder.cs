@@ -62,7 +62,9 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.Permissions.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<PermissionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<PermissionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -79,7 +81,9 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.Permissions.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Permission?> GetAsync(Action<PermissionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.Permission> GetAsync(Action<PermissionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -97,7 +101,9 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.Permissions.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Permission?> PatchAsync(Microsoft.Graph.Beta.Models.Permission body, Action<PermissionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.Permission> PatchAsync(Microsoft.Graph.Beta.Models.Permission body, Action<PermissionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -114,7 +120,9 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.Permissions.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<PermissionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<PermissionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -136,7 +144,9 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.Permissions.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<PermissionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<PermissionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -161,7 +171,9 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.Permissions.Item {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Permission body, Action<PermissionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Permission body, Action<PermissionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -203,16 +215,20 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.Permissions.Item {
         public class PermissionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

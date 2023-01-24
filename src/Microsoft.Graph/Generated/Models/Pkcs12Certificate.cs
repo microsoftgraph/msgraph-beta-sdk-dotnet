@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Pkcs12Certificate : ApiAuthenticationConfigurationBase, IParsable {
         /// <summary>This is the password for the pfx file. Required. If no password is used, must still provide a value of &apos;&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Password {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#nullable restore
 #else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This is the field for sending pfx content. The value should be a base-64 encoded version of the actual certificate content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Pkcs12Value {
             get { return BackingStore?.Get<string?>("pkcs12Value"); }
             set { BackingStore?.Set("pkcs12Value", value); }
         }
+#nullable restore
 #else
         public string Pkcs12Value {
             get { return BackingStore?.Get<string>("pkcs12Value"); }

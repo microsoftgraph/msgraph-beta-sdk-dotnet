@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Exchange location (URL) that the mail app connects to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HostName {
             get { return BackingStore?.Get<string?>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#nullable restore
 #else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AndroidWorkProfileCertificateProfileBase? IdentityCertificate {
             get { return BackingStore?.Get<AndroidWorkProfileCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#nullable restore
 #else
         public AndroidWorkProfileCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<AndroidWorkProfileCertificateProfileBase>("identityCertificate"); }

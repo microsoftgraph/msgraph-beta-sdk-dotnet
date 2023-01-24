@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class WorkloadAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The unique identifier for the workload action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActionId {
             get { return BackingStore?.Get<string?>("actionId"); }
             set { BackingStore?.Set("actionId", value); }
         }
+#nullable restore
 #else
         public string ActionId {
             get { return BackingStore?.Get<string>("actionId"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The description for the workload action. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The display name for the workload action. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The licenses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Licenses {
             get { return BackingStore?.Get<List<string>?>("licenses"); }
             set { BackingStore?.Set("licenses", value); }
         }
+#nullable restore
 #else
         public List<string> Licenses {
             get { return BackingStore?.Get<List<string>>("licenses"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The service associated with workload action. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Service {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#nullable restore
 #else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The collection of settings associated with the workload action. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Setting>? Settings {
             get { return BackingStore?.Get<List<Setting>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public List<Setting> Settings {
             get { return BackingStore?.Get<List<Setting>>("settings"); }

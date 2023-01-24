@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The identifer for the Microsoft Intune account. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IntuneAccountId {
             get { return BackingStore?.Get<string?>("intuneAccountId"); }
             set { BackingStore?.Set("intuneAccountId", value); }
         }
+#nullable restore
 #else
         public string IntuneAccountId {
             get { return BackingStore?.Get<string>("intuneAccountId"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The identifier for the Intune setting. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IntuneSettingId {
             get { return BackingStore?.Get<string?>("intuneSettingId"); }
             set { BackingStore?.Set("intuneSettingId", value); }
         }
+#nullable restore
 #else
         public string IntuneSettingId {
             get { return BackingStore?.Get<string>("intuneSettingId"); }
@@ -61,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The type for the device compliance policy. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyType {
             get { return BackingStore?.Get<string?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
+#nullable restore
 #else
         public string PolicyType {
             get { return BackingStore?.Get<string>("policyType"); }
@@ -73,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The name for the setting within the device compliance policy. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingName {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#nullable restore
 #else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
@@ -90,10 +98,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantDisplayName {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#nullable restore
 #else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
@@ -102,10 +112,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

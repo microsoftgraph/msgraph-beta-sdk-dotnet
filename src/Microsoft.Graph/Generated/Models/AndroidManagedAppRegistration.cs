@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable {
         /// <summary>The patch version for the current android app registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PatchVersion {
             get { return BackingStore?.Get<string?>("patchVersion"); }
             set { BackingStore?.Set("patchVersion", value); }
         }
+#nullable restore
 #else
         public string PatchVersion {
             get { return BackingStore?.Get<string>("patchVersion"); }

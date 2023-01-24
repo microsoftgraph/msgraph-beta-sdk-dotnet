@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TokenMeetingInfo : MeetingInfo, IParsable {
         /// <summary>The token used to join the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Token {
             get { return BackingStore?.Get<string?>("token"); }
             set { BackingStore?.Set("token", value); }
         }
+#nullable restore
 #else
         public string Token {
             get { return BackingStore?.Get<string>("token"); }

@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The globally unique identifier for the associated application (its appId property), if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppId {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#nullable restore
 #else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name for the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the risk history of Azure AD service principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RiskyServicePrincipalHistoryItem>? History {
             get { return BackingStore?.Get<List<RiskyServicePrincipalHistoryItem>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
+#nullable restore
 #else
         public List<RiskyServicePrincipalHistoryItem> History {
             get { return BackingStore?.Get<List<RiskyServicePrincipalHistoryItem>>("history"); }
@@ -73,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePrincipalType {
             get { return BackingStore?.Get<string?>("servicePrincipalType"); }
             set { BackingStore?.Set("servicePrincipalType", value); }
         }
+#nullable restore
 #else
         public string ServicePrincipalType {
             get { return BackingStore?.Get<string>("servicePrincipalType"); }

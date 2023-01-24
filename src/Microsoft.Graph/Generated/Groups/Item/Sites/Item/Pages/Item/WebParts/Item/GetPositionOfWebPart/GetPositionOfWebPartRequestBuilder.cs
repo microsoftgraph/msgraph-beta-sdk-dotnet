@@ -53,7 +53,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts.Item.G
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<WebPartPosition?> PostAsync(Action<GetPositionOfWebPartRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<WebPartPosition> PostAsync(Action<GetPositionOfWebPartRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -69,7 +71,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts.Item.G
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPostRequestInformation(Action<GetPositionOfWebPartRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPostRequestInformation(Action<GetPositionOfWebPartRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif

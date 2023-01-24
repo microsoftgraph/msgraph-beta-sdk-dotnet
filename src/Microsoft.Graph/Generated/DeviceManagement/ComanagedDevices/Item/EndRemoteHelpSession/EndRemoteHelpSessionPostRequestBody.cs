@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.EndRemoteH
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The sessionKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SessionKey {
             get { return BackingStore?.Get<string?>("sessionKey"); }
             set { BackingStore?.Set("sessionKey", value); }
         }
+#nullable restore
 #else
         public string SessionKey {
             get { return BackingStore?.Get<string>("sessionKey"); }

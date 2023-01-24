@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminAccessContainer : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The identifier of the access container (for example, a security group). For &apos;securityGroup&apos; access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner&apos;s tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccessContainerId {
             get { return BackingStore?.Get<string?>("accessContainerId"); }
             set { BackingStore?.Set("accessContainerId", value); }
         }
+#nullable restore
 #else
         public string AccessContainerId {
             get { return BackingStore?.Get<string>("accessContainerId"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

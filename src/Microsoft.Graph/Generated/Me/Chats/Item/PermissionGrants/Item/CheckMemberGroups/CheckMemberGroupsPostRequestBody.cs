@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.CheckMemberGr
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? GroupIds {
             get { return BackingStore?.Get<List<string>?>("groupIds"); }
             set { BackingStore?.Set("groupIds", value); }
         }
+#nullable restore
 #else
         public List<string> GroupIds {
             get { return BackingStore?.Get<List<string>>("groupIds"); }

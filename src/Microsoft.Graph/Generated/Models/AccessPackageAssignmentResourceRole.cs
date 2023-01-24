@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAssignmentResourceRole : Entity, IParsable {
         /// <summary>The access package assignments resulting in this role assignment. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAssignment>? AccessPackageAssignments {
             get { return BackingStore?.Get<List<AccessPackageAssignment>?>("accessPackageAssignments"); }
             set { BackingStore?.Set("accessPackageAssignments", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAssignment> AccessPackageAssignments {
             get { return BackingStore?.Get<List<AccessPackageAssignment>>("accessPackageAssignments"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The accessPackageResourceRole property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageResourceRole? AccessPackageResourceRole {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole?>("accessPackageResourceRole"); }
             set { BackingStore?.Set("accessPackageResourceRole", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRole"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The accessPackageResourceScope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageResourceScope? AccessPackageResourceScope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope?>("accessPackageResourceScope"); }
             set { BackingStore?.Set("accessPackageResourceScope", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>("accessPackageResourceScope"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageSubject? AccessPackageSubject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject?>("accessPackageSubject"); }
             set { BackingStore?.Set("accessPackageSubject", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageSubject AccessPackageSubject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageSubject>("accessPackageSubject"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginId {
             get { return BackingStore?.Get<string?>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
+#nullable restore
 #else
         public string OriginId {
             get { return BackingStore?.Get<string>("originId"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginSystem {
             get { return BackingStore?.Get<string?>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
+#nullable restore
 #else
         public string OriginSystem {
             get { return BackingStore?.Get<string>("originSystem"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Status {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }

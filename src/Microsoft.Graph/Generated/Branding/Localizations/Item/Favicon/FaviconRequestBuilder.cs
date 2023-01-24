@@ -52,7 +52,9 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.Favicon {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Stream?> GetAsync(Action<FaviconRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Stream> GetAsync(Action<FaviconRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -70,7 +72,9 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.Favicon {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task PutAsync(Stream body, Action<FaviconRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task PutAsync(Stream body, Action<FaviconRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -87,7 +91,9 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.Favicon {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<FaviconRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<FaviconRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -110,7 +116,9 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.Favicon {
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPutRequestInformation(Stream body, Action<FaviconRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPutRequestInformation(Stream body, Action<FaviconRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
 #endif

@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Guid?>? KnownClientApplications {
             get { return BackingStore?.Get<List<Guid?>?>("knownClientApplications"); }
             set { BackingStore?.Set("knownClientApplications", value); }
         }
+#nullable restore
 #else
         public List<Guid?> KnownClientApplications {
             get { return BackingStore?.Get<List<Guid?>>("knownClientApplications"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PermissionScope>? Oauth2PermissionScopes {
             get { return BackingStore?.Get<List<PermissionScope>?>("oauth2PermissionScopes"); }
             set { BackingStore?.Set("oauth2PermissionScopes", value); }
         }
+#nullable restore
 #else
         public List<PermissionScope> Oauth2PermissionScopes {
             get { return BackingStore?.Get<List<PermissionScope>>("oauth2PermissionScopes"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Lists the client applications that are pre-authorized with the specified delegated permissions to access this application&apos;s APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PreAuthorizedApplication>? PreAuthorizedApplications {
             get { return BackingStore?.Get<List<PreAuthorizedApplication>?>("preAuthorizedApplications"); }
             set { BackingStore?.Set("preAuthorizedApplications", value); }
         }
+#nullable restore
 #else
         public List<PreAuthorizedApplication> PreAuthorizedApplications {
             get { return BackingStore?.Get<List<PreAuthorizedApplication>>("preAuthorizedApplications"); }

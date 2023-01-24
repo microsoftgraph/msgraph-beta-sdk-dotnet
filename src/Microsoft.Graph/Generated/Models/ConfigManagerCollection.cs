@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConfigManagerCollection : Entity, IParsable {
         /// <summary>The collection identifier in SCCM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CollectionIdentifier {
             get { return BackingStore?.Get<string?>("collectionIdentifier"); }
             set { BackingStore?.Set("collectionIdentifier", value); }
         }
+#nullable restore
 #else
         public string CollectionIdentifier {
             get { return BackingStore?.Get<string>("collectionIdentifier"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The DisplayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Hierarchy Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HierarchyIdentifier {
             get { return BackingStore?.Get<string?>("hierarchyIdentifier"); }
             set { BackingStore?.Set("hierarchyIdentifier", value); }
         }
+#nullable restore
 #else
         public string HierarchyIdentifier {
             get { return BackingStore?.Get<string>("hierarchyIdentifier"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The HierarchyName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HierarchyName {
             get { return BackingStore?.Get<string?>("hierarchyName"); }
             set { BackingStore?.Set("hierarchyName", value); }
         }
+#nullable restore
 #else
         public string HierarchyName {
             get { return BackingStore?.Get<string>("hierarchyName"); }

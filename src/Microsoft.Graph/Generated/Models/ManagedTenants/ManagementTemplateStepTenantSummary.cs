@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedByUserId {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#nullable restore
 #else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
@@ -44,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastActionByUserId {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#nullable restore
 #else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
@@ -61,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The managementTemplateCollectionDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementTemplateCollectionDisplayName {
             get { return BackingStore?.Get<string?>("managementTemplateCollectionDisplayName"); }
             set { BackingStore?.Set("managementTemplateCollectionDisplayName", value); }
         }
+#nullable restore
 #else
         public string ManagementTemplateCollectionDisplayName {
             get { return BackingStore?.Get<string>("managementTemplateCollectionDisplayName"); }
@@ -73,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The managementTemplateCollectionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementTemplateCollectionId {
             get { return BackingStore?.Get<string?>("managementTemplateCollectionId"); }
             set { BackingStore?.Set("managementTemplateCollectionId", value); }
         }
+#nullable restore
 #else
         public string ManagementTemplateCollectionId {
             get { return BackingStore?.Get<string>("managementTemplateCollectionId"); }
@@ -85,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The managementTemplateDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementTemplateDisplayName {
             get { return BackingStore?.Get<string?>("managementTemplateDisplayName"); }
             set { BackingStore?.Set("managementTemplateDisplayName", value); }
         }
+#nullable restore
 #else
         public string ManagementTemplateDisplayName {
             get { return BackingStore?.Get<string>("managementTemplateDisplayName"); }
@@ -97,10 +107,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The managementTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementTemplateId {
             get { return BackingStore?.Get<string?>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
+#nullable restore
 #else
         public string ManagementTemplateId {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
@@ -109,10 +121,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The managementTemplateStepDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementTemplateStepDisplayName {
             get { return BackingStore?.Get<string?>("managementTemplateStepDisplayName"); }
             set { BackingStore?.Set("managementTemplateStepDisplayName", value); }
         }
+#nullable restore
 #else
         public string ManagementTemplateStepDisplayName {
             get { return BackingStore?.Get<string>("managementTemplateStepDisplayName"); }
@@ -121,10 +135,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The managementTemplateStepId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementTemplateStepId {
             get { return BackingStore?.Get<string?>("managementTemplateStepId"); }
             set { BackingStore?.Set("managementTemplateStepId", value); }
         }
+#nullable restore
 #else
         public string ManagementTemplateStepId {
             get { return BackingStore?.Get<string>("managementTemplateStepId"); }

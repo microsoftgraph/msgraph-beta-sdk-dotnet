@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Sender domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DomainName {
             get { return BackingStore?.Get<string?>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#nullable restore
 #else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Sender email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailAddress {
             get { return BackingStore?.Get<string?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#nullable restore
 #else
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

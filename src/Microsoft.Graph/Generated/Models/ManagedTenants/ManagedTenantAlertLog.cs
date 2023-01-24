@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagedTenantAlertLog : Entity, IParsable {
         /// <summary>The alert property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ManagedTenantAlert? Alert {
             get { return BackingStore?.Get<ManagedTenantAlert?>("alert"); }
             set { BackingStore?.Set("alert", value); }
         }
+#nullable restore
 #else
         public ManagedTenantAlert Alert {
             get { return BackingStore?.Get<ManagedTenantAlert>("alert"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AlertLogContent? Content {
             get { return BackingStore?.Get<AlertLogContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public AlertLogContent Content {
             get { return BackingStore?.Get<AlertLogContent>("content"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedByUserId {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#nullable restore
 #else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastActionByUserId {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#nullable restore
 #else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }

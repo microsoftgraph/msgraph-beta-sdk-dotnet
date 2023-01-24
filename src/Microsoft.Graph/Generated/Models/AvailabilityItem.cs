@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? EndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone EndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceId {
             get { return BackingStore?.Get<string?>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
+#nullable restore
 #else
         public string ServiceId {
             get { return BackingStore?.Get<string>("serviceId"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The startDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }

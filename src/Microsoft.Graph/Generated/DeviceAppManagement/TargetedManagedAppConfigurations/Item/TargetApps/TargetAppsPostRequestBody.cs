@@ -19,10 +19,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         }
         /// <summary>The apps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedMobileApp>? Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
+#nullable restore
 #else
         public List<ManagedMobileApp> Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }

@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>AES encryption Initialization Vector for encrypting client messages sent to PubSub</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PubSubEncryption {
             get { return BackingStore?.Get<string?>("pubSubEncryption"); }
             set { BackingStore?.Set("pubSubEncryption", value); }
         }
+#nullable restore
 #else
         public string PubSubEncryption {
             get { return BackingStore?.Get<string>("pubSubEncryption"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for encrypting client messages sent to PubSub</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PubSubEncryptionKey {
             get { return BackingStore?.Get<string?>("pubSubEncryptionKey"); }
             set { BackingStore?.Set("pubSubEncryptionKey", value); }
         }
+#nullable restore
 #else
         public string PubSubEncryptionKey {
             get { return BackingStore?.Get<string>("pubSubEncryptionKey"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for a session</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SessionKey {
             get { return BackingStore?.Get<string?>("sessionKey"); }
             set { BackingStore?.Set("sessionKey", value); }
         }
+#nullable restore
 #else
         public string SessionKey {
             get { return BackingStore?.Get<string>("sessionKey"); }

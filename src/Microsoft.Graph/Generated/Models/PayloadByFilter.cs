@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Azure AD security group ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GroupId {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#nullable restore
 #else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policy identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PayloadId {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
+#nullable restore
 #else
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }

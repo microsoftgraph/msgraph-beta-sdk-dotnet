@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ServicePrincipalIdentity : Identity, IParsable {
         /// <summary>The application identifier of the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppId {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#nullable restore
 #else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }

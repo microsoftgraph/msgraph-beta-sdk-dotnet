@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of applications targeted with your cross-tenant access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CrossTenantAccessPolicyTargetConfiguration? Applications {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration?>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
+#nullable restore
 #else
         public CrossTenantAccessPolicyTargetConfiguration Applications {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>("applications"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of users and groups targeted with your cross-tenant access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CrossTenantAccessPolicyTargetConfiguration? UsersAndGroups {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration?>("usersAndGroups"); }
             set { BackingStore?.Set("usersAndGroups", value); }
         }
+#nullable restore
 #else
         public CrossTenantAccessPolicyTargetConfiguration UsersAndGroups {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfiguration>("usersAndGroups"); }

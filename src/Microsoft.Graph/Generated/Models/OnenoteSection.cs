@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it&apos;s installed. The oneNoteWebURL link opens the section in OneNote on the web.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SectionLinks? Links {
             get { return BackingStore?.Get<SectionLinks?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+#nullable restore
 #else
         public SectionLinks Links {
             get { return BackingStore?.Get<SectionLinks>("links"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of pages in the section.  Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnenotePage>? Pages {
             get { return BackingStore?.Get<List<OnenotePage>?>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
+#nullable restore
 #else
         public List<OnenotePage> Pages {
             get { return BackingStore?.Get<List<OnenotePage>>("pages"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The pages endpoint where you can get details for all the pages in the section. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PagesUrl {
             get { return BackingStore?.Get<string?>("pagesUrl"); }
             set { BackingStore?.Set("pagesUrl", value); }
         }
+#nullable restore
 #else
         public string PagesUrl {
             get { return BackingStore?.Get<string>("pagesUrl"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The notebook that contains the section.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Notebook? ParentNotebook {
             get { return BackingStore?.Get<Notebook?>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
+#nullable restore
 #else
         public Notebook ParentNotebook {
             get { return BackingStore?.Get<Notebook>("parentNotebook"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The section group that contains the section.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SectionGroup? ParentSectionGroup {
             get { return BackingStore?.Get<SectionGroup?>("parentSectionGroup"); }
             set { BackingStore?.Set("parentSectionGroup", value); }
         }
+#nullable restore
 #else
         public SectionGroup ParentSectionGroup {
             get { return BackingStore?.Get<SectionGroup>("parentSectionGroup"); }

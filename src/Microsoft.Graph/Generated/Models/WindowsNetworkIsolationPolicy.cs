@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Contains a list of enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ProxiedDomain>? EnterpriseCloudResources {
             get { return BackingStore?.Get<List<ProxiedDomain>?>("enterpriseCloudResources"); }
             set { BackingStore?.Set("enterpriseCloudResources", value); }
         }
+#nullable restore
 #else
         public List<ProxiedDomain> EnterpriseCloudResources {
             get { return BackingStore?.Get<List<ProxiedDomain>>("enterpriseCloudResources"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This is the comma-separated list of internal proxy servers. For example, &apos;157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59&apos;. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseCloudResources policy to force traffic to the matched cloud resources through these proxies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EnterpriseInternalProxyServers {
             get { return BackingStore?.Get<List<string>?>("enterpriseInternalProxyServers"); }
             set { BackingStore?.Set("enterpriseInternalProxyServers", value); }
         }
+#nullable restore
 #else
         public List<string> EnterpriseInternalProxyServers {
             get { return BackingStore?.Get<List<string>>("enterpriseInternalProxyServers"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IpRange>? EnterpriseIPRanges {
             get { return BackingStore?.Get<List<IpRange>?>("enterpriseIPRanges"); }
             set { BackingStore?.Set("enterpriseIPRanges", value); }
         }
+#nullable restore
 #else
         public List<IpRange> EnterpriseIPRanges {
             get { return BackingStore?.Get<List<IpRange>>("enterpriseIPRanges"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected. These locations will be considered a safe destination for enterprise data to be shared to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EnterpriseNetworkDomainNames {
             get { return BackingStore?.Get<List<string>?>("enterpriseNetworkDomainNames"); }
             set { BackingStore?.Set("enterpriseNetworkDomainNames", value); }
         }
+#nullable restore
 #else
         public List<string> EnterpriseNetworkDomainNames {
             get { return BackingStore?.Get<List<string>>("enterpriseNetworkDomainNames"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This is a list of proxy servers. Any server not on this list is considered non-enterprise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EnterpriseProxyServers {
             get { return BackingStore?.Get<List<string>?>("enterpriseProxyServers"); }
             set { BackingStore?.Set("enterpriseProxyServers", value); }
         }
+#nullable restore
 #else
         public List<string> EnterpriseProxyServers {
             get { return BackingStore?.Get<List<string>>("enterpriseProxyServers"); }
@@ -88,10 +98,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of domain names that can used for work or personal resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? NeutralDomainResources {
             get { return BackingStore?.Get<List<string>?>("neutralDomainResources"); }
             set { BackingStore?.Set("neutralDomainResources", value); }
         }
+#nullable restore
 #else
         public List<string> NeutralDomainResources {
             get { return BackingStore?.Get<List<string>>("neutralDomainResources"); }
@@ -100,10 +112,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

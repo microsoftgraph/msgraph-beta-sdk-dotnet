@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EmailContentThreatSubmission : EmailThreatSubmission, IParsable {
         /// <summary>Base64 encoded file content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileContent {
             get { return BackingStore?.Get<string?>("fileContent"); }
             set { BackingStore?.Set("fileContent", value); }
         }
+#nullable restore
 #else
         public string FileContent {
             get { return BackingStore?.Get<string>("fileContent"); }

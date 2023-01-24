@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the directory. Must be unique within the synchronization schema. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of objects supported by the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ObjectDefinition>? Objects {
             get { return BackingStore?.Get<List<ObjectDefinition>?>("objects"); }
             set { BackingStore?.Set("objects", value); }
         }
+#nullable restore
 #else
         public List<ObjectDefinition> Objects {
             get { return BackingStore?.Get<List<ObjectDefinition>>("objects"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Read only value that indicates version discovered. null if discovery has not yet occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

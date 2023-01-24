@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesAgent : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnPremisesAgentGroup>? AgentGroups {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
+#nullable restore
 #else
         public List<OnPremisesAgentGroup> AgentGroups {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The external IP address as detected by the service for the agent machine. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalIp {
             get { return BackingStore?.Get<string?>("externalIp"); }
             set { BackingStore?.Set("externalIp", value); }
         }
+#nullable restore
 #else
         public string ExternalIp {
             get { return BackingStore?.Get<string>("externalIp"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the machine that the aggent is running on. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MachineName {
             get { return BackingStore?.Get<string?>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
+#nullable restore
 #else
         public string MachineName {
             get { return BackingStore?.Get<string>("machineName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The supportedPublishingTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnPremisesPublishingType?>? SupportedPublishingTypes {
             get { return BackingStore?.Get<List<OnPremisesPublishingType?>?>("supportedPublishingTypes"); }
             set { BackingStore?.Set("supportedPublishingTypes", value); }
         }
+#nullable restore
 #else
         public List<OnPremisesPublishingType?> SupportedPublishingTypes {
             get { return BackingStore?.Get<List<OnPremisesPublishingType?>>("supportedPublishingTypes"); }

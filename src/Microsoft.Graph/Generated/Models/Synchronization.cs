@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Synchronization : Entity, IParsable {
         /// <summary>Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationJob>? Jobs {
             get { return BackingStore?.Get<List<SynchronizationJob>?>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationJob> Jobs {
             get { return BackingStore?.Get<List<SynchronizationJob>>("jobs"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a collection of credentials to access provisioned cloud applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationSecretKeyStringValuePair>? Secrets {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("secrets"); }
             set { BackingStore?.Set("secrets", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationSecretKeyStringValuePair> Secrets {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("secrets"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Pre-configured synchronization settings for a particular application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationTemplate>? Templates {
             get { return BackingStore?.Get<List<SynchronizationTemplate>?>("templates"); }
             set { BackingStore?.Set("templates", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationTemplate> Templates {
             get { return BackingStore?.Get<List<SynchronizationTemplate>>("templates"); }

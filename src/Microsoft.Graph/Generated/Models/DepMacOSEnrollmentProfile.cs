@@ -77,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates what the full name for the primary account is</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrimaryAccountFullName {
             get { return BackingStore?.Get<string?>("primaryAccountFullName"); }
             set { BackingStore?.Set("primaryAccountFullName", value); }
         }
+#nullable restore
 #else
         public string PrimaryAccountFullName {
             get { return BackingStore?.Get<string>("primaryAccountFullName"); }
@@ -89,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates what the account name for the primary account is</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrimaryAccountUserName {
             get { return BackingStore?.Get<string?>("primaryAccountUserName"); }
             set { BackingStore?.Set("primaryAccountUserName", value); }
         }
+#nullable restore
 #else
         public string PrimaryAccountUserName {
             get { return BackingStore?.Get<string>("primaryAccountUserName"); }
@@ -101,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates who the primary user of the profile is</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrimaryUser {
             get { return BackingStore?.Get<string?>("primaryUser"); }
             set { BackingStore?.Set("primaryUser", value); }
         }
+#nullable restore
 #else
         public string PrimaryUser {
             get { return BackingStore?.Get<string>("primaryUser"); }
@@ -113,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates who the primary user of the profile is</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrimaryUserFullName {
             get { return BackingStore?.Get<string?>("primaryUserFullName"); }
             set { BackingStore?.Set("primaryUserFullName", value); }
         }
+#nullable restore
 #else
         public string PrimaryUserFullName {
             get { return BackingStore?.Get<string>("primaryUserFullName"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResourceScope : Entity, IParsable {
         /// <summary>The accessPackageResource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageResource? AccessPackageResource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource?>("accessPackageResource"); }
             set { BackingStore?.Set("accessPackageResource", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResource"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of the scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier for the scope in the resource as defined in the origin system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginId {
             get { return BackingStore?.Get<string?>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
+#nullable restore
 #else
         public string OriginId {
             get { return BackingStore?.Get<string>("originId"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The origin system for the scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginSystem {
             get { return BackingStore?.Get<string?>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
+#nullable restore
 #else
         public string OriginSystem {
             get { return BackingStore?.Get<string>("originSystem"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The origin system for the role, if different.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleOriginId {
             get { return BackingStore?.Get<string?>("roleOriginId"); }
             set { BackingStore?.Set("roleOriginId", value); }
         }
+#nullable restore
 #else
         public string RoleOriginId {
             get { return BackingStore?.Get<string>("roleOriginId"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A resource locator for the scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Url {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#nullable restore
 #else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }

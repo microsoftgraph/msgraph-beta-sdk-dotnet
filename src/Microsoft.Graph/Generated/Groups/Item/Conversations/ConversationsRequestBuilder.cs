@@ -65,7 +65,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<ConversationCollectionResponse?> GetAsync(Action<ConversationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<ConversationCollectionResponse> GetAsync(Action<ConversationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -77,14 +79,16 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             return await RequestAdapter.SendAsync<ConversationCollectionResponse>(requestInfo, ConversationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0" />
+        /// Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Conversation?> PostAsync(Conversation body, Action<ConversationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Conversation> PostAsync(Conversation body, Action<ConversationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -101,7 +105,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<ConversationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<ConversationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -121,12 +127,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             return requestInfo;
         }
         /// <summary>
-        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
+        /// Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPostRequestInformation(Conversation body, Action<ConversationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPostRequestInformation(Conversation body, Action<ConversationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -155,32 +163,40 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             public bool? Count { get; set; }
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24filter")]
             public string? Filter { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24orderby")]
             public string[]? Orderby { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24search")]
             public string? Search { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24search")]
             public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

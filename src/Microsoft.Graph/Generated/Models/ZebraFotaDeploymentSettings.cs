@@ -29,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Deploy update for devices with this model only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceModel {
             get { return BackingStore?.Get<string?>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
+#nullable restore
 #else
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
@@ -51,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FirmwareTargetArtifactDescription {
             get { return BackingStore?.Get<string?>("firmwareTargetArtifactDescription"); }
             set { BackingStore?.Set("firmwareTargetArtifactDescription", value); }
         }
+#nullable restore
 #else
         public string FirmwareTargetArtifactDescription {
             get { return BackingStore?.Get<string>("firmwareTargetArtifactDescription"); }
@@ -63,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Deployment&apos;s Board Support Package (BSP. E.g.: &apos;01.18.02.00&apos;). Required only for custom update type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FirmwareTargetBoardSupportPackageVersion {
             get { return BackingStore?.Get<string?>("firmwareTargetBoardSupportPackageVersion"); }
             set { BackingStore?.Set("firmwareTargetBoardSupportPackageVersion", value); }
         }
+#nullable restore
 #else
         public string FirmwareTargetBoardSupportPackageVersion {
             get { return BackingStore?.Get<string>("firmwareTargetBoardSupportPackageVersion"); }
@@ -75,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Target OS Version (e.g.: &apos;8.1.0&apos;). Required only for custom update type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FirmwareTargetOsVersion {
             get { return BackingStore?.Get<string?>("firmwareTargetOsVersion"); }
             set { BackingStore?.Set("firmwareTargetOsVersion", value); }
         }
+#nullable restore
 #else
         public string FirmwareTargetOsVersion {
             get { return BackingStore?.Get<string>("firmwareTargetOsVersion"); }
@@ -87,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Target patch name (e.g.: &apos;U06&apos;). Required only for custom update type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FirmwareTargetPatch {
             get { return BackingStore?.Get<string?>("firmwareTargetPatch"); }
             set { BackingStore?.Set("firmwareTargetPatch", value); }
         }
+#nullable restore
 #else
         public string FirmwareTargetPatch {
             get { return BackingStore?.Get<string>("firmwareTargetPatch"); }
@@ -114,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

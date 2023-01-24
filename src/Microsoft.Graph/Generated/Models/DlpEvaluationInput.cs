@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The currentLabel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.CurrentLabel? CurrentLabel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel?>("currentLabel"); }
             set { BackingStore?.Set("currentLabel", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The discoveredSensitiveTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DiscoveredSensitiveType>? DiscoveredSensitiveTypes {
             get { return BackingStore?.Get<List<DiscoveredSensitiveType>?>("discoveredSensitiveTypes"); }
             set { BackingStore?.Set("discoveredSensitiveTypes", value); }
         }
+#nullable restore
 #else
         public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes {
             get { return BackingStore?.Get<List<DiscoveredSensitiveType>>("discoveredSensitiveTypes"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

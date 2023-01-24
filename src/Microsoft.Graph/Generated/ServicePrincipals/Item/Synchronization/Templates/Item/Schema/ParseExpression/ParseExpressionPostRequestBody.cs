@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expression property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Expression {
             get { return BackingStore?.Get<string?>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
+#nullable restore
 #else
         public string Expression {
             get { return BackingStore?.Get<string>("expression"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
 #endif
         /// <summary>The targetAttributeDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AttributeDefinition? TargetAttributeDefinition {
             get { return BackingStore?.Get<AttributeDefinition?>("targetAttributeDefinition"); }
             set { BackingStore?.Set("targetAttributeDefinition", value); }
         }
+#nullable restore
 #else
         public AttributeDefinition TargetAttributeDefinition {
             get { return BackingStore?.Get<AttributeDefinition>("targetAttributeDefinition"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
 #endif
         /// <summary>The testInputObject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ExpressionInputObject? TestInputObject {
             get { return BackingStore?.Get<ExpressionInputObject?>("testInputObject"); }
             set { BackingStore?.Set("testInputObject", value); }
         }
+#nullable restore
 #else
         public ExpressionInputObject TestInputObject {
             get { return BackingStore?.Get<ExpressionInputObject>("testInputObject"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10EasEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable {
         /// <summary>Account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountName {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#nullable restore
 #else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Exchange location that (URL) that the native mail app connects to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HostName {
             get { return BackingStore?.Get<string?>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#nullable restore
 #else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagedTenantAlert : Entity, IParsable {
         /// <summary>The alertData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ManagedTenants.AlertData? AlertData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.AlertData?>("alertData"); }
             set { BackingStore?.Set("alertData", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ManagedTenants.AlertData AlertData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.AlertData>("alertData"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The alertDataReferenceStrings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AlertDataReferenceString>? AlertDataReferenceStrings {
             get { return BackingStore?.Get<List<AlertDataReferenceString>?>("alertDataReferenceStrings"); }
             set { BackingStore?.Set("alertDataReferenceStrings", value); }
         }
+#nullable restore
 #else
         public List<AlertDataReferenceString> AlertDataReferenceStrings {
             get { return BackingStore?.Get<List<AlertDataReferenceString>>("alertDataReferenceStrings"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The alertLogs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedTenantAlertLog>? AlertLogs {
             get { return BackingStore?.Get<List<ManagedTenantAlertLog>?>("alertLogs"); }
             set { BackingStore?.Set("alertLogs", value); }
         }
+#nullable restore
 #else
         public List<ManagedTenantAlertLog> AlertLogs {
             get { return BackingStore?.Get<List<ManagedTenantAlertLog>>("alertLogs"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The alertRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ManagedTenantAlertRule? AlertRule {
             get { return BackingStore?.Get<ManagedTenantAlertRule?>("alertRule"); }
             set { BackingStore?.Set("alertRule", value); }
         }
+#nullable restore
 #else
         public ManagedTenantAlertRule AlertRule {
             get { return BackingStore?.Get<ManagedTenantAlertRule>("alertRule"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The alertRuleDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlertRuleDisplayName {
             get { return BackingStore?.Get<string?>("alertRuleDisplayName"); }
             set { BackingStore?.Set("alertRuleDisplayName", value); }
         }
+#nullable restore
 #else
         public string AlertRuleDisplayName {
             get { return BackingStore?.Get<string>("alertRuleDisplayName"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The apiNotifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedTenantApiNotification>? ApiNotifications {
             get { return BackingStore?.Get<List<ManagedTenantApiNotification>?>("apiNotifications"); }
             set { BackingStore?.Set("apiNotifications", value); }
         }
+#nullable restore
 #else
         public List<ManagedTenantApiNotification> ApiNotifications {
             get { return BackingStore?.Get<List<ManagedTenantApiNotification>>("apiNotifications"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The assignedToUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignedToUserId {
             get { return BackingStore?.Get<string?>("assignedToUserId"); }
             set { BackingStore?.Set("assignedToUserId", value); }
         }
+#nullable restore
 #else
         public string AssignedToUserId {
             get { return BackingStore?.Get<string>("assignedToUserId"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The correlationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CorrelationId {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#nullable restore
 #else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
@@ -108,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedByUserId {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#nullable restore
 #else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
@@ -125,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The emailNotifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedTenantEmailNotification>? EmailNotifications {
             get { return BackingStore?.Get<List<ManagedTenantEmailNotification>?>("emailNotifications"); }
             set { BackingStore?.Set("emailNotifications", value); }
         }
+#nullable restore
 #else
         public List<ManagedTenantEmailNotification> EmailNotifications {
             get { return BackingStore?.Get<List<ManagedTenantEmailNotification>>("emailNotifications"); }
@@ -137,10 +157,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastActionByUserId {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#nullable restore
 #else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
@@ -154,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Message {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#nullable restore
 #else
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
@@ -176,10 +200,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -188,10 +214,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for the Private Link policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyId {
             get { return BackingStore?.Get<string?>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
+#nullable restore
 #else
         public string PolicyId {
             get { return BackingStore?.Get<string>("policyId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the Private Link policy in Azure AD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyName {
             get { return BackingStore?.Get<string?>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
+#nullable restore
 #else
         public string PolicyName {
             get { return BackingStore?.Get<string>("policyName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tenant identifier of the Azure AD tenant the Private Link policy belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyTenantId {
             get { return BackingStore?.Get<string?>("policyTenantId"); }
             set { BackingStore?.Set("policyTenantId", value); }
         }
+#nullable restore
 #else
         public string PolicyTenantId {
             get { return BackingStore?.Get<string>("policyTenantId"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure Resource Manager (ARM) path for the Private Link policy resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceId {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#nullable restore
 #else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }

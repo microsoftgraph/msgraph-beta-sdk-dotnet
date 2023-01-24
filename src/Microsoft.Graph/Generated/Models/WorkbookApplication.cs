@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookApplication : Entity, IParsable {
         /// <summary>Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CalculationMode {
             get { return BackingStore?.Get<string?>("calculationMode"); }
             set { BackingStore?.Set("calculationMode", value); }
         }
+#nullable restore
 #else
         public string CalculationMode {
             get { return BackingStore?.Get<string>("calculationMode"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Encrypted PFX blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? EncryptedPfxBlob {
             get { return BackingStore?.Get<byte[]?>("encryptedPfxBlob"); }
             set { BackingStore?.Set("encryptedPfxBlob", value); }
         }
+#nullable restore
 #else
         public byte[] EncryptedPfxBlob {
             get { return BackingStore?.Get<byte[]>("encryptedPfxBlob"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Encrypted PFX password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EncryptedPfxPassword {
             get { return BackingStore?.Get<string?>("encryptedPfxPassword"); }
             set { BackingStore?.Set("encryptedPfxPassword", value); }
         }
+#nullable restore
 #else
         public string EncryptedPfxPassword {
             get { return BackingStore?.Get<string>("encryptedPfxPassword"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the key (within the provider) used to encrypt the blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KeyName {
             get { return BackingStore?.Get<string?>("keyName"); }
             set { BackingStore?.Set("keyName", value); }
         }
+#nullable restore
 #else
         public string KeyName {
             get { return BackingStore?.Get<string>("keyName"); }
@@ -71,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Crypto provider used to encrypt this blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProviderName {
             get { return BackingStore?.Get<string?>("providerName"); }
             set { BackingStore?.Set("providerName", value); }
         }
+#nullable restore
 #else
         public string ProviderName {
             get { return BackingStore?.Get<string>("providerName"); }
@@ -88,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>SHA-1 thumbprint of the PFX certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Thumbprint {
             get { return BackingStore?.Get<string?>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
+#nullable restore
 #else
         public string Thumbprint {
             get { return BackingStore?.Get<string>("thumbprint"); }
@@ -100,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User Principal Name of the PFX certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

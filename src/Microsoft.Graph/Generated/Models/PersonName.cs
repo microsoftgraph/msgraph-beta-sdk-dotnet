@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PersonName : ItemFacet, IParsable {
         /// <summary>Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>First name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? First {
             get { return BackingStore?.Get<string?>("first"); }
             set { BackingStore?.Set("first", value); }
         }
+#nullable restore
 #else
         public string First {
             get { return BackingStore?.Get<string>("first"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Initials of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Initials {
             get { return BackingStore?.Get<string?>("initials"); }
             set { BackingStore?.Set("initials", value); }
         }
+#nullable restore
 #else
         public string Initials {
             get { return BackingStore?.Get<string>("initials"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LanguageTag {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+#nullable restore
 #else
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Last name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Last {
             get { return BackingStore?.Get<string?>("last"); }
             set { BackingStore?.Set("last", value); }
         }
+#nullable restore
 #else
         public string Last {
             get { return BackingStore?.Get<string>("last"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Maiden name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Maiden {
             get { return BackingStore?.Get<string?>("maiden"); }
             set { BackingStore?.Set("maiden", value); }
         }
+#nullable restore
 #else
         public string Maiden {
             get { return BackingStore?.Get<string>("maiden"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Middle name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Middle {
             get { return BackingStore?.Get<string?>("middle"); }
             set { BackingStore?.Set("middle", value); }
         }
+#nullable restore
 #else
         public string Middle {
             get { return BackingStore?.Get<string>("middle"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Nickname of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Nickname {
             get { return BackingStore?.Get<string?>("nickname"); }
             set { BackingStore?.Set("nickname", value); }
         }
+#nullable restore
 #else
         public string Nickname {
             get { return BackingStore?.Get<string>("nickname"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Guidance on how to pronounce the users name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PersonNamePronounciation? Pronunciation {
             get { return BackingStore?.Get<PersonNamePronounciation?>("pronunciation"); }
             set { BackingStore?.Set("pronunciation", value); }
         }
+#nullable restore
 #else
         public PersonNamePronounciation Pronunciation {
             get { return BackingStore?.Get<PersonNamePronounciation>("pronunciation"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Designators used after the users name (eg: PhD.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Suffix {
             get { return BackingStore?.Get<string?>("suffix"); }
             set { BackingStore?.Set("suffix", value); }
         }
+#nullable restore
 #else
         public string Suffix {
             get { return BackingStore?.Get<string>("suffix"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

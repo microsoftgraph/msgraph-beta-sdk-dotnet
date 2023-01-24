@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeWeblink : AndroidDeviceOwnerKioskModeFolderItem, IParsable {
         /// <summary>Display name for weblink</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Label {
             get { return BackingStore?.Get<string?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#nullable restore
 #else
         public string Label {
             get { return BackingStore?.Get<string>("label"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Link for weblink</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Link {
             get { return BackingStore?.Get<string?>("link"); }
             set { BackingStore?.Set("link", value); }
         }
+#nullable restore
 #else
         public string Link {
             get { return BackingStore?.Get<string>("link"); }

@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsInformationProtectionDeviceRegistration : Entity, IParsable {
         /// <summary>Device Mac address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceMacAddress {
             get { return BackingStore?.Get<string?>("deviceMacAddress"); }
             set { BackingStore?.Set("deviceMacAddress", value); }
         }
+#nullable restore
 #else
         public string DeviceMacAddress {
             get { return BackingStore?.Get<string>("deviceMacAddress"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device identifier for this device registration record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceRegistrationId {
             get { return BackingStore?.Get<string?>("deviceRegistrationId"); }
             set { BackingStore?.Set("deviceRegistrationId", value); }
         }
+#nullable restore
 #else
         public string DeviceRegistrationId {
             get { return BackingStore?.Get<string>("deviceRegistrationId"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device type, for example, Windows laptop VS Windows phone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceType {
             get { return BackingStore?.Get<string?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
+#nullable restore
 #else
         public string DeviceType {
             get { return BackingStore?.Get<string>("deviceType"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>UserId associated with this device registration record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

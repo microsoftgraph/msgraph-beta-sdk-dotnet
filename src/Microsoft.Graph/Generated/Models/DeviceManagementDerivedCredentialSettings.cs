@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementDerivedCredentialSettings : Entity, IParsable {
         /// <summary>The display name for the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HelpUrl {
             get { return BackingStore?.Get<string?>("helpUrl"); }
             set { BackingStore?.Set("helpUrl", value); }
         }
+#nullable restore
 #else
         public string HelpUrl {
             get { return BackingStore?.Get<string>("helpUrl"); }

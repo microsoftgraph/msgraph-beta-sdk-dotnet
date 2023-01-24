@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MatchLocation>? Matches {
             get { return BackingStore?.Get<List<MatchLocation>?>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
+#nullable restore
 #else
         public List<MatchLocation> Matches {
             get { return BackingStore?.Get<List<MatchLocation>>("matches"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sensitiveTypeId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SensitiveTypeId {
             get { return BackingStore?.Get<string?>("sensitiveTypeId"); }
             set { BackingStore?.Set("sensitiveTypeId", value); }
         }
+#nullable restore
 #else
         public string SensitiveTypeId {
             get { return BackingStore?.Get<string>("sensitiveTypeId"); }

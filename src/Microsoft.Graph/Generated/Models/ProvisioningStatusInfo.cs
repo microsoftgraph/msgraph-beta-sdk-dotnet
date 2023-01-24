@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The errorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ProvisioningErrorInfo? ErrorInformation {
             get { return BackingStore?.Get<ProvisioningErrorInfo?>("errorInformation"); }
             set { BackingStore?.Set("errorInformation", value); }
         }
+#nullable restore
 #else
         public ProvisioningErrorInfo ErrorInformation {
             get { return BackingStore?.Get<ProvisioningErrorInfo>("errorInformation"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The groups whose users have access to print using the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Group>? AllowedGroups {
             get { return BackingStore?.Get<List<Group>?>("allowedGroups"); }
             set { BackingStore?.Set("allowedGroups", value); }
         }
+#nullable restore
 #else
         public List<Group> AllowedGroups {
             get { return BackingStore?.Get<List<Group>>("allowedGroups"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The users who have access to print using the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<User>? AllowedUsers {
             get { return BackingStore?.Get<List<User>?>("allowedUsers"); }
             set { BackingStore?.Set("allowedUsers", value); }
         }
+#nullable restore
 #else
         public List<User> AllowedUsers {
             get { return BackingStore?.Get<List<User>>("allowedUsers"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The printer that this printer share is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Printer? Printer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Printer?>("printer"); }
             set { BackingStore?.Set("printer", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Printer Printer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Printer>("printer"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Additional data for a printer share as viewed by the signed-in user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrinterShareViewpoint? ViewPoint {
             get { return BackingStore?.Get<PrinterShareViewpoint?>("viewPoint"); }
             set { BackingStore?.Set("viewPoint", value); }
         }
+#nullable restore
 #else
         public PrinterShareViewpoint ViewPoint {
             get { return BackingStore?.Get<PrinterShareViewpoint>("viewPoint"); }

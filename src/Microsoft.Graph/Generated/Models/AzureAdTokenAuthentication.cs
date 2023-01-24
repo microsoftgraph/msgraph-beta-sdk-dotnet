@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AzureAdTokenAuthentication : CustomExtensionAuthenticationConfiguration, IParsable {
         /// <summary>The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceId {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#nullable restore
 #else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }

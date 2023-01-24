@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A list of all the Intune managed device IDs that completed the bulk action with a failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? FailedDeviceIds {
             get { return BackingStore?.Get<List<string>?>("failedDeviceIds"); }
             set { BackingStore?.Set("failedDeviceIds", value); }
         }
+#nullable restore
 #else
         public List<string> FailedDeviceIds {
             get { return BackingStore?.Get<List<string>>("failedDeviceIds"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of all the Intune managed device IDs that were not found when the bulk action was attempted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? NotFoundDeviceIds {
             get { return BackingStore?.Get<List<string>?>("notFoundDeviceIds"); }
             set { BackingStore?.Set("notFoundDeviceIds", value); }
         }
+#nullable restore
 #else
         public List<string> NotFoundDeviceIds {
             get { return BackingStore?.Get<List<string>>("notFoundDeviceIds"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? NotSupportedDeviceIds {
             get { return BackingStore?.Get<List<string>?>("notSupportedDeviceIds"); }
             set { BackingStore?.Set("notSupportedDeviceIds", value); }
         }
+#nullable restore
 #else
         public List<string> NotSupportedDeviceIds {
             get { return BackingStore?.Get<List<string>>("notSupportedDeviceIds"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of all the Intune managed device IDs that completed the bulk action successfully.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SuccessfulDeviceIds {
             get { return BackingStore?.Get<List<string>?>("successfulDeviceIds"); }
             set { BackingStore?.Set("successfulDeviceIds", value); }
         }
+#nullable restore
 #else
         public List<string> SuccessfulDeviceIds {
             get { return BackingStore?.Get<List<string>>("successfulDeviceIds"); }

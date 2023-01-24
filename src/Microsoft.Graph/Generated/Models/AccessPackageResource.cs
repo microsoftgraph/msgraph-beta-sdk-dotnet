@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResource : Entity, IParsable {
         /// <summary>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment&apos;s originId.Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment? AccessPackageResourceEnvironment {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment?>("accessPackageResourceEnvironment"); }
             set { BackingStore?.Set("accessPackageResourceEnvironment", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment AccessPackageResourceEnvironment {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>("accessPackageResourceEnvironment"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResourceRole>? AccessPackageResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageResourceRole>?>("accessPackageResourceRoles"); }
             set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResourceRole> AccessPackageResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageResourceRole>>("accessPackageResourceRoles"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResourceScope>? AccessPackageResourceScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceScope>?>("accessPackageResourceScopes"); }
             set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResourceScope> AccessPackageResourceScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceScope>>("accessPackageResourceScopes"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the user or application that first added this resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AddedBy {
             get { return BackingStore?.Get<string?>("addedBy"); }
             set { BackingStore?.Set("addedBy", value); }
         }
+#nullable restore
 #else
         public string AddedBy {
             get { return BackingStore?.Get<string>("addedBy"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains information about the attributes to be collected from the requestor and sent to the resource application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResourceAttribute>? Attributes {
             get { return BackingStore?.Get<List<AccessPackageResourceAttribute>?>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResourceAttribute> Attributes {
             get { return BackingStore?.Get<List<AccessPackageResourceAttribute>>("attributes"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A description for the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the resource, such as the application name, group name or site name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginId {
             get { return BackingStore?.Get<string?>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
+#nullable restore
 #else
         public string OriginId {
             get { return BackingStore?.Get<string>("originId"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginSystem {
             get { return BackingStore?.Get<string?>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
+#nullable restore
 #else
         public string OriginSystem {
             get { return BackingStore?.Get<string>("originSystem"); }
@@ -125,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceType {
             get { return BackingStore?.Get<string?>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
+#nullable restore
 #else
         public string ResourceType {
             get { return BackingStore?.Get<string>("resourceType"); }
@@ -137,10 +157,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A unique resource locator for the resource, such as the URL for signing a user into an application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Url {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#nullable restore
 #else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }

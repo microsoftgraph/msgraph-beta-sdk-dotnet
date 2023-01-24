@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The labelActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<LabelActionBase>? LabelActions {
             get { return BackingStore?.Get<List<LabelActionBase>?>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
+#nullable restore
 #else
         public List<LabelActionBase> LabelActions {
             get { return BackingStore?.Get<List<LabelActionBase>>("labelActions"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -97,10 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policyTip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyTip {
             get { return BackingStore?.Get<string?>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
+#nullable restore
 #else
         public string PolicyTip {
             get { return BackingStore?.Get<string>("policyTip"); }
@@ -114,10 +128,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The toolTip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ToolTip {
             get { return BackingStore?.Get<string?>("toolTip"); }
             set { BackingStore?.Set("toolTip", value); }
         }
+#nullable restore
 #else
         public string ToolTip {
             get { return BackingStore?.Get<string>("toolTip"); }

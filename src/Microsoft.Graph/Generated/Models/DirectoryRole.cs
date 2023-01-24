@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DirectoryRole : DirectoryObject, IParsable {
         /// <summary>The description for the directory role. Read-only. Supports $filter (eq), $search, $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? Members {
             get { return BackingStore?.Get<List<DirectoryObject>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> Members {
             get { return BackingStore?.Get<List<DirectoryObject>>("members"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleTemplateId {
             get { return BackingStore?.Get<string?>("roleTemplateId"); }
             set { BackingStore?.Set("roleTemplateId", value); }
         }
+#nullable restore
 #else
         public string RoleTemplateId {
             get { return BackingStore?.Get<string>("roleTemplateId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Members of this directory role that are scoped to administrative units. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ScopedRoleMembership>? ScopedMembers {
             get { return BackingStore?.Get<List<ScopedRoleMembership>?>("scopedMembers"); }
             set { BackingStore?.Set("scopedMembers", value); }
         }
+#nullable restore
 #else
         public List<ScopedRoleMembership> ScopedMembers {
             get { return BackingStore?.Get<List<ScopedRoleMembership>>("scopedMembers"); }

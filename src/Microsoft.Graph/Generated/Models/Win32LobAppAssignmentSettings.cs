@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The install time settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MobileAppInstallTimeSettings? InstallTimeSettings {
             get { return BackingStore?.Get<MobileAppInstallTimeSettings?>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
+#nullable restore
 #else
         public MobileAppInstallTimeSettings InstallTimeSettings {
             get { return BackingStore?.Get<MobileAppInstallTimeSettings>("installTimeSettings"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The reboot settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Win32LobAppRestartSettings? RestartSettings {
             get { return BackingStore?.Get<Win32LobAppRestartSettings?>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
+#nullable restore
 #else
         public Win32LobAppRestartSettings RestartSettings {
             get { return BackingStore?.Get<Win32LobAppRestartSettings>("restartSettings"); }

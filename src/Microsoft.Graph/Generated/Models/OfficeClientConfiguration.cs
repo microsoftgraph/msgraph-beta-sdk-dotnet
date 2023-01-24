@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OfficeClientConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OfficeClientConfigurationAssignment>? Assignments {
             get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<OfficeClientConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>>("assignments"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of office Client check-in status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OfficeClientCheckinStatus>? CheckinStatuses {
             get { return BackingStore?.Get<List<OfficeClientCheckinStatus>?>("checkinStatuses"); }
             set { BackingStore?.Set("checkinStatuses", value); }
         }
+#nullable restore
 #else
         public List<OfficeClientCheckinStatus> CheckinStatuses {
             get { return BackingStore?.Get<List<OfficeClientCheckinStatus>>("checkinStatuses"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Admin provided description of the office client configuration policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Policy settings JSON string in binary format, these values cannot be changed by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? PolicyPayload {
             get { return BackingStore?.Get<byte[]?>("policyPayload"); }
             set { BackingStore?.Set("policyPayload", value); }
         }
+#nullable restore
 #else
         public byte[] PolicyPayload {
             get { return BackingStore?.Get<byte[]>("policyPayload"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User check-in summary for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OfficeUserCheckinSummary? UserCheckinSummary {
             get { return BackingStore?.Get<OfficeUserCheckinSummary?>("userCheckinSummary"); }
             set { BackingStore?.Set("userCheckinSummary", value); }
         }
+#nullable restore
 #else
         public OfficeUserCheckinSummary UserCheckinSummary {
             get { return BackingStore?.Get<OfficeUserCheckinSummary>("userCheckinSummary"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Preference settings JSON string in binary format, these values can be overridden by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? UserPreferencePayload {
             get { return BackingStore?.Get<byte[]?>("userPreferencePayload"); }
             set { BackingStore?.Set("userPreferencePayload", value); }
         }
+#nullable restore
 #else
         public byte[] UserPreferencePayload {
             get { return BackingStore?.Get<byte[]>("userPreferencePayload"); }

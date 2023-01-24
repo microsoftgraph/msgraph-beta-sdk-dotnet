@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Invitation : Entity, IParsable {
         /// <summary>The user created as part of the invitation creation. Read-Only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public User? InvitedUser {
             get { return BackingStore?.Get<User?>("invitedUser"); }
             set { BackingStore?.Set("invitedUser", value); }
         }
+#nullable restore
 #else
         public User InvitedUser {
             get { return BackingStore?.Get<User>("invitedUser"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the user being invited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InvitedUserDisplayName {
             get { return BackingStore?.Get<string?>("invitedUserDisplayName"); }
             set { BackingStore?.Set("invitedUserDisplayName", value); }
         }
+#nullable restore
 #else
         public string InvitedUserDisplayName {
             get { return BackingStore?.Get<string>("invitedUserDisplayName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&amp;)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InvitedUserEmailAddress {
             get { return BackingStore?.Get<string?>("invitedUserEmailAddress"); }
             set { BackingStore?.Set("invitedUserEmailAddress", value); }
         }
+#nullable restore
 #else
         public string InvitedUserEmailAddress {
             get { return BackingStore?.Get<string>("invitedUserEmailAddress"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.InvitedUserMessageInfo? InvitedUserMessageInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InvitedUserMessageInfo?>("invitedUserMessageInfo"); }
             set { BackingStore?.Set("invitedUserMessageInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.InvitedUserMessageInfo InvitedUserMessageInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InvitedUserMessageInfo>("invitedUserMessageInfo"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The userType of the user being invited. By default, this is Guest. You can invite as Member if you&apos;re are company administrator. The default is false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InvitedUserType {
             get { return BackingStore?.Get<string?>("invitedUserType"); }
             set { BackingStore?.Set("invitedUserType", value); }
         }
+#nullable restore
 #else
         public string InvitedUserType {
             get { return BackingStore?.Get<string>("invitedUserType"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL the user can use to redeem their invitation. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InviteRedeemUrl {
             get { return BackingStore?.Get<string?>("inviteRedeemUrl"); }
             set { BackingStore?.Set("inviteRedeemUrl", value); }
         }
+#nullable restore
 #else
         public string InviteRedeemUrl {
             get { return BackingStore?.Get<string>("inviteRedeemUrl"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL user should be redirected to once the invitation is redeemed. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InviteRedirectUrl {
             get { return BackingStore?.Get<string?>("inviteRedirectUrl"); }
             set { BackingStore?.Set("inviteRedirectUrl", value); }
         }
+#nullable restore
 #else
         public string InviteRedirectUrl {
             get { return BackingStore?.Get<string>("inviteRedirectUrl"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Status {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }

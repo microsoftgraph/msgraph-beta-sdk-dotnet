@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Complet
         public CompleteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directory/impactedResources/{recommendationResource%2Did}/microsoft.graph.complete";
+            UrlTemplate = "{+baseurl}/directory/impactedResources/{impactedResource%2Did}/microsoft.graph.complete";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Complet
         public CompleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directory/impactedResources/{recommendationResource%2Did}/microsoft.graph.complete";
+            UrlTemplate = "{+baseurl}/directory/impactedResources/{impactedResource%2Did}/microsoft.graph.complete";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -52,23 +52,27 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Complet
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-        public async Task<RecommendationResource?> PostAsync(Action<CompleteRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable enable
+        public async Task<ImpactedResource?> PostAsync(Action<CompleteRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
-        public async Task<RecommendationResource> PostAsync(Action<CompleteRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ImpactedResource> PostAsync(Action<CompleteRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RecommendationResource>(requestInfo, RecommendationResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ImpactedResource>(requestInfo, ImpactedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Invoke action complete
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPostRequestInformation(Action<CompleteRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPostRequestInformation(Action<CompleteRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif

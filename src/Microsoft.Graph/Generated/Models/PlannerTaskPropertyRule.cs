@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerTaskPropertyRule : PlannerPropertyRule, IParsable {
         /// <summary>Rules and restrictions for applied categories. This value does not currently support overrides. Accepted values for the default rule and individual overrides are allow, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerFieldRules? AppliedCategories {
             get { return BackingStore?.Get<PlannerFieldRules?>("appliedCategories"); }
             set { BackingStore?.Set("appliedCategories", value); }
         }
+#nullable restore
 #else
         public PlannerFieldRules AppliedCategories {
             get { return BackingStore?.Get<PlannerFieldRules>("appliedCategories"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for assignments. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, addSelf, addOther, remove, removeSelf, removeOther, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerFieldRules? Assignments {
             get { return BackingStore?.Get<PlannerFieldRules?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public PlannerFieldRules Assignments {
             get { return BackingStore?.Get<PlannerFieldRules>("assignments"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for checklist. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, update, check, reorder, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerFieldRules? CheckLists {
             get { return BackingStore?.Get<PlannerFieldRules?>("checkLists"); }
             set { BackingStore?.Set("checkLists", value); }
         }
+#nullable restore
 #else
         public PlannerFieldRules CheckLists {
             get { return BackingStore?.Get<PlannerFieldRules>("checkLists"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for deleting the task. Accepted values are allow and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Delete {
             get { return BackingStore?.Get<List<string>?>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
+#nullable restore
 #else
         public List<string> Delete {
             get { return BackingStore?.Get<List<string>>("delete"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for changing the due date of the task. Accepted values are allow and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DueDate {
             get { return BackingStore?.Get<List<string>?>("dueDate"); }
             set { BackingStore?.Set("dueDate", value); }
         }
+#nullable restore
 #else
         public List<string> DueDate {
             get { return BackingStore?.Get<List<string>>("dueDate"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Move {
             get { return BackingStore?.Get<List<string>?>("move"); }
             set { BackingStore?.Set("move", value); }
         }
+#nullable restore
 #else
         public List<string> Move {
             get { return BackingStore?.Get<List<string>>("move"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for changing the notes of the task. Accepted values are allow and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Notes {
             get { return BackingStore?.Get<List<string>?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#nullable restore
 #else
         public List<string> Notes {
             get { return BackingStore?.Get<List<string>>("notes"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for changing the order of the task. Accepted values are allow and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Order {
             get { return BackingStore?.Get<List<string>?>("order"); }
             set { BackingStore?.Set("order", value); }
         }
+#nullable restore
 #else
         public List<string> Order {
             get { return BackingStore?.Get<List<string>>("order"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? PercentComplete {
             get { return BackingStore?.Get<List<string>?>("percentComplete"); }
             set { BackingStore?.Set("percentComplete", value); }
         }
+#nullable restore
 #else
         public List<string> PercentComplete {
             get { return BackingStore?.Get<List<string>>("percentComplete"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? PreviewType {
             get { return BackingStore?.Get<List<string>?>("previewType"); }
             set { BackingStore?.Set("previewType", value); }
         }
+#nullable restore
 #else
         public List<string> PreviewType {
             get { return BackingStore?.Get<List<string>>("previewType"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for changing the priority of the task. Accepted values are allow and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Priority {
             get { return BackingStore?.Get<List<string>?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
+#nullable restore
 #else
         public List<string> Priority {
             get { return BackingStore?.Get<List<string>>("priority"); }
@@ -139,10 +161,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for references. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerFieldRules? References {
             get { return BackingStore?.Get<PlannerFieldRules?>("references"); }
             set { BackingStore?.Set("references", value); }
         }
+#nullable restore
 #else
         public PlannerFieldRules References {
             get { return BackingStore?.Get<PlannerFieldRules>("references"); }
@@ -151,10 +175,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for changing the start date of the task. Accepted values are allow and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? StartDate {
             get { return BackingStore?.Get<List<string>?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
+#nullable restore
 #else
         public List<string> StartDate {
             get { return BackingStore?.Get<List<string>>("startDate"); }
@@ -163,10 +189,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules and restrictions for changing the title of the task. Accepted values are allow and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Title {
             get { return BackingStore?.Get<List<string>?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public List<string> Title {
             get { return BackingStore?.Get<List<string>>("title"); }

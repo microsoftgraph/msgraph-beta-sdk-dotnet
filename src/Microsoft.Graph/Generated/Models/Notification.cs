@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GroupName {
             get { return BackingStore?.Get<string?>("groupName"); }
             set { BackingStore?.Set("groupName", value); }
         }
+#nullable restore
 #else
         public string GroupName {
             get { return BackingStore?.Get<string>("groupName"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PayloadTypes? Payload {
             get { return BackingStore?.Get<PayloadTypes?>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
+#nullable restore
 #else
         public PayloadTypes Payload {
             get { return BackingStore?.Get<PayloadTypes>("payload"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the host name of the app to which the calling service wants to post the notification, for the given user. If targeting web endpoints (see targetPolicy.platformTypes), ensure that targetHostName is the same as the name used when creating a subscription on the client side within the application JSON property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetHostName {
             get { return BackingStore?.Get<string?>("targetHostName"); }
             set { BackingStore?.Set("targetHostName", value); }
         }
+#nullable restore
 #else
         public string TargetHostName {
             get { return BackingStore?.Get<string>("targetHostName"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TargetPolicyEndpoints? TargetPolicy {
             get { return BackingStore?.Get<TargetPolicyEndpoints?>("targetPolicy"); }
             set { BackingStore?.Set("targetPolicy", value); }
         }
+#nullable restore
 #else
         public TargetPolicyEndpoints TargetPolicy {
             get { return BackingStore?.Get<TargetPolicyEndpoints>("targetPolicy"); }

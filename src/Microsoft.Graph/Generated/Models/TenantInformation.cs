@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Primary domain name of an Azure AD tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultDomainName {
             get { return BackingStore?.Get<string?>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
+#nullable restore
 #else
         public string DefaultDomainName {
             get { return BackingStore?.Get<string>("defaultDomainName"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name of an Azure AD tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name shown to users that sign in to an Azure AD tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FederationBrandName {
             get { return BackingStore?.Get<string?>("federationBrandName"); }
             set { BackingStore?.Set("federationBrandName", value); }
         }
+#nullable restore
 #else
         public string FederationBrandName {
             get { return BackingStore?.Get<string>("federationBrandName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier of an Azure AD tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

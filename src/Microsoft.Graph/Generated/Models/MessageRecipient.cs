@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MessageEvent>? Events {
             get { return BackingStore?.Get<List<MessageEvent>?>("events"); }
             set { BackingStore?.Set("events", value); }
         }
+#nullable restore
 #else
         public List<MessageEvent> Events {
             get { return BackingStore?.Get<List<MessageEvent>>("events"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The recipientEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecipientEmail {
             get { return BackingStore?.Get<string?>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
+#nullable restore
 #else
         public string RecipientEmail {
             get { return BackingStore?.Get<string>("recipientEmail"); }

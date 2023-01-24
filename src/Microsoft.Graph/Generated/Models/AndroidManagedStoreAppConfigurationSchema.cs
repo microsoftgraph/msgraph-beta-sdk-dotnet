@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedStoreAppConfigurationSchema : Entity, IParsable {
         /// <summary>UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? ExampleJson {
             get { return BackingStore?.Get<byte[]?>("exampleJson"); }
             set { BackingStore?.Set("exampleJson", value); }
         }
+#nullable restore
 #else
         public byte[] ExampleJson {
             get { return BackingStore?.Get<byte[]>("exampleJson"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AndroidManagedStoreAppConfigurationSchemaItem>? NestedSchemaItems {
             get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>?>("nestedSchemaItems"); }
             set { BackingStore?.Set("nestedSchemaItems", value); }
         }
+#nullable restore
 #else
         public List<AndroidManagedStoreAppConfigurationSchemaItem> NestedSchemaItems {
             get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>("nestedSchemaItems"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AndroidManagedStoreAppConfigurationSchemaItem>? SchemaItems {
             get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>?>("schemaItems"); }
             set { BackingStore?.Set("schemaItems", value); }
         }
+#nullable restore
 #else
         public List<AndroidManagedStoreAppConfigurationSchemaItem> SchemaItems {
             get { return BackingStore?.Get<List<AndroidManagedStoreAppConfigurationSchemaItem>>("schemaItems"); }

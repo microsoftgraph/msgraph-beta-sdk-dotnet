@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Complex type containing file hashes (cryptographic and location-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.FileHash? FileHash {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileHash?>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.FileHash FileHash {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileHash>("fileHash"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>File name (without path).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Full file path of the file/imageFile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Path {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#nullable restore
 #else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RiskScore {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#nullable restore
 #else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }

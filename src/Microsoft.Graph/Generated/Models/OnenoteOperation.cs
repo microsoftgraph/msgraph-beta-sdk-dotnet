@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnenoteOperation : Operation, IParsable {
         /// <summary>The error returned by the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OnenoteOperationError? Error {
             get { return BackingStore?.Get<OnenoteOperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public OnenoteOperationError Error {
             get { return BackingStore?.Get<OnenoteOperationError>("error"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The operation percent complete if the operation is still in running status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PercentComplete {
             get { return BackingStore?.Get<string?>("percentComplete"); }
             set { BackingStore?.Set("percentComplete", value); }
         }
+#nullable restore
 #else
         public string PercentComplete {
             get { return BackingStore?.Get<string>("percentComplete"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The resource id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceId {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#nullable restore
 #else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The resource URI for the object. For example, the resource URI for a copied page or section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceLocation {
             get { return BackingStore?.Get<string?>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
+#nullable restore
 #else
         public string ResourceLocation {
             get { return BackingStore?.Get<string>("resourceLocation"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Email of the data subject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Email {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#nullable restore
 #else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>First name of the data subject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FirstName {
             get { return BackingStore?.Get<string?>("firstName"); }
             set { BackingStore?.Set("firstName", value); }
         }
+#nullable restore
 #else
         public string FirstName {
             get { return BackingStore?.Get<string>("firstName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Last Name of the data subject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastName {
             get { return BackingStore?.Get<string?>("lastName"); }
             set { BackingStore?.Set("lastName", value); }
         }
+#nullable restore
 #else
         public string LastName {
             get { return BackingStore?.Get<string>("lastName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Residency {
             get { return BackingStore?.Get<string?>("residency"); }
             set { BackingStore?.Set("residency", value); }
         }
+#nullable restore
 #else
         public string Residency {
             get { return BackingStore?.Get<string>("residency"); }

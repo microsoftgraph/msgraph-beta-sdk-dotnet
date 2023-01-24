@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The officeConfigurationXml property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? OfficeConfigurationXml {
             get { return BackingStore?.Get<byte[]?>("officeConfigurationXml"); }
             set { BackingStore?.Set("officeConfigurationXml", value); }
         }
+#nullable restore
 #else
         public byte[] OfficeConfigurationXml {
             get { return BackingStore?.Get<byte[]>("officeConfigurationXml"); }

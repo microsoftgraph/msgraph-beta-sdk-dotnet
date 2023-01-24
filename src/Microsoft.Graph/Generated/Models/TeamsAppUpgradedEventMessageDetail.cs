@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppUpgradedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Initiator {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#nullable restore
 #else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name of the teamsApp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamsAppDisplayName {
             get { return BackingStore?.Get<string?>("teamsAppDisplayName"); }
             set { BackingStore?.Set("teamsAppDisplayName", value); }
         }
+#nullable restore
 #else
         public string TeamsAppDisplayName {
             get { return BackingStore?.Get<string>("teamsAppDisplayName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier of the teamsApp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamsAppId {
             get { return BackingStore?.Get<string?>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
+#nullable restore
 #else
         public string TeamsAppId {
             get { return BackingStore?.Get<string>("teamsAppId"); }

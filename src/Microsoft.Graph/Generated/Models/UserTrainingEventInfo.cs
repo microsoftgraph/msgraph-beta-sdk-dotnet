@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name of the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Event details of the training when it was assigned to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserTrainingContentEventInfo? TrainingAssignedProperties {
             get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingAssignedProperties"); }
             set { BackingStore?.Set("trainingAssignedProperties", value); }
         }
+#nullable restore
 #else
         public UserTrainingContentEventInfo TrainingAssignedProperties {
             get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingAssignedProperties"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Event details of the training when it was completed by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserTrainingContentEventInfo? TrainingCompletedProperties {
             get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingCompletedProperties"); }
             set { BackingStore?.Set("trainingCompletedProperties", value); }
         }
+#nullable restore
 #else
         public UserTrainingContentEventInfo TrainingCompletedProperties {
             get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingCompletedProperties"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Event details of the training when it was updated/in-progress by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserTrainingContentEventInfo? TrainingUpdatedProperties {
             get { return BackingStore?.Get<UserTrainingContentEventInfo?>("trainingUpdatedProperties"); }
             set { BackingStore?.Set("trainingUpdatedProperties", value); }
         }
+#nullable restore
 #else
         public UserTrainingContentEventInfo TrainingUpdatedProperties {
             get { return BackingStore?.Get<UserTrainingContentEventInfo>("trainingUpdatedProperties"); }

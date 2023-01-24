@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identity information of the participant. Only the user property is used for onlineMeeting participants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Identity {
             get { return BackingStore?.Get<IdentitySet?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+#nullable restore
 #else
         public IdentitySet Identity {
             get { return BackingStore?.Get<IdentitySet>("identity"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User principal name of the participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Upn {
             get { return BackingStore?.Get<string?>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
+#nullable restore
 #else
         public string Upn {
             get { return BackingStore?.Get<string>("upn"); }

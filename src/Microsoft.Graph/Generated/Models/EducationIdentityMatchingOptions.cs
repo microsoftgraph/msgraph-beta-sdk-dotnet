@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the source property, which should be a field name in the source data. This property is case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourcePropertyName {
             get { return BackingStore?.Get<string?>("sourcePropertyName"); }
             set { BackingStore?.Set("sourcePropertyName", value); }
         }
+#nullable restore
 #else
         public string SourcePropertyName {
             get { return BackingStore?.Get<string>("sourcePropertyName"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetDomain {
             get { return BackingStore?.Get<string?>("targetDomain"); }
             set { BackingStore?.Set("targetDomain", value); }
         }
+#nullable restore
 #else
         public string TargetDomain {
             get { return BackingStore?.Get<string>("targetDomain"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the target property, which should be a valid property in Azure AD. This property is case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetPropertyName {
             get { return BackingStore?.Get<string?>("targetPropertyName"); }
             set { BackingStore?.Set("targetPropertyName", value); }
         }
+#nullable restore
 #else
         public string TargetPropertyName {
             get { return BackingStore?.Get<string>("targetPropertyName"); }

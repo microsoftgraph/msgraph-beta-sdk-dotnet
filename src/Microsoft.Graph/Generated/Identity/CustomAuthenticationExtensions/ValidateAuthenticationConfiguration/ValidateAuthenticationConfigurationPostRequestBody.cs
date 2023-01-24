@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.ValidateA
         }
         /// <summary>The authenticationConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CustomExtensionAuthenticationConfiguration? AuthenticationConfiguration {
             get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration?>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
+#nullable restore
 #else
         public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration {
             get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration>("authenticationConfiguration"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.ValidateA
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endpointConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CustomExtensionEndpointConfiguration? EndpointConfiguration {
             get { return BackingStore?.Get<CustomExtensionEndpointConfiguration?>("endpointConfiguration"); }
             set { BackingStore?.Set("endpointConfiguration", value); }
         }
+#nullable restore
 #else
         public CustomExtensionEndpointConfiguration EndpointConfiguration {
             get { return BackingStore?.Get<CustomExtensionEndpointConfiguration>("endpointConfiguration"); }

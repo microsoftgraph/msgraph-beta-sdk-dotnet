@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleUserInitiatedEnrollmentProfile : Entity, IParsable {
         /// <summary>The list of assignments for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppleEnrollmentProfileAssignment>? Assignments {
             get { return BackingStore?.Get<List<AppleEnrollmentProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<AppleEnrollmentProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<AppleEnrollmentProfileAssignment>>("assignments"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of available enrollment type options</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppleOwnerTypeEnrollmentType>? AvailableEnrollmentTypeOptions {
             get { return BackingStore?.Get<List<AppleOwnerTypeEnrollmentType>?>("availableEnrollmentTypeOptions"); }
             set { BackingStore?.Set("availableEnrollmentTypeOptions", value); }
         }
+#nullable restore
 #else
         public List<AppleOwnerTypeEnrollmentType> AvailableEnrollmentTypeOptions {
             get { return BackingStore?.Get<List<AppleOwnerTypeEnrollmentType>>("availableEnrollmentTypeOptions"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Description of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }

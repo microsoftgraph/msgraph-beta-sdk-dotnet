@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>An optional description of the units.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Units {
             get { return BackingStore?.Get<string?>("units"); }
             set { BackingStore?.Set("units", value); }
         }
+#nullable restore
 #else
         public string Units {
             get { return BackingStore?.Get<string>("units"); }

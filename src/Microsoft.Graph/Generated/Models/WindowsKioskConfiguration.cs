@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specify URLs that the kiosk browser is allowed to navigate to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? KioskBrowserBlockedUrlExceptions {
             get { return BackingStore?.Get<List<string>?>("kioskBrowserBlockedUrlExceptions"); }
             set { BackingStore?.Set("kioskBrowserBlockedUrlExceptions", value); }
         }
+#nullable restore
 #else
         public List<string> KioskBrowserBlockedUrlExceptions {
             get { return BackingStore?.Get<List<string>>("kioskBrowserBlockedUrlExceptions"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specify URLs that the kiosk browsers should not navigate to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? KioskBrowserBlockedURLs {
             get { return BackingStore?.Get<List<string>?>("kioskBrowserBlockedURLs"); }
             set { BackingStore?.Set("kioskBrowserBlockedURLs", value); }
         }
+#nullable restore
 #else
         public List<string> KioskBrowserBlockedURLs {
             get { return BackingStore?.Get<List<string>>("kioskBrowserBlockedURLs"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specify the default URL the browser should navigate to on launch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KioskBrowserDefaultUrl {
             get { return BackingStore?.Get<string?>("kioskBrowserDefaultUrl"); }
             set { BackingStore?.Set("kioskBrowserDefaultUrl", value); }
         }
+#nullable restore
 #else
         public string KioskBrowserDefaultUrl {
             get { return BackingStore?.Get<string>("kioskBrowserDefaultUrl"); }
@@ -68,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsKioskProfile>? KioskProfiles {
             get { return BackingStore?.Get<List<WindowsKioskProfile>?>("kioskProfiles"); }
             set { BackingStore?.Set("kioskProfiles", value); }
         }
+#nullable restore
 #else
         public List<WindowsKioskProfile> KioskProfiles {
             get { return BackingStore?.Get<List<WindowsKioskProfile>>("kioskProfiles"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>force update schedule for Kiosk devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule? WindowsKioskForceUpdateSchedule {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule?>("windowsKioskForceUpdateSchedule"); }
             set { BackingStore?.Set("windowsKioskForceUpdateSchedule", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule WindowsKioskForceUpdateSchedule {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule>("windowsKioskForceUpdateSchedule"); }

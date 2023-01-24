@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Default Teams channel to which notifications will be sent. Default value is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationChannelUrl {
             get { return BackingStore?.Get<string?>("notificationChannelUrl"); }
             set { BackingStore?.Set("notificationChannelUrl", value); }
         }
+#nullable restore
 #else
         public string NotificationChannelUrl {
             get { return BackingStore?.Get<string>("notificationChannelUrl"); }

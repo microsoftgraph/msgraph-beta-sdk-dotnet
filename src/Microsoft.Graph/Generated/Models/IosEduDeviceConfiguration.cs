@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosEduDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>The Trusted Root and PFX certificates for Device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosEduCertificateSettings? DeviceCertificateSettings {
             get { return BackingStore?.Get<IosEduCertificateSettings?>("deviceCertificateSettings"); }
             set { BackingStore?.Set("deviceCertificateSettings", value); }
         }
+#nullable restore
 #else
         public IosEduCertificateSettings DeviceCertificateSettings {
             get { return BackingStore?.Get<IosEduCertificateSettings>("deviceCertificateSettings"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Trusted Root and PFX certificates for Student</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosEduCertificateSettings? StudentCertificateSettings {
             get { return BackingStore?.Get<IosEduCertificateSettings?>("studentCertificateSettings"); }
             set { BackingStore?.Set("studentCertificateSettings", value); }
         }
+#nullable restore
 #else
         public IosEduCertificateSettings StudentCertificateSettings {
             get { return BackingStore?.Get<IosEduCertificateSettings>("studentCertificateSettings"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Trusted Root and PFX certificates for iOS EDU.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosEduCertificateSettings? TeacherCertificateSettings {
             get { return BackingStore?.Get<IosEduCertificateSettings?>("teacherCertificateSettings"); }
             set { BackingStore?.Set("teacherCertificateSettings", value); }
         }
+#nullable restore
 #else
         public IosEduCertificateSettings TeacherCertificateSettings {
             get { return BackingStore?.Get<IosEduCertificateSettings>("teacherCertificateSettings"); }

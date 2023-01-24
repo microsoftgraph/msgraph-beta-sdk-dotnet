@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftStoreForBusinessContainedApp : MobileContainedApp, IParsable {
         /// <summary>The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppUserModelId {
             get { return BackingStore?.Get<string?>("appUserModelId"); }
             set { BackingStore?.Set("appUserModelId", value); }
         }
+#nullable restore
 #else
         public string AppUserModelId {
             get { return BackingStore?.Get<string>("appUserModelId"); }

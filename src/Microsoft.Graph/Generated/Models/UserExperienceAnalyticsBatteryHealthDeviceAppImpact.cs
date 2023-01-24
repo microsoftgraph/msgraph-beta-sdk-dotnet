@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsBatteryHealthDeviceAppImpact : Entity, IParsable {
         /// <summary>User friendly display name for the app. Eg: Outlook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppDisplayName {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#nullable restore
 #else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>App name. Eg: oltk.exe</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppName {
             get { return BackingStore?.Get<string?>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
+#nullable restore
 #else
         public string AppName {
             get { return BackingStore?.Get<string>("appName"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>App publisher. Eg: Microsoft Corporation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppPublisher {
             get { return BackingStore?.Get<string?>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
+#nullable restore
 #else
         public string AppPublisher {
             get { return BackingStore?.Get<string>("appPublisher"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }

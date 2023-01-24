@@ -15,17 +15,19 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of account target content. Possible values are: unknown,includeAll, addressBook,  unknownFutureValue.</summary>
         public AccountTargetContentType? Type {
             get { return BackingStore?.Get<AccountTargetContentType?>("type"); }
             set { BackingStore?.Set("type", value); }

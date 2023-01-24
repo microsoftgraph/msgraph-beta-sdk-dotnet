@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecurityBaselineSettingState : Entity, IParsable {
         /// <summary>The policies that contribute to this setting instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SecurityBaselineContributingPolicy>? ContributingPolicies {
             get { return BackingStore?.Get<List<SecurityBaselineContributingPolicy>?>("contributingPolicies"); }
             set { BackingStore?.Set("contributingPolicies", value); }
         }
+#nullable restore
 #else
         public List<SecurityBaselineContributingPolicy> ContributingPolicies {
             get { return BackingStore?.Get<List<SecurityBaselineContributingPolicy>>("contributingPolicies"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The error code if the setting is in error state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ErrorCode {
             get { return BackingStore?.Get<string?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
+#nullable restore
 #else
         public string ErrorCode {
             get { return BackingStore?.Get<string>("errorCode"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The setting category id which this setting belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingCategoryId {
             get { return BackingStore?.Get<string?>("settingCategoryId"); }
             set { BackingStore?.Set("settingCategoryId", value); }
         }
+#nullable restore
 #else
         public string SettingCategoryId {
             get { return BackingStore?.Get<string>("settingCategoryId"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The setting category name which this setting belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingCategoryName {
             get { return BackingStore?.Get<string?>("settingCategoryName"); }
             set { BackingStore?.Set("settingCategoryName", value); }
         }
+#nullable restore
 #else
         public string SettingCategoryName {
             get { return BackingStore?.Get<string>("settingCategoryName"); }
@@ -58,10 +66,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The setting id guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingId {
             get { return BackingStore?.Get<string?>("settingId"); }
             set { BackingStore?.Set("settingId", value); }
         }
+#nullable restore
 #else
         public string SettingId {
             get { return BackingStore?.Get<string>("settingId"); }
@@ -70,10 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The setting name that is being reported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingName {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#nullable restore
 #else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
@@ -82,10 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policies that contribute to this setting instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SettingSource>? SourcePolicies {
             get { return BackingStore?.Get<List<SettingSource>?>("sourcePolicies"); }
             set { BackingStore?.Set("sourcePolicies", value); }
         }
+#nullable restore
 #else
         public List<SettingSource> SourcePolicies {
             get { return BackingStore?.Get<List<SettingSource>>("sourcePolicies"); }

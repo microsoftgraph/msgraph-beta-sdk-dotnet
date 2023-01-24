@@ -57,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The enterprise mode site list location. Could be a local file, local network or http location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BrowserEnterpriseModeSiteListLocation {
             get { return BackingStore?.Get<string?>("browserEnterpriseModeSiteListLocation"); }
             set { BackingStore?.Set("browserEnterpriseModeSiteListLocation", value); }
         }
+#nullable restore
 #else
         public string BrowserEnterpriseModeSiteListLocation {
             get { return BackingStore?.Get<string>("browserEnterpriseModeSiteListLocation"); }
@@ -79,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The logging report location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BrowserLoggingReportLocation {
             get { return BackingStore?.Get<string?>("browserLoggingReportLocation"); }
             set { BackingStore?.Set("browserLoggingReportLocation", value); }
         }
+#nullable restore
 #else
         public string BrowserLoggingReportLocation {
             get { return BackingStore?.Get<string>("browserLoggingReportLocation"); }
@@ -191,10 +195,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The work folders url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WorkFoldersUrl {
             get { return BackingStore?.Get<string?>("workFoldersUrl"); }
             set { BackingStore?.Set("workFoldersUrl", value); }
         }
+#nullable restore
 #else
         public string WorkFoldersUrl {
             get { return BackingStore?.Get<string>("workFoldersUrl"); }

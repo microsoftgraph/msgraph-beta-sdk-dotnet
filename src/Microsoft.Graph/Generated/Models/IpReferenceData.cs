@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The city property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? City {
             get { return BackingStore?.Get<string?>("city"); }
             set { BackingStore?.Set("city", value); }
         }
+#nullable restore
 #else
         public string City {
             get { return BackingStore?.Get<string>("city"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The countryOrRegionCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CountryOrRegionCode {
             get { return BackingStore?.Get<string?>("countryOrRegionCode"); }
             set { BackingStore?.Set("countryOrRegionCode", value); }
         }
+#nullable restore
 #else
         public string CountryOrRegionCode {
             get { return BackingStore?.Get<string>("countryOrRegionCode"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Organization {
             get { return BackingStore?.Get<string?>("organization"); }
             set { BackingStore?.Set("organization", value); }
         }
+#nullable restore
 #else
         public string Organization {
             get { return BackingStore?.Get<string>("organization"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? State {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#nullable restore
 #else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The vendor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Vendor {
             get { return BackingStore?.Get<string?>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
+#nullable restore
 #else
         public string Vendor {
             get { return BackingStore?.Get<string>("vendor"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Todo : Entity, IParsable {
         /// <summary>The task lists in the users mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TodoTaskList>? Lists {
             get { return BackingStore?.Get<List<TodoTaskList>?>("lists"); }
             set { BackingStore?.Set("lists", value); }
         }
+#nullable restore
 #else
         public List<TodoTaskList> Lists {
             get { return BackingStore?.Get<List<TodoTaskList>>("lists"); }

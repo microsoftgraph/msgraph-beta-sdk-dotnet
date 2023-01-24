@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -47,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleId {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#nullable restore
 #else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
@@ -59,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The roleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleName {
             get { return BackingStore?.Get<string?>("roleName"); }
             set { BackingStore?.Set("roleName", value); }
         }
+#nullable restore
 #else
         public string RoleName {
             get { return BackingStore?.Get<string>("roleName"); }

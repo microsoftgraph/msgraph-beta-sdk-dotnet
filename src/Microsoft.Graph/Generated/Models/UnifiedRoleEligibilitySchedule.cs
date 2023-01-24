@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleEligibilitySchedule : UnifiedRoleScheduleBase, IParsable {
         /// <summary>Membership type of the eligible assignment. It can either be Inherited, Direct, or Group. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MemberType {
             get { return BackingStore?.Get<string?>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
+#nullable restore
 #else
         public string MemberType {
             get { return BackingStore?.Get<string>("memberType"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The schedule object of the eligible role assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestSchedule? ScheduleInfo {
             get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
+#nullable restore
 #else
         public RequestSchedule ScheduleInfo {
             get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }

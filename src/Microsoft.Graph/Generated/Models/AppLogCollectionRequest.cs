@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of log folders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? CustomLogFolders {
             get { return BackingStore?.Get<List<string>?>("customLogFolders"); }
             set { BackingStore?.Set("customLogFolders", value); }
         }
+#nullable restore
 #else
         public List<string> CustomLogFolders {
             get { return BackingStore?.Get<List<string>>("customLogFolders"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Error message if any during the upload process</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ErrorMessage {
             get { return BackingStore?.Get<string?>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
+#nullable restore
 #else
         public string ErrorMessage {
             get { return BackingStore?.Get<string>("errorMessage"); }

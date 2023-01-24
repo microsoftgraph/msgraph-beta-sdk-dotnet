@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of serviceAnnouncementAttachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServiceAnnouncementAttachment>? Attachments {
             get { return BackingStore?.Get<List<ServiceAnnouncementAttachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#nullable restore
 #else
         public List<ServiceAnnouncementAttachment> Attachments {
             get { return BackingStore?.Get<List<ServiceAnnouncementAttachment>>("attachments"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The zip file of all attachments for a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? AttachmentsArchive {
             get { return BackingStore?.Get<byte[]?>("attachmentsArchive"); }
             set { BackingStore?.Set("attachmentsArchive", value); }
         }
+#nullable restore
 #else
         public byte[] AttachmentsArchive {
             get { return BackingStore?.Get<byte[]>("attachmentsArchive"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Body {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#nullable restore
 #else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The affected services by the service message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Services {
             get { return BackingStore?.Get<List<string>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
+#nullable restore
 #else
         public List<string> Services {
             get { return BackingStore?.Get<List<string>>("services"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Tags {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#nullable restore
 #else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
@@ -92,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ServiceUpdateMessageViewpoint? ViewPoint {
             get { return BackingStore?.Get<ServiceUpdateMessageViewpoint?>("viewPoint"); }
             set { BackingStore?.Set("viewPoint", value); }
         }
+#nullable restore
 #else
         public ServiceUpdateMessageViewpoint ViewPoint {
             get { return BackingStore?.Get<ServiceUpdateMessageViewpoint>("viewPoint"); }

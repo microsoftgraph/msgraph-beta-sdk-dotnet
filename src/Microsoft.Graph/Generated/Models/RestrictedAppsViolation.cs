@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RestrictedAppsViolation : Entity, IParsable {
         /// <summary>Device configuration profile unique identifier, must be Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceConfigurationId {
             get { return BackingStore?.Get<string?>("deviceConfigurationId"); }
             set { BackingStore?.Set("deviceConfigurationId", value); }
         }
+#nullable restore
 #else
         public string DeviceConfigurationId {
             get { return BackingStore?.Get<string>("deviceConfigurationId"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device configuration profile name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceConfigurationName {
             get { return BackingStore?.Get<string?>("deviceConfigurationName"); }
             set { BackingStore?.Set("deviceConfigurationName", value); }
         }
+#nullable restore
 #else
         public string DeviceConfigurationName {
             get { return BackingStore?.Get<string>("deviceConfigurationName"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Managed device unique identifier, must be Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of violated restricted apps</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedDeviceReportedApp>? RestrictedApps {
             get { return BackingStore?.Get<List<ManagedDeviceReportedApp>?>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
+#nullable restore
 #else
         public List<ManagedDeviceReportedApp> RestrictedApps {
             get { return BackingStore?.Get<List<ManagedDeviceReportedApp>>("restrictedApps"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User unique identifier, must be Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserName {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#nullable restore
 #else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }

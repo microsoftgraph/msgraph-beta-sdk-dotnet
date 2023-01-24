@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Enhanced Key Usage</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateExtendedKeyUsages {
             get { return BackingStore?.Get<string?>("certificateExtendedKeyUsages"); }
             set { BackingStore?.Set("certificateExtendedKeyUsages", value); }
         }
+#nullable restore
 #else
         public string CertificateExtendedKeyUsages {
             get { return BackingStore?.Get<string>("certificateExtendedKeyUsages"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Issuer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateIssuerName {
             get { return BackingStore?.Get<string?>("certificateIssuerName"); }
             set { BackingStore?.Set("certificateIssuerName", value); }
         }
+#nullable restore
 #else
         public string CertificateIssuerName {
             get { return BackingStore?.Get<string>("certificateIssuerName"); }
@@ -56,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Serial number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateSerialNumber {
             get { return BackingStore?.Get<string?>("certificateSerialNumber"); }
             set { BackingStore?.Set("certificateSerialNumber", value); }
         }
+#nullable restore
 #else
         public string CertificateSerialNumber {
             get { return BackingStore?.Get<string>("certificateSerialNumber"); }
@@ -68,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Certificate subject name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateSubjectName {
             get { return BackingStore?.Get<string?>("certificateSubjectName"); }
             set { BackingStore?.Set("certificateSubjectName", value); }
         }
+#nullable restore
 #else
         public string CertificateSubjectName {
             get { return BackingStore?.Get<string>("certificateSubjectName"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Thumbprint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateThumbprint {
             get { return BackingStore?.Get<string?>("certificateThumbprint"); }
             set { BackingStore?.Set("certificateThumbprint", value); }
         }
+#nullable restore
 #else
         public string CertificateThumbprint {
             get { return BackingStore?.Get<string>("certificateThumbprint"); }
@@ -92,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceDisplayName {
             get { return BackingStore?.Get<string?>("managedDeviceDisplayName"); }
             set { BackingStore?.Set("managedDeviceDisplayName", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceDisplayName {
             get { return BackingStore?.Get<string>("managedDeviceDisplayName"); }
@@ -104,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User principal name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

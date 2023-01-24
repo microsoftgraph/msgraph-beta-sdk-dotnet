@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.Users.Item.FindMeetingTimes {
         }
         /// <summary>The attendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AttendeeBase>? Attendees {
             get { return BackingStore?.Get<List<AttendeeBase>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
+#nullable restore
 #else
         public List<AttendeeBase> Attendees {
             get { return BackingStore?.Get<List<AttendeeBase>>("attendees"); }
@@ -33,10 +35,12 @@ namespace Microsoft.Graph.Beta.Users.Item.FindMeetingTimes {
         }
         /// <summary>The locationConstraint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.LocationConstraint? LocationConstraint {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocationConstraint?>("locationConstraint"); }
             set { BackingStore?.Set("locationConstraint", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.LocationConstraint LocationConstraint {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocationConstraint>("locationConstraint"); }
@@ -65,10 +69,12 @@ namespace Microsoft.Graph.Beta.Users.Item.FindMeetingTimes {
         }
         /// <summary>The timeConstraint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TimeConstraint? TimeConstraint {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeConstraint?>("timeConstraint"); }
             set { BackingStore?.Set("timeConstraint", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TimeConstraint TimeConstraint {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeConstraint>("timeConstraint"); }

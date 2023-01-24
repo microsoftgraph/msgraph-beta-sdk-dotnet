@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptDeviceState : Entity, IParsable {
         /// <summary>A list of the assignment filter ids used for health script applicability evaluation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AssignmentFilterIds {
             get { return BackingStore?.Get<List<string>?>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
+#nullable restore
 #else
         public List<string> AssignmentFilterIds {
             get { return BackingStore?.Get<List<string>>("assignmentFilterIds"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The managed device on which the device health script executed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ManagedDevice? ManagedDevice {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice?>("managedDevice"); }
             set { BackingStore?.Set("managedDevice", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>("managedDevice"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Error from the detection script after remediation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PostRemediationDetectionScriptError {
             get { return BackingStore?.Get<string?>("postRemediationDetectionScriptError"); }
             set { BackingStore?.Set("postRemediationDetectionScriptError", value); }
         }
+#nullable restore
 #else
         public string PostRemediationDetectionScriptError {
             get { return BackingStore?.Get<string>("postRemediationDetectionScriptError"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Detection script output after remediation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PostRemediationDetectionScriptOutput {
             get { return BackingStore?.Get<string?>("postRemediationDetectionScriptOutput"); }
             set { BackingStore?.Set("postRemediationDetectionScriptOutput", value); }
         }
+#nullable restore
 #else
         public string PostRemediationDetectionScriptOutput {
             get { return BackingStore?.Get<string>("postRemediationDetectionScriptOutput"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Error from the detection script before remediation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PreRemediationDetectionScriptError {
             get { return BackingStore?.Get<string?>("preRemediationDetectionScriptError"); }
             set { BackingStore?.Set("preRemediationDetectionScriptError", value); }
         }
+#nullable restore
 #else
         public string PreRemediationDetectionScriptError {
             get { return BackingStore?.Get<string>("preRemediationDetectionScriptError"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Output of the detection script before remediation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PreRemediationDetectionScriptOutput {
             get { return BackingStore?.Get<string?>("preRemediationDetectionScriptOutput"); }
             set { BackingStore?.Set("preRemediationDetectionScriptOutput", value); }
         }
+#nullable restore
 #else
         public string PreRemediationDetectionScriptOutput {
             get { return BackingStore?.Get<string>("preRemediationDetectionScriptOutput"); }
@@ -102,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Error output of the remediation script</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RemediationScriptError {
             get { return BackingStore?.Get<string?>("remediationScriptError"); }
             set { BackingStore?.Set("remediationScriptError", value); }
         }
+#nullable restore
 #else
         public string RemediationScriptError {
             get { return BackingStore?.Get<string>("remediationScriptError"); }

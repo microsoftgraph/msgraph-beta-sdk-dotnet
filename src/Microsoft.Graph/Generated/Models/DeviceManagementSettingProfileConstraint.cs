@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingProfileConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The source of the entity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Source {
             get { return BackingStore?.Get<string?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#nullable restore
 #else
         public string Source {
             get { return BackingStore?.Get<string>("source"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of types this entity carries</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Types {
             get { return BackingStore?.Get<List<string>?>("types"); }
             set { BackingStore?.Set("types", value); }
         }
+#nullable restore
 #else
         public List<string> Types {
             get { return BackingStore?.Get<List<string>>("types"); }

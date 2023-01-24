@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A comment was added to the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CommentAction? Comment {
             get { return BackingStore?.Get<CommentAction?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public CommentAction Comment {
             get { return BackingStore?.Get<CommentAction>("comment"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An item was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CreateAction? Create {
             get { return BackingStore?.Get<CreateAction?>("create"); }
             set { BackingStore?.Set("create", value); }
         }
+#nullable restore
 #else
         public CreateAction Create {
             get { return BackingStore?.Get<CreateAction>("create"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An item was deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeleteAction? Delete {
             get { return BackingStore?.Get<DeleteAction?>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
+#nullable restore
 #else
         public DeleteAction Delete {
             get { return BackingStore?.Get<DeleteAction>("delete"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An item was edited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EditAction? Edit {
             get { return BackingStore?.Get<EditAction?>("edit"); }
             set { BackingStore?.Set("edit", value); }
         }
+#nullable restore
 #else
         public EditAction Edit {
             get { return BackingStore?.Get<EditAction>("edit"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A user was mentioned in the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MentionAction? Mention {
             get { return BackingStore?.Get<MentionAction?>("mention"); }
             set { BackingStore?.Set("mention", value); }
         }
+#nullable restore
 #else
         public MentionAction Mention {
             get { return BackingStore?.Get<MentionAction>("mention"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An item was moved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MoveAction? Move {
             get { return BackingStore?.Get<MoveAction?>("move"); }
             set { BackingStore?.Set("move", value); }
         }
+#nullable restore
 #else
         public MoveAction Move {
             get { return BackingStore?.Get<MoveAction>("move"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An item was renamed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RenameAction? Rename {
             get { return BackingStore?.Get<RenameAction?>("rename"); }
             set { BackingStore?.Set("rename", value); }
         }
+#nullable restore
 #else
         public RenameAction Rename {
             get { return BackingStore?.Get<RenameAction>("rename"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An item was restored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RestoreAction? Restore {
             get { return BackingStore?.Get<RestoreAction?>("restore"); }
             set { BackingStore?.Set("restore", value); }
         }
+#nullable restore
 #else
         public RestoreAction Restore {
             get { return BackingStore?.Get<RestoreAction>("restore"); }
@@ -123,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An item was shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ShareAction? Share {
             get { return BackingStore?.Get<ShareAction?>("share"); }
             set { BackingStore?.Set("share", value); }
         }
+#nullable restore
 #else
         public ShareAction Share {
             get { return BackingStore?.Get<ShareAction>("share"); }
@@ -135,10 +155,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An item was versioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public VersionAction? Version {
             get { return BackingStore?.Get<VersionAction?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public VersionAction Version {
             get { return BackingStore?.Get<VersionAction>("version"); }

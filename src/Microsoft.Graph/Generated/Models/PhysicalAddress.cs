@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The city.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? City {
             get { return BackingStore?.Get<string?>("city"); }
             set { BackingStore?.Set("city", value); }
         }
+#nullable restore
 #else
         public string City {
             get { return BackingStore?.Get<string>("city"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The country or region. It&apos;s a free-format string value, for example, &apos;United States&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CountryOrRegion {
             get { return BackingStore?.Get<string?>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
+#nullable restore
 #else
         public string CountryOrRegion {
             get { return BackingStore?.Get<string>("countryOrRegion"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The postal code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PostalCode {
             get { return BackingStore?.Get<string?>("postalCode"); }
             set { BackingStore?.Set("postalCode", value); }
         }
+#nullable restore
 #else
         public string PostalCode {
             get { return BackingStore?.Get<string>("postalCode"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The post office box number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PostOfficeBox {
             get { return BackingStore?.Get<string?>("postOfficeBox"); }
             set { BackingStore?.Set("postOfficeBox", value); }
         }
+#nullable restore
 #else
         public string PostOfficeBox {
             get { return BackingStore?.Get<string>("postOfficeBox"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? State {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#nullable restore
 #else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The street.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Street {
             get { return BackingStore?.Get<string?>("street"); }
             set { BackingStore?.Set("street", value); }
         }
+#nullable restore
 #else
         public string Street {
             get { return BackingStore?.Get<string>("street"); }

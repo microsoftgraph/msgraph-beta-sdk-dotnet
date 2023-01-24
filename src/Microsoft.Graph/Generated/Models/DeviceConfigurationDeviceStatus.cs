@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Device name of the DevicePolicyStatus.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceDisplayName {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#nullable restore
 #else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The device model that is being reported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceModel {
             get { return BackingStore?.Get<string?>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
+#nullable restore
 #else
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The User Name that is being reported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserName {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#nullable restore
 #else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>UserPrincipalName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

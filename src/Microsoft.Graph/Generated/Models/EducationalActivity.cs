@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The institution property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public InstitutionData? Institution {
             get { return BackingStore?.Get<InstitutionData?>("institution"); }
             set { BackingStore?.Set("institution", value); }
         }
+#nullable restore
 #else
         public InstitutionData Institution {
             get { return BackingStore?.Get<InstitutionData>("institution"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The program property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationalActivityDetail? Program {
             get { return BackingStore?.Get<EducationalActivityDetail?>("program"); }
             set { BackingStore?.Set("program", value); }
         }
+#nullable restore
 #else
         public EducationalActivityDetail Program {
             get { return BackingStore?.Get<EducationalActivityDetail>("program"); }

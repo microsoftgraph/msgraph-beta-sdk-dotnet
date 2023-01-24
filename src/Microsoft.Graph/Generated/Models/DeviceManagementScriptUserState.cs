@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementScriptUserState : Entity, IParsable {
         /// <summary>List of run states for this script across all devices of specific user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementScriptDeviceState>? DeviceRunStates {
             get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>?>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementScriptDeviceState> DeviceRunStates {
             get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>("deviceRunStates"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User principle name of specific user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

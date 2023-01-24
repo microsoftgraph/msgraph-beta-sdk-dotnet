@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.ExceptionOccurrence
         }
         /// <summary>The AttachmentItem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AttachmentItem? AttachmentItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem?>("attachmentItem"); }
             set { BackingStore?.Set("attachmentItem", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AttachmentItem AttachmentItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem>("attachmentItem"); }

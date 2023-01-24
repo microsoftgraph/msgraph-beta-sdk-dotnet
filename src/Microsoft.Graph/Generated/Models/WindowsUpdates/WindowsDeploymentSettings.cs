@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class WindowsDeploymentSettings : DeploymentSettings, IParsable {
         /// <summary>Settings governing the user&apos;s update experience on a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceSettings? UserExperience {
             get { return BackingStore?.Get<UserExperienceSettings?>("userExperience"); }
             set { BackingStore?.Set("userExperience", value); }
         }
+#nullable restore
 #else
         public UserExperienceSettings UserExperience {
             get { return BackingStore?.Get<UserExperienceSettings>("userExperience"); }

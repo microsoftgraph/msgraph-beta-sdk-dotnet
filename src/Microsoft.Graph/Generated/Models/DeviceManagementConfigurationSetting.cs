@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSetting : Entity, IParsable {
         /// <summary>List of related Setting Definitions. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationSettingDefinition>? SettingDefinitions {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>?>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("settingDefinitions"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Setting instance within policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationSettingInstance? SettingInstance {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance?>("settingInstance"); }
             set { BackingStore?.Set("settingInstance", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationSettingInstance SettingInstance {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>("settingInstance"); }

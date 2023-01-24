@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the visible name defined for the resource. Typically specified when the resource is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates the unique ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ModifiedProperty>? ModifiedProperties {
             get { return BackingStore?.Get<List<ModifiedProperty>?>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
+#nullable restore
 #else
         public List<ModifiedProperty> ModifiedProperties {
             get { return BackingStore?.Get<List<ModifiedProperty>>("modifiedProperties"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>When type is set to User, this includes the user name that initiated the action; null for other types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EventMessage : Message, IParsable {
         /// <summary>The end time of the requested meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? EndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone EndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Event? Event {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Event?>("event"); }
             set { BackingStore?.Set("event", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Event Event {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Event>("event"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Location? Location {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Location Location {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>("location"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The recurrence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PatternedRecurrence? Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
+#nullable restore
 #else
         public PatternedRecurrence Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The startDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }

@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
         }
         /// <summary>The assignmentState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentState {
             get { return BackingStore?.Get<string?>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
+#nullable restore
 #else
         public string AssignmentState {
             get { return BackingStore?.Get<string>("assignmentState"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The decision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Decision {
             get { return BackingStore?.Get<string?>("decision"); }
             set { BackingStore?.Set("decision", value); }
         }
+#nullable restore
 #else
         public string Decision {
             get { return BackingStore?.Get<string>("decision"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
 #endif
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Reason {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
+#nullable restore
 #else
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
@@ -52,10 +58,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
 #endif
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GovernanceSchedule? Schedule {
             get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#nullable restore
 #else
         public GovernanceSchedule Schedule {
             get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ActivateDeviceEsimActionResult : DeviceActionResult, IParsable {
         /// <summary>Carrier Url to activate the device eSIM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CarrierUrl {
             get { return BackingStore?.Get<string?>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
+#nullable restore
 #else
         public string CarrierUrl {
             get { return BackingStore?.Get<string>("carrierUrl"); }

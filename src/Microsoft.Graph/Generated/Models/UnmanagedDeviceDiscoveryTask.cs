@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnmanagedDeviceDiscoveryTask : DeviceAppManagementTask, IParsable {
         /// <summary>Unmanaged devices discovered in the network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnmanagedDevice>? UnmanagedDevices {
             get { return BackingStore?.Get<List<UnmanagedDevice>?>("unmanagedDevices"); }
             set { BackingStore?.Set("unmanagedDevices", value); }
         }
+#nullable restore
 #else
         public List<UnmanagedDevice> UnmanagedDevices {
             get { return BackingStore?.Get<List<UnmanagedDevice>>("unmanagedDevices"); }

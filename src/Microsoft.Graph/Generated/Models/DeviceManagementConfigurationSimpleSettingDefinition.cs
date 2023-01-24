@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSimpleSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
         /// <summary>Default setting value for this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationSettingValue? DefaultValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationSettingValue DefaultValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue>("defaultValue"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>list of child settings that depend on this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>?>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>("dependedOnBy"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>list of parent settings this setting is dependent on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationDependentOn>? DependentOn {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>?>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationDependentOn> DependentOn {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>("dependentOn"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Definition of the value for this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationSettingValueDefinition? ValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingValueDefinition?>("valueDefinition"); }
             set { BackingStore?.Set("valueDefinition", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationSettingValueDefinition ValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingValueDefinition>("valueDefinition"); }

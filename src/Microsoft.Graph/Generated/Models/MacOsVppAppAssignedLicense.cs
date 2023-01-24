@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOsVppAppAssignedLicense : Entity, IParsable {
         /// <summary>The user email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserEmailAddress {
             get { return BackingStore?.Get<string?>("userEmailAddress"); }
             set { BackingStore?.Set("userEmailAddress", value); }
         }
+#nullable restore
 #else
         public string UserEmailAddress {
             get { return BackingStore?.Get<string>("userEmailAddress"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserName {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#nullable restore
 #else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user principal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

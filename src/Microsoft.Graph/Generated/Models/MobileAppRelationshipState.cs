@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The corresponding device id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -45,10 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -57,10 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of source mobile app&apos;s ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SourceIds {
             get { return BackingStore?.Get<List<string>?>("sourceIds"); }
             set { BackingStore?.Set("sourceIds", value); }
         }
+#nullable restore
 #else
         public List<string> SourceIds {
             get { return BackingStore?.Get<List<string>>("sourceIds"); }
@@ -69,10 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The related target app&apos;s display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetDisplayName {
             get { return BackingStore?.Get<string?>("targetDisplayName"); }
             set { BackingStore?.Set("targetDisplayName", value); }
         }
+#nullable restore
 #else
         public string TargetDisplayName {
             get { return BackingStore?.Get<string>("targetDisplayName"); }
@@ -81,10 +89,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The related target app&apos;s id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetId {
             get { return BackingStore?.Get<string?>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
         }
+#nullable restore
 #else
         public string TargetId {
             get { return BackingStore?.Get<string>("targetId"); }

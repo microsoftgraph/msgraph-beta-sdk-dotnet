@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EntitlementManagement : Entity, IParsable {
         /// <summary>The accessPackageAssignmentApprovals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Approval>? AccessPackageAssignmentApprovals {
             get { return BackingStore?.Get<List<Approval>?>("accessPackageAssignmentApprovals"); }
             set { BackingStore?.Set("accessPackageAssignmentApprovals", value); }
         }
+#nullable restore
 #else
         public List<Approval> AccessPackageAssignmentApprovals {
             get { return BackingStore?.Get<List<Approval>>("accessPackageAssignmentApprovals"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAssignmentPolicy>? AccessPackageAssignmentPolicies {
             get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>?>("accessPackageAssignmentPolicies"); }
             set { BackingStore?.Set("accessPackageAssignmentPolicies", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies {
             get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>>("accessPackageAssignmentPolicies"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents access package assignment requests created by or on behalf of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAssignmentRequest>? AccessPackageAssignmentRequests {
             get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>?>("accessPackageAssignmentRequests"); }
             set { BackingStore?.Set("accessPackageAssignmentRequests", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAssignmentRequest> AccessPackageAssignmentRequests {
             get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>>("accessPackageAssignmentRequests"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the resource-specific role which a subject has been assigned through an access package assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAssignmentResourceRole>? AccessPackageAssignmentResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>?>("accessPackageAssignmentResourceRoles"); }
             set { BackingStore?.Set("accessPackageAssignmentResourceRoles", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAssignmentResourceRole> AccessPackageAssignmentResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>>("accessPackageAssignmentResourceRoles"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The assignment of an access package to a subject for a period of time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAssignment>? AccessPackageAssignments {
             get { return BackingStore?.Get<List<AccessPackageAssignment>?>("accessPackageAssignments"); }
             set { BackingStore?.Set("accessPackageAssignments", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAssignment> AccessPackageAssignments {
             get { return BackingStore?.Get<List<AccessPackageAssignment>>("accessPackageAssignments"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A container of access packages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageCatalog>? AccessPackageCatalogs {
             get { return BackingStore?.Get<List<AccessPackageCatalog>?>("accessPackageCatalogs"); }
             set { BackingStore?.Set("accessPackageCatalogs", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageCatalog> AccessPackageCatalogs {
             get { return BackingStore?.Get<List<AccessPackageCatalog>>("accessPackageCatalogs"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A reference to the geolocation environment in which a resource is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResourceEnvironment>? AccessPackageResourceEnvironments {
             get { return BackingStore?.Get<List<AccessPackageResourceEnvironment>?>("accessPackageResourceEnvironments"); }
             set { BackingStore?.Set("accessPackageResourceEnvironments", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResourceEnvironment> AccessPackageResourceEnvironments {
             get { return BackingStore?.Get<List<AccessPackageResourceEnvironment>>("accessPackageResourceEnvironments"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a request to add or remove a resource to or from a catalog respectively.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResourceRequest>? AccessPackageResourceRequests {
             get { return BackingStore?.Get<List<AccessPackageResourceRequest>?>("accessPackageResourceRequests"); }
             set { BackingStore?.Set("accessPackageResourceRequests", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResourceRequest> AccessPackageResourceRequests {
             get { return BackingStore?.Get<List<AccessPackageResourceRequest>>("accessPackageResourceRequests"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A reference to both a scope within a resource, and a role in that resource for that scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResourceRoleScope>? AccessPackageResourceRoleScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>?>("accessPackageResourceRoleScopes"); }
             set { BackingStore?.Set("accessPackageResourceRoleScopes", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>("accessPackageResourceRoleScopes"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A reference to a resource associated with an access package catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResource>? AccessPackageResources {
             get { return BackingStore?.Get<List<AccessPackageResource>?>("accessPackageResources"); }
             set { BackingStore?.Set("accessPackageResources", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResource> AccessPackageResources {
             get { return BackingStore?.Get<List<AccessPackageResource>>("accessPackageResources"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents access package objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackage>? AccessPackages {
             get { return BackingStore?.Get<List<AccessPackage>?>("accessPackages"); }
             set { BackingStore?.Set("accessPackages", value); }
         }
+#nullable restore
 #else
         public List<AccessPackage> AccessPackages {
             get { return BackingStore?.Get<List<AccessPackage>>("accessPackages"); }
@@ -139,10 +161,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents references to a directory or domain of another organization whose users can request access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConnectedOrganization>? ConnectedOrganizations {
             get { return BackingStore?.Get<List<ConnectedOrganization>?>("connectedOrganizations"); }
             set { BackingStore?.Set("connectedOrganizations", value); }
         }
+#nullable restore
 #else
         public List<ConnectedOrganization> ConnectedOrganizations {
             get { return BackingStore?.Get<List<ConnectedOrganization>>("connectedOrganizations"); }
@@ -151,10 +175,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the settings that control the behavior of Azure AD entitlement management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EntitlementManagementSettings? Settings {
             get { return BackingStore?.Get<EntitlementManagementSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public EntitlementManagementSettings Settings {
             get { return BackingStore?.Get<EntitlementManagementSettings>("settings"); }
@@ -163,10 +189,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The subjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageSubject>? Subjects {
             get { return BackingStore?.Get<List<AccessPackageSubject>?>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageSubject> Subjects {
             get { return BackingStore?.Get<List<AccessPackageSubject>>("subjects"); }

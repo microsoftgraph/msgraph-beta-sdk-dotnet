@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>JSON representation of current intent (or) template setting&apos;s value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CurrentValueJson {
             get { return BackingStore?.Get<string?>("currentValueJson"); }
             set { BackingStore?.Set("currentValueJson", value); }
         }
+#nullable restore
 #else
         public string CurrentValueJson {
             get { return BackingStore?.Get<string>("currentValueJson"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the setting definition for this instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefinitionId {
             get { return BackingStore?.Get<string?>("definitionId"); }
             set { BackingStore?.Set("definitionId", value); }
         }
+#nullable restore
 #else
         public string DefinitionId {
             get { return BackingStore?.Get<string>("definitionId"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The setting&apos;s display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The setting ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>JSON representation of new template setting&apos;s value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NewValueJson {
             get { return BackingStore?.Get<string?>("newValueJson"); }
             set { BackingStore?.Set("newValueJson", value); }
         }
+#nullable restore
 #else
         public string NewValueJson {
             get { return BackingStore?.Get<string>("newValueJson"); }
@@ -83,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

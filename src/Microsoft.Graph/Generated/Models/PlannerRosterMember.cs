@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerRosterMember : Entity, IParsable {
         /// <summary>Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Roles {
             get { return BackingStore?.Get<List<string>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#nullable restore
 #else
         public List<string> Roles {
             get { return BackingStore?.Get<List<string>>("roles"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

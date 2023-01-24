@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationEventListener : Entity, IParsable {
         /// <summary>The authenticationEventsFlowId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticationEventsFlowId {
             get { return BackingStore?.Get<string?>("authenticationEventsFlowId"); }
             set { BackingStore?.Set("authenticationEventsFlowId", value); }
         }
+#nullable restore
 #else
         public string AuthenticationEventsFlowId {
             get { return BackingStore?.Get<string>("authenticationEventsFlowId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AuthenticationConditions? Conditions {
             get { return BackingStore?.Get<AuthenticationConditions?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
+#nullable restore
 #else
         public AuthenticationConditions Conditions {
             get { return BackingStore?.Get<AuthenticationConditions>("conditions"); }

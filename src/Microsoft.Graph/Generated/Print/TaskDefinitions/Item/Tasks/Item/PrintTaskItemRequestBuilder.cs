@@ -62,7 +62,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<PrintTaskItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<PrintTaskItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -79,7 +81,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<PrintTask?> GetAsync(Action<PrintTaskItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<PrintTask> GetAsync(Action<PrintTaskItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -97,7 +101,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<PrintTask?> PatchAsync(PrintTask body, Action<PrintTaskItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<PrintTask> PatchAsync(PrintTask body, Action<PrintTaskItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -114,7 +120,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<PrintTaskItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<PrintTaskItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -136,7 +144,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<PrintTaskItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<PrintTaskItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -161,7 +171,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(PrintTask body, Action<PrintTaskItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(PrintTask body, Action<PrintTaskItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -203,16 +215,20 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         public class PrintTaskItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

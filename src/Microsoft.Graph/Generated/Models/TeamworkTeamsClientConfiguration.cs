@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkTeamsClientConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The configuration of the Microsoft Teams client user account for a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkAccountConfiguration? AccountConfiguration {
             get { return BackingStore?.Get<TeamworkAccountConfiguration?>("accountConfiguration"); }
             set { BackingStore?.Set("accountConfiguration", value); }
         }
+#nullable restore
 #else
         public TeamworkAccountConfiguration AccountConfiguration {
             get { return BackingStore?.Get<TeamworkAccountConfiguration>("accountConfiguration"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The configuration of Microsoft Teams client features for a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkFeaturesConfiguration? FeaturesConfiguration {
             get { return BackingStore?.Get<TeamworkFeaturesConfiguration?>("featuresConfiguration"); }
             set { BackingStore?.Set("featuresConfiguration", value); }
         }
+#nullable restore
 #else
         public TeamworkFeaturesConfiguration FeaturesConfiguration {
             get { return BackingStore?.Get<TeamworkFeaturesConfiguration>("featuresConfiguration"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcGalleryImage : Entity, IParsable {
         /// <summary>The official display name of the gallery image. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Offer {
             get { return BackingStore?.Get<string?>("offer"); }
             set { BackingStore?.Set("offer", value); }
         }
+#nullable restore
 #else
         public string Offer {
             get { return BackingStore?.Get<string>("offer"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OfferDisplayName {
             get { return BackingStore?.Get<string?>("offerDisplayName"); }
             set { BackingStore?.Set("offerDisplayName", value); }
         }
+#nullable restore
 #else
         public string OfferDisplayName {
             get { return BackingStore?.Get<string>("offerDisplayName"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Publisher {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#nullable restore
 #else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Recommended Cloud PC SKU for this gallery image. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecommendedSku {
             get { return BackingStore?.Get<string?>("recommendedSku"); }
             set { BackingStore?.Set("recommendedSku", value); }
         }
+#nullable restore
 #else
         public string RecommendedSku {
             get { return BackingStore?.Get<string>("recommendedSku"); }
@@ -83,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Sku {
             get { return BackingStore?.Get<string?>("sku"); }
             set { BackingStore?.Set("sku", value); }
         }
+#nullable restore
 #else
         public string Sku {
             get { return BackingStore?.Get<string>("sku"); }
@@ -95,10 +107,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SkuDisplayName {
             get { return BackingStore?.Get<string?>("skuDisplayName"); }
             set { BackingStore?.Set("skuDisplayName", value); }
         }
+#nullable restore
 #else
         public string SkuDisplayName {
             get { return BackingStore?.Get<string>("skuDisplayName"); }

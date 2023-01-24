@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The calendar to use, e.g., Gregorian Calendar.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Calendar {
             get { return BackingStore?.Get<string?>("calendar"); }
             set { BackingStore?.Set("calendar", value); }
         }
+#nullable restore
 #else
         public string Calendar {
             get { return BackingStore?.Get<string>("calendar"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The first day of the week to use, e.g., Sunday.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FirstDayOfWeek {
             get { return BackingStore?.Get<string?>("firstDayOfWeek"); }
             set { BackingStore?.Set("firstDayOfWeek", value); }
         }
+#nullable restore
 #else
         public string FirstDayOfWeek {
             get { return BackingStore?.Get<string>("firstDayOfWeek"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The long date time format to be used for displaying dates.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LongDateFormat {
             get { return BackingStore?.Get<string?>("longDateFormat"); }
             set { BackingStore?.Set("longDateFormat", value); }
         }
+#nullable restore
 #else
         public string LongDateFormat {
             get { return BackingStore?.Get<string>("longDateFormat"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The long time format to be used for displaying time.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LongTimeFormat {
             get { return BackingStore?.Get<string?>("longTimeFormat"); }
             set { BackingStore?.Set("longTimeFormat", value); }
         }
+#nullable restore
 #else
         public string LongTimeFormat {
             get { return BackingStore?.Get<string>("longTimeFormat"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The short date time format to be used for displaying dates.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ShortDateFormat {
             get { return BackingStore?.Get<string?>("shortDateFormat"); }
             set { BackingStore?.Set("shortDateFormat", value); }
         }
+#nullable restore
 #else
         public string ShortDateFormat {
             get { return BackingStore?.Get<string>("shortDateFormat"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The short time format to be used for displaying time.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ShortTimeFormat {
             get { return BackingStore?.Get<string?>("shortTimeFormat"); }
             set { BackingStore?.Set("shortTimeFormat", value); }
         }
+#nullable restore
 #else
         public string ShortTimeFormat {
             get { return BackingStore?.Get<string>("shortTimeFormat"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The timezone to be used for displaying time.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TimeZone {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#nullable restore
 #else
         public string TimeZone {
             get { return BackingStore?.Get<string>("timeZone"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ShiftItem : ScheduleEntity, IParsable {
         /// <summary>An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ShiftActivity>? Activities {
             get { return BackingStore?.Get<List<ShiftActivity>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#nullable restore
 #else
         public List<ShiftActivity> Activities {
             get { return BackingStore?.Get<List<ShiftActivity>>("activities"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The shift label of the shiftItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The shift notes for the shiftItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Notes {
             get { return BackingStore?.Get<string?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#nullable restore
 #else
         public string Notes {
             get { return BackingStore?.Get<string>("notes"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, email. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserProperty {
             get { return BackingStore?.Get<string?>("userProperty"); }
             set { BackingStore?.Set("userProperty", value); }
         }
+#nullable restore
 #else
         public string UserProperty {
             get { return BackingStore?.Get<string>("userProperty"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? X509CertificateField {
             get { return BackingStore?.Get<string?>("x509CertificateField"); }
             set { BackingStore?.Set("x509CertificateField", value); }
         }
+#nullable restore
 #else
         public string X509CertificateField {
             get { return BackingStore?.Get<string>("x509CertificateField"); }

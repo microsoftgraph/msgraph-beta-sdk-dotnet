@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
         }
         /// <summary>The assets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UpdatableAsset>? Assets {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("assets"); }
             set { BackingStore?.Set("assets", value); }
         }
+#nullable restore
 #else
         public List<UpdatableAsset> Assets {
             get { return BackingStore?.Get<List<UpdatableAsset>>("assets"); }

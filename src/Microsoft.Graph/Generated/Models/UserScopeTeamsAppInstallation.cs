@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserScopeTeamsAppInstallation : TeamsAppInstallation, IParsable {
         /// <summary>The chat between the user and Teams app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Chat? Chat {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Chat?>("chat"); }
             set { BackingStore?.Set("chat", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Chat Chat {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Chat>("chat"); }

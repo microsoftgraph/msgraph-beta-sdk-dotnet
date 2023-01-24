@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AvailabilityView {
             get { return BackingStore?.Get<string?>("availabilityView"); }
             set { BackingStore?.Set("availabilityView", value); }
         }
+#nullable restore
 #else
         public string AvailabilityView {
             get { return BackingStore?.Get<string>("availabilityView"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Error information from attempting to get the availability of the user, distribution list, or resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public FreeBusyError? Error {
             get { return BackingStore?.Get<FreeBusyError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public FreeBusyError Error {
             get { return BackingStore?.Get<FreeBusyError>("error"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScheduleId {
             get { return BackingStore?.Get<string?>("scheduleId"); }
             set { BackingStore?.Set("scheduleId", value); }
         }
+#nullable restore
 #else
         public string ScheduleId {
             get { return BackingStore?.Get<string>("scheduleId"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the items that describe the availability of the user or resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ScheduleItem>? ScheduleItems {
             get { return BackingStore?.Get<List<ScheduleItem>?>("scheduleItems"); }
             set { BackingStore?.Set("scheduleItems", value); }
         }
+#nullable restore
 #else
         public List<ScheduleItem> ScheduleItems {
             get { return BackingStore?.Get<List<ScheduleItem>>("scheduleItems"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The days of the week and hours in a specific time zone that the user works. These are set as part of the user&apos;s mailboxSettings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.WorkingHours? WorkingHours {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkingHours?>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.WorkingHours WorkingHours {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkingHours>("workingHours"); }

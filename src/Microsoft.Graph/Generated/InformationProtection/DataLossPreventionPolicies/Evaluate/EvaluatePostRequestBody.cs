@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The evaluationInput property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DlpEvaluationInput? EvaluationInput {
             get { return BackingStore?.Get<DlpEvaluationInput?>("evaluationInput"); }
             set { BackingStore?.Set("evaluationInput", value); }
         }
+#nullable restore
 #else
         public DlpEvaluationInput EvaluationInput {
             get { return BackingStore?.Get<DlpEvaluationInput>("evaluationInput"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.
 #endif
         /// <summary>The notificationInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DlpNotification? NotificationInfo {
             get { return BackingStore?.Get<DlpNotification?>("notificationInfo"); }
             set { BackingStore?.Set("notificationInfo", value); }
         }
+#nullable restore
 #else
         public DlpNotification NotificationInfo {
             get { return BackingStore?.Get<DlpNotification>("notificationInfo"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.
 #endif
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Target {
             get { return BackingStore?.Get<string?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#nullable restore
 #else
         public string Target {
             get { return BackingStore?.Get<string>("target"); }

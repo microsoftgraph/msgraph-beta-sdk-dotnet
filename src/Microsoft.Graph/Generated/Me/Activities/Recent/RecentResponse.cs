@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Me.Activities.Recent {
     public class RecentResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserActivity>? Value {
             get { return BackingStore?.Get<List<UserActivity>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<UserActivity> Value {
             get { return BackingStore?.Get<List<UserActivity>>("value"); }

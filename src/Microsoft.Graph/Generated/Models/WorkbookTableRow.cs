@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Values {
             get { return BackingStore?.Get<Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public Json Values {
             get { return BackingStore?.Get<Json>("values"); }

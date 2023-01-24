@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DepOnboardingSetting : Entity, IParsable {
         /// <summary>The Apple ID used to obtain the current token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppleIdentifier {
             get { return BackingStore?.Get<string?>("appleIdentifier"); }
             set { BackingStore?.Set("appleIdentifier", value); }
         }
+#nullable restore
 #else
         public string AppleIdentifier {
             get { return BackingStore?.Get<string>("appleIdentifier"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Default iOS Enrollment Profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DepIOSEnrollmentProfile? DefaultIosEnrollmentProfile {
             get { return BackingStore?.Get<DepIOSEnrollmentProfile?>("defaultIosEnrollmentProfile"); }
             set { BackingStore?.Set("defaultIosEnrollmentProfile", value); }
         }
+#nullable restore
 #else
         public DepIOSEnrollmentProfile DefaultIosEnrollmentProfile {
             get { return BackingStore?.Get<DepIOSEnrollmentProfile>("defaultIosEnrollmentProfile"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Default MacOs Enrollment Profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DepMacOSEnrollmentProfile? DefaultMacOsEnrollmentProfile {
             get { return BackingStore?.Get<DepMacOSEnrollmentProfile?>("defaultMacOsEnrollmentProfile"); }
             set { BackingStore?.Set("defaultMacOsEnrollmentProfile", value); }
         }
+#nullable restore
 #else
         public DepMacOSEnrollmentProfile DefaultMacOsEnrollmentProfile {
             get { return BackingStore?.Get<DepMacOSEnrollmentProfile>("defaultMacOsEnrollmentProfile"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The enrollment profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EnrollmentProfile>? EnrollmentProfiles {
             get { return BackingStore?.Get<List<EnrollmentProfile>?>("enrollmentProfiles"); }
             set { BackingStore?.Set("enrollmentProfiles", value); }
         }
+#nullable restore
 #else
         public List<EnrollmentProfile> EnrollmentProfiles {
             get { return BackingStore?.Get<List<EnrollmentProfile>>("enrollmentProfiles"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The imported Apple device identities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ImportedAppleDeviceIdentity>? ImportedAppleDeviceIdentities {
             get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>?>("importedAppleDeviceIdentities"); }
             set { BackingStore?.Set("importedAppleDeviceIdentities", value); }
         }
+#nullable restore
 #else
         public List<ImportedAppleDeviceIdentity> ImportedAppleDeviceIdentities {
             get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>>("importedAppleDeviceIdentities"); }
@@ -95,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -122,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Friendly Name for Dep Token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TokenName {
             get { return BackingStore?.Get<string?>("tokenName"); }
             set { BackingStore?.Set("tokenName", value); }
         }
+#nullable restore
 #else
         public string TokenName {
             get { return BackingStore?.Get<string>("tokenName"); }

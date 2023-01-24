@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
     public class FilterByCurrentUserWithOnResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrivilegedAccessGroupAssignmentScheduleInstance>? Value {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleInstance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<PrivilegedAccessGroupAssignmentScheduleInstance> Value {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleInstance>>("value"); }

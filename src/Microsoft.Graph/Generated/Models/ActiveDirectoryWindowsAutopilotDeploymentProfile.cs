@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ActiveDirectoryWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable {
         /// <summary>Configuration to join Active Directory domain</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsDomainJoinConfiguration? DomainJoinConfiguration {
             get { return BackingStore?.Get<WindowsDomainJoinConfiguration?>("domainJoinConfiguration"); }
             set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
+#nullable restore
 #else
         public WindowsDomainJoinConfiguration DomainJoinConfiguration {
             get { return BackingStore?.Get<WindowsDomainJoinConfiguration>("domainJoinConfiguration"); }

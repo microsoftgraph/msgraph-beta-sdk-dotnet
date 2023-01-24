@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The id of the participant that is under observation. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ObservedParticipantId {
             get { return BackingStore?.Get<string?>("observedParticipantId"); }
             set { BackingStore?.Set("observedParticipantId", value); }
         }
+#nullable restore
 #else
         public string ObservedParticipantId {
             get { return BackingStore?.Get<string>("observedParticipantId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity that the call is happening on behalf of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? OnBehalfOf {
             get { return BackingStore?.Get<IdentitySet?>("onBehalfOf"); }
             set { BackingStore?.Set("onBehalfOf", value); }
         }
+#nullable restore
 #else
         public IdentitySet OnBehalfOf {
             get { return BackingStore?.Get<IdentitySet>("onBehalfOf"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The id of the participant that triggered the incoming call. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourceParticipantId {
             get { return BackingStore?.Get<string?>("sourceParticipantId"); }
             set { BackingStore?.Set("sourceParticipantId", value); }
         }
+#nullable restore
 #else
         public string SourceParticipantId {
             get { return BackingStore?.Get<string>("sourceParticipantId"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity that transferred the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Transferor {
             get { return BackingStore?.Get<IdentitySet?>("transferor"); }
             set { BackingStore?.Set("transferor", value); }
         }
+#nullable restore
 #else
         public IdentitySet Transferor {
             get { return BackingStore?.Get<IdentitySet>("transferor"); }

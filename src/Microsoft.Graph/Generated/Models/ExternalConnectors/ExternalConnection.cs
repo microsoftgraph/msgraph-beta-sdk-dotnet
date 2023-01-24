@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ExternalConnection : Entity, IParsable {
         /// <summary>Collects configurable settings related to activities involving connector content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings? ActivitySettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings?>("activitySettings"); }
             set { BackingStore?.Set("activitySettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings ActivitySettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings>("activitySettings"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The settings required for the connection to participate in eDiscovery, such as the display templates for eDiscovery results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings? ComplianceSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings?>("complianceSettings"); }
             set { BackingStore?.Set("complianceSettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings ComplianceSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>("complianceSettings"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration? Configuration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration Configuration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>("configuration"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The Teams App ID. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectorId {
             get { return BackingStore?.Get<string?>("connectorId"); }
             set { BackingStore?.Set("connectorId", value); }
         }
+#nullable restore
 #else
         public string ConnectorId {
             get { return BackingStore?.Get<string>("connectorId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>Description of the connection displayed in the Microsoft 365 admin center. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExternalGroup>? Groups {
             get { return BackingStore?.Get<List<ExternalGroup>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
+#nullable restore
 #else
         public List<ExternalGroup> Groups {
             get { return BackingStore?.Get<List<ExternalGroup>>("groups"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExternalItem>? Items {
             get { return BackingStore?.Get<List<ExternalItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#nullable restore
 #else
         public List<ExternalItem> Items {
             get { return BackingStore?.Get<List<ExternalItem>>("items"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConnectionOperation>? Operations {
             get { return BackingStore?.Get<List<ConnectionOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<ConnectionOperation> Operations {
             get { return BackingStore?.Get<List<ConnectionOperation>>("operations"); }
@@ -125,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The quota property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConnectionQuota? Quota {
             get { return BackingStore?.Get<ConnectionQuota?>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
+#nullable restore
 #else
         public ConnectionQuota Quota {
             get { return BackingStore?.Get<ConnectionQuota>("quota"); }
@@ -137,10 +157,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ExternalConnectors.Schema? Schema {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ExternalConnectors.Schema Schema {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>("schema"); }
@@ -149,10 +171,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The settings configuring the search experience for content in this connection, such as the display templates for search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings? SearchSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings?>("searchSettings"); }
             set { BackingStore?.Set("searchSettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings SearchSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings>("searchSettings"); }

@@ -11,10 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RetrieveRemoteHelpSessionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>ACS Group Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AcsGroupId {
             get { return BackingStore?.Get<string?>("acsGroupId"); }
             set { BackingStore?.Set("acsGroupId", value); }
         }
+#nullable restore
 #else
         public string AcsGroupId {
             get { return BackingStore?.Get<string>("acsGroupId"); }
@@ -23,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Helper ACS User Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AcsHelperUserId {
             get { return BackingStore?.Get<string?>("acsHelperUserId"); }
             set { BackingStore?.Set("acsHelperUserId", value); }
         }
+#nullable restore
 #else
         public string AcsHelperUserId {
             get { return BackingStore?.Get<string>("acsHelperUserId"); }
@@ -35,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Helper ACS User Token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AcsHelperUserToken {
             get { return BackingStore?.Get<string?>("acsHelperUserToken"); }
             set { BackingStore?.Set("acsHelperUserToken", value); }
         }
+#nullable restore
 #else
         public string AcsHelperUserToken {
             get { return BackingStore?.Get<string>("acsHelperUserToken"); }
@@ -47,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Sharer ACS User Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AcsSharerUserId {
             get { return BackingStore?.Get<string?>("acsSharerUserId"); }
             set { BackingStore?.Set("acsSharerUserId", value); }
         }
+#nullable restore
 #else
         public string AcsSharerUserId {
             get { return BackingStore?.Get<string>("acsSharerUserId"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Android Device Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -78,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -90,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Azure Pubsub Group Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PubSubGroupId {
             get { return BackingStore?.Get<string?>("pubSubGroupId"); }
             set { BackingStore?.Set("pubSubGroupId", value); }
         }
+#nullable restore
 #else
         public string PubSubGroupId {
             get { return BackingStore?.Get<string>("pubSubGroupId"); }
@@ -102,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Azure Pubsub Group Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PubSubHelperAccessUri {
             get { return BackingStore?.Get<string?>("pubSubHelperAccessUri"); }
             set { BackingStore?.Set("pubSubHelperAccessUri", value); }
         }
+#nullable restore
 #else
         public string PubSubHelperAccessUri {
             get { return BackingStore?.Get<string>("pubSubHelperAccessUri"); }
@@ -119,10 +135,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier for a session</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SessionKey {
             get { return BackingStore?.Get<string?>("sessionKey"); }
             set { BackingStore?.Set("sessionKey", value); }
         }
+#nullable restore
 #else
         public string SessionKey {
             get { return BackingStore?.Get<string>("sessionKey"); }

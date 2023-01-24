@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Content type information of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ContentTypeInfo? ContentType {
             get { return BackingStore?.Get<ContentTypeInfo?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#nullable restore
 #else
         public ContentTypeInfo ContentType {
             get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the file in resource folder that should be added as a default content or a template in the document set</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileName {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#nullable restore
 #else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Folder name in which the file will be placed when a new document set is created in the library.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FolderName {
             get { return BackingStore?.Get<string?>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
+#nullable restore
 #else
         public string FolderName {
             get { return BackingStore?.Get<string>("folderName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

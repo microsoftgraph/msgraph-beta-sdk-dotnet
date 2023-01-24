@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>The wireless LAN basic service set identifier of the media endpoint used to connect to the network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BasicServiceSetIdentifier {
             get { return BackingStore?.Get<string?>("basicServiceSetIdentifier"); }
             set { BackingStore?.Set("basicServiceSetIdentifier", value); }
         }
+#nullable restore
 #else
         public string BasicServiceSetIdentifier {
             get { return BackingStore?.Get<string>("basicServiceSetIdentifier"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>DNS suffix associated with the network adapter of the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DnsSuffix {
             get { return BackingStore?.Get<string?>("dnsSuffix"); }
             set { BackingStore?.Set("dnsSuffix", value); }
         }
+#nullable restore
 #else
         public string DnsSuffix {
             get { return BackingStore?.Get<string>("dnsSuffix"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>IP address of the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddress {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#nullable restore
 #else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
@@ -71,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>The media access control (MAC) address of the media endpoint&apos;s network device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MacAddress {
             get { return BackingStore?.Get<string?>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
+#nullable restore
 #else
         public string MacAddress {
             get { return BackingStore?.Get<string>("macAddress"); }
@@ -88,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -110,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReflexiveIPAddress {
             get { return BackingStore?.Get<string?>("reflexiveIPAddress"); }
             set { BackingStore?.Set("reflexiveIPAddress", value); }
         }
+#nullable restore
 #else
         public string ReflexiveIPAddress {
             get { return BackingStore?.Get<string>("reflexiveIPAddress"); }
@@ -122,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>IP address of the media relay server allocated by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RelayIPAddress {
             get { return BackingStore?.Get<string?>("relayIPAddress"); }
             set { BackingStore?.Set("relayIPAddress", value); }
         }
+#nullable restore
 #else
         public string RelayIPAddress {
             get { return BackingStore?.Get<string>("relayIPAddress"); }
@@ -144,10 +158,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Subnet used for media stream by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subnet {
             get { return BackingStore?.Get<string?>("subnet"); }
             set { BackingStore?.Set("subnet", value); }
         }
+#nullable restore
 #else
         public string Subnet {
             get { return BackingStore?.Get<string>("subnet"); }
@@ -156,10 +172,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>List of network trace route hops collected for this media stream.*</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TraceRouteHop>? TraceRouteHops {
             get { return BackingStore?.Get<List<TraceRouteHop>?>("traceRouteHops"); }
             set { BackingStore?.Set("traceRouteHops", value); }
         }
+#nullable restore
 #else
         public List<TraceRouteHop> TraceRouteHops {
             get { return BackingStore?.Get<List<TraceRouteHop>>("traceRouteHops"); }
@@ -183,10 +201,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WifiMicrosoftDriver {
             get { return BackingStore?.Get<string?>("wifiMicrosoftDriver"); }
             set { BackingStore?.Set("wifiMicrosoftDriver", value); }
         }
+#nullable restore
 #else
         public string WifiMicrosoftDriver {
             get { return BackingStore?.Get<string>("wifiMicrosoftDriver"); }
@@ -195,10 +215,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Version of the Microsoft WiFi driver used by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WifiMicrosoftDriverVersion {
             get { return BackingStore?.Get<string?>("wifiMicrosoftDriverVersion"); }
             set { BackingStore?.Set("wifiMicrosoftDriverVersion", value); }
         }
+#nullable restore
 #else
         public string WifiMicrosoftDriverVersion {
             get { return BackingStore?.Get<string>("wifiMicrosoftDriverVersion"); }
@@ -217,10 +239,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WifiVendorDriver {
             get { return BackingStore?.Get<string?>("wifiVendorDriver"); }
             set { BackingStore?.Set("wifiVendorDriver", value); }
         }
+#nullable restore
 #else
         public string WifiVendorDriver {
             get { return BackingStore?.Get<string>("wifiVendorDriver"); }
@@ -229,10 +253,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Version of the WiFi driver used by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WifiVendorDriverVersion {
             get { return BackingStore?.Get<string?>("wifiVendorDriverVersion"); }
             set { BackingStore?.Set("wifiVendorDriverVersion", value); }
         }
+#nullable restore
 #else
         public string WifiVendorDriverVersion {
             get { return BackingStore?.Get<string>("wifiVendorDriverVersion"); }

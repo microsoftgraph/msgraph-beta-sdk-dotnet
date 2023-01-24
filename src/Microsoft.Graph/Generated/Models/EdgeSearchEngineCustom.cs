@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EdgeSearchEngineCustom : EdgeSearchEngineBase, IParsable {
         /// <summary>Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EdgeSearchEngineOpenSearchXmlUrl {
             get { return BackingStore?.Get<string?>("edgeSearchEngineOpenSearchXmlUrl"); }
             set { BackingStore?.Set("edgeSearchEngineOpenSearchXmlUrl", value); }
         }
+#nullable restore
 #else
         public string EdgeSearchEngineOpenSearchXmlUrl {
             get { return BackingStore?.Get<string>("edgeSearchEngineOpenSearchXmlUrl"); }

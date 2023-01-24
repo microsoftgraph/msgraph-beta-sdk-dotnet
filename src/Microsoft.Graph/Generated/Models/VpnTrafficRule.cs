@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>App identifier, if this traffic rule is triggered by an app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppId {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#nullable restore
 #else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Claims associated with this traffic rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Claims {
             get { return BackingStore?.Get<string?>("claims"); }
             set { BackingStore?.Set("claims", value); }
         }
+#nullable restore
 #else
         public string Claims {
             get { return BackingStore?.Get<string>("claims"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Local address range. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IPv4Range>? LocalAddressRanges {
             get { return BackingStore?.Get<List<IPv4Range>?>("localAddressRanges"); }
             set { BackingStore?.Set("localAddressRanges", value); }
         }
+#nullable restore
 #else
         public List<IPv4Range> LocalAddressRanges {
             get { return BackingStore?.Get<List<IPv4Range>>("localAddressRanges"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Local port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<NumberRange>? LocalPortRanges {
             get { return BackingStore?.Get<List<NumberRange>?>("localPortRanges"); }
             set { BackingStore?.Set("localPortRanges", value); }
         }
+#nullable restore
 #else
         public List<NumberRange> LocalPortRanges {
             get { return BackingStore?.Get<List<NumberRange>>("localPortRanges"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -83,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -100,10 +112,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Remote address range. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IPv4Range>? RemoteAddressRanges {
             get { return BackingStore?.Get<List<IPv4Range>?>("remoteAddressRanges"); }
             set { BackingStore?.Set("remoteAddressRanges", value); }
         }
+#nullable restore
 #else
         public List<IPv4Range> RemoteAddressRanges {
             get { return BackingStore?.Get<List<IPv4Range>>("remoteAddressRanges"); }
@@ -112,10 +126,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Remote port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<NumberRange>? RemotePortRanges {
             get { return BackingStore?.Get<List<NumberRange>?>("remotePortRanges"); }
             set { BackingStore?.Set("remotePortRanges", value); }
         }
+#nullable restore
 #else
         public List<NumberRange> RemotePortRanges {
             get { return BackingStore?.Get<List<NumberRange>>("remotePortRanges"); }

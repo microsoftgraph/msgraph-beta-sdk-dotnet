@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class CaseSettings : Entity, IParsable {
         /// <summary>The OCR (Optical Character Recognition) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OcrSettings? Ocr {
             get { return BackingStore?.Get<OcrSettings?>("ocr"); }
             set { BackingStore?.Set("ocr", value); }
         }
+#nullable restore
 #else
         public OcrSettings Ocr {
             get { return BackingStore?.Get<OcrSettings>("ocr"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>The redundancy (near duplicate and email threading) detection settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RedundancyDetectionSettings? RedundancyDetection {
             get { return BackingStore?.Get<RedundancyDetectionSettings?>("redundancyDetection"); }
             set { BackingStore?.Set("redundancyDetection", value); }
         }
+#nullable restore
 #else
         public RedundancyDetectionSettings RedundancyDetection {
             get { return BackingStore?.Get<RedundancyDetectionSettings>("redundancyDetection"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>The Topic Modeling (Themes) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TopicModelingSettings? TopicModeling {
             get { return BackingStore?.Get<TopicModelingSettings?>("topicModeling"); }
             set { BackingStore?.Set("topicModeling", value); }
         }
+#nullable restore
 #else
         public TopicModelingSettings TopicModeling {
             get { return BackingStore?.Get<TopicModelingSettings>("topicModeling"); }

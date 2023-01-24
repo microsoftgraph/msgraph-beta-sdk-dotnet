@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RichLongRunningOperation : LongRunningOperation, IParsable {
         /// <summary>Error due to which the operation failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PublicError? Error {
             get { return BackingStore?.Get<PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public PublicError Error {
             get { return BackingStore?.Get<PublicError>("error"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A unique identifier for the result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceId {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#nullable restore
 #else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Type of the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }

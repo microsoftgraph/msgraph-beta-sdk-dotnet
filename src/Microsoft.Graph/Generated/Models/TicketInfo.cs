@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ticket number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TicketNumber {
             get { return BackingStore?.Get<string?>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
+#nullable restore
 #else
         public string TicketNumber {
             get { return BackingStore?.Get<string>("ticketNumber"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of the ticket system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TicketSystem {
             get { return BackingStore?.Get<string?>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
+#nullable restore
 #else
         public string TicketSystem {
             get { return BackingStore?.Get<string>("ticketSystem"); }

@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of answer choices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAnswerChoice>? Choices {
             get { return BackingStore?.Get<List<AccessPackageAnswerChoice>?>("choices"); }
             set { BackingStore?.Set("choices", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAnswerChoice> Choices {
             get { return BackingStore?.Get<List<AccessPackageAnswerChoice>>("choices"); }

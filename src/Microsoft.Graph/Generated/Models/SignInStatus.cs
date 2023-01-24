@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Provides additional details on the sign-in activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdditionalDetails {
             get { return BackingStore?.Get<string?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
+#nullable restore
 #else
         public string AdditionalDetails {
             get { return BackingStore?.Get<string>("additionalDetails"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FailureReason {
             get { return BackingStore?.Get<string?>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
         }
+#nullable restore
 #else
         public string FailureReason {
             get { return BackingStore?.Get<string>("failureReason"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemAttachment : Attachment, IParsable {
         /// <summary>The attached contact, message or event. Navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OutlookItem? Item {
             get { return BackingStore?.Get<OutlookItem?>("item"); }
             set { BackingStore?.Set("item", value); }
         }
+#nullable restore
 #else
         public OutlookItem Item {
             get { return BackingStore?.Get<OutlookItem>("item"); }

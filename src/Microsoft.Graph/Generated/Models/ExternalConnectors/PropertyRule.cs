@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
         /// <summary>The property from the externalItem schema. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Property {
             get { return BackingStore?.Get<string?>("property"); }
             set { BackingStore?.Set("property", value); }
         }
+#nullable restore
 #else
         public string Property {
             get { return BackingStore?.Get<string>("property"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Values {
             get { return BackingStore?.Get<List<string>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public List<string> Values {
             get { return BackingStore?.Get<List<string>>("values"); }

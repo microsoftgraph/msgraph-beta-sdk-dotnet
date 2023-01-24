@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppContent : Entity, IParsable {
         /// <summary>The collection of contained apps in a MobileLobApp acting as a package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileContainedApp>? ContainedApps {
             get { return BackingStore?.Get<List<MobileContainedApp>?>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
+#nullable restore
 #else
         public List<MobileContainedApp> ContainedApps {
             get { return BackingStore?.Get<List<MobileContainedApp>>("containedApps"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of files for this app content version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppContentFile>? Files {
             get { return BackingStore?.Get<List<MobileAppContentFile>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
+#nullable restore
 #else
         public List<MobileAppContentFile> Files {
             get { return BackingStore?.Get<List<MobileAppContentFile>>("files"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Number of users registered for each authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserRegistrationMethodCount>? UserRegistrationMethodCounts {
             get { return BackingStore?.Get<List<UserRegistrationMethodCount>?>("userRegistrationMethodCounts"); }
             set { BackingStore?.Set("userRegistrationMethodCounts", value); }
         }
+#nullable restore
 #else
         public List<UserRegistrationMethodCount> UserRegistrationMethodCounts {
             get { return BackingStore?.Get<List<UserRegistrationMethodCount>>("userRegistrationMethodCounts"); }

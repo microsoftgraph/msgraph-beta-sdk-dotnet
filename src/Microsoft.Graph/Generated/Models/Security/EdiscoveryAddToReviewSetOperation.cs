@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryAddToReviewSetOperation : CaseOperation, IParsable {
         /// <summary>eDiscovery review set to which items matching source collection query gets added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoveryReviewSet? ReviewSet {
             get { return BackingStore?.Get<EdiscoveryReviewSet?>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
+#nullable restore
 #else
         public EdiscoveryReviewSet ReviewSet {
             get { return BackingStore?.Get<EdiscoveryReviewSet>("reviewSet"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>eDiscovery search that gets added to review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoverySearch? Search {
             get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#nullable restore
 #else
         public EdiscoverySearch Search {
             get { return BackingStore?.Get<EdiscoverySearch>("search"); }

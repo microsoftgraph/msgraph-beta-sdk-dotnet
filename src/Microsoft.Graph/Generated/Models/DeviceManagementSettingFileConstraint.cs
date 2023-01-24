@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingFileConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>Acceptable file extensions to upload for this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SupportedExtensions {
             get { return BackingStore?.Get<List<string>?>("supportedExtensions"); }
             set { BackingStore?.Set("supportedExtensions", value); }
         }
+#nullable restore
 #else
         public List<string> SupportedExtensions {
             get { return BackingStore?.Get<List<string>>("supportedExtensions"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UsageRight : Entity, IParsable {
         /// <summary>Product id corresponding to the usage right.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CatalogId {
             get { return BackingStore?.Get<string?>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
+#nullable restore
 #else
         public string CatalogId {
             get { return BackingStore?.Get<string>("catalogId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the service corresponding to the usage right.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceIdentifier {
             get { return BackingStore?.Get<string?>("serviceIdentifier"); }
             set { BackingStore?.Set("serviceIdentifier", value); }
         }
+#nullable restore
 #else
         public string ServiceIdentifier {
             get { return BackingStore?.Get<string>("serviceIdentifier"); }

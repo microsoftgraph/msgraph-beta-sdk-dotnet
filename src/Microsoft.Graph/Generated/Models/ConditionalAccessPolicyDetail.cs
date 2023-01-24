@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessConditionSet? Conditions {
             get { return BackingStore?.Get<ConditionalAccessConditionSet?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessConditionSet Conditions {
             get { return BackingStore?.Get<ConditionalAccessConditionSet>("conditions"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents grant controls that must be fulfilled for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessGrantControls? GrantControls {
             get { return BackingStore?.Get<ConditionalAccessGrantControls?>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessGrantControls GrantControls {
             get { return BackingStore?.Get<ConditionalAccessGrantControls>("grantControls"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a complex type of session controls that is enforced after sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessSessionControls? SessionControls {
             get { return BackingStore?.Get<ConditionalAccessSessionControls?>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessSessionControls SessionControls {
             get { return BackingStore?.Get<ConditionalAccessSessionControls>("sessionControls"); }

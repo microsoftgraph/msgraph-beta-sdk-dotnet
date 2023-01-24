@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class LanguageProficiency : ItemFacet, IParsable {
         /// <summary>Contains the long-form name for the language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Tag {
             get { return BackingStore?.Get<string?>("tag"); }
             set { BackingStore?.Set("tag", value); }
         }
+#nullable restore
 #else
         public string Tag {
             get { return BackingStore?.Get<string>("tag"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The thumbnailUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ThumbnailUrl {
             get { return BackingStore?.Get<string?>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
+#nullable restore
 #else
         public string ThumbnailUrl {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }

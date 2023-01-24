@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminAccessAssignment : Entity, IParsable {
         /// <summary>The accessContainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DelegatedAdminAccessContainer? AccessContainer {
             get { return BackingStore?.Get<DelegatedAdminAccessContainer?>("accessContainer"); }
             set { BackingStore?.Set("accessContainer", value); }
         }
+#nullable restore
 #else
         public DelegatedAdminAccessContainer AccessContainer {
             get { return BackingStore?.Get<DelegatedAdminAccessContainer>("accessContainer"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The accessDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DelegatedAdminAccessDetails? AccessDetails {
             get { return BackingStore?.Get<DelegatedAdminAccessDetails?>("accessDetails"); }
             set { BackingStore?.Set("accessDetails", value); }
         }
+#nullable restore
 #else
         public DelegatedAdminAccessDetails AccessDetails {
             get { return BackingStore?.Get<DelegatedAdminAccessDetails>("accessDetails"); }

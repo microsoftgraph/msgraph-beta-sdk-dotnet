@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleAssignmentIds {
             get { return BackingStore?.Get<List<string>?>("roleAssignmentIds"); }
             set { BackingStore?.Set("roleAssignmentIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleAssignmentIds {
             get { return BackingStore?.Get<List<string>>("roleAssignmentIds"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleDefinitionIds {
             get { return BackingStore?.Get<List<string>?>("roleDefinitionIds"); }
             set { BackingStore?.Set("roleDefinitionIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleDefinitionIds {
             get { return BackingStore?.Get<List<string>>("roleDefinitionIds"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PayloadByFilterCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PayloadByFilter>? Value {
             get { return BackingStore?.Get<List<PayloadByFilter>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<PayloadByFilter> Value {
             get { return BackingStore?.Get<List<PayloadByFilter>>("value"); }

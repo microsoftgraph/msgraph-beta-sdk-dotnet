@@ -48,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Windows update for business configuration device states. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsUpdateState>? DeviceUpdateStates {
             get { return BackingStore?.Get<List<WindowsUpdateState>?>("deviceUpdateStates"); }
             set { BackingStore?.Set("deviceUpdateStates", value); }
         }
+#nullable restore
 #else
         public List<WindowsUpdateState> DeviceUpdateStates {
             get { return BackingStore?.Get<List<WindowsUpdateState>>("deviceUpdateStates"); }
@@ -115,10 +117,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsUpdateInstallScheduleType? InstallationSchedule {
             get { return BackingStore?.Get<WindowsUpdateInstallScheduleType?>("installationSchedule"); }
             set { BackingStore?.Set("installationSchedule", value); }
         }
+#nullable restore
 #else
         public WindowsUpdateInstallScheduleType InstallationSchedule {
             get { return BackingStore?.Get<WindowsUpdateInstallScheduleType>("installationSchedule"); }

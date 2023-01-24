@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceEnrollmentPlatformRestrictionsConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>Android for work restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceEnrollmentPlatformRestriction? AndroidForWorkRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("androidForWorkRestriction"); }
             set { BackingStore?.Set("androidForWorkRestriction", value); }
         }
+#nullable restore
 #else
         public DeviceEnrollmentPlatformRestriction AndroidForWorkRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("androidForWorkRestriction"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Android restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceEnrollmentPlatformRestriction? AndroidRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("androidRestriction"); }
             set { BackingStore?.Set("androidRestriction", value); }
         }
+#nullable restore
 #else
         public DeviceEnrollmentPlatformRestriction AndroidRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("androidRestriction"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Ios restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceEnrollmentPlatformRestriction? IosRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("iosRestriction"); }
             set { BackingStore?.Set("iosRestriction", value); }
         }
+#nullable restore
 #else
         public DeviceEnrollmentPlatformRestriction IosRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("iosRestriction"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Mac restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceEnrollmentPlatformRestriction? MacOSRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("macOSRestriction"); }
             set { BackingStore?.Set("macOSRestriction", value); }
         }
+#nullable restore
 #else
         public DeviceEnrollmentPlatformRestriction MacOSRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("macOSRestriction"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Mac restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceEnrollmentPlatformRestriction? MacRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("macRestriction"); }
             set { BackingStore?.Set("macRestriction", value); }
         }
+#nullable restore
 #else
         public DeviceEnrollmentPlatformRestriction MacRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("macRestriction"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Windows Home Sku restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceEnrollmentPlatformRestriction? WindowsHomeSkuRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("windowsHomeSkuRestriction"); }
             set { BackingStore?.Set("windowsHomeSkuRestriction", value); }
         }
+#nullable restore
 #else
         public DeviceEnrollmentPlatformRestriction WindowsHomeSkuRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("windowsHomeSkuRestriction"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Windows mobile restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceEnrollmentPlatformRestriction? WindowsMobileRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("windowsMobileRestriction"); }
             set { BackingStore?.Set("windowsMobileRestriction", value); }
         }
+#nullable restore
 #else
         public DeviceEnrollmentPlatformRestriction WindowsMobileRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("windowsMobileRestriction"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Windows restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceEnrollmentPlatformRestriction? WindowsRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("windowsRestriction"); }
             set { BackingStore?.Set("windowsRestriction", value); }
         }
+#nullable restore
 #else
         public DeviceEnrollmentPlatformRestriction WindowsRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("windowsRestriction"); }

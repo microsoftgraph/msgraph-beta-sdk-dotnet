@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementActionTenantDeploymentStatus : Entity, IParsable {
         /// <summary>The collection of deployment status for each instance of a management action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagementActionDeploymentStatus>? Statuses {
             get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>?>("statuses"); }
             set { BackingStore?.Set("statuses", value); }
         }
+#nullable restore
 #else
         public List<ManagementActionDeploymentStatus> Statuses {
             get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>>("statuses"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The identifier for the tenant group that is associated with the management action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantGroupId {
             get { return BackingStore?.Get<string?>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
+#nullable restore
 #else
         public string TenantGroupId {
             get { return BackingStore?.Get<string>("tenantGroupId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

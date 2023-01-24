@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier for the management action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementActionId {
             get { return BackingStore?.Get<string?>("managementActionId"); }
             set { BackingStore?.Set("managementActionId", value); }
         }
+#nullable restore
 #else
         public string ManagementActionId {
             get { return BackingStore?.Get<string>("managementActionId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The management template identifier that was used to generate the management action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementTemplateId {
             get { return BackingStore?.Get<string?>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
+#nullable restore
 #else
         public string ManagementTemplateId {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The collection of workload action deployment statues for the given management action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkloadActionDeploymentStatus>? WorkloadActionDeploymentStatuses {
             get { return BackingStore?.Get<List<WorkloadActionDeploymentStatus>?>("workloadActionDeploymentStatuses"); }
             set { BackingStore?.Set("workloadActionDeploymentStatuses", value); }
         }
+#nullable restore
 #else
         public List<WorkloadActionDeploymentStatus> WorkloadActionDeploymentStatuses {
             get { return BackingStore?.Get<List<WorkloadActionDeploymentStatus>>("workloadActionDeploymentStatuses"); }

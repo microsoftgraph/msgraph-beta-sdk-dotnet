@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Ass
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The officeConfigurationAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OfficeClientConfigurationAssignment>? OfficeConfigurationAssignments {
             get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>?>("officeConfigurationAssignments"); }
             set { BackingStore?.Set("officeConfigurationAssignments", value); }
         }
+#nullable restore
 #else
         public List<OfficeClientConfigurationAssignment> OfficeConfigurationAssignments {
             get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>>("officeConfigurationAssignments"); }

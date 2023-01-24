@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecurrenceEndType {
             get { return BackingStore?.Get<string?>("recurrenceEndType"); }
             set { BackingStore?.Set("recurrenceEndType", value); }
         }
+#nullable restore
 #else
         public string RecurrenceEndType {
             get { return BackingStore?.Get<string>("recurrenceEndType"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecurrenceType {
             get { return BackingStore?.Get<string?>("recurrenceType"); }
             set { BackingStore?.Set("recurrenceType", value); }
         }
+#nullable restore
 #else
         public string RecurrenceType {
             get { return BackingStore?.Get<string>("recurrenceType"); }

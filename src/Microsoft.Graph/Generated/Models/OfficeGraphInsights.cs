@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OfficeGraphInsights : Entity, IParsable {
         /// <summary>Access this property from the derived type itemInsights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SharedInsight>? Shared {
             get { return BackingStore?.Get<List<SharedInsight>?>("shared"); }
             set { BackingStore?.Set("shared", value); }
         }
+#nullable restore
 #else
         public List<SharedInsight> Shared {
             get { return BackingStore?.Get<List<SharedInsight>>("shared"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Access this property from the derived type itemInsights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.Trending>? Trending {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Trending>?>("trending"); }
             set { BackingStore?.Set("trending", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.Trending> Trending {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Trending>>("trending"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Access this property from the derived type itemInsights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UsedInsight>? Used {
             get { return BackingStore?.Get<List<UsedInsight>?>("used"); }
             set { BackingStore?.Set("used", value); }
         }
+#nullable restore
 #else
         public List<UsedInsight> Used {
             get { return BackingStore?.Get<List<UsedInsight>>("used"); }

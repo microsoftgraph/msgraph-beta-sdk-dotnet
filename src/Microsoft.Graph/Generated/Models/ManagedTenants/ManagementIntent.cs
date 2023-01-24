@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementIntent : Entity, IParsable {
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The collection of management templates associated with the management intent. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagementTemplateDetailedInfo>? ManagementTemplates {
             get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>?>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
+#nullable restore
 #else
         public List<ManagementTemplateDetailedInfo> ManagementTemplates {
             get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>("managementTemplates"); }

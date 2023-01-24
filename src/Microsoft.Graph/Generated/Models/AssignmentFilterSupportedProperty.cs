@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The data type of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DataType {
             get { return BackingStore?.Get<string?>("dataType"); }
             set { BackingStore?.Set("dataType", value); }
         }
+#nullable restore
 #else
         public string DataType {
             get { return BackingStore?.Get<string>("dataType"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Regex string to do validation on the property value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PropertyRegexConstraint {
             get { return BackingStore?.Get<string?>("propertyRegexConstraint"); }
             set { BackingStore?.Set("propertyRegexConstraint", value); }
         }
+#nullable restore
 #else
         public string PropertyRegexConstraint {
             get { return BackingStore?.Get<string>("propertyRegexConstraint"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of all supported operators on this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssignmentFilterOperator?>? SupportedOperators {
             get { return BackingStore?.Get<List<AssignmentFilterOperator?>?>("supportedOperators"); }
             set { BackingStore?.Set("supportedOperators", value); }
         }
+#nullable restore
 #else
         public List<AssignmentFilterOperator?> SupportedOperators {
             get { return BackingStore?.Get<List<AssignmentFilterOperator?>>("supportedOperators"); }
@@ -83,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of all supported values for this propery, empty if everything is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SupportedValues {
             get { return BackingStore?.Get<List<string>?>("supportedValues"); }
             set { BackingStore?.Set("supportedValues", value); }
         }
+#nullable restore
 #else
         public List<string> SupportedValues {
             get { return BackingStore?.Get<List<string>>("supportedValues"); }

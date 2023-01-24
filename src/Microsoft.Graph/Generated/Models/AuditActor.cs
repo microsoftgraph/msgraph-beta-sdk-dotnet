@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the Application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationDisplayName {
             get { return BackingStore?.Get<string?>("applicationDisplayName"); }
             set { BackingStore?.Set("applicationDisplayName", value); }
         }
+#nullable restore
 #else
         public string ApplicationDisplayName {
             get { return BackingStore?.Get<string>("applicationDisplayName"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>AAD Application Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationId {
             get { return BackingStore?.Get<string?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
+#nullable restore
 #else
         public string ApplicationId {
             get { return BackingStore?.Get<string>("applicationId"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Actor Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuditActorType {
             get { return BackingStore?.Get<string?>("auditActorType"); }
             set { BackingStore?.Set("auditActorType", value); }
         }
+#nullable restore
 #else
         public string AuditActorType {
             get { return BackingStore?.Get<string>("auditActorType"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>IPAddress.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddress {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#nullable restore
 #else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -78,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Remote Tenant Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RemoteTenantId {
             get { return BackingStore?.Get<string?>("remoteTenantId"); }
             set { BackingStore?.Set("remoteTenantId", value); }
         }
+#nullable restore
 #else
         public string RemoteTenantId {
             get { return BackingStore?.Get<string>("remoteTenantId"); }
@@ -90,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Remote User Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RemoteUserId {
             get { return BackingStore?.Get<string?>("remoteUserId"); }
             set { BackingStore?.Set("remoteUserId", value); }
         }
+#nullable restore
 #else
         public string RemoteUserId {
             get { return BackingStore?.Get<string>("remoteUserId"); }
@@ -102,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Service Principal Name (SPN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePrincipalName {
             get { return BackingStore?.Get<string?>("servicePrincipalName"); }
             set { BackingStore?.Set("servicePrincipalName", value); }
         }
+#nullable restore
 #else
         public string ServicePrincipalName {
             get { return BackingStore?.Get<string>("servicePrincipalName"); }
@@ -114,10 +130,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Actor Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
@@ -126,10 +144,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -138,10 +158,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of user permissions when the audit was performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? UserPermissions {
             get { return BackingStore?.Get<List<string>?>("userPermissions"); }
             set { BackingStore?.Set("userPermissions", value); }
         }
+#nullable restore
 #else
         public List<string> UserPermissions {
             get { return BackingStore?.Get<List<string>>("userPermissions"); }
@@ -150,10 +172,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User Principal Name (UPN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
@@ -162,10 +186,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of user scope tags when the audit was performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RoleScopeTagInfo>? UserRoleScopeTags {
             get { return BackingStore?.Get<List<RoleScopeTagInfo>?>("userRoleScopeTags"); }
             set { BackingStore?.Set("userRoleScopeTags", value); }
         }
+#nullable restore
 #else
         public List<RoleScopeTagInfo> UserRoleScopeTags {
             get { return BackingStore?.Get<List<RoleScopeTagInfo>>("userRoleScopeTags"); }

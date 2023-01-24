@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments.Item.Cancel {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cancellationMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CancellationMessage {
             get { return BackingStore?.Get<string?>("cancellationMessage"); }
             set { BackingStore?.Set("cancellationMessage", value); }
         }
+#nullable restore
 #else
         public string CancellationMessage {
             get { return BackingStore?.Get<string>("cancellationMessage"); }

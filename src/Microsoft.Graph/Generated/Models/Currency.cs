@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Currency : Entity, IParsable {
         /// <summary>The amountDecimalPlaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AmountDecimalPlaces {
             get { return BackingStore?.Get<string?>("amountDecimalPlaces"); }
             set { BackingStore?.Set("amountDecimalPlaces", value); }
         }
+#nullable restore
 #else
         public string AmountDecimalPlaces {
             get { return BackingStore?.Get<string>("amountDecimalPlaces"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Code {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
+#nullable restore
 #else
         public string Code {
             get { return BackingStore?.Get<string>("code"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The symbol property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Symbol {
             get { return BackingStore?.Get<string?>("symbol"); }
             set { BackingStore?.Set("symbol", value); }
         }
+#nullable restore
 #else
         public string Symbol {
             get { return BackingStore?.Get<string>("symbol"); }

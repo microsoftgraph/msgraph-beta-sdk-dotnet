@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PermissionId {
             get { return BackingStore?.Get<string?>("permissionId"); }
             set { BackingStore?.Set("permissionId", value); }
         }
+#nullable restore
 #else
         public string PermissionId {
             get { return BackingStore?.Get<string>("permissionId"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PermissionName {
             get { return BackingStore?.Get<string?>("permissionName"); }
             set { BackingStore?.Set("permissionName", value); }
         }
+#nullable restore
 #else
         public string PermissionName {
             get { return BackingStore?.Get<string>("permissionName"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContainerDisplayName {
             get { return BackingStore?.Get<string?>("containerDisplayName"); }
             set { BackingStore?.Set("containerDisplayName", value); }
         }
+#nullable restore
 #else
         public string ContainerDisplayName {
             get { return BackingStore?.Get<string>("containerDisplayName"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContainerType {
             get { return BackingStore?.Get<string?>("containerType"); }
             set { BackingStore?.Set("containerType", value); }
         }
+#nullable restore
 #else
         public string ContainerType {
             get { return BackingStore?.Get<string>("containerType"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A path leading to the folder in which the item is stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContainerWebUrl {
             get { return BackingStore?.Get<string?>("containerWebUrl"); }
             set { BackingStore?.Set("containerWebUrl", value); }
         }
+#nullable restore
 #else
         public string ContainerWebUrl {
             get { return BackingStore?.Get<string>("containerWebUrl"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The item&apos;s media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MediaType {
             get { return BackingStore?.Get<string?>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+#nullable restore
 #else
         public string MediaType {
             get { return BackingStore?.Get<string>("mediaType"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A URL leading to the preview image for the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PreviewImageUrl {
             get { return BackingStore?.Get<string?>("previewImageUrl"); }
             set { BackingStore?.Set("previewImageUrl", value); }
         }
+#nullable restore
 #else
         public string PreviewImageUrl {
             get { return BackingStore?.Get<string>("previewImageUrl"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A preview text for the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PreviewText {
             get { return BackingStore?.Get<string?>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
+#nullable restore
 #else
         public string PreviewText {
             get { return BackingStore?.Get<string>("previewText"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The item&apos;s title text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The item&apos;s media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }

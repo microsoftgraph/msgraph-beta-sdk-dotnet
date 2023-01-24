@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Run campaigns to remind users to setup targeted authentication methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign? AuthenticationMethodsRegistrationCampaign {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign?>("authenticationMethodsRegistrationCampaign"); }
             set { BackingStore?.Set("authenticationMethodsRegistrationCampaign", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaign {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign>("authenticationMethodsRegistrationCampaign"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DlpEvaluationWindowsDevicesInput : DlpEvaluationInput, IParsable {
         /// <summary>The contentProperties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ContentProperties? ContentProperties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentProperties?>("contentProperties"); }
             set { BackingStore?.Set("contentProperties", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ContentProperties ContentProperties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentProperties>("contentProperties"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sharedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SharedBy {
             get { return BackingStore?.Get<string?>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
+#nullable restore
 #else
         public string SharedBy {
             get { return BackingStore?.Get<string>("sharedBy"); }

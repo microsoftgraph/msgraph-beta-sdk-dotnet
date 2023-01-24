@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         }
         /// <summary>The assignmentFilterIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AssignmentFilterIds {
             get { return BackingStore?.Get<List<string>?>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
+#nullable restore
 #else
         public List<string> AssignmentFilterIds {
             get { return BackingStore?.Get<List<string>>("assignmentFilterIds"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedDeviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
 #endif
         /// <summary>The payloadId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PayloadId {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
+#nullable restore
 #else
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         }
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

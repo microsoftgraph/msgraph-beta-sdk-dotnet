@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RbacApplicationMultiple : Entity, IParsable {
         /// <summary>The resourceNamespaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRbacResourceNamespace>? ResourceNamespaces {
             get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>?>("resourceNamespaces"); }
             set { BackingStore?.Set("resourceNamespaces", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRbacResourceNamespace> ResourceNamespaces {
             get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>>("resourceNamespaces"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The roleAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRoleAssignmentMultiple>? RoleAssignments {
             get { return BackingStore?.Get<List<UnifiedRoleAssignmentMultiple>?>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRoleAssignmentMultiple> RoleAssignments {
             get { return BackingStore?.Get<List<UnifiedRoleAssignmentMultiple>>("roleAssignments"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The roleDefinitions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRoleDefinition>? RoleDefinitions {
             get { return BackingStore?.Get<List<UnifiedRoleDefinition>?>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRoleDefinition> RoleDefinitions {
             get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("roleDefinitions"); }

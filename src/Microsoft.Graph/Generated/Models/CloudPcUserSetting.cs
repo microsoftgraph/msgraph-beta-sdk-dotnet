@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcUserSetting : Entity, IParsable {
         /// <summary>Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcUserSettingAssignment>? Assignments {
             get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<CloudPcUserSettingAssignment> Assignments {
             get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>>("assignments"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The setting name displayed in the user interface.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Defines how frequently a restore point is created that is, a snapshot is taken) for users&apos; provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcRestorePointSetting? RestorePointSetting {
             get { return BackingStore?.Get<CloudPcRestorePointSetting?>("restorePointSetting"); }
             set { BackingStore?.Set("restorePointSetting", value); }
         }
+#nullable restore
 #else
         public CloudPcRestorePointSetting RestorePointSetting {
             get { return BackingStore?.Get<CloudPcRestorePointSetting>("restorePointSetting"); }

@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ActionStep : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actionUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ActionUrl? ActionUrl {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl?>("actionUrl"); }
             set { BackingStore?.Set("actionUrl", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ActionUrl ActionUrl {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl>("actionUrl"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Text {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }

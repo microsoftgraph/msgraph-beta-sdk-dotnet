@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkDeviceActivity : Entity, IParsable {
         /// <summary>The active peripheral devices attached to the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkActivePeripherals? ActivePeripherals {
             get { return BackingStore?.Get<TeamworkActivePeripherals?>("activePeripherals"); }
             set { BackingStore?.Set("activePeripherals", value); }
         }
+#nullable restore
 #else
         public TeamworkActivePeripherals ActivePeripherals {
             get { return BackingStore?.Get<TeamworkActivePeripherals>("activePeripherals"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity of the user who created the device activity document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identity of the user who last modified the device activity details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }

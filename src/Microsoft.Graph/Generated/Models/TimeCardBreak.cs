@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>ID of the timeCardBreak.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BreakId {
             get { return BackingStore?.Get<string?>("breakId"); }
             set { BackingStore?.Set("breakId", value); }
         }
+#nullable restore
 #else
         public string BreakId {
             get { return BackingStore?.Get<string>("breakId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The start event of the timeCardBreak.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TimeCardEvent? End {
             get { return BackingStore?.Get<TimeCardEvent?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
+#nullable restore
 #else
         public TimeCardEvent End {
             get { return BackingStore?.Get<TimeCardEvent>("end"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Notes about the timeCardBreak.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Notes {
             get { return BackingStore?.Get<ItemBody?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#nullable restore
 #else
         public ItemBody Notes {
             get { return BackingStore?.Get<ItemBody>("notes"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TimeCardEvent? Start {
             get { return BackingStore?.Get<TimeCardEvent?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
+#nullable restore
 #else
         public TimeCardEvent Start {
             get { return BackingStore?.Get<TimeCardEvent>("start"); }

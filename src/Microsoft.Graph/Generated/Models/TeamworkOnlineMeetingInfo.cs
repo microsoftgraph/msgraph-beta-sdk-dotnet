@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of the calendar event associated with the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CalendarEventId {
             get { return BackingStore?.Get<string?>("calendarEventId"); }
             set { BackingStore?.Set("calendarEventId", value); }
         }
+#nullable restore
 #else
         public string CalendarEventId {
             get { return BackingStore?.Get<string>("calendarEventId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL which can be clicked on to join or uniquely identify the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JoinWebUrl {
             get { return BackingStore?.Get<string?>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
+#nullable restore
 #else
         public string JoinWebUrl {
             get { return BackingStore?.Get<string>("joinWebUrl"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The organizer of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkUserIdentity? Organizer {
             get { return BackingStore?.Get<TeamworkUserIdentity?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
+#nullable restore
 #else
         public TeamworkUserIdentity Organizer {
             get { return BackingStore?.Get<TeamworkUserIdentity>("organizer"); }

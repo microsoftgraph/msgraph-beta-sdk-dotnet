@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AuthenticationSourceFilter? SourceFilter {
             get { return BackingStore?.Get<AuthenticationSourceFilter?>("sourceFilter"); }
             set { BackingStore?.Set("sourceFilter", value); }
         }
+#nullable restore
 #else
         public AuthenticationSourceFilter SourceFilter {
             get { return BackingStore?.Get<AuthenticationSourceFilter>("sourceFilter"); }

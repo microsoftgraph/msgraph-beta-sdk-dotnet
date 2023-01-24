@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BusinessScenarioPlanReference : Entity, IParsable {
         /// <summary>The title property of the plannerPlan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

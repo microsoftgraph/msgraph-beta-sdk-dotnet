@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Search.Query {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The requests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SearchRequest>? Requests {
             get { return BackingStore?.Get<List<SearchRequest>?>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
+#nullable restore
 #else
         public List<SearchRequest> Requests {
             get { return BackingStore?.Get<List<SearchRequest>>("requests"); }

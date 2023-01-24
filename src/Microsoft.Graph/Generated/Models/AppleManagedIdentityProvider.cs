@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleManagedIdentityProvider : IdentityProviderBase, IParsable {
         /// <summary>The certificate data which is a long string of text from the certificate, can be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateData {
             get { return BackingStore?.Get<string?>("certificateData"); }
             set { BackingStore?.Set("certificateData", value); }
         }
+#nullable restore
 #else
         public string CertificateData {
             get { return BackingStore?.Get<string>("certificateData"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Apple developer identifier. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeveloperId {
             get { return BackingStore?.Get<string?>("developerId"); }
             set { BackingStore?.Set("developerId", value); }
         }
+#nullable restore
 #else
         public string DeveloperId {
             get { return BackingStore?.Get<string>("developerId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Apple key identifier. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KeyId {
             get { return BackingStore?.Get<string?>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
+#nullable restore
 #else
         public string KeyId {
             get { return BackingStore?.Get<string>("keyId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Apple service identifier. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceId {
             get { return BackingStore?.Get<string?>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
+#nullable restore
 #else
         public string ServiceId {
             get { return BackingStore?.Get<string>("serviceId"); }

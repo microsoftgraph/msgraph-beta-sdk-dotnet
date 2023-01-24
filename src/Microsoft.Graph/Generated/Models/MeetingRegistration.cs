@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MeetingRegistration : MeetingRegistrationBase, IParsable {
         /// <summary>Custom registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MeetingRegistrationQuestion>? CustomQuestions {
             get { return BackingStore?.Get<List<MeetingRegistrationQuestion>?>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
+#nullable restore
 #else
         public List<MeetingRegistrationQuestion> CustomQuestions {
             get { return BackingStore?.Get<List<MeetingRegistrationQuestion>>("customQuestions"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The URL of the registration page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RegistrationPageWebUrl {
             get { return BackingStore?.Get<string?>("registrationPageWebUrl"); }
             set { BackingStore?.Set("registrationPageWebUrl", value); }
         }
+#nullable restore
 #else
         public string RegistrationPageWebUrl {
             get { return BackingStore?.Get<string>("registrationPageWebUrl"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The meeting speaker&apos;s information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MeetingSpeaker>? Speakers {
             get { return BackingStore?.Get<List<MeetingSpeaker>?>("speakers"); }
             set { BackingStore?.Set("speakers", value); }
         }
+#nullable restore
 #else
         public List<MeetingSpeaker> Speakers {
             get { return BackingStore?.Get<List<MeetingSpeaker>>("speakers"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The subject of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }

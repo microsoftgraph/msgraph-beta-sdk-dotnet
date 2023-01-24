@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BaseItem : Entity, IParsable {
         /// <summary>Identity of the user, device, or application which created the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The createdByUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public User? CreatedByUser {
             get { return BackingStore?.Get<User?>("createdByUser"); }
             set { BackingStore?.Set("createdByUser", value); }
         }
+#nullable restore
 #else
         public User CreatedByUser {
             get { return BackingStore?.Get<User>("createdByUser"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ETag for the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ETag {
             get { return BackingStore?.Get<string?>("eTag"); }
             set { BackingStore?.Set("eTag", value); }
         }
+#nullable restore
 #else
         public string ETag {
             get { return BackingStore?.Get<string>("eTag"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity of the user, device, and application which last modified the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The lastModifiedByUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public User? LastModifiedByUser {
             get { return BackingStore?.Get<User?>("lastModifiedByUser"); }
             set { BackingStore?.Set("lastModifiedByUser", value); }
         }
+#nullable restore
 #else
         public User LastModifiedByUser {
             get { return BackingStore?.Get<User>("lastModifiedByUser"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the item. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Parent information, if the item has a parent. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemReference? ParentReference {
             get { return BackingStore?.Get<ItemReference?>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
+#nullable restore
 #else
         public ItemReference ParentReference {
             get { return BackingStore?.Get<ItemReference>("parentReference"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL that displays the resource in the browser. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

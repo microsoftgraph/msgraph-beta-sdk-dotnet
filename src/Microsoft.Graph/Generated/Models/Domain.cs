@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Domain : Entity, IParsable {
         /// <summary>Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant&apos;s on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticationType {
             get { return BackingStore?.Get<string?>("authenticationType"); }
             set { BackingStore?.Set("authenticationType", value); }
         }
+#nullable restore
 #else
         public string AuthenticationType {
             get { return BackingStore?.Get<string>("authenticationType"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AvailabilityStatus {
             get { return BackingStore?.Get<string?>("availabilityStatus"); }
             set { BackingStore?.Set("availabilityStatus", value); }
         }
+#nullable restore
 #else
         public string AvailabilityStatus {
             get { return BackingStore?.Get<string>("availabilityStatus"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? DomainNameReferences {
             get { return BackingStore?.Get<List<DirectoryObject>?>("domainNameReferences"); }
             set { BackingStore?.Set("domainNameReferences", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> DomainNameReferences {
             get { return BackingStore?.Get<List<DirectoryObject>>("domainNameReferences"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Domain settings configured by customer when federated with Azure AD. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<InternalDomainFederation>? FederationConfiguration {
             get { return BackingStore?.Get<List<InternalDomainFederation>?>("federationConfiguration"); }
             set { BackingStore?.Set("federationConfiguration", value); }
         }
+#nullable restore
 #else
         public List<InternalDomainFederation> FederationConfiguration {
             get { return BackingStore?.Get<List<InternalDomainFederation>>("federationConfiguration"); }
@@ -90,10 +98,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DomainDnsRecord>? ServiceConfigurationRecords {
             get { return BackingStore?.Get<List<DomainDnsRecord>?>("serviceConfigurationRecords"); }
             set { BackingStore?.Set("serviceConfigurationRecords", value); }
         }
+#nullable restore
 #else
         public List<DomainDnsRecord> ServiceConfigurationRecords {
             get { return BackingStore?.Get<List<DomainDnsRecord>>("serviceConfigurationRecords"); }
@@ -102,10 +112,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sharedEmailDomainInvitations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SharedEmailDomainInvitation>? SharedEmailDomainInvitations {
             get { return BackingStore?.Get<List<SharedEmailDomainInvitation>?>("sharedEmailDomainInvitations"); }
             set { BackingStore?.Set("sharedEmailDomainInvitations", value); }
         }
+#nullable restore
 #else
         public List<SharedEmailDomainInvitation> SharedEmailDomainInvitations {
             get { return BackingStore?.Get<List<SharedEmailDomainInvitation>>("sharedEmailDomainInvitations"); }
@@ -114,10 +126,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Status of asynchronous operations scheduled for the domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DomainState? State {
             get { return BackingStore?.Get<DomainState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#nullable restore
 #else
         public DomainState State {
             get { return BackingStore?.Get<DomainState>("state"); }
@@ -126,10 +140,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SupportedServices {
             get { return BackingStore?.Get<List<string>?>("supportedServices"); }
             set { BackingStore?.Set("supportedServices", value); }
         }
+#nullable restore
 #else
         public List<string> SupportedServices {
             get { return BackingStore?.Get<List<string>>("supportedServices"); }
@@ -138,10 +154,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DomainDnsRecord>? VerificationDnsRecords {
             get { return BackingStore?.Get<List<DomainDnsRecord>?>("verificationDnsRecords"); }
             set { BackingStore?.Set("verificationDnsRecords", value); }
         }
+#nullable restore
 #else
         public List<DomainDnsRecord> VerificationDnsRecords {
             get { return BackingStore?.Get<List<DomainDnsRecord>>("verificationDnsRecords"); }

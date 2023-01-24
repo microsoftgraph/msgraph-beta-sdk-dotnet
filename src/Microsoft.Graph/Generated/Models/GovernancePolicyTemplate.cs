@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GovernancePolicyTemplate : Entity, IParsable {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GovernancePolicy? Policy {
             get { return BackingStore?.Get<GovernancePolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
+#nullable restore
 #else
         public GovernancePolicy Policy {
             get { return BackingStore?.Get<GovernancePolicy>("policy"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public BusinessFlowSettings? Settings {
             get { return BackingStore?.Get<BusinessFlowSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public BusinessFlowSettings Settings {
             get { return BackingStore?.Get<BusinessFlowSettings>("settings"); }

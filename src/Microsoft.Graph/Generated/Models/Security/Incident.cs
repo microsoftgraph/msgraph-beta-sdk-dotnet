@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class Incident : Entity, IParsable {
         /// <summary>The list of related alerts. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Alert>? Alerts {
             get { return BackingStore?.Get<List<Alert>?>("alerts"); }
             set { BackingStore?.Set("alerts", value); }
         }
+#nullable restore
 #else
         public List<Alert> Alerts {
             get { return BackingStore?.Get<List<Alert>>("alerts"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Owner of the incident, or null if no owner is assigned. Free editable text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignedTo {
             get { return BackingStore?.Get<string?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
+#nullable restore
 #else
         public string AssignedTo {
             get { return BackingStore?.Get<string>("assignedTo"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Array of comments created by the Security Operations (SecOps) team when the incident is managed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AlertComment>? Comments {
             get { return BackingStore?.Get<List<AlertComment>?>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
+#nullable restore
 #else
         public List<AlertComment> Comments {
             get { return BackingStore?.Get<List<AlertComment>>("comments"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Array of custom tags associated with an incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? CustomTags {
             get { return BackingStore?.Get<List<string>?>("customTags"); }
             set { BackingStore?.Set("customTags", value); }
         }
+#nullable restore
 #else
         public List<string> CustomTags {
             get { return BackingStore?.Get<List<string>>("customTags"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The incident name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The URL for the incident page in the Microsoft 365 Defender portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IncidentWebUrl {
             get { return BackingStore?.Get<string?>("incidentWebUrl"); }
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
+#nullable restore
 #else
         public string IncidentWebUrl {
             get { return BackingStore?.Get<string>("incidentWebUrl"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RedirectIncidentId {
             get { return BackingStore?.Get<string?>("redirectIncidentId"); }
             set { BackingStore?.Set("redirectIncidentId", value); }
         }
+#nullable restore
 #else
         public string RedirectIncidentId {
             get { return BackingStore?.Get<string>("redirectIncidentId"); }
@@ -121,10 +135,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The Azure Active Directory tenant in which the alert was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The answer given by the user in case the answerInputType is text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Answer {
             get { return BackingStore?.Get<string?>("answer"); }
             set { BackingStore?.Set("answer", value); }
         }
+#nullable restore
 #else
         public string Answer {
             get { return BackingStore?.Get<string>("answer"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>In case the answerInputType is radioButton, this will consists of a list of possible answer values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AnswerOptions {
             get { return BackingStore?.Get<List<string>?>("answerOptions"); }
             set { BackingStore?.Set("answerOptions", value); }
         }
+#nullable restore
 #else
         public List<string> AnswerOptions {
             get { return BackingStore?.Get<List<string>>("answerOptions"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Question {
             get { return BackingStore?.Get<string?>("question"); }
             set { BackingStore?.Set("question", value); }
         }
+#nullable restore
 #else
         public string Question {
             get { return BackingStore?.Get<string>("question"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the custom question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QuestionId {
             get { return BackingStore?.Get<string?>("questionId"); }
             set { BackingStore?.Set("questionId", value); }
         }
+#nullable restore
 #else
         public string QuestionId {
             get { return BackingStore?.Get<string>("questionId"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The answers selected by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SelectedOptions {
             get { return BackingStore?.Get<List<string>?>("selectedOptions"); }
             set { BackingStore?.Set("selectedOptions", value); }
         }
+#nullable restore
 #else
         public List<string> SelectedOptions {
             get { return BackingStore?.Get<List<string>>("selectedOptions"); }

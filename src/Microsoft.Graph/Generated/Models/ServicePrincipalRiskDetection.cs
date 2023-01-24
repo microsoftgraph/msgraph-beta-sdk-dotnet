@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdditionalInfo {
             get { return BackingStore?.Get<string?>("additionalInfo"); }
             set { BackingStore?.Set("additionalInfo", value); }
         }
+#nullable restore
 #else
         public string AdditionalInfo {
             get { return BackingStore?.Get<string>("additionalInfo"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for the associated application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppId {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#nullable restore
 #else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CorrelationId {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#nullable restore
 #else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Provides the IP address of the client from where the risk occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddress {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#nullable restore
 #else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier (GUID) for the key credential associated with the risk detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? KeyIds {
             get { return BackingStore?.Get<List<string>?>("keyIds"); }
             set { BackingStore?.Set("keyIds", value); }
         }
+#nullable restore
 #else
         public List<string> KeyIds {
             get { return BackingStore?.Get<List<string>>("keyIds"); }
@@ -92,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Location from where the sign-in was initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SignInLocation? Location {
             get { return BackingStore?.Get<SignInLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public SignInLocation Location {
             get { return BackingStore?.Get<SignInLocation>("location"); }
@@ -104,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RequestId {
             get { return BackingStore?.Get<string?>("requestId"); }
             set { BackingStore?.Set("requestId", value); }
         }
+#nullable restore
 #else
         public string RequestId {
             get { return BackingStore?.Get<string>("requestId"); }
@@ -121,10 +135,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RiskEventType {
             get { return BackingStore?.Get<string?>("riskEventType"); }
             set { BackingStore?.Set("riskEventType", value); }
         }
+#nullable restore
 #else
         public string RiskEventType {
             get { return BackingStore?.Get<string>("riskEventType"); }
@@ -143,10 +159,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The display name for the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePrincipalDisplayName {
             get { return BackingStore?.Get<string?>("servicePrincipalDisplayName"); }
             set { BackingStore?.Set("servicePrincipalDisplayName", value); }
         }
+#nullable restore
 #else
         public string ServicePrincipalDisplayName {
             get { return BackingStore?.Get<string>("servicePrincipalDisplayName"); }
@@ -155,10 +173,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for the service principal. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePrincipalId {
             get { return BackingStore?.Get<string?>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
+#nullable restore
 #else
         public string ServicePrincipalId {
             get { return BackingStore?.Get<string>("servicePrincipalId"); }
@@ -167,10 +187,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Source of the risk detection. For example, identityProtection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Source {
             get { return BackingStore?.Get<string?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#nullable restore
 #else
         public string Source {
             get { return BackingStore?.Get<string>("source"); }

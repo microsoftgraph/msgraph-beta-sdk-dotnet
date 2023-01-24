@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.CreateUploadSession {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The item property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DriveItemUploadableProperties? Item {
             get { return BackingStore?.Get<DriveItemUploadableProperties?>("item"); }
             set { BackingStore?.Set("item", value); }
         }
+#nullable restore
 #else
         public DriveItemUploadableProperties Item {
             get { return BackingStore?.Get<DriveItemUploadableProperties>("item"); }

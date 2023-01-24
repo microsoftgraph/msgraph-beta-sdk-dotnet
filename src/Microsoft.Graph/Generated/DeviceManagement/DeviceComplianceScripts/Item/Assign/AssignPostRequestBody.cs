@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Ass
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceHealthScriptAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceHealthScriptAssignment>? DeviceHealthScriptAssignments {
             get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>?>("deviceHealthScriptAssignments"); }
             set { BackingStore?.Set("deviceHealthScriptAssignments", value); }
         }
+#nullable restore
 #else
         public List<DeviceHealthScriptAssignment> DeviceHealthScriptAssignments {
             get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>>("deviceHealthScriptAssignments"); }

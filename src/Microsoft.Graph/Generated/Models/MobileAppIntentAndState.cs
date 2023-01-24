@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppIntentAndState : Entity, IParsable {
         /// <summary>Device identifier created or collected by Intune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceIdentifier {
             get { return BackingStore?.Get<string?>("managedDeviceIdentifier"); }
             set { BackingStore?.Set("managedDeviceIdentifier", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceIdentifier {
             get { return BackingStore?.Get<string>("managedDeviceIdentifier"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of payload intents and states for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppIntentAndStateDetail>? MobileAppList {
             get { return BackingStore?.Get<List<MobileAppIntentAndStateDetail>?>("mobileAppList"); }
             set { BackingStore?.Set("mobileAppList", value); }
         }
+#nullable restore
 #else
         public List<MobileAppIntentAndStateDetail> MobileAppList {
             get { return BackingStore?.Get<List<MobileAppIntentAndStateDetail>>("mobileAppList"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

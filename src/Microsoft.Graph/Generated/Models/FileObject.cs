@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Hashes of the file&apos;s binary content, if available. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Hashes? Hashes {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Hashes?>("hashes"); }
             set { BackingStore?.Set("hashes", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Hashes Hashes {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Hashes>("hashes"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MimeType {
             get { return BackingStore?.Get<string?>("mimeType"); }
             set { BackingStore?.Set("mimeType", value); }
         }
+#nullable restore
 #else
         public string MimeType {
             get { return BackingStore?.Get<string>("mimeType"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

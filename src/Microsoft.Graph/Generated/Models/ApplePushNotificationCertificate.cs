@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApplePushNotificationCertificate : Entity, IParsable {
         /// <summary>Apple Id of the account used to create the MDM push certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppleIdentifier {
             get { return BackingStore?.Get<string?>("appleIdentifier"); }
             set { BackingStore?.Set("appleIdentifier", value); }
         }
+#nullable restore
 #else
         public string AppleIdentifier {
             get { return BackingStore?.Get<string>("appleIdentifier"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Certificate {
             get { return BackingStore?.Get<string?>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
+#nullable restore
 #else
         public string Certificate {
             get { return BackingStore?.Get<string>("certificate"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Certificate serial number. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateSerialNumber {
             get { return BackingStore?.Get<string?>("certificateSerialNumber"); }
             set { BackingStore?.Set("certificateSerialNumber", value); }
         }
+#nullable restore
 #else
         public string CertificateSerialNumber {
             get { return BackingStore?.Get<string>("certificateSerialNumber"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The reason the certificate upload failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateUploadFailureReason {
             get { return BackingStore?.Get<string?>("certificateUploadFailureReason"); }
             set { BackingStore?.Set("certificateUploadFailureReason", value); }
         }
+#nullable restore
 #else
         public string CertificateUploadFailureReason {
             get { return BackingStore?.Get<string>("certificateUploadFailureReason"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The certificate upload status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateUploadStatus {
             get { return BackingStore?.Get<string?>("certificateUploadStatus"); }
             set { BackingStore?.Set("certificateUploadStatus", value); }
         }
+#nullable restore
 #else
         public string CertificateUploadStatus {
             get { return BackingStore?.Get<string>("certificateUploadStatus"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Topic Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TopicIdentifier {
             get { return BackingStore?.Get<string?>("topicIdentifier"); }
             set { BackingStore?.Set("topicIdentifier", value); }
         }
+#nullable restore
 #else
         public string TopicIdentifier {
             get { return BackingStore?.Get<string>("topicIdentifier"); }

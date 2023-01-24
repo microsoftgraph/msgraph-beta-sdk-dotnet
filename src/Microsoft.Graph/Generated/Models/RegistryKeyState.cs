@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Current (i.e. changed) registry key (excludes HIVE).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Key {
             get { return BackingStore?.Get<string?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+#nullable restore
 #else
         public string Key {
             get { return BackingStore?.Get<string>("key"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Previous (i.e. before changed) registry key (excludes HIVE).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OldKey {
             get { return BackingStore?.Get<string?>("oldKey"); }
             set { BackingStore?.Set("oldKey", value); }
         }
+#nullable restore
 #else
         public string OldKey {
             get { return BackingStore?.Get<string>("oldKey"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Previous (i.e. before changed) registry key value data (contents).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OldValueData {
             get { return BackingStore?.Get<string?>("oldValueData"); }
             set { BackingStore?.Set("oldValueData", value); }
         }
+#nullable restore
 #else
         public string OldValueData {
             get { return BackingStore?.Get<string>("oldValueData"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Previous (i.e. before changed) registry key value name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OldValueName {
             get { return BackingStore?.Get<string?>("oldValueName"); }
             set { BackingStore?.Set("oldValueName", value); }
         }
+#nullable restore
 #else
         public string OldValueName {
             get { return BackingStore?.Get<string>("oldValueName"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Current (i.e. changed) registry key value data (contents).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ValueData {
             get { return BackingStore?.Get<string?>("valueData"); }
             set { BackingStore?.Set("valueData", value); }
         }
+#nullable restore
 #else
         public string ValueData {
             get { return BackingStore?.Get<string>("valueData"); }
@@ -102,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Current (i.e. changed) registry key value name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ValueName {
             get { return BackingStore?.Get<string?>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
+#nullable restore
 #else
         public string ValueName {
             get { return BackingStore?.Get<string>("valueName"); }

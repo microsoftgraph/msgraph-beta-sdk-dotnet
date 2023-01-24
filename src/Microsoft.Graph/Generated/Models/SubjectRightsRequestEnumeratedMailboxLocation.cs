@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SubjectRightsRequestEnumeratedMailboxLocation : SubjectRightsRequestMailboxLocation, IParsable {
         /// <summary>Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Upns {
             get { return BackingStore?.Get<List<string>?>("upns"); }
             set { BackingStore?.Set("upns", value); }
         }
+#nullable restore
 #else
         public List<string> Upns {
             get { return BackingStore?.Get<List<string>>("upns"); }

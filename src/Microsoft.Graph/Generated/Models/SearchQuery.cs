@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The query_string property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SearchQueryString? Query_string {
             get { return BackingStore?.Get<SearchQueryString?>("query_string"); }
             set { BackingStore?.Set("query_string", value); }
         }
+#nullable restore
 #else
         public SearchQueryString Query_string {
             get { return BackingStore?.Get<SearchQueryString>("query_string"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The search query containing the search terms. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QueryString {
             get { return BackingStore?.Get<string?>("queryString"); }
             set { BackingStore?.Set("queryString", value); }
         }
+#nullable restore
 #else
         public string QueryString {
             get { return BackingStore?.Get<string>("queryString"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides a way to decorate the query string. Supports both KQL and query variables. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QueryTemplate {
             get { return BackingStore?.Get<string?>("queryTemplate"); }
             set { BackingStore?.Set("queryTemplate", value); }
         }
+#nullable restore
 #else
         public string QueryTemplate {
             get { return BackingStore?.Get<string>("queryTemplate"); }

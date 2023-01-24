@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
     public class UpdateAudiencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UpdatableAsset>? AddExclusions {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
+#nullable restore
 #else
         public List<UpdatableAsset> AddExclusions {
             get { return BackingStore?.Get<List<UpdatableAsset>>("addExclusions"); }
@@ -26,10 +28,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
         }
         /// <summary>The addMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UpdatableAsset>? AddMembers {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
+#nullable restore
 #else
         public List<UpdatableAsset> AddMembers {
             get { return BackingStore?.Get<List<UpdatableAsset>>("addMembers"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The removeExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UpdatableAsset>? RemoveExclusions {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
+#nullable restore
 #else
         public List<UpdatableAsset> RemoveExclusions {
             get { return BackingStore?.Get<List<UpdatableAsset>>("removeExclusions"); }
@@ -52,10 +58,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
 #endif
         /// <summary>The removeMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UpdatableAsset>? RemoveMembers {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
+#nullable restore
 #else
         public List<UpdatableAsset> RemoveMembers {
             get { return BackingStore?.Get<List<UpdatableAsset>>("removeMembers"); }

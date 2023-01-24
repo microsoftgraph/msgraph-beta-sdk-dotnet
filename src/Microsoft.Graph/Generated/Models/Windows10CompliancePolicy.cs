@@ -42,10 +42,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Require Windows Defender Antimalware minimum version on Windows devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefenderVersion {
             get { return BackingStore?.Get<string?>("defenderVersion"); }
             set { BackingStore?.Set("defenderVersion", value); }
         }
+#nullable restore
 #else
         public string DefenderVersion {
             get { return BackingStore?.Get<string>("defenderVersion"); }
@@ -54,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript? DeviceCompliancePolicyScript {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript?>("deviceCompliancePolicyScript"); }
             set { BackingStore?.Set("deviceCompliancePolicyScript", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript DeviceCompliancePolicyScript {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>("deviceCompliancePolicyScript"); }
@@ -81,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Maximum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MobileOsMaximumVersion {
             get { return BackingStore?.Get<string?>("mobileOsMaximumVersion"); }
             set { BackingStore?.Set("mobileOsMaximumVersion", value); }
         }
+#nullable restore
 #else
         public string MobileOsMaximumVersion {
             get { return BackingStore?.Get<string>("mobileOsMaximumVersion"); }
@@ -93,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MobileOsMinimumVersion {
             get { return BackingStore?.Get<string?>("mobileOsMinimumVersion"); }
             set { BackingStore?.Set("mobileOsMinimumVersion", value); }
         }
+#nullable restore
 #else
         public string MobileOsMinimumVersion {
             get { return BackingStore?.Get<string>("mobileOsMinimumVersion"); }
@@ -105,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Maximum Windows 10 version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMaximumVersion {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#nullable restore
 #else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
@@ -117,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum Windows 10 version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMinimumVersion {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#nullable restore
 #else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
@@ -204,10 +216,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The valid operating system build ranges on Windows devices. This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OperatingSystemVersionRange>? ValidOperatingSystemBuildRanges {
             get { return BackingStore?.Get<List<OperatingSystemVersionRange>?>("validOperatingSystemBuildRanges"); }
             set { BackingStore?.Set("validOperatingSystemBuildRanges", value); }
         }
+#nullable restore
 #else
         public List<OperatingSystemVersionRange> ValidOperatingSystemBuildRanges {
             get { return BackingStore?.Get<List<OperatingSystemVersionRange>>("validOperatingSystemBuildRanges"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.AssociateWi
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The hubSiteUrls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? HubSiteUrls {
             get { return BackingStore?.Get<List<string>?>("hubSiteUrls"); }
             set { BackingStore?.Set("hubSiteUrls", value); }
         }
+#nullable restore
 #else
         public List<string> HubSiteUrls {
             get { return BackingStore?.Get<List<string>>("hubSiteUrls"); }

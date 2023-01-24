@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Dismiss {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The userIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? UserIds {
             get { return BackingStore?.Get<List<string>?>("userIds"); }
             set { BackingStore?.Set("userIds", value); }
         }
+#nullable restore
 #else
         public List<string> UserIds {
             get { return BackingStore?.Get<List<string>>("userIds"); }

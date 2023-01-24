@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSEndpointProtectionConfigurationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSEndpointProtectionConfiguration>? Value {
             get { return BackingStore?.Get<List<MacOSEndpointProtectionConfiguration>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<MacOSEndpointProtectionConfiguration> Value {
             get { return BackingStore?.Get<List<MacOSEndpointProtectionConfiguration>>("value"); }

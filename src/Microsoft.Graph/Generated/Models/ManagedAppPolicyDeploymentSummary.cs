@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedAppPolicyDeploymentSummaryPerApp>? ConfigurationDeploymentSummaryPerApp {
             get { return BackingStore?.Get<List<ManagedAppPolicyDeploymentSummaryPerApp>?>("configurationDeploymentSummaryPerApp"); }
             set { BackingStore?.Set("configurationDeploymentSummaryPerApp", value); }
         }
+#nullable restore
 #else
         public List<ManagedAppPolicyDeploymentSummaryPerApp> ConfigurationDeploymentSummaryPerApp {
             get { return BackingStore?.Get<List<ManagedAppPolicyDeploymentSummaryPerApp>>("configurationDeploymentSummaryPerApp"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Version of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeApp : AndroidDeviceOwnerKioskModeFolderItem, IParsable {
         /// <summary>Class name of application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClassName {
             get { return BackingStore?.Get<string?>("className"); }
             set { BackingStore?.Set("className", value); }
         }
+#nullable restore
 #else
         public string ClassName {
             get { return BackingStore?.Get<string>("className"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Package name of application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Package {
             get { return BackingStore?.Get<string?>("package"); }
             set { BackingStore?.Set("package", value); }
         }
+#nullable restore
 #else
         public string Package {
             get { return BackingStore?.Get<string>("package"); }

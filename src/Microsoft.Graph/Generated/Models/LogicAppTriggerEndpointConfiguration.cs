@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class LogicAppTriggerEndpointConfiguration : CustomExtensionEndpointConfiguration, IParsable {
         /// <summary>The name of the logic app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LogicAppWorkflowName {
             get { return BackingStore?.Get<string?>("logicAppWorkflowName"); }
             set { BackingStore?.Set("logicAppWorkflowName", value); }
         }
+#nullable restore
 #else
         public string LogicAppWorkflowName {
             get { return BackingStore?.Get<string>("logicAppWorkflowName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure resource group name for the logic app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceGroupName {
             get { return BackingStore?.Get<string?>("resourceGroupName"); }
             set { BackingStore?.Set("resourceGroupName", value); }
         }
+#nullable restore
 #else
         public string ResourceGroupName {
             get { return BackingStore?.Get<string>("resourceGroupName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the Azure subscription for the logic app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubscriptionId {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
+#nullable restore
 #else
         public string SubscriptionId {
             get { return BackingStore?.Get<string>("subscriptionId"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewSet : Entity, IParsable {
         /// <summary>Represents an Azure AD access review decision on an instance of a review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewInstanceDecisionItem>? Decisions {
             get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewInstanceDecisionItem> Decisions {
             get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>>("decisions"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the template and scheduling for an access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewScheduleDefinition>? Definitions {
             get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>?>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewScheduleDefinition> Definitions {
             get { return BackingStore?.Get<List<AccessReviewScheduleDefinition>>("definitions"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a collection of access review history data and the scopes used to collect that data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewHistoryDefinition>? HistoryDefinitions {
             get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>?>("historyDefinitions"); }
             set { BackingStore?.Set("historyDefinitions", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewHistoryDefinition> HistoryDefinitions {
             get { return BackingStore?.Get<List<AccessReviewHistoryDefinition>>("historyDefinitions"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Resource that enables administrators to manage directory-level access review policies in their tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessReviewPolicy? Policy {
             get { return BackingStore?.Get<AccessReviewPolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
+#nullable restore
 #else
         public AccessReviewPolicy Policy {
             get { return BackingStore?.Get<AccessReviewPolicy>("policy"); }

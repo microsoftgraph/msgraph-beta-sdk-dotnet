@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.AddActivities {
     public class AddActivitiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExternalActivity>? Activities {
             get { return BackingStore?.Get<List<ExternalActivity>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#nullable restore
 #else
         public List<ExternalActivity> Activities {
             get { return BackingStore?.Get<List<ExternalActivity>>("activities"); }

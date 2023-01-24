@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user experience analytics device id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -57,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user experience analytics device boot record&apos;s operating system version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OperatingSystemVersion {
             get { return BackingStore?.Get<string?>("operatingSystemVersion"); }
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
+#nullable restore
 #else
         public string OperatingSystemVersion {
             get { return BackingStore?.Get<string>("operatingSystemVersion"); }
@@ -79,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>OS restart fault bucket. The fault bucket is used to find additional information about a system crash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RestartFaultBucket {
             get { return BackingStore?.Get<string?>("restartFaultBucket"); }
             set { BackingStore?.Set("restartFaultBucket", value); }
         }
+#nullable restore
 #else
         public string RestartFaultBucket {
             get { return BackingStore?.Get<string>("restartFaultBucket"); }
@@ -91,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RestartStopCode {
             get { return BackingStore?.Get<string?>("restartStopCode"); }
             set { BackingStore?.Set("restartStopCode", value); }
         }
+#nullable restore
 #else
         public string RestartStopCode {
             get { return BackingStore?.Get<string>("restartStopCode"); }

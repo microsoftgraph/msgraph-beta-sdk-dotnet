@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemov
     public class EvaluateRemovalResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<InformationProtectionAction>? Value {
             get { return BackingStore?.Get<List<InformationProtectionAction>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<InformationProtectionAction> Value {
             get { return BackingStore?.Get<List<InformationProtectionAction>>("value"); }

@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The helpWebUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HelpWebUrl {
             get { return BackingStore?.Get<string?>("helpWebUrl"); }
             set { BackingStore?.Set("helpWebUrl", value); }
         }
+#nullable restore
 #else
         public string HelpWebUrl {
             get { return BackingStore?.Get<string>("helpWebUrl"); }

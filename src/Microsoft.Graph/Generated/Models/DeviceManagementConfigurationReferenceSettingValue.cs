@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationReferenceSettingValue : DeviceManagementConfigurationStringSettingValue, IParsable {
         /// <summary>A note that admin can use to put some contextual information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Note {
             get { return BackingStore?.Get<string?>("note"); }
             set { BackingStore?.Set("note", value); }
         }
+#nullable restore
 #else
         public string Note {
             get { return BackingStore?.Get<string>("note"); }

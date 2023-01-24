@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Agreement : Entity, IParsable {
         /// <summary>Read-only. Information about acceptances of this agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AgreementAcceptance>? Acceptances {
             get { return BackingStore?.Get<List<AgreementAcceptance>?>("acceptances"); }
             set { BackingStore?.Set("acceptances", value); }
         }
+#nullable restore
 #else
         public List<AgreementAcceptance> Acceptances {
             get { return BackingStore?.Get<List<AgreementAcceptance>>("acceptances"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Default PDF linked to this agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AgreementFile? File {
             get { return BackingStore?.Get<AgreementFile?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
+#nullable restore
 #else
         public AgreementFile File {
             get { return BackingStore?.Get<AgreementFile>("file"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AgreementFileLocalization>? Files {
             get { return BackingStore?.Get<List<AgreementFileLocalization>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
+#nullable restore
 #else
         public List<AgreementFileLocalization> Files {
             get { return BackingStore?.Get<List<AgreementFileLocalization>>("files"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Expiration schedule and frequency of agreement for all users.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TermsExpiration? TermsExpiration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsExpiration?>("termsExpiration"); }
             set { BackingStore?.Set("termsExpiration", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TermsExpiration TermsExpiration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsExpiration>("termsExpiration"); }

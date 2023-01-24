@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.T
     public class TenantSearchResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TenantGroup>? Value {
             get { return BackingStore?.Get<List<TenantGroup>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<TenantGroup> Value {
             get { return BackingStore?.Get<List<TenantGroup>>("value"); }

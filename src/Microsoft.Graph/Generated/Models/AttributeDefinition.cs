@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The apiExpressions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<StringKeyStringValuePair>? ApiExpressions {
             get { return BackingStore?.Get<List<StringKeyStringValuePair>?>("apiExpressions"); }
             set { BackingStore?.Set("apiExpressions", value); }
         }
+#nullable restore
 #else
         public List<StringKeyStringValuePair> ApiExpressions {
             get { return BackingStore?.Get<List<StringKeyStringValuePair>>("apiExpressions"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The defaultValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultValue {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#nullable restore
 #else
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MetadataEntry>? Metadata {
             get { return BackingStore?.Get<List<MetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+#nullable restore
 #else
         public List<MetadataEntry> Metadata {
             get { return BackingStore?.Get<List<MetadataEntry>>("metadata"); }
@@ -76,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the attribute. Must be unique within the object definition. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -88,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -100,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ReferencedObject>? ReferencedObjects {
             get { return BackingStore?.Get<List<ReferencedObject>?>("referencedObjects"); }
             set { BackingStore?.Set("referencedObjects", value); }
         }
+#nullable restore
 #else
         public List<ReferencedObject> ReferencedObjects {
             get { return BackingStore?.Get<List<ReferencedObject>>("referencedObjects"); }

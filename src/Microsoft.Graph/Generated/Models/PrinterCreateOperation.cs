@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrinterCreateOperation : PrintOperation, IParsable {
         /// <summary>The signed certificate created during the registration process. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Certificate {
             get { return BackingStore?.Get<string?>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
+#nullable restore
 #else
         public string Certificate {
             get { return BackingStore?.Get<string>("certificate"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The printer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Printer? Printer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Printer?>("printer"); }
             set { BackingStore?.Set("printer", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Printer Printer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Printer>("printer"); }

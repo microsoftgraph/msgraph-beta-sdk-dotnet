@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.Assi
         }
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IntuneBrandingProfileAssignment>? Assignments {
             get { return BackingStore?.Get<List<IntuneBrandingProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<IntuneBrandingProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<IntuneBrandingProfileAssignment>>("assignments"); }

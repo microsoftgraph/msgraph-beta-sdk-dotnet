@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AzureCommunicationServicesUserIdentity : Identity, IParsable {
         /// <summary>The Azure Communication Services resource ID associated with the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureCommunicationServicesResourceId {
             get { return BackingStore?.Get<string?>("azureCommunicationServicesResourceId"); }
             set { BackingStore?.Set("azureCommunicationServicesResourceId", value); }
         }
+#nullable restore
 #else
         public string AzureCommunicationServicesResourceId {
             get { return BackingStore?.Get<string>("azureCommunicationServicesResourceId"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class FileSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ActivityGroupNames {
             get { return BackingStore?.Get<List<string>?>("activityGroupNames"); }
             set { BackingStore?.Set("activityGroupNames", value); }
         }
+#nullable restore
 #else
         public List<string> ActivityGroupNames {
             get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The azureSubscriptionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureSubscriptionId {
             get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
+#nullable restore
 #else
         public string AzureSubscriptionId {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The azureTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureTenantId {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#nullable restore
 #else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The certificateThumbprint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateThumbprint {
             get { return BackingStore?.Get<string?>("certificateThumbprint"); }
             set { BackingStore?.Set("certificateThumbprint", value); }
         }
+#nullable restore
 #else
         public string CertificateThumbprint {
             get { return BackingStore?.Get<string>("certificateThumbprint"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The extensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Extensions {
             get { return BackingStore?.Get<List<string>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#nullable restore
 #else
         public List<string> Extensions {
             get { return BackingStore?.Get<List<string>>("extensions"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The fileType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileType {
             get { return BackingStore?.Get<string?>("fileType"); }
             set { BackingStore?.Set("fileType", value); }
         }
+#nullable restore
 #else
         public string FileType {
             get { return BackingStore?.Get<string>("fileType"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The hashes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<FileHash>? Hashes {
             get { return BackingStore?.Get<List<FileHash>?>("hashes"); }
             set { BackingStore?.Set("hashes", value); }
         }
+#nullable restore
 #else
         public List<FileHash> Hashes {
             get { return BackingStore?.Get<List<FileHash>>("hashes"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The malwareStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MalwareState>? MalwareStates {
             get { return BackingStore?.Get<List<MalwareState>?>("malwareStates"); }
             set { BackingStore?.Set("malwareStates", value); }
         }
+#nullable restore
 #else
         public List<MalwareState> MalwareStates {
             get { return BackingStore?.Get<List<MalwareState>>("malwareStates"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The names property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Names {
             get { return BackingStore?.Get<List<string>?>("names"); }
             set { BackingStore?.Set("names", value); }
         }
+#nullable restore
 #else
         public List<string> Names {
             get { return BackingStore?.Get<List<string>>("names"); }
@@ -125,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The riskScore property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RiskScore {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#nullable restore
 #else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
@@ -142,10 +162,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Tags {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#nullable restore
 #else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
@@ -154,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SecurityVendorInformation? VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#nullable restore
 #else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
@@ -166,10 +190,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The vulnerabilityStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VulnerabilityState>? VulnerabilityStates {
             get { return BackingStore?.Get<List<VulnerabilityState>?>("vulnerabilityStates"); }
             set { BackingStore?.Set("vulnerabilityStates", value); }
         }
+#nullable restore
 #else
         public List<VulnerabilityState> VulnerabilityStates {
             get { return BackingStore?.Get<List<VulnerabilityState>>("vulnerabilityStates"); }

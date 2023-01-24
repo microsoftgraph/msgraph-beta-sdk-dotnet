@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the error code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Code {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
+#nullable restore
 #else
         public string Code {
             get { return BackingStore?.Get<string>("code"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PublicErrorDetail>? Details {
             get { return BackingStore?.Get<List<PublicErrorDetail>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#nullable restore
 #else
         public List<PublicErrorDetail> Details {
             get { return BackingStore?.Get<List<PublicErrorDetail>>("details"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of the inner error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PublicInnerError? InnerError {
             get { return BackingStore?.Get<PublicInnerError?>("innerError"); }
             set { BackingStore?.Set("innerError", value); }
         }
+#nullable restore
 #else
         public PublicInnerError InnerError {
             get { return BackingStore?.Get<PublicInnerError>("innerError"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A non-localized message for the developer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Message {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#nullable restore
 #else
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The target of the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Target {
             get { return BackingStore?.Get<string?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#nullable restore
 #else
         public string Target {
             get { return BackingStore?.Get<string>("target"); }

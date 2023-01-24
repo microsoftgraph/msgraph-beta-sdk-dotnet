@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Group Setting Collection Value Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationGroupSettingValueTemplate>? GroupSettingCollectionValueTemplate {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValueTemplate>?>("groupSettingCollectionValueTemplate"); }
             set { BackingStore?.Set("groupSettingCollectionValueTemplate", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationGroupSettingValueTemplate> GroupSettingCollectionValueTemplate {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValueTemplate>>("groupSettingCollectionValueTemplate"); }

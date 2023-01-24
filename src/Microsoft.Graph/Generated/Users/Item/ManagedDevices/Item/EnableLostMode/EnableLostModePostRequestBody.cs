@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The footer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Footer {
             get { return BackingStore?.Get<string?>("footer"); }
             set { BackingStore?.Set("footer", value); }
         }
+#nullable restore
 #else
         public string Footer {
             get { return BackingStore?.Get<string>("footer"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode {
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Message {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#nullable restore
 #else
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode {
 #endif
         /// <summary>The phoneNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PhoneNumber {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
+#nullable restore
 #else
         public string PhoneNumber {
             get { return BackingStore?.Get<string>("phoneNumber"); }

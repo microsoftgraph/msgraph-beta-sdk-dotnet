@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier of the anomaly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AnomalyId {
             get { return BackingStore?.Get<string?>("anomalyId"); }
             set { BackingStore?.Set("anomalyId", value); }
         }
+#nullable restore
 #else
         public string AnomalyId {
             get { return BackingStore?.Get<string>("anomalyId"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the anomaly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AnomalyName {
             get { return BackingStore?.Get<string?>("anomalyName"); }
             set { BackingStore?.Set("anomalyName", value); }
         }
+#nullable restore
 #else
         public string AnomalyName {
             get { return BackingStore?.Get<string>("anomalyName"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the application or module that caused the anomaly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssetName {
             get { return BackingStore?.Get<string?>("assetName"); }
             set { BackingStore?.Set("assetName", value); }
         }
+#nullable restore
 #else
         public string AssetName {
             get { return BackingStore?.Get<string>("assetName"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The publisher of the application or module that caused the anomaly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssetPublisher {
             get { return BackingStore?.Get<string?>("assetPublisher"); }
             set { BackingStore?.Set("assetPublisher", value); }
         }
+#nullable restore
 #else
         public string AssetPublisher {
             get { return BackingStore?.Get<string>("assetPublisher"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The version of the application or module that caused the anomaly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssetVersion {
             get { return BackingStore?.Get<string?>("assetVersion"); }
             set { BackingStore?.Set("assetVersion", value); }
         }
+#nullable restore
 #else
         public string AssetVersion {
             get { return BackingStore?.Get<string>("assetVersion"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier of the anomaly detection model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DetectionModelId {
             get { return BackingStore?.Get<string?>("detectionModelId"); }
             set { BackingStore?.Set("detectionModelId", value); }
         }
+#nullable restore
 #else
         public string DetectionModelId {
             get { return BackingStore?.Get<string>("detectionModelId"); }
@@ -102,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier of the anomaly detection model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IssueId {
             get { return BackingStore?.Get<string?>("issueId"); }
             set { BackingStore?.Set("issueId", value); }
         }
+#nullable restore
 #else
         public string IssueId {
             get { return BackingStore?.Get<string>("issueId"); }

@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ClassificationInnerError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActivityId {
             get { return BackingStore?.Get<string?>("activityId"); }
             set { BackingStore?.Set("activityId", value); }
         }
+#nullable restore
 #else
         public string ActivityId {
             get { return BackingStore?.Get<string>("activityId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientRequestId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientRequestId {
             get { return BackingStore?.Get<string?>("clientRequestId"); }
             set { BackingStore?.Set("clientRequestId", value); }
         }
+#nullable restore
 #else
         public string ClientRequestId {
             get { return BackingStore?.Get<string>("clientRequestId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Code {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
+#nullable restore
 #else
         public string Code {
             get { return BackingStore?.Get<string>("code"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

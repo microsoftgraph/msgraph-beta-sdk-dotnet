@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Classification of why a call or portion of a call failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Reason {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
+#nullable restore
 #else
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }

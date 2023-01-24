@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.Checkin {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The checkInAs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CheckInAs {
             get { return BackingStore?.Get<string?>("checkInAs"); }
             set { BackingStore?.Set("checkInAs", value); }
         }
+#nullable restore
 #else
         public string CheckInAs {
             get { return BackingStore?.Get<string>("checkInAs"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.Checkin {
 #endif
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Comment {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }

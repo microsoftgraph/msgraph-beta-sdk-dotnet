@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory, IParsable {
         /// <summary>The settings this category contains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementSettingInstance>? Settings {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementSettingInstance> Settings {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecurityBaselineTemplate : DeviceManagementTemplate, IParsable {
         /// <summary>The security baseline per category device state summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SecurityBaselineCategoryStateSummary>? CategoryDeviceStateSummaries {
             get { return BackingStore?.Get<List<SecurityBaselineCategoryStateSummary>?>("categoryDeviceStateSummaries"); }
             set { BackingStore?.Set("categoryDeviceStateSummaries", value); }
         }
+#nullable restore
 #else
         public List<SecurityBaselineCategoryStateSummary> CategoryDeviceStateSummaries {
             get { return BackingStore?.Get<List<SecurityBaselineCategoryStateSummary>>("categoryDeviceStateSummaries"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The security baseline device states</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SecurityBaselineDeviceState>? DeviceStates {
             get { return BackingStore?.Get<List<SecurityBaselineDeviceState>?>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#nullable restore
 #else
         public List<SecurityBaselineDeviceState> DeviceStates {
             get { return BackingStore?.Get<List<SecurityBaselineDeviceState>>("deviceStates"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The security baseline device state summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SecurityBaselineStateSummary? DeviceStateSummary {
             get { return BackingStore?.Get<SecurityBaselineStateSummary?>("deviceStateSummary"); }
             set { BackingStore?.Set("deviceStateSummary", value); }
         }
+#nullable restore
 #else
         public SecurityBaselineStateSummary DeviceStateSummary {
             get { return BackingStore?.Get<SecurityBaselineStateSummary>("deviceStateSummary"); }

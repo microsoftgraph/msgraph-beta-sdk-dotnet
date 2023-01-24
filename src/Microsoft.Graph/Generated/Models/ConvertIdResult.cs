@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GenericError? ErrorDetails {
             get { return BackingStore?.Get<GenericError?>("errorDetails"); }
             set { BackingStore?.Set("errorDetails", value); }
         }
+#nullable restore
 #else
         public GenericError ErrorDetails {
             get { return BackingStore?.Get<GenericError>("errorDetails"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier that was converted. This value is the original, un-converted identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourceId {
             get { return BackingStore?.Get<string?>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
+#nullable restore
 #else
         public string SourceId {
             get { return BackingStore?.Get<string>("sourceId"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The converted identifier. This value is not present if the conversion failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetId {
             get { return BackingStore?.Get<string?>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
         }
+#nullable restore
 #else
         public string TargetId {
             get { return BackingStore?.Get<string>("targetId"); }

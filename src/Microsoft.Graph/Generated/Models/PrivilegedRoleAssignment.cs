@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Result message set by the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResultMessage {
             get { return BackingStore?.Get<string?>("resultMessage"); }
             set { BackingStore?.Set("resultMessage", value); }
         }
+#nullable restore
 #else
         public string ResultMessage {
             get { return BackingStore?.Get<string>("resultMessage"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Role identifier. In GUID string format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleId {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#nullable restore
 #else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. The associated role information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrivilegedRole? RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
+#nullable restore
 #else
         public PrivilegedRole RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User identifier. In GUID string format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

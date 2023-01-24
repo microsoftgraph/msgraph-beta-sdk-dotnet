@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Delta {
     public class DeltaResponse : BaseDeltaFunctionResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MailFolder>? Value {
             get { return BackingStore?.Get<List<MailFolder>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<MailFolder> Value {
             get { return BackingStore?.Get<List<MailFolder>>("value"); }

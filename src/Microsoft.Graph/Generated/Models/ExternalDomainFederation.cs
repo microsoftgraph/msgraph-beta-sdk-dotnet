@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExternalDomainFederation : IdentitySource, IParsable {
         /// <summary>The name of the identity source, typically also the domain name. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The domain name. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DomainName {
             get { return BackingStore?.Get<string?>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#nullable restore
 #else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The issuerURI of the incoming federation. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IssuerUri {
             get { return BackingStore?.Get<string?>("issuerUri"); }
             set { BackingStore?.Set("issuerUri", value); }
         }
+#nullable restore
 #else
         public string IssuerUri {
             get { return BackingStore?.Get<string>("issuerUri"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Room : Place, IParsable {
         /// <summary>Specifies the name of the audio device in the room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AudioDeviceName {
             get { return BackingStore?.Get<string?>("audioDeviceName"); }
             set { BackingStore?.Set("audioDeviceName", value); }
         }
+#nullable restore
 #else
         public string AudioDeviceName {
             get { return BackingStore?.Get<string>("audioDeviceName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies the building name or building number that the room is in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Building {
             get { return BackingStore?.Get<string?>("building"); }
             set { BackingStore?.Set("building", value); }
         }
+#nullable restore
 #else
         public string Building {
             get { return BackingStore?.Get<string>("building"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies the name of the display device in the room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayDeviceName {
             get { return BackingStore?.Get<string?>("displayDeviceName"); }
             set { BackingStore?.Set("displayDeviceName", value); }
         }
+#nullable restore
 #else
         public string DisplayDeviceName {
             get { return BackingStore?.Get<string>("displayDeviceName"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Email address of the room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailAddress {
             get { return BackingStore?.Get<string?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#nullable restore
 #else
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies a descriptive label for the floor, for example, P.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FloorLabel {
             get { return BackingStore?.Get<string?>("floorLabel"); }
             set { BackingStore?.Set("floorLabel", value); }
         }
+#nullable restore
 #else
         public string FloorLabel {
             get { return BackingStore?.Get<string>("floorLabel"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies a descriptive label for the room, for example, a number or name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Label {
             get { return BackingStore?.Get<string?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#nullable restore
 #else
         public string Label {
             get { return BackingStore?.Get<string>("label"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies a nickname for the room, for example, &apos;conf room&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Nickname {
             get { return BackingStore?.Get<string?>("nickname"); }
             set { BackingStore?.Set("nickname", value); }
         }
+#nullable restore
 #else
         public string Nickname {
             get { return BackingStore?.Get<string>("nickname"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies additional features of the room, for example, details like the type of view or furniture type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Tags {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#nullable restore
 #else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the name of the video device in the room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VideoDeviceName {
             get { return BackingStore?.Get<string?>("videoDeviceName"); }
             set { BackingStore?.Set("videoDeviceName", value); }
         }
+#nullable restore
 #else
         public string VideoDeviceName {
             get { return BackingStore?.Get<string>("videoDeviceName"); }

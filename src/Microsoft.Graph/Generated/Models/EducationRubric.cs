@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationRubric : Entity, IParsable {
         /// <summary>The user who created this resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description of this rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationItemBody? Description {
             get { return BackingStore?.Get<EducationItemBody?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public EducationItemBody Description {
             get { return BackingStore?.Get<EducationItemBody>("description"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of this rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationAssignmentGradeType? Grading {
             get { return BackingStore?.Get<EducationAssignmentGradeType?>("grading"); }
             set { BackingStore?.Set("grading", value); }
         }
+#nullable restore
 #else
         public EducationAssignmentGradeType Grading {
             get { return BackingStore?.Get<EducationAssignmentGradeType>("grading"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The last user to modify the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of levels making up this rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RubricLevel>? Levels {
             get { return BackingStore?.Get<List<RubricLevel>?>("levels"); }
             set { BackingStore?.Set("levels", value); }
         }
+#nullable restore
 #else
         public List<RubricLevel> Levels {
             get { return BackingStore?.Get<List<RubricLevel>>("levels"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of qualities making up this rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RubricQuality>? Qualities {
             get { return BackingStore?.Get<List<RubricQuality>?>("qualities"); }
             set { BackingStore?.Set("qualities", value); }
         }
+#nullable restore
 #else
         public List<RubricQuality> Qualities {
             get { return BackingStore?.Get<List<RubricQuality>>("qualities"); }

@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticationMethod {
             get { return BackingStore?.Get<string?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
+#nullable restore
 #else
         public string AuthenticationMethod {
             get { return BackingStore?.Get<string>("authenticationMethod"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticationMethodDetail {
             get { return BackingStore?.Get<string?>("authenticationMethodDetail"); }
             set { BackingStore?.Set("authenticationMethodDetail", value); }
         }
+#nullable restore
 #else
         public string AuthenticationMethodDetail {
             get { return BackingStore?.Get<string>("authenticationMethodDetail"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticationStepRequirement {
             get { return BackingStore?.Get<string?>("authenticationStepRequirement"); }
             set { BackingStore?.Set("authenticationStepRequirement", value); }
         }
+#nullable restore
 #else
         public string AuthenticationStepRequirement {
             get { return BackingStore?.Get<string>("authenticationStepRequirement"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticationStepResultDetail {
             get { return BackingStore?.Get<string?>("authenticationStepResultDetail"); }
             set { BackingStore?.Set("authenticationStepResultDetail", value); }
         }
+#nullable restore
 #else
         public string AuthenticationStepResultDetail {
             get { return BackingStore?.Get<string>("authenticationStepResultDetail"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

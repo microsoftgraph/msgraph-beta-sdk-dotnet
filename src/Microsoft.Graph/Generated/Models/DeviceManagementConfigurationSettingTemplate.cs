@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingTemplate : Entity, IParsable {
         /// <summary>List of related Setting Definitions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationSettingDefinition>? SettingDefinitions {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>?>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("settingDefinitions"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Setting Instance Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationSettingInstanceTemplate? SettingInstanceTemplate {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplate?>("settingInstanceTemplate"); }
             set { BackingStore?.Set("settingInstanceTemplate", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationSettingInstanceTemplate SettingInstanceTemplate {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplate>("settingInstanceTemplate"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsUpdateState : Entity, IParsable {
         /// <summary>Device display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceDisplayName {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#nullable restore
 #else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The id of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The current feature update version of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FeatureUpdateVersion {
             get { return BackingStore?.Get<string?>("featureUpdateVersion"); }
             set { BackingStore?.Set("featureUpdateVersion", value); }
         }
+#nullable restore
 #else
         public string FeatureUpdateVersion {
             get { return BackingStore?.Get<string>("featureUpdateVersion"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Quality Update Version of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QualityUpdateVersion {
             get { return BackingStore?.Get<string?>("qualityUpdateVersion"); }
             set { BackingStore?.Set("qualityUpdateVersion", value); }
         }
+#nullable restore
 #else
         public string QualityUpdateVersion {
             get { return BackingStore?.Get<string>("qualityUpdateVersion"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The id of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User principal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

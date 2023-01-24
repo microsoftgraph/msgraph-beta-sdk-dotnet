@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.PlayLostMo
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The durationInMinutes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DurationInMinutes {
             get { return BackingStore?.Get<string?>("durationInMinutes"); }
             set { BackingStore?.Set("durationInMinutes", value); }
         }
+#nullable restore
 #else
         public string DurationInMinutes {
             get { return BackingStore?.Get<string>("durationInMinutes"); }

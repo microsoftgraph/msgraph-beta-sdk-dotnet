@@ -52,7 +52,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -69,7 +71,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<MobileAppProvisioningConfigGroupAssignment?> GetAsync(Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<MobileAppProvisioningConfigGroupAssignment> GetAsync(Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -87,7 +91,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<MobileAppProvisioningConfigGroupAssignment?> PatchAsync(MobileAppProvisioningConfigGroupAssignment body, Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<MobileAppProvisioningConfigGroupAssignment> PatchAsync(MobileAppProvisioningConfigGroupAssignment body, Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -104,7 +110,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -126,7 +134,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -151,7 +161,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(MobileAppProvisioningConfigGroupAssignment body, Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(MobileAppProvisioningConfigGroupAssignment body, Action<MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -193,16 +205,20 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         public class MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

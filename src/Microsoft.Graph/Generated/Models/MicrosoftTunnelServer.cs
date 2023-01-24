@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftTunnelServer : Entity, IParsable {
         /// <summary>The digest of the current agent image running on this server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AgentImageDigest {
             get { return BackingStore?.Get<string?>("agentImageDigest"); }
             set { BackingStore?.Set("agentImageDigest", value); }
         }
+#nullable restore
 #else
         public string AgentImageDigest {
             get { return BackingStore?.Get<string>("agentImageDigest"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name for the server. This property is required when a server is created and cannot be cleared during updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The digest of the current server image running on this server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServerImageDigest {
             get { return BackingStore?.Get<string?>("serverImageDigest"); }
             set { BackingStore?.Set("serverImageDigest", value); }
         }
+#nullable restore
 #else
         public string ServerImageDigest {
             get { return BackingStore?.Get<string>("serverImageDigest"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Provider {
             get { return BackingStore?.Get<string?>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
+#nullable restore
 #else
         public string Provider {
             get { return BackingStore?.Get<string>("provider"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Version of the provider or subprovider, if it exists, that generated the alert. Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProviderVersion {
             get { return BackingStore?.Get<string?>("providerVersion"); }
             set { BackingStore?.Set("providerVersion", value); }
         }
+#nullable restore
 #else
         public string ProviderVersion {
             get { return BackingStore?.Get<string>("providerVersion"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubProvider {
             get { return BackingStore?.Get<string?>("subProvider"); }
             set { BackingStore?.Set("subProvider", value); }
         }
+#nullable restore
 #else
         public string SubProvider {
             get { return BackingStore?.Get<string>("subProvider"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Vendor {
             get { return BackingStore?.Get<string?>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
+#nullable restore
 #else
         public string Vendor {
             get { return BackingStore?.Get<string>("vendor"); }

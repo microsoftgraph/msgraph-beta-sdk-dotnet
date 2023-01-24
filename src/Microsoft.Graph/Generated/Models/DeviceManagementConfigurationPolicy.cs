@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationPolicy : Entity, IParsable {
         /// <summary>Policy assignments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationPolicyAssignment>? Assignments {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationPolicyAssignment> Assignments {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyAssignment>>("assignments"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Policy creation source</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreationSource {
             get { return BackingStore?.Get<string?>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
+#nullable restore
 #else
         public string CreationSource {
             get { return BackingStore?.Get<string>("creationSource"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Policy description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Policy name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates the priority of each policies that are selected by the admin during enrollment process</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementPriorityMetaData? PriorityMetaData {
             get { return BackingStore?.Get<DeviceManagementPriorityMetaData?>("priorityMetaData"); }
             set { BackingStore?.Set("priorityMetaData", value); }
         }
+#nullable restore
 #else
         public DeviceManagementPriorityMetaData PriorityMetaData {
             get { return BackingStore?.Get<DeviceManagementPriorityMetaData>("priorityMetaData"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -107,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Policy settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationSetting>? Settings {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationSetting> Settings {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>("settings"); }
@@ -124,10 +138,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Template reference information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationPolicyTemplateReference? TemplateReference {
             get { return BackingStore?.Get<DeviceManagementConfigurationPolicyTemplateReference?>("templateReference"); }
             set { BackingStore?.Set("templateReference", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationPolicyTemplateReference TemplateReference {
             get { return BackingStore?.Get<DeviceManagementConfigurationPolicyTemplateReference>("templateReference"); }

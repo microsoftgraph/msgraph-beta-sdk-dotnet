@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamArchivedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Initiator {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#nullable restore
 #else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier of the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamId {
             get { return BackingStore?.Get<string?>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
         }
+#nullable restore
 #else
         public string TeamId {
             get { return BackingStore?.Get<string>("teamId"); }

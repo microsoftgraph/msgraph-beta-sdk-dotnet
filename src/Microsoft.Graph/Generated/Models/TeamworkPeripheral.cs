@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkPeripheral : Entity, IParsable {
         /// <summary>Display name for the peripheral.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The product ID of the device. Each product from a vendor has its own ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductId {
             get { return BackingStore?.Get<string?>("productId"); }
             set { BackingStore?.Set("productId", value); }
         }
+#nullable restore
 #else
         public string ProductId {
             get { return BackingStore?.Get<string>("productId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for the vendor of the device. Each vendor has a unique ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VendorId {
             get { return BackingStore?.Get<string?>("vendorId"); }
             set { BackingStore?.Set("vendorId", value); }
         }
+#nullable restore
 #else
         public string VendorId {
             get { return BackingStore?.Get<string>("vendorId"); }

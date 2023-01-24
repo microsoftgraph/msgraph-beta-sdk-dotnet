@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows81TrustedRootCertificateCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Windows81TrustedRootCertificate>? Value {
             get { return BackingStore?.Get<List<Windows81TrustedRootCertificate>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Windows81TrustedRootCertificate> Value {
             get { return BackingStore?.Get<List<Windows81TrustedRootCertificate>>("value"); }

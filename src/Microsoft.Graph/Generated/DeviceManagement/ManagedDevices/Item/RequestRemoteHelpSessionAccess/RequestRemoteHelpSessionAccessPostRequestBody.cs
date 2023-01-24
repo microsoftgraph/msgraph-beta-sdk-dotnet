@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RequestRemot
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The pubSubConnectionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PubSubConnectionId {
             get { return BackingStore?.Get<string?>("pubSubConnectionId"); }
             set { BackingStore?.Set("pubSubConnectionId", value); }
         }
+#nullable restore
 #else
         public string PubSubConnectionId {
             get { return BackingStore?.Get<string>("pubSubConnectionId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RequestRemot
 #endif
         /// <summary>The sessionKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SessionKey {
             get { return BackingStore?.Get<string?>("sessionKey"); }
             set { BackingStore?.Set("sessionKey", value); }
         }
+#nullable restore
 #else
         public string SessionKey {
             get { return BackingStore?.Get<string>("sessionKey"); }

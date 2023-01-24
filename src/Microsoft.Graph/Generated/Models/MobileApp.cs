@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileApp : Entity, IParsable {
         /// <summary>The list of group assignments for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppAssignment>? Assignments {
             get { return BackingStore?.Get<List<MobileAppAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<MobileAppAssignment> Assignments {
             get { return BackingStore?.Get<List<MobileAppAssignment>>("assignments"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of categories for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppCategory>? Categories {
             get { return BackingStore?.Get<List<MobileAppCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<MobileAppCategory> Categories {
             get { return BackingStore?.Get<List<MobileAppCategory>>("categories"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The developer of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Developer {
             get { return BackingStore?.Get<string?>("developer"); }
             set { BackingStore?.Set("developer", value); }
         }
+#nullable restore
 #else
         public string Developer {
             get { return BackingStore?.Get<string>("developer"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of installation states for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppInstallStatus>? DeviceStatuses {
             get { return BackingStore?.Get<List<MobileAppInstallStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
+#nullable restore
 #else
         public List<MobileAppInstallStatus> DeviceStatuses {
             get { return BackingStore?.Get<List<MobileAppInstallStatus>>("deviceStatuses"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The admin provided or imported title of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The more information Url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InformationUrl {
             get { return BackingStore?.Get<string?>("informationUrl"); }
             set { BackingStore?.Set("informationUrl", value); }
         }
+#nullable restore
 #else
         public string InformationUrl {
             get { return BackingStore?.Get<string>("informationUrl"); }
@@ -104,10 +118,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Mobile App Install Summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MobileAppInstallSummary? InstallSummary {
             get { return BackingStore?.Get<MobileAppInstallSummary?>("installSummary"); }
             set { BackingStore?.Set("installSummary", value); }
         }
+#nullable restore
 #else
         public MobileAppInstallSummary InstallSummary {
             get { return BackingStore?.Get<MobileAppInstallSummary>("installSummary"); }
@@ -126,10 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The large icon, to be displayed in the app details and used for upload of the icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MimeContent? LargeIcon {
             get { return BackingStore?.Get<MimeContent?>("largeIcon"); }
             set { BackingStore?.Set("largeIcon", value); }
         }
+#nullable restore
 #else
         public MimeContent LargeIcon {
             get { return BackingStore?.Get<MimeContent>("largeIcon"); }
@@ -143,10 +161,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Notes for the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Notes {
             get { return BackingStore?.Get<string?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#nullable restore
 #else
         public string Notes {
             get { return BackingStore?.Get<string>("notes"); }
@@ -155,10 +175,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The owner of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Owner {
             get { return BackingStore?.Get<string?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#nullable restore
 #else
         public string Owner {
             get { return BackingStore?.Get<string>("owner"); }
@@ -167,10 +189,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The privacy statement Url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrivacyInformationUrl {
             get { return BackingStore?.Get<string?>("privacyInformationUrl"); }
             set { BackingStore?.Set("privacyInformationUrl", value); }
         }
+#nullable restore
 #else
         public string PrivacyInformationUrl {
             get { return BackingStore?.Get<string>("privacyInformationUrl"); }
@@ -179,10 +203,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The publisher of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Publisher {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#nullable restore
 #else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
@@ -196,10 +222,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of relationships for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppRelationship>? Relationships {
             get { return BackingStore?.Get<List<MobileAppRelationship>?>("relationships"); }
             set { BackingStore?.Set("relationships", value); }
         }
+#nullable restore
 #else
         public List<MobileAppRelationship> Relationships {
             get { return BackingStore?.Get<List<MobileAppRelationship>>("relationships"); }
@@ -208,10 +236,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of scope tag ids for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -235,10 +265,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of installation states for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserAppInstallStatus>? UserStatuses {
             get { return BackingStore?.Get<List<UserAppInstallStatus>?>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
+#nullable restore
 #else
         public List<UserAppInstallStatus> UserStatuses {
             get { return BackingStore?.Get<List<UserAppInstallStatus>>("userStatuses"); }

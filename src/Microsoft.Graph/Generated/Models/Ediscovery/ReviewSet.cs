@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class ReviewSet : Entity, IParsable {
         /// <summary>The user who created the review set. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
         /// <summary>The review set name. The name is unique with a maximum limit of 64 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>The queries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ReviewSetQuery>? Queries {
             get { return BackingStore?.Get<List<ReviewSetQuery>?>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
+#nullable restore
 #else
         public List<ReviewSetQuery> Queries {
             get { return BackingStore?.Get<List<ReviewSetQuery>>("queries"); }

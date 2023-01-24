@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Device name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -52,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Operating system version of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsVersion {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#nullable restore
 #else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
@@ -64,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Policy Details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EncryptionReportPolicyDetails>? PolicyDetails {
             get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>?>("policyDetails"); }
             set { BackingStore?.Set("policyDetails", value); }
         }
+#nullable restore
 #else
         public List<EncryptionReportPolicyDetails> PolicyDetails {
             get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>>("policyDetails"); }
@@ -76,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device TPM Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TpmSpecificationVersion {
             get { return BackingStore?.Get<string?>("tpmSpecificationVersion"); }
             set { BackingStore?.Set("tpmSpecificationVersion", value); }
         }
+#nullable restore
 #else
         public string TpmSpecificationVersion {
             get { return BackingStore?.Get<string>("tpmSpecificationVersion"); }
@@ -88,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

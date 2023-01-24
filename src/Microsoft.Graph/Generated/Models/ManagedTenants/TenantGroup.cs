@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The display name for the tenant group. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The collection of management action associated with the tenant group. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagementActionInfo>? ManagementActions {
             get { return BackingStore?.Get<List<ManagementActionInfo>?>("managementActions"); }
             set { BackingStore?.Set("managementActions", value); }
         }
+#nullable restore
 #else
         public List<ManagementActionInfo> ManagementActions {
             get { return BackingStore?.Get<List<ManagementActionInfo>>("managementActions"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The collection of management intents associated with the tenant group. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagementIntentInfo>? ManagementIntents {
             get { return BackingStore?.Get<List<ManagementIntentInfo>?>("managementIntents"); }
             set { BackingStore?.Set("managementIntents", value); }
         }
+#nullable restore
 #else
         public List<ManagementIntentInfo> ManagementIntents {
             get { return BackingStore?.Get<List<ManagementIntentInfo>>("managementIntents"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TenantIds {
             get { return BackingStore?.Get<List<string>?>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
         }
+#nullable restore
 #else
         public List<string> TenantIds {
             get { return BackingStore?.Get<List<string>>("tenantIds"); }

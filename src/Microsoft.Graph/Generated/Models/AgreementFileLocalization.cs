@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AgreementFileLocalization : AgreementFileProperties, IParsable {
         /// <summary>Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AgreementFileVersion>? Versions {
             get { return BackingStore?.Get<List<AgreementFileVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
+#nullable restore
 #else
         public List<AgreementFileVersion> Versions {
             get { return BackingStore?.Get<List<AgreementFileVersion>>("versions"); }

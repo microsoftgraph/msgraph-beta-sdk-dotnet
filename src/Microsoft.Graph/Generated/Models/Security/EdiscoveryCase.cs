@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryCase : Case, IParsable {
         /// <summary>The user who closed the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? ClosedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("closedBy"); }
             set { BackingStore?.Set("closedBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet ClosedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("closedBy"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Returns a list of case ediscoveryCustodian objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryCustodian>? Custodians {
             get { return BackingStore?.Get<List<EdiscoveryCustodian>?>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryCustodian> Custodians {
             get { return BackingStore?.Get<List<EdiscoveryCustodian>>("custodians"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The external case number for customer reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalId {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#nullable restore
 #else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Returns a list of case eDiscoveryHoldPolicy objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryHoldPolicy>? LegalHolds {
             get { return BackingStore?.Get<List<EdiscoveryHoldPolicy>?>("legalHolds"); }
             set { BackingStore?.Set("legalHolds", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryHoldPolicy> LegalHolds {
             get { return BackingStore?.Get<List<EdiscoveryHoldPolicy>>("legalHolds"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Returns a list of case ediscoveryNoncustodialDataSource objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryNoncustodialDataSource>? NoncustodialDataSources {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>?>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryNoncustodialDataSource> NoncustodialDataSources {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>("noncustodialDataSources"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Returns a list of case caseOperation objects for this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CaseOperation>? Operations {
             get { return BackingStore?.Get<List<CaseOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<CaseOperation> Operations {
             get { return BackingStore?.Get<List<CaseOperation>>("operations"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Returns a list of eDiscoveryReviewSet objects in the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryReviewSet>? ReviewSets {
             get { return BackingStore?.Get<List<EdiscoveryReviewSet>?>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryReviewSet> ReviewSets {
             get { return BackingStore?.Get<List<EdiscoveryReviewSet>>("reviewSets"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Returns a list of eDiscoverySearch objects associated with this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoverySearch>? Searches {
             get { return BackingStore?.Get<List<EdiscoverySearch>?>("searches"); }
             set { BackingStore?.Set("searches", value); }
         }
+#nullable restore
 #else
         public List<EdiscoverySearch> Searches {
             get { return BackingStore?.Get<List<EdiscoverySearch>>("searches"); }
@@ -108,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Returns a list of eDIscoverySettings objects in the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoveryCaseSettings? Settings {
             get { return BackingStore?.Get<EdiscoveryCaseSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public EdiscoveryCaseSettings Settings {
             get { return BackingStore?.Get<EdiscoveryCaseSettings>("settings"); }
@@ -120,10 +138,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Returns a list of ediscoveryReviewTag objects associated to this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryReviewTag>? Tags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryReviewTag> Tags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tags"); }

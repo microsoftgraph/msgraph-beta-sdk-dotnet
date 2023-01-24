@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Transfer {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The transferee property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ParticipantInfo? Transferee {
             get { return BackingStore?.Get<ParticipantInfo?>("transferee"); }
             set { BackingStore?.Set("transferee", value); }
         }
+#nullable restore
 #else
         public ParticipantInfo Transferee {
             get { return BackingStore?.Get<ParticipantInfo>("transferee"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Transfer {
 #endif
         /// <summary>The transferTarget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public InvitationParticipantInfo? TransferTarget {
             get { return BackingStore?.Get<InvitationParticipantInfo?>("transferTarget"); }
             set { BackingStore?.Set("transferTarget", value); }
         }
+#nullable restore
 #else
         public InvitationParticipantInfo TransferTarget {
             get { return BackingStore?.Get<InvitationParticipantInfo>("transferTarget"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsCategory : Entity, IParsable {
         /// <summary>The insights for the user experience analytics category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserExperienceAnalyticsInsight>? Insights {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
+#nullable restore
 #else
         public List<UserExperienceAnalyticsInsight> Insights {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>("insights"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The metric values for the user experience analytics category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserExperienceAnalyticsMetric>? MetricValues {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>?>("metricValues"); }
             set { BackingStore?.Set("metricValues", value); }
         }
+#nullable restore
 #else
         public List<UserExperienceAnalyticsMetric> MetricValues {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsMetric>>("metricValues"); }

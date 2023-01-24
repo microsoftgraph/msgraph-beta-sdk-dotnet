@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicyAuthenticationContextRule : UnifiedRoleManagementPolicyRule, IParsable {
         /// <summary>The value of the authentication context claim.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClaimValue {
             get { return BackingStore?.Get<string?>("claimValue"); }
             set { BackingStore?.Set("claimValue", value); }
         }
+#nullable restore
 #else
         public string ClaimValue {
             get { return BackingStore?.Get<string>("claimValue"); }

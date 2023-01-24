@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.AddCopy {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentType {
             get { return BackingStore?.Get<string?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#nullable restore
 #else
         public string ContentType {
             get { return BackingStore?.Get<string>("contentType"); }

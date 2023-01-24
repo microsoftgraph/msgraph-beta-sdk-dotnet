@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementScriptAssignment : Entity, IParsable {
         /// <summary>The Id of the Azure Active Directory group we are targeting the script to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceAndAppManagementAssignmentTarget? Target {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#nullable restore
 #else
         public DeviceAndAppManagementAssignmentTarget Target {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }

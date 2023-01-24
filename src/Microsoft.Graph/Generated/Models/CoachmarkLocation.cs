@@ -13,29 +13,31 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The length property</summary>
+        /// <summary>Length of coachmark.</summary>
         public int? Length {
             get { return BackingStore?.Get<int?>("length"); }
             set { BackingStore?.Set("length", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The offset property</summary>
+        /// <summary>Offset of coachmark.</summary>
         public int? Offset {
             get { return BackingStore?.Get<int?>("offset"); }
             set { BackingStore?.Set("offset", value); }
         }
-        /// <summary>The type property</summary>
+        /// <summary>Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.</summary>
         public CoachmarkLocationType? Type {
             get { return BackingStore?.Get<CoachmarkLocationType?>("type"); }
             set { BackingStore?.Set("type", value); }

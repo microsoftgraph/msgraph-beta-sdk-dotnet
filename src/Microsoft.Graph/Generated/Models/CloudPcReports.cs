@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcReports : Entity, IParsable {
         /// <summary>The export jobs created for downloading reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcExportJob>? ExportJobs {
             get { return BackingStore?.Get<List<CloudPcExportJob>?>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
+#nullable restore
 #else
         public List<CloudPcExportJob> ExportJobs {
             get { return BackingStore?.Get<List<CloudPcExportJob>>("exportJobs"); }

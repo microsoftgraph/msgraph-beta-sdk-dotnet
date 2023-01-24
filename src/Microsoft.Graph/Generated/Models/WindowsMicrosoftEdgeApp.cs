@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The language locale to use when the Edge app displays text to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayLanguageLocale {
             get { return BackingStore?.Get<string?>("displayLanguageLocale"); }
             set { BackingStore?.Set("displayLanguageLocale", value); }
         }
+#nullable restore
 #else
         public string DisplayLanguageLocale {
             get { return BackingStore?.Get<string>("displayLanguageLocale"); }

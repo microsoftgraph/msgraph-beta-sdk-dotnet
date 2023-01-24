@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>MobieApp identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationId {
             get { return BackingStore?.Get<string?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
+#nullable restore
 #else
         public string ApplicationId {
             get { return BackingStore?.Get<string>("applicationId"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The admin provided or imported title of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Human readable version of the application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayVersion {
             get { return BackingStore?.Get<string?>("displayVersion"); }
             set { BackingStore?.Set("displayVersion", value); }
         }
+#nullable restore
 #else
         public string DisplayVersion {
             get { return BackingStore?.Get<string>("displayVersion"); }
@@ -64,10 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -76,10 +84,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supported platforms for the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppSupportedDeviceType>? SupportedDeviceTypes {
             get { return BackingStore?.Get<List<MobileAppSupportedDeviceType>?>("supportedDeviceTypes"); }
             set { BackingStore?.Set("supportedDeviceTypes", value); }
         }
+#nullable restore
 #else
         public List<MobileAppSupportedDeviceType> SupportedDeviceTypes {
             get { return BackingStore?.Get<List<MobileAppSupportedDeviceType>>("supportedDeviceTypes"); }

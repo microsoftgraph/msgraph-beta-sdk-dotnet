@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>DeviceName</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -47,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Manufacturer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Manufacturer {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#nullable restore
 #else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
@@ -59,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>MDMStatus</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MdmStatus {
             get { return BackingStore?.Get<string?>("mdmStatus"); }
             set { BackingStore?.Set("mdmStatus", value); }
         }
+#nullable restore
 #else
         public string MdmStatus {
             get { return BackingStore?.Get<string>("mdmStatus"); }
@@ -71,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Model</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Model {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#nullable restore
 #else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
@@ -83,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>OSDescription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsDescription {
             get { return BackingStore?.Get<string?>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
+#nullable restore
 #else
         public string OsDescription {
             get { return BackingStore?.Get<string>("osDescription"); }
@@ -95,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>OSVersion</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsVersion {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#nullable restore
 #else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
@@ -112,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>ReferenceId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReferenceId {
             get { return BackingStore?.Get<string?>("referenceId"); }
             set { BackingStore?.Set("referenceId", value); }
         }
+#nullable restore
 #else
         public string ReferenceId {
             get { return BackingStore?.Get<string>("referenceId"); }
@@ -124,10 +138,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>SerialNumber</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SerialNumber {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#nullable restore
 #else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
@@ -141,10 +157,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>UPN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Upn {
             get { return BackingStore?.Get<string?>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
+#nullable restore
 #else
         public string Upn {
             get { return BackingStore?.Get<string>("upn"); }
@@ -153,10 +171,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>UserEmail</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserEmail {
             get { return BackingStore?.Get<string?>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
+#nullable restore
 #else
         public string UserEmail {
             get { return BackingStore?.Get<string>("userEmail"); }
@@ -165,10 +185,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>UserId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -177,10 +199,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>UserName</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserName {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#nullable restore
 #else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }

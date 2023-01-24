@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Window
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The windowsPrivacyAccessControls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsPrivacyDataAccessControlItem>? WindowsPrivacyAccessControls {
             get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>?>("windowsPrivacyAccessControls"); }
             set { BackingStore?.Set("windowsPrivacyAccessControls", value); }
         }
+#nullable restore
 #else
         public List<WindowsPrivacyDataAccessControlItem> WindowsPrivacyAccessControls {
             get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>>("windowsPrivacyAccessControls"); }

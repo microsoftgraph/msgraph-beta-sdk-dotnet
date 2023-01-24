@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of the capture device driver used by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CaptureDeviceDriver {
             get { return BackingStore?.Get<string?>("captureDeviceDriver"); }
             set { BackingStore?.Set("captureDeviceDriver", value); }
         }
+#nullable restore
 #else
         public string CaptureDeviceDriver {
             get { return BackingStore?.Get<string>("captureDeviceDriver"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Name of the capture device used by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CaptureDeviceName {
             get { return BackingStore?.Get<string?>("captureDeviceName"); }
             set { BackingStore?.Set("captureDeviceName", value); }
         }
+#nullable restore
 #else
         public string CaptureDeviceName {
             get { return BackingStore?.Get<string>("captureDeviceName"); }
@@ -84,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -106,10 +112,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Name of the render device driver used by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RenderDeviceDriver {
             get { return BackingStore?.Get<string?>("renderDeviceDriver"); }
             set { BackingStore?.Set("renderDeviceDriver", value); }
         }
+#nullable restore
 #else
         public string RenderDeviceDriver {
             get { return BackingStore?.Get<string>("renderDeviceDriver"); }
@@ -118,10 +126,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Name of the render device used by the media endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RenderDeviceName {
             get { return BackingStore?.Get<string?>("renderDeviceName"); }
             set { BackingStore?.Set("renderDeviceName", value); }
         }
+#nullable restore
 #else
         public string RenderDeviceName {
             get { return BackingStore?.Get<string>("renderDeviceName"); }

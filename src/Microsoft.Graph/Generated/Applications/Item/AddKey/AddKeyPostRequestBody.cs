@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddKey {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keyCredential property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.KeyCredential? KeyCredential {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyCredential?>("keyCredential"); }
             set { BackingStore?.Set("keyCredential", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.KeyCredential KeyCredential {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyCredential>("keyCredential"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddKey {
 #endif
         /// <summary>The passwordCredential property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.PasswordCredential? PasswordCredential {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordCredential?>("passwordCredential"); }
             set { BackingStore?.Set("passwordCredential", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.PasswordCredential PasswordCredential {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordCredential>("passwordCredential"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddKey {
 #endif
         /// <summary>The proof property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Proof {
             get { return BackingStore?.Get<string?>("proof"); }
             set { BackingStore?.Set("proof", value); }
         }
+#nullable restore
 #else
         public string Proof {
             get { return BackingStore?.Get<string>("proof"); }

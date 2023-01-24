@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Domain {
             get { return BackingStore?.Get<string?>("domain"); }
             set { BackingStore?.Set("domain", value); }
         }
+#nullable restore
 #else
         public string Domain {
             get { return BackingStore?.Get<string>("domain"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The domain and username of the console device, for example, Seattle/RanierConf.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DomainUserName {
             get { return BackingStore?.Get<string?>("domainUserName"); }
             set { BackingStore?.Set("domainUserName", value); }
         }
+#nullable restore
 #else
         public string DomainUserName {
             get { return BackingStore?.Get<string>("domainUserName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SmtpAddress {
             get { return BackingStore?.Get<string?>("smtpAddress"); }
             set { BackingStore?.Set("smtpAddress", value); }
         }
+#nullable restore
 #else
         public string SmtpAddress {
             get { return BackingStore?.Get<string>("smtpAddress"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationOrganization : Entity, IParsable {
         /// <summary>Organization description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Organization display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The externalSourceDetail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalSourceDetail {
             get { return BackingStore?.Get<string?>("externalSourceDetail"); }
             set { BackingStore?.Set("externalSourceDetail", value); }
         }
+#nullable restore
 #else
         public string ExternalSourceDetail {
             get { return BackingStore?.Get<string>("externalSourceDetail"); }

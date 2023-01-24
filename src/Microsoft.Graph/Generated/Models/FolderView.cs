@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The method by which the folder should be sorted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SortBy {
             get { return BackingStore?.Get<string?>("sortBy"); }
             set { BackingStore?.Set("sortBy", value); }
         }
+#nullable restore
 #else
         public string SortBy {
             get { return BackingStore?.Get<string>("sortBy"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SortOrder {
             get { return BackingStore?.Get<string?>("sortOrder"); }
             set { BackingStore?.Set("sortOrder", value); }
         }
+#nullable restore
 #else
         public string SortOrder {
             get { return BackingStore?.Get<string>("sortOrder"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of view that should be used to represent the folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ViewType {
             get { return BackingStore?.Get<string?>("viewType"); }
             set { BackingStore?.Set("viewType", value); }
         }
+#nullable restore
 #else
         public string ViewType {
             get { return BackingStore?.Get<string>("viewType"); }

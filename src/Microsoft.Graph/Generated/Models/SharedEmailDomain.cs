@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SharedEmailDomain : Entity, IParsable {
         /// <summary>The provisioningStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProvisioningStatus {
             get { return BackingStore?.Get<string?>("provisioningStatus"); }
             set { BackingStore?.Set("provisioningStatus", value); }
         }
+#nullable restore
 #else
         public string ProvisioningStatus {
             get { return BackingStore?.Get<string>("provisioningStatus"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BusinessScenarioPlanner : Entity, IParsable {
         /// <summary>The configuration of Planner plans that will be created for the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerPlanConfiguration? PlanConfiguration {
             get { return BackingStore?.Get<PlannerPlanConfiguration?>("planConfiguration"); }
             set { BackingStore?.Set("planConfiguration", value); }
         }
+#nullable restore
 #else
         public PlannerPlanConfiguration PlanConfiguration {
             get { return BackingStore?.Get<PlannerPlanConfiguration>("planConfiguration"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The configuration of Planner tasks that will be created for the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerTaskConfiguration? TaskConfiguration {
             get { return BackingStore?.Get<PlannerTaskConfiguration?>("taskConfiguration"); }
             set { BackingStore?.Set("taskConfiguration", value); }
         }
+#nullable restore
 #else
         public PlannerTaskConfiguration TaskConfiguration {
             get { return BackingStore?.Get<PlannerTaskConfiguration>("taskConfiguration"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Planner tasks for the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BusinessScenarioTask>? Tasks {
             get { return BackingStore?.Get<List<BusinessScenarioTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#nullable restore
 #else
         public List<BusinessScenarioTask> Tasks {
             get { return BackingStore?.Get<List<BusinessScenarioTask>>("tasks"); }

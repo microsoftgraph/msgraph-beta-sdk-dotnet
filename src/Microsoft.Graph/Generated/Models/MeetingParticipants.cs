@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Information of the meeting attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MeetingParticipantInfo>? Attendees {
             get { return BackingStore?.Get<List<MeetingParticipantInfo>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
+#nullable restore
 #else
         public List<MeetingParticipantInfo> Attendees {
             get { return BackingStore?.Get<List<MeetingParticipantInfo>>("attendees"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contributors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MeetingParticipantInfo>? Contributors {
             get { return BackingStore?.Get<List<MeetingParticipantInfo>?>("contributors"); }
             set { BackingStore?.Set("contributors", value); }
         }
+#nullable restore
 #else
         public List<MeetingParticipantInfo> Contributors {
             get { return BackingStore?.Get<List<MeetingParticipantInfo>>("contributors"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information of the meeting organizer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MeetingParticipantInfo? Organizer {
             get { return BackingStore?.Get<MeetingParticipantInfo?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
+#nullable restore
 #else
         public MeetingParticipantInfo Organizer {
             get { return BackingStore?.Get<MeetingParticipantInfo>("organizer"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The producers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MeetingParticipantInfo>? Producers {
             get { return BackingStore?.Get<List<MeetingParticipantInfo>?>("producers"); }
             set { BackingStore?.Set("producers", value); }
         }
+#nullable restore
 #else
         public List<MeetingParticipantInfo> Producers {
             get { return BackingStore?.Get<List<MeetingParticipantInfo>>("producers"); }

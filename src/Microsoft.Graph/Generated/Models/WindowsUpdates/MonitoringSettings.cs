@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using &apos;or&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MonitoringRule>? MonitoringRules {
             get { return BackingStore?.Get<List<MonitoringRule>?>("monitoringRules"); }
             set { BackingStore?.Set("monitoringRules", value); }
         }
+#nullable restore
 #else
         public List<MonitoringRule> MonitoringRules {
             get { return BackingStore?.Get<List<MonitoringRule>>("monitoringRules"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

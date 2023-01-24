@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Invite {
     public class InviteResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.Permission>? Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Permission>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.Permission> Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Permission>>("value"); }

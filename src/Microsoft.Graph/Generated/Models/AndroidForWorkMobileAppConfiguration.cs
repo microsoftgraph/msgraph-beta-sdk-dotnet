@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Android For Work app configuration package id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PackageId {
             get { return BackingStore?.Get<string?>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
+#nullable restore
 #else
         public string PackageId {
             get { return BackingStore?.Get<string>("packageId"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Android For Work app configuration JSON payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PayloadJson {
             get { return BackingStore?.Get<string?>("payloadJson"); }
             set { BackingStore?.Set("payloadJson", value); }
         }
+#nullable restore
 #else
         public string PayloadJson {
             get { return BackingStore?.Get<string>("payloadJson"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of Android app permissions and corresponding permission actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AndroidPermissionAction>? PermissionActions {
             get { return BackingStore?.Get<List<AndroidPermissionAction>?>("permissionActions"); }
             set { BackingStore?.Set("permissionActions", value); }
         }
+#nullable restore
 #else
         public List<AndroidPermissionAction> PermissionActions {
             get { return BackingStore?.Get<List<AndroidPermissionAction>>("permissionActions"); }

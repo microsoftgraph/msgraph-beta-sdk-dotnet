@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementIntent : Entity, IParsable {
         /// <summary>Collection of assignments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementIntentAssignment>? Assignments {
             get { return BackingStore?.Get<List<DeviceManagementIntentAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementIntentAssignment> Assignments {
             get { return BackingStore?.Get<List<DeviceManagementIntentAssignment>>("assignments"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of setting categories within the intent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementIntentSettingCategory>? Categories {
             get { return BackingStore?.Get<List<DeviceManagementIntentSettingCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementIntentSettingCategory> Categories {
             get { return BackingStore?.Get<List<DeviceManagementIntentSettingCategory>>("categories"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user given description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementIntentDeviceSettingStateSummary>? DeviceSettingStateSummaries {
             get { return BackingStore?.Get<List<DeviceManagementIntentDeviceSettingStateSummary>?>("deviceSettingStateSummaries"); }
             set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementIntentDeviceSettingStateSummary> DeviceSettingStateSummaries {
             get { return BackingStore?.Get<List<DeviceManagementIntentDeviceSettingStateSummary>>("deviceSettingStateSummaries"); }
@@ -58,10 +66,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of states of all devices that the intent is applied to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementIntentDeviceState>? DeviceStates {
             get { return BackingStore?.Get<List<DeviceManagementIntentDeviceState>?>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementIntentDeviceState> DeviceStates {
             get { return BackingStore?.Get<List<DeviceManagementIntentDeviceState>>("deviceStates"); }
@@ -70,10 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementIntentDeviceStateSummary? DeviceStateSummary {
             get { return BackingStore?.Get<DeviceManagementIntentDeviceStateSummary?>("deviceStateSummary"); }
             set { BackingStore?.Set("deviceStateSummary", value); }
         }
+#nullable restore
 #else
         public DeviceManagementIntentDeviceStateSummary DeviceStateSummary {
             get { return BackingStore?.Get<DeviceManagementIntentDeviceStateSummary>("deviceStateSummary"); }
@@ -82,10 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user given display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -104,10 +118,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -116,10 +132,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of all settings to be applied</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementSettingInstance>? Settings {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementSettingInstance> Settings {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
@@ -128,10 +146,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the template this intent was created from (if any)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemplateId {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#nullable restore
 #else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
@@ -140,10 +160,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of states of all users that the intent is applied to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementIntentUserState>? UserStates {
             get { return BackingStore?.Get<List<DeviceManagementIntentUserState>?>("userStates"); }
             set { BackingStore?.Set("userStates", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementIntentUserState> UserStates {
             get { return BackingStore?.Get<List<DeviceManagementIntentUserState>>("userStates"); }
@@ -152,10 +174,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementIntentUserStateSummary? UserStateSummary {
             get { return BackingStore?.Get<DeviceManagementIntentUserStateSummary?>("userStateSummary"); }
             set { BackingStore?.Set("userStateSummary", value); }
         }
+#nullable restore
 #else
         public DeviceManagementIntentUserStateSummary UserStateSummary {
             get { return BackingStore?.Get<DeviceManagementIntentUserStateSummary>("userStateSummary"); }

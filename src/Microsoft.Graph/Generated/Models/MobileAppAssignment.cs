@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The settings for target assignment defined by the admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MobileAppAssignmentSettings? Settings {
             get { return BackingStore?.Get<MobileAppAssignmentSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public MobileAppAssignmentSettings Settings {
             get { return BackingStore?.Get<MobileAppAssignmentSettings>("settings"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The identifier of the source of the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourceId {
             get { return BackingStore?.Get<string?>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
+#nullable restore
 #else
         public string SourceId {
             get { return BackingStore?.Get<string>("sourceId"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The target group assignment defined by the admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceAndAppManagementAssignmentTarget? Target {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#nullable restore
 #else
         public DeviceAndAppManagementAssignmentTarget Target {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }

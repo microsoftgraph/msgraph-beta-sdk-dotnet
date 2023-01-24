@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class NdesConnector : Entity, IParsable {
         /// <summary>The build version of the Ndes Connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectorVersion {
             get { return BackingStore?.Get<string?>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
+#nullable restore
 #else
         public string ConnectorVersion {
             get { return BackingStore?.Get<string>("connectorVersion"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The friendly name of the Ndes Connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the machine running on-prem certificate connector service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MachineName {
             get { return BackingStore?.Get<string?>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
+#nullable restore
 #else
         public string MachineName {
             get { return BackingStore?.Get<string>("machineName"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }

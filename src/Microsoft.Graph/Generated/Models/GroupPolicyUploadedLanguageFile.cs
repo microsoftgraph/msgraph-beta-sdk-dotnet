@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contents of the uploaded ADML file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Content {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The file name of the uploaded ADML file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileName {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#nullable restore
 #else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Key of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The language code of the uploaded ADML file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LanguageCode {
             get { return BackingStore?.Get<string?>("languageCode"); }
             set { BackingStore?.Set("languageCode", value); }
         }
+#nullable restore
 #else
         public string LanguageCode {
             get { return BackingStore?.Get<string>("languageCode"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

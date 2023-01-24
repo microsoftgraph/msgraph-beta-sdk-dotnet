@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserInstallStateSummary : Entity, IParsable {
         /// <summary>The install state of the eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceInstallState>? DeviceStates {
             get { return BackingStore?.Get<List<DeviceInstallState>?>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#nullable restore
 #else
         public List<DeviceInstallState> DeviceStates {
             get { return BackingStore?.Get<List<DeviceInstallState>>("deviceStates"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserName {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#nullable restore
 #else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }

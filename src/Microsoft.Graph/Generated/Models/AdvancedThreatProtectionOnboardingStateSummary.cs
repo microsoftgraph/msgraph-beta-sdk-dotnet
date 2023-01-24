@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AdvancedThreatProtectionOnboardingStateSummary : Entity, IParsable {
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AdvancedThreatProtectionOnboardingDeviceSettingState>? AdvancedThreatProtectionOnboardingDeviceSettingStates {
             get { return BackingStore?.Get<List<AdvancedThreatProtectionOnboardingDeviceSettingState>?>("advancedThreatProtectionOnboardingDeviceSettingStates"); }
             set { BackingStore?.Set("advancedThreatProtectionOnboardingDeviceSettingStates", value); }
         }
+#nullable restore
 #else
         public List<AdvancedThreatProtectionOnboardingDeviceSettingState> AdvancedThreatProtectionOnboardingDeviceSettingStates {
             get { return BackingStore?.Get<List<AdvancedThreatProtectionOnboardingDeviceSettingState>>("advancedThreatProtectionOnboardingDeviceSettingStates"); }

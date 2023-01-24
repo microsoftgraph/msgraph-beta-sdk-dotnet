@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemPublication : ItemFacet, IParsable {
         /// <summary>Description of the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -20,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Title of the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Publication or publisher for the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Publisher {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#nullable restore
 #else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
@@ -49,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL referencing a thumbnail of the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ThumbnailUrl {
             get { return BackingStore?.Get<string?>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
+#nullable restore
 #else
         public string ThumbnailUrl {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
@@ -61,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL referencing the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

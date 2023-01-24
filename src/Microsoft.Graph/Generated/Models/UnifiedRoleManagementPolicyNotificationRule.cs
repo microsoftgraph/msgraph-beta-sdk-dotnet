@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The level of notification. The possible values are None, Critical, All.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationLevel {
             get { return BackingStore?.Get<string?>("notificationLevel"); }
             set { BackingStore?.Set("notificationLevel", value); }
         }
+#nullable restore
 #else
         public string NotificationLevel {
             get { return BackingStore?.Get<string>("notificationLevel"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of recipients of the email notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? NotificationRecipients {
             get { return BackingStore?.Get<List<string>?>("notificationRecipients"); }
             set { BackingStore?.Set("notificationRecipients", value); }
         }
+#nullable restore
 #else
         public List<string> NotificationRecipients {
             get { return BackingStore?.Get<List<string>>("notificationRecipients"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of notification. Only Email is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationType {
             get { return BackingStore?.Get<string?>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
+#nullable restore
 #else
         public string NotificationType {
             get { return BackingStore?.Get<string>("notificationType"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of recipient of the notification. The possible values are Requestor, Approver, Admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecipientType {
             get { return BackingStore?.Get<string?>("recipientType"); }
             set { BackingStore?.Set("recipientType", value); }
         }
+#nullable restore
 #else
         public string RecipientType {
             get { return BackingStore?.Get<string>("recipientType"); }

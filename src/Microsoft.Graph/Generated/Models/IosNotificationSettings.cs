@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Application name to be associated with the bundleID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppName {
             get { return BackingStore?.Get<string?>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
+#nullable restore
 #else
         public string AppName {
             get { return BackingStore?.Get<string>("appName"); }
@@ -40,10 +42,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Bundle id of app to which to apply these notification settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BundleID {
             get { return BackingStore?.Get<string?>("bundleID"); }
             set { BackingStore?.Set("bundleID", value); }
         }
+#nullable restore
 #else
         public string BundleID {
             get { return BackingStore?.Get<string>("bundleID"); }
@@ -57,10 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -74,10 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Publisher to be associated with the bundleID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Publisher {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#nullable restore
 #else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }

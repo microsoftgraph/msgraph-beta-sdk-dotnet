@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OutlookTaskFolder : Entity, IParsable {
         /// <summary>The version of the task folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChangeKey {
             get { return BackingStore?.Get<string?>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
+#nullable restore
 #else
         public string ChangeKey {
             get { return BackingStore?.Get<string>("changeKey"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the task folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of single-value extended properties defined for the task folder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tasks in this task folder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OutlookTask>? Tasks {
             get { return BackingStore?.Get<List<OutlookTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#nullable restore
 #else
         public List<OutlookTask> Tasks {
             get { return BackingStore?.Get<List<OutlookTask>>("tasks"); }

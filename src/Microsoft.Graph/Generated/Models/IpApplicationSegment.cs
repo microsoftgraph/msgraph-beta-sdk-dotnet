@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IpApplicationSegment : ApplicationSegment, IParsable {
         /// <summary>The destinationHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DestinationHost {
             get { return BackingStore?.Get<string?>("destinationHost"); }
             set { BackingStore?.Set("destinationHost", value); }
         }
+#nullable restore
 #else
         public string DestinationHost {
             get { return BackingStore?.Get<string>("destinationHost"); }

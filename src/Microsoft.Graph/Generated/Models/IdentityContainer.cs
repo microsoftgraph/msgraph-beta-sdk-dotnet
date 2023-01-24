@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents entry point for API connectors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IdentityApiConnector>? ApiConnectors {
             get { return BackingStore?.Get<List<IdentityApiConnector>?>("apiConnectors"); }
             set { BackingStore?.Set("apiConnectors", value); }
         }
+#nullable restore
 #else
         public List<IdentityApiConnector> ApiConnectors {
             get { return BackingStore?.Get<List<IdentityApiConnector>>("apiConnectors"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The authenticationEventListeners property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationEventListener>? AuthenticationEventListeners {
             get { return BackingStore?.Get<List<AuthenticationEventListener>?>("authenticationEventListeners"); }
             set { BackingStore?.Set("authenticationEventListeners", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationEventListener> AuthenticationEventListeners {
             get { return BackingStore?.Get<List<AuthenticationEventListener>>("authenticationEventListeners"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents entry point for B2C identity userflows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<B2cIdentityUserFlow>? B2cUserFlows {
             get { return BackingStore?.Get<List<B2cIdentityUserFlow>?>("b2cUserFlows"); }
             set { BackingStore?.Set("b2cUserFlows", value); }
         }
+#nullable restore
 #else
         public List<B2cIdentityUserFlow> B2cUserFlows {
             get { return BackingStore?.Get<List<B2cIdentityUserFlow>>("b2cUserFlows"); }
@@ -49,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents entry point for B2X and self-service sign-up identity userflows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<B2xIdentityUserFlow>? B2xUserFlows {
             get { return BackingStore?.Get<List<B2xIdentityUserFlow>?>("b2xUserFlows"); }
             set { BackingStore?.Set("b2xUserFlows", value); }
         }
+#nullable restore
 #else
         public List<B2xIdentityUserFlow> B2xUserFlows {
             get { return BackingStore?.Get<List<B2xIdentityUserFlow>>("b2xUserFlows"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>the entry point for the Conditional Access (CA) object model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessRoot? ConditionalAccess {
             get { return BackingStore?.Get<ConditionalAccessRoot?>("conditionalAccess"); }
             set { BackingStore?.Set("conditionalAccess", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessRoot ConditionalAccess {
             get { return BackingStore?.Get<ConditionalAccessRoot>("conditionalAccess"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents entry point for continuous access evaluation policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy? ContinuousAccessEvaluationPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy?>("continuousAccessEvaluationPolicy"); }
             set { BackingStore?.Set("continuousAccessEvaluationPolicy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>("continuousAccessEvaluationPolicy"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The customAuthenticationExtensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomAuthenticationExtension>? CustomAuthenticationExtensions {
             get { return BackingStore?.Get<List<CustomAuthenticationExtension>?>("customAuthenticationExtensions"); }
             set { BackingStore?.Set("customAuthenticationExtensions", value); }
         }
+#nullable restore
 #else
         public List<CustomAuthenticationExtension> CustomAuthenticationExtensions {
             get { return BackingStore?.Get<List<CustomAuthenticationExtension>>("customAuthenticationExtensions"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents entry point for identity provider base.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IdentityProviderBase>? IdentityProviders {
             get { return BackingStore?.Get<List<IdentityProviderBase>?>("identityProviders"); }
             set { BackingStore?.Set("identityProviders", value); }
         }
+#nullable restore
 #else
         public List<IdentityProviderBase> IdentityProviders {
             get { return BackingStore?.Get<List<IdentityProviderBase>>("identityProviders"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -123,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents entry point for identity userflow attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IdentityUserFlowAttribute>? UserFlowAttributes {
             get { return BackingStore?.Get<List<IdentityUserFlowAttribute>?>("userFlowAttributes"); }
             set { BackingStore?.Set("userFlowAttributes", value); }
         }
+#nullable restore
 #else
         public List<IdentityUserFlowAttribute> UserFlowAttributes {
             get { return BackingStore?.Get<List<IdentityUserFlowAttribute>>("userFlowAttributes"); }
@@ -135,10 +155,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The userFlows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IdentityUserFlow>? UserFlows {
             get { return BackingStore?.Get<List<IdentityUserFlow>?>("userFlows"); }
             set { BackingStore?.Set("userFlows", value); }
         }
+#nullable restore
 #else
         public List<IdentityUserFlow> UserFlows {
             get { return BackingStore?.Get<List<IdentityUserFlow>>("userFlows"); }

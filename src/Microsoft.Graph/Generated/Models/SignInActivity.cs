@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Request identifier of the last non-interactive sign-in performed by this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastNonInteractiveSignInRequestId {
             get { return BackingStore?.Get<string?>("lastNonInteractiveSignInRequestId"); }
             set { BackingStore?.Set("lastNonInteractiveSignInRequestId", value); }
         }
+#nullable restore
 #else
         public string LastNonInteractiveSignInRequestId {
             get { return BackingStore?.Get<string>("lastNonInteractiveSignInRequestId"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Request identifier of the last interactive sign-in performed by this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastSignInRequestId {
             get { return BackingStore?.Get<string?>("lastSignInRequestId"); }
             set { BackingStore?.Set("lastSignInRequestId", value); }
         }
+#nullable restore
 #else
         public string LastSignInRequestId {
             get { return BackingStore?.Get<string>("lastSignInRequestId"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

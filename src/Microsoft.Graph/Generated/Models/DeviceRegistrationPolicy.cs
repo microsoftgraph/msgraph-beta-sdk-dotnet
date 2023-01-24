@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceRegistrationPolicy : Entity, IParsable {
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AzureAdJoinPolicy? AzureADJoin {
             get { return BackingStore?.Get<AzureAdJoinPolicy?>("azureADJoin"); }
             set { BackingStore?.Set("azureADJoin", value); }
         }
+#nullable restore
 #else
         public AzureAdJoinPolicy AzureADJoin {
             get { return BackingStore?.Get<AzureAdJoinPolicy>("azureADJoin"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AzureADRegistrationPolicy? AzureADRegistration {
             get { return BackingStore?.Get<AzureADRegistrationPolicy?>("azureADRegistration"); }
             set { BackingStore?.Set("azureADRegistration", value); }
         }
+#nullable restore
 #else
         public AzureADRegistrationPolicy AzureADRegistration {
             get { return BackingStore?.Get<AzureADRegistrationPolicy>("azureADRegistration"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the device registration policy. It is always set to Device Registration Policy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }

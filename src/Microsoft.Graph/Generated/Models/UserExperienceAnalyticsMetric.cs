@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsMetric : Entity, IParsable {
         /// <summary>The unit of the user experience analytics metric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Unit {
             get { return BackingStore?.Get<string?>("unit"); }
             set { BackingStore?.Set("unit", value); }
         }
+#nullable restore
 #else
         public string Unit {
             get { return BackingStore?.Get<string>("unit"); }

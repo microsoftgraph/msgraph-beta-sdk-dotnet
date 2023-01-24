@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class FileAttachment : Attachment, IParsable {
         /// <summary>The base64-encoded contents of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? ContentBytes {
             get { return BackingStore?.Get<byte[]?>("contentBytes"); }
             set { BackingStore?.Set("contentBytes", value); }
         }
+#nullable restore
 #else
         public byte[] ContentBytes {
             get { return BackingStore?.Get<byte[]>("contentBytes"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the attachment in the Exchange store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentId {
             get { return BackingStore?.Get<string?>("contentId"); }
             set { BackingStore?.Set("contentId", value); }
         }
+#nullable restore
 #else
         public string ContentId {
             get { return BackingStore?.Get<string>("contentId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Do not use this property as it is not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentLocation {
             get { return BackingStore?.Get<string?>("contentLocation"); }
             set { BackingStore?.Set("contentLocation", value); }
         }
+#nullable restore
 #else
         public string ContentLocation {
             get { return BackingStore?.Get<string>("contentLocation"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.Ass
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceManagementScriptAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementScriptAssignment>? DeviceManagementScriptAssignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>?>("deviceManagementScriptAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptAssignments", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementScriptAssignment> DeviceManagementScriptAssignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>("deviceManagementScriptAssignments"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.Ass
 #endif
         /// <summary>The deviceManagementScriptGroupAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementScriptGroupAssignment>? DeviceManagementScriptGroupAssignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>?>("deviceManagementScriptGroupAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptGroupAssignments", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementScriptGroupAssignment> DeviceManagementScriptGroupAssignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>("deviceManagementScriptGroupAssignments"); }

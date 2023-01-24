@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureStorageAccountId {
             get { return BackingStore?.Get<string?>("azureStorageAccountId"); }
             set { BackingStore?.Set("azureStorageAccountId", value); }
         }
+#nullable restore
 #else
         public string AzureStorageAccountId {
             get { return BackingStore?.Get<string>("azureStorageAccountId"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureStorageAccountName {
             get { return BackingStore?.Get<string?>("azureStorageAccountName"); }
             set { BackingStore?.Set("azureStorageAccountName", value); }
         }
+#nullable restore
 #else
         public string AzureStorageAccountName {
             get { return BackingStore?.Get<string>("azureStorageAccountName"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureStorageContainerName {
             get { return BackingStore?.Get<string?>("azureStorageContainerName"); }
             set { BackingStore?.Set("azureStorageContainerName", value); }
         }
+#nullable restore
 #else
         public string AzureStorageContainerName {
             get { return BackingStore?.Get<string>("azureStorageContainerName"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubscriptionId {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
+#nullable restore
 #else
         public string SubscriptionId {
             get { return BackingStore?.Get<string>("subscriptionId"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the Azure subscription in which the Cloud PC snapshot is being saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubscriptionName {
             get { return BackingStore?.Get<string?>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
+#nullable restore
 #else
         public string SubscriptionName {
             get { return BackingStore?.Get<string>("subscriptionName"); }

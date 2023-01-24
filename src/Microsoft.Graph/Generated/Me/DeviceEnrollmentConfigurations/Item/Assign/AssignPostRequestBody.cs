@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item.Assign {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The enrollmentConfigurationAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EnrollmentConfigurationAssignment>? EnrollmentConfigurationAssignments {
             get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>?>("enrollmentConfigurationAssignments"); }
             set { BackingStore?.Set("enrollmentConfigurationAssignments", value); }
         }
+#nullable restore
 #else
         public List<EnrollmentConfigurationAssignment> EnrollmentConfigurationAssignments {
             get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>>("enrollmentConfigurationAssignments"); }

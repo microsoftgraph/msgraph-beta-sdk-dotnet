@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotifica
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The notificationBody property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationBody {
             get { return BackingStore?.Get<string?>("notificationBody"); }
             set { BackingStore?.Set("notificationBody", value); }
         }
+#nullable restore
 #else
         public string NotificationBody {
             get { return BackingStore?.Get<string>("notificationBody"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotifica
 #endif
         /// <summary>The notificationTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationTitle {
             get { return BackingStore?.Get<string?>("notificationTitle"); }
             set { BackingStore?.Set("notificationTitle", value); }
         }
+#nullable restore
 #else
         public string NotificationTitle {
             get { return BackingStore?.Get<string>("notificationTitle"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
         /// <summary>The applicationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ApplicationIds {
             get { return BackingStore?.Get<List<string>?>("applicationIds"); }
             set { BackingStore?.Set("applicationIds", value); }
         }
+#nullable restore
 #else
         public List<string> ApplicationIds {
             get { return BackingStore?.Get<List<string>>("applicationIds"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The applicationPublisherIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ApplicationPublisherIds {
             get { return BackingStore?.Get<List<string>?>("applicationPublisherIds"); }
             set { BackingStore?.Set("applicationPublisherIds", value); }
         }
+#nullable restore
 #else
         public List<string> ApplicationPublisherIds {
             get { return BackingStore?.Get<List<string>>("applicationPublisherIds"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The applicationTenantIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ApplicationTenantIds {
             get { return BackingStore?.Get<List<string>?>("applicationTenantIds"); }
             set { BackingStore?.Set("applicationTenantIds", value); }
         }
+#nullable restore
 #else
         public List<string> ApplicationTenantIds {
             get { return BackingStore?.Get<List<string>>("applicationTenantIds"); }

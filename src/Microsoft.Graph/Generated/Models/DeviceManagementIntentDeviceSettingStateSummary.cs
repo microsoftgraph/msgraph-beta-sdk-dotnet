@@ -40,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of a setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingName {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#nullable restore
 #else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }

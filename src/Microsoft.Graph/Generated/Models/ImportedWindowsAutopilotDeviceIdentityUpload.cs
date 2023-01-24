@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Collection of all Autopilot devices as a part of this upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ImportedWindowsAutopilotDeviceIdentity>? DeviceIdentities {
             get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>?>("deviceIdentities"); }
             set { BackingStore?.Set("deviceIdentities", value); }
         }
+#nullable restore
 #else
         public List<ImportedWindowsAutopilotDeviceIdentity> DeviceIdentities {
             get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>("deviceIdentities"); }

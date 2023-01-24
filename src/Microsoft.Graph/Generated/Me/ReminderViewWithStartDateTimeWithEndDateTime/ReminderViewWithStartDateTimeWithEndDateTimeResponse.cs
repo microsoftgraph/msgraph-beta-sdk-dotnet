@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime {
     public class ReminderViewWithStartDateTimeWithEndDateTimeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Reminder>? Value {
             get { return BackingStore?.Get<List<Reminder>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Reminder> Value {
             get { return BackingStore?.Get<List<Reminder>>("value"); }

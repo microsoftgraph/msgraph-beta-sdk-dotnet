@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time configurations for a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkDateTimeConfiguration? DateTimeConfiguration {
             get { return BackingStore?.Get<TeamworkDateTimeConfiguration?>("dateTimeConfiguration"); }
             set { BackingStore?.Set("dateTimeConfiguration", value); }
         }
+#nullable restore
 #else
         public TeamworkDateTimeConfiguration DateTimeConfiguration {
             get { return BackingStore?.Get<TeamworkDateTimeConfiguration>("dateTimeConfiguration"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The default password for the device. Write-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultPassword {
             get { return BackingStore?.Get<string?>("defaultPassword"); }
             set { BackingStore?.Set("defaultPassword", value); }
         }
+#nullable restore
 #else
         public string DefaultPassword {
             get { return BackingStore?.Get<string>("defaultPassword"); }
@@ -69,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The language option for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Language {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+#nullable restore
 #else
         public string Language {
             get { return BackingStore?.Get<string>("language"); }
@@ -81,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The pin that unlocks the device. Write-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LockPin {
             get { return BackingStore?.Get<string?>("lockPin"); }
             set { BackingStore?.Set("lockPin", value); }
         }
+#nullable restore
 #else
         public string LockPin {
             get { return BackingStore?.Get<string>("lockPin"); }
@@ -93,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The logging level for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LoggingLevel {
             get { return BackingStore?.Get<string?>("loggingLevel"); }
             set { BackingStore?.Set("loggingLevel", value); }
         }
+#nullable restore
 #else
         public string LoggingLevel {
             get { return BackingStore?.Get<string>("loggingLevel"); }
@@ -105,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The network configuration for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkNetworkConfiguration? NetworkConfiguration {
             get { return BackingStore?.Get<TeamworkNetworkConfiguration?>("networkConfiguration"); }
             set { BackingStore?.Set("networkConfiguration", value); }
         }
+#nullable restore
 #else
         public TeamworkNetworkConfiguration NetworkConfiguration {
             get { return BackingStore?.Get<TeamworkNetworkConfiguration>("networkConfiguration"); }
@@ -117,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

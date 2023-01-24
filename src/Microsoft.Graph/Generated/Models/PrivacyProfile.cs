@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A valid smtp email address for the privacy statement contact. Not required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContactEmail {
             get { return BackingStore?.Get<string?>("contactEmail"); }
             set { BackingStore?.Set("contactEmail", value); }
         }
+#nullable restore
 #else
         public string ContactEmail {
             get { return BackingStore?.Get<string>("contactEmail"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company&apos;s privacy statement. Not required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StatementUrl {
             get { return BackingStore?.Get<string?>("statementUrl"); }
             set { BackingStore?.Set("statementUrl", value); }
         }
+#nullable restore
 #else
         public string StatementUrl {
             get { return BackingStore?.Get<string>("statementUrl"); }

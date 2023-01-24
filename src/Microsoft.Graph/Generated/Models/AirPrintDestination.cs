@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The IP Address of the AirPrint destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddress {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#nullable restore
 #else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -52,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/Canon_MG5300_series, printers/Xerox_Phaser_7600, ipp/print, Epson_IPP_Printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourcePath {
             get { return BackingStore?.Get<string?>("resourcePath"); }
             set { BackingStore?.Set("resourcePath", value); }
         }
+#nullable restore
 #else
         public string ResourcePath {
             get { return BackingStore?.Get<string>("resourcePath"); }

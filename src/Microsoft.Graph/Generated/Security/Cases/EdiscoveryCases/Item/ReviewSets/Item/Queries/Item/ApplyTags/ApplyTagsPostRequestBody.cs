@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tagsToAdd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryReviewTag>? TagsToAdd {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tagsToAdd"); }
             set { BackingStore?.Set("tagsToAdd", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryReviewTag> TagsToAdd {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tagsToAdd"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
 #endif
         /// <summary>The tagsToRemove property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryReviewTag>? TagsToRemove {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tagsToRemove"); }
             set { BackingStore?.Set("tagsToRemove", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryReviewTag> TagsToRemove {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tagsToRemove"); }

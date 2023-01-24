@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
     public class Store : Entity, IParsable {
         /// <summary>Default language of the term store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultLanguageTag {
             get { return BackingStore?.Get<string?>("defaultLanguageTag"); }
             set { BackingStore?.Set("defaultLanguageTag", value); }
         }
+#nullable restore
 #else
         public string DefaultLanguageTag {
             get { return BackingStore?.Get<string>("defaultLanguageTag"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>Collection of all groups available in the term store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Group>? Groups {
             get { return BackingStore?.Get<List<Group>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
+#nullable restore
 #else
         public List<Group> Groups {
             get { return BackingStore?.Get<List<Group>>("groups"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>List of languages for the term store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? LanguageTags {
             get { return BackingStore?.Get<List<string>?>("languageTags"); }
             set { BackingStore?.Set("languageTags", value); }
         }
+#nullable restore
 #else
         public List<string> LanguageTags {
             get { return BackingStore?.Get<List<string>>("languageTags"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>Collection of all sets available in the term store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Set>? Sets {
             get { return BackingStore?.Get<List<Set>?>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
+#nullable restore
 #else
         public List<Set> Sets {
             get { return BackingStore?.Get<List<Set>>("sets"); }

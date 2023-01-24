@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Endpoint : DirectoryObject, IParsable {
         /// <summary>Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Capability {
             get { return BackingStore?.Get<string?>("capability"); }
             set { BackingStore?.Set("capability", value); }
         }
+#nullable restore
 #else
         public string Capability {
             get { return BackingStore?.Get<string>("capability"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Application id of the publishing underlying service. Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProviderId {
             get { return BackingStore?.Get<string?>("providerId"); }
             set { BackingStore?.Set("providerId", value); }
         }
+#nullable restore
 #else
         public string ProviderId {
             get { return BackingStore?.Get<string>("providerId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the publishing underlying service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProviderName {
             get { return BackingStore?.Get<string?>("providerName"); }
             set { BackingStore?.Set("providerName", value); }
         }
+#nullable restore
 #else
         public string ProviderName {
             get { return BackingStore?.Get<string>("providerName"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProviderResourceId {
             get { return BackingStore?.Get<string?>("providerResourceId"); }
             set { BackingStore?.Set("providerResourceId", value); }
         }
+#nullable restore
 #else
         public string ProviderResourceId {
             get { return BackingStore?.Get<string>("providerResourceId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL of the published resource. Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Uri {
             get { return BackingStore?.Get<string?>("uri"); }
             set { BackingStore?.Set("uri", value); }
         }
+#nullable restore
 #else
         public string Uri {
             get { return BackingStore?.Get<string>("uri"); }

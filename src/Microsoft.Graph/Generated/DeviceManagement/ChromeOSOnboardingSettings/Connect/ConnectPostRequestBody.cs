@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Conne
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ownerAccessToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OwnerAccessToken {
             get { return BackingStore?.Get<string?>("ownerAccessToken"); }
             set { BackingStore?.Set("ownerAccessToken", value); }
         }
+#nullable restore
 #else
         public string OwnerAccessToken {
             get { return BackingStore?.Get<string>("ownerAccessToken"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Conne
 #endif
         /// <summary>The ownerUserPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OwnerUserPrincipalName {
             get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
+#nullable restore
 #else
         public string OwnerUserPrincipalName {
             get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }

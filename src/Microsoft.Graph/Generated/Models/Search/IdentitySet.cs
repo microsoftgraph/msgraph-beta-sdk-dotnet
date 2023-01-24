@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
         }
         /// <summary>The application property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? Application {
             get { return BackingStore?.Get<Identity?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#nullable restore
 #else
         public Identity Application {
             get { return BackingStore?.Get<Identity>("application"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The device property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? Device {
             get { return BackingStore?.Get<Identity?>("device"); }
             set { BackingStore?.Set("device", value); }
         }
+#nullable restore
 #else
         public Identity Device {
             get { return BackingStore?.Get<Identity>("device"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? User {
             get { return BackingStore?.Get<Identity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#nullable restore
 #else
         public Identity User {
             get { return BackingStore?.Get<Identity>("user"); }

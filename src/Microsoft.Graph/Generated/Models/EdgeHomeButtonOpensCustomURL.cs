@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EdgeHomeButtonOpensCustomURL : EdgeHomeButtonConfiguration, IParsable {
         /// <summary>The specific URL to load.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HomeButtonCustomURL {
             get { return BackingStore?.Get<string?>("homeButtonCustomURL"); }
             set { BackingStore?.Set("homeButtonCustomURL", value); }
         }
+#nullable restore
 #else
         public string HomeButtonCustomURL {
             get { return BackingStore?.Get<string>("homeButtonCustomURL"); }

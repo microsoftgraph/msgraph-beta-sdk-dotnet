@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ClientCertificateAuthentication : ApiAuthenticationConfigurationBase, IParsable {
         /// <summary>The list of certificates uploaded for this API connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Pkcs12CertificateInformation>? CertificateList {
             get { return BackingStore?.Get<List<Pkcs12CertificateInformation>?>("certificateList"); }
             set { BackingStore?.Set("certificateList", value); }
         }
+#nullable restore
 #else
         public List<Pkcs12CertificateInformation> CertificateList {
             get { return BackingStore?.Get<List<Pkcs12CertificateInformation>>("certificateList"); }

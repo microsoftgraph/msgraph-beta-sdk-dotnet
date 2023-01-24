@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
     public class Relation : Entity, IParsable {
         /// <summary>The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Term? FromTerm {
             get { return BackingStore?.Get<Term?>("fromTerm"); }
             set { BackingStore?.Set("fromTerm", value); }
         }
+#nullable restore
 #else
         public Term FromTerm {
             get { return BackingStore?.Get<Term>("fromTerm"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         }
         /// <summary>The [set] in which the relation is relevant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TermStore.Set? Set {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set?>("set"); }
             set { BackingStore?.Set("set", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TermStore.Set Set {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set>("set"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>The to [term] of the relation. The term to which the relationship is defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Term? ToTerm {
             get { return BackingStore?.Get<Term?>("toTerm"); }
             set { BackingStore?.Set("toTerm", value); }
         }
+#nullable restore
 #else
         public Term ToTerm {
             get { return BackingStore?.Get<Term>("toTerm"); }

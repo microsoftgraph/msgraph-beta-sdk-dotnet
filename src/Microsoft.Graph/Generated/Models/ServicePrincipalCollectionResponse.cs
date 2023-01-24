@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ServicePrincipalCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServicePrincipal>? Value {
             get { return BackingStore?.Get<List<ServicePrincipal>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<ServicePrincipal> Value {
             get { return BackingStore?.Get<List<ServicePrincipal>>("value"); }

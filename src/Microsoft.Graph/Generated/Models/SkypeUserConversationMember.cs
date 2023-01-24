@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SkypeUserConversationMember : ConversationMember, IParsable {
         /// <summary>Skype ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SkypeId {
             get { return BackingStore?.Get<string?>("skypeId"); }
             set { BackingStore?.Set("skypeId", value); }
         }
+#nullable restore
 #else
         public string SkypeId {
             get { return BackingStore?.Get<string>("skypeId"); }

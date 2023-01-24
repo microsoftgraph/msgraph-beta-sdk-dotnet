@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementReports : Entity, IParsable {
         /// <summary>Entity representing the configuration of a cached report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementCachedReportConfiguration>? CachedReportConfigurations {
             get { return BackingStore?.Get<List<DeviceManagementCachedReportConfiguration>?>("cachedReportConfigurations"); }
             set { BackingStore?.Set("cachedReportConfigurations", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementCachedReportConfiguration> CachedReportConfigurations {
             get { return BackingStore?.Get<List<DeviceManagementCachedReportConfiguration>>("cachedReportConfigurations"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Entity representing a job to export a report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementExportJob>? ExportJobs {
             get { return BackingStore?.Get<List<DeviceManagementExportJob>?>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementExportJob> ExportJobs {
             get { return BackingStore?.Get<List<DeviceManagementExportJob>>("exportJobs"); }

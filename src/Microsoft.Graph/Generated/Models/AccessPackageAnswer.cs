@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The question the answer is for. Required and Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessPackageQuestion? AnsweredQuestion {
             get { return BackingStore?.Get<AccessPackageQuestion?>("answeredQuestion"); }
             set { BackingStore?.Set("answeredQuestion", value); }
         }
+#nullable restore
 #else
         public AccessPackageQuestion AnsweredQuestion {
             get { return BackingStore?.Get<AccessPackageQuestion>("answeredQuestion"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display value of the answer. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayValue {
             get { return BackingStore?.Get<string?>("displayValue"); }
             set { BackingStore?.Set("displayValue", value); }
         }
+#nullable restore
 #else
         public string DisplayValue {
             get { return BackingStore?.Get<string>("displayValue"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

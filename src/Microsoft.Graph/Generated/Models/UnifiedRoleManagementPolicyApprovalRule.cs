@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicyApprovalRule : UnifiedRoleManagementPolicyRule, IParsable {
         /// <summary>The settings for approval of the role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ApprovalSettings? Setting {
             get { return BackingStore?.Get<ApprovalSettings?>("setting"); }
             set { BackingStore?.Set("setting", value); }
         }
+#nullable restore
 #else
         public ApprovalSettings Setting {
             get { return BackingStore?.Get<ApprovalSettings>("setting"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyCategory : Entity, IParsable {
         /// <summary>The children categories</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyCategory>? Children {
             get { return BackingStore?.Get<List<GroupPolicyCategory>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyCategory> Children {
             get { return BackingStore?.Get<List<GroupPolicyCategory>>("children"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The id of the definition file the category came from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyDefinitionFile? DefinitionFile {
             get { return BackingStore?.Get<GroupPolicyDefinitionFile?>("definitionFile"); }
             set { BackingStore?.Set("definitionFile", value); }
         }
+#nullable restore
 #else
         public GroupPolicyDefinitionFile DefinitionFile {
             get { return BackingStore?.Get<GroupPolicyDefinitionFile>("definitionFile"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The immediate GroupPolicyDefinition children of the category</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyDefinition>? Definitions {
             get { return BackingStore?.Get<List<GroupPolicyDefinition>?>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyDefinition> Definitions {
             get { return BackingStore?.Get<List<GroupPolicyDefinition>>("definitions"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The string id of the category&apos;s display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The parent category</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyCategory? Parent {
             get { return BackingStore?.Get<GroupPolicyCategory?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
+#nullable restore
 #else
         public GroupPolicyCategory Parent {
             get { return BackingStore?.Get<GroupPolicyCategory>("parent"); }

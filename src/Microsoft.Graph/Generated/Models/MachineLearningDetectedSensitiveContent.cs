@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The modelVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ModelVersion {
             get { return BackingStore?.Get<string?>("modelVersion"); }
             set { BackingStore?.Set("modelVersion", value); }
         }
+#nullable restore
 #else
         public string ModelVersion {
             get { return BackingStore?.Get<string>("modelVersion"); }

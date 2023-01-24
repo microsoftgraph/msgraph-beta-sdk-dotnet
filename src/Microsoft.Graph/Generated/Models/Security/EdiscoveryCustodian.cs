@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Email address of the custodian.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Email {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#nullable restore
 #else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Operation entity that represents the latest indexing for the custodian.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoveryIndexOperation? LastIndexOperation {
             get { return BackingStore?.Get<EdiscoveryIndexOperation?>("lastIndexOperation"); }
             set { BackingStore?.Set("lastIndexOperation", value); }
         }
+#nullable restore
 #else
         public EdiscoveryIndexOperation LastIndexOperation {
             get { return BackingStore?.Get<EdiscoveryIndexOperation>("lastIndexOperation"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Data source entity for SharePoint sites associated with the custodian.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SiteSource>? SiteSources {
             get { return BackingStore?.Get<List<SiteSource>?>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
+#nullable restore
 #else
         public List<SiteSource> SiteSources {
             get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Data source entity for groups associated with the custodian.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedGroupSource>? UnifiedGroupSources {
             get { return BackingStore?.Get<List<UnifiedGroupSource>?>("unifiedGroupSources"); }
             set { BackingStore?.Set("unifiedGroupSources", value); }
         }
+#nullable restore
 #else
         public List<UnifiedGroupSource> UnifiedGroupSources {
             get { return BackingStore?.Get<List<UnifiedGroupSource>>("unifiedGroupSources"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Data source entity for a custodian. This is the container for a custodian&apos;s mailbox and OneDrive for Business site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserSource>? UserSources {
             get { return BackingStore?.Get<List<UserSource>?>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
+#nullable restore
 #else
         public List<UserSource> UserSources {
             get { return BackingStore?.Get<List<UserSource>>("userSources"); }

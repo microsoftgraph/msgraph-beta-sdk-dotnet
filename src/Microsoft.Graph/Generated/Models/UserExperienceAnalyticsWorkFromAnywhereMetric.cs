@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable {
         /// <summary>The work from anywhere metric devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserExperienceAnalyticsWorkFromAnywhereDevice>? MetricDevices {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>?>("metricDevices"); }
             set { BackingStore?.Set("metricDevices", value); }
         }
+#nullable restore
 #else
         public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsWorkFromAnywhereDevice>>("metricDevices"); }

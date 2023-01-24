@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartPointFormat : Entity, IParsable {
         /// <summary>Represents the fill format of a chart, which includes background formating information. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartFill? Fill {
             get { return BackingStore?.Get<WorkbookChartFill?>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
+#nullable restore
 #else
         public WorkbookChartFill Fill {
             get { return BackingStore?.Get<WorkbookChartFill>("fill"); }

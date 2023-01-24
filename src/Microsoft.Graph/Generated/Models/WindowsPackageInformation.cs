@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Display Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityName {
             get { return BackingStore?.Get<string?>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
+#nullable restore
 #else
         public string IdentityName {
             get { return BackingStore?.Get<string>("identityName"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Identity Publisher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityPublisher {
             get { return BackingStore?.Get<string?>("identityPublisher"); }
             set { BackingStore?.Set("identityPublisher", value); }
         }
+#nullable restore
 #else
         public string IdentityPublisher {
             get { return BackingStore?.Get<string>("identityPublisher"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Identity Resource Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityResourceIdentifier {
             get { return BackingStore?.Get<string?>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
+#nullable restore
 #else
         public string IdentityResourceIdentifier {
             get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Identity Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityVersion {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#nullable restore
 #else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
@@ -83,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#nullable restore
 #else
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
@@ -95,10 +107,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

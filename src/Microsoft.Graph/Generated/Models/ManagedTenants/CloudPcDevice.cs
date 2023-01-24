@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class CloudPcDevice : Entity, IParsable {
         /// <summary>The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CloudPcStatus {
             get { return BackingStore?.Get<string?>("cloudPcStatus"); }
             set { BackingStore?.Set("cloudPcStatus", value); }
         }
+#nullable restore
 #else
         public string CloudPcStatus {
             get { return BackingStore?.Get<string>("cloudPcStatus"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The specification of the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceSpecification {
             get { return BackingStore?.Get<string?>("deviceSpecification"); }
             set { BackingStore?.Set("deviceSpecification", value); }
         }
+#nullable restore
 #else
         public string DeviceSpecification {
             get { return BackingStore?.Get<string>("deviceSpecification"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The display name  of the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The managed device identifier of the cloud PC device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The managed device display name of the cloud PC device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceName {
             get { return BackingStore?.Get<string?>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceName {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The provisioning policy identifier for the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProvisioningPolicyId {
             get { return BackingStore?.Get<string?>("provisioningPolicyId"); }
             set { BackingStore?.Set("provisioningPolicyId", value); }
         }
+#nullable restore
 #else
         public string ProvisioningPolicyId {
             get { return BackingStore?.Get<string>("provisioningPolicyId"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The service plan name of the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePlanName {
             get { return BackingStore?.Get<string?>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
+#nullable restore
 #else
         public string ServicePlanName {
             get { return BackingStore?.Get<string>("servicePlanName"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The service plan type of the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePlanType {
             get { return BackingStore?.Get<string?>("servicePlanType"); }
             set { BackingStore?.Set("servicePlanType", value); }
         }
+#nullable restore
 #else
         public string ServicePlanType {
             get { return BackingStore?.Get<string>("servicePlanType"); }
@@ -108,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantDisplayName {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#nullable restore
 #else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
@@ -120,10 +138,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -132,10 +152,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The user principal name (UPN) of the user assigned to the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

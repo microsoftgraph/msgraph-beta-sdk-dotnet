@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataNextLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataNextLink {
             get { return BackingStore?.Get<string?>("@odata.nextLink"); }
             set { BackingStore?.Set("@odata.nextLink", value); }
         }
+#nullable restore
 #else
         public string OdataNextLink {
             get { return BackingStore?.Get<string>("@odata.nextLink"); }

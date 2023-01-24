@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationTeamsAppResource : EducationResource, IParsable {
         /// <summary>URL that points to the icon of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppIconWebUrl {
             get { return BackingStore?.Get<string?>("appIconWebUrl"); }
             set { BackingStore?.Set("appIconWebUrl", value); }
         }
+#nullable restore
 #else
         public string AppIconWebUrl {
             get { return BackingStore?.Get<string>("appIconWebUrl"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Teams app ID of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppId {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#nullable restore
 #else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL for the app resource that will be opened by Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamsEmbeddedContentUrl {
             get { return BackingStore?.Get<string?>("teamsEmbeddedContentUrl"); }
             set { BackingStore?.Set("teamsEmbeddedContentUrl", value); }
         }
+#nullable restore
 #else
         public string TeamsEmbeddedContentUrl {
             get { return BackingStore?.Get<string>("teamsEmbeddedContentUrl"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL for the app resource that can be opened in the browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

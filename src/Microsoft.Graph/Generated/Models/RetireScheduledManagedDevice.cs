@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Device Compliance PolicyId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceCompliancePolicyId {
             get { return BackingStore?.Get<string?>("deviceCompliancePolicyId"); }
             set { BackingStore?.Set("deviceCompliancePolicyId", value); }
         }
+#nullable restore
 #else
         public string DeviceCompliancePolicyId {
             get { return BackingStore?.Get<string>("deviceCompliancePolicyId"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device Compliance Policy Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceCompliancePolicyName {
             get { return BackingStore?.Get<string?>("deviceCompliancePolicyName"); }
             set { BackingStore?.Set("deviceCompliancePolicyName", value); }
         }
+#nullable restore
 #else
         public string DeviceCompliancePolicyName {
             get { return BackingStore?.Get<string>("deviceCompliancePolicyName"); }
@@ -52,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Key of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -64,10 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Managed DeviceId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -76,10 +84,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Managed Device Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceName {
             get { return BackingStore?.Get<string?>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceName {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
@@ -93,10 +103,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -115,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }

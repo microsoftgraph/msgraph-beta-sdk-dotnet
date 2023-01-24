@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceComplianceSettingState>? DeviceComplianceSettingStates {
             get { return BackingStore?.Get<List<DeviceComplianceSettingState>?>("deviceComplianceSettingStates"); }
             set { BackingStore?.Set("deviceComplianceSettingStates", value); }
         }
+#nullable restore
 #else
         public List<DeviceComplianceSettingState> DeviceComplianceSettingStates {
             get { return BackingStore?.Get<List<DeviceComplianceSettingState>>("deviceComplianceSettingStates"); }
@@ -57,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The setting class name and property name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Setting {
             get { return BackingStore?.Get<string?>("setting"); }
             set { BackingStore?.Set("setting", value); }
         }
+#nullable restore
 #else
         public string Setting {
             get { return BackingStore?.Get<string>("setting"); }
@@ -69,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingName {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#nullable restore
 #else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }

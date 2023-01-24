@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartGridlinesFormat : Entity, IParsable {
         /// <summary>Represents chart line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartLineFormat? Line {
             get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
             set { BackingStore?.Set("line", value); }
         }
+#nullable restore
 #else
         public WorkbookChartLineFormat Line {
             get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }

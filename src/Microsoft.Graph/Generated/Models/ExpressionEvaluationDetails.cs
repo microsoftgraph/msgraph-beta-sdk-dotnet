@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents expression which has been evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Expression {
             get { return BackingStore?.Get<string?>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
+#nullable restore
 #else
         public string Expression {
             get { return BackingStore?.Get<string>("expression"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the details of the evaluation of the expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExpressionEvaluationDetails>? ExpressionEvaluationDetails_prop {
             get { return BackingStore?.Get<List<ExpressionEvaluationDetails>?>("expressionEvaluationDetails"); }
             set { BackingStore?.Set("expressionEvaluationDetails", value); }
         }
+#nullable restore
 #else
         public List<ExpressionEvaluationDetails> ExpressionEvaluationDetails_prop {
             get { return BackingStore?.Get<List<ExpressionEvaluationDetails>>("expressionEvaluationDetails"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines the name of the property and the value of that property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.PropertyToEvaluate? PropertyToEvaluate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PropertyToEvaluate?>("propertyToEvaluate"); }
             set { BackingStore?.Set("propertyToEvaluate", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.PropertyToEvaluate PropertyToEvaluate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PropertyToEvaluate>("propertyToEvaluate"); }

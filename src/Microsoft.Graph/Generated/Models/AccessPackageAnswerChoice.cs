@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAnswerChoice : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actual value of the selected choice. This is typically a string value which is understandable by applications. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActualValue {
             get { return BackingStore?.Get<string?>("actualValue"); }
             set { BackingStore?.Set("actualValue", value); }
         }
+#nullable restore
 #else
         public string ActualValue {
             get { return BackingStore?.Get<string>("actualValue"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The localized display values shown to the requestor and approvers. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessPackageLocalizedContent? DisplayValue {
             get { return BackingStore?.Get<AccessPackageLocalizedContent?>("displayValue"); }
             set { BackingStore?.Set("displayValue", value); }
         }
+#nullable restore
 #else
         public AccessPackageLocalizedContent DisplayValue {
             get { return BackingStore?.Get<AccessPackageLocalizedContent>("displayValue"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

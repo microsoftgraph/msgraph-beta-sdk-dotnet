@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Delta {
     public class DeltaResponse : BaseDeltaFunctionResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.DriveItem>? Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.DriveItem> Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>>("value"); }

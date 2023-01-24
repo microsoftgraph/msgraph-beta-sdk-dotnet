@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class TriggersRoot : Entity, IParsable {
         /// <summary>The retentionEvents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RetentionEvent>? RetentionEvents {
             get { return BackingStore?.Get<List<RetentionEvent>?>("retentionEvents"); }
             set { BackingStore?.Set("retentionEvents", value); }
         }
+#nullable restore
 #else
         public List<RetentionEvent> RetentionEvents {
             get { return BackingStore?.Get<List<RetentionEvent>>("retentionEvents"); }

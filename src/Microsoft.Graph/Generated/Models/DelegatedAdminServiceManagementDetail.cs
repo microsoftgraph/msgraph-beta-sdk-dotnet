@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminServiceManagementDetail : Entity, IParsable {
         /// <summary>The URL of the management portal for the managed service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceManagementUrl {
             get { return BackingStore?.Get<string?>("serviceManagementUrl"); }
             set { BackingStore?.Set("serviceManagementUrl", value); }
         }
+#nullable restore
 #else
         public string ServiceManagementUrl {
             get { return BackingStore?.Get<string>("serviceManagementUrl"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of a managed service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceName {
             get { return BackingStore?.Get<string?>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
         }
+#nullable restore
 #else
         public string ServiceName {
             get { return BackingStore?.Get<string>("serviceName"); }

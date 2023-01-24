@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CorsConfiguration_v2 : Entity, IParsable {
         /// <summary>The allowedHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedHeaders {
             get { return BackingStore?.Get<List<string>?>("allowedHeaders"); }
             set { BackingStore?.Set("allowedHeaders", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedHeaders {
             get { return BackingStore?.Get<List<string>>("allowedHeaders"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The allowedMethods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedMethods {
             get { return BackingStore?.Get<List<string>?>("allowedMethods"); }
             set { BackingStore?.Set("allowedMethods", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedMethods {
             get { return BackingStore?.Get<List<string>>("allowedMethods"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The allowedOrigins property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedOrigins {
             get { return BackingStore?.Get<List<string>?>("allowedOrigins"); }
             set { BackingStore?.Set("allowedOrigins", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedOrigins {
             get { return BackingStore?.Get<List<string>>("allowedOrigins"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Resource {
             get { return BackingStore?.Get<string?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#nullable restore
 #else
         public string Resource {
             get { return BackingStore?.Get<string>("resource"); }

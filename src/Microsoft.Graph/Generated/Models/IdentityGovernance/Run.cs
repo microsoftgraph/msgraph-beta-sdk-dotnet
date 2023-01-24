@@ -47,10 +47,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The related taskProcessingResults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TaskProcessingResult>? TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
+#nullable restore
 #else
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
@@ -74,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The associated individual user execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserProcessingResult>? UserProcessingResults {
             get { return BackingStore?.Get<List<UserProcessingResult>?>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
+#nullable restore
 #else
         public List<UserProcessingResult> UserProcessingResults {
             get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }

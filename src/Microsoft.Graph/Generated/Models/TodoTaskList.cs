@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TodoTaskList : Entity, IParsable {
         /// <summary>The name of the task list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of open extensions defined for the task list. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Extension>? Extensions {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#nullable restore
 #else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The tasks in this task list. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TodoTask>? Tasks {
             get { return BackingStore?.Get<List<TodoTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#nullable restore
 #else
         public List<TodoTask> Tasks {
             get { return BackingStore?.Get<List<TodoTask>>("tasks"); }

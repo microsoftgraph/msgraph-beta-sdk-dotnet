@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Setting Definition Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingDefinitionId {
             get { return BackingStore?.Get<string?>("settingDefinitionId"); }
             set { BackingStore?.Set("settingDefinitionId", value); }
         }
+#nullable restore
 #else
         public string SettingDefinitionId {
             get { return BackingStore?.Get<string>("settingDefinitionId"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Setting Instance Template Reference</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationSettingInstanceTemplateReference? SettingInstanceTemplateReference {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplateReference?>("settingInstanceTemplateReference"); }
             set { BackingStore?.Set("settingInstanceTemplateReference", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationSettingInstanceTemplateReference SettingInstanceTemplateReference {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplateReference>("settingInstanceTemplateReference"); }

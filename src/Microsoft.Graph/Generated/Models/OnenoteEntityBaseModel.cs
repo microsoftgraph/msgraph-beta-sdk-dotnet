@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnenoteEntityBaseModel : Entity, IParsable {
         /// <summary>The self property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Self {
             get { return BackingStore?.Get<string?>("self"); }
             set { BackingStore?.Set("self", value); }
         }
+#nullable restore
 #else
         public string Self {
             get { return BackingStore?.Get<string>("self"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConversationMemberRoleUpdatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Roles for the coversation member user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ConversationMemberRoles {
             get { return BackingStore?.Get<List<string>?>("conversationMemberRoles"); }
             set { BackingStore?.Set("conversationMemberRoles", value); }
         }
+#nullable restore
 #else
         public List<string> ConversationMemberRoles {
             get { return BackingStore?.Get<List<string>>("conversationMemberRoles"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity of the conversation member user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkUserIdentity? ConversationMemberUser {
             get { return BackingStore?.Get<TeamworkUserIdentity?>("conversationMemberUser"); }
             set { BackingStore?.Set("conversationMemberUser", value); }
         }
+#nullable restore
 #else
         public TeamworkUserIdentity ConversationMemberUser {
             get { return BackingStore?.Get<TeamworkUserIdentity>("conversationMemberUser"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Initiator {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#nullable restore
 #else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }

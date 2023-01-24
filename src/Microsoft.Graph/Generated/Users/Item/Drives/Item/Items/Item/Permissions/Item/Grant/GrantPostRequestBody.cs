@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Permissions.Ite
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DriveRecipient>? Recipients {
             get { return BackingStore?.Get<List<DriveRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#nullable restore
 #else
         public List<DriveRecipient> Recipients {
             get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Permissions.Ite
 #endif
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Roles {
             get { return BackingStore?.Get<List<string>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#nullable restore
 #else
         public List<string> Roles {
             get { return BackingStore?.Get<List<string>>("roles"); }

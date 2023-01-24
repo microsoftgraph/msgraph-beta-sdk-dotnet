@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EasEmailProfileConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomDomainName {
             get { return BackingStore?.Get<string?>("customDomainName"); }
             set { BackingStore?.Set("customDomainName", value); }
         }
+#nullable restore
 #else
         public string CustomDomainName {
             get { return BackingStore?.Get<string>("customDomainName"); }

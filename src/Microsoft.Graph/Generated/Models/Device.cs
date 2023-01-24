@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AlternativeSecurityId>? AlternativeSecurityIds {
             get { return BackingStore?.Get<List<AlternativeSecurityId>?>("alternativeSecurityIds"); }
             set { BackingStore?.Set("alternativeSecurityIds", value); }
         }
+#nullable restore
 #else
         public List<AlternativeSecurityId> AlternativeSecurityIds {
             get { return BackingStore?.Get<List<AlternativeSecurityId>>("alternativeSecurityIds"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Set of commands sent to this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Command>? Commands {
             get { return BackingStore?.Get<List<Command>?>("commands"); }
             set { BackingStore?.Set("commands", value); }
         }
+#nullable restore
 #else
         public List<Command> Commands {
             get { return BackingStore?.Get<List<Command>>("commands"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User-defined property set by Intune to automatically add devices to groups and simplify managing devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceCategory {
             get { return BackingStore?.Get<string?>("deviceCategory"); }
             set { BackingStore?.Set("deviceCategory", value); }
         }
+#nullable restore
 #else
         public string DeviceCategory {
             get { return BackingStore?.Get<string>("deviceCategory"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For internal use only. Set to null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceMetadata {
             get { return BackingStore?.Get<string?>("deviceMetadata"); }
             set { BackingStore?.Set("deviceMetadata", value); }
         }
+#nullable restore
 #else
         public string DeviceMetadata {
             get { return BackingStore?.Get<string>("deviceMetadata"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceOwnership {
             get { return BackingStore?.Get<string?>("deviceOwnership"); }
             set { BackingStore?.Set("deviceOwnership", value); }
         }
+#nullable restore
 #else
         public string DeviceOwnership {
             get { return BackingStore?.Get<string>("deviceOwnership"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DomainName {
             get { return BackingStore?.Get<string?>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#nullable restore
 #else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EnrollmentProfileName {
             get { return BackingStore?.Get<string?>("enrollmentProfileName"); }
             set { BackingStore?.Set("enrollmentProfileName", value); }
         }
+#nullable restore
 #else
         public string EnrollmentProfileName {
             get { return BackingStore?.Get<string>("enrollmentProfileName"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EnrollmentType {
             get { return BackingStore?.Get<string?>("enrollmentType"); }
             set { BackingStore?.Set("enrollmentType", value); }
         }
+#nullable restore
 #else
         public string EnrollmentType {
             get { return BackingStore?.Get<string>("enrollmentType"); }
@@ -147,10 +167,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, not, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OnPremisesExtensionAttributes? ExtensionAttributes {
             get { return BackingStore?.Get<OnPremisesExtensionAttributes?>("extensionAttributes"); }
             set { BackingStore?.Set("extensionAttributes", value); }
         }
+#nullable restore
 #else
         public OnPremisesExtensionAttributes ExtensionAttributes {
             get { return BackingStore?.Get<OnPremisesExtensionAttributes>("extensionAttributes"); }
@@ -159,10 +181,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of open extensions defined for the device. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Extension>? Extensions {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#nullable restore
 #else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
@@ -171,10 +195,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of hostNames for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Hostnames {
             get { return BackingStore?.Get<List<string>?>("hostnames"); }
             set { BackingStore?.Set("hostnames", value); }
         }
+#nullable restore
 #else
         public List<string> Hostnames {
             get { return BackingStore?.Get<List<string>>("hostnames"); }
@@ -203,10 +229,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Kind {
             get { return BackingStore?.Get<string?>("kind"); }
             set { BackingStore?.Set("kind", value); }
         }
+#nullable restore
 #else
         public string Kind {
             get { return BackingStore?.Get<string>("kind"); }
@@ -215,10 +243,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementType {
             get { return BackingStore?.Get<string?>("managementType"); }
             set { BackingStore?.Set("managementType", value); }
         }
+#nullable restore
 #else
         public string ManagementType {
             get { return BackingStore?.Get<string>("managementType"); }
@@ -227,10 +257,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Manufacturer of the device. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Manufacturer {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#nullable restore
 #else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
@@ -239,10 +271,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MdmAppId {
             get { return BackingStore?.Get<string?>("mdmAppId"); }
             set { BackingStore?.Set("mdmAppId", value); }
         }
+#nullable restore
 #else
         public string MdmAppId {
             get { return BackingStore?.Get<string>("mdmAppId"); }
@@ -251,10 +285,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? MemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> MemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
@@ -263,10 +299,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Model of the device. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Model {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#nullable restore
 #else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
@@ -275,10 +313,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -297,10 +337,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OperatingSystem {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
+#nullable restore
 #else
         public string OperatingSystem {
             get { return BackingStore?.Get<string>("operatingSystem"); }
@@ -309,10 +351,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OperatingSystemVersion {
             get { return BackingStore?.Get<string?>("operatingSystemVersion"); }
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
+#nullable restore
 #else
         public string OperatingSystemVersion {
             get { return BackingStore?.Get<string>("operatingSystemVersion"); }
@@ -321,10 +365,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? PhysicalIds {
             get { return BackingStore?.Get<List<string>?>("physicalIds"); }
             set { BackingStore?.Set("physicalIds", value); }
         }
+#nullable restore
 #else
         public List<string> PhysicalIds {
             get { return BackingStore?.Get<List<string>>("physicalIds"); }
@@ -333,10 +379,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Platform {
             get { return BackingStore?.Get<string?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
+#nullable restore
 #else
         public string Platform {
             get { return BackingStore?.Get<string>("platform"); }
@@ -345,10 +393,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProfileType {
             get { return BackingStore?.Get<string?>("profileType"); }
             set { BackingStore?.Set("profileType", value); }
         }
+#nullable restore
 #else
         public string ProfileType {
             get { return BackingStore?.Get<string>("profileType"); }
@@ -357,10 +407,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? RegisteredOwners {
             get { return BackingStore?.Get<List<DirectoryObject>?>("registeredOwners"); }
             set { BackingStore?.Set("registeredOwners", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> RegisteredOwners {
             get { return BackingStore?.Get<List<DirectoryObject>>("registeredOwners"); }
@@ -369,10 +421,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? RegisteredUsers {
             get { return BackingStore?.Get<List<DirectoryObject>?>("registeredUsers"); }
             set { BackingStore?.Set("registeredUsers", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> RegisteredUsers {
             get { return BackingStore?.Get<List<DirectoryObject>>("registeredUsers"); }
@@ -386,10 +440,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Status {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
@@ -398,10 +454,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SystemLabels {
             get { return BackingStore?.Get<List<string>?>("systemLabels"); }
             set { BackingStore?.Set("systemLabels", value); }
         }
+#nullable restore
 #else
         public List<string> SystemLabels {
             get { return BackingStore?.Get<List<string>>("systemLabels"); }
@@ -410,10 +468,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? TransitiveMemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> TransitiveMemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
@@ -422,10 +482,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TrustType {
             get { return BackingStore?.Get<string?>("trustType"); }
             set { BackingStore?.Set("trustType", value); }
         }
+#nullable restore
 #else
         public string TrustType {
             get { return BackingStore?.Get<string>("trustType"); }
@@ -434,10 +496,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the usage rights a device has been granted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UsageRight>? UsageRights {
             get { return BackingStore?.Get<List<UsageRight>?>("usageRights"); }
             set { BackingStore?.Set("usageRights", value); }
         }
+#nullable restore
 #else
         public List<UsageRight> UsageRights {
             get { return BackingStore?.Get<List<UsageRight>>("usageRights"); }

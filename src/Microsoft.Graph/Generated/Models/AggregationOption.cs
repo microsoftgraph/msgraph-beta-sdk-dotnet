@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The bucketDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public BucketAggregationDefinition? BucketDefinition {
             get { return BackingStore?.Get<BucketAggregationDefinition?>("bucketDefinition"); }
             set { BackingStore?.Set("bucketDefinition", value); }
         }
+#nullable restore
 #else
         public BucketAggregationDefinition BucketDefinition {
             get { return BackingStore?.Get<BucketAggregationDefinition>("bucketDefinition"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Computes aggregation on the field while the field exists in current entity type. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Field {
             get { return BackingStore?.Get<string?>("field"); }
             set { BackingStore?.Set("field", value); }
         }
+#nullable restore
 #else
         public string Field {
             get { return BackingStore?.Get<string>("field"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

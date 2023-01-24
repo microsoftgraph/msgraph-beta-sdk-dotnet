@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.ContentInfo? ContentInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo?>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.ContentInfo ContentInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ContentInfo>("contentInfo"); }

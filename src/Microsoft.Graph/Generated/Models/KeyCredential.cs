@@ -13,12 +13,14 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Custom key identifier</summary>
+        /// <summary>A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? CustomKeyIdentifier {
             get { return BackingStore?.Get<byte[]?>("customKeyIdentifier"); }
             set { BackingStore?.Set("customKeyIdentifier", value); }
         }
+#nullable restore
 #else
         public byte[] CustomKeyIdentifier {
             get { return BackingStore?.Get<byte[]>("customKeyIdentifier"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Friendly name for the key. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Key {
             get { return BackingStore?.Get<byte[]?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+#nullable restore
 #else
         public byte[] Key {
             get { return BackingStore?.Get<byte[]>("key"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The type of key credential; for example, Symmetric, AsymmetricX509Cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A string that describes the purpose for which the key can be used; for example, Verify.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Usage {
             get { return BackingStore?.Get<string?>("usage"); }
             set { BackingStore?.Set("usage", value); }
         }
+#nullable restore
 #else
         public string Usage {
             get { return BackingStore?.Get<string>("usage"); }

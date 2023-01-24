@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Delta {
     public class DeltaResponse : BaseDeltaFunctionResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.AdministrativeUnit>? Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AdministrativeUnit>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.AdministrativeUnit> Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AdministrativeUnit>>("value"); }

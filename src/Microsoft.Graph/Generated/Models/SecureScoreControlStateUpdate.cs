@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The assignedTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignedTo {
             get { return BackingStore?.Get<string?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
+#nullable restore
 #else
         public string AssignedTo {
             get { return BackingStore?.Get<string>("assignedTo"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Comment {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? State {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#nullable restore
 #else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The updatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UpdatedBy {
             get { return BackingStore?.Get<string?>("updatedBy"); }
             set { BackingStore?.Set("updatedBy", value); }
         }
+#nullable restore
 #else
         public string UpdatedBy {
             get { return BackingStore?.Get<string>("updatedBy"); }

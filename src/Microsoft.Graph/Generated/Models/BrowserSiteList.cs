@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BrowserSiteList : Entity, IParsable {
         /// <summary>The description of the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user who last modified the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user who published the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? PublishedBy {
             get { return BackingStore?.Get<IdentitySet?>("publishedBy"); }
             set { BackingStore?.Set("publishedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet PublishedBy {
             get { return BackingStore?.Get<IdentitySet>("publishedBy"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The current revision of the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Revision {
             get { return BackingStore?.Get<string?>("revision"); }
             set { BackingStore?.Set("revision", value); }
         }
+#nullable restore
 #else
         public string Revision {
             get { return BackingStore?.Get<string>("revision"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of shared cookies defined for the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BrowserSharedCookie>? SharedCookies {
             get { return BackingStore?.Get<List<BrowserSharedCookie>?>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
+#nullable restore
 #else
         public List<BrowserSharedCookie> SharedCookies {
             get { return BackingStore?.Get<List<BrowserSharedCookie>>("sharedCookies"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of sites defined for the site list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BrowserSite>? Sites {
             get { return BackingStore?.Get<List<BrowserSite>?>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
+#nullable restore
 #else
         public List<BrowserSite> Sites {
             get { return BackingStore?.Get<List<BrowserSite>>("sites"); }

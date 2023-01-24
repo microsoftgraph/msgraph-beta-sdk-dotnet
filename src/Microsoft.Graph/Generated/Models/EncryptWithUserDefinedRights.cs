@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The decryptionRightsManagementTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DecryptionRightsManagementTemplateId {
             get { return BackingStore?.Get<string?>("decryptionRightsManagementTemplateId"); }
             set { BackingStore?.Set("decryptionRightsManagementTemplateId", value); }
         }
+#nullable restore
 #else
         public string DecryptionRightsManagementTemplateId {
             get { return BackingStore?.Get<string>("decryptionRightsManagementTemplateId"); }

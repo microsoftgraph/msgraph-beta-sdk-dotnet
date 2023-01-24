@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConditionalAccessTemplate : Entity, IParsable {
         /// <summary>The user-friendly name of the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessPolicyDetail? Details {
             get { return BackingStore?.Get<ConditionalAccessPolicyDetail?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessPolicyDetail Details {
             get { return BackingStore?.Get<ConditionalAccessPolicyDetail>("details"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user-friendly name of the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }

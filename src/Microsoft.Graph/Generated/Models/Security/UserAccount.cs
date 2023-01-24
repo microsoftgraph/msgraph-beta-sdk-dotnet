@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class UserAccount : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The user account&apos;s displayed name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountName {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#nullable restore
 #else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The user object identifier in Azure AD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureAdUserId {
             get { return BackingStore?.Get<string?>("azureAdUserId"); }
             set { BackingStore?.Set("azureAdUserId", value); }
         }
+#nullable restore
 #else
         public string AzureAdUserId {
             get { return BackingStore?.Get<string>("azureAdUserId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the Active Directory domain of which the user is a member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DomainName {
             get { return BackingStore?.Get<string?>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#nullable restore
 #else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The user principal name of the account in Azure AD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The local security identifier of the user account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserSid {
             get { return BackingStore?.Get<string?>("userSid"); }
             set { BackingStore?.Set("userSid", value); }
         }
+#nullable restore
 #else
         public string UserSid {
             get { return BackingStore?.Get<string>("userSid"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttachmentSession : Entity, IParsable {
         /// <summary>The content streams that are uploaded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Content {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates a single value {start} that represents the location in the file where the next upload should begin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? NextExpectedRanges {
             get { return BackingStore?.Get<List<string>?>("nextExpectedRanges"); }
             set { BackingStore?.Set("nextExpectedRanges", value); }
         }
+#nullable restore
 #else
         public List<string> NextExpectedRanges {
             get { return BackingStore?.Get<List<string>>("nextExpectedRanges"); }

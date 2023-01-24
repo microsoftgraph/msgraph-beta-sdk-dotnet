@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The identifier for the account that offboarded the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OffboardedByUserId {
             get { return BackingStore?.Get<string?>("offboardedByUserId"); }
             set { BackingStore?.Set("offboardedByUserId", value); }
         }
+#nullable restore
 #else
         public string OffboardedByUserId {
             get { return BackingStore?.Get<string>("offboardedByUserId"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The identifier for the account that onboarded the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnboardedByUserId {
             get { return BackingStore?.Get<string?>("onboardedByUserId"); }
             set { BackingStore?.Set("onboardedByUserId", value); }
         }
+#nullable restore
 #else
         public string OnboardedByUserId {
             get { return BackingStore?.Get<string>("onboardedByUserId"); }
@@ -81,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The collection of workload statues for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkloadStatus>? WorkloadStatuses {
             get { return BackingStore?.Get<List<WorkloadStatus>?>("workloadStatuses"); }
             set { BackingStore?.Set("workloadStatuses", value); }
         }
+#nullable restore
 #else
         public List<WorkloadStatus> WorkloadStatuses {
             get { return BackingStore?.Get<List<WorkloadStatus>>("workloadStatuses"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The timeSeries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TimeSeriesParameter? TimeSeries {
             get { return BackingStore?.Get<TimeSeriesParameter?>("timeSeries"); }
             set { BackingStore?.Set("timeSeries", value); }
         }
+#nullable restore
 #else
         public TimeSeriesParameter TimeSeries {
             get { return BackingStore?.Get<TimeSeriesParameter>("timeSeries"); }

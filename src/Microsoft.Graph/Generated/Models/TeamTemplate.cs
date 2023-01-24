@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamTemplate : Entity, IParsable {
         /// <summary>The definitions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamTemplateDefinition>? Definitions {
             get { return BackingStore?.Get<List<TeamTemplateDefinition>?>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
+#nullable restore
 #else
         public List<TeamTemplateDefinition> Definitions {
             get { return BackingStore?.Get<List<TeamTemplateDefinition>>("definitions"); }

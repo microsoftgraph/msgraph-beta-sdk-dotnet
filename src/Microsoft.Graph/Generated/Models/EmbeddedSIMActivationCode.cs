@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IntegratedCircuitCardIdentifier {
             get { return BackingStore?.Get<string?>("integratedCircuitCardIdentifier"); }
             set { BackingStore?.Set("integratedCircuitCardIdentifier", value); }
         }
+#nullable restore
 #else
         public string IntegratedCircuitCardIdentifier {
             get { return BackingStore?.Get<string>("integratedCircuitCardIdentifier"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MatchingIdentifier {
             get { return BackingStore?.Get<string?>("matchingIdentifier"); }
             set { BackingStore?.Set("matchingIdentifier", value); }
         }
+#nullable restore
 #else
         public string MatchingIdentifier {
             get { return BackingStore?.Get<string>("matchingIdentifier"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SmdpPlusServerAddress {
             get { return BackingStore?.Get<string?>("smdpPlusServerAddress"); }
             set { BackingStore?.Set("smdpPlusServerAddress", value); }
         }
+#nullable restore
 #else
         public string SmdpPlusServerAddress {
             get { return BackingStore?.Get<string>("smdpPlusServerAddress"); }

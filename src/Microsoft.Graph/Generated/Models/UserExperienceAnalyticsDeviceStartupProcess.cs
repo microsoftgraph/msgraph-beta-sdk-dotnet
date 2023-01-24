@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsDeviceStartupProcess : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User experience analytics device startup process name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProcessName {
             get { return BackingStore?.Get<string?>("processName"); }
             set { BackingStore?.Set("processName", value); }
         }
+#nullable restore
 #else
         public string ProcessName {
             get { return BackingStore?.Get<string>("processName"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user experience analytics device startup process product name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductName {
             get { return BackingStore?.Get<string?>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
+#nullable restore
 #else
         public string ProductName {
             get { return BackingStore?.Get<string>("productName"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The User experience analytics device startup process publisher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Publisher {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#nullable restore
 #else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }

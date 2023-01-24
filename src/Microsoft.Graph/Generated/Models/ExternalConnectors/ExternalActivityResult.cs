@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ExternalActivityResult : ExternalActivity, IParsable {
         /// <summary>Error information explaining failure to process external activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.PublicError? Error {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.PublicError Error {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError>("error"); }

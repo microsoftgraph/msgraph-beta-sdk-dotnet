@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The file hash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileHash {
             get { return BackingStore?.Get<string?>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
+#nullable restore
 #else
         public string FileHash {
             get { return BackingStore?.Get<string>("fileHash"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileName {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#nullable restore
 #else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

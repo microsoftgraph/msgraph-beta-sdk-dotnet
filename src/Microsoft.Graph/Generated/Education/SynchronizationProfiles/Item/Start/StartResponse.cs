@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
     public class StartResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationFileSynchronizationVerificationMessage>? Value {
             get { return BackingStore?.Get<List<EducationFileSynchronizationVerificationMessage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<EducationFileSynchronizationVerificationMessage> Value {
             get { return BackingStore?.Get<List<EducationFileSynchronizationVerificationMessage>>("value"); }

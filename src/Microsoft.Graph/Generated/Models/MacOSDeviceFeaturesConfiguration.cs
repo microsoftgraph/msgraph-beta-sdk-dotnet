@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets a list that maps apps to their associated domains. Application identifiers must be unique. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSAssociatedDomainsItem>? AppAssociatedDomains {
             get { return BackingStore?.Get<List<MacOSAssociatedDomainsItem>?>("appAssociatedDomains"); }
             set { BackingStore?.Set("appAssociatedDomains", value); }
         }
+#nullable restore
 #else
         public List<MacOSAssociatedDomainsItem> AppAssociatedDomains {
             get { return BackingStore?.Get<List<MacOSAssociatedDomainsItem>>("appAssociatedDomains"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>DEPRECATED: use appAssociatedDomains instead. Gets or sets a list that maps apps to their associated domains. The key should match the app&apos;s ID, and the value should be a string in the form of &apos;service:domain&apos; where domain is a fully qualified hostname (e.g. webcredentials:example.com). This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? AssociatedDomains {
             get { return BackingStore?.Get<List<KeyValuePair>?>("associatedDomains"); }
             set { BackingStore?.Set("associatedDomains", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> AssociatedDomains {
             get { return BackingStore?.Get<List<KeyValuePair>>("associatedDomains"); }
@@ -66,10 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of applications, files, folders, and other items to launch when the user logs in. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSLaunchItem>? AutoLaunchItems {
             get { return BackingStore?.Get<List<MacOSLaunchItem>?>("autoLaunchItems"); }
             set { BackingStore?.Set("autoLaunchItems", value); }
         }
+#nullable restore
 #else
         public List<MacOSLaunchItem> AutoLaunchItems {
             get { return BackingStore?.Get<List<MacOSLaunchItem>>("autoLaunchItems"); }
@@ -88,10 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of custom IP ranges content caches will use to listen for clients. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IpRange>? ContentCachingClientListenRanges {
             get { return BackingStore?.Get<List<IpRange>?>("contentCachingClientListenRanges"); }
             set { BackingStore?.Set("contentCachingClientListenRanges", value); }
         }
+#nullable restore
 #else
         public List<IpRange> ContentCachingClientListenRanges {
             get { return BackingStore?.Get<List<IpRange>>("contentCachingClientListenRanges"); }
@@ -105,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The path to the directory used to store cached content. The value must be (or end with) /Library/Application Support/Apple/AssetCache/Data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentCachingDataPath {
             get { return BackingStore?.Get<string?>("contentCachingDataPath"); }
             set { BackingStore?.Set("contentCachingDataPath", value); }
         }
+#nullable restore
 #else
         public string ContentCachingDataPath {
             get { return BackingStore?.Get<string>("contentCachingDataPath"); }
@@ -147,10 +157,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of IP addresses representing parent content caches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ContentCachingParents {
             get { return BackingStore?.Get<List<string>?>("contentCachingParents"); }
             set { BackingStore?.Set("contentCachingParents", value); }
         }
+#nullable restore
 #else
         public List<string> ContentCachingParents {
             get { return BackingStore?.Get<List<string>>("contentCachingParents"); }
@@ -164,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of custom IP ranges content caches will use to query for content from peers caches. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IpRange>? ContentCachingPeerFilterRanges {
             get { return BackingStore?.Get<List<IpRange>?>("contentCachingPeerFilterRanges"); }
             set { BackingStore?.Set("contentCachingPeerFilterRanges", value); }
         }
+#nullable restore
 #else
         public List<IpRange> ContentCachingPeerFilterRanges {
             get { return BackingStore?.Get<List<IpRange>>("contentCachingPeerFilterRanges"); }
@@ -176,10 +190,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of custom IP ranges content caches will use to listen for peer caches. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IpRange>? ContentCachingPeerListenRanges {
             get { return BackingStore?.Get<List<IpRange>?>("contentCachingPeerListenRanges"); }
             set { BackingStore?.Set("contentCachingPeerListenRanges", value); }
         }
+#nullable restore
 #else
         public List<IpRange> ContentCachingPeerListenRanges {
             get { return BackingStore?.Get<List<IpRange>>("contentCachingPeerListenRanges"); }
@@ -198,10 +214,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of custom IP ranges that Apple&apos;s content caching service should use to match clients to content caches. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IpRange>? ContentCachingPublicRanges {
             get { return BackingStore?.Get<List<IpRange>?>("contentCachingPublicRanges"); }
             set { BackingStore?.Set("contentCachingPublicRanges", value); }
         }
+#nullable restore
 #else
         public List<IpRange> ContentCachingPublicRanges {
             get { return BackingStore?.Get<List<IpRange>>("contentCachingPublicRanges"); }
@@ -220,10 +238,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Custom text to be displayed on the login window.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LoginWindowText {
             get { return BackingStore?.Get<string?>("loginWindowText"); }
             set { BackingStore?.Set("loginWindowText", value); }
         }
+#nullable restore
 #else
         public string LoginWindowText {
             get { return BackingStore?.Get<string>("loginWindowText"); }
@@ -237,10 +257,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets a single sign-on extension profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension? MacOSSingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension?>("macOSSingleSignOnExtension"); }
             set { BackingStore?.Set("macOSSingleSignOnExtension", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension MacOSSingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension>("macOSSingleSignOnExtension"); }
@@ -279,10 +301,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets a single sign-on extension profile. Deprecated: use MacOSSingleSignOnExtension instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.SingleSignOnExtension? SingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension?>("singleSignOnExtension"); }
             set { BackingStore?.Set("singleSignOnExtension", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.SingleSignOnExtension SingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension>("singleSignOnExtension"); }
@@ -291,10 +315,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>PKINIT Certificate for the authentication with single sign-on extensions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MacOSCertificateProfileBase? SingleSignOnExtensionPkinitCertificate {
             get { return BackingStore?.Get<MacOSCertificateProfileBase?>("singleSignOnExtensionPkinitCertificate"); }
             set { BackingStore?.Set("singleSignOnExtensionPkinitCertificate", value); }
         }
+#nullable restore
 #else
         public MacOSCertificateProfileBase SingleSignOnExtensionPkinitCertificate {
             get { return BackingStore?.Get<MacOSCertificateProfileBase>("singleSignOnExtensionPkinitCertificate"); }

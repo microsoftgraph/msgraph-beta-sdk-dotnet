@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TextClassificationRequest : Entity, IParsable {
         /// <summary>The fileExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileExtension {
             get { return BackingStore?.Get<string?>("fileExtension"); }
             set { BackingStore?.Set("fileExtension", value); }
         }
+#nullable restore
 #else
         public string FileExtension {
             get { return BackingStore?.Get<string>("fileExtension"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The sensitiveTypeIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SensitiveTypeIds {
             get { return BackingStore?.Get<List<string>?>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
+#nullable restore
 #else
         public List<string> SensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Text {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }

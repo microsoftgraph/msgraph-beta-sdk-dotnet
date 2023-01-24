@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CommsOperation : Entity, IParsable {
         /// <summary>Unique Client Context string. Max limit is 256 chars.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientContext {
             get { return BackingStore?.Get<string?>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
+#nullable restore
 #else
         public string ClientContext {
             get { return BackingStore?.Get<string>("clientContext"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The result information. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ResultInfo? ResultInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultInfo?>("resultInfo"); }
             set { BackingStore?.Set("resultInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ResultInfo ResultInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultInfo>("resultInfo"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ExternalActivityCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExternalActivity>? Value {
             get { return BackingStore?.Get<List<ExternalActivity>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<ExternalActivity> Value {
             get { return BackingStore?.Get<List<ExternalActivity>>("value"); }

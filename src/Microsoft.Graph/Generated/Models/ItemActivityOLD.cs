@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemActivityOLD : Entity, IParsable {
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemActionSet? Action {
             get { return BackingStore?.Get<ItemActionSet?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
+#nullable restore
 #else
         public ItemActionSet Action {
             get { return BackingStore?.Get<ItemActionSet>("action"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Actor {
             get { return BackingStore?.Get<IdentitySet?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
+#nullable restore
 #else
         public IdentitySet Actor {
             get { return BackingStore?.Get<IdentitySet>("actor"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The driveItem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DriveItem? DriveItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("driveItem"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The listItem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ListItem? ListItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem?>("listItem"); }
             set { BackingStore?.Set("listItem", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ListItem ListItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem>("listItem"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The times property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemActivityTimeSet? Times {
             get { return BackingStore?.Get<ItemActivityTimeSet?>("times"); }
             set { BackingStore?.Set("times", value); }
         }
+#nullable restore
 #else
         public ItemActivityTimeSet Times {
             get { return BackingStore?.Get<ItemActivityTimeSet>("times"); }

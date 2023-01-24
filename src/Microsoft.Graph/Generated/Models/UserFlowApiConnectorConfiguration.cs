@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The postAttributeCollection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentityApiConnector? PostAttributeCollection {
             get { return BackingStore?.Get<IdentityApiConnector?>("postAttributeCollection"); }
             set { BackingStore?.Set("postAttributeCollection", value); }
         }
+#nullable restore
 #else
         public IdentityApiConnector PostAttributeCollection {
             get { return BackingStore?.Get<IdentityApiConnector>("postAttributeCollection"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The postFederationSignup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentityApiConnector? PostFederationSignup {
             get { return BackingStore?.Get<IdentityApiConnector?>("postFederationSignup"); }
             set { BackingStore?.Set("postFederationSignup", value); }
         }
+#nullable restore
 #else
         public IdentityApiConnector PostFederationSignup {
             get { return BackingStore?.Get<IdentityApiConnector>("postFederationSignup"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The preTokenIssuance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentityApiConnector? PreTokenIssuance {
             get { return BackingStore?.Get<IdentityApiConnector?>("preTokenIssuance"); }
             set { BackingStore?.Set("preTokenIssuance", value); }
         }
+#nullable restore
 #else
         public IdentityApiConnector PreTokenIssuance {
             get { return BackingStore?.Get<IdentityApiConnector>("preTokenIssuance"); }

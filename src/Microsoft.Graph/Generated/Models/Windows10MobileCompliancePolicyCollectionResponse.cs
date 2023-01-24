@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10MobileCompliancePolicyCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Windows10MobileCompliancePolicy>? Value {
             get { return BackingStore?.Get<List<Windows10MobileCompliancePolicy>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Windows10MobileCompliancePolicy> Value {
             get { return BackingStore?.Get<List<Windows10MobileCompliancePolicy>>("value"); }

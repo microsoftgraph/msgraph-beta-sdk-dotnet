@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MatchingDlpRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DlpActionInfo>? Actions {
             get { return BackingStore?.Get<List<DlpActionInfo>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
+#nullable restore
 #else
         public List<DlpActionInfo> Actions {
             get { return BackingStore?.Get<List<DlpActionInfo>>("actions"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policyId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyId {
             get { return BackingStore?.Get<string?>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
+#nullable restore
 #else
         public string PolicyId {
             get { return BackingStore?.Get<string>("policyId"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyName {
             get { return BackingStore?.Get<string?>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
+#nullable restore
 #else
         public string PolicyName {
             get { return BackingStore?.Get<string>("policyName"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ruleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RuleId {
             get { return BackingStore?.Get<string?>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
+#nullable restore
 #else
         public string RuleId {
             get { return BackingStore?.Get<string>("ruleId"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ruleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RuleName {
             get { return BackingStore?.Get<string?>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
+#nullable restore
 #else
         public string RuleName {
             get { return BackingStore?.Get<string>("ruleName"); }

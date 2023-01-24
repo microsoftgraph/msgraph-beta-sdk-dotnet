@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DlpEvaluatePoliciesJobResponse : JobResponseBase, IParsable {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DlpPoliciesJobResult? Result {
             get { return BackingStore?.Get<DlpPoliciesJobResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
+#nullable restore
 #else
         public DlpPoliciesJobResult Result {
             get { return BackingStore?.Get<DlpPoliciesJobResult>("result"); }

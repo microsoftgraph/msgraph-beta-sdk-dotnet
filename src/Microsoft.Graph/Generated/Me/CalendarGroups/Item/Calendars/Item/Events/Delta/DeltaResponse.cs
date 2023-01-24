@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.Events.Delt
     public class DeltaResponse : BaseDeltaFunctionResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Event>? Value {
             get { return BackingStore?.Get<List<Event>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Event> Value {
             get { return BackingStore?.Get<List<Event>>("value"); }

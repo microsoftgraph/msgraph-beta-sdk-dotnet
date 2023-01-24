@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Image file details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public FileDetails? ImageFile {
             get { return BackingStore?.Get<FileDetails?>("imageFile"); }
             set { BackingStore?.Set("imageFile", value); }
         }
+#nullable restore
 #else
         public FileDetails ImageFile {
             get { return BackingStore?.Get<FileDetails>("imageFile"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MdeDeviceId {
             get { return BackingStore?.Get<string?>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
+#nullable restore
 #else
         public string MdeDeviceId {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Parent process image file details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public FileDetails? ParentProcessImageFile {
             get { return BackingStore?.Get<FileDetails?>("parentProcessImageFile"); }
             set { BackingStore?.Set("parentProcessImageFile", value); }
         }
+#nullable restore
 #else
         public FileDetails ParentProcessImageFile {
             get { return BackingStore?.Get<FileDetails>("parentProcessImageFile"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Command line used to create the new process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProcessCommandLine {
             get { return BackingStore?.Get<string?>("processCommandLine"); }
             set { BackingStore?.Set("processCommandLine", value); }
         }
+#nullable restore
 #else
         public string ProcessCommandLine {
             get { return BackingStore?.Get<string>("processCommandLine"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>User details of the user that ran the process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.UserAccount? UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount?>("userAccount"); }
             set { BackingStore?.Set("userAccount", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.UserAccount UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount>("userAccount"); }

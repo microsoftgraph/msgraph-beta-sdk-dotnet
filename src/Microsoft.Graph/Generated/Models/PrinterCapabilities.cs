@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A list of supported bottom margins(in microns) for the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<int?>? BottomMargins {
             get { return BackingStore?.Get<List<int?>?>("bottomMargins"); }
             set { BackingStore?.Set("bottomMargins", value); }
         }
+#nullable restore
 #else
         public List<int?> BottomMargins {
             get { return BackingStore?.Get<List<int?>>("bottomMargins"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The color modes supported by the printer. Valid values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintColorMode?>? ColorModes {
             get { return BackingStore?.Get<List<PrintColorMode?>?>("colorModes"); }
             set { BackingStore?.Set("colorModes", value); }
         }
+#nullable restore
 #else
         public List<PrintColorMode?> ColorModes {
             get { return BackingStore?.Get<List<PrintColorMode?>>("colorModes"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ContentTypes {
             get { return BackingStore?.Get<List<string>?>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
+#nullable restore
 #else
         public List<string> ContentTypes {
             get { return BackingStore?.Get<List<string>>("contentTypes"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The range of copies per job supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IntegerRange? CopiesPerJob {
             get { return BackingStore?.Get<IntegerRange?>("copiesPerJob"); }
             set { BackingStore?.Set("copiesPerJob", value); }
         }
+#nullable restore
 #else
         public IntegerRange CopiesPerJob {
             get { return BackingStore?.Get<IntegerRange>("copiesPerJob"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of print resolutions in DPI that are supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<int?>? Dpis {
             get { return BackingStore?.Get<List<int?>?>("dpis"); }
             set { BackingStore?.Set("dpis", value); }
         }
+#nullable restore
 #else
         public List<int?> Dpis {
             get { return BackingStore?.Get<List<int?>>("dpis"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of duplex modes that are supported by the printer. Valid values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintDuplexMode?>? DuplexModes {
             get { return BackingStore?.Get<List<PrintDuplexMode?>?>("duplexModes"); }
             set { BackingStore?.Set("duplexModes", value); }
         }
+#nullable restore
 #else
         public List<PrintDuplexMode?> DuplexModes {
             get { return BackingStore?.Get<List<PrintDuplexMode?>>("duplexModes"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The feedDirections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrinterFeedDirection?>? FeedDirections {
             get { return BackingStore?.Get<List<PrinterFeedDirection?>?>("feedDirections"); }
             set { BackingStore?.Set("feedDirections", value); }
         }
+#nullable restore
 #else
         public List<PrinterFeedDirection?> FeedDirections {
             get { return BackingStore?.Get<List<PrinterFeedDirection?>>("feedDirections"); }
@@ -104,10 +118,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of feed orientations that are supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrinterFeedOrientation?>? FeedOrientations {
             get { return BackingStore?.Get<List<PrinterFeedOrientation?>?>("feedOrientations"); }
             set { BackingStore?.Set("feedOrientations", value); }
         }
+#nullable restore
 #else
         public List<PrinterFeedOrientation?> FeedOrientations {
             get { return BackingStore?.Get<List<PrinterFeedOrientation?>>("feedOrientations"); }
@@ -116,10 +132,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Finishing processes the printer supports for a printed document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintFinishing?>? Finishings {
             get { return BackingStore?.Get<List<PrintFinishing?>?>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
+#nullable restore
 #else
         public List<PrintFinishing?> Finishings {
             get { return BackingStore?.Get<List<PrintFinishing?>>("finishings"); }
@@ -128,10 +146,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Supported input bins for the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? InputBins {
             get { return BackingStore?.Get<List<string>?>("inputBins"); }
             set { BackingStore?.Set("inputBins", value); }
         }
+#nullable restore
 #else
         public List<string> InputBins {
             get { return BackingStore?.Get<List<string>>("inputBins"); }
@@ -150,10 +170,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of supported left margins(in microns) for the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<int?>? LeftMargins {
             get { return BackingStore?.Get<List<int?>?>("leftMargins"); }
             set { BackingStore?.Set("leftMargins", value); }
         }
+#nullable restore
 #else
         public List<int?> LeftMargins {
             get { return BackingStore?.Get<List<int?>>("leftMargins"); }
@@ -162,10 +184,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The media (i.e., paper) colors supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? MediaColors {
             get { return BackingStore?.Get<List<string>?>("mediaColors"); }
             set { BackingStore?.Set("mediaColors", value); }
         }
+#nullable restore
 #else
         public List<string> MediaColors {
             get { return BackingStore?.Get<List<string>>("mediaColors"); }
@@ -174,10 +198,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? MediaSizes {
             get { return BackingStore?.Get<List<string>?>("mediaSizes"); }
             set { BackingStore?.Set("mediaSizes", value); }
         }
+#nullable restore
 #else
         public List<string> MediaSizes {
             get { return BackingStore?.Get<List<string>>("mediaSizes"); }
@@ -186,10 +212,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The media types supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? MediaTypes {
             get { return BackingStore?.Get<List<string>?>("mediaTypes"); }
             set { BackingStore?.Set("mediaTypes", value); }
         }
+#nullable restore
 #else
         public List<string> MediaTypes {
             get { return BackingStore?.Get<List<string>>("mediaTypes"); }
@@ -198,10 +226,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The presentation directions supported by the printer. Supported values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintMultipageLayout?>? MultipageLayouts {
             get { return BackingStore?.Get<List<PrintMultipageLayout?>?>("multipageLayouts"); }
             set { BackingStore?.Set("multipageLayouts", value); }
         }
+#nullable restore
 #else
         public List<PrintMultipageLayout?> MultipageLayouts {
             get { return BackingStore?.Get<List<PrintMultipageLayout?>>("multipageLayouts"); }
@@ -210,10 +240,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -222,10 +254,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The print orientations supported by the printer. Valid values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintOrientation?>? Orientations {
             get { return BackingStore?.Get<List<PrintOrientation?>?>("orientations"); }
             set { BackingStore?.Set("orientations", value); }
         }
+#nullable restore
 #else
         public List<PrintOrientation?> Orientations {
             get { return BackingStore?.Get<List<PrintOrientation?>>("orientations"); }
@@ -234,10 +268,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The printer&apos;s supported output bins (trays).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? OutputBins {
             get { return BackingStore?.Get<List<string>?>("outputBins"); }
             set { BackingStore?.Set("outputBins", value); }
         }
+#nullable restore
 #else
         public List<string> OutputBins {
             get { return BackingStore?.Get<List<string>>("outputBins"); }
@@ -246,10 +282,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Supported number of Input Pages to impose upon a single Impression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<int?>? PagesPerSheet {
             get { return BackingStore?.Get<List<int?>?>("pagesPerSheet"); }
             set { BackingStore?.Set("pagesPerSheet", value); }
         }
+#nullable restore
 #else
         public List<int?> PagesPerSheet {
             get { return BackingStore?.Get<List<int?>>("pagesPerSheet"); }
@@ -258,10 +296,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The print qualities supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintQuality?>? Qualities {
             get { return BackingStore?.Get<List<PrintQuality?>?>("qualities"); }
             set { BackingStore?.Set("qualities", value); }
         }
+#nullable restore
 #else
         public List<PrintQuality?> Qualities {
             get { return BackingStore?.Get<List<PrintQuality?>>("qualities"); }
@@ -270,10 +310,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of supported right margins(in microns) for the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<int?>? RightMargins {
             get { return BackingStore?.Get<List<int?>?>("rightMargins"); }
             set { BackingStore?.Set("rightMargins", value); }
         }
+#nullable restore
 #else
         public List<int?> RightMargins {
             get { return BackingStore?.Get<List<int?>>("rightMargins"); }
@@ -282,10 +324,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Supported print scalings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintScaling?>? Scalings {
             get { return BackingStore?.Get<List<PrintScaling?>?>("scalings"); }
             set { BackingStore?.Set("scalings", value); }
         }
+#nullable restore
 #else
         public List<PrintScaling?> Scalings {
             get { return BackingStore?.Get<List<PrintScaling?>>("scalings"); }
@@ -294,10 +338,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedColorConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintColorConfiguration?>? SupportedColorConfigurations {
             get { return BackingStore?.Get<List<PrintColorConfiguration?>?>("supportedColorConfigurations"); }
             set { BackingStore?.Set("supportedColorConfigurations", value); }
         }
+#nullable restore
 #else
         public List<PrintColorConfiguration?> SupportedColorConfigurations {
             get { return BackingStore?.Get<List<PrintColorConfiguration?>>("supportedColorConfigurations"); }
@@ -306,10 +352,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedCopiesPerJob property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IntegerRange? SupportedCopiesPerJob {
             get { return BackingStore?.Get<IntegerRange?>("supportedCopiesPerJob"); }
             set { BackingStore?.Set("supportedCopiesPerJob", value); }
         }
+#nullable restore
 #else
         public IntegerRange SupportedCopiesPerJob {
             get { return BackingStore?.Get<IntegerRange>("supportedCopiesPerJob"); }
@@ -318,10 +366,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedDocumentMimeTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SupportedDocumentMimeTypes {
             get { return BackingStore?.Get<List<string>?>("supportedDocumentMimeTypes"); }
             set { BackingStore?.Set("supportedDocumentMimeTypes", value); }
         }
+#nullable restore
 #else
         public List<string> SupportedDocumentMimeTypes {
             get { return BackingStore?.Get<List<string>>("supportedDocumentMimeTypes"); }
@@ -330,10 +380,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedDuplexConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintDuplexConfiguration?>? SupportedDuplexConfigurations {
             get { return BackingStore?.Get<List<PrintDuplexConfiguration?>?>("supportedDuplexConfigurations"); }
             set { BackingStore?.Set("supportedDuplexConfigurations", value); }
         }
+#nullable restore
 #else
         public List<PrintDuplexConfiguration?> SupportedDuplexConfigurations {
             get { return BackingStore?.Get<List<PrintDuplexConfiguration?>>("supportedDuplexConfigurations"); }
@@ -342,10 +394,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedFinishings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintFinishing?>? SupportedFinishings {
             get { return BackingStore?.Get<List<PrintFinishing?>?>("supportedFinishings"); }
             set { BackingStore?.Set("supportedFinishings", value); }
         }
+#nullable restore
 #else
         public List<PrintFinishing?> SupportedFinishings {
             get { return BackingStore?.Get<List<PrintFinishing?>>("supportedFinishings"); }
@@ -354,10 +408,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedMediaColors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SupportedMediaColors {
             get { return BackingStore?.Get<List<string>?>("supportedMediaColors"); }
             set { BackingStore?.Set("supportedMediaColors", value); }
         }
+#nullable restore
 #else
         public List<string> SupportedMediaColors {
             get { return BackingStore?.Get<List<string>>("supportedMediaColors"); }
@@ -366,10 +422,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedMediaSizes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SupportedMediaSizes {
             get { return BackingStore?.Get<List<string>?>("supportedMediaSizes"); }
             set { BackingStore?.Set("supportedMediaSizes", value); }
         }
+#nullable restore
 #else
         public List<string> SupportedMediaSizes {
             get { return BackingStore?.Get<List<string>>("supportedMediaSizes"); }
@@ -378,10 +436,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedMediaTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintMediaType?>? SupportedMediaTypes {
             get { return BackingStore?.Get<List<PrintMediaType?>?>("supportedMediaTypes"); }
             set { BackingStore?.Set("supportedMediaTypes", value); }
         }
+#nullable restore
 #else
         public List<PrintMediaType?> SupportedMediaTypes {
             get { return BackingStore?.Get<List<PrintMediaType?>>("supportedMediaTypes"); }
@@ -390,10 +450,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedOrientations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintOrientation?>? SupportedOrientations {
             get { return BackingStore?.Get<List<PrintOrientation?>?>("supportedOrientations"); }
             set { BackingStore?.Set("supportedOrientations", value); }
         }
+#nullable restore
 #else
         public List<PrintOrientation?> SupportedOrientations {
             get { return BackingStore?.Get<List<PrintOrientation?>>("supportedOrientations"); }
@@ -402,10 +464,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedOutputBins property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SupportedOutputBins {
             get { return BackingStore?.Get<List<string>?>("supportedOutputBins"); }
             set { BackingStore?.Set("supportedOutputBins", value); }
         }
+#nullable restore
 #else
         public List<string> SupportedOutputBins {
             get { return BackingStore?.Get<List<string>>("supportedOutputBins"); }
@@ -414,10 +478,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedPagesPerSheet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IntegerRange? SupportedPagesPerSheet {
             get { return BackingStore?.Get<IntegerRange?>("supportedPagesPerSheet"); }
             set { BackingStore?.Set("supportedPagesPerSheet", value); }
         }
+#nullable restore
 #else
         public IntegerRange SupportedPagesPerSheet {
             get { return BackingStore?.Get<IntegerRange>("supportedPagesPerSheet"); }
@@ -426,10 +492,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedPresentationDirections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintPresentationDirection?>? SupportedPresentationDirections {
             get { return BackingStore?.Get<List<PrintPresentationDirection?>?>("supportedPresentationDirections"); }
             set { BackingStore?.Set("supportedPresentationDirections", value); }
         }
+#nullable restore
 #else
         public List<PrintPresentationDirection?> SupportedPresentationDirections {
             get { return BackingStore?.Get<List<PrintPresentationDirection?>>("supportedPresentationDirections"); }
@@ -438,10 +506,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedPrintQualities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintQuality?>? SupportedPrintQualities {
             get { return BackingStore?.Get<List<PrintQuality?>?>("supportedPrintQualities"); }
             set { BackingStore?.Set("supportedPrintQualities", value); }
         }
+#nullable restore
 #else
         public List<PrintQuality?> SupportedPrintQualities {
             get { return BackingStore?.Get<List<PrintQuality?>>("supportedPrintQualities"); }
@@ -455,10 +525,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of supported top margins(in microns) for the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<int?>? TopMargins {
             get { return BackingStore?.Get<List<int?>?>("topMargins"); }
             set { BackingStore?.Set("topMargins", value); }
         }
+#nullable restore
 #else
         public List<int?> TopMargins {
             get { return BackingStore?.Get<List<int?>>("topMargins"); }

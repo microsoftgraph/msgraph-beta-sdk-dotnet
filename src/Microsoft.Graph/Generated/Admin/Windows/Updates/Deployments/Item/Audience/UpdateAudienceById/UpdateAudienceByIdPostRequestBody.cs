@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
     public class UpdateAudienceByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AddExclusions {
             get { return BackingStore?.Get<List<string>?>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
+#nullable restore
 #else
         public List<string> AddExclusions {
             get { return BackingStore?.Get<List<string>>("addExclusions"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
         }
         /// <summary>The addMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AddMembers {
             get { return BackingStore?.Get<List<string>?>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
+#nullable restore
 #else
         public List<string> AddMembers {
             get { return BackingStore?.Get<List<string>>("addMembers"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The memberEntityType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MemberEntityType {
             get { return BackingStore?.Get<string?>("memberEntityType"); }
             set { BackingStore?.Set("memberEntityType", value); }
         }
+#nullable restore
 #else
         public string MemberEntityType {
             get { return BackingStore?.Get<string>("memberEntityType"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
 #endif
         /// <summary>The removeExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RemoveExclusions {
             get { return BackingStore?.Get<List<string>?>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
+#nullable restore
 #else
         public List<string> RemoveExclusions {
             get { return BackingStore?.Get<List<string>>("removeExclusions"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.U
 #endif
         /// <summary>The removeMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RemoveMembers {
             get { return BackingStore?.Get<List<string>?>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
+#nullable restore
 #else
         public List<string> RemoveMembers {
             get { return BackingStore?.Get<List<string>>("removeMembers"); }

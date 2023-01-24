@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The wdacPolicyAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>? WdacPolicyAssignments {
             get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>?>("wdacPolicyAssignments"); }
             set { BackingStore?.Set("wdacPolicyAssignments", value); }
         }
+#nullable restore
 #else
         public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> WdacPolicyAssignments {
             get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>>("wdacPolicyAssignments"); }

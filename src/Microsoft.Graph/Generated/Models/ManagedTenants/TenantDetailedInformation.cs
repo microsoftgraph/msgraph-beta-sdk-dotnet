@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class TenantDetailedInformation : Entity, IParsable {
         /// <summary>The city where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? City {
             get { return BackingStore?.Get<string?>("city"); }
             set { BackingStore?.Set("city", value); }
         }
+#nullable restore
 #else
         public string City {
             get { return BackingStore?.Get<string>("city"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The code for the country where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CountryCode {
             get { return BackingStore?.Get<string?>("countryCode"); }
             set { BackingStore?.Set("countryCode", value); }
         }
+#nullable restore
 #else
         public string CountryCode {
             get { return BackingStore?.Get<string>("countryCode"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The name for the country where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CountryName {
             get { return BackingStore?.Get<string?>("countryName"); }
             set { BackingStore?.Set("countryName", value); }
         }
+#nullable restore
 #else
         public string CountryName {
             get { return BackingStore?.Get<string>("countryName"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The default domain name for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultDomainName {
             get { return BackingStore?.Get<string?>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
+#nullable restore
 #else
         public string DefaultDomainName {
             get { return BackingStore?.Get<string>("defaultDomainName"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The display name for the managed tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The business industry associated with the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IndustryName {
             get { return BackingStore?.Get<string?>("industryName"); }
             set { BackingStore?.Set("industryName", value); }
         }
+#nullable restore
 #else
         public string IndustryName {
             get { return BackingStore?.Get<string>("industryName"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The region where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Region {
             get { return BackingStore?.Get<string?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
+#nullable restore
 #else
         public string Region {
             get { return BackingStore?.Get<string>("region"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The business segment associated with the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SegmentName {
             get { return BackingStore?.Get<string?>("segmentName"); }
             set { BackingStore?.Set("segmentName", value); }
         }
+#nullable restore
 #else
         public string SegmentName {
             get { return BackingStore?.Get<string>("segmentName"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The vertical associated with the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VerticalName {
             get { return BackingStore?.Get<string?>("verticalName"); }
             set { BackingStore?.Set("verticalName", value); }
         }
+#nullable restore
 #else
         public string VerticalName {
             get { return BackingStore?.Get<string>("verticalName"); }

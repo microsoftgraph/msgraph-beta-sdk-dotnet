@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementComplexSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>The definitions of each property of the complex setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? PropertyDefinitionIds {
             get { return BackingStore?.Get<List<string>?>("propertyDefinitionIds"); }
             set { BackingStore?.Set("propertyDefinitionIds", value); }
         }
+#nullable restore
 #else
         public List<string> PropertyDefinitionIds {
             get { return BackingStore?.Get<List<string>>("propertyDefinitionIds"); }

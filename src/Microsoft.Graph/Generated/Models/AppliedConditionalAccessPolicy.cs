@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The custom authentication strength enforced in a Conditional Access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AuthenticationStrength? AuthenticationStrength {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationStrength?>("authenticationStrength"); }
             set { BackingStore?.Set("authenticationStrength", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AuthenticationStrength AuthenticationStrength {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationStrength>("authenticationStrength"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the conditional access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Refers to the grant controls enforced by the conditional access policy (example: &apos;Require multi-factor authentication&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EnforcedGrantControls {
             get { return BackingStore?.Get<List<string>?>("enforcedGrantControls"); }
             set { BackingStore?.Set("enforcedGrantControls", value); }
         }
+#nullable restore
 #else
         public List<string> EnforcedGrantControls {
             get { return BackingStore?.Get<List<string>>("enforcedGrantControls"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Refers to the session controls enforced by the conditional access policy (example: &apos;Require app enforced controls&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EnforcedSessionControls {
             get { return BackingStore?.Get<List<string>?>("enforcedSessionControls"); }
             set { BackingStore?.Set("enforcedSessionControls", value); }
         }
+#nullable restore
 #else
         public List<string> EnforcedSessionControls {
             get { return BackingStore?.Get<List<string>>("enforcedSessionControls"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{&apos;devicePlatform&apos; : &apos;DevicePlatform&apos;}] means the policy didn’t apply, because the DevicePlatform condition was a match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConditionalAccessRuleSatisfied>? ExcludeRulesSatisfied {
             get { return BackingStore?.Get<List<ConditionalAccessRuleSatisfied>?>("excludeRulesSatisfied"); }
             set { BackingStore?.Set("excludeRulesSatisfied", value); }
         }
+#nullable restore
 #else
         public List<ConditionalAccessRuleSatisfied> ExcludeRulesSatisfied {
             get { return BackingStore?.Get<List<ConditionalAccessRuleSatisfied>>("excludeRulesSatisfied"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the conditional access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -97,10 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ &apos;application&apos; : &apos;AllApps&apos;}, {&apos;users&apos;: &apos;Group&apos;}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConditionalAccessRuleSatisfied>? IncludeRulesSatisfied {
             get { return BackingStore?.Get<List<ConditionalAccessRuleSatisfied>?>("includeRulesSatisfied"); }
             set { BackingStore?.Set("includeRulesSatisfied", value); }
         }
+#nullable restore
 #else
         public List<ConditionalAccessRuleSatisfied> IncludeRulesSatisfied {
             get { return BackingStore?.Get<List<ConditionalAccessRuleSatisfied>>("includeRulesSatisfied"); }
@@ -109,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -126,10 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Refers to the session controls that a sign-in activity did not satisfy. (Example: Application enforced Restrictions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SessionControlsNotSatisfied {
             get { return BackingStore?.Get<List<string>?>("sessionControlsNotSatisfied"); }
             set { BackingStore?.Set("sessionControlsNotSatisfied", value); }
         }
+#nullable restore
 #else
         public List<string> SessionControlsNotSatisfied {
             get { return BackingStore?.Get<List<string>>("sessionControlsNotSatisfied"); }

@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of driver Ids where the action is failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? FailedDriverIds {
             get { return BackingStore?.Get<List<string>?>("failedDriverIds"); }
             set { BackingStore?.Set("failedDriverIds", value); }
         }
+#nullable restore
 #else
         public List<string> FailedDriverIds {
             get { return BackingStore?.Get<List<string>>("failedDriverIds"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of driver Ids that are not found.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? NotFoundDriverIds {
             get { return BackingStore?.Get<List<string>?>("notFoundDriverIds"); }
             set { BackingStore?.Set("notFoundDriverIds", value); }
         }
+#nullable restore
 #else
         public List<string> NotFoundDriverIds {
             get { return BackingStore?.Get<List<string>>("notFoundDriverIds"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of driver Ids where the action is successful.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SuccessfulDriverIds {
             get { return BackingStore?.Get<List<string>?>("successfulDriverIds"); }
             set { BackingStore?.Set("successfulDriverIds", value); }
         }
+#nullable restore
 #else
         public List<string> SuccessfulDriverIds {
             get { return BackingStore?.Get<List<string>>("successfulDriverIds"); }

@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.SetPresence {
     public class SetPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Activity {
             get { return BackingStore?.Get<string?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#nullable restore
 #else
         public string Activity {
             get { return BackingStore?.Get<string>("activity"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.SetPresence {
         }
         /// <summary>The availability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Availability {
             get { return BackingStore?.Get<string?>("availability"); }
             set { BackingStore?.Set("availability", value); }
         }
+#nullable restore
 #else
         public string Availability {
             get { return BackingStore?.Get<string>("availability"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.SetPresence {
         }
         /// <summary>The sessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SessionId {
             get { return BackingStore?.Get<string?>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
+#nullable restore
 #else
         public string SessionId {
             get { return BackingStore?.Get<string>("sessionId"); }

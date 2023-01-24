@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskSingleWin32App : WindowsKioskAppConfiguration, IParsable {
         /// <summary>The win32App property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsKioskWin32App? Win32App {
             get { return BackingStore?.Get<WindowsKioskWin32App?>("win32App"); }
             set { BackingStore?.Set("win32App", value); }
         }
+#nullable restore
 #else
         public WindowsKioskWin32App Win32App {
             get { return BackingStore?.Get<WindowsKioskWin32App>("win32App"); }

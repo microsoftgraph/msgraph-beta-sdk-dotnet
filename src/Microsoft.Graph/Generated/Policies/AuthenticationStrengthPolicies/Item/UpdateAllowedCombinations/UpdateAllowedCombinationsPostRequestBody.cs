@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Upda
         }
         /// <summary>The allowedCombinations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>? AllowedCombinations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>?>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> AllowedCombinations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("allowedCombinations"); }

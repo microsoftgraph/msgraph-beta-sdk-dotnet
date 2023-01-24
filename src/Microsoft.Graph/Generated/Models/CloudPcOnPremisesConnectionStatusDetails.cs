@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>All checks that are done on the connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcOnPremisesConnectionHealthCheck>? HealthChecks {
             get { return BackingStore?.Get<List<CloudPcOnPremisesConnectionHealthCheck>?>("healthChecks"); }
             set { BackingStore?.Set("healthChecks", value); }
         }
+#nullable restore
 #else
         public List<CloudPcOnPremisesConnectionHealthCheck> HealthChecks {
             get { return BackingStore?.Get<List<CloudPcOnPremisesConnectionHealthCheck>>("healthChecks"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

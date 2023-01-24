@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Details on the label that is currently applied to the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public LabelDetails? Label {
             get { return BackingStore?.Get<LabelDetails?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#nullable restore
 #else
         public LabelDetails Label {
             get { return BackingStore?.Get<LabelDetails>("label"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AllowedDataLocation : Entity, IParsable {
         /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppId {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#nullable restore
 #else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Domain {
             get { return BackingStore?.Get<string?>("domain"); }
             set { BackingStore?.Set("domain", value); }
         }
+#nullable restore
 #else
         public string Domain {
             get { return BackingStore?.Get<string>("domain"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Location {
             get { return BackingStore?.Get<string?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public string Location {
             get { return BackingStore?.Get<string>("location"); }

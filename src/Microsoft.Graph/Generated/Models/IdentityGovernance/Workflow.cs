@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The unique identifier of the Azure AD identity that last modified the workflow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.User>? ExecutionScope {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.User> ExecutionScope {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("executionScope"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The runs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Run>? Runs {
             get { return BackingStore?.Get<List<Run>?>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
+#nullable restore
 #else
         public List<Run> Runs {
             get { return BackingStore?.Get<List<Run>>("runs"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>Represents the aggregation of task execution data for tasks within a workflow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TaskReport>? TaskReports {
             get { return BackingStore?.Get<List<TaskReport>?>("taskReports"); }
             set { BackingStore?.Set("taskReports", value); }
         }
+#nullable restore
 #else
         public List<TaskReport> TaskReports {
             get { return BackingStore?.Get<List<TaskReport>>("taskReports"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The userProcessingResults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserProcessingResult>? UserProcessingResults {
             get { return BackingStore?.Get<List<UserProcessingResult>?>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
+#nullable restore
 #else
         public List<UserProcessingResult> UserProcessingResults {
             get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The workflow versions that are available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkflowVersion>? Versions {
             get { return BackingStore?.Get<List<WorkflowVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
+#nullable restore
 #else
         public List<WorkflowVersion> Versions {
             get { return BackingStore?.Get<List<WorkflowVersion>>("versions"); }

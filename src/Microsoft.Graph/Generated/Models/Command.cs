@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Command : Entity, IParsable {
         /// <summary>The appServiceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppServiceName {
             get { return BackingStore?.Get<string?>("appServiceName"); }
             set { BackingStore?.Set("appServiceName", value); }
         }
+#nullable restore
 #else
         public string AppServiceName {
             get { return BackingStore?.Get<string>("appServiceName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Error {
             get { return BackingStore?.Get<string?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public string Error {
             get { return BackingStore?.Get<string>("error"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The packageFamilyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PackageFamilyName {
             get { return BackingStore?.Get<string?>("packageFamilyName"); }
             set { BackingStore?.Set("packageFamilyName", value); }
         }
+#nullable restore
 #else
         public string PackageFamilyName {
             get { return BackingStore?.Get<string>("packageFamilyName"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PayloadRequest? Payload {
             get { return BackingStore?.Get<PayloadRequest?>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
+#nullable restore
 #else
         public PayloadRequest Payload {
             get { return BackingStore?.Get<PayloadRequest>("payload"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The permissionTicket property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PermissionTicket {
             get { return BackingStore?.Get<string?>("permissionTicket"); }
             set { BackingStore?.Set("permissionTicket", value); }
         }
+#nullable restore
 #else
         public string PermissionTicket {
             get { return BackingStore?.Get<string>("permissionTicket"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The postBackUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PostBackUri {
             get { return BackingStore?.Get<string?>("postBackUri"); }
             set { BackingStore?.Set("postBackUri", value); }
         }
+#nullable restore
 #else
         public string PostBackUri {
             get { return BackingStore?.Get<string>("postBackUri"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The responsepayload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PayloadResponse? Responsepayload {
             get { return BackingStore?.Get<PayloadResponse?>("responsepayload"); }
             set { BackingStore?.Set("responsepayload", value); }
         }
+#nullable restore
 #else
         public PayloadResponse Responsepayload {
             get { return BackingStore?.Get<PayloadResponse>("responsepayload"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Status {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }

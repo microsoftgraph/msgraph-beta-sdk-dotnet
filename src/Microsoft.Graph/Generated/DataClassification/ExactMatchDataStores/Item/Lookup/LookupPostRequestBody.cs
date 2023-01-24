@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Key {
             get { return BackingStore?.Get<string?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+#nullable restore
 #else
         public string Key {
             get { return BackingStore?.Get<string>("key"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
 #endif
         /// <summary>The resultColumnNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ResultColumnNames {
             get { return BackingStore?.Get<List<string>?>("resultColumnNames"); }
             set { BackingStore?.Set("resultColumnNames", value); }
         }
+#nullable restore
 #else
         public List<string> ResultColumnNames {
             get { return BackingStore?.Get<List<string>>("resultColumnNames"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
 #endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Values {
             get { return BackingStore?.Get<List<string>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public List<string> Values {
             get { return BackingStore?.Get<List<string>>("values"); }

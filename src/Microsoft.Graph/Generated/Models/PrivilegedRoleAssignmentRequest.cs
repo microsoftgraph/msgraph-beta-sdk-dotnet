@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedRoleAssignmentRequest : Entity, IParsable {
         /// <summary>The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentState {
             get { return BackingStore?.Get<string?>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
+#nullable restore
 #else
         public string AssignmentState {
             get { return BackingStore?.Get<string>("assignmentState"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The duration of a role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Duration {
             get { return BackingStore?.Get<string?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
+#nullable restore
 #else
         public string Duration {
             get { return BackingStore?.Get<string>("duration"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The reason for the role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Reason {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
+#nullable restore
 #else
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The id of the role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleId {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#nullable restore
 #else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The roleInfo object of the role assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrivilegedRole? RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
+#nullable restore
 #else
         public PrivilegedRole RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The schedule object of the role assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GovernanceSchedule? Schedule {
             get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#nullable restore
 #else
         public GovernanceSchedule Schedule {
             get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only.The status of the role assignment request. The value can be NotStarted,Completed,RequestedApproval,Scheduled,Approved,ApprovalDenied,ApprovalAborted,Cancelling,Cancelled,Revoked,RequestExpired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Status {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ticketNumber for the role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TicketNumber {
             get { return BackingStore?.Get<string?>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
+#nullable restore
 #else
         public string TicketNumber {
             get { return BackingStore?.Get<string>("ticketNumber"); }
@@ -108,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ticketSystem for the role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TicketSystem {
             get { return BackingStore?.Get<string?>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
+#nullable restore
 #else
         public string TicketSystem {
             get { return BackingStore?.Get<string>("ticketSystem"); }
@@ -120,10 +138,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
@@ -132,10 +152,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The id of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

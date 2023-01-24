@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? User {
             get { return BackingStore?.Get<Identity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#nullable restore
 #else
         public Identity User {
             get { return BackingStore?.Get<Identity>("user"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The userDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserDisplayName {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#nullable restore
 #else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The userPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

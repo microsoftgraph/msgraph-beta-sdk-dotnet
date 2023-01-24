@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Data that represents the terms of use PDF document. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AgreementFileData? FileData {
             get { return BackingStore?.Get<AgreementFileData?>("fileData"); }
             set { BackingStore?.Set("fileData", value); }
         }
+#nullable restore
 #else
         public AgreementFileData FileData {
             get { return BackingStore?.Get<AgreementFileData>("fileData"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the agreement file (for example, TOU.pdf). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileName {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#nullable restore
 #else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The language of the agreement file in the format &apos;languagecode2-country/regioncode2&apos;. &apos;languagecode2&apos; is a lowercase two-letter code derived from ISO 639-1, while &apos;country/regioncode2&apos; is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Language {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+#nullable restore
 #else
         public string Language {
             get { return BackingStore?.Get<string>("language"); }

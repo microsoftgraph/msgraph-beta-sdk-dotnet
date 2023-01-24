@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProviderTenantSetting : Entity, IParsable {
         /// <summary>The azureTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureTenantId {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#nullable restore
 #else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Provider {
             get { return BackingStore?.Get<string?>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
+#nullable restore
 #else
         public string Provider {
             get { return BackingStore?.Get<string>("provider"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The vendor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Vendor {
             get { return BackingStore?.Get<string?>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
+#nullable restore
 #else
         public string Vendor {
             get { return BackingStore?.Get<string>("vendor"); }

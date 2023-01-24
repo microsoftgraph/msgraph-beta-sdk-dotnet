@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Office365ActiveUserDetail : Entity, IParsable {
         /// <summary>All the products assigned for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AssignedProducts {
             get { return BackingStore?.Get<List<string>?>("assignedProducts"); }
             set { BackingStore?.Set("assignedProducts", value); }
         }
+#nullable restore
 #else
         public List<string> AssignedProducts {
             get { return BackingStore?.Get<List<string>>("assignedProducts"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name displayed in the address book for the user. This is usually the combination of the user&apos;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -127,10 +131,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

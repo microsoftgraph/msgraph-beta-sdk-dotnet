@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileLobApp : MobileApp, IParsable {
         /// <summary>The internal committed content version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CommittedContentVersion {
             get { return BackingStore?.Get<string?>("committedContentVersion"); }
             set { BackingStore?.Set("committedContentVersion", value); }
         }
+#nullable restore
 #else
         public string CommittedContentVersion {
             get { return BackingStore?.Get<string>("committedContentVersion"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of content versions for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppContent>? ContentVersions {
             get { return BackingStore?.Get<List<MobileAppContent>?>("contentVersions"); }
             set { BackingStore?.Set("contentVersions", value); }
         }
+#nullable restore
 #else
         public List<MobileAppContent> ContentVersions {
             get { return BackingStore?.Get<List<MobileAppContent>>("contentVersions"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the main Lob application file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileName {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#nullable restore
 #else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }

@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnsupportedGroupPolicyExtension : Entity, IParsable {
         /// <summary>ExtensionType of the unsupported extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionType {
             get { return BackingStore?.Get<string?>("extensionType"); }
             set { BackingStore?.Set("extensionType", value); }
         }
+#nullable restore
 #else
         public string ExtensionType {
             get { return BackingStore?.Get<string>("extensionType"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Namespace Url of the unsupported extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NamespaceUrl {
             get { return BackingStore?.Get<string?>("namespaceUrl"); }
             set { BackingStore?.Set("namespaceUrl", value); }
         }
+#nullable restore
 #else
         public string NamespaceUrl {
             get { return BackingStore?.Get<string>("namespaceUrl"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Node name of the unsupported extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NodeName {
             get { return BackingStore?.Get<string?>("nodeName"); }
             set { BackingStore?.Set("nodeName", value); }
         }
+#nullable restore
 #else
         public string NodeName {
             get { return BackingStore?.Get<string>("nodeName"); }

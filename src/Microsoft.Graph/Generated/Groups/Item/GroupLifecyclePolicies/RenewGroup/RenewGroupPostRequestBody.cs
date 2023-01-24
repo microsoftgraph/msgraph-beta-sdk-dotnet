@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GroupId {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#nullable restore
 #else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }

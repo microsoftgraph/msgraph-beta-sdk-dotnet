@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookWorksheetCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookWorksheet>? Value {
             get { return BackingStore?.Get<List<WorkbookWorksheet>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<WorkbookWorksheet> Value {
             get { return BackingStore?.Get<List<WorkbookWorksheet>>("value"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SoftwareOathAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The secret key of the method. Always returns null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SecretKey {
             get { return BackingStore?.Get<string?>("secretKey"); }
             set { BackingStore?.Set("secretKey", value); }
         }
+#nullable restore
 #else
         public string SecretKey {
             get { return BackingStore?.Get<string>("secretKey"); }

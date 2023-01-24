@@ -28,10 +28,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The display name of the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GroupDisplayName {
             get { return BackingStore?.Get<string?>("groupDisplayName"); }
             set { BackingStore?.Set("groupDisplayName", value); }
         }
+#nullable restore
 #else
         public string GroupDisplayName {
             get { return BackingStore?.Get<string>("groupDisplayName"); }
@@ -40,10 +42,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The group id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GroupId {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#nullable restore
 #else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
@@ -52,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The group type. Possible values are: Public or Private.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GroupType {
             get { return BackingStore?.Get<string?>("groupType"); }
             set { BackingStore?.Set("groupType", value); }
         }
+#nullable restore
 #else
         public string GroupType {
             get { return BackingStore?.Get<string>("groupType"); }
@@ -79,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The group owner principal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OwnerPrincipalName {
             get { return BackingStore?.Get<string?>("ownerPrincipalName"); }
             set { BackingStore?.Set("ownerPrincipalName", value); }
         }
+#nullable restore
 #else
         public string OwnerPrincipalName {
             get { return BackingStore?.Get<string>("ownerPrincipalName"); }
@@ -91,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The number of days the report covers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReportPeriod {
             get { return BackingStore?.Get<string?>("reportPeriod"); }
             set { BackingStore?.Set("reportPeriod", value); }
         }
+#nullable restore
 #else
         public string ReportPeriod {
             get { return BackingStore?.Get<string>("reportPeriod"); }

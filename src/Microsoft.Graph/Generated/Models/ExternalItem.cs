@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExternalItem : Entity, IParsable {
         /// <summary>The acl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.Acl>? Acl {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Acl>?>("acl"); }
             set { BackingStore?.Set("acl", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.Acl> Acl {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Acl>>("acl"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ExternalItemContent? Content {
             get { return BackingStore?.Get<ExternalItemContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public ExternalItemContent Content {
             get { return BackingStore?.Get<ExternalItemContent>("content"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Properties? Properties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Properties?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Properties Properties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Properties>("properties"); }

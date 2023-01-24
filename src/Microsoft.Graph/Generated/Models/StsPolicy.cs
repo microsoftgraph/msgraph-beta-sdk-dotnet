@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class StsPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? AppliesTo {
             get { return BackingStore?.Get<List<DirectoryObject>?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> AppliesTo {
             get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Definition {
             get { return BackingStore?.Get<List<string>?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#nullable restore
 #else
         public List<string> Definition {
             get { return BackingStore?.Get<List<string>>("definition"); }

@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of file extensions to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AdvancedThreatProtectionExcludedExtensions {
             get { return BackingStore?.Get<List<string>?>("advancedThreatProtectionExcludedExtensions"); }
             set { BackingStore?.Set("advancedThreatProtectionExcludedExtensions", value); }
         }
+#nullable restore
 #else
         public List<string> AdvancedThreatProtectionExcludedExtensions {
             get { return BackingStore?.Get<List<string>>("advancedThreatProtectionExcludedExtensions"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of paths to files to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AdvancedThreatProtectionExcludedFiles {
             get { return BackingStore?.Get<List<string>?>("advancedThreatProtectionExcludedFiles"); }
             set { BackingStore?.Set("advancedThreatProtectionExcludedFiles", value); }
         }
+#nullable restore
 #else
         public List<string> AdvancedThreatProtectionExcludedFiles {
             get { return BackingStore?.Get<List<string>>("advancedThreatProtectionExcludedFiles"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of paths to folders to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AdvancedThreatProtectionExcludedFolders {
             get { return BackingStore?.Get<List<string>?>("advancedThreatProtectionExcludedFolders"); }
             set { BackingStore?.Set("advancedThreatProtectionExcludedFolders", value); }
         }
+#nullable restore
 #else
         public List<string> AdvancedThreatProtectionExcludedFolders {
             get { return BackingStore?.Get<List<string>>("advancedThreatProtectionExcludedFolders"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of process names to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AdvancedThreatProtectionExcludedProcesses {
             get { return BackingStore?.Get<List<string>?>("advancedThreatProtectionExcludedProcesses"); }
             set { BackingStore?.Set("advancedThreatProtectionExcludedProcesses", value); }
         }
+#nullable restore
 #else
         public List<string> AdvancedThreatProtectionExcludedProcesses {
             get { return BackingStore?.Get<List<string>>("advancedThreatProtectionExcludedProcesses"); }
@@ -95,10 +103,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Required if selected recovery key type(s) include InstitutionalRecoveryKey. The DER Encoded certificate file used to set an institutional recovery key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? FileVaultInstitutionalRecoveryKeyCertificate {
             get { return BackingStore?.Get<byte[]?>("fileVaultInstitutionalRecoveryKeyCertificate"); }
             set { BackingStore?.Set("fileVaultInstitutionalRecoveryKeyCertificate", value); }
         }
+#nullable restore
 #else
         public byte[] FileVaultInstitutionalRecoveryKeyCertificate {
             get { return BackingStore?.Get<byte[]>("fileVaultInstitutionalRecoveryKeyCertificate"); }
@@ -107,10 +117,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>File name of the institutional recovery key certificate to display in UI. (.der).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileVaultInstitutionalRecoveryKeyCertificateFileName {
             get { return BackingStore?.Get<string?>("fileVaultInstitutionalRecoveryKeyCertificateFileName"); }
             set { BackingStore?.Set("fileVaultInstitutionalRecoveryKeyCertificateFileName", value); }
         }
+#nullable restore
 #else
         public string FileVaultInstitutionalRecoveryKeyCertificateFileName {
             get { return BackingStore?.Get<string>("fileVaultInstitutionalRecoveryKeyCertificateFileName"); }
@@ -124,10 +136,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Required if selected recovery key type(s) include PersonalRecoveryKey. A short message displayed to the user that explains how they can retrieve their personal recovery key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileVaultPersonalRecoveryKeyHelpMessage {
             get { return BackingStore?.Get<string?>("fileVaultPersonalRecoveryKeyHelpMessage"); }
             set { BackingStore?.Set("fileVaultPersonalRecoveryKeyHelpMessage", value); }
         }
+#nullable restore
 #else
         public string FileVaultPersonalRecoveryKeyHelpMessage {
             get { return BackingStore?.Get<string>("fileVaultPersonalRecoveryKeyHelpMessage"); }
@@ -146,10 +160,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of applications with firewall settings. Firewall settings for applications not on this list are determined by the user. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSFirewallApplication>? FirewallApplications {
             get { return BackingStore?.Get<List<MacOSFirewallApplication>?>("firewallApplications"); }
             set { BackingStore?.Set("firewallApplications", value); }
         }
+#nullable restore
 #else
         public List<MacOSFirewallApplication> FirewallApplications {
             get { return BackingStore?.Get<List<MacOSFirewallApplication>>("firewallApplications"); }

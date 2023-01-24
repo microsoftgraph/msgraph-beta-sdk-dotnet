@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSub
     public class GetSubscriptionsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcSubscription>? Value {
             get { return BackingStore?.Get<List<CloudPcSubscription>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<CloudPcSubscription> Value {
             get { return BackingStore?.Get<List<CloudPcSubscription>>("value"); }

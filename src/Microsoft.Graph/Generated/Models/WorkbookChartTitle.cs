@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartTitle : Entity, IParsable {
         /// <summary>Represents the formatting of a chart title, which includes fill and font formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartTitleFormat? Format {
             get { return BackingStore?.Get<WorkbookChartTitleFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#nullable restore
 #else
         public WorkbookChartTitleFormat Format {
             get { return BackingStore?.Get<WorkbookChartTitleFormat>("format"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the title text of a chart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Text {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }

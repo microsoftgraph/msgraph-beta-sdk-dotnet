@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkApp : MobileApp, IParsable {
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppIdentifier {
             get { return BackingStore?.Get<string?>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
+#nullable restore
 #else
         public string AppIdentifier {
             get { return BackingStore?.Get<string>("appIdentifier"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Play for Work Store app URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppStoreUrl {
             get { return BackingStore?.Get<string?>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
+#nullable restore
 #else
         public string AppStoreUrl {
             get { return BackingStore?.Get<string>("appStoreUrl"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The package identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PackageId {
             get { return BackingStore?.Get<string?>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
+#nullable restore
 #else
         public string PackageId {
             get { return BackingStore?.Get<string>("packageId"); }

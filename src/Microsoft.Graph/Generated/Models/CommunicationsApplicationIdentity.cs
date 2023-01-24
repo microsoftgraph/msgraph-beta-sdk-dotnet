@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsApplicationIdentity : Identity, IParsable {
         /// <summary>First party Microsoft application presenting this identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationType {
             get { return BackingStore?.Get<string?>("applicationType"); }
             set { BackingStore?.Set("applicationType", value); }
         }
+#nullable restore
 #else
         public string ApplicationType {
             get { return BackingStore?.Get<string>("applicationType"); }

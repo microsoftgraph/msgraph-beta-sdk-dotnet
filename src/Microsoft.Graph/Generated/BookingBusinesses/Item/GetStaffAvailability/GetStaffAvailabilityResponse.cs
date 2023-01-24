@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
     public class GetStaffAvailabilityResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<StaffAvailabilityItem>? Value {
             get { return BackingStore?.Get<List<StaffAvailabilityItem>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<StaffAvailabilityItem> Value {
             get { return BackingStore?.Get<List<StaffAvailabilityItem>>("value"); }

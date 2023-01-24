@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MeetingRegistrantBase : Entity, IParsable {
         /// <summary>A unique web URL for the registrant to join the meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JoinWebUrl {
             get { return BackingStore?.Get<string?>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
+#nullable restore
 #else
         public string JoinWebUrl {
             get { return BackingStore?.Get<string>("joinWebUrl"); }

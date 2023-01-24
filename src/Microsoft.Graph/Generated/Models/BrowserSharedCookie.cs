@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BrowserSharedCookie : Entity, IParsable {
         /// <summary>The comment for the shared cookie.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Comment {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the cookie.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The history of modifications applied to the cookie.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BrowserSharedCookieHistory>? History {
             get { return BackingStore?.Get<List<BrowserSharedCookieHistory>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
+#nullable restore
 #else
         public List<BrowserSharedCookieHistory> History {
             get { return BackingStore?.Get<List<BrowserSharedCookieHistory>>("history"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The URL of the cookie.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HostOrDomain {
             get { return BackingStore?.Get<string?>("hostOrDomain"); }
             set { BackingStore?.Set("hostOrDomain", value); }
         }
+#nullable restore
 #else
         public string HostOrDomain {
             get { return BackingStore?.Get<string>("hostOrDomain"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user who last modified the cookie.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The path of the cookie.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Path {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#nullable restore
 #else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }

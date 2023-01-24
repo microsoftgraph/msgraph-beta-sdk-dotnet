@@ -30,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The managed device on which the device compliance script executed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ManagedDevice? ManagedDevice {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice?>("managedDevice"); }
             set { BackingStore?.Set("managedDevice", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>("managedDevice"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Error from the detection script</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScriptError {
             get { return BackingStore?.Get<string?>("scriptError"); }
             set { BackingStore?.Set("scriptError", value); }
         }
+#nullable restore
 #else
         public string ScriptError {
             get { return BackingStore?.Get<string>("scriptError"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Output of the detection script</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScriptOutput {
             get { return BackingStore?.Get<string?>("scriptOutput"); }
             set { BackingStore?.Set("scriptOutput", value); }
         }
+#nullable restore
 #else
         public string ScriptOutput {
             get { return BackingStore?.Get<string>("scriptOutput"); }

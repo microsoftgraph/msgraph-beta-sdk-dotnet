@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Teamwork : Entity, IParsable {
         /// <summary>A collection of deleted teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeletedTeam>? DeletedTeams {
             get { return BackingStore?.Get<List<DeletedTeam>?>("deletedTeams"); }
             set { BackingStore?.Set("deletedTeams", value); }
         }
+#nullable restore
 #else
         public List<DeletedTeam> DeletedTeams {
             get { return BackingStore?.Get<List<DeletedTeam>>("deletedTeams"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Teams devices provisioned for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamworkDevice>? Devices {
             get { return BackingStore?.Get<List<TeamworkDevice>?>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
+#nullable restore
 #else
         public List<TeamworkDevice> Devices {
             get { return BackingStore?.Get<List<TeamworkDevice>>("devices"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents tenant-wide settings for all Teams apps in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TeamsAppSettings? TeamsAppSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppSettings?>("teamsAppSettings"); }
             set { BackingStore?.Set("teamsAppSettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TeamsAppSettings TeamsAppSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppSettings>("teamsAppSettings"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The templates associated with a team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamTemplate>? TeamTemplates {
             get { return BackingStore?.Get<List<TeamTemplate>?>("teamTemplates"); }
             set { BackingStore?.Set("teamTemplates", value); }
         }
+#nullable restore
 #else
         public List<TeamTemplate> TeamTemplates {
             get { return BackingStore?.Get<List<TeamTemplate>>("teamTemplates"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A workforce integration with shifts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkforceIntegration>? WorkforceIntegrations {
             get { return BackingStore?.Get<List<WorkforceIntegration>?>("workforceIntegrations"); }
             set { BackingStore?.Set("workforceIntegrations", value); }
         }
+#nullable restore
 #else
         public List<WorkforceIntegration> WorkforceIntegrations {
             get { return BackingStore?.Get<List<WorkforceIntegration>>("workforceIntegrations"); }

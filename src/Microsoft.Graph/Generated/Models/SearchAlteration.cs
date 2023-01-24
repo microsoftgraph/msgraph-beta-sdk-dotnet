@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlteredHighlightedQueryString {
             get { return BackingStore?.Get<string?>("alteredHighlightedQueryString"); }
             set { BackingStore?.Set("alteredHighlightedQueryString", value); }
         }
+#nullable restore
 #else
         public string AlteredHighlightedQueryString {
             get { return BackingStore?.Get<string>("alteredHighlightedQueryString"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines the altered query string with spelling correction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlteredQueryString {
             get { return BackingStore?.Get<string?>("alteredQueryString"); }
             set { BackingStore?.Set("alteredQueryString", value); }
         }
+#nullable restore
 #else
         public string AlteredQueryString {
             get { return BackingStore?.Get<string>("alteredQueryString"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents changed segments with respect to original query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AlteredQueryToken>? AlteredQueryTokens {
             get { return BackingStore?.Get<List<AlteredQueryToken>?>("alteredQueryTokens"); }
             set { BackingStore?.Set("alteredQueryTokens", value); }
         }
+#nullable restore
 #else
         public List<AlteredQueryToken> AlteredQueryTokens {
             get { return BackingStore?.Get<List<AlteredQueryToken>>("alteredQueryTokens"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

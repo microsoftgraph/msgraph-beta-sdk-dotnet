@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The email address information of the sender for whom the override is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EmailAddress? SenderEmailAddress {
             get { return BackingStore?.Get<EmailAddress?>("senderEmailAddress"); }
             set { BackingStore?.Set("senderEmailAddress", value); }
         }
+#nullable restore
 #else
         public EmailAddress SenderEmailAddress {
             get { return BackingStore?.Get<EmailAddress>("senderEmailAddress"); }

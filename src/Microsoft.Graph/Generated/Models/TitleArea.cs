@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Alternative text on the title area.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlternativeText {
             get { return BackingStore?.Get<string?>("alternativeText"); }
             set { BackingStore?.Set("alternativeText", value); }
         }
+#nullable restore
 #else
         public string AlternativeText {
             get { return BackingStore?.Get<string>("alternativeText"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>URL of the image in the title area.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ImageWebUrl {
             get { return BackingStore?.Get<string?>("imageWebUrl"); }
             set { BackingStore?.Set("imageWebUrl", value); }
         }
+#nullable restore
 #else
         public string ImageWebUrl {
             get { return BackingStore?.Get<string>("imageWebUrl"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains collections of data that can be processed by server side services like search index and link fixup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ServerProcessedContent? ServerProcessedContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServerProcessedContent?>("serverProcessedContent"); }
             set { BackingStore?.Set("serverProcessedContent", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ServerProcessedContent ServerProcessedContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServerProcessedContent>("serverProcessedContent"); }
@@ -88,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The text above title line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TextAboveTitle {
             get { return BackingStore?.Get<string?>("textAboveTitle"); }
             set { BackingStore?.Set("textAboveTitle", value); }
         }
+#nullable restore
 #else
         public string TextAboveTitle {
             get { return BackingStore?.Get<string>("textAboveTitle"); }

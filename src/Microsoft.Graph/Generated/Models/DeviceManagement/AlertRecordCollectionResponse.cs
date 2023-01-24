@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     public class AlertRecordCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AlertRecord>? Value {
             get { return BackingStore?.Get<List<AlertRecord>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<AlertRecord> Value {
             get { return BackingStore?.Get<List<AlertRecord>>("value"); }

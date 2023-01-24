@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MarkContent : LabelActionBase, IParsable {
         /// <summary>The fontColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FontColor {
             get { return BackingStore?.Get<string?>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
+#nullable restore
 #else
         public string FontColor {
             get { return BackingStore?.Get<string>("fontColor"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Text {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }

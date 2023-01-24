@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchSessionBase : ExactMatchJobBase, IParsable {
         /// <summary>The dataStoreId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DataStoreId {
             get { return BackingStore?.Get<string?>("dataStoreId"); }
             set { BackingStore?.Set("dataStoreId", value); }
         }
+#nullable restore
 #else
         public string DataStoreId {
             get { return BackingStore?.Get<string>("dataStoreId"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? State {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#nullable restore
 #else
         public string State {
             get { return BackingStore?.Get<string>("state"); }

@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LoginGroupOrDomain {
             get { return BackingStore?.Get<string?>("loginGroupOrDomain"); }
             set { BackingStore?.Set("loginGroupOrDomain", value); }
         }
+#nullable restore
 #else
         public string LoginGroupOrDomain {
             get { return BackingStore?.Get<string>("loginGroupOrDomain"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Proxy Server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Windows81VpnProxyServer? ProxyServer {
             get { return BackingStore?.Get<Windows81VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
+#nullable restore
 #else
         public Windows81VpnProxyServer ProxyServer {
             get { return BackingStore?.Get<Windows81VpnProxyServer>("proxyServer"); }

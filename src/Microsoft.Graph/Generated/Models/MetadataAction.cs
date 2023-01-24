@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MetadataAction : InformationProtectionAction, IParsable {
         /// <summary>A collection of key value pairs that should be added to the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? MetadataToAdd {
             get { return BackingStore?.Get<List<KeyValuePair>?>("metadataToAdd"); }
             set { BackingStore?.Set("metadataToAdd", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> MetadataToAdd {
             get { return BackingStore?.Get<List<KeyValuePair>>("metadataToAdd"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of strings that indicate which keys to remove from the file metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? MetadataToRemove {
             get { return BackingStore?.Get<List<string>?>("metadataToRemove"); }
             set { BackingStore?.Set("metadataToRemove", value); }
         }
+#nullable restore
 #else
         public List<string> MetadataToRemove {
             get { return BackingStore?.Get<List<string>>("metadataToRemove"); }

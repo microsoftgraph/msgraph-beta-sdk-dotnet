@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Bitlocker : Entity, IParsable {
         /// <summary>The recovery keys associated with the bitlocker entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BitlockerRecoveryKey>? RecoveryKeys {
             get { return BackingStore?.Get<List<BitlockerRecoveryKey>?>("recoveryKeys"); }
             set { BackingStore?.Set("recoveryKeys", value); }
         }
+#nullable restore
 #else
         public List<BitlockerRecoveryKey> RecoveryKeys {
             get { return BackingStore?.Get<List<BitlockerRecoveryKey>>("recoveryKeys"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProvisioningObjectSummary : Entity, IParsable {
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Action {
             get { return BackingStore?.Get<string?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
+#nullable restore
 #else
         public string Action {
             get { return BackingStore?.Get<string>("action"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Unique ID of this change in this cycle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChangeId {
             get { return BackingStore?.Get<string?>("changeId"); }
             set { BackingStore?.Set("changeId", value); }
         }
+#nullable restore
 #else
         public string ChangeId {
             get { return BackingStore?.Get<string>("changeId"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique ID per job iteration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CycleId {
             get { return BackingStore?.Get<string?>("cycleId"); }
             set { BackingStore?.Set("cycleId", value); }
         }
+#nullable restore
 #else
         public string CycleId {
             get { return BackingStore?.Get<string>("cycleId"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Details of who initiated this provisioning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Initiator? InitiatedBy {
             get { return BackingStore?.Get<Initiator?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
+#nullable restore
 #else
         public Initiator InitiatedBy {
             get { return BackingStore?.Get<Initiator>("initiatedBy"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique ID for the whole provisioning job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JobId {
             get { return BackingStore?.Get<string?>("jobId"); }
             set { BackingStore?.Set("jobId", value); }
         }
+#nullable restore
 #else
         public string JobId {
             get { return BackingStore?.Get<string>("jobId"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of each property that was modified in this provisioning action on this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ModifiedProperty>? ModifiedProperties {
             get { return BackingStore?.Get<List<ModifiedProperty>?>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
+#nullable restore
 #else
         public List<ModifiedProperty> ModifiedProperties {
             get { return BackingStore?.Get<List<ModifiedProperty>>("modifiedProperties"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Details of provisioning status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ProvisioningStatusInfo? ProvisioningStatusInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningStatusInfo?>("provisioningStatusInfo"); }
             set { BackingStore?.Set("provisioningStatusInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ProvisioningStatusInfo ProvisioningStatusInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningStatusInfo>("provisioningStatusInfo"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of each step in provisioning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ProvisioningStep>? ProvisioningSteps {
             get { return BackingStore?.Get<List<ProvisioningStep>?>("provisioningSteps"); }
             set { BackingStore?.Set("provisioningSteps", value); }
         }
+#nullable restore
 #else
         public List<ProvisioningStep> ProvisioningSteps {
             get { return BackingStore?.Get<List<ProvisioningStep>>("provisioningSteps"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the service principal used for provisioning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ProvisioningServicePrincipal? ServicePrincipal {
             get { return BackingStore?.Get<ProvisioningServicePrincipal?>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
+#nullable restore
 #else
         public ProvisioningServicePrincipal ServicePrincipal {
             get { return BackingStore?.Get<ProvisioningServicePrincipal>("servicePrincipal"); }
@@ -130,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of source object being provisioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ProvisionedIdentity? SourceIdentity {
             get { return BackingStore?.Get<ProvisionedIdentity?>("sourceIdentity"); }
             set { BackingStore?.Set("sourceIdentity", value); }
         }
+#nullable restore
 #else
         public ProvisionedIdentity SourceIdentity {
             get { return BackingStore?.Get<ProvisionedIdentity>("sourceIdentity"); }
@@ -142,10 +162,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of source system of the object being provisioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ProvisioningSystem? SourceSystem {
             get { return BackingStore?.Get<ProvisioningSystem?>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
+#nullable restore
 #else
         public ProvisioningSystem SourceSystem {
             get { return BackingStore?.Get<ProvisioningSystem>("sourceSystem"); }
@@ -154,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The statusInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public StatusBase? StatusInfo {
             get { return BackingStore?.Get<StatusBase?>("statusInfo"); }
             set { BackingStore?.Set("statusInfo", value); }
         }
+#nullable restore
 #else
         public StatusBase StatusInfo {
             get { return BackingStore?.Get<StatusBase>("statusInfo"); }
@@ -166,10 +190,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of target object being provisioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ProvisionedIdentity? TargetIdentity {
             get { return BackingStore?.Get<ProvisionedIdentity?>("targetIdentity"); }
             set { BackingStore?.Set("targetIdentity", value); }
         }
+#nullable restore
 #else
         public ProvisionedIdentity TargetIdentity {
             get { return BackingStore?.Get<ProvisionedIdentity>("targetIdentity"); }
@@ -178,10 +204,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of target system of the object being provisioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ProvisioningSystem? TargetSystem {
             get { return BackingStore?.Get<ProvisioningSystem?>("targetSystem"); }
             set { BackingStore?.Set("targetSystem", value); }
         }
+#nullable restore
 #else
         public ProvisioningSystem TargetSystem {
             get { return BackingStore?.Get<ProvisioningSystem>("targetSystem"); }
@@ -190,10 +218,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique Azure AD tenant ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

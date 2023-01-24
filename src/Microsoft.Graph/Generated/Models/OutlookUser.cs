@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OutlookUser : Entity, IParsable {
         /// <summary>A list of categories defined for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OutlookCategory>? MasterCategories {
             get { return BackingStore?.Get<List<OutlookCategory>?>("masterCategories"); }
             set { BackingStore?.Set("masterCategories", value); }
         }
+#nullable restore
 #else
         public List<OutlookCategory> MasterCategories {
             get { return BackingStore?.Get<List<OutlookCategory>>("masterCategories"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The taskFolders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OutlookTaskFolder>? TaskFolders {
             get { return BackingStore?.Get<List<OutlookTaskFolder>?>("taskFolders"); }
             set { BackingStore?.Set("taskFolders", value); }
         }
+#nullable restore
 #else
         public List<OutlookTaskFolder> TaskFolders {
             get { return BackingStore?.Get<List<OutlookTaskFolder>>("taskFolders"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The taskGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OutlookTaskGroup>? TaskGroups {
             get { return BackingStore?.Get<List<OutlookTaskGroup>?>("taskGroups"); }
             set { BackingStore?.Set("taskGroups", value); }
         }
+#nullable restore
 #else
         public List<OutlookTaskGroup> TaskGroups {
             get { return BackingStore?.Get<List<OutlookTaskGroup>>("taskGroups"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tasks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OutlookTask>? Tasks {
             get { return BackingStore?.Get<List<OutlookTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#nullable restore
 #else
         public List<OutlookTask> Tasks {
             get { return BackingStore?.Get<List<OutlookTask>>("tasks"); }

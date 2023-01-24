@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateAppli
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ContentInfo? ContentInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentInfo?>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ContentInfo ContentInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentInfo>("contentInfo"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateAppli
 #endif
         /// <summary>The labelingOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.LabelingOptions? LabelingOptions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LabelingOptions?>("labelingOptions"); }
             set { BackingStore?.Set("labelingOptions", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.LabelingOptions LabelingOptions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LabelingOptions>("labelingOptions"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhoneXAP : MobileLobApp, IParsable {
         /// <summary>The identity version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityVersion {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#nullable restore
 #else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#nullable restore
 #else
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Product Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductIdentifier {
             get { return BackingStore?.Get<string?>("productIdentifier"); }
             set { BackingStore?.Set("productIdentifier", value); }
         }
+#nullable restore
 #else
         public string ProductIdentifier {
             get { return BackingStore?.Get<string>("productIdentifier"); }

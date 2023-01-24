@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Process : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountName {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#nullable restore
 #else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The full process invocation commandline including all parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CommandLine {
             get { return BackingStore?.Get<string?>("commandLine"); }
             set { BackingStore?.Set("commandLine", value); }
         }
+#nullable restore
 #else
         public string CommandLine {
             get { return BackingStore?.Get<string>("commandLine"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Complex type containing file hashes (cryptographic and location-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.FileHash? FileHash {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileHash?>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.FileHash FileHash {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileHash>("fileHash"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the process&apos; Image file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -100,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the image file of the parent process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentProcessName {
             get { return BackingStore?.Get<string?>("parentProcessName"); }
             set { BackingStore?.Set("parentProcessName", value); }
         }
+#nullable restore
 #else
         public string ParentProcessName {
             get { return BackingStore?.Get<string>("parentProcessName"); }
@@ -112,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Full path, including filename.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Path {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#nullable restore
 #else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Translation override behavior for languages, if any.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TranslationLanguageOverride>? LanguageOverrides {
             get { return BackingStore?.Get<List<TranslationLanguageOverride>?>("languageOverrides"); }
             set { BackingStore?.Set("languageOverrides", value); }
         }
+#nullable restore
 #else
         public List<TranslationLanguageOverride> LanguageOverrides {
             get { return BackingStore?.Get<List<TranslationLanguageOverride>>("languageOverrides"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify &apos;fr&apos; for the neutral French culture, but not &apos;fr-FR&apos; for the French culture in France. Returned by default. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? UntranslatedLanguages {
             get { return BackingStore?.Get<List<string>?>("untranslatedLanguages"); }
             set { BackingStore?.Set("untranslatedLanguages", value); }
         }
+#nullable restore
 #else
         public List<string> UntranslatedLanguages {
             get { return BackingStore?.Get<List<string>>("untranslatedLanguages"); }

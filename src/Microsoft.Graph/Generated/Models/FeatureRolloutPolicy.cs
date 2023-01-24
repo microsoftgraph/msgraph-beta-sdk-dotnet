@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class FeatureRolloutPolicy : Entity, IParsable {
         /// <summary>Nullable. Specifies a list of directoryObjects that feature is enabled for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? AppliesTo {
             get { return BackingStore?.Get<List<DirectoryObject>?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> AppliesTo {
             get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A description for this feature rollout policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name for this  feature rollout policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }

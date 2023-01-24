@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client ID used to connect to the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientId {
             get { return BackingStore?.Get<string?>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
+#nullable restore
 #else
         public string ClientId {
             get { return BackingStore?.Get<string>("clientId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Client secret to authenticate the connection to the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientSecret {
             get { return BackingStore?.Get<string?>("clientSecret"); }
             set { BackingStore?.Set("clientSecret", value); }
         }
+#nullable restore
 #else
         public string ClientSecret {
             get { return BackingStore?.Get<string>("clientSecret"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

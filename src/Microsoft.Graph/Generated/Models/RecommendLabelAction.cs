@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RecommendLabelAction : InformationProtectionAction, IParsable {
         /// <summary>Actions to take if the label is accepted by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<InformationProtectionAction>? Actions {
             get { return BackingStore?.Get<List<InformationProtectionAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
+#nullable restore
 #else
         public List<InformationProtectionAction> Actions {
             get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The label that is being recommended.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public LabelDetails? Label {
             get { return BackingStore?.Get<LabelDetails?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#nullable restore
 #else
         public LabelDetails Label {
             get { return BackingStore?.Get<LabelDetails>("label"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sensitive information type GUIDs that caused the recommendation to be given.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Guid?>? ResponsibleSensitiveTypeIds {
             get { return BackingStore?.Get<List<Guid?>?>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
+#nullable restore
 #else
         public List<Guid?> ResponsibleSensitiveTypeIds {
             get { return BackingStore?.Get<List<Guid?>>("responsibleSensitiveTypeIds"); }

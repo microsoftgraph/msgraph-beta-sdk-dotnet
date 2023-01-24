@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of caller that&apos;s the target of the policy rule. Allowed values are: None, Admin, EndUser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Caller {
             get { return BackingStore?.Get<string?>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
+#nullable restore
 #else
         public string Caller {
             get { return BackingStore?.Get<string>("caller"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EnforcedSettings {
             get { return BackingStore?.Get<List<string>?>("enforcedSettings"); }
             set { BackingStore?.Set("enforcedSettings", value); }
         }
+#nullable restore
 #else
         public List<string> EnforcedSettings {
             get { return BackingStore?.Get<List<string>>("enforcedSettings"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of role settings that can be inherited by child scopes. Use All for all settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? InheritableSettings {
             get { return BackingStore?.Get<List<string>?>("inheritableSettings"); }
             set { BackingStore?.Set("inheritableSettings", value); }
         }
+#nullable restore
 #else
         public List<string> InheritableSettings {
             get { return BackingStore?.Get<List<string>>("inheritableSettings"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The role assignment type that&apos;s the target of policy rule. Allowed values are: Eligibility, Assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Level {
             get { return BackingStore?.Get<string?>("level"); }
             set { BackingStore?.Set("level", value); }
         }
+#nullable restore
 #else
         public string Level {
             get { return BackingStore?.Get<string>("level"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Operations {
             get { return BackingStore?.Get<List<string>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<string> Operations {
             get { return BackingStore?.Get<List<string>>("operations"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The targetObjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? TargetObjects {
             get { return BackingStore?.Get<List<DirectoryObject>?>("targetObjects"); }
             set { BackingStore?.Set("targetObjects", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> TargetObjects {
             get { return BackingStore?.Get<List<DirectoryObject>>("targetObjects"); }

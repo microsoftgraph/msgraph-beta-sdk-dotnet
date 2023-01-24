@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkDevice : Entity, IParsable {
         /// <summary>The activity properties that change based on the device usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkDeviceActivity? Activity {
             get { return BackingStore?.Get<TeamworkDeviceActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#nullable restore
 #else
         public TeamworkDeviceActivity Activity {
             get { return BackingStore?.Get<TeamworkDeviceActivity>("activity"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The company asset tag assigned by the admin on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CompanyAssetTag {
             get { return BackingStore?.Get<string?>("companyAssetTag"); }
             set { BackingStore?.Set("companyAssetTag", value); }
         }
+#nullable restore
 #else
         public string CompanyAssetTag {
             get { return BackingStore?.Get<string>("companyAssetTag"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The configuration properties of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkDeviceConfiguration? Configuration {
             get { return BackingStore?.Get<TeamworkDeviceConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
+#nullable restore
 #else
         public TeamworkDeviceConfiguration Configuration {
             get { return BackingStore?.Get<TeamworkDeviceConfiguration>("configuration"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity of the user who enrolled the device to the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The signed-in user on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkUserIdentity? CurrentUser {
             get { return BackingStore?.Get<TeamworkUserIdentity?>("currentUser"); }
             set { BackingStore?.Set("currentUser", value); }
         }
+#nullable restore
 #else
         public TeamworkUserIdentity CurrentUser {
             get { return BackingStore?.Get<TeamworkUserIdentity>("currentUser"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The hardwareDetail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkHardwareDetail? HardwareDetail {
             get { return BackingStore?.Get<TeamworkHardwareDetail?>("hardwareDetail"); }
             set { BackingStore?.Set("hardwareDetail", value); }
         }
+#nullable restore
 #else
         public TeamworkHardwareDetail HardwareDetail {
             get { return BackingStore?.Get<TeamworkHardwareDetail>("hardwareDetail"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The health properties of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkDeviceHealth? Health {
             get { return BackingStore?.Get<TeamworkDeviceHealth?>("health"); }
             set { BackingStore?.Set("health", value); }
         }
+#nullable restore
 #else
         public TeamworkDeviceHealth Health {
             get { return BackingStore?.Get<TeamworkDeviceHealth>("health"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identity of the user who last modified the device details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -128,10 +144,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The notes added by the admin to the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Notes {
             get { return BackingStore?.Get<string?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#nullable restore
 #else
         public string Notes {
             get { return BackingStore?.Get<string>("notes"); }
@@ -140,10 +158,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The async operations on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamworkDeviceOperation>? Operations {
             get { return BackingStore?.Get<List<TeamworkDeviceOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<TeamworkDeviceOperation> Operations {
             get { return BackingStore?.Get<List<TeamworkDeviceOperation>>("operations"); }

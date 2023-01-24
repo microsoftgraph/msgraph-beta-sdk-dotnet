@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>If status is failed, provides more information about the error that caused the failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.PublicError? Error {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.PublicError Error {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError>("error"); }

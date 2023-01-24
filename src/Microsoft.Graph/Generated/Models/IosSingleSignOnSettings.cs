@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? AllowedAppsList {
             get { return BackingStore?.Get<List<AppListItem>?>("allowedAppsList"); }
             set { BackingStore?.Set("allowedAppsList", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> AllowedAppsList {
             get { return BackingStore?.Get<List<AppListItem>>("allowedAppsList"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of HTTP URLs that must be matched in order to use this login. With iOS 9.0 or later, a wildcard characters may be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedUrls {
             get { return BackingStore?.Get<List<string>?>("allowedUrls"); }
             set { BackingStore?.Set("allowedUrls", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedUrls {
             get { return BackingStore?.Get<List<string>>("allowedUrls"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name of login settings shown on the receiving device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A Kerberos principal name. If not provided, the user is prompted for one during profile installation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KerberosPrincipalName {
             get { return BackingStore?.Get<string?>("kerberosPrincipalName"); }
             set { BackingStore?.Set("kerberosPrincipalName", value); }
         }
+#nullable restore
 #else
         public string KerberosPrincipalName {
             get { return BackingStore?.Get<string>("kerberosPrincipalName"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A Kerberos realm name. Case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KerberosRealm {
             get { return BackingStore?.Get<string?>("kerberosRealm"); }
             set { BackingStore?.Set("kerberosRealm", value); }
         }
+#nullable restore
 #else
         public string KerberosRealm {
             get { return BackingStore?.Get<string>("kerberosRealm"); }
@@ -78,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

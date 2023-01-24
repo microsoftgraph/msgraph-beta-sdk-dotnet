@@ -67,7 +67,9 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<OutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<OutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -84,7 +86,9 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<OutlookTaskFolder?> GetAsync(Action<OutlookTaskFolderItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<OutlookTaskFolder> GetAsync(Action<OutlookTaskFolderItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -102,7 +106,9 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<OutlookTaskFolder?> PatchAsync(OutlookTaskFolder body, Action<OutlookTaskFolderItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<OutlookTaskFolder> PatchAsync(OutlookTaskFolder body, Action<OutlookTaskFolderItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -119,7 +125,9 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<OutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<OutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -141,7 +149,9 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<OutlookTaskFolderItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<OutlookTaskFolderItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -166,7 +176,9 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(OutlookTaskFolder body, Action<OutlookTaskFolderItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(OutlookTaskFolder body, Action<OutlookTaskFolderItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -208,8 +220,10 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item {
         public class OutlookTaskFolderItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

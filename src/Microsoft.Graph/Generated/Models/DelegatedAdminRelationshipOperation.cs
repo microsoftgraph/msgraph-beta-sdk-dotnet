@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The data (payload) for the operation. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Data {
             get { return BackingStore?.Get<string?>("data"); }
             set { BackingStore?.Set("data", value); }
         }
+#nullable restore
 #else
         public string Data {
             get { return BackingStore?.Get<string>("data"); }

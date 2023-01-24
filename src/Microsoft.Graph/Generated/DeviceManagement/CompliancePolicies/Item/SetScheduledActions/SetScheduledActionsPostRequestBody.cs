@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetSched
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The scheduledActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementComplianceScheduledActionForRule>? ScheduledActions {
             get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>?>("scheduledActions"); }
             set { BackingStore?.Set("scheduledActions", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementComplianceScheduledActionForRule> ScheduledActions {
             get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>>("scheduledActions"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementAbstractComplexSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>List of definition IDs for all possible implementations of this abstract complex setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Implementations {
             get { return BackingStore?.Get<List<string>?>("implementations"); }
             set { BackingStore?.Set("implementations", value); }
         }
+#nullable restore
 #else
         public List<string> Implementations {
             get { return BackingStore?.Get<List<string>>("implementations"); }

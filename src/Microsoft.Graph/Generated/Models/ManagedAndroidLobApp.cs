@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedAndroidLobApp : ManagedMobileLobApp, IParsable {
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityName {
             get { return BackingStore?.Get<string?>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
+#nullable restore
 #else
         public string IdentityName {
             get { return BackingStore?.Get<string>("identityName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityVersion {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#nullable restore
 #else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<AndroidMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#nullable restore
 #else
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The package identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PackageId {
             get { return BackingStore?.Get<string?>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
+#nullable restore
 #else
         public string PackageId {
             get { return BackingStore?.Get<string>("packageId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The version code of managed Android Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VersionCode {
             get { return BackingStore?.Get<string?>("versionCode"); }
             set { BackingStore?.Set("versionCode", value); }
         }
+#nullable restore
 #else
         public string VersionCode {
             get { return BackingStore?.Get<string>("versionCode"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The version name of managed Android Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VersionName {
             get { return BackingStore?.Get<string?>("versionName"); }
             set { BackingStore?.Set("versionName", value); }
         }
+#nullable restore
 #else
         public string VersionName {
             get { return BackingStore?.Get<string>("versionName"); }

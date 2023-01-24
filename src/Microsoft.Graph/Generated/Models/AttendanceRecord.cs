@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttendanceRecord : Entity, IParsable {
         /// <summary>List of time periods between joining and leaving a meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AttendanceInterval>? AttendanceIntervals {
             get { return BackingStore?.Get<List<AttendanceInterval>?>("attendanceIntervals"); }
             set { BackingStore?.Set("attendanceIntervals", value); }
         }
+#nullable restore
 #else
         public List<AttendanceInterval> AttendanceIntervals {
             get { return BackingStore?.Get<List<AttendanceInterval>>("attendanceIntervals"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Email address of the user associated with this atttendance record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailAddress {
             get { return BackingStore?.Get<string?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#nullable restore
 #else
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Identity? Identity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Identity Identity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("identity"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RegistrantId {
             get { return BackingStore?.Get<string?>("registrantId"); }
             set { BackingStore?.Set("registrantId", value); }
         }
+#nullable restore
 #else
         public string RegistrantId {
             get { return BackingStore?.Get<string>("registrantId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Role {
             get { return BackingStore?.Get<string?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#nullable restore
 #else
         public string Role {
             get { return BackingStore?.Get<string>("role"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of office Client configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OfficeClientConfiguration>? ClientConfigurations {
             get { return BackingStore?.Get<List<OfficeClientConfiguration>?>("clientConfigurations"); }
             set { BackingStore?.Set("clientConfigurations", value); }
         }
+#nullable restore
 #else
         public List<OfficeClientConfiguration> ClientConfigurations {
             get { return BackingStore?.Get<List<OfficeClientConfiguration>>("clientConfigurations"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of office Client check-in status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OfficeClientCheckinStatus>? TenantCheckinStatuses {
             get { return BackingStore?.Get<List<OfficeClientCheckinStatus>?>("tenantCheckinStatuses"); }
             set { BackingStore?.Set("tenantCheckinStatuses", value); }
         }
+#nullable restore
 #else
         public List<OfficeClientCheckinStatus> TenantCheckinStatuses {
             get { return BackingStore?.Get<List<OfficeClientCheckinStatus>>("tenantCheckinStatuses"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Entity that describes tenant check-in statues</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OfficeUserCheckinSummary? TenantUserCheckinSummary {
             get { return BackingStore?.Get<OfficeUserCheckinSummary?>("tenantUserCheckinSummary"); }
             set { BackingStore?.Set("tenantUserCheckinSummary", value); }
         }
+#nullable restore
 #else
         public OfficeUserCheckinSummary TenantUserCheckinSummary {
             get { return BackingStore?.Get<OfficeUserCheckinSummary>("tenantUserCheckinSummary"); }

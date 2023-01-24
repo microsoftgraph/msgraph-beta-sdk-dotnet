@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specific feedback for one quality of this rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationItemBody? Feedback {
             get { return BackingStore?.Get<EducationItemBody?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
+#nullable restore
 #else
         public EducationItemBody Feedback {
             get { return BackingStore?.Get<EducationItemBody>("feedback"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the rubricQuality that this feedback is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QualityId {
             get { return BackingStore?.Get<string?>("qualityId"); }
             set { BackingStore?.Set("qualityId", value); }
         }
+#nullable restore
 #else
         public string QualityId {
             get { return BackingStore?.Get<string>("qualityId"); }

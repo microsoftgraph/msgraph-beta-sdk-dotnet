@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -33,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The parentTerm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Term? ParentTerm {
             get { return BackingStore?.Get<Term?>("parentTerm"); }
             set { BackingStore?.Set("parentTerm", value); }
         }
+#nullable restore
 #else
         public Term ParentTerm {
             get { return BackingStore?.Get<Term>("parentTerm"); }
@@ -50,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The termSet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TermStore.Set? TermSet {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set?>("termSet"); }
             set { BackingStore?.Set("termSet", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TermStore.Set TermSet {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set>("termSet"); }

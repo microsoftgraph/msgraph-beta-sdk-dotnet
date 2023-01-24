@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingAbstractImplementationConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of value which means not configured for the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedAbstractImplementationDefinitionIds {
             get { return BackingStore?.Get<List<string>?>("allowedAbstractImplementationDefinitionIds"); }
             set { BackingStore?.Set("allowedAbstractImplementationDefinitionIds", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedAbstractImplementationDefinitionIds {
             get { return BackingStore?.Get<List<string>>("allowedAbstractImplementationDefinitionIds"); }

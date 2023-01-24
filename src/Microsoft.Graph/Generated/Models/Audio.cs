@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The title of the album for this audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Album {
             get { return BackingStore?.Get<string?>("album"); }
             set { BackingStore?.Set("album", value); }
         }
+#nullable restore
 #else
         public string Album {
             get { return BackingStore?.Get<string>("album"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The artist named on the album for the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlbumArtist {
             get { return BackingStore?.Get<string?>("albumArtist"); }
             set { BackingStore?.Set("albumArtist", value); }
         }
+#nullable restore
 #else
         public string AlbumArtist {
             get { return BackingStore?.Get<string>("albumArtist"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The performing artist for the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Artist {
             get { return BackingStore?.Get<string?>("artist"); }
             set { BackingStore?.Set("artist", value); }
         }
+#nullable restore
 #else
         public string Artist {
             get { return BackingStore?.Get<string>("artist"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the composer of the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Composers {
             get { return BackingStore?.Get<string?>("composers"); }
             set { BackingStore?.Set("composers", value); }
         }
+#nullable restore
 #else
         public string Composers {
             get { return BackingStore?.Get<string>("composers"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Copyright information for the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Copyright {
             get { return BackingStore?.Get<string?>("copyright"); }
             set { BackingStore?.Set("copyright", value); }
         }
+#nullable restore
 #else
         public string Copyright {
             get { return BackingStore?.Get<string>("copyright"); }
@@ -95,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The genre of this audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Genre {
             get { return BackingStore?.Get<string?>("genre"); }
             set { BackingStore?.Set("genre", value); }
         }
+#nullable restore
 #else
         public string Genre {
             get { return BackingStore?.Get<string>("genre"); }
@@ -117,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -129,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The title of the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

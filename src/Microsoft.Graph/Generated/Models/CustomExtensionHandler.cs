@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CustomExtensionHandler : Entity, IParsable {
         /// <summary>Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CustomAccessPackageWorkflowExtension? CustomExtension {
             get { return BackingStore?.Get<CustomAccessPackageWorkflowExtension?>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
+#nullable restore
 #else
         public CustomAccessPackageWorkflowExtension CustomExtension {
             get { return BackingStore?.Get<CustomAccessPackageWorkflowExtension>("customExtension"); }

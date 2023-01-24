@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class Tenant : Entity, IParsable {
         /// <summary>The relationship details for the tenant with the managing entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TenantContract? Contract {
             get { return BackingStore?.Get<TenantContract?>("contract"); }
             set { BackingStore?.Set("contract", value); }
         }
+#nullable restore
 #else
         public TenantContract Contract {
             get { return BackingStore?.Get<TenantContract>("contract"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The display name for the tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The onboarding status information for the tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation? TenantStatusInformation {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation?>("tenantStatusInformation"); }
             set { BackingStore?.Set("tenantStatusInformation", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation TenantStatusInformation {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation>("tenantStatusInformation"); }

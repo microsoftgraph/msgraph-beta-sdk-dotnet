@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsBaseline : Entity, IParsable {
         /// <summary>The user experience analytics app health metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsCategory? AppHealthMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("appHealthMetrics"); }
             set { BackingStore?.Set("appHealthMetrics", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsCategory AppHealthMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("appHealthMetrics"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user experience analytics battery health metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsCategory? BatteryHealthMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("batteryHealthMetrics"); }
             set { BackingStore?.Set("batteryHealthMetrics", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsCategory BatteryHealthMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("batteryHealthMetrics"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user experience analytics best practices metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsCategory? BestPracticesMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("bestPracticesMetrics"); }
             set { BackingStore?.Set("bestPracticesMetrics", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsCategory BestPracticesMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("bestPracticesMetrics"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user experience analytics device boot performance metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsCategory? DeviceBootPerformanceMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("deviceBootPerformanceMetrics"); }
             set { BackingStore?.Set("deviceBootPerformanceMetrics", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsCategory DeviceBootPerformanceMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("deviceBootPerformanceMetrics"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the user experience analytics baseline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user experience analytics reboot analytics metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsCategory? RebootAnalyticsMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("rebootAnalyticsMetrics"); }
             set { BackingStore?.Set("rebootAnalyticsMetrics", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsCategory RebootAnalyticsMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("rebootAnalyticsMetrics"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user experience analytics resource performance metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsCategory? ResourcePerformanceMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("resourcePerformanceMetrics"); }
             set { BackingStore?.Set("resourcePerformanceMetrics", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsCategory ResourcePerformanceMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("resourcePerformanceMetrics"); }
@@ -104,10 +118,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user experience analytics work from anywhere metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsCategory? WorkFromAnywhereMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory?>("workFromAnywhereMetrics"); }
             set { BackingStore?.Set("workFromAnywhereMetrics", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsCategory WorkFromAnywhereMetrics {
             get { return BackingStore?.Get<UserExperienceAnalyticsCategory>("workFromAnywhereMetrics"); }

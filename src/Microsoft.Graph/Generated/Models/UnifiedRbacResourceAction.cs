@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRbacResourceAction : Entity, IParsable {
         /// <summary>HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActionVerb {
             get { return BackingStore?.Get<string?>("actionVerb"); }
             set { BackingStore?.Set("actionVerb", value); }
         }
+#nullable restore
 #else
         public string ActionVerb {
             get { return BackingStore?.Get<string>("actionVerb"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The authenticationContextId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticationContextId {
             get { return BackingStore?.Get<string?>("authenticationContextId"); }
             set { BackingStore?.Set("authenticationContextId", value); }
         }
+#nullable restore
 #else
         public string AuthenticationContextId {
             get { return BackingStore?.Get<string>("authenticationContextId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description for the action. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The resourceScope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UnifiedRbacResourceScope? ResourceScope {
             get { return BackingStore?.Get<UnifiedRbacResourceScope?>("resourceScope"); }
             set { BackingStore?.Set("resourceScope", value); }
         }
+#nullable restore
 #else
         public UnifiedRbacResourceScope ResourceScope {
             get { return BackingStore?.Get<UnifiedRbacResourceScope>("resourceScope"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Not implemented.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceScopeId {
             get { return BackingStore?.Get<string?>("resourceScopeId"); }
             set { BackingStore?.Set("resourceScopeId", value); }
         }
+#nullable restore
 #else
         public string ResourceScopeId {
             get { return BackingStore?.Get<string>("resourceScopeId"); }

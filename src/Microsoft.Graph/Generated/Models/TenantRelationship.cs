@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The customer who has a delegated admin relationship with a Microsoft partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DelegatedAdminCustomer>? DelegatedAdminCustomers {
             get { return BackingStore?.Get<List<DelegatedAdminCustomer>?>("delegatedAdminCustomers"); }
             set { BackingStore?.Set("delegatedAdminCustomers", value); }
         }
+#nullable restore
 #else
         public List<DelegatedAdminCustomer> DelegatedAdminCustomers {
             get { return BackingStore?.Get<List<DelegatedAdminCustomer>>("delegatedAdminCustomers"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DelegatedAdminRelationship>? DelegatedAdminRelationships {
             get { return BackingStore?.Get<List<DelegatedAdminRelationship>?>("delegatedAdminRelationships"); }
             set { BackingStore?.Set("delegatedAdminRelationships", value); }
         }
+#nullable restore
 #else
         public List<DelegatedAdminRelationship> DelegatedAdminRelationships {
             get { return BackingStore?.Get<List<DelegatedAdminRelationship>>("delegatedAdminRelationships"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The operations available to interact with the multi-tenant management platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ManagedTenant? ManagedTenants {
             get { return BackingStore?.Get<ManagedTenant?>("managedTenants"); }
             set { BackingStore?.Set("managedTenants", value); }
         }
+#nullable restore
 #else
         public ManagedTenant ManagedTenants {
             get { return BackingStore?.Get<ManagedTenant>("managedTenants"); }
@@ -52,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

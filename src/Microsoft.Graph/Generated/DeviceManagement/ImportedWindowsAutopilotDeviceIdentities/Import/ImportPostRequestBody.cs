@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceId
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The importedWindowsAutopilotDeviceIdentities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ImportedWindowsAutopilotDeviceIdentity>? ImportedWindowsAutopilotDeviceIdentities {
             get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>?>("importedWindowsAutopilotDeviceIdentities"); }
             set { BackingStore?.Set("importedWindowsAutopilotDeviceIdentities", value); }
         }
+#nullable restore
 #else
         public List<ImportedWindowsAutopilotDeviceIdentity> ImportedWindowsAutopilotDeviceIdentities {
             get { return BackingStore?.Get<List<ImportedWindowsAutopilotDeviceIdentity>>("importedWindowsAutopilotDeviceIdentities"); }

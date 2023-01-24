@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Dismiss
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The dismissReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DismissReason {
             get { return BackingStore?.Get<string?>("dismissReason"); }
             set { BackingStore?.Set("dismissReason", value); }
         }
+#nullable restore
 #else
         public string DismissReason {
             get { return BackingStore?.Get<string>("dismissReason"); }

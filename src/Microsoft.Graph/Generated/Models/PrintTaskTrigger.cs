@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrintTaskTrigger : Entity, IParsable {
         /// <summary>The definition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrintTaskDefinition? Definition {
             get { return BackingStore?.Get<PrintTaskDefinition?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#nullable restore
 #else
         public PrintTaskDefinition Definition {
             get { return BackingStore?.Get<PrintTaskDefinition>("definition"); }

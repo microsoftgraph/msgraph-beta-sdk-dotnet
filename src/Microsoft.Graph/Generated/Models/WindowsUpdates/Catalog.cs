@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class Catalog : Entity, IParsable {
         /// <summary>Lists the content that you can approve for deployment. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CatalogEntry>? Entries {
             get { return BackingStore?.Get<List<CatalogEntry>?>("entries"); }
             set { BackingStore?.Set("entries", value); }
         }
+#nullable restore
 #else
         public List<CatalogEntry> Entries {
             get { return BackingStore?.Get<List<CatalogEntry>>("entries"); }

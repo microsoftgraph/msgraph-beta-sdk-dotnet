@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
         /// <summary>Returns the tags that are a child of a tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Tag>? ChildTags {
             get { return BackingStore?.Get<List<Tag>?>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
+#nullable restore
 #else
         public List<Tag> ChildTags {
             get { return BackingStore?.Get<List<Tag>>("childTags"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>The user who created the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>The description for the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>Display name of the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
         /// <summary>Returns the parent tag of the specified tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Tag? Parent {
             get { return BackingStore?.Get<Tag?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
+#nullable restore
 #else
         public Tag Parent {
             get { return BackingStore?.Get<Tag>("parent"); }

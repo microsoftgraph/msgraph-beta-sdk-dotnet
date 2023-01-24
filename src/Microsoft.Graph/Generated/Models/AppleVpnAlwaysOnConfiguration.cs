@@ -31,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Determines whether all, some, or no non-native captive networking apps are allowed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SpecifiedCaptiveNetworkPlugins? AllowedCaptiveNetworkPlugins {
             get { return BackingStore?.Get<SpecifiedCaptiveNetworkPlugins?>("allowedCaptiveNetworkPlugins"); }
             set { BackingStore?.Set("allowedCaptiveNetworkPlugins", value); }
         }
+#nullable restore
 #else
         public SpecifiedCaptiveNetworkPlugins AllowedCaptiveNetworkPlugins {
             get { return BackingStore?.Get<SpecifiedCaptiveNetworkPlugins>("allowedCaptiveNetworkPlugins"); }
@@ -60,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

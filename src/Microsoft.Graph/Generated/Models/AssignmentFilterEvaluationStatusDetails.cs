@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AssignmentFilterEvaluationStatusDetails : Entity, IParsable {
         /// <summary>PayloadId on which filter has been applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PayloadId {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
+#nullable restore
 #else
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }

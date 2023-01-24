@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The description of the workflowTemplate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkflowExecutionConditions? ExecutionConditions {
             get { return BackingStore?.Get<WorkflowExecutionConditions?>("executionConditions"); }
             set { BackingStore?.Set("executionConditions", value); }
         }
+#nullable restore
 #else
         public WorkflowExecutionConditions ExecutionConditions {
             get { return BackingStore?.Get<WorkflowExecutionConditions>("executionConditions"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TaskObject>? Tasks {
             get { return BackingStore?.Get<List<TaskObject>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#nullable restore
 #else
         public List<TaskObject> Tasks {
             get { return BackingStore?.Get<List<TaskObject>>("tasks"); }

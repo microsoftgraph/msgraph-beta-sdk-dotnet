@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PublishedResource : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnPremisesAgentGroup>? AgentGroups {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
+#nullable restore
 #else
         public List<OnPremisesAgentGroup> AgentGroups {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display Name of the publishedResource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the publishedResource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceName {
             get { return BackingStore?.Get<string?>("resourceName"); }
             set { BackingStore?.Set("resourceName", value); }
         }
+#nullable restore
 #else
         public string ResourceName {
             get { return BackingStore?.Get<string>("resourceName"); }

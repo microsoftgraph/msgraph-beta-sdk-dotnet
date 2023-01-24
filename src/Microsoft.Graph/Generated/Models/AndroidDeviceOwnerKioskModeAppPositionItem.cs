@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AndroidDeviceOwnerKioskModeHomeScreenItem? Item {
             get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeHomeScreenItem?>("item"); }
             set { BackingStore?.Set("item", value); }
         }
+#nullable restore
 #else
         public AndroidDeviceOwnerKioskModeHomeScreenItem Item {
             get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeHomeScreenItem>("item"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

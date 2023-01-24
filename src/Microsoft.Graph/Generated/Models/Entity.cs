@@ -26,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for an entity. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -38,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -698,6 +702,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.identityUserFlow" => new IdentityUserFlow(),
                 "#microsoft.graph.identityUserFlowAttribute" => new IdentityUserFlowAttribute(),
                 "#microsoft.graph.identityUserFlowAttributeAssignment" => new IdentityUserFlowAttributeAssignment(),
+                "#microsoft.graph.impactedResource" => new ImpactedResource(),
                 "#microsoft.graph.importedAppleDeviceIdentity" => new ImportedAppleDeviceIdentity(),
                 "#microsoft.graph.importedAppleDeviceIdentityResult" => new ImportedAppleDeviceIdentityResult(),
                 "#microsoft.graph.importedDeviceIdentity" => new ImportedDeviceIdentity(),
@@ -1090,7 +1095,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.rbacApplication" => new RbacApplication(),
                 "#microsoft.graph.rbacApplicationMultiple" => new RbacApplicationMultiple(),
                 "#microsoft.graph.recommendation" => new Recommendation(),
-                "#microsoft.graph.recommendationResource" => new RecommendationResource(),
+                "#microsoft.graph.recommendationBase" => new RecommendationBase(),
                 "#microsoft.graph.recordOperation" => new RecordOperation(),
                 "#microsoft.graph.referenceAttachment" => new ReferenceAttachment(),
                 "#microsoft.graph.regionalAndLanguageSettings" => new RegionalAndLanguageSettings(),
@@ -1239,6 +1244,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.smsAuthenticationMethodTarget" => new SmsAuthenticationMethodTarget(),
                 "#microsoft.graph.socialIdentityProvider" => new SocialIdentityProvider(),
                 "#microsoft.graph.softwareOathAuthenticationMethod" => new SoftwareOathAuthenticationMethod(),
+                "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new SoftwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.softwareUpdateStatusSummary" => new SoftwareUpdateStatusSummary(),
                 "#microsoft.graph.standardWebPart" => new StandardWebPart(),
                 "#microsoft.graph.startHoldMusicOperation" => new StartHoldMusicOperation(),
@@ -1419,6 +1425,8 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.verticalSection" => new VerticalSection(),
                 "#microsoft.graph.virtualAppointment" => new VirtualAppointment(),
                 "#microsoft.graph.virtualEndpoint" => new VirtualEndpoint(),
+                "#microsoft.graph.voiceAuthenticationMethodConfiguration" => new VoiceAuthenticationMethodConfiguration(),
+                "#microsoft.graph.voiceAuthenticationMethodTarget" => new VoiceAuthenticationMethodTarget(),
                 "#microsoft.graph.vpnConfiguration" => new VpnConfiguration(),
                 "#microsoft.graph.vppToken" => new VppToken(),
                 "#microsoft.graph.vulnerableManagedDevice" => new VulnerableManagedDevice(),

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagedTenantAlertRuleDefinition : Entity, IParsable {
         /// <summary>The alertRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedTenantAlertRule>? AlertRules {
             get { return BackingStore?.Get<List<ManagedTenantAlertRule>?>("alertRules"); }
             set { BackingStore?.Set("alertRules", value); }
         }
+#nullable restore
 #else
         public List<ManagedTenantAlertRule> AlertRules {
             get { return BackingStore?.Get<List<ManagedTenantAlertRule>>("alertRules"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedByUserId {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#nullable restore
 #else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The definitionTemplate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AlertRuleDefinitionTemplate? DefinitionTemplate {
             get { return BackingStore?.Get<AlertRuleDefinitionTemplate?>("definitionTemplate"); }
             set { BackingStore?.Set("definitionTemplate", value); }
         }
+#nullable restore
 #else
         public AlertRuleDefinitionTemplate DefinitionTemplate {
             get { return BackingStore?.Get<AlertRuleDefinitionTemplate>("definitionTemplate"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastActionByUserId {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#nullable restore
 #else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }

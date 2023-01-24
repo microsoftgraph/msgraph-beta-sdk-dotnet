@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackage? AccessPackage {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage?>("accessPackage"); }
             set { BackingStore?.Set("accessPackage", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackage"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The accessPackageCatalog property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageCatalog? AccessPackageCatalog {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCatalog?>("accessPackageCatalog"); }
             set { BackingStore?.Set("accessPackageCatalog", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCatalog>("accessPackageCatalog"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the access package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccessPackageId {
             get { return BackingStore?.Get<string?>("accessPackageId"); }
             set { BackingStore?.Set("accessPackageId", value); }
         }
+#nullable restore
 #else
         public string AccessPackageId {
             get { return BackingStore?.Get<string>("accessPackageId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AssignmentReviewSettings? AccessReviewSettings {
             get { return BackingStore?.Get<AssignmentReviewSettings?>("accessReviewSettings"); }
             set { BackingStore?.Set("accessReviewSettings", value); }
         }
+#nullable restore
 #else
         public AssignmentReviewSettings AccessReviewSettings {
             get { return BackingStore?.Get<AssignmentReviewSettings>("accessReviewSettings"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedBy {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public string CreatedBy {
             get { return BackingStore?.Get<string>("createdBy"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomExtensionHandler>? CustomExtensionHandlers {
             get { return BackingStore?.Get<List<CustomExtensionHandler>?>("customExtensionHandlers"); }
             set { BackingStore?.Set("customExtensionHandlers", value); }
         }
+#nullable restore
 #else
         public List<CustomExtensionHandler> CustomExtensionHandlers {
             get { return BackingStore?.Get<List<CustomExtensionHandler>>("customExtensionHandlers"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the policy. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The modifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ModifiedBy {
             get { return BackingStore?.Get<string?>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
+#nullable restore
 #else
         public string ModifiedBy {
             get { return BackingStore?.Get<string>("modifiedBy"); }
@@ -140,10 +158,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Questions that are posed to the  requestor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageQuestion>? Questions {
             get { return BackingStore?.Get<List<AccessPackageQuestion>?>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageQuestion> Questions {
             get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
@@ -152,10 +172,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Who must approve requests for access package in this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ApprovalSettings? RequestApprovalSettings {
             get { return BackingStore?.Get<ApprovalSettings?>("requestApprovalSettings"); }
             set { BackingStore?.Set("requestApprovalSettings", value); }
         }
+#nullable restore
 #else
         public ApprovalSettings RequestApprovalSettings {
             get { return BackingStore?.Get<ApprovalSettings>("requestApprovalSettings"); }
@@ -164,10 +186,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Who can request this access package from this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.RequestorSettings? RequestorSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestorSettings?>("requestorSettings"); }
             set { BackingStore?.Set("requestorSettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.RequestorSettings RequestorSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestorSettings>("requestorSettings"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceEnrollmentPlatformRestrictionConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>Restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceEnrollmentPlatformRestriction? PlatformRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("platformRestriction"); }
             set { BackingStore?.Set("platformRestriction", value); }
         }
+#nullable restore
 #else
         public DeviceEnrollmentPlatformRestriction PlatformRestriction {
             get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("platformRestriction"); }

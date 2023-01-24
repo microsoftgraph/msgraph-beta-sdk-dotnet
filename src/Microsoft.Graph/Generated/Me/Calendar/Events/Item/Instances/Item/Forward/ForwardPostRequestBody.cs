@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.Forward {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Comment {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.Forward {
 #endif
         /// <summary>The ToRecipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? ToRecipients {
             get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
+#nullable restore
 #else
         public List<Recipient> ToRecipients {
             get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }

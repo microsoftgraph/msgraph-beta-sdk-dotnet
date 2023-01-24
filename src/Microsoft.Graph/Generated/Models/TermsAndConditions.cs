@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TermsAndConditions : Entity, IParsable {
         /// <summary>Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&amp;C policy. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AcceptanceStatement {
             get { return BackingStore?.Get<string?>("acceptanceStatement"); }
             set { BackingStore?.Set("acceptanceStatement", value); }
         }
+#nullable restore
 #else
         public string AcceptanceStatement {
             get { return BackingStore?.Get<string>("acceptanceStatement"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of acceptance statuses for this T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TermsAndConditionsAcceptanceStatus>? AcceptanceStatuses {
             get { return BackingStore?.Get<List<TermsAndConditionsAcceptanceStatus>?>("acceptanceStatuses"); }
             set { BackingStore?.Set("acceptanceStatuses", value); }
         }
+#nullable restore
 #else
         public List<TermsAndConditionsAcceptanceStatus> AcceptanceStatuses {
             get { return BackingStore?.Get<List<TermsAndConditionsAcceptanceStatus>>("acceptanceStatuses"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of assignments for this T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TermsAndConditionsAssignment>? Assignments {
             get { return BackingStore?.Get<List<TermsAndConditionsAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<TermsAndConditionsAssignment> Assignments {
             get { return BackingStore?.Get<List<TermsAndConditionsAssignment>>("assignments"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BodyText {
             get { return BackingStore?.Get<string?>("bodyText"); }
             set { BackingStore?.Set("bodyText", value); }
         }
+#nullable restore
 #else
         public string BodyText {
             get { return BackingStore?.Get<string>("bodyText"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Administrator-supplied description of the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Administrator-supplied name for the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of group assignments for this T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TermsAndConditionsGroupAssignment>? GroupAssignments {
             get { return BackingStore?.Get<List<TermsAndConditionsGroupAssignment>?>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
+#nullable restore
 #else
         public List<TermsAndConditionsGroupAssignment> GroupAssignments {
             get { return BackingStore?.Get<List<TermsAndConditionsGroupAssignment>>("groupAssignments"); }
@@ -109,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -121,10 +137,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&amp;C policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

@@ -30,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Details of the last execution of the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SynchronizationTaskExecution? LastExecution {
             get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastExecution"); }
             set { BackingStore?.Set("lastExecution", value); }
         }
+#nullable restore
 #else
         public SynchronizationTaskExecution LastExecution {
             get { return BackingStore?.Get<SynchronizationTaskExecution>("lastExecution"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of the last execution of this job, which didn&apos;t have any errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SynchronizationTaskExecution? LastSuccessfulExecution {
             get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastSuccessfulExecution"); }
             set { BackingStore?.Set("lastSuccessfulExecution", value); }
         }
+#nullable restore
 #else
         public SynchronizationTaskExecution LastSuccessfulExecution {
             get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecution"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of the last execution of the job, which exported objects into the target directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SynchronizationTaskExecution? LastSuccessfulExecutionWithExports {
             get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastSuccessfulExecutionWithExports"); }
             set { BackingStore?.Set("lastSuccessfulExecutionWithExports", value); }
         }
+#nullable restore
 #else
         public SynchronizationTaskExecution LastSuccessfulExecutionWithExports {
             get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecutionWithExports"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of the progress of a job toward completion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationProgress>? Progress {
             get { return BackingStore?.Get<List<SynchronizationProgress>?>("progress"); }
             set { BackingStore?.Set("progress", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationProgress> Progress {
             get { return BackingStore?.Get<List<SynchronizationProgress>>("progress"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If job is in quarantine, quarantine details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SynchronizationQuarantine? Quarantine {
             get { return BackingStore?.Get<SynchronizationQuarantine?>("quarantine"); }
             set { BackingStore?.Set("quarantine", value); }
         }
+#nullable restore
 #else
         public SynchronizationQuarantine Quarantine {
             get { return BackingStore?.Get<SynchronizationQuarantine>("quarantine"); }
@@ -112,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Count of synchronized objects, listed by object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<StringKeyLongValuePair>? SynchronizedEntryCountByType {
             get { return BackingStore?.Get<List<StringKeyLongValuePair>?>("synchronizedEntryCountByType"); }
             set { BackingStore?.Set("synchronizedEntryCountByType", value); }
         }
+#nullable restore
 #else
         public List<StringKeyLongValuePair> SynchronizedEntryCountByType {
             get { return BackingStore?.Get<List<StringKeyLongValuePair>>("synchronizedEntryCountByType"); }
@@ -124,10 +138,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>In the event of an error, the URL with the troubleshooting steps for the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TroubleshootingUrl {
             get { return BackingStore?.Get<string?>("troubleshootingUrl"); }
             set { BackingStore?.Set("troubleshootingUrl", value); }
         }
+#nullable restore
 #else
         public string TroubleshootingUrl {
             get { return BackingStore?.Get<string>("troubleshootingUrl"); }

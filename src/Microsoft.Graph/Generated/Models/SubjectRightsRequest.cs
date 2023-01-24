@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SubjectRightsRequest : Entity, IParsable {
         /// <summary>Identity that the request is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? AssignedTo {
             get { return BackingStore?.Get<Identity?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
+#nullable restore
 #else
         public Identity AssignedTo {
             get { return BackingStore?.Get<Identity>("assignedTo"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentQuery {
             get { return BackingStore?.Get<string?>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
+#nullable restore
 #else
         public string ContentQuery {
             get { return BackingStore?.Get<string>("contentQuery"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity information for the entity that created the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Information about the data subject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DataSubject? DataSubject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataSubject?>("dataSubject"); }
             set { BackingStore?.Set("dataSubject", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DataSubject DataSubject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataSubject>("dataSubject"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Description for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalId {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#nullable restore
 #else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of history change events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SubjectRightsRequestHistory>? History {
             get { return BackingStore?.Get<List<SubjectRightsRequestHistory>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
+#nullable restore
 #else
         public List<SubjectRightsRequestHistory> History {
             get { return BackingStore?.Get<List<SubjectRightsRequestHistory>>("history"); }
@@ -128,10 +144,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Insight about the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SubjectRightsRequestDetail? Insight {
             get { return BackingStore?.Get<SubjectRightsRequestDetail?>("insight"); }
             set { BackingStore?.Set("insight", value); }
         }
+#nullable restore
 #else
         public SubjectRightsRequestDetail Insight {
             get { return BackingStore?.Get<SubjectRightsRequestDetail>("insight"); }
@@ -145,10 +163,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identity information for the entity that last modified the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -162,10 +182,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The mailboxlocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SubjectRightsRequestMailboxLocation? Mailboxlocations {
             get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation?>("mailboxlocations"); }
             set { BackingStore?.Set("mailboxlocations", value); }
         }
+#nullable restore
 #else
         public SubjectRightsRequestMailboxLocation Mailboxlocations {
             get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation>("mailboxlocations"); }
@@ -174,10 +196,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of notes associated with the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthoredNote>? Notes {
             get { return BackingStore?.Get<List<AuthoredNote>?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#nullable restore
 #else
         public List<AuthoredNote> Notes {
             get { return BackingStore?.Get<List<AuthoredNote>>("notes"); }
@@ -191,10 +215,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of regulations that this request will fulfill.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Regulations {
             get { return BackingStore?.Get<List<string>?>("regulations"); }
             set { BackingStore?.Set("regulations", value); }
         }
+#nullable restore
 #else
         public List<string> Regulations {
             get { return BackingStore?.Get<List<string>>("regulations"); }
@@ -203,10 +229,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sitelocations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SubjectRightsRequestSiteLocation? Sitelocations {
             get { return BackingStore?.Get<SubjectRightsRequestSiteLocation?>("sitelocations"); }
             set { BackingStore?.Set("sitelocations", value); }
         }
+#nullable restore
 #else
         public SubjectRightsRequestSiteLocation Sitelocations {
             get { return BackingStore?.Get<SubjectRightsRequestSiteLocation>("sitelocations"); }
@@ -215,10 +243,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information about the different stages for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SubjectRightsRequestStageDetail>? Stages {
             get { return BackingStore?.Get<List<SubjectRightsRequestStageDetail>?>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
+#nullable restore
 #else
         public List<SubjectRightsRequestStageDetail> Stages {
             get { return BackingStore?.Get<List<SubjectRightsRequestStageDetail>>("stages"); }
@@ -232,10 +262,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Information about the Microsoft Teams team that was created for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Team? Team {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team?>("team"); }
             set { BackingStore?.Set("team", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Team Team {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>("team"); }

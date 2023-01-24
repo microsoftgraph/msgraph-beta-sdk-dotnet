@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccessGroup : Entity, IParsable {
         /// <summary>The assignmentScheduleInstances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrivilegedAccessGroupAssignmentScheduleInstance>? AssignmentScheduleInstances {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleInstance>?>("assignmentScheduleInstances"); }
             set { BackingStore?.Set("assignmentScheduleInstances", value); }
         }
+#nullable restore
 #else
         public List<PrivilegedAccessGroupAssignmentScheduleInstance> AssignmentScheduleInstances {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleInstance>>("assignmentScheduleInstances"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The assignmentScheduleRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrivilegedAccessGroupAssignmentScheduleRequest>? AssignmentScheduleRequests {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleRequest>?>("assignmentScheduleRequests"); }
             set { BackingStore?.Set("assignmentScheduleRequests", value); }
         }
+#nullable restore
 #else
         public List<PrivilegedAccessGroupAssignmentScheduleRequest> AssignmentScheduleRequests {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentScheduleRequest>>("assignmentScheduleRequests"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The assignmentSchedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrivilegedAccessGroupAssignmentSchedule>? AssignmentSchedules {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentSchedule>?>("assignmentSchedules"); }
             set { BackingStore?.Set("assignmentSchedules", value); }
         }
+#nullable restore
 #else
         public List<PrivilegedAccessGroupAssignmentSchedule> AssignmentSchedules {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupAssignmentSchedule>>("assignmentSchedules"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The eligibilityScheduleInstances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrivilegedAccessGroupEligibilityScheduleInstance>? EligibilityScheduleInstances {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleInstance>?>("eligibilityScheduleInstances"); }
             set { BackingStore?.Set("eligibilityScheduleInstances", value); }
         }
+#nullable restore
 #else
         public List<PrivilegedAccessGroupEligibilityScheduleInstance> EligibilityScheduleInstances {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleInstance>>("eligibilityScheduleInstances"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The eligibilityScheduleRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrivilegedAccessGroupEligibilityScheduleRequest>? EligibilityScheduleRequests {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleRequest>?>("eligibilityScheduleRequests"); }
             set { BackingStore?.Set("eligibilityScheduleRequests", value); }
         }
+#nullable restore
 #else
         public List<PrivilegedAccessGroupEligibilityScheduleRequest> EligibilityScheduleRequests {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilityScheduleRequest>>("eligibilityScheduleRequests"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The eligibilitySchedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrivilegedAccessGroupEligibilitySchedule>? EligibilitySchedules {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilitySchedule>?>("eligibilitySchedules"); }
             set { BackingStore?.Set("eligibilitySchedules", value); }
         }
+#nullable restore
 #else
         public List<PrivilegedAccessGroupEligibilitySchedule> EligibilitySchedules {
             get { return BackingStore?.Get<List<PrivilegedAccessGroupEligibilitySchedule>>("eligibilitySchedules"); }

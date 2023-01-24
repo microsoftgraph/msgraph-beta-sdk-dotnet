@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CallTranscriptEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Unique identifier of the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CallId {
             get { return BackingStore?.Get<string?>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
+#nullable restore
 #else
         public string CallId {
             get { return BackingStore?.Get<string>("callId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier for a call transcript.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CallTranscriptICalUid {
             get { return BackingStore?.Get<string?>("callTranscriptICalUid"); }
             set { BackingStore?.Set("callTranscriptICalUid", value); }
         }
+#nullable restore
 #else
         public string CallTranscriptICalUid {
             get { return BackingStore?.Get<string>("callTranscriptICalUid"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The organizer of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? MeetingOrganizer {
             get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
+#nullable restore
 #else
         public IdentitySet MeetingOrganizer {
             get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }

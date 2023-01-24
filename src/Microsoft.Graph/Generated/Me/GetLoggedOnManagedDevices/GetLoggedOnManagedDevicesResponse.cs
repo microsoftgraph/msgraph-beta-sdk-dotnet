@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices {
     public class GetLoggedOnManagedDevicesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.ManagedDevice>? Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.ManagedDevice> Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>>("value"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChannelMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable {
         /// <summary>The unique identifier for the channel whose members should receive the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChannelId {
             get { return BackingStore?.Get<string?>("channelId"); }
             set { BackingStore?.Set("channelId", value); }
         }
+#nullable restore
 #else
         public string ChannelId {
             get { return BackingStore?.Get<string>("channelId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for the team under which the channel resides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamId {
             get { return BackingStore?.Get<string?>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
         }
+#nullable restore
 #else
         public string TeamId {
             get { return BackingStore?.Get<string>("teamId"); }

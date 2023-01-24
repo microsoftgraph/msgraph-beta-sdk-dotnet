@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This is the regex pattern that the corresponding text answer must follow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RegexPattern {
             get { return BackingStore?.Get<string?>("regexPattern"); }
             set { BackingStore?.Set("regexPattern", value); }
         }
+#nullable restore
 #else
         public string RegexPattern {
             get { return BackingStore?.Get<string>("regexPattern"); }

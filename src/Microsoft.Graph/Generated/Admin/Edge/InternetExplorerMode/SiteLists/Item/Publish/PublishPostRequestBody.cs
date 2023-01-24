@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The revision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Revision {
             get { return BackingStore?.Get<string?>("revision"); }
             set { BackingStore?.Set("revision", value); }
         }
+#nullable restore
 #else
         public string Revision {
             get { return BackingStore?.Get<string>("revision"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
 #endif
         /// <summary>The sharedCookies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BrowserSharedCookie>? SharedCookies {
             get { return BackingStore?.Get<List<BrowserSharedCookie>?>("sharedCookies"); }
             set { BackingStore?.Set("sharedCookies", value); }
         }
+#nullable restore
 #else
         public List<BrowserSharedCookie> SharedCookies {
             get { return BackingStore?.Get<List<BrowserSharedCookie>>("sharedCookies"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
 #endif
         /// <summary>The sites property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BrowserSite>? Sites {
             get { return BackingStore?.Get<List<BrowserSite>?>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
+#nullable restore
 #else
         public List<BrowserSite> Sites {
             get { return BackingStore?.Get<List<BrowserSite>>("sites"); }

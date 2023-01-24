@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Preview {
         }
         /// <summary>The page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Page {
             get { return BackingStore?.Get<string?>("page"); }
             set { BackingStore?.Set("page", value); }
         }
+#nullable restore
 #else
         public string Page {
             get { return BackingStore?.Get<string>("page"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Preview {
 #endif
         /// <summary>The viewer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Viewer {
             get { return BackingStore?.Get<string?>("viewer"); }
             set { BackingStore?.Set("viewer", value); }
         }
+#nullable restore
 #else
         public string Viewer {
             get { return BackingStore?.Get<string>("viewer"); }

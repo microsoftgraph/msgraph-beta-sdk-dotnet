@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The activatedUsing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrivilegedAccessGroupEligibilityScheduleInstance? ActivatedUsing {
             get { return BackingStore?.Get<PrivilegedAccessGroupEligibilityScheduleInstance?>("activatedUsing"); }
             set { BackingStore?.Set("activatedUsing", value); }
         }
+#nullable restore
 #else
         public PrivilegedAccessGroupEligibilityScheduleInstance ActivatedUsing {
             get { return BackingStore?.Get<PrivilegedAccessGroupEligibilityScheduleInstance>("activatedUsing"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The assignmentScheduleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentScheduleId {
             get { return BackingStore?.Get<string?>("assignmentScheduleId"); }
             set { BackingStore?.Set("assignmentScheduleId", value); }
         }
+#nullable restore
 #else
         public string AssignmentScheduleId {
             get { return BackingStore?.Get<string>("assignmentScheduleId"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Group? Group {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Group Group {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>("group"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The groupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GroupId {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#nullable restore
 #else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The principal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DirectoryObject? Principal {
             get { return BackingStore?.Get<DirectoryObject?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
+#nullable restore
 #else
         public DirectoryObject Principal {
             get { return BackingStore?.Get<DirectoryObject>("principal"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The principalId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrincipalId {
             get { return BackingStore?.Get<string?>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
+#nullable restore
 #else
         public string PrincipalId {
             get { return BackingStore?.Get<string>("principalId"); }

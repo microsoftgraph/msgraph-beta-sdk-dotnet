@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Post property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Post? Post {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post?>("post"); }
             set { BackingStore?.Set("post", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Post Post {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post>("post"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartSeries : Entity, IParsable {
         /// <summary>Represents the formatting of a chart series, which includes fill and line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartSeriesFormat? Format {
             get { return BackingStore?.Get<WorkbookChartSeriesFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#nullable restore
 #else
         public WorkbookChartSeriesFormat Format {
             get { return BackingStore?.Get<WorkbookChartSeriesFormat>("format"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the name of a series in a chart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a collection of all points in the series. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookChartPoint>? Points {
             get { return BackingStore?.Get<List<WorkbookChartPoint>?>("points"); }
             set { BackingStore?.Set("points", value); }
         }
+#nullable restore
 #else
         public List<WorkbookChartPoint> Points {
             get { return BackingStore?.Get<List<WorkbookChartPoint>>("points"); }

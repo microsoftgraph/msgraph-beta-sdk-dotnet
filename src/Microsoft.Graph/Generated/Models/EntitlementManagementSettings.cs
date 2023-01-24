@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>One of None, BlockSignIn, or BlockSignInAndDelete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalUserLifecycleAction {
             get { return BackingStore?.Get<string?>("externalUserLifecycleAction"); }
             set { BackingStore?.Set("externalUserLifecycleAction", value); }
         }
+#nullable restore
 #else
         public string ExternalUserLifecycleAction {
             get { return BackingStore?.Get<string>("externalUserLifecycleAction"); }

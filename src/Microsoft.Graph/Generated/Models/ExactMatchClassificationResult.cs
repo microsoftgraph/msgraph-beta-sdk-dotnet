@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExactMatchDetectedSensitiveContent>? Classification {
             get { return BackingStore?.Get<List<ExactMatchDetectedSensitiveContent>?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
+#nullable restore
 #else
         public List<ExactMatchDetectedSensitiveContent> Classification {
             get { return BackingStore?.Get<List<ExactMatchDetectedSensitiveContent>>("classification"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ClassificationError>? Errors {
             get { return BackingStore?.Get<List<ClassificationError>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
+#nullable restore
 #else
         public List<ClassificationError> Errors {
             get { return BackingStore?.Get<List<ClassificationError>>("errors"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

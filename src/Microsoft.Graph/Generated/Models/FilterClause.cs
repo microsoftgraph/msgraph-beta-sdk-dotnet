@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OperatorName {
             get { return BackingStore?.Get<string?>("operatorName"); }
             set { BackingStore?.Set("operatorName", value); }
         }
+#nullable restore
 #else
         public string OperatorName {
             get { return BackingStore?.Get<string>("operatorName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourceOperandName {
             get { return BackingStore?.Get<string?>("sourceOperandName"); }
             set { BackingStore?.Set("sourceOperandName", value); }
         }
+#nullable restore
 #else
         public string SourceOperandName {
             get { return BackingStore?.Get<string>("sourceOperandName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Values that the source operand will be tested against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public FilterOperand? TargetOperand {
             get { return BackingStore?.Get<FilterOperand?>("targetOperand"); }
             set { BackingStore?.Set("targetOperand", value); }
         }
+#nullable restore
 #else
         public FilterOperand TargetOperand {
             get { return BackingStore?.Get<FilterOperand>("targetOperand"); }

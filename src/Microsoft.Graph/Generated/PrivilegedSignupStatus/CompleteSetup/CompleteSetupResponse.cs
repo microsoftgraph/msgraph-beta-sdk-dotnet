@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
     public class CompleteSetupResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RoleSuccessStatistics>? Value {
             get { return BackingStore?.Get<List<RoleSuccessStatistics>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<RoleSuccessStatistics> Value {
             get { return BackingStore?.Get<List<RoleSuccessStatistics>>("value"); }

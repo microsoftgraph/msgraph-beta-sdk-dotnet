@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Status message for the synchronization stage of the current profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StatusMessage {
             get { return BackingStore?.Get<string?>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
+#nullable restore
 #else
         public string StatusMessage {
             get { return BackingStore?.Get<string>("statusMessage"); }

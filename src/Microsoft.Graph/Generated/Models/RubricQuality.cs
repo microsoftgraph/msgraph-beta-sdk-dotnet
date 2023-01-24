@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The collection of criteria for this rubric quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RubricCriterion>? Criteria {
             get { return BackingStore?.Get<List<RubricCriterion>?>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
+#nullable restore
 #else
         public List<RubricCriterion> Criteria {
             get { return BackingStore?.Get<List<RubricCriterion>>("criteria"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of this rubric quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationItemBody? Description {
             get { return BackingStore?.Get<EducationItemBody?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public EducationItemBody Description {
             get { return BackingStore?.Get<EducationItemBody>("description"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of this rubric quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of this resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QualityId {
             get { return BackingStore?.Get<string?>("qualityId"); }
             set { BackingStore?.Set("qualityId", value); }
         }
+#nullable restore
 #else
         public string QualityId {
             get { return BackingStore?.Get<string>("qualityId"); }

@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationsByAzureAdDe
         }
         /// <summary>The azureAdDeviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureAdDeviceId {
             get { return BackingStore?.Get<string?>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
+#nullable restore
 #else
         public string AzureAdDeviceId {
             get { return BackingStore?.Get<string>("azureAdDeviceId"); }

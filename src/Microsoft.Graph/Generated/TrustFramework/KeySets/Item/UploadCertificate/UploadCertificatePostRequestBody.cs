@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Key {
             get { return BackingStore?.Get<string?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+#nullable restore
 #else
         public string Key {
             get { return BackingStore?.Get<string>("key"); }

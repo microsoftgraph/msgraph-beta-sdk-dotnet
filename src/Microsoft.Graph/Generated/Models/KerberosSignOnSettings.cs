@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KerberosServicePrincipalName {
             get { return BackingStore?.Get<string?>("kerberosServicePrincipalName"); }
             set { BackingStore?.Set("kerberosServicePrincipalName", value); }
         }
+#nullable restore
 #else
         public string KerberosServicePrincipalName {
             get { return BackingStore?.Get<string>("kerberosServicePrincipalName"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

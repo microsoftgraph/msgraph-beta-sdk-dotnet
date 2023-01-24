@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingBusiness : BookingNamedEntity, IParsable {
         /// <summary>The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PhysicalAddress? Address {
             get { return BackingStore?.Get<PhysicalAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#nullable restore
 #else
         public PhysicalAddress Address {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All the appointments of this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingAppointment>? Appointments {
             get { return BackingStore?.Get<List<BookingAppointment>?>("appointments"); }
             set { BackingStore?.Set("appointments", value); }
         }
+#nullable restore
 #else
         public List<BookingAppointment> Appointments {
             get { return BackingStore?.Get<List<BookingAppointment>>("appointments"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The hours of operation for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingWorkHours>? BusinessHours {
             get { return BackingStore?.Get<List<BookingWorkHours>?>("businessHours"); }
             set { BackingStore?.Set("businessHours", value); }
         }
+#nullable restore
 #else
         public List<BookingWorkHours> BusinessHours {
             get { return BackingStore?.Get<List<BookingWorkHours>>("businessHours"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BusinessType {
             get { return BackingStore?.Get<string?>("businessType"); }
             set { BackingStore?.Set("businessType", value); }
         }
+#nullable restore
 #else
         public string BusinessType {
             get { return BackingStore?.Get<string>("businessType"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The set of appointments of this business in a specified date range. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingAppointment>? CalendarView {
             get { return BackingStore?.Get<List<BookingAppointment>?>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
+#nullable restore
 #else
         public List<BookingAppointment> CalendarView {
             get { return BackingStore?.Get<List<BookingAppointment>>("calendarView"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All the customers of this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingCustomer>? Customers {
             get { return BackingStore?.Get<List<BookingCustomer>?>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
+#nullable restore
 #else
         public List<BookingCustomer> Customers {
             get { return BackingStore?.Get<List<BookingCustomer>>("customers"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All the custom questions of this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingCustomQuestion>? CustomQuestions {
             get { return BackingStore?.Get<List<BookingCustomQuestion>?>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
+#nullable restore
 #else
         public List<BookingCustomQuestion> CustomQuestions {
             get { return BackingStore?.Get<List<BookingCustomQuestion>>("customQuestions"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The code for the currency that the business operates in on Microsoft Bookings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultCurrencyIso {
             get { return BackingStore?.Get<string?>("defaultCurrencyIso"); }
             set { BackingStore?.Set("defaultCurrencyIso", value); }
         }
+#nullable restore
 #else
         public string DefaultCurrencyIso {
             get { return BackingStore?.Get<string>("defaultCurrencyIso"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The email address for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Email {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#nullable restore
 #else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
@@ -120,10 +138,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The language of the self service booking page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LanguageTag {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+#nullable restore
 #else
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
@@ -132,10 +152,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Phone {
             get { return BackingStore?.Get<string?>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
+#nullable restore
 #else
         public string Phone {
             get { return BackingStore?.Get<string>("phone"); }
@@ -144,10 +166,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PublicUrl {
             get { return BackingStore?.Get<string?>("publicUrl"); }
             set { BackingStore?.Set("publicUrl", value); }
         }
+#nullable restore
 #else
         public string PublicUrl {
             get { return BackingStore?.Get<string>("publicUrl"); }
@@ -156,10 +180,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies how bookings can be created for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public BookingSchedulingPolicy? SchedulingPolicy {
             get { return BackingStore?.Get<BookingSchedulingPolicy?>("schedulingPolicy"); }
             set { BackingStore?.Set("schedulingPolicy", value); }
         }
+#nullable restore
 #else
         public BookingSchedulingPolicy SchedulingPolicy {
             get { return BackingStore?.Get<BookingSchedulingPolicy>("schedulingPolicy"); }
@@ -168,10 +194,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All the services offered by this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingService>? Services {
             get { return BackingStore?.Get<List<BookingService>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
+#nullable restore
 #else
         public List<BookingService> Services {
             get { return BackingStore?.Get<List<BookingService>>("services"); }
@@ -180,10 +208,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All the staff members that provide services in this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingStaffMember>? StaffMembers {
             get { return BackingStore?.Get<List<BookingStaffMember>?>("staffMembers"); }
             set { BackingStore?.Set("staffMembers", value); }
         }
+#nullable restore
 #else
         public List<BookingStaffMember> StaffMembers {
             get { return BackingStore?.Get<List<BookingStaffMember>>("staffMembers"); }
@@ -192,10 +222,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebSiteUrl {
             get { return BackingStore?.Get<string?>("webSiteUrl"); }
             set { BackingStore?.Set("webSiteUrl", value); }
         }
+#nullable restore
 #else
         public string WebSiteUrl {
             get { return BackingStore?.Get<string>("webSiteUrl"); }

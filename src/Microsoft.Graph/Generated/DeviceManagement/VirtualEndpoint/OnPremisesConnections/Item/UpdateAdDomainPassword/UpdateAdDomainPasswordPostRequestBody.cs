@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
         }
         /// <summary>The adDomainPassword property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdDomainPassword {
             get { return BackingStore?.Get<string?>("adDomainPassword"); }
             set { BackingStore?.Set("adDomainPassword", value); }
         }
+#nullable restore
 #else
         public string AdDomainPassword {
             get { return BackingStore?.Get<string>("adDomainPassword"); }

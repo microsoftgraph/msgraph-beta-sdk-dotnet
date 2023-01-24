@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewHistoryInstance : Entity, IParsable {
         /// <summary>Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DownloadUri {
             get { return BackingStore?.Get<string?>("downloadUri"); }
             set { BackingStore?.Set("downloadUri", value); }
         }
+#nullable restore
 #else
         public string DownloadUri {
             get { return BackingStore?.Get<string>("downloadUri"); }

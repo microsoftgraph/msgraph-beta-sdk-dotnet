@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrintUsageByPrinter : PrintUsage, IParsable {
         /// <summary>The printerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrinterId {
             get { return BackingStore?.Get<string?>("printerId"); }
             set { BackingStore?.Set("printerId", value); }
         }
+#nullable restore
 #else
         public string PrinterId {
             get { return BackingStore?.Get<string>("printerId"); }

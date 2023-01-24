@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Search.Query {
     public class QueryResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SearchResponse>? Value {
             get { return BackingStore?.Get<List<SearchResponse>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<SearchResponse> Value {
             get { return BackingStore?.Get<List<SearchResponse>>("value"); }

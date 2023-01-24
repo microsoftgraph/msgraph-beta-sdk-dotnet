@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetAzureADApplicationSignInSummaryW
     public class GetAzureADApplicationSignInSummaryWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ApplicationSignInSummary>? Value {
             get { return BackingStore?.Get<List<ApplicationSignInSummary>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<ApplicationSignInSummary> Value {
             get { return BackingStore?.Get<List<ApplicationSignInSummary>>("value"); }

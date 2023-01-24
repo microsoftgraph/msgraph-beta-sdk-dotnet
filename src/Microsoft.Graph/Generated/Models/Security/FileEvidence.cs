@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The file details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.FileDetails? FileDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FileDetails?>("fileDetails"); }
             set { BackingStore?.Set("fileDetails", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.FileDetails FileDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FileDetails>("fileDetails"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MdeDeviceId {
             get { return BackingStore?.Get<string?>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
+#nullable restore
 #else
         public string MdeDeviceId {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }

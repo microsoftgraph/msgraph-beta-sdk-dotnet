@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Mention : Entity, IParsable {
         /// <summary>The name of the application where the mention is created. Optional. Not used and defaulted as null for message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Application {
             get { return BackingStore?.Get<string?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#nullable restore
 #else
         public string Application {
             get { return BackingStore?.Get<string>("application"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientReference {
             get { return BackingStore?.Get<string?>("clientReference"); }
             set { BackingStore?.Set("clientReference", value); }
         }
+#nullable restore
 #else
         public string ClientReference {
             get { return BackingStore?.Get<string>("clientReference"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The email information of the user who made the mention.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EmailAddress? CreatedBy {
             get { return BackingStore?.Get<EmailAddress?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public EmailAddress CreatedBy {
             get { return BackingStore?.Get<EmailAddress>("createdBy"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeepLink {
             get { return BackingStore?.Get<string?>("deepLink"); }
             set { BackingStore?.Set("deepLink", value); }
         }
+#nullable restore
 #else
         public string DeepLink {
             get { return BackingStore?.Get<string>("deepLink"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The mentioned property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EmailAddress? Mentioned {
             get { return BackingStore?.Get<EmailAddress?>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
+#nullable restore
 #else
         public EmailAddress Mentioned {
             get { return BackingStore?.Get<EmailAddress>("mentioned"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MentionText {
             get { return BackingStore?.Get<string?>("mentionText"); }
             set { BackingStore?.Set("mentionText", value); }
         }
+#nullable restore
 #else
         public string MentionText {
             get { return BackingStore?.Get<string>("mentionText"); }

@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
+#nullable restore
 #else
         public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Certificate access information. This collection can contain a maximum of 50 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AndroidDeviceOwnerSilentCertificateAccess>? SilentCertificateAccessDetails {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>?>("silentCertificateAccessDetails"); }
             set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
+#nullable restore
 #else
         public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>>("silentCertificateAccessDetails"); }

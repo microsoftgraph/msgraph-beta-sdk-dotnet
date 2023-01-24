@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class ThreatSubmissionRoot : Entity, IParsable {
         /// <summary>The emailThreats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EmailThreatSubmission>? EmailThreats {
             get { return BackingStore?.Get<List<EmailThreatSubmission>?>("emailThreats"); }
             set { BackingStore?.Set("emailThreats", value); }
         }
+#nullable restore
 #else
         public List<EmailThreatSubmission> EmailThreats {
             get { return BackingStore?.Get<List<EmailThreatSubmission>>("emailThreats"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The emailThreatSubmissionPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EmailThreatSubmissionPolicy>? EmailThreatSubmissionPolicies {
             get { return BackingStore?.Get<List<EmailThreatSubmissionPolicy>?>("emailThreatSubmissionPolicies"); }
             set { BackingStore?.Set("emailThreatSubmissionPolicies", value); }
         }
+#nullable restore
 #else
         public List<EmailThreatSubmissionPolicy> EmailThreatSubmissionPolicies {
             get { return BackingStore?.Get<List<EmailThreatSubmissionPolicy>>("emailThreatSubmissionPolicies"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The fileThreats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<FileThreatSubmission>? FileThreats {
             get { return BackingStore?.Get<List<FileThreatSubmission>?>("fileThreats"); }
             set { BackingStore?.Set("fileThreats", value); }
         }
+#nullable restore
 #else
         public List<FileThreatSubmission> FileThreats {
             get { return BackingStore?.Get<List<FileThreatSubmission>>("fileThreats"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The urlThreats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UrlThreatSubmission>? UrlThreats {
             get { return BackingStore?.Get<List<UrlThreatSubmission>?>("urlThreats"); }
             set { BackingStore?.Set("urlThreats", value); }
         }
+#nullable restore
 #else
         public List<UrlThreatSubmission> UrlThreats {
             get { return BackingStore?.Get<List<UrlThreatSubmission>>("urlThreats"); }

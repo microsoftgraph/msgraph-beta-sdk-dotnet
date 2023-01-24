@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChannelDescriptionUpdatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>The updated description of the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChannelDescription {
             get { return BackingStore?.Get<string?>("channelDescription"); }
             set { BackingStore?.Set("channelDescription", value); }
         }
+#nullable restore
 #else
         public string ChannelDescription {
             get { return BackingStore?.Get<string>("channelDescription"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier of the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChannelId {
             get { return BackingStore?.Get<string?>("channelId"); }
             set { BackingStore?.Set("channelId", value); }
         }
+#nullable restore
 #else
         public string ChannelId {
             get { return BackingStore?.Get<string>("channelId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Initiator {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#nullable restore
 #else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }

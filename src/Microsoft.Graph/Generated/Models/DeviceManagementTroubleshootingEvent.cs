@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementTroubleshootingEvent : Entity, IParsable {
         /// <summary>A set of string key and string value pairs which provides additional information on the Troubleshooting event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? AdditionalInformation {
             get { return BackingStore?.Get<List<KeyValuePair>?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> AdditionalInformation {
             get { return BackingStore?.Get<List<KeyValuePair>>("additionalInformation"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Id used for tracing the failure in the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CorrelationId {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#nullable restore
 #else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Event Name corresponding to the Troubleshooting Event. It is an Optional field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EventName {
             get { return BackingStore?.Get<string?>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
         }
+#nullable restore
 #else
         public string EventName {
             get { return BackingStore?.Get<string>("eventName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails {
             get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails?>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
+#nullable restore
 #else
         public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails {
             get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }

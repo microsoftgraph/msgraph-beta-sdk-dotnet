@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResourceRoleScope : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageResourceRole? AccessPackageResourceRole {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole?>("accessPackageResourceRole"); }
             set { BackingStore?.Set("accessPackageResourceRole", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRole"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The accessPackageResourceScope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageResourceScope? AccessPackageResourceScope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope?>("accessPackageResourceScope"); }
             set { BackingStore?.Set("accessPackageResourceScope", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>("accessPackageResourceScope"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedBy {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public string CreatedBy {
             get { return BackingStore?.Get<string>("createdBy"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The modifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ModifiedBy {
             get { return BackingStore?.Get<string?>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
+#nullable restore
 #else
         public string ModifiedBy {
             get { return BackingStore?.Get<string>("modifiedBy"); }

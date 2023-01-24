@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The content stream of the alternative recording of a Microsoft Teams live event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? AlternativeRecording {
             get { return BackingStore?.Get<byte[]?>("alternativeRecording"); }
             set { BackingStore?.Set("alternativeRecording", value); }
         }
+#nullable restore
 #else
         public byte[] AlternativeRecording {
             get { return BackingStore?.Get<byte[]>("alternativeRecording"); }
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The anonymizeIdentityForRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnlineMeetingRole?>? AnonymizeIdentityForRoles {
             get { return BackingStore?.Get<List<OnlineMeetingRole?>?>("anonymizeIdentityForRoles"); }
             set { BackingStore?.Set("anonymizeIdentityForRoles", value); }
         }
+#nullable restore
 #else
         public List<OnlineMeetingRole?> AnonymizeIdentityForRoles {
             get { return BackingStore?.Get<List<OnlineMeetingRole?>>("anonymizeIdentityForRoles"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>? AttendanceReports {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>?>("attendanceReports"); }
             set { BackingStore?.Set("attendanceReports", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.MeetingAttendanceReport> AttendanceReports {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>>("attendanceReports"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The content stream of the attendee report of a Teams live event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? AttendeeReport {
             get { return BackingStore?.Get<byte[]?>("attendeeReport"); }
             set { BackingStore?.Set("attendeeReport", value); }
         }
+#nullable restore
 #else
         public byte[] AttendeeReport {
             get { return BackingStore?.Get<byte[]>("attendeeReport"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The phone access (dial-in) information for an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AudioConferencing? AudioConferencing {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AudioConferencing?>("audioConferencing"); }
             set { BackingStore?.Set("audioConferencing", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AudioConferencing AudioConferencing {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AudioConferencing>("audioConferencing"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Settings related to a live event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public BroadcastMeetingSettings? BroadcastSettings {
             get { return BackingStore?.Get<BroadcastMeetingSettings?>("broadcastSettings"); }
             set { BackingStore?.Set("broadcastSettings", value); }
         }
+#nullable restore
 #else
         public BroadcastMeetingSettings BroadcastSettings {
             get { return BackingStore?.Get<BroadcastMeetingSettings>("broadcastSettings"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The capabilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MeetingCapabilities?>? Capabilities {
             get { return BackingStore?.Get<List<MeetingCapabilities?>?>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
+#nullable restore
 #else
         public List<MeetingCapabilities?> Capabilities {
             get { return BackingStore?.Get<List<MeetingCapabilities?>>("capabilities"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The chat information associated with this online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ChatInfo? ChatInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatInfo?>("chatInfo"); }
             set { BackingStore?.Set("chatInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ChatInfo ChatInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo"); }
@@ -133,10 +149,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The external ID. A custom ID. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalId {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#nullable restore
 #else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
@@ -155,10 +173,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The join information in the language and locale variant specified in &apos;Accept-Language&apos; request HTTP header. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? JoinInformation {
             get { return BackingStore?.Get<ItemBody?>("joinInformation"); }
             set { BackingStore?.Set("joinInformation", value); }
         }
+#nullable restore
 #else
         public ItemBody JoinInformation {
             get { return BackingStore?.Get<ItemBody>("joinInformation"); }
@@ -167,10 +187,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.JoinMeetingIdSettings? JoinMeetingIdSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.JoinMeetingIdSettings?>("joinMeetingIdSettings"); }
             set { BackingStore?.Set("joinMeetingIdSettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.JoinMeetingIdSettings JoinMeetingIdSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.JoinMeetingIdSettings>("joinMeetingIdSettings"); }
@@ -179,10 +201,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The joinUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JoinUrl {
             get { return BackingStore?.Get<string?>("joinUrl"); }
             set { BackingStore?.Set("joinUrl", value); }
         }
+#nullable restore
 #else
         public string JoinUrl {
             get { return BackingStore?.Get<string>("joinUrl"); }
@@ -191,10 +215,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The join URL of the online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JoinWebUrl {
             get { return BackingStore?.Get<string?>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
+#nullable restore
 #else
         public string JoinWebUrl {
             get { return BackingStore?.Get<string>("joinWebUrl"); }
@@ -203,10 +229,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies which participants can bypass the meeting lobby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.LobbyBypassSettings? LobbyBypassSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings?>("lobbyBypassSettings"); }
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.LobbyBypassSettings LobbyBypassSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings>("lobbyBypassSettings"); }
@@ -215,10 +243,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The meetingAttendanceReport property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.MeetingAttendanceReport? MeetingAttendanceReport {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingAttendanceReport?>("meetingAttendanceReport"); }
             set { BackingStore?.Set("meetingAttendanceReport", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.MeetingAttendanceReport MeetingAttendanceReport {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>("meetingAttendanceReport"); }
@@ -227,10 +257,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The participants associated with the online meeting. This includes the organizer and the attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MeetingParticipants? Participants {
             get { return BackingStore?.Get<MeetingParticipants?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#nullable restore
 #else
         public MeetingParticipants Participants {
             get { return BackingStore?.Get<MeetingParticipants>("participants"); }
@@ -244,10 +276,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The content stream of the recording of a Teams live event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Recording {
             get { return BackingStore?.Get<byte[]?>("recording"); }
             set { BackingStore?.Set("recording", value); }
         }
+#nullable restore
 #else
         public byte[] Recording {
             get { return BackingStore?.Get<byte[]>("recording"); }
@@ -256,10 +290,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MeetingRegistration? Registration {
             get { return BackingStore?.Get<MeetingRegistration?>("registration"); }
             set { BackingStore?.Set("registration", value); }
         }
+#nullable restore
 #else
         public MeetingRegistration Registration {
             get { return BackingStore?.Get<MeetingRegistration>("registration"); }
@@ -273,10 +309,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The subject of the online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
@@ -285,10 +323,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The transcripts of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CallTranscript>? Transcripts {
             get { return BackingStore?.Get<List<CallTranscript>?>("transcripts"); }
             set { BackingStore?.Set("transcripts", value); }
         }
+#nullable restore
 #else
         public List<CallTranscript> Transcripts {
             get { return BackingStore?.Get<List<CallTranscript>>("transcripts"); }
@@ -297,10 +337,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The video teleconferencing ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VideoTeleconferenceId {
             get { return BackingStore?.Get<string?>("videoTeleconferenceId"); }
             set { BackingStore?.Set("videoTeleconferenceId", value); }
         }
+#nullable restore
 #else
         public string VideoTeleconferenceId {
             get { return BackingStore?.Get<string>("videoTeleconferenceId"); }
@@ -309,10 +351,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The virtualAppointment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.VirtualAppointment? VirtualAppointment {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualAppointment?>("virtualAppointment"); }
             set { BackingStore?.Set("virtualAppointment", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.VirtualAppointment VirtualAppointment {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualAppointment>("virtualAppointment"); }
@@ -321,10 +365,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The watermarkProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WatermarkProtectionValues? WatermarkProtection {
             get { return BackingStore?.Get<WatermarkProtectionValues?>("watermarkProtection"); }
             set { BackingStore?.Set("watermarkProtection", value); }
         }
+#nullable restore
 #else
         public WatermarkProtectionValues WatermarkProtection {
             get { return BackingStore?.Get<WatermarkProtectionValues>("watermarkProtection"); }

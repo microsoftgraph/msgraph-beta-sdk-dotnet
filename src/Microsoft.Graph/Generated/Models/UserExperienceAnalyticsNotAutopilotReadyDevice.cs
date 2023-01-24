@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The intune device&apos;s azure Ad joinType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureAdJoinType {
             get { return BackingStore?.Get<string?>("azureAdJoinType"); }
             set { BackingStore?.Set("azureAdJoinType", value); }
         }
+#nullable restore
 #else
         public string AzureAdJoinType {
             get { return BackingStore?.Get<string>("azureAdJoinType"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The intune device&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The intune device&apos;s managed by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedBy {
             get { return BackingStore?.Get<string?>("managedBy"); }
             set { BackingStore?.Set("managedBy", value); }
         }
+#nullable restore
 #else
         public string ManagedBy {
             get { return BackingStore?.Get<string>("managedBy"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The intune device&apos;s manufacturer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Manufacturer {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#nullable restore
 #else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The intune device&apos;s model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Model {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#nullable restore
 #else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The intune device&apos;s serial number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SerialNumber {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#nullable restore
 #else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }

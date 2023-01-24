@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? File {
             get { return BackingStore?.Get<byte[]?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
+#nullable restore
 #else
         public byte[] File {
             get { return BackingStore?.Get<byte[]>("file"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
 #endif
         /// <summary>The sensitiveTypeIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SensitiveTypeIds {
             get { return BackingStore?.Get<List<string>?>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
+#nullable restore
 #else
         public List<string> SensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }

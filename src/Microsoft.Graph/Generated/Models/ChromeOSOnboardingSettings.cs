@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ChromebookTenant&apos;s OwnerUserPrincipalName</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OwnerUserPrincipalName {
             get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
+#nullable restore
 #else
         public string OwnerUserPrincipalName {
             get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }

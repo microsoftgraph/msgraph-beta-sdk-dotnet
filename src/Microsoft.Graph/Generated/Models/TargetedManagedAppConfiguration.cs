@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedMobileApp>? Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
+#nullable restore
 #else
         public List<ManagedMobileApp> Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TargetedManagedAppPolicyAssignment>? Assignments {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<TargetedManagedAppPolicyAssignment> Assignments {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ManagedAppPolicyDeploymentSummary? DeploymentSummary {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
+#nullable restore
 #else
         public ManagedAppPolicyDeploymentSummary DeploymentSummary {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }

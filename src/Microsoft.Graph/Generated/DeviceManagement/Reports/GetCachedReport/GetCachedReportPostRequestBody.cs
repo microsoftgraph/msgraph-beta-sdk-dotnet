@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? GroupBy {
             get { return BackingStore?.Get<List<string>?>("groupBy"); }
             set { BackingStore?.Set("groupBy", value); }
         }
+#nullable restore
 #else
         public List<string> GroupBy {
             get { return BackingStore?.Get<List<string>>("groupBy"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport {
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport {
 #endif
         /// <summary>The orderBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? OrderBy {
             get { return BackingStore?.Get<List<string>?>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
+#nullable restore
 #else
         public List<string> OrderBy {
             get { return BackingStore?.Get<List<string>>("orderBy"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport {
 #endif
         /// <summary>The search property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Search {
             get { return BackingStore?.Get<string?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#nullable restore
 #else
         public string Search {
             get { return BackingStore?.Get<string>("search"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport {
 #endif
         /// <summary>The select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Select {
             get { return BackingStore?.Get<List<string>?>("select"); }
             set { BackingStore?.Set("select", value); }
         }
+#nullable restore
 #else
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }

@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of assigned trainings and their information in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssignedTrainingInfo>? AssignedTrainingsInfos {
             get { return BackingStore?.Get<List<AssignedTrainingInfo>?>("assignedTrainingsInfos"); }
             set { BackingStore?.Set("assignedTrainingsInfos", value); }
         }
+#nullable restore
 #else
         public List<AssignedTrainingInfo> AssignedTrainingsInfos {
             get { return BackingStore?.Get<List<AssignedTrainingInfo>>("assignedTrainingsInfos"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

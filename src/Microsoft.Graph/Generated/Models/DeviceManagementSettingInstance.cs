@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingInstance : Entity, IParsable {
         /// <summary>The ID of the setting definition for this instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefinitionId {
             get { return BackingStore?.Get<string?>("definitionId"); }
             set { BackingStore?.Set("definitionId", value); }
         }
+#nullable restore
 #else
         public string DefinitionId {
             get { return BackingStore?.Get<string>("definitionId"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>JSON representation of the value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ValueJson {
             get { return BackingStore?.Get<string?>("valueJson"); }
             set { BackingStore?.Set("valueJson", value); }
         }
+#nullable restore
 #else
         public string ValueJson {
             get { return BackingStore?.Get<string>("valueJson"); }

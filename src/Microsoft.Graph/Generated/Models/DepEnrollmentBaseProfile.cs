@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Sets a literal or name pattern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceNameTemplate {
             get { return BackingStore?.Get<string?>("deviceNameTemplate"); }
             set { BackingStore?.Set("deviceNameTemplate", value); }
         }
+#nullable restore
 #else
         public string DeviceNameTemplate {
             get { return BackingStore?.Get<string>("deviceNameTemplate"); }
@@ -44,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>enabledSkipKeys contains all the enabled skip keys as strings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EnabledSkipKeys {
             get { return BackingStore?.Get<List<string>?>("enabledSkipKeys"); }
             set { BackingStore?.Set("enabledSkipKeys", value); }
         }
+#nullable restore
 #else
         public List<string> EnabledSkipKeys {
             get { return BackingStore?.Get<List<string>>("enabledSkipKeys"); }
@@ -101,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Support department information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SupportDepartment {
             get { return BackingStore?.Get<string?>("supportDepartment"); }
             set { BackingStore?.Set("supportDepartment", value); }
         }
+#nullable restore
 #else
         public string SupportDepartment {
             get { return BackingStore?.Get<string>("supportDepartment"); }
@@ -113,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Support phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SupportPhoneNumber {
             get { return BackingStore?.Get<string?>("supportPhoneNumber"); }
             set { BackingStore?.Set("supportPhoneNumber", value); }
         }
+#nullable restore
 #else
         public string SupportPhoneNumber {
             get { return BackingStore?.Get<string>("supportPhoneNumber"); }

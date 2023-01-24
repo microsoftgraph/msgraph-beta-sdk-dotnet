@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Fido2AuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AaGuid {
             get { return BackingStore?.Get<string?>("aaGuid"); }
             set { BackingStore?.Set("aaGuid", value); }
         }
+#nullable restore
 #else
         public string AaGuid {
             get { return BackingStore?.Get<string>("aaGuid"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The attestation certificate(s) attached to this security key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AttestationCertificates {
             get { return BackingStore?.Get<List<string>?>("attestationCertificates"); }
             set { BackingStore?.Set("attestationCertificates", value); }
         }
+#nullable restore
 #else
         public List<string> AttestationCertificates {
             get { return BackingStore?.Get<List<string>>("attestationCertificates"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The display name of the key as given by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The manufacturer-assigned model of the FIDO2 security key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Model {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#nullable restore
 #else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }

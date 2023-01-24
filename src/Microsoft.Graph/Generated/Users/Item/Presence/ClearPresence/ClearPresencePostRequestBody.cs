@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.ClearPresence {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The sessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SessionId {
             get { return BackingStore?.Get<string?>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
+#nullable restore
 #else
         public string SessionId {
             get { return BackingStore?.Get<string>("sessionId"); }

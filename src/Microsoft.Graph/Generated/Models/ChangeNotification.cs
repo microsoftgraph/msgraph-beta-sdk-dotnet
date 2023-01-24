@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Value of the clientState property sent specified in the subscription request (if any). The maximum length is 255 characters. The client can check whether the change notification came from the service by comparing the values of the clientState property. The value of the clientState property sent with the subscription is compared with the value of the clientState property received with each change notification. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientState {
             get { return BackingStore?.Get<string?>("clientState"); }
             set { BackingStore?.Set("clientState", value); }
         }
+#nullable restore
 #else
         public string ClientState {
             get { return BackingStore?.Get<string>("clientState"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>(Preview) Encrypted content attached with the change notification. Only provided if encryptionCertificate and includeResourceData were defined during the subscription request and if the resource supports it. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ChangeNotificationEncryptedContent? EncryptedContent {
             get { return BackingStore?.Get<ChangeNotificationEncryptedContent?>("encryptedContent"); }
             set { BackingStore?.Set("encryptedContent", value); }
         }
+#nullable restore
 #else
         public ChangeNotificationEncryptedContent EncryptedContent {
             get { return BackingStore?.Get<ChangeNotificationEncryptedContent>("encryptedContent"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique ID for the notification. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URI of the resource that emitted the change notification relative to https://graph.microsoft.com. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Resource {
             get { return BackingStore?.Get<string?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#nullable restore
 #else
         public string Resource {
             get { return BackingStore?.Get<string>("resource"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The content of this property depends on the type of resource being subscribed to. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ResourceData? ResourceData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceData?>("resourceData"); }
             set { BackingStore?.Set("resourceData", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ResourceData ResourceData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceData>("resourceData"); }

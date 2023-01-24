@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookOperation : Entity, IParsable {
         /// <summary>The error returned by the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookOperationError? Error {
             get { return BackingStore?.Get<WorkbookOperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public WorkbookOperationError Error {
             get { return BackingStore?.Get<WorkbookOperationError>("error"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The resource URI for the result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceLocation {
             get { return BackingStore?.Get<string?>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
+#nullable restore
 #else
         public string ResourceLocation {
             get { return BackingStore?.Get<string>("resourceLocation"); }

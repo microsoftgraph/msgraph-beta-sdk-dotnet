@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of keywords used to trigger the search answer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Keywords {
             get { return BackingStore?.Get<List<string>?>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
+#nullable restore
 #else
         public List<string> Keywords {
             get { return BackingStore?.Get<List<string>>("keywords"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
 #endif
         /// <summary>Unique keywords that will guarantee the search answer is triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ReservedKeywords {
             get { return BackingStore?.Get<List<string>?>("reservedKeywords"); }
             set { BackingStore?.Set("reservedKeywords", value); }
         }
+#nullable restore
 #else
         public List<string> ReservedKeywords {
             get { return BackingStore?.Get<List<string>>("reservedKeywords"); }

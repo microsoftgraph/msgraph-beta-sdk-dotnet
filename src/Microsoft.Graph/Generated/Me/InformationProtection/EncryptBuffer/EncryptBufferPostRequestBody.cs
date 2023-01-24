@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.EncryptBuffer {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The buffer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Buffer {
             get { return BackingStore?.Get<byte[]?>("buffer"); }
             set { BackingStore?.Set("buffer", value); }
         }
+#nullable restore
 #else
         public byte[] Buffer {
             get { return BackingStore?.Get<byte[]>("buffer"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileApp>? Value {
             get { return BackingStore?.Get<List<MobileApp>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<MobileApp> Value {
             get { return BackingStore?.Get<List<MobileApp>>("value"); }

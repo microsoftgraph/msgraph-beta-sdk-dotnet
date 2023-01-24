@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Targeted device Mac address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetedDeviceMacAddress {
             get { return BackingStore?.Get<string?>("targetedDeviceMacAddress"); }
             set { BackingStore?.Set("targetedDeviceMacAddress", value); }
         }
+#nullable restore
 #else
         public string TargetedDeviceMacAddress {
             get { return BackingStore?.Get<string>("targetedDeviceMacAddress"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Targeted device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetedDeviceName {
             get { return BackingStore?.Get<string?>("targetedDeviceName"); }
             set { BackingStore?.Set("targetedDeviceName", value); }
         }
+#nullable restore
 #else
         public string TargetedDeviceName {
             get { return BackingStore?.Get<string>("targetedDeviceName"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The DeviceRegistrationId being targeted by this wipe action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetedDeviceRegistrationId {
             get { return BackingStore?.Get<string?>("targetedDeviceRegistrationId"); }
             set { BackingStore?.Set("targetedDeviceRegistrationId", value); }
         }
+#nullable restore
 #else
         public string TargetedDeviceRegistrationId {
             get { return BackingStore?.Get<string>("targetedDeviceRegistrationId"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The UserId being targeted by this wipe action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetedUserId {
             get { return BackingStore?.Get<string?>("targetedUserId"); }
             set { BackingStore?.Set("targetedUserId", value); }
         }
+#nullable restore
 #else
         public string TargetedUserId {
             get { return BackingStore?.Get<string>("targetedUserId"); }

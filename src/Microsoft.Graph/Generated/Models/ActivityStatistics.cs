@@ -28,10 +28,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be &apos;Pacific Standard Time.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TimeZoneUsed {
             get { return BackingStore?.Get<string?>("timeZoneUsed"); }
             set { BackingStore?.Set("timeZoneUsed", value); }
         }
+#nullable restore
 #else
         public string TimeZoneUsed {
             get { return BackingStore?.Get<string>("timeZoneUsed"); }

@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.AddActivities {
     public class AddActivitiesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExternalActivityResult>? Value {
             get { return BackingStore?.Get<List<ExternalActivityResult>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<ExternalActivityResult> Value {
             get { return BackingStore?.Get<List<ExternalActivityResult>>("value"); }

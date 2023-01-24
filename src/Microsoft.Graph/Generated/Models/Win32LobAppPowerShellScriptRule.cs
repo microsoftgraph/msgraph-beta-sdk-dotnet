@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppPowerShellScriptRule : Win32LobAppRule, IParsable {
         /// <summary>The script output comparison value. Do not specify a value if the rule is used for detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ComparisonValue {
             get { return BackingStore?.Get<string?>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
+#nullable restore
 #else
         public string ComparisonValue {
             get { return BackingStore?.Get<string>("comparisonValue"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name for the rule. Do not specify this value if the rule is used for detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -56,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The base64-encoded script content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScriptContent {
             get { return BackingStore?.Get<string?>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
+#nullable restore
 #else
         public string ScriptContent {
             get { return BackingStore?.Get<string>("scriptContent"); }

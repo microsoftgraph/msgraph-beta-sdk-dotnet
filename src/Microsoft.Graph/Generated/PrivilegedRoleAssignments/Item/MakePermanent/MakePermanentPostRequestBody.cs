@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Reason {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
+#nullable restore
 #else
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
 #endif
         /// <summary>The ticketNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TicketNumber {
             get { return BackingStore?.Get<string?>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
+#nullable restore
 #else
         public string TicketNumber {
             get { return BackingStore?.Get<string>("ticketNumber"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
 #endif
         /// <summary>The ticketSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TicketSystem {
             get { return BackingStore?.Get<string?>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
+#nullable restore
 #else
         public string TicketSystem {
             get { return BackingStore?.Get<string>("ticketSystem"); }

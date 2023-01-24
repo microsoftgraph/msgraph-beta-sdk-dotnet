@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>How many decimal places to display. See below for information about the possible values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DecimalPlaces {
             get { return BackingStore?.Get<string?>("decimalPlaces"); }
             set { BackingStore?.Set("decimalPlaces", value); }
         }
+#nullable restore
 #else
         public string DecimalPlaces {
             get { return BackingStore?.Get<string>("decimalPlaces"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayAs {
             get { return BackingStore?.Get<string?>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
+#nullable restore
 #else
         public string DisplayAs {
             get { return BackingStore?.Get<string>("displayAs"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

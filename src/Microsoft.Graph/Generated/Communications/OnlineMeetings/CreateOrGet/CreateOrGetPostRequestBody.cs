@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.CreateOrGet {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The chatInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ChatInfo? ChatInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatInfo?>("chatInfo"); }
             set { BackingStore?.Set("chatInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ChatInfo ChatInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo"); }
@@ -33,10 +35,12 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.CreateOrGet {
         }
         /// <summary>The externalId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalId {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#nullable restore
 #else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
@@ -45,10 +49,12 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.CreateOrGet {
 #endif
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MeetingParticipants? Participants {
             get { return BackingStore?.Get<MeetingParticipants?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#nullable restore
 #else
         public MeetingParticipants Participants {
             get { return BackingStore?.Get<MeetingParticipants>("participants"); }
@@ -62,10 +68,12 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.CreateOrGet {
         }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }

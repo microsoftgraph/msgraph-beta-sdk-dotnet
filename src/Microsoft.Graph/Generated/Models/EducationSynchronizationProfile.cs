@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationProfile : Entity, IParsable {
         /// <summary>The dataProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationSynchronizationDataProvider? DataProvider {
             get { return BackingStore?.Get<EducationSynchronizationDataProvider?>("dataProvider"); }
             set { BackingStore?.Set("dataProvider", value); }
         }
+#nullable restore
 #else
         public EducationSynchronizationDataProvider DataProvider {
             get { return BackingStore?.Get<EducationSynchronizationDataProvider>("dataProvider"); }
@@ -20,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the configuration profile for syncing identities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -32,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All errors associated with this synchronization profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationSynchronizationError>? Errors {
             get { return BackingStore?.Get<List<EducationSynchronizationError>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
+#nullable restore
 #else
         public List<EducationSynchronizationError> Errors {
             get { return BackingStore?.Get<List<EducationSynchronizationError>>("errors"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The identitySynchronizationConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationIdentitySynchronizationConfiguration? IdentitySynchronizationConfiguration {
             get { return BackingStore?.Get<EducationIdentitySynchronizationConfiguration?>("identitySynchronizationConfiguration"); }
             set { BackingStore?.Set("identitySynchronizationConfiguration", value); }
         }
+#nullable restore
 #else
         public EducationIdentitySynchronizationConfiguration IdentitySynchronizationConfiguration {
             get { return BackingStore?.Get<EducationIdentitySynchronizationConfiguration>("identitySynchronizationConfiguration"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>License setup configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationSynchronizationLicenseAssignment>? LicensesToAssign {
             get { return BackingStore?.Get<List<EducationSynchronizationLicenseAssignment>?>("licensesToAssign"); }
             set { BackingStore?.Set("licensesToAssign", value); }
         }
+#nullable restore
 #else
         public List<EducationSynchronizationLicenseAssignment> LicensesToAssign {
             get { return BackingStore?.Get<List<EducationSynchronizationLicenseAssignment>>("licensesToAssign"); }
@@ -78,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The synchronization status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationSynchronizationProfileStatus? ProfileStatus {
             get { return BackingStore?.Get<EducationSynchronizationProfileStatus?>("profileStatus"); }
             set { BackingStore?.Set("profileStatus", value); }
         }
+#nullable restore
 #else
         public EducationSynchronizationProfileStatus ProfileStatus {
             get { return BackingStore?.Get<EducationSynchronizationProfileStatus>("profileStatus"); }

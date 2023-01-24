@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminRelationship : Entity, IParsable {
         /// <summary>The access assignments associated with the delegated admin relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DelegatedAdminAccessAssignment>? AccessAssignments {
             get { return BackingStore?.Get<List<DelegatedAdminAccessAssignment>?>("accessAssignments"); }
             set { BackingStore?.Set("accessAssignments", value); }
         }
+#nullable restore
 #else
         public List<DelegatedAdminAccessAssignment> AccessAssignments {
             get { return BackingStore?.Get<List<DelegatedAdminAccessAssignment>>("accessAssignments"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The accessDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DelegatedAdminAccessDetails? AccessDetails {
             get { return BackingStore?.Get<DelegatedAdminAccessDetails?>("accessDetails"); }
             set { BackingStore?.Set("accessDetails", value); }
         }
+#nullable restore
 #else
         public DelegatedAdminAccessDetails AccessDetails {
             get { return BackingStore?.Get<DelegatedAdminAccessDetails>("accessDetails"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DelegatedAdminRelationshipCustomerParticipant? Customer {
             get { return BackingStore?.Get<DelegatedAdminRelationshipCustomerParticipant?>("customer"); }
             set { BackingStore?.Set("customer", value); }
         }
+#nullable restore
 #else
         public DelegatedAdminRelationshipCustomerParticipant Customer {
             get { return BackingStore?.Get<DelegatedAdminRelationshipCustomerParticipant>("customer"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The long running operations associated with the delegated admin relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DelegatedAdminRelationshipOperation>? Operations {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<DelegatedAdminRelationshipOperation> Operations {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipOperation>>("operations"); }
@@ -92,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The requests associated with the delegated admin relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DelegatedAdminRelationshipRequest>? Requests {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipRequest>?>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
+#nullable restore
 #else
         public List<DelegatedAdminRelationshipRequest> Requests {
             get { return BackingStore?.Get<List<DelegatedAdminRelationshipRequest>>("requests"); }

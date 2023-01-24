@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Approval ids, if approval is required for activation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ApproverIds {
             get { return BackingStore?.Get<List<string>?>("approverIds"); }
             set { BackingStore?.Set("approverIds", value); }
         }
+#nullable restore
 #else
         public List<string> ApproverIds {
             get { return BackingStore?.Get<List<string>>("approverIds"); }

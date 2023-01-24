@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.ExceptionOccurrence
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Comment {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }

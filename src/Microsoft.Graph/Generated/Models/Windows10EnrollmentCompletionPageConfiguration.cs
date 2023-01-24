@@ -32,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Set custom error message to show upon installation failure</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomErrorMessage {
             get { return BackingStore?.Get<string?>("customErrorMessage"); }
             set { BackingStore?.Set("customErrorMessage", value); }
         }
+#nullable restore
 #else
         public string CustomErrorMessage {
             get { return BackingStore?.Get<string>("customErrorMessage"); }
@@ -59,10 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Selected applications to track the installation status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SelectedMobileAppIds {
             get { return BackingStore?.Get<List<string>?>("selectedMobileAppIds"); }
             set { BackingStore?.Set("selectedMobileAppIds", value); }
         }
+#nullable restore
 #else
         public List<string> SelectedMobileAppIds {
             get { return BackingStore?.Get<List<string>>("selectedMobileAppIds"); }

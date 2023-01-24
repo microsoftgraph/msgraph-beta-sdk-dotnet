@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The parentUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentUri {
             get { return BackingStore?.Get<string?>("parentUri"); }
             set { BackingStore?.Set("parentUri", value); }
         }
+#nullable restore
 #else
         public string ParentUri {
             get { return BackingStore?.Get<string>("parentUri"); }

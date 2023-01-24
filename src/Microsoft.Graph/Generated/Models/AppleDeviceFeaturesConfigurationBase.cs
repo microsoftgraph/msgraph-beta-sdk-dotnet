@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AirPrintDestination>? AirPrintDestinations {
             get { return BackingStore?.Get<List<AirPrintDestination>?>("airPrintDestinations"); }
             set { BackingStore?.Set("airPrintDestinations", value); }
         }
+#nullable restore
 #else
         public List<AirPrintDestination> AirPrintDestinations {
             get { return BackingStore?.Get<List<AirPrintDestination>>("airPrintDestinations"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier (guid) for the item&apos;s list in SharePoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ListId {
             get { return BackingStore?.Get<string?>("listId"); }
             set { BackingStore?.Set("listId", value); }
         }
+#nullable restore
 #else
         public string ListId {
             get { return BackingStore?.Get<string>("listId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An integer identifier for the item within the containing list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ListItemId {
             get { return BackingStore?.Get<string?>("listItemId"); }
             set { BackingStore?.Set("listItemId", value); }
         }
+#nullable restore
 #else
         public string ListItemId {
             get { return BackingStore?.Get<string>("listItemId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ListItemUniqueId {
             get { return BackingStore?.Get<string?>("listItemUniqueId"); }
             set { BackingStore?.Set("listItemUniqueId", value); }
         }
+#nullable restore
 #else
         public string ListItemUniqueId {
             get { return BackingStore?.Get<string>("listItemUniqueId"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier (guid) for the item&apos;s site collection (SPSite).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SiteId {
             get { return BackingStore?.Get<string?>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
+#nullable restore
 #else
         public string SiteId {
             get { return BackingStore?.Get<string>("siteId"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The SharePoint URL for the site that contains the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SiteUrl {
             get { return BackingStore?.Get<string?>("siteUrl"); }
             set { BackingStore?.Set("siteUrl", value); }
         }
+#nullable restore
 #else
         public string SiteUrl {
             get { return BackingStore?.Get<string>("siteUrl"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier (guid) for the tenancy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier (guid) for the item&apos;s site (SPWeb).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebId {
             get { return BackingStore?.Get<string?>("webId"); }
             set { BackingStore?.Set("webId", value); }
         }
+#nullable restore
 #else
         public string WebId {
             get { return BackingStore?.Get<string>("webId"); }

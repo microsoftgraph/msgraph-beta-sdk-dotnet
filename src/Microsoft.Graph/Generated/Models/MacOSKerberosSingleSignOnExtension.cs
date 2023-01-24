@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSKerberosSingleSignOnExtension : MacOSSingleSignOnExtension, IParsable {
         /// <summary>Gets or sets the Active Directory site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActiveDirectorySiteCode {
             get { return BackingStore?.Get<string?>("activeDirectorySiteCode"); }
             set { BackingStore?.Set("activeDirectorySiteCode", value); }
         }
+#nullable restore
 #else
         public string ActiveDirectorySiteCode {
             get { return BackingStore?.Get<string>("activeDirectorySiteCode"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets the Generic Security Services name of the Kerberos cache to use for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CacheName {
             get { return BackingStore?.Get<string?>("cacheName"); }
             set { BackingStore?.Set("cacheName", value); }
         }
+#nullable restore
 #else
         public string CacheName {
             get { return BackingStore?.Get<string>("cacheName"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a list of app Bundle IDs allowed to access the Kerberos Ticket Granting Ticket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? CredentialBundleIdAccessControlList {
             get { return BackingStore?.Get<List<string>?>("credentialBundleIdAccessControlList"); }
             set { BackingStore?.Set("credentialBundleIdAccessControlList", value); }
         }
+#nullable restore
 #else
         public List<string> CredentialBundleIdAccessControlList {
             get { return BackingStore?.Get<List<string>>("credentialBundleIdAccessControlList"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DomainRealms {
             get { return BackingStore?.Get<List<string>?>("domainRealms"); }
             set { BackingStore?.Set("domainRealms", value); }
         }
+#nullable restore
 #else
         public List<string> DomainRealms {
             get { return BackingStore?.Get<List<string>>("domainRealms"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a list of hosts or domain names for which the app extension performs SSO.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Domains {
             get { return BackingStore?.Get<List<string>?>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#nullable restore
 #else
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
@@ -97,10 +107,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Select how other processes use the Kerberos Extension credential.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ModeCredentialUsed {
             get { return BackingStore?.Get<string?>("modeCredentialUsed"); }
             set { BackingStore?.Set("modeCredentialUsed", value); }
         }
+#nullable restore
 #else
         public string ModeCredentialUsed {
             get { return BackingStore?.Get<string>("modeCredentialUsed"); }
@@ -114,10 +126,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets the URL that the user will be sent to when they initiate a password change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PasswordChangeUrl {
             get { return BackingStore?.Get<string?>("passwordChangeUrl"); }
             set { BackingStore?.Set("passwordChangeUrl", value); }
         }
+#nullable restore
 #else
         public string PasswordChangeUrl {
             get { return BackingStore?.Get<string>("passwordChangeUrl"); }
@@ -161,10 +175,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets a description of the password complexity requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PasswordRequirementsDescription {
             get { return BackingStore?.Get<string?>("passwordRequirementsDescription"); }
             set { BackingStore?.Set("passwordRequirementsDescription", value); }
         }
+#nullable restore
 #else
         public string PasswordRequirementsDescription {
             get { return BackingStore?.Get<string>("passwordRequirementsDescription"); }
@@ -173,10 +189,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Add creates an ordered list of preferred Key Distribution Centers (KDCs) to use for Kerberos traffic. This list is used when the servers are not discoverable using DNS. When the servers are discoverable, the list is used for both connectivity checks, and used first for Kerberos traffic. If the servers don’t respond, then the device uses DNS discovery. Delete removes an existing list, and devices use DNS discovery. Available for devices running macOS versions 12 and later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? PreferredKDCs {
             get { return BackingStore?.Get<List<string>?>("preferredKDCs"); }
             set { BackingStore?.Set("preferredKDCs", value); }
         }
+#nullable restore
 #else
         public List<string> PreferredKDCs {
             get { return BackingStore?.Get<List<string>>("preferredKDCs"); }
@@ -185,10 +203,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets the case-sensitive realm name for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Realm {
             get { return BackingStore?.Get<string?>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
+#nullable restore
 #else
         public string Realm {
             get { return BackingStore?.Get<string>("realm"); }
@@ -202,10 +222,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Text displayed to the user at the Kerberos sign in window. Available for devices running iOS and iPadOS versions 14 and later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SignInHelpText {
             get { return BackingStore?.Get<string?>("signInHelpText"); }
             set { BackingStore?.Set("signInHelpText", value); }
         }
+#nullable restore
 #else
         public string SignInHelpText {
             get { return BackingStore?.Get<string>("signInHelpText"); }
@@ -219,10 +241,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This label replaces the user name shown in the Kerberos extension. You can enter a name to match the name of your company or organization. Available for devices running macOS versions 11 and later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UsernameLabelCustom {
             get { return BackingStore?.Get<string?>("usernameLabelCustom"); }
             set { BackingStore?.Set("usernameLabelCustom", value); }
         }
+#nullable restore
 #else
         public string UsernameLabelCustom {
             get { return BackingStore?.Get<string>("usernameLabelCustom"); }
@@ -231,10 +255,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets the principle user name to use for this profile. The realm name does not need to be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Filters applied on the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Filter {
             get { return BackingStore?.Get<string?>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
+#nullable restore
 #else
         public string Filter {
             get { return BackingStore?.Get<string>("filter"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReportName {
             get { return BackingStore?.Get<string?>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
+#nullable restore
 #else
         public string ReportName {
             get { return BackingStore?.Get<string>("reportName"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Columns selected from the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Select {
             get { return BackingStore?.Get<List<string>?>("select"); }
             set { BackingStore?.Set("select", value); }
         }
+#nullable restore
 #else
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SnapshotId {
             get { return BackingStore?.Get<string?>("snapshotId"); }
             set { BackingStore?.Set("snapshotId", value); }
         }
+#nullable restore
 #else
         public string SnapshotId {
             get { return BackingStore?.Get<string>("snapshotId"); }
@@ -83,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Temporary location of the exported report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Url {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#nullable restore
 #else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }

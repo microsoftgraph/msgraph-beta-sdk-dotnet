@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>For example, &apos;Enabled&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CapabilityStatus {
             get { return BackingStore?.Get<string?>("capabilityStatus"); }
             set { BackingStore?.Set("capabilityStatus", value); }
         }
+#nullable restore
 #else
         public string CapabilityStatus {
             get { return BackingStore?.Get<string>("capabilityStatus"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For example, &apos;Success&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProvisioningStatus {
             get { return BackingStore?.Get<string?>("provisioningStatus"); }
             set { BackingStore?.Set("provisioningStatus", value); }
         }
+#nullable restore
 #else
         public string ProvisioningStatus {
             get { return BackingStore?.Get<string>("provisioningStatus"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the service; for example, &apos;AccessControlS2S&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Service {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#nullable restore
 #else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }

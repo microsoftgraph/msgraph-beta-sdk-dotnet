@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationIdentityCreationConfiguration : EducationIdentitySynchronizationConfiguration, IParsable {
         /// <summary>The userDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationIdentityDomain>? UserDomains {
             get { return BackingStore?.Get<List<EducationIdentityDomain>?>("userDomains"); }
             set { BackingStore?.Set("userDomains", value); }
         }
+#nullable restore
 #else
         public List<EducationIdentityDomain> UserDomains {
             get { return BackingStore?.Get<List<EducationIdentityDomain>>("userDomains"); }

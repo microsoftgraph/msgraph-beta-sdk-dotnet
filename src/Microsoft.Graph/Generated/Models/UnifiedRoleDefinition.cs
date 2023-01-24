@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleDefinition : Entity, IParsable {
         /// <summary>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRoleDefinition>? InheritsPermissionsFrom {
             get { return BackingStore?.Get<List<UnifiedRoleDefinition>?>("inheritsPermissionsFrom"); }
             set { BackingStore?.Set("inheritsPermissionsFrom", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRoleDefinition> InheritsPermissionsFrom {
             get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("inheritsPermissionsFrom"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ResourceScopes {
             get { return BackingStore?.Get<List<string>?>("resourceScopes"); }
             set { BackingStore?.Set("resourceScopes", value); }
         }
+#nullable restore
 #else
         public List<string> ResourceScopes {
             get { return BackingStore?.Get<List<string>>("resourceScopes"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of permissions included in the role. Read-only when isBuiltIn is true. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRolePermission>? RolePermissions {
             get { return BackingStore?.Get<List<UnifiedRolePermission>?>("rolePermissions"); }
             set { BackingStore?.Set("rolePermissions", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRolePermission> RolePermissions {
             get { return BackingStore?.Get<List<UnifiedRolePermission>>("rolePermissions"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemplateId {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#nullable restore
 #else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

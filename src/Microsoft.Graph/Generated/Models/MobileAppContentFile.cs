@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppContentFile : Entity, IParsable {
         /// <summary>The Azure Storage URI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureStorageUri {
             get { return BackingStore?.Get<string?>("azureStorageUri"); }
             set { BackingStore?.Set("azureStorageUri", value); }
         }
+#nullable restore
 #else
         public string AzureStorageUri {
             get { return BackingStore?.Get<string>("azureStorageUri"); }
@@ -47,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The manifest information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Manifest {
             get { return BackingStore?.Get<byte[]?>("manifest"); }
             set { BackingStore?.Set("manifest", value); }
         }
+#nullable restore
 #else
         public byte[] Manifest {
             get { return BackingStore?.Get<byte[]>("manifest"); }
@@ -59,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>the file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }

@@ -5,39 +5,43 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class LongRunningOperation : Entity, IParsable {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The lastActionDateTime property</summary>
+        /// <summary>The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
-        /// <summary>The resourceLocation property</summary>
+        /// <summary>URI of the resource that the operation is performed on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceLocation {
             get { return BackingStore?.Get<string?>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
+#nullable restore
 #else
         public string ResourceLocation {
             get { return BackingStore?.Get<string>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.</summary>
         public LongRunningOperationStatus? Status {
             get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The statusDetail property</summary>
+        /// <summary>Details about the status of the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StatusDetail {
             get { return BackingStore?.Get<string?>("statusDetail"); }
             set { BackingStore?.Set("statusDetail", value); }
         }
+#nullable restore
 #else
         public string StatusDetail {
             get { return BackingStore?.Get<string>("statusDetail"); }

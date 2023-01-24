@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudCommunications : Entity, IParsable {
         /// <summary>The callRecords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CallRecord>? CallRecords {
             get { return BackingStore?.Get<List<CallRecord>?>("callRecords"); }
             set { BackingStore?.Set("callRecords", value); }
         }
+#nullable restore
 #else
         public List<CallRecord> CallRecords {
             get { return BackingStore?.Get<List<CallRecord>>("callRecords"); }
@@ -20,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The calls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Call>? Calls {
             get { return BackingStore?.Get<List<Call>?>("calls"); }
             set { BackingStore?.Set("calls", value); }
         }
+#nullable restore
 #else
         public List<Call> Calls {
             get { return BackingStore?.Get<List<Call>>("calls"); }
@@ -32,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The onlineMeetings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnlineMeeting>? OnlineMeetings {
             get { return BackingStore?.Get<List<OnlineMeeting>?>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
+#nullable restore
 #else
         public List<OnlineMeeting> OnlineMeetings {
             get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
@@ -44,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The presences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Presence>? Presences {
             get { return BackingStore?.Get<List<Presence>?>("presences"); }
             set { BackingStore?.Set("presences", value); }
         }
+#nullable restore
 #else
         public List<Presence> Presences {
             get { return BackingStore?.Get<List<Presence>>("presences"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Apple Id associated with the given Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppleId {
             get { return BackingStore?.Get<string?>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
+#nullable restore
 #else
         public string AppleId {
             get { return BackingStore?.Get<string>("appleId"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The organization associated with the Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrganizationName {
             get { return BackingStore?.Get<string?>("organizationName"); }
             set { BackingStore?.Set("organizationName", value); }
         }
+#nullable restore
 #else
         public string OrganizationName {
             get { return BackingStore?.Get<string>("organizationName"); }
@@ -64,10 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identifier of the VPP token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VppTokenId {
             get { return BackingStore?.Get<string?>("vppTokenId"); }
             set { BackingStore?.Set("vppTokenId", value); }
         }
+#nullable restore
 #else
         public string VppTokenId {
             get { return BackingStore?.Get<string>("vppTokenId"); }

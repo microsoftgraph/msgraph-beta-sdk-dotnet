@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The client ID used to connect to PowerSchool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientId {
             get { return BackingStore?.Get<string?>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
+#nullable restore
 #else
         public string ClientId {
             get { return BackingStore?.Get<string>("clientId"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The client secret to authenticate the connection to the PowerSchool instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientSecret {
             get { return BackingStore?.Get<string?>("clientSecret"); }
             set { BackingStore?.Set("clientSecret", value); }
         }
+#nullable restore
 #else
         public string ClientSecret {
             get { return BackingStore?.Get<string>("clientSecret"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The connection URL to the PowerSchool instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectionUrl {
             get { return BackingStore?.Get<string?>("connectionUrl"); }
             set { BackingStore?.Set("connectionUrl", value); }
         }
+#nullable restore
 #else
         public string ConnectionUrl {
             get { return BackingStore?.Get<string>("connectionUrl"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Optional customization to be applied to the synchronization profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationSynchronizationCustomizations? Customizations {
             get { return BackingStore?.Get<EducationSynchronizationCustomizations?>("customizations"); }
             set { BackingStore?.Set("customizations", value); }
         }
+#nullable restore
 #else
         public EducationSynchronizationCustomizations Customizations {
             get { return BackingStore?.Get<EducationSynchronizationCustomizations>("customizations"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of schools to sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SchoolsIds {
             get { return BackingStore?.Get<List<string>?>("schoolsIds"); }
             set { BackingStore?.Set("schoolsIds", value); }
         }
+#nullable restore
 #else
         public List<string> SchoolsIds {
             get { return BackingStore?.Get<List<string>>("schoolsIds"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The school year to sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SchoolYear {
             get { return BackingStore?.Get<string?>("schoolYear"); }
             set { BackingStore?.Set("schoolYear", value); }
         }
+#nullable restore
 #else
         public string SchoolYear {
             get { return BackingStore?.Get<string>("schoolYear"); }

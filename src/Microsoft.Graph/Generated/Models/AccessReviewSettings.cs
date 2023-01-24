@@ -33,10 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AutoReviewSettings? AutoReviewSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoReviewSettings?>("autoReviewSettings"); }
             set { BackingStore?.Set("autoReviewSettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AutoReviewSettings AutoReviewSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoReviewSettings>("autoReviewSettings"); }
@@ -57,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -69,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Detailed settings for recurrence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessReviewRecurrenceSettings? RecurrenceSettings {
             get { return BackingStore?.Get<AccessReviewRecurrenceSettings?>("recurrenceSettings"); }
             set { BackingStore?.Set("recurrenceSettings", value); }
         }
+#nullable restore
 #else
         public AccessReviewRecurrenceSettings RecurrenceSettings {
             get { return BackingStore?.Get<AccessReviewRecurrenceSettings>("recurrenceSettings"); }

@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The device property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Device? Device {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device?>("device"); }
             set { BackingStore?.Set("device", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Device Device {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>("device"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the mobile device as given by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }

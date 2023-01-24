@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description in the localized language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>The language tag for the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LanguageTag {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+#nullable restore
 #else
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

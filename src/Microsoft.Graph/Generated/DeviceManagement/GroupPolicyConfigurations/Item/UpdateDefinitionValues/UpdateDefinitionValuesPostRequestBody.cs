@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
     public class UpdateDefinitionValuesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyDefinitionValue>? Added {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("added"); }
             set { BackingStore?.Set("added", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyDefinitionValue> Added {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("added"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deletedIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DeletedIds {
             get { return BackingStore?.Get<List<string>?>("deletedIds"); }
             set { BackingStore?.Set("deletedIds", value); }
         }
+#nullable restore
 #else
         public List<string> DeletedIds {
             get { return BackingStore?.Get<List<string>>("deletedIds"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
 #endif
         /// <summary>The updated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyDefinitionValue>? Updated {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("updated"); }
             set { BackingStore?.Set("updated", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyDefinitionValue> Updated {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("updated"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them. Cannot be set if includeDevices or excludeDevices is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessFilter? DeviceFilter {
             get { return BackingStore?.Get<ConditionalAccessFilter?>("deviceFilter"); }
             set { BackingStore?.Set("deviceFilter", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessFilter DeviceFilter {
             get { return BackingStore?.Get<ConditionalAccessFilter>("deviceFilter"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExcludeDevices {
             get { return BackingStore?.Get<List<string>?>("excludeDevices"); }
             set { BackingStore?.Set("excludeDevices", value); }
         }
+#nullable restore
 #else
         public List<string> ExcludeDevices {
             get { return BackingStore?.Get<List<string>>("excludeDevices"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The excludeDeviceStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExcludeDeviceStates {
             get { return BackingStore?.Get<List<string>?>("excludeDeviceStates"); }
             set { BackingStore?.Set("excludeDeviceStates", value); }
         }
+#nullable restore
 #else
         public List<string> ExcludeDeviceStates {
             get { return BackingStore?.Get<List<string>>("excludeDeviceStates"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? IncludeDevices {
             get { return BackingStore?.Get<List<string>?>("includeDevices"); }
             set { BackingStore?.Set("includeDevices", value); }
         }
+#nullable restore
 #else
         public List<string> IncludeDevices {
             get { return BackingStore?.Get<List<string>>("includeDevices"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The includeDeviceStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? IncludeDeviceStates {
             get { return BackingStore?.Get<List<string>?>("includeDeviceStates"); }
             set { BackingStore?.Set("includeDeviceStates", value); }
         }
+#nullable restore
 #else
         public List<string> IncludeDeviceStates {
             get { return BackingStore?.Get<List<string>>("includeDeviceStates"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

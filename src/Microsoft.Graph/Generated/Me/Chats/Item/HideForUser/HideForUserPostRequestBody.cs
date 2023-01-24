@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.HideForUser {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.HideForUser {
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkUserIdentity? User {
             get { return BackingStore?.Get<TeamworkUserIdentity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#nullable restore
 #else
         public TeamworkUserIdentity User {
             get { return BackingStore?.Get<TeamworkUserIdentity>("user"); }

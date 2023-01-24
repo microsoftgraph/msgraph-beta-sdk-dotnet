@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuditUserIdentity : UserIdentity, IParsable {
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HomeTenantId {
             get { return BackingStore?.Get<string?>("homeTenantId"); }
             set { BackingStore?.Set("homeTenantId", value); }
         }
+#nullable restore
 #else
         public string HomeTenantId {
             get { return BackingStore?.Get<string>("homeTenantId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HomeTenantName {
             get { return BackingStore?.Get<string?>("homeTenantName"); }
             set { BackingStore?.Set("homeTenantName", value); }
         }
+#nullable restore
 #else
         public string HomeTenantName {
             get { return BackingStore?.Get<string>("homeTenantName"); }

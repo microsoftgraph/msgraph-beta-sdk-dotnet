@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationSchema : Entity, IParsable {
         /// <summary>Contains the collection of directories and all of their objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryDefinition>? Directories {
             get { return BackingStore?.Get<List<DirectoryDefinition>?>("directories"); }
             set { BackingStore?.Set("directories", value); }
         }
+#nullable restore
 #else
         public List<DirectoryDefinition> Directories {
             get { return BackingStore?.Get<List<DirectoryDefinition>>("directories"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationRule>? SynchronizationRules {
             get { return BackingStore?.Get<List<SynchronizationRule>?>("synchronizationRules"); }
             set { BackingStore?.Set("synchronizationRules", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationRule> SynchronizationRules {
             get { return BackingStore?.Get<List<SynchronizationRule>>("synchronizationRules"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The version of the schema, updated automatically with every schema change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

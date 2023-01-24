@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcWindowsSettings? WindowsSettings {
             get { return BackingStore?.Get<CloudPcWindowsSettings?>("windowsSettings"); }
             set { BackingStore?.Set("windowsSettings", value); }
         }
+#nullable restore
 #else
         public CloudPcWindowsSettings WindowsSettings {
             get { return BackingStore?.Get<CloudPcWindowsSettings>("windowsSettings"); }

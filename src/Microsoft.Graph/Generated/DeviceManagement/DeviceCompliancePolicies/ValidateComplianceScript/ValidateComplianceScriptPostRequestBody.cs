@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Validat
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceCompliancePolicyScript property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript? DeviceCompliancePolicyScript {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript?>("deviceCompliancePolicyScript"); }
             set { BackingStore?.Set("deviceCompliancePolicyScript", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript DeviceCompliancePolicyScript {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>("deviceCompliancePolicyScript"); }

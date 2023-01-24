@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Code {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
+#nullable restore
 #else
         public string Code {
             get { return BackingStore?.Get<string>("code"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The discountDateCalculation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DiscountDateCalculation {
             get { return BackingStore?.Get<string?>("discountDateCalculation"); }
             set { BackingStore?.Set("discountDateCalculation", value); }
         }
+#nullable restore
 #else
         public string DiscountDateCalculation {
             get { return BackingStore?.Get<string>("discountDateCalculation"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dueDateCalculation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DueDateCalculation {
             get { return BackingStore?.Get<string?>("dueDateCalculation"); }
             set { BackingStore?.Set("dueDateCalculation", value); }
         }
+#nullable restore
 #else
         public string DueDateCalculation {
             get { return BackingStore?.Get<string>("dueDateCalculation"); }

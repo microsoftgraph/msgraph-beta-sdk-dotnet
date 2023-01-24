@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BuiltInIdentityProvider : IdentityProviderBase, IParsable {
         /// <summary>The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityProviderType {
             get { return BackingStore?.Get<string?>("identityProviderType"); }
             set { BackingStore?.Set("identityProviderType", value); }
         }
+#nullable restore
 #else
         public string IdentityProviderType {
             get { return BackingStore?.Get<string>("identityProviderType"); }

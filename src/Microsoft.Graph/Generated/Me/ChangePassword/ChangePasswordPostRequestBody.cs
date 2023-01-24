@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.ChangePassword {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The currentPassword property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CurrentPassword {
             get { return BackingStore?.Get<string?>("currentPassword"); }
             set { BackingStore?.Set("currentPassword", value); }
         }
+#nullable restore
 #else
         public string CurrentPassword {
             get { return BackingStore?.Get<string>("currentPassword"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Me.ChangePassword {
 #endif
         /// <summary>The newPassword property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NewPassword {
             get { return BackingStore?.Get<string?>("newPassword"); }
             set { BackingStore?.Set("newPassword", value); }
         }
+#nullable restore
 #else
         public string NewPassword {
             get { return BackingStore?.Get<string>("newPassword"); }

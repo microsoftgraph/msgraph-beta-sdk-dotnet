@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SetCloudPcRe
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The reviewStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcReviewStatus? ReviewStatus {
             get { return BackingStore?.Get<CloudPcReviewStatus?>("reviewStatus"); }
             set { BackingStore?.Set("reviewStatus", value); }
         }
+#nullable restore
 #else
         public CloudPcReviewStatus ReviewStatus {
             get { return BackingStore?.Get<CloudPcReviewStatus>("reviewStatus"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationValueList : GroupPolicyPresentationValue, IParsable {
         /// <summary>A list of pairs for the associated presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? Values {
             get { return BackingStore?.Get<List<KeyValuePair>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> Values {
             get { return BackingStore?.Get<List<KeyValuePair>>("values"); }

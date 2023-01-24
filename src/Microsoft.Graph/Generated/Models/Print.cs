@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of available print connectors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintConnector>? Connectors {
             get { return BackingStore?.Get<List<PrintConnector>?>("connectors"); }
             set { BackingStore?.Set("connectors", value); }
         }
+#nullable restore
 #else
         public List<PrintConnector> Connectors {
             get { return BackingStore?.Get<List<PrintConnector>>("connectors"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintOperation>? Operations {
             get { return BackingStore?.Get<List<PrintOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<PrintOperation> Operations {
             get { return BackingStore?.Get<List<PrintOperation>>("operations"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of printers registered in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Printer>? Printers {
             get { return BackingStore?.Get<List<Printer>?>("printers"); }
             set { BackingStore?.Set("printers", value); }
         }
+#nullable restore
 #else
         public List<Printer> Printers {
             get { return BackingStore?.Get<List<Printer>>("printers"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The printerShares property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrinterShare>? PrinterShares {
             get { return BackingStore?.Get<List<PrinterShare>?>("printerShares"); }
             set { BackingStore?.Set("printerShares", value); }
         }
+#nullable restore
 #else
         public List<PrinterShare> PrinterShares {
             get { return BackingStore?.Get<List<PrinterShare>>("printerShares"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The reports property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ReportRoot? Reports {
             get { return BackingStore?.Get<ReportRoot?>("reports"); }
             set { BackingStore?.Set("reports", value); }
         }
+#nullable restore
 #else
         public ReportRoot Reports {
             get { return BackingStore?.Get<ReportRoot>("reports"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of available Universal Print service endpoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintService>? Services {
             get { return BackingStore?.Get<List<PrintService>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
+#nullable restore
 #else
         public List<PrintService> Services {
             get { return BackingStore?.Get<List<PrintService>>("services"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Tenant-wide settings for the Universal Print service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrintSettings? Settings {
             get { return BackingStore?.Get<PrintSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public PrintSettings Settings {
             get { return BackingStore?.Get<PrintSettings>("settings"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of printer shares registered in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrinterShare>? Shares {
             get { return BackingStore?.Get<List<PrinterShare>?>("shares"); }
             set { BackingStore?.Set("shares", value); }
         }
+#nullable restore
 #else
         public List<PrinterShare> Shares {
             get { return BackingStore?.Get<List<PrinterShare>>("shares"); }
@@ -123,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The taskDefinitions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintTaskDefinition>? TaskDefinitions {
             get { return BackingStore?.Get<List<PrintTaskDefinition>?>("taskDefinitions"); }
             set { BackingStore?.Set("taskDefinitions", value); }
         }
+#nullable restore
 #else
         public List<PrintTaskDefinition> TaskDefinitions {
             get { return BackingStore?.Get<List<PrintTaskDefinition>>("taskDefinitions"); }

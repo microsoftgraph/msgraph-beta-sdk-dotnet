@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAnswerCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAnswer>? Value {
             get { return BackingStore?.Get<List<AccessPackageAnswer>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAnswer> Value {
             get { return BackingStore?.Get<List<AccessPackageAnswer>>("value"); }

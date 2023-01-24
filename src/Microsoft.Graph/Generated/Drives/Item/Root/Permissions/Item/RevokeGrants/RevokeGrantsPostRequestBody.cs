@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Permissions.Item.RevokeGrants {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The grantees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DriveRecipient>? Grantees {
             get { return BackingStore?.Get<List<DriveRecipient>?>("grantees"); }
             set { BackingStore?.Set("grantees", value); }
         }
+#nullable restore
 #else
         public List<DriveRecipient> Grantees {
             get { return BackingStore?.Get<List<DriveRecipient>>("grantees"); }

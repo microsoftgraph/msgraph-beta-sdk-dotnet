@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeletedTeam : Entity, IParsable {
         /// <summary>The channels those are either shared with this deleted team or created in this deleted team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Channel>? Channels {
             get { return BackingStore?.Get<List<Channel>?>("channels"); }
             set { BackingStore?.Set("channels", value); }
         }
+#nullable restore
 #else
         public List<Channel> Channels {
             get { return BackingStore?.Get<List<Channel>>("channels"); }

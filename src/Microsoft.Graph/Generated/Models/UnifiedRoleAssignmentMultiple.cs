@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleAssignmentMultiple : Entity, IParsable {
         /// <summary>Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AppScopeIds {
             get { return BackingStore?.Get<List<string>?>("appScopeIds"); }
             set { BackingStore?.Set("appScopeIds", value); }
         }
+#nullable restore
 #else
         public List<string> AppScopeIds {
             get { return BackingStore?.Get<List<string>>("appScopeIds"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppScope>? AppScopes {
             get { return BackingStore?.Get<List<AppScope>?>("appScopes"); }
             set { BackingStore?.Set("appScopes", value); }
         }
+#nullable restore
 #else
         public List<AppScope> AppScopes {
             get { return BackingStore?.Get<List<AppScope>>("appScopes"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Condition {
             get { return BackingStore?.Get<string?>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
+#nullable restore
 #else
         public string Condition {
             get { return BackingStore?.Get<string>("condition"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description of the role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DirectoryScopeIds {
             get { return BackingStore?.Get<List<string>?>("directoryScopeIds"); }
             set { BackingStore?.Set("directoryScopeIds", value); }
         }
+#nullable restore
 #else
         public List<string> DirectoryScopeIds {
             get { return BackingStore?.Get<List<string>>("directoryScopeIds"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? DirectoryScopes {
             get { return BackingStore?.Get<List<DirectoryObject>?>("directoryScopes"); }
             set { BackingStore?.Set("directoryScopes", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> DirectoryScopes {
             get { return BackingStore?.Get<List<DirectoryObject>>("directoryScopes"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the role assignment. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? PrincipalIds {
             get { return BackingStore?.Get<List<string>?>("principalIds"); }
             set { BackingStore?.Set("principalIds", value); }
         }
+#nullable restore
 #else
         public List<string> PrincipalIds {
             get { return BackingStore?.Get<List<string>>("principalIds"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? Principals {
             get { return BackingStore?.Get<List<DirectoryObject>?>("principals"); }
             set { BackingStore?.Set("principals", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> Principals {
             get { return BackingStore?.Get<List<DirectoryObject>>("principals"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UnifiedRoleDefinition? RoleDefinition {
             get { return BackingStore?.Get<UnifiedRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
+#nullable restore
 #else
         public UnifiedRoleDefinition RoleDefinition {
             get { return BackingStore?.Get<UnifiedRoleDefinition>("roleDefinition"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the unifiedRoleDefinition the assignment is for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleDefinitionId {
             get { return BackingStore?.Get<string?>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
+#nullable restore
 #else
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }

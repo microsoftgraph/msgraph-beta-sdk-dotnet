@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TenantRelationshipAccessPolicyBase : PolicyBase, IParsable {
         /// <summary>The definition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Definition {
             get { return BackingStore?.Get<List<string>?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#nullable restore
 #else
         public List<string> Definition {
             get { return BackingStore?.Get<List<string>>("definition"); }

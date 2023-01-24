@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DirectorySetting : Entity, IParsable {
         /// <summary>Display name of this group of settings, which comes from the associated template. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier for the template used to create this group of settings. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemplateId {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#nullable restore
 #else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SettingValue>? Values {
             get { return BackingStore?.Get<List<SettingValue>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public List<SettingValue> Values {
             get { return BackingStore?.Get<List<SettingValue>>("values"); }

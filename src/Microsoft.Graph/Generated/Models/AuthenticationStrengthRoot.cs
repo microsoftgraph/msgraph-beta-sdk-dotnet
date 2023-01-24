@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationStrengthRoot : Entity, IParsable {
         /// <summary>A collection of all valid authentication method combinations in the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>? AuthenticationCombinations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>?>("authenticationCombinations"); }
             set { BackingStore?.Set("authenticationCombinations", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> AuthenticationCombinations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("authenticationCombinations"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Names and descriptions of all valid authentication method modes in the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationMethodModeDetail>? AuthenticationMethodModes {
             get { return BackingStore?.Get<List<AuthenticationMethodModeDetail>?>("authenticationMethodModes"); }
             set { BackingStore?.Set("authenticationMethodModes", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationMethodModeDetail> AuthenticationMethodModes {
             get { return BackingStore?.Get<List<AuthenticationMethodModeDetail>>("authenticationMethodModes"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationStrengthPolicy>? Policies {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>?>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationStrengthPolicy> Policies {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>>("policies"); }

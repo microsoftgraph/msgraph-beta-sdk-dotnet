@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TenantSetupInfo : Entity, IParsable {
         /// <summary>The defaultRolesSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrivilegedRoleSettings? DefaultRolesSettings {
             get { return BackingStore?.Get<PrivilegedRoleSettings?>("defaultRolesSettings"); }
             set { BackingStore?.Set("defaultRolesSettings", value); }
         }
+#nullable restore
 #else
         public PrivilegedRoleSettings DefaultRolesSettings {
             get { return BackingStore?.Get<PrivilegedRoleSettings>("defaultRolesSettings"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The relevantRolesSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RelevantRolesSettings {
             get { return BackingStore?.Get<List<string>?>("relevantRolesSettings"); }
             set { BackingStore?.Set("relevantRolesSettings", value); }
         }
+#nullable restore
 #else
         public List<string> RelevantRolesSettings {
             get { return BackingStore?.Get<List<string>>("relevantRolesSettings"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The userRolesActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserRolesActions {
             get { return BackingStore?.Get<string?>("userRolesActions"); }
             set { BackingStore?.Set("userRolesActions", value); }
         }
+#nullable restore
 #else
         public string UserRolesActions {
             get { return BackingStore?.Get<string>("userRolesActions"); }

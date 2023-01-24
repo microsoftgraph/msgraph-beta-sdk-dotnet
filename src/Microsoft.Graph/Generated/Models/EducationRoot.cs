@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationClass>? Classes {
             get { return BackingStore?.Get<List<EducationClass>?>("classes"); }
             set { BackingStore?.Set("classes", value); }
         }
+#nullable restore
 #else
         public List<EducationClass> Classes {
             get { return BackingStore?.Get<List<EducationClass>>("classes"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The me property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationUser? Me {
             get { return BackingStore?.Get<EducationUser?>("me"); }
             set { BackingStore?.Set("me", value); }
         }
+#nullable restore
 #else
         public EducationUser Me {
             get { return BackingStore?.Get<EducationUser>("me"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The schools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationSchool>? Schools {
             get { return BackingStore?.Get<List<EducationSchool>?>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
+#nullable restore
 #else
         public List<EducationSchool> Schools {
             get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The synchronizationProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationSynchronizationProfile>? SynchronizationProfiles {
             get { return BackingStore?.Get<List<EducationSynchronizationProfile>?>("synchronizationProfiles"); }
             set { BackingStore?.Set("synchronizationProfiles", value); }
         }
+#nullable restore
 #else
         public List<EducationSynchronizationProfile> SynchronizationProfiles {
             get { return BackingStore?.Get<List<EducationSynchronizationProfile>>("synchronizationProfiles"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationUser>? Users {
             get { return BackingStore?.Get<List<EducationUser>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
+#nullable restore
 #else
         public List<EducationUser> Users {
             get { return BackingStore?.Get<List<EducationUser>>("users"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookRangeView : Entity, IParsable {
         /// <summary>The cellAddresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? CellAddresses {
             get { return BackingStore?.Get<Json?>("cellAddresses"); }
             set { BackingStore?.Set("cellAddresses", value); }
         }
+#nullable restore
 #else
         public Json CellAddresses {
             get { return BackingStore?.Get<Json>("cellAddresses"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the formula in A1-style notation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Formulas {
             get { return BackingStore?.Get<Json?>("formulas"); }
             set { BackingStore?.Set("formulas", value); }
         }
+#nullable restore
 #else
         public Json Formulas {
             get { return BackingStore?.Get<Json>("formulas"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the formula in A1-style notation, in the user&apos;s language and number-formatting locale. For example, the English &apos;=SUM(A1, 1.5)&apos; formula would become &apos;=SUMME(A1; 1,5)&apos; in German.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? FormulasLocal {
             get { return BackingStore?.Get<Json?>("formulasLocal"); }
             set { BackingStore?.Set("formulasLocal", value); }
         }
+#nullable restore
 #else
         public Json FormulasLocal {
             get { return BackingStore?.Get<Json>("formulasLocal"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the formula in R1C1-style notation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? FormulasR1C1 {
             get { return BackingStore?.Get<Json?>("formulasR1C1"); }
             set { BackingStore?.Set("formulasR1C1", value); }
         }
+#nullable restore
 #else
         public Json FormulasR1C1 {
             get { return BackingStore?.Get<Json>("formulasR1C1"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents Excel&apos;s number format code for the given cell. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? NumberFormat {
             get { return BackingStore?.Get<Json?>("numberFormat"); }
             set { BackingStore?.Set("numberFormat", value); }
         }
+#nullable restore
 #else
         public Json NumberFormat {
             get { return BackingStore?.Get<Json>("numberFormat"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents a collection of range views associated with the range. Read-only. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookRangeView>? Rows {
             get { return BackingStore?.Get<List<WorkbookRangeView>?>("rows"); }
             set { BackingStore?.Set("rows", value); }
         }
+#nullable restore
 #else
         public List<WorkbookRangeView> Rows {
             get { return BackingStore?.Get<List<WorkbookRangeView>>("rows"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Text {
             get { return BackingStore?.Get<Json?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public Json Text {
             get { return BackingStore?.Get<Json>("text"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Values {
             get { return BackingStore?.Get<Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public Json Values {
             get { return BackingStore?.Get<Json>("values"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? ValueTypes {
             get { return BackingStore?.Get<Json?>("valueTypes"); }
             set { BackingStore?.Set("valueTypes", value); }
         }
+#nullable restore
 #else
         public Json ValueTypes {
             get { return BackingStore?.Get<Json>("valueTypes"); }

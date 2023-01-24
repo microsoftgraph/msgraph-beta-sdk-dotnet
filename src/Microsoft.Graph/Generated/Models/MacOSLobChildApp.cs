@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The build number of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BuildNumber {
             get { return BackingStore?.Get<string?>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
+#nullable restore
 #else
         public string BuildNumber {
             get { return BackingStore?.Get<string>("buildNumber"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The bundleId of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BundleId {
             get { return BackingStore?.Get<string?>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
+#nullable restore
 #else
         public string BundleId {
             get { return BackingStore?.Get<string>("bundleId"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The version number of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VersionNumber {
             get { return BackingStore?.Get<string?>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
         }
+#nullable restore
 #else
         public string VersionNumber {
             get { return BackingStore?.Get<string>("versionNumber"); }

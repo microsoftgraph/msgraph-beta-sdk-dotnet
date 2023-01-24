@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SalesOrderLine : Entity, IParsable {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Account? Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account?>("account"); }
             set { BackingStore?.Set("account", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Account Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -82,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The item property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Item? Item {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Item?>("item"); }
             set { BackingStore?.Set("item", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Item Item {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Item>("item"); }
@@ -99,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The lineType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LineType {
             get { return BackingStore?.Get<string?>("lineType"); }
             set { BackingStore?.Set("lineType", value); }
         }
+#nullable restore
 #else
         public string LineType {
             get { return BackingStore?.Get<string>("lineType"); }
@@ -151,10 +159,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The taxCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TaxCode {
             get { return BackingStore?.Get<string?>("taxCode"); }
             set { BackingStore?.Set("taxCode", value); }
         }
+#nullable restore
 #else
         public string TaxCode {
             get { return BackingStore?.Get<string>("taxCode"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class External : Entity, IParsable {
         /// <summary>The connections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExternalConnection>? Connections {
             get { return BackingStore?.Get<List<ExternalConnection>?>("connections"); }
             set { BackingStore?.Set("connections", value); }
         }
+#nullable restore
 #else
         public List<ExternalConnection> Connections {
             get { return BackingStore?.Get<List<ExternalConnection>>("connections"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSVpnConfiguration : AppleVpnConfiguration, IParsable {
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MacOSCertificateProfileBase? IdentityCertificate {
             get { return BackingStore?.Get<MacOSCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#nullable restore
 #else
         public MacOSCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<MacOSCertificateProfileBase>("identityCertificate"); }

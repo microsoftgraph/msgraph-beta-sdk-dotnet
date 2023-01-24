@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The currencyCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CurrencyCode {
             get { return BackingStore?.Get<string?>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
+#nullable restore
 #else
         public string CurrencyCode {
             get { return BackingStore?.Get<string>("currencyCode"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The customerNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomerNumber {
             get { return BackingStore?.Get<string?>("customerNumber"); }
             set { BackingStore?.Set("customerNumber", value); }
         }
+#nullable restore
 #else
         public string CustomerNumber {
             get { return BackingStore?.Get<string>("customerNumber"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -74,10 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The periodLengthFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PeriodLengthFilter {
             get { return BackingStore?.Get<string?>("periodLengthFilter"); }
             set { BackingStore?.Set("periodLengthFilter", value); }
         }
+#nullable restore
 #else
         public string PeriodLengthFilter {
             get { return BackingStore?.Get<string>("periodLengthFilter"); }

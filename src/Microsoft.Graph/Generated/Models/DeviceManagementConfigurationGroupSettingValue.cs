@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationGroupSettingValue : DeviceManagementConfigurationSettingValue, IParsable {
         /// <summary>Collection of child setting instances contained within this GroupSetting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationSettingInstance>? Children {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationSettingInstance> Children {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>>("children"); }

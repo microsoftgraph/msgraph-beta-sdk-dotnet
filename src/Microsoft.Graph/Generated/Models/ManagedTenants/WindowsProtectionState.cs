@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>The anti-malware version for the managed device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AntiMalwareVersion {
             get { return BackingStore?.Get<string?>("antiMalwareVersion"); }
             set { BackingStore?.Set("antiMalwareVersion", value); }
         }
+#nullable restore
 #else
         public string AntiMalwareVersion {
             get { return BackingStore?.Get<string>("antiMalwareVersion"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The anti-virus engine version for the managed device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EngineVersion {
             get { return BackingStore?.Get<string?>("engineVersion"); }
             set { BackingStore?.Set("engineVersion", value); }
         }
+#nullable restore
 #else
         public string EngineVersion {
             get { return BackingStore?.Get<string>("engineVersion"); }
@@ -61,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The version anti-malware version used to perform the last full scan. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastFullScanSignatureVersion {
             get { return BackingStore?.Get<string?>("lastFullScanSignatureVersion"); }
             set { BackingStore?.Set("lastFullScanSignatureVersion", value); }
         }
+#nullable restore
 #else
         public string LastFullScanSignatureVersion {
             get { return BackingStore?.Get<string>("lastFullScanSignatureVersion"); }
@@ -78,10 +84,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The version anti-malware version used to perform the last full scan. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastQuickScanSignatureVersion {
             get { return BackingStore?.Get<string?>("lastQuickScanSignatureVersion"); }
             set { BackingStore?.Set("lastQuickScanSignatureVersion", value); }
         }
+#nullable restore
 #else
         public string LastQuickScanSignatureVersion {
             get { return BackingStore?.Get<string>("lastQuickScanSignatureVersion"); }
@@ -105,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The health state for the managed device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceHealthState {
             get { return BackingStore?.Get<string?>("managedDeviceHealthState"); }
             set { BackingStore?.Set("managedDeviceHealthState", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceHealthState {
             get { return BackingStore?.Get<string>("managedDeviceHealthState"); }
@@ -117,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The unique identifier for the managed device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -129,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The display name for the managed device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceName {
             get { return BackingStore?.Get<string?>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceName {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
@@ -166,10 +180,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The signature version for the managed device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SignatureVersion {
             get { return BackingStore?.Get<string?>("signatureVersion"); }
             set { BackingStore?.Set("signatureVersion", value); }
         }
+#nullable restore
 #else
         public string SignatureVersion {
             get { return BackingStore?.Get<string>("signatureVersion"); }
@@ -178,10 +194,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantDisplayName {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#nullable restore
 #else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
@@ -190,10 +208,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

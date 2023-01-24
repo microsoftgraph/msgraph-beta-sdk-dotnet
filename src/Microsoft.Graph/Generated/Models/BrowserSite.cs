@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The comment for the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Comment {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The history of modifications applied to the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BrowserSiteHistory>? History {
             get { return BackingStore?.Get<List<BrowserSiteHistory>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
+#nullable restore
 #else
         public List<BrowserSiteHistory> History {
             get { return BackingStore?.Get<List<BrowserSiteHistory>>("history"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user who last modified the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -86,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The URL of the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

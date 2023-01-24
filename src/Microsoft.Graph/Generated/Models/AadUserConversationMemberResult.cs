@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AadUserConversationMemberResult : ActionResultPart, IParsable {
         /// <summary>The user object ID of the Azure AD user that was being added as part of the bulk operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

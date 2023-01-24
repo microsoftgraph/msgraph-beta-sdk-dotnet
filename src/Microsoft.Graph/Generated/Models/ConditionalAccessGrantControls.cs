@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The authenticationStrength property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AuthenticationStrengthPolicy? AuthenticationStrength {
             get { return BackingStore?.Get<AuthenticationStrengthPolicy?>("authenticationStrength"); }
             set { BackingStore?.Set("authenticationStrength", value); }
         }
+#nullable restore
 #else
         public AuthenticationStrengthPolicy AuthenticationStrength {
             get { return BackingStore?.Get<AuthenticationStrengthPolicy>("authenticationStrength"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConditionalAccessGrantControl?>? BuiltInControls {
             get { return BackingStore?.Get<List<ConditionalAccessGrantControl?>?>("builtInControls"); }
             set { BackingStore?.Set("builtInControls", value); }
         }
+#nullable restore
 #else
         public List<ConditionalAccessGrantControl?> BuiltInControls {
             get { return BackingStore?.Get<List<ConditionalAccessGrantControl?>>("builtInControls"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? CustomAuthenticationFactors {
             get { return BackingStore?.Get<List<string>?>("customAuthenticationFactors"); }
             set { BackingStore?.Set("customAuthenticationFactors", value); }
         }
+#nullable restore
 #else
         public List<string> CustomAuthenticationFactors {
             get { return BackingStore?.Get<List<string>>("customAuthenticationFactors"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines the relationship of the grant controls. Possible values: AND, OR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Operator {
             get { return BackingStore?.Get<string?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
+#nullable restore
 #else
         public string Operator {
             get { return BackingStore?.Get<string>("operator"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of terms of use IDs required by the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TermsOfUse {
             get { return BackingStore?.Get<List<string>?>("termsOfUse"); }
             set { BackingStore?.Set("termsOfUse", value); }
         }
+#nullable restore
 #else
         public List<string> TermsOfUse {
             get { return BackingStore?.Get<List<string>>("termsOfUse"); }

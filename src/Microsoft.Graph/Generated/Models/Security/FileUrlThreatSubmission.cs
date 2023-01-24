@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class FileUrlThreatSubmission : FileThreatSubmission, IParsable {
         /// <summary>It specifies the URL of the file which needs to be submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileUrl {
             get { return BackingStore?.Get<string?>("fileUrl"); }
             set { BackingStore?.Set("fileUrl", value); }
         }
+#nullable restore
 #else
         public string FileUrl {
             get { return BackingStore?.Get<string>("fileUrl"); }

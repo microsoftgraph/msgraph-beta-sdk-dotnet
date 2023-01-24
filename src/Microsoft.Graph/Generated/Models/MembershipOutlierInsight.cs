@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MembershipOutlierInsight : GovernanceInsight, IParsable {
         /// <summary>Navigation link to the container directory object. For example, to a group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DirectoryObject? Container {
             get { return BackingStore?.Get<DirectoryObject?>("container"); }
             set { BackingStore?.Set("container", value); }
         }
+#nullable restore
 #else
         public DirectoryObject Container {
             get { return BackingStore?.Get<DirectoryObject>("container"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates the identifier of the container, for example, a group ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContainerId {
             get { return BackingStore?.Get<string?>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
         }
+#nullable restore
 #else
         public string ContainerId {
             get { return BackingStore?.Get<string>("containerId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Navigation link to a member object. For example, to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DirectoryObject? Member {
             get { return BackingStore?.Get<DirectoryObject?>("member"); }
             set { BackingStore?.Set("member", value); }
         }
+#nullable restore
 #else
         public DirectoryObject Member {
             get { return BackingStore?.Get<DirectoryObject>("member"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates the identifier of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MemberId {
             get { return BackingStore?.Get<string?>("memberId"); }
             set { BackingStore?.Set("memberId", value); }
         }
+#nullable restore
 #else
         public string MemberId {
             get { return BackingStore?.Get<string>("memberId"); }

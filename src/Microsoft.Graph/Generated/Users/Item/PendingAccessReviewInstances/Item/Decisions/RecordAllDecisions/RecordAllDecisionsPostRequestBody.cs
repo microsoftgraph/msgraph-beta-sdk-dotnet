@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Deci
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The decision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Decision {
             get { return BackingStore?.Get<string?>("decision"); }
             set { BackingStore?.Set("decision", value); }
         }
+#nullable restore
 #else
         public string Decision {
             get { return BackingStore?.Get<string>("decision"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Deci
 #endif
         /// <summary>The justification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Justification {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#nullable restore
 #else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Deci
 #endif
         /// <summary>The principalId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrincipalId {
             get { return BackingStore?.Get<string?>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
+#nullable restore
 #else
         public string PrincipalId {
             get { return BackingStore?.Get<string>("principalId"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Deci
 #endif
         /// <summary>The resourceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceId {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#nullable restore
 #else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }

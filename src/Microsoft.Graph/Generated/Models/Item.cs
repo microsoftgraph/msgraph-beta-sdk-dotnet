@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The gtin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Gtin {
             get { return BackingStore?.Get<string?>("gtin"); }
             set { BackingStore?.Set("gtin", value); }
         }
+#nullable restore
 #else
         public string Gtin {
             get { return BackingStore?.Get<string>("gtin"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The itemCategory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ItemCategory? ItemCategory {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemCategory?>("itemCategory"); }
             set { BackingStore?.Set("itemCategory", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ItemCategory ItemCategory {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemCategory>("itemCategory"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The itemCategoryCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ItemCategoryCode {
             get { return BackingStore?.Get<string?>("itemCategoryCode"); }
             set { BackingStore?.Set("itemCategoryCode", value); }
         }
+#nullable restore
 #else
         public string ItemCategoryCode {
             get { return BackingStore?.Get<string>("itemCategoryCode"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Number {
             get { return BackingStore?.Get<string?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
+#nullable restore
 #else
         public string Number {
             get { return BackingStore?.Get<string>("number"); }
@@ -92,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The picture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.Picture>? Picture {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>?>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.Picture> Picture {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
@@ -109,10 +121,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The taxGroupCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TaxGroupCode {
             get { return BackingStore?.Get<string?>("taxGroupCode"); }
             set { BackingStore?.Set("taxGroupCode", value); }
         }
+#nullable restore
 #else
         public string TaxGroupCode {
             get { return BackingStore?.Get<string>("taxGroupCode"); }
@@ -126,10 +140,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }

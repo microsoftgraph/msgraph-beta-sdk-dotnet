@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The metricNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? MetricNames {
             get { return BackingStore?.Get<List<string>?>("metricNames"); }
             set { BackingStore?.Set("metricNames", value); }
         }
+#nullable restore
 #else
         public List<string> MetricNames {
             get { return BackingStore?.Get<List<string>>("metricNames"); }

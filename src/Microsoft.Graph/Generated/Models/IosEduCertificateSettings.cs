@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertFileName {
             get { return BackingStore?.Get<string?>("certFileName"); }
             set { BackingStore?.Set("certFileName", value); }
         }
+#nullable restore
 #else
         public string CertFileName {
             get { return BackingStore?.Get<string>("certFileName"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>PKCS Certificate Template Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateTemplateName {
             get { return BackingStore?.Get<string?>("certificateTemplateName"); }
             set { BackingStore?.Set("certificateTemplateName", value); }
         }
+#nullable restore
 #else
         public string CertificateTemplateName {
             get { return BackingStore?.Get<string>("certificateTemplateName"); }
@@ -52,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>PKCS Certification Authority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificationAuthority {
             get { return BackingStore?.Get<string?>("certificationAuthority"); }
             set { BackingStore?.Set("certificationAuthority", value); }
         }
+#nullable restore
 #else
         public string CertificationAuthority {
             get { return BackingStore?.Get<string>("certificationAuthority"); }
@@ -64,10 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>PKCS Certification Authority Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificationAuthorityName {
             get { return BackingStore?.Get<string?>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
+#nullable restore
 #else
         public string CertificationAuthorityName {
             get { return BackingStore?.Get<string>("certificationAuthorityName"); }
@@ -76,10 +84,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -93,10 +103,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Trusted Root Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? TrustedRootCertificate {
             get { return BackingStore?.Get<byte[]?>("trustedRootCertificate"); }
             set { BackingStore?.Set("trustedRootCertificate", value); }
         }
+#nullable restore
 #else
         public byte[] TrustedRootCertificate {
             get { return BackingStore?.Get<byte[]>("trustedRootCertificate"); }

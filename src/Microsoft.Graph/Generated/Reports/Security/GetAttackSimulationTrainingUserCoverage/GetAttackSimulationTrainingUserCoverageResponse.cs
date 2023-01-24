@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Reports.Security.GetAttackSimulationTrainingUserC
     public class GetAttackSimulationTrainingUserCoverageResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AttackSimulationTrainingUserCoverage>? Value {
             get { return BackingStore?.Get<List<AttackSimulationTrainingUserCoverage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<AttackSimulationTrainingUserCoverage> Value {
             get { return BackingStore?.Get<List<AttackSimulationTrainingUserCoverage>>("value"); }

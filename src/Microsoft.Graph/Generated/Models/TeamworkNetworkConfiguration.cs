@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The default gateway is the path used to pass information when the destination is unknown to the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultGateway {
             get { return BackingStore?.Get<string?>("defaultGateway"); }
             set { BackingStore?.Set("defaultGateway", value); }
         }
+#nullable restore
 #else
         public string DefaultGateway {
             get { return BackingStore?.Get<string>("defaultGateway"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The network domain of the device, for example, contoso.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DomainName {
             get { return BackingStore?.Get<string?>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#nullable restore
 #else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The device name on a network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HostName {
             get { return BackingStore?.Get<string?>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#nullable restore
 #else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The IP address is a numerical label that uniquely identifies every device connected to the internet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddress {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#nullable restore
 #else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A primary DNS is the first point of contact for a device that translates the hostname into an IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrimaryDns {
             get { return BackingStore?.Get<string?>("primaryDns"); }
             set { BackingStore?.Set("primaryDns", value); }
         }
+#nullable restore
 #else
         public string PrimaryDns {
             get { return BackingStore?.Get<string>("primaryDns"); }
@@ -97,10 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A secondary DNS is used when the primary DNS is not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SecondaryDns {
             get { return BackingStore?.Get<string?>("secondaryDns"); }
             set { BackingStore?.Set("secondaryDns", value); }
         }
+#nullable restore
 #else
         public string SecondaryDns {
             get { return BackingStore?.Get<string>("secondaryDns"); }
@@ -109,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A subnet mask is a number that distinguishes the network address and the host address within an IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubnetMask {
             get { return BackingStore?.Get<string?>("subnetMask"); }
             set { BackingStore?.Set("subnetMask", value); }
         }
+#nullable restore
 #else
         public string SubnetMask {
             get { return BackingStore?.Get<string>("subnetMask"); }

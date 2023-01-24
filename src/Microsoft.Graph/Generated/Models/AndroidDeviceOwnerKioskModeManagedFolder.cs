@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier for the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FolderIdentifier {
             get { return BackingStore?.Get<string?>("folderIdentifier"); }
             set { BackingStore?.Set("folderIdentifier", value); }
         }
+#nullable restore
 #else
         public string FolderIdentifier {
             get { return BackingStore?.Get<string>("folderIdentifier"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name for the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FolderName {
             get { return BackingStore?.Get<string?>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
+#nullable restore
 #else
         public string FolderName {
             get { return BackingStore?.Get<string>("folderName"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Items to be added to managed folder. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AndroidDeviceOwnerKioskModeFolderItem>? Items {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#nullable restore
 #else
         public List<AndroidDeviceOwnerKioskModeFolderItem> Items {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>>("items"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

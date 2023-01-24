@@ -45,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user who created the print job. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserIdentity? CreatedBy {
             get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public UserIdentity CreatedBy {
             get { return BackingStore?.Get<UserIdentity>("createdBy"); }
@@ -67,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The archived print job&apos;s GUID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -79,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -96,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The printer ID that the job was queued for. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrinterId {
             get { return BackingStore?.Get<string?>("printerId"); }
             set { BackingStore?.Set("printerId", value); }
         }
+#nullable restore
 #else
         public string PrinterId {
             get { return BackingStore?.Get<string>("printerId"); }

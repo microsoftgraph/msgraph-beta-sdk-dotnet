@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserSecurityState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>AAD User object identifier (GUID) - represents the physical/multi-account user entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AadUserId {
             get { return BackingStore?.Get<string?>("aadUserId"); }
             set { BackingStore?.Set("aadUserId", value); }
         }
+#nullable restore
 #else
         public string AadUserId {
             get { return BackingStore?.Get<string>("aadUserId"); }
@@ -20,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountName {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#nullable restore
 #else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>NetBIOS/Active Directory domain of user account (that is, domain/account format).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DomainName {
             get { return BackingStore?.Get<string?>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+#nullable restore
 #else
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User sign-in ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LogonId {
             get { return BackingStore?.Get<string?>("logonId"); }
             set { BackingStore?.Set("logonId", value); }
         }
+#nullable restore
 #else
         public string LogonId {
             get { return BackingStore?.Get<string>("logonId"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>IP Address the sign-in request originated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LogonIp {
             get { return BackingStore?.Get<string?>("logonIp"); }
             set { BackingStore?.Set("logonIp", value); }
         }
+#nullable restore
 #else
         public string LogonIp {
             get { return BackingStore?.Get<string>("logonIp"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Location (by IP address mapping) associated with a user sign-in event by this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LogonLocation {
             get { return BackingStore?.Get<string?>("logonLocation"); }
             set { BackingStore?.Set("logonLocation", value); }
         }
+#nullable restore
 #else
         public string LogonLocation {
             get { return BackingStore?.Get<string>("logonLocation"); }
@@ -107,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -119,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Active Directory (on-premises) Security Identifier (SID) of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnPremisesSecurityIdentifier {
             get { return BackingStore?.Get<string?>("onPremisesSecurityIdentifier"); }
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
+#nullable restore
 #else
         public string OnPremisesSecurityIdentifier {
             get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
@@ -131,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RiskScore {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#nullable restore
 #else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
@@ -148,10 +166,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User sign-in name - internet format: (user account name)@(user account DNS domain name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

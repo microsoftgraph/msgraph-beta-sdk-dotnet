@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The conditionalAccessProtectionLevelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConditionalAccessProtectionLevelId {
             get { return BackingStore?.Get<string?>("conditionalAccessProtectionLevelId"); }
             set { BackingStore?.Set("conditionalAccessProtectionLevelId", value); }
         }
+#nullable restore
 #else
         public string ConditionalAccessProtectionLevelId {
             get { return BackingStore?.Get<string>("conditionalAccessProtectionLevelId"); }

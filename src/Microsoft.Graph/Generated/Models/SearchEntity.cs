@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SearchEntity : Entity, IParsable {
         /// <summary>Administrative answer in Microsoft Search results to define common acronyms in a organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Acronym>? Acronyms {
             get { return BackingStore?.Get<List<Acronym>?>("acronyms"); }
             set { BackingStore?.Set("acronyms", value); }
         }
+#nullable restore
 #else
         public List<Acronym> Acronyms {
             get { return BackingStore?.Get<List<Acronym>>("acronyms"); }
@@ -20,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Administrative answer in Microsoft Search results for common search queries in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Bookmark>? Bookmarks {
             get { return BackingStore?.Get<List<Bookmark>?>("bookmarks"); }
             set { BackingStore?.Set("bookmarks", value); }
         }
+#nullable restore
 #else
         public List<Bookmark> Bookmarks {
             get { return BackingStore?.Get<List<Bookmark>>("bookmarks"); }
@@ -32,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Qna>? Qnas {
             get { return BackingStore?.Get<List<Qna>?>("qnas"); }
             set { BackingStore?.Set("qnas", value); }
         }
+#nullable restore
 #else
         public List<Qna> Qnas {
             get { return BackingStore?.Get<List<Qna>>("qnas"); }

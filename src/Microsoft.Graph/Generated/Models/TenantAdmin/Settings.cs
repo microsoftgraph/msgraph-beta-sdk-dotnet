@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
     public class Settings : Entity, IParsable {
         /// <summary>Collection of trusted domain GUIDs for the OneDrive sync app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Guid?>? AllowedDomainGuidsForSyncApp {
             get { return BackingStore?.Get<List<Guid?>?>("allowedDomainGuidsForSyncApp"); }
             set { BackingStore?.Set("allowedDomainGuidsForSyncApp", value); }
         }
+#nullable restore
 #else
         public List<Guid?> AllowedDomainGuidsForSyncApp {
             get { return BackingStore?.Get<List<Guid?>>("allowedDomainGuidsForSyncApp"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
 #endif
         /// <summary>Collection of managed paths available for site creation. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AvailableManagedPathsForSiteCreation {
             get { return BackingStore?.Get<List<string>?>("availableManagedPathsForSiteCreation"); }
             set { BackingStore?.Set("availableManagedPathsForSiteCreation", value); }
         }
+#nullable restore
 #else
         public List<string> AvailableManagedPathsForSiteCreation {
             get { return BackingStore?.Get<List<string>>("availableManagedPathsForSiteCreation"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         }
         /// <summary>Collection of file extensions not uploaded by the OneDrive sync app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExcludedFileExtensionsForSyncApp {
             get { return BackingStore?.Get<List<string>?>("excludedFileExtensionsForSyncApp"); }
             set { BackingStore?.Set("excludedFileExtensionsForSyncApp", value); }
         }
+#nullable restore
 #else
         public List<string> ExcludedFileExtensionsForSyncApp {
             get { return BackingStore?.Get<List<string>>("excludedFileExtensionsForSyncApp"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
 #endif
         /// <summary>Specifies the idle session sign-out policies for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut? IdleSessionSignOut {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut?>("idleSessionSignOut"); }
             set { BackingStore?.Set("idleSessionSignOut", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut IdleSessionSignOut {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut>("idleSessionSignOut"); }
@@ -145,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         }
         /// <summary>Collection of email domains that are allowed for sharing outside the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SharingAllowedDomainList {
             get { return BackingStore?.Get<List<string>?>("sharingAllowedDomainList"); }
             set { BackingStore?.Set("sharingAllowedDomainList", value); }
         }
+#nullable restore
 #else
         public List<string> SharingAllowedDomainList {
             get { return BackingStore?.Get<List<string>>("sharingAllowedDomainList"); }
@@ -157,10 +167,12 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
 #endif
         /// <summary>Collection of email domains that are blocked for sharing outside the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SharingBlockedDomainList {
             get { return BackingStore?.Get<List<string>?>("sharingBlockedDomainList"); }
             set { BackingStore?.Set("sharingBlockedDomainList", value); }
         }
+#nullable restore
 #else
         public List<string> SharingBlockedDomainList {
             get { return BackingStore?.Get<List<string>>("sharingBlockedDomainList"); }
@@ -179,10 +191,12 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         }
         /// <summary>The value of the team site managed path. This is the path under which new team sites will be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SiteCreationDefaultManagedPath {
             get { return BackingStore?.Get<string?>("siteCreationDefaultManagedPath"); }
             set { BackingStore?.Set("siteCreationDefaultManagedPath", value); }
         }
+#nullable restore
 #else
         public string SiteCreationDefaultManagedPath {
             get { return BackingStore?.Get<string>("siteCreationDefaultManagedPath"); }
@@ -196,10 +210,12 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         }
         /// <summary>The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantDefaultTimezone {
             get { return BackingStore?.Get<string?>("tenantDefaultTimezone"); }
             set { BackingStore?.Set("tenantDefaultTimezone", value); }
         }
+#nullable restore
 #else
         public string TenantDefaultTimezone {
             get { return BackingStore?.Get<string>("tenantDefaultTimezone"); }

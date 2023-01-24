@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationStrengthPolicy : Entity, IParsable {
         /// <summary>A collection of authentication method modes that are required be used to satify this authentication strength.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationMethodModes?>? AllowedCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationMethodModes?> AllowedCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("allowedCombinations"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationCombinationConfiguration>? CombinationConfigurations {
             get { return BackingStore?.Get<List<AuthenticationCombinationConfiguration>?>("combinationConfigurations"); }
             set { BackingStore?.Set("combinationConfigurations", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationCombinationConfiguration> CombinationConfigurations {
             get { return BackingStore?.Get<List<AuthenticationCombinationConfiguration>>("combinationConfigurations"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The human-readable description of this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }

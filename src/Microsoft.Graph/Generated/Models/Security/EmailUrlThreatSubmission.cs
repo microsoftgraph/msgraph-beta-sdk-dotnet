@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EmailUrlThreatSubmission : EmailThreatSubmission, IParsable {
         /// <summary>Specifies the url of the message to be submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MessageUrl {
             get { return BackingStore?.Get<string?>("messageUrl"); }
             set { BackingStore?.Set("messageUrl", value); }
         }
+#nullable restore
 #else
         public string MessageUrl {
             get { return BackingStore?.Get<string>("messageUrl"); }

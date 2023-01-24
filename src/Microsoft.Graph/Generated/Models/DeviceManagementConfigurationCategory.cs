@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationCategory : Entity, IParsable {
         /// <summary>Description of the category header</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CategoryDescription {
             get { return BackingStore?.Get<string?>("categoryDescription"); }
             set { BackingStore?.Set("categoryDescription", value); }
         }
+#nullable restore
 #else
         public string CategoryDescription {
             get { return BackingStore?.Get<string>("categoryDescription"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of child ids of the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ChildCategoryIds {
             get { return BackingStore?.Get<List<string>?>("childCategoryIds"); }
             set { BackingStore?.Set("childCategoryIds", value); }
         }
+#nullable restore
 #else
         public List<string> ChildCategoryIds {
             get { return BackingStore?.Get<List<string>>("childCategoryIds"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -58,10 +66,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Help text of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HelpText {
             get { return BackingStore?.Get<string?>("helpText"); }
             set { BackingStore?.Set("helpText", value); }
         }
+#nullable restore
 #else
         public string HelpText {
             get { return BackingStore?.Get<string>("helpText"); }
@@ -70,10 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -82,10 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Parent id of the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentCategoryId {
             get { return BackingStore?.Get<string?>("parentCategoryId"); }
             set { BackingStore?.Set("parentCategoryId", value); }
         }
+#nullable restore
 #else
         public string ParentCategoryId {
             get { return BackingStore?.Get<string>("parentCategoryId"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Root id of the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RootCategoryId {
             get { return BackingStore?.Get<string?>("rootCategoryId"); }
             set { BackingStore?.Set("rootCategoryId", value); }
         }
+#nullable restore
 #else
         public string RootCategoryId {
             get { return BackingStore?.Get<string>("rootCategoryId"); }

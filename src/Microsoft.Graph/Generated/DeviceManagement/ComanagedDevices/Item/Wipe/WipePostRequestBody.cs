@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Wipe {
         }
         /// <summary>The macOsUnlockCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MacOsUnlockCode {
             get { return BackingStore?.Get<string?>("macOsUnlockCode"); }
             set { BackingStore?.Set("macOsUnlockCode", value); }
         }
+#nullable restore
 #else
         public string MacOsUnlockCode {
             get { return BackingStore?.Get<string>("macOsUnlockCode"); }

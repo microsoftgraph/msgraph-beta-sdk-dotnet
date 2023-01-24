@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Membership type of the assignment. It can either be Inherited, Direct, or Group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MemberType {
             get { return BackingStore?.Get<string?>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
+#nullable restore
 #else
         public string MemberType {
             get { return BackingStore?.Get<string>("memberType"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the parent roleEligibilitySchedule for this instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleEligibilityScheduleId {
             get { return BackingStore?.Get<string?>("roleEligibilityScheduleId"); }
             set { BackingStore?.Set("roleEligibilityScheduleId", value); }
         }
+#nullable restore
 #else
         public string RoleEligibilityScheduleId {
             get { return BackingStore?.Get<string>("roleEligibilityScheduleId"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OutlookItem : Entity, IParsable {
         /// <summary>The categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Categories {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The changeKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChangeKey {
             get { return BackingStore?.Get<string?>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
+#nullable restore
 #else
         public string ChangeKey {
             get { return BackingStore?.Get<string>("changeKey"); }

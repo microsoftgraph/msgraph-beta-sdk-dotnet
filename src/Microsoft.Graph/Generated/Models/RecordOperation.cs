@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The access token required to retrieve the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecordingAccessToken {
             get { return BackingStore?.Get<string?>("recordingAccessToken"); }
             set { BackingStore?.Set("recordingAccessToken", value); }
         }
+#nullable restore
 #else
         public string RecordingAccessToken {
             get { return BackingStore?.Get<string>("recordingAccessToken"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The location where the recording is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecordingLocation {
             get { return BackingStore?.Get<string?>("recordingLocation"); }
             set { BackingStore?.Set("recordingLocation", value); }
         }
+#nullable restore
 #else
         public string RecordingLocation {
             get { return BackingStore?.Get<string>("recordingLocation"); }

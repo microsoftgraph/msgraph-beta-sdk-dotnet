@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>The track IDs to enable for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AndroidManagedStoreAppTrackIds {
             get { return BackingStore?.Get<List<string>?>("androidManagedStoreAppTrackIds"); }
             set { BackingStore?.Set("androidManagedStoreAppTrackIds", value); }
         }
+#nullable restore
 #else
         public List<string> AndroidManagedStoreAppTrackIds {
             get { return BackingStore?.Get<List<string>>("androidManagedStoreAppTrackIds"); }

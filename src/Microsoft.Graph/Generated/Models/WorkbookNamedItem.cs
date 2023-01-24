@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookNamedItem : Entity, IParsable {
         /// <summary>Represents the comment associated with this name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Comment {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the object. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Scope {
             get { return BackingStore?.Get<string?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
+#nullable restore
 #else
         public string Scope {
             get { return BackingStore?.Get<string>("scope"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates what type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Value {
             get { return BackingStore?.Get<Json?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public Json Value {
             get { return BackingStore?.Get<Json>("value"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookWorksheet? Worksheet {
             get { return BackingStore?.Get<WorkbookWorksheet?>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
         }
+#nullable restore
 #else
         public WorkbookWorksheet Worksheet {
             get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }

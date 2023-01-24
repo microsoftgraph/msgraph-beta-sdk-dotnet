@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SharedPCConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SharedPCAccountManagerPolicy? AccountManagerPolicy {
             get { return BackingStore?.Get<SharedPCAccountManagerPolicy?>("accountManagerPolicy"); }
             set { BackingStore?.Set("accountManagerPolicy", value); }
         }
+#nullable restore
 #else
         public SharedPCAccountManagerPolicy AccountManagerPolicy {
             get { return BackingStore?.Get<SharedPCAccountManagerPolicy>("accountManagerPolicy"); }
@@ -65,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies the display text for the account shown on the sign-in screen which launches the app specified by SetKioskAppUserModelId. Only applies when KioskAppUserModelId is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KioskAppDisplayName {
             get { return BackingStore?.Get<string?>("kioskAppDisplayName"); }
             set { BackingStore?.Set("kioskAppDisplayName", value); }
         }
+#nullable restore
 #else
         public string KioskAppDisplayName {
             get { return BackingStore?.Get<string>("kioskAppDisplayName"); }
@@ -77,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the application user model ID of the app to use with assigned access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KioskAppUserModelId {
             get { return BackingStore?.Get<string?>("kioskAppUserModelId"); }
             set { BackingStore?.Set("kioskAppUserModelId", value); }
         }
+#nullable restore
 #else
         public string KioskAppUserModelId {
             get { return BackingStore?.Get<string>("kioskAppUserModelId"); }

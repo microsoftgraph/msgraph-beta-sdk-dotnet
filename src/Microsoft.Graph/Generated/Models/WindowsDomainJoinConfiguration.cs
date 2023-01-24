@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsDomainJoinConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Active Directory domain name to join.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActiveDirectoryDomainName {
             get { return BackingStore?.Get<string?>("activeDirectoryDomainName"); }
             set { BackingStore?.Set("activeDirectoryDomainName", value); }
         }
+#nullable restore
 #else
         public string ActiveDirectoryDomainName {
             get { return BackingStore?.Get<string>("activeDirectoryDomainName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Fixed prefix to be used for computer name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ComputerNameStaticPrefix {
             get { return BackingStore?.Get<string?>("computerNameStaticPrefix"); }
             set { BackingStore?.Set("computerNameStaticPrefix", value); }
         }
+#nullable restore
 #else
         public string ComputerNameStaticPrefix {
             get { return BackingStore?.Get<string>("computerNameStaticPrefix"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Reference to device configurations required for network connectivity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceConfiguration>? NetworkAccessConfigurations {
             get { return BackingStore?.Get<List<DeviceConfiguration>?>("networkAccessConfigurations"); }
             set { BackingStore?.Set("networkAccessConfigurations", value); }
         }
+#nullable restore
 #else
         public List<DeviceConfiguration> NetworkAccessConfigurations {
             get { return BackingStore?.Get<List<DeviceConfiguration>>("networkAccessConfigurations"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrganizationalUnit {
             get { return BackingStore?.Get<string?>("organizationalUnit"); }
             set { BackingStore?.Set("organizationalUnit", value); }
         }
+#nullable restore
 #else
         public string OrganizationalUnit {
             get { return BackingStore?.Get<string>("organizationalUnit"); }

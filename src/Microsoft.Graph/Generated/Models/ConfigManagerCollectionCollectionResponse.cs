@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConfigManagerCollectionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConfigManagerCollection>? Value {
             get { return BackingStore?.Get<List<ConfigManagerCollection>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<ConfigManagerCollection> Value {
             get { return BackingStore?.Get<List<ConfigManagerCollection>>("value"); }

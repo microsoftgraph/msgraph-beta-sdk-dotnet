@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity of the user who started the comment thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? ParentAuthor {
             get { return BackingStore?.Get<IdentitySet?>("parentAuthor"); }
             set { BackingStore?.Set("parentAuthor", value); }
         }
+#nullable restore
 #else
         public IdentitySet ParentAuthor {
             get { return BackingStore?.Get<IdentitySet>("parentAuthor"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identities of the users participating in this comment thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IdentitySet>? Participants {
             get { return BackingStore?.Get<List<IdentitySet>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#nullable restore
 #else
         public List<IdentitySet> Participants {
             get { return BackingStore?.Get<List<IdentitySet>>("participants"); }

@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewReviewerScope>? Reviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewReviewerScope> Reviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }

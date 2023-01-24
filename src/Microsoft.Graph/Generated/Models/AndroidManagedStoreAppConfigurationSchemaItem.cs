@@ -33,10 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Default value for string array type items, if specified by the app developer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DefaultStringArrayValue {
             get { return BackingStore?.Get<List<string>?>("defaultStringArrayValue"); }
             set { BackingStore?.Set("defaultStringArrayValue", value); }
         }
+#nullable restore
 #else
         public List<string> DefaultStringArrayValue {
             get { return BackingStore?.Get<List<string>>("defaultStringArrayValue"); }
@@ -45,10 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Default value for string type items, if specified by the app developer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultStringValue {
             get { return BackingStore?.Get<string?>("defaultStringValue"); }
             set { BackingStore?.Set("defaultStringValue", value); }
         }
+#nullable restore
 #else
         public string DefaultStringValue {
             get { return BackingStore?.Get<string>("defaultStringValue"); }
@@ -57,10 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description of what the item controls within the application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -69,10 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Human readable name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -86,10 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -103,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Unique key the application uses to identify the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SchemaItemKey {
             get { return BackingStore?.Get<string?>("schemaItemKey"); }
             set { BackingStore?.Set("schemaItemKey", value); }
         }
+#nullable restore
 #else
         public string SchemaItemKey {
             get { return BackingStore?.Get<string>("schemaItemKey"); }
@@ -115,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? Selections {
             get { return BackingStore?.Get<List<KeyValuePair>?>("selections"); }
             set { BackingStore?.Set("selections", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> Selections {
             get { return BackingStore?.Get<List<KeyValuePair>>("selections"); }

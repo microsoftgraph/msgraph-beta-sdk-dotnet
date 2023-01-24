@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskDesktopApp : WindowsKioskAppBase, IParsable {
         /// <summary>Define the DesktopApplicationID of the app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DesktopApplicationId {
             get { return BackingStore?.Get<string?>("desktopApplicationId"); }
             set { BackingStore?.Set("desktopApplicationId", value); }
         }
+#nullable restore
 #else
         public string DesktopApplicationId {
             get { return BackingStore?.Get<string>("desktopApplicationId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Define the DesktopApplicationLinkPath of the app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DesktopApplicationLinkPath {
             get { return BackingStore?.Get<string?>("desktopApplicationLinkPath"); }
             set { BackingStore?.Set("desktopApplicationLinkPath", value); }
         }
+#nullable restore
 #else
         public string DesktopApplicationLinkPath {
             get { return BackingStore?.Get<string>("desktopApplicationLinkPath"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Define the path of a desktop app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Path {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#nullable restore
 #else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }

@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The file or folder detection value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DetectionValue {
             get { return BackingStore?.Get<string?>("detectionValue"); }
             set { BackingStore?.Set("detectionValue", value); }
         }
+#nullable restore
 #else
         public string DetectionValue {
             get { return BackingStore?.Get<string>("detectionValue"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The file or folder name to detect Win32 Line of Business (LoB) app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileOrFolderName {
             get { return BackingStore?.Get<string?>("fileOrFolderName"); }
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
+#nullable restore
 #else
         public string FileOrFolderName {
             get { return BackingStore?.Get<string>("fileOrFolderName"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The file or folder path to detect Win32 Line of Business (LoB) app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Path {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#nullable restore
 #else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }

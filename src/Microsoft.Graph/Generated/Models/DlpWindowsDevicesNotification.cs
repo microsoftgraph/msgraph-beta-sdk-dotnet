@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DlpWindowsDevicesNotification : DlpNotification, IParsable {
         /// <summary>The contentName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentName {
             get { return BackingStore?.Get<string?>("contentName"); }
             set { BackingStore?.Set("contentName", value); }
         }
+#nullable restore
 #else
         public string ContentName {
             get { return BackingStore?.Get<string>("contentName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The lastModfiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastModfiedBy {
             get { return BackingStore?.Get<string?>("lastModfiedBy"); }
             set { BackingStore?.Set("lastModfiedBy", value); }
         }
+#nullable restore
 #else
         public string LastModfiedBy {
             get { return BackingStore?.Get<string>("lastModfiedBy"); }

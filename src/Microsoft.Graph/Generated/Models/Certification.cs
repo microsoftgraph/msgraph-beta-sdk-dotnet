@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>URL that shows certification details for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificationDetailsUrl {
             get { return BackingStore?.Get<string?>("certificationDetailsUrl"); }
             set { BackingStore?.Set("certificationDetailsUrl", value); }
         }
+#nullable restore
 #else
         public string CertificationDetailsUrl {
             get { return BackingStore?.Get<string>("certificationDetailsUrl"); }
@@ -47,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

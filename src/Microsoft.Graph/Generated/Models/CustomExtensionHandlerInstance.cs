@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifier of the customAccessPackageWorkflowExtension triggered at this instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomExtensionId {
             get { return BackingStore?.Get<string?>("customExtensionId"); }
             set { BackingStore?.Set("customExtensionId", value); }
         }
+#nullable restore
 #else
         public string CustomExtensionId {
             get { return BackingStore?.Get<string>("customExtensionId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique run ID for the logic app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalCorrelationId {
             get { return BackingStore?.Get<string?>("externalCorrelationId"); }
             set { BackingStore?.Set("externalCorrelationId", value); }
         }
+#nullable restore
 #else
         public string ExternalCorrelationId {
             get { return BackingStore?.Get<string>("externalCorrelationId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

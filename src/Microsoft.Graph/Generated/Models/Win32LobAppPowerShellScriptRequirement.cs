@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique display name for this rule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The base64 encoded script content to detect Win32 Line of Business (LoB) app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScriptContent {
             get { return BackingStore?.Get<string?>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
+#nullable restore
 #else
         public string ScriptContent {
             get { return BackingStore?.Get<string>("scriptContent"); }

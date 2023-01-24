@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>If the meeting update changes the meeting end time, this property specifies the previous meeting end time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? PreviousEndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("previousEndDateTime"); }
             set { BackingStore?.Set("previousEndDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone PreviousEndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("previousEndDateTime"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If the meeting update changes the meeting location, this property specifies the previous meeting location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Location? PreviousLocation {
             get { return BackingStore?.Get<Location?>("previousLocation"); }
             set { BackingStore?.Set("previousLocation", value); }
         }
+#nullable restore
 #else
         public Location PreviousLocation {
             get { return BackingStore?.Get<Location>("previousLocation"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If the meeting update changes the meeting start time, this property specifies the previous meeting start time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? PreviousStartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("previousStartDateTime"); }
             set { BackingStore?.Set("previousStartDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone PreviousStartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("previousStartDateTime"); }

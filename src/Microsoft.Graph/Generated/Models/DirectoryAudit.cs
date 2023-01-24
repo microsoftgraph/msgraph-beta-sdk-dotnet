@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates the activity name or the operation name (E.g. &apos;Create User&apos;, &apos;Add member to group&apos;). For a list of activities logged, refer to Azure Ad activity list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActivityDisplayName {
             get { return BackingStore?.Get<string?>("activityDisplayName"); }
             set { BackingStore?.Set("activityDisplayName", value); }
         }
+#nullable restore
 #else
         public string ActivityDisplayName {
             get { return BackingStore?.Get<string>("activityDisplayName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates additional details on the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValue>? AdditionalDetails {
             get { return BackingStore?.Get<List<KeyValue>?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
+#nullable restore
 #else
         public List<KeyValue> AdditionalDetails {
             get { return BackingStore?.Get<List<KeyValue>>("additionalDetails"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates which resource category that&apos;s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Category {
             get { return BackingStore?.Get<string?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
+#nullable restore
 #else
         public string Category {
             get { return BackingStore?.Get<string>("category"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CorrelationId {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#nullable restore
 #else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The initiatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AuditActivityInitiator? InitiatedBy {
             get { return BackingStore?.Get<AuditActivityInitiator?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
+#nullable restore
 #else
         public AuditActivityInitiator InitiatedBy {
             get { return BackingStore?.Get<AuditActivityInitiator>("initiatedBy"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LoggedByService {
             get { return BackingStore?.Get<string?>("loggedByService"); }
             set { BackingStore?.Set("loggedByService", value); }
         }
+#nullable restore
 #else
         public string LoggedByService {
             get { return BackingStore?.Get<string>("loggedByService"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OperationType {
             get { return BackingStore?.Get<string?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
+#nullable restore
 #else
         public string OperationType {
             get { return BackingStore?.Get<string>("operationType"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates the reason for failure if the result is failure or timeout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResultReason {
             get { return BackingStore?.Get<string?>("resultReason"); }
             set { BackingStore?.Set("resultReason", value); }
         }
+#nullable restore
 #else
         public string ResultReason {
             get { return BackingStore?.Get<string>("resultReason"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information about the resource that changed due to the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TargetResource>? TargetResources {
             get { return BackingStore?.Get<List<TargetResource>?>("targetResources"); }
             set { BackingStore?.Set("targetResources", value); }
         }
+#nullable restore
 #else
         public List<TargetResource> TargetResources {
             get { return BackingStore?.Get<List<TargetResource>>("targetResources"); }
@@ -125,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Type of user agent used by a user in the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserAgent {
             get { return BackingStore?.Get<string?>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
+#nullable restore
 #else
         public string UserAgent {
             get { return BackingStore?.Get<string>("userAgent"); }

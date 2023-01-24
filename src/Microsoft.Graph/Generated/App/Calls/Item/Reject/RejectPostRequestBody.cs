@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Reject {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callbackUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CallbackUri {
             get { return BackingStore?.Get<string?>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
+#nullable restore
 #else
         public string CallbackUri {
             get { return BackingStore?.Get<string>("callbackUri"); }

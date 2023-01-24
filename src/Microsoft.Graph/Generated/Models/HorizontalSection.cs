@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class HorizontalSection : Entity, IParsable {
         /// <summary>The set of vertical columns in this section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<HorizontalSectionColumn>? Columns {
             get { return BackingStore?.Get<List<HorizontalSectionColumn>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#nullable restore
 #else
         public List<HorizontalSectionColumn> Columns {
             get { return BackingStore?.Get<List<HorizontalSectionColumn>>("columns"); }

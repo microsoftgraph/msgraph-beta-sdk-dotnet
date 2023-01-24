@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedGroups {
             get { return BackingStore?.Get<List<string>?>("allowedGroups"); }
             set { BackingStore?.Set("allowedGroups", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedGroups {
             get { return BackingStore?.Get<List<string>>("allowedGroups"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifiers of users that are in the scope of the policy. Required when the appliesTo property is set to selected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedUsers {
             get { return BackingStore?.Get<List<string>?>("allowedUsers"); }
             set { BackingStore?.Set("allowedUsers", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedUsers {
             get { return BackingStore?.Get<List<string>>("allowedUsers"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

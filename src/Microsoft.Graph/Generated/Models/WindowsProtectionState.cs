@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>Current anti malware version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AntiMalwareVersion {
             get { return BackingStore?.Get<string?>("antiMalwareVersion"); }
             set { BackingStore?.Set("antiMalwareVersion", value); }
         }
+#nullable restore
 #else
         public string AntiMalwareVersion {
             get { return BackingStore?.Get<string>("antiMalwareVersion"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device malware list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsDeviceMalwareState>? DetectedMalwareState {
             get { return BackingStore?.Get<List<WindowsDeviceMalwareState>?>("detectedMalwareState"); }
             set { BackingStore?.Set("detectedMalwareState", value); }
         }
+#nullable restore
 #else
         public List<WindowsDeviceMalwareState> DetectedMalwareState {
             get { return BackingStore?.Get<List<WindowsDeviceMalwareState>>("detectedMalwareState"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Current endpoint protection engine&apos;s version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EngineVersion {
             get { return BackingStore?.Get<string?>("engineVersion"); }
             set { BackingStore?.Set("engineVersion", value); }
         }
+#nullable restore
 #else
         public string EngineVersion {
             get { return BackingStore?.Get<string>("engineVersion"); }
@@ -68,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Last full scan signature version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastFullScanSignatureVersion {
             get { return BackingStore?.Get<string?>("lastFullScanSignatureVersion"); }
             set { BackingStore?.Set("lastFullScanSignatureVersion", value); }
         }
+#nullable restore
 #else
         public string LastFullScanSignatureVersion {
             get { return BackingStore?.Get<string>("lastFullScanSignatureVersion"); }
@@ -85,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Last quick scan signature version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastQuickScanSignatureVersion {
             get { return BackingStore?.Get<string?>("lastQuickScanSignatureVersion"); }
             set { BackingStore?.Set("lastQuickScanSignatureVersion", value); }
         }
+#nullable restore
 #else
         public string LastQuickScanSignatureVersion {
             get { return BackingStore?.Get<string>("lastQuickScanSignatureVersion"); }
@@ -137,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Current malware definitions version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SignatureVersion {
             get { return BackingStore?.Get<string?>("signatureVersion"); }
             set { BackingStore?.Set("signatureVersion", value); }
         }
+#nullable restore
 #else
         public string SignatureVersion {
             get { return BackingStore?.Get<string>("signatureVersion"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartCustomExtensionHandler : OnTokenIssuanceStartHandler, IParsable {
         /// <summary>The customExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OnTokenIssuanceStartCustomExtension? CustomExtension {
             get { return BackingStore?.Get<OnTokenIssuanceStartCustomExtension?>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
+#nullable restore
 #else
         public OnTokenIssuanceStartCustomExtension CustomExtension {
             get { return BackingStore?.Get<OnTokenIssuanceStartCustomExtension>("customExtension"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationJobApplicationParameters>? Parameters {
             get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationJobApplicationParameters> Parameters {
             get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>>("parameters"); }

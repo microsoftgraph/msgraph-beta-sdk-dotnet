@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>DNS suffix search list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DnsSuffixSearchList {
             get { return BackingStore?.Get<List<string>?>("dnsSuffixSearchList"); }
             set { BackingStore?.Set("dnsSuffixSearchList", value); }
         }
+#nullable restore
 #else
         public List<string> DnsSuffixSearchList {
             get { return BackingStore?.Get<List<string>>("dnsSuffixSearchList"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsPhone81CertificateProfileBase? IdentityCertificate {
             get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#nullable restore
 #else
         public WindowsPhone81CertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase>("identityCertificate"); }

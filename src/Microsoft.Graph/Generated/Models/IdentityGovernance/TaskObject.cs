@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class TaskObject : Entity, IParsable {
         /// <summary>Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.KeyValuePair>? Arguments {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("arguments"); }
             set { BackingStore?.Set("arguments", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.KeyValuePair> Arguments {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("arguments"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>A string that describes the purpose of the task for administrative use. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>A unique string that identifies the task. Required.Supports $filter(eq, ne) and orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TaskDefinitionId {
             get { return BackingStore?.Get<string?>("taskDefinitionId"); }
             set { BackingStore?.Set("taskDefinitionId", value); }
         }
+#nullable restore
 #else
         public string TaskDefinitionId {
             get { return BackingStore?.Get<string>("taskDefinitionId"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The result of processing the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TaskProcessingResult>? TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
+#nullable restore
 #else
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }

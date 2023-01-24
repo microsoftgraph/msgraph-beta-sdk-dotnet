@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The days of the week on which the user works.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DayOfWeekObject?>? DaysOfWeek {
             get { return BackingStore?.Get<List<DayOfWeekObject?>?>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
+#nullable restore
 #else
         public List<DayOfWeekObject?> DaysOfWeek {
             get { return BackingStore?.Get<List<DayOfWeekObject?>>("daysOfWeek"); }
@@ -33,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -50,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The time zone to which the working hours apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TimeZoneBase? TimeZone {
             get { return BackingStore?.Get<TimeZoneBase?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#nullable restore
 #else
         public TimeZoneBase TimeZone {
             get { return BackingStore?.Get<TimeZoneBase>("timeZone"); }

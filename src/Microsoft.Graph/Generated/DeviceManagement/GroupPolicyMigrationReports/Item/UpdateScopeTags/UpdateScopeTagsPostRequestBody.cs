@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The roleScopeTagIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }

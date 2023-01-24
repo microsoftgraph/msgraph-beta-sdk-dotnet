@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The authorizedAppIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AuthorizedAppIds {
             get { return BackingStore?.Get<List<string>?>("authorizedAppIds"); }
             set { BackingStore?.Set("authorizedAppIds", value); }
         }
+#nullable restore
 #else
         public List<string> AuthorizedAppIds {
             get { return BackingStore?.Get<List<string>>("authorizedAppIds"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The authorizedApps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AuthorizedApps {
             get { return BackingStore?.Get<List<string>?>("authorizedApps"); }
             set { BackingStore?.Set("authorizedApps", value); }
         }
+#nullable restore
 #else
         public List<string> AuthorizedApps {
             get { return BackingStore?.Get<List<string>>("authorizedApps"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

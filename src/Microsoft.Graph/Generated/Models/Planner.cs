@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Planner : Entity, IParsable {
         /// <summary>Read-only. Nullable. Returns a collection of the specified buckets</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PlannerBucket>? Buckets {
             get { return BackingStore?.Get<List<PlannerBucket>?>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
+#nullable restore
 #else
         public List<PlannerBucket> Buckets {
             get { return BackingStore?.Get<List<PlannerBucket>>("buckets"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified plans</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PlannerPlan>? Plans {
             get { return BackingStore?.Get<List<PlannerPlan>?>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
+#nullable restore
 #else
         public List<PlannerPlan> Plans {
             get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified rosters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PlannerRoster>? Rosters {
             get { return BackingStore?.Get<List<PlannerRoster>?>("rosters"); }
             set { BackingStore?.Set("rosters", value); }
         }
+#nullable restore
 #else
         public List<PlannerRoster> Rosters {
             get { return BackingStore?.Get<List<PlannerRoster>>("rosters"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified tasks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PlannerTask>? Tasks {
             get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#nullable restore
 #else
         public List<PlannerTask> Tasks {
             get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }

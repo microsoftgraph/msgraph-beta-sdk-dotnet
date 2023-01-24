@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RoleMembershipGovernanceCriteria : GovernanceCriteria, IParsable {
         /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleId {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#nullable restore
 #else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The roleTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleTemplateId {
             get { return BackingStore?.Get<string?>("roleTemplateId"); }
             set { BackingStore?.Set("roleTemplateId", value); }
         }
+#nullable restore
 #else
         public string RoleTemplateId {
             get { return BackingStore?.Get<string>("roleTemplateId"); }

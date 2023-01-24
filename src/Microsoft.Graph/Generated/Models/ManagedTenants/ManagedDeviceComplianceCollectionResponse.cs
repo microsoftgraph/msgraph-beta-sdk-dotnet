@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagedDeviceComplianceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedDeviceCompliance>? Value {
             get { return BackingStore?.Get<List<ManagedDeviceCompliance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<ManagedDeviceCompliance> Value {
             get { return BackingStore?.Get<List<ManagedDeviceCompliance>>("value"); }

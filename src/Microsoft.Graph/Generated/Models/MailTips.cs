@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Mail tips for automatic reply if it has been set up by the recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AutomaticRepliesMailTips? AutomaticReplies {
             get { return BackingStore?.Get<AutomaticRepliesMailTips?>("automaticReplies"); }
             set { BackingStore?.Set("automaticReplies", value); }
         }
+#nullable restore
 #else
         public AutomaticRepliesMailTips AutomaticReplies {
             get { return BackingStore?.Get<AutomaticRepliesMailTips>("automaticReplies"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A custom mail tip that can be set on the recipient&apos;s mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomMailTip {
             get { return BackingStore?.Get<string?>("customMailTip"); }
             set { BackingStore?.Set("customMailTip", value); }
         }
+#nullable restore
 #else
         public string CustomMailTip {
             get { return BackingStore?.Get<string>("customMailTip"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The email address of the recipient to get mailtips for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.EmailAddress? EmailAddress {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.EmailAddress EmailAddress {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress>("emailAddress"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Errors that occur during the getMailTips action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MailTipsError? Error {
             get { return BackingStore?.Get<MailTipsError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public MailTipsError Error {
             get { return BackingStore?.Get<MailTipsError>("error"); }
@@ -88,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -105,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Recipients suggested based on previous contexts where they appear in the same message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? RecipientSuggestions {
             get { return BackingStore?.Get<List<Recipient>?>("recipientSuggestions"); }
             set { BackingStore?.Set("recipientSuggestions", value); }
         }
+#nullable restore
 #else
         public List<Recipient> RecipientSuggestions {
             get { return BackingStore?.Get<List<Recipient>>("recipientSuggestions"); }

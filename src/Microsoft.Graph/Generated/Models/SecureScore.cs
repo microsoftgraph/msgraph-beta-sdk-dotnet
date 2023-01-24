@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AverageComparativeScore>? AverageComparativeScores {
             get { return BackingStore?.Get<List<AverageComparativeScore>?>("averageComparativeScores"); }
             set { BackingStore?.Set("averageComparativeScores", value); }
         }
+#nullable restore
 #else
         public List<AverageComparativeScore> AverageComparativeScores {
             get { return BackingStore?.Get<List<AverageComparativeScore>>("averageComparativeScores"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>GUID string for tenant ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureTenantId {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#nullable restore
 #else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains tenant scores for a set of controls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ControlScore>? ControlScores {
             get { return BackingStore?.Get<List<ControlScore>?>("controlScores"); }
             set { BackingStore?.Set("controlScores", value); }
         }
+#nullable restore
 #else
         public List<ControlScore> ControlScores {
             get { return BackingStore?.Get<List<ControlScore>>("controlScores"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EnabledServices {
             get { return BackingStore?.Get<List<string>?>("enabledServices"); }
             set { BackingStore?.Set("enabledServices", value); }
         }
+#nullable restore
 #else
         public List<string> EnabledServices {
             get { return BackingStore?.Get<List<string>>("enabledServices"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SecurityVendorInformation? VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#nullable restore
 #else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }

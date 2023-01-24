@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identity of the channel in which the message was posted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChannelId {
             get { return BackingStore?.Get<string?>("channelId"); }
             set { BackingStore?.Set("channelId", value); }
         }
+#nullable restore
 #else
         public string ChannelId {
             get { return BackingStore?.Get<string>("channelId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity of the team in which the message was posted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamId {
             get { return BackingStore?.Get<string?>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
         }
+#nullable restore
 #else
         public string TeamId {
             get { return BackingStore?.Get<string>("teamId"); }

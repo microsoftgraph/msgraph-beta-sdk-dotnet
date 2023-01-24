@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The aliases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Aliases {
             get { return BackingStore?.Get<List<string>?>("aliases"); }
             set { BackingStore?.Set("aliases", value); }
         }
+#nullable restore
 #else
         public List<string> Aliases {
             get { return BackingStore?.Get<List<string>>("aliases"); }
@@ -47,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Label?>? Labels {
             get { return BackingStore?.Get<List<Label?>?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
+#nullable restore
 #else
         public List<Label?> Labels {
             get { return BackingStore?.Get<List<Label?>>("labels"); }
@@ -59,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -71,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeClou
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The targetServicePlanId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetServicePlanId {
             get { return BackingStore?.Get<string?>("targetServicePlanId"); }
             set { BackingStore?.Set("targetServicePlanId", value); }
         }
+#nullable restore
 #else
         public string TargetServicePlanId {
             get { return BackingStore?.Get<string>("targetServicePlanId"); }

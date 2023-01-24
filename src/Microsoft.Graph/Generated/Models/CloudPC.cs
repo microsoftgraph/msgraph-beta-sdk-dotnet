@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPC : Entity, IParsable {
         /// <summary>The Azure Active Directory (Azure AD) device ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AadDeviceId {
             get { return BackingStore?.Get<string?>("aadDeviceId"); }
             set { BackingStore?.Set("aadDeviceId", value); }
         }
+#nullable restore
 #else
         public string AadDeviceId {
             get { return BackingStore?.Get<string>("aadDeviceId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcConnectivityResult? ConnectivityResult {
             get { return BackingStore?.Get<CloudPcConnectivityResult?>("connectivityResult"); }
             set { BackingStore?.Set("connectivityResult", value); }
         }
+#nullable restore
 #else
         public CloudPcConnectivityResult ConnectivityResult {
             get { return BackingStore?.Get<CloudPcConnectivityResult>("connectivityResult"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The display name of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the OS image that&apos;s on the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ImageDisplayName {
             get { return BackingStore?.Get<string?>("imageDisplayName"); }
             set { BackingStore?.Set("imageDisplayName", value); }
         }
+#nullable restore
 #else
         public string ImageDisplayName {
             get { return BackingStore?.Get<string>("imageDisplayName"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The last login result of the Cloud PC. For example, { &apos;time&apos;: &apos;2014-01-01T00:00:00Z&apos;}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcLoginResult? LastLoginResult {
             get { return BackingStore?.Get<CloudPcLoginResult?>("lastLoginResult"); }
             set { BackingStore?.Set("lastLoginResult", value); }
         }
+#nullable restore
 #else
         public CloudPcLoginResult LastLoginResult {
             get { return BackingStore?.Get<CloudPcLoginResult>("lastLoginResult"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcRemoteActionResult? LastRemoteActionResult {
             get { return BackingStore?.Get<CloudPcRemoteActionResult?>("lastRemoteActionResult"); }
             set { BackingStore?.Set("lastRemoteActionResult", value); }
         }
+#nullable restore
 #else
         public CloudPcRemoteActionResult LastRemoteActionResult {
             get { return BackingStore?.Get<CloudPcRemoteActionResult>("lastRemoteActionResult"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Intune device ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Intune device name of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceName {
             get { return BackingStore?.Get<string?>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceName {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure network connection that is applied during the provisioning of Cloud PCs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnPremisesConnectionName {
             get { return BackingStore?.Get<string?>("onPremisesConnectionName"); }
             set { BackingStore?.Set("onPremisesConnectionName", value); }
         }
+#nullable restore
 #else
         public string OnPremisesConnectionName {
             get { return BackingStore?.Get<string>("onPremisesConnectionName"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The results of every partner agent&apos;s installation status on Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcPartnerAgentInstallResult>? PartnerAgentInstallResults {
             get { return BackingStore?.Get<List<CloudPcPartnerAgentInstallResult>?>("partnerAgentInstallResults"); }
             set { BackingStore?.Set("partnerAgentInstallResults", value); }
         }
+#nullable restore
 #else
         public List<CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults {
             get { return BackingStore?.Get<List<CloudPcPartnerAgentInstallResult>>("partnerAgentInstallResults"); }
@@ -147,10 +167,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The provisioning policy ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProvisioningPolicyId {
             get { return BackingStore?.Get<string?>("provisioningPolicyId"); }
             set { BackingStore?.Set("provisioningPolicyId", value); }
         }
+#nullable restore
 #else
         public string ProvisioningPolicyId {
             get { return BackingStore?.Get<string>("provisioningPolicyId"); }
@@ -159,10 +181,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The provisioning policy that is applied during the provisioning of Cloud PCs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProvisioningPolicyName {
             get { return BackingStore?.Get<string?>("provisioningPolicyName"); }
             set { BackingStore?.Set("provisioningPolicyName", value); }
         }
+#nullable restore
 #else
         public string ProvisioningPolicyName {
             get { return BackingStore?.Get<string>("provisioningPolicyName"); }
@@ -176,10 +200,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The service plan ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePlanId {
             get { return BackingStore?.Get<string?>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
+#nullable restore
 #else
         public string ServicePlanId {
             get { return BackingStore?.Get<string>("servicePlanId"); }
@@ -188,10 +214,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The service plan name of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePlanName {
             get { return BackingStore?.Get<string?>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
+#nullable restore
 #else
         public string ServicePlanName {
             get { return BackingStore?.Get<string>("servicePlanName"); }
@@ -210,10 +238,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The details of the Cloud PC status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcStatusDetails? StatusDetails {
             get { return BackingStore?.Get<CloudPcStatusDetails?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
+#nullable restore
 #else
         public CloudPcStatusDetails StatusDetails {
             get { return BackingStore?.Get<CloudPcStatusDetails>("statusDetails"); }
@@ -227,10 +257,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user principal name (UPN) of the user assigned to the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CertificateConnectorDetails : Entity, IParsable {
         /// <summary>Connector name (set during enrollment).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectorName {
             get { return BackingStore?.Get<string?>("connectorName"); }
             set { BackingStore?.Set("connectorName", value); }
         }
+#nullable restore
 #else
         public string ConnectorName {
             get { return BackingStore?.Get<string>("connectorName"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Version of the connector installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectorVersion {
             get { return BackingStore?.Get<string?>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
+#nullable restore
 #else
         public string ConnectorVersion {
             get { return BackingStore?.Get<string>("connectorVersion"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the machine hosting this connector service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MachineName {
             get { return BackingStore?.Get<string?>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
+#nullable restore
 #else
         public string MachineName {
             get { return BackingStore?.Get<string>("machineName"); }

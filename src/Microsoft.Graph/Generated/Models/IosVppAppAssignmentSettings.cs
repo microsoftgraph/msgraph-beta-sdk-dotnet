@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The VPN Configuration Id to apply for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VpnConfigurationId {
             get { return BackingStore?.Get<string?>("vpnConfigurationId"); }
             set { BackingStore?.Set("vpnConfigurationId", value); }
         }
+#nullable restore
 #else
         public string VpnConfigurationId {
             get { return BackingStore?.Get<string>("vpnConfigurationId"); }

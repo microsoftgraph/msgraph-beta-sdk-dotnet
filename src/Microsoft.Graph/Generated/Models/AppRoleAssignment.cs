@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrincipalDisplayName {
             get { return BackingStore?.Get<string?>("principalDisplayName"); }
             set { BackingStore?.Set("principalDisplayName", value); }
         }
+#nullable restore
 #else
         public string PrincipalDisplayName {
             get { return BackingStore?.Get<string>("principalDisplayName"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrincipalType {
             get { return BackingStore?.Get<string?>("principalType"); }
             set { BackingStore?.Set("principalType", value); }
         }
+#nullable restore
 #else
         public string PrincipalType {
             get { return BackingStore?.Get<string>("principalType"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the resource app&apos;s service principal to which the assignment is made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceDisplayName {
             get { return BackingStore?.Get<string?>("resourceDisplayName"); }
             set { BackingStore?.Set("resourceDisplayName", value); }
         }
+#nullable restore
 #else
         public string ResourceDisplayName {
             get { return BackingStore?.Get<string>("resourceDisplayName"); }

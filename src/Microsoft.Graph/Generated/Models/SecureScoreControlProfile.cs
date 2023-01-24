@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecureScoreControlProfile : Entity, IParsable {
         /// <summary>Control action type (Config, Review, Behavior).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActionType {
             get { return BackingStore?.Get<string?>("actionType"); }
             set { BackingStore?.Set("actionType", value); }
         }
+#nullable restore
 #else
         public string ActionType {
             get { return BackingStore?.Get<string>("actionType"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL to where the control can be actioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActionUrl {
             get { return BackingStore?.Get<string?>("actionUrl"); }
             set { BackingStore?.Set("actionUrl", value); }
         }
+#nullable restore
 #else
         public string ActionUrl {
             get { return BackingStore?.Get<string>("actionUrl"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>GUID string for tenant ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureTenantId {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#nullable restore
 #else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of compliance information associated with secure score control</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.ComplianceInformation>? ComplianceInformation {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComplianceInformation>?>("complianceInformation"); }
             set { BackingStore?.Set("complianceInformation", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.ComplianceInformation> ComplianceInformation {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComplianceInformation>>("complianceInformation"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Control action category (Account, Data, Device, Apps, Infrastructure).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ControlCategory {
             get { return BackingStore?.Get<string?>("controlCategory"); }
             set { BackingStore?.Set("controlCategory", value); }
         }
+#nullable restore
 #else
         public string ControlCategory {
             get { return BackingStore?.Get<string>("controlCategory"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SecureScoreControlStateUpdate>? ControlStateUpdates {
             get { return BackingStore?.Get<List<SecureScoreControlStateUpdate>?>("controlStateUpdates"); }
             set { BackingStore?.Set("controlStateUpdates", value); }
         }
+#nullable restore
 #else
         public List<SecureScoreControlStateUpdate> ControlStateUpdates {
             get { return BackingStore?.Get<List<SecureScoreControlStateUpdate>>("controlStateUpdates"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Resource cost of implemmentating control (low, moderate, high).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ImplementationCost {
             get { return BackingStore?.Get<string?>("implementationCost"); }
             set { BackingStore?.Set("implementationCost", value); }
         }
+#nullable restore
 #else
         public string ImplementationCost {
             get { return BackingStore?.Get<string>("implementationCost"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Description of what the control will help remediate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Remediation {
             get { return BackingStore?.Get<string?>("remediation"); }
             set { BackingStore?.Set("remediation", value); }
         }
+#nullable restore
 #else
         public string Remediation {
             get { return BackingStore?.Get<string>("remediation"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description of the impact on users of the remediation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RemediationImpact {
             get { return BackingStore?.Get<string?>("remediationImpact"); }
             set { BackingStore?.Set("remediationImpact", value); }
         }
+#nullable restore
 #else
         public string RemediationImpact {
             get { return BackingStore?.Get<string>("remediationImpact"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Service that owns the control (Exchange, Sharepoint, Azure AD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Service {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#nullable restore
 #else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }
@@ -147,10 +167,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Threats {
             get { return BackingStore?.Get<List<string>?>("threats"); }
             set { BackingStore?.Set("threats", value); }
         }
+#nullable restore
 #else
         public List<string> Threats {
             get { return BackingStore?.Get<List<string>>("threats"); }
@@ -159,10 +181,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Control tier (Core, Defense in Depth, Advanced.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Tier {
             get { return BackingStore?.Get<string?>("tier"); }
             set { BackingStore?.Set("tier", value); }
         }
+#nullable restore
 #else
         public string Tier {
             get { return BackingStore?.Get<string>("tier"); }
@@ -171,10 +195,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Title of the control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
@@ -183,10 +209,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User impact of implementing control (low, moderate, high).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserImpact {
             get { return BackingStore?.Get<string?>("userImpact"); }
             set { BackingStore?.Set("userImpact", value); }
         }
+#nullable restore
 #else
         public string UserImpact {
             get { return BackingStore?.Get<string>("userImpact"); }
@@ -195,10 +223,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SecurityVendorInformation? VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#nullable restore
 #else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }

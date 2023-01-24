@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         }
         /// <summary>Description that gives details on the term usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>Name of the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>ID of the parent site of this group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentSiteId {
             get { return BackingStore?.Get<string?>("parentSiteId"); }
             set { BackingStore?.Set("parentSiteId", value); }
         }
+#nullable restore
 #else
         public string ParentSiteId {
             get { return BackingStore?.Get<string>("parentSiteId"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         }
         /// <summary>All sets under the group in a term [store].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Set>? Sets {
             get { return BackingStore?.Get<List<Set>?>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
+#nullable restore
 #else
         public List<Set> Sets {
             get { return BackingStore?.Get<List<Set>>("sets"); }

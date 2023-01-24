@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies when the time zone switches from standard time to daylight saving time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DaylightTimeZoneOffset? DaylightOffset {
             get { return BackingStore?.Get<DaylightTimeZoneOffset?>("daylightOffset"); }
             set { BackingStore?.Set("daylightOffset", value); }
         }
+#nullable restore
 #else
         public DaylightTimeZoneOffset DaylightOffset {
             get { return BackingStore?.Get<DaylightTimeZoneOffset>("daylightOffset"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies when the time zone switches from daylight saving time to standard time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public StandardTimeZoneOffset? StandardOffset {
             get { return BackingStore?.Get<StandardTimeZoneOffset?>("standardOffset"); }
             set { BackingStore?.Set("standardOffset", value); }
         }
+#nullable restore
 #else
         public StandardTimeZoneOffset StandardOffset {
             get { return BackingStore?.Get<StandardTimeZoneOffset>("standardOffset"); }

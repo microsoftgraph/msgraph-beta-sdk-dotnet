@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppManagementPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? AppliesTo {
             get { return BackingStore?.Get<List<DirectoryObject>?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> AppliesTo {
             get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The restrictions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AppManagementConfiguration? Restrictions {
             get { return BackingStore?.Get<AppManagementConfiguration?>("restrictions"); }
             set { BackingStore?.Set("restrictions", value); }
         }
+#nullable restore
 #else
         public AppManagementConfiguration Restrictions {
             get { return BackingStore?.Get<AppManagementConfiguration>("restrictions"); }

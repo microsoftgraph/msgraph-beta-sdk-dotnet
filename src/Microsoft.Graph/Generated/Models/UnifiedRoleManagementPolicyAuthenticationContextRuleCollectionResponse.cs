@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicyAuthenticationContextRuleCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRoleManagementPolicyAuthenticationContextRule>? Value {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyAuthenticationContextRule>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRoleManagementPolicyAuthenticationContextRule> Value {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyAuthenticationContextRule>>("value"); }

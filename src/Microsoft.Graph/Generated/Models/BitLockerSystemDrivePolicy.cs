@@ -28,10 +28,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -45,10 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Defines a custom recovery message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrebootRecoveryMessage {
             get { return BackingStore?.Get<string?>("prebootRecoveryMessage"); }
             set { BackingStore?.Set("prebootRecoveryMessage", value); }
         }
+#nullable restore
 #else
         public string PrebootRecoveryMessage {
             get { return BackingStore?.Get<string>("prebootRecoveryMessage"); }
@@ -57,10 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines a custom recovery URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrebootRecoveryUrl {
             get { return BackingStore?.Get<string?>("prebootRecoveryUrl"); }
             set { BackingStore?.Set("prebootRecoveryUrl", value); }
         }
+#nullable restore
 #else
         public string PrebootRecoveryUrl {
             get { return BackingStore?.Get<string>("prebootRecoveryUrl"); }
@@ -69,10 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Allows to recover BitLocker encrypted operating system drives in the absence of the required startup key information. This policy setting is applied when you turn on BitLocker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public BitLockerRecoveryOptions? RecoveryOptions {
             get { return BackingStore?.Get<BitLockerRecoveryOptions?>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
+#nullable restore
 #else
         public BitLockerRecoveryOptions RecoveryOptions {
             get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }

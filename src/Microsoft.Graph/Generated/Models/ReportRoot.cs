@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ReportRoot : Entity, IParsable {
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>? ApplicationSignInDetailedSummary {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>?>("applicationSignInDetailedSummary"); }
             set { BackingStore?.Set("applicationSignInDetailedSummary", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary> ApplicationSignInDetailedSummary {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>>("applicationSignInDetailedSummary"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Container for navigation properties for Azure AD authentication methods resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AuthenticationMethodsRoot? AuthenticationMethods {
             get { return BackingStore?.Get<AuthenticationMethodsRoot?>("authenticationMethods"); }
             set { BackingStore?.Set("authenticationMethods", value); }
         }
+#nullable restore
 #else
         public AuthenticationMethodsRoot AuthenticationMethods {
             get { return BackingStore?.Get<AuthenticationMethodsRoot>("authenticationMethods"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>? CredentialUserRegistrationDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>?>("credentialUserRegistrationDetails"); }
             set { BackingStore?.Set("credentialUserRegistrationDetails", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails> CredentialUserRegistrationDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>>("credentialUserRegistrationDetails"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dailyPrintUsage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintUsage>? DailyPrintUsage {
             get { return BackingStore?.Get<List<PrintUsage>?>("dailyPrintUsage"); }
             set { BackingStore?.Set("dailyPrintUsage", value); }
         }
+#nullable restore
 #else
         public List<PrintUsage> DailyPrintUsage {
             get { return BackingStore?.Get<List<PrintUsage>>("dailyPrintUsage"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dailyPrintUsageByPrinter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintUsageByPrinter>? DailyPrintUsageByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("dailyPrintUsageByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
+#nullable restore
 #else
         public List<PrintUsageByPrinter> DailyPrintUsageByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageByPrinter"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dailyPrintUsageByUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintUsageByUser>? DailyPrintUsageByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>?>("dailyPrintUsageByUser"); }
             set { BackingStore?.Set("dailyPrintUsageByUser", value); }
         }
+#nullable restore
 #else
         public List<PrintUsageByUser> DailyPrintUsageByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageByUser"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dailyPrintUsageSummariesByPrinter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintUsageByPrinter>? DailyPrintUsageSummariesByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("dailyPrintUsageSummariesByPrinter"); }
             set { BackingStore?.Set("dailyPrintUsageSummariesByPrinter", value); }
         }
+#nullable restore
 #else
         public List<PrintUsageByPrinter> DailyPrintUsageSummariesByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("dailyPrintUsageSummariesByPrinter"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dailyPrintUsageSummariesByUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintUsageByUser>? DailyPrintUsageSummariesByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>?>("dailyPrintUsageSummariesByUser"); }
             set { BackingStore?.Set("dailyPrintUsageSummariesByUser", value); }
         }
+#nullable restore
 #else
         public List<PrintUsageByUser> DailyPrintUsageSummariesByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("dailyPrintUsageSummariesByUser"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The monthlyPrintUsageByPrinter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintUsageByPrinter>? MonthlyPrintUsageByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("monthlyPrintUsageByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
+#nullable restore
 #else
         public List<PrintUsageByPrinter> MonthlyPrintUsageByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageByPrinter"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The monthlyPrintUsageByUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintUsageByUser>? MonthlyPrintUsageByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>?>("monthlyPrintUsageByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageByUser", value); }
         }
+#nullable restore
 #else
         public List<PrintUsageByUser> MonthlyPrintUsageByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageByUser"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The monthlyPrintUsageSummariesByPrinter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintUsageByPrinter>? MonthlyPrintUsageSummariesByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>?>("monthlyPrintUsageSummariesByPrinter"); }
             set { BackingStore?.Set("monthlyPrintUsageSummariesByPrinter", value); }
         }
+#nullable restore
 #else
         public List<PrintUsageByPrinter> MonthlyPrintUsageSummariesByPrinter {
             get { return BackingStore?.Get<List<PrintUsageByPrinter>>("monthlyPrintUsageSummariesByPrinter"); }
@@ -139,10 +161,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The monthlyPrintUsageSummariesByUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintUsageByUser>? MonthlyPrintUsageSummariesByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>?>("monthlyPrintUsageSummariesByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
         }
+#nullable restore
 #else
         public List<PrintUsageByUser> MonthlyPrintUsageSummariesByUser {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageSummariesByUser"); }
@@ -151,10 +175,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SecurityReportsRoot? Security {
             get { return BackingStore?.Get<SecurityReportsRoot?>("security"); }
             set { BackingStore?.Set("security", value); }
         }
+#nullable restore
 #else
         public SecurityReportsRoot Security {
             get { return BackingStore?.Get<SecurityReportsRoot>("security"); }
@@ -163,10 +189,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the self-service password reset (SSPR) usage for a given tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>? UserCredentialUsageDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>?>("userCredentialUsageDetails"); }
             set { BackingStore?.Set("userCredentialUsageDetails", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails> UserCredentialUsageDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>>("userCredentialUsageDetails"); }

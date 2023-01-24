@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The fallback string, which is used when a requested localization is not available. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultText {
             get { return BackingStore?.Get<string?>("defaultText"); }
             set { BackingStore?.Set("defaultText", value); }
         }
+#nullable restore
 #else
         public string DefaultText {
             get { return BackingStore?.Get<string>("defaultText"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Content represented in a format for a specific locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageLocalizedText>? LocalizedTexts {
             get { return BackingStore?.Get<List<AccessPackageLocalizedText>?>("localizedTexts"); }
             set { BackingStore?.Set("localizedTexts", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageLocalizedText> LocalizedTexts {
             get { return BackingStore?.Get<List<AccessPackageLocalizedText>>("localizedTexts"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

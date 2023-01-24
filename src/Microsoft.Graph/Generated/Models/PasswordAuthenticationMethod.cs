@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>For security, the password is always returned as null from a LIST or GET operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Password {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#nullable restore
 #else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }

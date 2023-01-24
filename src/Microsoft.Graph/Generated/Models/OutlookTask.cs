@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OutlookTask : OutlookItem, IParsable {
         /// <summary>The name of the person who has been assigned the task in Outlook. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignedTo {
             get { return BackingStore?.Get<string?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
+#nullable restore
 #else
         public string AssignedTo {
             get { return BackingStore?.Get<string>("assignedTo"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Attachment>? Attachments {
             get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#nullable restore
 #else
         public List<Attachment> Attachments {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The task body that typically contains information about the task. Note that only HTML type is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Body {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#nullable restore
 #else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The date in the specified time zone that the task was finished.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone CompletedDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("completedDateTime"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The date in the specified time zone that the task is to be finished.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? DueDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone DueDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("dueDateTime"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of multi-value extended properties defined for the task. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Owner {
             get { return BackingStore?.Get<string?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#nullable restore
 #else
         public string Owner {
             get { return BackingStore?.Get<string>("owner"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The parentFolderId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentFolderId {
             get { return BackingStore?.Get<string?>("parentFolderId"); }
             set { BackingStore?.Set("parentFolderId", value); }
         }
+#nullable restore
 #else
         public string ParentFolderId {
             get { return BackingStore?.Get<string>("parentFolderId"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The recurrence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PatternedRecurrence? Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
+#nullable restore
 #else
         public PatternedRecurrence Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
@@ -130,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The reminderDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? ReminderDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("reminderDateTime"); }
             set { BackingStore?.Set("reminderDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone ReminderDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("reminderDateTime"); }
@@ -147,10 +167,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of single-value extended properties defined for the task. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
@@ -159,10 +181,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The startDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
@@ -176,10 +200,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }

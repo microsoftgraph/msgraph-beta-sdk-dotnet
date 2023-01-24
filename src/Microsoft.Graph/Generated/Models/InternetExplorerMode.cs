@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class InternetExplorerMode : Entity, IParsable {
         /// <summary>A collection of site lists to support Internet Explorer mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BrowserSiteList>? SiteLists {
             get { return BackingStore?.Get<List<BrowserSiteList>?>("siteLists"); }
             set { BackingStore?.Set("siteLists", value); }
         }
+#nullable restore
 #else
         public List<BrowserSiteList> SiteLists {
             get { return BackingStore?.Get<List<BrowserSiteList>>("siteLists"); }

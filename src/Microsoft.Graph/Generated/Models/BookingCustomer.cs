@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingCustomer : BookingPerson, IParsable {
         /// <summary>Addresses associated with the customer, including home, business and other addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PhysicalAddress>? Addresses {
             get { return BackingStore?.Get<List<PhysicalAddress>?>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
+#nullable restore
 #else
         public List<PhysicalAddress> Addresses {
             get { return BackingStore?.Get<List<PhysicalAddress>>("addresses"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Phone numbers associated with the customer, including home, business and mobile numbers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Phone>? Phones {
             get { return BackingStore?.Get<List<Phone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
+#nullable restore
 #else
         public List<Phone> Phones {
             get { return BackingStore?.Get<List<Phone>>("phones"); }

@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSSoftwareUpdateCategorySummary : Entity, IParsable {
         /// <summary>The device ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -59,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Summary of the update states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSSoftwareUpdateStateSummary>? UpdateStateSummaries {
             get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>?>("updateStateSummaries"); }
             set { BackingStore?.Set("updateStateSummaries", value); }
         }
+#nullable restore
 #else
         public List<MacOSSoftwareUpdateStateSummary> UpdateStateSummaries {
             get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>>("updateStateSummaries"); }
@@ -71,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

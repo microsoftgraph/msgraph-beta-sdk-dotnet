@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
     public class Set : Entity, IParsable {
         /// <summary>Children terms of set in term [store].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Term>? Children {
             get { return BackingStore?.Get<List<Term>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
+#nullable restore
 #else
         public List<Term> Children {
             get { return BackingStore?.Get<List<Term>>("children"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         }
         /// <summary>Description giving details on the term usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>Name of the set for each languageTag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<LocalizedName>? LocalizedNames {
             get { return BackingStore?.Get<List<LocalizedName>?>("localizedNames"); }
             set { BackingStore?.Set("localizedNames", value); }
         }
+#nullable restore
 #else
         public List<LocalizedName> LocalizedNames {
             get { return BackingStore?.Get<List<LocalizedName>>("localizedNames"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>The parentGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Group? ParentGroup {
             get { return BackingStore?.Get<Group?>("parentGroup"); }
             set { BackingStore?.Set("parentGroup", value); }
         }
+#nullable restore
 #else
         public Group ParentGroup {
             get { return BackingStore?.Get<Group>("parentGroup"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>Custom properties for the set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.KeyValue>? Properties {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.KeyValue> Properties {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>("properties"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>Indicates which terms have been pinned or reused directly under the set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Relation>? Relations {
             get { return BackingStore?.Get<List<Relation>?>("relations"); }
             set { BackingStore?.Set("relations", value); }
         }
+#nullable restore
 #else
         public List<Relation> Relations {
             get { return BackingStore?.Get<List<Relation>>("relations"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
 #endif
         /// <summary>All the terms under the set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Term>? Terms {
             get { return BackingStore?.Get<List<Term>?>("terms"); }
             set { BackingStore?.Set("terms", value); }
         }
+#nullable restore
 #else
         public List<Term> Terms {
             get { return BackingStore?.Get<List<Term>>("terms"); }

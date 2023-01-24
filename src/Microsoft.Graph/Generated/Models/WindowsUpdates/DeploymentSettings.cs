@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Settings governing conditions to monitor and automated actions to take.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MonitoringSettings? Monitoring {
             get { return BackingStore?.Get<MonitoringSettings?>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
+#nullable restore
 #else
         public MonitoringSettings Monitoring {
             get { return BackingStore?.Get<MonitoringSettings>("monitoring"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
 #endif
         /// <summary>Settings governing how the content is rolled out.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RolloutSettings? Rollout {
             get { return BackingStore?.Get<RolloutSettings?>("rollout"); }
             set { BackingStore?.Set("rollout", value); }
         }
+#nullable restore
 #else
         public RolloutSettings Rollout {
             get { return BackingStore?.Get<RolloutSettings>("rollout"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
 #endif
         /// <summary>Settings governing safeguard holds on offering content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SafeguardSettings? Safeguard {
             get { return BackingStore?.Get<SafeguardSettings?>("safeguard"); }
             set { BackingStore?.Set("safeguard", value); }
         }
+#nullable restore
 #else
         public SafeguardSettings Safeguard {
             get { return BackingStore?.Get<SafeguardSettings>("safeguard"); }

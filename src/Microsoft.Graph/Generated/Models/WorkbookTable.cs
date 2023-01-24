@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookTable : Entity, IParsable {
         /// <summary>Represents a collection of all the columns in the table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookTableColumn>? Columns {
             get { return BackingStore?.Get<List<WorkbookTableColumn>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#nullable restore
 #else
         public List<WorkbookTableColumn> Columns {
             get { return BackingStore?.Get<List<WorkbookTableColumn>>("columns"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LegacyId {
             get { return BackingStore?.Get<string?>("legacyId"); }
             set { BackingStore?.Set("legacyId", value); }
         }
+#nullable restore
 #else
         public string LegacyId {
             get { return BackingStore?.Get<string>("legacyId"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a collection of all the rows in the table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookTableRow>? Rows {
             get { return BackingStore?.Get<List<WorkbookTableRow>?>("rows"); }
             set { BackingStore?.Set("rows", value); }
         }
+#nullable restore
 #else
         public List<WorkbookTableRow> Rows {
             get { return BackingStore?.Get<List<WorkbookTableRow>>("rows"); }
@@ -90,10 +98,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the sorting for the table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookTableSort? Sort {
             get { return BackingStore?.Get<WorkbookTableSort?>("sort"); }
             set { BackingStore?.Set("sort", value); }
         }
+#nullable restore
 #else
         public WorkbookTableSort Sort {
             get { return BackingStore?.Get<WorkbookTableSort>("sort"); }
@@ -102,10 +112,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Style {
             get { return BackingStore?.Get<string?>("style"); }
             set { BackingStore?.Set("style", value); }
         }
+#nullable restore
 #else
         public string Style {
             get { return BackingStore?.Get<string>("style"); }
@@ -114,10 +126,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The worksheet containing the current table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookWorksheet? Worksheet {
             get { return BackingStore?.Get<WorkbookWorksheet?>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
         }
+#nullable restore
 #else
         public WorkbookWorksheet Worksheet {
             get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }

@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The friendly name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppDisplayName {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#nullable restore
 #else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppName {
             get { return BackingStore?.Get<string?>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
+#nullable restore
 #else
         public string AppName {
             get { return BackingStore?.Get<string>("appName"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The publisher of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppPublisher {
             get { return BackingStore?.Get<string?>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
+#nullable restore
 #else
         public string AppPublisher {
             get { return BackingStore?.Get<string>("appPublisher"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The os build number of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsBuildNumber {
             get { return BackingStore?.Get<string?>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
+#nullable restore
 #else
         public string OsBuildNumber {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The os version of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsVersion {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#nullable restore
 #else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }

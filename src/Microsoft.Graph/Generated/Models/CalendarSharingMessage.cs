@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The sharingMessageAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CalendarSharingMessageAction? SharingMessageAction {
             get { return BackingStore?.Get<CalendarSharingMessageAction?>("sharingMessageAction"); }
             set { BackingStore?.Set("sharingMessageAction", value); }
         }
+#nullable restore
 #else
         public CalendarSharingMessageAction SharingMessageAction {
             get { return BackingStore?.Get<CalendarSharingMessageAction>("sharingMessageAction"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sharingMessageActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CalendarSharingMessageAction>? SharingMessageActions {
             get { return BackingStore?.Get<List<CalendarSharingMessageAction>?>("sharingMessageActions"); }
             set { BackingStore?.Set("sharingMessageActions", value); }
         }
+#nullable restore
 #else
         public List<CalendarSharingMessageAction> SharingMessageActions {
             get { return BackingStore?.Get<List<CalendarSharingMessageAction>>("sharingMessageActions"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The suggestedCalendarName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SuggestedCalendarName {
             get { return BackingStore?.Get<string?>("suggestedCalendarName"); }
             set { BackingStore?.Set("suggestedCalendarName", value); }
         }
+#nullable restore
 #else
         public string SuggestedCalendarName {
             get { return BackingStore?.Get<string>("suggestedCalendarName"); }

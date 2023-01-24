@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementUserRightsLocalUserOrGroup>? LocalUsersOrGroups {
             get { return BackingStore?.Get<List<DeviceManagementUserRightsLocalUserOrGroup>?>("localUsersOrGroups"); }
             set { BackingStore?.Set("localUsersOrGroups", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementUserRightsLocalUserOrGroup> LocalUsersOrGroups {
             get { return BackingStore?.Get<List<DeviceManagementUserRightsLocalUserOrGroup>>("localUsersOrGroups"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

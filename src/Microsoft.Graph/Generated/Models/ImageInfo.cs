@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Optional; alt-text accessible content for the image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlternateText {
             get { return BackingStore?.Get<string?>("alternateText"); }
             set { BackingStore?.Set("alternateText", value); }
         }
+#nullable restore
 #else
         public string AlternateText {
             get { return BackingStore?.Get<string>("alternateText"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The alternativeText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlternativeText {
             get { return BackingStore?.Get<string?>("alternativeText"); }
             set { BackingStore?.Set("alternativeText", value); }
         }
+#nullable restore
 #else
         public string AlternativeText {
             get { return BackingStore?.Get<string>("alternativeText"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional; URI that points to an icon which represents the application used to generate the activity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IconUrl {
             get { return BackingStore?.Get<string?>("iconUrl"); }
             set { BackingStore?.Set("iconUrl", value); }
         }
+#nullable restore
 #else
         public string IconUrl {
             get { return BackingStore?.Get<string>("iconUrl"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

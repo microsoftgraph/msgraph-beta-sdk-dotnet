@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccessRoot : Entity, IParsable {
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrivilegedAccessGroup? Group {
             get { return BackingStore?.Get<PrivilegedAccessGroup?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
+#nullable restore
 #else
         public PrivilegedAccessGroup Group {
             get { return BackingStore?.Get<PrivilegedAccessGroup>("group"); }

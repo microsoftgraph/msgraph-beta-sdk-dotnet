@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The hostName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HostName {
             get { return BackingStore?.Get<string?>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#nullable restore
 #else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }

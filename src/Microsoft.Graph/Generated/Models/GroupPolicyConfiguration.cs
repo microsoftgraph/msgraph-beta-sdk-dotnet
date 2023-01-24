@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyConfigurationAssignment>? Assignments {
             get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>>("assignments"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of enabled or disabled group policy definition values for the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyDefinitionValue>? DefinitionValues {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("definitionValues"); }
             set { BackingStore?.Set("definitionValues", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyDefinitionValue> DefinitionValues {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("definitionValues"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User provided description for the resource object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User provided name for the resource object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of scope tags for the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }

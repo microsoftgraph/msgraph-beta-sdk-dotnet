@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPCConnectivityIssue : Entity, IParsable {
         /// <summary>The Intune DeviceId of the device the connection is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The error code of the connectivity issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ErrorCode {
             get { return BackingStore?.Get<string?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
+#nullable restore
 #else
         public string ErrorCode {
             get { return BackingStore?.Get<string>("errorCode"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The detailed description of what went wrong.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ErrorDescription {
             get { return BackingStore?.Get<string?>("errorDescription"); }
             set { BackingStore?.Set("errorDescription", value); }
         }
+#nullable restore
 #else
         public string ErrorDescription {
             get { return BackingStore?.Get<string>("errorDescription"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The recommended action to fix the corresponding error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecommendedAction {
             get { return BackingStore?.Get<string?>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
+#nullable restore
 #else
         public string RecommendedAction {
             get { return BackingStore?.Get<string>("recommendedAction"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique id of user who initialize the connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The resource URI of the mail message for assessment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MessageUri {
             get { return BackingStore?.Get<string?>("messageUri"); }
             set { BackingStore?.Set("messageUri", value); }
         }
+#nullable restore
 #else
         public string MessageUri {
             get { return BackingStore?.Get<string>("messageUri"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The mail recipient whose policies are used to assess the mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecipientEmail {
             get { return BackingStore?.Get<string?>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
+#nullable restore
 #else
         public string RecipientEmail {
             get { return BackingStore?.Get<string>("recipientEmail"); }

@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The assignedPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<LabelPolicy>? AssignedPolicies {
             get { return BackingStore?.Get<List<LabelPolicy>?>("assignedPolicies"); }
             set { BackingStore?.Set("assignedPolicies", value); }
         }
+#nullable restore
 #else
         public List<LabelPolicy> AssignedPolicies {
             get { return BackingStore?.Get<List<LabelPolicy>>("assignedPolicies"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The autoLabeling property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AutoLabeling? AutoLabeling {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoLabeling?>("autoLabeling"); }
             set { BackingStore?.Set("autoLabeling", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AutoLabeling AutoLabeling {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoLabeling>("autoLabeling"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The labelActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<LabelActionBase>? LabelActions {
             get { return BackingStore?.Get<List<LabelActionBase>?>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
+#nullable restore
 #else
         public List<LabelActionBase> LabelActions {
             get { return BackingStore?.Get<List<LabelActionBase>>("labelActions"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -104,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The sublabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SensitivityLabel>? Sublabels {
             get { return BackingStore?.Get<List<SensitivityLabel>?>("sublabels"); }
             set { BackingStore?.Set("sublabels", value); }
         }
+#nullable restore
 #else
         public List<SensitivityLabel> Sublabels {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sublabels"); }
@@ -116,10 +130,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The toolTip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ToolTip {
             get { return BackingStore?.Get<string?>("toolTip"); }
             set { BackingStore?.Set("toolTip", value); }
         }
+#nullable restore
 #else
         public string ToolTip {
             get { return BackingStore?.Get<string>("toolTip"); }

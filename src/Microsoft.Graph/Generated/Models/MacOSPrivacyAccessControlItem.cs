@@ -26,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSAppleEventReceiver>? AppleEventsAllowedReceivers {
             get { return BackingStore?.Get<List<MacOSAppleEventReceiver>?>("appleEventsAllowedReceivers"); }
             set { BackingStore?.Set("appleEventsAllowedReceivers", value); }
         }
+#nullable restore
 #else
         public List<MacOSAppleEventReceiver> AppleEventsAllowedReceivers {
             get { return BackingStore?.Get<List<MacOSAppleEventReceiver>>("appleEventsAllowedReceivers"); }
@@ -65,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Enter the code requirement, which can be obtained with the command &apos;codesign –display -r –&apos; in the Terminal app. Include everything after &apos;=&gt;&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CodeRequirement {
             get { return BackingStore?.Get<string?>("codeRequirement"); }
             set { BackingStore?.Set("codeRequirement", value); }
         }
+#nullable restore
 #else
         public string CodeRequirement {
             get { return BackingStore?.Get<string>("codeRequirement"); }
@@ -77,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the app, process, or executable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -94,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The bundle ID or path of the app, process, or executable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Identifier {
             get { return BackingStore?.Get<string?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
+#nullable restore
 #else
         public string Identifier {
             get { return BackingStore?.Get<string>("identifier"); }
@@ -116,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

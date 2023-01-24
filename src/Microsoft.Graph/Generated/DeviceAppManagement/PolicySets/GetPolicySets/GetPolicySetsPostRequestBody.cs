@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The policySetIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? PolicySetIds {
             get { return BackingStore?.Get<List<string>?>("policySetIds"); }
             set { BackingStore?.Set("policySetIds", value); }
         }
+#nullable restore
 #else
         public List<string> PolicySetIds {
             get { return BackingStore?.Get<List<string>>("policySetIds"); }

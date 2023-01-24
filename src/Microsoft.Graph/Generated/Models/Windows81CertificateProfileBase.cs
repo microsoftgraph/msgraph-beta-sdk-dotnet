@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows81CertificateProfileBase : WindowsCertificateProfileBase, IParsable {
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
+#nullable restore
 #else
         public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExtendedKeyUsage>? ExtendedKeyUsages {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
+#nullable restore
 #else
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }

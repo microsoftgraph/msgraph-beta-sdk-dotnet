@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The defaultMicrophone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? DefaultMicrophone {
             get { return BackingStore?.Get<TeamworkPeripheral?>("defaultMicrophone"); }
             set { BackingStore?.Set("defaultMicrophone", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral DefaultMicrophone {
             get { return BackingStore?.Get<TeamworkPeripheral>("defaultMicrophone"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The microphones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamworkPeripheral>? Microphones {
             get { return BackingStore?.Get<List<TeamworkPeripheral>?>("microphones"); }
             set { BackingStore?.Set("microphones", value); }
         }
+#nullable restore
 #else
         public List<TeamworkPeripheral> Microphones {
             get { return BackingStore?.Get<List<TeamworkPeripheral>>("microphones"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

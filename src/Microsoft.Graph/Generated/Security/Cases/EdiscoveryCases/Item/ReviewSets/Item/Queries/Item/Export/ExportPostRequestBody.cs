@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         }
         /// <summary>The azureBlobContainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureBlobContainer {
             get { return BackingStore?.Get<string?>("azureBlobContainer"); }
             set { BackingStore?.Set("azureBlobContainer", value); }
         }
+#nullable restore
 #else
         public string AzureBlobContainer {
             get { return BackingStore?.Get<string>("azureBlobContainer"); }
@@ -26,10 +28,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
 #endif
         /// <summary>The azureBlobToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureBlobToken {
             get { return BackingStore?.Get<string?>("azureBlobToken"); }
             set { BackingStore?.Set("azureBlobToken", value); }
         }
+#nullable restore
 #else
         public string AzureBlobToken {
             get { return BackingStore?.Get<string>("azureBlobToken"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -62,10 +68,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         }
         /// <summary>The outputName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OutputName {
             get { return BackingStore?.Get<string?>("outputName"); }
             set { BackingStore?.Set("outputName", value); }
         }
+#nullable restore
 #else
         public string OutputName {
             get { return BackingStore?.Get<string>("outputName"); }

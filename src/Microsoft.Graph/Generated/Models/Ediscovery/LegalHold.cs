@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class LegalHold : Entity, IParsable {
         /// <summary>KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentQuery {
             get { return BackingStore?.Get<string?>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
+#nullable restore
 #else
         public string ContentQuery {
             get { return BackingStore?.Get<string>("contentQuery"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>The user who created the legal hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
         /// <summary>The legal hold description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>The display name of the legal hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>Lists any errors that happened while placing the hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Errors {
             get { return BackingStore?.Get<List<string>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
+#nullable restore
 #else
         public List<string> Errors {
             get { return BackingStore?.Get<List<string>>("errors"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
         /// <summary>the user who last modified the legal hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
         /// <summary>Data source entity for SharePoint sites associated with the legal hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SiteSource>? SiteSources {
             get { return BackingStore?.Get<List<SiteSource>?>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
+#nullable restore
 #else
         public List<SiteSource> SiteSources {
             get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
         /// <summary>The unifiedGroupSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedGroupSource>? UnifiedGroupSources {
             get { return BackingStore?.Get<List<UnifiedGroupSource>?>("unifiedGroupSources"); }
             set { BackingStore?.Set("unifiedGroupSources", value); }
         }
+#nullable restore
 #else
         public List<UnifiedGroupSource> UnifiedGroupSources {
             get { return BackingStore?.Get<List<UnifiedGroupSource>>("unifiedGroupSources"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserSource>? UserSources {
             get { return BackingStore?.Get<List<UserSource>?>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
+#nullable restore
 #else
         public List<UserSource> UserSources {
             get { return BackingStore?.Get<List<UserSource>>("userSources"); }

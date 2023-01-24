@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationFeedbackOutcome : EducationOutcome, IParsable {
         /// <summary>Teacher&apos;s written feedback to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationFeedback? Feedback {
             get { return BackingStore?.Get<EducationFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
+#nullable restore
 #else
         public EducationFeedback Feedback {
             get { return BackingStore?.Get<EducationFeedback>("feedback"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A copy of the feedback property that is made when the grade is released to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationFeedback? PublishedFeedback {
             get { return BackingStore?.Get<EducationFeedback?>("publishedFeedback"); }
             set { BackingStore?.Set("publishedFeedback", value); }
         }
+#nullable restore
 #else
         public EducationFeedback PublishedFeedback {
             get { return BackingStore?.Get<EducationFeedback>("publishedFeedback"); }

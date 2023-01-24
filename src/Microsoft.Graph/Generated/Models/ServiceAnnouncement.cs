@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ServiceAnnouncement : Entity, IParsable {
         /// <summary>A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServiceHealth>? HealthOverviews {
             get { return BackingStore?.Get<List<ServiceHealth>?>("healthOverviews"); }
             set { BackingStore?.Set("healthOverviews", value); }
         }
+#nullable restore
 #else
         public List<ServiceHealth> HealthOverviews {
             get { return BackingStore?.Get<List<ServiceHealth>>("healthOverviews"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServiceHealthIssue>? Issues {
             get { return BackingStore?.Get<List<ServiceHealthIssue>?>("issues"); }
             set { BackingStore?.Set("issues", value); }
         }
+#nullable restore
 #else
         public List<ServiceHealthIssue> Issues {
             get { return BackingStore?.Get<List<ServiceHealthIssue>>("issues"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServiceUpdateMessage>? Messages {
             get { return BackingStore?.Get<List<ServiceUpdateMessage>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
+#nullable restore
 #else
         public List<ServiceUpdateMessage> Messages {
             get { return BackingStore?.Get<List<ServiceUpdateMessage>>("messages"); }

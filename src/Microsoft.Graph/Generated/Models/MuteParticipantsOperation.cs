@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MuteParticipantsOperation : CommsOperation, IParsable {
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Participants {
             get { return BackingStore?.Get<List<string>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#nullable restore
 #else
         public List<string> Participants {
             get { return BackingStore?.Get<List<string>>("participants"); }

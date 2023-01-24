@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration, IParsable {
         /// <summary>The uwpApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsKioskUWPApp? UwpApp {
             get { return BackingStore?.Get<WindowsKioskUWPApp?>("uwpApp"); }
             set { BackingStore?.Set("uwpApp", value); }
         }
+#nullable restore
 #else
         public WindowsKioskUWPApp UwpApp {
             get { return BackingStore?.Get<WindowsKioskUWPApp>("uwpApp"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsStoreApp : MobileApp, IParsable {
         /// <summary>The Windows app store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppStoreUrl {
             get { return BackingStore?.Get<string?>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
+#nullable restore
 #else
         public string AppStoreUrl {
             get { return BackingStore?.Get<string>("appStoreUrl"); }

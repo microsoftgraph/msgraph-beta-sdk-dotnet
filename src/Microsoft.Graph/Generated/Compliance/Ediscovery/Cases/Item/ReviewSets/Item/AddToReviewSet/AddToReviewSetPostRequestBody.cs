@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The sourceCollection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection?>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }

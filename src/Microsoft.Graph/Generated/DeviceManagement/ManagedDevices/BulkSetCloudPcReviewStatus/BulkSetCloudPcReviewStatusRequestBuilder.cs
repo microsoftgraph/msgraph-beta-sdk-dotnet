@@ -54,7 +54,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkSetCloudPcRev
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<CloudPcBulkRemoteActionResult?> PostAsync(BulkSetCloudPcReviewStatusPostRequestBody body, Action<BulkSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<CloudPcBulkRemoteActionResult> PostAsync(BulkSetCloudPcReviewStatusPostRequestBody body, Action<BulkSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -72,7 +74,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkSetCloudPcRev
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPostRequestInformation(BulkSetCloudPcReviewStatusPostRequestBody body, Action<BulkSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPostRequestInformation(BulkSetCloudPcReviewStatusPostRequestBody body, Action<BulkSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif

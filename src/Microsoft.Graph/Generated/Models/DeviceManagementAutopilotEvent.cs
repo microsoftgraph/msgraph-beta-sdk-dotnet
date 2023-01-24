@@ -45,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Device id associated with the object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -67,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Device serial number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceSerialNumber {
             get { return BackingStore?.Get<string?>("deviceSerialNumber"); }
             set { BackingStore?.Set("deviceSerialNumber", value); }
         }
+#nullable restore
 #else
         public string DeviceSerialNumber {
             get { return BackingStore?.Get<string>("deviceSerialNumber"); }
@@ -89,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Enrollment failure details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EnrollmentFailureDetails {
             get { return BackingStore?.Get<string?>("enrollmentFailureDetails"); }
             set { BackingStore?.Set("enrollmentFailureDetails", value); }
         }
+#nullable restore
 #else
         public string EnrollmentFailureDetails {
             get { return BackingStore?.Get<string>("enrollmentFailureDetails"); }
@@ -121,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Managed device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceName {
             get { return BackingStore?.Get<string?>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceName {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
@@ -133,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device operating system version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsVersion {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#nullable restore
 #else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
@@ -145,10 +155,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Policy and application status details for this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementAutopilotPolicyStatusDetail>? PolicyStatusDetails {
             get { return BackingStore?.Get<List<DeviceManagementAutopilotPolicyStatusDetail>?>("policyStatusDetails"); }
             set { BackingStore?.Set("policyStatusDetails", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementAutopilotPolicyStatusDetail> PolicyStatusDetails {
             get { return BackingStore?.Get<List<DeviceManagementAutopilotPolicyStatusDetail>>("policyStatusDetails"); }
@@ -167,10 +179,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User principal name used to enroll the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
@@ -179,10 +193,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Enrollment Status Page profile name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Windows10EnrollmentCompletionPageConfigurationDisplayName {
             get { return BackingStore?.Get<string?>("windows10EnrollmentCompletionPageConfigurationDisplayName"); }
             set { BackingStore?.Set("windows10EnrollmentCompletionPageConfigurationDisplayName", value); }
         }
+#nullable restore
 #else
         public string Windows10EnrollmentCompletionPageConfigurationDisplayName {
             get { return BackingStore?.Get<string>("windows10EnrollmentCompletionPageConfigurationDisplayName"); }
@@ -191,10 +207,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Enrollment Status Page profile ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Windows10EnrollmentCompletionPageConfigurationId {
             get { return BackingStore?.Get<string?>("windows10EnrollmentCompletionPageConfigurationId"); }
             set { BackingStore?.Set("windows10EnrollmentCompletionPageConfigurationId", value); }
         }
+#nullable restore
 #else
         public string Windows10EnrollmentCompletionPageConfigurationId {
             get { return BackingStore?.Get<string>("windows10EnrollmentCompletionPageConfigurationId"); }
@@ -203,10 +221,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Autopilot profile name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WindowsAutopilotDeploymentProfileDisplayName {
             get { return BackingStore?.Get<string?>("windowsAutopilotDeploymentProfileDisplayName"); }
             set { BackingStore?.Set("windowsAutopilotDeploymentProfileDisplayName", value); }
         }
+#nullable restore
 #else
         public string WindowsAutopilotDeploymentProfileDisplayName {
             get { return BackingStore?.Get<string>("windowsAutopilotDeploymentProfileDisplayName"); }

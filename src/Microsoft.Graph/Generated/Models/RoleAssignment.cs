@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RoleAssignment : Entity, IParsable {
         /// <summary>Description of the Role Assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display or friendly name of the role Assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of ids of role scope member security groups.  These are IDs from Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ResourceScopes {
             get { return BackingStore?.Get<List<string>?>("resourceScopes"); }
             set { BackingStore?.Set("resourceScopes", value); }
         }
+#nullable restore
 #else
         public List<string> ResourceScopes {
             get { return BackingStore?.Get<List<string>>("resourceScopes"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Role definition this assignment is part of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.RoleDefinition? RoleDefinition {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.RoleDefinition RoleDefinition {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoleDefinition>("roleDefinition"); }
@@ -58,10 +66,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of ids of role scope member security groups.  These are IDs from Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ScopeMembers {
             get { return BackingStore?.Get<List<string>?>("scopeMembers"); }
             set { BackingStore?.Set("scopeMembers", value); }
         }
+#nullable restore
 #else
         public List<string> ScopeMembers {
             get { return BackingStore?.Get<List<string>>("scopeMembers"); }

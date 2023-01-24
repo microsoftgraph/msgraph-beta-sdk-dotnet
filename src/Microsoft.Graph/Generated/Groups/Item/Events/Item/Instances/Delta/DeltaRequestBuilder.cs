@@ -52,7 +52,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Delta {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<DeltaResponse?> GetAsync(Action<DeltaRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<DeltaResponse> GetAsync(Action<DeltaRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -68,7 +70,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Delta {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<DeltaRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<DeltaRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -96,32 +100,40 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.Instances.Delta {
             public bool? Count { get; set; }
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24filter")]
             public string? Filter { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24orderby")]
             public string[]? Orderby { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24search")]
             public string? Search { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24search")]
             public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

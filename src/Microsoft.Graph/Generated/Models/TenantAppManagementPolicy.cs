@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TenantAppManagementPolicy : PolicyBase, IParsable {
         /// <summary>Restrictions that apply as default to all application objects in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AppManagementConfiguration? ApplicationRestrictions {
             get { return BackingStore?.Get<AppManagementConfiguration?>("applicationRestrictions"); }
             set { BackingStore?.Set("applicationRestrictions", value); }
         }
+#nullable restore
 #else
         public AppManagementConfiguration ApplicationRestrictions {
             get { return BackingStore?.Get<AppManagementConfiguration>("applicationRestrictions"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Restrictions that apply as default to all service principal objects in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AppManagementConfiguration? ServicePrincipalRestrictions {
             get { return BackingStore?.Get<AppManagementConfiguration?>("servicePrincipalRestrictions"); }
             set { BackingStore?.Set("servicePrincipalRestrictions", value); }
         }
+#nullable restore
 #else
         public AppManagementConfiguration ServicePrincipalRestrictions {
             get { return BackingStore?.Get<AppManagementConfiguration>("servicePrincipalRestrictions"); }

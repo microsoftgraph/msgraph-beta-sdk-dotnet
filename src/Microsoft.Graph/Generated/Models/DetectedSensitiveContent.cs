@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         /// <summary>The classificationAttributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ClassificationAttribute>? ClassificationAttributes {
             get { return BackingStore?.Get<List<ClassificationAttribute>?>("classificationAttributes"); }
             set { BackingStore?.Set("classificationAttributes", value); }
         }
+#nullable restore
 #else
         public List<ClassificationAttribute> ClassificationAttributes {
             get { return BackingStore?.Get<List<ClassificationAttribute>>("classificationAttributes"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SensitiveContentLocation>? Matches {
             get { return BackingStore?.Get<List<SensitiveContentLocation>?>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
+#nullable restore
 #else
         public List<SensitiveContentLocation> Matches {
             get { return BackingStore?.Get<List<SensitiveContentLocation>>("matches"); }

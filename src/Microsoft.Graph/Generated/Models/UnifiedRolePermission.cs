@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Set of tasks that can be performed on a resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedResourceActions {
             get { return BackingStore?.Get<List<string>?>("allowedResourceActions"); }
             set { BackingStore?.Set("allowedResourceActions", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedResourceActions {
             get { return BackingStore?.Get<List<string>>("allowedResourceActions"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional constraints that must be met for the permission to be effective. Not supported for custom roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Condition {
             get { return BackingStore?.Get<string?>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
+#nullable restore
 #else
         public string Condition {
             get { return BackingStore?.Get<string>("condition"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The excludedResourceActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExcludedResourceActions {
             get { return BackingStore?.Get<List<string>?>("excludedResourceActions"); }
             set { BackingStore?.Set("excludedResourceActions", value); }
         }
+#nullable restore
 #else
         public List<string> ExcludedResourceActions {
             get { return BackingStore?.Get<List<string>>("excludedResourceActions"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

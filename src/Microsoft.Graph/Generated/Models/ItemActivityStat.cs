@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemActivityStat : Entity, IParsable {
         /// <summary>Statistics about the access actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemActionStat? Access {
             get { return BackingStore?.Get<ItemActionStat?>("access"); }
             set { BackingStore?.Set("access", value); }
         }
+#nullable restore
 #else
         public ItemActionStat Access {
             get { return BackingStore?.Get<ItemActionStat>("access"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Exposes the itemActivities represented in this itemActivityStat resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ItemActivity>? Activities {
             get { return BackingStore?.Get<List<ItemActivity>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#nullable restore
 #else
         public List<ItemActivity> Activities {
             get { return BackingStore?.Get<List<ItemActivity>>("activities"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Statistics about the create actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemActionStat? Create {
             get { return BackingStore?.Get<ItemActionStat?>("create"); }
             set { BackingStore?.Set("create", value); }
         }
+#nullable restore
 #else
         public ItemActionStat Create {
             get { return BackingStore?.Get<ItemActionStat>("create"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Statistics about the delete actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemActionStat? Delete {
             get { return BackingStore?.Get<ItemActionStat?>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
+#nullable restore
 #else
         public ItemActionStat Delete {
             get { return BackingStore?.Get<ItemActionStat>("delete"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Statistics about the edit actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemActionStat? Edit {
             get { return BackingStore?.Get<ItemActionStat?>("edit"); }
             set { BackingStore?.Set("edit", value); }
         }
+#nullable restore
 #else
         public ItemActionStat Edit {
             get { return BackingStore?.Get<ItemActionStat>("edit"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates that the statistics in this interval are based on incomplete data. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IncompleteData? IncompleteData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncompleteData?>("incompleteData"); }
             set { BackingStore?.Set("incompleteData", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IncompleteData IncompleteData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncompleteData>("incompleteData"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Statistics about the move actions in this interval. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemActionStat? Move {
             get { return BackingStore?.Get<ItemActionStat?>("move"); }
             set { BackingStore?.Set("move", value); }
         }
+#nullable restore
 #else
         public ItemActionStat Move {
             get { return BackingStore?.Get<ItemActionStat>("move"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DomainDnsMxRecord : DomainDnsRecord, IParsable {
         /// <summary>Value used when configuring the answer/destination/value of the MX record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MailExchange {
             get { return BackingStore?.Get<string?>("mailExchange"); }
             set { BackingStore?.Set("mailExchange", value); }
         }
+#nullable restore
 #else
         public string MailExchange {
             get { return BackingStore?.Get<string>("mailExchange"); }

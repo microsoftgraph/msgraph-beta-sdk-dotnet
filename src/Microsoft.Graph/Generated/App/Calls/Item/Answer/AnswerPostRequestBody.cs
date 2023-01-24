@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Answer {
     public class AnswerPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The acceptedModalities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Modality?>? AcceptedModalities {
             get { return BackingStore?.Get<List<Modality?>?>("acceptedModalities"); }
             set { BackingStore?.Set("acceptedModalities", value); }
         }
+#nullable restore
 #else
         public List<Modality?> AcceptedModalities {
             get { return BackingStore?.Get<List<Modality?>>("acceptedModalities"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Answer {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callbackUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CallbackUri {
             get { return BackingStore?.Get<string?>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
+#nullable restore
 #else
         public string CallbackUri {
             get { return BackingStore?.Get<string>("callbackUri"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Answer {
 #endif
         /// <summary>The callOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IncomingCallOptions? CallOptions {
             get { return BackingStore?.Get<IncomingCallOptions?>("callOptions"); }
             set { BackingStore?.Set("callOptions", value); }
         }
+#nullable restore
 #else
         public IncomingCallOptions CallOptions {
             get { return BackingStore?.Get<IncomingCallOptions>("callOptions"); }
@@ -52,10 +58,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Answer {
 #endif
         /// <summary>The mediaConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.MediaConfig? MediaConfig {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaConfig?>("mediaConfig"); }
             set { BackingStore?.Set("mediaConfig", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.MediaConfig MediaConfig {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaConfig>("mediaConfig"); }

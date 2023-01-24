@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class IpEvidence : AlertEvidence, IParsable {
         /// <summary>The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CountryLetterCode {
             get { return BackingStore?.Get<string?>("countryLetterCode"); }
             set { BackingStore?.Set("countryLetterCode", value); }
         }
+#nullable restore
 #else
         public string CountryLetterCode {
             get { return BackingStore?.Get<string>("countryLetterCode"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The value of the IP Address, can be either in V4 address or V6 address format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddress {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#nullable restore
 #else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }

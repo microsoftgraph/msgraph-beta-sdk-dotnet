@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcOnPremisesConnection : Entity, IParsable {
         /// <summary>The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdDomainName {
             get { return BackingStore?.Get<string?>("adDomainName"); }
             set { BackingStore?.Set("adDomainName", value); }
         }
+#nullable restore
 #else
         public string AdDomainName {
             get { return BackingStore?.Get<string>("adDomainName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The password associated with adDomainUsername.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdDomainPassword {
             get { return BackingStore?.Get<string?>("adDomainPassword"); }
             set { BackingStore?.Set("adDomainPassword", value); }
         }
+#nullable restore
 #else
         public string AdDomainPassword {
             get { return BackingStore?.Get<string>("adDomainPassword"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdDomainUsername {
             get { return BackingStore?.Get<string?>("adDomainUsername"); }
             set { BackingStore?.Set("adDomainUsername", value); }
         }
+#nullable restore
 #else
         public string AdDomainUsername {
             get { return BackingStore?.Get<string>("adDomainUsername"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The interface URL of the partner service&apos;s resource that links to this Azure network connection. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlternateResourceUrl {
             get { return BackingStore?.Get<string?>("alternateResourceUrl"); }
             set { BackingStore?.Set("alternateResourceUrl", value); }
         }
+#nullable restore
 #else
         public string AlternateResourceUrl {
             get { return BackingStore?.Get<string>("alternateResourceUrl"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name for the Azure network connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcOnPremisesConnectionStatusDetails? HealthCheckStatusDetails {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatusDetails?>("healthCheckStatusDetails"); }
             set { BackingStore?.Set("healthCheckStatusDetails", value); }
         }
+#nullable restore
 #else
         public CloudPcOnPremisesConnectionStatusDetails HealthCheckStatusDetails {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatusDetails>("healthCheckStatusDetails"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrganizationalUnit {
             get { return BackingStore?.Get<string?>("organizationalUnit"); }
             set { BackingStore?.Set("organizationalUnit", value); }
         }
+#nullable restore
 #else
         public string OrganizationalUnit {
             get { return BackingStore?.Get<string>("organizationalUnit"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceGroupId {
             get { return BackingStore?.Get<string?>("resourceGroupId"); }
             set { BackingStore?.Set("resourceGroupId", value); }
         }
+#nullable restore
 #else
         public string ResourceGroupId {
             get { return BackingStore?.Get<string>("resourceGroupId"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubnetId {
             get { return BackingStore?.Get<string?>("subnetId"); }
             set { BackingStore?.Set("subnetId", value); }
         }
+#nullable restore
 #else
         public string SubnetId {
             get { return BackingStore?.Get<string>("subnetId"); }
@@ -130,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the target Azure subscription that’s associated with your tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubscriptionId {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
+#nullable restore
 #else
         public string SubscriptionId {
             get { return BackingStore?.Get<string>("subscriptionId"); }
@@ -142,10 +162,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the target Azure subscription. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubscriptionName {
             get { return BackingStore?.Get<string?>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
+#nullable restore
 #else
         public string SubscriptionName {
             get { return BackingStore?.Get<string>("subscriptionName"); }
@@ -159,22 +181,26 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VirtualNetworkId {
             get { return BackingStore?.Get<string?>("virtualNetworkId"); }
             set { BackingStore?.Set("virtualNetworkId", value); }
         }
+#nullable restore
 #else
         public string VirtualNetworkId {
             get { return BackingStore?.Get<string>("virtualNetworkId"); }
             set { BackingStore?.Set("virtualNetworkId", value); }
         }
 #endif
-        /// <summary>The virtualNetworkLocation property</summary>
+        /// <summary>Indicates resource location of the virtual target network. Read-only, computed value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VirtualNetworkLocation {
             get { return BackingStore?.Get<string?>("virtualNetworkLocation"); }
             set { BackingStore?.Set("virtualNetworkLocation", value); }
         }
+#nullable restore
 #else
         public string VirtualNetworkLocation {
             get { return BackingStore?.Get<string>("virtualNetworkLocation"); }

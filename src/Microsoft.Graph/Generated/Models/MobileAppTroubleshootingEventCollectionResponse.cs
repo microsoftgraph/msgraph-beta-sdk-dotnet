@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppTroubleshootingEventCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppTroubleshootingEvent>? Value {
             get { return BackingStore?.Get<List<MobileAppTroubleshootingEvent>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<MobileAppTroubleshootingEvent> Value {
             get { return BackingStore?.Get<List<MobileAppTroubleshootingEvent>>("value"); }

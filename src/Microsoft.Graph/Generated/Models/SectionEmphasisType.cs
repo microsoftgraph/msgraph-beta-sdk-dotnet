@@ -1,7 +1,7 @@
 namespace Microsoft.Graph.Beta.Models {
     public enum SectionEmphasisType {
         None,
-        Netural,
+        Neutral,
         Soft,
         Strong,
         UnknownFutureValue,

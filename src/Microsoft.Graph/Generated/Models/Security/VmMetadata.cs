@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Unique identifier of the Azure resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceId {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#nullable restore
 #else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Unique identifier of the Azure subscription the customer tenant belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubscriptionId {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
+#nullable restore
 #else
         public string SubscriptionId {
             get { return BackingStore?.Get<string>("subscriptionId"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Unique identifier of the virtual machine instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VmId {
             get { return BackingStore?.Get<string?>("vmId"); }
             set { BackingStore?.Set("vmId", value); }
         }
+#nullable restore
 #else
         public string VmId {
             get { return BackingStore?.Get<string>("vmId"); }

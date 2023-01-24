@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Document : Entity, IParsable {
         /// <summary>The comments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DocumentComment>? Comments {
             get { return BackingStore?.Get<List<DocumentComment>?>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
+#nullable restore
 #else
         public List<DocumentComment> Comments {
             get { return BackingStore?.Get<List<DocumentComment>>("comments"); }

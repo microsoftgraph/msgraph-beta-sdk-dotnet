@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Device name to which the subscription was provisioned e.g. DESKTOP-JOE</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>String description of the provisioning state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StateDetails {
             get { return BackingStore?.Get<string?>("stateDetails"); }
             set { BackingStore?.Set("stateDetails", value); }
         }
+#nullable restore
 #else
         public string StateDetails {
             get { return BackingStore?.Get<string>("stateDetails"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UniversalIntegratedCircuitCardIdentifier {
             get { return BackingStore?.Get<string?>("universalIntegratedCircuitCardIdentifier"); }
             set { BackingStore?.Set("universalIntegratedCircuitCardIdentifier", value); }
         }
+#nullable restore
 #else
         public string UniversalIntegratedCircuitCardIdentifier {
             get { return BackingStore?.Get<string>("universalIntegratedCircuitCardIdentifier"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Username which the subscription was provisioned to e.g. joe@contoso.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserName {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#nullable restore
 #else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }

@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The group policy operation status detail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StatusDetails {
             get { return BackingStore?.Get<string?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
+#nullable restore
 #else
         public string StatusDetails {
             get { return BackingStore?.Get<string>("statusDetails"); }

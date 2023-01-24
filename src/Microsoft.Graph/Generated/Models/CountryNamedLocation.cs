@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CountryNamedLocation : NamedLocation, IParsable {
         /// <summary>List of countries and/or regions in two-letter format specified by ISO 3166-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? CountriesAndRegions {
             get { return BackingStore?.Get<List<string>?>("countriesAndRegions"); }
             set { BackingStore?.Set("countriesAndRegions", value); }
         }
+#nullable restore
 #else
         public List<string> CountriesAndRegions {
             get { return BackingStore?.Get<List<string>>("countriesAndRegions"); }

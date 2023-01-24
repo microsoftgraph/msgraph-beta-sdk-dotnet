@@ -28,10 +28,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The unique identifier for the user who got the attack simulation email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AttackSimUserId {
             get { return BackingStore?.Get<string?>("attackSimUserId"); }
             set { BackingStore?.Set("attackSimUserId", value); }
         }
+#nullable restore
 #else
         public string AttackSimUserId {
             get { return BackingStore?.Get<string>("attackSimUserId"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

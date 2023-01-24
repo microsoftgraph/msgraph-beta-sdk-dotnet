@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The feature name of the service issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Feature {
             get { return BackingStore?.Get<string?>("feature"); }
             set { BackingStore?.Set("feature", value); }
         }
+#nullable restore
 #else
         public string Feature {
             get { return BackingStore?.Get<string>("feature"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The feature group name of the service issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FeatureGroup {
             get { return BackingStore?.Get<string?>("featureGroup"); }
             set { BackingStore?.Set("featureGroup", value); }
         }
+#nullable restore
 #else
         public string FeatureGroup {
             get { return BackingStore?.Get<string>("featureGroup"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of the service issue impact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ImpactDescription {
             get { return BackingStore?.Get<string?>("impactDescription"); }
             set { BackingStore?.Set("impactDescription", value); }
         }
+#nullable restore
 #else
         public string ImpactDescription {
             get { return BackingStore?.Get<string>("impactDescription"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Collection of historical posts for the service issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServiceHealthIssuePost>? Posts {
             get { return BackingStore?.Get<List<ServiceHealthIssuePost>?>("posts"); }
             set { BackingStore?.Set("posts", value); }
         }
+#nullable restore
 #else
         public List<ServiceHealthIssuePost> Posts {
             get { return BackingStore?.Get<List<ServiceHealthIssuePost>>("posts"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates the service affected by the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Service {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#nullable restore
 #else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }

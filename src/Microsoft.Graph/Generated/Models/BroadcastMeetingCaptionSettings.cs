@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The spoken language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SpokenLanguage {
             get { return BackingStore?.Get<string?>("spokenLanguage"); }
             set { BackingStore?.Set("spokenLanguage", value); }
         }
+#nullable restore
 #else
         public string SpokenLanguage {
             get { return BackingStore?.Get<string>("spokenLanguage"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The translation languages (choose up to 6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TranslationLanguages {
             get { return BackingStore?.Get<List<string>?>("translationLanguages"); }
             set { BackingStore?.Set("translationLanguages", value); }
         }
+#nullable restore
 #else
         public List<string> TranslationLanguages {
             get { return BackingStore?.Get<List<string>>("translationLanguages"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The value of work from anywhere autopilot devices summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsAutopilotDevicesSummary? AutopilotDevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsAutopilotDevicesSummary?>("autopilotDevicesSummary"); }
             set { BackingStore?.Set("autopilotDevicesSummary", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsAutopilotDevicesSummary AutopilotDevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsAutopilotDevicesSummary>("autopilotDevicesSummary"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The user experience analytics work from anywhere Cloud Identity devices summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsCloudIdentityDevicesSummary? CloudIdentityDevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudIdentityDevicesSummary?>("cloudIdentityDevicesSummary"); }
             set { BackingStore?.Set("cloudIdentityDevicesSummary", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsCloudIdentityDevicesSummary CloudIdentityDevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudIdentityDevicesSummary>("cloudIdentityDevicesSummary"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user experience work from anywhere Cloud management devices summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsCloudManagementDevicesSummary? CloudManagementDevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudManagementDevicesSummary?>("cloudManagementDevicesSummary"); }
             set { BackingStore?.Set("cloudManagementDevicesSummary", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsCloudManagementDevicesSummary CloudManagementDevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsCloudManagementDevicesSummary>("cloudManagementDevicesSummary"); }
@@ -79,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -111,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user experience analytics work from anywhere Windows 10 devices summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserExperienceAnalyticsWindows10DevicesSummary? Windows10DevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsWindows10DevicesSummary?>("windows10DevicesSummary"); }
             set { BackingStore?.Set("windows10DevicesSummary", value); }
         }
+#nullable restore
 #else
         public UserExperienceAnalyticsWindows10DevicesSummary Windows10DevicesSummary {
             get { return BackingStore?.Get<UserExperienceAnalyticsWindows10DevicesSummary>("windows10DevicesSummary"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>First customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute1 {
             get { return BackingStore?.Get<string?>("extensionAttribute1"); }
             set { BackingStore?.Set("extensionAttribute1", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute1 {
             get { return BackingStore?.Get<string>("extensionAttribute1"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Tenth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute10 {
             get { return BackingStore?.Get<string?>("extensionAttribute10"); }
             set { BackingStore?.Set("extensionAttribute10", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute10 {
             get { return BackingStore?.Get<string>("extensionAttribute10"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Eleventh customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute11 {
             get { return BackingStore?.Get<string?>("extensionAttribute11"); }
             set { BackingStore?.Set("extensionAttribute11", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute11 {
             get { return BackingStore?.Get<string>("extensionAttribute11"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Twelfth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute12 {
             get { return BackingStore?.Get<string?>("extensionAttribute12"); }
             set { BackingStore?.Set("extensionAttribute12", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute12 {
             get { return BackingStore?.Get<string>("extensionAttribute12"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Thirteenth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute13 {
             get { return BackingStore?.Get<string?>("extensionAttribute13"); }
             set { BackingStore?.Set("extensionAttribute13", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute13 {
             get { return BackingStore?.Get<string>("extensionAttribute13"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Fourteenth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute14 {
             get { return BackingStore?.Get<string?>("extensionAttribute14"); }
             set { BackingStore?.Set("extensionAttribute14", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute14 {
             get { return BackingStore?.Get<string>("extensionAttribute14"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Fifteenth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute15 {
             get { return BackingStore?.Get<string?>("extensionAttribute15"); }
             set { BackingStore?.Set("extensionAttribute15", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute15 {
             get { return BackingStore?.Get<string>("extensionAttribute15"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Second customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute2 {
             get { return BackingStore?.Get<string?>("extensionAttribute2"); }
             set { BackingStore?.Set("extensionAttribute2", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute2 {
             get { return BackingStore?.Get<string>("extensionAttribute2"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Third customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute3 {
             get { return BackingStore?.Get<string?>("extensionAttribute3"); }
             set { BackingStore?.Set("extensionAttribute3", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute3 {
             get { return BackingStore?.Get<string>("extensionAttribute3"); }
@@ -123,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Fourth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute4 {
             get { return BackingStore?.Get<string?>("extensionAttribute4"); }
             set { BackingStore?.Set("extensionAttribute4", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute4 {
             get { return BackingStore?.Get<string>("extensionAttribute4"); }
@@ -135,10 +155,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Fifth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute5 {
             get { return BackingStore?.Get<string?>("extensionAttribute5"); }
             set { BackingStore?.Set("extensionAttribute5", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute5 {
             get { return BackingStore?.Get<string>("extensionAttribute5"); }
@@ -147,10 +169,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Sixth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute6 {
             get { return BackingStore?.Get<string?>("extensionAttribute6"); }
             set { BackingStore?.Set("extensionAttribute6", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute6 {
             get { return BackingStore?.Get<string>("extensionAttribute6"); }
@@ -159,10 +183,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Seventh customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute7 {
             get { return BackingStore?.Get<string?>("extensionAttribute7"); }
             set { BackingStore?.Set("extensionAttribute7", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute7 {
             get { return BackingStore?.Get<string>("extensionAttribute7"); }
@@ -171,10 +197,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Eighth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute8 {
             get { return BackingStore?.Get<string?>("extensionAttribute8"); }
             set { BackingStore?.Set("extensionAttribute8", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute8 {
             get { return BackingStore?.Get<string>("extensionAttribute8"); }
@@ -183,10 +211,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Ninth customizable extension attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionAttribute9 {
             get { return BackingStore?.Get<string?>("extensionAttribute9"); }
             set { BackingStore?.Set("extensionAttribute9", value); }
         }
+#nullable restore
 #else
         public string ExtensionAttribute9 {
             get { return BackingStore?.Get<string>("extensionAttribute9"); }
@@ -195,10 +225,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

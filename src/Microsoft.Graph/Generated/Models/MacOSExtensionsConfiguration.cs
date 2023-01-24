@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSExtensionsConfiguration : DeviceConfiguration, IParsable {
         /// <summary>All kernel extensions validly signed by the team identifiers in this list will be allowed to load.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? KernelExtensionAllowedTeamIdentifiers {
             get { return BackingStore?.Get<List<string>?>("kernelExtensionAllowedTeamIdentifiers"); }
             set { BackingStore?.Set("kernelExtensionAllowedTeamIdentifiers", value); }
         }
+#nullable restore
 #else
         public List<string> KernelExtensionAllowedTeamIdentifiers {
             get { return BackingStore?.Get<List<string>>("kernelExtensionAllowedTeamIdentifiers"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of kernel extensions that will be allowed to load. . This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSKernelExtension>? KernelExtensionsAllowed {
             get { return BackingStore?.Get<List<MacOSKernelExtension>?>("kernelExtensionsAllowed"); }
             set { BackingStore?.Set("kernelExtensionsAllowed", value); }
         }
+#nullable restore
 #else
         public List<MacOSKernelExtension> KernelExtensionsAllowed {
             get { return BackingStore?.Get<List<MacOSKernelExtension>>("kernelExtensionsAllowed"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSSystemExtension>? SystemExtensionsAllowed {
             get { return BackingStore?.Get<List<MacOSSystemExtension>?>("systemExtensionsAllowed"); }
             set { BackingStore?.Set("systemExtensionsAllowed", value); }
         }
+#nullable restore
 #else
         public List<MacOSSystemExtension> SystemExtensionsAllowed {
             get { return BackingStore?.Get<List<MacOSSystemExtension>>("systemExtensionsAllowed"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a list of allowed team identifiers. Any system extension signed with any of the specified team identifiers will be approved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SystemExtensionsAllowedTeamIdentifiers {
             get { return BackingStore?.Get<List<string>?>("systemExtensionsAllowedTeamIdentifiers"); }
             set { BackingStore?.Set("systemExtensionsAllowedTeamIdentifiers", value); }
         }
+#nullable restore
 #else
         public List<string> SystemExtensionsAllowedTeamIdentifiers {
             get { return BackingStore?.Get<List<string>>("systemExtensionsAllowedTeamIdentifiers"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSSystemExtensionTypeMapping>? SystemExtensionsAllowedTypes {
             get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>?>("systemExtensionsAllowedTypes"); }
             set { BackingStore?.Set("systemExtensionsAllowedTypes", value); }
         }
+#nullable restore
 #else
         public List<MacOSSystemExtensionTypeMapping> SystemExtensionsAllowedTypes {
             get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>>("systemExtensionsAllowedTypes"); }

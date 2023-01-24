@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosEasEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable {
         /// <summary>Account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountName {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#nullable restore
 #else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
+#nullable restore
 #else
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
@@ -76,10 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Exchange location that (URL) that the native mail app connects to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HostName {
             get { return BackingStore?.Get<string?>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#nullable restore
 #else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }
@@ -88,10 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosCertificateProfileBase? IdentityCertificate {
             get { return BackingStore?.Get<IosCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#nullable restore
 #else
         public IosCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificate"); }
@@ -100,10 +108,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Profile ID of the Per-App VPN policy to be used to access emails from the native Mail client</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PerAppVPNProfileId {
             get { return BackingStore?.Get<string?>("perAppVPNProfileId"); }
             set { BackingStore?.Set("perAppVPNProfileId", value); }
         }
+#nullable restore
 #else
         public string PerAppVPNProfileId {
             get { return BackingStore?.Get<string>("perAppVPNProfileId"); }
@@ -142,10 +152,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>S/MIME encryption certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosCertificateProfile? SmimeEncryptionCertificate {
             get { return BackingStore?.Get<IosCertificateProfile?>("smimeEncryptionCertificate"); }
             set { BackingStore?.Set("smimeEncryptionCertificate", value); }
         }
+#nullable restore
 #else
         public IosCertificateProfile SmimeEncryptionCertificate {
             get { return BackingStore?.Get<IosCertificateProfile>("smimeEncryptionCertificate"); }
@@ -159,10 +171,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>S/MIME signing certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosCertificateProfile? SmimeSigningCertificate {
             get { return BackingStore?.Get<IosCertificateProfile?>("smimeSigningCertificate"); }
             set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
+#nullable restore
 #else
         public IosCertificateProfile SmimeSigningCertificate {
             get { return BackingStore?.Get<IosCertificateProfile>("smimeSigningCertificate"); }

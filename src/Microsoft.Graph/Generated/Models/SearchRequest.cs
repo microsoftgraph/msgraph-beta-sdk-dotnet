@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format &apos;{field}:/&apos;{aggregationFilterToken}/&apos;&apos;. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format &apos;{field}:or(/&apos;{aggregationFilterToken1}/&apos;,/&apos;{aggregationFilterToken2}/&apos;)&apos;. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AggregationFilters {
             get { return BackingStore?.Get<List<string>?>("aggregationFilters"); }
             set { BackingStore?.Set("aggregationFilters", value); }
         }
+#nullable restore
 #else
         public List<string> AggregationFilters {
             get { return BackingStore?.Get<List<string>>("aggregationFilters"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AggregationOption>? Aggregations {
             get { return BackingStore?.Get<List<AggregationOption>?>("aggregations"); }
             set { BackingStore?.Set("aggregations", value); }
         }
+#nullable restore
 #else
         public List<AggregationOption> Aggregations {
             get { return BackingStore?.Get<List<AggregationOption>>("aggregations"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Contains the ordered collection of fields and limit to collapse results. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CollapseProperty>? CollapseProperties {
             get { return BackingStore?.Get<List<CollapseProperty>?>("collapseProperties"); }
             set { BackingStore?.Set("collapseProperties", value); }
         }
+#nullable restore
 #else
         public List<CollapseProperty> CollapseProperties {
             get { return BackingStore?.Get<List<CollapseProperty>>("collapseProperties"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ContentSources {
             get { return BackingStore?.Get<List<string>?>("contentSources"); }
             set { BackingStore?.Set("contentSources", value); }
         }
+#nullable restore
 #else
         public List<string> ContentSources {
             get { return BackingStore?.Get<List<string>>("contentSources"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EntityType?>? EntityTypes {
             get { return BackingStore?.Get<List<EntityType?>?>("entityTypes"); }
             set { BackingStore?.Set("entityTypes", value); }
         }
+#nullable restore
 #else
         public List<EntityType?> EntityTypes {
             get { return BackingStore?.Get<List<EntityType?>>("entityTypes"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Fields {
             get { return BackingStore?.Get<List<string>?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
+#nullable restore
 #else
         public List<string> Fields {
             get { return BackingStore?.Get<List<string>>("fields"); }
@@ -97,10 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -109,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SearchQuery? Query {
             get { return BackingStore?.Get<SearchQuery?>("query"); }
             set { BackingStore?.Set("query", value); }
         }
+#nullable restore
 #else
         public SearchQuery Query {
             get { return BackingStore?.Get<SearchQuery>("query"); }
@@ -121,10 +137,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SearchAlterationOptions? QueryAlterationOptions {
             get { return BackingStore?.Get<SearchAlterationOptions?>("queryAlterationOptions"); }
             set { BackingStore?.Set("queryAlterationOptions", value); }
         }
+#nullable restore
 #else
         public SearchAlterationOptions QueryAlterationOptions {
             get { return BackingStore?.Get<SearchAlterationOptions>("queryAlterationOptions"); }
@@ -133,10 +151,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Required for searches that use application permissions. Represents the geographic location for the search. For details, see Get the region value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Region {
             get { return BackingStore?.Get<string?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
+#nullable restore
 #else
         public string Region {
             get { return BackingStore?.Get<string>("region"); }
@@ -145,10 +165,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides the search result templates options for rendering connectors search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ResultTemplateOption? ResultTemplateOptions {
             get { return BackingStore?.Get<ResultTemplateOption?>("resultTemplateOptions"); }
             set { BackingStore?.Set("resultTemplateOptions", value); }
         }
+#nullable restore
 #else
         public ResultTemplateOption ResultTemplateOptions {
             get { return BackingStore?.Get<ResultTemplateOption>("resultTemplateOptions"); }
@@ -157,10 +179,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.SharePointOneDriveOptions? SharePointOneDriveOptions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharePointOneDriveOptions?>("sharePointOneDriveOptions"); }
             set { BackingStore?.Set("sharePointOneDriveOptions", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.SharePointOneDriveOptions SharePointOneDriveOptions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharePointOneDriveOptions>("sharePointOneDriveOptions"); }
@@ -174,10 +198,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SortProperty>? SortProperties {
             get { return BackingStore?.Get<List<SortProperty>?>("sortProperties"); }
             set { BackingStore?.Set("sortProperties", value); }
         }
+#nullable restore
 #else
         public List<SortProperty> SortProperties {
             get { return BackingStore?.Get<List<SortProperty>>("sortProperties"); }
@@ -186,10 +212,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The stored_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Stored_fields {
             get { return BackingStore?.Get<List<string>?>("stored_fields"); }
             set { BackingStore?.Set("stored_fields", value); }
         }
+#nullable restore
 #else
         public List<string> Stored_fields {
             get { return BackingStore?.Get<List<string>>("stored_fields"); }

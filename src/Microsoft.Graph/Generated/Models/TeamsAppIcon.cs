@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppIcon : Entity, IParsable {
         /// <summary>The contents of the app icon if the icon is hosted within the Teams infrastructure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkHostedContent? HostedContent {
             get { return BackingStore?.Get<TeamworkHostedContent?>("hostedContent"); }
             set { BackingStore?.Set("hostedContent", value); }
         }
+#nullable restore
 #else
         public TeamworkHostedContent HostedContent {
             get { return BackingStore?.Get<TeamworkHostedContent>("hostedContent"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The web URL that can be used for downloading the image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedDeviceOverview : Entity, IParsable {
         /// <summary>Distribution of Exchange Access State in Intune</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary? DeviceExchangeAccessStateSummary {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary?>("deviceExchangeAccessStateSummary"); }
             set { BackingStore?.Set("deviceExchangeAccessStateSummary", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary DeviceExchangeAccessStateSummary {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceExchangeAccessStateSummary>("deviceExchangeAccessStateSummary"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device operating system summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary? DeviceOperatingSystemSummary {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary?>("deviceOperatingSystemSummary"); }
             set { BackingStore?.Set("deviceOperatingSystemSummary", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary DeviceOperatingSystemSummary {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceOperatingSystemSummary>("deviceOperatingSystemSummary"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Models and Manufactures meatadata for managed devices in the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers? ManagedDeviceModelsAndManufacturers {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers?>("managedDeviceModelsAndManufacturers"); }
             set { BackingStore?.Set("managedDeviceModelsAndManufacturers", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers ManagedDeviceModelsAndManufacturers {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceModelsAndManufacturers>("managedDeviceModelsAndManufacturers"); }

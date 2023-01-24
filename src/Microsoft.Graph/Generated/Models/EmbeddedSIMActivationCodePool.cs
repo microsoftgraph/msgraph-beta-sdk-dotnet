@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EmbeddedSIMActivationCode>? ActivationCodes {
             get { return BackingStore?.Get<List<EmbeddedSIMActivationCode>?>("activationCodes"); }
             set { BackingStore?.Set("activationCodes", value); }
         }
+#nullable restore
 #else
         public List<EmbeddedSIMActivationCode> ActivationCodes {
             get { return BackingStore?.Get<List<EmbeddedSIMActivationCode>>("activationCodes"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Navigational property to a list of targets to which this pool is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EmbeddedSIMActivationCodePoolAssignment>? Assignments {
             get { return BackingStore?.Get<List<EmbeddedSIMActivationCodePoolAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<EmbeddedSIMActivationCodePoolAssignment> Assignments {
             get { return BackingStore?.Get<List<EmbeddedSIMActivationCodePoolAssignment>>("assignments"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Navigational property to a list of device states for this pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EmbeddedSIMDeviceState>? DeviceStates {
             get { return BackingStore?.Get<List<EmbeddedSIMDeviceState>?>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#nullable restore
 #else
         public List<EmbeddedSIMDeviceState> DeviceStates {
             get { return BackingStore?.Get<List<EmbeddedSIMDeviceState>>("deviceStates"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The admin defined name of the embedded SIM activation code pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }

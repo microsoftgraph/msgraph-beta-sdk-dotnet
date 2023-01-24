@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewSta
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedDeviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ManagedDeviceIds {
             get { return BackingStore?.Get<List<string>?>("managedDeviceIds"); }
             set { BackingStore?.Set("managedDeviceIds", value); }
         }
+#nullable restore
 #else
         public List<string> ManagedDeviceIds {
             get { return BackingStore?.Get<List<string>>("managedDeviceIds"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewSta
 #endif
         /// <summary>The reviewStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcReviewStatus? ReviewStatus {
             get { return BackingStore?.Get<CloudPcReviewStatus?>("reviewStatus"); }
             set { BackingStore?.Set("reviewStatus", value); }
         }
+#nullable restore
 #else
         public CloudPcReviewStatus ReviewStatus {
             get { return BackingStore?.Get<CloudPcReviewStatus>("reviewStatus"); }

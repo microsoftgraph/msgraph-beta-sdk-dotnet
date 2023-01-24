@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsInformationProtectionAppLockerFile : Entity, IParsable {
         /// <summary>The friendly name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>File as a byte array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? File {
             get { return BackingStore?.Get<byte[]?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
+#nullable restore
 #else
         public byte[] File {
             get { return BackingStore?.Get<byte[]>("file"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>SHA256 hash of the file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileHash {
             get { return BackingStore?.Get<string?>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
+#nullable restore
 #else
         public string FileHash {
             get { return BackingStore?.Get<string>("fileHash"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Version of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

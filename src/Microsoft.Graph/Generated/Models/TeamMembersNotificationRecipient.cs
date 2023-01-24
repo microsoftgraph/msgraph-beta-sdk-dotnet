@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable {
         /// <summary>The unique identifier for the team whose members should receive the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamId {
             get { return BackingStore?.Get<string?>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
         }
+#nullable restore
 #else
         public string TeamId {
             get { return BackingStore?.Get<string>("teamId"); }

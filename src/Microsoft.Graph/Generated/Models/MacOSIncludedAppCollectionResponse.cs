@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSIncludedAppCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSIncludedApp>? Value {
             get { return BackingStore?.Get<List<MacOSIncludedApp>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<MacOSIncludedApp> Value {
             get { return BackingStore?.Get<List<MacOSIncludedApp>>("value"); }

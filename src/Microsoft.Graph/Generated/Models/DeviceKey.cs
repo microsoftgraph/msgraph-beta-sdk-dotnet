@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The keyMaterial property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? KeyMaterial {
             get { return BackingStore?.Get<byte[]?>("keyMaterial"); }
             set { BackingStore?.Set("keyMaterial", value); }
         }
+#nullable restore
 #else
         public byte[] KeyMaterial {
             get { return BackingStore?.Get<byte[]>("keyMaterial"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The keyType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KeyType {
             get { return BackingStore?.Get<string?>("keyType"); }
             set { BackingStore?.Set("keyType", value); }
         }
+#nullable restore
 #else
         public string KeyType {
             get { return BackingStore?.Get<string>("keyType"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

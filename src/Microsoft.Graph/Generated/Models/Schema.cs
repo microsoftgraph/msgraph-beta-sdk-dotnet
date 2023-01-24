@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Schema : Entity, IParsable {
         /// <summary>The baseType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BaseType {
             get { return BackingStore?.Get<string?>("baseType"); }
             set { BackingStore?.Set("baseType", value); }
         }
+#nullable restore
 #else
         public string BaseType {
             get { return BackingStore?.Get<string>("baseType"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Property>? Properties {
             get { return BackingStore?.Get<List<Property>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#nullable restore
 #else
         public List<Property> Properties {
             get { return BackingStore?.Get<List<Property>>("properties"); }

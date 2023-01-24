@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Guid?>? ExcludedGroups {
             get { return BackingStore?.Get<List<Guid?>?>("excludedGroups"); }
             set { BackingStore?.Set("excludedGroups", value); }
         }
+#nullable restore
 #else
         public List<Guid?> ExcludedGroups {
             get { return BackingStore?.Get<List<Guid?>>("excludedGroups"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Guid?>? IncludedGroups {
             get { return BackingStore?.Get<List<Guid?>?>("includedGroups"); }
             set { BackingStore?.Set("includedGroups", value); }
         }
+#nullable restore
 #else
         public List<Guid?> IncludedGroups {
             get { return BackingStore?.Get<List<Guid?>>("includedGroups"); }

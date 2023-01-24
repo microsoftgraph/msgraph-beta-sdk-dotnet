@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ZebraFotaDeployment : Entity, IParsable {
         /// <summary>Collection of Android FOTA Assignment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AndroidFotaDeploymentAssignment>? DeploymentAssignments {
             get { return BackingStore?.Get<List<AndroidFotaDeploymentAssignment>?>("deploymentAssignments"); }
             set { BackingStore?.Set("deploymentAssignments", value); }
         }
+#nullable restore
 #else
         public List<AndroidFotaDeploymentAssignment> DeploymentAssignments {
             get { return BackingStore?.Get<List<AndroidFotaDeploymentAssignment>>("deploymentAssignments"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Zebra FOTA deployment complex type that describes the settings required to create a FOTA deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ZebraFotaDeploymentSettings? DeploymentSettings {
             get { return BackingStore?.Get<ZebraFotaDeploymentSettings?>("deploymentSettings"); }
             set { BackingStore?.Set("deploymentSettings", value); }
         }
+#nullable restore
 #else
         public ZebraFotaDeploymentSettings DeploymentSettings {
             get { return BackingStore?.Get<ZebraFotaDeploymentSettings>("deploymentSettings"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the deployment status from Zebra. The status is a high level status of the deployment as opposed being a detailed status per device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ZebraFotaDeploymentStatus? DeploymentStatus {
             get { return BackingStore?.Get<ZebraFotaDeploymentStatus?>("deploymentStatus"); }
             set { BackingStore?.Set("deploymentStatus", value); }
         }
+#nullable restore
 #else
         public ZebraFotaDeploymentStatus DeploymentStatus {
             get { return BackingStore?.Get<ZebraFotaDeploymentStatus>("deploymentStatus"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A human readable description of the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -58,10 +66,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A human readable name of the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }

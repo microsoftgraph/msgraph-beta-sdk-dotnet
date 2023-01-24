@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConfigurationManagerCollectionAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable {
         /// <summary>The collection Id that is the target of the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CollectionId {
             get { return BackingStore?.Get<string?>("collectionId"); }
             set { BackingStore?.Set("collectionId", value); }
         }
+#nullable restore
 #else
         public string CollectionId {
             get { return BackingStore?.Get<string>("collectionId"); }

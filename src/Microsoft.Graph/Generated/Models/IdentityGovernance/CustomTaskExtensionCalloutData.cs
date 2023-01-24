@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class CustomTaskExtensionCalloutData : CustomExtensionData, IParsable {
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.User? Subject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.User Subject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("subject"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject? TaskObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject TaskObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The taskProcessingresult property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult? TaskProcessingresult {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult?>("taskProcessingresult"); }
             set { BackingStore?.Set("taskProcessingresult", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult TaskProcessingresult {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingresult"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The workflow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow? Workflow {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow?>("workflow"); }
             set { BackingStore?.Set("workflow", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow Workflow {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>("workflow"); }

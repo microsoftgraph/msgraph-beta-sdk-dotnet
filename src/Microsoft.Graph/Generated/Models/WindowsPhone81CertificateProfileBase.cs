@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExtendedKeyUsage>? ExtendedKeyUsages {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
+#nullable restore
 #else
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }

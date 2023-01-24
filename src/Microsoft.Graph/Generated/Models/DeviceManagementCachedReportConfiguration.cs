@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Filters applied on report creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Filter {
             get { return BackingStore?.Get<string?>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
+#nullable restore
 #else
         public string Filter {
             get { return BackingStore?.Get<string>("filter"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Caller-managed metadata associated with the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Metadata {
             get { return BackingStore?.Get<string?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+#nullable restore
 #else
         public string Metadata {
             get { return BackingStore?.Get<string>("metadata"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Ordering of columns in the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? OrderBy {
             get { return BackingStore?.Get<List<string>?>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
+#nullable restore
 #else
         public List<string> OrderBy {
             get { return BackingStore?.Get<List<string>>("orderBy"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReportName {
             get { return BackingStore?.Get<string?>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
+#nullable restore
 #else
         public string ReportName {
             get { return BackingStore?.Get<string>("reportName"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Columns selected from the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Select {
             get { return BackingStore?.Get<List<string>?>("select"); }
             set { BackingStore?.Set("select", value); }
         }
+#nullable restore
 #else
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }

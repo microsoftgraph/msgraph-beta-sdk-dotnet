@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Connection name displayed to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectionName {
             get { return BackingStore?.Get<string?>("connectionName"); }
             set { BackingStore?.Set("connectionName", value); }
         }
+#nullable restore
 #else
         public string ConnectionName {
             get { return BackingStore?.Get<string>("connectionName"); }
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValue>? CustomData {
             get { return BackingStore?.Get<List<KeyValue>?>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
+#nullable restore
 #else
         public List<KeyValue> CustomData {
             get { return BackingStore?.Get<List<KeyValue>>("customData"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? CustomKeyValueData {
             get { return BackingStore?.Get<List<KeyValuePair>?>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> CustomKeyValueData {
             get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Fingerprint {
             get { return BackingStore?.Get<string?>("fingerprint"); }
             set { BackingStore?.Set("fingerprint", value); }
         }
+#nullable restore
 #else
         public string Fingerprint {
             get { return BackingStore?.Get<string>("fingerprint"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AndroidWorkProfileCertificateProfileBase? IdentityCertificate {
             get { return BackingStore?.Get<AndroidWorkProfileCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#nullable restore
 #else
         public AndroidWorkProfileCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<AndroidWorkProfileCertificateProfileBase>("identityCertificate"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Microsoft Tunnel site ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MicrosoftTunnelSiteId {
             get { return BackingStore?.Get<string?>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
+#nullable restore
 #else
         public string MicrosoftTunnelSiteId {
             get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Proxy server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public VpnProxyServer? ProxyServer {
             get { return BackingStore?.Get<VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
+#nullable restore
 #else
         public VpnProxyServer ProxyServer {
             get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Realm when connection type is set to Pulse Secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Realm {
             get { return BackingStore?.Get<string?>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
+#nullable restore
 #else
         public string Realm {
             get { return BackingStore?.Get<string>("realm"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Role when connection type is set to Pulse Secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Role {
             get { return BackingStore?.Get<string?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#nullable restore
 #else
         public string Role {
             get { return BackingStore?.Get<string>("role"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VpnServer>? Servers {
             get { return BackingStore?.Get<List<VpnServer>?>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
+#nullable restore
 #else
         public List<VpnServer> Servers {
             get { return BackingStore?.Get<List<VpnServer>>("servers"); }
@@ -147,10 +167,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Targeted mobile apps. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? TargetedMobileApps {
             get { return BackingStore?.Get<List<AppListItem>?>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> TargetedMobileApps {
             get { return BackingStore?.Get<List<AppListItem>>("targetedMobileApps"); }
@@ -159,10 +181,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Targeted App package IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TargetedPackageIds {
             get { return BackingStore?.Get<List<string>?>("targetedPackageIds"); }
             set { BackingStore?.Set("targetedPackageIds", value); }
         }
+#nullable restore
 #else
         public List<string> TargetedPackageIds {
             get { return BackingStore?.Get<List<string>>("targetedPackageIds"); }

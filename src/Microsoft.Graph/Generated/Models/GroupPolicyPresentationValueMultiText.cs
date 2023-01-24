@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationValueMultiText : GroupPolicyPresentationValue, IParsable {
         /// <summary>A collection of non-empty strings for the associated presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Values {
             get { return BackingStore?.Get<List<string>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public List<string> Values {
             get { return BackingStore?.Get<List<string>>("values"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ServiceAnnouncementBase : Entity, IParsable {
         /// <summary>Additional details about service event. This property doesn&apos;t support filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? Details {
             get { return BackingStore?.Get<List<KeyValuePair>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> Details {
             get { return BackingStore?.Get<List<KeyValuePair>>("details"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The title of the service event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>OEM name. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OemName {
             get { return BackingStore?.Get<string?>("oemName"); }
             set { BackingStore?.Set("oemName", value); }
         }
+#nullable restore
 #else
         public string OemName {
             get { return BackingStore?.Get<string>("oemName"); }

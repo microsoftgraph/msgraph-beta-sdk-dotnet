@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable {
         /// <summary>The choiceSettingValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationChoiceSettingValue? ChoiceSettingValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValue?>("choiceSettingValue"); }
             set { BackingStore?.Set("choiceSettingValue", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationChoiceSettingValue ChoiceSettingValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValue>("choiceSettingValue"); }

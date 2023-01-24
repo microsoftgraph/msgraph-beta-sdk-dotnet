@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The threat assessment request creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -44,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ThreatAssessmentResult>? Results {
             get { return BackingStore?.Get<List<ThreatAssessmentResult>?>("results"); }
             set { BackingStore?.Set("results", value); }
         }
+#nullable restore
 #else
         public List<ThreatAssessmentResult> Results {
             get { return BackingStore?.Get<List<ThreatAssessmentResult>>("results"); }

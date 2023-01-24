@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoverySearch : Search, IParsable {
         /// <summary>Adds an additional source to the eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DataSource>? AdditionalSources {
             get { return BackingStore?.Get<List<DataSource>?>("additionalSources"); }
             set { BackingStore?.Set("additionalSources", value); }
         }
+#nullable restore
 #else
         public List<DataSource> AdditionalSources {
             get { return BackingStore?.Get<List<DataSource>>("additionalSources"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Adds the results of the eDiscovery search to the specified reviewSet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoveryAddToReviewSetOperation? AddToReviewSetOperation {
             get { return BackingStore?.Get<EdiscoveryAddToReviewSetOperation?>("addToReviewSetOperation"); }
             set { BackingStore?.Set("addToReviewSetOperation", value); }
         }
+#nullable restore
 #else
         public EdiscoveryAddToReviewSetOperation AddToReviewSetOperation {
             get { return BackingStore?.Get<EdiscoveryAddToReviewSetOperation>("addToReviewSetOperation"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Custodian sources that are included in the eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DataSource>? CustodianSources {
             get { return BackingStore?.Get<List<DataSource>?>("custodianSources"); }
             set { BackingStore?.Set("custodianSources", value); }
         }
+#nullable restore
 #else
         public List<DataSource> CustodianSources {
             get { return BackingStore?.Get<List<DataSource>>("custodianSources"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The last estimate operation associated with the eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoveryEstimateOperation? LastEstimateStatisticsOperation {
             get { return BackingStore?.Get<EdiscoveryEstimateOperation?>("lastEstimateStatisticsOperation"); }
             set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
         }
+#nullable restore
 #else
         public EdiscoveryEstimateOperation LastEstimateStatisticsOperation {
             get { return BackingStore?.Get<EdiscoveryEstimateOperation>("lastEstimateStatisticsOperation"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>noncustodialDataSource sources that are included in the eDiscovery search</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryNoncustodialDataSource>? NoncustodialSources {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>?>("noncustodialSources"); }
             set { BackingStore?.Set("noncustodialSources", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryNoncustodialDataSource> NoncustodialSources {
             get { return BackingStore?.Get<List<EdiscoveryNoncustodialDataSource>>("noncustodialSources"); }

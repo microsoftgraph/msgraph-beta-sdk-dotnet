@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class CustomAction : InformationProtectionAction, IParsable {
         /// <summary>Name of the custom action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Properties, in key-value pair format, of the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? Properties {
             get { return BackingStore?.Get<List<KeyValuePair>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> Properties {
             get { return BackingStore?.Get<List<KeyValuePair>>("properties"); }

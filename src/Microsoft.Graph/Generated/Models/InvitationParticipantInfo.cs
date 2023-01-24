@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Identity {
             get { return BackingStore?.Get<IdentitySet?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+#nullable restore
 #else
         public IdentitySet Identity {
             get { return BackingStore?.Get<IdentitySet>("identity"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Optional. The ID of the target participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParticipantId {
             get { return BackingStore?.Get<string?>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
+#nullable restore
 #else
         public string ParticipantId {
             get { return BackingStore?.Get<string>("participantId"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReplacesCallId {
             get { return BackingStore?.Get<string?>("replacesCallId"); }
             set { BackingStore?.Set("replacesCallId", value); }
         }
+#nullable restore
 #else
         public string ReplacesCallId {
             get { return BackingStore?.Get<string>("replacesCallId"); }

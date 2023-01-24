@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsVpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Connection name displayed to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectionName {
             get { return BackingStore?.Get<string?>("connectionName"); }
             set { BackingStore?.Set("connectionName", value); }
         }
+#nullable restore
 #else
         public string ConnectionName {
             get { return BackingStore?.Get<string>("connectionName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom XML commands that configures the VPN connection. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? CustomXml {
             get { return BackingStore?.Get<byte[]?>("customXml"); }
             set { BackingStore?.Set("customXml", value); }
         }
+#nullable restore
 #else
         public byte[] CustomXml {
             get { return BackingStore?.Get<byte[]>("customXml"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VpnServer>? Servers {
             get { return BackingStore?.Get<List<VpnServer>?>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
+#nullable restore
 #else
         public List<VpnServer> Servers {
             get { return BackingStore?.Get<List<VpnServer>>("servers"); }

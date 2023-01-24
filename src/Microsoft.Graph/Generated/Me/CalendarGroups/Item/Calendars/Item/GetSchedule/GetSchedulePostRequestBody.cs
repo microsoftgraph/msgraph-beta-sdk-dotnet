@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.GetSchedule
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The EndTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? EndTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("endTime"); }
             set { BackingStore?.Set("endTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone EndTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("endTime"); }
@@ -33,10 +35,12 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.GetSchedule
 #endif
         /// <summary>The Schedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Schedules {
             get { return BackingStore?.Get<List<string>?>("schedules"); }
             set { BackingStore?.Set("schedules", value); }
         }
+#nullable restore
 #else
         public List<string> Schedules {
             get { return BackingStore?.Get<List<string>>("schedules"); }
@@ -45,10 +49,12 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.GetSchedule
 #endif
         /// <summary>The StartTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? StartTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("startTime"); }
             set { BackingStore?.Set("startTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone StartTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startTime"); }

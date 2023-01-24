@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChooseFromType {
             get { return BackingStore?.Get<string?>("chooseFromType"); }
             set { BackingStore?.Set("chooseFromType", value); }
         }
+#nullable restore
 #else
         public string ChooseFromType {
             get { return BackingStore?.Get<string>("chooseFromType"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>How to display the information about the person or group chosen. See below.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayAs {
             get { return BackingStore?.Get<string?>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
+#nullable restore
 #else
         public string DisplayAs {
             get { return BackingStore?.Get<string>("displayAs"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

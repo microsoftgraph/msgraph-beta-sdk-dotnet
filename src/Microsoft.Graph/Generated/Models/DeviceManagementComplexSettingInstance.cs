@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementComplexSettingInstance : DeviceManagementSettingInstance, IParsable {
         /// <summary>The values that make up the complex setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementSettingInstance>? Value {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementSettingInstance> Value {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("value"); }

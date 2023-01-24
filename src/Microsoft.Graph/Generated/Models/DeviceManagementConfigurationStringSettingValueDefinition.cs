@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationStringSettingValueDefinition : DeviceManagementConfigurationSettingValueDefinition, IParsable {
         /// <summary>Supported file types for this setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? FileTypes {
             get { return BackingStore?.Get<List<string>?>("fileTypes"); }
             set { BackingStore?.Set("fileTypes", value); }
         }
+#nullable restore
 #else
         public List<string> FileTypes {
             get { return BackingStore?.Get<List<string>>("fileTypes"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Regular expression or any xml or json schema that the input string should match</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InputValidationSchema {
             get { return BackingStore?.Get<string?>("inputValidationSchema"); }
             set { BackingStore?.Set("inputValidationSchema", value); }
         }
+#nullable restore
 #else
         public string InputValidationSchema {
             get { return BackingStore?.Get<string>("inputValidationSchema"); }

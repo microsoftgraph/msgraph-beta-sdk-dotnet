@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SearchHit : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The _id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? _id {
             get { return BackingStore?.Get<string?>("_id"); }
             set { BackingStore?.Set("_id", value); }
         }
+#nullable restore
 #else
         public string _id {
             get { return BackingStore?.Get<string>("_id"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The _source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Entity? _source {
             get { return BackingStore?.Get<Entity?>("_source"); }
             set { BackingStore?.Set("_source", value); }
         }
+#nullable restore
 #else
         public Entity _source {
             get { return BackingStore?.Get<Entity>("_source"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The _summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? _summary {
             get { return BackingStore?.Get<string?>("_summary"); }
             set { BackingStore?.Set("_summary", value); }
         }
+#nullable restore
 #else
         public string _summary {
             get { return BackingStore?.Get<string>("_summary"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the content source which the externalItem is part of .</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentSource {
             get { return BackingStore?.Get<string?>("contentSource"); }
             set { BackingStore?.Set("contentSource", value); }
         }
+#nullable restore
 #else
         public string ContentSource {
             get { return BackingStore?.Get<string>("contentSource"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HitId {
             get { return BackingStore?.Get<string?>("hitId"); }
             set { BackingStore?.Set("hitId", value); }
         }
+#nullable restore
 #else
         public string HitId {
             get { return BackingStore?.Get<string>("hitId"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -102,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Entity? Resource {
             get { return BackingStore?.Get<Entity?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#nullable restore
 #else
         public Entity Resource {
             get { return BackingStore?.Get<Entity>("resource"); }
@@ -114,10 +128,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResultTemplateId {
             get { return BackingStore?.Get<string?>("resultTemplateId"); }
             set { BackingStore?.Set("resultTemplateId", value); }
         }
+#nullable restore
 #else
         public string ResultTemplateId {
             get { return BackingStore?.Get<string>("resultTemplateId"); }
@@ -126,10 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A summary of the result, if a summary is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Summary {
             get { return BackingStore?.Get<string?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
+#nullable restore
 #else
         public string Summary {
             get { return BackingStore?.Get<string>("summary"); }

@@ -57,7 +57,9 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<ParentGroupRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<ParentGroupRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -74,7 +76,9 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.TermStore.Group?> GetAsync(Action<ParentGroupRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.TermStore.Group> GetAsync(Action<ParentGroupRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -92,7 +96,9 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.TermStore.Group?> PatchAsync(Microsoft.Graph.Beta.Models.TermStore.Group body, Action<ParentGroupRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.TermStore.Group> PatchAsync(Microsoft.Graph.Beta.Models.TermStore.Group body, Action<ParentGroupRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -109,7 +115,9 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<ParentGroupRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<ParentGroupRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -131,7 +139,9 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<ParentGroupRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<ParentGroupRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -156,7 +166,9 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TermStore.Group body, Action<ParentGroupRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TermStore.Group body, Action<ParentGroupRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -198,16 +210,20 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup {
         public class ParentGroupRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

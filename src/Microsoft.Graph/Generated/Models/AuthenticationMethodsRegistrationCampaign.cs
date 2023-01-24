@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Users and groups of users that are excluded from being prompted to set up the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExcludeTarget>? ExcludeTargets {
             get { return BackingStore?.Get<List<ExcludeTarget>?>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
+#nullable restore
 #else
         public List<ExcludeTarget> ExcludeTargets {
             get { return BackingStore?.Get<List<ExcludeTarget>>("excludeTargets"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Users and groups of users that are prompted to set up the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationMethodsRegistrationCampaignIncludeTarget>? IncludeTargets {
             get { return BackingStore?.Get<List<AuthenticationMethodsRegistrationCampaignIncludeTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationMethodsRegistrationCampaignIncludeTarget> IncludeTargets {
             get { return BackingStore?.Get<List<AuthenticationMethodsRegistrationCampaignIncludeTarget>>("includeTargets"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

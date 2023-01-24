@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The default message displayed if the user&apos;s locale doesn&apos;t match with any of the localized messages</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultMessage {
             get { return BackingStore?.Get<string?>("defaultMessage"); }
             set { BackingStore?.Set("defaultMessage", value); }
         }
+#nullable restore
 #else
         public string DefaultMessage {
             get { return BackingStore?.Get<string>("defaultMessage"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of &lt;locale, message&gt; pairs. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? LocalizedMessages {
             get { return BackingStore?.Get<List<KeyValuePair>?>("localizedMessages"); }
             set { BackingStore?.Set("localizedMessages", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> LocalizedMessages {
             get { return BackingStore?.Get<List<KeyValuePair>>("localizedMessages"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

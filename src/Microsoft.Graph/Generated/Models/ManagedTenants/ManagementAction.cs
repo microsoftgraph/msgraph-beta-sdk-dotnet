@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The description for the management action. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The display name for the management action. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The reference for the management template used to generate the management action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReferenceTemplateId {
             get { return BackingStore?.Get<string?>("referenceTemplateId"); }
             set { BackingStore?.Set("referenceTemplateId", value); }
         }
+#nullable restore
 #else
         public string ReferenceTemplateId {
             get { return BackingStore?.Get<string>("referenceTemplateId"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The collection of workload actions associated with the management action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkloadAction>? WorkloadActions {
             get { return BackingStore?.Get<List<WorkloadAction>?>("workloadActions"); }
             set { BackingStore?.Set("workloadActions", value); }
         }
+#nullable restore
 #else
         public List<WorkloadAction> WorkloadActions {
             get { return BackingStore?.Get<List<WorkloadAction>>("workloadActions"); }

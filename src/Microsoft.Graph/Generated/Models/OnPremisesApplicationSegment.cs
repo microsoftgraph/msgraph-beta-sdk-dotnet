@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>If you&apos;re configuring a traffic manager in front of multiple App Proxy application segments, contains the user-friendly URL that will point to the traffic manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlternateUrl {
             get { return BackingStore?.Get<string?>("alternateUrl"); }
             set { BackingStore?.Set("alternateUrl", value); }
         }
+#nullable restore
 #else
         public string AlternateUrl {
             get { return BackingStore?.Get<string>("alternateUrl"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>CORS Rule definition for a particular application segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CorsConfiguration>? CorsConfigurations {
             get { return BackingStore?.Get<List<CorsConfiguration>?>("corsConfigurations"); }
             set { BackingStore?.Set("corsConfigurations", value); }
         }
+#nullable restore
 #else
         public List<CorsConfiguration> CorsConfigurations {
             get { return BackingStore?.Get<List<CorsConfiguration>>("corsConfigurations"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The published external URL for the application segment; for example, https://intranet.contoso.com./</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalUrl {
             get { return BackingStore?.Get<string?>("externalUrl"); }
             set { BackingStore?.Set("externalUrl", value); }
         }
+#nullable restore
 #else
         public string ExternalUrl {
             get { return BackingStore?.Get<string>("externalUrl"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The internal URL of the application segment; for example, https://intranet/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InternalUrl {
             get { return BackingStore?.Get<string?>("internalUrl"); }
             set { BackingStore?.Set("internalUrl", value); }
         }
+#nullable restore
 #else
         public string InternalUrl {
             get { return BackingStore?.Get<string>("internalUrl"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

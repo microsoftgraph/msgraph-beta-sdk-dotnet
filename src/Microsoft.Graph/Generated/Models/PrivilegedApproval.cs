@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The approvalType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApprovalType {
             get { return BackingStore?.Get<string?>("approvalType"); }
             set { BackingStore?.Set("approvalType", value); }
         }
+#nullable restore
 #else
         public string ApprovalType {
             get { return BackingStore?.Get<string>("approvalType"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The approverReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApproverReason {
             get { return BackingStore?.Get<string?>("approverReason"); }
             set { BackingStore?.Set("approverReason", value); }
         }
+#nullable restore
 #else
         public string ApproverReason {
             get { return BackingStore?.Get<string>("approverReason"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Read-only. The role assignment request for this approval object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrivilegedRoleAssignmentRequest? Request {
             get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest?>("request"); }
             set { BackingStore?.Set("request", value); }
         }
+#nullable restore
 #else
         public PrivilegedRoleAssignmentRequest Request {
             get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest>("request"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The requestorReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RequestorReason {
             get { return BackingStore?.Get<string?>("requestorReason"); }
             set { BackingStore?.Set("requestorReason", value); }
         }
+#nullable restore
 #else
         public string RequestorReason {
             get { return BackingStore?.Get<string>("requestorReason"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleId {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#nullable restore
 #else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The roleInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrivilegedRole? RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
+#nullable restore
 #else
         public PrivilegedRole RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

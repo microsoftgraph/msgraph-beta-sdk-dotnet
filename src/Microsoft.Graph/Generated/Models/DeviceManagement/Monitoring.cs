@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     public class Monitoring : Entity, IParsable {
         /// <summary>The collection of records of alert events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AlertRecord>? AlertRecords {
             get { return BackingStore?.Get<List<AlertRecord>?>("alertRecords"); }
             set { BackingStore?.Set("alertRecords", value); }
         }
+#nullable restore
 #else
         public List<AlertRecord> AlertRecords {
             get { return BackingStore?.Get<List<AlertRecord>>("alertRecords"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>The collection of alert rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AlertRule>? AlertRules {
             get { return BackingStore?.Get<List<AlertRule>?>("alertRules"); }
             set { BackingStore?.Set("alertRules", value); }
         }
+#nullable restore
 #else
         public List<AlertRule> AlertRules {
             get { return BackingStore?.Get<List<AlertRule>>("alertRules"); }

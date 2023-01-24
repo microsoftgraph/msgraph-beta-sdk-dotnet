@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsIdentitySet : IdentitySet, IParsable {
         /// <summary>The application instance associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? ApplicationInstance {
             get { return BackingStore?.Get<Identity?>("applicationInstance"); }
             set { BackingStore?.Set("applicationInstance", value); }
         }
+#nullable restore
 #else
         public Identity ApplicationInstance {
             get { return BackingStore?.Get<Identity>("applicationInstance"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An identity the participant would like to present itself as to the other participants in the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? AssertedIdentity {
             get { return BackingStore?.Get<Identity?>("assertedIdentity"); }
             set { BackingStore?.Set("assertedIdentity", value); }
         }
+#nullable restore
 #else
         public Identity AssertedIdentity {
             get { return BackingStore?.Get<Identity>("assertedIdentity"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure Communication Services user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? AzureCommunicationServicesUser {
             get { return BackingStore?.Get<Identity?>("azureCommunicationServicesUser"); }
             set { BackingStore?.Set("azureCommunicationServicesUser", value); }
         }
+#nullable restore
 #else
         public Identity AzureCommunicationServicesUser {
             get { return BackingStore?.Get<Identity>("azureCommunicationServicesUser"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The encrypted user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? Encrypted {
             get { return BackingStore?.Get<Identity?>("encrypted"); }
             set { BackingStore?.Set("encrypted", value); }
         }
+#nullable restore
 #else
         public Identity Encrypted {
             get { return BackingStore?.Get<Identity>("encrypted"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The guest user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? Guest {
             get { return BackingStore?.Get<Identity?>("guest"); }
             set { BackingStore?.Set("guest", value); }
         }
+#nullable restore
 #else
         public Identity Guest {
             get { return BackingStore?.Get<Identity>("guest"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Skype for Business On-Premises user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? OnPremises {
             get { return BackingStore?.Get<Identity?>("onPremises"); }
             set { BackingStore?.Set("onPremises", value); }
         }
+#nullable restore
 #else
         public Identity OnPremises {
             get { return BackingStore?.Get<Identity>("onPremises"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Inherited from identitySet. The phone user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? Phone {
             get { return BackingStore?.Get<Identity?>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
+#nullable restore
 #else
         public Identity Phone {
             get { return BackingStore?.Get<Identity>("phone"); }

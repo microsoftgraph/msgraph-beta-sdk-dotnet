@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate : DeviceManagementConfigurationChoiceSettingValueDefaultTemplate, IParsable {
         /// <summary>Option Children</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationSettingInstanceTemplate>? Children {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationSettingInstanceTemplate> Children {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Default Constant Value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingDefinitionOptionId {
             get { return BackingStore?.Get<string?>("settingDefinitionOptionId"); }
             set { BackingStore?.Set("settingDefinitionOptionId", value); }
         }
+#nullable restore
 #else
         public string SettingDefinitionOptionId {
             get { return BackingStore?.Get<string>("settingDefinitionOptionId"); }

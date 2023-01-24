@@ -47,12 +47,14 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.Payloa
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get payload from security
+        /// The payload associated with a simulation during its creation.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Payload?> GetAsync(Action<PayloadRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.Payload> GetAsync(Action<PayloadRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -64,11 +66,13 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.Payloa
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get payload from security
+        /// The payload associated with a simulation during its creation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<PayloadRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<PayloadRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -88,21 +92,25 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.Payloa
             return requestInfo;
         }
         /// <summary>
-        /// Get payload from security
+        /// The payload associated with a simulation during its creation.
         /// </summary>
         public class PayloadRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

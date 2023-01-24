@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RuleId {
             get { return BackingStore?.Get<string?>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
+#nullable restore
 #else
         public string RuleId {
             get { return BackingStore?.Get<string>("ruleId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifiers of one or more objects to which a synchronizationJob is to be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationJobSubject>? Subjects {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>?>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationJobSubject> Subjects {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>>("subjects"); }

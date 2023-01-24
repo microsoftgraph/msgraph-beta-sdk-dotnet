@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of registration count and status information for users in your tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserRegistrationCount>? UserRegistrationCounts {
             get { return BackingStore?.Get<List<UserRegistrationCount>?>("userRegistrationCounts"); }
             set { BackingStore?.Set("userRegistrationCounts", value); }
         }
+#nullable restore
 #else
         public List<UserRegistrationCount> UserRegistrationCounts {
             get { return BackingStore?.Get<List<UserRegistrationCount>>("userRegistrationCounts"); }

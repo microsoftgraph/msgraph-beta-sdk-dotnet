@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartCustomExtension : CustomAuthenticationExtension, IParsable {
         /// <summary>The claimsForTokenConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnTokenIssuanceStartReturnClaim>? ClaimsForTokenConfiguration {
             get { return BackingStore?.Get<List<OnTokenIssuanceStartReturnClaim>?>("claimsForTokenConfiguration"); }
             set { BackingStore?.Set("claimsForTokenConfiguration", value); }
         }
+#nullable restore
 #else
         public List<OnTokenIssuanceStartReturnClaim> ClaimsForTokenConfiguration {
             get { return BackingStore?.Get<List<OnTokenIssuanceStartReturnClaim>>("claimsForTokenConfiguration"); }

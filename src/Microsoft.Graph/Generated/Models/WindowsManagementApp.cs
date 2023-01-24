@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsManagementApp : Entity, IParsable {
         /// <summary>Windows management app available version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AvailableVersion {
             get { return BackingStore?.Get<string?>("availableVersion"); }
             set { BackingStore?.Set("availableVersion", value); }
         }
+#nullable restore
 #else
         public string AvailableVersion {
             get { return BackingStore?.Get<string>("availableVersion"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of health states for installed Windows management app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsManagementAppHealthState>? HealthStates {
             get { return BackingStore?.Get<List<WindowsManagementAppHealthState>?>("healthStates"); }
             set { BackingStore?.Set("healthStates", value); }
         }
+#nullable restore
 #else
         public List<WindowsManagementAppHealthState> HealthStates {
             get { return BackingStore?.Get<List<WindowsManagementAppHealthState>>("healthStates"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Managed Installer Configured Date Time</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedInstallerConfiguredDateTime {
             get { return BackingStore?.Get<string?>("managedInstallerConfiguredDateTime"); }
             set { BackingStore?.Set("managedInstallerConfiguredDateTime", value); }
         }
+#nullable restore
 #else
         public string ManagedInstallerConfiguredDateTime {
             get { return BackingStore?.Get<string>("managedInstallerConfiguredDateTime"); }

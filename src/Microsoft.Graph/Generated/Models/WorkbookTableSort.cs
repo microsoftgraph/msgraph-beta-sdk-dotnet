@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookTableSort : Entity, IParsable {
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookSortField>? Fields {
             get { return BackingStore?.Get<List<WorkbookSortField>?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
+#nullable restore
 #else
         public List<WorkbookSortField> Fields {
             get { return BackingStore?.Get<List<WorkbookSortField>>("fields"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents Chinese character ordering method last used to sort the table. Possible values are: PinYin, StrokeCount. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Method {
             get { return BackingStore?.Get<string?>("method"); }
             set { BackingStore?.Set("method", value); }
         }
+#nullable restore
 #else
         public string Method {
             get { return BackingStore?.Get<string>("method"); }

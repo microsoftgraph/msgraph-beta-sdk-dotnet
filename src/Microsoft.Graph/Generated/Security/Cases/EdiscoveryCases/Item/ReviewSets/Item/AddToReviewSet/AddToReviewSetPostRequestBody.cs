@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The search property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoverySearch? Search {
             get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#nullable restore
 #else
         public EdiscoverySearch Search {
             get { return BackingStore?.Get<EdiscoverySearch>("search"); }

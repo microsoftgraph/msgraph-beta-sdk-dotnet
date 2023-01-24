@@ -11,12 +11,28 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
+        /// <summary>Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties will be null and inherit from the default settings, which is always false.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public InboundOutboundPolicyConfiguration? AutomaticUserConsentSettings {
+            get { return BackingStore?.Get<InboundOutboundPolicyConfiguration?>("automaticUserConsentSettings"); }
+            set { BackingStore?.Set("automaticUserConsentSettings", value); }
+        }
+#nullable restore
+#else
+        public InboundOutboundPolicyConfiguration AutomaticUserConsentSettings {
+            get { return BackingStore?.Get<InboundOutboundPolicyConfiguration>("automaticUserConsentSettings"); }
+            set { BackingStore?.Set("automaticUserConsentSettings", value); }
+        }
+#endif
         /// <summary>Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CrossTenantAccessPolicyB2BSetting? B2bCollaborationInbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bCollaborationInbound"); }
             set { BackingStore?.Set("b2bCollaborationInbound", value); }
         }
+#nullable restore
 #else
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationInbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationInbound"); }
@@ -25,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CrossTenantAccessPolicyB2BSetting? B2bCollaborationOutbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bCollaborationOutbound"); }
             set { BackingStore?.Set("b2bCollaborationOutbound", value); }
         }
+#nullable restore
 #else
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationOutbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationOutbound"); }
@@ -37,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectInbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bDirectConnectInbound"); }
             set { BackingStore?.Set("b2bDirectConnectInbound", value); }
         }
+#nullable restore
 #else
         public CrossTenantAccessPolicyB2BSetting B2bDirectConnectInbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound"); }
@@ -49,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectOutbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bDirectConnectOutbound"); }
             set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
+#nullable restore
 #else
         public CrossTenantAccessPolicyB2BSetting B2bDirectConnectOutbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound"); }
@@ -61,12 +83,28 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Defines the cross-tenant policy for synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating creating, updating, and deleting users from one tenant to another.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CrossTenantIdentitySyncPolicyPartner? IdentitySynchronization {
+            get { return BackingStore?.Get<CrossTenantIdentitySyncPolicyPartner?>("identitySynchronization"); }
+            set { BackingStore?.Set("identitySynchronization", value); }
+        }
+#nullable restore
+#else
+        public CrossTenantIdentitySyncPolicyPartner IdentitySynchronization {
+            get { return BackingStore?.Get<CrossTenantIdentitySyncPolicyPartner>("identitySynchronization"); }
+            set { BackingStore?.Set("identitySynchronization", value); }
+        }
+#endif
         /// <summary>Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CrossTenantAccessPolicyInboundTrust? InboundTrust {
             get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust?>("inboundTrust"); }
             set { BackingStore?.Set("inboundTrust", value); }
         }
+#nullable restore
 #else
         public CrossTenantAccessPolicyInboundTrust InboundTrust {
             get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust>("inboundTrust"); }
@@ -80,10 +118,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -92,10 +132,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tenant identifier for the partner Azure AD organization. Read-only. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -104,10 +146,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tenantRestrictions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CrossTenantAccessPolicyTenantRestrictions? TenantRestrictions {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTenantRestrictions?>("tenantRestrictions"); }
             set { BackingStore?.Set("tenantRestrictions", value); }
         }
+#nullable restore
 #else
         public CrossTenantAccessPolicyTenantRestrictions TenantRestrictions {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions"); }
@@ -134,10 +178,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"automaticUserConsentSettings", n => { AutomaticUserConsentSettings = n.GetObjectValue<InboundOutboundPolicyConfiguration>(InboundOutboundPolicyConfiguration.CreateFromDiscriminatorValue); } },
                 {"b2bCollaborationInbound", n => { B2bCollaborationInbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 {"b2bCollaborationOutbound", n => { B2bCollaborationOutbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 {"b2bDirectConnectInbound", n => { B2bDirectConnectInbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 {"b2bDirectConnectOutbound", n => { B2bDirectConnectOutbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
+                {"identitySynchronization", n => { IdentitySynchronization = n.GetObjectValue<CrossTenantIdentitySyncPolicyPartner>(CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue); } },
                 {"inboundTrust", n => { InboundTrust = n.GetObjectValue<CrossTenantAccessPolicyInboundTrust>(CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
                 {"isServiceProvider", n => { IsServiceProvider = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -151,10 +197,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<InboundOutboundPolicyConfiguration>("automaticUserConsentSettings", AutomaticUserConsentSettings);
             writer.WriteObjectValue<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationInbound", B2bCollaborationInbound);
             writer.WriteObjectValue<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationOutbound", B2bCollaborationOutbound);
             writer.WriteObjectValue<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound", B2bDirectConnectInbound);
             writer.WriteObjectValue<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound", B2bDirectConnectOutbound);
+            writer.WriteObjectValue<CrossTenantIdentitySyncPolicyPartner>("identitySynchronization", IdentitySynchronization);
             writer.WriteObjectValue<CrossTenantAccessPolicyInboundTrust>("inboundTrust", InboundTrust);
             writer.WriteBoolValue("isServiceProvider", IsServiceProvider);
             writer.WriteStringValue("@odata.type", OdataType);

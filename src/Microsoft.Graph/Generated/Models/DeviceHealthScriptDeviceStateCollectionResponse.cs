@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptDeviceStateCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceHealthScriptDeviceState>? Value {
             get { return BackingStore?.Get<List<DeviceHealthScriptDeviceState>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<DeviceHealthScriptDeviceState> Value {
             get { return BackingStore?.Get<List<DeviceHealthScriptDeviceState>>("value"); }
