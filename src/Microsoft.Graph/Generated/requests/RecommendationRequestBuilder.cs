@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type RecommendationRequestBuilder.
     /// </summary>
-    public partial class RecommendationRequestBuilder : EntityRequestBuilder, IRecommendationRequestBuilder
+    public partial class RecommendationRequestBuilder : RecommendationBaseRequestBuilder, IRecommendationRequestBuilder
     {
 
         /// <summary>
@@ -48,18 +48,6 @@ namespace Microsoft.Graph
         public new IRecommendationRequest Request(IEnumerable<Option> options)
         {
             return new RecommendationRequest(this.RequestUrl, this.Client, options);
-        }
-    
-        /// <summary>
-        /// Gets the request builder for ImpactedResources.
-        /// </summary>
-        /// <returns>The <see cref="IRecommendationImpactedResourcesCollectionRequestBuilder"/>.</returns>
-        public IRecommendationImpactedResourcesCollectionRequestBuilder ImpactedResources
-        {
-            get
-            {
-                return new RecommendationImpactedResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("impactedResources"), this.Client);
-            }
         }
     
         /// <summary>

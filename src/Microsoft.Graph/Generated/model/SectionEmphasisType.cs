@@ -25,9 +25,9 @@ namespace Microsoft.Graph
         None = 0,
 	
         /// <summary>
-        /// Netural
+        /// Neutral
         /// </summary>
-        Netural = 1,
+        Neutral = 1,
 	
         /// <summary>
         /// Soft

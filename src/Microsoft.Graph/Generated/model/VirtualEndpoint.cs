@@ -157,7 +157,7 @@ namespace Microsoft.Graph
         /// Gets or sets shared use service plans.
         /// </summary>
         [JsonPropertyName("sharedUseServicePlans")]
-        public IVirtualEndpointSharedUseServicePlansCollectionWithReferencesPage SharedUseServicePlans { get; set; }
+        public IVirtualEndpointSharedUseServicePlansCollectionPage SharedUseServicePlans { get; set; }
 
         /// <summary>
         /// Gets or sets sharedUseServicePlansNextLink.

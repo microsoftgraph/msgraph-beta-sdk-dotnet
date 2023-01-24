@@ -185,12 +185,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for SharedUseServicePlans.
         /// </summary>
-        /// <returns>The <see cref="IVirtualEndpointSharedUseServicePlansCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IVirtualEndpointSharedUseServicePlansCollectionWithReferencesRequestBuilder SharedUseServicePlans
+        /// <returns>The <see cref="IVirtualEndpointSharedUseServicePlansCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointSharedUseServicePlansCollectionRequestBuilder SharedUseServicePlans
         {
             get
             {
-                return new VirtualEndpointSharedUseServicePlansCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("sharedUseServicePlans"), this.Client);
+                return new VirtualEndpointSharedUseServicePlansCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sharedUseServicePlans"), this.Client);
             }
         }
 

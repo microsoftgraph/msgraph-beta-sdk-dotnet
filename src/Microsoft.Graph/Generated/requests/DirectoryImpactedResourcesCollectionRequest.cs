@@ -34,29 +34,29 @@ namespace Microsoft.Graph
         {
         }
         /// <summary>
-        /// Adds the specified RecommendationResource to the collection via POST.
+        /// Adds the specified ImpactedResource to the collection via POST.
         /// </summary>
-        /// <param name="recommendationResource">The RecommendationResource to add.</param>
+        /// <param name="impactedResource">The ImpactedResource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created RecommendationResource.</returns>
-        public System.Threading.Tasks.Task<RecommendationResource> AddAsync(RecommendationResource recommendationResource, CancellationToken cancellationToken = default)
+        /// <returns>The created ImpactedResource.</returns>
+        public System.Threading.Tasks.Task<ImpactedResource> AddAsync(ImpactedResource impactedResource, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsync<RecommendationResource>(recommendationResource, cancellationToken);
+            return this.SendAsync<ImpactedResource>(impactedResource, cancellationToken);
         }
 
         /// <summary>
-        /// Adds the specified RecommendationResource to the collection via POST and returns a <see cref="GraphResponse{RecommendationResource}"/> object of the request.
+        /// Adds the specified ImpactedResource to the collection via POST and returns a <see cref="GraphResponse{ImpactedResource}"/> object of the request.
         /// </summary>
-        /// <param name="recommendationResource">The RecommendationResource to add.</param>
+        /// <param name="impactedResource">The ImpactedResource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{RecommendationResource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RecommendationResource>> AddResponseAsync(RecommendationResource recommendationResource, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{ImpactedResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ImpactedResource>> AddResponseAsync(ImpactedResource impactedResource, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<RecommendationResource>(recommendationResource, cancellationToken);
+            return this.SendAsyncWithGraphResponse<ImpactedResource>(impactedResource, cancellationToken);
         }
 
 
@@ -107,7 +107,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryImpactedResourcesCollectionRequest Expand(Expression<Func<RecommendationResource, object>> expandExpression)
+        public IDirectoryImpactedResourcesCollectionRequest Expand(Expression<Func<ImpactedResource, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryImpactedResourcesCollectionRequest Select(Expression<Func<RecommendationResource, object>> selectExpression)
+        public IDirectoryImpactedResourcesCollectionRequest Select(Expression<Func<ImpactedResource, object>> selectExpression)
         {
             if (selectExpression == null)
             {

@@ -135,6 +135,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets virtual network location.
+        /// Indicates resource location of the virtual target network. Read-only, computed value.
         /// </summary>
         [JsonPropertyName("virtualNetworkLocation")]
         public string VirtualNetworkLocation { get; set; }

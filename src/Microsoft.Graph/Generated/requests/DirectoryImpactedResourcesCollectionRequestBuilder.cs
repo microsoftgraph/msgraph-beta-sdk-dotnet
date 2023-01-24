@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IRecommendationResourceRequestBuilder"/> for the specified DirectoryRecommendationResource.
+        /// Gets an <see cref="IImpactedResourceRequestBuilder"/> for the specified DirectoryImpactedResource.
         /// </summary>
-        /// <param name="id">The ID for the DirectoryRecommendationResource.</param>
-        /// <returns>The <see cref="IRecommendationResourceRequestBuilder"/>.</returns>
-        public IRecommendationResourceRequestBuilder this[string id]
+        /// <param name="id">The ID for the DirectoryImpactedResource.</param>
+        /// <returns>The <see cref="IImpactedResourceRequestBuilder"/>.</returns>
+        public IImpactedResourceRequestBuilder this[string id]
         {
             get
             {
-                return new RecommendationResourceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new ImpactedResourceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

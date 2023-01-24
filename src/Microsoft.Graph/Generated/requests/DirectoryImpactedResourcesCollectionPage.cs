@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DirectoryImpactedResourcesCollectionPage.
     /// </summary>
-    public partial class DirectoryImpactedResourcesCollectionPage : CollectionPage<RecommendationResource>, IDirectoryImpactedResourcesCollectionPage
+    public partial class DirectoryImpactedResourcesCollectionPage : CollectionPage<ImpactedResource>, IDirectoryImpactedResourcesCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IDirectoryImpactedResourcesCollectionRequest"/> instance.

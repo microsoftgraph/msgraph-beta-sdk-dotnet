@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         IDirectoryImpactedResourcesCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IRecommendationResourceRequestBuilder"/> for the specified RecommendationResource.
+        /// Gets an <see cref="IImpactedResourceRequestBuilder"/> for the specified ImpactedResource.
         /// </summary>
-        /// <param name="id">The ID for the RecommendationResource.</param>
-        /// <returns>The <see cref="IRecommendationResourceRequestBuilder"/>.</returns>
-        IRecommendationResourceRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the ImpactedResource.</param>
+        /// <returns>The <see cref="IImpactedResourceRequestBuilder"/>.</returns>
+        IImpactedResourceRequestBuilder this[string id] { get; }
 
         
     }

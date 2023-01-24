@@ -20,34 +20,19 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Usage And Compliance
+        /// Identity Best Practice
         /// </summary>
-        UsageAndCompliance = 0,
+        IdentityBestPractice = 0,
 	
         /// <summary>
-        /// Security
+        /// Identity Secure Score
         /// </summary>
-        Security = 1,
+        IdentitySecureScore = 1,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 5,
-	
-        /// <summary>
-        /// Productivity
-        /// </summary>
-        Productivity = 2,
-	
-        /// <summary>
-        /// Health
-        /// </summary>
-        Health = 3,
-	
-        /// <summary>
-        /// Configuration
-        /// </summary>
-        Configuration = 4,
+        UnknownFutureValue = 2,
 	
     }
 }

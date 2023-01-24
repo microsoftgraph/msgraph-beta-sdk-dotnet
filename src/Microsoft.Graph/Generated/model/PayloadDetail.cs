@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets coachmarks.
+        /// Payload coachmark details.
         /// </summary>
         [JsonPropertyName("coachmarks")]
         public IEnumerable<PayloadCoachmark> Coachmarks { get; set; }
     
         /// <summary>
         /// Gets or sets content.
+        /// Payload content details.
         /// </summary>
         [JsonPropertyName("content")]
         public string Content { get; set; }
     
         /// <summary>
         /// Gets or sets phishingUrl.
+        /// The phishing URL used to target a user.
         /// </summary>
         [JsonPropertyName("phishingUrl")]
         public string PhishingUrl { get; set; }

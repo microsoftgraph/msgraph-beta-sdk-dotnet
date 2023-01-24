@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets actionCapability.
+        /// Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: enabled, disabled. Default value is enabled.
         /// </summary>
         [JsonPropertyName("actionCapability")]
         public ActionCapability? ActionCapability { get; set; }
     
         /// <summary>
         /// Gets or sets actionName.
+        /// The name of the supported Cloud PC remote action. Possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.
         /// </summary>
         [JsonPropertyName("actionName")]
         public CloudPcRemoteActionName? ActionName { get; set; }

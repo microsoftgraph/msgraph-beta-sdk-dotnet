@@ -31,18 +31,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets percentage completed.
+        /// Percentage of completion of the respective operation.
         /// </summary>
         [JsonPropertyName("percentageCompleted")]
         public Int32? PercentageCompleted { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// Tenant identifier.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("type")]
         public AttackSimulationOperationType? Type { get; set; }

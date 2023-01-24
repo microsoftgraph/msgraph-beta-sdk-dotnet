@@ -21,20 +21,20 @@ namespace Microsoft.Graph
     public partial interface IDirectoryImpactedResourcesCollectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Adds the specified RecommendationResource to the collection via POST.
+        /// Adds the specified ImpactedResource to the collection via POST.
         /// </summary>
-        /// <param name="recommendationResource">The RecommendationResource to add.</param>
+        /// <param name="impactedResource">The ImpactedResource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created RecommendationResource.</returns>
-        System.Threading.Tasks.Task<RecommendationResource> AddAsync(RecommendationResource recommendationResource, CancellationToken cancellationToken = default);
+        /// <returns>The created ImpactedResource.</returns>
+        System.Threading.Tasks.Task<ImpactedResource> AddAsync(ImpactedResource impactedResource, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Adds the specified RecommendationResource to the collection via POST and returns a <see cref="GraphResponse{RecommendationResource}"/> object of the request.
+        /// Adds the specified ImpactedResource to the collection via POST and returns a <see cref="GraphResponse{ImpactedResource}"/> object of the request.
         /// </summary>
-        /// <param name="recommendationResource">The RecommendationResource to add.</param>
+        /// <param name="impactedResource">The ImpactedResource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{RecommendationResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RecommendationResource>> AddResponseAsync(RecommendationResource recommendationResource, CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{ImpactedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImpactedResource>> AddResponseAsync(ImpactedResource impactedResource, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IDirectoryImpactedResourcesCollectionRequest Expand(Expression<Func<RecommendationResource, object>> expandExpression);
+        IDirectoryImpactedResourcesCollectionRequest Expand(Expression<Func<ImpactedResource, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -77,7 +77,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IDirectoryImpactedResourcesCollectionRequest Select(Expression<Func<RecommendationResource, object>> selectExpression);
+        IDirectoryImpactedResourcesCollectionRequest Select(Expression<Func<ImpactedResource, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

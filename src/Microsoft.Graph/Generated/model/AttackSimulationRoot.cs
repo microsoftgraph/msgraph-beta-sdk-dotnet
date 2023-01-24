@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operations.
+        /// Represents an attack simulation training operation.
         /// </summary>
         [JsonPropertyName("operations")]
         public IAttackSimulationRootOperationsCollectionPage Operations { get; set; }
@@ -44,6 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets payloads.
+        /// Represents an attack simulation training campaign payload in a tenant.
         /// </summary>
         [JsonPropertyName("payloads")]
         public IAttackSimulationRootPayloadsCollectionPage Payloads { get; set; }

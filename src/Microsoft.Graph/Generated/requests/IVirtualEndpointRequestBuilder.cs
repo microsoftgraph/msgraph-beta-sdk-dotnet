@@ -100,8 +100,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for SharedUseServicePlans.
         /// </summary>
-        /// <returns>The <see cref="IVirtualEndpointSharedUseServicePlansCollectionWithReferencesRequestBuilder"/>.</returns>
-        IVirtualEndpointSharedUseServicePlansCollectionWithReferencesRequestBuilder SharedUseServicePlans { get; }
+        /// <returns>The <see cref="IVirtualEndpointSharedUseServicePlansCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointSharedUseServicePlansCollectionRequestBuilder SharedUseServicePlans { get; }
 
         /// <summary>
         /// Gets the request builder for Snapshots.

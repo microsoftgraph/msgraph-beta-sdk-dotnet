@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets automatic user consent settings.
+        /// Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties will be null and inherit from the default settings, which is always false.
+        /// </summary>
+        [JsonPropertyName("automaticUserConsentSettings")]
+        public InboundOutboundPolicyConfiguration AutomaticUserConsentSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets b2b collaboration inbound.
         /// Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
         /// </summary>
@@ -75,6 +82,14 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tenantRestrictions")]
         public CrossTenantAccessPolicyTenantRestrictions TenantRestrictions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets identity synchronization.
+        /// Defines the cross-tenant policy for synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating creating, updating, and deleting users from one tenant to another.
+        /// </summary>
+        [Obsolete("")]
+        [JsonPropertyName("identitySynchronization")]
+        public CrossTenantIdentitySyncPolicyPartner IdentitySynchronization { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

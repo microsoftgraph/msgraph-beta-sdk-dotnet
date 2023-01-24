@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         ICrossTenantAccessPolicyConfigurationPartnerRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for IdentitySynchronization.
+        /// </summary>
+        /// <returns>The <see cref="ICrossTenantIdentitySyncPolicyPartnerRequestBuilder"/>.</returns>
+        ICrossTenantIdentitySyncPolicyPartnerRequestBuilder IdentitySynchronization { get; }
+    
     }
 }

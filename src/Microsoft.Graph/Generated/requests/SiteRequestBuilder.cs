@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for InformationProtection.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionRequestBuilder"/>.</returns>
+        public IInformationProtectionRequestBuilder InformationProtection
+        {
+            get
+            {
+                return new InformationProtectionRequestBuilder(this.AppendSegmentToRequestUrl("informationProtection"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Analytics.
         /// </summary>
         /// <returns>The <see cref="IItemAnalyticsWithReferenceRequestBuilder"/>.</returns>
