@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ExternalColumns;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Items;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote;
@@ -53,6 +54,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
         public ExternalColumnsRequestBuilder ExternalColumns { get =>
             new ExternalColumnsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the informationProtection property of the microsoft.graph.site entity.</summary>
+        public InformationProtectionRequestBuilder InformationProtection { get =>
+            new InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the items property of the microsoft.graph.site entity.</summary>
         public ItemsRequestBuilder Items { get =>
@@ -145,7 +150,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Site?> GetAsync(Action<SiteItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.Site> GetAsync(Action<SiteItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -171,7 +178,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Site?> PatchAsync(Microsoft.Graph.Beta.Models.Site body, Action<SiteItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.Site> PatchAsync(Microsoft.Graph.Beta.Models.Site body, Action<SiteItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -188,7 +197,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<SiteItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<SiteItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -213,7 +224,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Site body, Action<SiteItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Site body, Action<SiteItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -239,16 +252,20 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         public class SiteItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

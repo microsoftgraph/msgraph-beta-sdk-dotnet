@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OfficeClientConfigurationAssignment : Entity, IParsable {
         /// <summary>The target assignment defined by the admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OfficeConfigurationAssignmentTarget? Target {
             get { return BackingStore?.Get<OfficeConfigurationAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#nullable restore
 #else
         public OfficeConfigurationAssignmentTarget Target {
             get { return BackingStore?.Get<OfficeConfigurationAssignmentTarget>("target"); }

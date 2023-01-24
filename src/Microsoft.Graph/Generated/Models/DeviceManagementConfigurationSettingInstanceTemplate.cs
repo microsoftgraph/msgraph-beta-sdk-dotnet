@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Setting Definition Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingDefinitionId {
             get { return BackingStore?.Get<string?>("settingDefinitionId"); }
             set { BackingStore?.Set("settingDefinitionId", value); }
         }
+#nullable restore
 #else
         public string SettingDefinitionId {
             get { return BackingStore?.Get<string>("settingDefinitionId"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Setting Instance Template Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingInstanceTemplateId {
             get { return BackingStore?.Get<string?>("settingInstanceTemplateId"); }
             set { BackingStore?.Set("settingInstanceTemplateId", value); }
         }
+#nullable restore
 #else
         public string SettingInstanceTemplateId {
             get { return BackingStore?.Get<string>("settingInstanceTemplateId"); }

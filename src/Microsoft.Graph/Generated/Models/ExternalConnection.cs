@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ExternalConnection : Entity, IParsable {
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Configuration? Configuration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Configuration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Configuration Configuration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Configuration>("configuration"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExternalGroup>? Groups {
             get { return BackingStore?.Get<List<ExternalGroup>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
+#nullable restore
 #else
         public List<ExternalGroup> Groups {
             get { return BackingStore?.Get<List<ExternalGroup>>("groups"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExternalItem>? Items {
             get { return BackingStore?.Get<List<ExternalItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#nullable restore
 #else
         public List<ExternalItem> Items {
             get { return BackingStore?.Get<List<ExternalItem>>("items"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConnectionOperation>? Operations {
             get { return BackingStore?.Get<List<ConnectionOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<ConnectionOperation> Operations {
             get { return BackingStore?.Get<List<ConnectionOperation>>("operations"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Schema? Schema {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Schema?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Schema Schema {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Schema>("schema"); }

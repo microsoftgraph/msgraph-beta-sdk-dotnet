@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DefaultManagedAppProtection : ManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AllowedAndroidDeviceManufacturers {
             get { return BackingStore?.Get<string?>("allowedAndroidDeviceManufacturers"); }
             set { BackingStore?.Set("allowedAndroidDeviceManufacturers", value); }
         }
+#nullable restore
 #else
         public string AllowedAndroidDeviceManufacturers {
             get { return BackingStore?.Get<string>("allowedAndroidDeviceManufacturers"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of device models allowed, as a string, for the managed app to work. (Android Only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedAndroidDeviceModels {
             get { return BackingStore?.Get<List<string>?>("allowedAndroidDeviceModels"); }
             set { BackingStore?.Set("allowedAndroidDeviceModels", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedAndroidDeviceModels {
             get { return BackingStore?.Get<List<string>>("allowedAndroidDeviceModels"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work. (iOS Only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AllowedIosDeviceModels {
             get { return BackingStore?.Get<string?>("allowedIosDeviceModels"); }
             set { BackingStore?.Set("allowedIosDeviceModels", value); }
         }
+#nullable restore
 #else
         public string AllowedIosDeviceModels {
             get { return BackingStore?.Get<string>("allowedIosDeviceModels"); }
@@ -93,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedMobileApp>? Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
+#nullable restore
 #else
         public List<ManagedMobileApp> Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
@@ -120,10 +128,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Friendly name of the preferred custom browser to open weblink on Android. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomBrowserDisplayName {
             get { return BackingStore?.Get<string?>("customBrowserDisplayName"); }
             set { BackingStore?.Set("customBrowserDisplayName", value); }
         }
+#nullable restore
 #else
         public string CustomBrowserDisplayName {
             get { return BackingStore?.Get<string>("customBrowserDisplayName"); }
@@ -132,10 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier of a custom browser to open weblink on Android. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomBrowserPackageId {
             get { return BackingStore?.Get<string?>("customBrowserPackageId"); }
             set { BackingStore?.Set("customBrowserPackageId", value); }
         }
+#nullable restore
 #else
         public string CustomBrowserPackageId {
             get { return BackingStore?.Get<string>("customBrowserPackageId"); }
@@ -144,10 +156,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A custom browser protocol to open weblink on iOS. (iOS only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomBrowserProtocol {
             get { return BackingStore?.Get<string?>("customBrowserProtocol"); }
             set { BackingStore?.Set("customBrowserProtocol", value); }
         }
+#nullable restore
 #else
         public string CustomBrowserProtocol {
             get { return BackingStore?.Get<string>("customBrowserProtocol"); }
@@ -156,10 +170,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Friendly name of a custom dialer app to click-to-open a phone number on Android.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomDialerAppDisplayName {
             get { return BackingStore?.Get<string?>("customDialerAppDisplayName"); }
             set { BackingStore?.Set("customDialerAppDisplayName", value); }
         }
+#nullable restore
 #else
         public string CustomDialerAppDisplayName {
             get { return BackingStore?.Get<string>("customDialerAppDisplayName"); }
@@ -168,10 +184,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>PackageId of a custom dialer app to click-to-open a phone number on Android.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomDialerAppPackageId {
             get { return BackingStore?.Get<string?>("customDialerAppPackageId"); }
             set { BackingStore?.Set("customDialerAppPackageId", value); }
         }
+#nullable restore
 #else
         public string CustomDialerAppPackageId {
             get { return BackingStore?.Get<string>("customDialerAppPackageId"); }
@@ -180,10 +198,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomDialerAppProtocol {
             get { return BackingStore?.Get<string?>("customDialerAppProtocol"); }
             set { BackingStore?.Set("customDialerAppProtocol", value); }
         }
+#nullable restore
 #else
         public string CustomDialerAppProtocol {
             get { return BackingStore?.Get<string>("customDialerAppProtocol"); }
@@ -192,10 +212,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A set of string key and string value pairs to be sent to the affected users, unalterned by this service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? CustomSettings {
             get { return BackingStore?.Get<List<KeyValuePair>?>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> CustomSettings {
             get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
@@ -209,10 +231,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ManagedAppPolicyDeploymentSummary? DeploymentSummary {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
+#nullable restore
 #else
         public ManagedAppPolicyDeploymentSummary DeploymentSummary {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
@@ -241,10 +265,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Android App packages in this list will be exempt from the policy and will be able to receive data from managed apps. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? ExemptedAppPackages {
             get { return BackingStore?.Get<List<KeyValuePair>?>("exemptedAppPackages"); }
             set { BackingStore?.Set("exemptedAppPackages", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> ExemptedAppPackages {
             get { return BackingStore?.Get<List<KeyValuePair>>("exemptedAppPackages"); }
@@ -253,10 +279,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>iOS Apps in this list will be exempt from the policy and will be able to receive data from managed apps. (iOS Only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? ExemptedAppProtocols {
             get { return BackingStore?.Get<List<KeyValuePair>?>("exemptedAppProtocols"); }
             set { BackingStore?.Set("exemptedAppProtocols", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> ExemptedAppProtocols {
             get { return BackingStore?.Get<List<KeyValuePair>>("exemptedAppProtocols"); }
@@ -280,10 +308,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Minimum version of the Company portal that must be installed on the device or app access will be blocked</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumRequiredCompanyPortalVersion {
             get { return BackingStore?.Get<string?>("minimumRequiredCompanyPortalVersion"); }
             set { BackingStore?.Set("minimumRequiredCompanyPortalVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumRequiredCompanyPortalVersion {
             get { return BackingStore?.Get<string>("minimumRequiredCompanyPortalVersion"); }
@@ -292,10 +322,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumRequiredPatchVersion {
             get { return BackingStore?.Get<string?>("minimumRequiredPatchVersion"); }
             set { BackingStore?.Set("minimumRequiredPatchVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumRequiredPatchVersion {
             get { return BackingStore?.Get<string>("minimumRequiredPatchVersion"); }
@@ -304,10 +336,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data. (iOS Only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumRequiredSdkVersion {
             get { return BackingStore?.Get<string?>("minimumRequiredSdkVersion"); }
             set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumRequiredSdkVersion {
             get { return BackingStore?.Get<string>("minimumRequiredSdkVersion"); }
@@ -316,10 +350,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum version of the Company portal that must be installed on the device or the user will receive a warning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWarningCompanyPortalVersion {
             get { return BackingStore?.Get<string?>("minimumWarningCompanyPortalVersion"); }
             set { BackingStore?.Set("minimumWarningCompanyPortalVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWarningCompanyPortalVersion {
             get { return BackingStore?.Get<string>("minimumWarningCompanyPortalVersion"); }
@@ -328,10 +364,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWarningPatchVersion {
             get { return BackingStore?.Get<string?>("minimumWarningPatchVersion"); }
             set { BackingStore?.Set("minimumWarningPatchVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWarningPatchVersion {
             get { return BackingStore?.Get<string>("minimumWarningPatchVersion"); }
@@ -340,10 +378,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWarningSdkVersion {
             get { return BackingStore?.Get<string?>("minimumWarningSdkVersion"); }
             set { BackingStore?.Set("minimumWarningSdkVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWarningSdkVersion {
             get { return BackingStore?.Get<string>("minimumWarningSdkVersion"); }
@@ -352,10 +392,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWipeCompanyPortalVersion {
             get { return BackingStore?.Get<string?>("minimumWipeCompanyPortalVersion"); }
             set { BackingStore?.Set("minimumWipeCompanyPortalVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWipeCompanyPortalVersion {
             get { return BackingStore?.Get<string>("minimumWipeCompanyPortalVersion"); }
@@ -364,10 +406,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWipePatchVersion {
             get { return BackingStore?.Get<string?>("minimumWipePatchVersion"); }
             set { BackingStore?.Set("minimumWipePatchVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWipePatchVersion {
             get { return BackingStore?.Get<string>("minimumWipePatchVersion"); }
@@ -376,10 +420,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWipeSdkVersion {
             get { return BackingStore?.Get<string?>("minimumWipeSdkVersion"); }
             set { BackingStore?.Set("minimumWipeSdkVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWipeSdkVersion {
             get { return BackingStore?.Get<string>("minimumWipeSdkVersion"); }

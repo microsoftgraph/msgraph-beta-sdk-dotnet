@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Enrollment url for the MDM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MdmEnrollmentUrl {
             get { return BackingStore?.Get<string?>("mdmEnrollmentUrl"); }
             set { BackingStore?.Set("mdmEnrollmentUrl", value); }
         }
+#nullable restore
 #else
         public string MdmEnrollmentUrl {
             get { return BackingStore?.Get<string>("mdmEnrollmentUrl"); }

@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsDeviceTimelineEvents : Entity, IParsable {
         /// <summary>The id of the device where the event occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Placeholder value for future expansion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EventAdditionalInformation {
             get { return BackingStore?.Get<string?>("eventAdditionalInformation"); }
             set { BackingStore?.Set("eventAdditionalInformation", value); }
         }
+#nullable restore
 #else
         public string EventAdditionalInformation {
             get { return BackingStore?.Get<string>("eventAdditionalInformation"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The details provided by the event, format depends on event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EventDetails {
             get { return BackingStore?.Get<string?>("eventDetails"); }
             set { BackingStore?.Set("eventDetails", value); }
         }
+#nullable restore
 #else
         public string EventDetails {
             get { return BackingStore?.Get<string>("eventDetails"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the event. Examples include: BootEvent, LogonEvent, AppCrashEvent, AppHangEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EventName {
             get { return BackingStore?.Get<string?>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
         }
+#nullable restore
 #else
         public string EventName {
             get { return BackingStore?.Get<string>("eventName"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The source of the event. Examples include: Intune, Sccm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EventSource {
             get { return BackingStore?.Get<string?>("eventSource"); }
             set { BackingStore?.Set("eventSource", value); }
         }
+#nullable restore
 #else
         public string EventSource {
             get { return BackingStore?.Get<string>("eventSource"); }

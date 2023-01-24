@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AllowedIosDeviceModels {
             get { return BackingStore?.Get<string?>("allowedIosDeviceModels"); }
             set { BackingStore?.Set("allowedIosDeviceModels", value); }
         }
+#nullable restore
 #else
         public string AllowedIosDeviceModels {
             get { return BackingStore?.Get<string>("allowedIosDeviceModels"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedMobileApp>? Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
+#nullable restore
 #else
         public List<ManagedMobileApp> Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A custom browser protocol to open weblink on iOS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomBrowserProtocol {
             get { return BackingStore?.Get<string?>("customBrowserProtocol"); }
             set { BackingStore?.Set("customBrowserProtocol", value); }
         }
+#nullable restore
 #else
         public string CustomBrowserProtocol {
             get { return BackingStore?.Get<string>("customBrowserProtocol"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomDialerAppProtocol {
             get { return BackingStore?.Get<string?>("customDialerAppProtocol"); }
             set { BackingStore?.Set("customDialerAppProtocol", value); }
         }
+#nullable restore
 #else
         public string CustomDialerAppProtocol {
             get { return BackingStore?.Get<string>("customDialerAppProtocol"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ManagedAppPolicyDeploymentSummary? DeploymentSummary {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
+#nullable restore
 #else
         public ManagedAppPolicyDeploymentSummary DeploymentSummary {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Apps in this list will be exempt from the policy and will be able to receive data from managed apps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? ExemptedAppProtocols {
             get { return BackingStore?.Get<List<KeyValuePair>?>("exemptedAppProtocols"); }
             set { BackingStore?.Set("exemptedAppProtocols", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> ExemptedAppProtocols {
             get { return BackingStore?.Get<List<KeyValuePair>>("exemptedAppProtocols"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of custom urls that are allowed to invocate an unmanaged app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExemptedUniversalLinks {
             get { return BackingStore?.Get<List<string>?>("exemptedUniversalLinks"); }
             set { BackingStore?.Set("exemptedUniversalLinks", value); }
         }
+#nullable restore
 #else
         public List<string> ExemptedUniversalLinks {
             get { return BackingStore?.Get<List<string>>("exemptedUniversalLinks"); }
@@ -121,10 +135,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of custom urls that are allowed to invocate a managed app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ManagedUniversalLinks {
             get { return BackingStore?.Get<List<string>?>("managedUniversalLinks"); }
             set { BackingStore?.Set("managedUniversalLinks", value); }
         }
+#nullable restore
 #else
         public List<string> ManagedUniversalLinks {
             get { return BackingStore?.Get<List<string>>("managedUniversalLinks"); }
@@ -133,10 +149,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumRequiredSdkVersion {
             get { return BackingStore?.Get<string?>("minimumRequiredSdkVersion"); }
             set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumRequiredSdkVersion {
             get { return BackingStore?.Get<string>("minimumRequiredSdkVersion"); }
@@ -145,10 +163,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWarningSdkVersion {
             get { return BackingStore?.Get<string?>("minimumWarningSdkVersion"); }
             set { BackingStore?.Set("minimumWarningSdkVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWarningSdkVersion {
             get { return BackingStore?.Get<string>("minimumWarningSdkVersion"); }
@@ -157,10 +177,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWipeSdkVersion {
             get { return BackingStore?.Get<string?>("minimumWipeSdkVersion"); }
             set { BackingStore?.Set("minimumWipeSdkVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWipeSdkVersion {
             get { return BackingStore?.Get<string>("minimumWipeSdkVersion"); }

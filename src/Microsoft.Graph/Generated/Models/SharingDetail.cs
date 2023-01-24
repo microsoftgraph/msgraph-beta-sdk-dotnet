@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user who shared the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public InsightIdentity? SharedBy {
             get { return BackingStore?.Get<InsightIdentity?>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
+#nullable restore
 #else
         public InsightIdentity SharedBy {
             get { return BackingStore?.Get<InsightIdentity>("sharedBy"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The sharingReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ResourceReference? SharingReference {
             get { return BackingStore?.Get<ResourceReference?>("sharingReference"); }
             set { BackingStore?.Set("sharingReference", value); }
         }
+#nullable restore
 #else
         public ResourceReference SharingReference {
             get { return BackingStore?.Get<ResourceReference>("sharingReference"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The subject with which the document was shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SharingSubject {
             get { return BackingStore?.Get<string?>("sharingSubject"); }
             set { BackingStore?.Set("sharingSubject", value); }
         }
+#nullable restore
 #else
         public string SharingSubject {
             get { return BackingStore?.Get<string>("sharingSubject"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Determines the way the document was shared, can be by a &apos;Link&apos;, &apos;Attachment&apos;, &apos;Group&apos;, &apos;Site&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SharingType {
             get { return BackingStore?.Get<string?>("sharingType"); }
             set { BackingStore?.Set("sharingType", value); }
         }
+#nullable restore
 #else
         public string SharingType {
             get { return BackingStore?.Get<string>("sharingType"); }

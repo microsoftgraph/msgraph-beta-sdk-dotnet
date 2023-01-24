@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Fido2CombinationConfigurationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Fido2CombinationConfiguration>? Value {
             get { return BackingStore?.Get<List<Fido2CombinationConfiguration>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Fido2CombinationConfiguration> Value {
             get { return BackingStore?.Get<List<Fido2CombinationConfiguration>>("value"); }

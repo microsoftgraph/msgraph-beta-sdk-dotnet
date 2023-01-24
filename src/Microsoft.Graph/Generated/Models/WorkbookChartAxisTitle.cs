@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartAxisTitle : Entity, IParsable {
         /// <summary>Represents the formatting of chart axis title. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartAxisTitleFormat? Format {
             get { return BackingStore?.Get<WorkbookChartAxisTitleFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#nullable restore
 #else
         public WorkbookChartAxisTitleFormat Format {
             get { return BackingStore?.Get<WorkbookChartAxisTitleFormat>("format"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the axis title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Text {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }

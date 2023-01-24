@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RoomList : Place, IParsable {
         /// <summary>The email address of the room list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailAddress {
             get { return BackingStore?.Get<string?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#nullable restore
 #else
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The rooms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Room>? Rooms {
             get { return BackingStore?.Get<List<Room>?>("rooms"); }
             set { BackingStore?.Set("rooms", value); }
         }
+#nullable restore
 #else
         public List<Room> Rooms {
             get { return BackingStore?.Get<List<Room>>("rooms"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The workspaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Workspace>? Workspaces {
             get { return BackingStore?.Get<List<Workspace>?>("workspaces"); }
             set { BackingStore?.Set("workspaces", value); }
         }
+#nullable restore
 #else
         public List<Workspace> Workspaces {
             get { return BackingStore?.Get<List<Workspace>>("workspaces"); }

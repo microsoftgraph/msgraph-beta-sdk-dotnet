@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TargetedManagedAppConfigurationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TargetedManagedAppConfiguration>? Value {
             get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<TargetedManagedAppConfiguration> Value {
             get { return BackingStore?.Get<List<TargetedManagedAppConfiguration>>("value"); }

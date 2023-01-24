@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.OverrideCompliance
         }
         /// <summary>The remediationUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RemediationUrl {
             get { return BackingStore?.Get<string?>("remediationUrl"); }
             set { BackingStore?.Set("remediationUrl", value); }
         }
+#nullable restore
 #else
         public string RemediationUrl {
             get { return BackingStore?.Get<string>("remediationUrl"); }

@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Notes {
             get { return BackingStore?.Get<ItemBody?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#nullable restore
 #else
         public ItemBody Notes {
             get { return BackingStore?.Get<ItemBody>("notes"); }

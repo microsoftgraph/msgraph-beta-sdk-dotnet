@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class Deployment : Entity, IParsable {
         /// <summary>Specifies the audience to which content is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeploymentAudience? Audience {
             get { return BackingStore?.Get<DeploymentAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
+#nullable restore
 #else
         public DeploymentAudience Audience {
             get { return BackingStore?.Get<DeploymentAudience>("audience"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
 #endif
         /// <summary>Specifies what content to deploy. Cannot be changed. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeployableContent? Content {
             get { return BackingStore?.Get<DeployableContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public DeployableContent Content {
             get { return BackingStore?.Get<DeployableContent>("content"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
         /// <summary>Settings specified on the specific deployment governing how to deploy content. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeploymentSettings? Settings {
             get { return BackingStore?.Get<DeploymentSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public DeploymentSettings Settings {
             get { return BackingStore?.Get<DeploymentSettings>("settings"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
 #endif
         /// <summary>Execution status of the deployment. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeploymentState? State {
             get { return BackingStore?.Get<DeploymentState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#nullable restore
 #else
         public DeploymentState State {
             get { return BackingStore?.Get<DeploymentState>("state"); }

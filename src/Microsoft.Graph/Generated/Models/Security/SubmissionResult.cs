@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Specifies the files detected by Microsoft in the submitted emails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SubmissionDetectedFile>? DetectedFiles {
             get { return BackingStore?.Get<List<SubmissionDetectedFile>?>("detectedFiles"); }
             set { BackingStore?.Set("detectedFiles", value); }
         }
+#nullable restore
 #else
         public List<SubmissionDetectedFile> DetectedFiles {
             get { return BackingStore?.Get<List<SubmissionDetectedFile>>("detectedFiles"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Specifes the URLs detected by Microsoft in the submitted email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DetectedUrls {
             get { return BackingStore?.Get<List<string>?>("detectedUrls"); }
             set { BackingStore?.Set("detectedUrls", value); }
         }
+#nullable restore
 #else
         public List<string> DetectedUrls {
             get { return BackingStore?.Get<List<string>>("detectedUrls"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable {
         /// <summary>ID of the service principal of the Azure AD app that has been granted access. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientAppId {
             get { return BackingStore?.Get<string?>("clientAppId"); }
             set { BackingStore?.Set("clientAppId", value); }
         }
+#nullable restore
 #else
         public string ClientAppId {
             get { return BackingStore?.Get<string>("clientAppId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ID of the Azure AD app that has been granted access. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientId {
             get { return BackingStore?.Get<string?>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
+#nullable restore
 #else
         public string ClientId {
             get { return BackingStore?.Get<string>("clientId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the resource-specific permission. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Permission {
             get { return BackingStore?.Get<string?>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
+#nullable restore
 #else
         public string Permission {
             get { return BackingStore?.Get<string>("permission"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of permission. Possible values are: Application, Delegated. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PermissionType {
             get { return BackingStore?.Get<string?>("permissionType"); }
             set { BackingStore?.Set("permissionType", value); }
         }
+#nullable restore
 #else
         public string PermissionType {
             get { return BackingStore?.Get<string>("permissionType"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ID of the Azure AD app that is hosting the resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceAppId {
             get { return BackingStore?.Get<string?>("resourceAppId"); }
             set { BackingStore?.Set("resourceAppId", value); }
         }
+#nullable restore
 #else
         public string ResourceAppId {
             get { return BackingStore?.Get<string>("resourceAppId"); }

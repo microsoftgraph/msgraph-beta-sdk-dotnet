@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsOverview : Entity, IParsable {
         /// <summary>The user experience analytics insights.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserExperienceAnalyticsInsight>? Insights {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
+#nullable restore
 #else
         public List<UserExperienceAnalyticsInsight> Insights {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsight>>("insights"); }

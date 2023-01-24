@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MainError? Error {
             get { return BackingStore?.Get<MainError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public MainError Error {
             get { return BackingStore?.Get<MainError>("error"); }

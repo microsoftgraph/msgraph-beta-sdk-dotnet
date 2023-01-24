@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class AddToReviewSetOperation : CaseOperation, IParsable {
         /// <summary>The review set to which items matching the source collection query are added to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet? ReviewSet {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet?>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>("reviewSet"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
 #endif
         /// <summary>The sourceCollection that items are being added from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection?>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }

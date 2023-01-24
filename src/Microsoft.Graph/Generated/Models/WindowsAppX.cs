@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityName {
             get { return BackingStore?.Get<string?>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
+#nullable restore
 #else
         public string IdentityName {
             get { return BackingStore?.Get<string>("identityName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Identity Publisher Hash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityPublisherHash {
             get { return BackingStore?.Get<string?>("identityPublisherHash"); }
             set { BackingStore?.Set("identityPublisherHash", value); }
         }
+#nullable restore
 #else
         public string IdentityPublisherHash {
             get { return BackingStore?.Get<string>("identityPublisherHash"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Identity Resource Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityResourceIdentifier {
             get { return BackingStore?.Get<string?>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
+#nullable restore
 #else
         public string IdentityResourceIdentifier {
             get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityVersion {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#nullable restore
 #else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#nullable restore
 #else
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }

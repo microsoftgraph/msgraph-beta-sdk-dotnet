@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of the user or bot who received the call. E.164 format, but may include additional data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CalleeNumber {
             get { return BackingStore?.Get<string?>("calleeNumber"); }
             set { BackingStore?.Set("calleeNumber", value); }
         }
+#nullable restore
 #else
         public string CalleeNumber {
             get { return BackingStore?.Get<string>("calleeNumber"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Number of the user or bot who made the call. E.164 format, but may include additional data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CallerNumber {
             get { return BackingStore?.Get<string?>("callerNumber"); }
             set { BackingStore?.Set("callerNumber", value); }
         }
+#nullable restore
 #else
         public string CallerNumber {
             get { return BackingStore?.Get<string>("callerNumber"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Call type and direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CallType {
             get { return BackingStore?.Get<string?>("callType"); }
             set { BackingStore?.Set("callType", value); }
         }
+#nullable restore
 #else
         public string CallType {
             get { return BackingStore?.Get<string>("callType"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Identifier for the call that you can use when calling Microsoft Support. GUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CorrelationId {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#nullable restore
 #else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
@@ -88,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Description of the SIP code and Microsoft subcode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FinalSipCodePhrase {
             get { return BackingStore?.Get<string?>("finalSipCodePhrase"); }
             set { BackingStore?.Set("finalSipCodePhrase", value); }
         }
+#nullable restore
 #else
         public string FinalSipCodePhrase {
             get { return BackingStore?.Get<string>("finalSipCodePhrase"); }
@@ -100,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Unique call identifier. GUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -122,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>The datacenter used for media path in non-bypass call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MediaPathLocation {
             get { return BackingStore?.Get<string?>("mediaPathLocation"); }
             set { BackingStore?.Set("mediaPathLocation", value); }
         }
+#nullable restore
 #else
         public string MediaPathLocation {
             get { return BackingStore?.Get<string>("mediaPathLocation"); }
@@ -134,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -146,10 +162,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>The datacenter used for signaling for both bypass and non-bypass calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SignalingLocation {
             get { return BackingStore?.Get<string?>("signalingLocation"); }
             set { BackingStore?.Set("signalingLocation", value); }
         }
+#nullable restore
 #else
         public string SignalingLocation {
             get { return BackingStore?.Get<string>("signalingLocation"); }
@@ -168,10 +186,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Fully qualified domain name of the session border controller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TrunkFullyQualifiedDomainName {
             get { return BackingStore?.Get<string?>("trunkFullyQualifiedDomainName"); }
             set { BackingStore?.Set("trunkFullyQualifiedDomainName", value); }
         }
+#nullable restore
 #else
         public string TrunkFullyQualifiedDomainName {
             get { return BackingStore?.Get<string>("trunkFullyQualifiedDomainName"); }
@@ -180,10 +200,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Display name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserDisplayName {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#nullable restore
 #else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
@@ -192,10 +214,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Calling user&apos;s ID in Graph. This and other user info will be null/empty for bot call types. GUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -204,10 +228,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user&apos;s SIP Address, and can be same as user&apos;s e-mail address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

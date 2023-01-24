@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description for the template parameter. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The display name for the template parameter. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JsonAllowedValues {
             get { return BackingStore?.Get<string?>("jsonAllowedValues"); }
             set { BackingStore?.Set("jsonAllowedValues", value); }
         }
+#nullable restore
 #else
         public string JsonAllowedValues {
             get { return BackingStore?.Get<string>("jsonAllowedValues"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JsonDefaultValue {
             get { return BackingStore?.Get<string?>("jsonDefaultValue"); }
             set { BackingStore?.Set("jsonDefaultValue", value); }
         }
+#nullable restore
 #else
         public string JsonDefaultValue {
             get { return BackingStore?.Get<string>("jsonDefaultValue"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

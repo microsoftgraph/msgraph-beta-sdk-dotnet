@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcRemoteActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActionName {
             get { return BackingStore?.Get<string?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
+#nullable restore
 #else
         public string ActionName {
             get { return BackingStore?.Get<string>("actionName"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ID of the Cloud PC device on which the remote action is performed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CloudPcId {
             get { return BackingStore?.Get<string?>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
+#nullable restore
 #else
         public string CloudPcId {
             get { return BackingStore?.Get<string>("cloudPcId"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ID of the Intune managed device on which the remote action is performed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The details of the Cloud PC status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcStatusDetails? StatusDetails {
             get { return BackingStore?.Get<CloudPcStatusDetails?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
+#nullable restore
 #else
         public CloudPcStatusDetails StatusDetails {
             get { return BackingStore?.Get<CloudPcStatusDetails>("statusDetails"); }

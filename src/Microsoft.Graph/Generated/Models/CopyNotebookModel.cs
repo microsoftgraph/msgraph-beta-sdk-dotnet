@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedBy {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public string CreatedBy {
             get { return BackingStore?.Get<string>("createdBy"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The createdByIdentity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedByIdentity {
             get { return BackingStore?.Get<IdentitySet?>("createdByIdentity"); }
             set { BackingStore?.Set("createdByIdentity", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedByIdentity {
             get { return BackingStore?.Get<IdentitySet>("createdByIdentity"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The lastModifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastModifiedBy {
             get { return BackingStore?.Get<string?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public string LastModifiedBy {
             get { return BackingStore?.Get<string>("lastModifiedBy"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The lastModifiedByIdentity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedByIdentity {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedByIdentity"); }
             set { BackingStore?.Set("lastModifiedByIdentity", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedByIdentity {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedByIdentity"); }
@@ -95,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public NotebookLinks? Links {
             get { return BackingStore?.Get<NotebookLinks?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+#nullable restore
 #else
         public NotebookLinks Links {
             get { return BackingStore?.Get<NotebookLinks>("links"); }
@@ -107,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -119,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -131,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sectionGroupsUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SectionGroupsUrl {
             get { return BackingStore?.Get<string?>("sectionGroupsUrl"); }
             set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
+#nullable restore
 #else
         public string SectionGroupsUrl {
             get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
@@ -143,10 +161,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sectionsUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SectionsUrl {
             get { return BackingStore?.Get<string?>("sectionsUrl"); }
             set { BackingStore?.Set("sectionsUrl", value); }
         }
+#nullable restore
 #else
         public string SectionsUrl {
             get { return BackingStore?.Get<string>("sectionsUrl"); }
@@ -155,10 +175,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The self property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Self {
             get { return BackingStore?.Get<string?>("self"); }
             set { BackingStore?.Set("self", value); }
         }
+#nullable restore
 #else
         public string Self {
             get { return BackingStore?.Get<string>("self"); }

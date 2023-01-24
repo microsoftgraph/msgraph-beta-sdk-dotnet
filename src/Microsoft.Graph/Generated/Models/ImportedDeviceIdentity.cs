@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Imported Device Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ImportedDeviceIdentifier {
             get { return BackingStore?.Get<string?>("importedDeviceIdentifier"); }
             set { BackingStore?.Set("importedDeviceIdentifier", value); }
         }
+#nullable restore
 #else
         public string ImportedDeviceIdentifier {
             get { return BackingStore?.Get<string>("importedDeviceIdentifier"); }

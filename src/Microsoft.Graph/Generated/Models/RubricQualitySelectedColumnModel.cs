@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>ID of the selected level for this quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ColumnId {
             get { return BackingStore?.Get<string?>("columnId"); }
             set { BackingStore?.Set("columnId", value); }
         }
+#nullable restore
 #else
         public string ColumnId {
             get { return BackingStore?.Get<string>("columnId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ID of the associated quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QualityId {
             get { return BackingStore?.Get<string?>("qualityId"); }
             set { BackingStore?.Set("qualityId", value); }
         }
+#nullable restore
 #else
         public string QualityId {
             get { return BackingStore?.Get<string>("qualityId"); }

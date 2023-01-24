@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAssignmentRequest : Entity, IParsable {
         /// <summary>The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackage? AccessPackage {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage?>("accessPackage"); }
             set { BackingStore?.Set("accessPackage", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackage"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageAssignment? AccessPackageAssignment {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageAssignment?>("accessPackageAssignment"); }
             set { BackingStore?.Set("accessPackageAssignment", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageAssignment AccessPackageAssignment {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageAssignment>("accessPackageAssignment"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAnswer>? Answers {
             get { return BackingStore?.Get<List<AccessPackageAnswer>?>("answers"); }
             set { BackingStore?.Set("answers", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAnswer> Answers {
             get { return BackingStore?.Get<List<AccessPackageAnswer>>("answers"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of custom workflow extension instances being run on an assignment request. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomExtensionHandlerInstance>? CustomExtensionHandlerInstances {
             get { return BackingStore?.Get<List<CustomExtensionHandlerInstance>?>("customExtensionHandlerInstances"); }
             set { BackingStore?.Set("customExtensionHandlerInstances", value); }
         }
+#nullable restore
 #else
         public List<CustomExtensionHandlerInstance> CustomExtensionHandlerInstances {
             get { return BackingStore?.Get<List<CustomExtensionHandlerInstance>>("customExtensionHandlerInstances"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The requestor&apos;s supplied justification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Justification {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#nullable restore
 #else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessPackageSubject? Requestor {
             get { return BackingStore?.Get<AccessPackageSubject?>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
+#nullable restore
 #else
         public AccessPackageSubject Requestor {
             get { return BackingStore?.Get<AccessPackageSubject>("requestor"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RequestState {
             get { return BackingStore?.Get<string?>("requestState"); }
             set { BackingStore?.Set("requestState", value); }
         }
+#nullable restore
 #else
         public string RequestState {
             get { return BackingStore?.Get<string>("requestState"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>More information on the request processing status. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RequestStatus {
             get { return BackingStore?.Get<string?>("requestStatus"); }
             set { BackingStore?.Set("requestStatus", value); }
         }
+#nullable restore
 #else
         public string RequestStatus {
             get { return BackingStore?.Get<string>("requestStatus"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RequestType {
             get { return BackingStore?.Get<string?>("requestType"); }
             set { BackingStore?.Set("requestType", value); }
         }
+#nullable restore
 #else
         public string RequestType {
             get { return BackingStore?.Get<string>("requestType"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The range of dates that access is to be assigned to the requestor. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestSchedule? Schedule {
             get { return BackingStore?.Get<RequestSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#nullable restore
 #else
         public RequestSchedule Schedule {
             get { return BackingStore?.Get<RequestSchedule>("schedule"); }

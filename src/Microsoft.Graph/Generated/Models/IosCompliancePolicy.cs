@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Maximum IOS build version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMaximumBuildVersion {
             get { return BackingStore?.Get<string?>("osMaximumBuildVersion"); }
             set { BackingStore?.Set("osMaximumBuildVersion", value); }
         }
+#nullable restore
 #else
         public string OsMaximumBuildVersion {
             get { return BackingStore?.Get<string>("osMaximumBuildVersion"); }
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Maximum IOS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMaximumVersion {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#nullable restore
 #else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum IOS build version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMinimumBuildVersion {
             get { return BackingStore?.Get<string?>("osMinimumBuildVersion"); }
             set { BackingStore?.Set("osMinimumBuildVersion", value); }
         }
+#nullable restore
 #else
         public string OsMinimumBuildVersion {
             get { return BackingStore?.Get<string>("osMinimumBuildVersion"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum IOS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMinimumVersion {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#nullable restore
 #else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
@@ -120,10 +128,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Require the device to not have the specified apps installed. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? RestrictedApps {
             get { return BackingStore?.Get<List<AppListItem>?>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> RestrictedApps {
             get { return BackingStore?.Get<List<AppListItem>>("restrictedApps"); }

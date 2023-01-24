@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcAuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Activity {
             get { return BackingStore?.Get<string?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#nullable restore
 #else
         public string Activity {
             get { return BackingStore?.Get<string>("activity"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The type of activity that was performed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActivityType {
             get { return BackingStore?.Get<string?>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
+#nullable restore
 #else
         public string ActivityType {
             get { return BackingStore?.Get<string>("activityType"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcAuditActor? Actor {
             get { return BackingStore?.Get<CloudPcAuditActor?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
+#nullable restore
 #else
         public CloudPcAuditActor Actor {
             get { return BackingStore?.Get<CloudPcAuditActor>("actor"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Component name. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ComponentName {
             get { return BackingStore?.Get<string?>("componentName"); }
             set { BackingStore?.Set("componentName", value); }
         }
+#nullable restore
 #else
         public string ComponentName {
             get { return BackingStore?.Get<string>("componentName"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The client request identifier, used to correlate activity within the system. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CorrelationId {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#nullable restore
 #else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Event display name. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of cloudPcAuditResource objects. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcAuditResource>? Resources {
             get { return BackingStore?.Get<List<CloudPcAuditResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#nullable restore
 #else
         public List<CloudPcAuditResource> Resources {
             get { return BackingStore?.Get<List<CloudPcAuditResource>>("resources"); }

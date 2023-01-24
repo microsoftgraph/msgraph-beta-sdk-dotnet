@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Journal : Entity, IParsable {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Account? Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account?>("account"); }
             set { BackingStore?.Set("account", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Account Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The balancingAccountNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BalancingAccountNumber {
             get { return BackingStore?.Get<string?>("balancingAccountNumber"); }
             set { BackingStore?.Set("balancingAccountNumber", value); }
         }
+#nullable restore
 #else
         public string BalancingAccountNumber {
             get { return BackingStore?.Get<string>("balancingAccountNumber"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Code {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
+#nullable restore
 #else
         public string Code {
             get { return BackingStore?.Get<string>("code"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The journalLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<JournalLine>? JournalLines {
             get { return BackingStore?.Get<List<JournalLine>?>("journalLines"); }
             set { BackingStore?.Set("journalLines", value); }
         }
+#nullable restore
 #else
         public List<JournalLine> JournalLines {
             get { return BackingStore?.Get<List<JournalLine>>("journalLines"); }

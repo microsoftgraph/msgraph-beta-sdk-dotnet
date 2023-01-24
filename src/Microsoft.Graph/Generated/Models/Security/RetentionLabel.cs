@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Represents the user who created the retentionLabel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Provides label information for the admin. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DescriptionForAdmins {
             get { return BackingStore?.Get<string?>("descriptionForAdmins"); }
             set { BackingStore?.Set("descriptionForAdmins", value); }
         }
+#nullable restore
 #else
         public string DescriptionForAdmins {
             get { return BackingStore?.Get<string>("descriptionForAdmins"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Provides the label information for the user. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DescriptionForUsers {
             get { return BackingStore?.Get<string?>("descriptionForUsers"); }
             set { BackingStore?.Set("descriptionForUsers", value); }
         }
+#nullable restore
 #else
         public string DescriptionForUsers {
             get { return BackingStore?.Get<string>("descriptionForUsers"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Unique string that defines a label name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Review stages during which reviewers are notified to determine whether a document must be deleted or retained.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DispositionReviewStage>? DispositionReviewStages {
             get { return BackingStore?.Get<List<DispositionReviewStage>?>("dispositionReviewStages"); }
             set { BackingStore?.Set("dispositionReviewStages", value); }
         }
+#nullable restore
 #else
         public List<DispositionReviewStage> DispositionReviewStages {
             get { return BackingStore?.Get<List<DispositionReviewStage>>("dispositionReviewStages"); }
@@ -92,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Specifies the replacement label to be applied automatically after the retention period of the current label ends.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LabelToBeApplied {
             get { return BackingStore?.Get<string?>("labelToBeApplied"); }
             set { BackingStore?.Set("labelToBeApplied", value); }
         }
+#nullable restore
 #else
         public string LabelToBeApplied {
             get { return BackingStore?.Get<string>("labelToBeApplied"); }
@@ -104,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The user who last modified the retentionLabel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
@@ -121,10 +135,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Specifies the number of days to retain the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.RetentionDuration? RetentionDuration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionDuration?>("retentionDuration"); }
             set { BackingStore?.Set("retentionDuration", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.RetentionDuration RetentionDuration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionDuration>("retentionDuration"); }
@@ -133,10 +149,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The retentionEventType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.RetentionEventType? RetentionEventType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType?>("retentionEventType"); }
             set { BackingStore?.Set("retentionEventType", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.RetentionEventType RetentionEventType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType>("retentionEventType"); }

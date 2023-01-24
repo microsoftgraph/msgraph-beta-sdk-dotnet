@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Current value of setting on device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CurrentValue {
             get { return BackingStore?.Get<string?>("currentValue"); }
             set { BackingStore?.Set("currentValue", value); }
         }
+#nullable restore
 #else
         public string CurrentValue {
             get { return BackingStore?.Get<string>("currentValue"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Error description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ErrorDescription {
             get { return BackingStore?.Get<string?>("errorDescription"); }
             set { BackingStore?.Set("errorDescription", value); }
         }
+#nullable restore
 #else
         public string ErrorDescription {
             get { return BackingStore?.Get<string>("errorDescription"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of setting instance that is being reported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InstanceDisplayName {
             get { return BackingStore?.Get<string?>("instanceDisplayName"); }
             set { BackingStore?.Set("instanceDisplayName", value); }
         }
+#nullable restore
 #else
         public string InstanceDisplayName {
             get { return BackingStore?.Get<string>("instanceDisplayName"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The setting that is being reported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Setting {
             get { return BackingStore?.Get<string?>("setting"); }
             set { BackingStore?.Set("setting", value); }
         }
+#nullable restore
 #else
         public string Setting {
             get { return BackingStore?.Get<string>("setting"); }
@@ -83,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>SettingInstanceId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingInstanceId {
             get { return BackingStore?.Get<string?>("settingInstanceId"); }
             set { BackingStore?.Set("settingInstanceId", value); }
         }
+#nullable restore
 #else
         public string SettingInstanceId {
             get { return BackingStore?.Get<string>("settingInstanceId"); }
@@ -95,10 +107,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Localized/user friendly setting name that is being reported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingName {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#nullable restore
 #else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
@@ -107,10 +121,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contributing policies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SettingSource>? Sources {
             get { return BackingStore?.Get<List<SettingSource>?>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
+#nullable restore
 #else
         public List<SettingSource> Sources {
             get { return BackingStore?.Get<List<SettingSource>>("sources"); }
@@ -124,10 +140,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>UserEmail</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserEmail {
             get { return BackingStore?.Get<string?>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
+#nullable restore
 #else
         public string UserEmail {
             get { return BackingStore?.Get<string>("userEmail"); }
@@ -136,10 +154,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>UserId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -148,10 +168,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>UserName</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserName {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#nullable restore
 #else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
@@ -160,10 +182,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>UserPrincipalName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

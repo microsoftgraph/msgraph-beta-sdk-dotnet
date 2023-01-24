@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Information about the Exchange connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkConnection? ExchangeConnection {
             get { return BackingStore?.Get<TeamworkConnection?>("exchangeConnection"); }
             set { BackingStore?.Set("exchangeConnection", value); }
         }
+#nullable restore
 #else
         public TeamworkConnection ExchangeConnection {
             get { return BackingStore?.Get<TeamworkConnection>("exchangeConnection"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information about the Skype for Business connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkConnection? SkypeConnection {
             get { return BackingStore?.Get<TeamworkConnection?>("skypeConnection"); }
             set { BackingStore?.Set("skypeConnection", value); }
         }
+#nullable restore
 #else
         public TeamworkConnection SkypeConnection {
             get { return BackingStore?.Get<TeamworkConnection>("skypeConnection"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information about the Teams connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkConnection? TeamsConnection {
             get { return BackingStore?.Get<TeamworkConnection?>("teamsConnection"); }
             set { BackingStore?.Set("teamsConnection", value); }
         }
+#nullable restore
 #else
         public TeamworkConnection TeamsConnection {
             get { return BackingStore?.Get<TeamworkConnection>("teamsConnection"); }

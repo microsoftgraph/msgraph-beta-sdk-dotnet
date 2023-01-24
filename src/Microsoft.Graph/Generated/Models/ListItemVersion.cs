@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ListItemVersion : BaseItemVersion, IParsable {
         /// <summary>A collection of the fields and values for this version of the list item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public FieldValueSet? Fields {
             get { return BackingStore?.Get<FieldValueSet?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
+#nullable restore
 #else
         public FieldValueSet Fields {
             get { return BackingStore?.Get<FieldValueSet>("fields"); }

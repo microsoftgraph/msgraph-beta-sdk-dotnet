@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationTaskExecution : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Identifier of the job run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActivityIdentifier {
             get { return BackingStore?.Get<string?>("activityIdentifier"); }
             set { BackingStore?.Set("activityIdentifier", value); }
         }
+#nullable restore
 #else
         public string ActivityIdentifier {
             get { return BackingStore?.Get<string>("activityIdentifier"); }
@@ -72,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>If an error was encountered, contains a synchronizationError object with details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SynchronizationError? Error {
             get { return BackingStore?.Get<SynchronizationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public SynchronizationError Error {
             get { return BackingStore?.Get<SynchronizationError>("error"); }
@@ -84,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

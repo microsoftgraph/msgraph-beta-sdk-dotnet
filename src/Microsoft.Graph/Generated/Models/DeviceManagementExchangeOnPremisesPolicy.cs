@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementExchangeOnPremisesPolicy : Entity, IParsable {
         /// <summary>The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementExchangeAccessRule>? AccessRules {
             get { return BackingStore?.Get<List<DeviceManagementExchangeAccessRule>?>("accessRules"); }
             set { BackingStore?.Set("accessRules", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementExchangeAccessRule> AccessRules {
             get { return BackingStore?.Get<List<DeviceManagementExchangeAccessRule>>("accessRules"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OnPremisesConditionalAccessSettings? ConditionalAccessSettings {
             get { return BackingStore?.Get<OnPremisesConditionalAccessSettings?>("conditionalAccessSettings"); }
             set { BackingStore?.Set("conditionalAccessSettings", value); }
         }
+#nullable restore
 #else
         public OnPremisesConditionalAccessSettings ConditionalAccessSettings {
             get { return BackingStore?.Get<OnPremisesConditionalAccessSettings>("conditionalAccessSettings"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of device classes known to Exchange</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementExchangeDeviceClass>? KnownDeviceClasses {
             get { return BackingStore?.Get<List<DeviceManagementExchangeDeviceClass>?>("knownDeviceClasses"); }
             set { BackingStore?.Set("knownDeviceClasses", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementExchangeDeviceClass> KnownDeviceClasses {
             get { return BackingStore?.Get<List<DeviceManagementExchangeDeviceClass>>("knownDeviceClasses"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? NotificationContent {
             get { return BackingStore?.Get<byte[]?>("notificationContent"); }
             set { BackingStore?.Set("notificationContent", value); }
         }
+#nullable restore
 #else
         public byte[] NotificationContent {
             get { return BackingStore?.Get<byte[]>("notificationContent"); }

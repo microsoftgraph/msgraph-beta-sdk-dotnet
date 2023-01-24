@@ -42,10 +42,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Maximum MacOS build version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMaximumBuildVersion {
             get { return BackingStore?.Get<string?>("osMaximumBuildVersion"); }
             set { BackingStore?.Set("osMaximumBuildVersion", value); }
         }
+#nullable restore
 #else
         public string OsMaximumBuildVersion {
             get { return BackingStore?.Get<string>("osMaximumBuildVersion"); }
@@ -54,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Maximum MacOS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMaximumVersion {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#nullable restore
 #else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
@@ -66,10 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum MacOS build version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMinimumBuildVersion {
             get { return BackingStore?.Get<string?>("osMinimumBuildVersion"); }
             set { BackingStore?.Set("osMinimumBuildVersion", value); }
         }
+#nullable restore
 #else
         public string OsMinimumBuildVersion {
             get { return BackingStore?.Get<string>("osMinimumBuildVersion"); }
@@ -78,10 +84,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum MacOS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMinimumVersion {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#nullable restore
 #else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewHistoryDefinition : Entity, IParsable {
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserIdentity? CreatedBy {
             get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public UserIdentity CreatedBy {
             get { return BackingStore?.Get<UserIdentity>("createdBy"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewHistoryDecisionFilter?>? Decisions {
             get { return BackingStore?.Get<List<AccessReviewHistoryDecisionFilter?>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewHistoryDecisionFilter?> Decisions {
             get { return BackingStore?.Get<List<AccessReviewHistoryDecisionFilter?>>("decisions"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name for the access review history data collection. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The downloadUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DownloadUri {
             get { return BackingStore?.Get<string?>("downloadUri"); }
             set { BackingStore?.Set("downloadUri", value); }
         }
+#nullable restore
 #else
         public string DownloadUri {
             get { return BackingStore?.Get<string>("downloadUri"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewHistoryInstance>? Instances {
             get { return BackingStore?.Get<List<AccessReviewHistoryInstance>?>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewHistoryInstance> Instances {
             get { return BackingStore?.Get<List<AccessReviewHistoryInstance>>("instances"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessReviewHistoryScheduleSettings? ScheduleSettings {
             get { return BackingStore?.Get<AccessReviewHistoryScheduleSettings?>("scheduleSettings"); }
             set { BackingStore?.Set("scheduleSettings", value); }
         }
+#nullable restore
 #else
         public AccessReviewHistoryScheduleSettings ScheduleSettings {
             get { return BackingStore?.Get<AccessReviewHistoryScheduleSettings>("scheduleSettings"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewScope>? Scopes {
             get { return BackingStore?.Get<List<AccessReviewScope>?>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewScope> Scopes {
             get { return BackingStore?.Get<List<AccessReviewScope>>("scopes"); }

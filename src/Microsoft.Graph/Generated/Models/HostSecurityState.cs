@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Fqdn {
             get { return BackingStore?.Get<string?>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
+#nullable restore
 #else
         public string Fqdn {
             get { return BackingStore?.Get<string>("fqdn"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The local host name, without the DNS domain name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetBiosName {
             get { return BackingStore?.Get<string?>("netBiosName"); }
             set { BackingStore?.Set("netBiosName", value); }
         }
+#nullable restore
 #else
         public string NetBiosName {
             get { return BackingStore?.Get<string>("netBiosName"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Os {
             get { return BackingStore?.Get<string?>("os"); }
             set { BackingStore?.Set("os", value); }
         }
+#nullable restore
 #else
         public string Os {
             get { return BackingStore?.Get<string>("os"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrivateIpAddress {
             get { return BackingStore?.Get<string?>("privateIpAddress"); }
             set { BackingStore?.Set("privateIpAddress", value); }
         }
+#nullable restore
 #else
         public string PrivateIpAddress {
             get { return BackingStore?.Get<string>("privateIpAddress"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PublicIpAddress {
             get { return BackingStore?.Get<string?>("publicIpAddress"); }
             set { BackingStore?.Set("publicIpAddress", value); }
         }
+#nullable restore
 #else
         public string PublicIpAddress {
             get { return BackingStore?.Get<string>("publicIpAddress"); }
@@ -102,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RiskScore {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#nullable restore
 #else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }

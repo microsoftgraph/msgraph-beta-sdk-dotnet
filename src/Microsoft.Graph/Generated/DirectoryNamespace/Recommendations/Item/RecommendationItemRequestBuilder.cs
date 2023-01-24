@@ -1,6 +1,5 @@
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Complete;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Dismiss;
-using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Reactivate;
 using Microsoft.Graph.Beta.Models;
@@ -25,10 +24,6 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
         /// <summary>Provides operations to call the dismiss method.</summary>
         public DismissRequestBuilder Dismiss { get =>
             new DismissRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the impactedResources property of the microsoft.graph.recommendation entity.</summary>
-        public ImpactedResourcesRequestBuilder ImpactedResources { get =>
-            new ImpactedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +72,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<RecommendationItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<RecommendationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -94,7 +91,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Recommendation?> GetAsync(Action<RecommendationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Recommendation> GetAsync(Action<RecommendationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -112,7 +111,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Recommendation?> PatchAsync(Recommendation body, Action<RecommendationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Recommendation> PatchAsync(Recommendation body, Action<RecommendationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -129,7 +130,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RecommendationItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RecommendationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -151,7 +154,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<RecommendationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<RecommendationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -176,7 +181,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(Recommendation body, Action<RecommendationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(Recommendation body, Action<RecommendationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -218,16 +225,20 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
         public class RecommendationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamsApp : Entity, IParsable {
         /// <summary>The details for each version of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamsAppDefinition>? AppDefinitions {
             get { return BackingStore?.Get<List<TeamsAppDefinition>?>("appDefinitions"); }
             set { BackingStore?.Set("appDefinitions", value); }
         }
+#nullable restore
 #else
         public List<TeamsAppDefinition> AppDefinitions {
             get { return BackingStore?.Get<List<TeamsAppDefinition>>("appDefinitions"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalId {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#nullable restore
 #else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }

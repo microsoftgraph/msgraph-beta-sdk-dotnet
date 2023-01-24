@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RecommendedAction>? RecommendedActions {
             get { return BackingStore?.Get<List<RecommendedAction>?>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
+#nullable restore
 #else
         public List<RecommendedAction> RecommendedActions {
             get { return BackingStore?.Get<List<RecommendedAction>>("recommendedActions"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Summary of simulation events in the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.SimulationEventsContent? SimulationEventsContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationEventsContent?>("simulationEventsContent"); }
             set { BackingStore?.Set("simulationEventsContent", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.SimulationEventsContent SimulationEventsContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationEventsContent>("simulationEventsContent"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Summary of assigned trainings in the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TrainingEventsContent? TrainingEventsContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingEventsContent?>("trainingEventsContent"); }
             set { BackingStore?.Set("trainingEventsContent", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TrainingEventsContent TrainingEventsContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingEventsContent>("trainingEventsContent"); }

@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Get
     public class GetSourceImagesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcSourceDeviceImage>? Value {
             get { return BackingStore?.Get<List<CloudPcSourceDeviceImage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<CloudPcSourceDeviceImage> Value {
             get { return BackingStore?.Get<List<CloudPcSourceDeviceImage>>("value"); }

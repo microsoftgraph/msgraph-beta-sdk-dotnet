@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OpenTypeExtension : Extension, IParsable {
         /// <summary>A unique text identifier for an open type data extension. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionName {
             get { return BackingStore?.Get<string?>("extensionName"); }
             set { BackingStore?.Set("extensionName", value); }
         }
+#nullable restore
 #else
         public string ExtensionName {
             get { return BackingStore?.Get<string>("extensionName"); }

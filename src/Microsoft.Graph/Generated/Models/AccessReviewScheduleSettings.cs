@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewApplyAction>? ApplyActions {
             get { return BackingStore?.Get<List<AccessReviewApplyAction>?>("applyActions"); }
             set { BackingStore?.Set("applyActions", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewApplyAction> ApplyActions {
             get { return BackingStore?.Get<List<AccessReviewApplyAction>>("applyActions"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultDecision {
             get { return BackingStore?.Get<string?>("defaultDecision"); }
             set { BackingStore?.Set("defaultDecision", value); }
         }
+#nullable restore
 #else
         public string DefaultDecision {
             get { return BackingStore?.Get<string>("defaultDecision"); }
@@ -69,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -81,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewRecommendationInsightSetting>? RecommendationInsightSettings {
             get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>?>("recommendationInsightSettings"); }
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings {
             get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>>("recommendationInsightSettings"); }
@@ -103,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PatternedRecurrence? Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
+#nullable restore
 #else
         public PatternedRecurrence Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppStatusRaw : ManagedAppStatus, IParsable {
         /// <summary>Status report content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Content {
             get { return BackingStore?.Get<Json?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public Json Content {
             get { return BackingStore?.Get<Json>("content"); }

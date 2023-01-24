@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PurchaseInvoice : Entity, IParsable {
         /// <summary>The buyFromAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PostalAddressType? BuyFromAddress {
             get { return BackingStore?.Get<PostalAddressType?>("buyFromAddress"); }
             set { BackingStore?.Set("buyFromAddress", value); }
         }
+#nullable restore
 #else
         public PostalAddressType BuyFromAddress {
             get { return BackingStore?.Get<PostalAddressType>("buyFromAddress"); }
@@ -20,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Currency? Currency {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency?>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Currency Currency {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency>("currency"); }
@@ -32,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The currencyCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CurrencyCode {
             get { return BackingStore?.Get<string?>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
+#nullable restore
 #else
         public string CurrencyCode {
             get { return BackingStore?.Get<string>("currencyCode"); }
@@ -74,10 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Number {
             get { return BackingStore?.Get<string?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
+#nullable restore
 #else
         public string Number {
             get { return BackingStore?.Get<string>("number"); }
@@ -86,10 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The payToAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PostalAddressType? PayToAddress {
             get { return BackingStore?.Get<PostalAddressType?>("payToAddress"); }
             set { BackingStore?.Set("payToAddress", value); }
         }
+#nullable restore
 #else
         public PostalAddressType PayToAddress {
             get { return BackingStore?.Get<PostalAddressType>("payToAddress"); }
@@ -98,10 +108,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The payToContact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PayToContact {
             get { return BackingStore?.Get<string?>("payToContact"); }
             set { BackingStore?.Set("payToContact", value); }
         }
+#nullable restore
 #else
         public string PayToContact {
             get { return BackingStore?.Get<string>("payToContact"); }
@@ -110,10 +122,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The payToName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PayToName {
             get { return BackingStore?.Get<string?>("payToName"); }
             set { BackingStore?.Set("payToName", value); }
         }
+#nullable restore
 #else
         public string PayToName {
             get { return BackingStore?.Get<string>("payToName"); }
@@ -127,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The payToVendorNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PayToVendorNumber {
             get { return BackingStore?.Get<string?>("payToVendorNumber"); }
             set { BackingStore?.Set("payToVendorNumber", value); }
         }
+#nullable restore
 #else
         public string PayToVendorNumber {
             get { return BackingStore?.Get<string>("payToVendorNumber"); }
@@ -144,10 +160,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The purchaseInvoiceLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PurchaseInvoiceLine>? PurchaseInvoiceLines {
             get { return BackingStore?.Get<List<PurchaseInvoiceLine>?>("purchaseInvoiceLines"); }
             set { BackingStore?.Set("purchaseInvoiceLines", value); }
         }
+#nullable restore
 #else
         public List<PurchaseInvoiceLine> PurchaseInvoiceLines {
             get { return BackingStore?.Get<List<PurchaseInvoiceLine>>("purchaseInvoiceLines"); }
@@ -156,10 +174,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The shipToAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PostalAddressType? ShipToAddress {
             get { return BackingStore?.Get<PostalAddressType?>("shipToAddress"); }
             set { BackingStore?.Set("shipToAddress", value); }
         }
+#nullable restore
 #else
         public PostalAddressType ShipToAddress {
             get { return BackingStore?.Get<PostalAddressType>("shipToAddress"); }
@@ -168,10 +188,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The shipToContact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ShipToContact {
             get { return BackingStore?.Get<string?>("shipToContact"); }
             set { BackingStore?.Set("shipToContact", value); }
         }
+#nullable restore
 #else
         public string ShipToContact {
             get { return BackingStore?.Get<string>("shipToContact"); }
@@ -180,10 +202,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The shipToName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ShipToName {
             get { return BackingStore?.Get<string?>("shipToName"); }
             set { BackingStore?.Set("shipToName", value); }
         }
+#nullable restore
 #else
         public string ShipToName {
             get { return BackingStore?.Get<string>("shipToName"); }
@@ -192,10 +216,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Status {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
@@ -219,10 +245,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The vendor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Vendor? Vendor {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Vendor?>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Vendor Vendor {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Vendor>("vendor"); }
@@ -236,10 +264,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The vendorInvoiceNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VendorInvoiceNumber {
             get { return BackingStore?.Get<string?>("vendorInvoiceNumber"); }
             set { BackingStore?.Set("vendorInvoiceNumber", value); }
         }
+#nullable restore
 #else
         public string VendorInvoiceNumber {
             get { return BackingStore?.Get<string>("vendorInvoiceNumber"); }
@@ -248,10 +278,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The vendorName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VendorName {
             get { return BackingStore?.Get<string?>("vendorName"); }
             set { BackingStore?.Set("vendorName", value); }
         }
+#nullable restore
 #else
         public string VendorName {
             get { return BackingStore?.Get<string>("vendorName"); }
@@ -260,10 +292,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The vendorNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VendorNumber {
             get { return BackingStore?.Get<string?>("vendorNumber"); }
             set { BackingStore?.Set("vendorNumber", value); }
         }
+#nullable restore
 #else
         public string VendorNumber {
             get { return BackingStore?.Get<string>("vendorNumber"); }

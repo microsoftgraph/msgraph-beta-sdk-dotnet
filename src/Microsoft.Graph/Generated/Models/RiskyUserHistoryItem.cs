@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RiskyUserHistoryItem : RiskyUser, IParsable {
         /// <summary>The activity related to user risk level change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RiskUserActivity? Activity {
             get { return BackingStore?.Get<RiskUserActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#nullable restore
 #else
         public RiskUserActivity Activity {
             get { return BackingStore?.Get<RiskUserActivity>("activity"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of actor that does the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InitiatedBy {
             get { return BackingStore?.Get<string?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
+#nullable restore
 #else
         public string InitiatedBy {
             get { return BackingStore?.Get<string>("initiatedBy"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

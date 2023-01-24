@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Uploa
         }
         /// <summary>The appleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppleId {
             get { return BackingStore?.Get<string?>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
+#nullable restore
 #else
         public string AppleId {
             get { return BackingStore?.Get<string>("appleId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Uploa
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The depToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DepToken {
             get { return BackingStore?.Get<string?>("depToken"); }
             set { BackingStore?.Set("depToken", value); }
         }
+#nullable restore
 #else
         public string DepToken {
             get { return BackingStore?.Get<string>("depToken"); }

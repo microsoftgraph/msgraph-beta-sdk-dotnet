@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EmailFileAssessmentRequest : ThreatAssessmentRequest, IParsable {
         /// <summary>Base64 encoded .eml email file content. The file content cannot fetch back because it isn&apos;t stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentData {
             get { return BackingStore?.Get<string?>("contentData"); }
             set { BackingStore?.Set("contentData", value); }
         }
+#nullable restore
 #else
         public string ContentData {
             get { return BackingStore?.Get<string>("contentData"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The mail recipient whose policies are used to assess the mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecipientEmail {
             get { return BackingStore?.Get<string?>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
+#nullable restore
 #else
         public string RecipientEmail {
             get { return BackingStore?.Get<string>("recipientEmail"); }

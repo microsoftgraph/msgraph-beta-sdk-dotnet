@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ApplicationEnforcedRestrictionsSessionControl? ApplicationEnforcedRestrictions {
             get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl?>("applicationEnforcedRestrictions"); }
             set { BackingStore?.Set("applicationEnforcedRestrictions", value); }
         }
+#nullable restore
 #else
         public ApplicationEnforcedRestrictionsSessionControl ApplicationEnforcedRestrictions {
             get { return BackingStore?.Get<ApplicationEnforcedRestrictionsSessionControl>("applicationEnforcedRestrictions"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Session control to apply cloud app security.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudAppSecuritySessionControl? CloudAppSecurity {
             get { return BackingStore?.Get<CloudAppSecuritySessionControl?>("cloudAppSecurity"); }
             set { BackingStore?.Set("cloudAppSecurity", value); }
         }
+#nullable restore
 #else
         public CloudAppSecuritySessionControl CloudAppSecurity {
             get { return BackingStore?.Get<CloudAppSecuritySessionControl>("cloudAppSecurity"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Session control for continuous access evaluation settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ContinuousAccessEvaluationSessionControl? ContinuousAccessEvaluation {
             get { return BackingStore?.Get<ContinuousAccessEvaluationSessionControl?>("continuousAccessEvaluation"); }
             set { BackingStore?.Set("continuousAccessEvaluation", value); }
         }
+#nullable restore
 #else
         public ContinuousAccessEvaluationSessionControl ContinuousAccessEvaluation {
             get { return BackingStore?.Get<ContinuousAccessEvaluationSessionControl>("continuousAccessEvaluation"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PersistentBrowserSessionControl? PersistentBrowser {
             get { return BackingStore?.Get<PersistentBrowserSessionControl?>("persistentBrowser"); }
             set { BackingStore?.Set("persistentBrowser", value); }
         }
+#nullable restore
 #else
         public PersistentBrowserSessionControl PersistentBrowser {
             get { return BackingStore?.Get<PersistentBrowserSessionControl>("persistentBrowser"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Session control to enforce signin frequency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SignInFrequencySessionControl? SignInFrequency {
             get { return BackingStore?.Get<SignInFrequencySessionControl?>("signInFrequency"); }
             set { BackingStore?.Set("signInFrequency", value); }
         }
+#nullable restore
 #else
         public SignInFrequencySessionControl SignInFrequency {
             get { return BackingStore?.Get<SignInFrequencySessionControl>("signInFrequency"); }

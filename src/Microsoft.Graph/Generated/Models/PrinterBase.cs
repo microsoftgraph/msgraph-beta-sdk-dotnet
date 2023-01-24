@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrinterBase : Entity, IParsable {
         /// <summary>The capabilities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrinterCapabilities? Capabilities {
             get { return BackingStore?.Get<PrinterCapabilities?>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
+#nullable restore
 #else
         public PrinterCapabilities Capabilities {
             get { return BackingStore?.Get<PrinterCapabilities>("capabilities"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The defaults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrinterDefaults? Defaults {
             get { return BackingStore?.Get<PrinterDefaults?>("defaults"); }
             set { BackingStore?.Set("defaults", value); }
         }
+#nullable restore
 #else
         public PrinterDefaults Defaults {
             get { return BackingStore?.Get<PrinterDefaults>("defaults"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The jobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintJob>? Jobs {
             get { return BackingStore?.Get<List<PrintJob>?>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
+#nullable restore
 #else
         public List<PrintJob> Jobs {
             get { return BackingStore?.Get<List<PrintJob>>("jobs"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrinterLocation? Location {
             get { return BackingStore?.Get<PrinterLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public PrinterLocation Location {
             get { return BackingStore?.Get<PrinterLocation>("location"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The manufacturer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Manufacturer {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#nullable restore
 #else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Model {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#nullable restore
 #else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -108,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrinterStatus? Status {
             get { return BackingStore?.Get<PrinterStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public PrinterStatus Status {
             get { return BackingStore?.Get<PrinterStatus>("status"); }

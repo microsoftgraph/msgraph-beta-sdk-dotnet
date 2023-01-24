@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerTrustedRootCertificate : DeviceConfiguration, IParsable {
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertFileName {
             get { return BackingStore?.Get<string?>("certFileName"); }
             set { BackingStore?.Set("certFileName", value); }
         }
+#nullable restore
 #else
         public string CertFileName {
             get { return BackingStore?.Get<string>("certFileName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Trusted Root Certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? TrustedRootCertificate {
             get { return BackingStore?.Get<byte[]?>("trustedRootCertificate"); }
             set { BackingStore?.Set("trustedRootCertificate", value); }
         }
+#nullable restore
 #else
         public byte[] TrustedRootCertificate {
             get { return BackingStore?.Get<byte[]>("trustedRootCertificate"); }

@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Compliance URL of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ComplianceUrl {
             get { return BackingStore?.Get<string?>("complianceUrl"); }
             set { BackingStore?.Set("complianceUrl", value); }
         }
+#nullable restore
 #else
         public string ComplianceUrl {
             get { return BackingStore?.Get<string>("complianceUrl"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Discovery URL of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DiscoveryUrl {
             get { return BackingStore?.Get<string?>("discoveryUrl"); }
             set { BackingStore?.Set("discoveryUrl", value); }
         }
+#nullable restore
 #else
         public string DiscoveryUrl {
             get { return BackingStore?.Get<string>("discoveryUrl"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Azure AD groups under the scope of the mobility management application if appliesTo is selected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Group>? IncludedGroups {
             get { return BackingStore?.Get<List<Group>?>("includedGroups"); }
             set { BackingStore?.Set("includedGroups", value); }
         }
+#nullable restore
 #else
         public List<Group> IncludedGroups {
             get { return BackingStore?.Get<List<Group>>("includedGroups"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Terms of Use URL of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TermsOfUseUrl {
             get { return BackingStore?.Get<string?>("termsOfUseUrl"); }
             set { BackingStore?.Set("termsOfUseUrl", value); }
         }
+#nullable restore
 #else
         public string TermsOfUseUrl {
             get { return BackingStore?.Get<string>("termsOfUseUrl"); }

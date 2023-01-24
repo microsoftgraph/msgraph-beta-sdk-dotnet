@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeleteUserFromSharedAppleDeviceActionResult : DeviceActionResult, IParsable {
         /// <summary>User principal name of the user to be deleted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

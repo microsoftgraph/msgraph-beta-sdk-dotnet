@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserActivity : Entity, IParsable {
         /// <summary>The activationUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActivationUrl {
             get { return BackingStore?.Get<string?>("activationUrl"); }
             set { BackingStore?.Set("activationUrl", value); }
         }
+#nullable restore
 #else
         public string ActivationUrl {
             get { return BackingStore?.Get<string>("activationUrl"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The activitySourceHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActivitySourceHost {
             get { return BackingStore?.Get<string?>("activitySourceHost"); }
             set { BackingStore?.Set("activitySourceHost", value); }
         }
+#nullable restore
 #else
         public string ActivitySourceHost {
             get { return BackingStore?.Get<string>("activitySourceHost"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The appActivityId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppActivityId {
             get { return BackingStore?.Get<string?>("appActivityId"); }
             set { BackingStore?.Set("appActivityId", value); }
         }
+#nullable restore
 #else
         public string AppActivityId {
             get { return BackingStore?.Get<string>("appActivityId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The appDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppDisplayName {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#nullable restore
 #else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The contentInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? ContentInfo {
             get { return BackingStore?.Get<Json?>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
+#nullable restore
 #else
         public Json ContentInfo {
             get { return BackingStore?.Get<Json>("contentInfo"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The contentUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentUrl {
             get { return BackingStore?.Get<string?>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
+#nullable restore
 #else
         public string ContentUrl {
             get { return BackingStore?.Get<string>("contentUrl"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The fallbackUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FallbackUrl {
             get { return BackingStore?.Get<string?>("fallbackUrl"); }
             set { BackingStore?.Set("fallbackUrl", value); }
         }
+#nullable restore
 #else
         public string FallbackUrl {
             get { return BackingStore?.Get<string>("fallbackUrl"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The historyItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ActivityHistoryItem>? HistoryItems {
             get { return BackingStore?.Get<List<ActivityHistoryItem>?>("historyItems"); }
             set { BackingStore?.Set("historyItems", value); }
         }
+#nullable restore
 #else
         public List<ActivityHistoryItem> HistoryItems {
             get { return BackingStore?.Get<List<ActivityHistoryItem>>("historyItems"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The userTimezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserTimezone {
             get { return BackingStore?.Get<string?>("userTimezone"); }
             set { BackingStore?.Set("userTimezone", value); }
         }
+#nullable restore
 #else
         public string UserTimezone {
             get { return BackingStore?.Get<string>("userTimezone"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The visualElements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public VisualInfo? VisualElements {
             get { return BackingStore?.Get<VisualInfo?>("visualElements"); }
             set { BackingStore?.Set("visualElements", value); }
         }
+#nullable restore
 #else
         public VisualInfo VisualElements {
             get { return BackingStore?.Get<VisualInfo>("visualElements"); }

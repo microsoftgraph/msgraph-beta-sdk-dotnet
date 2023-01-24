@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationWordResource : EducationResource, IParsable {
         /// <summary>Location of the file on disk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileUrl {
             get { return BackingStore?.Get<string?>("fileUrl"); }
             set { BackingStore?.Set("fileUrl", value); }
         }
+#nullable restore
 #else
         public string FileUrl {
             get { return BackingStore?.Get<string>("fileUrl"); }

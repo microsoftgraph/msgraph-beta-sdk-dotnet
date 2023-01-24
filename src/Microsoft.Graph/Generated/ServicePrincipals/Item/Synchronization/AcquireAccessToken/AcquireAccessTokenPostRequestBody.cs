@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.AcquireAcc
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationSecretKeyStringValuePair>? Credentials {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationSecretKeyStringValuePair> Credentials {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("credentials"); }

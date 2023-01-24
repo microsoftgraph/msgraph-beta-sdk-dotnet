@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Security.RunHuntingQuery {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Query {
             get { return BackingStore?.Get<string?>("query"); }
             set { BackingStore?.Set("query", value); }
         }
+#nullable restore
 #else
         public string Query {
             get { return BackingStore?.Get<string>("query"); }

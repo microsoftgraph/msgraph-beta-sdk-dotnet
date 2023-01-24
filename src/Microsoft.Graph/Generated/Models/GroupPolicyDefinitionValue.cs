@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The definition value entity stores the value for a single group policy definition.
+    /// </summary>
     public class GroupPolicyDefinitionValue : Entity, IParsable {
         /// <summary>Group Policy Configuration Type</summary>
         public GroupPolicyConfigurationType? ConfigurationType {
@@ -17,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The associated group policy definition with the value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyDefinition? Definition {
             get { return BackingStore?.Get<GroupPolicyDefinition?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#nullable restore
 #else
         public GroupPolicyDefinition Definition {
             get { return BackingStore?.Get<GroupPolicyDefinition>("definition"); }
@@ -39,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The associated group policy presentation values with the definition value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyPresentationValue>? PresentationValues {
             get { return BackingStore?.Get<List<GroupPolicyPresentationValue>?>("presentationValues"); }
             set { BackingStore?.Set("presentationValues", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyPresentationValue> PresentationValues {
             get { return BackingStore?.Get<List<GroupPolicyPresentationValue>>("presentationValues"); }

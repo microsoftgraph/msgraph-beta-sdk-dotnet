@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Information about the source of media. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.MediaSource? MediaSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaSource?>("mediaSource"); }
             set { BackingStore?.Set("mediaSource", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.MediaSource MediaSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaSource>("mediaSource"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

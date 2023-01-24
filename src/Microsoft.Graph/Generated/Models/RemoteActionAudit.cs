@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Intune device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceDisplayName {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#nullable restore
 #else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>IMEI of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceIMEI {
             get { return BackingStore?.Get<string?>("deviceIMEI"); }
             set { BackingStore?.Set("deviceIMEI", value); }
         }
+#nullable restore
 #else
         public string DeviceIMEI {
             get { return BackingStore?.Get<string>("deviceIMEI"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Upn of the device owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceOwnerUserPrincipalName {
             get { return BackingStore?.Get<string?>("deviceOwnerUserPrincipalName"); }
             set { BackingStore?.Set("deviceOwnerUserPrincipalName", value); }
         }
+#nullable restore
 #else
         public string DeviceOwnerUserPrincipalName {
             get { return BackingStore?.Get<string>("deviceOwnerUserPrincipalName"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User who initiated the device action, format is UPN.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InitiatedByUserPrincipalName {
             get { return BackingStore?.Get<string?>("initiatedByUserPrincipalName"); }
             set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
+#nullable restore
 #else
         public string InitiatedByUserPrincipalName {
             get { return BackingStore?.Get<string>("initiatedByUserPrincipalName"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Action target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>[deprecated] Please use InitiatedByUserPrincipalName instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserName {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#nullable restore
 #else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }

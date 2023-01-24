@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidCustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>OMA settings. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OmaSetting>? OmaSettings {
             get { return BackingStore?.Get<List<OmaSetting>?>("omaSettings"); }
             set { BackingStore?.Set("omaSettings", value); }
         }
+#nullable restore
 #else
         public List<OmaSetting> OmaSettings {
             get { return BackingStore?.Get<List<OmaSetting>>("omaSettings"); }

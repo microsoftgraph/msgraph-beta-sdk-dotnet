@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
         /// <summary>User source or SharePoint site data source as non-custodial data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Ediscovery.DataSource? DataSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSource?>("dataSource"); }
             set { BackingStore?.Set("dataSource", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Ediscovery.DataSource DataSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>("dataSource"); }
@@ -23,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
 #endif
         /// <summary>
-        /// Instantiates a new NoncustodialDataSource and sets the default values.
+        /// Instantiates a new noncustodialDataSource and sets the default values.
         /// </summary>
         public NoncustodialDataSource() : base() {
             OdataType = "#microsoft.graph.ediscovery.noncustodialDataSource";

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationWindowsSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable {
         /// <summary>Version of CSP setting is a part of</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConfigurationServiceProviderVersion {
             get { return BackingStore?.Get<string?>("configurationServiceProviderVersion"); }
             set { BackingStore?.Set("configurationServiceProviderVersion", value); }
         }
+#nullable restore
 #else
         public string ConfigurationServiceProviderVersion {
             get { return BackingStore?.Get<string>("configurationServiceProviderVersion"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Maximum supported version of Windows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MaximumSupportedVersion {
             get { return BackingStore?.Get<string?>("maximumSupportedVersion"); }
             set { BackingStore?.Set("maximumSupportedVersion", value); }
         }
+#nullable restore
 #else
         public string MaximumSupportedVersion {
             get { return BackingStore?.Get<string>("maximumSupportedVersion"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum supported version of Windows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumSupportedVersion {
             get { return BackingStore?.Get<string?>("minimumSupportedVersion"); }
             set { BackingStore?.Set("minimumSupportedVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumSupportedVersion {
             get { return BackingStore?.Get<string>("minimumSupportedVersion"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Windows SKUs that the setting is applicable for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationWindowsSkus?>? WindowsSkus {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationWindowsSkus?>?>("windowsSkus"); }
             set { BackingStore?.Set("windowsSkus", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationWindowsSkus?> WindowsSkus {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationWindowsSkus?>>("windowsSkus"); }

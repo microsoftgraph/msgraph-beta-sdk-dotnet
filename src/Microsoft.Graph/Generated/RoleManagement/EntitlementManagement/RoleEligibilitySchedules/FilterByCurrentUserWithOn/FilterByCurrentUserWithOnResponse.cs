@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibil
     public class FilterByCurrentUserWithOnResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRoleEligibilitySchedule>? Value {
             get { return BackingStore?.Get<List<UnifiedRoleEligibilitySchedule>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRoleEligibilitySchedule> Value {
             get { return BackingStore?.Get<List<UnifiedRoleEligibilitySchedule>>("value"); }

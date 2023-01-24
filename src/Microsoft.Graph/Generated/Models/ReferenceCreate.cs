@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataId {
             get { return BackingStore?.Get<string?>("@odata.id"); }
             set { BackingStore?.Set("@odata.id", value); }
         }
+#nullable restore
 #else
         public string OdataId {
             get { return BackingStore?.Get<string>("@odata.id"); }

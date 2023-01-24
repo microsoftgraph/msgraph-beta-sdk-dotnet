@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.GetByIds {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Ids {
             get { return BackingStore?.Get<List<string>?>("ids"); }
             set { BackingStore?.Set("ids", value); }
         }
+#nullable restore
 #else
         public List<string> Ids {
             get { return BackingStore?.Get<List<string>>("ids"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.GetByIds {
 #endif
         /// <summary>The types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Types {
             get { return BackingStore?.Get<List<string>?>("types"); }
             set { BackingStore?.Set("types", value); }
         }
+#nullable restore
 #else
         public List<string> Types {
             get { return BackingStore?.Get<List<string>>("types"); }

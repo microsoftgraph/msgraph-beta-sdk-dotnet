@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cameras property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamworkPeripheral>? Cameras {
             get { return BackingStore?.Get<List<TeamworkPeripheral>?>("cameras"); }
             set { BackingStore?.Set("cameras", value); }
         }
+#nullable restore
 #else
         public List<TeamworkPeripheral> Cameras {
             get { return BackingStore?.Get<List<TeamworkPeripheral>>("cameras"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The configuration for the content camera.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkContentCameraConfiguration? ContentCameraConfiguration {
             get { return BackingStore?.Get<TeamworkContentCameraConfiguration?>("contentCameraConfiguration"); }
             set { BackingStore?.Set("contentCameraConfiguration", value); }
         }
+#nullable restore
 #else
         public TeamworkContentCameraConfiguration ContentCameraConfiguration {
             get { return BackingStore?.Get<TeamworkContentCameraConfiguration>("contentCameraConfiguration"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The defaultContentCamera property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? DefaultContentCamera {
             get { return BackingStore?.Get<TeamworkPeripheral?>("defaultContentCamera"); }
             set { BackingStore?.Set("defaultContentCamera", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral DefaultContentCamera {
             get { return BackingStore?.Get<TeamworkPeripheral>("defaultContentCamera"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

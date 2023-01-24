@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookWorksheetProtection : Entity, IParsable {
         /// <summary>Sheet protection options. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookWorksheetProtectionOptions? Options {
             get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions?>("options"); }
             set { BackingStore?.Set("options", value); }
         }
+#nullable restore
 #else
         public WorkbookWorksheetProtectionOptions Options {
             get { return BackingStore?.Get<WorkbookWorksheetProtectionOptions>("options"); }

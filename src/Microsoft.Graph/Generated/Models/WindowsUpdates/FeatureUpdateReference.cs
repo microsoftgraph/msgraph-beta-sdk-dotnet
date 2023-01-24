@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class FeatureUpdateReference : WindowsUpdateReference, IParsable {
         /// <summary>Specifies a feature update by version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

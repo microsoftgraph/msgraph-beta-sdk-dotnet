@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OrgContact : DirectoryObject, IParsable {
         /// <summary>Postal addresses for this organizational contact. For now a contact can only have one physical address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PhysicalOfficeAddress>? Addresses {
             get { return BackingStore?.Get<List<PhysicalOfficeAddress>?>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
+#nullable restore
 #else
         public List<PhysicalOfficeAddress> Addresses {
             get { return BackingStore?.Get<List<PhysicalOfficeAddress>>("addresses"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CompanyName {
             get { return BackingStore?.Get<string?>("companyName"); }
             set { BackingStore?.Set("companyName", value); }
         }
+#nullable restore
 #else
         public string CompanyName {
             get { return BackingStore?.Get<string>("companyName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Department {
             get { return BackingStore?.Get<string?>("department"); }
             set { BackingStore?.Set("department", value); }
         }
+#nullable restore
 #else
         public string Department {
             get { return BackingStore?.Get<string>("department"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? DirectReports {
             get { return BackingStore?.Get<List<DirectoryObject>?>("directReports"); }
             set { BackingStore?.Set("directReports", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> DirectReports {
             get { return BackingStore?.Get<List<DirectoryObject>>("directReports"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GivenName {
             get { return BackingStore?.Get<string?>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
+#nullable restore
 #else
         public string GivenName {
             get { return BackingStore?.Get<string>("givenName"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JobTitle {
             get { return BackingStore?.Get<string?>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
+#nullable restore
 #else
         public string JobTitle {
             get { return BackingStore?.Get<string>("jobTitle"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The SMTP address for the contact, for example, &apos;jeff@contoso.onmicrosoft.com&apos;. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Mail {
             get { return BackingStore?.Get<string?>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
+#nullable restore
 #else
         public string Mail {
             get { return BackingStore?.Get<string>("mail"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MailNickname {
             get { return BackingStore?.Get<string?>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
+#nullable restore
 #else
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DirectoryObject? Manager {
             get { return BackingStore?.Get<DirectoryObject?>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
+#nullable restore
 #else
         public DirectoryObject Manager {
             get { return BackingStore?.Get<DirectoryObject>("manager"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Groups that this contact is a member of. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? MemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> MemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
@@ -144,10 +166,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not for category and propertyCausingError), /$count eq 0, /$count ne 0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnPremisesProvisioningError>? OnPremisesProvisioningErrors {
             get { return BackingStore?.Get<List<OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
+#nullable restore
 #else
         public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors {
             get { return BackingStore?.Get<List<OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
@@ -161,10 +185,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Phone>? Phones {
             get { return BackingStore?.Get<List<Phone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
+#nullable restore
 #else
         public List<Phone> Phones {
             get { return BackingStore?.Get<List<Phone>>("phones"); }
@@ -173,10 +199,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For example: &apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ProxyAddresses {
             get { return BackingStore?.Get<List<string>?>("proxyAddresses"); }
             set { BackingStore?.Set("proxyAddresses", value); }
         }
+#nullable restore
 #else
         public List<string> ProxyAddresses {
             get { return BackingStore?.Get<List<string>>("proxyAddresses"); }
@@ -185,10 +213,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Surname {
             get { return BackingStore?.Get<string?>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
+#nullable restore
 #else
         public string Surname {
             get { return BackingStore?.Get<string>("surname"); }
@@ -197,10 +227,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The transitiveMemberOf property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? TransitiveMemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> TransitiveMemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
@@ -209,10 +241,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The transitive reports for a contact. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? TransitiveReports {
             get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveReports"); }
             set { BackingStore?.Set("transitiveReports", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> TransitiveReports {
             get { return BackingStore?.Get<List<DirectoryObject>>("transitiveReports"); }

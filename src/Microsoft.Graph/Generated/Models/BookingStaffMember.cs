@@ -32,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TimeZone {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#nullable restore
 #else
         public string TimeZone {
             get { return BackingStore?.Get<string>("timeZone"); }
@@ -49,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingWorkHours>? WorkingHours {
             get { return BackingStore?.Get<List<BookingWorkHours>?>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
+#nullable restore
 #else
         public List<BookingWorkHours> WorkingHours {
             get { return BackingStore?.Get<List<BookingWorkHours>>("workingHours"); }

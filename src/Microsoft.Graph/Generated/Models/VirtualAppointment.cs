@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class VirtualAppointment : Entity, IParsable {
         /// <summary>The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppointmentClientJoinWebUrl {
             get { return BackingStore?.Get<string?>("appointmentClientJoinWebUrl"); }
             set { BackingStore?.Set("appointmentClientJoinWebUrl", value); }
         }
+#nullable restore
 #else
         public string AppointmentClientJoinWebUrl {
             get { return BackingStore?.Get<string>("appointmentClientJoinWebUrl"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The client information for the virtual appointment, including name, email, and SMS phone number. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VirtualAppointmentUser>? AppointmentClients {
             get { return BackingStore?.Get<List<VirtualAppointmentUser>?>("appointmentClients"); }
             set { BackingStore?.Set("appointmentClients", value); }
         }
+#nullable restore
 #else
         public List<VirtualAppointmentUser> AppointmentClients {
             get { return BackingStore?.Get<List<VirtualAppointmentUser>>("appointmentClients"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalAppointmentId {
             get { return BackingStore?.Get<string?>("externalAppointmentId"); }
             set { BackingStore?.Set("externalAppointmentId", value); }
         }
+#nullable restore
 #else
         public string ExternalAppointmentId {
             get { return BackingStore?.Get<string>("externalAppointmentId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalAppointmentUrl {
             get { return BackingStore?.Get<string?>("externalAppointmentUrl"); }
             set { BackingStore?.Set("externalAppointmentUrl", value); }
         }
+#nullable restore
 #else
         public string ExternalAppointmentUrl {
             get { return BackingStore?.Get<string>("externalAppointmentUrl"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The settings associated with the virtual appointment resource. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public VirtualAppointmentSettings? Settings {
             get { return BackingStore?.Get<VirtualAppointmentSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public VirtualAppointmentSettings Settings {
             get { return BackingStore?.Get<VirtualAppointmentSettings>("settings"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSCredentialSingleSignOnExtension : MacOSSingleSignOnExtension, IParsable {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyTypedValuePair>? Configurations {
             get { return BackingStore?.Get<List<KeyTypedValuePair>?>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
+#nullable restore
 #else
         public List<KeyTypedValuePair> Configurations {
             get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a list of hosts or domain names for which the app extension performs SSO.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Domains {
             get { return BackingStore?.Get<List<string>?>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#nullable restore
 #else
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExtensionIdentifier {
             get { return BackingStore?.Get<string?>("extensionIdentifier"); }
             set { BackingStore?.Set("extensionIdentifier", value); }
         }
+#nullable restore
 #else
         public string ExtensionIdentifier {
             get { return BackingStore?.Get<string>("extensionIdentifier"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets the case-sensitive realm name for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Realm {
             get { return BackingStore?.Get<string?>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
+#nullable restore
 #else
         public string Realm {
             get { return BackingStore?.Get<string>("realm"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets the team ID of the app extension that performs SSO for the specified URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamIdentifier {
             get { return BackingStore?.Get<string?>("teamIdentifier"); }
             set { BackingStore?.Set("teamIdentifier", value); }
         }
+#nullable restore
 #else
         public string TeamIdentifier {
             get { return BackingStore?.Get<string>("teamIdentifier"); }

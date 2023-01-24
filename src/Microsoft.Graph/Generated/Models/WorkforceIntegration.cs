@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the workforce integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The workforce integration encryption resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkforceIntegrationEncryption? Encryption {
             get { return BackingStore?.Get<WorkforceIntegrationEncryption?>("encryption"); }
             set { BackingStore?.Set("encryption", value); }
         }
+#nullable restore
 #else
         public WorkforceIntegrationEncryption Encryption {
             get { return BackingStore?.Get<WorkforceIntegrationEncryption>("encryption"); }
@@ -56,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Workforce Integration URL for callbacks from the Shifts service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Url {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#nullable restore
 #else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }

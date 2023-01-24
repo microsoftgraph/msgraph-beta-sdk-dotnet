@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminCustomer : Entity, IParsable {
         /// <summary>The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DelegatedAdminServiceManagementDetail>? ServiceManagementDetails {
             get { return BackingStore?.Get<List<DelegatedAdminServiceManagementDetail>?>("serviceManagementDetails"); }
             set { BackingStore?.Set("serviceManagementDetails", value); }
         }
+#nullable restore
 #else
         public List<DelegatedAdminServiceManagementDetail> ServiceManagementDetails {
             get { return BackingStore?.Get<List<DelegatedAdminServiceManagementDetail>>("serviceManagementDetails"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure AD-assigned tenant ID of the customer. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OrganizationalBranding : OrganizationalBrandingProperties, IParsable {
         /// <summary>Add different branding based on a locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OrganizationalBrandingLocalization>? Localizations {
             get { return BackingStore?.Get<List<OrganizationalBrandingLocalization>?>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
+#nullable restore
 #else
         public List<OrganizationalBrandingLocalization> Localizations {
             get { return BackingStore?.Get<List<OrganizationalBrandingLocalization>>("localizations"); }

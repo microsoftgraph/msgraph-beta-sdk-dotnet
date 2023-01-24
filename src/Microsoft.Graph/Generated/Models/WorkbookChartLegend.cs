@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartLegend : Entity, IParsable {
         /// <summary>Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartLegendFormat? Format {
             get { return BackingStore?.Get<WorkbookChartLegendFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#nullable restore
 #else
         public WorkbookChartLegendFormat Format {
             get { return BackingStore?.Get<WorkbookChartLegendFormat>("format"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Position {
             get { return BackingStore?.Get<string?>("position"); }
             set { BackingStore?.Set("position", value); }
         }
+#nullable restore
 #else
         public string Position {
             get { return BackingStore?.Get<string>("position"); }

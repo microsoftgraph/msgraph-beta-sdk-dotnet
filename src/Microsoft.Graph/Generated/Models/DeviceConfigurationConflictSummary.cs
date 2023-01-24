@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceConfigurationConflictSummary : Entity, IParsable {
         /// <summary>The set of policies in conflict with the given setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SettingSource>? ConflictingDeviceConfigurations {
             get { return BackingStore?.Get<List<SettingSource>?>("conflictingDeviceConfigurations"); }
             set { BackingStore?.Set("conflictingDeviceConfigurations", value); }
         }
+#nullable restore
 #else
         public List<SettingSource> ConflictingDeviceConfigurations {
             get { return BackingStore?.Get<List<SettingSource>>("conflictingDeviceConfigurations"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The set of settings in conflict with the given policies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ContributingSettings {
             get { return BackingStore?.Get<List<string>?>("contributingSettings"); }
             set { BackingStore?.Set("contributingSettings", value); }
         }
+#nullable restore
 #else
         public List<string> ContributingSettings {
             get { return BackingStore?.Get<List<string>>("contributingSettings"); }

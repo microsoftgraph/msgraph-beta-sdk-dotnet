@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewInstanceDecisionItemAzureRoleResource : AccessReviewInstanceDecisionItemResource, IParsable {
         /// <summary>Details of the scope this role is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessReviewInstanceDecisionItemResource? Scope {
             get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
+#nullable restore
 #else
         public AccessReviewInstanceDecisionItemResource Scope {
             get { return BackingStore?.Get<AccessReviewInstanceDecisionItemResource>("scope"); }

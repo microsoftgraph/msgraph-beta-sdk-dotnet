@@ -40,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -57,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of simulation events of a user in the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserSimulationEventInfo>? SimulationEvents {
             get { return BackingStore?.Get<List<UserSimulationEventInfo>?>("simulationEvents"); }
             set { BackingStore?.Set("simulationEvents", value); }
         }
+#nullable restore
 #else
         public List<UserSimulationEventInfo> SimulationEvents {
             get { return BackingStore?.Get<List<UserSimulationEventInfo>>("simulationEvents"); }
@@ -69,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AttackSimulationUser? SimulationUser {
             get { return BackingStore?.Get<AttackSimulationUser?>("simulationUser"); }
             set { BackingStore?.Set("simulationUser", value); }
         }
+#nullable restore
 #else
         public AttackSimulationUser SimulationUser {
             get { return BackingStore?.Get<AttackSimulationUser>("simulationUser"); }
@@ -81,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of training events of a user in the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserTrainingEventInfo>? TrainingEvents {
             get { return BackingStore?.Get<List<UserTrainingEventInfo>?>("trainingEvents"); }
             set { BackingStore?.Set("trainingEvents", value); }
         }
+#nullable restore
 #else
         public List<UserTrainingEventInfo> TrainingEvents {
             get { return BackingStore?.Get<List<UserTrainingEventInfo>>("trainingEvents"); }

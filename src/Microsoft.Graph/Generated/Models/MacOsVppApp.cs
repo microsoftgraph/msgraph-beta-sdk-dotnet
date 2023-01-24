@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOsVppApp : MobileApp, IParsable {
         /// <summary>The store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppStoreUrl {
             get { return BackingStore?.Get<string?>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
+#nullable restore
 #else
         public string AppStoreUrl {
             get { return BackingStore?.Get<string>("appStoreUrl"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The licenses assigned to this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOsVppAppAssignedLicense>? AssignedLicenses {
             get { return BackingStore?.Get<List<MacOsVppAppAssignedLicense>?>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
+#nullable restore
 #else
         public List<MacOsVppAppAssignedLicense> AssignedLicenses {
             get { return BackingStore?.Get<List<MacOsVppAppAssignedLicense>>("assignedLicenses"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BundleId {
             get { return BackingStore?.Get<string?>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
+#nullable restore
 #else
         public string BundleId {
             get { return BackingStore?.Get<string>("bundleId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supported License Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public VppLicensingType? LicensingType {
             get { return BackingStore?.Get<VppLicensingType?>("licensingType"); }
             set { BackingStore?.Set("licensingType", value); }
         }
+#nullable restore
 #else
         public VppLicensingType LicensingType {
             get { return BackingStore?.Get<VppLicensingType>("licensingType"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Results of revoke license actions on this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOsVppAppRevokeLicensesActionResult>? RevokeLicenseActionResults {
             get { return BackingStore?.Get<List<MacOsVppAppRevokeLicensesActionResult>?>("revokeLicenseActionResults"); }
             set { BackingStore?.Set("revokeLicenseActionResults", value); }
         }
+#nullable restore
 #else
         public List<MacOsVppAppRevokeLicensesActionResult> RevokeLicenseActionResults {
             get { return BackingStore?.Get<List<MacOsVppAppRevokeLicensesActionResult>>("revokeLicenseActionResults"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Apple Id associated with the given Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VppTokenAppleId {
             get { return BackingStore?.Get<string?>("vppTokenAppleId"); }
             set { BackingStore?.Set("vppTokenAppleId", value); }
         }
+#nullable restore
 #else
         public string VppTokenAppleId {
             get { return BackingStore?.Get<string>("vppTokenAppleId"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the VPP token associated with this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VppTokenId {
             get { return BackingStore?.Get<string?>("vppTokenId"); }
             set { BackingStore?.Set("vppTokenId", value); }
         }
+#nullable restore
 #else
         public string VppTokenId {
             get { return BackingStore?.Get<string>("vppTokenId"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The organization associated with the Apple Volume Purchase Program Token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VppTokenOrganizationName {
             get { return BackingStore?.Get<string?>("vppTokenOrganizationName"); }
             set { BackingStore?.Set("vppTokenOrganizationName", value); }
         }
+#nullable restore
 #else
         public string VppTokenOrganizationName {
             get { return BackingStore?.Get<string>("vppTokenOrganizationName"); }

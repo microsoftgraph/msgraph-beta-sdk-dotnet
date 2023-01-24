@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationExternalResource : EducationResource, IParsable {
         /// <summary>Location of the resource. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

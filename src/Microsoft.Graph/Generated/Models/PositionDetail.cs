@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Detail about the company or employer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CompanyDetail? Company {
             get { return BackingStore?.Get<CompanyDetail?>("company"); }
             set { BackingStore?.Set("company", value); }
         }
+#nullable restore
 #else
         public CompanyDetail Company {
             get { return BackingStore?.Get<CompanyDetail>("company"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description of the position in question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -45,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The title held when in that position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JobTitle {
             get { return BackingStore?.Get<string?>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
+#nullable restore
 #else
         public string JobTitle {
             get { return BackingStore?.Get<string>("jobTitle"); }
@@ -57,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -69,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The role the position entailed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Role {
             get { return BackingStore?.Get<string?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#nullable restore
 #else
         public string Role {
             get { return BackingStore?.Get<string>("role"); }
@@ -86,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Short summary of the position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Summary {
             get { return BackingStore?.Get<string?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
+#nullable restore
 #else
         public string Summary {
             get { return BackingStore?.Get<string>("summary"); }

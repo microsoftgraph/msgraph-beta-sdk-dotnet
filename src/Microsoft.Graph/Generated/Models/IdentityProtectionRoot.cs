@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Risk detection in Azure AD Identity Protection and the associated information about the detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RiskDetection>? RiskDetections {
             get { return BackingStore?.Get<List<RiskDetection>?>("riskDetections"); }
             set { BackingStore?.Set("riskDetections", value); }
         }
+#nullable restore
 #else
         public List<RiskDetection> RiskDetections {
             get { return BackingStore?.Get<List<RiskDetection>>("riskDetections"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Azure AD service principals that are at risk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RiskyServicePrincipal>? RiskyServicePrincipals {
             get { return BackingStore?.Get<List<RiskyServicePrincipal>?>("riskyServicePrincipals"); }
             set { BackingStore?.Set("riskyServicePrincipals", value); }
         }
+#nullable restore
 #else
         public List<RiskyServicePrincipal> RiskyServicePrincipals {
             get { return BackingStore?.Get<List<RiskyServicePrincipal>>("riskyServicePrincipals"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Users that are flagged as at-risk by Azure AD Identity Protection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RiskyUser>? RiskyUsers {
             get { return BackingStore?.Get<List<RiskyUser>?>("riskyUsers"); }
             set { BackingStore?.Set("riskyUsers", value); }
         }
+#nullable restore
 #else
         public List<RiskyUser> RiskyUsers {
             get { return BackingStore?.Get<List<RiskyUser>>("riskyUsers"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents information about detected at-risk service principals in an Azure AD tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServicePrincipalRiskDetection>? ServicePrincipalRiskDetections {
             get { return BackingStore?.Get<List<ServicePrincipalRiskDetection>?>("servicePrincipalRiskDetections"); }
             set { BackingStore?.Set("servicePrincipalRiskDetections", value); }
         }
+#nullable restore
 #else
         public List<ServicePrincipalRiskDetection> ServicePrincipalRiskDetections {
             get { return BackingStore?.Get<List<ServicePrincipalRiskDetection>>("servicePrincipalRiskDetections"); }

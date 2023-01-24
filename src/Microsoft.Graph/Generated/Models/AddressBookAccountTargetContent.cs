@@ -5,12 +5,14 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AddressBookAccountTargetContent : AccountTargetContent, IParsable {
-        /// <summary>The accountTargetEmails property</summary>
+        /// <summary>List of user emails targeted for an attack simulation training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AccountTargetEmails {
             get { return BackingStore?.Get<List<string>?>("accountTargetEmails"); }
             set { BackingStore?.Set("accountTargetEmails", value); }
         }
+#nullable restore
 #else
         public List<string> AccountTargetEmails {
             get { return BackingStore?.Get<List<string>>("accountTargetEmails"); }

@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Extended Key Usage (EKU) settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExtendedKeyUsage>? ExtendedKeyUsages {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
+#nullable restore
 #else
         public List<ExtendedKeyUsage> ExtendedKeyUsages {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>SCEP Hash Algorithm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<HashAlgorithms?>? HashAlgorithm {
             get { return BackingStore?.Get<List<HashAlgorithms?>?>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
+#nullable restore
 #else
         public List<HashAlgorithms?> HashAlgorithm {
             get { return BackingStore?.Get<List<HashAlgorithms?>>("hashAlgorithm"); }
@@ -71,10 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>SCEP Server Url(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ScepServerUrls {
             get { return BackingStore?.Get<List<string>?>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
+#nullable restore
 #else
         public List<string> ScepServerUrls {
             get { return BackingStore?.Get<List<string>>("scepServerUrls"); }
@@ -83,10 +89,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom AAD Attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Windows10XCustomSubjectAlternativeName>? SubjectAlternativeNameFormats {
             get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>?>("subjectAlternativeNameFormats"); }
             set { BackingStore?.Set("subjectAlternativeNameFormats", value); }
         }
+#nullable restore
 #else
         public List<Windows10XCustomSubjectAlternativeName> SubjectAlternativeNameFormats {
             get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>>("subjectAlternativeNameFormats"); }
@@ -95,10 +103,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubjectNameFormatString {
             get { return BackingStore?.Get<string?>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
+#nullable restore
 #else
         public string SubjectNameFormatString {
             get { return BackingStore?.Get<string>("subjectNameFormatString"); }

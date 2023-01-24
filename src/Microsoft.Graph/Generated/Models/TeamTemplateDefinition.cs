@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Categories {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The iconUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IconUrl {
             get { return BackingStore?.Get<string?>("iconUrl"); }
             set { BackingStore?.Set("iconUrl", value); }
         }
+#nullable restore
 #else
         public string IconUrl {
             get { return BackingStore?.Get<string>("iconUrl"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The languageTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LanguageTag {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+#nullable restore
 #else
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The lastModifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The parentTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentTemplateId {
             get { return BackingStore?.Get<string?>("parentTemplateId"); }
             set { BackingStore?.Set("parentTemplateId", value); }
         }
+#nullable restore
 #else
         public string ParentTemplateId {
             get { return BackingStore?.Get<string>("parentTemplateId"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The publisherName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PublisherName {
             get { return BackingStore?.Get<string?>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
+#nullable restore
 #else
         public string PublisherName {
             get { return BackingStore?.Get<string>("publisherName"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The shortDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ShortDescription {
             get { return BackingStore?.Get<string?>("shortDescription"); }
             set { BackingStore?.Set("shortDescription", value); }
         }
+#nullable restore
 #else
         public string ShortDescription {
             get { return BackingStore?.Get<string>("shortDescription"); }
@@ -125,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The teamDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Team? TeamDefinition {
             get { return BackingStore?.Get<Team?>("teamDefinition"); }
             set { BackingStore?.Set("teamDefinition", value); }
         }
+#nullable restore
 #else
         public Team TeamDefinition {
             get { return BackingStore?.Get<Team>("teamDefinition"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MetaDataKeyValuePairCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MetaDataKeyValuePair>? Value {
             get { return BackingStore?.Get<List<MetaDataKeyValuePair>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<MetaDataKeyValuePair> Value {
             get { return BackingStore?.Get<List<MetaDataKeyValuePair>>("value"); }

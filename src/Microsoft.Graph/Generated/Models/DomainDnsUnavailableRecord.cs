@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DomainDnsUnavailableRecord : DomainDnsRecord, IParsable {
         /// <summary>Provides the reason why the DomainDnsUnavailableRecord entity is returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.SetStatusMessage {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The statusMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PresenceStatusMessage? StatusMessage {
             get { return BackingStore?.Get<PresenceStatusMessage?>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
+#nullable restore
 #else
         public PresenceStatusMessage StatusMessage {
             get { return BackingStore?.Get<PresenceStatusMessage>("statusMessage"); }

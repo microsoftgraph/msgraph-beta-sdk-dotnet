@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The meeting ID to be used to join a meeting. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JoinMeetingId {
             get { return BackingStore?.Get<string?>("joinMeetingId"); }
             set { BackingStore?.Set("joinMeetingId", value); }
         }
+#nullable restore
 #else
         public string JoinMeetingId {
             get { return BackingStore?.Get<string>("joinMeetingId"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The passcode to join a meeting.  Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Passcode {
             get { return BackingStore?.Get<string?>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
+#nullable restore
 #else
         public string Passcode {
             get { return BackingStore?.Get<string>("passcode"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Workbook : Entity, IParsable {
         /// <summary>The application property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookApplication? Application {
             get { return BackingStore?.Get<WorkbookApplication?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#nullable restore
 #else
         public WorkbookApplication Application {
             get { return BackingStore?.Get<WorkbookApplication>("application"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The comments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookComment>? Comments {
             get { return BackingStore?.Get<List<WorkbookComment>?>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
+#nullable restore
 #else
         public List<WorkbookComment> Comments {
             get { return BackingStore?.Get<List<WorkbookComment>>("comments"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The functions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookFunctions? Functions {
             get { return BackingStore?.Get<WorkbookFunctions?>("functions"); }
             set { BackingStore?.Set("functions", value); }
         }
+#nullable restore
 #else
         public WorkbookFunctions Functions {
             get { return BackingStore?.Get<WorkbookFunctions>("functions"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookNamedItem>? Names {
             get { return BackingStore?.Get<List<WorkbookNamedItem>?>("names"); }
             set { BackingStore?.Set("names", value); }
         }
+#nullable restore
 #else
         public List<WorkbookNamedItem> Names {
             get { return BackingStore?.Get<List<WorkbookNamedItem>>("names"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookOperation>? Operations {
             get { return BackingStore?.Get<List<WorkbookOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<WorkbookOperation> Operations {
             get { return BackingStore?.Get<List<WorkbookOperation>>("operations"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a collection of tables associated with the workbook. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookTable>? Tables {
             get { return BackingStore?.Get<List<WorkbookTable>?>("tables"); }
             set { BackingStore?.Set("tables", value); }
         }
+#nullable restore
 #else
         public List<WorkbookTable> Tables {
             get { return BackingStore?.Get<List<WorkbookTable>>("tables"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a collection of worksheets associated with the workbook. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookWorksheet>? Worksheets {
             get { return BackingStore?.Get<List<WorkbookWorksheet>?>("worksheets"); }
             set { BackingStore?.Set("worksheets", value); }
         }
+#nullable restore
 #else
         public List<WorkbookWorksheet> Worksheets {
             get { return BackingStore?.Get<List<WorkbookWorksheet>>("worksheets"); }

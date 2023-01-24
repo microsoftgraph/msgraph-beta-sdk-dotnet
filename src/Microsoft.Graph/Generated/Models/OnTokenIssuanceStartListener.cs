@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartListener : AuthenticationEventListener, IParsable {
         /// <summary>The handler property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OnTokenIssuanceStartHandler? Handler {
             get { return BackingStore?.Get<OnTokenIssuanceStartHandler?>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
+#nullable restore
 #else
         public OnTokenIssuanceStartHandler Handler {
             get { return BackingStore?.Get<OnTokenIssuanceStartHandler>("handler"); }

@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The carrierUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CarrierUrl {
             get { return BackingStore?.Get<string?>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
+#nullable restore
 #else
         public string CarrierUrl {
             get { return BackingStore?.Get<string>("carrierUrl"); }
@@ -33,10 +35,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction {
 #endif
         /// <summary>The deprovisionReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeprovisionReason {
             get { return BackingStore?.Get<string?>("deprovisionReason"); }
             set { BackingStore?.Set("deprovisionReason", value); }
         }
+#nullable restore
 #else
         public string DeprovisionReason {
             get { return BackingStore?.Get<string>("deprovisionReason"); }
@@ -45,10 +49,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction {
 #endif
         /// <summary>The deviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DeviceIds {
             get { return BackingStore?.Get<List<string>?>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
+#nullable restore
 #else
         public List<string> DeviceIds {
             get { return BackingStore?.Get<List<string>>("deviceIds"); }
@@ -57,10 +63,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction {
 #endif
         /// <summary>The deviceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -79,10 +87,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction {
         }
         /// <summary>The notificationBody property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationBody {
             get { return BackingStore?.Get<string?>("notificationBody"); }
             set { BackingStore?.Set("notificationBody", value); }
         }
+#nullable restore
 #else
         public string NotificationBody {
             get { return BackingStore?.Get<string>("notificationBody"); }
@@ -91,10 +101,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction {
 #endif
         /// <summary>The notificationTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationTitle {
             get { return BackingStore?.Get<string?>("notificationTitle"); }
             set { BackingStore?.Set("notificationTitle", value); }
         }
+#nullable restore
 #else
         public string NotificationTitle {
             get { return BackingStore?.Get<string>("notificationTitle"); }
@@ -103,10 +115,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction {
 #endif
         /// <summary>The organizationalUnitPath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrganizationalUnitPath {
             get { return BackingStore?.Get<string?>("organizationalUnitPath"); }
             set { BackingStore?.Set("organizationalUnitPath", value); }
         }
+#nullable restore
 #else
         public string OrganizationalUnitPath {
             get { return BackingStore?.Get<string>("organizationalUnitPath"); }

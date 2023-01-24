@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date, time, and time zone that the corresponding event ends.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? End {
             get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone End {
             get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The location where the corresponding event is held or attended from. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Location {
             get { return BackingStore?.Get<string?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public string Location {
             get { return BackingStore?.Get<string>("location"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The date, time, and time zone that the corresponding event starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? Start {
             get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone Start {
             get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The corresponding event&apos;s subject line. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }

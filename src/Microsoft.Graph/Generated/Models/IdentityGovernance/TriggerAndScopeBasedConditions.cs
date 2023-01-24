@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class TriggerAndScopeBasedConditions : WorkflowExecutionConditions, IParsable {
         /// <summary>Defines who the workflow runs for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.SubjectSet? Scope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectSet?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.SubjectSet Scope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectSet>("scope"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>What triggers a workflow to run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkflowExecutionTrigger? Trigger {
             get { return BackingStore?.Get<WorkflowExecutionTrigger?>("trigger"); }
             set { BackingStore?.Set("trigger", value); }
         }
+#nullable restore
 #else
         public WorkflowExecutionTrigger Trigger {
             get { return BackingStore?.Get<WorkflowExecutionTrigger>("trigger"); }

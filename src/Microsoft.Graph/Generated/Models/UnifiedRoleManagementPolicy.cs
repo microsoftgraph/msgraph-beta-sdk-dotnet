@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicy : Entity, IParsable {
         /// <summary>Description for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRoleManagementPolicyRule>? EffectiveRules {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>?>("effectiveRules"); }
             set { BackingStore?.Set("effectiveRules", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRoleManagementPolicyRule> EffectiveRules {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>("effectiveRules"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The identity who last modified the role setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? LastModifiedBy {
             get { return BackingStore?.Get<Identity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public Identity LastModifiedBy {
             get { return BackingStore?.Get<Identity>("lastModifiedBy"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of rules like approval rules and expiration rules. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRoleManagementPolicyRule>? Rules {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRoleManagementPolicyRule> Rules {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyRule>>("rules"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScopeId {
             get { return BackingStore?.Get<string?>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
+#nullable restore
 #else
         public string ScopeId {
             get { return BackingStore?.Get<string>("scopeId"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScopeType {
             get { return BackingStore?.Get<string?>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
+#nullable restore
 #else
         public string ScopeType {
             get { return BackingStore?.Get<string>("scopeType"); }

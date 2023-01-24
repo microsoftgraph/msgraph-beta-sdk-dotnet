@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ScopedRoleMembership : Entity, IParsable {
         /// <summary>Unique identifier for the administrative unit that the directory role is scoped to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdministrativeUnitId {
             get { return BackingStore?.Get<string?>("administrativeUnitId"); }
             set { BackingStore?.Set("administrativeUnitId", value); }
         }
+#nullable restore
 #else
         public string AdministrativeUnitId {
             get { return BackingStore?.Get<string>("administrativeUnitId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier for the directory role that the member is in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleId {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#nullable restore
 #else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The roleMemberInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? RoleMemberInfo {
             get { return BackingStore?.Get<Identity?>("roleMemberInfo"); }
             set { BackingStore?.Set("roleMemberInfo", value); }
         }
+#nullable restore
 #else
         public Identity RoleMemberInfo {
             get { return BackingStore?.Get<Identity>("roleMemberInfo"); }

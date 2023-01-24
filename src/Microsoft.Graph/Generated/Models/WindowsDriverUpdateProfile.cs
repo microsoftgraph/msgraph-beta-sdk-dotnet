@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of group assignments of the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsDriverUpdateProfileAssignment>? Assignments {
             get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<WindowsDriverUpdateProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>>("assignments"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description of the profile which is specified by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The display name for the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Driver inventories for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsDriverUpdateInventory>? DriverInventories {
             get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>?>("driverInventories"); }
             set { BackingStore?.Set("driverInventories", value); }
         }
+#nullable restore
 #else
         public List<WindowsDriverUpdateInventory> DriverInventories {
             get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>>("driverInventories"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Driver inventory sync status for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsDriverUpdateProfileInventorySyncStatus? InventorySyncStatus {
             get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus?>("inventorySyncStatus"); }
             set { BackingStore?.Set("inventorySyncStatus", value); }
         }
+#nullable restore
 #else
         public WindowsDriverUpdateProfileInventorySyncStatus InventorySyncStatus {
             get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus>("inventorySyncStatus"); }
@@ -100,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Scope Tags for this Driver Update entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }

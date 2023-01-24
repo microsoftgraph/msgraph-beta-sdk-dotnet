@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChatMessageMentionedIdentitySet : IdentitySet, IParsable {
         /// <summary>If present, represents a conversation (for example, team or channel) @mentioned in a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkConversationIdentity? Conversation {
             get { return BackingStore?.Get<TeamworkConversationIdentity?>("conversation"); }
             set { BackingStore?.Set("conversation", value); }
         }
+#nullable restore
 #else
         public TeamworkConversationIdentity Conversation {
             get { return BackingStore?.Get<TeamworkConversationIdentity>("conversation"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If present, represents a tag @mentioned in a team message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkTagIdentity? Tag {
             get { return BackingStore?.Get<TeamworkTagIdentity?>("tag"); }
             set { BackingStore?.Set("tag", value); }
         }
+#nullable restore
 #else
         public TeamworkTagIdentity Tag {
             get { return BackingStore?.Get<TeamworkTagIdentity>("tag"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultRule {
             get { return BackingStore?.Get<string?>("defaultRule"); }
             set { BackingStore?.Set("defaultRule", value); }
         }
+#nullable restore
 #else
         public string DefaultRule {
             get { return BackingStore?.Get<string>("defaultRule"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rules for specific properties and actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerTaskPropertyRule? PropertyRule {
             get { return BackingStore?.Get<PlannerTaskPropertyRule?>("propertyRule"); }
             set { BackingStore?.Set("propertyRule", value); }
         }
+#nullable restore
 #else
         public PlannerTaskPropertyRule PropertyRule {
             get { return BackingStore?.Get<PlannerTaskPropertyRule>("propertyRule"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The role these rules apply to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerTaskConfigurationRoleBase? Role {
             get { return BackingStore?.Get<PlannerTaskConfigurationRoleBase?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#nullable restore
 #else
         public PlannerTaskConfigurationRoleBase Role {
             get { return BackingStore?.Get<PlannerTaskConfigurationRoleBase>("role"); }

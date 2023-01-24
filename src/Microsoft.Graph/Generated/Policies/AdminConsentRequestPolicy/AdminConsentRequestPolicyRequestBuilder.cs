@@ -52,7 +52,9 @@ namespace Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<AdminConsentRequestPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<AdminConsentRequestPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -70,7 +72,9 @@ namespace Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy?> GetAsync(Action<AdminConsentRequestPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy> GetAsync(Action<AdminConsentRequestPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -89,7 +93,9 @@ namespace Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy?> PatchAsync(Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy body, Action<AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy> PatchAsync(Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy body, Action<AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -106,7 +112,9 @@ namespace Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<AdminConsentRequestPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<AdminConsentRequestPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -128,7 +136,9 @@ namespace Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<AdminConsentRequestPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<AdminConsentRequestPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -153,7 +163,9 @@ namespace Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy body, Action<AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy body, Action<AdminConsentRequestPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -195,16 +207,20 @@ namespace Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy {
         public class AdminConsentRequestPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

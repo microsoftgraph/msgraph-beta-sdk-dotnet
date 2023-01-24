@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AssignmentFilterEvaluateRequest? Data {
             get { return BackingStore?.Get<AssignmentFilterEvaluateRequest?>("data"); }
             set { BackingStore?.Set("data", value); }
         }
+#nullable restore
 #else
         public AssignmentFilterEvaluateRequest Data {
             get { return BackingStore?.Get<AssignmentFilterEvaluateRequest>("data"); }

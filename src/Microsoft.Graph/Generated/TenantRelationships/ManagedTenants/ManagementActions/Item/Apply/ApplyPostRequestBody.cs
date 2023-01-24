@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The excludeGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExcludeGroups {
             get { return BackingStore?.Get<List<string>?>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
+#nullable restore
 #else
         public List<string> ExcludeGroups {
             get { return BackingStore?.Get<List<string>>("excludeGroups"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         }
         /// <summary>The includeGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? IncludeGroups {
             get { return BackingStore?.Get<List<string>?>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
+#nullable restore
 #else
         public List<string> IncludeGroups {
             get { return BackingStore?.Get<List<string>>("includeGroups"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
 #endif
         /// <summary>The managementTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementTemplateId {
             get { return BackingStore?.Get<string?>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
+#nullable restore
 #else
         public string ManagementTemplateId {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
 #endif
         /// <summary>The tenantGroupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantGroupId {
             get { return BackingStore?.Get<string?>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
+#nullable restore
 #else
         public string TenantGroupId {
             get { return BackingStore?.Get<string>("tenantGroupId"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
 #endif
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

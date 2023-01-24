@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Color {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#nullable restore
 #else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The criterion1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Criterion1 {
             get { return BackingStore?.Get<string?>("criterion1"); }
             set { BackingStore?.Set("criterion1", value); }
         }
+#nullable restore
 #else
         public string Criterion1 {
             get { return BackingStore?.Get<string>("criterion1"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The criterion2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Criterion2 {
             get { return BackingStore?.Get<string?>("criterion2"); }
             set { BackingStore?.Set("criterion2", value); }
         }
+#nullable restore
 #else
         public string Criterion2 {
             get { return BackingStore?.Get<string>("criterion2"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dynamicCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DynamicCriteria {
             get { return BackingStore?.Get<string?>("dynamicCriteria"); }
             set { BackingStore?.Set("dynamicCriteria", value); }
         }
+#nullable restore
 #else
         public string DynamicCriteria {
             get { return BackingStore?.Get<string>("dynamicCriteria"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The filterOn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FilterOn {
             get { return BackingStore?.Get<string?>("filterOn"); }
             set { BackingStore?.Set("filterOn", value); }
         }
+#nullable restore
 #else
         public string FilterOn {
             get { return BackingStore?.Get<string>("filterOn"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookIcon? Icon {
             get { return BackingStore?.Get<WorkbookIcon?>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
+#nullable restore
 #else
         public WorkbookIcon Icon {
             get { return BackingStore?.Get<WorkbookIcon>("icon"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The operator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Operator {
             get { return BackingStore?.Get<string?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
+#nullable restore
 #else
         public string Operator {
             get { return BackingStore?.Get<string>("operator"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Values {
             get { return BackingStore?.Get<Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public Json Values {
             get { return BackingStore?.Get<Json>("values"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationJob : Entity, IParsable {
         /// <summary>Schedule used to run the job. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SynchronizationSchedule? Schedule {
             get { return BackingStore?.Get<SynchronizationSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#nullable restore
 #else
         public SynchronizationSchedule Schedule {
             get { return BackingStore?.Get<SynchronizationSchedule>("schedule"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The synchronization schema configured for the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SynchronizationSchema? Schema {
             get { return BackingStore?.Get<SynchronizationSchema?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
+#nullable restore
 #else
         public SynchronizationSchema Schema {
             get { return BackingStore?.Get<SynchronizationSchema>("schema"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Status of the job, which includes when the job was last run, current job state, and errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SynchronizationStatus? Status {
             get { return BackingStore?.Get<SynchronizationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public SynchronizationStatus Status {
             get { return BackingStore?.Get<SynchronizationStatus>("status"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Settings associated with the job. Some settings are inherited from the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? SynchronizationJobSettings {
             get { return BackingStore?.Get<List<KeyValuePair>?>("synchronizationJobSettings"); }
             set { BackingStore?.Set("synchronizationJobSettings", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> SynchronizationJobSettings {
             get { return BackingStore?.Get<List<KeyValuePair>>("synchronizationJobSettings"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier of the synchronization template this job is based on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemplateId {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#nullable restore
 #else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }

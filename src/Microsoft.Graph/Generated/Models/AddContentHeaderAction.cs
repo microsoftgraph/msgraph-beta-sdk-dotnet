@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Color of the font to use for the header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FontColor {
             get { return BackingStore?.Get<string?>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
+#nullable restore
 #else
         public string FontColor {
             get { return BackingStore?.Get<string>("fontColor"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the font to use for the header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FontName {
             get { return BackingStore?.Get<string?>("fontName"); }
             set { BackingStore?.Set("fontName", value); }
         }
+#nullable restore
 #else
         public string FontName {
             get { return BackingStore?.Get<string>("fontName"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The contents of the header itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Text {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the UI element where the header should be placed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UiElementName {
             get { return BackingStore?.Get<string?>("uiElementName"); }
             set { BackingStore?.Set("uiElementName", value); }
         }
+#nullable restore
 #else
         public string UiElementName {
             get { return BackingStore?.Get<string>("uiElementName"); }

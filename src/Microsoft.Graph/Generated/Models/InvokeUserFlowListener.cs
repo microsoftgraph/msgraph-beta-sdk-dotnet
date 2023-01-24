@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class InvokeUserFlowListener : AuthenticationListener, IParsable {
         /// <summary>The user flow that is invoked when this action executes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public B2xIdentityUserFlow? UserFlow {
             get { return BackingStore?.Get<B2xIdentityUserFlow?>("userFlow"); }
             set { BackingStore?.Set("userFlow", value); }
         }
+#nullable restore
 #else
         public B2xIdentityUserFlow UserFlow {
             get { return BackingStore?.Get<B2xIdentityUserFlow>("userFlow"); }

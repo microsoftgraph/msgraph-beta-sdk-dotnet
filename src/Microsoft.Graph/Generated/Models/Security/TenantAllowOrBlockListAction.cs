@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Specifies the note added to the tenant allow block list entry in the format of string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Note {
             get { return BackingStore?.Get<string?>("note"); }
             set { BackingStore?.Set("note", value); }
         }
+#nullable restore
 #else
         public string Note {
             get { return BackingStore?.Get<string>("note"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Contains the result of the submission that lead to the tenant allow-block-list entry creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TenantAllowBlockListEntryResult>? Results {
             get { return BackingStore?.Get<List<TenantAllowBlockListEntryResult>?>("results"); }
             set { BackingStore?.Set("results", value); }
         }
+#nullable restore
 #else
         public List<TenantAllowBlockListEntryResult> Results {
             get { return BackingStore?.Get<List<TenantAllowBlockListEntryResult>>("results"); }

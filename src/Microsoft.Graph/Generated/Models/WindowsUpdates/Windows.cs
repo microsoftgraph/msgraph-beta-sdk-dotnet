@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class Windows : Entity, IParsable {
         /// <summary>Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.WindowsUpdates.Updates? Updates {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates?>("updates"); }
             set { BackingStore?.Set("updates", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.WindowsUpdates.Updates Updates {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates>("updates"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Add {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConversationMember>? Values {
             get { return BackingStore?.Get<List<ConversationMember>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public List<ConversationMember> Values {
             get { return BackingStore?.Get<List<ConversationMember>>("values"); }

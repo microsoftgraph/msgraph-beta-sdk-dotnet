@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedMobileApp : Entity, IParsable {
         /// <summary>The identifier for an app with it&apos;s operating system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.MobileAppIdentifier? MobileAppIdentifier {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppIdentifier?>("mobileAppIdentifier"); }
             set { BackingStore?.Set("mobileAppIdentifier", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.MobileAppIdentifier MobileAppIdentifier {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppIdentifier>("mobileAppIdentifier"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Version of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ColumnDefinition : Entity, IParsable {
         /// <summary>This column stores boolean values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public BooleanColumn? Boolean {
             get { return BackingStore?.Get<BooleanColumn?>("boolean"); }
             set { BackingStore?.Set("boolean", value); }
         }
+#nullable restore
 #else
         public BooleanColumn Boolean {
             get { return BackingStore?.Get<BooleanColumn>("boolean"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column&apos;s data is calculated based on other columns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CalculatedColumn? Calculated {
             get { return BackingStore?.Get<CalculatedColumn?>("calculated"); }
             set { BackingStore?.Set("calculated", value); }
         }
+#nullable restore
 #else
         public CalculatedColumn Calculated {
             get { return BackingStore?.Get<CalculatedColumn>("calculated"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column stores data from a list of choices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ChoiceColumn? Choice {
             get { return BackingStore?.Get<ChoiceColumn?>("choice"); }
             set { BackingStore?.Set("choice", value); }
         }
+#nullable restore
 #else
         public ChoiceColumn Choice {
             get { return BackingStore?.Get<ChoiceColumn>("choice"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For site columns, the name of the group this column belongs to. Helps organize related columns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ColumnGroup {
             get { return BackingStore?.Get<string?>("columnGroup"); }
             set { BackingStore?.Set("columnGroup", value); }
         }
+#nullable restore
 #else
         public string ColumnGroup {
             get { return BackingStore?.Get<string>("columnGroup"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column stores content approval status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ContentApprovalStatusColumn? ContentApprovalStatus {
             get { return BackingStore?.Get<ContentApprovalStatusColumn?>("contentApprovalStatus"); }
             set { BackingStore?.Set("contentApprovalStatus", value); }
         }
+#nullable restore
 #else
         public ContentApprovalStatusColumn ContentApprovalStatus {
             get { return BackingStore?.Get<ContentApprovalStatusColumn>("contentApprovalStatus"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column stores currency values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CurrencyColumn? Currency {
             get { return BackingStore?.Get<CurrencyColumn?>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
+#nullable restore
 #else
         public CurrencyColumn Currency {
             get { return BackingStore?.Get<CurrencyColumn>("currency"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column stores DateTime values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeColumn? DateTime {
             get { return BackingStore?.Get<DateTimeColumn?>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeColumn DateTime {
             get { return BackingStore?.Get<DateTimeColumn>("dateTime"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The default value for this column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DefaultColumnValue? DefaultValue {
             get { return BackingStore?.Get<DefaultColumnValue?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#nullable restore
 #else
         public DefaultColumnValue DefaultValue {
             get { return BackingStore?.Get<DefaultColumnValue>("defaultValue"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user-facing description of the column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user-facing name of the column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -132,10 +152,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This column stores a geolocation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GeolocationColumn? Geolocation {
             get { return BackingStore?.Get<GeolocationColumn?>("geolocation"); }
             set { BackingStore?.Set("geolocation", value); }
         }
+#nullable restore
 #else
         public GeolocationColumn Geolocation {
             get { return BackingStore?.Get<GeolocationColumn>("geolocation"); }
@@ -149,10 +171,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This column stores hyperlink or picture values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public HyperlinkOrPictureColumn? HyperlinkOrPicture {
             get { return BackingStore?.Get<HyperlinkOrPictureColumn?>("hyperlinkOrPicture"); }
             set { BackingStore?.Set("hyperlinkOrPicture", value); }
         }
+#nullable restore
 #else
         public HyperlinkOrPictureColumn HyperlinkOrPicture {
             get { return BackingStore?.Get<HyperlinkOrPictureColumn>("hyperlinkOrPicture"); }
@@ -181,10 +205,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This column&apos;s data is looked up from another source in the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public LookupColumn? Lookup {
             get { return BackingStore?.Get<LookupColumn?>("lookup"); }
             set { BackingStore?.Set("lookup", value); }
         }
+#nullable restore
 #else
         public LookupColumn Lookup {
             get { return BackingStore?.Get<LookupColumn>("lookup"); }
@@ -193,10 +219,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -205,10 +233,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column stores number values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public NumberColumn? Number {
             get { return BackingStore?.Get<NumberColumn?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
+#nullable restore
 #else
         public NumberColumn Number {
             get { return BackingStore?.Get<NumberColumn>("number"); }
@@ -217,10 +247,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column stores Person or Group values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PersonOrGroupColumn? PersonOrGroup {
             get { return BackingStore?.Get<PersonOrGroupColumn?>("personOrGroup"); }
             set { BackingStore?.Set("personOrGroup", value); }
         }
+#nullable restore
 #else
         public PersonOrGroupColumn PersonOrGroup {
             get { return BackingStore?.Get<PersonOrGroupColumn>("personOrGroup"); }
@@ -244,10 +276,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The source column for content type column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ColumnDefinition? SourceColumn {
             get { return BackingStore?.Get<ColumnDefinition?>("sourceColumn"); }
             set { BackingStore?.Set("sourceColumn", value); }
         }
+#nullable restore
 #else
         public ColumnDefinition SourceColumn {
             get { return BackingStore?.Get<ColumnDefinition>("sourceColumn"); }
@@ -256,10 +290,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ContentType from which this column is inherited from. Used only to fetch contentTypes columns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ContentTypeInfo? SourceContentType {
             get { return BackingStore?.Get<ContentTypeInfo?>("sourceContentType"); }
             set { BackingStore?.Set("sourceContentType", value); }
         }
+#nullable restore
 #else
         public ContentTypeInfo SourceContentType {
             get { return BackingStore?.Get<ContentTypeInfo>("sourceContentType"); }
@@ -268,10 +304,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column stores taxonomy terms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TermColumn? Term {
             get { return BackingStore?.Get<TermColumn?>("term"); }
             set { BackingStore?.Set("term", value); }
         }
+#nullable restore
 #else
         public TermColumn Term {
             get { return BackingStore?.Get<TermColumn>("term"); }
@@ -280,10 +318,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column stores text values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TextColumn? Text {
             get { return BackingStore?.Get<TextColumn?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public TextColumn Text {
             get { return BackingStore?.Get<TextColumn>("text"); }
@@ -292,10 +332,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This column stores thumbnail values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ThumbnailColumn? Thumbnail {
             get { return BackingStore?.Get<ThumbnailColumn?>("thumbnail"); }
             set { BackingStore?.Set("thumbnail", value); }
         }
+#nullable restore
 #else
         public ThumbnailColumn Thumbnail {
             get { return BackingStore?.Get<ThumbnailColumn>("thumbnail"); }
@@ -309,10 +351,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This column stores validation formula and message for the column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ColumnValidation? Validation {
             get { return BackingStore?.Get<ColumnValidation?>("validation"); }
             set { BackingStore?.Set("validation", value); }
         }
+#nullable restore
 #else
         public ColumnValidation Validation {
             get { return BackingStore?.Get<ColumnValidation>("validation"); }

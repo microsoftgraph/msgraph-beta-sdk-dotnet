@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class SensitivityLabel : Entity, IParsable {
         /// <summary>The color that the UI should display for the label, if configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Color {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#nullable restore
 #else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Returns the supported content formats for the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ContentFormats {
             get { return BackingStore?.Get<List<string>?>("contentFormats"); }
             set { BackingStore?.Set("contentFormats", value); }
         }
+#nullable restore
 #else
         public List<string> ContentFormats {
             get { return BackingStore?.Get<List<string>>("contentFormats"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The admin-defined description for the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The plaintext name of the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The parent label associated with a child label. Null if the label has no parent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SensitivityLabel? Parent {
             get { return BackingStore?.Get<SensitivityLabel?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
+#nullable restore
 #else
         public SensitivityLabel Parent {
             get { return BackingStore?.Get<SensitivityLabel>("parent"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The tooltip that should be displayed for the label in a UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Tooltip {
             get { return BackingStore?.Get<string?>("tooltip"); }
             set { BackingStore?.Set("tooltip", value); }
         }
+#nullable restore
 #else
         public string Tooltip {
             get { return BackingStore?.Get<string>("tooltip"); }

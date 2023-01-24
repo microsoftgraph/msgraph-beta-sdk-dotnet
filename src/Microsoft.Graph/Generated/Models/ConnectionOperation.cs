@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PublicError? Error {
             get { return BackingStore?.Get<PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public PublicError Error {
             get { return BackingStore?.Get<PublicError>("error"); }

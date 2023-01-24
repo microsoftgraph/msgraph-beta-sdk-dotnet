@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class StrongAuthenticationDetail : Entity, IParsable {
         /// <summary>The encryptedPinHashHistory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? EncryptedPinHashHistory {
             get { return BackingStore?.Get<byte[]?>("encryptedPinHashHistory"); }
             set { BackingStore?.Set("encryptedPinHashHistory", value); }
         }
+#nullable restore
 #else
         public byte[] EncryptedPinHashHistory {
             get { return BackingStore?.Get<byte[]>("encryptedPinHashHistory"); }

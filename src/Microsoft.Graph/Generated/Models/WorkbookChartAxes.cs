@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartAxes : Entity, IParsable {
         /// <summary>Represents the category axis in a chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartAxis? CategoryAxis {
             get { return BackingStore?.Get<WorkbookChartAxis?>("categoryAxis"); }
             set { BackingStore?.Set("categoryAxis", value); }
         }
+#nullable restore
 #else
         public WorkbookChartAxis CategoryAxis {
             get { return BackingStore?.Get<WorkbookChartAxis>("categoryAxis"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the series axis of a 3-dimensional chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartAxis? SeriesAxis {
             get { return BackingStore?.Get<WorkbookChartAxis?>("seriesAxis"); }
             set { BackingStore?.Set("seriesAxis", value); }
         }
+#nullable restore
 #else
         public WorkbookChartAxis SeriesAxis {
             get { return BackingStore?.Get<WorkbookChartAxis>("seriesAxis"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the value axis in an axis. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartAxis? ValueAxis {
             get { return BackingStore?.Get<WorkbookChartAxis?>("valueAxis"); }
             set { BackingStore?.Set("valueAxis", value); }
         }
+#nullable restore
 #else
         public WorkbookChartAxis ValueAxis {
             get { return BackingStore?.Get<WorkbookChartAxis>("valueAxis"); }

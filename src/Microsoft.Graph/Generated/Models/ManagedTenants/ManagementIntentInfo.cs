@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementIntentDisplayName {
             get { return BackingStore?.Get<string?>("managementIntentDisplayName"); }
             set { BackingStore?.Set("managementIntentDisplayName", value); }
         }
+#nullable restore
 #else
         public string ManagementIntentDisplayName {
             get { return BackingStore?.Get<string>("managementIntentDisplayName"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The identifier for the management intent. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementIntentId {
             get { return BackingStore?.Get<string?>("managementIntentId"); }
             set { BackingStore?.Set("managementIntentId", value); }
         }
+#nullable restore
 #else
         public string ManagementIntentId {
             get { return BackingStore?.Get<string>("managementIntentId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The collection of management template information associated with the management intent. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagementTemplateDetailedInfo>? ManagementTemplates {
             get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>?>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
+#nullable restore
 #else
         public List<ManagementTemplateDetailedInfo> ManagementTemplates {
             get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>("managementTemplates"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

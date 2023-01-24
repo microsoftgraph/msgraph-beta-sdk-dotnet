@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class ThreatSubmission : Entity, IParsable {
         /// <summary>Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SubmissionAdminReview? AdminReview {
             get { return BackingStore?.Get<SubmissionAdminReview?>("adminReview"); }
             set { BackingStore?.Set("adminReview", value); }
         }
+#nullable restore
 #else
         public SubmissionAdminReview AdminReview {
             get { return BackingStore?.Get<SubmissionAdminReview>("adminReview"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq &apos;value&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SubmissionUserIdentity? CreatedBy {
             get { return BackingStore?.Get<SubmissionUserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public SubmissionUserIdentity CreatedBy {
             get { return BackingStore?.Get<SubmissionUserIdentity>("createdBy"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Specifies the result of the analysis performed by Microsoft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SubmissionResult? Result {
             get { return BackingStore?.Get<SubmissionResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
+#nullable restore
 #else
         public SubmissionResult Result {
             get { return BackingStore?.Get<SubmissionResult>("result"); }
@@ -73,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

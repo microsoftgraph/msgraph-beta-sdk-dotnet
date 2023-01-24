@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Network Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkName {
             get { return BackingStore?.Get<string?>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
+#nullable restore
 #else
         public string NetworkName {
             get { return BackingStore?.Get<string>("networkName"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PreSharedKey {
             get { return BackingStore?.Get<string?>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
+#nullable restore
 #else
         public string PreSharedKey {
             get { return BackingStore?.Get<string>("preSharedKey"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProxyAutomaticConfigurationUrl {
             get { return BackingStore?.Get<string?>("proxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
+#nullable restore
 #else
         public string ProxyAutomaticConfigurationUrl {
             get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>IP Address or DNS hostname of the proxy server when manual configuration is selected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProxyManualAddress {
             get { return BackingStore?.Get<string?>("proxyManualAddress"); }
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
+#nullable restore
 #else
         public string ProxyManualAddress {
             get { return BackingStore?.Get<string>("proxyManualAddress"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Ssid {
             get { return BackingStore?.Get<string?>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
+#nullable restore
 #else
         public string Ssid {
             get { return BackingStore?.Get<string>("ssid"); }

@@ -33,10 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The serial number of the device’s current battery</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BatterySerialNumber {
             get { return BackingStore?.Get<string?>("batterySerialNumber"); }
             set { BackingStore?.Set("batterySerialNumber", value); }
         }
+#nullable restore
 #else
         public string BatterySerialNumber {
             get { return BackingStore?.Get<string>("batterySerialNumber"); }
@@ -45,10 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Cellular technology of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CellularTechnology {
             get { return BackingStore?.Get<string?>("cellularTechnology"); }
             set { BackingStore?.Set("cellularTechnology", value); }
         }
+#nullable restore
 #else
         public string CellularTechnology {
             get { return BackingStore?.Get<string>("cellularTechnology"); }
@@ -57,10 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceFullQualifiedDomainName {
             get { return BackingStore?.Get<string?>("deviceFullQualifiedDomainName"); }
             set { BackingStore?.Set("deviceFullQualifiedDomainName", value); }
         }
+#nullable restore
 #else
         public string DeviceFullQualifiedDomainName {
             get { return BackingStore?.Get<string>("deviceFullQualifiedDomainName"); }
@@ -89,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceLicensingLastErrorDescription {
             get { return BackingStore?.Get<string?>("deviceLicensingLastErrorDescription"); }
             set { BackingStore?.Set("deviceLicensingLastErrorDescription", value); }
         }
+#nullable restore
 #else
         public string DeviceLicensingLastErrorDescription {
             get { return BackingStore?.Get<string>("deviceLicensingLastErrorDescription"); }
@@ -106,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>eSIM identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EsimIdentifier {
             get { return BackingStore?.Get<string?>("esimIdentifier"); }
             set { BackingStore?.Set("esimIdentifier", value); }
         }
+#nullable restore
 #else
         public string EsimIdentifier {
             get { return BackingStore?.Get<string>("esimIdentifier"); }
@@ -123,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>IMEI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Imei {
             get { return BackingStore?.Get<string?>("imei"); }
             set { BackingStore?.Set("imei", value); }
         }
+#nullable restore
 #else
         public string Imei {
             get { return BackingStore?.Get<string>("imei"); }
@@ -135,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>IPAddressV4</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddressV4 {
             get { return BackingStore?.Get<string?>("ipAddressV4"); }
             set { BackingStore?.Set("ipAddressV4", value); }
         }
+#nullable restore
 #else
         public string IpAddressV4 {
             get { return BackingStore?.Get<string>("ipAddressV4"); }
@@ -162,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Manufacturer of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Manufacturer {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#nullable restore
 #else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
@@ -174,10 +190,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>MEID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Meid {
             get { return BackingStore?.Get<string?>("meid"); }
             set { BackingStore?.Set("meid", value); }
         }
+#nullable restore
 #else
         public string Meid {
             get { return BackingStore?.Get<string>("meid"); }
@@ -186,10 +204,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Model of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Model {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#nullable restore
 #else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
@@ -198,10 +218,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -210,10 +232,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>String that specifies the OS edition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OperatingSystemEdition {
             get { return BackingStore?.Get<string?>("operatingSystemEdition"); }
             set { BackingStore?.Set("operatingSystemEdition", value); }
         }
+#nullable restore
 #else
         public string OperatingSystemEdition {
             get { return BackingStore?.Get<string>("operatingSystemEdition"); }
@@ -222,10 +246,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Operating system language of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OperatingSystemLanguage {
             get { return BackingStore?.Get<string?>("operatingSystemLanguage"); }
             set { BackingStore?.Set("operatingSystemLanguage", value); }
         }
+#nullable restore
 #else
         public string OperatingSystemLanguage {
             get { return BackingStore?.Get<string>("operatingSystemLanguage"); }
@@ -239,10 +265,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Operating System Build Number on Android device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsBuildNumber {
             get { return BackingStore?.Get<string?>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
+#nullable restore
 #else
         public string OsBuildNumber {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
@@ -251,10 +279,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Phone number of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PhoneNumber {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
+#nullable restore
 #else
         public string PhoneNumber {
             get { return BackingStore?.Get<string>("phoneNumber"); }
@@ -263,10 +293,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductName {
             get { return BackingStore?.Get<string?>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
+#nullable restore
 #else
         public string ProductName {
             get { return BackingStore?.Get<string>("productName"); }
@@ -280,10 +312,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Serial number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SerialNumber {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#nullable restore
 #else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
@@ -292,10 +326,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All users on the shared Apple device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SharedAppleDeviceUser>? SharedDeviceCachedUsers {
             get { return BackingStore?.Get<List<SharedAppleDeviceUser>?>("sharedDeviceCachedUsers"); }
             set { BackingStore?.Set("sharedDeviceCachedUsers", value); }
         }
+#nullable restore
 #else
         public List<SharedAppleDeviceUser> SharedDeviceCachedUsers {
             get { return BackingStore?.Get<List<SharedAppleDeviceUser>>("sharedDeviceCachedUsers"); }
@@ -304,10 +340,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>SubnetAddress</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubnetAddress {
             get { return BackingStore?.Get<string?>("subnetAddress"); }
             set { BackingStore?.Set("subnetAddress", value); }
         }
+#nullable restore
 #else
         public string SubnetAddress {
             get { return BackingStore?.Get<string>("subnetAddress"); }
@@ -316,10 +354,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Subscriber carrier of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubscriberCarrier {
             get { return BackingStore?.Get<string?>("subscriberCarrier"); }
             set { BackingStore?.Set("subscriberCarrier", value); }
         }
+#nullable restore
 #else
         public string SubscriberCarrier {
             get { return BackingStore?.Get<string>("subscriberCarrier"); }
@@ -328,10 +368,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>BIOS version as reported by SMBIOS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SystemManagementBIOSVersion {
             get { return BackingStore?.Get<string?>("systemManagementBIOSVersion"); }
             set { BackingStore?.Set("systemManagementBIOSVersion", value); }
         }
+#nullable restore
 #else
         public string SystemManagementBIOSVersion {
             get { return BackingStore?.Get<string>("systemManagementBIOSVersion"); }
@@ -345,10 +387,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The identifying information that uniquely names the TPM manufacturer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TpmManufacturer {
             get { return BackingStore?.Get<string?>("tpmManufacturer"); }
             set { BackingStore?.Set("tpmManufacturer", value); }
         }
+#nullable restore
 #else
         public string TpmManufacturer {
             get { return BackingStore?.Get<string>("tpmManufacturer"); }
@@ -357,10 +401,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>String that specifies the specification version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TpmSpecificationVersion {
             get { return BackingStore?.Get<string?>("tpmSpecificationVersion"); }
             set { BackingStore?.Set("tpmSpecificationVersion", value); }
         }
+#nullable restore
 #else
         public string TpmSpecificationVersion {
             get { return BackingStore?.Get<string>("tpmSpecificationVersion"); }
@@ -369,10 +415,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The version of the TPM, as specified by the manufacturer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TpmVersion {
             get { return BackingStore?.Get<string?>("tpmVersion"); }
             set { BackingStore?.Set("tpmVersion", value); }
         }
+#nullable restore
 #else
         public string TpmVersion {
             get { return BackingStore?.Get<string>("tpmVersion"); }
@@ -381,10 +429,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>WiFi MAC address of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WifiMac {
             get { return BackingStore?.Get<string?>("wifiMac"); }
             set { BackingStore?.Set("wifiMac", value); }
         }
+#nullable restore
 #else
         public string WifiMac {
             get { return BackingStore?.Get<string>("wifiMac"); }
@@ -393,10 +443,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? WiredIPv4Addresses {
             get { return BackingStore?.Get<List<string>?>("wiredIPv4Addresses"); }
             set { BackingStore?.Set("wiredIPv4Addresses", value); }
         }
+#nullable restore
 #else
         public List<string> WiredIPv4Addresses {
             get { return BackingStore?.Get<List<string>>("wiredIPv4Addresses"); }

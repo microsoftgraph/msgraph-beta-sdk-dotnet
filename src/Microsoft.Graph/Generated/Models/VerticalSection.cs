@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The set of web parts in this section.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WebPart>? Webparts {
             get { return BackingStore?.Get<List<WebPart>?>("webparts"); }
             set { BackingStore?.Set("webparts", value); }
         }
+#nullable restore
 #else
         public List<WebPart> Webparts {
             get { return BackingStore?.Get<List<WebPart>>("webparts"); }

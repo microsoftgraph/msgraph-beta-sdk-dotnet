@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier for the bucketDefinition configured in the plannerPlanConfiguration for the scenario. The task will be placed in the corresponding plannerBucket in the target plan. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalBucketId {
             get { return BackingStore?.Get<string?>("externalBucketId"); }
             set { BackingStore?.Set("externalBucketId", value); }
         }
+#nullable restore
 #else
         public string ExternalBucketId {
             get { return BackingStore?.Get<string>("externalBucketId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier for the context of the task. Context is an application controlled value, and tasks can be queried by their externalContextId. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalContextId {
             get { return BackingStore?.Get<string?>("externalContextId"); }
             set { BackingStore?.Set("externalContextId", value); }
         }
+#nullable restore
 #else
         public string ExternalContextId {
             get { return BackingStore?.Get<string>("externalContextId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Application-specific identifier for the task. Every task for the same scenario must have a unique identifier specified for this property. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalObjectId {
             get { return BackingStore?.Get<string?>("externalObjectId"); }
             set { BackingStore?.Set("externalObjectId", value); }
         }
+#nullable restore
 #else
         public string ExternalObjectId {
             get { return BackingStore?.Get<string>("externalObjectId"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Application-specific version of the task. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalObjectVersion {
             get { return BackingStore?.Get<string?>("externalObjectVersion"); }
             set { BackingStore?.Set("externalObjectVersion", value); }
         }
+#nullable restore
 #else
         public string ExternalObjectVersion {
             get { return BackingStore?.Get<string>("externalObjectVersion"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL to the application-specific experience for this task. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

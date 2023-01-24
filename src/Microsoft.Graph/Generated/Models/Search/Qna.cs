@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
         }
         /// <summary>List of security groups able to view this qna.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? GroupIds {
             get { return BackingStore?.Get<List<string>?>("groupIds"); }
             set { BackingStore?.Set("groupIds", value); }
         }
+#nullable restore
 #else
         public List<string> GroupIds {
             get { return BackingStore?.Get<List<string>>("groupIds"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
         }
         /// <summary>Keywords that trigger this qna to appear in search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AnswerKeyword? Keywords {
             get { return BackingStore?.Get<AnswerKeyword?>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
+#nullable restore
 #else
         public AnswerKeyword Keywords {
             get { return BackingStore?.Get<AnswerKeyword>("keywords"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
 #endif
         /// <summary>A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? LanguageTags {
             get { return BackingStore?.Get<List<string>?>("languageTags"); }
             set { BackingStore?.Set("languageTags", value); }
         }
+#nullable restore
 #else
         public List<string> LanguageTags {
             get { return BackingStore?.Get<List<string>>("languageTags"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
 #endif
         /// <summary>List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DevicePlatformType?>? Platforms {
             get { return BackingStore?.Get<List<DevicePlatformType?>?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
+#nullable restore
 #else
         public List<DevicePlatformType?> Platforms {
             get { return BackingStore?.Get<List<DevicePlatformType?>>("platforms"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
         }
         /// <summary>Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AnswerVariant>? TargetedVariations {
             get { return BackingStore?.Get<List<AnswerVariant>?>("targetedVariations"); }
             set { BackingStore?.Set("targetedVariations", value); }
         }
+#nullable restore
 #else
         public List<AnswerVariant> TargetedVariations {
             get { return BackingStore?.Get<List<AnswerVariant>>("targetedVariations"); }

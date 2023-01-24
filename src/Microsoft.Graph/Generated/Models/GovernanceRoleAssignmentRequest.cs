@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GovernanceRoleAssignmentRequest : Entity, IParsable {
         /// <summary>Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentState {
             get { return BackingStore?.Get<string?>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
+#nullable restore
 #else
         public string AssignmentState {
             get { return BackingStore?.Get<string>("assignmentState"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LinkedEligibleRoleAssignmentId {
             get { return BackingStore?.Get<string?>("linkedEligibleRoleAssignmentId"); }
             set { BackingStore?.Set("linkedEligibleRoleAssignmentId", value); }
         }
+#nullable restore
 #else
         public string LinkedEligibleRoleAssignmentId {
             get { return BackingStore?.Get<string>("linkedEligibleRoleAssignmentId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A message provided by users and administrators when create the request about why it is needed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Reason {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
+#nullable restore
 #else
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Read-only. The resource that the request aims to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GovernanceResource? Resource {
             get { return BackingStore?.Get<GovernanceResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#nullable restore
 #else
         public GovernanceResource Resource {
             get { return BackingStore?.Get<GovernanceResource>("resource"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Required. The unique identifier of the Azure resource that is associated with the role assignment request. Azure resources can include subscriptions, resource groups, virtual machines, and SQL databases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceId {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#nullable restore
 #else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. The role definition that the request aims to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GovernanceRoleDefinition? RoleDefinition {
             get { return BackingStore?.Get<GovernanceRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
+#nullable restore
 #else
         public GovernanceRoleDefinition RoleDefinition {
             get { return BackingStore?.Get<GovernanceRoleDefinition>("roleDefinition"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Required. The identifier of the Azure role definition that the role assignment request is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleDefinitionId {
             get { return BackingStore?.Get<string?>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
+#nullable restore
 #else
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The schedule object of the role assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GovernanceSchedule? Schedule {
             get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#nullable restore
 #else
         public GovernanceSchedule Schedule {
             get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
@@ -108,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The status of the role assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GovernanceRoleAssignmentRequestStatus? Status {
             get { return BackingStore?.Get<GovernanceRoleAssignmentRequestStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public GovernanceRoleAssignmentRequestStatus Status {
             get { return BackingStore?.Get<GovernanceRoleAssignmentRequestStatus>("status"); }
@@ -120,10 +138,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. The user/group principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GovernanceSubject? Subject {
             get { return BackingStore?.Get<GovernanceSubject?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public GovernanceSubject Subject {
             get { return BackingStore?.Get<GovernanceSubject>("subject"); }
@@ -132,10 +152,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubjectId {
             get { return BackingStore?.Get<string?>("subjectId"); }
             set { BackingStore?.Set("subjectId", value); }
         }
+#nullable restore
 #else
         public string SubjectId {
             get { return BackingStore?.Get<string>("subjectId"); }
@@ -144,10 +166,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }

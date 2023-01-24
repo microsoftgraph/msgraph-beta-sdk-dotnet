@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory {
     public class GetCloudPcConnectivityHistoryResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcConnectivityEvent>? Value {
             get { return BackingStore?.Get<List<CloudPcConnectivityEvent>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<CloudPcConnectivityEvent> Value {
             get { return BackingStore?.Get<List<CloudPcConnectivityEvent>>("value"); }

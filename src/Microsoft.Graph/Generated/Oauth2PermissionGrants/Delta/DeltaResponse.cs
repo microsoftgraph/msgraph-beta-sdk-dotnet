@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Oauth2PermissionGrants.Delta {
     public class DeltaResponse : BaseDeltaFunctionResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OAuth2PermissionGrant>? Value {
             get { return BackingStore?.Get<List<OAuth2PermissionGrant>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<OAuth2PermissionGrant> Value {
             get { return BackingStore?.Get<List<OAuth2PermissionGrant>>("value"); }

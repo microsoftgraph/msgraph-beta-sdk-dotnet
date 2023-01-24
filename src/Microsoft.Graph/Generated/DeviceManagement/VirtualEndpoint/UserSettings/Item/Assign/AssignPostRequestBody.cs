@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
         }
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcUserSettingAssignment>? Assignments {
             get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<CloudPcUserSettingAssignment> Assignments {
             get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>>("assignments"); }

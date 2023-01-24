@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>ID of the server the log collection is requested upon</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServerId {
             get { return BackingStore?.Get<string?>("serverId"); }
             set { BackingStore?.Set("serverId", value); }
         }
+#nullable restore
 #else
         public string ServerId {
             get { return BackingStore?.Get<string>("serverId"); }

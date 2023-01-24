@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class LabelsRoot : Entity, IParsable {
         /// <summary>The retentionLabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RetentionLabel>? RetentionLabels {
             get { return BackingStore?.Get<List<RetentionLabel>?>("retentionLabels"); }
             set { BackingStore?.Set("retentionLabels", value); }
         }
+#nullable restore
 #else
         public List<RetentionLabel> RetentionLabels {
             get { return BackingStore?.Get<List<RetentionLabel>>("retentionLabels"); }

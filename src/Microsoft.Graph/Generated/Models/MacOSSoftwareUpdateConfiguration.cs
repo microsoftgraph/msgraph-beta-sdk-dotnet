@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Custom Time windows when updates will be allowed or blocked. This collection can contain a maximum of 20 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomUpdateTimeWindow>? CustomUpdateTimeWindows {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>?>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
+#nullable restore
 #else
         public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }

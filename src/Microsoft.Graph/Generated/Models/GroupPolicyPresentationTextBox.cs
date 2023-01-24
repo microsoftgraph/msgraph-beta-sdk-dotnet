@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationTextBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized default string displayed in the text box. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultValue {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#nullable restore
 #else
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }

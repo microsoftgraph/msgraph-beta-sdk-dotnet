@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.AssignSensitivityLabel {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The justificationText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JustificationText {
             get { return BackingStore?.Get<string?>("justificationText"); }
             set { BackingStore?.Set("justificationText", value); }
         }
+#nullable restore
 #else
         public string JustificationText {
             get { return BackingStore?.Get<string>("justificationText"); }
@@ -33,10 +35,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.AssignSensitivityLabel {
 #endif
         /// <summary>The sensitivityLabelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SensitivityLabelId {
             get { return BackingStore?.Get<string?>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
+#nullable restore
 #else
         public string SensitivityLabelId {
             get { return BackingStore?.Get<string>("sensitivityLabelId"); }

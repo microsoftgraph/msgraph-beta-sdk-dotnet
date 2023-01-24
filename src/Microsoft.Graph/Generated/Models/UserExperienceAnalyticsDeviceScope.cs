@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the user experience analytics device Scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceScopeName {
             get { return BackingStore?.Get<string?>("deviceScopeName"); }
             set { BackingStore?.Set("deviceScopeName", value); }
         }
+#nullable restore
 #else
         public string DeviceScopeName {
             get { return BackingStore?.Get<string>("deviceScopeName"); }
@@ -44,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier of the person (admin) who created the device scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OwnerId {
             get { return BackingStore?.Get<string?>("ownerId"); }
             set { BackingStore?.Set("ownerId", value); }
         }
+#nullable restore
 #else
         public string OwnerId {
             get { return BackingStore?.Get<string>("ownerId"); }
@@ -66,10 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The device scope configuration query clause value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Value {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
@@ -78,10 +84,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for a user device scope tag Id used for the creation of device scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ValueObjectId {
             get { return BackingStore?.Get<string?>("valueObjectId"); }
             set { BackingStore?.Set("valueObjectId", value); }
         }
+#nullable restore
 #else
         public string ValueObjectId {
             get { return BackingStore?.Get<string>("valueObjectId"); }

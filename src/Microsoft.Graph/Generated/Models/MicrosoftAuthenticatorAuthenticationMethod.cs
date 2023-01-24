@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Device? Device {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device?>("device"); }
             set { BackingStore?.Set("device", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Device Device {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>("device"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Tags containing app metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceTag {
             get { return BackingStore?.Get<string?>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
+#nullable restore
 #else
         public string DeviceTag {
             get { return BackingStore?.Get<string>("deviceTag"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the device on which this app is registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Numerical version of this instance of the Authenticator app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PhoneAppVersion {
             get { return BackingStore?.Get<string?>("phoneAppVersion"); }
             set { BackingStore?.Set("phoneAppVersion", value); }
         }
+#nullable restore
 #else
         public string PhoneAppVersion {
             get { return BackingStore?.Get<string>("phoneAppVersion"); }

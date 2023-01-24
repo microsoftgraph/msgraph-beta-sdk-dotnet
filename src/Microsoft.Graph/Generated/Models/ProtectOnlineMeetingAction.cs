@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The lobbyBypassSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.LobbyBypassSettings? LobbyBypassSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings?>("lobbyBypassSettings"); }
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.LobbyBypassSettings LobbyBypassSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings>("lobbyBypassSettings"); }

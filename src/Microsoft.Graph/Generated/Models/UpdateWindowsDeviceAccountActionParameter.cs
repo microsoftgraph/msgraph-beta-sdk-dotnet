@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsDeviceAccount? DeviceAccount {
             get { return BackingStore?.Get<WindowsDeviceAccount?>("deviceAccount"); }
             set { BackingStore?.Set("deviceAccount", value); }
         }
+#nullable restore
 #else
         public WindowsDeviceAccount DeviceAccount {
             get { return BackingStore?.Get<WindowsDeviceAccount>("deviceAccount"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceAccountEmail {
             get { return BackingStore?.Get<string?>("deviceAccountEmail"); }
             set { BackingStore?.Set("deviceAccountEmail", value); }
         }
+#nullable restore
 #else
         public string DeviceAccountEmail {
             get { return BackingStore?.Get<string>("deviceAccountEmail"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExchangeServer {
             get { return BackingStore?.Get<string?>("exchangeServer"); }
             set { BackingStore?.Set("exchangeServer", value); }
         }
+#nullable restore
 #else
         public string ExchangeServer {
             get { return BackingStore?.Get<string>("exchangeServer"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SessionInitiationProtocalAddress {
             get { return BackingStore?.Get<string?>("sessionInitiationProtocalAddress"); }
             set { BackingStore?.Set("sessionInitiationProtocalAddress", value); }
         }
+#nullable restore
 #else
         public string SessionInitiationProtocalAddress {
             get { return BackingStore?.Get<string>("sessionInitiationProtocalAddress"); }

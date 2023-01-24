@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         }
         /// <summary>Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<NotificationReceiver>? NotificationReceivers {
             get { return BackingStore?.Get<List<NotificationReceiver>?>("notificationReceivers"); }
             set { BackingStore?.Set("notificationReceivers", value); }
         }
+#nullable restore
 #else
         public List<NotificationReceiver> NotificationReceivers {
             get { return BackingStore?.Get<List<NotificationReceiver>>("notificationReceivers"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Receivers {
             get { return BackingStore?.Get<List<string>?>("receivers"); }
             set { BackingStore?.Set("receivers", value); }
         }
+#nullable restore
 #else
         public List<string> Receivers {
             get { return BackingStore?.Get<List<string>>("receivers"); }

@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Maximum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMaximumVersion {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#nullable restore
 #else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsMinimumVersion {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#nullable restore
 #else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
@@ -106,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The valid operating system build ranges on Windows devices. This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OperatingSystemVersionRange>? ValidOperatingSystemBuildRanges {
             get { return BackingStore?.Get<List<OperatingSystemVersionRange>?>("validOperatingSystemBuildRanges"); }
             set { BackingStore?.Set("validOperatingSystemBuildRanges", value); }
         }
+#nullable restore
 #else
         public List<OperatingSystemVersionRange> ValidOperatingSystemBuildRanges {
             get { return BackingStore?.Get<List<OperatingSystemVersionRange>>("validOperatingSystemBuildRanges"); }

@@ -57,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specify identity certificate for client authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsCertificateProfileBase? IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<WindowsCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
+#nullable restore
 #else
         public WindowsCertificateProfileBase IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<WindowsCertificateProfileBase>("identityCertificateForClientAuthentication"); }
@@ -109,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specify the string to replace usernames for privacy when using EAP TTLS or PEAP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OuterIdentityPrivacyTemporaryValue {
             get { return BackingStore?.Get<string?>("outerIdentityPrivacyTemporaryValue"); }
             set { BackingStore?.Set("outerIdentityPrivacyTemporaryValue", value); }
         }
+#nullable restore
 #else
         public string OuterIdentityPrivacyTemporaryValue {
             get { return BackingStore?.Get<string>("outerIdentityPrivacyTemporaryValue"); }
@@ -136,10 +140,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specify root certificate for client validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Windows81TrustedRootCertificate? RootCertificateForClientValidation {
             get { return BackingStore?.Get<Windows81TrustedRootCertificate?>("rootCertificateForClientValidation"); }
             set { BackingStore?.Set("rootCertificateForClientValidation", value); }
         }
+#nullable restore
 #else
         public Windows81TrustedRootCertificate RootCertificateForClientValidation {
             get { return BackingStore?.Get<Windows81TrustedRootCertificate>("rootCertificateForClientValidation"); }
@@ -148,10 +154,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specify root certificate for server validation. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Windows81TrustedRootCertificate>? RootCertificatesForServerValidation {
             get { return BackingStore?.Get<List<Windows81TrustedRootCertificate>?>("rootCertificatesForServerValidation"); }
             set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
         }
+#nullable restore
 #else
         public List<Windows81TrustedRootCertificate> RootCertificatesForServerValidation {
             get { return BackingStore?.Get<List<Windows81TrustedRootCertificate>>("rootCertificatesForServerValidation"); }
@@ -160,10 +168,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specify trusted server certificate names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TrustedServerCertificateNames {
             get { return BackingStore?.Get<List<string>?>("trustedServerCertificateNames"); }
             set { BackingStore?.Set("trustedServerCertificateNames", value); }
         }
+#nullable restore
 #else
         public List<string> TrustedServerCertificateNames {
             get { return BackingStore?.Get<List<string>>("trustedServerCertificateNames"); }

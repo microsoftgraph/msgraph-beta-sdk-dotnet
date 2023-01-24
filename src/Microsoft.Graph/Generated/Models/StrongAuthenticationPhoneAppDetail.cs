@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class StrongAuthenticationPhoneAppDetail : Entity, IParsable {
         /// <summary>The authenticationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticationType {
             get { return BackingStore?.Get<string?>("authenticationType"); }
             set { BackingStore?.Set("authenticationType", value); }
         }
+#nullable restore
 #else
         public string AuthenticationType {
             get { return BackingStore?.Get<string>("authenticationType"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The authenticatorFlavor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticatorFlavor {
             get { return BackingStore?.Get<string?>("authenticatorFlavor"); }
             set { BackingStore?.Set("authenticatorFlavor", value); }
         }
+#nullable restore
 #else
         public string AuthenticatorFlavor {
             get { return BackingStore?.Get<string>("authenticatorFlavor"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The deviceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The deviceTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceTag {
             get { return BackingStore?.Get<string?>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
+#nullable restore
 #else
         public string DeviceTag {
             get { return BackingStore?.Get<string>("deviceTag"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The deviceToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceToken {
             get { return BackingStore?.Get<string?>("deviceToken"); }
             set { BackingStore?.Set("deviceToken", value); }
         }
+#nullable restore
 #else
         public string DeviceToken {
             get { return BackingStore?.Get<string>("deviceToken"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The hashFunction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HashFunction {
             get { return BackingStore?.Get<string?>("hashFunction"); }
             set { BackingStore?.Set("hashFunction", value); }
         }
+#nullable restore
 #else
         public string HashFunction {
             get { return BackingStore?.Get<string>("hashFunction"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The notificationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationType {
             get { return BackingStore?.Get<string?>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
+#nullable restore
 #else
         public string NotificationType {
             get { return BackingStore?.Get<string>("notificationType"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The oathSecretKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OathSecretKey {
             get { return BackingStore?.Get<string?>("oathSecretKey"); }
             set { BackingStore?.Set("oathSecretKey", value); }
         }
+#nullable restore
 #else
         public string OathSecretKey {
             get { return BackingStore?.Get<string>("oathSecretKey"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The oathTokenMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.OathTokenMetadata? OathTokenMetadata {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OathTokenMetadata?>("oathTokenMetadata"); }
             set { BackingStore?.Set("oathTokenMetadata", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.OathTokenMetadata OathTokenMetadata {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OathTokenMetadata>("oathTokenMetadata"); }
@@ -130,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The phoneAppVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PhoneAppVersion {
             get { return BackingStore?.Get<string?>("phoneAppVersion"); }
             set { BackingStore?.Set("phoneAppVersion", value); }
         }
+#nullable restore
 #else
         public string PhoneAppVersion {
             get { return BackingStore?.Get<string>("phoneAppVersion"); }
@@ -142,10 +162,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tenantDeviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantDeviceId {
             get { return BackingStore?.Get<string?>("tenantDeviceId"); }
             set { BackingStore?.Set("tenantDeviceId", value); }
         }
+#nullable restore
 #else
         public string TenantDeviceId {
             get { return BackingStore?.Get<string>("tenantDeviceId"); }

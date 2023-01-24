@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
     public class RunResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryFile>? Value {
             get { return BackingStore?.Get<List<EdiscoveryFile>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryFile> Value {
             get { return BackingStore?.Get<List<EdiscoveryFile>>("value"); }

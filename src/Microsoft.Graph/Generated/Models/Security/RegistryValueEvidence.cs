@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class RegistryValueEvidence : AlertEvidence, IParsable {
         /// <summary>Registry hive of the key that the recorded action was applied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RegistryHive {
             get { return BackingStore?.Get<string?>("registryHive"); }
             set { BackingStore?.Set("registryHive", value); }
         }
+#nullable restore
 #else
         public string RegistryHive {
             get { return BackingStore?.Get<string>("registryHive"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Registry key that the recorded action was applied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RegistryKey {
             get { return BackingStore?.Get<string?>("registryKey"); }
             set { BackingStore?.Set("registryKey", value); }
         }
+#nullable restore
 #else
         public string RegistryKey {
             get { return BackingStore?.Get<string>("registryKey"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Data of the registry value that the recorded action was applied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RegistryValue {
             get { return BackingStore?.Get<string?>("registryValue"); }
             set { BackingStore?.Set("registryValue", value); }
         }
+#nullable restore
 #else
         public string RegistryValue {
             get { return BackingStore?.Get<string>("registryValue"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Name of the registry value that the recorded action was applied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RegistryValueName {
             get { return BackingStore?.Get<string?>("registryValueName"); }
             set { BackingStore?.Set("registryValueName", value); }
         }
+#nullable restore
 #else
         public string RegistryValueName {
             get { return BackingStore?.Get<string>("registryValueName"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Data type, such as binary or string, of the registry value that the recorded action was applied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RegistryValueType {
             get { return BackingStore?.Get<string?>("registryValueType"); }
             set { BackingStore?.Set("registryValueType", value); }
         }
+#nullable restore
 #else
         public string RegistryValueType {
             get { return BackingStore?.Get<string>("registryValueType"); }

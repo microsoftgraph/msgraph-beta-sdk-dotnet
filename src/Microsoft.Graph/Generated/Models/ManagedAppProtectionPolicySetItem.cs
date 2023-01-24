@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppProtectionPolicySetItem : PolicySetItem, IParsable {
         /// <summary>TargetedAppManagementLevels of the ManagedAppPolicySetItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetedAppManagementLevels {
             get { return BackingStore?.Get<string?>("targetedAppManagementLevels"); }
             set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
+#nullable restore
 #else
         public string TargetedAppManagementLevels {
             get { return BackingStore?.Get<string>("targetedAppManagementLevels"); }

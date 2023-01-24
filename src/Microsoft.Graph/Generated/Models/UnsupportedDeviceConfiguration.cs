@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnsupportedDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnsupportedDeviceConfigurationDetail>? Details {
             get { return BackingStore?.Get<List<UnsupportedDeviceConfigurationDetail>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#nullable restore
 #else
         public List<UnsupportedDeviceConfigurationDetail> Details {
             get { return BackingStore?.Get<List<UnsupportedDeviceConfigurationDetail>>("details"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of entity that would be returned otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginalEntityTypeName {
             get { return BackingStore?.Get<string?>("originalEntityTypeName"); }
             set { BackingStore?.Set("originalEntityTypeName", value); }
         }
+#nullable restore
 #else
         public string OriginalEntityTypeName {
             get { return BackingStore?.Get<string>("originalEntityTypeName"); }

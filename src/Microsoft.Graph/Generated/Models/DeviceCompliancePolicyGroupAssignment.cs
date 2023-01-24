@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceCompliancePolicyGroupAssignment : Entity, IParsable {
         /// <summary>The navigation link to the  device compliance polic targeted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicy? DeviceCompliancePolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy?>("deviceCompliancePolicy"); }
             set { BackingStore?.Set("deviceCompliancePolicy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicy DeviceCompliancePolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>("deviceCompliancePolicy"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Id of the AAD group we are targeting the device compliance policy to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetGroupId {
             get { return BackingStore?.Get<string?>("targetGroupId"); }
             set { BackingStore?.Set("targetGroupId", value); }
         }
+#nullable restore
 #else
         public string TargetGroupId {
             get { return BackingStore?.Get<string>("targetGroupId"); }

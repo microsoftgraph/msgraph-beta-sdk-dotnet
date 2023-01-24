@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkPosition : ItemFacet, IParsable {
         /// <summary>Categories that the user has associated with this position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Categories {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Colleagues that are associated with this position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RelatedPerson>? Colleagues {
             get { return BackingStore?.Get<List<RelatedPerson>?>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
+#nullable restore
 #else
         public List<RelatedPerson> Colleagues {
             get { return BackingStore?.Get<List<RelatedPerson>>("colleagues"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PositionDetail? Detail {
             get { return BackingStore?.Get<PositionDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
+#nullable restore
 #else
         public PositionDetail Detail {
             get { return BackingStore?.Get<PositionDetail>("detail"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains detail of the user&apos;s manager in this position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RelatedPerson? Manager {
             get { return BackingStore?.Get<RelatedPerson?>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
+#nullable restore
 #else
         public RelatedPerson Manager {
             get { return BackingStore?.Get<RelatedPerson>("manager"); }

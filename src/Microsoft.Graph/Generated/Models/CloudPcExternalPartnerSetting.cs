@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The external partner ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PartnerId {
             get { return BackingStore?.Get<string?>("partnerId"); }
             set { BackingStore?.Set("partnerId", value); }
         }
+#nullable restore
 #else
         public string PartnerId {
             get { return BackingStore?.Get<string>("partnerId"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Status details message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StatusDetails {
             get { return BackingStore?.Get<string?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
+#nullable restore
 #else
         public string StatusDetails {
             get { return BackingStore?.Get<string>("statusDetails"); }

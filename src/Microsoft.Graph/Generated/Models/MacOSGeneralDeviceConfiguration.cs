@@ -57,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
@@ -79,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>An email address lacking a suffix that matches any of these strings will be considered out-of-domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EmailInDomainSuffixes {
             get { return BackingStore?.Get<List<string>?>("emailInDomainSuffixes"); }
             set { BackingStore?.Set("emailInDomainSuffixes", value); }
         }
+#nullable restore
 #else
         public List<string> EmailInDomainSuffixes {
             get { return BackingStore?.Get<List<string>>("emailInDomainSuffixes"); }
@@ -261,10 +265,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of privacy preference policy controls. This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSPrivacyAccessControlItem>? PrivacyAccessControls {
             get { return BackingStore?.Get<List<MacOSPrivacyAccessControlItem>?>("privacyAccessControls"); }
             set { BackingStore?.Set("privacyAccessControls", value); }
         }
+#nullable restore
 #else
         public List<MacOSPrivacyAccessControlItem> PrivacyAccessControls {
             get { return BackingStore?.Get<List<MacOSPrivacyAccessControlItem>>("privacyAccessControls"); }

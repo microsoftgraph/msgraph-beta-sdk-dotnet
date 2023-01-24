@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>DNS Search Domains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DnsSearchDomains {
             get { return BackingStore?.Get<List<string>?>("dnsSearchDomains"); }
             set { BackingStore?.Set("dnsSearchDomains", value); }
         }
+#nullable restore
 #else
         public List<string> DnsSearchDomains {
             get { return BackingStore?.Get<List<string>>("dnsSearchDomains"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>DNS Search Server Address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DnsServerAddressMatch {
             get { return BackingStore?.Get<List<string>?>("dnsServerAddressMatch"); }
             set { BackingStore?.Set("dnsServerAddressMatch", value); }
         }
+#nullable restore
 #else
         public List<string> DnsServerAddressMatch {
             get { return BackingStore?.Get<List<string>>("dnsServerAddressMatch"); }
@@ -52,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Domains (Only applicable when Action is evaluate connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Domains {
             get { return BackingStore?.Get<List<string>?>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#nullable restore
 #else
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
@@ -69,10 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -81,10 +89,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProbeRequiredUrl {
             get { return BackingStore?.Get<string?>("probeRequiredUrl"); }
             set { BackingStore?.Set("probeRequiredUrl", value); }
         }
+#nullable restore
 #else
         public string ProbeRequiredUrl {
             get { return BackingStore?.Get<string>("probeRequiredUrl"); }
@@ -93,10 +103,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProbeUrl {
             get { return BackingStore?.Get<string?>("probeUrl"); }
             set { BackingStore?.Set("probeUrl", value); }
         }
+#nullable restore
 #else
         public string ProbeUrl {
             get { return BackingStore?.Get<string>("probeUrl"); }
@@ -105,10 +117,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Network Service Set Identifiers (SSIDs).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Ssids {
             get { return BackingStore?.Get<List<string>?>("ssids"); }
             set { BackingStore?.Set("ssids", value); }
         }
+#nullable restore
 #else
         public List<string> Ssids {
             get { return BackingStore?.Get<List<string>>("ssids"); }

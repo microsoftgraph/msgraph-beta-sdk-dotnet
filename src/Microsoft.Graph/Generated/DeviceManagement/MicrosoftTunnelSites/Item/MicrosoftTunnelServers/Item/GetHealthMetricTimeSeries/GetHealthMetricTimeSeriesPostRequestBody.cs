@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
         }
         /// <summary>The metricName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MetricName {
             get { return BackingStore?.Get<string?>("metricName"); }
             set { BackingStore?.Set("metricName", value); }
         }
+#nullable restore
 #else
         public string MetricName {
             get { return BackingStore?.Get<string>("metricName"); }

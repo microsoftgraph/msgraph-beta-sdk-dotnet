@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedHeaders {
             get { return BackingStore?.Get<List<string>?>("allowedHeaders"); }
             set { BackingStore?.Set("allowedHeaders", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedHeaders {
             get { return BackingStore?.Get<List<string>>("allowedHeaders"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The HTTP request methods that the origin domain may use for a CORS request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedMethods {
             get { return BackingStore?.Get<List<string>?>("allowedMethods"); }
             set { BackingStore?.Set("allowedMethods", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedMethods {
             get { return BackingStore?.Get<List<string>>("allowedMethods"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The origin domains that are permitted to make a request against the service via CORS. The origin domain is the domain from which the request originates. The origin must be an exact case-sensitive match with the origin that the user age sends to the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AllowedOrigins {
             get { return BackingStore?.Get<List<string>?>("allowedOrigins"); }
             set { BackingStore?.Set("allowedOrigins", value); }
         }
+#nullable restore
 #else
         public List<string> AllowedOrigins {
             get { return BackingStore?.Get<List<string>>("allowedOrigins"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Resource within the application segment for which CORS permissions are granted. / grants permission for whole app segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Resource {
             get { return BackingStore?.Get<string?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#nullable restore
 #else
         public string Resource {
             get { return BackingStore?.Get<string>("resource"); }

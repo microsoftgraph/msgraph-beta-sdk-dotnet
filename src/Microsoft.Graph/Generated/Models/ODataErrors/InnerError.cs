@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client request Id as sent by the client application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientRequestId {
             get { return BackingStore?.Get<string?>("client-request-id"); }
             set { BackingStore?.Set("client-request-id", value); }
         }
+#nullable restore
 #else
         public string ClientRequestId {
             get { return BackingStore?.Get<string>("client-request-id"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
 #endif
         /// <summary>Request Id as tracked internally by the service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RequestId {
             get { return BackingStore?.Get<string?>("request-id"); }
             set { BackingStore?.Set("request-id", value); }
         }
+#nullable restore
 #else
         public string RequestId {
             get { return BackingStore?.Get<string>("request-id"); }

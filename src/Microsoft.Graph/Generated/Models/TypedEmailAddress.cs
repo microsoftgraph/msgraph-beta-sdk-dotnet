@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TypedEmailAddress : EmailAddress, IParsable {
         /// <summary>To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OtherLabel {
             get { return BackingStore?.Get<string?>("otherLabel"); }
             set { BackingStore?.Set("otherLabel", value); }
         }
+#nullable restore
 #else
         public string OtherLabel {
             get { return BackingStore?.Get<string>("otherLabel"); }

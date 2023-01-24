@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsInsightValueCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserExperienceAnalyticsInsightValue>? Value {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsightValue>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<UserExperienceAnalyticsInsightValue> Value {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsightValue>>("value"); }

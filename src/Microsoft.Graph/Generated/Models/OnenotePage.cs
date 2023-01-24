@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable {
         /// <summary>The page&apos;s HTML content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Content {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL for the page&apos;s HTML content.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentUrl {
             get { return BackingStore?.Get<string?>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
+#nullable restore
 #else
         public string ContentUrl {
             get { return BackingStore?.Get<string>("contentUrl"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier of the application that created the page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedByAppId {
             get { return BackingStore?.Get<string?>("createdByAppId"); }
             set { BackingStore?.Set("createdByAppId", value); }
         }
+#nullable restore
 #else
         public string CreatedByAppId {
             get { return BackingStore?.Get<string>("createdByAppId"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it &apos;s installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PageLinks? Links {
             get { return BackingStore?.Get<PageLinks?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+#nullable restore
 #else
         public PageLinks Links {
             get { return BackingStore?.Get<PageLinks>("links"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The notebook that contains the page.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Notebook? ParentNotebook {
             get { return BackingStore?.Get<Notebook?>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
+#nullable restore
 #else
         public Notebook ParentNotebook {
             get { return BackingStore?.Get<Notebook>("parentNotebook"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The section that contains the page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OnenoteSection? ParentSection {
             get { return BackingStore?.Get<OnenoteSection?>("parentSection"); }
             set { BackingStore?.Set("parentSection", value); }
         }
+#nullable restore
 #else
         public OnenoteSection ParentSection {
             get { return BackingStore?.Get<OnenoteSection>("parentSection"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The title of the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The userTags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? UserTags {
             get { return BackingStore?.Get<List<string>?>("userTags"); }
             set { BackingStore?.Set("userTags", value); }
         }
+#nullable restore
 #else
         public List<string> UserTags {
             get { return BackingStore?.Get<List<string>>("userTags"); }

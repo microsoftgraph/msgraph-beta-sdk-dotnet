@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerGlobalProxyDirect : AndroidDeviceOwnerGlobalProxy, IParsable {
         /// <summary>The excluded hosts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExcludedHosts {
             get { return BackingStore?.Get<List<string>?>("excludedHosts"); }
             set { BackingStore?.Set("excludedHosts", value); }
         }
+#nullable restore
 #else
         public List<string> ExcludedHosts {
             get { return BackingStore?.Get<List<string>>("excludedHosts"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The host name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Host {
             get { return BackingStore?.Get<string?>("host"); }
             set { BackingStore?.Set("host", value); }
         }
+#nullable restore
 #else
         public string Host {
             get { return BackingStore?.Get<string>("host"); }

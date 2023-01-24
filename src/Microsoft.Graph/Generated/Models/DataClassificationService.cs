@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DataClassificationService : Entity, IParsable {
         /// <summary>The classifyFileJobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<JobResponseBase>? ClassifyFileJobs {
             get { return BackingStore?.Get<List<JobResponseBase>?>("classifyFileJobs"); }
             set { BackingStore?.Set("classifyFileJobs", value); }
         }
+#nullable restore
 #else
         public List<JobResponseBase> ClassifyFileJobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("classifyFileJobs"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The classifyTextJobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<JobResponseBase>? ClassifyTextJobs {
             get { return BackingStore?.Get<List<JobResponseBase>?>("classifyTextJobs"); }
             set { BackingStore?.Set("classifyTextJobs", value); }
         }
+#nullable restore
 #else
         public List<JobResponseBase> ClassifyTextJobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("classifyTextJobs"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The evaluateDlpPoliciesJobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<JobResponseBase>? EvaluateDlpPoliciesJobs {
             get { return BackingStore?.Get<List<JobResponseBase>?>("evaluateDlpPoliciesJobs"); }
             set { BackingStore?.Set("evaluateDlpPoliciesJobs", value); }
         }
+#nullable restore
 #else
         public List<JobResponseBase> EvaluateDlpPoliciesJobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("evaluateDlpPoliciesJobs"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The evaluateLabelJobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<JobResponseBase>? EvaluateLabelJobs {
             get { return BackingStore?.Get<List<JobResponseBase>?>("evaluateLabelJobs"); }
             set { BackingStore?.Set("evaluateLabelJobs", value); }
         }
+#nullable restore
 #else
         public List<JobResponseBase> EvaluateLabelJobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("evaluateLabelJobs"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The exactMatchDataStores property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExactMatchDataStore>? ExactMatchDataStores {
             get { return BackingStore?.Get<List<ExactMatchDataStore>?>("exactMatchDataStores"); }
             set { BackingStore?.Set("exactMatchDataStores", value); }
         }
+#nullable restore
 #else
         public List<ExactMatchDataStore> ExactMatchDataStores {
             get { return BackingStore?.Get<List<ExactMatchDataStore>>("exactMatchDataStores"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The exactMatchUploadAgents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ExactMatchUploadAgent>? ExactMatchUploadAgents {
             get { return BackingStore?.Get<List<ExactMatchUploadAgent>?>("exactMatchUploadAgents"); }
             set { BackingStore?.Set("exactMatchUploadAgents", value); }
         }
+#nullable restore
 #else
         public List<ExactMatchUploadAgent> ExactMatchUploadAgents {
             get { return BackingStore?.Get<List<ExactMatchUploadAgent>>("exactMatchUploadAgents"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The jobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<JobResponseBase>? Jobs {
             get { return BackingStore?.Get<List<JobResponseBase>?>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
+#nullable restore
 #else
         public List<JobResponseBase> Jobs {
             get { return BackingStore?.Get<List<JobResponseBase>>("jobs"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sensitiveTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SensitiveType>? SensitiveTypes {
             get { return BackingStore?.Get<List<SensitiveType>?>("sensitiveTypes"); }
             set { BackingStore?.Set("sensitiveTypes", value); }
         }
+#nullable restore
 #else
         public List<SensitiveType> SensitiveTypes {
             get { return BackingStore?.Get<List<SensitiveType>>("sensitiveTypes"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sensitivityLabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SensitivityLabel>? SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
+#nullable restore
 #else
         public List<SensitivityLabel> SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SectionGroup : OnenoteEntityHierarchyModel, IParsable {
         /// <summary>The notebook that contains the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Notebook? ParentNotebook {
             get { return BackingStore?.Get<Notebook?>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
+#nullable restore
 #else
         public Notebook ParentNotebook {
             get { return BackingStore?.Get<Notebook>("parentNotebook"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The section group that contains the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SectionGroup? ParentSectionGroup {
             get { return BackingStore?.Get<SectionGroup?>("parentSectionGroup"); }
             set { BackingStore?.Set("parentSectionGroup", value); }
         }
+#nullable restore
 #else
         public SectionGroup ParentSectionGroup {
             get { return BackingStore?.Get<SectionGroup>("parentSectionGroup"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The section groups in the section. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SectionGroup>? SectionGroups {
             get { return BackingStore?.Get<List<SectionGroup>?>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
+#nullable restore
 #else
         public List<SectionGroup> SectionGroups {
             get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SectionGroupsUrl {
             get { return BackingStore?.Get<string?>("sectionGroupsUrl"); }
             set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
+#nullable restore
 #else
         public string SectionGroupsUrl {
             get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sections in the section group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnenoteSection>? Sections {
             get { return BackingStore?.Get<List<OnenoteSection>?>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
+#nullable restore
 #else
         public List<OnenoteSection> Sections {
             get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL for the sections navigation property, which returns all the sections in the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SectionsUrl {
             get { return BackingStore?.Get<string?>("sectionsUrl"); }
             set { BackingStore?.Set("sectionsUrl", value); }
         }
+#nullable restore
 #else
         public string SectionsUrl {
             get { return BackingStore?.Get<string>("sectionsUrl"); }

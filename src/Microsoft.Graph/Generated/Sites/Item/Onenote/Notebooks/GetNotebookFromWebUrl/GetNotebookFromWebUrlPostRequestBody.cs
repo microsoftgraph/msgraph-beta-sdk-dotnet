@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.GetNotebookFromWebUr
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The webUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

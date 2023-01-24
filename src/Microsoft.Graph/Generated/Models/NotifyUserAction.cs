@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The emailText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailText {
             get { return BackingStore?.Get<string?>("emailText"); }
             set { BackingStore?.Set("emailText", value); }
         }
+#nullable restore
 #else
         public string EmailText {
             get { return BackingStore?.Get<string>("emailText"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The policyTip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyTip {
             get { return BackingStore?.Get<string?>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
+#nullable restore
 #else
         public string PolicyTip {
             get { return BackingStore?.Get<string>("policyTip"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Recipients {
             get { return BackingStore?.Get<List<string>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#nullable restore
 #else
         public List<string> Recipients {
             get { return BackingStore?.Get<List<string>>("recipients"); }

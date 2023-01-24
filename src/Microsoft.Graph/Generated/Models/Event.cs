@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Attachment>? Attachments {
             get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#nullable restore
 #else
         public List<Attachment> Attachments {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of attendees for the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Attendee>? Attendees {
             get { return BackingStore?.Get<List<Attendee>?>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
+#nullable restore
 #else
         public List<Attendee> Attendees {
             get { return BackingStore?.Get<List<Attendee>>("attendees"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The body of the message associated with the event. It can be in HTML or text format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Body {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#nullable restore
 #else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The preview of the message associated with the event. It is in text format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BodyPreview {
             get { return BackingStore?.Get<string?>("bodyPreview"); }
             set { BackingStore?.Set("bodyPreview", value); }
         }
+#nullable restore
 #else
         public string BodyPreview {
             get { return BackingStore?.Get<string>("bodyPreview"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The calendar that contains the event. Navigation property. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Calendar? Calendar {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Calendar?>("calendar"); }
             set { BackingStore?.Set("calendar", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Calendar Calendar {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Calendar>("calendar"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? CancelledOccurrences {
             get { return BackingStore?.Get<List<string>?>("cancelledOccurrences"); }
             set { BackingStore?.Set("cancelledOccurrences", value); }
         }
+#nullable restore
 #else
         public List<string> CancelledOccurrences {
             get { return BackingStore?.Get<List<string>>("cancelledOccurrences"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The date, time, and time zone that the event ends. By default, the end time is in UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? End {
             get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone End {
             get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The exceptionOccurrences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Event>? ExceptionOccurrences {
             get { return BackingStore?.Get<List<Event>?>("exceptionOccurrences"); }
             set { BackingStore?.Set("exceptionOccurrences", value); }
         }
+#nullable restore
 #else
         public List<Event> ExceptionOccurrences {
             get { return BackingStore?.Get<List<Event>>("exceptionOccurrences"); }
@@ -108,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of open extensions defined for the event. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Extension>? Extensions {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#nullable restore
 #else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Event>? Instances {
             get { return BackingStore?.Get<List<Event>?>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
+#nullable restore
 #else
         public List<Event> Instances {
             get { return BackingStore?.Get<List<Event>>("instances"); }
@@ -177,10 +197,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Location? Location {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Location Location {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>("location"); }
@@ -189,10 +211,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.Location>? Locations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Location>?>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.Location> Locations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Location>>("locations"); }
@@ -201,10 +225,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of multi-value extended properties defined for the event. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
@@ -213,10 +239,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The occurrenceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OccurrenceId {
             get { return BackingStore?.Get<string?>("occurrenceId"); }
             set { BackingStore?.Set("occurrenceId", value); }
         }
+#nullable restore
 #else
         public string OccurrenceId {
             get { return BackingStore?.Get<string>("occurrenceId"); }
@@ -225,10 +253,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The onlineMeeting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OnlineMeetingInfo? OnlineMeeting {
             get { return BackingStore?.Get<OnlineMeetingInfo?>("onlineMeeting"); }
             set { BackingStore?.Set("onlineMeeting", value); }
         }
+#nullable restore
 #else
         public OnlineMeetingInfo OnlineMeeting {
             get { return BackingStore?.Get<OnlineMeetingInfo>("onlineMeeting"); }
@@ -242,10 +272,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The onlineMeetingUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnlineMeetingUrl {
             get { return BackingStore?.Get<string?>("onlineMeetingUrl"); }
             set { BackingStore?.Set("onlineMeetingUrl", value); }
         }
+#nullable restore
 #else
         public string OnlineMeetingUrl {
             get { return BackingStore?.Get<string>("onlineMeetingUrl"); }
@@ -254,10 +286,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The organizer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Recipient? Organizer {
             get { return BackingStore?.Get<Recipient?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
+#nullable restore
 #else
         public Recipient Organizer {
             get { return BackingStore?.Get<Recipient>("organizer"); }
@@ -266,10 +300,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The originalEndTimeZone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginalEndTimeZone {
             get { return BackingStore?.Get<string?>("originalEndTimeZone"); }
             set { BackingStore?.Set("originalEndTimeZone", value); }
         }
+#nullable restore
 #else
         public string OriginalEndTimeZone {
             get { return BackingStore?.Get<string>("originalEndTimeZone"); }
@@ -283,10 +319,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The originalStartTimeZone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginalStartTimeZone {
             get { return BackingStore?.Get<string?>("originalStartTimeZone"); }
             set { BackingStore?.Set("originalStartTimeZone", value); }
         }
+#nullable restore
 #else
         public string OriginalStartTimeZone {
             get { return BackingStore?.Get<string>("originalStartTimeZone"); }
@@ -295,10 +333,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The recurrence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PatternedRecurrence? Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
+#nullable restore
 #else
         public PatternedRecurrence Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
@@ -317,10 +357,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The responseStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ResponseStatus? ResponseStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponseStatus?>("responseStatus"); }
             set { BackingStore?.Set("responseStatus", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ResponseStatus ResponseStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponseStatus>("responseStatus"); }
@@ -334,10 +376,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The seriesMasterId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SeriesMasterId {
             get { return BackingStore?.Get<string?>("seriesMasterId"); }
             set { BackingStore?.Set("seriesMasterId", value); }
         }
+#nullable restore
 #else
         public string SeriesMasterId {
             get { return BackingStore?.Get<string>("seriesMasterId"); }
@@ -351,10 +395,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of single-value extended properties defined for the event. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
@@ -363,10 +409,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? Start {
             get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone Start {
             get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
@@ -375,10 +423,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
@@ -387,10 +437,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The transactionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TransactionId {
             get { return BackingStore?.Get<string?>("transactionId"); }
             set { BackingStore?.Set("transactionId", value); }
         }
+#nullable restore
 #else
         public string TransactionId {
             get { return BackingStore?.Get<string>("transactionId"); }
@@ -404,10 +456,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Uid {
             get { return BackingStore?.Get<string?>("uid"); }
             set { BackingStore?.Set("uid", value); }
         }
+#nullable restore
 #else
         public string Uid {
             get { return BackingStore?.Get<string>("uid"); }
@@ -416,10 +470,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The webLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebLink {
             get { return BackingStore?.Get<string?>("webLink"); }
             set { BackingStore?.Set("webLink", value); }
         }
+#nullable restore
 #else
         public string WebLink {
             get { return BackingStore?.Get<string>("webLink"); }

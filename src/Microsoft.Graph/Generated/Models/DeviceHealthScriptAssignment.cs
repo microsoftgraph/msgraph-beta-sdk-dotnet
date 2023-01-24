@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Script run schedule for the target group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceHealthScriptRunSchedule? RunSchedule {
             get { return BackingStore?.Get<DeviceHealthScriptRunSchedule?>("runSchedule"); }
             set { BackingStore?.Set("runSchedule", value); }
         }
+#nullable restore
 #else
         public DeviceHealthScriptRunSchedule RunSchedule {
             get { return BackingStore?.Get<DeviceHealthScriptRunSchedule>("runSchedule"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure Active Directory group we are targeting the script to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceAndAppManagementAssignmentTarget? Target {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#nullable restore
 #else
         public DeviceAndAppManagementAssignmentTarget Target {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }

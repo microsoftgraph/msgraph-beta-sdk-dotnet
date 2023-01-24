@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365ServicesUserCountsWithP
     public class GetOffice365ServicesUserCountsWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Office365ServicesUserCounts>? Value {
             get { return BackingStore?.Get<List<Office365ServicesUserCounts>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Office365ServicesUserCounts> Value {
             get { return BackingStore?.Get<List<Office365ServicesUserCounts>>("value"); }

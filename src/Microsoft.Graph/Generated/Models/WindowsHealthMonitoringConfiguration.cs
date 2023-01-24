@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies custom set of events collected from the device where health monitoring is enabled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConfigDeviceHealthMonitoringCustomScope {
             get { return BackingStore?.Get<string?>("configDeviceHealthMonitoringCustomScope"); }
             set { BackingStore?.Set("configDeviceHealthMonitoringCustomScope", value); }
         }
+#nullable restore
 #else
         public string ConfigDeviceHealthMonitoringCustomScope {
             get { return BackingStore?.Get<string>("configDeviceHealthMonitoringCustomScope"); }

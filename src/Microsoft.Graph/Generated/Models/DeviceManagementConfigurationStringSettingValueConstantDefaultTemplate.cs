@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate : DeviceManagementConfigurationStringSettingValueDefaultTemplate, IParsable {
         /// <summary>Default Constant Value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConstantValue {
             get { return BackingStore?.Get<string?>("constantValue"); }
             set { BackingStore?.Set("constantValue", value); }
         }
+#nullable restore
 #else
         public string ConstantValue {
             get { return BackingStore?.Get<string>("constantValue"); }

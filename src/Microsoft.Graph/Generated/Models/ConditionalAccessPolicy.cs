@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConditionalAccessPolicy : Entity, IParsable {
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessConditionSet? Conditions {
             get { return BackingStore?.Get<ConditionalAccessConditionSet?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessConditionSet Conditions {
             get { return BackingStore?.Get<ConditionalAccessConditionSet>("conditions"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Not used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies a display name for the conditionalAccessPolicy object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the grant controls that must be fulfilled to pass the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessGrantControls? GrantControls {
             get { return BackingStore?.Get<ConditionalAccessGrantControls?>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessGrantControls GrantControls {
             get { return BackingStore?.Get<ConditionalAccessGrantControls>("grantControls"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies the session controls that are enforced after sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessSessionControls? SessionControls {
             get { return BackingStore?.Get<ConditionalAccessSessionControls?>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessSessionControls SessionControls {
             get { return BackingStore?.Get<ConditionalAccessSessionControls>("sessionControls"); }

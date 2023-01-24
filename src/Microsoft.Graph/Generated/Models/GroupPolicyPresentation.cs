@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentation : Entity, IParsable {
         /// <summary>The group policy definition associated with the presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyDefinition? Definition {
             get { return BackingStore?.Get<GroupPolicyDefinition?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#nullable restore
 #else
         public GroupPolicyDefinition Definition {
             get { return BackingStore?.Get<GroupPolicyDefinition>("definition"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Localized text label for any presentation entity. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Label {
             get { return BackingStore?.Get<string?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#nullable restore
 #else
         public string Label {
             get { return BackingStore?.Get<string>("label"); }

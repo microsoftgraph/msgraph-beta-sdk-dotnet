@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The application identifier of the app to associate domains with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationIdentifier {
             get { return BackingStore?.Get<string?>("applicationIdentifier"); }
             set { BackingStore?.Set("applicationIdentifier", value); }
         }
+#nullable restore
 #else
         public string ApplicationIdentifier {
             get { return BackingStore?.Get<string>("applicationIdentifier"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of domains to associate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Domains {
             get { return BackingStore?.Get<List<string>?>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#nullable restore
 #else
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Location IDs excluded from scope of policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExcludeLocations {
             get { return BackingStore?.Get<List<string>?>("excludeLocations"); }
             set { BackingStore?.Set("excludeLocations", value); }
         }
+#nullable restore
 #else
         public List<string> ExcludeLocations {
             get { return BackingStore?.Get<List<string>>("excludeLocations"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? IncludeLocations {
             get { return BackingStore?.Get<List<string>?>("includeLocations"); }
             set { BackingStore?.Set("includeLocations", value); }
         }
+#nullable restore
 #else
         public List<string> IncludeLocations {
             get { return BackingStore?.Get<List<string>>("includeLocations"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

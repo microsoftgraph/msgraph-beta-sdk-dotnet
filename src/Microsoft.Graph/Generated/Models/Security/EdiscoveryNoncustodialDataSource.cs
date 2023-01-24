@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryNoncustodialDataSource : DataSourceContainer, IParsable {
         /// <summary>User source or SharePoint site data source as non-custodial data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.DataSource? DataSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSource?>("dataSource"); }
             set { BackingStore?.Set("dataSource", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.DataSource DataSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSource>("dataSource"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Operation entity that represents the latest indexing for the non-custodial data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoveryIndexOperation? LastIndexOperation {
             get { return BackingStore?.Get<EdiscoveryIndexOperation?>("lastIndexOperation"); }
             set { BackingStore?.Set("lastIndexOperation", value); }
         }
+#nullable restore
 #else
         public EdiscoveryIndexOperation LastIndexOperation {
             get { return BackingStore?.Get<EdiscoveryIndexOperation>("lastIndexOperation"); }

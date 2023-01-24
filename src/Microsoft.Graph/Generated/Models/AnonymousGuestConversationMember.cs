@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AnonymousGuestConversationMember : ConversationMember, IParsable {
         /// <summary>Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AnonymousGuestId {
             get { return BackingStore?.Get<string?>("anonymousGuestId"); }
             set { BackingStore?.Set("anonymousGuestId", value); }
         }
+#nullable restore
 #else
         public string AnonymousGuestId {
             get { return BackingStore?.Get<string>("anonymousGuestId"); }

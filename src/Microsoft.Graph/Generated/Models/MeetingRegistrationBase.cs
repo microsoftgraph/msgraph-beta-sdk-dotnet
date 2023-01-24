@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Registrants of the online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MeetingRegistrantBase>? Registrants {
             get { return BackingStore?.Get<List<MeetingRegistrantBase>?>("registrants"); }
             set { BackingStore?.Set("registrants", value); }
         }
+#nullable restore
 #else
         public List<MeetingRegistrantBase> Registrants {
             get { return BackingStore?.Get<List<MeetingRegistrantBase>>("registrants"); }

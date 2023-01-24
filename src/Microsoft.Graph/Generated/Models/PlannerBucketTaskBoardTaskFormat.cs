@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerBucketTaskBoardTaskFormat : PlannerDelta, IParsable {
         /// <summary>Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrderHint {
             get { return BackingStore?.Get<string?>("orderHint"); }
             set { BackingStore?.Set("orderHint", value); }
         }
+#nullable restore
 #else
         public string OrderHint {
             get { return BackingStore?.Get<string>("orderHint"); }

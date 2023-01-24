@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes.Item.Cop
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The destinationFileName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DestinationFileName {
             get { return BackingStore?.Get<string?>("destinationFileName"); }
             set { BackingStore?.Set("destinationFileName", value); }
         }
+#nullable restore
 #else
         public string DestinationFileName {
             get { return BackingStore?.Get<string>("destinationFileName"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes.Item.Cop
 #endif
         /// <summary>The sourceFile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemReference? SourceFile {
             get { return BackingStore?.Get<ItemReference?>("sourceFile"); }
             set { BackingStore?.Set("sourceFile", value); }
         }
+#nullable restore
 #else
         public ItemReference SourceFile {
             get { return BackingStore?.Get<ItemReference>("sourceFile"); }

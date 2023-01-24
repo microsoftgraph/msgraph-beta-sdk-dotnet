@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AnonymousGuestConversationMemberCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AnonymousGuestConversationMember>? Value {
             get { return BackingStore?.Get<List<AnonymousGuestConversationMember>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<AnonymousGuestConversationMember> Value {
             get { return BackingStore?.Get<List<AnonymousGuestConversationMember>>("value"); }

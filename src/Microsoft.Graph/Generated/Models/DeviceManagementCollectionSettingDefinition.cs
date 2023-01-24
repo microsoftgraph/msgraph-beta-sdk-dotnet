@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementCollectionSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>The Setting Definition ID that describes what each element of the collection looks like</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ElementDefinitionId {
             get { return BackingStore?.Get<string?>("elementDefinitionId"); }
             set { BackingStore?.Set("elementDefinitionId", value); }
         }
+#nullable restore
 #else
         public string ElementDefinitionId {
             get { return BackingStore?.Get<string>("elementDefinitionId"); }

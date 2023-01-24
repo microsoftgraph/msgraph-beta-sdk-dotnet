@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Azure Operational Insights workspace id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureOperationalInsightsWorkspaceId {
             get { return BackingStore?.Get<string?>("azureOperationalInsightsWorkspaceId"); }
             set { BackingStore?.Set("azureOperationalInsightsWorkspaceId", value); }
         }
+#nullable restore
 #else
         public string AzureOperationalInsightsWorkspaceId {
             get { return BackingStore?.Get<string>("azureOperationalInsightsWorkspaceId"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure Operational Insights Workspace key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureOperationalInsightsWorkspaceKey {
             get { return BackingStore?.Get<string?>("azureOperationalInsightsWorkspaceKey"); }
             set { BackingStore?.Set("azureOperationalInsightsWorkspaceKey", value); }
         }
+#nullable restore
 #else
         public string AzureOperationalInsightsWorkspaceKey {
             get { return BackingStore?.Get<string>("azureOperationalInsightsWorkspaceKey"); }
@@ -107,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WelcomeScreenBackgroundImageUrl {
             get { return BackingStore?.Get<string?>("welcomeScreenBackgroundImageUrl"); }
             set { BackingStore?.Set("welcomeScreenBackgroundImageUrl", value); }
         }
+#nullable restore
 #else
         public string WelcomeScreenBackgroundImageUrl {
             get { return BackingStore?.Get<string>("welcomeScreenBackgroundImageUrl"); }

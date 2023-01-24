@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The grantedTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? GrantedTo {
             get { return BackingStore?.Get<IdentitySet?>("grantedTo"); }
             set { BackingStore?.Set("grantedTo", value); }
         }
+#nullable restore
 #else
         public IdentitySet GrantedTo {
             get { return BackingStore?.Get<IdentitySet>("grantedTo"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The grantedToIdentities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IdentitySet>? GrantedToIdentities {
             get { return BackingStore?.Get<List<IdentitySet>?>("grantedToIdentities"); }
             set { BackingStore?.Set("grantedToIdentities", value); }
         }
+#nullable restore
 #else
         public List<IdentitySet> GrantedToIdentities {
             get { return BackingStore?.Get<List<IdentitySet>>("grantedToIdentities"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For link type permissions, the details of the users to whom permission was granted. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SharePointIdentitySet>? GrantedToIdentitiesV2 {
             get { return BackingStore?.Get<List<SharePointIdentitySet>?>("grantedToIdentitiesV2"); }
             set { BackingStore?.Set("grantedToIdentitiesV2", value); }
         }
+#nullable restore
 #else
         public List<SharePointIdentitySet> GrantedToIdentitiesV2 {
             get { return BackingStore?.Get<List<SharePointIdentitySet>>("grantedToIdentitiesV2"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For user type permissions, the details of the users and applications for this permission. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SharePointIdentitySet? GrantedToV2 {
             get { return BackingStore?.Get<SharePointIdentitySet?>("grantedToV2"); }
             set { BackingStore?.Set("grantedToV2", value); }
         }
+#nullable restore
 #else
         public SharePointIdentitySet GrantedToV2 {
             get { return BackingStore?.Get<SharePointIdentitySet>("grantedToV2"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemReference? InheritedFrom {
             get { return BackingStore?.Get<ItemReference?>("inheritedFrom"); }
             set { BackingStore?.Set("inheritedFrom", value); }
         }
+#nullable restore
 #else
         public ItemReference InheritedFrom {
             get { return BackingStore?.Get<ItemReference>("inheritedFrom"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of any associated sharing invitation for this permission. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SharingInvitation? Invitation {
             get { return BackingStore?.Get<SharingInvitation?>("invitation"); }
             set { BackingStore?.Set("invitation", value); }
         }
+#nullable restore
 #else
         public SharingInvitation Invitation {
             get { return BackingStore?.Get<SharingInvitation>("invitation"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides the link details of the current permission, if it is a link type permissions. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SharingLink? Link {
             get { return BackingStore?.Get<SharingLink?>("link"); }
             set { BackingStore?.Set("link", value); }
         }
+#nullable restore
 #else
         public SharingLink Link {
             get { return BackingStore?.Get<SharingLink>("link"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of permission, for example, read. See below for the full list of roles. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Roles {
             get { return BackingStore?.Get<List<string>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#nullable restore
 #else
         public List<string> Roles {
             get { return BackingStore?.Get<List<string>>("roles"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A unique token that can be used to access this shared item via the [shares API][]. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ShareId {
             get { return BackingStore?.Get<string?>("shareId"); }
             set { BackingStore?.Set("shareId", value); }
         }
+#nullable restore
 #else
         public string ShareId {
             get { return BackingStore?.Get<string>("shareId"); }

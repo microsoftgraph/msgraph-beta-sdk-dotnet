@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingInstanceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationSettingInstance>? Value {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationSettingInstance> Value {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>>("value"); }

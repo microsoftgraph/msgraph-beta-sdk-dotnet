@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IdentityUserFlowAttributeAssignment : Entity, IParsable {
         /// <summary>The display name of the identityUserFlowAttribute within a user flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user attribute that you want to add to your user flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentityUserFlowAttribute? UserAttribute {
             get { return BackingStore?.Get<IdentityUserFlowAttribute?>("userAttribute"); }
             set { BackingStore?.Set("userAttribute", value); }
         }
+#nullable restore
 #else
         public IdentityUserFlowAttribute UserAttribute {
             get { return BackingStore?.Get<IdentityUserFlowAttribute>("userAttribute"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserAttributeValuesItem>? UserAttributeValues {
             get { return BackingStore?.Get<List<UserAttributeValuesItem>?>("userAttributeValues"); }
             set { BackingStore?.Set("userAttributeValues", value); }
         }
+#nullable restore
 #else
         public List<UserAttributeValuesItem> UserAttributeValues {
             get { return BackingStore?.Get<List<UserAttributeValuesItem>>("userAttributeValues"); }

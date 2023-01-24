@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DisplayTemplate>? EDiscoveryResultTemplates {
             get { return BackingStore?.Get<List<DisplayTemplate>?>("eDiscoveryResultTemplates"); }
             set { BackingStore?.Set("eDiscoveryResultTemplates", value); }
         }
+#nullable restore
 #else
         public List<DisplayTemplate> EDiscoveryResultTemplates {
             get { return BackingStore?.Get<List<DisplayTemplate>>("eDiscoveryResultTemplates"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

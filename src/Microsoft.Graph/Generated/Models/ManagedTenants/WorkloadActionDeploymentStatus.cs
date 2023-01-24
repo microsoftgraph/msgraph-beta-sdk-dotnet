@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class WorkloadActionDeploymentStatus : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The unique identifier for the workload action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActionId {
             get { return BackingStore?.Get<string?>("actionId"); }
             set { BackingStore?.Set("actionId", value); }
         }
+#nullable restore
 #else
         public string ActionId {
             get { return BackingStore?.Get<string>("actionId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of any policy that was created by applying the workload action. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeployedPolicyId {
             get { return BackingStore?.Get<string?>("deployedPolicyId"); }
             set { BackingStore?.Set("deployedPolicyId", value); }
         }
+#nullable restore
 #else
         public string DeployedPolicyId {
             get { return BackingStore?.Get<string>("deployedPolicyId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The detailed information for exceptions that occur when deploying the workload action. Optional. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.GenericError? Error {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GenericError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.GenericError Error {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GenericError>("error"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The excludeGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExcludeGroups {
             get { return BackingStore?.Get<List<string>?>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
+#nullable restore
 #else
         public List<string> ExcludeGroups {
             get { return BackingStore?.Get<List<string>>("excludeGroups"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The includeGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? IncludeGroups {
             get { return BackingStore?.Get<List<string>?>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
+#nullable restore
 #else
         public List<string> IncludeGroups {
             get { return BackingStore?.Get<List<string>>("includeGroups"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingCurrency : Entity, IParsable {
         /// <summary>The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Symbol {
             get { return BackingStore?.Get<string?>("symbol"); }
             set { BackingStore?.Set("symbol", value); }
         }
+#nullable restore
 #else
         public string Symbol {
             get { return BackingStore?.Get<string>("symbol"); }

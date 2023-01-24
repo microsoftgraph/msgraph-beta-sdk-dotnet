@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidEasEmailProfileConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountName {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#nullable restore
 #else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomDomainName {
             get { return BackingStore?.Get<string?>("customDomainName"); }
             set { BackingStore?.Set("customDomainName", value); }
         }
+#nullable restore
 #else
         public string CustomDomainName {
             get { return BackingStore?.Get<string>("customDomainName"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Exchange location (URL) that the native mail app connects to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HostName {
             get { return BackingStore?.Get<string?>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#nullable restore
 #else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AndroidCertificateProfileBase? IdentityCertificate {
             get { return BackingStore?.Get<AndroidCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#nullable restore
 #else
         public AndroidCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<AndroidCertificateProfileBase>("identityCertificate"); }
@@ -85,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>S/MIME signing certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AndroidCertificateProfileBase? SmimeSigningCertificate {
             get { return BackingStore?.Get<AndroidCertificateProfileBase?>("smimeSigningCertificate"); }
             set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
+#nullable restore
 #else
         public AndroidCertificateProfileBase SmimeSigningCertificate {
             get { return BackingStore?.Get<AndroidCertificateProfileBase>("smimeSigningCertificate"); }

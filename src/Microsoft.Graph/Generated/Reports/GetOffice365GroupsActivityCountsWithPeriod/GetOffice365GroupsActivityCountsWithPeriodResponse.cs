@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPerio
     public class GetOffice365GroupsActivityCountsWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Office365GroupsActivityCounts>? Value {
             get { return BackingStore?.Get<List<Office365GroupsActivityCounts>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Office365GroupsActivityCounts> Value {
             get { return BackingStore?.Get<List<Office365GroupsActivityCounts>>("value"); }

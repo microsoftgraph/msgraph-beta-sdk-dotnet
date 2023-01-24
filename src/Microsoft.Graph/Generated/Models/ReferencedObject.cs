@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the referenced object. Must match one of the objects in the directory definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReferencedObjectName {
             get { return BackingStore?.Get<string?>("referencedObjectName"); }
             set { BackingStore?.Set("referencedObjectName", value); }
         }
+#nullable restore
 #else
         public string ReferencedObjectName {
             get { return BackingStore?.Get<string>("referencedObjectName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReferencedProperty {
             get { return BackingStore?.Get<string?>("referencedProperty"); }
             set { BackingStore?.Set("referencedProperty", value); }
         }
+#nullable restore
 #else
         public string ReferencedProperty {
             get { return BackingStore?.Get<string>("referencedProperty"); }

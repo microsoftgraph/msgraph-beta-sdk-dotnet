@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewDecision : Entity, IParsable {
         /// <summary>The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccessRecommendation {
             get { return BackingStore?.Get<string?>("accessRecommendation"); }
             set { BackingStore?.Set("accessRecommendation", value); }
         }
+#nullable restore
 #else
         public string AccessRecommendation {
             get { return BackingStore?.Get<string>("accessRecommendation"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The feature-generated id of the access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccessReviewId {
             get { return BackingStore?.Get<string?>("accessReviewId"); }
             set { BackingStore?.Set("accessReviewId", value); }
         }
+#nullable restore
 #else
         public string AccessReviewId {
             get { return BackingStore?.Get<string>("accessReviewId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserIdentity? AppliedBy {
             get { return BackingStore?.Get<UserIdentity?>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
+#nullable restore
 #else
         public UserIdentity AppliedBy {
             get { return BackingStore?.Get<UserIdentity>("appliedBy"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplyResult {
             get { return BackingStore?.Get<string?>("applyResult"); }
             set { BackingStore?.Set("applyResult", value); }
         }
+#nullable restore
 #else
         public string ApplyResult {
             get { return BackingStore?.Get<string>("applyResult"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The reviewer&apos;s business justification, if supplied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Justification {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#nullable restore
 #else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserIdentity? ReviewedBy {
             get { return BackingStore?.Get<UserIdentity?>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
+#nullable restore
 #else
         public UserIdentity ReviewedBy {
             get { return BackingStore?.Get<UserIdentity>("reviewedBy"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The result of the review, one of NotReviewed, Deny, DontKnow or Approve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReviewResult {
             get { return BackingStore?.Get<string?>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
+#nullable restore
 #else
         public string ReviewResult {
             get { return BackingStore?.Get<string>("reviewResult"); }

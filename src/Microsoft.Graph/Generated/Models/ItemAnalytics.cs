@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ItemAnalytics : Entity, IParsable {
         /// <summary>The allTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemActivityStat? AllTime {
             get { return BackingStore?.Get<ItemActivityStat?>("allTime"); }
             set { BackingStore?.Set("allTime", value); }
         }
+#nullable restore
 #else
         public ItemActivityStat AllTime {
             get { return BackingStore?.Get<ItemActivityStat>("allTime"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The itemActivityStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ItemActivityStat>? ItemActivityStats {
             get { return BackingStore?.Get<List<ItemActivityStat>?>("itemActivityStats"); }
             set { BackingStore?.Set("itemActivityStats", value); }
         }
+#nullable restore
 #else
         public List<ItemActivityStat> ItemActivityStats {
             get { return BackingStore?.Get<List<ItemActivityStat>>("itemActivityStats"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The lastSevenDays property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemActivityStat? LastSevenDays {
             get { return BackingStore?.Get<ItemActivityStat?>("lastSevenDays"); }
             set { BackingStore?.Set("lastSevenDays", value); }
         }
+#nullable restore
 #else
         public ItemActivityStat LastSevenDays {
             get { return BackingStore?.Get<ItemActivityStat>("lastSevenDays"); }

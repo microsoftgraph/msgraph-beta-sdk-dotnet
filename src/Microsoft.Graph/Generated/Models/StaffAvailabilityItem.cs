@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Each item in this collection indicates a slot and the status of the staff member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AvailabilityItem>? AvailabilityItems {
             get { return BackingStore?.Get<List<AvailabilityItem>?>("availabilityItems"); }
             set { BackingStore?.Set("availabilityItems", value); }
         }
+#nullable restore
 #else
         public List<AvailabilityItem> AvailabilityItems {
             get { return BackingStore?.Get<List<AvailabilityItem>>("availabilityItems"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the staff member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StaffId {
             get { return BackingStore?.Get<string?>("staffId"); }
             set { BackingStore?.Set("staffId", value); }
         }
+#nullable restore
 #else
         public string StaffId {
             get { return BackingStore?.Get<string>("staffId"); }

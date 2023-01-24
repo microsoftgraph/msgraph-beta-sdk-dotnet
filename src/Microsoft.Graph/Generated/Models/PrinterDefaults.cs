@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The default content (MIME) type to use when processing documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentType {
             get { return BackingStore?.Get<string?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#nullable restore
 #else
         public string ContentType {
             get { return BackingStore?.Get<string>("contentType"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The documentMimeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DocumentMimeType {
             get { return BackingStore?.Get<string?>("documentMimeType"); }
             set { BackingStore?.Set("documentMimeType", value); }
         }
+#nullable restore
 #else
         public string DocumentMimeType {
             get { return BackingStore?.Get<string>("documentMimeType"); }
@@ -64,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The default set of finishings to apply to print jobs. Valid values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintFinishing?>? Finishings {
             get { return BackingStore?.Get<List<PrintFinishing?>?>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
+#nullable restore
 #else
         public List<PrintFinishing?> Finishings {
             get { return BackingStore?.Get<List<PrintFinishing?>>("finishings"); }
@@ -81,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The default input bin that serves as the paper source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InputBin {
             get { return BackingStore?.Get<string?>("inputBin"); }
             set { BackingStore?.Set("inputBin", value); }
         }
+#nullable restore
 #else
         public string InputBin {
             get { return BackingStore?.Get<string>("inputBin"); }
@@ -93,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The default media (such as paper) color to print the document on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MediaColor {
             get { return BackingStore?.Get<string?>("mediaColor"); }
             set { BackingStore?.Set("mediaColor", value); }
         }
+#nullable restore
 #else
         public string MediaColor {
             get { return BackingStore?.Get<string>("mediaColor"); }
@@ -105,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MediaSize {
             get { return BackingStore?.Get<string?>("mediaSize"); }
             set { BackingStore?.Set("mediaSize", value); }
         }
+#nullable restore
 #else
         public string MediaSize {
             get { return BackingStore?.Get<string>("mediaSize"); }
@@ -117,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The default media (such as paper) type to print the document on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MediaType {
             get { return BackingStore?.Get<string?>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+#nullable restore
 #else
         public string MediaType {
             get { return BackingStore?.Get<string>("mediaType"); }
@@ -134,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -151,10 +167,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The default output bin to place completed prints into. See the printer&apos;s capabilities for a list of supported output bins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OutputBin {
             get { return BackingStore?.Get<string?>("outputBin"); }
             set { BackingStore?.Set("outputBin", value); }
         }
+#nullable restore
 #else
         public string OutputBin {
             get { return BackingStore?.Get<string>("outputBin"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleVppTokenTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Apple Volume Purchase Program Token Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TokenId {
             get { return BackingStore?.Get<string?>("tokenId"); }
             set { BackingStore?.Set("tokenId", value); }
         }
+#nullable restore
 #else
         public string TokenId {
             get { return BackingStore?.Get<string>("tokenId"); }

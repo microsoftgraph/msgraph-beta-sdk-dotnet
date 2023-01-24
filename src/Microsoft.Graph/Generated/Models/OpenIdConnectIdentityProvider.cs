@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OpenIdConnectIdentityProvider : IdentityProviderBase, IParsable {
         /// <summary>After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ClaimsMapping? ClaimsMapping {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClaimsMapping?>("claimsMapping"); }
             set { BackingStore?.Set("claimsMapping", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ClaimsMapping ClaimsMapping {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClaimsMapping>("claimsMapping"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The client identifier for the application obtained when registering the application with the identity provider. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientId {
             get { return BackingStore?.Get<string?>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
+#nullable restore
 #else
         public string ClientId {
             get { return BackingStore?.Get<string>("clientId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is id_token the secret is not required because there is no code exchange. The id_token is returned directly from the authorization response. This is write-only. A read operation returns ****.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientSecret {
             get { return BackingStore?.Get<string?>("clientSecret"); }
             set { BackingStore?.Set("clientSecret", value); }
         }
+#nullable restore
 #else
         public string ClientSecret {
             get { return BackingStore?.Get<string>("clientSecret"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DomainHint {
             get { return BackingStore?.Get<string?>("domainHint"); }
             set { BackingStore?.Set("domainHint", value); }
         }
+#nullable restore
 #else
         public string DomainHint {
             get { return BackingStore?.Get<string>("domainHint"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service&apos;s public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration. Provide the metadata URL for the OpenID Connect identity provider you add. Read-only. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MetadataUrl {
             get { return BackingStore?.Get<string?>("metadataUrl"); }
             set { BackingStore?.Set("metadataUrl", value); }
         }
+#nullable restore
 #else
         public string MetadataUrl {
             get { return BackingStore?.Get<string>("metadataUrl"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations see RFC6749 Section 3.3. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Scope {
             get { return BackingStore?.Get<string?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
+#nullable restore
 #else
         public string Scope {
             get { return BackingStore?.Get<string>("scope"); }

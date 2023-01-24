@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The packageIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? PackageIds {
             get { return BackingStore?.Get<List<string>?>("packageIds"); }
             set { BackingStore?.Set("packageIds", value); }
         }
+#nullable restore
 #else
         public List<string> PackageIds {
             get { return BackingStore?.Get<List<string>>("packageIds"); }

@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The appliesToInvoiceNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppliesToInvoiceNumber {
             get { return BackingStore?.Get<string?>("appliesToInvoiceNumber"); }
             set { BackingStore?.Set("appliesToInvoiceNumber", value); }
         }
+#nullable restore
 #else
         public string AppliesToInvoiceNumber {
             get { return BackingStore?.Get<string>("appliesToInvoiceNumber"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Comment {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The contactId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContactId {
             get { return BackingStore?.Get<string?>("contactId"); }
             set { BackingStore?.Set("contactId", value); }
         }
+#nullable restore
 #else
         public string ContactId {
             get { return BackingStore?.Get<string>("contactId"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The customer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Customer? Customer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer?>("customer"); }
             set { BackingStore?.Set("customer", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Customer Customer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer>("customer"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The customerNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomerNumber {
             get { return BackingStore?.Get<string?>("customerNumber"); }
             set { BackingStore?.Set("customerNumber", value); }
         }
+#nullable restore
 #else
         public string CustomerNumber {
             get { return BackingStore?.Get<string>("customerNumber"); }
@@ -83,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -95,10 +107,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The documentNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DocumentNumber {
             get { return BackingStore?.Get<string?>("documentNumber"); }
             set { BackingStore?.Set("documentNumber", value); }
         }
+#nullable restore
 #else
         public string DocumentNumber {
             get { return BackingStore?.Get<string>("documentNumber"); }
@@ -107,10 +121,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The externalDocumentNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalDocumentNumber {
             get { return BackingStore?.Get<string?>("externalDocumentNumber"); }
             set { BackingStore?.Set("externalDocumentNumber", value); }
         }
+#nullable restore
 #else
         public string ExternalDocumentNumber {
             get { return BackingStore?.Get<string>("externalDocumentNumber"); }
@@ -119,10 +135,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The journalDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JournalDisplayName {
             get { return BackingStore?.Get<string?>("journalDisplayName"); }
             set { BackingStore?.Set("journalDisplayName", value); }
         }
+#nullable restore
 #else
         public string JournalDisplayName {
             get { return BackingStore?.Get<string>("journalDisplayName"); }

@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsInformationProtectionAppLearningSummary : Entity, IParsable {
         /// <summary>Application Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationName {
             get { return BackingStore?.Get<string?>("applicationName"); }
             set { BackingStore?.Set("applicationName", value); }
         }
+#nullable restore
 #else
         public string ApplicationName {
             get { return BackingStore?.Get<string>("applicationName"); }

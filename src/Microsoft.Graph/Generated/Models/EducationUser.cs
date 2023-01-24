@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The licenses that are assigned to the user. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssignedLicense>? AssignedLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>?>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
+#nullable restore
 #else
         public List<AssignedLicense> AssignedLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>>("assignedLicenses"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The plans that are assigned to the user. Read-only. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssignedPlan>? AssignedPlans {
             get { return BackingStore?.Get<List<AssignedPlan>?>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
+#nullable restore
 #else
         public List<AssignedPlan> AssignedPlans {
             get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of assignments for the user. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationAssignment>? Assignments {
             get { return BackingStore?.Get<List<EducationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<EducationAssignment> Assignments {
             get { return BackingStore?.Get<List<EducationAssignment>>("assignments"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? BusinessPhones {
             get { return BackingStore?.Get<List<string>?>("businessPhones"); }
             set { BackingStore?.Set("businessPhones", value); }
         }
+#nullable restore
 #else
         public List<string> BusinessPhones {
             get { return BackingStore?.Get<List<string>>("businessPhones"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Classes to which the user belongs. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationClass>? Classes {
             get { return BackingStore?.Get<List<EducationClass>?>("classes"); }
             set { BackingStore?.Set("classes", value); }
         }
+#nullable restore
 #else
         public List<EducationClass> Classes {
             get { return BackingStore?.Get<List<EducationClass>>("classes"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Entity who created the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name for the department in which the user works. Supports /$filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Department {
             get { return BackingStore?.Get<string?>("department"); }
             set { BackingStore?.Set("department", value); }
         }
+#nullable restore
 #else
         public string Department {
             get { return BackingStore?.Get<string>("department"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name displayed in the address book for the user. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the external source this resources was generated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalSourceDetail {
             get { return BackingStore?.Get<string?>("externalSourceDetail"); }
             set { BackingStore?.Set("externalSourceDetail", value); }
         }
+#nullable restore
 #else
         public string ExternalSourceDetail {
             get { return BackingStore?.Get<string>("externalSourceDetail"); }
@@ -125,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The given name (first name) of the user. Supports /$filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GivenName {
             get { return BackingStore?.Get<string?>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
+#nullable restore
 #else
         public string GivenName {
             get { return BackingStore?.Get<string>("givenName"); }
@@ -137,10 +157,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The SMTP address for the user; for example, &apos;jeff@contoso.onmicrosoft.com&apos;. Read-Only. Supports /$filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Mail {
             get { return BackingStore?.Get<string?>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
+#nullable restore
 #else
         public string Mail {
             get { return BackingStore?.Get<string>("mail"); }
@@ -149,10 +171,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PhysicalAddress? MailingAddress {
             get { return BackingStore?.Get<PhysicalAddress?>("mailingAddress"); }
             set { BackingStore?.Set("mailingAddress", value); }
         }
+#nullable restore
 #else
         public PhysicalAddress MailingAddress {
             get { return BackingStore?.Get<PhysicalAddress>("mailingAddress"); }
@@ -161,10 +185,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The mail alias for the user. This property must be specified when a user is created. Supports /$filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MailNickname {
             get { return BackingStore?.Get<string?>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
+#nullable restore
 #else
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
@@ -173,10 +199,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The middle name of user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MiddleName {
             get { return BackingStore?.Get<string?>("middleName"); }
             set { BackingStore?.Set("middleName", value); }
         }
+#nullable restore
 #else
         public string MiddleName {
             get { return BackingStore?.Get<string>("middleName"); }
@@ -185,10 +213,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The primary cellular telephone number for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MobilePhone {
             get { return BackingStore?.Get<string?>("mobilePhone"); }
             set { BackingStore?.Set("mobilePhone", value); }
         }
+#nullable restore
 #else
         public string MobilePhone {
             get { return BackingStore?.Get<string>("mobilePhone"); }
@@ -197,10 +227,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The officeLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OfficeLocation {
             get { return BackingStore?.Get<string?>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
+#nullable restore
 #else
         public string OfficeLocation {
             get { return BackingStore?.Get<string>("officeLocation"); }
@@ -209,10 +241,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Additional information used to associate the AAD user with it&apos;s Active Directory counterpart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationOnPremisesInfo? OnPremisesInfo {
             get { return BackingStore?.Get<EducationOnPremisesInfo?>("onPremisesInfo"); }
             set { BackingStore?.Set("onPremisesInfo", value); }
         }
+#nullable restore
 #else
         public EducationOnPremisesInfo OnPremisesInfo {
             get { return BackingStore?.Get<EducationOnPremisesInfo>("onPremisesInfo"); }
@@ -221,10 +255,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies password policies for the user. See standard [user] resource for additional details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PasswordPolicies {
             get { return BackingStore?.Get<string?>("passwordPolicies"); }
             set { BackingStore?.Set("passwordPolicies", value); }
         }
+#nullable restore
 #else
         public string PasswordPolicies {
             get { return BackingStore?.Get<string>("passwordPolicies"); }
@@ -233,10 +269,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. See standard [user] resource for additional details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.PasswordProfile? PasswordProfile {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordProfile?>("passwordProfile"); }
             set { BackingStore?.Set("passwordProfile", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.PasswordProfile PasswordProfile {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordProfile>("passwordProfile"); }
@@ -245,10 +283,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The preferred language for the user. Should follow ISO 639-1 Code; for example, &apos;en-US&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PreferredLanguage {
             get { return BackingStore?.Get<string?>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
+#nullable restore
 #else
         public string PreferredLanguage {
             get { return BackingStore?.Get<string>("preferredLanguage"); }
@@ -262,10 +302,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The plans that are provisioned for the user. Read-only. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ProvisionedPlan>? ProvisionedPlans {
             get { return BackingStore?.Get<List<ProvisionedPlan>?>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
+#nullable restore
 #else
         public List<ProvisionedPlan> ProvisionedPlans {
             get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
@@ -279,10 +321,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Related records related to the user. Possible relationships are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RelatedContact>? RelatedContacts {
             get { return BackingStore?.Get<List<RelatedContact>?>("relatedContacts"); }
             set { BackingStore?.Set("relatedContacts", value); }
         }
+#nullable restore
 #else
         public List<RelatedContact> RelatedContacts {
             get { return BackingStore?.Get<List<RelatedContact>>("relatedContacts"); }
@@ -291,10 +335,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PhysicalAddress? ResidenceAddress {
             get { return BackingStore?.Get<PhysicalAddress?>("residenceAddress"); }
             set { BackingStore?.Set("residenceAddress", value); }
         }
+#nullable restore
 #else
         public PhysicalAddress ResidenceAddress {
             get { return BackingStore?.Get<PhysicalAddress>("residenceAddress"); }
@@ -303,10 +349,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>When set, the grading rubric attached to the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationRubric>? Rubrics {
             get { return BackingStore?.Get<List<EducationRubric>?>("rubrics"); }
             set { BackingStore?.Set("rubrics", value); }
         }
+#nullable restore
 #else
         public List<EducationRubric> Rubrics {
             get { return BackingStore?.Get<List<EducationRubric>>("rubrics"); }
@@ -315,10 +363,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Schools to which the user belongs. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationSchool>? Schools {
             get { return BackingStore?.Get<List<EducationSchool>?>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
+#nullable restore
 #else
         public List<EducationSchool> Schools {
             get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
@@ -332,10 +382,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>If the primary role is student, this block will contain student specific data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationStudent? Student {
             get { return BackingStore?.Get<EducationStudent?>("student"); }
             set { BackingStore?.Set("student", value); }
         }
+#nullable restore
 #else
         public EducationStudent Student {
             get { return BackingStore?.Get<EducationStudent>("student"); }
@@ -344,10 +396,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user&apos;s surname (family name or last name). Supports /$filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Surname {
             get { return BackingStore?.Get<string?>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
+#nullable restore
 #else
         public string Surname {
             get { return BackingStore?.Get<string>("surname"); }
@@ -356,10 +410,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Classes for which the user is a teacher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationClass>? TaughtClasses {
             get { return BackingStore?.Get<List<EducationClass>?>("taughtClasses"); }
             set { BackingStore?.Set("taughtClasses", value); }
         }
+#nullable restore
 #else
         public List<EducationClass> TaughtClasses {
             get { return BackingStore?.Get<List<EducationClass>>("taughtClasses"); }
@@ -368,10 +424,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If the primary role is teacher, this block will contain teacher specific data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationTeacher? Teacher {
             get { return BackingStore?.Get<EducationTeacher?>("teacher"); }
             set { BackingStore?.Set("teacher", value); }
         }
+#nullable restore
 #else
         public EducationTeacher Teacher {
             get { return BackingStore?.Get<EducationTeacher>("teacher"); }
@@ -380,10 +438,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UsageLocation {
             get { return BackingStore?.Get<string?>("usageLocation"); }
             set { BackingStore?.Set("usageLocation", value); }
         }
+#nullable restore
 #else
         public string UsageLocation {
             get { return BackingStore?.Get<string>("usageLocation"); }
@@ -392,10 +452,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.User? User {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.User User {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("user"); }
@@ -404,10 +466,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
@@ -416,10 +480,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A string value that can be used to classify user types in your directory, such as &apos;Member&apos; and &apos;Guest&apos;. Supports /$filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserType {
             get { return BackingStore?.Get<string?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
+#nullable restore
 #else
         public string UserType {
             get { return BackingStore?.Get<string>("userType"); }

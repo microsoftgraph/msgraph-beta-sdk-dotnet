@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthoredNote : Entity, IParsable {
         /// <summary>Identity information about the note&apos;s author.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? Author {
             get { return BackingStore?.Get<Identity?>("author"); }
             set { BackingStore?.Set("author", value); }
         }
+#nullable restore
 #else
         public Identity Author {
             get { return BackingStore?.Get<Identity>("author"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The content of the note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Content {
             get { return BackingStore?.Get<ItemBody?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public ItemBody Content {
             get { return BackingStore?.Get<ItemBody>("content"); }

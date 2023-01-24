@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Returns the tags that are a child of a tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryReviewTag>? ChildTags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryReviewTag> ChildTags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("childTags"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Returns the parent tag of the specified tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoveryReviewTag? Parent {
             get { return BackingStore?.Get<EdiscoveryReviewTag?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
+#nullable restore
 #else
         public EdiscoveryReviewTag Parent {
             get { return BackingStore?.Get<EdiscoveryReviewTag>("parent"); }

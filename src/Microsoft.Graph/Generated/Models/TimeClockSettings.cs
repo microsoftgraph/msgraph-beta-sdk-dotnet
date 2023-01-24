@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The aprroved location of the timeClock.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GeoCoordinates? ApprovedLocation {
             get { return BackingStore?.Get<GeoCoordinates?>("approvedLocation"); }
             set { BackingStore?.Set("approvedLocation", value); }
         }
+#nullable restore
 #else
         public GeoCoordinates ApprovedLocation {
             get { return BackingStore?.Get<GeoCoordinates>("approvedLocation"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

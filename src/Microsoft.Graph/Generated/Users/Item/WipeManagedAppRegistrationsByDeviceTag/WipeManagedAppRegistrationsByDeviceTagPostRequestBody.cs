@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationsByDeviceTag
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceTag {
             get { return BackingStore?.Get<string?>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
+#nullable restore
 #else
         public string DeviceTag {
             get { return BackingStore?.Get<string>("deviceTag"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ConditionalAccessPolicyCoverage : Entity, IParsable {
         /// <summary>The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConditionalAccessPolicyState {
             get { return BackingStore?.Get<string?>("conditionalAccessPolicyState"); }
             set { BackingStore?.Set("conditionalAccessPolicyState", value); }
         }
+#nullable restore
 #else
         public string ConditionalAccessPolicyState {
             get { return BackingStore?.Get<string>("conditionalAccessPolicyState"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantDisplayName {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#nullable restore
 #else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }

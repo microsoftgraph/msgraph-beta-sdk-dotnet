@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Newly generated passcode for the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Passcode {
             get { return BackingStore?.Get<string?>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
+#nullable restore
 #else
         public string Passcode {
             get { return BackingStore?.Get<string>("passcode"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CanvasLayout : Entity, IParsable {
         /// <summary>Collection of horizontal sections on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<HorizontalSection>? HorizontalSections {
             get { return BackingStore?.Get<List<HorizontalSection>?>("horizontalSections"); }
             set { BackingStore?.Set("horizontalSections", value); }
         }
+#nullable restore
 #else
         public List<HorizontalSection> HorizontalSections {
             get { return BackingStore?.Get<List<HorizontalSection>>("horizontalSections"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Vertical section on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.VerticalSection? VerticalSection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerticalSection?>("verticalSection"); }
             set { BackingStore?.Set("verticalSection", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.VerticalSection VerticalSection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerticalSection>("verticalSection"); }

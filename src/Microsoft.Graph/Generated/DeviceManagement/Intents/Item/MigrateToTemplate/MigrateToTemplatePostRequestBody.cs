@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The newTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NewTemplateId {
             get { return BackingStore?.Get<string?>("newTemplateId"); }
             set { BackingStore?.Set("newTemplateId", value); }
         }
+#nullable restore
 #else
         public string NewTemplateId {
             get { return BackingStore?.Get<string>("newTemplateId"); }

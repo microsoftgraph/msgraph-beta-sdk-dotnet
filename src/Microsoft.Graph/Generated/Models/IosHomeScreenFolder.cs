@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosHomeScreenFolder : IosHomeScreenItem, IParsable {
         /// <summary>Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IosHomeScreenFolderPage>? Pages {
             get { return BackingStore?.Get<List<IosHomeScreenFolderPage>?>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
+#nullable restore
 #else
         public List<IosHomeScreenFolderPage> Pages {
             get { return BackingStore?.Get<List<IosHomeScreenFolderPage>>("pages"); }

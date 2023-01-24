@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceConfiguration : Entity, IParsable {
         /// <summary>The list of assignments for the device configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceConfigurationAssignment>? Assignments {
             get { return BackingStore?.Get<List<DeviceConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<DeviceConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>("assignments"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The device mode applicability rule for this Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode? DeviceManagementApplicabilityRuleDeviceMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode?>("deviceManagementApplicabilityRuleDeviceMode"); }
             set { BackingStore?.Set("deviceManagementApplicabilityRuleDeviceMode", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode DeviceManagementApplicabilityRuleDeviceMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode>("deviceManagementApplicabilityRuleDeviceMode"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OS edition applicability for this Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition? DeviceManagementApplicabilityRuleOsEdition {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition?>("deviceManagementApplicabilityRuleOsEdition"); }
             set { BackingStore?.Set("deviceManagementApplicabilityRuleOsEdition", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition DeviceManagementApplicabilityRuleOsEdition {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition>("deviceManagementApplicabilityRuleOsEdition"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OS version applicability rule for this Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion? DeviceManagementApplicabilityRuleOsVersion {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion?>("deviceManagementApplicabilityRuleOsVersion"); }
             set { BackingStore?.Set("deviceManagementApplicabilityRuleOsVersion", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion DeviceManagementApplicabilityRuleOsVersion {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion>("deviceManagementApplicabilityRuleOsVersion"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device Configuration Setting State Device Summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SettingStateDeviceSummary>? DeviceSettingStateSummaries {
             get { return BackingStore?.Get<List<SettingStateDeviceSummary>?>("deviceSettingStateSummaries"); }
             set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
+#nullable restore
 #else
         public List<SettingStateDeviceSummary> DeviceSettingStateSummaries {
             get { return BackingStore?.Get<List<SettingStateDeviceSummary>>("deviceSettingStateSummaries"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device configuration installation status by device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceConfigurationDeviceStatus>? DeviceStatuses {
             get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
+#nullable restore
 #else
         public List<DeviceConfigurationDeviceStatus> DeviceStatuses {
             get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>>("deviceStatuses"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device Configuration devices status overview</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceConfigurationDeviceOverview? DeviceStatusOverview {
             get { return BackingStore?.Get<DeviceConfigurationDeviceOverview?>("deviceStatusOverview"); }
             set { BackingStore?.Set("deviceStatusOverview", value); }
         }
+#nullable restore
 #else
         public DeviceConfigurationDeviceOverview DeviceStatusOverview {
             get { return BackingStore?.Get<DeviceConfigurationDeviceOverview>("deviceStatusOverview"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Admin provided name of the device configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -123,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of group assignments for the device configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceConfigurationGroupAssignment>? GroupAssignments {
             get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>?>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
+#nullable restore
 #else
         public List<DeviceConfigurationGroupAssignment> GroupAssignments {
             get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>>("groupAssignments"); }
@@ -140,10 +160,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -157,10 +179,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Device configuration installation status by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceConfigurationUserStatus>? UserStatuses {
             get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>?>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
+#nullable restore
 #else
         public List<DeviceConfigurationUserStatus> UserStatuses {
             get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>>("userStatuses"); }
@@ -169,10 +193,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device Configuration users status overview</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceConfigurationUserOverview? UserStatusOverview {
             get { return BackingStore?.Get<DeviceConfigurationUserOverview?>("userStatusOverview"); }
             set { BackingStore?.Set("userStatusOverview", value); }
         }
+#nullable restore
 #else
         public DeviceConfigurationUserOverview UserStatusOverview {
             get { return BackingStore?.Get<DeviceConfigurationUserOverview>("userStatusOverview"); }

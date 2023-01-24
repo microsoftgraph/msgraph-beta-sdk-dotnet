@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class InformationProtectionPolicy : Entity, IParsable {
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<InformationProtectionLabel>? Labels {
             get { return BackingStore?.Get<List<InformationProtectionLabel>?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
+#nullable restore
 #else
         public List<InformationProtectionLabel> Labels {
             get { return BackingStore?.Get<List<InformationProtectionLabel>>("labels"); }

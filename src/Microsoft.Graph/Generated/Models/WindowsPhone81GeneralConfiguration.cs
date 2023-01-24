@@ -37,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }

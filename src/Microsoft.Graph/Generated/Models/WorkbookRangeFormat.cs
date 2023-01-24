@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookRangeFormat : Entity, IParsable {
         /// <summary>Collection of border objects that apply to the overall range selected Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookRangeBorder>? Borders {
             get { return BackingStore?.Get<List<WorkbookRangeBorder>?>("borders"); }
             set { BackingStore?.Set("borders", value); }
         }
+#nullable restore
 #else
         public List<WorkbookRangeBorder> Borders {
             get { return BackingStore?.Get<List<WorkbookRangeBorder>>("borders"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Returns the fill object defined on the overall range. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookRangeFill? Fill {
             get { return BackingStore?.Get<WorkbookRangeFill?>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
+#nullable restore
 #else
         public WorkbookRangeFill Fill {
             get { return BackingStore?.Get<WorkbookRangeFill>("fill"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Returns the font object defined on the overall range selected Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookRangeFont? Font {
             get { return BackingStore?.Get<WorkbookRangeFont?>("font"); }
             set { BackingStore?.Set("font", value); }
         }
+#nullable restore
 #else
         public WorkbookRangeFont Font {
             get { return BackingStore?.Get<WorkbookRangeFont>("font"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HorizontalAlignment {
             get { return BackingStore?.Get<string?>("horizontalAlignment"); }
             set { BackingStore?.Set("horizontalAlignment", value); }
         }
+#nullable restore
 #else
         public string HorizontalAlignment {
             get { return BackingStore?.Get<string>("horizontalAlignment"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Returns the format protection object for a range. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookFormatProtection? Protection {
             get { return BackingStore?.Get<WorkbookFormatProtection?>("protection"); }
             set { BackingStore?.Set("protection", value); }
         }
+#nullable restore
 #else
         public WorkbookFormatProtection Protection {
             get { return BackingStore?.Get<WorkbookFormatProtection>("protection"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VerticalAlignment {
             get { return BackingStore?.Get<string?>("verticalAlignment"); }
             set { BackingStore?.Set("verticalAlignment", value); }
         }
+#nullable restore
 #else
         public string VerticalAlignment {
             get { return BackingStore?.Get<string>("verticalAlignment"); }

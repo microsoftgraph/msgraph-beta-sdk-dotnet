@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The connectors that are associated with the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintConnector>? Connectors {
             get { return BackingStore?.Get<List<PrintConnector>?>("connectors"); }
             set { BackingStore?.Set("connectors", value); }
         }
+#nullable restore
 #else
         public List<PrintConnector> Connectors {
             get { return BackingStore?.Get<List<PrintConnector>>("connectors"); }
@@ -44,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The share property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrinterShare? Share {
             get { return BackingStore?.Get<PrinterShare?>("share"); }
             set { BackingStore?.Set("share", value); }
         }
+#nullable restore
 #else
         public PrinterShare Share {
             get { return BackingStore?.Get<PrinterShare>("share"); }
@@ -56,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrinterShare>? Shares {
             get { return BackingStore?.Get<List<PrinterShare>?>("shares"); }
             set { BackingStore?.Set("shares", value); }
         }
+#nullable restore
 #else
         public List<PrinterShare> Shares {
             get { return BackingStore?.Get<List<PrinterShare>>("shares"); }
@@ -68,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of task triggers that are associated with the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintTaskTrigger>? TaskTriggers {
             get { return BackingStore?.Get<List<PrintTaskTrigger>?>("taskTriggers"); }
             set { BackingStore?.Set("taskTriggers", value); }
         }
+#nullable restore
 #else
         public List<PrintTaskTrigger> TaskTriggers {
             get { return BackingStore?.Get<List<PrintTaskTrigger>>("taskTriggers"); }

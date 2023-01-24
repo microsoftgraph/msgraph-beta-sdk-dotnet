@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
         /// <summary>A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Aliases {
             get { return BackingStore?.Get<List<string>?>("aliases"); }
             set { BackingStore?.Set("aliases", value); }
         }
+#nullable restore
 #else
         public List<string> Aliases {
             get { return BackingStore?.Get<List<string>>("aliases"); }
@@ -52,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
         /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Label?>? Labels {
             get { return BackingStore?.Get<List<Label?>?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
+#nullable restore
 #else
         public List<Label?> Labels {
             get { return BackingStore?.Get<List<Label?>>("labels"); }
@@ -64,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^.  Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -76,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

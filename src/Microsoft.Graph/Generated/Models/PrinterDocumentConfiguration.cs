@@ -50,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The finishings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintFinishing?>? Finishings {
             get { return BackingStore?.Get<List<PrintFinishing?>?>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
+#nullable restore
 #else
         public List<PrintFinishing?> Finishings {
             get { return BackingStore?.Get<List<PrintFinishing?>>("finishings"); }
@@ -67,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The inputBin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InputBin {
             get { return BackingStore?.Get<string?>("inputBin"); }
             set { BackingStore?.Set("inputBin", value); }
         }
+#nullable restore
 #else
         public string InputBin {
             get { return BackingStore?.Get<string>("inputBin"); }
@@ -79,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The margin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrintMargin? Margin {
             get { return BackingStore?.Get<PrintMargin?>("margin"); }
             set { BackingStore?.Set("margin", value); }
         }
+#nullable restore
 #else
         public PrintMargin Margin {
             get { return BackingStore?.Get<PrintMargin>("margin"); }
@@ -91,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The mediaSize property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MediaSize {
             get { return BackingStore?.Get<string?>("mediaSize"); }
             set { BackingStore?.Set("mediaSize", value); }
         }
+#nullable restore
 #else
         public string MediaSize {
             get { return BackingStore?.Get<string>("mediaSize"); }
@@ -103,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The mediaType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MediaType {
             get { return BackingStore?.Get<string?>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+#nullable restore
 #else
         public string MediaType {
             get { return BackingStore?.Get<string>("mediaType"); }
@@ -120,10 +130,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -137,10 +149,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The outputBin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OutputBin {
             get { return BackingStore?.Get<string?>("outputBin"); }
             set { BackingStore?.Set("outputBin", value); }
         }
+#nullable restore
 #else
         public string OutputBin {
             get { return BackingStore?.Get<string>("outputBin"); }
@@ -149,10 +163,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The pageRanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IntegerRange>? PageRanges {
             get { return BackingStore?.Get<List<IntegerRange>?>("pageRanges"); }
             set { BackingStore?.Set("pageRanges", value); }
         }
+#nullable restore
 #else
         public List<IntegerRange> PageRanges {
             get { return BackingStore?.Get<List<IntegerRange>>("pageRanges"); }

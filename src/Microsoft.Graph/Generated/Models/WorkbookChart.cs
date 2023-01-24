@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChart : Entity, IParsable {
         /// <summary>Represents chart axes. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartAxes? Axes {
             get { return BackingStore?.Get<WorkbookChartAxes?>("axes"); }
             set { BackingStore?.Set("axes", value); }
         }
+#nullable restore
 #else
         public WorkbookChartAxes Axes {
             get { return BackingStore?.Get<WorkbookChartAxes>("axes"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the datalabels on the chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartDataLabels? DataLabels {
             get { return BackingStore?.Get<WorkbookChartDataLabels?>("dataLabels"); }
             set { BackingStore?.Set("dataLabels", value); }
         }
+#nullable restore
 #else
         public WorkbookChartDataLabels DataLabels {
             get { return BackingStore?.Get<WorkbookChartDataLabels>("dataLabels"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Encapsulates the format properties for the chart area. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartAreaFormat? Format {
             get { return BackingStore?.Get<WorkbookChartAreaFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#nullable restore
 #else
         public WorkbookChartAreaFormat Format {
             get { return BackingStore?.Get<WorkbookChartAreaFormat>("format"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the legend for the chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartLegend? Legend {
             get { return BackingStore?.Get<WorkbookChartLegend?>("legend"); }
             set { BackingStore?.Set("legend", value); }
         }
+#nullable restore
 #else
         public WorkbookChartLegend Legend {
             get { return BackingStore?.Get<WorkbookChartLegend>("legend"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the name of a chart object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents either a single series or collection of series in the chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WorkbookChartSeries>? Series {
             get { return BackingStore?.Get<List<WorkbookChartSeries>?>("series"); }
             set { BackingStore?.Set("series", value); }
         }
+#nullable restore
 #else
         public List<WorkbookChartSeries> Series {
             get { return BackingStore?.Get<List<WorkbookChartSeries>>("series"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartTitle? Title {
             get { return BackingStore?.Get<WorkbookChartTitle?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public WorkbookChartTitle Title {
             get { return BackingStore?.Get<WorkbookChartTitle>("title"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The worksheet containing the current chart. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookWorksheet? Worksheet {
             get { return BackingStore?.Get<WorkbookWorksheet?>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
         }
+#nullable restore
 #else
         public WorkbookWorksheet Worksheet {
             get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }

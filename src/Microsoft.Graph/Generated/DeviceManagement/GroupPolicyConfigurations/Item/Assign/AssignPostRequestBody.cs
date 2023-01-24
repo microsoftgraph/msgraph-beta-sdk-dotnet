@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.A
         }
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyConfigurationAssignment>? Assignments {
             get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>>("assignments"); }

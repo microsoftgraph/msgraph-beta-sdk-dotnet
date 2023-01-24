@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSup
     public class GetPlatformSupportedPropertiesWithPlatformResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssignmentFilterSupportedProperty>? Value {
             get { return BackingStore?.Get<List<AssignmentFilterSupportedProperty>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<AssignmentFilterSupportedProperty> Value {
             get { return BackingStore?.Get<List<AssignmentFilterSupportedProperty>>("value"); }

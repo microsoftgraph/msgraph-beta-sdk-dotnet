@@ -57,7 +57,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<UnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<UnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -74,7 +76,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<UnifiedRbacResourceAction?> GetAsync(Action<UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<UnifiedRbacResourceAction> GetAsync(Action<UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -92,7 +96,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<UnifiedRbacResourceAction?> PatchAsync(UnifiedRbacResourceAction body, Action<UnifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<UnifiedRbacResourceAction> PatchAsync(UnifiedRbacResourceAction body, Action<UnifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -109,7 +115,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<UnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<UnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -131,7 +139,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -156,7 +166,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(UnifiedRbacResourceAction body, Action<UnifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(UnifiedRbacResourceAction body, Action<UnifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -198,16 +210,20 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         public class UnifiedRbacResourceActionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

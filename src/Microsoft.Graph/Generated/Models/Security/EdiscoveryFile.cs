@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryFile : FileObject, IParsable {
         /// <summary>Custodians associated with the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoveryCustodian? Custodian {
             get { return BackingStore?.Get<EdiscoveryCustodian?>("custodian"); }
             set { BackingStore?.Set("custodian", value); }
         }
+#nullable restore
 #else
         public EdiscoveryCustodian Custodian {
             get { return BackingStore?.Get<EdiscoveryCustodian>("custodian"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Tags associated with the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryReviewTag>? Tags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryReviewTag> Tags {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tags"); }

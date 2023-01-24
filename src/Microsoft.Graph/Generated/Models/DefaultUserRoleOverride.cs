@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The rolePermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRolePermission>? RolePermissions {
             get { return BackingStore?.Get<List<UnifiedRolePermission>?>("rolePermissions"); }
             set { BackingStore?.Set("rolePermissions", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRolePermission> RolePermissions {
             get { return BackingStore?.Get<List<UnifiedRolePermission>>("rolePermissions"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosHomeScreenApp : IosHomeScreenItem, IParsable {
         /// <summary>BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BundleID {
             get { return BackingStore?.Get<string?>("bundleID"); }
             set { BackingStore?.Set("bundleID", value); }
         }
+#nullable restore
 #else
         public string BundleID {
             get { return BackingStore?.Get<string>("bundleID"); }

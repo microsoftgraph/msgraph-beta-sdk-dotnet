@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
     public class GetStorageAccountsWithSubscriptionIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcForensicStorageAccount>? Value {
             get { return BackingStore?.Get<List<CloudPcForensicStorageAccount>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<CloudPcForensicStorageAccount> Value {
             get { return BackingStore?.Get<List<CloudPcForensicStorageAccount>>("value"); }

@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppRelationship : Entity, IParsable {
         /// <summary>The target mobile app&apos;s display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetDisplayName {
             get { return BackingStore?.Get<string?>("targetDisplayName"); }
             set { BackingStore?.Set("targetDisplayName", value); }
         }
+#nullable restore
 #else
         public string TargetDisplayName {
             get { return BackingStore?.Get<string>("targetDisplayName"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The target mobile app&apos;s display version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetDisplayVersion {
             get { return BackingStore?.Get<string?>("targetDisplayVersion"); }
             set { BackingStore?.Set("targetDisplayVersion", value); }
         }
+#nullable restore
 #else
         public string TargetDisplayVersion {
             get { return BackingStore?.Get<string>("targetDisplayVersion"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The target mobile app&apos;s app id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetId {
             get { return BackingStore?.Get<string?>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
         }
+#nullable restore
 #else
         public string TargetId {
             get { return BackingStore?.Get<string>("targetId"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The target mobile app&apos;s publisher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetPublisher {
             get { return BackingStore?.Get<string?>("targetPublisher"); }
             set { BackingStore?.Set("targetPublisher", value); }
         }
+#nullable restore
 #else
         public string TargetPublisher {
             get { return BackingStore?.Get<string>("targetPublisher"); }

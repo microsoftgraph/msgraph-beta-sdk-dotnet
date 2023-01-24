@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ValuePrefix {
             get { return BackingStore?.Get<string?>("valuePrefix"); }
             set { BackingStore?.Set("valuePrefix", value); }
         }
+#nullable restore
 #else
         public string ValuePrefix {
             get { return BackingStore?.Get<string>("valuePrefix"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the application the diagnostic is from. Example: com.microsoft.CompanyPortal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Application {
             get { return BackingStore?.Get<string?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#nullable restore
 #else
         public string Application {
             get { return BackingStore?.Get<string>("application"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The version of the application. Example: 5.2203.1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientVersion {
             get { return BackingStore?.Get<string?>("clientVersion"); }
             set { BackingStore?.Set("clientVersion", value); }
         }
+#nullable restore
 #else
         public string ClientVersion {
             get { return BackingStore?.Get<string>("clientVersion"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique app diagnostic identifier as a user friendly 8 character hexadecimal string. Example: 8520467A</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EasyId {
             get { return BackingStore?.Get<string?>("easyId"); }
             set { BackingStore?.Set("easyId", value); }
         }
+#nullable restore
 #else
         public string EasyId {
             get { return BackingStore?.Get<string>("easyId"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of files that are associated with the diagnostic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? FileNames {
             get { return BackingStore?.Get<List<string>?>("fileNames"); }
             set { BackingStore?.Set("fileNames", value); }
         }
+#nullable restore
 #else
         public List<string> FileNames {
             get { return BackingStore?.Get<List<string>>("fileNames"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The locale information of the application. Example: en-US</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Locale {
             get { return BackingStore?.Get<string?>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
+#nullable restore
 #else
         public string Locale {
             get { return BackingStore?.Get<string>("locale"); }
@@ -83,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -95,10 +107,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The device&apos;s OS the diagnostic is from. Example: iOS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Platform {
             get { return BackingStore?.Get<string?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
+#nullable restore
 #else
         public string Platform {
             get { return BackingStore?.Get<string>("platform"); }

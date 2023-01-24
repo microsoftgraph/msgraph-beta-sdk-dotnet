@@ -52,7 +52,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -69,7 +71,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<WindowsQualityUpdateProfileAssignment?> GetAsync(Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<WindowsQualityUpdateProfileAssignment> GetAsync(Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -87,7 +91,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<WindowsQualityUpdateProfileAssignment?> PatchAsync(WindowsQualityUpdateProfileAssignment body, Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<WindowsQualityUpdateProfileAssignment> PatchAsync(WindowsQualityUpdateProfileAssignment body, Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -104,7 +110,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -126,7 +134,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -151,7 +161,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(WindowsQualityUpdateProfileAssignment body, Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(WindowsQualityUpdateProfileAssignment body, Action<WindowsQualityUpdateProfileAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -193,16 +205,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
         public class WindowsQualityUpdateProfileAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

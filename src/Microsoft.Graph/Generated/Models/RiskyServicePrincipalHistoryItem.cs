@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RiskyServicePrincipalHistoryItem : RiskyServicePrincipal, IParsable {
         /// <summary>The activity related to service principal risk level change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RiskServicePrincipalActivity? Activity {
             get { return BackingStore?.Get<RiskServicePrincipalActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#nullable restore
 #else
         public RiskServicePrincipalActivity Activity {
             get { return BackingStore?.Get<RiskServicePrincipalActivity>("activity"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the actor of the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InitiatedBy {
             get { return BackingStore?.Get<string?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
+#nullable restore
 #else
         public string InitiatedBy {
             get { return BackingStore?.Get<string>("initiatedBy"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePrincipalId {
             get { return BackingStore?.Get<string?>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
+#nullable restore
 #else
         public string ServicePrincipalId {
             get { return BackingStore?.Get<string>("servicePrincipalId"); }

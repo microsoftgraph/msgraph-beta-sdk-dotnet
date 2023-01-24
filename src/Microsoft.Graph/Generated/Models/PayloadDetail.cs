@@ -13,24 +13,28 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The coachmarks property</summary>
+        /// <summary>Payload coachmark details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PayloadCoachmark>? Coachmarks {
             get { return BackingStore?.Get<List<PayloadCoachmark>?>("coachmarks"); }
             set { BackingStore?.Set("coachmarks", value); }
         }
+#nullable restore
 #else
         public List<PayloadCoachmark> Coachmarks {
             get { return BackingStore?.Get<List<PayloadCoachmark>>("coachmarks"); }
             set { BackingStore?.Set("coachmarks", value); }
         }
 #endif
-        /// <summary>The content property</summary>
+        /// <summary>Payload content details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Content {
             get { return BackingStore?.Get<string?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public string Content {
             get { return BackingStore?.Get<string>("content"); }
@@ -39,22 +43,26 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The phishingUrl property</summary>
+        /// <summary>The phishing URL used to target a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PhishingUrl {
             get { return BackingStore?.Get<string?>("phishingUrl"); }
             set { BackingStore?.Set("phishingUrl", value); }
         }
+#nullable restore
 #else
         public string PhishingUrl {
             get { return BackingStore?.Get<string>("phishingUrl"); }

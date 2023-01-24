@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.GetPstnCallsWithFromDa
     public class GetPstnCallsWithFromDateTimeWithToDateTimeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PstnCallLogRow>? Value {
             get { return BackingStore?.Get<List<PstnCallLogRow>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<PstnCallLogRow> Value {
             get { return BackingStore?.Get<List<PstnCallLogRow>>("value"); }

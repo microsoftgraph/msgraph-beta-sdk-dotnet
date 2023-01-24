@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementTemplateStep : Entity, IParsable {
         /// <summary>The acceptedVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ManagementTemplateStepVersion? AcceptedVersion {
             get { return BackingStore?.Get<ManagementTemplateStepVersion?>("acceptedVersion"); }
             set { BackingStore?.Set("acceptedVersion", value); }
         }
+#nullable restore
 #else
         public ManagementTemplateStepVersion AcceptedVersion {
             get { return BackingStore?.Get<ManagementTemplateStepVersion>("acceptedVersion"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedByUserId {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#nullable restore
 #else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastActionByUserId {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#nullable restore
 #else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The managementTemplate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate? ManagementTemplate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate?>("managementTemplate"); }
             set { BackingStore?.Set("managementTemplate", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate ManagementTemplate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>("managementTemplate"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The portalLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ActionUrl? PortalLink {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl?>("portalLink"); }
             set { BackingStore?.Set("portalLink", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ActionUrl PortalLink {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl>("portalLink"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The versions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagementTemplateStepVersion>? Versions {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
+#nullable restore
 #else
         public List<ManagementTemplateStepVersion> Versions {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>("versions"); }

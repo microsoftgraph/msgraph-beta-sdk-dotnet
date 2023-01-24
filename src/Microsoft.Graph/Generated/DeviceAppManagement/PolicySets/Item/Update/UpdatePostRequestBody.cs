@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
     public class UpdatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addedPolicySetItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PolicySetItem>? AddedPolicySetItems {
             get { return BackingStore?.Get<List<PolicySetItem>?>("addedPolicySetItems"); }
             set { BackingStore?.Set("addedPolicySetItems", value); }
         }
+#nullable restore
 #else
         public List<PolicySetItem> AddedPolicySetItems {
             get { return BackingStore?.Get<List<PolicySetItem>>("addedPolicySetItems"); }
@@ -26,10 +28,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
         }
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PolicySetAssignment>? Assignments {
             get { return BackingStore?.Get<List<PolicySetAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<PolicySetAssignment> Assignments {
             get { return BackingStore?.Get<List<PolicySetAssignment>>("assignments"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deletedPolicySetItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DeletedPolicySetItems {
             get { return BackingStore?.Get<List<string>?>("deletedPolicySetItems"); }
             set { BackingStore?.Set("deletedPolicySetItems", value); }
         }
+#nullable restore
 #else
         public List<string> DeletedPolicySetItems {
             get { return BackingStore?.Get<List<string>>("deletedPolicySetItems"); }
@@ -52,10 +58,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
 #endif
         /// <summary>The updatedPolicySetItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PolicySetItem>? UpdatedPolicySetItems {
             get { return BackingStore?.Get<List<PolicySetItem>?>("updatedPolicySetItems"); }
             set { BackingStore?.Set("updatedPolicySetItems", value); }
         }
+#nullable restore
 #else
         public List<PolicySetItem> UpdatedPolicySetItems {
             get { return BackingStore?.Get<List<PolicySetItem>>("updatedPolicySetItems"); }

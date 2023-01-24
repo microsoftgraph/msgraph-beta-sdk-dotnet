@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10NetworkBoundaryConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Windows Network Isolation Policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy? WindowsNetworkIsolationPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy?>("windowsNetworkIsolationPolicy"); }
             set { BackingStore?.Set("windowsNetworkIsolationPolicy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy WindowsNetworkIsolationPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy>("windowsNetworkIsolationPolicy"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleAssignmentSchedule : UnifiedRoleScheduleBase, IParsable {
         /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UnifiedRoleEligibilitySchedule? ActivatedUsing {
             get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule?>("activatedUsing"); }
             set { BackingStore?.Set("activatedUsing", value); }
         }
+#nullable restore
 #else
         public UnifiedRoleEligibilitySchedule ActivatedUsing {
             get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule>("activatedUsing"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentType {
             get { return BackingStore?.Get<string?>("assignmentType"); }
             set { BackingStore?.Set("assignmentType", value); }
         }
+#nullable restore
 #else
         public string AssignmentType {
             get { return BackingStore?.Get<string>("assignmentType"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MemberType {
             get { return BackingStore?.Get<string?>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
+#nullable restore
 #else
         public string MemberType {
             get { return BackingStore?.Get<string>("memberType"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The period of the role assignment. It can represent a single occurrence or multiple recurrences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestSchedule? ScheduleInfo {
             get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
+#nullable restore
 #else
         public RequestSchedule ScheduleInfo {
             get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Deprovisio
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deprovisionReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeprovisionReason {
             get { return BackingStore?.Get<string?>("deprovisionReason"); }
             set { BackingStore?.Set("deprovisionReason", value); }
         }
+#nullable restore
 #else
         public string DeprovisionReason {
             get { return BackingStore?.Get<string>("deprovisionReason"); }

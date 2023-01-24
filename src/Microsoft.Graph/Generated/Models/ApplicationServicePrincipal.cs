@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The application property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Application? Application {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Application?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Application Application {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Application>("application"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The servicePrincipal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ServicePrincipal? ServicePrincipal {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipal?>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ServicePrincipal ServicePrincipal {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipal>("servicePrincipal"); }

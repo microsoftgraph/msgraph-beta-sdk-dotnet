@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementComplianceScheduledActionForRule : Entity, IParsable {
         /// <summary>Name of the rule which this scheduled action applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RuleName {
             get { return BackingStore?.Get<string?>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
+#nullable restore
 #else
         public string RuleName {
             get { return BackingStore?.Get<string>("ruleName"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementComplianceActionItem>? ScheduledActionConfigurations {
             get { return BackingStore?.Get<List<DeviceManagementComplianceActionItem>?>("scheduledActionConfigurations"); }
             set { BackingStore?.Set("scheduledActionConfigurations", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementComplianceActionItem> ScheduledActionConfigurations {
             get { return BackingStore?.Get<List<DeviceManagementComplianceActionItem>>("scheduledActionConfigurations"); }

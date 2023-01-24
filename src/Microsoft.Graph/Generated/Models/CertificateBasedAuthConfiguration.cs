@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CertificateBasedAuthConfiguration : Entity, IParsable {
         /// <summary>Collection of certificate authorities which creates a trusted certificate chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CertificateAuthority>? CertificateAuthorities {
             get { return BackingStore?.Get<List<CertificateAuthority>?>("certificateAuthorities"); }
             set { BackingStore?.Set("certificateAuthorities", value); }
         }
+#nullable restore
 #else
         public List<CertificateAuthority> CertificateAuthorities {
             get { return BackingStore?.Get<List<CertificateAuthority>>("certificateAuthorities"); }

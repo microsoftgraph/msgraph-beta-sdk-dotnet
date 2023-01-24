@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Context {
             get { return BackingStore?.Get<string?>("context"); }
             set { BackingStore?.Set("context", value); }
         }
+#nullable restore
 #else
         public string Context {
             get { return BackingStore?.Get<string>("context"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Failure {
             get { return BackingStore?.Get<string?>("failure"); }
             set { BackingStore?.Set("failure", value); }
         }
+#nullable restore
 #else
         public string Failure {
             get { return BackingStore?.Get<string>("failure"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The detailed description of what went wrong.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FailureDetails {
             get { return BackingStore?.Get<string?>("failureDetails"); }
             set { BackingStore?.Set("failureDetails", value); }
         }
+#nullable restore
 #else
         public string FailureDetails {
             get { return BackingStore?.Get<string>("failureDetails"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The detailed description of how to remediate this issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Remediation {
             get { return BackingStore?.Get<string?>("remediation"); }
             set { BackingStore?.Set("remediation", value); }
         }
+#nullable restore
 #else
         public string Remediation {
             get { return BackingStore?.Get<string>("remediation"); }
@@ -78,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Links to helpful documentation about this failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementTroubleshootingErrorResource>? Resources {
             get { return BackingStore?.Get<List<DeviceManagementTroubleshootingErrorResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementTroubleshootingErrorResource> Resources {
             get { return BackingStore?.Get<List<DeviceManagementTroubleshootingErrorResource>>("resources"); }

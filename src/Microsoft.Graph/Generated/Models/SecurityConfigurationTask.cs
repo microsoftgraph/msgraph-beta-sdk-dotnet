@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Information about the mitigation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Insights {
             get { return BackingStore?.Get<string?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
+#nullable restore
 #else
         public string Insights {
             get { return BackingStore?.Get<string>("insights"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The intended settings and their values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? IntendedSettings {
             get { return BackingStore?.Get<List<KeyValuePair>?>("intendedSettings"); }
             set { BackingStore?.Set("intendedSettings", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> IntendedSettings {
             get { return BackingStore?.Get<List<KeyValuePair>>("intendedSettings"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The vulnerable managed devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VulnerableManagedDevice>? ManagedDevices {
             get { return BackingStore?.Get<List<VulnerableManagedDevice>?>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
+#nullable restore
 #else
         public List<VulnerableManagedDevice> ManagedDevices {
             get { return BackingStore?.Get<List<VulnerableManagedDevice>>("managedDevices"); }

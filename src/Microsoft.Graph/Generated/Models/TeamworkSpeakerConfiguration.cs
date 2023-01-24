@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The defaultCommunicationSpeaker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? DefaultCommunicationSpeaker {
             get { return BackingStore?.Get<TeamworkPeripheral?>("defaultCommunicationSpeaker"); }
             set { BackingStore?.Set("defaultCommunicationSpeaker", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral DefaultCommunicationSpeaker {
             get { return BackingStore?.Get<TeamworkPeripheral>("defaultCommunicationSpeaker"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The defaultSpeaker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? DefaultSpeaker {
             get { return BackingStore?.Get<TeamworkPeripheral?>("defaultSpeaker"); }
             set { BackingStore?.Set("defaultSpeaker", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral DefaultSpeaker {
             get { return BackingStore?.Get<TeamworkPeripheral>("defaultSpeaker"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The speakers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamworkPeripheral>? Speakers {
             get { return BackingStore?.Get<List<TeamworkPeripheral>?>("speakers"); }
             set { BackingStore?.Set("speakers", value); }
         }
+#nullable restore
 #else
         public List<TeamworkPeripheral> Speakers {
             get { return BackingStore?.Get<List<TeamworkPeripheral>>("speakers"); }

@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Count of items per insight.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? InsightCounts {
             get { return BackingStore?.Get<List<KeyValuePair>?>("insightCounts"); }
             set { BackingStore?.Set("insightCounts", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> InsightCounts {
             get { return BackingStore?.Get<List<KeyValuePair>>("insightCounts"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? ProductItemCounts {
             get { return BackingStore?.Get<List<KeyValuePair>?>("productItemCounts"); }
             set { BackingStore?.Set("productItemCounts", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> ProductItemCounts {
             get { return BackingStore?.Get<List<KeyValuePair>>("productItemCounts"); }

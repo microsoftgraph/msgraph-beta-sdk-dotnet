@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DocumentCommentReply : Entity, IParsable {
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Content {
             get { return BackingStore?.Get<string?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public string Content {
             get { return BackingStore?.Get<string>("content"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Location {
             get { return BackingStore?.Get<string?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public string Location {
             get { return BackingStore?.Get<string>("location"); }

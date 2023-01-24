@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhone81AppXBundle : WindowsPhone81AppX, IParsable {
         /// <summary>The list of AppX Package Information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsPackageInformation>? AppXPackageInformationList {
             get { return BackingStore?.Get<List<WindowsPackageInformation>?>("appXPackageInformationList"); }
             set { BackingStore?.Set("appXPackageInformationList", value); }
         }
+#nullable restore
 #else
         public List<WindowsPackageInformation> AppXPackageInformationList {
             get { return BackingStore?.Get<List<WindowsPackageInformation>>("appXPackageInformationList"); }

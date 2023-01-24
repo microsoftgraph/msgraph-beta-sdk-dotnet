@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The categories to which the task has been applied. See applied Categories for possible values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerAppliedCategories? AppliedCategories {
             get { return BackingStore?.Get<PlannerAppliedCategories?>("appliedCategories"); }
             set { BackingStore?.Set("appliedCategories", value); }
         }
+#nullable restore
 #else
         public PlannerAppliedCategories AppliedCategories {
             get { return BackingStore?.Get<PlannerAppliedCategories>("appliedCategories"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerAssignedToTaskBoardTaskFormat? AssignedToTaskBoardFormat {
             get { return BackingStore?.Get<PlannerAssignedToTaskBoardTaskFormat?>("assignedToTaskBoardFormat"); }
             set { BackingStore?.Set("assignedToTaskBoardFormat", value); }
         }
+#nullable restore
 #else
         public PlannerAssignedToTaskBoardTaskFormat AssignedToTaskBoardFormat {
             get { return BackingStore?.Get<PlannerAssignedToTaskBoardTaskFormat>("assignedToTaskBoardFormat"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Hint used to order items of this type in a list view. The format is defined as outlined here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssigneePriority {
             get { return BackingStore?.Get<string?>("assigneePriority"); }
             set { BackingStore?.Set("assigneePriority", value); }
         }
+#nullable restore
 #else
         public string AssigneePriority {
             get { return BackingStore?.Get<string>("assigneePriority"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The set of assignees the task is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerAssignments? Assignments {
             get { return BackingStore?.Get<PlannerAssignments?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public PlannerAssignments Assignments {
             get { return BackingStore?.Get<PlannerAssignments>("assignments"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BucketId {
             get { return BackingStore?.Get<string?>("bucketId"); }
             set { BackingStore?.Set("bucketId", value); }
         }
+#nullable restore
 #else
         public string BucketId {
             get { return BackingStore?.Get<string>("bucketId"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerBucketTaskBoardTaskFormat? BucketTaskBoardFormat {
             get { return BackingStore?.Get<PlannerBucketTaskBoardTaskFormat?>("bucketTaskBoardFormat"); }
             set { BackingStore?.Set("bucketTaskBoardFormat", value); }
         }
+#nullable restore
 #else
         public PlannerBucketTaskBoardTaskFormat BucketTaskBoardFormat {
             get { return BackingStore?.Get<PlannerBucketTaskBoardTaskFormat>("bucketTaskBoardFormat"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identity of the user that completed the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CompletedBy {
             get { return BackingStore?.Get<IdentitySet?>("completedBy"); }
             set { BackingStore?.Set("completedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CompletedBy {
             get { return BackingStore?.Get<IdentitySet>("completedBy"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConversationThreadId {
             get { return BackingStore?.Get<string?>("conversationThreadId"); }
             set { BackingStore?.Set("conversationThreadId", value); }
         }
+#nullable restore
 #else
         public string ConversationThreadId {
             get { return BackingStore?.Get<string>("conversationThreadId"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity of the user that created the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains information about the origin of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerTaskCreation? CreationSource {
             get { return BackingStore?.Get<PlannerTaskCreation?>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
+#nullable restore
 #else
         public PlannerTaskCreation CreationSource {
             get { return BackingStore?.Get<PlannerTaskCreation>("creationSource"); }
@@ -147,10 +167,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Additional details about the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerTaskDetails? Details {
             get { return BackingStore?.Get<PlannerTaskDetails?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#nullable restore
 #else
         public PlannerTaskDetails Details {
             get { return BackingStore?.Get<PlannerTaskDetails>("details"); }
@@ -169,10 +191,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Hint used to order items of this type in a list view. The format is defined as outlined here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrderHint {
             get { return BackingStore?.Get<string?>("orderHint"); }
             set { BackingStore?.Set("orderHint", value); }
         }
+#nullable restore
 #else
         public string OrderHint {
             get { return BackingStore?.Get<string>("orderHint"); }
@@ -186,10 +210,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Plan ID to which the task belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PlanId {
             get { return BackingStore?.Get<string?>("planId"); }
             set { BackingStore?.Set("planId", value); }
         }
+#nullable restore
 #else
         public string PlanId {
             get { return BackingStore?.Get<string>("planId"); }
@@ -208,10 +234,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerProgressTaskBoardTaskFormat? ProgressTaskBoardFormat {
             get { return BackingStore?.Get<PlannerProgressTaskBoardTaskFormat?>("progressTaskBoardFormat"); }
             set { BackingStore?.Set("progressTaskBoardFormat", value); }
         }
+#nullable restore
 #else
         public PlannerProgressTaskBoardTaskFormat ProgressTaskBoardFormat {
             get { return BackingStore?.Get<PlannerProgressTaskBoardTaskFormat>("progressTaskBoardFormat"); }
@@ -230,10 +258,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Title of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

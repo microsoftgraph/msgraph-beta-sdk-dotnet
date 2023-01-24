@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Edge : Entity, IParsable {
         /// <summary>A container for Internet Explorer mode resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.InternetExplorerMode? InternetExplorerMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InternetExplorerMode?>("internetExplorerMode"); }
             set { BackingStore?.Set("internetExplorerMode", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.InternetExplorerMode InternetExplorerMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InternetExplorerMode>("internetExplorerMode"); }

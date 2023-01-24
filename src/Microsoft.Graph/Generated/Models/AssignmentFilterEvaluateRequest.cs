@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Order the devices should be sorted in. Default is ascending on device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? OrderBy {
             get { return BackingStore?.Get<List<string>?>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
+#nullable restore
 #else
         public List<string> OrderBy {
             get { return BackingStore?.Get<List<string>>("orderBy"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Rule definition of the Assignment Filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Rule {
             get { return BackingStore?.Get<string?>("rule"); }
             set { BackingStore?.Set("rule", value); }
         }
+#nullable restore
 #else
         public string Rule {
             get { return BackingStore?.Get<string>("rule"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Search keyword applied to scope found devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Search {
             get { return BackingStore?.Get<string?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#nullable restore
 #else
         public string Search {
             get { return BackingStore?.Get<string>("search"); }

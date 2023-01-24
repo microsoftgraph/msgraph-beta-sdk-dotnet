@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.UpdateWindow
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The updateWindowsDeviceAccountActionParameter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.UpdateWindowsDeviceAccountActionParameter? UpdateWindowsDeviceAccountActionParameter {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateWindowsDeviceAccountActionParameter?>("updateWindowsDeviceAccountActionParameter"); }
             set { BackingStore?.Set("updateWindowsDeviceAccountActionParameter", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.UpdateWindowsDeviceAccountActionParameter UpdateWindowsDeviceAccountActionParameter {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateWindowsDeviceAccountActionParameter>("updateWindowsDeviceAccountActionParameter"); }

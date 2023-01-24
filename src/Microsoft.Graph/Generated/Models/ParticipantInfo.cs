@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ISO 3166-1 Alpha-2 country code of the participant&apos;s best estimated physical location at the start of the call. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CountryCode {
             get { return BackingStore?.Get<string?>("countryCode"); }
             set { BackingStore?.Set("countryCode", value); }
         }
+#nullable restore
 #else
         public string CountryCode {
             get { return BackingStore?.Get<string>("countryCode"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Identity {
             get { return BackingStore?.Get<IdentitySet?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+#nullable restore
 #else
         public IdentitySet Identity {
             get { return BackingStore?.Get<IdentitySet>("identity"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The language culture string. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LanguageId {
             get { return BackingStore?.Get<string?>("languageId"); }
             set { BackingStore?.Set("languageId", value); }
         }
+#nullable restore
 #else
         public string LanguageId {
             get { return BackingStore?.Get<string>("languageId"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The nonAnonymizedIdentity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? NonAnonymizedIdentity {
             get { return BackingStore?.Get<IdentitySet?>("nonAnonymizedIdentity"); }
             set { BackingStore?.Set("nonAnonymizedIdentity", value); }
         }
+#nullable restore
 #else
         public IdentitySet NonAnonymizedIdentity {
             get { return BackingStore?.Get<IdentitySet>("nonAnonymizedIdentity"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The participant ID of the participant. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParticipantId {
             get { return BackingStore?.Get<string?>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
+#nullable restore
 #else
         public string ParticipantId {
             get { return BackingStore?.Get<string>("participantId"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The client platform ID of the participant. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PlatformId {
             get { return BackingStore?.Get<string?>("platformId"); }
             set { BackingStore?.Set("platformId", value); }
         }
+#nullable restore
 #else
         public string PlatformId {
             get { return BackingStore?.Get<string>("platformId"); }
@@ -104,10 +118,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant&apos;s current physical location, unlike countryCode. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Region {
             get { return BackingStore?.Get<string?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
+#nullable restore
 #else
         public string Region {
             get { return BackingStore?.Get<string>("region"); }

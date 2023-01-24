@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelatio
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The relationships property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppRelationship>? Relationships {
             get { return BackingStore?.Get<List<MobileAppRelationship>?>("relationships"); }
             set { BackingStore?.Set("relationships", value); }
         }
+#nullable restore
 #else
         public List<MobileAppRelationship> Relationships {
             get { return BackingStore?.Get<List<MobileAppRelationship>>("relationships"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A reason for not returning any meeting suggestions. Possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmptySuggestionsReason {
             get { return BackingStore?.Get<string?>("emptySuggestionsReason"); }
             set { BackingStore?.Set("emptySuggestionsReason", value); }
         }
+#nullable restore
 #else
         public string EmptySuggestionsReason {
             get { return BackingStore?.Get<string>("emptySuggestionsReason"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An array of meeting suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MeetingTimeSuggestion>? MeetingTimeSuggestions {
             get { return BackingStore?.Get<List<MeetingTimeSuggestion>?>("meetingTimeSuggestions"); }
             set { BackingStore?.Set("meetingTimeSuggestions", value); }
         }
+#nullable restore
 #else
         public List<MeetingTimeSuggestion> MeetingTimeSuggestions {
             get { return BackingStore?.Get<List<MeetingTimeSuggestion>>("meetingTimeSuggestions"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

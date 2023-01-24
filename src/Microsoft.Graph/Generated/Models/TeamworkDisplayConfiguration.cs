@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of configured displays. Applicable only for Microsoft Teams Rooms devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamworkConfiguredPeripheral>? ConfiguredDisplays {
             get { return BackingStore?.Get<List<TeamworkConfiguredPeripheral>?>("configuredDisplays"); }
             set { BackingStore?.Set("configuredDisplays", value); }
         }
+#nullable restore
 #else
         public List<TeamworkConfiguredPeripheral> ConfiguredDisplays {
             get { return BackingStore?.Get<List<TeamworkConfiguredPeripheral>>("configuredDisplays"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Configuration for the inbuilt display. Not applicable for Teams Rooms devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkDisplayScreenConfiguration? InBuiltDisplayScreenConfiguration {
             get { return BackingStore?.Get<TeamworkDisplayScreenConfiguration?>("inBuiltDisplayScreenConfiguration"); }
             set { BackingStore?.Set("inBuiltDisplayScreenConfiguration", value); }
         }
+#nullable restore
 #else
         public TeamworkDisplayScreenConfiguration InBuiltDisplayScreenConfiguration {
             get { return BackingStore?.Get<TeamworkDisplayScreenConfiguration>("inBuiltDisplayScreenConfiguration"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

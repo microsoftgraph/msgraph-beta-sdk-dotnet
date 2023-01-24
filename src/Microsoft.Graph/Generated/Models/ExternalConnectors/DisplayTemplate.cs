@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The layout property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Json? Layout {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json?>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Json Layout {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Json>("layout"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
         /// <summary>Specifies additional rules for selecting this display template based on the item schema. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PropertyRule>? Rules {
             get { return BackingStore?.Get<List<PropertyRule>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
+#nullable restore
 #else
         public List<PropertyRule> Rules {
             get { return BackingStore?.Get<List<PropertyRule>>("rules"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationClass : Entity, IParsable {
         /// <summary>All categories associated with this class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationCategory>? AssignmentCategories {
             get { return BackingStore?.Get<List<EducationCategory>?>("assignmentCategories"); }
             set { BackingStore?.Set("assignmentCategories", value); }
         }
+#nullable restore
 #else
         public List<EducationCategory> AssignmentCategories {
             get { return BackingStore?.Get<List<EducationCategory>>("assignmentCategories"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies class-level defaults respected by new assignments created in the class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationAssignmentDefaults? AssignmentDefaults {
             get { return BackingStore?.Get<EducationAssignmentDefaults?>("assignmentDefaults"); }
             set { BackingStore?.Set("assignmentDefaults", value); }
         }
+#nullable restore
 #else
         public EducationAssignmentDefaults AssignmentDefaults {
             get { return BackingStore?.Get<EducationAssignmentDefaults>("assignmentDefaults"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All assignments associated with this class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationAssignment>? Assignments {
             get { return BackingStore?.Get<List<EducationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<EducationAssignment> Assignments {
             get { return BackingStore?.Get<List<EducationAssignment>>("assignments"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies class-level assignments settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationAssignmentSettings? AssignmentSettings {
             get { return BackingStore?.Get<EducationAssignmentSettings?>("assignmentSettings"); }
             set { BackingStore?.Set("assignmentSettings", value); }
         }
+#nullable restore
 #else
         public EducationAssignmentSettings AssignmentSettings {
             get { return BackingStore?.Get<EducationAssignmentSettings>("assignmentSettings"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Class code used by the school to identify the class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClassCode {
             get { return BackingStore?.Get<string?>("classCode"); }
             set { BackingStore?.Set("classCode", value); }
         }
+#nullable restore
 #else
         public string ClassCode {
             get { return BackingStore?.Get<string>("classCode"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Course information for the class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationCourse? Course {
             get { return BackingStore?.Get<EducationCourse?>("course"); }
             set { BackingStore?.Set("course", value); }
         }
+#nullable restore
 #else
         public EducationCourse Course {
             get { return BackingStore?.Get<EducationCourse>("course"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Entity who created the class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description of the class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ID of the class from the syncing system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalId {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#nullable restore
 #else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the class in the syncing system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalName {
             get { return BackingStore?.Get<string?>("externalName"); }
             set { BackingStore?.Set("externalName", value); }
         }
+#nullable restore
 #else
         public string ExternalName {
             get { return BackingStore?.Get<string>("externalName"); }
@@ -144,10 +166,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the external source this resources was generated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalSourceDetail {
             get { return BackingStore?.Get<string?>("externalSourceDetail"); }
             set { BackingStore?.Set("externalSourceDetail", value); }
         }
+#nullable restore
 #else
         public string ExternalSourceDetail {
             get { return BackingStore?.Get<string>("externalSourceDetail"); }
@@ -156,10 +180,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Grade level of the class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Grade {
             get { return BackingStore?.Get<string?>("grade"); }
             set { BackingStore?.Set("grade", value); }
         }
+#nullable restore
 #else
         public string Grade {
             get { return BackingStore?.Get<string>("grade"); }
@@ -168,10 +194,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Group? Group {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Group Group {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>("group"); }
@@ -180,10 +208,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Mail name for sending email to all members, if this is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MailNickname {
             get { return BackingStore?.Get<string?>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
+#nullable restore
 #else
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
@@ -192,10 +222,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All users in the class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationUser>? Members {
             get { return BackingStore?.Get<List<EducationUser>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#nullable restore
 #else
         public List<EducationUser> Members {
             get { return BackingStore?.Get<List<EducationUser>>("members"); }
@@ -204,10 +236,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All schools that this class is associated with. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationSchool>? Schools {
             get { return BackingStore?.Get<List<EducationSchool>?>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
+#nullable restore
 #else
         public List<EducationSchool> Schools {
             get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
@@ -216,10 +250,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All teachers in the class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationUser>? Teachers {
             get { return BackingStore?.Get<List<EducationUser>?>("teachers"); }
             set { BackingStore?.Set("teachers", value); }
         }
+#nullable restore
 #else
         public List<EducationUser> Teachers {
             get { return BackingStore?.Get<List<EducationUser>>("teachers"); }
@@ -228,10 +264,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Term for the class.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationTerm? Term {
             get { return BackingStore?.Get<EducationTerm?>("term"); }
             set { BackingStore?.Set("term", value); }
         }
+#nullable restore
 #else
         public EducationTerm Term {
             get { return BackingStore?.Get<EducationTerm>("term"); }

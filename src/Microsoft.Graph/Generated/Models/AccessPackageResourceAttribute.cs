@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessPackageResourceAttributeDestination? AttributeDestination {
             get { return BackingStore?.Get<AccessPackageResourceAttributeDestination?>("attributeDestination"); }
             set { BackingStore?.Set("attributeDestination", value); }
         }
+#nullable restore
 #else
         public AccessPackageResourceAttributeDestination AttributeDestination {
             get { return BackingStore?.Get<AccessPackageResourceAttributeDestination>("attributeDestination"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AttributeName {
             get { return BackingStore?.Get<string?>("attributeName"); }
             set { BackingStore?.Set("attributeName", value); }
         }
+#nullable restore
 #else
         public string AttributeName {
             get { return BackingStore?.Get<string>("attributeName"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessPackageResourceAttributeSource? AttributeSource {
             get { return BackingStore?.Get<AccessPackageResourceAttributeSource?>("attributeSource"); }
             set { BackingStore?.Set("attributeSource", value); }
         }
+#nullable restore
 #else
         public AccessPackageResourceAttributeSource AttributeSource {
             get { return BackingStore?.Get<AccessPackageResourceAttributeSource>("attributeSource"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier for the attribute on the access package resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

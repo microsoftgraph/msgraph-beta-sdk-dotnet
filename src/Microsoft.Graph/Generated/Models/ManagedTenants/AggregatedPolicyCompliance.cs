@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class AggregatedPolicyCompliance : Entity, IParsable {
         /// <summary>Identifier for the device compliance policy. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CompliancePolicyId {
             get { return BackingStore?.Get<string?>("compliancePolicyId"); }
             set { BackingStore?.Set("compliancePolicyId", value); }
         }
+#nullable restore
 #else
         public string CompliancePolicyId {
             get { return BackingStore?.Get<string>("compliancePolicyId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>Name of the device compliance policy. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CompliancePolicyName {
             get { return BackingStore?.Get<string?>("compliancePolicyName"); }
             set { BackingStore?.Set("compliancePolicyName", value); }
         }
+#nullable restore
 #else
         public string CompliancePolicyName {
             get { return BackingStore?.Get<string>("compliancePolicyName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CompliancePolicyPlatform {
             get { return BackingStore?.Get<string?>("compliancePolicyPlatform"); }
             set { BackingStore?.Set("compliancePolicyPlatform", value); }
         }
+#nullable restore
 #else
         public string CompliancePolicyPlatform {
             get { return BackingStore?.Get<string>("compliancePolicyPlatform"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The type of compliance policy. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CompliancePolicyType {
             get { return BackingStore?.Get<string?>("compliancePolicyType"); }
             set { BackingStore?.Set("compliancePolicyType", value); }
         }
+#nullable restore
 #else
         public string CompliancePolicyType {
             get { return BackingStore?.Get<string>("compliancePolicyType"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantDisplayName {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#nullable restore
 #else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
@@ -92,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
 #endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TenantId {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#nullable restore
 #else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }

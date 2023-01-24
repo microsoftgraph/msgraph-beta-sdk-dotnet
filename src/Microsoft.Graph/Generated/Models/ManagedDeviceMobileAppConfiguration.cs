@@ -4,16 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// An abstract class for Mobile app configuration for enrolled devices.
-    /// </summary>
     public class ManagedDeviceMobileAppConfiguration : Entity, IParsable {
         /// <summary>The list of group assignemenets for app configration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedDeviceMobileAppConfigurationAssignment>? Assignments {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<ManagedDeviceMobileAppConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationAssignment>>("assignments"); }
@@ -27,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -39,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of ManagedDeviceMobileAppConfigurationDeviceStatus.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedDeviceMobileAppConfigurationDeviceStatus>? DeviceStatuses {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
+#nullable restore
 #else
         public List<ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>>("deviceStatuses"); }
@@ -51,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>App configuration device status summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ManagedDeviceMobileAppConfigurationDeviceSummary? DeviceStatusSummary {
             get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationDeviceSummary?>("deviceStatusSummary"); }
             set { BackingStore?.Set("deviceStatusSummary", value); }
         }
+#nullable restore
 #else
         public ManagedDeviceMobileAppConfigurationDeviceSummary DeviceStatusSummary {
             get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationDeviceSummary>("deviceStatusSummary"); }
@@ -63,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Admin provided name of the device configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -80,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Scope Tags for this App configuration entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -92,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>the associated app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TargetedMobileApps {
             get { return BackingStore?.Get<List<string>?>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
+#nullable restore
 #else
         public List<string> TargetedMobileApps {
             get { return BackingStore?.Get<List<string>>("targetedMobileApps"); }
@@ -104,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of ManagedDeviceMobileAppConfigurationUserStatus.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedDeviceMobileAppConfigurationUserStatus>? UserStatuses {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>?>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
+#nullable restore
 #else
         public List<ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>>("userStatuses"); }
@@ -116,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>App configuration user status summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ManagedDeviceMobileAppConfigurationUserSummary? UserStatusSummary {
             get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationUserSummary?>("userStatusSummary"); }
             set { BackingStore?.Set("userStatusSummary", value); }
         }
+#nullable restore
 #else
         public ManagedDeviceMobileAppConfigurationUserSummary UserStatusSummary {
             get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationUserSummary>("userStatusSummary"); }

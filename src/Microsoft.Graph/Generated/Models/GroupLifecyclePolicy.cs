@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupLifecyclePolicy : Entity, IParsable {
         /// <summary>List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlternateNotificationEmails {
             get { return BackingStore?.Get<string?>("alternateNotificationEmails"); }
             set { BackingStore?.Set("alternateNotificationEmails", value); }
         }
+#nullable restore
 #else
         public string AlternateNotificationEmails {
             get { return BackingStore?.Get<string>("alternateNotificationEmails"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The group type for which the expiration policy applies. Possible values are All, Selected or None.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedGroupTypes {
             get { return BackingStore?.Get<string?>("managedGroupTypes"); }
             set { BackingStore?.Set("managedGroupTypes", value); }
         }
+#nullable restore
 #else
         public string ManagedGroupTypes {
             get { return BackingStore?.Get<string>("managedGroupTypes"); }

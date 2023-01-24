@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerPlanConfiguration : Entity, IParsable {
         /// <summary>List the buckets that should be created in the plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PlannerPlanConfigurationBucketDefinition>? Buckets {
             get { return BackingStore?.Get<List<PlannerPlanConfigurationBucketDefinition>?>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
+#nullable restore
 #else
         public List<PlannerPlanConfigurationBucketDefinition> Buckets {
             get { return BackingStore?.Get<List<PlannerPlanConfigurationBucketDefinition>>("buckets"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity of the creator of the plan configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The language code for the default language to be used for the names of the objects created for the plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultLanguage {
             get { return BackingStore?.Get<string?>("defaultLanguage"); }
             set { BackingStore?.Set("defaultLanguage", value); }
         }
+#nullable restore
 #else
         public string DefaultLanguage {
             get { return BackingStore?.Get<string>("defaultLanguage"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity of the user who last modified the plan configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Localized names for the plan configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PlannerPlanConfigurationLocalization>? Localizations {
             get { return BackingStore?.Get<List<PlannerPlanConfigurationLocalization>?>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
+#nullable restore
 #else
         public List<PlannerPlanConfigurationLocalization> Localizations {
             get { return BackingStore?.Get<List<PlannerPlanConfigurationLocalization>>("localizations"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AgreementAcceptance : Entity, IParsable {
         /// <summary>ID of the agreement file accepted by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AgreementFileId {
             get { return BackingStore?.Get<string?>("agreementFileId"); }
             set { BackingStore?.Set("agreementFileId", value); }
         }
+#nullable restore
 #else
         public string AgreementFileId {
             get { return BackingStore?.Get<string>("agreementFileId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ID of the agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AgreementId {
             get { return BackingStore?.Get<string?>("agreementId"); }
             set { BackingStore?.Set("agreementId", value); }
         }
+#nullable restore
 #else
         public string AgreementId {
             get { return BackingStore?.Get<string>("agreementId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the device used for accepting the agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceDisplayName {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#nullable restore
 #else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The operating system used for accepting the agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceOSType {
             get { return BackingStore?.Get<string?>("deviceOSType"); }
             set { BackingStore?.Set("deviceOSType", value); }
         }
+#nullable restore
 #else
         public string DeviceOSType {
             get { return BackingStore?.Get<string>("deviceOSType"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The operating system version of the device used for accepting the agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceOSVersion {
             get { return BackingStore?.Get<string?>("deviceOSVersion"); }
             set { BackingStore?.Set("deviceOSVersion", value); }
         }
+#nullable restore
 #else
         public string DeviceOSVersion {
             get { return BackingStore?.Get<string>("deviceOSVersion"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Display name of the user when the acceptance was recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserDisplayName {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#nullable restore
 #else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Email of the user when the acceptance was recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserEmail {
             get { return BackingStore?.Get<string?>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
+#nullable restore
 #else
         public string UserEmail {
             get { return BackingStore?.Get<string>("userEmail"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ID of the user who accepted the agreement. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -130,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>UPN of the user when the acceptance was recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

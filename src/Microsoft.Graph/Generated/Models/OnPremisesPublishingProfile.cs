@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesPublishingProfile : Entity, IParsable {
         /// <summary>List of existing onPremisesAgentGroup objects. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnPremisesAgentGroup>? AgentGroups {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
+#nullable restore
 #else
         public List<OnPremisesAgentGroup> AgentGroups {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of existing onPremisesAgent objects. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnPremisesAgent>? Agents {
             get { return BackingStore?.Get<List<OnPremisesAgent>?>("agents"); }
             set { BackingStore?.Set("agents", value); }
         }
+#nullable restore
 #else
         public List<OnPremisesAgent> Agents {
             get { return BackingStore?.Get<List<OnPremisesAgent>>("agents"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConnectorGroup>? ConnectorGroups {
             get { return BackingStore?.Get<List<ConnectorGroup>?>("connectorGroups"); }
             set { BackingStore?.Set("connectorGroups", value); }
         }
+#nullable restore
 #else
         public List<ConnectorGroup> ConnectorGroups {
             get { return BackingStore?.Get<List<ConnectorGroup>>("connectorGroups"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Connector>? Connectors {
             get { return BackingStore?.Get<List<Connector>?>("connectors"); }
             set { BackingStore?.Set("connectors", value); }
         }
+#nullable restore
 #else
         public List<Connector> Connectors {
             get { return BackingStore?.Get<List<Connector>>("connectors"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a hybridAgentUpdaterConfiguration object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration? HybridAgentUpdaterConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration?>("hybridAgentUpdaterConfiguration"); }
             set { BackingStore?.Set("hybridAgentUpdaterConfiguration", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration HybridAgentUpdaterConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>("hybridAgentUpdaterConfiguration"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of existing publishedResource objects. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PublishedResource>? PublishedResources {
             get { return BackingStore?.Get<List<PublishedResource>?>("publishedResources"); }
             set { BackingStore?.Set("publishedResources", value); }
         }
+#nullable restore
 #else
         public List<PublishedResource> PublishedResources {
             get { return BackingStore?.Get<List<PublishedResource>>("publishedResources"); }

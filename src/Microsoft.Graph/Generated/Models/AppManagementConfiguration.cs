@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Collection of keyCredential restrictions settings to be applied to an application or service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyCredentialConfiguration>? KeyCredentials {
             get { return BackingStore?.Get<List<KeyCredentialConfiguration>?>("keyCredentials"); }
             set { BackingStore?.Set("keyCredentials", value); }
         }
+#nullable restore
 #else
         public List<KeyCredentialConfiguration> KeyCredentials {
             get { return BackingStore?.Get<List<KeyCredentialConfiguration>>("keyCredentials"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of password restrictions settings to be applied to an application or service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PasswordCredentialConfiguration>? PasswordCredentials {
             get { return BackingStore?.Get<List<PasswordCredentialConfiguration>?>("passwordCredentials"); }
             set { BackingStore?.Set("passwordCredentials", value); }
         }
+#nullable restore
 #else
         public List<PasswordCredentialConfiguration> PasswordCredentials {
             get { return BackingStore?.Get<List<PasswordCredentialConfiguration>>("passwordCredentials"); }

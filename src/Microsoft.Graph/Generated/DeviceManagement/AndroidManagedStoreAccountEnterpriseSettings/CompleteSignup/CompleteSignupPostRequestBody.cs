@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The enterpriseToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EnterpriseToken {
             get { return BackingStore?.Get<string?>("enterpriseToken"); }
             set { BackingStore?.Set("enterpriseToken", value); }
         }
+#nullable restore
 #else
         public string EnterpriseToken {
             get { return BackingStore?.Get<string>("enterpriseToken"); }

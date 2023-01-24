@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The sensitivityLabelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SensitivityLabelId {
             get { return BackingStore?.Get<string?>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
+#nullable restore
 #else
         public string SensitivityLabelId {
             get { return BackingStore?.Get<string>("sensitivityLabelId"); }

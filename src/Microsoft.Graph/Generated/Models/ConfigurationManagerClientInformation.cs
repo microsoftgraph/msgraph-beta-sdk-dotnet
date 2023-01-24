@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Configuration Manager Client Id from SCCM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientIdentifier {
             get { return BackingStore?.Get<string?>("clientIdentifier"); }
             set { BackingStore?.Set("clientIdentifier", value); }
         }
+#nullable restore
 #else
         public string ClientIdentifier {
             get { return BackingStore?.Get<string>("clientIdentifier"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Configuration Manager Client version from SCCM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientVersion {
             get { return BackingStore?.Get<string?>("clientVersion"); }
             set { BackingStore?.Set("clientVersion", value); }
         }
+#nullable restore
 #else
         public string ClientVersion {
             get { return BackingStore?.Get<string>("clientVersion"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

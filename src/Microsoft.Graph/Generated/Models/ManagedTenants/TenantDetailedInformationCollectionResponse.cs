@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class TenantDetailedInformationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TenantDetailedInformation>? Value {
             get { return BackingStore?.Get<List<TenantDetailedInformation>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<TenantDetailedInformation> Value {
             get { return BackingStore?.Get<List<TenantDetailedInformation>>("value"); }

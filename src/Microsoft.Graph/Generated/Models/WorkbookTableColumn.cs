@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookTableColumn : Entity, IParsable {
         /// <summary>Retrieve the filter applied to the column. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookFilter? Filter {
             get { return BackingStore?.Get<WorkbookFilter?>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
+#nullable restore
 #else
         public WorkbookFilter Filter {
             get { return BackingStore?.Get<WorkbookFilter>("filter"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Returns the name of the table column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Values {
             get { return BackingStore?.Get<Json?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#nullable restore
 #else
         public Json Values {
             get { return BackingStore?.Get<Json>("values"); }

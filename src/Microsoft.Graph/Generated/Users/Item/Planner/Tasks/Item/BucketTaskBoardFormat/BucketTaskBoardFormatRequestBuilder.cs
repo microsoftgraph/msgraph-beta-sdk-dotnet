@@ -52,7 +52,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.BucketTaskBoardForm
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<BucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<BucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -70,7 +72,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.BucketTaskBoardForm
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<PlannerBucketTaskBoardTaskFormat?> GetAsync(Action<BucketTaskBoardFormatRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<PlannerBucketTaskBoardTaskFormat> GetAsync(Action<BucketTaskBoardFormatRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -89,7 +93,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.BucketTaskBoardForm
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<PlannerBucketTaskBoardTaskFormat?> PatchAsync(PlannerBucketTaskBoardTaskFormat body, Action<BucketTaskBoardFormatRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<PlannerBucketTaskBoardTaskFormat> PatchAsync(PlannerBucketTaskBoardTaskFormat body, Action<BucketTaskBoardFormatRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -106,7 +112,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.BucketTaskBoardForm
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<BucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<BucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -128,7 +136,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.BucketTaskBoardForm
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<BucketTaskBoardFormatRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<BucketTaskBoardFormatRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -153,7 +163,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.BucketTaskBoardForm
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(PlannerBucketTaskBoardTaskFormat body, Action<BucketTaskBoardFormatRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(PlannerBucketTaskBoardTaskFormat body, Action<BucketTaskBoardFormatRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -195,16 +207,20 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.BucketTaskBoardForm
         public class BucketTaskBoardFormatRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

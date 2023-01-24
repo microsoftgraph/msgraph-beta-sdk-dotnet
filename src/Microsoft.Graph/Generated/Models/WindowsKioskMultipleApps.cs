@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu. This collection can contain a maximum of 128 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsKioskAppBase>? Apps {
             get { return BackingStore?.Get<List<WindowsKioskAppBase>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
+#nullable restore
 #else
         public List<WindowsKioskAppBase> Apps {
             get { return BackingStore?.Get<List<WindowsKioskAppBase>>("apps"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? StartMenuLayoutXml {
             get { return BackingStore?.Get<byte[]?>("startMenuLayoutXml"); }
             set { BackingStore?.Set("startMenuLayoutXml", value); }
         }
+#nullable restore
 #else
         public byte[] StartMenuLayoutXml {
             get { return BackingStore?.Get<byte[]>("startMenuLayoutXml"); }

@@ -30,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Build number of the operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsBuildNumber {
             get { return BackingStore?.Get<string?>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
+#nullable restore
 #else
         public string OsBuildNumber {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Version of the operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsVersion {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#nullable restore
 #else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }

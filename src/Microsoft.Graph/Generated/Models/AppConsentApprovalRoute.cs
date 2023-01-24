@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppConsentApprovalRoute : Entity, IParsable {
         /// <summary>A collection of userConsentRequest objects for a specific application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppConsentRequest>? AppConsentRequests {
             get { return BackingStore?.Get<List<AppConsentRequest>?>("appConsentRequests"); }
             set { BackingStore?.Set("appConsentRequests", value); }
         }
+#nullable restore
 #else
         public List<AppConsentRequest> AppConsentRequests {
             get { return BackingStore?.Get<List<AppConsentRequest>>("appConsentRequests"); }

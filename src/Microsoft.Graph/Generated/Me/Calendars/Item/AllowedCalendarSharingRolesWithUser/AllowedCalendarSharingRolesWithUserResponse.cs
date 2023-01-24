@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.AllowedCalendarSharingRolesWith
     public class AllowedCalendarSharingRolesWithUserResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CalendarRoleType?>? Value {
             get { return BackingStore?.Get<List<CalendarRoleType?>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<CalendarRoleType?> Value {
             get { return BackingStore?.Get<List<CalendarRoleType?>>("value"); }

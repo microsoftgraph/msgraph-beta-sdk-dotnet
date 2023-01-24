@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The issuer name of the custom domain certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IssuerName {
             get { return BackingStore?.Get<string?>("issuerName"); }
             set { BackingStore?.Set("issuerName", value); }
         }
+#nullable restore
 #else
         public string IssuerName {
             get { return BackingStore?.Get<string>("issuerName"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The subject name of the custom domain certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubjectName {
             get { return BackingStore?.Get<string?>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
+#nullable restore
 #else
         public string SubjectName {
             get { return BackingStore?.Get<string>("subjectName"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The thumbprint associated with the custom domain certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Thumbprint {
             get { return BackingStore?.Get<string?>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
+#nullable restore
 #else
         public string Thumbprint {
             get { return BackingStore?.Get<string>("thumbprint"); }

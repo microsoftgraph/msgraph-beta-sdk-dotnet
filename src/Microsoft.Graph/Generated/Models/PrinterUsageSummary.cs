@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The printer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DirectoryObject? Printer {
             get { return BackingStore?.Get<DirectoryObject?>("printer"); }
             set { BackingStore?.Set("printer", value); }
         }
+#nullable restore
 #else
         public DirectoryObject Printer {
             get { return BackingStore?.Get<DirectoryObject>("printer"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The printerDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrinterDisplayName {
             get { return BackingStore?.Get<string?>("printerDisplayName"); }
             set { BackingStore?.Set("printerDisplayName", value); }
         }
+#nullable restore
 #else
         public string PrinterDisplayName {
             get { return BackingStore?.Get<string>("printerDisplayName"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The printerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrinterId {
             get { return BackingStore?.Get<string?>("printerId"); }
             set { BackingStore?.Set("printerId", value); }
         }
+#nullable restore
 #else
         public string PrinterId {
             get { return BackingStore?.Get<string>("printerId"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The printerManufacturer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrinterManufacturer {
             get { return BackingStore?.Get<string?>("printerManufacturer"); }
             set { BackingStore?.Set("printerManufacturer", value); }
         }
+#nullable restore
 #else
         public string PrinterManufacturer {
             get { return BackingStore?.Get<string>("printerManufacturer"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The printerModel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrinterModel {
             get { return BackingStore?.Get<string?>("printerModel"); }
             set { BackingStore?.Set("printerModel", value); }
         }
+#nullable restore
 #else
         public string PrinterModel {
             get { return BackingStore?.Get<string>("printerModel"); }

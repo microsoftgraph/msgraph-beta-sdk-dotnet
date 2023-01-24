@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Archive {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The messageIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? MessageIds {
             get { return BackingStore?.Get<List<string>?>("messageIds"); }
             set { BackingStore?.Set("messageIds", value); }
         }
+#nullable restore
 #else
         public List<string> MessageIds {
             get { return BackingStore?.Get<List<string>>("messageIds"); }

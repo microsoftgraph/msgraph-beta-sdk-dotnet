@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ListItem : BaseItem, IParsable {
         /// <summary>The list of recent activities that took place on this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ItemActivityOLD>? Activities {
             get { return BackingStore?.Get<List<ItemActivityOLD>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#nullable restore
 #else
         public List<ItemActivityOLD> Activities {
             get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Analytics about the view activities that took place on this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemAnalytics? Analytics {
             get { return BackingStore?.Get<ItemAnalytics?>("analytics"); }
             set { BackingStore?.Set("analytics", value); }
         }
+#nullable restore
 #else
         public ItemAnalytics Analytics {
             get { return BackingStore?.Get<ItemAnalytics>("analytics"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The content type of this list item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ContentTypeInfo? ContentType {
             get { return BackingStore?.Get<ContentTypeInfo?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#nullable restore
 #else
         public ContentTypeInfo ContentType {
             get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The deleted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Deleted? Deleted {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Deleted?>("deleted"); }
             set { BackingStore?.Set("deleted", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Deleted Deleted {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Deleted>("deleted"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Version information for a document set version created by a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DocumentSetVersion>? DocumentSetVersions {
             get { return BackingStore?.Get<List<DocumentSetVersion>?>("documentSetVersions"); }
             set { BackingStore?.Set("documentSetVersions", value); }
         }
+#nullable restore
 #else
         public List<DocumentSetVersion> DocumentSetVersions {
             get { return BackingStore?.Get<List<DocumentSetVersion>>("documentSetVersions"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DriveItem? DriveItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("driveItem"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The values of the columns set on this list item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public FieldValueSet? Fields {
             get { return BackingStore?.Get<FieldValueSet?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
+#nullable restore
 #else
         public FieldValueSet Fields {
             get { return BackingStore?.Get<FieldValueSet>("fields"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.SharepointIds? SharepointIds {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds?>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of previous versions of the list item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ListItemVersion>? Versions {
             get { return BackingStore?.Get<List<ListItemVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
+#nullable restore
 #else
         public List<ListItemVersion> Versions {
             get { return BackingStore?.Get<List<ListItemVersion>>("versions"); }

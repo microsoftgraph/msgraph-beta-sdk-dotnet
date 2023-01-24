@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The registry comparison value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ComparisonValue {
             get { return BackingStore?.Get<string?>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
+#nullable restore
 #else
         public string ComparisonValue {
             get { return BackingStore?.Get<string>("comparisonValue"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The full path of the registry entry containing the value to detect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KeyPath {
             get { return BackingStore?.Get<string?>("keyPath"); }
             set { BackingStore?.Set("keyPath", value); }
         }
+#nullable restore
 #else
         public string KeyPath {
             get { return BackingStore?.Get<string>("keyPath"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the registry value to detect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ValueName {
             get { return BackingStore?.Get<string?>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
+#nullable restore
 #else
         public string ValueName {
             get { return BackingStore?.Get<string>("valueName"); }

@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MethodUsabilityReason {
             get { return BackingStore?.Get<string?>("methodUsabilityReason"); }
             set { BackingStore?.Set("methodUsabilityReason", value); }
         }
+#nullable restore
 #else
         public string MethodUsabilityReason {
             get { return BackingStore?.Get<string>("methodUsabilityReason"); }
@@ -44,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemporaryAccessPass {
             get { return BackingStore?.Get<string?>("temporaryAccessPass"); }
             set { BackingStore?.Set("temporaryAccessPass", value); }
         }
+#nullable restore
 #else
         public string TemporaryAccessPass {
             get { return BackingStore?.Get<string>("temporaryAccessPass"); }

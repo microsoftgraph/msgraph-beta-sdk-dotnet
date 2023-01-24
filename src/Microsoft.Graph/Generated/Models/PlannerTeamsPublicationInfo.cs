@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the publication. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PublicationId {
             get { return BackingStore?.Get<string?>("publicationId"); }
             set { BackingStore?.Set("publicationId", value); }
         }
+#nullable restore
 #else
         public string PublicationId {
             get { return BackingStore?.Get<string>("publicationId"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the plannerPlan this task was originally placed in. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PublishedToPlanId {
             get { return BackingStore?.Get<string?>("publishedToPlanId"); }
             set { BackingStore?.Set("publishedToPlanId", value); }
         }
+#nullable restore
 #else
         public string PublishedToPlanId {
             get { return BackingStore?.Get<string>("publishedToPlanId"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the team that initiated the publication process. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PublishingTeamId {
             get { return BackingStore?.Get<string?>("publishingTeamId"); }
             set { BackingStore?.Set("publishingTeamId", value); }
         }
+#nullable restore
 #else
         public string PublishingTeamId {
             get { return BackingStore?.Get<string>("publishingTeamId"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PublishingTeamName {
             get { return BackingStore?.Get<string?>("publishingTeamName"); }
             set { BackingStore?.Set("publishingTeamName", value); }
         }
+#nullable restore
 #else
         public string PublishingTeamName {
             get { return BackingStore?.Get<string>("publishingTeamName"); }

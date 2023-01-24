@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>reusable setting description supplied by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>reusable setting display name supplied by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>configuration policies referencing the current reusable setting. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationPolicy>? ReferencingConfigurationPolicies {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>?>("referencingConfigurationPolicies"); }
             set { BackingStore?.Set("referencingConfigurationPolicies", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationPolicy> ReferencingConfigurationPolicies {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicy>>("referencingConfigurationPolicies"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>setting definition id associated with this reusable setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingDefinitionId {
             get { return BackingStore?.Get<string?>("settingDefinitionId"); }
             set { BackingStore?.Set("settingDefinitionId", value); }
         }
+#nullable restore
 #else
         public string SettingDefinitionId {
             get { return BackingStore?.Get<string>("settingDefinitionId"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>reusable setting configuration instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationSettingInstance? SettingInstance {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance?>("settingInstance"); }
             set { BackingStore?.Set("settingInstance", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationSettingInstance SettingInstance {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>("settingInstance"); }

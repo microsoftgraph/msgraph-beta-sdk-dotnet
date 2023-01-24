@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Additional information associated with the risk detection in JSON format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdditionalInfo {
             get { return BackingStore?.Get<string?>("additionalInfo"); }
             set { BackingStore?.Set("additionalInfo", value); }
         }
+#nullable restore
 #else
         public string AdditionalInfo {
             get { return BackingStore?.Get<string>("additionalInfo"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CorrelationId {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#nullable restore
 #else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Provides the IP address of the client from where the risk occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddress {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#nullable restore
 #else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
@@ -68,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Location of the sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SignInLocation? Location {
             get { return BackingStore?.Get<SignInLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public SignInLocation Location {
             get { return BackingStore?.Get<SignInLocation>("location"); }
@@ -80,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RequestId {
             get { return BackingStore?.Get<string?>("requestId"); }
             set { BackingStore?.Set("requestId", value); }
         }
+#nullable restore
 #else
         public string RequestId {
             get { return BackingStore?.Get<string>("requestId"); }
@@ -97,10 +107,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and anomalousUserActivity.  For more information about each value, see riskEventType values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RiskEventType {
             get { return BackingStore?.Get<string?>("riskEventType"); }
             set { BackingStore?.Set("riskEventType", value); }
         }
+#nullable restore
 #else
         public string RiskEventType {
             get { return BackingStore?.Get<string>("riskEventType"); }
@@ -124,10 +136,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Source of the risk detection. For example, activeDirectory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Source {
             get { return BackingStore?.Get<string?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#nullable restore
 #else
         public string Source {
             get { return BackingStore?.Get<string>("source"); }
@@ -141,10 +155,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserDisplayName {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#nullable restore
 #else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
@@ -153,10 +169,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique ID of the user.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -165,10 +183,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user principal name (UPN) of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

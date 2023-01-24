@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.Reply {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Comment {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#nullable restore
 #else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.Reply {
 #endif
         /// <summary>The Message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Message? Message {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Message Message {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message>("message"); }

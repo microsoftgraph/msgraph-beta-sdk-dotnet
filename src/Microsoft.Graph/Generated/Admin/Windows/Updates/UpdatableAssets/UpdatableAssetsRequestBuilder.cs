@@ -79,13 +79,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get a list of azureADDevice objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.azureADDevice`, which inherits from updatableAsset.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowsupdates-updates-list-updatableassets-azureaddevice?view=graph-rest-1.0" />
+        /// Get a list of updatableAssetGroup objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.updatableAssetGroup`, which inherits from updatableAsset.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowsupdates-updates-list-updatableassets-updatableassetgroup?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<UpdatableAssetCollectionResponse?> GetAsync(Action<UpdatableAssetsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<UpdatableAssetCollectionResponse> GetAsync(Action<UpdatableAssetsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -104,7 +106,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<UpdatableAsset?> PostAsync(UpdatableAsset body, Action<UpdatableAssetsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<UpdatableAsset> PostAsync(UpdatableAsset body, Action<UpdatableAssetsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -117,11 +121,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, UpdatableAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of azureADDevice objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.azureADDevice`, which inherits from updatableAsset.
+        /// Get a list of updatableAssetGroup objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.updatableAssetGroup`, which inherits from updatableAsset.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<UpdatableAssetsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<UpdatableAssetsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -146,7 +152,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPostRequestInformation(UpdatableAsset body, Action<UpdatableAssetsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPostRequestInformation(UpdatableAsset body, Action<UpdatableAssetsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -167,7 +175,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of azureADDevice objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.azureADDevice`, which inherits from updatableAsset.
+        /// Get a list of updatableAssetGroup objects and their properties. This operation filters on the fully qualified resource type, `microsoft.graph.windowsUpdates.updatableAssetGroup`, which inherits from updatableAsset.
         /// </summary>
         public class UpdatableAssetsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
@@ -175,40 +183,50 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24filter")]
             public string? Filter { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24orderby")]
             public string[]? Orderby { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24search")]
             public string? Search { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24search")]
             public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

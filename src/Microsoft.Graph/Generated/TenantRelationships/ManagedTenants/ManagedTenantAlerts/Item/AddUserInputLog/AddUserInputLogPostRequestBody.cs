@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The logInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LogInformation {
             get { return BackingStore?.Get<string?>("logInformation"); }
             set { BackingStore?.Set("logInformation", value); }
         }
+#nullable restore
 #else
         public string LogInformation {
             get { return BackingStore?.Get<string>("logInformation"); }

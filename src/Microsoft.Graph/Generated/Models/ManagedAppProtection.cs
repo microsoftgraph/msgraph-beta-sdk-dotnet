@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppProtection : ManagedAppPolicy, IParsable {
         /// <summary>Data storage locations where a user may store managed data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedAppDataIngestionLocation?>? AllowedDataIngestionLocations {
             get { return BackingStore?.Get<List<ManagedAppDataIngestionLocation?>?>("allowedDataIngestionLocations"); }
             set { BackingStore?.Set("allowedDataIngestionLocations", value); }
         }
+#nullable restore
 #else
         public List<ManagedAppDataIngestionLocation?> AllowedDataIngestionLocations {
             get { return BackingStore?.Get<List<ManagedAppDataIngestionLocation?>>("allowedDataIngestionLocations"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Data storage locations where a user may store managed data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedAppDataStorageLocation?>? AllowedDataStorageLocations {
             get { return BackingStore?.Get<List<ManagedAppDataStorageLocation?>?>("allowedDataStorageLocations"); }
             set { BackingStore?.Set("allowedDataStorageLocations", value); }
         }
+#nullable restore
 #else
         public List<ManagedAppDataStorageLocation?> AllowedDataStorageLocations {
             get { return BackingStore?.Get<List<ManagedAppDataStorageLocation?>>("allowedDataStorageLocations"); }
@@ -126,10 +130,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MaximumRequiredOsVersion {
             get { return BackingStore?.Get<string?>("maximumRequiredOsVersion"); }
             set { BackingStore?.Set("maximumRequiredOsVersion", value); }
         }
+#nullable restore
 #else
         public string MaximumRequiredOsVersion {
             get { return BackingStore?.Get<string>("maximumRequiredOsVersion"); }
@@ -138,10 +144,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MaximumWarningOsVersion {
             get { return BackingStore?.Get<string?>("maximumWarningOsVersion"); }
             set { BackingStore?.Set("maximumWarningOsVersion", value); }
         }
+#nullable restore
 #else
         public string MaximumWarningOsVersion {
             get { return BackingStore?.Get<string>("maximumWarningOsVersion"); }
@@ -150,10 +158,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MaximumWipeOsVersion {
             get { return BackingStore?.Get<string?>("maximumWipeOsVersion"); }
             set { BackingStore?.Set("maximumWipeOsVersion", value); }
         }
+#nullable restore
 #else
         public string MaximumWipeOsVersion {
             get { return BackingStore?.Get<string>("maximumWipeOsVersion"); }
@@ -167,10 +177,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumRequiredAppVersion {
             get { return BackingStore?.Get<string?>("minimumRequiredAppVersion"); }
             set { BackingStore?.Set("minimumRequiredAppVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumRequiredAppVersion {
             get { return BackingStore?.Get<string>("minimumRequiredAppVersion"); }
@@ -179,10 +191,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumRequiredOsVersion {
             get { return BackingStore?.Get<string?>("minimumRequiredOsVersion"); }
             set { BackingStore?.Set("minimumRequiredOsVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumRequiredOsVersion {
             get { return BackingStore?.Get<string>("minimumRequiredOsVersion"); }
@@ -191,10 +205,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than the specified version will result in warning message on the managed app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWarningAppVersion {
             get { return BackingStore?.Get<string?>("minimumWarningAppVersion"); }
             set { BackingStore?.Set("minimumWarningAppVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWarningAppVersion {
             get { return BackingStore?.Get<string>("minimumWarningAppVersion"); }
@@ -203,10 +219,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWarningOsVersion {
             get { return BackingStore?.Get<string?>("minimumWarningOsVersion"); }
             set { BackingStore?.Set("minimumWarningOsVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWarningOsVersion {
             get { return BackingStore?.Get<string>("minimumWarningOsVersion"); }
@@ -215,10 +233,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than or equal to the specified version will wipe the managed app and the associated company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWipeAppVersion {
             get { return BackingStore?.Get<string?>("minimumWipeAppVersion"); }
             set { BackingStore?.Set("minimumWipeAppVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWipeAppVersion {
             get { return BackingStore?.Get<string>("minimumWipeAppVersion"); }
@@ -227,10 +247,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Versions less than or equal to the specified version will wipe the managed app and the associated company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumWipeOsVersion {
             get { return BackingStore?.Get<string?>("minimumWipeOsVersion"); }
             set { BackingStore?.Set("minimumWipeOsVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumWipeOsVersion {
             get { return BackingStore?.Get<string>("minimumWipeOsVersion"); }

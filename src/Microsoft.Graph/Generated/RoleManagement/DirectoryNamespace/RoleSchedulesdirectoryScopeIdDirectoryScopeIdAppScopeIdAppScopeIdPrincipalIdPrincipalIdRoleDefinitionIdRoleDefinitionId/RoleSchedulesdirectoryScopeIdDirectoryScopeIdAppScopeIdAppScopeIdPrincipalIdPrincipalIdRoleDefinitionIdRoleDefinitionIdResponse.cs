@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdi
     public class RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRoleScheduleBase>? Value {
             get { return BackingStore?.Get<List<UnifiedRoleScheduleBase>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRoleScheduleBase> Value {
             get { return BackingStore?.Get<List<UnifiedRoleScheduleBase>>("value"); }

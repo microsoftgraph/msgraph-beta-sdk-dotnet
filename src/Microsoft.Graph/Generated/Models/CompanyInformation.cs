@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CompanyInformation : Entity, IParsable {
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PostalAddressType? Address {
             get { return BackingStore?.Get<PostalAddressType?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#nullable restore
 #else
         public PostalAddressType Address {
             get { return BackingStore?.Get<PostalAddressType>("address"); }
@@ -20,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The currencyCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CurrencyCode {
             get { return BackingStore?.Get<string?>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
+#nullable restore
 #else
         public string CurrencyCode {
             get { return BackingStore?.Get<string>("currencyCode"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -49,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Email {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#nullable restore
 #else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
@@ -61,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The faxNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FaxNumber {
             get { return BackingStore?.Get<string?>("faxNumber"); }
             set { BackingStore?.Set("faxNumber", value); }
         }
+#nullable restore
 #else
         public string FaxNumber {
             get { return BackingStore?.Get<string>("faxNumber"); }
@@ -73,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The industry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Industry {
             get { return BackingStore?.Get<string?>("industry"); }
             set { BackingStore?.Set("industry", value); }
         }
+#nullable restore
 #else
         public string Industry {
             get { return BackingStore?.Get<string>("industry"); }
@@ -90,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The phoneNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PhoneNumber {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
+#nullable restore
 #else
         public string PhoneNumber {
             get { return BackingStore?.Get<string>("phoneNumber"); }
@@ -102,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The picture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Picture {
             get { return BackingStore?.Get<byte[]?>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
+#nullable restore
 #else
         public byte[] Picture {
             get { return BackingStore?.Get<byte[]>("picture"); }
@@ -114,10 +130,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The taxRegistrationNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TaxRegistrationNumber {
             get { return BackingStore?.Get<string?>("taxRegistrationNumber"); }
             set { BackingStore?.Set("taxRegistrationNumber", value); }
         }
+#nullable restore
 #else
         public string TaxRegistrationNumber {
             get { return BackingStore?.Get<string>("taxRegistrationNumber"); }
@@ -126,10 +144,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The website property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Website {
             get { return BackingStore?.Get<string?>("website"); }
             set { BackingStore?.Set("website", value); }
         }
+#nullable restore
 #else
         public string Website {
             get { return BackingStore?.Get<string>("website"); }

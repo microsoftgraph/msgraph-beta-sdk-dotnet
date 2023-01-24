@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IpNamedLocation : NamedLocation, IParsable {
         /// <summary>List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IpRange>? IpRanges {
             get { return BackingStore?.Get<List<IpRange>?>("ipRanges"); }
             set { BackingStore?.Set("ipRanges", value); }
         }
+#nullable restore
 #else
         public List<IpRange> IpRanges {
             get { return BackingStore?.Get<List<IpRange>>("ipRanges"); }

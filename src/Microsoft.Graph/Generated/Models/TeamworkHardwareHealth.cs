@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The system health details for a teamworkDevice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheralHealth? ComputeHealth {
             get { return BackingStore?.Get<TeamworkPeripheralHealth?>("computeHealth"); }
             set { BackingStore?.Set("computeHealth", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheralHealth ComputeHealth {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("computeHealth"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The health details about the HDMI ingest of a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheralHealth? HdmiIngestHealth {
             get { return BackingStore?.Get<TeamworkPeripheralHealth?>("hdmiIngestHealth"); }
             set { BackingStore?.Set("hdmiIngestHealth", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheralHealth HdmiIngestHealth {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("hdmiIngestHealth"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

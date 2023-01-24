@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.JoinedGroups.EvaluateDynamicMembership {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The memberId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MemberId {
             get { return BackingStore?.Get<string?>("memberId"); }
             set { BackingStore?.Set("memberId", value); }
         }
+#nullable restore
 #else
         public string MemberId {
             get { return BackingStore?.Get<string>("memberId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Me.JoinedGroups.EvaluateDynamicMembership {
 #endif
         /// <summary>The membershipRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MembershipRule {
             get { return BackingStore?.Get<string?>("membershipRule"); }
             set { BackingStore?.Set("membershipRule", value); }
         }
+#nullable restore
 #else
         public string MembershipRule {
             get { return BackingStore?.Get<string>("membershipRule"); }

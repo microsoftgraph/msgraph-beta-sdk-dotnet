@@ -37,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Organization name used when onboarding Android for Work</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OwnerOrganizationName {
             get { return BackingStore?.Get<string?>("ownerOrganizationName"); }
             set { BackingStore?.Set("ownerOrganizationName", value); }
         }
+#nullable restore
 #else
         public string OwnerOrganizationName {
             get { return BackingStore?.Get<string>("ownerOrganizationName"); }
@@ -49,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Owner UPN that created the enterprise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OwnerUserPrincipalName {
             get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
+#nullable restore
 #else
         public string OwnerUserPrincipalName {
             get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
@@ -61,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to &apos;Targeted&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TargetGroupIds {
             get { return BackingStore?.Get<List<string>?>("targetGroupIds"); }
             set { BackingStore?.Set("targetGroupIds", value); }
         }
+#nullable restore
 #else
         public List<string> TargetGroupIds {
             get { return BackingStore?.Get<List<string>>("targetGroupIds"); }

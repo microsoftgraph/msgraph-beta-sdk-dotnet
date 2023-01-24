@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The group policy definition value associated with the presentation value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyDefinitionValue? DefinitionValue {
             get { return BackingStore?.Get<GroupPolicyDefinitionValue?>("definitionValue"); }
             set { BackingStore?.Set("definitionValue", value); }
         }
+#nullable restore
 #else
         public GroupPolicyDefinitionValue DefinitionValue {
             get { return BackingStore?.Get<GroupPolicyDefinitionValue>("definitionValue"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The group policy presentation associated with the presentation value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyPresentation? Presentation {
             get { return BackingStore?.Get<GroupPolicyPresentation?>("presentation"); }
             set { BackingStore?.Set("presentation", value); }
         }
+#nullable restore
 #else
         public GroupPolicyPresentation Presentation {
             get { return BackingStore?.Get<GroupPolicyPresentation>("presentation"); }

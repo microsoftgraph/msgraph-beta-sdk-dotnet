@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory : Entity, IParsable {
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The datetime for the instance of runtime history.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RuntimeDateTime {
             get { return BackingStore?.Get<string?>("runtimeDateTime"); }
             set { BackingStore?.Set("runtimeDateTime", value); }
         }
+#nullable restore
 #else
         public string RuntimeDateTime {
             get { return BackingStore?.Get<string>("runtimeDateTime"); }

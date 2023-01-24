@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.
         }
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedDeviceMobileAppConfigurationAssignment>? Assignments {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<ManagedDeviceMobileAppConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationAssignment>>("assignments"); }

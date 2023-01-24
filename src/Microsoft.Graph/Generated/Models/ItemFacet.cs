@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains inference detail if the entity is inferred by the creating or modifying application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public InferenceData? Inference {
             get { return BackingStore?.Get<InferenceData?>("inference"); }
             set { BackingStore?.Set("inference", value); }
         }
+#nullable restore
 #else
         public InferenceData Inference {
             get { return BackingStore?.Get<InferenceData>("inference"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The lastModifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Where the values within an entity originated if synced from another service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PersonDataSources? Source {
             get { return BackingStore?.Get<PersonDataSources?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#nullable restore
 #else
         public PersonDataSources Source {
             get { return BackingStore?.Get<PersonDataSources>("source"); }

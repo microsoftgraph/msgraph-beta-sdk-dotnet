@@ -11,10 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Action name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActionName {
             get { return BackingStore?.Get<string?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
+#nullable restore
 #else
         public string ActionName {
             get { return BackingStore?.Get<string>("actionName"); }
@@ -40,10 +42,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationMethodTarget>? IncludeTargets {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationMethodTarget> IncludeTargets {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosWebContentFilterSpecificWebsitesAccess : IosWebContentFilterBase, IParsable {
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IosBookmark>? SpecificWebsitesOnly {
             get { return BackingStore?.Get<List<IosBookmark>?>("specificWebsitesOnly"); }
             set { BackingStore?.Set("specificWebsitesOnly", value); }
         }
+#nullable restore
 #else
         public List<IosBookmark> SpecificWebsitesOnly {
             get { return BackingStore?.Get<List<IosBookmark>>("specificWebsitesOnly"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IosBookmark>? WebsiteList {
             get { return BackingStore?.Get<List<IosBookmark>?>("websiteList"); }
             set { BackingStore?.Set("websiteList", value); }
         }
+#nullable restore
 #else
         public List<IosBookmark> WebsiteList {
             get { return BackingStore?.Get<List<IosBookmark>>("websiteList"); }

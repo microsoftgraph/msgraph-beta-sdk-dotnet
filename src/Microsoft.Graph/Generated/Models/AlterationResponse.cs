@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines the original user query string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginalQueryString {
             get { return BackingStore?.Get<string?>("originalQueryString"); }
             set { BackingStore?.Set("originalQueryString", value); }
         }
+#nullable restore
 #else
         public string OriginalQueryString {
             get { return BackingStore?.Get<string>("originalQueryString"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines the details of alteration information for the spelling correction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SearchAlteration? QueryAlteration {
             get { return BackingStore?.Get<SearchAlteration?>("queryAlteration"); }
             set { BackingStore?.Set("queryAlteration", value); }
         }
+#nullable restore
 #else
         public SearchAlteration QueryAlteration {
             get { return BackingStore?.Get<SearchAlteration>("queryAlteration"); }

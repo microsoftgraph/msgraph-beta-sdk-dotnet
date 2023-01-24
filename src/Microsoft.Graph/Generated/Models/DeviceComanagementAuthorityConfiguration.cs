@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceComanagementAuthorityConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConfigurationManagerAgentCommandLineArgument {
             get { return BackingStore?.Get<string?>("configurationManagerAgentCommandLineArgument"); }
             set { BackingStore?.Set("configurationManagerAgentCommandLineArgument", value); }
         }
+#nullable restore
 #else
         public string ConfigurationManagerAgentCommandLineArgument {
             get { return BackingStore?.Get<string>("configurationManagerAgentCommandLineArgument"); }

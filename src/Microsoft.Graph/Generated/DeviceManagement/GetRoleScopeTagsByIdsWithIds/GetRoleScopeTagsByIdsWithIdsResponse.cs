@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
     public class GetRoleScopeTagsByIdsWithIdsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RoleScopeTag>? Value {
             get { return BackingStore?.Get<List<RoleScopeTag>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<RoleScopeTag> Value {
             get { return BackingStore?.Get<List<RoleScopeTag>>("value"); }

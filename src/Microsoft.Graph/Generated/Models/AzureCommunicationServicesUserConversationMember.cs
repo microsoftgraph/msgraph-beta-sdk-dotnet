@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AzureCommunicationServicesUserConversationMember : ConversationMember, IParsable {
         /// <summary>The azureCommunicationServicesId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureCommunicationServicesId {
             get { return BackingStore?.Get<string?>("azureCommunicationServicesId"); }
             set { BackingStore?.Set("azureCommunicationServicesId", value); }
         }
+#nullable restore
 #else
         public string AzureCommunicationServicesId {
             get { return BackingStore?.Get<string>("azureCommunicationServicesId"); }

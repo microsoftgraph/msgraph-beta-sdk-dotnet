@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecurityAction : Entity, IParsable {
         /// <summary>Reason for invoking this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActionReason {
             get { return BackingStore?.Get<string?>("actionReason"); }
             set { BackingStore?.Set("actionReason", value); }
         }
+#nullable restore
 #else
         public string ActionReason {
             get { return BackingStore?.Get<string>("actionReason"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppId {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#nullable restore
 #else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureTenantId {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#nullable restore
 #else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The clientContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientContext {
             get { return BackingStore?.Get<string?>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
+#nullable restore
 #else
         public string ClientContext {
             get { return BackingStore?.Get<string>("clientContext"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Error info when the action fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ResultInfo? ErrorInfo {
             get { return BackingStore?.Get<ResultInfo?>("errorInfo"); }
             set { BackingStore?.Set("errorInfo", value); }
         }
+#nullable restore
 #else
         public ResultInfo ErrorInfo {
             get { return BackingStore?.Get<ResultInfo>("errorInfo"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Action name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? Parameters {
             get { return BackingStore?.Get<List<KeyValuePair>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> Parameters {
             get { return BackingStore?.Get<List<KeyValuePair>>("parameters"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of securityActionState to keep the history of an action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SecurityActionState>? States {
             get { return BackingStore?.Get<List<SecurityActionState>?>("states"); }
             set { BackingStore?.Set("states", value); }
         }
+#nullable restore
 #else
         public List<SecurityActionState> States {
             get { return BackingStore?.Get<List<SecurityActionState>>("states"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? User {
             get { return BackingStore?.Get<string?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#nullable restore
 #else
         public string User {
             get { return BackingStore?.Get<string>("user"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SecurityVendorInformation? VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#nullable restore
 #else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }

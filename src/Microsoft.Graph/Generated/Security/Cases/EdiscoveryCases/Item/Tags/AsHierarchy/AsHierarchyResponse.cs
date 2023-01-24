@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.AsHierar
     public class AsHierarchyResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryReviewTag>? Value {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryReviewTag> Value {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("value"); }

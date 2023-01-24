@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftApplicationDataAccessSettings : Entity, IParsable {
         /// <summary>The ID of an Azure Active Directory (Azure AD) security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge.  This is only applicable if isEnabledForAllMicrosoftApplications is set to true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisabledForGroup {
             get { return BackingStore?.Get<string?>("disabledForGroup"); }
             set { BackingStore?.Set("disabledForGroup", value); }
         }
+#nullable restore
 #else
         public string DisabledForGroup {
             get { return BackingStore?.Get<string>("disabledForGroup"); }

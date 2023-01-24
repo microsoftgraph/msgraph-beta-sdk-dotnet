@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class InferenceClassification : Entity, IParsable {
         /// <summary>A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<InferenceClassificationOverride>? Overrides {
             get { return BackingStore?.Get<List<InferenceClassificationOverride>?>("overrides"); }
             set { BackingStore?.Set("overrides", value); }
         }
+#nullable restore
 #else
         public List<InferenceClassificationOverride> Overrides {
             get { return BackingStore?.Get<List<InferenceClassificationOverride>>("overrides"); }

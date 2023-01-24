@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.VerifySignature {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The digest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Digest {
             get { return BackingStore?.Get<byte[]?>("digest"); }
             set { BackingStore?.Set("digest", value); }
         }
+#nullable restore
 #else
         public byte[] Digest {
             get { return BackingStore?.Get<byte[]>("digest"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.VerifySignature {
 #endif
         /// <summary>The signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Signature {
             get { return BackingStore?.Get<byte[]?>("signature"); }
             set { BackingStore?.Set("signature", value); }
         }
+#nullable restore
 #else
         public byte[] Signature {
             get { return BackingStore?.Get<byte[]>("signature"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.VerifySignature {
 #endif
         /// <summary>The signingKeyId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SigningKeyId {
             get { return BackingStore?.Get<string?>("signingKeyId"); }
             set { BackingStore?.Set("signingKeyId", value); }
         }
+#nullable restore
 #else
         public string SigningKeyId {
             get { return BackingStore?.Get<string>("signingKeyId"); }

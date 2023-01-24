@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     public class AlertRecord : Entity, IParsable {
         /// <summary>The impact of the alert event. Consists of a number followed by the aggregation type. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. 12 affectedCloudPcPercentage means 12% of Cloud PCs are affected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact? AlertImpact {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact?>("alertImpact"); }
             set { BackingStore?.Set("alertImpact", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact AlertImpact {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact>("alertImpact"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>The corresponding ID of the alert rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlertRuleId {
             get { return BackingStore?.Get<string?>("alertRuleId"); }
             set { BackingStore?.Set("alertRuleId", value); }
         }
+#nullable restore
 #else
         public string AlertRuleId {
             get { return BackingStore?.Get<string>("alertRuleId"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         }
         /// <summary>The display name of the alert record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }

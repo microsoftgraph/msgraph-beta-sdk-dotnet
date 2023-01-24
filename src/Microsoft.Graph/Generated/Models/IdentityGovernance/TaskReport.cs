@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The unique identifier of the associated run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RunId {
             get { return BackingStore?.Get<string?>("runId"); }
             set { BackingStore?.Set("runId", value); }
         }
+#nullable restore
 #else
         public string RunId {
             get { return BackingStore?.Get<string>("runId"); }
@@ -49,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The taskDefinition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition? TaskDefinition {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition?>("taskDefinition"); }
             set { BackingStore?.Set("taskDefinition", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition TaskDefinition {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition>("taskDefinition"); }
@@ -61,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject? TaskObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject TaskObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }
@@ -73,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The related lifecycle workflow taskProcessingResults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TaskProcessingResult>? TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
+#nullable restore
 #else
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }

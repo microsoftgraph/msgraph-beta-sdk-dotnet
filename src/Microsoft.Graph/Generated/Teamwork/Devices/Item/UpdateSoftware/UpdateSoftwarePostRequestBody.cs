@@ -21,10 +21,12 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware {
         }
         /// <summary>The softwareVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SoftwareVersion {
             get { return BackingStore?.Get<string?>("softwareVersion"); }
             set { BackingStore?.Set("softwareVersion", value); }
         }
+#nullable restore
 #else
         public string SoftwareVersion {
             get { return BackingStore?.Get<string>("softwareVersion"); }

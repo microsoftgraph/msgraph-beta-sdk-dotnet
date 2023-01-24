@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyObjectFileCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyObjectFile>? Value {
             get { return BackingStore?.Get<List<GroupPolicyObjectFile>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyObjectFile> Value {
             get { return BackingStore?.Get<List<GroupPolicyObjectFile>>("value"); }

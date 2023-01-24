@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Description of the Assignment Filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>DisplayName of the Assignment Filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Associated assignments for a specific filter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PayloadByFilter>? Payloads {
             get { return BackingStore?.Get<List<PayloadByFilter>?>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
+#nullable restore
 #else
         public List<PayloadByFilter> Payloads {
             get { return BackingStore?.Get<List<PayloadByFilter>>("payloads"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>RoleScopeTags of the Assignment Filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTags {
             get { return BackingStore?.Get<List<string>?>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTags {
             get { return BackingStore?.Get<List<string>>("roleScopeTags"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Rule definition of the Assignment Filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Rule {
             get { return BackingStore?.Get<string?>("rule"); }
             set { BackingStore?.Set("rule", value); }
         }
+#nullable restore
 #else
         public string Rule {
             get { return BackingStore?.Get<string>("rule"); }

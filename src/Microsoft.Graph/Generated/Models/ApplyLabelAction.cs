@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApplyLabelAction : InformationProtectionAction, IParsable {
         /// <summary>The collection of specific actions that should be taken by the consuming application to label the document. See  informationProtectionAction for the full list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<InformationProtectionAction>? Actions {
             get { return BackingStore?.Get<List<InformationProtectionAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
+#nullable restore
 #else
         public List<InformationProtectionAction> Actions {
             get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Object that describes the details of the label to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public LabelDetails? Label {
             get { return BackingStore?.Get<LabelDetails?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#nullable restore
 #else
         public LabelDetails Label {
             get { return BackingStore?.Get<LabelDetails>("label"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Guid?>? ResponsibleSensitiveTypeIds {
             get { return BackingStore?.Get<List<Guid?>?>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
+#nullable restore
 #else
         public List<Guid?> ResponsibleSensitiveTypeIds {
             get { return BackingStore?.Get<List<Guid?>>("responsibleSensitiveTypeIds"); }

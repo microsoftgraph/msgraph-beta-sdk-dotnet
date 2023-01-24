@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
         }
         /// <summary>The k property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? K {
             get { return BackingStore?.Get<string?>("k"); }
             set { BackingStore?.Set("k", value); }
         }
+#nullable restore
 #else
         public string K {
             get { return BackingStore?.Get<string>("k"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
         }
         /// <summary>The use property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Use {
             get { return BackingStore?.Get<string?>("use"); }
             set { BackingStore?.Set("use", value); }
         }
+#nullable restore
 #else
         public string Use {
             get { return BackingStore?.Get<string>("use"); }

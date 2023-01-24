@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile, IParsable {
         /// <summary>The contents of the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Content {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The default language of the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultLanguageCode {
             get { return BackingStore?.Get<string?>("defaultLanguageCode"); }
             set { BackingStore?.Set("defaultLanguageCode", value); }
         }
+#nullable restore
 #else
         public string DefaultLanguageCode {
             get { return BackingStore?.Get<string>("defaultLanguageCode"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of operations on the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyOperation>? GroupPolicyOperations {
             get { return BackingStore?.Get<List<GroupPolicyOperation>?>("groupPolicyOperations"); }
             set { BackingStore?.Set("groupPolicyOperations", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyOperation> GroupPolicyOperations {
             get { return BackingStore?.Get<List<GroupPolicyOperation>>("groupPolicyOperations"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of ADML files associated with the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyUploadedLanguageFile>? GroupPolicyUploadedLanguageFiles {
             get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>?>("groupPolicyUploadedLanguageFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles {
             get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>("groupPolicyUploadedLanguageFiles"); }

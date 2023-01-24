@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcSnapshot : Entity, IParsable {
         /// <summary>The unique identifier for the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CloudPcId {
             get { return BackingStore?.Get<string?>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
+#nullable restore
 #else
         public string CloudPcId {
             get { return BackingStore?.Get<string>("cloudPcId"); }

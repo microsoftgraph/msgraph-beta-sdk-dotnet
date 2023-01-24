@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class FileContentThreatSubmission : FileThreatSubmission, IParsable {
         /// <summary>It specifies the file content in base 64 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileContent {
             get { return BackingStore?.Get<string?>("fileContent"); }
             set { BackingStore?.Set("fileContent", value); }
         }
+#nullable restore
 #else
         public string FileContent {
             get { return BackingStore?.Get<string>("fileContent"); }

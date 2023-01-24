@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The WebApplicationInfo.Id from the Teams app manifest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureADAppId {
             get { return BackingStore?.Get<string?>("azureADAppId"); }
             set { BackingStore?.Set("azureADAppId", value); }
         }
+#nullable restore
 #else
         public string AzureADAppId {
             get { return BackingStore?.Get<string>("azureADAppId"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The details of the bot specified in the Teams app manifest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkBot? Bot {
             get { return BackingStore?.Get<TeamworkBot?>("bot"); }
             set { BackingStore?.Set("bot", value); }
         }
+#nullable restore
 #else
         public TeamworkBot Bot {
             get { return BackingStore?.Get<TeamworkBot>("bot"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The color version of the Teams app&apos;s icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamsAppIcon? ColorIcon {
             get { return BackingStore?.Get<TeamsAppIcon?>("colorIcon"); }
             set { BackingStore?.Set("colorIcon", value); }
         }
+#nullable restore
 #else
         public TeamsAppIcon ColorIcon {
             get { return BackingStore?.Get<TeamsAppIcon>("colorIcon"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the app provided by the app developer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The outline version of the Teams app&apos;s icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamsAppIcon? OutlineIcon {
             get { return BackingStore?.Get<TeamsAppIcon?>("outlineIcon"); }
             set { BackingStore?.Set("outlineIcon", value); }
         }
+#nullable restore
 #else
         public TeamsAppIcon OutlineIcon {
             get { return BackingStore?.Get<TeamsAppIcon>("outlineIcon"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The shortdescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Shortdescription {
             get { return BackingStore?.Get<string?>("shortdescription"); }
             set { BackingStore?.Set("shortdescription", value); }
         }
+#nullable restore
 #else
         public string Shortdescription {
             get { return BackingStore?.Get<string>("shortdescription"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID from the Teams app manifest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamsAppId {
             get { return BackingStore?.Get<string?>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
+#nullable restore
 #else
         public string TeamsAppId {
             get { return BackingStore?.Get<string>("teamsAppId"); }
@@ -130,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The version number of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

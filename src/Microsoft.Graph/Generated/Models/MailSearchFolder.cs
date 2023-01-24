@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MailSearchFolder : MailFolder, IParsable {
         /// <summary>The OData query to filter the messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FilterQuery {
             get { return BackingStore?.Get<string?>("filterQuery"); }
             set { BackingStore?.Set("filterQuery", value); }
         }
+#nullable restore
 #else
         public string FilterQuery {
             get { return BackingStore?.Get<string>("filterQuery"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The mailbox folders that should be mined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SourceFolderIds {
             get { return BackingStore?.Get<List<string>?>("sourceFolderIds"); }
             set { BackingStore?.Set("sourceFolderIds", value); }
         }
+#nullable restore
 #else
         public List<string> SourceFolderIds {
             get { return BackingStore?.Get<List<string>>("sourceFolderIds"); }

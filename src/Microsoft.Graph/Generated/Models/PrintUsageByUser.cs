@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrintUsageByUser : PrintUsage, IParsable {
         /// <summary>The UPN of the user represented by these statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

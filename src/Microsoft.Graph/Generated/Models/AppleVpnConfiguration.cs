@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AppleVpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Associated Domains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AssociatedDomains {
             get { return BackingStore?.Get<List<string>?>("associatedDomains"); }
             set { BackingStore?.Set("associatedDomains", value); }
         }
+#nullable restore
 #else
         public List<string> AssociatedDomains {
             get { return BackingStore?.Get<List<string>>("associatedDomains"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Connection name displayed to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectionName {
             get { return BackingStore?.Get<string?>("connectionName"); }
             set { BackingStore?.Set("connectionName", value); }
         }
+#nullable restore
 #else
         public string ConnectionName {
             get { return BackingStore?.Get<string>("connectionName"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValue>? CustomData {
             get { return BackingStore?.Get<List<KeyValue>?>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
+#nullable restore
 #else
         public List<KeyValue> CustomData {
             get { return BackingStore?.Get<List<KeyValue>>("customData"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? CustomKeyValueData {
             get { return BackingStore?.Get<List<KeyValuePair>?>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> CustomKeyValueData {
             get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
@@ -90,10 +98,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Domains that are accessed through the public internet instead of through VPN, even when per-app VPN is activated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ExcludedDomains {
             get { return BackingStore?.Get<List<string>?>("excludedDomains"); }
             set { BackingStore?.Set("excludedDomains", value); }
         }
+#nullable restore
 #else
         public List<string> ExcludedDomains {
             get { return BackingStore?.Get<List<string>>("excludedDomains"); }
@@ -102,10 +112,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier provided by VPN vendor when connection type is set to Custom VPN. For example: Cisco AnyConnect uses an identifier of the form com.cisco.anyconnect.applevpn.plugin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Identifier {
             get { return BackingStore?.Get<string?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
+#nullable restore
 #else
         public string Identifier {
             get { return BackingStore?.Get<string>("identifier"); }
@@ -114,10 +126,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LoginGroupOrDomain {
             get { return BackingStore?.Get<string?>("loginGroupOrDomain"); }
             set { BackingStore?.Set("loginGroupOrDomain", value); }
         }
+#nullable restore
 #else
         public string LoginGroupOrDomain {
             get { return BackingStore?.Get<string>("loginGroupOrDomain"); }
@@ -126,10 +140,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>On-Demand Rules. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VpnOnDemandRule>? OnDemandRules {
             get { return BackingStore?.Get<List<VpnOnDemandRule>?>("onDemandRules"); }
             set { BackingStore?.Set("onDemandRules", value); }
         }
+#nullable restore
 #else
         public List<VpnOnDemandRule> OnDemandRules {
             get { return BackingStore?.Get<List<VpnOnDemandRule>>("onDemandRules"); }
@@ -148,10 +164,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Proxy Server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public VpnProxyServer? ProxyServer {
             get { return BackingStore?.Get<VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
+#nullable restore
 #else
         public VpnProxyServer ProxyServer {
             get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
@@ -160,10 +178,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Realm when connection type is set to Pulse Secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Realm {
             get { return BackingStore?.Get<string?>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
+#nullable restore
 #else
         public string Realm {
             get { return BackingStore?.Get<string>("realm"); }
@@ -172,10 +192,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Role when connection type is set to Pulse Secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Role {
             get { return BackingStore?.Get<string?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#nullable restore
 #else
         public string Role {
             get { return BackingStore?.Get<string>("role"); }
@@ -184,10 +206,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Safari domains when this VPN per App setting is enabled. In addition to the apps associated with this VPN, Safari domains specified here will also be able to trigger this VPN connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SafariDomains {
             get { return BackingStore?.Get<List<string>?>("safariDomains"); }
             set { BackingStore?.Set("safariDomains", value); }
         }
+#nullable restore
 #else
         public List<string> SafariDomains {
             get { return BackingStore?.Get<List<string>>("safariDomains"); }
@@ -196,10 +220,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>VPN Server definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public VpnServer? Server {
             get { return BackingStore?.Get<VpnServer?>("server"); }
             set { BackingStore?.Set("server", value); }
         }
+#nullable restore
 #else
         public VpnServer Server {
             get { return BackingStore?.Get<VpnServer>("server"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ConversationThread : Entity, IParsable {
         /// <summary>The Cc: recipients for the thread. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? CcRecipients {
             get { return BackingStore?.Get<List<Recipient>?>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
+#nullable restore
 #else
         public List<Recipient> CcRecipients {
             get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The posts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Post>? Posts {
             get { return BackingStore?.Get<List<Post>?>("posts"); }
             set { BackingStore?.Set("posts", value); }
         }
+#nullable restore
 #else
         public List<Post> Posts {
             get { return BackingStore?.Get<List<Post>>("posts"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A short summary from the body of the latest post in this conversation. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Preview {
             get { return BackingStore?.Get<string?>("preview"); }
             set { BackingStore?.Set("preview", value); }
         }
+#nullable restore
 #else
         public string Preview {
             get { return BackingStore?.Get<string>("preview"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Topic {
             get { return BackingStore?.Get<string?>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
+#nullable restore
 #else
         public string Topic {
             get { return BackingStore?.Get<string>("topic"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The To: recipients for the thread. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? ToRecipients {
             get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
+#nullable restore
 #else
         public List<Recipient> ToRecipients {
             get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All the users that sent a message to this thread. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? UniqueSenders {
             get { return BackingStore?.Get<List<string>?>("uniqueSenders"); }
             set { BackingStore?.Set("uniqueSenders", value); }
         }
+#nullable restore
 #else
         public List<string> UniqueSenders {
             get { return BackingStore?.Get<List<string>>("uniqueSenders"); }

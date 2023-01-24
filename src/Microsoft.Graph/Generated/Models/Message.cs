@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Message : OutlookItem, IParsable {
         /// <summary>The fileAttachment and itemAttachment attachments for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Attachment>? Attachments {
             get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#nullable restore
 #else
         public List<Attachment> Attachments {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Bcc: recipients for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? BccRecipients {
             get { return BackingStore?.Get<List<Recipient>?>("bccRecipients"); }
             set { BackingStore?.Set("bccRecipients", value); }
         }
+#nullable restore
 #else
         public List<Recipient> BccRecipients {
             get { return BackingStore?.Get<List<Recipient>>("bccRecipients"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Body {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#nullable restore
 #else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BodyPreview {
             get { return BackingStore?.Get<string?>("bodyPreview"); }
             set { BackingStore?.Set("bodyPreview", value); }
         }
+#nullable restore
 #else
         public string BodyPreview {
             get { return BackingStore?.Get<string>("bodyPreview"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Cc: recipients for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? CcRecipients {
             get { return BackingStore?.Get<List<Recipient>?>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
+#nullable restore
 #else
         public List<Recipient> CcRecipients {
             get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the conversation the email belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConversationId {
             get { return BackingStore?.Get<string?>("conversationId"); }
             set { BackingStore?.Set("conversationId", value); }
         }
+#nullable restore
 #else
         public string ConversationId {
             get { return BackingStore?.Get<string>("conversationId"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates the position of the message within the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? ConversationIndex {
             get { return BackingStore?.Get<byte[]?>("conversationIndex"); }
             set { BackingStore?.Set("conversationIndex", value); }
         }
+#nullable restore
 #else
         public byte[] ConversationIndex {
             get { return BackingStore?.Get<byte[]>("conversationIndex"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of open extensions defined for the message. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Extension>? Extensions {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#nullable restore
 #else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The flag value that indicates the status, start date, due date, or completion date for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public FollowupFlag? Flag {
             get { return BackingStore?.Get<FollowupFlag?>("flag"); }
             set { BackingStore?.Set("flag", value); }
         }
+#nullable restore
 #else
         public FollowupFlag Flag {
             get { return BackingStore?.Get<FollowupFlag>("flag"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Recipient? From {
             get { return BackingStore?.Get<Recipient?>("from"); }
             set { BackingStore?.Set("from", value); }
         }
+#nullable restore
 #else
         public Recipient From {
             get { return BackingStore?.Get<Recipient>("from"); }
@@ -142,10 +162,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The internetMessageHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<InternetMessageHeader>? InternetMessageHeaders {
             get { return BackingStore?.Get<List<InternetMessageHeader>?>("internetMessageHeaders"); }
             set { BackingStore?.Set("internetMessageHeaders", value); }
         }
+#nullable restore
 #else
         public List<InternetMessageHeader> InternetMessageHeaders {
             get { return BackingStore?.Get<List<InternetMessageHeader>>("internetMessageHeaders"); }
@@ -154,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The internetMessageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InternetMessageId {
             get { return BackingStore?.Get<string?>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
+#nullable restore
 #else
         public string InternetMessageId {
             get { return BackingStore?.Get<string>("internetMessageId"); }
@@ -186,10 +210,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Mention>? Mentions {
             get { return BackingStore?.Get<List<Mention>?>("mentions"); }
             set { BackingStore?.Set("mentions", value); }
         }
+#nullable restore
 #else
         public List<Mention> Mentions {
             get { return BackingStore?.Get<List<Mention>>("mentions"); }
@@ -198,10 +224,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The mentionsPreview property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.MentionsPreview? MentionsPreview {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MentionsPreview?>("mentionsPreview"); }
             set { BackingStore?.Set("mentionsPreview", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.MentionsPreview MentionsPreview {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MentionsPreview>("mentionsPreview"); }
@@ -210,10 +238,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of multi-value extended properties defined for the message. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
@@ -222,10 +252,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The parentFolderId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentFolderId {
             get { return BackingStore?.Get<string?>("parentFolderId"); }
             set { BackingStore?.Set("parentFolderId", value); }
         }
+#nullable restore
 #else
         public string ParentFolderId {
             get { return BackingStore?.Get<string>("parentFolderId"); }
@@ -239,10 +271,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The replyTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? ReplyTo {
             get { return BackingStore?.Get<List<Recipient>?>("replyTo"); }
             set { BackingStore?.Set("replyTo", value); }
         }
+#nullable restore
 #else
         public List<Recipient> ReplyTo {
             get { return BackingStore?.Get<List<Recipient>>("replyTo"); }
@@ -251,10 +285,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sender property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Recipient? Sender {
             get { return BackingStore?.Get<Recipient?>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
+#nullable restore
 #else
         public Recipient Sender {
             get { return BackingStore?.Get<Recipient>("sender"); }
@@ -268,10 +304,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of single-value extended properties defined for the message. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
@@ -280,10 +318,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
@@ -292,10 +332,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The toRecipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? ToRecipients {
             get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
+#nullable restore
 #else
         public List<Recipient> ToRecipients {
             get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
@@ -304,10 +346,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The uniqueBody property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? UniqueBody {
             get { return BackingStore?.Get<ItemBody?>("uniqueBody"); }
             set { BackingStore?.Set("uniqueBody", value); }
         }
+#nullable restore
 #else
         public ItemBody UniqueBody {
             get { return BackingStore?.Get<ItemBody>("uniqueBody"); }
@@ -316,10 +360,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unsubscribeData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? UnsubscribeData {
             get { return BackingStore?.Get<List<string>?>("unsubscribeData"); }
             set { BackingStore?.Set("unsubscribeData", value); }
         }
+#nullable restore
 #else
         public List<string> UnsubscribeData {
             get { return BackingStore?.Get<List<string>>("unsubscribeData"); }
@@ -333,10 +379,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The webLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebLink {
             get { return BackingStore?.Get<string?>("webLink"); }
             set { BackingStore?.Set("webLink", value); }
         }
+#nullable restore
 #else
         public string WebLink {
             get { return BackingStore?.Get<string>("webLink"); }

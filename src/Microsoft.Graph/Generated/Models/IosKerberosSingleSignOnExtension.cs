@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosKerberosSingleSignOnExtension : IosSingleSignOnExtension, IParsable {
         /// <summary>Gets or sets the Active Directory site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActiveDirectorySiteCode {
             get { return BackingStore?.Get<string?>("activeDirectorySiteCode"); }
             set { BackingStore?.Set("activeDirectorySiteCode", value); }
         }
+#nullable restore
 #else
         public string ActiveDirectorySiteCode {
             get { return BackingStore?.Get<string>("activeDirectorySiteCode"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets the Generic Security Services name of the Kerberos cache to use for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CacheName {
             get { return BackingStore?.Get<string?>("cacheName"); }
             set { BackingStore?.Set("cacheName", value); }
         }
+#nullable restore
 #else
         public string CacheName {
             get { return BackingStore?.Get<string>("cacheName"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a list of app Bundle IDs allowed to access the Kerberos Ticket Granting Ticket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? CredentialBundleIdAccessControlList {
             get { return BackingStore?.Get<List<string>?>("credentialBundleIdAccessControlList"); }
             set { BackingStore?.Set("credentialBundleIdAccessControlList", value); }
         }
+#nullable restore
 #else
         public List<string> CredentialBundleIdAccessControlList {
             get { return BackingStore?.Get<List<string>>("credentialBundleIdAccessControlList"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DomainRealms {
             get { return BackingStore?.Get<List<string>?>("domainRealms"); }
             set { BackingStore?.Set("domainRealms", value); }
         }
+#nullable restore
 #else
         public List<string> DomainRealms {
             get { return BackingStore?.Get<List<string>>("domainRealms"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a list of hosts or domain names for which the app extension performs SSO.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Domains {
             get { return BackingStore?.Get<List<string>?>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#nullable restore
 #else
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
@@ -92,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets the URL that the user will be sent to when they initiate a password change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PasswordChangeUrl {
             get { return BackingStore?.Get<string?>("passwordChangeUrl"); }
             set { BackingStore?.Set("passwordChangeUrl", value); }
         }
+#nullable restore
 #else
         public string PasswordChangeUrl {
             get { return BackingStore?.Get<string>("passwordChangeUrl"); }
@@ -139,10 +151,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Gets or sets a description of the password complexity requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PasswordRequirementsDescription {
             get { return BackingStore?.Get<string?>("passwordRequirementsDescription"); }
             set { BackingStore?.Set("passwordRequirementsDescription", value); }
         }
+#nullable restore
 #else
         public string PasswordRequirementsDescription {
             get { return BackingStore?.Get<string>("passwordRequirementsDescription"); }
@@ -151,10 +165,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets the case-sensitive realm name for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Realm {
             get { return BackingStore?.Get<string?>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
+#nullable restore
 #else
         public string Realm {
             get { return BackingStore?.Get<string>("realm"); }
@@ -168,10 +184,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Text displayed to the user at the Kerberos sign in window. Available for devices running iOS and iPadOS versions 14 and later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SignInHelpText {
             get { return BackingStore?.Get<string?>("signInHelpText"); }
             set { BackingStore?.Set("signInHelpText", value); }
         }
+#nullable restore
 #else
         public string SignInHelpText {
             get { return BackingStore?.Get<string>("signInHelpText"); }
@@ -180,10 +198,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets the principle user name to use for this profile. The realm name does not need to be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

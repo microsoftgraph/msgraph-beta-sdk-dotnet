@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? MigrationValidationDetails {
             get { return BackingStore?.Get<List<KeyValuePair>?>("migrationValidationDetails"); }
             set { BackingStore?.Set("migrationValidationDetails", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> MigrationValidationDetails {
             get { return BackingStore?.Get<List<KeyValuePair>>("migrationValidationDetails"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RelyingPartyId {
             get { return BackingStore?.Get<string?>("relyingPartyId"); }
             set { BackingStore?.Set("relyingPartyId", value); }
         }
+#nullable restore
 #else
         public string RelyingPartyId {
             get { return BackingStore?.Get<string>("relyingPartyId"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RelyingPartyName {
             get { return BackingStore?.Get<string?>("relyingPartyName"); }
             set { BackingStore?.Set("relyingPartyName", value); }
         }
+#nullable restore
 #else
         public string RelyingPartyName {
             get { return BackingStore?.Get<string>("relyingPartyName"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies where the relying party expects to receive the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ReplyUrls {
             get { return BackingStore?.Get<List<string>?>("replyUrls"); }
             set { BackingStore?.Set("replyUrls", value); }
         }
+#nullable restore
 #else
         public List<string> ReplyUrls {
             get { return BackingStore?.Get<List<string>>("replyUrls"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Uniquely identifies the Active Directory forest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceId {
             get { return BackingStore?.Get<string?>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
+#nullable restore
 #else
         public string ServiceId {
             get { return BackingStore?.Get<string>("serviceId"); }

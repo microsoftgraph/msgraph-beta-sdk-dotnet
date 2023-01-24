@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>If the bundle is an [album][], then the album property is included</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Album? Album {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Album?>("album"); }
             set { BackingStore?.Set("album", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Album Album {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Album>("album"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

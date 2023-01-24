@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class VirtualEndpoint : Entity, IParsable {
         /// <summary>Cloud PC audit event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcAuditEvent>? AuditEvents {
             get { return BackingStore?.Get<List<CloudPcAuditEvent>?>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
+#nullable restore
 #else
         public List<CloudPcAuditEvent> AuditEvents {
             get { return BackingStore?.Get<List<CloudPcAuditEvent>>("auditEvents"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Cloud managed virtual desktops.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPC>? CloudPCs {
             get { return BackingStore?.Get<List<CloudPC>?>("cloudPCs"); }
             set { BackingStore?.Set("cloudPCs", value); }
         }
+#nullable restore
 #else
         public List<CloudPC> CloudPCs {
             get { return BackingStore?.Get<List<CloudPC>>("cloudPCs"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcCrossCloudGovernmentOrganizationMapping? CrossCloudGovernmentOrganizationMapping {
             get { return BackingStore?.Get<CloudPcCrossCloudGovernmentOrganizationMapping?>("crossCloudGovernmentOrganizationMapping"); }
             set { BackingStore?.Set("crossCloudGovernmentOrganizationMapping", value); }
         }
+#nullable restore
 #else
         public CloudPcCrossCloudGovernmentOrganizationMapping CrossCloudGovernmentOrganizationMapping {
             get { return BackingStore?.Get<CloudPcCrossCloudGovernmentOrganizationMapping>("crossCloudGovernmentOrganizationMapping"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The image resource on Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcDeviceImage>? DeviceImages {
             get { return BackingStore?.Get<List<CloudPcDeviceImage>?>("deviceImages"); }
             set { BackingStore?.Set("deviceImages", value); }
         }
+#nullable restore
 #else
         public List<CloudPcDeviceImage> DeviceImages {
             get { return BackingStore?.Get<List<CloudPcDeviceImage>>("deviceImages"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The external partner settings on a Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcExternalPartnerSetting>? ExternalPartnerSettings {
             get { return BackingStore?.Get<List<CloudPcExternalPartnerSetting>?>("externalPartnerSettings"); }
             set { BackingStore?.Set("externalPartnerSettings", value); }
         }
+#nullable restore
 #else
         public List<CloudPcExternalPartnerSetting> ExternalPartnerSettings {
             get { return BackingStore?.Get<List<CloudPcExternalPartnerSetting>>("externalPartnerSettings"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The gallery image resource on Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcGalleryImage>? GalleryImages {
             get { return BackingStore?.Get<List<CloudPcGalleryImage>?>("galleryImages"); }
             set { BackingStore?.Set("galleryImages", value); }
         }
+#nullable restore
 #else
         public List<CloudPcGalleryImage> GalleryImages {
             get { return BackingStore?.Get<List<CloudPcGalleryImage>>("galleryImages"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcOnPremisesConnection>? OnPremisesConnections {
             get { return BackingStore?.Get<List<CloudPcOnPremisesConnection>?>("onPremisesConnections"); }
             set { BackingStore?.Set("onPremisesConnections", value); }
         }
+#nullable restore
 #else
         public List<CloudPcOnPremisesConnection> OnPremisesConnections {
             get { return BackingStore?.Get<List<CloudPcOnPremisesConnection>>("onPremisesConnections"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Cloud PC organization settings for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcOrganizationSettings? OrganizationSettings {
             get { return BackingStore?.Get<CloudPcOrganizationSettings?>("organizationSettings"); }
             set { BackingStore?.Set("organizationSettings", value); }
         }
+#nullable restore
 #else
         public CloudPcOrganizationSettings OrganizationSettings {
             get { return BackingStore?.Get<CloudPcOrganizationSettings>("organizationSettings"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Cloud PC provisioning policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcProvisioningPolicy>? ProvisioningPolicies {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>?>("provisioningPolicies"); }
             set { BackingStore?.Set("provisioningPolicies", value); }
         }
+#nullable restore
 #else
         public List<CloudPcProvisioningPolicy> ProvisioningPolicies {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>>("provisioningPolicies"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Cloud PC related reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CloudPcReports? Reports {
             get { return BackingStore?.Get<CloudPcReports?>("reports"); }
             set { BackingStore?.Set("reports", value); }
         }
+#nullable restore
 #else
         public CloudPcReports Reports {
             get { return BackingStore?.Get<CloudPcReports>("reports"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Cloud PC service plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcServicePlan>? ServicePlans {
             get { return BackingStore?.Get<List<CloudPcServicePlan>?>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
+#nullable restore
 #else
         public List<CloudPcServicePlan> ServicePlans {
             get { return BackingStore?.Get<List<CloudPcServicePlan>>("servicePlans"); }
@@ -139,10 +161,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sharedUseServicePlans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcSharedUseServicePlan>? SharedUseServicePlans {
             get { return BackingStore?.Get<List<CloudPcSharedUseServicePlan>?>("sharedUseServicePlans"); }
             set { BackingStore?.Set("sharedUseServicePlans", value); }
         }
+#nullable restore
 #else
         public List<CloudPcSharedUseServicePlan> SharedUseServicePlans {
             get { return BackingStore?.Get<List<CloudPcSharedUseServicePlan>>("sharedUseServicePlans"); }
@@ -151,10 +175,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Cloud PC snapshots.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcSnapshot>? Snapshots {
             get { return BackingStore?.Get<List<CloudPcSnapshot>?>("snapshots"); }
             set { BackingStore?.Set("snapshots", value); }
         }
+#nullable restore
 #else
         public List<CloudPcSnapshot> Snapshots {
             get { return BackingStore?.Get<List<CloudPcSnapshot>>("snapshots"); }
@@ -163,10 +189,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Cloud PC supported regions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcSupportedRegion>? SupportedRegions {
             get { return BackingStore?.Get<List<CloudPcSupportedRegion>?>("supportedRegions"); }
             set { BackingStore?.Set("supportedRegions", value); }
         }
+#nullable restore
 #else
         public List<CloudPcSupportedRegion> SupportedRegions {
             get { return BackingStore?.Get<List<CloudPcSupportedRegion>>("supportedRegions"); }
@@ -175,10 +203,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Cloud PC user settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcUserSetting>? UserSettings {
             get { return BackingStore?.Get<List<CloudPcUserSetting>?>("userSettings"); }
             set { BackingStore?.Set("userSettings", value); }
         }
+#nullable restore
 #else
         public List<CloudPcUserSetting> UserSettings {
             get { return BackingStore?.Get<List<CloudPcUserSetting>>("userSettings"); }

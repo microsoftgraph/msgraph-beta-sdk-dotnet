@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OutlookTaskGroup : Entity, IParsable {
         /// <summary>The version of the task group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChangeKey {
             get { return BackingStore?.Get<string?>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
+#nullable restore
 #else
         public string ChangeKey {
             get { return BackingStore?.Get<string>("changeKey"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the task group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of task folders in the task group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OutlookTaskFolder>? TaskFolders {
             get { return BackingStore?.Get<List<OutlookTaskFolder>?>("taskFolders"); }
             set { BackingStore?.Set("taskFolders", value); }
         }
+#nullable restore
 #else
         public List<OutlookTaskFolder> TaskFolders {
             get { return BackingStore?.Get<List<OutlookTaskFolder>>("taskFolders"); }

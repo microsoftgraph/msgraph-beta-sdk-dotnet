@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupPolicyUploadedLanguageFiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyUploadedLanguageFile>? GroupPolicyUploadedLanguageFiles {
             get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>?>("groupPolicyUploadedLanguageFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles {
             get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>("groupPolicyUploadedLanguageFiles"); }

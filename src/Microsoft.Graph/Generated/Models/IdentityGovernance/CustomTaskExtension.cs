@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class CustomTaskExtension : CustomCalloutExtension, IParsable {
         /// <summary>The callback configuration for a custom extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration? CallbackConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration?>("callbackConfiguration"); }
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration CallbackConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration>("callbackConfiguration"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.User? CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.User CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("createdBy"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.User? LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.User LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("lastModifiedBy"); }

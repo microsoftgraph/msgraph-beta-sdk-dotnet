@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Error details, if expression evaluation resulted in an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PublicError? Error {
             get { return BackingStore?.Get<PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public PublicError Error {
             get { return BackingStore?.Get<PublicError>("error"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of values produced by the evaluation of the expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EvaluationResult {
             get { return BackingStore?.Get<List<string>?>("evaluationResult"); }
             set { BackingStore?.Set("evaluationResult", value); }
         }
+#nullable restore
 #else
         public List<string> EvaluationResult {
             get { return BackingStore?.Get<List<string>>("evaluationResult"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An attributeMappingSource object representing the parsed expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AttributeMappingSource? ParsedExpression {
             get { return BackingStore?.Get<AttributeMappingSource?>("parsedExpression"); }
             set { BackingStore?.Set("parsedExpression", value); }
         }
+#nullable restore
 #else
         public AttributeMappingSource ParsedExpression {
             get { return BackingStore?.Get<AttributeMappingSource>("parsedExpression"); }

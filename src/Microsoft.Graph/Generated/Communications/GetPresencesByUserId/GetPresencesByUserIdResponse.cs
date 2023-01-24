@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Communications.GetPresencesByUserId {
     public class GetPresencesByUserIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.Presence>? Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Presence>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.Presence> Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Presence>>("value"); }

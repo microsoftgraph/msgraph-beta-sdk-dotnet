@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AggregationOptionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AggregationOption>? Value {
             get { return BackingStore?.Get<List<AggregationOption>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<AggregationOption> Value {
             get { return BackingStore?.Get<List<AggregationOption>>("value"); }

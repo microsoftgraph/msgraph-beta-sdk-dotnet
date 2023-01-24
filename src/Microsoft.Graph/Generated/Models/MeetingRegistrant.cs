@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MeetingRegistrant : MeetingRegistrantBase, IParsable {
         /// <summary>The registrant&apos;s answer to custom questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomQuestionAnswer>? CustomQuestionAnswers {
             get { return BackingStore?.Get<List<CustomQuestionAnswer>?>("customQuestionAnswers"); }
             set { BackingStore?.Set("customQuestionAnswers", value); }
         }
+#nullable restore
 #else
         public List<CustomQuestionAnswer> CustomQuestionAnswers {
             get { return BackingStore?.Get<List<CustomQuestionAnswer>>("customQuestionAnswers"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The email address of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Email {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#nullable restore
 #else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The first name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FirstName {
             get { return BackingStore?.Get<string?>("firstName"); }
             set { BackingStore?.Set("firstName", value); }
         }
+#nullable restore
 #else
         public string FirstName {
             get { return BackingStore?.Get<string>("firstName"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The last name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LastName {
             get { return BackingStore?.Get<string?>("lastName"); }
             set { BackingStore?.Set("lastName", value); }
         }
+#nullable restore
 #else
         public string LastName {
             get { return BackingStore?.Get<string>("lastName"); }

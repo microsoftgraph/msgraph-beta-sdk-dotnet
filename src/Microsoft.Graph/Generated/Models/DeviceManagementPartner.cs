@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementPartner : Entity, IParsable {
         /// <summary>Partner display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User groups that specifies whether enrollment is through partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementPartnerAssignment>? GroupsRequiringPartnerEnrollment {
             get { return BackingStore?.Get<List<DeviceManagementPartnerAssignment>?>("groupsRequiringPartnerEnrollment"); }
             set { BackingStore?.Set("groupsRequiringPartnerEnrollment", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementPartnerAssignment> GroupsRequiringPartnerEnrollment {
             get { return BackingStore?.Get<List<DeviceManagementPartnerAssignment>>("groupsRequiringPartnerEnrollment"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Partner Single tenant App id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SingleTenantAppId {
             get { return BackingStore?.Get<string?>("singleTenantAppId"); }
             set { BackingStore?.Set("singleTenantAppId", value); }
         }
+#nullable restore
 #else
         public string SingleTenantAppId {
             get { return BackingStore?.Get<string>("singleTenantAppId"); }

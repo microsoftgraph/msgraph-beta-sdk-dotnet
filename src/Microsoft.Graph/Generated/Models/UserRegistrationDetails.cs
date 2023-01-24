@@ -47,10 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? MethodsRegistered {
             get { return BackingStore?.Get<List<string>?>("methodsRegistered"); }
             set { BackingStore?.Set("methodsRegistered", value); }
         }
+#nullable restore
 #else
         public List<string> MethodsRegistered {
             get { return BackingStore?.Get<List<string>>("methodsRegistered"); }
@@ -59,10 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserDisplayName {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#nullable restore
 #else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
@@ -71,10 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

@@ -30,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The overall app health status of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceAppHealthStatus {
             get { return BackingStore?.Get<string?>("deviceAppHealthStatus"); }
             set { BackingStore?.Set("deviceAppHealthStatus", value); }
         }
+#nullable restore
 #else
         public string DeviceAppHealthStatus {
             get { return BackingStore?.Get<string>("deviceAppHealthStatus"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceDisplayName {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#nullable restore
 #else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The id of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceId {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#nullable restore
 #else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The manufacturer name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceManufacturer {
             get { return BackingStore?.Get<string?>("deviceManufacturer"); }
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
+#nullable restore
 #else
         public string DeviceManufacturer {
             get { return BackingStore?.Get<string>("deviceManufacturer"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The model name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceModel {
             get { return BackingStore?.Get<string?>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
+#nullable restore
 #else
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }

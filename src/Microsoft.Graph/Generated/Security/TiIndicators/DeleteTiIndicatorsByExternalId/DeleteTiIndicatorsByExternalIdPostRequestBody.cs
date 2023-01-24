@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Value {
             get { return BackingStore?.Get<List<string>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<string> Value {
             get { return BackingStore?.Get<List<string>>("value"); }

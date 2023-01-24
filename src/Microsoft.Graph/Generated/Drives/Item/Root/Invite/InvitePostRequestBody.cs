@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Invite {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expirationDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExpirationDateTime {
             get { return BackingStore?.Get<string?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
+#nullable restore
 #else
         public string ExpirationDateTime {
             get { return BackingStore?.Get<string>("expirationDateTime"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Invite {
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Message {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#nullable restore
 #else
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Invite {
 #endif
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Password {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#nullable restore
 #else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }
@@ -52,10 +58,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Invite {
 #endif
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DriveRecipient>? Recipients {
             get { return BackingStore?.Get<List<DriveRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#nullable restore
 #else
         public List<DriveRecipient> Recipients {
             get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
@@ -74,10 +82,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.Invite {
         }
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Roles {
             get { return BackingStore?.Get<List<string>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#nullable restore
 #else
         public List<string> Roles {
             get { return BackingStore?.Get<List<string>>("roles"); }

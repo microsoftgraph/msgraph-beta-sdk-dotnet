@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ActivateDe
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The carrierUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CarrierUrl {
             get { return BackingStore?.Get<string?>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
+#nullable restore
 #else
         public string CarrierUrl {
             get { return BackingStore?.Get<string>("carrierUrl"); }

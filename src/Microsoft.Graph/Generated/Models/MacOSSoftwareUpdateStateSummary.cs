@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSSoftwareUpdateStateSummary : Entity, IParsable {
         /// <summary>Human readable name of the software update</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Product key of the software update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductKey {
             get { return BackingStore?.Get<string?>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
+#nullable restore
 #else
         public string ProductKey {
             get { return BackingStore?.Get<string>("productKey"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Version of the software update</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UpdateVersion {
             get { return BackingStore?.Get<string?>("updateVersion"); }
             set { BackingStore?.Set("updateVersion", value); }
         }
+#nullable restore
 #else
         public string UpdateVersion {
             get { return BackingStore?.Get<string>("updateVersion"); }

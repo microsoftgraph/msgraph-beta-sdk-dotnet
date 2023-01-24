@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyDefinition : Entity, IParsable {
         /// <summary>The group policy category associated with the definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyCategory? Category {
             get { return BackingStore?.Get<GroupPolicyCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
+#nullable restore
 #else
         public GroupPolicyCategory Category {
             get { return BackingStore?.Get<GroupPolicyCategory>("category"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The localized full category path for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CategoryPath {
             get { return BackingStore?.Get<string?>("categoryPath"); }
             set { BackingStore?.Set("categoryPath", value); }
         }
+#nullable restore
 #else
         public string CategoryPath {
             get { return BackingStore?.Get<string>("categoryPath"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The group policy file associated with the definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyDefinitionFile? DefinitionFile {
             get { return BackingStore?.Get<GroupPolicyDefinitionFile?>("definitionFile"); }
             set { BackingStore?.Set("definitionFile", value); }
         }
+#nullable restore
 #else
         public GroupPolicyDefinitionFile DefinitionFile {
             get { return BackingStore?.Get<GroupPolicyDefinitionFile>("definitionFile"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The localized policy name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The localized explanation or help text associated with the policy. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExplainText {
             get { return BackingStore?.Get<string?>("explainText"); }
             set { BackingStore?.Set("explainText", value); }
         }
+#nullable restore
 #else
         public string ExplainText {
             get { return BackingStore?.Get<string>("explainText"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Minimum required CSP version for device configuration in this definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinDeviceCspVersion {
             get { return BackingStore?.Get<string?>("minDeviceCspVersion"); }
             set { BackingStore?.Set("minDeviceCspVersion", value); }
         }
+#nullable restore
 #else
         public string MinDeviceCspVersion {
             get { return BackingStore?.Get<string>("minDeviceCspVersion"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum required CSP version for user configuration in this definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinUserCspVersion {
             get { return BackingStore?.Get<string?>("minUserCspVersion"); }
             set { BackingStore?.Set("minUserCspVersion", value); }
         }
+#nullable restore
 #else
         public string MinUserCspVersion {
             get { return BackingStore?.Get<string>("minUserCspVersion"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Definition of the next version of this definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyDefinition? NextVersionDefinition {
             get { return BackingStore?.Get<GroupPolicyDefinition?>("nextVersionDefinition"); }
             set { BackingStore?.Set("nextVersionDefinition", value); }
         }
+#nullable restore
 #else
         public GroupPolicyDefinition NextVersionDefinition {
             get { return BackingStore?.Get<GroupPolicyDefinition>("nextVersionDefinition"); }
@@ -128,10 +144,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The group policy presentations associated with the definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyPresentation>? Presentations {
             get { return BackingStore?.Get<List<GroupPolicyPresentation>?>("presentations"); }
             set { BackingStore?.Set("presentations", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyPresentation> Presentations {
             get { return BackingStore?.Get<List<GroupPolicyPresentation>>("presentations"); }
@@ -140,10 +158,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Definition of the previous version of this definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyDefinition? PreviousVersionDefinition {
             get { return BackingStore?.Get<GroupPolicyDefinition?>("previousVersionDefinition"); }
             set { BackingStore?.Set("previousVersionDefinition", value); }
         }
+#nullable restore
 #else
         public GroupPolicyDefinition PreviousVersionDefinition {
             get { return BackingStore?.Get<GroupPolicyDefinition>("previousVersionDefinition"); }
@@ -152,10 +172,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Localized string used to specify what operating system or application version is affected by the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SupportedOn {
             get { return BackingStore?.Get<string?>("supportedOn"); }
             set { BackingStore?.Set("supportedOn", value); }
         }
+#nullable restore
 #else
         public string SupportedOn {
             get { return BackingStore?.Get<string>("supportedOn"); }
@@ -164,10 +186,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Setting definition version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

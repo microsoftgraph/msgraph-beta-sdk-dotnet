@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>User-agent reported by this endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.CallRecords.UserAgent? UserAgent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.UserAgent?>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.CallRecords.UserAgent UserAgent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.UserAgent>("userAgent"); }

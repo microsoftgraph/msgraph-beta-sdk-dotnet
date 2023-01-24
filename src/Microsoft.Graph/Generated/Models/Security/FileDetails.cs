@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileName {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#nullable restore
 #else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The file path (location) of the file instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FilePath {
             get { return BackingStore?.Get<string?>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
+#nullable restore
 #else
         public string FilePath {
             get { return BackingStore?.Get<string>("filePath"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The publisher of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FilePublisher {
             get { return BackingStore?.Get<string?>("filePublisher"); }
             set { BackingStore?.Set("filePublisher", value); }
         }
+#nullable restore
 #else
         public string FilePublisher {
             get { return BackingStore?.Get<string>("filePublisher"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The certificate authority (CA) that issued the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Issuer {
             get { return BackingStore?.Get<string?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
+#nullable restore
 #else
         public string Issuer {
             get { return BackingStore?.Get<string>("issuer"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The Sha1 cryptographic hash of the file content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Sha1 {
             get { return BackingStore?.Get<string?>("sha1"); }
             set { BackingStore?.Set("sha1", value); }
         }
+#nullable restore
 #else
         public string Sha1 {
             get { return BackingStore?.Get<string>("sha1"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The Sha256 cryptographic hash of the file content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Sha256 {
             get { return BackingStore?.Get<string?>("sha256"); }
             set { BackingStore?.Set("sha256", value); }
         }
+#nullable restore
 #else
         public string Sha256 {
             get { return BackingStore?.Get<string>("sha256"); }
@@ -104,10 +118,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The signer of the signed file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Signer {
             get { return BackingStore?.Get<string?>("signer"); }
             set { BackingStore?.Set("signer", value); }
         }
+#nullable restore
 #else
         public string Signer {
             get { return BackingStore?.Get<string>("signer"); }

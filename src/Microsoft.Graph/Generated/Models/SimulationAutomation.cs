@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SimulationAutomation : Entity, IParsable {
         /// <summary>Identity of the user who created the attack simulation automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EmailIdentity? CreatedBy {
             get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public EmailIdentity CreatedBy {
             get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Description of the attack simulation automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name of the attack simulation automation. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity of the user who most recently modified the attack simulation automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EmailIdentity? LastModifiedBy {
             get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public EmailIdentity LastModifiedBy {
             get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of simulation automation runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SimulationAutomationRun>? Runs {
             get { return BackingStore?.Get<List<SimulationAutomationRun>?>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
+#nullable restore
 #else
         public List<SimulationAutomationRun> Runs {
             get { return BackingStore?.Get<List<SimulationAutomationRun>>("runs"); }

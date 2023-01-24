@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>DefaultLocale for the Enrollment Notification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultLocale {
             get { return BackingStore?.Get<string?>("defaultLocale"); }
             set { BackingStore?.Set("defaultLocale", value); }
         }
+#nullable restore
 #else
         public string DefaultLocale {
             get { return BackingStore?.Get<string>("defaultLocale"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of notification data -</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? NotificationTemplates {
             get { return BackingStore?.Get<List<string>?>("notificationTemplates"); }
             set { BackingStore?.Set("notificationTemplates", value); }
         }
+#nullable restore
 #else
         public List<string> NotificationTemplates {
             get { return BackingStore?.Get<List<string>>("notificationTemplates"); }

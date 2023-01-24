@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
+#nullable restore
 #else
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }

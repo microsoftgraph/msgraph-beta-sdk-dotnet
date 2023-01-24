@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Me.FindRoomsWithRoomList {
     public class FindRoomsWithRoomListResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EmailAddress>? Value {
             get { return BackingStore?.Get<List<EmailAddress>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<EmailAddress> Value {
             get { return BackingStore?.Get<List<EmailAddress>>("value"); }

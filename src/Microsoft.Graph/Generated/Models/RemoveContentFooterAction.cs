@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RemoveContentFooterAction : InformationProtectionAction, IParsable {
         /// <summary>The name of the UI element of the footer to be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? UiElementNames {
             get { return BackingStore?.Get<List<string>?>("uiElementNames"); }
             set { BackingStore?.Set("uiElementNames", value); }
         }
+#nullable restore
 #else
         public List<string> UiElementNames {
             get { return BackingStore?.Get<List<string>>("uiElementNames"); }

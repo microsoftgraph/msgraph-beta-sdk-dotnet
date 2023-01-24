@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Details about the remediation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RemediationStatusDetails {
             get { return BackingStore?.Get<string?>("remediationStatusDetails"); }
             set { BackingStore?.Set("remediationStatusDetails", value); }
         }
+#nullable restore
 #else
         public string RemediationStatusDetails {
             get { return BackingStore?.Get<string>("remediationStatusDetails"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role &apos;Attacker&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EvidenceRole?>? Roles {
             get { return BackingStore?.Get<List<EvidenceRole?>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#nullable restore
 #else
         public List<EvidenceRole?> Roles {
             get { return BackingStore?.Get<List<EvidenceRole?>>("roles"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Tags {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#nullable restore
 #else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }

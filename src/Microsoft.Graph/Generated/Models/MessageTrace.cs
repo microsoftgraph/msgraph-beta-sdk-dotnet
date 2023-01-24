@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MessageTrace : Entity, IParsable {
         /// <summary>The destinationIPAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DestinationIPAddress {
             get { return BackingStore?.Get<string?>("destinationIPAddress"); }
             set { BackingStore?.Set("destinationIPAddress", value); }
         }
+#nullable restore
 #else
         public string DestinationIPAddress {
             get { return BackingStore?.Get<string>("destinationIPAddress"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The messageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MessageId {
             get { return BackingStore?.Get<string?>("messageId"); }
             set { BackingStore?.Set("messageId", value); }
         }
+#nullable restore
 #else
         public string MessageId {
             get { return BackingStore?.Get<string>("messageId"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MessageRecipient>? Recipients {
             get { return BackingStore?.Get<List<MessageRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#nullable restore
 #else
         public List<MessageRecipient> Recipients {
             get { return BackingStore?.Get<List<MessageRecipient>>("recipients"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The senderEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SenderEmail {
             get { return BackingStore?.Get<string?>("senderEmail"); }
             set { BackingStore?.Set("senderEmail", value); }
         }
+#nullable restore
 #else
         public string SenderEmail {
             get { return BackingStore?.Get<string>("senderEmail"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The sourceIPAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourceIPAddress {
             get { return BackingStore?.Get<string?>("sourceIPAddress"); }
             set { BackingStore?.Set("sourceIPAddress", value); }
         }
+#nullable restore
 #else
         public string SourceIPAddress {
             get { return BackingStore?.Get<string>("sourceIPAddress"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }

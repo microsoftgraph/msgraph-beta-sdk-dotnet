@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -62,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Enrollment profile Id admin intends to apply to the device during next enrollment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RequestedEnrollmentProfileId {
             get { return BackingStore?.Get<string?>("requestedEnrollmentProfileId"); }
             set { BackingStore?.Set("requestedEnrollmentProfileId", value); }
         }
+#nullable restore
 #else
         public string RequestedEnrollmentProfileId {
             get { return BackingStore?.Get<string>("requestedEnrollmentProfileId"); }
@@ -74,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device serial number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SerialNumber {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#nullable restore
 #else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }

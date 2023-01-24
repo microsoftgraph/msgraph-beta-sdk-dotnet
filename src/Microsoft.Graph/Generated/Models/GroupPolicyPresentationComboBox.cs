@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationComboBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized default string displayed in the combo box. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultValue {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#nullable restore
 #else
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Localized strings listed in the drop-down list of the combo box. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Suggestions {
             get { return BackingStore?.Get<List<string>?>("suggestions"); }
             set { BackingStore?.Set("suggestions", value); }
         }
+#nullable restore
 #else
         public List<string> Suggestions {
             get { return BackingStore?.Get<List<string>>("suggestions"); }

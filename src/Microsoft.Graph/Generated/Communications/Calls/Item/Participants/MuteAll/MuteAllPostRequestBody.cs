@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.MuteAll {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientContext {
             get { return BackingStore?.Get<string?>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
+#nullable restore
 #else
         public string ClientContext {
             get { return BackingStore?.Get<string>("clientContext"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.MuteAll {
 #endif
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Participants {
             get { return BackingStore?.Get<List<string>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#nullable restore
 #else
         public List<string> Participants {
             get { return BackingStore?.Get<List<string>>("participants"); }

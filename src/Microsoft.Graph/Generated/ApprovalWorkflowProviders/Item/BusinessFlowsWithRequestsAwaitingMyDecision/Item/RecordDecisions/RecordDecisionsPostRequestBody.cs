@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The justification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Justification {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#nullable restore
 #else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
 #endif
         /// <summary>The reviewResult property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReviewResult {
             get { return BackingStore?.Get<string?>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
+#nullable restore
 #else
         public string ReviewResult {
             get { return BackingStore?.Get<string>("reviewResult"); }

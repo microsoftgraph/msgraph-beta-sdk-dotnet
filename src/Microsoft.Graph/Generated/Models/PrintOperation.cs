@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrintOperationStatus? Status {
             get { return BackingStore?.Get<PrintOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public PrintOperationStatus Status {
             get { return BackingStore?.Get<PrintOperationStatus>("status"); }

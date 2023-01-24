@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.SectionGroups.Item.Sections.I
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The commands property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnenotePatchContentCommand>? Commands {
             get { return BackingStore?.Get<List<OnenotePatchContentCommand>?>("commands"); }
             set { BackingStore?.Set("commands", value); }
         }
+#nullable restore
 #else
         public List<OnenotePatchContentCommand> Commands {
             get { return BackingStore?.Get<List<OnenotePatchContentCommand>>("commands"); }

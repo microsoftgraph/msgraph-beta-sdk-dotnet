@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationRubricOutcome : EducationOutcome, IParsable {
         /// <summary>A copy of the rubricQualityFeedback property that is made when the grade is released to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RubricQualityFeedbackModel>? PublishedRubricQualityFeedback {
             get { return BackingStore?.Get<List<RubricQualityFeedbackModel>?>("publishedRubricQualityFeedback"); }
             set { BackingStore?.Set("publishedRubricQualityFeedback", value); }
         }
+#nullable restore
 #else
         public List<RubricQualityFeedbackModel> PublishedRubricQualityFeedback {
             get { return BackingStore?.Get<List<RubricQualityFeedbackModel>>("publishedRubricQualityFeedback"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A copy of the rubricQualitySelectedLevels property that is made when the grade is released to the student.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RubricQualitySelectedColumnModel>? PublishedRubricQualitySelectedLevels {
             get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>?>("publishedRubricQualitySelectedLevels"); }
             set { BackingStore?.Set("publishedRubricQualitySelectedLevels", value); }
         }
+#nullable restore
 #else
         public List<RubricQualitySelectedColumnModel> PublishedRubricQualitySelectedLevels {
             get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>>("publishedRubricQualitySelectedLevels"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of specific feedback for each quality of this rubric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RubricQualityFeedbackModel>? RubricQualityFeedback {
             get { return BackingStore?.Get<List<RubricQualityFeedbackModel>?>("rubricQualityFeedback"); }
             set { BackingStore?.Set("rubricQualityFeedback", value); }
         }
+#nullable restore
 #else
         public List<RubricQualityFeedbackModel> RubricQualityFeedback {
             get { return BackingStore?.Get<List<RubricQualityFeedbackModel>>("rubricQualityFeedback"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The level that the teacher has selected for each quality while grading this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RubricQualitySelectedColumnModel>? RubricQualitySelectedLevels {
             get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>?>("rubricQualitySelectedLevels"); }
             set { BackingStore?.Set("rubricQualitySelectedLevels", value); }
         }
+#nullable restore
 #else
         public List<RubricQualitySelectedColumnModel> RubricQualitySelectedLevels {
             get { return BackingStore?.Get<List<RubricQualitySelectedColumnModel>>("rubricQualitySelectedLevels"); }

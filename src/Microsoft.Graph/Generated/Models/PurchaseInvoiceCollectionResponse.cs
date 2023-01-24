@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PurchaseInvoiceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PurchaseInvoice>? Value {
             get { return BackingStore?.Get<List<PurchaseInvoice>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<PurchaseInvoice> Value {
             get { return BackingStore?.Get<List<PurchaseInvoice>>("value"); }

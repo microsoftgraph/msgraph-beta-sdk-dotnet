@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EnterpriseCodeSigningCertificate : Entity, IParsable {
         /// <summary>The Windows Enterprise Code-Signing Certificate in the raw data format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Content {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Issuer value for the cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Issuer {
             get { return BackingStore?.Get<string?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
+#nullable restore
 #else
         public string Issuer {
             get { return BackingStore?.Get<string>("issuer"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Issuer Name for the cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IssuerName {
             get { return BackingStore?.Get<string?>("issuerName"); }
             set { BackingStore?.Set("issuerName", value); }
         }
+#nullable restore
 #else
         public string IssuerName {
             get { return BackingStore?.Get<string>("issuerName"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Subject Value for the cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Subject Name for the cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubjectName {
             get { return BackingStore?.Get<string?>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
+#nullable restore
 #else
         public string SubjectName {
             get { return BackingStore?.Get<string>("subjectName"); }

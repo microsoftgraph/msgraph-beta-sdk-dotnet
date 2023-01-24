@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
         }
         /// <summary>The assignedAccessMultiModeProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsAssignedAccessProfile>? AssignedAccessMultiModeProfiles {
             get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>?>("assignedAccessMultiModeProfiles"); }
             set { BackingStore?.Set("assignedAccessMultiModeProfiles", value); }
         }
+#nullable restore
 #else
         public List<WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles {
             get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>>("assignedAccessMultiModeProfiles"); }

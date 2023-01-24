@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DirectoryRoleAccessReviewPolicy : Entity, IParsable {
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessReviewScheduleSettings? Settings {
             get { return BackingStore?.Get<AccessReviewScheduleSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public AccessReviewScheduleSettings Settings {
             get { return BackingStore?.Get<AccessReviewScheduleSettings>("settings"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class UpdatableAssetGroup : UpdatableAsset, IParsable {
         /// <summary>Members of the group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UpdatableAsset>? Members {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#nullable restore
 #else
         public List<UpdatableAsset> Members {
             get { return BackingStore?.Get<List<UpdatableAsset>>("members"); }

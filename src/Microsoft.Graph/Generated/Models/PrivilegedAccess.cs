@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccess : Entity, IParsable {
         /// <summary>The display name of the provider managed by PIM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of resources for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GovernanceResource>? Resources {
             get { return BackingStore?.Get<List<GovernanceResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#nullable restore
 #else
         public List<GovernanceResource> Resources {
             get { return BackingStore?.Get<List<GovernanceResource>>("resources"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of role assignment requests for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GovernanceRoleAssignmentRequest>? RoleAssignmentRequests {
             get { return BackingStore?.Get<List<GovernanceRoleAssignmentRequest>?>("roleAssignmentRequests"); }
             set { BackingStore?.Set("roleAssignmentRequests", value); }
         }
+#nullable restore
 #else
         public List<GovernanceRoleAssignmentRequest> RoleAssignmentRequests {
             get { return BackingStore?.Get<List<GovernanceRoleAssignmentRequest>>("roleAssignmentRequests"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of role assignments for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GovernanceRoleAssignment>? RoleAssignments {
             get { return BackingStore?.Get<List<GovernanceRoleAssignment>?>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
+#nullable restore
 #else
         public List<GovernanceRoleAssignment> RoleAssignments {
             get { return BackingStore?.Get<List<GovernanceRoleAssignment>>("roleAssignments"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of role defintions for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GovernanceRoleDefinition>? RoleDefinitions {
             get { return BackingStore?.Get<List<GovernanceRoleDefinition>?>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
+#nullable restore
 #else
         public List<GovernanceRoleDefinition> RoleDefinitions {
             get { return BackingStore?.Get<List<GovernanceRoleDefinition>>("roleDefinitions"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of role settings for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GovernanceRoleSetting>? RoleSettings {
             get { return BackingStore?.Get<List<GovernanceRoleSetting>?>("roleSettings"); }
             set { BackingStore?.Set("roleSettings", value); }
         }
+#nullable restore
 #else
         public List<GovernanceRoleSetting> RoleSettings {
             get { return BackingStore?.Get<List<GovernanceRoleSetting>>("roleSettings"); }

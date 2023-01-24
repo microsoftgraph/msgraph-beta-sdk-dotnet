@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of breaks associated with the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TimeCardBreak>? Breaks {
             get { return BackingStore?.Get<List<TimeCardBreak>?>("breaks"); }
             set { BackingStore?.Set("breaks", value); }
         }
+#nullable restore
 #else
         public List<TimeCardBreak> Breaks {
             get { return BackingStore?.Get<List<TimeCardBreak>>("breaks"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The clock-in event of the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TimeCardEvent? ClockInEvent {
             get { return BackingStore?.Get<TimeCardEvent?>("clockInEvent"); }
             set { BackingStore?.Set("clockInEvent", value); }
         }
+#nullable restore
 #else
         public TimeCardEvent ClockInEvent {
             get { return BackingStore?.Get<TimeCardEvent>("clockInEvent"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The clock-out event of the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TimeCardEvent? ClockOutEvent {
             get { return BackingStore?.Get<TimeCardEvent?>("clockOutEvent"); }
             set { BackingStore?.Set("clockOutEvent", value); }
         }
+#nullable restore
 #else
         public TimeCardEvent ClockOutEvent {
             get { return BackingStore?.Get<TimeCardEvent>("clockOutEvent"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

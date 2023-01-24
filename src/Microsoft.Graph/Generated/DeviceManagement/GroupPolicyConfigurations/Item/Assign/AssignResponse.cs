@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.A
     public class AssignResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyConfigurationAssignment>? Value {
             get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyConfigurationAssignment> Value {
             get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>>("value"); }

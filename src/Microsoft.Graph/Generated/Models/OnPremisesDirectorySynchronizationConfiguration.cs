@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesDirectorySynchronizationConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Contains the accidental deletion prevention configuration for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OnPremisesAccidentalDeletionPrevention? AccidentalDeletionPrevention {
             get { return BackingStore?.Get<OnPremisesAccidentalDeletionPrevention?>("accidentalDeletionPrevention"); }
             set { BackingStore?.Set("accidentalDeletionPrevention", value); }
         }
+#nullable restore
 #else
         public OnPremisesAccidentalDeletionPrevention AccidentalDeletionPrevention {
             get { return BackingStore?.Get<OnPremisesAccidentalDeletionPrevention>("accidentalDeletionPrevention"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

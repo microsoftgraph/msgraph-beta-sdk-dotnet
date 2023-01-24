@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information about the publication process that created this task. This field is deprecated and clients should move to using the new inheritance model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerTeamsPublicationInfo? TeamsPublicationInfo {
             get { return BackingStore?.Get<PlannerTeamsPublicationInfo?>("teamsPublicationInfo"); }
             set { BackingStore?.Set("teamsPublicationInfo", value); }
         }
+#nullable restore
 #else
         public PlannerTeamsPublicationInfo TeamsPublicationInfo {
             get { return BackingStore?.Get<PlannerTeamsPublicationInfo>("teamsPublicationInfo"); }

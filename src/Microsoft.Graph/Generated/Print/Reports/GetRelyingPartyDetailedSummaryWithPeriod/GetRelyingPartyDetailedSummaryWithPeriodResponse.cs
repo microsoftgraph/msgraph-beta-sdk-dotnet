@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetRelyingPartyDetailedSummaryWithP
     public class GetRelyingPartyDetailedSummaryWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RelyingPartyDetailedSummary>? Value {
             get { return BackingStore?.Get<List<RelyingPartyDetailedSummary>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<RelyingPartyDetailedSummary> Value {
             get { return BackingStore?.Get<List<RelyingPartyDetailedSummary>>("value"); }

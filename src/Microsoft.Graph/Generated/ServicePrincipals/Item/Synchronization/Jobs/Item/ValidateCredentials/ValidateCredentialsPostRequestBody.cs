@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         }
         /// <summary>The applicationIdentifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationIdentifier {
             get { return BackingStore?.Get<string?>("applicationIdentifier"); }
             set { BackingStore?.Set("applicationIdentifier", value); }
         }
+#nullable restore
 #else
         public string ApplicationIdentifier {
             get { return BackingStore?.Get<string>("applicationIdentifier"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationSecretKeyStringValuePair>? Credentials {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("credentials"); }
             set { BackingStore?.Set("credentials", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationSecretKeyStringValuePair> Credentials {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("credentials"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
 #endif
         /// <summary>The templateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemplateId {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#nullable restore
 #else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }

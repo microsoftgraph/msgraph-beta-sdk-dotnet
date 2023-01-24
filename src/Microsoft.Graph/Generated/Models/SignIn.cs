@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SignIn : Entity, IParsable {
         /// <summary>The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppDisplayName {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#nullable restore
 #else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The application identifier in Azure Active Directory. Supports $filter (eq operator only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppId {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#nullable restore
 #else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of conditional access policies that are triggered by the corresponding sign-in activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppliedConditionalAccessPolicy>? AppliedConditionalAccessPolicies {
             get { return BackingStore?.Get<List<AppliedConditionalAccessPolicy>?>("appliedConditionalAccessPolicies"); }
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
+#nullable restore
 #else
         public List<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies {
             get { return BackingStore?.Get<List<AppliedConditionalAccessPolicy>>("appliedConditionalAccessPolicies"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The appliedEventListeners property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppliedAuthenticationEventListener>? AppliedEventListeners {
             get { return BackingStore?.Get<List<AppliedAuthenticationEventListener>?>("appliedEventListeners"); }
             set { BackingStore?.Set("appliedEventListeners", value); }
         }
+#nullable restore
 #else
         public List<AppliedAuthenticationEventListener> AppliedEventListeners {
             get { return BackingStore?.Get<List<AppliedAuthenticationEventListener>>("appliedEventListeners"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides details about the app and device used during an Azure AD authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails? AuthenticationAppDeviceDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails?>("authenticationAppDeviceDetails"); }
             set { BackingStore?.Set("authenticationAppDeviceDetails", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails AuthenticationAppDeviceDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationAppPolicyDetails>? AuthenticationAppPolicyEvaluationDetails {
             get { return BackingStore?.Get<List<AuthenticationAppPolicyDetails>?>("authenticationAppPolicyEvaluationDetails"); }
             set { BackingStore?.Set("authenticationAppPolicyEvaluationDetails", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationAppPolicyDetails> AuthenticationAppPolicyEvaluationDetails {
             get { return BackingStore?.Get<List<AuthenticationAppPolicyDetails>>("authenticationAppPolicyEvaluationDetails"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationContext>? AuthenticationContextClassReferences {
             get { return BackingStore?.Get<List<AuthenticationContext>?>("authenticationContextClassReferences"); }
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationContext> AuthenticationContextClassReferences {
             get { return BackingStore?.Get<List<AuthenticationContext>>("authenticationContextClassReferences"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The result of the authentication attempt and additional details on the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationDetail>? AuthenticationDetails {
             get { return BackingStore?.Get<List<AuthenticationDetail>?>("authenticationDetails"); }
             set { BackingStore?.Set("authenticationDetails", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationDetail> AuthenticationDetails {
             get { return BackingStore?.Get<List<AuthenticationDetail>>("authenticationDetails"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The authentication methods used. Possible values: SMS, Authenticator App, App Verification code, Password, FIDO, PTA, or PHS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AuthenticationMethodsUsed {
             get { return BackingStore?.Get<List<string>?>("authenticationMethodsUsed"); }
             set { BackingStore?.Set("authenticationMethodsUsed", value); }
         }
+#nullable restore
 #else
         public List<string> AuthenticationMethodsUsed {
             get { return BackingStore?.Get<List<string>>("authenticationMethodsUsed"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValue>? AuthenticationProcessingDetails {
             get { return BackingStore?.Get<List<KeyValue>?>("authenticationProcessingDetails"); }
             set { BackingStore?.Set("authenticationProcessingDetails", value); }
         }
+#nullable restore
 #else
         public List<KeyValue> AuthenticationProcessingDetails {
             get { return BackingStore?.Get<List<KeyValue>>("authenticationProcessingDetails"); }
@@ -132,10 +152,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuthenticationRequirement {
             get { return BackingStore?.Get<string?>("authenticationRequirement"); }
             set { BackingStore?.Set("authenticationRequirement", value); }
         }
+#nullable restore
 #else
         public string AuthenticationRequirement {
             get { return BackingStore?.Get<string>("authenticationRequirement"); }
@@ -144,10 +166,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationRequirementPolicy>? AuthenticationRequirementPolicies {
             get { return BackingStore?.Get<List<AuthenticationRequirementPolicy>?>("authenticationRequirementPolicies"); }
             set { BackingStore?.Set("authenticationRequirementPolicies", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationRequirementPolicy> AuthenticationRequirementPolicies {
             get { return BackingStore?.Get<List<AuthenticationRequirementPolicy>>("authenticationRequirementPolicies"); }
@@ -161,10 +185,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureResourceId {
             get { return BackingStore?.Get<string?>("azureResourceId"); }
             set { BackingStore?.Set("azureResourceId", value); }
         }
+#nullable restore
 #else
         public string AzureResourceId {
             get { return BackingStore?.Get<string>("azureResourceId"); }
@@ -173,10 +199,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClientAppUsed {
             get { return BackingStore?.Get<string?>("clientAppUsed"); }
             set { BackingStore?.Set("clientAppUsed", value); }
         }
+#nullable restore
 #else
         public string ClientAppUsed {
             get { return BackingStore?.Get<string>("clientAppUsed"); }
@@ -195,10 +223,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The identifier that&apos;s sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CorrelationId {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#nullable restore
 #else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
@@ -217,10 +247,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceDetail? DeviceDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceDetail?>("deviceDetail"); }
             set { BackingStore?.Set("deviceDetail", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceDetail DeviceDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceDetail>("deviceDetail"); }
@@ -229,10 +261,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the identifier of an application&apos;s federated identity credential, if a federated identity credential was used to sign in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FederatedCredentialId {
             get { return BackingStore?.Get<string?>("federatedCredentialId"); }
             set { BackingStore?.Set("federatedCredentialId", value); }
         }
+#nullable restore
 #else
         public string FederatedCredentialId {
             get { return BackingStore?.Get<string>("federatedCredentialId"); }
@@ -246,10 +280,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HomeTenantId {
             get { return BackingStore?.Get<string?>("homeTenantId"); }
             set { BackingStore?.Set("homeTenantId", value); }
         }
+#nullable restore
 #else
         public string HomeTenantId {
             get { return BackingStore?.Get<string>("homeTenantId"); }
@@ -258,10 +294,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HomeTenantName {
             get { return BackingStore?.Get<string?>("homeTenantName"); }
             set { BackingStore?.Set("homeTenantName", value); }
         }
+#nullable restore
 #else
         public string HomeTenantName {
             get { return BackingStore?.Get<string>("homeTenantName"); }
@@ -275,10 +313,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddress {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#nullable restore
 #else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
@@ -287,10 +327,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddressFromResourceProvider {
             get { return BackingStore?.Get<string?>("ipAddressFromResourceProvider"); }
             set { BackingStore?.Set("ipAddressFromResourceProvider", value); }
         }
+#nullable restore
 #else
         public string IpAddressFromResourceProvider {
             get { return BackingStore?.Get<string>("ipAddressFromResourceProvider"); }
@@ -309,10 +351,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SignInLocation? Location {
             get { return BackingStore?.Get<SignInLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public SignInLocation Location {
             get { return BackingStore?.Get<SignInLocation>("location"); }
@@ -321,10 +365,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The mfaDetail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.MfaDetail? MfaDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MfaDetail?>("mfaDetail"); }
             set { BackingStore?.Set("mfaDetail", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.MfaDetail MfaDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MfaDetail>("mfaDetail"); }
@@ -333,10 +379,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The network location details including the type of network used and its names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<NetworkLocationDetail>? NetworkLocationDetails {
             get { return BackingStore?.Get<List<NetworkLocationDetail>?>("networkLocationDetails"); }
             set { BackingStore?.Set("networkLocationDetails", value); }
         }
+#nullable restore
 #else
         public List<NetworkLocationDetail> NetworkLocationDetails {
             get { return BackingStore?.Get<List<NetworkLocationDetail>>("networkLocationDetails"); }
@@ -345,10 +393,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginalRequestId {
             get { return BackingStore?.Get<string?>("originalRequestId"); }
             set { BackingStore?.Set("originalRequestId", value); }
         }
+#nullable restore
 #else
         public string OriginalRequestId {
             get { return BackingStore?.Get<string>("originalRequestId"); }
@@ -357,10 +407,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains information about the Azure AD Private Link policy that is associated with the sign in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.PrivateLinkDetails? PrivateLinkDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivateLinkDetails?>("privateLinkDetails"); }
             set { BackingStore?.Set("privateLinkDetails", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.PrivateLinkDetails PrivateLinkDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivateLinkDetails>("privateLinkDetails"); }
@@ -374,10 +426,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the resource that the user signed in to. Supports $filter (eq operator only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceDisplayName {
             get { return BackingStore?.Get<string?>("resourceDisplayName"); }
             set { BackingStore?.Set("resourceDisplayName", value); }
         }
+#nullable restore
 #else
         public string ResourceDisplayName {
             get { return BackingStore?.Get<string>("resourceDisplayName"); }
@@ -386,10 +440,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the resource that the user signed in to. Supports $filter (eq operator only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceId {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#nullable restore
 #else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
@@ -398,10 +454,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the service principal representing the target resource in the sign-in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceServicePrincipalId {
             get { return BackingStore?.Get<string?>("resourceServicePrincipalId"); }
             set { BackingStore?.Set("resourceServicePrincipalId", value); }
         }
+#nullable restore
 #else
         public string ResourceServicePrincipalId {
             get { return BackingStore?.Get<string>("resourceServicePrincipalId"); }
@@ -410,10 +468,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tenant identifier of the resource referenced in the sign in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourceTenantId {
             get { return BackingStore?.Get<string?>("resourceTenantId"); }
             set { BackingStore?.Set("resourceTenantId", value); }
         }
+#nullable restore
 #else
         public string ResourceTenantId {
             get { return BackingStore?.Get<string>("resourceTenantId"); }
@@ -427,10 +487,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RiskEventTypes_v2 {
             get { return BackingStore?.Get<List<string>?>("riskEventTypes_v2"); }
             set { BackingStore?.Set("riskEventTypes_v2", value); }
         }
+#nullable restore
 #else
         public List<string> RiskEventTypes_v2 {
             get { return BackingStore?.Get<List<string>>("riskEventTypes_v2"); }
@@ -454,10 +516,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier of the key credential used by the service principal to authenticate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePrincipalCredentialKeyId {
             get { return BackingStore?.Get<string?>("servicePrincipalCredentialKeyId"); }
             set { BackingStore?.Set("servicePrincipalCredentialKeyId", value); }
         }
+#nullable restore
 #else
         public string ServicePrincipalCredentialKeyId {
             get { return BackingStore?.Get<string>("servicePrincipalCredentialKeyId"); }
@@ -466,10 +530,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The certificate thumbprint of the certificate used by the service principal to authenticate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePrincipalCredentialThumbprint {
             get { return BackingStore?.Get<string?>("servicePrincipalCredentialThumbprint"); }
             set { BackingStore?.Set("servicePrincipalCredentialThumbprint", value); }
         }
+#nullable restore
 #else
         public string ServicePrincipalCredentialThumbprint {
             get { return BackingStore?.Get<string>("servicePrincipalCredentialThumbprint"); }
@@ -478,10 +544,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePrincipalId {
             get { return BackingStore?.Get<string?>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
+#nullable restore
 #else
         public string ServicePrincipalId {
             get { return BackingStore?.Get<string>("servicePrincipalId"); }
@@ -490,10 +558,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServicePrincipalName {
             get { return BackingStore?.Get<string?>("servicePrincipalName"); }
             set { BackingStore?.Set("servicePrincipalName", value); }
         }
+#nullable restore
 #else
         public string ServicePrincipalName {
             get { return BackingStore?.Get<string>("servicePrincipalName"); }
@@ -502,10 +572,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Any conditional access session management policies that were applied during the sign-in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SessionLifetimePolicy>? SessionLifetimePolicies {
             get { return BackingStore?.Get<List<SessionLifetimePolicy>?>("sessionLifetimePolicies"); }
             set { BackingStore?.Set("sessionLifetimePolicies", value); }
         }
+#nullable restore
 #else
         public List<SessionLifetimePolicy> SessionLifetimePolicies {
             get { return BackingStore?.Get<List<SessionLifetimePolicy>>("sessionLifetimePolicies"); }
@@ -514,10 +586,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SignInEventTypes {
             get { return BackingStore?.Get<List<string>?>("signInEventTypes"); }
             set { BackingStore?.Set("signInEventTypes", value); }
         }
+#nullable restore
 #else
         public List<string> SignInEventTypes {
             get { return BackingStore?.Get<List<string>>("signInEventTypes"); }
@@ -526,10 +600,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identification that the user provided to sign in. It may be the userPrincipalName but it&apos;s also populated when a user signs in using other identifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SignInIdentifier {
             get { return BackingStore?.Get<string?>("signInIdentifier"); }
             set { BackingStore?.Set("signInIdentifier", value); }
         }
+#nullable restore
 #else
         public string SignInIdentifier {
             get { return BackingStore?.Get<string>("signInIdentifier"); }
@@ -543,10 +619,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SignInStatus? Status {
             get { return BackingStore?.Get<SignInStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public SignInStatus Status {
             get { return BackingStore?.Get<SignInStatus>("status"); }
@@ -555,10 +633,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TokenIssuerName {
             get { return BackingStore?.Get<string?>("tokenIssuerName"); }
             set { BackingStore?.Set("tokenIssuerName", value); }
         }
+#nullable restore
 #else
         public string TokenIssuerName {
             get { return BackingStore?.Get<string>("tokenIssuerName"); }
@@ -572,10 +652,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UniqueTokenIdentifier {
             get { return BackingStore?.Get<string?>("uniqueTokenIdentifier"); }
             set { BackingStore?.Set("uniqueTokenIdentifier", value); }
         }
+#nullable restore
 #else
         public string UniqueTokenIdentifier {
             get { return BackingStore?.Get<string>("uniqueTokenIdentifier"); }
@@ -584,10 +666,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserAgent {
             get { return BackingStore?.Get<string?>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
+#nullable restore
 #else
         public string UserAgent {
             get { return BackingStore?.Get<string>("userAgent"); }
@@ -596,10 +680,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the user. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserDisplayName {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
+#nullable restore
 #else
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
@@ -608,10 +694,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the user. Supports $filter (eq operator only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -620,10 +708,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The UPN of the user. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

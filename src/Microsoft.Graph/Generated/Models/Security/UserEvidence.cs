@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class UserEvidence : AlertEvidence, IParsable {
         /// <summary>The user account details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.UserAccount? UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount?>("userAccount"); }
             set { BackingStore?.Set("userAccount", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.UserAccount UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount>("userAccount"); }

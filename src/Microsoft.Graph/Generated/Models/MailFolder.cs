@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of child folders in the mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MailFolder>? ChildFolders {
             get { return BackingStore?.Get<List<MailFolder>?>("childFolders"); }
             set { BackingStore?.Set("childFolders", value); }
         }
+#nullable restore
 #else
         public List<MailFolder> ChildFolders {
             get { return BackingStore?.Get<List<MailFolder>>("childFolders"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The mailFolder&apos;s display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of rules that apply to the user&apos;s Inbox folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MessageRule>? MessageRules {
             get { return BackingStore?.Get<List<MessageRule>?>("messageRules"); }
             set { BackingStore?.Set("messageRules", value); }
         }
+#nullable restore
 #else
         public List<MessageRule> MessageRules {
             get { return BackingStore?.Get<List<MessageRule>>("messageRules"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of messages in the mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Message>? Messages {
             get { return BackingStore?.Get<List<Message>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
+#nullable restore
 #else
         public List<Message> Messages {
             get { return BackingStore?.Get<List<Message>>("messages"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for the mailFolder&apos;s parent mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentFolderId {
             get { return BackingStore?.Get<string?>("parentFolderId"); }
             set { BackingStore?.Set("parentFolderId", value); }
         }
+#nullable restore
 #else
         public string ParentFolderId {
             get { return BackingStore?.Get<string>("parentFolderId"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#nullable restore
 #else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The userConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserConfiguration>? UserConfigurations {
             get { return BackingStore?.Get<List<UserConfiguration>?>("userConfigurations"); }
             set { BackingStore?.Set("userConfigurations", value); }
         }
+#nullable restore
 #else
         public List<UserConfiguration> UserConfigurations {
             get { return BackingStore?.Get<List<UserConfiguration>>("userConfigurations"); }
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WellKnownName {
             get { return BackingStore?.Get<string?>("wellKnownName"); }
             set { BackingStore?.Set("wellKnownName", value); }
         }
+#nullable restore
 #else
         public string WellKnownName {
             get { return BackingStore?.Get<string>("wellKnownName"); }

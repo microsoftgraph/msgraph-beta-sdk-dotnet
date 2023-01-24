@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Maximum OS version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MaximumOperatingSystemVersion {
             get { return BackingStore?.Get<string?>("maximumOperatingSystemVersion"); }
             set { BackingStore?.Set("maximumOperatingSystemVersion", value); }
         }
+#nullable restore
 #else
         public string MaximumOperatingSystemVersion {
             get { return BackingStore?.Get<string>("maximumOperatingSystemVersion"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Minimum OS version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MinimumOperatingSystemVersion {
             get { return BackingStore?.Get<string?>("minimumOperatingSystemVersion"); }
             set { BackingStore?.Set("minimumOperatingSystemVersion", value); }
         }
+#nullable restore
 #else
         public string MinimumOperatingSystemVersion {
             get { return BackingStore?.Get<string>("minimumOperatingSystemVersion"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

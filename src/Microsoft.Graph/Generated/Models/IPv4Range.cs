@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IPv4Range : IpRange, IParsable {
         /// <summary>Lower address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LowerAddress {
             get { return BackingStore?.Get<string?>("lowerAddress"); }
             set { BackingStore?.Set("lowerAddress", value); }
         }
+#nullable restore
 #else
         public string LowerAddress {
             get { return BackingStore?.Get<string>("lowerAddress"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Upper address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UpperAddress {
             get { return BackingStore?.Get<string?>("upperAddress"); }
             set { BackingStore?.Set("upperAddress", value); }
         }
+#nullable restore
 #else
         public string UpperAddress {
             get { return BackingStore?.Get<string>("upperAddress"); }

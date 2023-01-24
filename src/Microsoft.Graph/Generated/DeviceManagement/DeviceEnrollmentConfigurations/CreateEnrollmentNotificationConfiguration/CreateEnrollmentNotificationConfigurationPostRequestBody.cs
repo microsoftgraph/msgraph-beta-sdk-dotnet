@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.C
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceEnrollmentNotificationConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceEnrollmentConfiguration>? DeviceEnrollmentNotificationConfigurations {
             get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>?>("deviceEnrollmentNotificationConfigurations"); }
             set { BackingStore?.Set("deviceEnrollmentNotificationConfigurations", value); }
         }
+#nullable restore
 #else
         public List<DeviceEnrollmentConfiguration> DeviceEnrollmentNotificationConfigurations {
             get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>("deviceEnrollmentNotificationConfigurations"); }

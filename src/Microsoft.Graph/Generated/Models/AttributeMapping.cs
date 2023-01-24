@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Default value to be used in case the source property was evaluated to null. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultValue {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#nullable restore
 #else
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }
@@ -47,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -59,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines how a value should be extracted (or transformed) from the source object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AttributeMappingSource? Source {
             get { return BackingStore?.Get<AttributeMappingSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#nullable restore
 #else
         public AttributeMappingSource Source {
             get { return BackingStore?.Get<AttributeMappingSource>("source"); }
@@ -71,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the attribute on the target object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetAttributeName {
             get { return BackingStore?.Get<string?>("targetAttributeName"); }
             set { BackingStore?.Set("targetAttributeName", value); }
         }
+#nullable restore
 #else
         public string TargetAttributeName {
             get { return BackingStore?.Get<string>("targetAttributeName"); }

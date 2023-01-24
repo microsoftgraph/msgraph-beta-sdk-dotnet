@@ -26,10 +26,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         }
         /// <summary>The driverIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DriverIds {
             get { return BackingStore?.Get<List<string>?>("driverIds"); }
             set { BackingStore?.Set("driverIds", value); }
         }
+#nullable restore
 #else
         public List<string> DriverIds {
             get { return BackingStore?.Get<List<string>>("driverIds"); }

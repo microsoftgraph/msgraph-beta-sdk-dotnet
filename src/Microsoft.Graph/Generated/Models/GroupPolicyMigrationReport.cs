@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of Group Policy Object from the GPO Xml Content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -42,10 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of group policy settings to MDM/Intune mappings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicySettingMapping>? GroupPolicySettingMappings {
             get { return BackingStore?.Get<List<GroupPolicySettingMapping>?>("groupPolicySettingMappings"); }
             set { BackingStore?.Set("groupPolicySettingMappings", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicySettingMapping> GroupPolicySettingMappings {
             get { return BackingStore?.Get<List<GroupPolicySettingMapping>>("groupPolicySettingMappings"); }
@@ -64,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The distinguished name of the OU.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OuDistinguishedName {
             get { return BackingStore?.Get<string?>("ouDistinguishedName"); }
             set { BackingStore?.Set("ouDistinguishedName", value); }
         }
+#nullable restore
 #else
         public string OuDistinguishedName {
             get { return BackingStore?.Get<string>("ouDistinguishedName"); }
@@ -76,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of scope tags for the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -108,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of unsupported group policy extensions inside the Group Policy Object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnsupportedGroupPolicyExtension>? UnsupportedGroupPolicyExtensions {
             get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>?>("unsupportedGroupPolicyExtensions"); }
             set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
         }
+#nullable restore
 #else
         public List<UnsupportedGroupPolicyExtension> UnsupportedGroupPolicyExtensions {
             get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>>("unsupportedGroupPolicyExtensions"); }

@@ -11,12 +11,14 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The Identity of the Application. This property is read-only.</summary>
+        /// <summary>Optional. The application associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? Application {
             get { return BackingStore?.Get<Identity?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#nullable restore
 #else
         public Identity Application {
             get { return BackingStore?.Get<Identity>("application"); }
@@ -25,12 +27,14 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The Identity of the Device. This property is read-only.</summary>
+        /// <summary>Optional. The device associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? Device {
             get { return BackingStore?.Get<Identity?>("device"); }
             set { BackingStore?.Set("device", value); }
         }
+#nullable restore
 #else
         public Identity Device {
             get { return BackingStore?.Get<Identity>("device"); }
@@ -39,22 +43,26 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The Identity of the User. This property is read-only.</summary>
+        /// <summary>Optional. The user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Identity? User {
             get { return BackingStore?.Get<Identity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#nullable restore
 #else
         public Identity User {
             get { return BackingStore?.Get<Identity>("user"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Applications.Item.SetVerifiedPublisher {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The verifiedPublisherId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VerifiedPublisherId {
             get { return BackingStore?.Get<string?>("verifiedPublisherId"); }
             set { BackingStore?.Set("verifiedPublisherId", value); }
         }
+#nullable restore
 #else
         public string VerifiedPublisherId {
             get { return BackingStore?.Get<string>("verifiedPublisherId"); }

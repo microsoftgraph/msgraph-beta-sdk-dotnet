@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsFeatureUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsFeatureUpdateProfileAssignment>? Assignments {
             get { return BackingStore?.Get<List<WindowsFeatureUpdateProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<WindowsFeatureUpdateProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<WindowsFeatureUpdateProfileAssignment>>("assignments"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Friendly display name of the quality update profile deployable content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeployableContentDisplayName {
             get { return BackingStore?.Get<string?>("deployableContentDisplayName"); }
             set { BackingStore?.Set("deployableContentDisplayName", value); }
         }
+#nullable restore
 #else
         public string DeployableContentDisplayName {
             get { return BackingStore?.Get<string>("deployableContentDisplayName"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of the profile which is specified by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FeatureUpdateVersion {
             get { return BackingStore?.Get<string?>("featureUpdateVersion"); }
             set { BackingStore?.Set("featureUpdateVersion", value); }
         }
+#nullable restore
 #else
         public string FeatureUpdateVersion {
             get { return BackingStore?.Get<string>("featureUpdateVersion"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Scope Tags for this Feature Update entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -97,10 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsUpdateRolloutSettings? RolloutSettings {
             get { return BackingStore?.Get<WindowsUpdateRolloutSettings?>("rolloutSettings"); }
             set { BackingStore?.Set("rolloutSettings", value); }
         }
+#nullable restore
 #else
         public WindowsUpdateRolloutSettings RolloutSettings {
             get { return BackingStore?.Get<WindowsUpdateRolloutSettings>("rolloutSettings"); }

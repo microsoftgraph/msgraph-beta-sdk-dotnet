@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The DestinationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DestinationId {
             get { return BackingStore?.Get<string?>("destinationId"); }
             set { BackingStore?.Set("destinationId", value); }
         }
+#nullable restore
 #else
         public string DestinationId {
             get { return BackingStore?.Get<string>("destinationId"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResourceEnvironment : Entity, IParsable {
         /// <summary>Read-only. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResource>? AccessPackageResources {
             get { return BackingStore?.Get<List<AccessPackageResource>?>("accessPackageResources"); }
             set { BackingStore?.Set("accessPackageResources", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResource> AccessPackageResources {
             get { return BackingStore?.Get<List<AccessPackageResource>>("accessPackageResources"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Connection information of an environment used to connect to a resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ConnectionInfo? ConnectionInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectionInfo?>("connectionInfo"); }
             set { BackingStore?.Set("connectionInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ConnectionInfo ConnectionInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectionInfo>("connectionInfo"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the user that created this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedBy {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public string CreatedBy {
             get { return BackingStore?.Get<string>("createdBy"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description of this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The display name of the entity that last modified this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ModifiedBy {
             get { return BackingStore?.Get<string?>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
+#nullable restore
 #else
         public string ModifiedBy {
             get { return BackingStore?.Get<string>("modifiedBy"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The unique identifier of this environment in the origin system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginId {
             get { return BackingStore?.Get<string?>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
+#nullable restore
 #else
         public string OriginId {
             get { return BackingStore?.Get<string>("originId"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OriginSystem {
             get { return BackingStore?.Get<string?>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
+#nullable restore
 #else
         public string OriginSystem {
             get { return BackingStore?.Get<string>("originSystem"); }

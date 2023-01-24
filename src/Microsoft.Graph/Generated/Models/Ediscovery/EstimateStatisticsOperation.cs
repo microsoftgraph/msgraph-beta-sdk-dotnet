@@ -27,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
         /// <summary>eDiscovery collection, commonly known as a search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection?>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TodoTask : Entity, IParsable {
         /// <summary>A collection of file attachments for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AttachmentBase>? Attachments {
             get { return BackingStore?.Get<List<AttachmentBase>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#nullable restore
 #else
         public List<AttachmentBase> Attachments {
             get { return BackingStore?.Get<List<AttachmentBase>>("attachments"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The attachmentSessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AttachmentSession>? AttachmentSessions {
             get { return BackingStore?.Get<List<AttachmentSession>?>("attachmentSessions"); }
             set { BackingStore?.Set("attachmentSessions", value); }
         }
+#nullable restore
 #else
         public List<AttachmentSession> AttachmentSessions {
             get { return BackingStore?.Get<List<AttachmentSession>>("attachmentSessions"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The task body that typically contains information about the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Body {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#nullable restore
 #else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Categories {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of smaller subtasks linked to the more complex parent task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ChecklistItem>? ChecklistItems {
             get { return BackingStore?.Get<List<ChecklistItem>?>("checklistItems"); }
             set { BackingStore?.Set("checklistItems", value); }
         }
+#nullable restore
 #else
         public List<ChecklistItem> ChecklistItems {
             get { return BackingStore?.Get<List<ChecklistItem>>("checklistItems"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The date and time in the specified time zone that the task was finished.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone CompletedDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("completedDateTime"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The date and time in the specified time zone that the task is to be finished.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? DueDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone DueDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("dueDateTime"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of open extensions defined for the task. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Extension>? Extensions {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#nullable restore
 #else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
@@ -133,10 +149,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of resources linked to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<LinkedResource>? LinkedResources {
             get { return BackingStore?.Get<List<LinkedResource>?>("linkedResources"); }
             set { BackingStore?.Set("linkedResources", value); }
         }
+#nullable restore
 #else
         public List<LinkedResource> LinkedResources {
             get { return BackingStore?.Get<List<LinkedResource>>("linkedResources"); }
@@ -145,10 +163,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The recurrence pattern for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PatternedRecurrence? Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
+#nullable restore
 #else
         public PatternedRecurrence Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
@@ -157,10 +177,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The date and time in the specified time zone for a reminder alert of the task to occur.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? ReminderDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("reminderDateTime"); }
             set { BackingStore?.Set("reminderDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone ReminderDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("reminderDateTime"); }
@@ -169,10 +191,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The date and time in the specified time zone at which the task is scheduled to start.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
@@ -186,10 +210,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A brief description of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

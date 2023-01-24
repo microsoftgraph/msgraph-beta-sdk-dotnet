@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class InformationProtectionPolicySetting : Entity, IParsable {
         /// <summary>The defaultLabelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultLabelId {
             get { return BackingStore?.Get<string?>("defaultLabelId"); }
             set { BackingStore?.Set("defaultLabelId", value); }
         }
+#nullable restore
 #else
         public string DefaultLabelId {
             get { return BackingStore?.Get<string>("defaultLabelId"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Exposes the more information URL that can be configured by the administrator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MoreInfoUrl {
             get { return BackingStore?.Get<string?>("moreInfoUrl"); }
             set { BackingStore?.Set("moreInfoUrl", value); }
         }
+#nullable restore
 #else
         public string MoreInfoUrl {
             get { return BackingStore?.Get<string>("moreInfoUrl"); }

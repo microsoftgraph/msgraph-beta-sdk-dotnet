@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Audiences {
             get { return BackingStore?.Get<List<string>?>("audiences"); }
             set { BackingStore?.Set("audiences", value); }
         }
+#nullable restore
 #else
         public List<string> Audiences {
             get { return BackingStore?.Get<List<string>>("audiences"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DataVersion {
             get { return BackingStore?.Get<string?>("dataVersion"); }
             set { BackingStore?.Set("dataVersion", value); }
         }
+#nullable restore
 #else
         public string DataVersion {
             get { return BackingStore?.Get<string>("dataVersion"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description of the web part.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Properties bag of the web part.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Properties {
             get { return BackingStore?.Get<Json?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#nullable restore
 #else
         public Json Properties {
             get { return BackingStore?.Get<Json>("properties"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains collections of data that can be processed by server side services like search index and link fixup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ServerProcessedContent? ServerProcessedContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServerProcessedContent?>("serverProcessedContent"); }
             set { BackingStore?.Set("serverProcessedContent", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ServerProcessedContent ServerProcessedContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServerProcessedContent>("serverProcessedContent"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Title of the web part.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

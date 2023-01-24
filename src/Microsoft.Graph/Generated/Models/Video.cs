@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the audio format (AAC, MP3, etc.).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AudioFormat {
             get { return BackingStore?.Get<string?>("audioFormat"); }
             set { BackingStore?.Set("audioFormat", value); }
         }
+#nullable restore
 #else
         public string AudioFormat {
             get { return BackingStore?.Get<string>("audioFormat"); }
@@ -52,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>&apos;Four character code&apos; name of the video format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FourCC {
             get { return BackingStore?.Get<string?>("fourCC"); }
             set { BackingStore?.Set("fourCC", value); }
         }
+#nullable restore
 #else
         public string FourCC {
             get { return BackingStore?.Get<string>("fourCC"); }
@@ -74,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

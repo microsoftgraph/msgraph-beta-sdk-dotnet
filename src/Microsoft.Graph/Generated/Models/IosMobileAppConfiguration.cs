@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable {
         /// <summary>mdm app configuration Base64 binary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? EncodedSettingXml {
             get { return BackingStore?.Get<byte[]?>("encodedSettingXml"); }
             set { BackingStore?.Set("encodedSettingXml", value); }
         }
+#nullable restore
 #else
         public byte[] EncodedSettingXml {
             get { return BackingStore?.Get<byte[]>("encodedSettingXml"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>app configuration setting items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppConfigurationSettingItem>? Settings {
             get { return BackingStore?.Get<List<AppConfigurationSettingItem>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public List<AppConfigurationSettingItem> Settings {
             get { return BackingStore?.Get<List<AppConfigurationSettingItem>>("settings"); }

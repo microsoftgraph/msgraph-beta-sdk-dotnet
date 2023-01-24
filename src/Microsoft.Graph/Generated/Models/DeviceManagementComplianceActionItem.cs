@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? NotificationMessageCCList {
             get { return BackingStore?.Get<List<string>?>("notificationMessageCCList"); }
             set { BackingStore?.Set("notificationMessageCCList", value); }
         }
+#nullable restore
 #else
         public List<string> NotificationMessageCCList {
             get { return BackingStore?.Get<List<string>>("notificationMessageCCList"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>What notification Message template to use</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationTemplateId {
             get { return BackingStore?.Get<string?>("notificationTemplateId"); }
             set { BackingStore?.Set("notificationTemplateId", value); }
         }
+#nullable restore
 #else
         public string NotificationTemplateId {
             get { return BackingStore?.Get<string>("notificationTemplateId"); }

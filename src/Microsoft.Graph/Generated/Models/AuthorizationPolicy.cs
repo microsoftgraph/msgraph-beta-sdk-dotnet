@@ -37,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The defaultUserRoleOverrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DefaultUserRoleOverride>? DefaultUserRoleOverrides {
             get { return BackingStore?.Get<List<DefaultUserRoleOverride>?>("defaultUserRoleOverrides"); }
             set { BackingStore?.Set("defaultUserRoleOverrides", value); }
         }
+#nullable restore
 #else
         public List<DefaultUserRoleOverride> DefaultUserRoleOverrides {
             get { return BackingStore?.Get<List<DefaultUserRoleOverride>>("defaultUserRoleOverrides"); }
@@ -49,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The defaultUserRolePermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DefaultUserRolePermissions? DefaultUserRolePermissions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions?>("defaultUserRolePermissions"); }
             set { BackingStore?.Set("defaultUserRolePermissions", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DefaultUserRolePermissions DefaultUserRolePermissions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>("defaultUserRolePermissions"); }
@@ -61,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of features enabled for private preview on the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? EnabledPreviewFeatures {
             get { return BackingStore?.Get<List<string>?>("enabledPreviewFeatures"); }
             set { BackingStore?.Set("enabledPreviewFeatures", value); }
         }
+#nullable restore
 #else
         public List<string> EnabledPreviewFeatures {
             get { return BackingStore?.Get<List<string>>("enabledPreviewFeatures"); }
@@ -78,10 +84,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? PermissionGrantPolicyIdsAssignedToDefaultUserRole {
             get { return BackingStore?.Get<List<string>?>("permissionGrantPolicyIdsAssignedToDefaultUserRole"); }
             set { BackingStore?.Set("permissionGrantPolicyIdsAssignedToDefaultUserRole", value); }
         }
+#nullable restore
 #else
         public List<string> PermissionGrantPolicyIdsAssignedToDefaultUserRole {
             get { return BackingStore?.Get<List<string>>("permissionGrantPolicyIdsAssignedToDefaultUserRole"); }

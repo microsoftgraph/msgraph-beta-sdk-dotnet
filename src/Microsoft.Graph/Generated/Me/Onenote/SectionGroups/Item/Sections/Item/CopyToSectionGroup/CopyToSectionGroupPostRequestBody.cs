@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.Sections.Item.CopyT
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GroupId {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#nullable restore
 #else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.Sections.Item.CopyT
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.Sections.Item.CopyT
 #endif
         /// <summary>The renameAs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RenameAs {
             get { return BackingStore?.Get<string?>("renameAs"); }
             set { BackingStore?.Set("renameAs", value); }
         }
+#nullable restore
 #else
         public string RenameAs {
             get { return BackingStore?.Get<string>("renameAs"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.Sections.Item.CopyT
 #endif
         /// <summary>The siteCollectionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SiteCollectionId {
             get { return BackingStore?.Get<string?>("siteCollectionId"); }
             set { BackingStore?.Set("siteCollectionId", value); }
         }
+#nullable restore
 #else
         public string SiteCollectionId {
             get { return BackingStore?.Get<string>("siteCollectionId"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.Sections.Item.CopyT
 #endif
         /// <summary>The siteId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SiteId {
             get { return BackingStore?.Get<string?>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
+#nullable restore
 #else
         public string SiteId {
             get { return BackingStore?.Get<string>("siteId"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CallTranscript : Entity, IParsable {
         /// <summary>A field representing the content of the transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Content {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }

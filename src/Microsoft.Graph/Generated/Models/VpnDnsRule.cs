@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -52,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Proxy Server Uri.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProxyServerUri {
             get { return BackingStore?.Get<string?>("proxyServerUri"); }
             set { BackingStore?.Set("proxyServerUri", value); }
         }
+#nullable restore
 #else
         public string ProxyServerUri {
             get { return BackingStore?.Get<string>("proxyServerUri"); }
@@ -64,10 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Servers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Servers {
             get { return BackingStore?.Get<List<string>?>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
+#nullable restore
 #else
         public List<string> Servers {
             get { return BackingStore?.Get<List<string>>("servers"); }

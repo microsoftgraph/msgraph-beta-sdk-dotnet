@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GetRelatedApp
     public class GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppRelationshipState>? Value {
             get { return BackingStore?.Get<List<MobileAppRelationshipState>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<MobileAppRelationshipState> Value {
             get { return BackingStore?.Get<List<MobileAppRelationshipState>>("value"); }

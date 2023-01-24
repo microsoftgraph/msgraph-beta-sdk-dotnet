@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Information about why the updateAllowedCombinations action was successful or failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdditionalInformation {
             get { return BackingStore?.Get<string?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
+#nullable restore
 #else
         public string AdditionalInformation {
             get { return BackingStore?.Get<string>("additionalInformation"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>References to existing Conditional Access policies that use this authentication strength.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ConditionalAccessReferences {
             get { return BackingStore?.Get<List<string>?>("conditionalAccessReferences"); }
             set { BackingStore?.Set("conditionalAccessReferences", value); }
         }
+#nullable restore
 #else
         public List<string> ConditionalAccessReferences {
             get { return BackingStore?.Get<List<string>>("conditionalAccessReferences"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of current authentication method combinations allowed by the authentication strength.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationMethodModes?>? CurrentCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("currentCombinations"); }
             set { BackingStore?.Set("currentCombinations", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationMethodModes?> CurrentCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("currentCombinations"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationMethodModes?>? PreviousCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("previousCombinations"); }
             set { BackingStore?.Set("previousCombinations", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationMethodModes?> PreviousCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("previousCombinations"); }

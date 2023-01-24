@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>PKCS Certificate Template Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateTemplateName {
             get { return BackingStore?.Get<string?>("certificateTemplateName"); }
             set { BackingStore?.Set("certificateTemplateName", value); }
         }
+#nullable restore
 #else
         public string CertificateTemplateName {
             get { return BackingStore?.Get<string>("certificateTemplateName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>PKCS Certification Authority</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificationAuthority {
             get { return BackingStore?.Get<string?>("certificationAuthority"); }
             set { BackingStore?.Set("certificationAuthority", value); }
         }
+#nullable restore
 #else
         public string CertificationAuthority {
             get { return BackingStore?.Get<string>("certificationAuthority"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>PKCS Certification Authority Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificationAuthorityName {
             get { return BackingStore?.Get<string?>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
+#nullable restore
 #else
         public string CertificationAuthorityName {
             get { return BackingStore?.Get<string>("certificationAuthorityName"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
+#nullable restore
 #else
         public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
+#nullable restore
 #else
         public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom String that defines the AAD Attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubjectAlternativeNameFormatString {
             get { return BackingStore?.Get<string?>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
+#nullable restore
 #else
         public string SubjectAlternativeNameFormatString {
             get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubjectNameFormatString {
             get { return BackingStore?.Get<string?>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
+#nullable restore
 #else
         public string SubjectNameFormatString {
             get { return BackingStore?.Get<string>("subjectNameFormatString"); }

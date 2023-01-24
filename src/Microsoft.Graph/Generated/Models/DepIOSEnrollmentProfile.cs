@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Carrier URL for activating device eSIM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CarrierActivationUrl {
             get { return BackingStore?.Get<string?>("carrierActivationUrl"); }
             set { BackingStore?.Set("carrierActivationUrl", value); }
         }
+#nullable restore
 #else
         public string CarrierActivationUrl {
             get { return BackingStore?.Get<string>("carrierActivationUrl"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. &apos;enableAuthenticationViaCompanyPortal&apos; must be set in order for this property to be set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CompanyPortalVppTokenId {
             get { return BackingStore?.Get<string?>("companyPortalVppTokenId"); }
             set { BackingStore?.Set("companyPortalVppTokenId", value); }
         }
+#nullable restore
 #else
         public string CompanyPortalVppTokenId {
             get { return BackingStore?.Get<string>("companyPortalVppTokenId"); }
@@ -81,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Management certificates for Apple Configurator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagementCertificateWithThumbprint>? ManagementCertificates {
             get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>?>("managementCertificates"); }
             set { BackingStore?.Set("managementCertificates", value); }
         }
+#nullable restore
 #else
         public List<ManagementCertificateWithThumbprint> ManagementCertificates {
             get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>>("managementCertificates"); }

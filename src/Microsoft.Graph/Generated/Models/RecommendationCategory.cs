@@ -1,10 +1,7 @@
 namespace Microsoft.Graph.Beta.Models {
     public enum RecommendationCategory {
-        UsageAndCompliance,
-        Security,
+        IdentityBestPractice,
+        IdentitySecureScore,
         UnknownFutureValue,
-        Productivity,
-        Health,
-        Configuration,
     }
 }

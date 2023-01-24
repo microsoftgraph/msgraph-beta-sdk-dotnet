@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of apps expected to be installed by the DMG.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSIncludedApp>? IncludedApps {
             get { return BackingStore?.Get<List<MacOSIncludedApp>?>("includedApps"); }
             set { BackingStore?.Set("includedApps", value); }
         }
+#nullable restore
 #else
         public List<MacOSIncludedApp> IncludedApps {
             get { return BackingStore?.Get<List<MacOSIncludedApp>>("includedApps"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MacOSMinimumOperatingSystem? MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<MacOSMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#nullable restore
 #else
         public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<MacOSMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The primary CFBundleIdentifier of the DMG.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrimaryBundleId {
             get { return BackingStore?.Get<string?>("primaryBundleId"); }
             set { BackingStore?.Set("primaryBundleId", value); }
         }
+#nullable restore
 #else
         public string PrimaryBundleId {
             get { return BackingStore?.Get<string>("primaryBundleId"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The primary CFBundleVersion of the DMG.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrimaryBundleVersion {
             get { return BackingStore?.Get<string?>("primaryBundleVersion"); }
             set { BackingStore?.Set("primaryBundleVersion", value); }
         }
+#nullable restore
 #else
         public string PrimaryBundleVersion {
             get { return BackingStore?.Get<string>("primaryBundleVersion"); }

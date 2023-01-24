@@ -59,12 +59,15 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get payloads from security
+        /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter **source** to filter and query the respective data source.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/attacksimulationroot-list-payloads?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<PayloadCollectionResponse?> GetAsync(Action<PayloadsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<PayloadCollectionResponse> GetAsync(Action<PayloadsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -82,7 +85,9 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Payload?> PostAsync(Microsoft.Graph.Beta.Models.Payload body, Action<PayloadsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<Microsoft.Graph.Beta.Models.Payload> PostAsync(Microsoft.Graph.Beta.Models.Payload body, Action<PayloadsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -95,11 +100,13 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get payloads from security
+        /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter **source** to filter and query the respective data source.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<PayloadsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<PayloadsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -124,7 +131,9 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Payload body, Action<PayloadsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Payload body, Action<PayloadsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -145,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
             return requestInfo;
         }
         /// <summary>
-        /// Get payloads from security
+        /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter **source** to filter and query the respective data source.
         /// </summary>
         public class PayloadsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
@@ -153,40 +162,50 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
             public bool? Count { get; set; }
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24filter")]
             public string? Filter { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24orderby")]
             public string[]? Orderby { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24search")]
             public string? Search { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24search")]
             public string Search { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

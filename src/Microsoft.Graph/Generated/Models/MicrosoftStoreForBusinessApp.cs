@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftStoreForBusinessApp : MobileApp, IParsable {
         /// <summary>The collection of contained apps in a mobileApp acting as a package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileContainedApp>? ContainedApps {
             get { return BackingStore?.Get<List<MobileContainedApp>?>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
+#nullable restore
 #else
         public List<MobileContainedApp> ContainedApps {
             get { return BackingStore?.Get<List<MobileContainedApp>>("containedApps"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The supported License Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public VppLicensingType? LicensingType {
             get { return BackingStore?.Get<VppLicensingType?>("licensingType"); }
             set { BackingStore?.Set("licensingType", value); }
         }
+#nullable restore
 #else
         public VppLicensingType LicensingType {
             get { return BackingStore?.Get<VppLicensingType>("licensingType"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The app package identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PackageIdentityName {
             get { return BackingStore?.Get<string?>("packageIdentityName"); }
             set { BackingStore?.Set("packageIdentityName", value); }
         }
+#nullable restore
 #else
         public string PackageIdentityName {
             get { return BackingStore?.Get<string>("packageIdentityName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The app product key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductKey {
             get { return BackingStore?.Get<string?>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
+#nullable restore
 #else
         public string ProductKey {
             get { return BackingStore?.Get<string>("productKey"); }

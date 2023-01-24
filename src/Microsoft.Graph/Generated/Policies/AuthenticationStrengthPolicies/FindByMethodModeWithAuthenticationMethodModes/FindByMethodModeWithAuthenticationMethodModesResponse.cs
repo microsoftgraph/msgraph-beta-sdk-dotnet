@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMet
     public class FindByMethodModeWithAuthenticationMethodModesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationStrengthPolicy>? Value {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationStrengthPolicy> Value {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>>("value"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceRestrictionAction : DlpActionInfo, IParsable {
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Message {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#nullable restore
 #else
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The triggers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RestrictionTrigger?>? Triggers {
             get { return BackingStore?.Get<List<RestrictionTrigger?>?>("triggers"); }
             set { BackingStore?.Set("triggers", value); }
         }
+#nullable restore
 #else
         public List<RestrictionTrigger?> Triggers {
             get { return BackingStore?.Get<List<RestrictionTrigger?>>("triggers"); }

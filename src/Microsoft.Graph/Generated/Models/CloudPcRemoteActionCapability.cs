@@ -6,12 +6,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcRemoteActionCapability : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The actionCapability property</summary>
+        /// <summary>Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: enabled, disabled. Default value is enabled.</summary>
         public Microsoft.Graph.Beta.Models.ActionCapability? ActionCapability {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionCapability?>("actionCapability"); }
             set { BackingStore?.Set("actionCapability", value); }
         }
-        /// <summary>The actionName property</summary>
+        /// <summary>The name of the supported Cloud PC remote action. Possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.</summary>
         public CloudPcRemoteActionName? ActionName {
             get { return BackingStore?.Get<CloudPcRemoteActionName?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

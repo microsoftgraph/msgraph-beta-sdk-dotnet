@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The requestIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RequestIds {
             get { return BackingStore?.Get<List<string>?>("requestIds"); }
             set { BackingStore?.Set("requestIds", value); }
         }
+#nullable restore
 #else
         public List<string> RequestIds {
             get { return BackingStore?.Get<List<string>>("requestIds"); }

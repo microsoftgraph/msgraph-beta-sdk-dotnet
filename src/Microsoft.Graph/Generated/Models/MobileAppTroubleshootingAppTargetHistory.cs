@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MobileAppTroubleshootingAppTargetHistory : MobileAppTroubleshootingHistoryItem, IParsable {
         /// <summary>Error code for the failure, empty if no failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ErrorCode {
             get { return BackingStore?.Get<string?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
+#nullable restore
 #else
         public string ErrorCode {
             get { return BackingStore?.Get<string>("errorCode"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>AAD security group id to which it was targeted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SecurityGroupId {
             get { return BackingStore?.Get<string?>("securityGroupId"); }
             set { BackingStore?.Set("securityGroupId", value); }
         }
+#nullable restore
 #else
         public string SecurityGroupId {
             get { return BackingStore?.Get<string>("securityGroupId"); }

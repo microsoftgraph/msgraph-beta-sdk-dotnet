@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class Updates : Entity, IParsable {
         /// <summary>Catalog of content that can be approved for deployment by the deployment service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog? Catalog {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog?>("catalog"); }
             set { BackingStore?.Set("catalog", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog Catalog {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>("catalog"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
 #endif
         /// <summary>Deployments created using the deployment service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Deployment>? Deployments {
             get { return BackingStore?.Get<List<Deployment>?>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
+#nullable restore
 #else
         public List<Deployment> Deployments {
             get { return BackingStore?.Get<List<Deployment>>("deployments"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
 #endif
         /// <summary>Service connections to external resources such as analytics workspaces.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ResourceConnection>? ResourceConnections {
             get { return BackingStore?.Get<List<ResourceConnection>?>("resourceConnections"); }
             set { BackingStore?.Set("resourceConnections", value); }
         }
+#nullable restore
 #else
         public List<ResourceConnection> ResourceConnections {
             get { return BackingStore?.Get<List<ResourceConnection>>("resourceConnections"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
 #endif
         /// <summary>Assets registered with the deployment service that can receive updates. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UpdatableAsset>? UpdatableAssets {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("updatableAssets"); }
             set { BackingStore?.Set("updatableAssets", value); }
         }
+#nullable restore
 #else
         public List<UpdatableAsset> UpdatableAssets {
             get { return BackingStore?.Get<List<UpdatableAsset>>("updatableAssets"); }

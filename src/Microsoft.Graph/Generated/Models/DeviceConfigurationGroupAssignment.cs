@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceConfigurationGroupAssignment : Entity, IParsable {
         /// <summary>The navigation link to the Device Configuration being targeted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceConfiguration? DeviceConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfiguration?>("deviceConfiguration"); }
             set { BackingStore?.Set("deviceConfiguration", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceConfiguration DeviceConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfiguration>("deviceConfiguration"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Id of the AAD group we are targeting the device configuration to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetGroupId {
             get { return BackingStore?.Get<string?>("targetGroupId"); }
             set { BackingStore?.Set("targetGroupId", value); }
         }
+#nullable restore
 #else
         public string TargetGroupId {
             get { return BackingStore?.Get<string>("targetGroupId"); }

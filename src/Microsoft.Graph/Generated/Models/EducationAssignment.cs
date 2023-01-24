@@ -37,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Which users, or whole class should receive a submission object once the assignment is published.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationAssignmentRecipient? AssignTo {
             get { return BackingStore?.Get<EducationAssignmentRecipient?>("assignTo"); }
             set { BackingStore?.Set("assignTo", value); }
         }
+#nullable restore
 #else
         public EducationAssignmentRecipient AssignTo {
             get { return BackingStore?.Get<EducationAssignmentRecipient>("assignTo"); }
@@ -49,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>When set, enables users to easily find assignments of a given type.  Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationCategory>? Categories {
             get { return BackingStore?.Get<List<EducationCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<EducationCategory> Categories {
             get { return BackingStore?.Get<List<EducationCategory>>("categories"); }
@@ -61,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Class which this assignment belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClassId {
             get { return BackingStore?.Get<string?>("classId"); }
             set { BackingStore?.Set("classId", value); }
         }
+#nullable restore
 #else
         public string ClassId {
             get { return BackingStore?.Get<string>("classId"); }
@@ -78,10 +84,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Who created the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -95,10 +103,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -112,10 +122,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Folder URL where all the feedback file resources for this assignment are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FeedbackResourcesFolderUrl {
             get { return BackingStore?.Get<string?>("feedbackResourcesFolderUrl"); }
             set { BackingStore?.Set("feedbackResourcesFolderUrl", value); }
         }
+#nullable restore
 #else
         public string FeedbackResourcesFolderUrl {
             get { return BackingStore?.Get<string>("feedbackResourcesFolderUrl"); }
@@ -124,10 +136,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>How the assignment will be graded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationAssignmentGradeType? Grading {
             get { return BackingStore?.Get<EducationAssignmentGradeType?>("grading"); }
             set { BackingStore?.Set("grading", value); }
         }
+#nullable restore
 #else
         public EducationAssignmentGradeType Grading {
             get { return BackingStore?.Get<EducationAssignmentGradeType>("grading"); }
@@ -136,10 +150,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Instructions for the assignment.  This along with the display name tell the student what to do.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationItemBody? Instructions {
             get { return BackingStore?.Get<EducationItemBody?>("instructions"); }
             set { BackingStore?.Set("instructions", value); }
         }
+#nullable restore
 #else
         public EducationItemBody Instructions {
             get { return BackingStore?.Get<EducationItemBody>("instructions"); }
@@ -148,10 +164,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Who last modified the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -165,10 +183,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NotificationChannelUrl {
             get { return BackingStore?.Get<string?>("notificationChannelUrl"); }
             set { BackingStore?.Set("notificationChannelUrl", value); }
         }
+#nullable restore
 #else
         public string NotificationChannelUrl {
             get { return BackingStore?.Get<string>("notificationChannelUrl"); }
@@ -177,10 +197,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationAssignmentResource>? Resources {
             get { return BackingStore?.Get<List<EducationAssignmentResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#nullable restore
 #else
         public List<EducationAssignmentResource> Resources {
             get { return BackingStore?.Get<List<EducationAssignmentResource>>("resources"); }
@@ -189,10 +211,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Folder URL where all the file resources for this assignment are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResourcesFolderUrl {
             get { return BackingStore?.Get<string?>("resourcesFolderUrl"); }
             set { BackingStore?.Set("resourcesFolderUrl", value); }
         }
+#nullable restore
 #else
         public string ResourcesFolderUrl {
             get { return BackingStore?.Get<string>("resourcesFolderUrl"); }
@@ -201,10 +225,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>When set, the grading rubric attached to this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationRubric? Rubric {
             get { return BackingStore?.Get<EducationRubric?>("rubric"); }
             set { BackingStore?.Set("rubric", value); }
         }
+#nullable restore
 #else
         public EducationRubric Rubric {
             get { return BackingStore?.Get<EducationRubric>("rubric"); }
@@ -218,10 +244,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationSubmission>? Submissions {
             get { return BackingStore?.Get<List<EducationSubmission>?>("submissions"); }
             set { BackingStore?.Set("submissions", value); }
         }
+#nullable restore
 #else
         public List<EducationSubmission> Submissions {
             get { return BackingStore?.Get<List<EducationSubmission>>("submissions"); }
@@ -230,10 +258,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The deep link URL for the given assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

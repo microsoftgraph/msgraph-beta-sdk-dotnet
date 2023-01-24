@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValue>? CustomData {
             get { return BackingStore?.Get<List<KeyValue>?>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
+#nullable restore
 #else
         public List<KeyValue> CustomData {
             get { return BackingStore?.Get<List<KeyValue>>("customData"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? CustomKeyValueData {
             get { return BackingStore?.Get<List<KeyValuePair>?>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> CustomKeyValueData {
             get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
+#nullable restore
 #else
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AndroidDeviceOwnerCertificateProfileBase? IdentityCertificate {
             get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#nullable restore
 #else
         public AndroidDeviceOwnerCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase>("identityCertificate"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Microsoft Tunnel site ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MicrosoftTunnelSiteId {
             get { return BackingStore?.Get<string?>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
+#nullable restore
 #else
         public string MicrosoftTunnelSiteId {
             get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Proxy server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public VpnProxyServer? ProxyServer {
             get { return BackingStore?.Get<VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
+#nullable restore
 #else
         public VpnProxyServer ProxyServer {
             get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Targeted mobile apps. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? TargetedMobileApps {
             get { return BackingStore?.Get<List<AppListItem>?>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> TargetedMobileApps {
             get { return BackingStore?.Get<List<AppListItem>>("targetedMobileApps"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Targeted App package IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TargetedPackageIds {
             get { return BackingStore?.Get<List<string>?>("targetedPackageIds"); }
             set { BackingStore?.Set("targetedPackageIds", value); }
         }
+#nullable restore
 #else
         public List<string> TargetedPackageIds {
             get { return BackingStore?.Get<List<string>>("targetedPackageIds"); }

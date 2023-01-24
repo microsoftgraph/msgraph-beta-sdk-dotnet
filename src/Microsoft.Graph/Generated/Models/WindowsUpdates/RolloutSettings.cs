@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
         /// <summary>Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DurationBetweenOffers {
             get { return BackingStore?.Get<string?>("durationBetweenOffers"); }
             set { BackingStore?.Set("durationBetweenOffers", value); }
         }
+#nullable restore
 #else
         public string DurationBetweenOffers {
             get { return BackingStore?.Get<string>("durationBetweenOffers"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserTeamwork : Entity, IParsable {
         /// <summary>The list of associatedTeamInfo objects that a user is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssociatedTeamInfo>? AssociatedTeams {
             get { return BackingStore?.Get<List<AssociatedTeamInfo>?>("associatedTeams"); }
             set { BackingStore?.Set("associatedTeams", value); }
         }
+#nullable restore
 #else
         public List<AssociatedTeamInfo> AssociatedTeams {
             get { return BackingStore?.Get<List<AssociatedTeamInfo>>("associatedTeams"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The apps installed in the personal scope of this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserScopeTeamsAppInstallation>? InstalledApps {
             get { return BackingStore?.Get<List<UserScopeTeamsAppInstallation>?>("installedApps"); }
             set { BackingStore?.Set("installedApps", value); }
         }
+#nullable restore
 #else
         public List<UserScopeTeamsAppInstallation> InstalledApps {
             get { return BackingStore?.Get<List<UserScopeTeamsAppInstallation>>("installedApps"); }

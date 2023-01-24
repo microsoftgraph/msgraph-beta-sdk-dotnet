@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementExchangeConnector : Entity, IParsable {
         /// <summary>The name of the server hosting the Exchange Connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectorServerName {
             get { return BackingStore?.Get<string?>("connectorServerName"); }
             set { BackingStore?.Set("connectorServerName", value); }
         }
+#nullable restore
 #else
         public string ConnectorServerName {
             get { return BackingStore?.Get<string>("connectorServerName"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An alias assigned to the Exchange server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExchangeAlias {
             get { return BackingStore?.Get<string?>("exchangeAlias"); }
             set { BackingStore?.Set("exchangeAlias", value); }
         }
+#nullable restore
 #else
         public string ExchangeAlias {
             get { return BackingStore?.Get<string>("exchangeAlias"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Exchange Organization to the Exchange server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExchangeOrganization {
             get { return BackingStore?.Get<string?>("exchangeOrganization"); }
             set { BackingStore?.Set("exchangeOrganization", value); }
         }
+#nullable restore
 #else
         public string ExchangeOrganization {
             get { return BackingStore?.Get<string>("exchangeOrganization"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Email address used to configure the Service To Service Exchange Connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrimarySmtpAddress {
             get { return BackingStore?.Get<string?>("primarySmtpAddress"); }
             set { BackingStore?.Set("primarySmtpAddress", value); }
         }
+#nullable restore
 #else
         public string PrimarySmtpAddress {
             get { return BackingStore?.Get<string>("primarySmtpAddress"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the Exchange server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServerName {
             get { return BackingStore?.Get<string?>("serverName"); }
             set { BackingStore?.Set("serverName", value); }
         }
+#nullable restore
 #else
         public string ServerName {
             get { return BackingStore?.Get<string>("serverName"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The version of the ExchangeConnectorAgent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

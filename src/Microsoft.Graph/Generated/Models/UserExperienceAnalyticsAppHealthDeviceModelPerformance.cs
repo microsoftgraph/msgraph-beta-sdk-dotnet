@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The manufacturer name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceManufacturer {
             get { return BackingStore?.Get<string?>("deviceManufacturer"); }
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
+#nullable restore
 #else
         public string DeviceManufacturer {
             get { return BackingStore?.Get<string>("deviceManufacturer"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The model name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceModel {
             get { return BackingStore?.Get<string?>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
+#nullable restore
 #else
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The overall app health status of the device model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ModelAppHealthStatus {
             get { return BackingStore?.Get<string?>("modelAppHealthStatus"); }
             set { BackingStore?.Set("modelAppHealthStatus", value); }
         }
+#nullable restore
 #else
         public string ModelAppHealthStatus {
             get { return BackingStore?.Get<string>("modelAppHealthStatus"); }

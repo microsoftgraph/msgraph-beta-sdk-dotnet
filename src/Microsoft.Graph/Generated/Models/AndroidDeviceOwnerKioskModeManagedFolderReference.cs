@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeManagedFolderReference : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable {
         /// <summary>Unique identifier for the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FolderIdentifier {
             get { return BackingStore?.Get<string?>("folderIdentifier"); }
             set { BackingStore?.Set("folderIdentifier", value); }
         }
+#nullable restore
 #else
         public string FolderIdentifier {
             get { return BackingStore?.Get<string>("folderIdentifier"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FolderName {
             get { return BackingStore?.Get<string?>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
+#nullable restore
 #else
         public string FolderName {
             get { return BackingStore?.Get<string>("folderName"); }

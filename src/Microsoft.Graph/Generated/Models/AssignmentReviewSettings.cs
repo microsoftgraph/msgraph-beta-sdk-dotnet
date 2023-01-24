@@ -40,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -52,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The interval for recurrence, such as monthly or quarterly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecurrenceType {
             get { return BackingStore?.Get<string?>("recurrenceType"); }
             set { BackingStore?.Set("recurrenceType", value); }
         }
+#nullable restore
 #else
         public string RecurrenceType {
             get { return BackingStore?.Get<string>("recurrenceType"); }
@@ -64,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserSet>? Reviewers {
             get { return BackingStore?.Get<List<UserSet>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
+#nullable restore
 #else
         public List<UserSet> Reviewers {
             get { return BackingStore?.Get<List<UserSet>>("reviewers"); }
@@ -76,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Who should be asked to do the review, either Self or Reviewers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReviewerType {
             get { return BackingStore?.Get<string?>("reviewerType"); }
             set { BackingStore?.Set("reviewerType", value); }
         }
+#nullable restore
 #else
         public string ReviewerType {
             get { return BackingStore?.Get<string>("reviewerType"); }

@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the application managing the network connection (for example, Facebook, SMTP, etc.).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationName {
             get { return BackingStore?.Get<string?>("applicationName"); }
             set { BackingStore?.Set("applicationName", value); }
         }
+#nullable restore
 #else
         public string ApplicationName {
             get { return BackingStore?.Get<string>("applicationName"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Destination IP address (of the network connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DestinationAddress {
             get { return BackingStore?.Get<string?>("destinationAddress"); }
             set { BackingStore?.Set("destinationAddress", value); }
         }
+#nullable restore
 #else
         public string DestinationAddress {
             get { return BackingStore?.Get<string>("destinationAddress"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Destination domain portion of the destination URL. (for example &apos;www.contoso.com&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DestinationDomain {
             get { return BackingStore?.Get<string?>("destinationDomain"); }
             set { BackingStore?.Set("destinationDomain", value); }
         }
+#nullable restore
 #else
         public string DestinationDomain {
             get { return BackingStore?.Get<string>("destinationDomain"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Location (by IP address mapping) associated with the destination of a network connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DestinationLocation {
             get { return BackingStore?.Get<string?>("destinationLocation"); }
             set { BackingStore?.Set("destinationLocation", value); }
         }
+#nullable restore
 #else
         public string DestinationLocation {
             get { return BackingStore?.Get<string>("destinationLocation"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Destination port (of the network connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DestinationPort {
             get { return BackingStore?.Get<string?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
+#nullable restore
 #else
         public string DestinationPort {
             get { return BackingStore?.Get<string>("destinationPort"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Network connection URL/URI string - excluding parameters. (for example &apos;www.contoso.com/products/default.html&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DestinationUrl {
             get { return BackingStore?.Get<string?>("destinationUrl"); }
             set { BackingStore?.Set("destinationUrl", value); }
         }
+#nullable restore
 #else
         public string DestinationUrl {
             get { return BackingStore?.Get<string>("destinationUrl"); }
@@ -97,10 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The local DNS name resolution as it appears in the host&apos;s local DNS cache (for example, in case the &apos;hosts&apos; file was tampered with).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LocalDnsName {
             get { return BackingStore?.Get<string?>("localDnsName"); }
             set { BackingStore?.Set("localDnsName", value); }
         }
+#nullable restore
 #else
         public string LocalDnsName {
             get { return BackingStore?.Get<string>("localDnsName"); }
@@ -109,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Network Address Translation destination IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NatDestinationAddress {
             get { return BackingStore?.Get<string?>("natDestinationAddress"); }
             set { BackingStore?.Set("natDestinationAddress", value); }
         }
+#nullable restore
 #else
         public string NatDestinationAddress {
             get { return BackingStore?.Get<string>("natDestinationAddress"); }
@@ -121,10 +137,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Network Address Translation destination port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NatDestinationPort {
             get { return BackingStore?.Get<string?>("natDestinationPort"); }
             set { BackingStore?.Set("natDestinationPort", value); }
         }
+#nullable restore
 #else
         public string NatDestinationPort {
             get { return BackingStore?.Get<string>("natDestinationPort"); }
@@ -133,10 +151,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Network Address Translation source IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NatSourceAddress {
             get { return BackingStore?.Get<string?>("natSourceAddress"); }
             set { BackingStore?.Set("natSourceAddress", value); }
         }
+#nullable restore
 #else
         public string NatSourceAddress {
             get { return BackingStore?.Get<string>("natSourceAddress"); }
@@ -145,10 +165,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Network Address Translation source port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NatSourcePort {
             get { return BackingStore?.Get<string?>("natSourcePort"); }
             set { BackingStore?.Set("natSourcePort", value); }
         }
+#nullable restore
 #else
         public string NatSourcePort {
             get { return BackingStore?.Get<string>("natSourcePort"); }
@@ -157,10 +179,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -174,10 +198,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RiskScore {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#nullable restore
 #else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
@@ -186,10 +212,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Source (i.e. origin) IP address (of the network connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourceAddress {
             get { return BackingStore?.Get<string?>("sourceAddress"); }
             set { BackingStore?.Set("sourceAddress", value); }
         }
+#nullable restore
 #else
         public string SourceAddress {
             get { return BackingStore?.Get<string>("sourceAddress"); }
@@ -198,10 +226,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Location (by IP address mapping) associated with the source of a network connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourceLocation {
             get { return BackingStore?.Get<string?>("sourceLocation"); }
             set { BackingStore?.Set("sourceLocation", value); }
         }
+#nullable restore
 #else
         public string SourceLocation {
             get { return BackingStore?.Get<string>("sourceLocation"); }
@@ -210,10 +240,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Source (i.e. origin) IP port (of the network connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourcePort {
             get { return BackingStore?.Get<string?>("sourcePort"); }
             set { BackingStore?.Set("sourcePort", value); }
         }
+#nullable restore
 #else
         public string SourcePort {
             get { return BackingStore?.Get<string>("sourcePort"); }
@@ -227,10 +259,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Parameters (suffix) of the destination URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UrlParameters {
             get { return BackingStore?.Get<string?>("urlParameters"); }
             set { BackingStore?.Set("urlParameters", value); }
         }
+#nullable restore
 #else
         public string UrlParameters {
             get { return BackingStore?.Get<string>("urlParameters"); }

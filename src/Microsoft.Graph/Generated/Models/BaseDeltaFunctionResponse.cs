@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataDeltaLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataDeltaLink {
             get { return BackingStore?.Get<string?>("@odata.deltaLink"); }
             set { BackingStore?.Set("@odata.deltaLink", value); }
         }
+#nullable restore
 #else
         public string OdataDeltaLink {
             get { return BackingStore?.Get<string>("@odata.deltaLink"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataNextLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataNextLink {
             get { return BackingStore?.Get<string?>("@odata.nextLink"); }
             set { BackingStore?.Set("@odata.nextLink", value); }
         }
+#nullable restore
 #else
         public string OdataNextLink {
             get { return BackingStore?.Get<string>("@odata.nextLink"); }

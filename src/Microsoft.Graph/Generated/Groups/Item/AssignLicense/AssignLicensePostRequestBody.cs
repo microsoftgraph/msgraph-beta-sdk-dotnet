@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.AssignLicense {
         }
         /// <summary>The addLicenses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssignedLicense>? AddLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>?>("addLicenses"); }
             set { BackingStore?.Set("addLicenses", value); }
         }
+#nullable restore
 #else
         public List<AssignedLicense> AddLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>>("addLicenses"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.AssignLicense {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The removeLicenses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Guid?>? RemoveLicenses {
             get { return BackingStore?.Get<List<Guid?>?>("removeLicenses"); }
             set { BackingStore?.Set("removeLicenses", value); }
         }
+#nullable restore
 #else
         public List<Guid?> RemoveLicenses {
             get { return BackingStore?.Get<List<Guid?>>("removeLicenses"); }

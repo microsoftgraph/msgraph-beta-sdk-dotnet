@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SearchHitsContainer>? HitsContainers {
             get { return BackingStore?.Get<List<SearchHitsContainer>?>("hitsContainers"); }
             set { BackingStore?.Set("hitsContainers", value); }
         }
+#nullable restore
 #else
         public List<SearchHitsContainer> HitsContainers {
             get { return BackingStore?.Get<List<SearchHitsContainer>>("hitsContainers"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides details of query alteration response for spelling correction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AlterationResponse? QueryAlterationResponse {
             get { return BackingStore?.Get<AlterationResponse?>("queryAlterationResponse"); }
             set { BackingStore?.Set("queryAlterationResponse", value); }
         }
+#nullable restore
 #else
         public AlterationResponse QueryAlterationResponse {
             get { return BackingStore?.Get<AlterationResponse>("queryAlterationResponse"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ResultTemplateDictionary? ResultTemplates {
             get { return BackingStore?.Get<ResultTemplateDictionary?>("resultTemplates"); }
             set { BackingStore?.Set("resultTemplates", value); }
         }
+#nullable restore
 #else
         public ResultTemplateDictionary ResultTemplates {
             get { return BackingStore?.Get<ResultTemplateDictionary>("resultTemplates"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the search terms sent in the initial search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SearchTerms {
             get { return BackingStore?.Get<List<string>?>("searchTerms"); }
             set { BackingStore?.Set("searchTerms", value); }
         }
+#nullable restore
 #else
         public List<string> SearchTerms {
             get { return BackingStore?.Get<List<string>>("searchTerms"); }

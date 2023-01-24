@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TimeOffItem : ScheduleEntity, IParsable {
         /// <summary>ID of the timeOffReason for this timeOffItem. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TimeOffReasonId {
             get { return BackingStore?.Get<string?>("timeOffReasonId"); }
             set { BackingStore?.Set("timeOffReasonId", value); }
         }
+#nullable restore
 #else
         public string TimeOffReasonId {
             get { return BackingStore?.Get<string>("timeOffReasonId"); }

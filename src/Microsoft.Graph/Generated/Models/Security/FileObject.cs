@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class FileObject : Entity, IParsable {
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Content {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#nullable restore
 #else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The extension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Extension {
             get { return BackingStore?.Get<string?>("extension"); }
             set { BackingStore?.Set("extension", value); }
         }
+#nullable restore
 #else
         public string Extension {
             get { return BackingStore?.Get<string>("extension"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The extractedTextContent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? ExtractedTextContent {
             get { return BackingStore?.Get<byte[]?>("extractedTextContent"); }
             set { BackingStore?.Set("extractedTextContent", value); }
         }
+#nullable restore
 #else
         public byte[] ExtractedTextContent {
             get { return BackingStore?.Get<byte[]>("extractedTextContent"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The mediaType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MediaType {
             get { return BackingStore?.Get<string?>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+#nullable restore
 #else
         public string MediaType {
             get { return BackingStore?.Get<string>("mediaType"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The otherProperties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public StringValueDictionary? OtherProperties {
             get { return BackingStore?.Get<StringValueDictionary?>("otherProperties"); }
             set { BackingStore?.Set("otherProperties", value); }
         }
+#nullable restore
 #else
         public StringValueDictionary OtherProperties {
             get { return BackingStore?.Get<StringValueDictionary>("otherProperties"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The senderOrAuthors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SenderOrAuthors {
             get { return BackingStore?.Get<List<string>?>("senderOrAuthors"); }
             set { BackingStore?.Set("senderOrAuthors", value); }
         }
+#nullable restore
 #else
         public List<string> SenderOrAuthors {
             get { return BackingStore?.Get<List<string>>("senderOrAuthors"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The subjectTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SubjectTitle {
             get { return BackingStore?.Get<string?>("subjectTitle"); }
             set { BackingStore?.Set("subjectTitle", value); }
         }
+#nullable restore
 #else
         public string SubjectTitle {
             get { return BackingStore?.Get<string>("subjectTitle"); }

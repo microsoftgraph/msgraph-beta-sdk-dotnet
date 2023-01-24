@@ -32,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.User? Subject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.User Subject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("subject"); }
@@ -44,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The associated individual task execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TaskProcessingResult>? TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
+#nullable restore
 #else
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }

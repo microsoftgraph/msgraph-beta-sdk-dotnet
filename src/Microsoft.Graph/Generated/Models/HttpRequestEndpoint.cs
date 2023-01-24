@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class HttpRequestEndpoint : CustomExtensionEndpointConfiguration, IParsable {
         /// <summary>The targetUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetUrl {
             get { return BackingStore?.Get<string?>("targetUrl"); }
             set { BackingStore?.Set("targetUrl", value); }
         }
+#nullable restore
 #else
         public string TargetUrl {
             get { return BackingStore?.Get<string>("targetUrl"); }

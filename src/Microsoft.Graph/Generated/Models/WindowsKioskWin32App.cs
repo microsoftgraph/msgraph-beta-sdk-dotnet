@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskWin32App : WindowsKioskAppBase, IParsable {
         /// <summary>This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ClassicAppPath {
             get { return BackingStore?.Get<string?>("classicAppPath"); }
             set { BackingStore?.Set("classicAppPath", value); }
         }
+#nullable restore
 #else
         public string ClassicAppPath {
             get { return BackingStore?.Get<string>("classicAppPath"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Edge kiosk (url) for Edge kiosk mode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EdgeKiosk {
             get { return BackingStore?.Get<string?>("edgeKiosk"); }
             set { BackingStore?.Set("edgeKiosk", value); }
         }
+#nullable restore
 #else
         public string EdgeKiosk {
             get { return BackingStore?.Get<string>("edgeKiosk"); }

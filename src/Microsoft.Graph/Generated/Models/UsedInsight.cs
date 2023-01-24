@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UsedInsight : Entity, IParsable {
         /// <summary>Information about when the item was last viewed or modified by the user. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UsageDetails? LastUsed {
             get { return BackingStore?.Get<UsageDetails?>("lastUsed"); }
             set { BackingStore?.Set("lastUsed", value); }
         }
+#nullable restore
 #else
         public UsageDetails LastUsed {
             get { return BackingStore?.Get<UsageDetails>("lastUsed"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Entity? Resource {
             get { return BackingStore?.Get<Entity?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#nullable restore
 #else
         public Entity Resource {
             get { return BackingStore?.Get<Entity>("resource"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Reference properties of the used document, such as the url and type of the document. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ResourceReference? ResourceReference {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference?>("resourceReference"); }
             set { BackingStore?.Set("resourceReference", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ResourceReference ResourceReference {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference>("resourceReference"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Properties that you can use to visualize the document in your experience. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ResourceVisualization? ResourceVisualization {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceVisualization?>("resourceVisualization"); }
             set { BackingStore?.Set("resourceVisualization", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ResourceVisualization ResourceVisualization {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceVisualization>("resourceVisualization"); }

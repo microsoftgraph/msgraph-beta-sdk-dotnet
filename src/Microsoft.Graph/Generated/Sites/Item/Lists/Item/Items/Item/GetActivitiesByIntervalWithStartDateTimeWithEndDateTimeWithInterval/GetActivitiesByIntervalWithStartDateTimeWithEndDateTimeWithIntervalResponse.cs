@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.GetActivitiesByI
     public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ItemActivityStat>? Value {
             get { return BackingStore?.Get<List<ItemActivityStat>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<ItemActivityStat> Value {
             get { return BackingStore?.Get<List<ItemActivityStat>>("value"); }

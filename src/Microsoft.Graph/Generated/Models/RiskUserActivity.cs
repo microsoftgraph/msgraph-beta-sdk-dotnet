@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The eventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RiskEventType?>? EventTypes {
             get { return BackingStore?.Get<List<RiskEventType?>?>("eventTypes"); }
             set { BackingStore?.Set("eventTypes", value); }
         }
+#nullable restore
 #else
         public List<RiskEventType?> EventTypes {
             get { return BackingStore?.Get<List<RiskEventType?>>("eventTypes"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The riskEventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RiskEventTypes {
             get { return BackingStore?.Get<List<string>?>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
+#nullable restore
 #else
         public List<string> RiskEventTypes {
             get { return BackingStore?.Get<List<string>>("riskEventTypes"); }

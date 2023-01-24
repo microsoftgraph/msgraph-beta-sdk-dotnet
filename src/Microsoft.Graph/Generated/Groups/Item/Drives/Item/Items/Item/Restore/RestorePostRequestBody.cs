@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Items.Item.Restore {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Items.Item.Restore {
 #endif
         /// <summary>The parentReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemReference? ParentReference {
             get { return BackingStore?.Get<ItemReference?>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
+#nullable restore
 #else
         public ItemReference ParentReference {
             get { return BackingStore?.Get<ItemReference>("parentReference"); }

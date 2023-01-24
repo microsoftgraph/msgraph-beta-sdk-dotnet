@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceCustomAttributeShellScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementScriptAssignment>? Assignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementScriptAssignment> Assignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>("assignments"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the custom attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomAttributeName {
             get { return BackingStore?.Get<string?>("customAttributeName"); }
             set { BackingStore?.Set("customAttributeName", value); }
         }
+#nullable restore
 #else
         public string CustomAttributeName {
             get { return BackingStore?.Get<string>("customAttributeName"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Optional description for the device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of run states for this script across all devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementScriptDeviceState>? DeviceRunStates {
             get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>?>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementScriptDeviceState> DeviceRunStates {
             get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>("deviceRunStates"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Script file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileName {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#nullable restore
 #else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of group assignments for the device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementScriptGroupAssignment>? GroupAssignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>?>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementScriptGroupAssignment> GroupAssignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>("groupAssignments"); }
@@ -109,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of Scope Tag IDs for this PowerShellScript instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -126,10 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Run summary for device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementScriptRunSummary? RunSummary {
             get { return BackingStore?.Get<DeviceManagementScriptRunSummary?>("runSummary"); }
             set { BackingStore?.Set("runSummary", value); }
         }
+#nullable restore
 #else
         public DeviceManagementScriptRunSummary RunSummary {
             get { return BackingStore?.Get<DeviceManagementScriptRunSummary>("runSummary"); }
@@ -138,10 +156,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The script content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? ScriptContent {
             get { return BackingStore?.Get<byte[]?>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
+#nullable restore
 #else
         public byte[] ScriptContent {
             get { return BackingStore?.Get<byte[]>("scriptContent"); }
@@ -150,10 +170,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of run states for this script across all users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementScriptUserState>? UserRunStates {
             get { return BackingStore?.Get<List<DeviceManagementScriptUserState>?>("userRunStates"); }
             set { BackingStore?.Set("userRunStates", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementScriptUserState> UserRunStates {
             get { return BackingStore?.Get<List<DeviceManagementScriptUserState>>("userRunStates"); }

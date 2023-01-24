@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcForensicStorageAccount : Entity, IParsable {
         /// <summary>The ID of the storage account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StorageAccountId {
             get { return BackingStore?.Get<string?>("storageAccountId"); }
             set { BackingStore?.Set("storageAccountId", value); }
         }
+#nullable restore
 #else
         public string StorageAccountId {
             get { return BackingStore?.Get<string>("storageAccountId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the storage account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StorageAccountName {
             get { return BackingStore?.Get<string?>("storageAccountName"); }
             set { BackingStore?.Set("storageAccountName", value); }
         }
+#nullable restore
 #else
         public string StorageAccountName {
             get { return BackingStore?.Get<string>("storageAccountName"); }

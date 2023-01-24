@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementExchangeConnectorCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementExchangeConnector>? Value {
             get { return BackingStore?.Get<List<DeviceManagementExchangeConnector>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementExchangeConnector> Value {
             get { return BackingStore?.Get<List<DeviceManagementExchangeConnector>>("value"); }

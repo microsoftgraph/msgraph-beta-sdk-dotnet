@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationIdentityMatchingOptionsCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationIdentityMatchingOptions>? Value {
             get { return BackingStore?.Get<List<EducationIdentityMatchingOptions>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<EducationIdentityMatchingOptions> Value {
             get { return BackingStore?.Get<List<EducationIdentityMatchingOptions>>("value"); }

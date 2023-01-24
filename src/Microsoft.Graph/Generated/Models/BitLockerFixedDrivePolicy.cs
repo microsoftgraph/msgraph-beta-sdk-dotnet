@@ -23,10 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public BitLockerRecoveryOptions? RecoveryOptions {
             get { return BackingStore?.Get<BitLockerRecoveryOptions?>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
+#nullable restore
 #else
         public BitLockerRecoveryOptions RecoveryOptions {
             get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }

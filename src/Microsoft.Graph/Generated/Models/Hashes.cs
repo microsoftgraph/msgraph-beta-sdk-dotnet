@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The CRC32 value of the file (if available). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Crc32Hash {
             get { return BackingStore?.Get<string?>("crc32Hash"); }
             set { BackingStore?.Set("crc32Hash", value); }
         }
+#nullable restore
 #else
         public string Crc32Hash {
             get { return BackingStore?.Get<string>("crc32Hash"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QuickXorHash {
             get { return BackingStore?.Get<string?>("quickXorHash"); }
             set { BackingStore?.Set("quickXorHash", value); }
         }
+#nullable restore
 #else
         public string QuickXorHash {
             get { return BackingStore?.Get<string>("quickXorHash"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>SHA1 hash for the contents of the file (if available). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Sha1Hash {
             get { return BackingStore?.Get<string?>("sha1Hash"); }
             set { BackingStore?.Set("sha1Hash", value); }
         }
+#nullable restore
 #else
         public string Sha1Hash {
             get { return BackingStore?.Get<string>("sha1Hash"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>SHA256 hash for the contents of the file (if available). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Sha256Hash {
             get { return BackingStore?.Get<string?>("sha256Hash"); }
             set { BackingStore?.Set("sha256Hash", value); }
         }
+#nullable restore
 #else
         public string Sha256Hash {
             get { return BackingStore?.Get<string>("sha256Hash"); }

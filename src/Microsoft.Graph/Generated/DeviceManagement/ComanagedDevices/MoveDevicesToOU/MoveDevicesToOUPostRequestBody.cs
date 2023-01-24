@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.MoveDevicesToOU
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Guid?>? DeviceIds {
             get { return BackingStore?.Get<List<Guid?>?>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
+#nullable restore
 #else
         public List<Guid?> DeviceIds {
             get { return BackingStore?.Get<List<Guid?>>("deviceIds"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.MoveDevicesToOU
 #endif
         /// <summary>The organizationalUnitPath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrganizationalUnitPath {
             get { return BackingStore?.Get<string?>("organizationalUnitPath"); }
             set { BackingStore?.Set("organizationalUnitPath", value); }
         }
+#nullable restore
 #else
         public string OrganizationalUnitPath {
             get { return BackingStore?.Get<string>("organizationalUnitPath"); }

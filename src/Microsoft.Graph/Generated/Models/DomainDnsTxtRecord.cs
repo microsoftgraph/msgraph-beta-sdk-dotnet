@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DomainDnsTxtRecord : DomainDnsRecord, IParsable {
         /// <summary>Value used when configuring the text property at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Text {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }

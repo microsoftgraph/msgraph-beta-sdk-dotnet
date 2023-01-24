@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Company : Entity, IParsable {
         /// <summary>The accounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Account>? Accounts {
             get { return BackingStore?.Get<List<Account>?>("accounts"); }
             set { BackingStore?.Set("accounts", value); }
         }
+#nullable restore
 #else
         public List<Account> Accounts {
             get { return BackingStore?.Get<List<Account>>("accounts"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The agedAccountsPayable property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.AgedAccountsPayable>? AgedAccountsPayable {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsPayable>?>("agedAccountsPayable"); }
             set { BackingStore?.Set("agedAccountsPayable", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.AgedAccountsPayable> AgedAccountsPayable {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsPayable>>("agedAccountsPayable"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The agedAccountsReceivable property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>? AgedAccountsReceivable {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>?>("agedAccountsReceivable"); }
             set { BackingStore?.Set("agedAccountsReceivable", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable> AgedAccountsReceivable {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>>("agedAccountsReceivable"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The businessProfileId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BusinessProfileId {
             get { return BackingStore?.Get<string?>("businessProfileId"); }
             set { BackingStore?.Set("businessProfileId", value); }
         }
+#nullable restore
 #else
         public string BusinessProfileId {
             get { return BackingStore?.Get<string>("businessProfileId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The companyInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.CompanyInformation>? CompanyInformation {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanyInformation>?>("companyInformation"); }
             set { BackingStore?.Set("companyInformation", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.CompanyInformation> CompanyInformation {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanyInformation>>("companyInformation"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The countriesRegions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CountryRegion>? CountriesRegions {
             get { return BackingStore?.Get<List<CountryRegion>?>("countriesRegions"); }
             set { BackingStore?.Set("countriesRegions", value); }
         }
+#nullable restore
 #else
         public List<CountryRegion> CountriesRegions {
             get { return BackingStore?.Get<List<CountryRegion>>("countriesRegions"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The currencies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Currency>? Currencies {
             get { return BackingStore?.Get<List<Currency>?>("currencies"); }
             set { BackingStore?.Set("currencies", value); }
         }
+#nullable restore
 #else
         public List<Currency> Currencies {
             get { return BackingStore?.Get<List<Currency>>("currencies"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The customerPaymentJournals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomerPaymentJournal>? CustomerPaymentJournals {
             get { return BackingStore?.Get<List<CustomerPaymentJournal>?>("customerPaymentJournals"); }
             set { BackingStore?.Set("customerPaymentJournals", value); }
         }
+#nullable restore
 #else
         public List<CustomerPaymentJournal> CustomerPaymentJournals {
             get { return BackingStore?.Get<List<CustomerPaymentJournal>>("customerPaymentJournals"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The customerPayments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomerPayment>? CustomerPayments {
             get { return BackingStore?.Get<List<CustomerPayment>?>("customerPayments"); }
             set { BackingStore?.Set("customerPayments", value); }
         }
+#nullable restore
 #else
         public List<CustomerPayment> CustomerPayments {
             get { return BackingStore?.Get<List<CustomerPayment>>("customerPayments"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The customers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Customer>? Customers {
             get { return BackingStore?.Get<List<Customer>?>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
+#nullable restore
 #else
         public List<Customer> Customers {
             get { return BackingStore?.Get<List<Customer>>("customers"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dimensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Dimension>? Dimensions {
             get { return BackingStore?.Get<List<Dimension>?>("dimensions"); }
             set { BackingStore?.Set("dimensions", value); }
         }
+#nullable restore
 #else
         public List<Dimension> Dimensions {
             get { return BackingStore?.Get<List<Dimension>>("dimensions"); }
@@ -139,10 +161,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dimensionValues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DimensionValue>? DimensionValues {
             get { return BackingStore?.Get<List<DimensionValue>?>("dimensionValues"); }
             set { BackingStore?.Set("dimensionValues", value); }
         }
+#nullable restore
 #else
         public List<DimensionValue> DimensionValues {
             get { return BackingStore?.Get<List<DimensionValue>>("dimensionValues"); }
@@ -151,10 +175,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -163,10 +189,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The employees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Employee>? Employees {
             get { return BackingStore?.Get<List<Employee>?>("employees"); }
             set { BackingStore?.Set("employees", value); }
         }
+#nullable restore
 #else
         public List<Employee> Employees {
             get { return BackingStore?.Get<List<Employee>>("employees"); }
@@ -175,10 +203,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The generalLedgerEntries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GeneralLedgerEntry>? GeneralLedgerEntries {
             get { return BackingStore?.Get<List<GeneralLedgerEntry>?>("generalLedgerEntries"); }
             set { BackingStore?.Set("generalLedgerEntries", value); }
         }
+#nullable restore
 #else
         public List<GeneralLedgerEntry> GeneralLedgerEntries {
             get { return BackingStore?.Get<List<GeneralLedgerEntry>>("generalLedgerEntries"); }
@@ -187,10 +217,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The itemCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ItemCategory>? ItemCategories {
             get { return BackingStore?.Get<List<ItemCategory>?>("itemCategories"); }
             set { BackingStore?.Set("itemCategories", value); }
         }
+#nullable restore
 #else
         public List<ItemCategory> ItemCategories {
             get { return BackingStore?.Get<List<ItemCategory>>("itemCategories"); }
@@ -199,10 +231,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Item>? Items {
             get { return BackingStore?.Get<List<Item>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#nullable restore
 #else
         public List<Item> Items {
             get { return BackingStore?.Get<List<Item>>("items"); }
@@ -211,10 +245,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The journalLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<JournalLine>? JournalLines {
             get { return BackingStore?.Get<List<JournalLine>?>("journalLines"); }
             set { BackingStore?.Set("journalLines", value); }
         }
+#nullable restore
 #else
         public List<JournalLine> JournalLines {
             get { return BackingStore?.Get<List<JournalLine>>("journalLines"); }
@@ -223,10 +259,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The journals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Journal>? Journals {
             get { return BackingStore?.Get<List<Journal>?>("journals"); }
             set { BackingStore?.Set("journals", value); }
         }
+#nullable restore
 #else
         public List<Journal> Journals {
             get { return BackingStore?.Get<List<Journal>>("journals"); }
@@ -235,10 +273,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -247,10 +287,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The paymentMethods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PaymentMethod>? PaymentMethods {
             get { return BackingStore?.Get<List<PaymentMethod>?>("paymentMethods"); }
             set { BackingStore?.Set("paymentMethods", value); }
         }
+#nullable restore
 #else
         public List<PaymentMethod> PaymentMethods {
             get { return BackingStore?.Get<List<PaymentMethod>>("paymentMethods"); }
@@ -259,10 +301,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The paymentTerms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PaymentTerm>? PaymentTerms {
             get { return BackingStore?.Get<List<PaymentTerm>?>("paymentTerms"); }
             set { BackingStore?.Set("paymentTerms", value); }
         }
+#nullable restore
 #else
         public List<PaymentTerm> PaymentTerms {
             get { return BackingStore?.Get<List<PaymentTerm>>("paymentTerms"); }
@@ -271,10 +315,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The picture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.Picture>? Picture {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>?>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.Picture> Picture {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
@@ -283,10 +329,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The purchaseInvoiceLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PurchaseInvoiceLine>? PurchaseInvoiceLines {
             get { return BackingStore?.Get<List<PurchaseInvoiceLine>?>("purchaseInvoiceLines"); }
             set { BackingStore?.Set("purchaseInvoiceLines", value); }
         }
+#nullable restore
 #else
         public List<PurchaseInvoiceLine> PurchaseInvoiceLines {
             get { return BackingStore?.Get<List<PurchaseInvoiceLine>>("purchaseInvoiceLines"); }
@@ -295,10 +343,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The purchaseInvoices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PurchaseInvoice>? PurchaseInvoices {
             get { return BackingStore?.Get<List<PurchaseInvoice>?>("purchaseInvoices"); }
             set { BackingStore?.Set("purchaseInvoices", value); }
         }
+#nullable restore
 #else
         public List<PurchaseInvoice> PurchaseInvoices {
             get { return BackingStore?.Get<List<PurchaseInvoice>>("purchaseInvoices"); }
@@ -307,10 +357,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The salesCreditMemoLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SalesCreditMemoLine>? SalesCreditMemoLines {
             get { return BackingStore?.Get<List<SalesCreditMemoLine>?>("salesCreditMemoLines"); }
             set { BackingStore?.Set("salesCreditMemoLines", value); }
         }
+#nullable restore
 #else
         public List<SalesCreditMemoLine> SalesCreditMemoLines {
             get { return BackingStore?.Get<List<SalesCreditMemoLine>>("salesCreditMemoLines"); }
@@ -319,10 +371,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The salesCreditMemos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SalesCreditMemo>? SalesCreditMemos {
             get { return BackingStore?.Get<List<SalesCreditMemo>?>("salesCreditMemos"); }
             set { BackingStore?.Set("salesCreditMemos", value); }
         }
+#nullable restore
 #else
         public List<SalesCreditMemo> SalesCreditMemos {
             get { return BackingStore?.Get<List<SalesCreditMemo>>("salesCreditMemos"); }
@@ -331,10 +385,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The salesInvoiceLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SalesInvoiceLine>? SalesInvoiceLines {
             get { return BackingStore?.Get<List<SalesInvoiceLine>?>("salesInvoiceLines"); }
             set { BackingStore?.Set("salesInvoiceLines", value); }
         }
+#nullable restore
 #else
         public List<SalesInvoiceLine> SalesInvoiceLines {
             get { return BackingStore?.Get<List<SalesInvoiceLine>>("salesInvoiceLines"); }
@@ -343,10 +399,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The salesInvoices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SalesInvoice>? SalesInvoices {
             get { return BackingStore?.Get<List<SalesInvoice>?>("salesInvoices"); }
             set { BackingStore?.Set("salesInvoices", value); }
         }
+#nullable restore
 #else
         public List<SalesInvoice> SalesInvoices {
             get { return BackingStore?.Get<List<SalesInvoice>>("salesInvoices"); }
@@ -355,10 +413,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The salesOrderLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SalesOrderLine>? SalesOrderLines {
             get { return BackingStore?.Get<List<SalesOrderLine>?>("salesOrderLines"); }
             set { BackingStore?.Set("salesOrderLines", value); }
         }
+#nullable restore
 #else
         public List<SalesOrderLine> SalesOrderLines {
             get { return BackingStore?.Get<List<SalesOrderLine>>("salesOrderLines"); }
@@ -367,10 +427,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The salesOrders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SalesOrder>? SalesOrders {
             get { return BackingStore?.Get<List<SalesOrder>?>("salesOrders"); }
             set { BackingStore?.Set("salesOrders", value); }
         }
+#nullable restore
 #else
         public List<SalesOrder> SalesOrders {
             get { return BackingStore?.Get<List<SalesOrder>>("salesOrders"); }
@@ -379,10 +441,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The salesQuoteLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SalesQuoteLine>? SalesQuoteLines {
             get { return BackingStore?.Get<List<SalesQuoteLine>?>("salesQuoteLines"); }
             set { BackingStore?.Set("salesQuoteLines", value); }
         }
+#nullable restore
 #else
         public List<SalesQuoteLine> SalesQuoteLines {
             get { return BackingStore?.Get<List<SalesQuoteLine>>("salesQuoteLines"); }
@@ -391,10 +455,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The salesQuotes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SalesQuote>? SalesQuotes {
             get { return BackingStore?.Get<List<SalesQuote>?>("salesQuotes"); }
             set { BackingStore?.Set("salesQuotes", value); }
         }
+#nullable restore
 #else
         public List<SalesQuote> SalesQuotes {
             get { return BackingStore?.Get<List<SalesQuote>>("salesQuotes"); }
@@ -403,10 +469,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The shipmentMethods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ShipmentMethod>? ShipmentMethods {
             get { return BackingStore?.Get<List<ShipmentMethod>?>("shipmentMethods"); }
             set { BackingStore?.Set("shipmentMethods", value); }
         }
+#nullable restore
 #else
         public List<ShipmentMethod> ShipmentMethods {
             get { return BackingStore?.Get<List<ShipmentMethod>>("shipmentMethods"); }
@@ -415,10 +483,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The systemVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SystemVersion {
             get { return BackingStore?.Get<string?>("systemVersion"); }
             set { BackingStore?.Set("systemVersion", value); }
         }
+#nullable restore
 #else
         public string SystemVersion {
             get { return BackingStore?.Get<string>("systemVersion"); }
@@ -427,10 +497,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The taxAreas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TaxArea>? TaxAreas {
             get { return BackingStore?.Get<List<TaxArea>?>("taxAreas"); }
             set { BackingStore?.Set("taxAreas", value); }
         }
+#nullable restore
 #else
         public List<TaxArea> TaxAreas {
             get { return BackingStore?.Get<List<TaxArea>>("taxAreas"); }
@@ -439,10 +511,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The taxGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TaxGroup>? TaxGroups {
             get { return BackingStore?.Get<List<TaxGroup>?>("taxGroups"); }
             set { BackingStore?.Set("taxGroups", value); }
         }
+#nullable restore
 #else
         public List<TaxGroup> TaxGroups {
             get { return BackingStore?.Get<List<TaxGroup>>("taxGroups"); }
@@ -451,10 +525,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unitsOfMeasure property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnitOfMeasure>? UnitsOfMeasure {
             get { return BackingStore?.Get<List<UnitOfMeasure>?>("unitsOfMeasure"); }
             set { BackingStore?.Set("unitsOfMeasure", value); }
         }
+#nullable restore
 #else
         public List<UnitOfMeasure> UnitsOfMeasure {
             get { return BackingStore?.Get<List<UnitOfMeasure>>("unitsOfMeasure"); }
@@ -463,10 +539,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The vendors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Vendor>? Vendors {
             get { return BackingStore?.Get<List<Vendor>?>("vendors"); }
             set { BackingStore?.Set("vendors", value); }
         }
+#nullable restore
 #else
         public List<Vendor> Vendors {
             get { return BackingStore?.Get<List<Vendor>>("vendors"); }

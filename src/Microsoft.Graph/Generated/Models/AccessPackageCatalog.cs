@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageCatalog : Entity, IParsable {
         /// <summary>The roles in each resource in a catalog. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResourceRole>? AccessPackageResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageResourceRole>?>("accessPackageResourceRoles"); }
             set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResourceRole> AccessPackageResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageResourceRole>>("accessPackageResourceRoles"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The accessPackageResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResource>? AccessPackageResources {
             get { return BackingStore?.Get<List<AccessPackageResource>?>("accessPackageResources"); }
             set { BackingStore?.Set("accessPackageResources", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResource> AccessPackageResources {
             get { return BackingStore?.Get<List<AccessPackageResource>>("accessPackageResources"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The accessPackageResourceScopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageResourceScope>? AccessPackageResourceScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceScope>?>("accessPackageResourceScopes"); }
             set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageResourceScope> AccessPackageResourceScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceScope>>("accessPackageResourceScopes"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The access packages in this catalog. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackage>? AccessPackages {
             get { return BackingStore?.Get<List<AccessPackage>?>("accessPackages"); }
             set { BackingStore?.Set("accessPackages", value); }
         }
+#nullable restore
 #else
         public List<AccessPackage> AccessPackages {
             get { return BackingStore?.Get<List<AccessPackage>>("accessPackages"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Has the value Published if the access packages are available for management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CatalogStatus {
             get { return BackingStore?.Get<string?>("catalogStatus"); }
             set { BackingStore?.Set("catalogStatus", value); }
         }
+#nullable restore
 #else
         public string CatalogStatus {
             get { return BackingStore?.Get<string>("catalogStatus"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>One of UserManaged or ServiceDefault.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CatalogType {
             get { return BackingStore?.Get<string?>("catalogType"); }
             set { BackingStore?.Set("catalogType", value); }
         }
+#nullable restore
 #else
         public string CatalogType {
             get { return BackingStore?.Get<string>("catalogType"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>UPN of the user who created this resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedBy {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public string CreatedBy {
             get { return BackingStore?.Get<string>("createdBy"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The customAccessPackageWorkflowExtensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomAccessPackageWorkflowExtension>? CustomAccessPackageWorkflowExtensions {
             get { return BackingStore?.Get<List<CustomAccessPackageWorkflowExtension>?>("customAccessPackageWorkflowExtensions"); }
             set { BackingStore?.Set("customAccessPackageWorkflowExtensions", value); }
         }
+#nullable restore
 #else
         public List<CustomAccessPackageWorkflowExtension> CustomAccessPackageWorkflowExtensions {
             get { return BackingStore?.Get<List<CustomAccessPackageWorkflowExtension>>("customAccessPackageWorkflowExtensions"); }
@@ -108,10 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of the access package catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -120,10 +138,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the access package catalog. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -137,10 +157,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The UPN of the user who last modified this resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ModifiedBy {
             get { return BackingStore?.Get<string?>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
+#nullable restore
 #else
         public string ModifiedBy {
             get { return BackingStore?.Get<string>("modifiedBy"); }

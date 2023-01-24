@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BusinessFlow : Entity, IParsable {
         /// <summary>The customData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomData {
             get { return BackingStore?.Get<string?>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
+#nullable restore
 #else
         public string CustomData {
             get { return BackingStore?.Get<string>("customData"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The deDuplicationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeDuplicationId {
             get { return BackingStore?.Get<string?>("deDuplicationId"); }
             set { BackingStore?.Set("deDuplicationId", value); }
         }
+#nullable restore
 #else
         public string DeDuplicationId {
             get { return BackingStore?.Get<string>("deDuplicationId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GovernancePolicy? Policy {
             get { return BackingStore?.Get<GovernancePolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
+#nullable restore
 #else
         public GovernancePolicy Policy {
             get { return BackingStore?.Get<GovernancePolicy>("policy"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policyTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyTemplateId {
             get { return BackingStore?.Get<string?>("policyTemplateId"); }
             set { BackingStore?.Set("policyTemplateId", value); }
         }
+#nullable restore
 #else
         public string PolicyTemplateId {
             get { return BackingStore?.Get<string>("policyTemplateId"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The recordVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecordVersion {
             get { return BackingStore?.Get<string?>("recordVersion"); }
             set { BackingStore?.Set("recordVersion", value); }
         }
+#nullable restore
 #else
         public string RecordVersion {
             get { return BackingStore?.Get<string>("recordVersion"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The schemaId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SchemaId {
             get { return BackingStore?.Get<string?>("schemaId"); }
             set { BackingStore?.Set("schemaId", value); }
         }
+#nullable restore
 #else
         public string SchemaId {
             get { return BackingStore?.Get<string>("schemaId"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public BusinessFlowSettings? Settings {
             get { return BackingStore?.Get<BusinessFlowSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public BusinessFlowSettings Settings {
             get { return BackingStore?.Get<BusinessFlowSettings>("settings"); }

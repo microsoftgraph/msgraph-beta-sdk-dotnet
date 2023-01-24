@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>HTML color code representation of the text color. E.g. #FF0000 represents Red.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Color {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#nullable restore
 #else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Font name (e.g. &apos;Calibri&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Underline {
             get { return BackingStore?.Get<string?>("underline"); }
             set { BackingStore?.Set("underline", value); }
         }
+#nullable restore
 #else
         public string Underline {
             get { return BackingStore?.Get<string>("underline"); }

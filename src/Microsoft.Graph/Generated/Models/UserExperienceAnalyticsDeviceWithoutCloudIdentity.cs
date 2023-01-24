@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Entity, IParsable {
         /// <summary>Azure Active Directory Device Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureAdDeviceId {
             get { return BackingStore?.Get<string?>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
+#nullable restore
 #else
         public string AzureAdDeviceId {
             get { return BackingStore?.Get<string>("azureAdDeviceId"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tenant attach device&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DomainDnsCnameRecord : DomainDnsRecord, IParsable {
         /// <summary>The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CanonicalName {
             get { return BackingStore?.Get<string?>("canonicalName"); }
             set { BackingStore?.Set("canonicalName", value); }
         }
+#nullable restore
 #else
         public string CanonicalName {
             get { return BackingStore?.Get<string>("canonicalName"); }

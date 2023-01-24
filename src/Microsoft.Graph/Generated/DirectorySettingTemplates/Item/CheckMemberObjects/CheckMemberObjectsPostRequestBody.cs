@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item.CheckMemberObjects
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Ids {
             get { return BackingStore?.Get<List<string>?>("ids"); }
             set { BackingStore?.Set("ids", value); }
         }
+#nullable restore
 #else
         public List<string> Ids {
             get { return BackingStore?.Get<List<string>>("ids"); }

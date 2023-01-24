@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Exception information indicates if check for this item was successful or not.Empty string for no error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Error {
             get { return BackingStore?.Get<string?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public string Error {
             get { return BackingStore?.Get<string>("error"); }
@@ -35,10 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Key of the Payload, In the format of Guid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PayloadId {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
+#nullable restore
 #else
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The reason where the link comes from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceAndAppManagementAssignmentSource?>? Sources {
             get { return BackingStore?.Get<List<DeviceAndAppManagementAssignmentSource?>?>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
+#nullable restore
 #else
         public List<DeviceAndAppManagementAssignmentSource?> Sources {
             get { return BackingStore?.Get<List<DeviceAndAppManagementAssignmentSource?>>("sources"); }

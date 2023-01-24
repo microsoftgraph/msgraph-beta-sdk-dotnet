@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EmailAuthenticationMethod : AuthenticationMethod, IParsable {
         /// <summary>The email address registered to this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EmailAddress {
             get { return BackingStore?.Get<string?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#nullable restore
 #else
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }

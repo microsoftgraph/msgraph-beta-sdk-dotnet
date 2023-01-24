@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The getUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GetUrl {
             get { return BackingStore?.Get<string?>("getUrl"); }
             set { BackingStore?.Set("getUrl", value); }
         }
+#nullable restore
 #else
         public string GetUrl {
             get { return BackingStore?.Get<string>("getUrl"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The postParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PostParameters {
             get { return BackingStore?.Get<string?>("postParameters"); }
             set { BackingStore?.Set("postParameters", value); }
         }
+#nullable restore
 #else
         public string PostParameters {
             get { return BackingStore?.Get<string>("postParameters"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The postUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PostUrl {
             get { return BackingStore?.Get<string?>("postUrl"); }
             set { BackingStore?.Set("postUrl", value); }
         }
+#nullable restore
 #else
         public string PostUrl {
             get { return BackingStore?.Get<string>("postUrl"); }

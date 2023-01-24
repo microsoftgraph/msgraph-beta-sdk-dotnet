@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The conference id of the online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConferenceId {
             get { return BackingStore?.Get<string?>("conferenceId"); }
             set { BackingStore?.Set("conferenceId", value); }
         }
+#nullable restore
 #else
         public string ConferenceId {
             get { return BackingStore?.Get<string>("conferenceId"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A URL to the externally-accessible web page that contains dial-in information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DialinUrl {
             get { return BackingStore?.Get<string?>("dialinUrl"); }
             set { BackingStore?.Set("dialinUrl", value); }
         }
+#nullable restore
 #else
         public string DialinUrl {
             get { return BackingStore?.Get<string>("dialinUrl"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tollFreeNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TollFreeNumber {
             get { return BackingStore?.Get<string?>("tollFreeNumber"); }
             set { BackingStore?.Set("tollFreeNumber", value); }
         }
+#nullable restore
 #else
         public string TollFreeNumber {
             get { return BackingStore?.Get<string>("tollFreeNumber"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of toll-free numbers that are displayed in the meeting invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TollFreeNumbers {
             get { return BackingStore?.Get<List<string>?>("tollFreeNumbers"); }
             set { BackingStore?.Set("tollFreeNumbers", value); }
         }
+#nullable restore
 #else
         public List<string> TollFreeNumbers {
             get { return BackingStore?.Get<List<string>>("tollFreeNumbers"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tollNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TollNumber {
             get { return BackingStore?.Get<string?>("tollNumber"); }
             set { BackingStore?.Set("tollNumber", value); }
         }
+#nullable restore
 #else
         public string TollNumber {
             get { return BackingStore?.Get<string>("tollNumber"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of toll numbers that are displayed in the meeting invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TollNumbers {
             get { return BackingStore?.Get<List<string>?>("tollNumbers"); }
             set { BackingStore?.Set("tollNumbers", value); }
         }
+#nullable restore
 #else
         public List<string> TollNumbers {
             get { return BackingStore?.Get<List<string>>("tollNumbers"); }

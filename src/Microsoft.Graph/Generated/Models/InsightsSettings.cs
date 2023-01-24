@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class InsightsSettings : Entity, IParsable {
         /// <summary>The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisabledForGroup {
             get { return BackingStore?.Get<string?>("disabledForGroup"); }
             set { BackingStore?.Set("disabledForGroup", value); }
         }
+#nullable restore
 #else
         public string DisabledForGroup {
             get { return BackingStore?.Get<string>("disabledForGroup"); }

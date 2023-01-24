@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicySettingMapping : Entity, IParsable {
         /// <summary>Admx Group Policy Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdmxSettingDefinitionId {
             get { return BackingStore?.Get<string?>("admxSettingDefinitionId"); }
             set { BackingStore?.Set("admxSettingDefinitionId", value); }
         }
+#nullable restore
 #else
         public string AdmxSettingDefinitionId {
             get { return BackingStore?.Get<string>("admxSettingDefinitionId"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of Child Ids of the group policy setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ChildIdList {
             get { return BackingStore?.Get<List<string>?>("childIdList"); }
             set { BackingStore?.Set("childIdList", value); }
         }
+#nullable restore
 #else
         public List<string> ChildIdList {
             get { return BackingStore?.Get<List<string>>("childIdList"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Intune Setting Definition Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IntuneSettingDefinitionId {
             get { return BackingStore?.Get<string?>("intuneSettingDefinitionId"); }
             set { BackingStore?.Set("intuneSettingDefinitionId", value); }
         }
+#nullable restore
 #else
         public string IntuneSettingDefinitionId {
             get { return BackingStore?.Get<string>("intuneSettingDefinitionId"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of Intune Setting URIs this group policy setting maps to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? IntuneSettingUriList {
             get { return BackingStore?.Get<List<string>?>("intuneSettingUriList"); }
             set { BackingStore?.Set("intuneSettingUriList", value); }
         }
+#nullable restore
 #else
         public List<string> IntuneSettingUriList {
             get { return BackingStore?.Get<List<string>>("intuneSettingUriList"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The CSP name this group policy setting maps to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MdmCspName {
             get { return BackingStore?.Get<string?>("mdmCspName"); }
             set { BackingStore?.Set("mdmCspName", value); }
         }
+#nullable restore
 #else
         public string MdmCspName {
             get { return BackingStore?.Get<string>("mdmCspName"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The MDM CSP URI this group policy setting maps to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MdmSettingUri {
             get { return BackingStore?.Get<string?>("mdmSettingUri"); }
             set { BackingStore?.Set("mdmSettingUri", value); }
         }
+#nullable restore
 #else
         public string MdmSettingUri {
             get { return BackingStore?.Get<string>("mdmSettingUri"); }
@@ -97,10 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Parent Id of the group policy setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentId {
             get { return BackingStore?.Get<string?>("parentId"); }
             set { BackingStore?.Set("parentId", value); }
         }
+#nullable restore
 #else
         public string ParentId {
             get { return BackingStore?.Get<string>("parentId"); }
@@ -109,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The category the group policy setting is in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingCategory {
             get { return BackingStore?.Get<string?>("settingCategory"); }
             set { BackingStore?.Set("settingCategory", value); }
         }
+#nullable restore
 #else
         public string SettingCategory {
             get { return BackingStore?.Get<string>("settingCategory"); }
@@ -121,10 +137,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of this group policy setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingDisplayName {
             get { return BackingStore?.Get<string?>("settingDisplayName"); }
             set { BackingStore?.Set("settingDisplayName", value); }
         }
+#nullable restore
 #else
         public string SettingDisplayName {
             get { return BackingStore?.Get<string>("settingDisplayName"); }
@@ -133,10 +151,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display value of this group policy setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingDisplayValue {
             get { return BackingStore?.Get<string?>("settingDisplayValue"); }
             set { BackingStore?.Set("settingDisplayValue", value); }
         }
+#nullable restore
 #else
         public string SettingDisplayValue {
             get { return BackingStore?.Get<string>("settingDisplayValue"); }
@@ -145,10 +165,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display value type of this group policy setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingDisplayValueType {
             get { return BackingStore?.Get<string?>("settingDisplayValueType"); }
             set { BackingStore?.Set("settingDisplayValueType", value); }
         }
+#nullable restore
 #else
         public string SettingDisplayValueType {
             get { return BackingStore?.Get<string>("settingDisplayValueType"); }
@@ -157,10 +179,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of this group policy setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingName {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#nullable restore
 #else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
@@ -179,10 +203,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The value of this group policy setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingValue {
             get { return BackingStore?.Get<string?>("settingValue"); }
             set { BackingStore?.Set("settingValue", value); }
         }
+#nullable restore
 #else
         public string SettingValue {
             get { return BackingStore?.Get<string>("settingValue"); }
@@ -191,10 +217,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display units of this group policy setting value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingValueDisplayUnits {
             get { return BackingStore?.Get<string?>("settingValueDisplayUnits"); }
             set { BackingStore?.Set("settingValueDisplayUnits", value); }
         }
+#nullable restore
 #else
         public string SettingValueDisplayUnits {
             get { return BackingStore?.Get<string>("settingValueDisplayUnits"); }
@@ -203,10 +231,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The value type of this group policy setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingValueType {
             get { return BackingStore?.Get<string?>("settingValueType"); }
             set { BackingStore?.Set("settingValueType", value); }
         }
+#nullable restore
 #else
         public string SettingValueType {
             get { return BackingStore?.Get<string>("settingValueType"); }

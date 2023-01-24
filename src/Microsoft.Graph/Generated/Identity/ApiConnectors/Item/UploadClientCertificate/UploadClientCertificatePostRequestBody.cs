@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item.UploadClientCertifica
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Password {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#nullable restore
 #else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item.UploadClientCertifica
 #endif
         /// <summary>The pkcs12Value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Pkcs12Value {
             get { return BackingStore?.Get<string?>("pkcs12Value"); }
             set { BackingStore?.Set("pkcs12Value", value); }
         }
+#nullable restore
 #else
         public string Pkcs12Value {
             get { return BackingStore?.Get<string>("pkcs12Value"); }

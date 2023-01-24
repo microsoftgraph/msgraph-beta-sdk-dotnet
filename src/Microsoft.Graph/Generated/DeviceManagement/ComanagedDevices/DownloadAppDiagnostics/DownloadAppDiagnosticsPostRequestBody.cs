@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadAppDiag
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PowerliftDownloadRequest? Request {
             get { return BackingStore?.Get<PowerliftDownloadRequest?>("request"); }
             set { BackingStore?.Set("request", value); }
         }
+#nullable restore
 #else
         public PowerliftDownloadRequest Request {
             get { return BackingStore?.Get<PowerliftDownloadRequest>("request"); }

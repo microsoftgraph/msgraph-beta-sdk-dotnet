@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Time in which the status message expires.If not provided, the status message does not expire.expiryDateTime.dateTime should not include time zone.expiryDateTime is not available when requesting presence of another user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? ExpiryDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone ExpiryDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("expiryDateTime"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Status message item. The only supported format currently is message.contentType = &apos;text&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Message {
             get { return BackingStore?.Get<ItemBody?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#nullable restore
 #else
         public ItemBody Message {
             get { return BackingStore?.Get<ItemBody>("message"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

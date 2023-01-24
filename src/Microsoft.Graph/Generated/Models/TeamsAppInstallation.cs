@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppInstallation : Entity, IParsable {
         /// <summary>The app that is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TeamsApp? TeamsApp {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp?>("teamsApp"); }
             set { BackingStore?.Set("teamsApp", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TeamsApp TeamsApp {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp>("teamsApp"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The details of this version of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TeamsAppDefinition? TeamsAppDefinition {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDefinition?>("teamsAppDefinition"); }
             set { BackingStore?.Set("teamsAppDefinition", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TeamsAppDefinition TeamsAppDefinition {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppDefinition>("teamsAppDefinition"); }

@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The updateWindow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.UpdateWindow? UpdateWindow {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateWindow?>("updateWindow"); }
             set { BackingStore?.Set("updateWindow", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.UpdateWindow UpdateWindow {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateWindow>("updateWindow"); }

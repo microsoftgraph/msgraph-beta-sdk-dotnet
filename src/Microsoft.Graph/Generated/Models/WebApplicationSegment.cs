@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WebApplicationSegment : ApplicationSegment, IParsable {
         /// <summary>The alternateUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlternateUrl {
             get { return BackingStore?.Get<string?>("alternateUrl"); }
             set { BackingStore?.Set("alternateUrl", value); }
         }
+#nullable restore
 #else
         public string AlternateUrl {
             get { return BackingStore?.Get<string>("alternateUrl"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The corsConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CorsConfiguration_v2>? CorsConfigurations {
             get { return BackingStore?.Get<List<CorsConfiguration_v2>?>("corsConfigurations"); }
             set { BackingStore?.Set("corsConfigurations", value); }
         }
+#nullable restore
 #else
         public List<CorsConfiguration_v2> CorsConfigurations {
             get { return BackingStore?.Get<List<CorsConfiguration_v2>>("corsConfigurations"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The externalUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalUrl {
             get { return BackingStore?.Get<string?>("externalUrl"); }
             set { BackingStore?.Set("externalUrl", value); }
         }
+#nullable restore
 #else
         public string ExternalUrl {
             get { return BackingStore?.Get<string>("externalUrl"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The internalUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InternalUrl {
             get { return BackingStore?.Get<string?>("internalUrl"); }
             set { BackingStore?.Set("internalUrl", value); }
         }
+#nullable restore
 #else
         public string InternalUrl {
             get { return BackingStore?.Get<string>("internalUrl"); }

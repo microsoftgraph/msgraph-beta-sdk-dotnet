@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrefixFilter {
             get { return BackingStore?.Get<string?>("prefixFilter"); }
             set { BackingStore?.Set("prefixFilter", value); }
         }
+#nullable restore
 #else
         public string PrefixFilter {
             get { return BackingStore?.Get<string>("prefixFilter"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BucketAggregationRange>? Ranges {
             get { return BackingStore?.Get<List<BucketAggregationRange>?>("ranges"); }
             set { BackingStore?.Set("ranges", value); }
         }
+#nullable restore
 #else
         public List<BucketAggregationRange> Ranges {
             get { return BackingStore?.Get<List<BucketAggregationRange>>("ranges"); }

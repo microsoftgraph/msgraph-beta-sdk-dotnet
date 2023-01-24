@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? BodyContains {
             get { return BackingStore?.Get<List<string>?>("bodyContains"); }
             set { BackingStore?.Set("bodyContains", value); }
         }
+#nullable restore
 #else
         public List<string> BodyContains {
             get { return BackingStore?.Get<List<string>>("bodyContains"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? BodyOrSubjectContains {
             get { return BackingStore?.Get<List<string>?>("bodyOrSubjectContains"); }
             set { BackingStore?.Set("bodyOrSubjectContains", value); }
         }
+#nullable restore
 #else
         public List<string> BodyOrSubjectContains {
             get { return BackingStore?.Get<List<string>>("bodyOrSubjectContains"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Categories {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? FromAddresses {
             get { return BackingStore?.Get<List<Recipient>?>("fromAddresses"); }
             set { BackingStore?.Set("fromAddresses", value); }
         }
+#nullable restore
 #else
         public List<Recipient> FromAddresses {
             get { return BackingStore?.Get<List<Recipient>>("fromAddresses"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? HeaderContains {
             get { return BackingStore?.Get<List<string>?>("headerContains"); }
             set { BackingStore?.Set("headerContains", value); }
         }
+#nullable restore
 #else
         public List<string> HeaderContains {
             get { return BackingStore?.Get<List<string>>("headerContains"); }
@@ -150,10 +160,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -162,10 +174,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RecipientContains {
             get { return BackingStore?.Get<List<string>?>("recipientContains"); }
             set { BackingStore?.Set("recipientContains", value); }
         }
+#nullable restore
 #else
         public List<string> RecipientContains {
             get { return BackingStore?.Get<List<string>>("recipientContains"); }
@@ -174,10 +188,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SenderContains {
             get { return BackingStore?.Get<List<string>?>("senderContains"); }
             set { BackingStore?.Set("senderContains", value); }
         }
+#nullable restore
 #else
         public List<string> SenderContains {
             get { return BackingStore?.Get<List<string>>("senderContains"); }
@@ -201,10 +217,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Recipient>? SentToAddresses {
             get { return BackingStore?.Get<List<Recipient>?>("sentToAddresses"); }
             set { BackingStore?.Set("sentToAddresses", value); }
         }
+#nullable restore
 #else
         public List<Recipient> SentToAddresses {
             get { return BackingStore?.Get<List<Recipient>>("sentToAddresses"); }
@@ -223,10 +241,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SubjectContains {
             get { return BackingStore?.Get<List<string>?>("subjectContains"); }
             set { BackingStore?.Set("subjectContains", value); }
         }
+#nullable restore
 #else
         public List<string> SubjectContains {
             get { return BackingStore?.Get<List<string>>("subjectContains"); }
@@ -235,10 +255,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SizeRange? WithinSizeRange {
             get { return BackingStore?.Get<SizeRange?>("withinSizeRange"); }
             set { BackingStore?.Set("withinSizeRange", value); }
         }
+#nullable restore
 #else
         public SizeRange WithinSizeRange {
             get { return BackingStore?.Get<SizeRange>("withinSizeRange"); }

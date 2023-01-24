@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The app base class used to identify the application info for the kiosk configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsKioskAppConfiguration? AppConfiguration {
             get { return BackingStore?.Get<WindowsKioskAppConfiguration?>("appConfiguration"); }
             set { BackingStore?.Set("appConfiguration", value); }
         }
+#nullable restore
 #else
         public WindowsKioskAppConfiguration AppConfiguration {
             get { return BackingStore?.Get<WindowsKioskAppConfiguration>("appConfiguration"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Key of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProfileId {
             get { return BackingStore?.Get<string?>("profileId"); }
             set { BackingStore?.Set("profileId", value); }
         }
+#nullable restore
 #else
         public string ProfileId {
             get { return BackingStore?.Get<string>("profileId"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProfileName {
             get { return BackingStore?.Get<string?>("profileName"); }
             set { BackingStore?.Set("profileName", value); }
         }
+#nullable restore
 #else
         public string ProfileName {
             get { return BackingStore?.Get<string>("profileName"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WindowsKioskUser>? UserAccountsConfiguration {
             get { return BackingStore?.Get<List<WindowsKioskUser>?>("userAccountsConfiguration"); }
             set { BackingStore?.Set("userAccountsConfiguration", value); }
         }
+#nullable restore
 #else
         public List<WindowsKioskUser> UserAccountsConfiguration {
             get { return BackingStore?.Get<List<WindowsKioskUser>>("userAccountsConfiguration"); }

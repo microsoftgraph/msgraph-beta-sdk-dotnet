@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContactInformation {
             get { return BackingStore?.Get<string?>("contactInformation"); }
             set { BackingStore?.Set("contactInformation", value); }
         }
+#nullable restore
 #else
         public string ContactInformation {
             get { return BackingStore?.Get<string>("contactInformation"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Locale {
             get { return BackingStore?.Get<string?>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
+#nullable restore
 #else
         public string Locale {
             get { return BackingStore?.Get<string>("locale"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

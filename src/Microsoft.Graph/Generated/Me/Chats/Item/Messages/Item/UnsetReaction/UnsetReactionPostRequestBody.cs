@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Messages.Item.UnsetReaction {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The reactionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReactionType {
             get { return BackingStore?.Get<string?>("reactionType"); }
             set { BackingStore?.Set("reactionType", value); }
         }
+#nullable restore
 #else
         public string ReactionType {
             get { return BackingStore?.Get<string>("reactionType"); }

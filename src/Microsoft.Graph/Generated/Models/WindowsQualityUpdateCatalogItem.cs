@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Knowledge base article id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? KbArticleId {
             get { return BackingStore?.Get<string?>("kbArticleId"); }
             set { BackingStore?.Set("kbArticleId", value); }
         }
+#nullable restore
 #else
         public string KbArticleId {
             get { return BackingStore?.Get<string>("kbArticleId"); }

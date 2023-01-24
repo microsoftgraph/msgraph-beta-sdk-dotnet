@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApplicationSignInSummary : Entity, IParsable {
         /// <summary>Name of the application that the user signed into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppDisplayName {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#nullable restore
 #else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }

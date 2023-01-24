@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerBucket : PlannerDelta, IParsable {
         /// <summary>Contains information about the origin of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerBucketCreation? CreationSource {
             get { return BackingStore?.Get<PlannerBucketCreation?>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
+#nullable restore
 #else
         public PlannerBucketCreation CreationSource {
             get { return BackingStore?.Get<PlannerBucketCreation>("creationSource"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Hint used to order items of this type in a list view. The format is defined as outlined here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrderHint {
             get { return BackingStore?.Get<string?>("orderHint"); }
             set { BackingStore?.Set("orderHint", value); }
         }
+#nullable restore
 #else
         public string OrderHint {
             get { return BackingStore?.Get<string>("orderHint"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Plan ID to which the bucket belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PlanId {
             get { return BackingStore?.Get<string?>("planId"); }
             set { BackingStore?.Set("planId", value); }
         }
+#nullable restore
 #else
         public string PlanId {
             get { return BackingStore?.Get<string>("planId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. The collection of tasks in the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PlannerTask>? Tasks {
             get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#nullable restore
 #else
         public List<PlannerTask> Tasks {
             get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }

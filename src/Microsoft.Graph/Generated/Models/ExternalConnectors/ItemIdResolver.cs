@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ItemIdResolver : UrlToItemResolverBase, IParsable {
         /// <summary>Pattern that specifies how to form the ID of the external item that the URL represents. The named groups from the regular expression in urlPattern within the urlMatchInfo can be referenced by inserting the group name inside curly brackets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ItemId {
             get { return BackingStore?.Get<string?>("itemId"); }
             set { BackingStore?.Set("itemId", value); }
         }
+#nullable restore
 #else
         public string ItemId {
             get { return BackingStore?.Get<string>("itemId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
 #endif
         /// <summary>Configurations to match and resolve URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ExternalConnectors.UrlMatchInfo? UrlMatchInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.UrlMatchInfo?>("urlMatchInfo"); }
             set { BackingStore?.Set("urlMatchInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ExternalConnectors.UrlMatchInfo UrlMatchInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.UrlMatchInfo>("urlMatchInfo"); }

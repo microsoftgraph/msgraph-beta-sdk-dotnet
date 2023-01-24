@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class Segment : Entity, IParsable {
         /// <summary>Endpoint that answered this segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Endpoint? Callee {
             get { return BackingStore?.Get<Endpoint?>("callee"); }
             set { BackingStore?.Set("callee", value); }
         }
+#nullable restore
 #else
         public Endpoint Callee {
             get { return BackingStore?.Get<Endpoint>("callee"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Endpoint that initiated this segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Endpoint? Caller {
             get { return BackingStore?.Get<Endpoint?>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
+#nullable restore
 #else
         public Endpoint Caller {
             get { return BackingStore?.Get<Endpoint>("caller"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Failure information associated with the segment if it failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.CallRecords.FailureInfo? FailureInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo?>("failureInfo"); }
             set { BackingStore?.Set("failureInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.CallRecords.FailureInfo FailureInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo>("failureInfo"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Media associated with this segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.CallRecords.Media>? Media {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Media>?>("media"); }
             set { BackingStore?.Set("media", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.CallRecords.Media> Media {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.Media>>("media"); }

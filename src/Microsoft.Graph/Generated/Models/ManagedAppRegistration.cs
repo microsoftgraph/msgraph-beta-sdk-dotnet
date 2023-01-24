@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppRegistration : Entity, IParsable {
         /// <summary>The app package Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MobileAppIdentifier? AppIdentifier {
             get { return BackingStore?.Get<MobileAppIdentifier?>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
+#nullable restore
 #else
         public MobileAppIdentifier AppIdentifier {
             get { return BackingStore?.Get<MobileAppIdentifier>("appIdentifier"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>App version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationVersion {
             get { return BackingStore?.Get<string?>("applicationVersion"); }
             set { BackingStore?.Set("applicationVersion", value); }
         }
+#nullable restore
 #else
         public string ApplicationVersion {
             get { return BackingStore?.Get<string>("applicationVersion"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Zero or more policys already applied on the registered app when it last synchronized with managment service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedAppPolicy>? AppliedPolicies {
             get { return BackingStore?.Get<List<ManagedAppPolicy>?>("appliedPolicies"); }
             set { BackingStore?.Set("appliedPolicies", value); }
         }
+#nullable restore
 #else
         public List<ManagedAppPolicy> AppliedPolicies {
             get { return BackingStore?.Get<List<ManagedAppPolicy>>("appliedPolicies"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure Active Directory Device identifier of the host device. Value could be empty even when the host device is Azure Active Directory registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AzureADDeviceId {
             get { return BackingStore?.Get<string?>("azureADDeviceId"); }
             set { BackingStore?.Set("azureADDeviceId", value); }
         }
+#nullable restore
 #else
         public string AzureADDeviceId {
             get { return BackingStore?.Get<string>("azureADDeviceId"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The device manufacturer for the current app registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceManufacturer {
             get { return BackingStore?.Get<string?>("deviceManufacturer"); }
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
+#nullable restore
 #else
         public string DeviceManufacturer {
             get { return BackingStore?.Get<string>("deviceManufacturer"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The device model for the current app registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceModel {
             get { return BackingStore?.Get<string?>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
+#nullable restore
 #else
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Host device name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceTag {
             get { return BackingStore?.Get<string?>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
+#nullable restore
 #else
         public string DeviceTag {
             get { return BackingStore?.Get<string>("deviceTag"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Host device type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceType {
             get { return BackingStore?.Get<string?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
+#nullable restore
 #else
         public string DeviceType {
             get { return BackingStore?.Get<string>("deviceType"); }
@@ -123,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Zero or more reasons an app registration is flagged. E.g. app running on rooted device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedAppFlaggedReason?>? FlaggedReasons {
             get { return BackingStore?.Get<List<ManagedAppFlaggedReason?>?>("flaggedReasons"); }
             set { BackingStore?.Set("flaggedReasons", value); }
         }
+#nullable restore
 #else
         public List<ManagedAppFlaggedReason?> FlaggedReasons {
             get { return BackingStore?.Get<List<ManagedAppFlaggedReason?>>("flaggedReasons"); }
@@ -135,10 +155,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Zero or more policies admin intended for the app as of now.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedAppPolicy>? IntendedPolicies {
             get { return BackingStore?.Get<List<ManagedAppPolicy>?>("intendedPolicies"); }
             set { BackingStore?.Set("intendedPolicies", value); }
         }
+#nullable restore
 #else
         public List<ManagedAppPolicy> IntendedPolicies {
             get { return BackingStore?.Get<List<ManagedAppPolicy>>("intendedPolicies"); }
@@ -152,10 +174,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Managed Device identifier of the host device. Value could be empty even when the host device is managed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagedDeviceId {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#nullable restore
 #else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
@@ -164,10 +188,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>App management SDK version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagementSdkVersion {
             get { return BackingStore?.Get<string?>("managementSdkVersion"); }
             set { BackingStore?.Set("managementSdkVersion", value); }
         }
+#nullable restore
 #else
         public string ManagementSdkVersion {
             get { return BackingStore?.Get<string>("managementSdkVersion"); }
@@ -176,10 +202,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Zero or more long running operations triggered on the app registration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagedAppOperation>? Operations {
             get { return BackingStore?.Get<List<ManagedAppOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<ManagedAppOperation> Operations {
             get { return BackingStore?.Get<List<ManagedAppOperation>>("operations"); }
@@ -188,10 +216,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Operating System version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PlatformVersion {
             get { return BackingStore?.Get<string?>("platformVersion"); }
             set { BackingStore?.Set("platformVersion", value); }
         }
+#nullable restore
 #else
         public string PlatformVersion {
             get { return BackingStore?.Get<string>("platformVersion"); }
@@ -200,10 +230,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user Id to who this app registration belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -212,10 +244,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Version of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

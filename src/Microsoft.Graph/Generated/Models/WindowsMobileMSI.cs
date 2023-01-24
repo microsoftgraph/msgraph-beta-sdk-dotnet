@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsMobileMSI : MobileLobApp, IParsable {
         /// <summary>The command line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CommandLine {
             get { return BackingStore?.Get<string?>("commandLine"); }
             set { BackingStore?.Set("commandLine", value); }
         }
+#nullable restore
 #else
         public string CommandLine {
             get { return BackingStore?.Get<string>("commandLine"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityVersion {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#nullable restore
 #else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The product code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductCode {
             get { return BackingStore?.Get<string?>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
+#nullable restore
 #else
         public string ProductCode {
             get { return BackingStore?.Get<string>("productCode"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The product version of Windows Mobile MSI Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductVersion {
             get { return BackingStore?.Get<string?>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
+#nullable restore
 #else
         public string ProductVersion {
             get { return BackingStore?.Get<string>("productVersion"); }

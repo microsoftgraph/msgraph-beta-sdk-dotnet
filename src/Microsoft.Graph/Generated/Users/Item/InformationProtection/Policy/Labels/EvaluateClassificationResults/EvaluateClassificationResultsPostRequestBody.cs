@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.Ev
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classificationResults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ClassificationResult>? ClassificationResults {
             get { return BackingStore?.Get<List<ClassificationResult>?>("classificationResults"); }
             set { BackingStore?.Set("classificationResults", value); }
         }
+#nullable restore
 #else
         public List<ClassificationResult> ClassificationResults {
             get { return BackingStore?.Get<List<ClassificationResult>>("classificationResults"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.Ev
 #endif
         /// <summary>The contentInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ContentInfo? ContentInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentInfo?>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ContentInfo ContentInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentInfo>("contentInfo"); }

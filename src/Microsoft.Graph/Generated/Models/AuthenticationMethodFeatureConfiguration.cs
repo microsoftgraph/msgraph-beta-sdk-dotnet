@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A single entity that&apos;s excluded from using this feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public FeatureTarget? ExcludeTarget {
             get { return BackingStore?.Get<FeatureTarget?>("excludeTarget"); }
             set { BackingStore?.Set("excludeTarget", value); }
         }
+#nullable restore
 #else
         public FeatureTarget ExcludeTarget {
             get { return BackingStore?.Get<FeatureTarget>("excludeTarget"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A single entity that&apos;s allowed to use this feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public FeatureTarget? IncludeTarget {
             get { return BackingStore?.Get<FeatureTarget?>("includeTarget"); }
             set { BackingStore?.Set("includeTarget", value); }
         }
+#nullable restore
 #else
         public FeatureTarget IncludeTarget {
             get { return BackingStore?.Get<FeatureTarget>("includeTarget"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

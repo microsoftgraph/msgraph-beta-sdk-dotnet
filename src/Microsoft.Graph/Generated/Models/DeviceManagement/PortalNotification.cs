@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         }
         /// <summary>The associated alert impact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact? AlertImpact {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact?>("alertImpact"); }
             set { BackingStore?.Set("alertImpact", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact AlertImpact {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact>("alertImpact"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>The associated alert record ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlertRecordId {
             get { return BackingStore?.Get<string?>("alertRecordId"); }
             set { BackingStore?.Set("alertRecordId", value); }
         }
+#nullable restore
 #else
         public string AlertRecordId {
             get { return BackingStore?.Get<string>("alertRecordId"); }
@@ -37,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>The associated alert rule ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlertRuleId {
             get { return BackingStore?.Get<string?>("alertRuleId"); }
             set { BackingStore?.Set("alertRuleId", value); }
         }
+#nullable restore
 #else
         public string AlertRuleId {
             get { return BackingStore?.Get<string>("alertRuleId"); }
@@ -49,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>The associated alert rule name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AlertRuleName {
             get { return BackingStore?.Get<string?>("alertRuleName"); }
             set { BackingStore?.Set("alertRuleName", value); }
         }
+#nullable restore
 #else
         public string AlertRuleName {
             get { return BackingStore?.Get<string>("alertRuleName"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for the portal notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

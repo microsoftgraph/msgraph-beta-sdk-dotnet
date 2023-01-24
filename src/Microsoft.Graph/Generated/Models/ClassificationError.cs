@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ClassificationError : ClassifcationErrorBase, IParsable {
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ClassifcationErrorBase>? Details {
             get { return BackingStore?.Get<List<ClassifcationErrorBase>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#nullable restore
 #else
         public List<ClassifcationErrorBase> Details {
             get { return BackingStore?.Get<List<ClassifcationErrorBase>>("details"); }

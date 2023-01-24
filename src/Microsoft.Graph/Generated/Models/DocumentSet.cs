@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Content types allowed in document set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ContentTypeInfo>? AllowedContentTypes {
             get { return BackingStore?.Get<List<ContentTypeInfo>?>("allowedContentTypes"); }
             set { BackingStore?.Set("allowedContentTypes", value); }
         }
+#nullable restore
 #else
         public List<ContentTypeInfo> AllowedContentTypes {
             get { return BackingStore?.Get<List<ContentTypeInfo>>("allowedContentTypes"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Default contents of document set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DocumentSetContent>? DefaultContents {
             get { return BackingStore?.Get<List<DocumentSetContent>?>("defaultContents"); }
             set { BackingStore?.Set("defaultContents", value); }
         }
+#nullable restore
 #else
         public List<DocumentSetContent> DefaultContents {
             get { return BackingStore?.Get<List<DocumentSetContent>>("defaultContents"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The sharedColumns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ColumnDefinition>? SharedColumns {
             get { return BackingStore?.Get<List<ColumnDefinition>?>("sharedColumns"); }
             set { BackingStore?.Set("sharedColumns", value); }
         }
+#nullable restore
 #else
         public List<ColumnDefinition> SharedColumns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("sharedColumns"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The welcomePageColumns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ColumnDefinition>? WelcomePageColumns {
             get { return BackingStore?.Get<List<ColumnDefinition>?>("welcomePageColumns"); }
             set { BackingStore?.Set("welcomePageColumns", value); }
         }
+#nullable restore
 #else
         public List<ColumnDefinition> WelcomePageColumns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("welcomePageColumns"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Welcome page absolute URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WelcomePageUrl {
             get { return BackingStore?.Get<string?>("welcomePageUrl"); }
             set { BackingStore?.Set("welcomePageUrl", value); }
         }
+#nullable restore
 #else
         public string WelcomePageUrl {
             get { return BackingStore?.Get<string>("welcomePageUrl"); }

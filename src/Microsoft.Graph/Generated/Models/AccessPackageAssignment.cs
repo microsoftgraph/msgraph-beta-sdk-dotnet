@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageAssignment : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackage? AccessPackage {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage?>("accessPackage"); }
             set { BackingStore?.Set("accessPackage", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackage"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy? AccessPackageAssignmentPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy?>("accessPackageAssignmentPolicy"); }
             set { BackingStore?.Set("accessPackageAssignmentPolicy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicy"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The accessPackageAssignmentRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAssignmentRequest>? AccessPackageAssignmentRequests {
             get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>?>("accessPackageAssignmentRequests"); }
             set { BackingStore?.Set("accessPackageAssignmentRequests", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAssignmentRequest> AccessPackageAssignmentRequests {
             get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>>("accessPackageAssignmentRequests"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The resource roles delivered to the target user for this assignment. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAssignmentResourceRole>? AccessPackageAssignmentResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>?>("accessPackageAssignmentResourceRoles"); }
             set { BackingStore?.Set("accessPackageAssignmentResourceRoles", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAssignmentResourceRole> AccessPackageAssignmentResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>>("accessPackageAssignmentResourceRoles"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the access package. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccessPackageId {
             get { return BackingStore?.Get<string?>("accessPackageId"); }
             set { BackingStore?.Set("accessPackageId", value); }
         }
+#nullable restore
 #else
         public string AccessPackageId {
             get { return BackingStore?.Get<string>("accessPackageId"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the access package assignment policy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentPolicyId {
             get { return BackingStore?.Get<string?>("assignmentPolicyId"); }
             set { BackingStore?.Set("assignmentPolicyId", value); }
         }
+#nullable restore
 #else
         public string AssignmentPolicyId {
             get { return BackingStore?.Get<string>("assignmentPolicyId"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentState {
             get { return BackingStore?.Get<string?>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
+#nullable restore
 #else
         public string AssignmentState {
             get { return BackingStore?.Get<string>("assignmentState"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentStatus {
             get { return BackingStore?.Get<string?>("assignmentStatus"); }
             set { BackingStore?.Set("assignmentStatus", value); }
         }
+#nullable restore
 #else
         public string AssignmentStatus {
             get { return BackingStore?.Get<string>("assignmentStatus"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the catalog containing the access package. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CatalogId {
             get { return BackingStore?.Get<string?>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
+#nullable restore
 #else
         public string CatalogId {
             get { return BackingStore?.Get<string>("catalogId"); }
@@ -125,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>When the access assignment is to be in place. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestSchedule? Schedule {
             get { return BackingStore?.Get<RequestSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#nullable restore
 #else
         public RequestSchedule Schedule {
             get { return BackingStore?.Get<RequestSchedule>("schedule"); }
@@ -137,10 +157,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AccessPackageSubject? Target {
             get { return BackingStore?.Get<AccessPackageSubject?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#nullable restore
 #else
         public AccessPackageSubject Target {
             get { return BackingStore?.Get<AccessPackageSubject>("target"); }
@@ -149,10 +171,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the subject with the assignment. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetId {
             get { return BackingStore?.Get<string?>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
         }
+#nullable restore
 #else
         public string TargetId {
             get { return BackingStore?.Get<string>("targetId"); }

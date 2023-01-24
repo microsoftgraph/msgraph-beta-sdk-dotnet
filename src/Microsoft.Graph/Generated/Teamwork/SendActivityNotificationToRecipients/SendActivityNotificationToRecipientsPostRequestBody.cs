@@ -9,10 +9,12 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
     public class SendActivityNotificationToRecipientsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ActivityType {
             get { return BackingStore?.Get<string?>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
+#nullable restore
 #else
         public string ActivityType {
             get { return BackingStore?.Get<string>("activityType"); }
@@ -33,10 +35,12 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
         }
         /// <summary>The previewText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? PreviewText {
             get { return BackingStore?.Get<ItemBody?>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
+#nullable restore
 #else
         public ItemBody PreviewText {
             get { return BackingStore?.Get<ItemBody>("previewText"); }
@@ -45,10 +49,12 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
 #endif
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamworkNotificationRecipient>? Recipients {
             get { return BackingStore?.Get<List<TeamworkNotificationRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#nullable restore
 #else
         public List<TeamworkNotificationRecipient> Recipients {
             get { return BackingStore?.Get<List<TeamworkNotificationRecipient>>("recipients"); }
@@ -57,10 +63,12 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
 #endif
         /// <summary>The teamsAppId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TeamsAppId {
             get { return BackingStore?.Get<string?>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
+#nullable restore
 #else
         public string TeamsAppId {
             get { return BackingStore?.Get<string>("teamsAppId"); }
@@ -69,10 +77,12 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
 #endif
         /// <summary>The templateParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.KeyValuePair>? TemplateParameters {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("templateParameters"); }
             set { BackingStore?.Set("templateParameters", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.KeyValuePair> TemplateParameters {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("templateParameters"); }
@@ -81,10 +91,12 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
 #endif
         /// <summary>The topic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkActivityTopic? Topic {
             get { return BackingStore?.Get<TeamworkActivityTopic?>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
+#nullable restore
 #else
         public TeamworkActivityTopic Topic {
             get { return BackingStore?.Get<TeamworkActivityTopic>("topic"); }

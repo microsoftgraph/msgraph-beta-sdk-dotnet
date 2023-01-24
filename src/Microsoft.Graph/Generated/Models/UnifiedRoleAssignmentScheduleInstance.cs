@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleAssignmentScheduleInstance : UnifiedRoleScheduleInstanceBase, IParsable {
         /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UnifiedRoleEligibilityScheduleInstance? ActivatedUsing {
             get { return BackingStore?.Get<UnifiedRoleEligibilityScheduleInstance?>("activatedUsing"); }
             set { BackingStore?.Set("activatedUsing", value); }
         }
+#nullable restore
 #else
         public UnifiedRoleEligibilityScheduleInstance ActivatedUsing {
             get { return BackingStore?.Get<UnifiedRoleEligibilityScheduleInstance>("activatedUsing"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentType {
             get { return BackingStore?.Get<string?>("assignmentType"); }
             set { BackingStore?.Set("assignmentType", value); }
         }
+#nullable restore
 #else
         public string AssignmentType {
             get { return BackingStore?.Get<string>("assignmentType"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MemberType {
             get { return BackingStore?.Get<string?>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
         }
+#nullable restore
 #else
         public string MemberType {
             get { return BackingStore?.Get<string>("memberType"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the role assignment in Azure AD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleAssignmentOriginId {
             get { return BackingStore?.Get<string?>("roleAssignmentOriginId"); }
             set { BackingStore?.Set("roleAssignmentOriginId", value); }
         }
+#nullable restore
 #else
         public string RoleAssignmentOriginId {
             get { return BackingStore?.Get<string>("roleAssignmentOriginId"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleAssignmentScheduleId {
             get { return BackingStore?.Get<string?>("roleAssignmentScheduleId"); }
             set { BackingStore?.Set("roleAssignmentScheduleId", value); }
         }
+#nullable restore
 #else
         public string RoleAssignmentScheduleId {
             get { return BackingStore?.Get<string>("roleAssignmentScheduleId"); }

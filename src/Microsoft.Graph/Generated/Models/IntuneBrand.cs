@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Collection of blocked actions on the company portal as per platform and device ownership types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CompanyPortalBlockedAction>? CompanyPortalBlockedActions {
             get { return BackingStore?.Get<List<CompanyPortalBlockedAction>?>("companyPortalBlockedActions"); }
             set { BackingStore?.Set("companyPortalBlockedActions", value); }
         }
+#nullable restore
 #else
         public List<CompanyPortalBlockedAction> CompanyPortalBlockedActions {
             get { return BackingStore?.Get<List<CompanyPortalBlockedAction>>("companyPortalBlockedActions"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Email address of the person/organization responsible for IT support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContactITEmailAddress {
             get { return BackingStore?.Get<string?>("contactITEmailAddress"); }
             set { BackingStore?.Set("contactITEmailAddress", value); }
         }
+#nullable restore
 #else
         public string ContactITEmailAddress {
             get { return BackingStore?.Get<string>("contactITEmailAddress"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Name of the person/organization responsible for IT support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContactITName {
             get { return BackingStore?.Get<string?>("contactITName"); }
             set { BackingStore?.Set("contactITName", value); }
         }
+#nullable restore
 #else
         public string ContactITName {
             get { return BackingStore?.Get<string>("contactITName"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Text comments regarding the person/organization responsible for IT support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContactITNotes {
             get { return BackingStore?.Get<string?>("contactITNotes"); }
             set { BackingStore?.Set("contactITNotes", value); }
         }
+#nullable restore
 #else
         public string ContactITNotes {
             get { return BackingStore?.Get<string>("contactITNotes"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Phone number of the person/organization responsible for IT support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContactITPhoneNumber {
             get { return BackingStore?.Get<string?>("contactITPhoneNumber"); }
             set { BackingStore?.Set("contactITPhoneNumber", value); }
         }
+#nullable restore
 #else
         public string ContactITPhoneNumber {
             get { return BackingStore?.Get<string>("contactITPhoneNumber"); }
@@ -78,10 +88,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The custom privacy message used to explain what the organization can see and do on managed devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomCanSeePrivacyMessage {
             get { return BackingStore?.Get<string?>("customCanSeePrivacyMessage"); }
             set { BackingStore?.Set("customCanSeePrivacyMessage", value); }
         }
+#nullable restore
 #else
         public string CustomCanSeePrivacyMessage {
             get { return BackingStore?.Get<string>("customCanSeePrivacyMessage"); }
@@ -90,10 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The custom privacy message used to explain what the organization can’t see or do on managed devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomCantSeePrivacyMessage {
             get { return BackingStore?.Get<string?>("customCantSeePrivacyMessage"); }
             set { BackingStore?.Set("customCantSeePrivacyMessage", value); }
         }
+#nullable restore
 #else
         public string CustomCantSeePrivacyMessage {
             get { return BackingStore?.Get<string>("customCantSeePrivacyMessage"); }
@@ -102,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The custom privacy message used to explain what the organization can’t see or do on managed devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomPrivacyMessage {
             get { return BackingStore?.Get<string?>("customPrivacyMessage"); }
             set { BackingStore?.Set("customPrivacyMessage", value); }
         }
+#nullable restore
 #else
         public string CustomPrivacyMessage {
             get { return BackingStore?.Get<string>("customPrivacyMessage"); }
@@ -114,10 +130,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Logo image displayed in Company Portal apps which have a dark background behind the logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MimeContent? DarkBackgroundLogo {
             get { return BackingStore?.Get<MimeContent?>("darkBackgroundLogo"); }
             set { BackingStore?.Set("darkBackgroundLogo", value); }
         }
+#nullable restore
 #else
         public MimeContent DarkBackgroundLogo {
             get { return BackingStore?.Get<MimeContent>("darkBackgroundLogo"); }
@@ -131,10 +149,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Company/organization name that is displayed to end users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -158,10 +178,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Customized image displayed in Company Portal app landing page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MimeContent? LandingPageCustomizedImage {
             get { return BackingStore?.Get<MimeContent?>("landingPageCustomizedImage"); }
             set { BackingStore?.Set("landingPageCustomizedImage", value); }
         }
+#nullable restore
 #else
         public MimeContent LandingPageCustomizedImage {
             get { return BackingStore?.Get<MimeContent>("landingPageCustomizedImage"); }
@@ -170,10 +192,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Logo image displayed in Company Portal apps which have a light background behind the logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MimeContent? LightBackgroundLogo {
             get { return BackingStore?.Get<MimeContent?>("lightBackgroundLogo"); }
             set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
+#nullable restore
 #else
         public MimeContent LightBackgroundLogo {
             get { return BackingStore?.Get<MimeContent>("lightBackgroundLogo"); }
@@ -182,10 +206,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -194,10 +220,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name of the company/organization’s IT helpdesk site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnlineSupportSiteName {
             get { return BackingStore?.Get<string?>("onlineSupportSiteName"); }
             set { BackingStore?.Set("onlineSupportSiteName", value); }
         }
+#nullable restore
 #else
         public string OnlineSupportSiteName {
             get { return BackingStore?.Get<string>("onlineSupportSiteName"); }
@@ -206,10 +234,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL to the company/organization’s IT helpdesk site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnlineSupportSiteUrl {
             get { return BackingStore?.Get<string?>("onlineSupportSiteUrl"); }
             set { BackingStore?.Set("onlineSupportSiteUrl", value); }
         }
+#nullable restore
 #else
         public string OnlineSupportSiteUrl {
             get { return BackingStore?.Get<string>("onlineSupportSiteUrl"); }
@@ -218,10 +248,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL to the company/organization’s privacy policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrivacyUrl {
             get { return BackingStore?.Get<string?>("privacyUrl"); }
             set { BackingStore?.Set("privacyUrl", value); }
         }
+#nullable restore
 #else
         public string PrivacyUrl {
             get { return BackingStore?.Get<string>("privacyUrl"); }
@@ -230,10 +262,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of scope tags assigned to the default branding profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -277,10 +311,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Primary theme color used in the Company Portal applications and web portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RgbColor? ThemeColor {
             get { return BackingStore?.Get<RgbColor?>("themeColor"); }
             set { BackingStore?.Set("themeColor", value); }
         }
+#nullable restore
 #else
         public RgbColor ThemeColor {
             get { return BackingStore?.Get<RgbColor>("themeColor"); }

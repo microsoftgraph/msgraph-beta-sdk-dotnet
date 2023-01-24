@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Participant : Entity, IParsable {
         /// <summary>The info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ParticipantInfo? Info {
             get { return BackingStore?.Get<ParticipantInfo?>("info"); }
             set { BackingStore?.Set("info", value); }
         }
+#nullable restore
 #else
         public ParticipantInfo Info {
             get { return BackingStore?.Get<ParticipantInfo>("info"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of media streams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MediaStream>? MediaStreams {
             get { return BackingStore?.Get<List<MediaStream>?>("mediaStreams"); }
             set { BackingStore?.Set("mediaStreams", value); }
         }
+#nullable restore
 #else
         public List<MediaStream> MediaStreams {
             get { return BackingStore?.Get<List<MediaStream>>("mediaStreams"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A blob of data provided by the participant in the roster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Metadata {
             get { return BackingStore?.Get<string?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+#nullable restore
 #else
         public string Metadata {
             get { return BackingStore?.Get<string>("metadata"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information on whether the participant has recording capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.RecordingInfo? RecordingInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingInfo?>("recordingInfo"); }
             set { BackingStore?.Set("recordingInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.RecordingInfo RecordingInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingInfo>("recordingInfo"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The restrictedExperience property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OnlineMeetingRestricted? RestrictedExperience {
             get { return BackingStore?.Get<OnlineMeetingRestricted?>("restrictedExperience"); }
             set { BackingStore?.Set("restrictedExperience", value); }
         }
+#nullable restore
 #else
         public OnlineMeetingRestricted RestrictedExperience {
             get { return BackingStore?.Get<OnlineMeetingRestricted>("restrictedExperience"); }

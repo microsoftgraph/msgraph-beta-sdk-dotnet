@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Name of the instance of the SaaS application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InstanceName {
             get { return BackingStore?.Get<string?>("instanceName"); }
             set { BackingStore?.Set("instanceName", value); }
         }
+#nullable restore
 #else
         public string InstanceName {
             get { return BackingStore?.Get<string>("instanceName"); }

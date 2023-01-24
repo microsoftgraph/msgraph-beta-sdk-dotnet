@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class TeamworkDeviceHealth : Entity, IParsable {
         /// <summary>The connection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkConnection? Connection {
             get { return BackingStore?.Get<TeamworkConnection?>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
+#nullable restore
 #else
         public TeamworkConnection Connection {
             get { return BackingStore?.Get<TeamworkConnection>("connection"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity of the user who created the device health document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? CreatedBy {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Health details about the device hardware.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkHardwareHealth? HardwareHealth {
             get { return BackingStore?.Get<TeamworkHardwareHealth?>("hardwareHealth"); }
             set { BackingStore?.Set("hardwareHealth", value); }
         }
+#nullable restore
 #else
         public TeamworkHardwareHealth HardwareHealth {
             get { return BackingStore?.Get<TeamworkHardwareHealth>("hardwareHealth"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity of the user who last modified the device health details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The login status of Microsoft Teams, Skype for Business, and Exchange.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkLoginStatus? LoginStatus {
             get { return BackingStore?.Get<TeamworkLoginStatus?>("loginStatus"); }
             set { BackingStore?.Set("loginStatus", value); }
         }
+#nullable restore
 #else
         public TeamworkLoginStatus LoginStatus {
             get { return BackingStore?.Get<TeamworkLoginStatus>("loginStatus"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Health details about all peripherals (for example, speaker and microphone) attached to a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheralsHealth? PeripheralsHealth {
             get { return BackingStore?.Get<TeamworkPeripheralsHealth?>("peripheralsHealth"); }
             set { BackingStore?.Set("peripheralsHealth", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheralsHealth PeripheralsHealth {
             get { return BackingStore?.Get<TeamworkPeripheralsHealth>("peripheralsHealth"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Software updates available for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkSoftwareUpdateHealth? SoftwareUpdateHealth {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth?>("softwareUpdateHealth"); }
             set { BackingStore?.Set("softwareUpdateHealth", value); }
         }
+#nullable restore
 #else
         public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth>("softwareUpdateHealth"); }

@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? AppsHideList {
             get { return BackingStore?.Get<List<AppListItem>?>("appsHideList"); }
             set { BackingStore?.Set("appsHideList", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> AppsHideList {
             get { return BackingStore?.Get<List<AppListItem>>("appsHideList"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? AppsInstallAllowList {
             get { return BackingStore?.Get<List<AppListItem>?>("appsInstallAllowList"); }
             set { BackingStore?.Set("appsInstallAllowList", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> AppsInstallAllowList {
             get { return BackingStore?.Get<List<AppListItem>>("appsInstallAllowList"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? AppsLaunchBlockList {
             get { return BackingStore?.Get<List<AppListItem>?>("appsLaunchBlockList"); }
             set { BackingStore?.Set("appsLaunchBlockList", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> AppsLaunchBlockList {
             get { return BackingStore?.Get<List<AppListItem>>("appsLaunchBlockList"); }
@@ -93,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
@@ -135,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppListItem>? KioskModeApps {
             get { return BackingStore?.Get<List<AppListItem>?>("kioskModeApps"); }
             set { BackingStore?.Set("kioskModeApps", value); }
         }
+#nullable restore
 #else
         public List<AppListItem> KioskModeApps {
             get { return BackingStore?.Get<List<AppListItem>>("kioskModeApps"); }

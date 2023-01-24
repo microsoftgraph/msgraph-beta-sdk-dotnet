@@ -28,10 +28,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The number of days the report covers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReportPeriod {
             get { return BackingStore?.Get<string?>("reportPeriod"); }
             set { BackingStore?.Set("reportPeriod", value); }
         }
+#nullable restore
 #else
         public string ReportPeriod {
             get { return BackingStore?.Get<string>("reportPeriod"); }

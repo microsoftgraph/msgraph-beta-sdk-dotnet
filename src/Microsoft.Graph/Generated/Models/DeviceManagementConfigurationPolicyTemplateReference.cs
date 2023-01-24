@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Template Display Name of the referenced template. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemplateDisplayName {
             get { return BackingStore?.Get<string?>("templateDisplayName"); }
             set { BackingStore?.Set("templateDisplayName", value); }
         }
+#nullable restore
 #else
         public string TemplateDisplayName {
             get { return BackingStore?.Get<string>("templateDisplayName"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Template Display Version of the referenced Template. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemplateDisplayVersion {
             get { return BackingStore?.Get<string?>("templateDisplayVersion"); }
             set { BackingStore?.Set("templateDisplayVersion", value); }
         }
+#nullable restore
 #else
         public string TemplateDisplayVersion {
             get { return BackingStore?.Get<string>("templateDisplayVersion"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Template id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemplateId {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#nullable restore
 #else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }

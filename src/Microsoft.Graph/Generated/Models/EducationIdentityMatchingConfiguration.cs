@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationIdentityMatchingConfiguration : EducationIdentitySynchronizationConfiguration, IParsable {
         /// <summary>Mapping between the user account and the options to use to uniquely identify the user to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationIdentityMatchingOptions>? MatchingOptions {
             get { return BackingStore?.Get<List<EducationIdentityMatchingOptions>?>("matchingOptions"); }
             set { BackingStore?.Set("matchingOptions", value); }
         }
+#nullable restore
 #else
         public List<EducationIdentityMatchingOptions> MatchingOptions {
             get { return BackingStore?.Get<List<EducationIdentityMatchingOptions>>("matchingOptions"); }

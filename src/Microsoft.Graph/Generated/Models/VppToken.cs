@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class VppToken : Entity, IParsable {
         /// <summary>The apple Id associated with the given Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppleId {
             get { return BackingStore?.Get<string?>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
+#nullable restore
 #else
         public string AppleId {
             get { return BackingStore?.Get<string>("appleId"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Whether or not apps for the VPP token will be automatically updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CountryOrRegion {
             get { return BackingStore?.Get<string?>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
+#nullable restore
 #else
         public string CountryOrRegion {
             get { return BackingStore?.Get<string>("countryOrRegion"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>An admin specified token friendly name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -81,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Token location returned from Apple VPP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LocationName {
             get { return BackingStore?.Get<string?>("locationName"); }
             set { BackingStore?.Set("locationName", value); }
         }
+#nullable restore
 #else
         public string LocationName {
             get { return BackingStore?.Get<string>("locationName"); }
@@ -93,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The organization associated with the Apple Volume Purchase Program Token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrganizationName {
             get { return BackingStore?.Get<string?>("organizationName"); }
             set { BackingStore?.Set("organizationName", value); }
         }
+#nullable restore
 #else
         public string OrganizationName {
             get { return BackingStore?.Get<string>("organizationName"); }
@@ -105,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Role Scope Tags IDs assigned to this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -122,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Token {
             get { return BackingStore?.Get<string?>("token"); }
             set { BackingStore?.Set("token", value); }
         }
+#nullable restore
 #else
         public string Token {
             get { return BackingStore?.Get<string>("token"); }
@@ -134,10 +148,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VppTokenActionResult>? TokenActionResults {
             get { return BackingStore?.Get<List<VppTokenActionResult>?>("tokenActionResults"); }
             set { BackingStore?.Set("tokenActionResults", value); }
         }
+#nullable restore
 #else
         public List<VppTokenActionResult> TokenActionResults {
             get { return BackingStore?.Get<List<VppTokenActionResult>>("tokenActionResults"); }

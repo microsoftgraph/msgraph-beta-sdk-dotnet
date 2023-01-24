@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceScopeAction {
             get { return BackingStore?.Get<string?>("deviceScopeAction"); }
             set { BackingStore?.Set("deviceScopeAction", value); }
         }
+#nullable restore
 #else
         public string DeviceScopeAction {
             get { return BackingStore?.Get<string>("deviceScopeAction"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier of the device scope the action was triggered on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceScopeId {
             get { return BackingStore?.Get<string?>("deviceScopeId"); }
             set { BackingStore?.Set("deviceScopeId", value); }
         }
+#nullable restore
 #else
         public string DeviceScopeId {
             get { return BackingStore?.Get<string>("deviceScopeId"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The message indicates the reason the device scope action failed to trigger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FailedMessage {
             get { return BackingStore?.Get<string?>("failedMessage"); }
             set { BackingStore?.Set("failedMessage", value); }
         }
+#nullable restore
 #else
         public string FailedMessage {
             get { return BackingStore?.Get<string>("failedMessage"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

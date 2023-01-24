@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CorsConfiguration_v2CollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CorsConfiguration_v2>? Value {
             get { return BackingStore?.Get<List<CorsConfiguration_v2>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<CorsConfiguration_v2> Value {
             get { return BackingStore?.Get<List<CorsConfiguration_v2>>("value"); }

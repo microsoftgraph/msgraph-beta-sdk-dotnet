@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The storage account URL of the exported report. It can be used to download the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExportUrl {
             get { return BackingStore?.Get<string?>("exportUrl"); }
             set { BackingStore?.Set("exportUrl", value); }
         }
+#nullable restore
 #else
         public string ExportUrl {
             get { return BackingStore?.Get<string>("exportUrl"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The filter applied on the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Filter {
             get { return BackingStore?.Get<string?>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
+#nullable restore
 #else
         public string Filter {
             get { return BackingStore?.Get<string>("filter"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The format of the exported report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Format {
             get { return BackingStore?.Get<string?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#nullable restore
 #else
         public string Format {
             get { return BackingStore?.Get<string>("format"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The selected columns of the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Select {
             get { return BackingStore?.Get<List<string>?>("select"); }
             set { BackingStore?.Set("select", value); }
         }
+#nullable restore
 #else
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public CustomTaskExtensionCallbackData? Data {
             get { return BackingStore?.Get<CustomTaskExtensionCallbackData?>("data"); }
             set { BackingStore?.Set("data", value); }
         }
+#nullable restore
 #else
         public CustomTaskExtensionCallbackData Data {
             get { return BackingStore?.Get<CustomTaskExtensionCallbackData>("data"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Source {
             get { return BackingStore?.Get<string?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
+#nullable restore
 #else
         public string Source {
             get { return BackingStore?.Get<string>("source"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Type {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#nullable restore
 #else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }

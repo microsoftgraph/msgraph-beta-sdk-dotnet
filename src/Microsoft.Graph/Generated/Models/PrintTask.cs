@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrintTask : Entity, IParsable {
         /// <summary>The definition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrintTaskDefinition? Definition {
             get { return BackingStore?.Get<PrintTaskDefinition?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#nullable restore
 #else
         public PrintTaskDefinition Definition {
             get { return BackingStore?.Get<PrintTaskDefinition>("definition"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentUrl {
             get { return BackingStore?.Get<string?>("parentUrl"); }
             set { BackingStore?.Set("parentUrl", value); }
         }
+#nullable restore
 #else
         public string ParentUrl {
             get { return BackingStore?.Get<string>("parentUrl"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrintTaskStatus? Status {
             get { return BackingStore?.Get<PrintTaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public PrintTaskStatus Status {
             get { return BackingStore?.Get<PrintTaskStatus>("status"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The trigger property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PrintTaskTrigger? Trigger {
             get { return BackingStore?.Get<PrintTaskTrigger?>("trigger"); }
             set { BackingStore?.Set("trigger", value); }
         }
+#nullable restore
 #else
         public PrintTaskTrigger Trigger {
             get { return BackingStore?.Get<PrintTaskTrigger>("trigger"); }

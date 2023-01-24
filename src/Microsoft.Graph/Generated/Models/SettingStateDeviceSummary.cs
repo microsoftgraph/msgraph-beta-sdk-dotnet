@@ -25,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the InstancePath for the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InstancePath {
             get { return BackingStore?.Get<string?>("instancePath"); }
             set { BackingStore?.Set("instancePath", value); }
         }
+#nullable restore
 #else
         public string InstancePath {
             get { return BackingStore?.Get<string>("instancePath"); }
@@ -52,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Name of the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingName {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#nullable restore
 #else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserFlowLanguageConfiguration : Entity, IParsable {
         /// <summary>Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserFlowLanguagePage>? DefaultPages {
             get { return BackingStore?.Get<List<UserFlowLanguagePage>?>("defaultPages"); }
             set { BackingStore?.Set("defaultPages", value); }
         }
+#nullable restore
 #else
         public List<UserFlowLanguagePage> DefaultPages {
             get { return BackingStore?.Get<List<UserFlowLanguagePage>>("defaultPages"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The language name to display. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UserFlowLanguagePage>? OverridesPages {
             get { return BackingStore?.Get<List<UserFlowLanguagePage>?>("overridesPages"); }
             set { BackingStore?.Set("overridesPages", value); }
         }
+#nullable restore
 #else
         public List<UserFlowLanguagePage> OverridesPages {
             get { return BackingStore?.Get<List<UserFlowLanguagePage>>("overridesPages"); }

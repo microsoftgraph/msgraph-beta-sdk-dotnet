@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Folder ID of an archive folder for the user. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ArchiveFolder {
             get { return BackingStore?.Get<string?>("archiveFolder"); }
             set { BackingStore?.Set("archiveFolder", value); }
         }
+#nullable restore
 #else
         public string ArchiveFolder {
             get { return BackingStore?.Get<string>("archiveFolder"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.AutomaticRepliesSetting? AutomaticRepliesSetting {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutomaticRepliesSetting?>("automaticRepliesSetting"); }
             set { BackingStore?.Set("automaticRepliesSetting", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AutomaticRepliesSetting AutomaticRepliesSetting {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutomaticRepliesSetting>("automaticRepliesSetting"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date format for the user&apos;s mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DateFormat {
             get { return BackingStore?.Get<string?>("dateFormat"); }
             set { BackingStore?.Set("dateFormat", value); }
         }
+#nullable restore
 #else
         public string DateFormat {
             get { return BackingStore?.Get<string>("dateFormat"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The locale information for the user, including the preferred language and country/region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public LocaleInfo? Language {
             get { return BackingStore?.Get<LocaleInfo?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+#nullable restore
 #else
         public LocaleInfo Language {
             get { return BackingStore?.Get<LocaleInfo>("language"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The time format for the user&apos;s mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TimeFormat {
             get { return BackingStore?.Get<string?>("timeFormat"); }
             set { BackingStore?.Set("timeFormat", value); }
         }
+#nullable restore
 #else
         public string TimeFormat {
             get { return BackingStore?.Get<string>("timeFormat"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The default time zone for the user&apos;s mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TimeZone {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#nullable restore
 #else
         public string TimeZone {
             get { return BackingStore?.Get<string>("timeZone"); }
@@ -114,10 +128,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The days of the week and hours in a specific time zone that the user works.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.WorkingHours? WorkingHours {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkingHours?>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.WorkingHours WorkingHours {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkingHours>("workingHours"); }

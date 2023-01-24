@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptStringParameter : DeviceHealthScriptParameter, IParsable {
         /// <summary>The default value of string param</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultValue {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#nullable restore
 #else
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }

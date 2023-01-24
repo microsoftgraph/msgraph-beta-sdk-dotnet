@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The auditCorrelationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AuditCorrelationId {
             get { return BackingStore?.Get<string?>("auditCorrelationId"); }
             set { BackingStore?.Set("auditCorrelationId", value); }
         }
+#nullable restore
 #else
         public string AuditCorrelationId {
             get { return BackingStore?.Get<string>("auditCorrelationId"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The matchingRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MatchingDlpRule>? MatchingRules {
             get { return BackingStore?.Get<List<MatchingDlpRule>?>("matchingRules"); }
             set { BackingStore?.Set("matchingRules", value); }
         }
+#nullable restore
 #else
         public List<MatchingDlpRule> MatchingRules {
             get { return BackingStore?.Get<List<MatchingDlpRule>>("matchingRules"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

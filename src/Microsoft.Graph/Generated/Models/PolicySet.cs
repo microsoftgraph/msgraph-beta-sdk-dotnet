@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PolicySet : Entity, IParsable {
         /// <summary>Assignments of the PolicySet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PolicySetAssignment>? Assignments {
             get { return BackingStore?.Get<List<PolicySetAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#nullable restore
 #else
         public List<PolicySetAssignment> Assignments {
             get { return BackingStore?.Get<List<PolicySetAssignment>>("assignments"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Description of the PolicySet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>DisplayName of the PolicySet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Tags of the guided deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? GuidedDeploymentTags {
             get { return BackingStore?.Get<List<string>?>("guidedDeploymentTags"); }
             set { BackingStore?.Set("guidedDeploymentTags", value); }
         }
+#nullable restore
 #else
         public List<string> GuidedDeploymentTags {
             get { return BackingStore?.Get<List<string>>("guidedDeploymentTags"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Items of the PolicySet with maximum count 100.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PolicySetItem>? Items {
             get { return BackingStore?.Get<List<PolicySetItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#nullable restore
 #else
         public List<PolicySetItem> Items {
             get { return BackingStore?.Get<List<PolicySetItem>>("items"); }
@@ -85,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>RoleScopeTags of the PolicySet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTags {
             get { return BackingStore?.Get<List<string>?>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTags {
             get { return BackingStore?.Get<List<string>>("roleScopeTags"); }

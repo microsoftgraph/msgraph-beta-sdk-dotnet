@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SignDigest {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The digest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Digest {
             get { return BackingStore?.Get<byte[]?>("digest"); }
             set { BackingStore?.Set("digest", value); }
         }
+#nullable restore
 #else
         public byte[] Digest {
             get { return BackingStore?.Get<byte[]>("digest"); }

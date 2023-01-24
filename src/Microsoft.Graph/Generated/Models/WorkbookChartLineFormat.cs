@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartLineFormat : Entity, IParsable {
         /// <summary>HTML color code representing the color of lines in the chart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Color {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#nullable restore
 #else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }

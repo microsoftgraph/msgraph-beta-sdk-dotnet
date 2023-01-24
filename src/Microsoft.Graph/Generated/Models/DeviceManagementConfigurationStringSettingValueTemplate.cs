@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationStringSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable {
         /// <summary>String Setting Value Default Template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationStringSettingValueDefaultTemplate? DefaultValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationStringSettingValueDefaultTemplate?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationStringSettingValueDefaultTemplate DefaultValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationStringSettingValueDefaultTemplate>("defaultValue"); }

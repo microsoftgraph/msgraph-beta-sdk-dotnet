@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class RemoteAssistancePartner : Entity, IParsable {
         /// <summary>Display name of the partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -37,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>URL of the partner&apos;s onboarding portal, where an administrator can configure their Remote Assistance service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnboardingUrl {
             get { return BackingStore?.Get<string?>("onboardingUrl"); }
             set { BackingStore?.Set("onboardingUrl", value); }
         }
+#nullable restore
 #else
         public string OnboardingUrl {
             get { return BackingStore?.Get<string>("onboardingUrl"); }

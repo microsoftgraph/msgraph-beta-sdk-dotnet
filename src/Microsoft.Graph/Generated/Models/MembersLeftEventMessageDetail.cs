@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MembersLeftEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Initiator {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#nullable restore
 #else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of members who left the chat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeamworkUserIdentity>? Members {
             get { return BackingStore?.Get<List<TeamworkUserIdentity>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#nullable restore
 #else
         public List<TeamworkUserIdentity> Members {
             get { return BackingStore?.Get<List<TeamworkUserIdentity>>("members"); }

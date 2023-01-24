@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationLinkResource : EducationResource, IParsable {
         /// <summary>URL to the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Link {
             get { return BackingStore?.Get<string?>("link"); }
             set { BackingStore?.Set("link", value); }
         }
+#nullable restore
 #else
         public string Link {
             get { return BackingStore?.Get<string>("link"); }

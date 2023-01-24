@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The connectingIP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ConnectingIP {
             get { return BackingStore?.Get<string?>("connectingIP"); }
             set { BackingStore?.Set("connectingIP", value); }
         }
+#nullable restore
 #else
         public string ConnectingIP {
             get { return BackingStore?.Get<string>("connectingIP"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The deliveryAction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeliveryAction {
             get { return BackingStore?.Get<string?>("deliveryAction"); }
             set { BackingStore?.Set("deliveryAction", value); }
         }
+#nullable restore
 #else
         public string DeliveryAction {
             get { return BackingStore?.Get<string>("deliveryAction"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The deliveryLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeliveryLocation {
             get { return BackingStore?.Get<string?>("deliveryLocation"); }
             set { BackingStore?.Set("deliveryLocation", value); }
         }
+#nullable restore
 #else
         public string DeliveryLocation {
             get { return BackingStore?.Get<string>("deliveryLocation"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The directionality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Directionality {
             get { return BackingStore?.Get<string?>("directionality"); }
             set { BackingStore?.Set("directionality", value); }
         }
+#nullable restore
 #else
         public string Directionality {
             get { return BackingStore?.Get<string>("directionality"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The internetMessageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InternetMessageId {
             get { return BackingStore?.Get<string?>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
+#nullable restore
 #else
         public string InternetMessageId {
             get { return BackingStore?.Get<string>("internetMessageId"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The messageFingerprint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MessageFingerprint {
             get { return BackingStore?.Get<string?>("messageFingerprint"); }
             set { BackingStore?.Set("messageFingerprint", value); }
         }
+#nullable restore
 #else
         public string MessageFingerprint {
             get { return BackingStore?.Get<string>("messageFingerprint"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The messageSubject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MessageSubject {
             get { return BackingStore?.Get<string?>("messageSubject"); }
             set { BackingStore?.Set("messageSubject", value); }
         }
+#nullable restore
 #else
         public string MessageSubject {
             get { return BackingStore?.Get<string>("messageSubject"); }
@@ -104,10 +118,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The networkMessageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NetworkMessageId {
             get { return BackingStore?.Get<string?>("networkMessageId"); }
             set { BackingStore?.Set("networkMessageId", value); }
         }
+#nullable restore
 #else
         public string NetworkMessageId {
             get { return BackingStore?.Get<string>("networkMessageId"); }
@@ -116,10 +132,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

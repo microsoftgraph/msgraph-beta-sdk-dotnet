@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of additional warranty offers. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WarrantyOffer>? AdditionalWarranties {
             get { return BackingStore?.Get<List<WarrantyOffer>?>("additionalWarranties"); }
             set { BackingStore?.Set("additionalWarranties", value); }
         }
+#nullable restore
 #else
         public List<WarrantyOffer> AdditionalWarranties {
             get { return BackingStore?.Get<List<WarrantyOffer>>("additionalWarranties"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of base warranty offers. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WarrantyOffer>? BaseWarranties {
             get { return BackingStore?.Get<List<WarrantyOffer>?>("baseWarranties"); }
             set { BackingStore?.Set("baseWarranties", value); }
         }
+#nullable restore
 #else
         public List<WarrantyOffer> BaseWarranties {
             get { return BackingStore?.Get<List<WarrantyOffer>>("baseWarranties"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device configuration page URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceConfigurationUrl {
             get { return BackingStore?.Get<string?>("deviceConfigurationUrl"); }
             set { BackingStore?.Set("deviceConfigurationUrl", value); }
         }
+#nullable restore
 #else
         public string DeviceConfigurationUrl {
             get { return BackingStore?.Get<string>("deviceConfigurationUrl"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device warranty page URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceWarrantyUrl {
             get { return BackingStore?.Get<string?>("deviceWarrantyUrl"); }
             set { BackingStore?.Set("deviceWarrantyUrl", value); }
         }
+#nullable restore
 #else
         public string DeviceWarrantyUrl {
             get { return BackingStore?.Get<string>("deviceWarrantyUrl"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

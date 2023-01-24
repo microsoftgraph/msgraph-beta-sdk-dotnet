@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CloudPcDeviceImage : Entity, IParsable {
         /// <summary>The image&apos;s display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The image&apos;s operating system. For example: Windows 10 Enterprise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OperatingSystem {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
+#nullable restore
 #else
         public string OperatingSystem {
             get { return BackingStore?.Get<string>("operatingSystem"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The image&apos;s OS build version. For example: 1909.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsBuildNumber {
             get { return BackingStore?.Get<string?>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
+#nullable restore
 #else
         public string OsBuildNumber {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ID of the source image resource on Azure. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourceImageResourceId {
             get { return BackingStore?.Get<string?>("sourceImageResourceId"); }
             set { BackingStore?.Set("sourceImageResourceId", value); }
         }
+#nullable restore
 #else
         public string SourceImageResourceId {
             get { return BackingStore?.Get<string>("sourceImageResourceId"); }
@@ -81,10 +89,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The image version. For example: 0.0.1, 1.5.13.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Version {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#nullable restore
 #else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }

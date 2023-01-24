@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The manager property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SynchronizationJobSubject? Manager {
             get { return BackingStore?.Get<SynchronizationJobSubject?>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
+#nullable restore
 #else
         public SynchronizationJobSubject Manager {
             get { return BackingStore?.Get<SynchronizationJobSubject>("manager"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All group members that you would like to provision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationJobSubject>? Members {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationJobSubject> Members {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>>("members"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The owners property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SynchronizationJobSubject>? Owners {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>?>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
+#nullable restore
 #else
         public List<SynchronizationJobSubject> Owners {
             get { return BackingStore?.Get<List<SynchronizationJobSubject>>("owners"); }

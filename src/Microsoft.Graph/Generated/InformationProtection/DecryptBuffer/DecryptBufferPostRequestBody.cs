@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.DecryptBuffer {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The encryptedBuffer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? EncryptedBuffer {
             get { return BackingStore?.Get<byte[]?>("encryptedBuffer"); }
             set { BackingStore?.Set("encryptedBuffer", value); }
         }
+#nullable restore
 #else
         public byte[] EncryptedBuffer {
             get { return BackingStore?.Get<byte[]>("encryptedBuffer"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.DecryptBuffer {
 #endif
         /// <summary>The publishingLicense property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? PublishingLicense {
             get { return BackingStore?.Get<byte[]?>("publishingLicense"); }
             set { BackingStore?.Set("publishingLicense", value); }
         }
+#nullable restore
 #else
         public byte[] PublishingLicense {
             get { return BackingStore?.Get<byte[]>("publishingLicense"); }

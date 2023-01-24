@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Group : DirectoryObject, IParsable {
         /// <summary>The list of users or groups that are allowed to create post&apos;s or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? AcceptedSenders {
             get { return BackingStore?.Get<List<DirectoryObject>?>("acceptedSenders"); }
             set { BackingStore?.Set("acceptedSenders", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> AcceptedSenders {
             get { return BackingStore?.Get<List<DirectoryObject>>("acceptedSenders"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Represents the app roles a group has been granted for an application. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AppRoleAssignment>? AppRoleAssignments {
             get { return BackingStore?.Get<List<AppRoleAssignment>?>("appRoleAssignments"); }
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
+#nullable restore
 #else
         public List<AppRoleAssignment> AppRoleAssignments {
             get { return BackingStore?.Get<List<AppRoleAssignment>>("appRoleAssignments"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssignedLabel>? AssignedLabels {
             get { return BackingStore?.Get<List<AssignedLabel>?>("assignedLabels"); }
             set { BackingStore?.Set("assignedLabels", value); }
         }
+#nullable restore
 #else
         public List<AssignedLabel> AssignedLabels {
             get { return BackingStore?.Get<List<AssignedLabel>>("assignedLabels"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssignedLicense>? AssignedLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>?>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
+#nullable restore
 #else
         public List<AssignedLicense> AssignedLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>>("assignedLicenses"); }
@@ -70,10 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The group&apos;s calendar. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Calendar? Calendar {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Calendar?>("calendar"); }
             set { BackingStore?.Set("calendar", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Calendar Calendar {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Calendar>("calendar"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The calendar view for the calendar. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Event>? CalendarView {
             get { return BackingStore?.Get<List<Event>?>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
+#nullable restore
 #else
         public List<Event> CalendarView {
             get { return BackingStore?.Get<List<Event>>("calendarView"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Classification {
             get { return BackingStore?.Get<string?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
+#nullable restore
 #else
         public string Classification {
             get { return BackingStore?.Get<string>("classification"); }
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The group&apos;s conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Conversation>? Conversations {
             get { return BackingStore?.Get<List<Conversation>?>("conversations"); }
             set { BackingStore?.Set("conversations", value); }
         }
+#nullable restore
 #else
         public List<Conversation> Conversations {
             get { return BackingStore?.Get<List<Conversation>>("conversations"); }
@@ -118,10 +134,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>App ID of the app used to create the group. Can be null for some groups. Returned by default. Read-only. Supports $filter (eq, ne, not, in, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CreatedByAppId {
             get { return BackingStore?.Get<string?>("createdByAppId"); }
             set { BackingStore?.Set("createdByAppId", value); }
         }
+#nullable restore
 #else
         public string CreatedByAppId {
             get { return BackingStore?.Get<string>("createdByAppId"); }
@@ -135,10 +153,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DirectoryObject? CreatedOnBehalfOf {
             get { return BackingStore?.Get<DirectoryObject?>("createdOnBehalfOf"); }
             set { BackingStore?.Set("createdOnBehalfOf", value); }
         }
+#nullable restore
 #else
         public DirectoryObject CreatedOnBehalfOf {
             get { return BackingStore?.Get<DirectoryObject>("createdOnBehalfOf"); }
@@ -147,10 +167,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An optional description for the group. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -159,10 +181,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -171,10 +195,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The group&apos;s default drive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Drive? Drive {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive?>("drive"); }
             set { BackingStore?.Set("drive", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Drive Drive {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive>("drive"); }
@@ -183,10 +209,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The group&apos;s drives. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.Drive>? Drives {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Drive>?>("drives"); }
             set { BackingStore?.Set("drives", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.Drive> Drives {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Drive>>("drives"); }
@@ -195,10 +223,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Endpoints for the group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Endpoint>? Endpoints {
             get { return BackingStore?.Get<List<Endpoint>?>("endpoints"); }
             set { BackingStore?.Set("endpoints", value); }
         }
+#nullable restore
 #else
         public List<Endpoint> Endpoints {
             get { return BackingStore?.Get<List<Endpoint>>("endpoints"); }
@@ -207,10 +237,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The group&apos;s events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Event>? Events {
             get { return BackingStore?.Get<List<Event>?>("events"); }
             set { BackingStore?.Set("events", value); }
         }
+#nullable restore
 #else
         public List<Event> Events {
             get { return BackingStore?.Get<List<Event>>("events"); }
@@ -224,10 +256,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of open extensions defined for the group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Extension>? Extensions {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#nullable restore
 #else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
@@ -236,10 +270,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of lifecycle policies for this group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupLifecyclePolicy>? GroupLifecyclePolicies {
             get { return BackingStore?.Get<List<GroupLifecyclePolicy>?>("groupLifecyclePolicies"); }
             set { BackingStore?.Set("groupLifecyclePolicies", value); }
         }
+#nullable restore
 #else
         public List<GroupLifecyclePolicy> GroupLifecyclePolicies {
             get { return BackingStore?.Get<List<GroupLifecyclePolicy>>("groupLifecyclePolicies"); }
@@ -248,10 +284,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it&apos;s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? GroupTypes {
             get { return BackingStore?.Get<List<string>?>("groupTypes"); }
             set { BackingStore?.Set("groupTypes", value); }
         }
+#nullable restore
 #else
         public List<string> GroupTypes {
             get { return BackingStore?.Get<List<string>>("groupTypes"); }
@@ -275,10 +313,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? InfoCatalogs {
             get { return BackingStore?.Get<List<string>?>("infoCatalogs"); }
             set { BackingStore?.Set("infoCatalogs", value); }
         }
+#nullable restore
 #else
         public List<string> InfoCatalogs {
             get { return BackingStore?.Get<List<string>>("infoCatalogs"); }
@@ -290,7 +330,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isArchived"); }
             set { BackingStore?.Set("isArchived", value); }
         }
-        /// <summary>Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).</summary>
+        /// <summary>Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).</summary>
         public bool? IsAssignableToRole {
             get { return BackingStore?.Get<bool?>("isAssignableToRole"); }
             set { BackingStore?.Set("isAssignableToRole", value); }
@@ -312,10 +352,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates status of the group license assignment to all members of the group. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.LicenseProcessingState? LicenseProcessingState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LicenseProcessingState?>("licenseProcessingState"); }
             set { BackingStore?.Set("licenseProcessingState", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.LicenseProcessingState LicenseProcessingState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LicenseProcessingState>("licenseProcessingState"); }
@@ -324,10 +366,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The SMTP address for the group, for example, &apos;serviceadmins@contoso.onmicrosoft.com&apos;. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Mail {
             get { return BackingStore?.Get<string?>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
+#nullable restore
 #else
         public string Mail {
             get { return BackingStore?.Get<string>("mail"); }
@@ -341,10 +385,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] &apos; ; : &lt;&gt; , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MailNickname {
             get { return BackingStore?.Get<string?>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
+#nullable restore
 #else
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
@@ -353,10 +399,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? MemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> MemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
@@ -365,10 +413,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? Members {
             get { return BackingStore?.Get<List<DirectoryObject>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> Members {
             get { return BackingStore?.Get<List<DirectoryObject>>("members"); }
@@ -377,10 +427,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MembershipRule {
             get { return BackingStore?.Get<string?>("membershipRule"); }
             set { BackingStore?.Set("membershipRule", value); }
         }
+#nullable restore
 #else
         public string MembershipRule {
             get { return BackingStore?.Get<string>("membershipRule"); }
@@ -389,10 +441,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MembershipRuleProcessingState {
             get { return BackingStore?.Get<string?>("membershipRuleProcessingState"); }
             set { BackingStore?.Set("membershipRuleProcessingState", value); }
         }
+#nullable restore
 #else
         public string MembershipRuleProcessingState {
             get { return BackingStore?.Get<string>("membershipRuleProcessingState"); }
@@ -401,10 +455,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Describes the processing status for rules-based dynamic groups. The property is null for non-rule based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus? MembershipRuleProcessingStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus?>("membershipRuleProcessingStatus"); }
             set { BackingStore?.Set("membershipRuleProcessingStatus", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus MembershipRuleProcessingStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus>("membershipRuleProcessingStatus"); }
@@ -413,10 +469,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of group members with license errors from this group-based license assignment. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? MembersWithLicenseErrors {
             get { return BackingStore?.Get<List<DirectoryObject>?>("membersWithLicenseErrors"); }
             set { BackingStore?.Set("membersWithLicenseErrors", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> MembersWithLicenseErrors {
             get { return BackingStore?.Get<List<DirectoryObject>>("membersWithLicenseErrors"); }
@@ -425,10 +483,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The onenote property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Onenote? Onenote {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Onenote?>("onenote"); }
             set { BackingStore?.Set("onenote", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Onenote Onenote {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Onenote>("onenote"); }
@@ -437,10 +497,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnPremisesDomainName {
             get { return BackingStore?.Get<string?>("onPremisesDomainName"); }
             set { BackingStore?.Set("onPremisesDomainName", value); }
         }
+#nullable restore
 #else
         public string OnPremisesDomainName {
             get { return BackingStore?.Get<string>("onPremisesDomainName"); }
@@ -454,10 +516,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnPremisesNetBiosName {
             get { return BackingStore?.Get<string?>("onPremisesNetBiosName"); }
             set { BackingStore?.Set("onPremisesNetBiosName", value); }
         }
+#nullable restore
 #else
         public string OnPremisesNetBiosName {
             get { return BackingStore?.Get<string>("onPremisesNetBiosName"); }
@@ -466,10 +530,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnPremisesProvisioningError>? OnPremisesProvisioningErrors {
             get { return BackingStore?.Get<List<OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
+#nullable restore
 #else
         public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors {
             get { return BackingStore?.Get<List<OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
@@ -478,10 +544,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnPremisesSamAccountName {
             get { return BackingStore?.Get<string?>("onPremisesSamAccountName"); }
             set { BackingStore?.Set("onPremisesSamAccountName", value); }
         }
+#nullable restore
 #else
         public string OnPremisesSamAccountName {
             get { return BackingStore?.Get<string>("onPremisesSamAccountName"); }
@@ -490,10 +558,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnPremisesSecurityIdentifier {
             get { return BackingStore?.Get<string?>("onPremisesSecurityIdentifier"); }
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
+#nullable restore
 #else
         public string OnPremisesSecurityIdentifier {
             get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
@@ -507,10 +577,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The organizationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OrganizationId {
             get { return BackingStore?.Get<string?>("organizationId"); }
             set { BackingStore?.Set("organizationId", value); }
         }
+#nullable restore
 #else
         public string OrganizationId {
             get { return BackingStore?.Get<string>("organizationId"); }
@@ -519,10 +591,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? Owners {
             get { return BackingStore?.Get<List<DirectoryObject>?>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> Owners {
             get { return BackingStore?.Get<List<DirectoryObject>>("owners"); }
@@ -531,10 +605,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The permissions that have been granted for a group to a specific application. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ResourceSpecificPermissionGrant>? PermissionGrants {
             get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>?>("permissionGrants"); }
             set { BackingStore?.Set("permissionGrants", value); }
         }
+#nullable restore
 #else
         public List<ResourceSpecificPermissionGrant> PermissionGrants {
             get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>("permissionGrants"); }
@@ -543,10 +619,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The group&apos;s profile photo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ProfilePhoto? Photo {
             get { return BackingStore?.Get<ProfilePhoto?>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
+#nullable restore
 #else
         public ProfilePhoto Photo {
             get { return BackingStore?.Get<ProfilePhoto>("photo"); }
@@ -555,10 +633,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The profile photos owned by the group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ProfilePhoto>? Photos {
             get { return BackingStore?.Get<List<ProfilePhoto>?>("photos"); }
             set { BackingStore?.Set("photos", value); }
         }
+#nullable restore
 #else
         public List<ProfilePhoto> Photos {
             get { return BackingStore?.Get<List<ProfilePhoto>>("photos"); }
@@ -567,10 +647,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Selective Planner services available to the group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerGroup? Planner {
             get { return BackingStore?.Get<PlannerGroup?>("planner"); }
             set { BackingStore?.Set("planner", value); }
         }
+#nullable restore
 #else
         public PlannerGroup Planner {
             get { return BackingStore?.Get<PlannerGroup>("planner"); }
@@ -579,10 +661,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator&apos;s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PreferredDataLocation {
             get { return BackingStore?.Get<string?>("preferredDataLocation"); }
             set { BackingStore?.Set("preferredDataLocation", value); }
         }
+#nullable restore
 #else
         public string PreferredDataLocation {
             get { return BackingStore?.Get<string>("preferredDataLocation"); }
@@ -591,10 +675,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PreferredLanguage {
             get { return BackingStore?.Get<string?>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
+#nullable restore
 #else
         public string PreferredLanguage {
             get { return BackingStore?.Get<string>("preferredLanguage"); }
@@ -603,10 +689,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Email addresses for the group that direct to the same group mailbox. For example: [&apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;]. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ProxyAddresses {
             get { return BackingStore?.Get<List<string>?>("proxyAddresses"); }
             set { BackingStore?.Set("proxyAddresses", value); }
         }
+#nullable restore
 #else
         public List<string> ProxyAddresses {
             get { return BackingStore?.Get<List<string>>("proxyAddresses"); }
@@ -615,10 +703,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? RejectedSenders {
             get { return BackingStore?.Get<List<DirectoryObject>?>("rejectedSenders"); }
             set { BackingStore?.Set("rejectedSenders", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> RejectedSenders {
             get { return BackingStore?.Get<List<DirectoryObject>>("rejectedSenders"); }
@@ -632,10 +722,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ResourceBehaviorOptions {
             get { return BackingStore?.Get<List<string>?>("resourceBehaviorOptions"); }
             set { BackingStore?.Set("resourceBehaviorOptions", value); }
         }
+#nullable restore
 #else
         public List<string> ResourceBehaviorOptions {
             get { return BackingStore?.Get<List<string>>("resourceBehaviorOptions"); }
@@ -644,10 +736,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ResourceProvisioningOptions {
             get { return BackingStore?.Get<List<string>?>("resourceProvisioningOptions"); }
             set { BackingStore?.Set("resourceProvisioningOptions", value); }
         }
+#nullable restore
 #else
         public List<string> ResourceProvisioningOptions {
             get { return BackingStore?.Get<List<string>>("resourceProvisioningOptions"); }
@@ -661,10 +755,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Security identifier of the group, used in Windows scenarios. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SecurityIdentifier {
             get { return BackingStore?.Get<string?>("securityIdentifier"); }
             set { BackingStore?.Set("securityIdentifier", value); }
         }
+#nullable restore
 #else
         public string SecurityIdentifier {
             get { return BackingStore?.Get<string>("securityIdentifier"); }
@@ -673,10 +769,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectorySetting>? Settings {
             get { return BackingStore?.Get<List<DirectorySetting>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public List<DirectorySetting> Settings {
             get { return BackingStore?.Get<List<DirectorySetting>>("settings"); }
@@ -685,10 +783,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Site>? Sites {
             get { return BackingStore?.Get<List<Site>?>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
+#nullable restore
 #else
         public List<Site> Sites {
             get { return BackingStore?.Get<List<Site>>("sites"); }
@@ -697,10 +797,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The team associated with this group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Team? Team {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team?>("team"); }
             set { BackingStore?.Set("team", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Team Team {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>("team"); }
@@ -709,10 +811,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies a Microsoft 365 group&apos;s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Theme {
             get { return BackingStore?.Get<string?>("theme"); }
             set { BackingStore?.Set("theme", value); }
         }
+#nullable restore
 #else
         public string Theme {
             get { return BackingStore?.Get<string>("theme"); }
@@ -721,10 +825,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The group&apos;s conversation threads. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConversationThread>? Threads {
             get { return BackingStore?.Get<List<ConversationThread>?>("threads"); }
             set { BackingStore?.Set("threads", value); }
         }
+#nullable restore
 #else
         public List<ConversationThread> Threads {
             get { return BackingStore?.Get<List<ConversationThread>>("threads"); }
@@ -733,10 +839,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The groups that a group is a member of, either directly and through nested membership. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? TransitiveMemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> TransitiveMemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
@@ -745,10 +853,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The direct and transitive members of a group. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DirectoryObject>? TransitiveMembers {
             get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMembers"); }
             set { BackingStore?.Set("transitiveMembers", value); }
         }
+#nullable restore
 #else
         public List<DirectoryObject> TransitiveMembers {
             get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMembers"); }
@@ -772,10 +882,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Visibility {
             get { return BackingStore?.Get<string?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
+#nullable restore
 #else
         public string Visibility {
             get { return BackingStore?.Get<string>("visibility"); }
@@ -784,10 +896,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Azure AD Connect sync client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupWritebackConfiguration? WritebackConfiguration {
             get { return BackingStore?.Get<GroupWritebackConfiguration?>("writebackConfiguration"); }
             set { BackingStore?.Set("writebackConfiguration", value); }
         }
+#nullable restore
 #else
         public GroupWritebackConfiguration WritebackConfiguration {
             get { return BackingStore?.Get<GroupWritebackConfiguration>("writebackConfiguration"); }

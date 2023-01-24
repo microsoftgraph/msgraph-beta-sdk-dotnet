@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MacOSLobApp : MobileLobApp, IParsable {
         /// <summary>The build number of the package. This should match the package CFBundleShortVersionString of the .pkg file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BuildNumber {
             get { return BackingStore?.Get<string?>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
+#nullable restore
 #else
         public string BuildNumber {
             get { return BackingStore?.Get<string>("buildNumber"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The primary bundleId of the package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BundleId {
             get { return BackingStore?.Get<string?>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
+#nullable restore
 #else
         public string BundleId {
             get { return BackingStore?.Get<string>("bundleId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of ComplexType macOSLobChildApp objects. Represents the apps expected to be installed by the package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSLobChildApp>? ChildApps {
             get { return BackingStore?.Get<List<MacOSLobChildApp>?>("childApps"); }
             set { BackingStore?.Set("childApps", value); }
         }
+#nullable restore
 #else
         public List<MacOSLobChildApp> ChildApps {
             get { return BackingStore?.Get<List<MacOSLobChildApp>>("childApps"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identity version. This property is being deprecated in 2211(November 2022).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdentityVersion {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#nullable restore
 #else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The MD5 hash codes. This is empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Md5Hash {
             get { return BackingStore?.Get<List<string>?>("md5Hash"); }
             set { BackingStore?.Set("md5Hash", value); }
         }
+#nullable restore
 #else
         public List<string> Md5Hash {
             get { return BackingStore?.Get<List<string>>("md5Hash"); }
@@ -82,10 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MacOSMinimumOperatingSystem? MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<MacOSMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#nullable restore
 #else
         public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<MacOSMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
@@ -94,10 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The version number of the package. This should match the package CFBundleVersion in the packageinfo file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VersionNumber {
             get { return BackingStore?.Get<string?>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
         }
+#nullable restore
 #else
         public string VersionNumber {
             get { return BackingStore?.Get<string>("versionNumber"); }

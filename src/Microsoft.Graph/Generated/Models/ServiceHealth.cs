@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ServiceHealth : Entity, IParsable {
         /// <summary>A collection of issues that happened on the service, with detailed information for each issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServiceHealthIssue>? Issues {
             get { return BackingStore?.Get<List<ServiceHealthIssue>?>("issues"); }
             set { BackingStore?.Set("issues", value); }
         }
+#nullable restore
 #else
         public List<ServiceHealthIssue> Issues {
             get { return BackingStore?.Get<List<ServiceHealthIssue>>("issues"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Service {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#nullable restore
 #else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }

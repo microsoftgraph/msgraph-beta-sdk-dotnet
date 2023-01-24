@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cloudPC property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RbacApplicationMultiple? CloudPC {
             get { return BackingStore?.Get<RbacApplicationMultiple?>("cloudPC"); }
             set { BackingStore?.Set("cloudPC", value); }
         }
+#nullable restore
 #else
         public RbacApplicationMultiple CloudPC {
             get { return BackingStore?.Get<RbacApplicationMultiple>("cloudPC"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The RbacApplication for Device Management</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RbacApplicationMultiple? DeviceManagement {
             get { return BackingStore?.Get<RbacApplicationMultiple?>("deviceManagement"); }
             set { BackingStore?.Set("deviceManagement", value); }
         }
+#nullable restore
 #else
         public RbacApplicationMultiple DeviceManagement {
             get { return BackingStore?.Get<RbacApplicationMultiple>("deviceManagement"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The directory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RbacApplication? Directory {
             get { return BackingStore?.Get<RbacApplication?>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
+#nullable restore
 #else
         public RbacApplication Directory {
             get { return BackingStore?.Get<RbacApplication>("directory"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The RbacApplication for Entitlement Management</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RbacApplication? EntitlementManagement {
             get { return BackingStore?.Get<RbacApplication?>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
+#nullable restore
 #else
         public RbacApplication EntitlementManagement {
             get { return BackingStore?.Get<RbacApplication>("entitlementManagement"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

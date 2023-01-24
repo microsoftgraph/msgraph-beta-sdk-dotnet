@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Supported values are like, angry, sad, laugh, heart, surprised.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReactionType {
             get { return BackingStore?.Get<string?>("reactionType"); }
             set { BackingStore?.Set("reactionType", value); }
         }
+#nullable restore
 #else
         public string ReactionType {
             get { return BackingStore?.Get<string>("reactionType"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ChatMessageReactionIdentitySet? User {
             get { return BackingStore?.Get<ChatMessageReactionIdentitySet?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#nullable restore
 #else
         public ChatMessageReactionIdentitySet User {
             get { return BackingStore?.Get<ChatMessageReactionIdentitySet>("user"); }

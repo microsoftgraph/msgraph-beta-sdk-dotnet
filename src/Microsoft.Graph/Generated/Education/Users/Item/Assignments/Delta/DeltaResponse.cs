@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Delta {
     public class DeltaResponse : BaseDeltaFunctionResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EducationAssignment>? Value {
             get { return BackingStore?.Get<List<EducationAssignment>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<EducationAssignment> Value {
             get { return BackingStore?.Get<List<EducationAssignment>>("value"); }

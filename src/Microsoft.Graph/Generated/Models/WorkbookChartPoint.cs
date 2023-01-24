@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartPoint : Entity, IParsable {
         /// <summary>Encapsulates the format properties chart point. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartPointFormat? Format {
             get { return BackingStore?.Get<WorkbookChartPointFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#nullable restore
 #else
         public WorkbookChartPointFormat Format {
             get { return BackingStore?.Get<WorkbookChartPointFormat>("format"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Returns the value of a chart point. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Json? Value {
             get { return BackingStore?.Get<Json?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public Json Value {
             get { return BackingStore?.Get<Json>("value"); }

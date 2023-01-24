@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class InviteParticipantsOperation : CommsOperation, IParsable {
         /// <summary>The participants to invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<InvitationParticipantInfo>? Participants {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#nullable restore
 #else
         public List<InvitationParticipantInfo> Participants {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>>("participants"); }

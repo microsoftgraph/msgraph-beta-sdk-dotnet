@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Meeting URL associated to the call. May not be available for a peerToPeer call record type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JoinWebUrl {
             get { return BackingStore?.Get<string?>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
+#nullable restore
 #else
         public string JoinWebUrl {
             get { return BackingStore?.Get<string>("joinWebUrl"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Modality?>? Modalities {
             get { return BackingStore?.Get<List<Modality?>?>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
+#nullable restore
 #else
         public List<Modality?> Modalities {
             get { return BackingStore?.Get<List<Modality?>>("modalities"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>The organizing party&apos;s identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? Organizer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet Organizer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("organizer"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>List of distinct identities involved in the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.IdentitySet>? Participants {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentitySet>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.IdentitySet> Participants {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentitySet>>("participants"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Session>? Sessions {
             get { return BackingStore?.Get<List<Session>?>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
+#nullable restore
 #else
         public List<Session> Sessions {
             get { return BackingStore?.Get<List<Session>>("sessions"); }

@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Any error that causes the async operation to fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OperationError? Error {
             get { return BackingStore?.Get<OperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#nullable restore
 #else
         public OperationError Error {
             get { return BackingStore?.Get<OperationError>("error"); }
@@ -44,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ID of the object that&apos;s created or modified as result of this async operation, typically a team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetResourceId {
             get { return BackingStore?.Get<string?>("targetResourceId"); }
             set { BackingStore?.Set("targetResourceId", value); }
         }
+#nullable restore
 #else
         public string TargetResourceId {
             get { return BackingStore?.Get<string>("targetResourceId"); }
@@ -56,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The location of the object that&apos;s created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TargetResourceLocation {
             get { return BackingStore?.Get<string?>("targetResourceLocation"); }
             set { BackingStore?.Set("targetResourceLocation", value); }
         }
+#nullable restore
 #else
         public string TargetResourceLocation {
             get { return BackingStore?.Get<string>("targetResourceLocation"); }

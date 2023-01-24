@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppProductCodeDetection : Win32LobAppDetection, IParsable {
         /// <summary>The product code of Win32 Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductCode {
             get { return BackingStore?.Get<string?>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
+#nullable restore
 #else
         public string ProductCode {
             get { return BackingStore?.Get<string>("productCode"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The product version of Win32 Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProductVersion {
             get { return BackingStore?.Get<string?>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
+#nullable restore
 #else
         public string ProductVersion {
             get { return BackingStore?.Get<string>("productVersion"); }

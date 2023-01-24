@@ -62,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Management certificates for Apple Configurator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ManagementCertificateWithThumbprint>? ManagementCertificates {
             get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>?>("managementCertificates"); }
             set { BackingStore?.Set("managementCertificates", value); }
         }
+#nullable restore
 #else
         public List<ManagementCertificateWithThumbprint> ManagementCertificates {
             get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>>("managementCertificates"); }
@@ -109,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Support department information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SupportDepartment {
             get { return BackingStore?.Get<string?>("supportDepartment"); }
             set { BackingStore?.Set("supportDepartment", value); }
         }
+#nullable restore
 #else
         public string SupportDepartment {
             get { return BackingStore?.Get<string>("supportDepartment"); }
@@ -121,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Support phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SupportPhoneNumber {
             get { return BackingStore?.Get<string?>("supportPhoneNumber"); }
             set { BackingStore?.Set("supportPhoneNumber", value); }
         }
+#nullable restore
 #else
         public string SupportPhoneNumber {
             get { return BackingStore?.Get<string>("supportPhoneNumber"); }

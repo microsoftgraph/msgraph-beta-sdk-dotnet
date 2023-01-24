@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftAccountUserConversationMember : ConversationMember, IParsable {
         /// <summary>ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserId {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#nullable restore
 #else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }

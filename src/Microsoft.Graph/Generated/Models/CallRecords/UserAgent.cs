@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Identifies the version of application software used by this endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ApplicationVersion {
             get { return BackingStore?.Get<string?>("applicationVersion"); }
             set { BackingStore?.Set("applicationVersion", value); }
         }
+#nullable restore
 #else
         public string ApplicationVersion {
             get { return BackingStore?.Get<string>("applicationVersion"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>User-agent header value reported by this endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HeaderValue {
             get { return BackingStore?.Get<string?>("headerValue"); }
             set { BackingStore?.Set("headerValue", value); }
         }
+#nullable restore
 #else
         public string HeaderValue {
             get { return BackingStore?.Get<string>("headerValue"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

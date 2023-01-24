@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The downgrade justification object that indicates if downgrade was justified and, if so, the reason.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.DowngradeJustification? DowngradeJustification {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification?>("downgradeJustification"); }
             set { BackingStore?.Set("downgradeJustification", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.DowngradeJustification DowngradeJustification {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>("downgradeJustification"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<KeyValuePair>? ExtendedProperties {
             get { return BackingStore?.Get<List<KeyValuePair>?>("extendedProperties"); }
             set { BackingStore?.Set("extendedProperties", value); }
         }
+#nullable restore
 #else
         public List<KeyValuePair> ExtendedProperties {
             get { return BackingStore?.Get<List<KeyValuePair>>("extendedProperties"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The GUID of the label that should be applied to the information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LabelId {
             get { return BackingStore?.Get<string?>("labelId"); }
             set { BackingStore?.Set("labelId", value); }
         }
+#nullable restore
 #else
         public string LabelId {
             get { return BackingStore?.Get<string>("labelId"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

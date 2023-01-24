@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRbacResourceNamespace : Entity, IParsable {
         /// <summary>Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Operations that an authorized principal are allowed to perform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<UnifiedRbacResourceAction>? ResourceActions {
             get { return BackingStore?.Get<List<UnifiedRbacResourceAction>?>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
+#nullable restore
 #else
         public List<UnifiedRbacResourceAction> ResourceActions {
             get { return BackingStore?.Get<List<UnifiedRbacResourceAction>>("resourceActions"); }

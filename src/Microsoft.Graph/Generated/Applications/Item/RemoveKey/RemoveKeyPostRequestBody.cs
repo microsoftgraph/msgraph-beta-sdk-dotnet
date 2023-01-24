@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Applications.Item.RemoveKey {
         }
         /// <summary>The proof property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Proof {
             get { return BackingStore?.Get<string?>("proof"); }
             set { BackingStore?.Set("proof", value); }
         }
+#nullable restore
 #else
         public string Proof {
             get { return BackingStore?.Get<string>("proof"); }

@@ -51,7 +51,9 @@ namespace Microsoft.Graph.Beta.Print.Reports.Security.GetAttackSimulationRepeatO
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<GetAttackSimulationRepeatOffendersResponse?> GetAsync(Action<GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<GetAttackSimulationRepeatOffendersResponse> GetAsync(Action<GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -67,7 +69,9 @@ namespace Microsoft.Graph.Beta.Print.Reports.Security.GetAttackSimulationRepeatO
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -95,16 +99,20 @@ namespace Microsoft.Graph.Beta.Print.Reports.Security.GetAttackSimulationRepeatO
             public bool? Count { get; set; }
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24filter")]
             public string? Filter { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24search")]
             public string? Search { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24search")]
             public string Search { get; set; }

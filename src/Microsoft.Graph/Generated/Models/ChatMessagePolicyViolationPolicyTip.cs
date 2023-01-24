@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn&apos;t say in chats)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ComplianceUrl {
             get { return BackingStore?.Get<string?>("complianceUrl"); }
             set { BackingStore?.Set("complianceUrl", value); }
         }
+#nullable restore
 #else
         public string ComplianceUrl {
             get { return BackingStore?.Get<string>("complianceUrl"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Explanatory text shown to the sender of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GeneralText {
             get { return BackingStore?.Get<string?>("generalText"); }
             set { BackingStore?.Set("generalText", value); }
         }
+#nullable restore
 #else
         public string GeneralText {
             get { return BackingStore?.Get<string>("generalText"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include &apos;Credit Card Number&apos; and &apos;Social Security Number&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? MatchedConditionDescriptions {
             get { return BackingStore?.Get<List<string>?>("matchedConditionDescriptions"); }
             set { BackingStore?.Set("matchedConditionDescriptions", value); }
         }
+#nullable restore
 #else
         public List<string> MatchedConditionDescriptions {
             get { return BackingStore?.Get<List<string>>("matchedConditionDescriptions"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

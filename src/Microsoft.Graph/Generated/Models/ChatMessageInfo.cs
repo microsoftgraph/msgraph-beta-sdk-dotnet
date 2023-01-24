@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChatMessageInfo : Entity, IParsable {
         /// <summary>Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemBody? Body {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#nullable restore
 #else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EventMessageDetail? EventDetail {
             get { return BackingStore?.Get<EventMessageDetail?>("eventDetail"); }
             set { BackingStore?.Set("eventDetail", value); }
         }
+#nullable restore
 #else
         public EventMessageDetail EventDetail {
             get { return BackingStore?.Get<EventMessageDetail>("eventDetail"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information about the sender of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ChatMessageFromIdentitySet? From {
             get { return BackingStore?.Get<ChatMessageFromIdentitySet?>("from"); }
             set { BackingStore?.Set("from", value); }
         }
+#nullable restore
 #else
         public ChatMessageFromIdentitySet From {
             get { return BackingStore?.Get<ChatMessageFromIdentitySet>("from"); }

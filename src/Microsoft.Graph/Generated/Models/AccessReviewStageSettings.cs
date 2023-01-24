@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DecisionsThatWillMoveToNextStage {
             get { return BackingStore?.Get<List<string>?>("decisionsThatWillMoveToNextStage"); }
             set { BackingStore?.Set("decisionsThatWillMoveToNextStage", value); }
         }
+#nullable restore
 #else
         public List<string> DecisionsThatWillMoveToNextStage {
             get { return BackingStore?.Get<List<string>>("decisionsThatWillMoveToNextStage"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, do not specify dependsOn. Required if stageId is not 1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DependsOn {
             get { return BackingStore?.Get<List<string>?>("dependsOn"); }
             set { BackingStore?.Set("dependsOn", value); }
         }
+#nullable restore
 #else
         public List<string> DependsOn {
             get { return BackingStore?.Get<List<string>>("dependsOn"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewReviewerScope>? FallbackReviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewReviewerScope> FallbackReviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("fallbackReviewers"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The recommendationInsightSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewRecommendationInsightSetting>? RecommendationInsightSettings {
             get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>?>("recommendationInsightSettings"); }
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings {
             get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>>("recommendationInsightSettings"); }
@@ -90,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessReviewReviewerScope>? Reviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
+#nullable restore
 #else
         public List<AccessReviewReviewerScope> Reviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
@@ -102,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StageId {
             get { return BackingStore?.Get<string?>("stageId"); }
             set { BackingStore?.Set("stageId", value); }
         }
+#nullable restore
 #else
         public string StageId {
             get { return BackingStore?.Get<string>("stageId"); }

@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ZebraFotaArtifact : Entity, IParsable {
         /// <summary>The version of the Board Support Package (BSP. E.g.: 01.18.02.00)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BoardSupportPackageVersion {
             get { return BackingStore?.Get<string?>("boardSupportPackageVersion"); }
             set { BackingStore?.Set("boardSupportPackageVersion", value); }
         }
+#nullable restore
 #else
         public string BoardSupportPackageVersion {
             get { return BackingStore?.Get<string>("boardSupportPackageVersion"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Applicable device model (e.g.: TC8300)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceModel {
             get { return BackingStore?.Get<string?>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
+#nullable restore
 #else
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Artifact OS version (e.g.: 8.1.0)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OsVersion {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#nullable restore
 #else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
@@ -58,10 +66,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Artifact patch version (e.g.: U00)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PatchVersion {
             get { return BackingStore?.Get<string?>("patchVersion"); }
             set { BackingStore?.Set("patchVersion", value); }
         }
+#nullable restore
 #else
         public string PatchVersion {
             get { return BackingStore?.Get<string>("patchVersion"); }
@@ -70,10 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Artifact release notes URL (e.g.: https://www.zebra.com/&lt;filename.pdf&gt;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReleaseNotesUrl {
             get { return BackingStore?.Get<string?>("releaseNotesUrl"); }
             set { BackingStore?.Set("releaseNotesUrl", value); }
         }
+#nullable restore
 #else
         public string ReleaseNotesUrl {
             get { return BackingStore?.Get<string>("releaseNotesUrl"); }

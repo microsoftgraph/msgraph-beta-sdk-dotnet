@@ -14,10 +14,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         }
         /// <summary>The appProvisioningConfigurationGroupAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MobileAppProvisioningConfigGroupAssignment>? AppProvisioningConfigurationGroupAssignments {
             get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>?>("appProvisioningConfigurationGroupAssignments"); }
             set { BackingStore?.Set("appProvisioningConfigurationGroupAssignments", value); }
         }
+#nullable restore
 #else
         public List<MobileAppProvisioningConfigGroupAssignment> AppProvisioningConfigurationGroupAssignments {
             get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>("appProvisioningConfigurationGroupAssignments"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The iOSLobAppProvisioningConfigAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IosLobAppProvisioningConfigurationAssignment>? IOSLobAppProvisioningConfigAssignments {
             get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>?>("iOSLobAppProvisioningConfigAssignments"); }
             set { BackingStore?.Set("iOSLobAppProvisioningConfigAssignments", value); }
         }
+#nullable restore
 #else
         public List<IosLobAppProvisioningConfigurationAssignment> IOSLobAppProvisioningConfigAssignments {
             get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>("iOSLobAppProvisioningConfigAssignments"); }

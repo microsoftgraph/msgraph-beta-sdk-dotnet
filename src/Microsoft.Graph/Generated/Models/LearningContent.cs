@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class LearningContent : Entity, IParsable {
         /// <summary>Keywords, topics, and other tags associated with the learning content. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AdditionalTags {
             get { return BackingStore?.Get<List<string>?>("additionalTags"); }
             set { BackingStore?.Set("additionalTags", value); }
         }
+#nullable restore
 #else
         public List<string> AdditionalTags {
             get { return BackingStore?.Get<List<string>>("additionalTags"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The content web URL for the learning content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentWebUrl {
             get { return BackingStore?.Get<string?>("contentWebUrl"); }
             set { BackingStore?.Set("contentWebUrl", value); }
         }
+#nullable restore
 #else
         public string ContentWebUrl {
             get { return BackingStore?.Get<string>("contentWebUrl"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The authors, creators, or contributors of the learning content. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Contributors {
             get { return BackingStore?.Get<List<string>?>("contributors"); }
             set { BackingStore?.Set("contributors", value); }
         }
+#nullable restore
 #else
         public List<string> Contributors {
             get { return BackingStore?.Get<List<string>>("contributors"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description or summary for the learning content. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Unique external content ID for the learning content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalId {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#nullable restore
 #else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The format of the learning content. For example, Course, Video, Book, Book Summary, Audiobook Summary. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Format {
             get { return BackingStore?.Get<string?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#nullable restore
 #else
         public string Format {
             get { return BackingStore?.Get<string>("format"); }
@@ -104,10 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The language of the learning content, for example, en-us or fr-fr. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LanguageTag {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+#nullable restore
 #else
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
@@ -126,10 +140,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The skills tags associated with the learning content. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SkillTags {
             get { return BackingStore?.Get<List<string>?>("skillTags"); }
             set { BackingStore?.Set("skillTags", value); }
         }
+#nullable restore
 #else
         public List<string> SkillTags {
             get { return BackingStore?.Get<List<string>>("skillTags"); }
@@ -138,10 +154,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The source name of the learning content, such as LinkedIn Learning or Coursera. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SourceName {
             get { return BackingStore?.Get<string?>("sourceName"); }
             set { BackingStore?.Set("sourceName", value); }
         }
+#nullable restore
 #else
         public string SourceName {
             get { return BackingStore?.Get<string>("sourceName"); }
@@ -150,10 +168,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL of learning content thumbnail image. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ThumbnailWebUrl {
             get { return BackingStore?.Get<string?>("thumbnailWebUrl"); }
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
+#nullable restore
 #else
         public string ThumbnailWebUrl {
             get { return BackingStore?.Get<string>("thumbnailWebUrl"); }
@@ -162,10 +182,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The title of the learning content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }

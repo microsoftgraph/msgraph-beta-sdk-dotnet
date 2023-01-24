@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementTemplate : Entity, IParsable {
         /// <summary>Collection of setting categories within the template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementTemplateSettingCategory>? Categories {
             get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementTemplateSettingCategory> Categories {
             get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>>("categories"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The template&apos;s description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The template&apos;s display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Collection of templates this template can migrate to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementTemplate>? MigratableTo {
             get { return BackingStore?.Get<List<DeviceManagementTemplate>?>("migratableTo"); }
             set { BackingStore?.Set("migratableTo", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementTemplate> MigratableTo {
             get { return BackingStore?.Get<List<DeviceManagementTemplate>>("migratableTo"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Collection of all settings this template has</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementSettingInstance>? Settings {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementSettingInstance> Settings {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
@@ -100,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The template&apos;s version information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VersionInfo {
             get { return BackingStore?.Get<string?>("versionInfo"); }
             set { BackingStore?.Set("versionInfo", value); }
         }
+#nullable restore
 #else
         public string VersionInfo {
             get { return BackingStore?.Get<string>("versionInfo"); }

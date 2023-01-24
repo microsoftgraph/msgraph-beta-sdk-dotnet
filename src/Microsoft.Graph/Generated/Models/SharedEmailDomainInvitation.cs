@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The invitationDomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InvitationDomain {
             get { return BackingStore?.Get<string?>("invitationDomain"); }
             set { BackingStore?.Set("invitationDomain", value); }
         }
+#nullable restore
 #else
         public string InvitationDomain {
             get { return BackingStore?.Get<string>("invitationDomain"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The invitationStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InvitationStatus {
             get { return BackingStore?.Get<string?>("invitationStatus"); }
             set { BackingStore?.Set("invitationStatus", value); }
         }
+#nullable restore
 #else
         public string InvitationStatus {
             get { return BackingStore?.Get<string>("invitationStatus"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Confirm
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The servicePrincipalIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ServicePrincipalIds {
             get { return BackingStore?.Get<List<string>?>("servicePrincipalIds"); }
             set { BackingStore?.Set("servicePrincipalIds", value); }
         }
+#nullable restore
 #else
         public List<string> ServicePrincipalIds {
             get { return BackingStore?.Get<List<string>>("servicePrincipalIds"); }

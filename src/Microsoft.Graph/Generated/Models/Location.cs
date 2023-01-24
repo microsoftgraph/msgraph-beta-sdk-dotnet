@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The street address of the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PhysicalAddress? Address {
             get { return BackingStore?.Get<PhysicalAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#nullable restore
 #else
         public PhysicalAddress Address {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The geographic coordinates and elevation of the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OutlookGeoCoordinates? Coordinates {
             get { return BackingStore?.Get<OutlookGeoCoordinates?>("coordinates"); }
             set { BackingStore?.Set("coordinates", value); }
         }
+#nullable restore
 #else
         public OutlookGeoCoordinates Coordinates {
             get { return BackingStore?.Get<OutlookGeoCoordinates>("coordinates"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name associated with the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Optional email address of the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LocationEmailAddress {
             get { return BackingStore?.Get<string?>("locationEmailAddress"); }
             set { BackingStore?.Set("locationEmailAddress", value); }
         }
+#nullable restore
 #else
         public string LocationEmailAddress {
             get { return BackingStore?.Get<string>("locationEmailAddress"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Optional URI representing the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LocationUri {
             get { return BackingStore?.Get<string?>("locationUri"); }
             set { BackingStore?.Set("locationUri", value); }
         }
+#nullable restore
 #else
         public string LocationUri {
             get { return BackingStore?.Get<string>("locationUri"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -92,10 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>For internal use only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UniqueId {
             get { return BackingStore?.Get<string?>("uniqueId"); }
             set { BackingStore?.Set("uniqueId", value); }
         }
+#nullable restore
 #else
         public string UniqueId {
             get { return BackingStore?.Get<string>("uniqueId"); }

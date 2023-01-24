@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class NetworkConnectionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<NetworkConnection>? Value {
             get { return BackingStore?.Get<List<NetworkConnection>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<NetworkConnection> Value {
             get { return BackingStore?.Get<List<NetworkConnection>>("value"); }

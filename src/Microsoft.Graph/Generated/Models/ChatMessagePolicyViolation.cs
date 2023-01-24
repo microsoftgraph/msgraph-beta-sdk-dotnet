@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Justification text provided by the sender of the message when overriding a policy violation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JustificationText {
             get { return BackingStore?.Get<string?>("justificationText"); }
             set { BackingStore?.Set("justificationText", value); }
         }
+#nullable restore
 #else
         public string JustificationText {
             get { return BackingStore?.Get<string>("justificationText"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information to display to the message sender about why the message was flagged as a violation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ChatMessagePolicyViolationPolicyTip? PolicyTip {
             get { return BackingStore?.Get<ChatMessagePolicyViolationPolicyTip?>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
+#nullable restore
 #else
         public ChatMessagePolicyViolationPolicyTip PolicyTip {
             get { return BackingStore?.Get<ChatMessagePolicyViolationPolicyTip>("policyTip"); }

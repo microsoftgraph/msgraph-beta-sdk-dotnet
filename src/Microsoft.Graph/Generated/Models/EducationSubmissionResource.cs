@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationSubmissionResource : Entity, IParsable {
         /// <summary>Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentResourceUrl {
             get { return BackingStore?.Get<string?>("assignmentResourceUrl"); }
             set { BackingStore?.Set("assignmentResourceUrl", value); }
         }
+#nullable restore
 #else
         public string AssignmentResourceUrl {
             get { return BackingStore?.Get<string>("assignmentResourceUrl"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Resource object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationResource? Resource {
             get { return BackingStore?.Get<EducationResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#nullable restore
 #else
         public EducationResource Resource {
             get { return BackingStore?.Get<EducationResource>("resource"); }

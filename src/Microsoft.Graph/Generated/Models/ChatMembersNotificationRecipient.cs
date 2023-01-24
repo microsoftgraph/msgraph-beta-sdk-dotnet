@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChatMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable {
         /// <summary>The unique identifier for the chat whose members should receive the notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChatId {
             get { return BackingStore?.Get<string?>("chatId"); }
             set { BackingStore?.Set("chatId", value); }
         }
+#nullable restore
 #else
         public string ChatId {
             get { return BackingStore?.Get<string>("chatId"); }

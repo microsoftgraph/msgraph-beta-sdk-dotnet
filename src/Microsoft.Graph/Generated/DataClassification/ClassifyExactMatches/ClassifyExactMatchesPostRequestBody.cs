@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The contentClassifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ContentClassification>? ContentClassifications {
             get { return BackingStore?.Get<List<ContentClassification>?>("contentClassifications"); }
             set { BackingStore?.Set("contentClassifications", value); }
         }
+#nullable restore
 #else
         public List<ContentClassification> ContentClassifications {
             get { return BackingStore?.Get<List<ContentClassification>>("contentClassifications"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
 #endif
         /// <summary>The sensitiveTypeIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SensitiveTypeIds {
             get { return BackingStore?.Get<List<string>?>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
+#nullable restore
 #else
         public List<string> SensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
@@ -40,10 +44,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
 #endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Text {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
@@ -52,10 +58,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
 #endif
         /// <summary>The timeoutInMs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TimeoutInMs {
             get { return BackingStore?.Get<string?>("timeoutInMs"); }
             set { BackingStore?.Set("timeoutInMs", value); }
         }
+#nullable restore
 #else
         public string TimeoutInMs {
             get { return BackingStore?.Get<string>("timeoutInMs"); }

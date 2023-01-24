@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The activity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserActivity? Activity {
             get { return BackingStore?.Get<UserActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#nullable restore
 #else
         public UserActivity Activity {
             get { return BackingStore?.Get<UserActivity>("activity"); }
@@ -54,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The userTimezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserTimezone {
             get { return BackingStore?.Get<string?>("userTimezone"); }
             set { BackingStore?.Set("userTimezone", value); }
         }
+#nullable restore
 #else
         public string UserTimezone {
             get { return BackingStore?.Get<string>("userTimezone"); }

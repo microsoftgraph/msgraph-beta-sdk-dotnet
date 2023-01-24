@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EmailThreatSubmissionPolicy : Entity, IParsable {
         /// <summary>Specifies the email address of the sender from which email notifications will be sent to end users to inform them whether an email is spam, phish or clean. The default value is null. Optional for creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomizedNotificationSenderEmailAddress {
             get { return BackingStore?.Get<string?>("customizedNotificationSenderEmailAddress"); }
             set { BackingStore?.Set("customizedNotificationSenderEmailAddress", value); }
         }
+#nullable restore
 #else
         public string CustomizedNotificationSenderEmailAddress {
             get { return BackingStore?.Get<string>("customizedNotificationSenderEmailAddress"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomizedReportRecipientEmailAddress {
             get { return BackingStore?.Get<string?>("customizedReportRecipientEmailAddress"); }
             set { BackingStore?.Set("customizedReportRecipientEmailAddress", value); }
         }
+#nullable restore
 #else
         public string CustomizedReportRecipientEmailAddress {
             get { return BackingStore?.Get<string>("customizedReportRecipientEmailAddress"); }

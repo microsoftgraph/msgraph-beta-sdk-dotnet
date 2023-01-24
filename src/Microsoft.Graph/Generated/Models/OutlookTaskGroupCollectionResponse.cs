@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OutlookTaskGroupCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OutlookTaskGroup>? Value {
             get { return BackingStore?.Get<List<OutlookTaskGroup>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<OutlookTaskGroup> Value {
             get { return BackingStore?.Get<List<OutlookTaskGroup>>("value"); }

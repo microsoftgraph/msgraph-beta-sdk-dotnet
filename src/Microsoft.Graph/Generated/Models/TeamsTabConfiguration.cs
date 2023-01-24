@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Url used for rendering tab contents in Teams. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContentUrl {
             get { return BackingStore?.Get<string?>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
+#nullable restore
 #else
         public string ContentUrl {
             get { return BackingStore?.Get<string>("contentUrl"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identifier for the entity hosted by the tab provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EntityId {
             get { return BackingStore?.Get<string?>("entityId"); }
             set { BackingStore?.Set("entityId", value); }
         }
+#nullable restore
 #else
         public string EntityId {
             get { return BackingStore?.Get<string>("entityId"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Url called by Teams client when a Tab is removed using the Teams Client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RemoveUrl {
             get { return BackingStore?.Get<string?>("removeUrl"); }
             set { BackingStore?.Set("removeUrl", value); }
         }
+#nullable restore
 #else
         public string RemoveUrl {
             get { return BackingStore?.Get<string>("removeUrl"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Url for showing tab contents outside of Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebsiteUrl {
             get { return BackingStore?.Get<string?>("websiteUrl"); }
             set { BackingStore?.Set("websiteUrl", value); }
         }
+#nullable restore
 #else
         public string WebsiteUrl {
             get { return BackingStore?.Get<string>("websiteUrl"); }

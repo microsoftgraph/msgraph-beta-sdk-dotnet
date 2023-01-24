@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class DispositionReviewStage : Entity, IParsable {
         /// <summary>Name representing each stage within a collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>A collection of reviewers at each stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? ReviewersEmailAddresses {
             get { return BackingStore?.Get<List<string>?>("reviewersEmailAddresses"); }
             set { BackingStore?.Set("reviewersEmailAddresses", value); }
         }
+#nullable restore
 #else
         public List<string> ReviewersEmailAddresses {
             get { return BackingStore?.Get<List<string>>("reviewersEmailAddresses"); }

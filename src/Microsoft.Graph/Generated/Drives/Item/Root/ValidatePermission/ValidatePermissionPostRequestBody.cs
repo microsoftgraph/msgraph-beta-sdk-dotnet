@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ValidatePermission {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The challengeToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ChallengeToken {
             get { return BackingStore?.Get<string?>("challengeToken"); }
             set { BackingStore?.Set("challengeToken", value); }
         }
+#nullable restore
 #else
         public string ChallengeToken {
             get { return BackingStore?.Get<string>("challengeToken"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ValidatePermission {
 #endif
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Password {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#nullable restore
 #else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }

@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The available software version to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AvailableVersion {
             get { return BackingStore?.Get<string?>("availableVersion"); }
             set { BackingStore?.Set("availableVersion", value); }
         }
+#nullable restore
 #else
         public string AvailableVersion {
             get { return BackingStore?.Get<string>("availableVersion"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The current software version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CurrentVersion {
             get { return BackingStore?.Get<string?>("currentVersion"); }
             set { BackingStore?.Set("currentVersion", value); }
         }
+#nullable restore
 #else
         public string CurrentVersion {
             get { return BackingStore?.Get<string>("currentVersion"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

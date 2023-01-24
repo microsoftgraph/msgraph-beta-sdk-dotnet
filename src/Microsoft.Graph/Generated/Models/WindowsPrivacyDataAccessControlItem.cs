@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Package Family Name of a Windows app. When set, the access level applies to the specified application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppDisplayName {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#nullable restore
 #else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Package Family Name of a Windows app. When set, the access level applies to the specified application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppPackageFamilyName {
             get { return BackingStore?.Get<string?>("appPackageFamilyName"); }
             set { BackingStore?.Set("appPackageFamilyName", value); }
         }
+#nullable restore
 #else
         public string AppPackageFamilyName {
             get { return BackingStore?.Get<string>("appPackageFamilyName"); }

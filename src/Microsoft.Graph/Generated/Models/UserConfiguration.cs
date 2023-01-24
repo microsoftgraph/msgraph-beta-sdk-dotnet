@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UserConfiguration : Entity, IParsable {
         /// <summary>The binaryData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? BinaryData {
             get { return BackingStore?.Get<byte[]?>("binaryData"); }
             set { BackingStore?.Set("binaryData", value); }
         }
+#nullable restore
 #else
         public byte[] BinaryData {
             get { return BackingStore?.Get<byte[]>("binaryData"); }

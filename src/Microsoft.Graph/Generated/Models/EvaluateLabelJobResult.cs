@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The responsiblePolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ResponsiblePolicy? ResponsiblePolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponsiblePolicy?>("responsiblePolicy"); }
             set { BackingStore?.Set("responsiblePolicy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ResponsiblePolicy ResponsiblePolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponsiblePolicy>("responsiblePolicy"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The responsibleSensitiveTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ResponsibleSensitiveType>? ResponsibleSensitiveTypes {
             get { return BackingStore?.Get<List<ResponsibleSensitiveType>?>("responsibleSensitiveTypes"); }
             set { BackingStore?.Set("responsibleSensitiveTypes", value); }
         }
+#nullable restore
 #else
         public List<ResponsibleSensitiveType> ResponsibleSensitiveTypes {
             get { return BackingStore?.Get<List<ResponsibleSensitiveType>>("responsibleSensitiveTypes"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sensitivityLabel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MatchingLabel? SensitivityLabel {
             get { return BackingStore?.Get<MatchingLabel?>("sensitivityLabel"); }
             set { BackingStore?.Set("sensitivityLabel", value); }
         }
+#nullable restore
 #else
         public MatchingLabel SensitivityLabel {
             get { return BackingStore?.Get<MatchingLabel>("sensitivityLabel"); }

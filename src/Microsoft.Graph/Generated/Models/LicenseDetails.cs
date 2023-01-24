@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class LicenseDetails : Entity, IParsable {
         /// <summary>Information about the service plans assigned with the license. Read-only, Not nullable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServicePlanInfo>? ServicePlans {
             get { return BackingStore?.Get<List<ServicePlanInfo>?>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
+#nullable restore
 #else
         public List<ServicePlanInfo> ServicePlans {
             get { return BackingStore?.Get<List<ServicePlanInfo>>("servicePlans"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: &apos;AAD_Premium&apos;. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SkuPartNumber {
             get { return BackingStore?.Get<string?>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
         }
+#nullable restore
 #else
         public string SkuPartNumber {
             get { return BackingStore?.Get<string>("skuPartNumber"); }

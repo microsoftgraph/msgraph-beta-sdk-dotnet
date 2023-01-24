@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PrintService : Entity, IParsable {
         /// <summary>Endpoints that can be used to access the service. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PrintServiceEndpoint>? Endpoints {
             get { return BackingStore?.Get<List<PrintServiceEndpoint>?>("endpoints"); }
             set { BackingStore?.Set("endpoints", value); }
         }
+#nullable restore
 #else
         public List<PrintServiceEndpoint> Endpoints {
             get { return BackingStore?.Get<List<PrintServiceEndpoint>>("endpoints"); }

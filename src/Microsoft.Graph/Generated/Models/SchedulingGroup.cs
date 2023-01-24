@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SchedulingGroup : ChangeTrackedEntity, IParsable {
         /// <summary>The display name for the schedulingGroup. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of user IDs that are a member of the schedulingGroup. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? UserIds {
             get { return BackingStore?.Get<List<string>?>("userIds"); }
             set { BackingStore?.Set("userIds", value); }
         }
+#nullable restore
 #else
         public List<string> UserIds {
             get { return BackingStore?.Get<List<string>>("userIds"); }

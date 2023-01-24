@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Communications.Calls.LogTeleconferenceDeviceQuali
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The quality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeleconferenceDeviceQuality? Quality {
             get { return BackingStore?.Get<TeleconferenceDeviceQuality?>("quality"); }
             set { BackingStore?.Set("quality", value); }
         }
+#nullable restore
 #else
         public TeleconferenceDeviceQuality Quality {
             get { return BackingStore?.Get<TeleconferenceDeviceQuality>("quality"); }

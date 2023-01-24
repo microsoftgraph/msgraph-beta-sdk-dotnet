@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationError : Entity, IParsable {
         /// <summary>Represents the sync entity (school, section, student, teacher).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EntryType {
             get { return BackingStore?.Get<string?>("entryType"); }
             set { BackingStore?.Set("entryType", value); }
         }
+#nullable restore
 #else
         public string EntryType {
             get { return BackingStore?.Get<string>("entryType"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the error code for this error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ErrorCode {
             get { return BackingStore?.Get<string?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
+#nullable restore
 #else
         public string ErrorCode {
             get { return BackingStore?.Get<string>("errorCode"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Contains a description of the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ErrorMessage {
             get { return BackingStore?.Get<string?>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
+#nullable restore
 #else
         public string ErrorMessage {
             get { return BackingStore?.Get<string>("errorMessage"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier for the entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JoiningValue {
             get { return BackingStore?.Get<string?>("joiningValue"); }
             set { BackingStore?.Set("joiningValue", value); }
         }
+#nullable restore
 #else
         public string JoiningValue {
             get { return BackingStore?.Get<string>("joiningValue"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The identifier of this error entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ReportableIdentifier {
             get { return BackingStore?.Get<string?>("reportableIdentifier"); }
             set { BackingStore?.Set("reportableIdentifier", value); }
         }
+#nullable restore
 #else
         public string ReportableIdentifier {
             get { return BackingStore?.Get<string>("reportableIdentifier"); }

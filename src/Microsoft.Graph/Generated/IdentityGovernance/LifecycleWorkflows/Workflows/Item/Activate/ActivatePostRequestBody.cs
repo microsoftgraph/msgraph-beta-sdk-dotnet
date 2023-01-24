@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The subjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.User>? Subjects {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.User> Subjects {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("subjects"); }

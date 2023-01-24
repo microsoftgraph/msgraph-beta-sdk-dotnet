@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PersonCertification : ItemFacet, IParsable {
         /// <summary>The referenceable identifier for the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificationId {
             get { return BackingStore?.Get<string?>("certificationId"); }
             set { BackingStore?.Set("certificationId", value); }
         }
+#nullable restore
 #else
         public string CertificationId {
             get { return BackingStore?.Get<string>("certificationId"); }
@@ -20,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Description of the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -32,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Title of the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Authority which granted the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IssuingAuthority {
             get { return BackingStore?.Get<string?>("issuingAuthority"); }
             set { BackingStore?.Set("issuingAuthority", value); }
         }
+#nullable restore
 #else
         public string IssuingAuthority {
             get { return BackingStore?.Get<string>("issuingAuthority"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Company which granted the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IssuingCompany {
             get { return BackingStore?.Get<string?>("issuingCompany"); }
             set { BackingStore?.Set("issuingCompany", value); }
         }
+#nullable restore
 #else
         public string IssuingCompany {
             get { return BackingStore?.Get<string>("issuingCompany"); }
@@ -83,10 +93,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>URL referencing a thumbnail of the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ThumbnailUrl {
             get { return BackingStore?.Get<string?>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
+#nullable restore
 #else
         public string ThumbnailUrl {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
@@ -95,10 +107,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>URL referencing the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WebUrl {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#nullable restore
 #else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }

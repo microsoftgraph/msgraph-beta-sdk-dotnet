@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the color that is the target of the condition if the sorting is on font or cell color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Color {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#nullable restore
 #else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DataOption {
             get { return BackingStore?.Get<string?>("dataOption"); }
             set { BackingStore?.Set("dataOption", value); }
         }
+#nullable restore
 #else
         public string DataOption {
             get { return BackingStore?.Get<string>("dataOption"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the icon that is the target of the condition if the sorting is on the cell&apos;s icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookIcon? Icon {
             get { return BackingStore?.Get<WorkbookIcon?>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
+#nullable restore
 #else
         public WorkbookIcon Icon {
             get { return BackingStore?.Get<WorkbookIcon>("icon"); }
@@ -61,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -73,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SortOn {
             get { return BackingStore?.Get<string?>("sortOn"); }
             set { BackingStore?.Set("sortOn", value); }
         }
+#nullable restore
 #else
         public string SortOn {
             get { return BackingStore?.Get<string>("sortOn"); }

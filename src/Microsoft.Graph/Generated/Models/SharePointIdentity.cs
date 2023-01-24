@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SharePointIdentity : Identity, IParsable {
         /// <summary>The sign in name of the SharePoint identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LoginName {
             get { return BackingStore?.Get<string?>("loginName"); }
             set { BackingStore?.Set("loginName", value); }
         }
+#nullable restore
 #else
         public string LoginName {
             get { return BackingStore?.Get<string>("loginName"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SubscribedSku : Entity, IParsable {
         /// <summary>For example, &apos;User&apos; or &apos;Company&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppliesTo {
             get { return BackingStore?.Get<string?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
+#nullable restore
 #else
         public string AppliesTo {
             get { return BackingStore?.Get<string>("appliesTo"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CapabilityStatus {
             get { return BackingStore?.Get<string?>("capabilityStatus"); }
             set { BackingStore?.Set("capabilityStatus", value); }
         }
+#nullable restore
 #else
         public string CapabilityStatus {
             get { return BackingStore?.Get<string>("capabilityStatus"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Information about the number and status of prepaid licenses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public LicenseUnitsDetail? PrepaidUnits {
             get { return BackingStore?.Get<LicenseUnitsDetail?>("prepaidUnits"); }
             set { BackingStore?.Set("prepaidUnits", value); }
         }
+#nullable restore
 #else
         public LicenseUnitsDetail PrepaidUnits {
             get { return BackingStore?.Get<LicenseUnitsDetail>("prepaidUnits"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information about the service plans that are available with the SKU. Not nullable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ServicePlanInfo>? ServicePlans {
             get { return BackingStore?.Get<List<ServicePlanInfo>?>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
+#nullable restore
 #else
         public List<ServicePlanInfo> ServicePlans {
             get { return BackingStore?.Get<List<ServicePlanInfo>>("servicePlans"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The SKU part number; for example: &apos;AAD_PREMIUM&apos; or &apos;RMSBASIC&apos;. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SkuPartNumber {
             get { return BackingStore?.Get<string?>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
         }
+#nullable restore
 #else
         public string SkuPartNumber {
             get { return BackingStore?.Get<string>("skuPartNumber"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The note property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Note {
             get { return BackingStore?.Get<string?>("note"); }
             set { BackingStore?.Set("note", value); }
         }
+#nullable restore
 #else
         public string Note {
             get { return BackingStore?.Get<string>("note"); }

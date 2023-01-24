@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SimulationId {
             get { return BackingStore?.Get<string?>("simulationId"); }
             set { BackingStore?.Set("simulationId", value); }
         }
+#nullable restore
 #else
         public string SimulationId {
             get { return BackingStore?.Get<string>("simulationId"); }

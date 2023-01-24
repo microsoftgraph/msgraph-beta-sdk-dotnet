@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSimpleSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable {
         /// <summary>The simpleSettingValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationSimpleSettingValue? SimpleSettingValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValue?>("simpleSettingValue"); }
             set { BackingStore?.Set("simpleSettingValue", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationSimpleSettingValue SimpleSettingValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValue>("simpleSettingValue"); }

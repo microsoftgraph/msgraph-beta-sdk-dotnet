@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class IosDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase, IParsable {
         /// <summary>Asset tag information for the device, displayed on the login window and lock screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssetTagTemplate {
             get { return BackingStore?.Get<string?>("assetTagTemplate"); }
             set { BackingStore?.Set("assetTagTemplate", value); }
         }
+#nullable restore
 #else
         public string AssetTagTemplate {
             get { return BackingStore?.Get<string>("assetTagTemplate"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets iOS Web Content Filter settings, supervised mode only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosWebContentFilterBase? ContentFilterSettings {
             get { return BackingStore?.Get<IosWebContentFilterBase?>("contentFilterSettings"); }
             set { BackingStore?.Set("contentFilterSettings", value); }
         }
+#nullable restore
 #else
         public IosWebContentFilterBase ContentFilterSettings {
             get { return BackingStore?.Get<IosWebContentFilterBase>("contentFilterSettings"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IosHomeScreenItem>? HomeScreenDockIcons {
             get { return BackingStore?.Get<List<IosHomeScreenItem>?>("homeScreenDockIcons"); }
             set { BackingStore?.Set("homeScreenDockIcons", value); }
         }
+#nullable restore
 #else
         public List<IosHomeScreenItem> HomeScreenDockIcons {
             get { return BackingStore?.Get<List<IosHomeScreenItem>>("homeScreenDockIcons"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IosHomeScreenPage>? HomeScreenPages {
             get { return BackingStore?.Get<List<IosHomeScreenPage>?>("homeScreenPages"); }
             set { BackingStore?.Set("homeScreenPages", value); }
         }
+#nullable restore
 #else
         public List<IosHomeScreenPage> HomeScreenPages {
             get { return BackingStore?.Get<List<IosHomeScreenPage>>("homeScreenPages"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Identity Certificate for the renewal of Kerberos ticket used in single sign-on settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosCertificateProfileBase? IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<IosCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
+#nullable restore
 #else
         public IosCertificateProfileBase IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificateForClientAuthentication"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a single sign-on extension profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IosSingleSignOnExtension? IosSingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosSingleSignOnExtension?>("iosSingleSignOnExtension"); }
             set { BackingStore?.Set("iosSingleSignOnExtension", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IosSingleSignOnExtension IosSingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosSingleSignOnExtension>("iosSingleSignOnExtension"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LockScreenFootnote {
             get { return BackingStore?.Get<string?>("lockScreenFootnote"); }
             set { BackingStore?.Set("lockScreenFootnote", value); }
         }
+#nullable restore
 #else
         public string LockScreenFootnote {
             get { return BackingStore?.Get<string>("lockScreenFootnote"); }
@@ -101,10 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<IosNotificationSettings>? NotificationSettings {
             get { return BackingStore?.Get<List<IosNotificationSettings>?>("notificationSettings"); }
             set { BackingStore?.Set("notificationSettings", value); }
         }
+#nullable restore
 #else
         public List<IosNotificationSettings> NotificationSettings {
             get { return BackingStore?.Get<List<IosNotificationSettings>>("notificationSettings"); }
@@ -113,10 +129,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Gets or sets a single sign-on extension profile. Deprecated: use IOSSingleSignOnExtension instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.SingleSignOnExtension? SingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension?>("singleSignOnExtension"); }
             set { BackingStore?.Set("singleSignOnExtension", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.SingleSignOnExtension SingleSignOnExtension {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnExtension>("singleSignOnExtension"); }
@@ -125,10 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>PKINIT Certificate for the authentication with single sign-on extension settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosCertificateProfileBase? SingleSignOnExtensionPkinitCertificate {
             get { return BackingStore?.Get<IosCertificateProfileBase?>("singleSignOnExtensionPkinitCertificate"); }
             set { BackingStore?.Set("singleSignOnExtensionPkinitCertificate", value); }
         }
+#nullable restore
 #else
         public IosCertificateProfileBase SingleSignOnExtensionPkinitCertificate {
             get { return BackingStore?.Get<IosCertificateProfileBase>("singleSignOnExtensionPkinitCertificate"); }
@@ -137,10 +157,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Kerberos login settings that enable apps on receiving devices to authenticate smoothly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosSingleSignOnSettings? SingleSignOnSettings {
             get { return BackingStore?.Get<IosSingleSignOnSettings?>("singleSignOnSettings"); }
             set { BackingStore?.Set("singleSignOnSettings", value); }
         }
+#nullable restore
 #else
         public IosSingleSignOnSettings SingleSignOnSettings {
             get { return BackingStore?.Get<IosSingleSignOnSettings>("singleSignOnSettings"); }
@@ -154,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A wallpaper image must be in either PNG or JPEG format. It requires a supervised device with iOS 8 or later version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MimeContent? WallpaperImage {
             get { return BackingStore?.Get<MimeContent?>("wallpaperImage"); }
             set { BackingStore?.Set("wallpaperImage", value); }
         }
+#nullable restore
 #else
         public MimeContent WallpaperImage {
             get { return BackingStore?.Get<MimeContent>("wallpaperImage"); }

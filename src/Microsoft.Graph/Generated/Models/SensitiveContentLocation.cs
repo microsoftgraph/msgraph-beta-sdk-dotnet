@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The evidences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SensitiveContentEvidence>? Evidences {
             get { return BackingStore?.Get<List<SensitiveContentEvidence>?>("evidences"); }
             set { BackingStore?.Set("evidences", value); }
         }
+#nullable restore
 #else
         public List<SensitiveContentEvidence> Evidences {
             get { return BackingStore?.Get<List<SensitiveContentEvidence>>("evidences"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The idMatch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IdMatch {
             get { return BackingStore?.Get<string?>("idMatch"); }
             set { BackingStore?.Set("idMatch", value); }
         }
+#nullable restore
 #else
         public string IdMatch {
             get { return BackingStore?.Get<string>("idMatch"); }
@@ -49,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsDefenderScanActionResult : DeviceActionResult, IParsable {
         /// <summary>Scan type either full scan or quick scan</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScanType {
             get { return BackingStore?.Get<string?>("scanType"); }
             set { BackingStore?.Set("scanType", value); }
         }
+#nullable restore
 #else
         public string ScanType {
             get { return BackingStore?.Get<string>("scanType"); }

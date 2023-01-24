@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SecurityBaselineState : Entity, IParsable {
         /// <summary>The display name of the security baseline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The security baseline template id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SecurityBaselineTemplateId {
             get { return BackingStore?.Get<string?>("securityBaselineTemplateId"); }
             set { BackingStore?.Set("securityBaselineTemplateId", value); }
         }
+#nullable restore
 #else
         public string SecurityBaselineTemplateId {
             get { return BackingStore?.Get<string>("securityBaselineTemplateId"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The security baseline state for different settings for a device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SecurityBaselineSettingState>? SettingStates {
             get { return BackingStore?.Get<List<SecurityBaselineSettingState>?>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
+#nullable restore
 #else
         public List<SecurityBaselineSettingState> SettingStates {
             get { return BackingStore?.Get<List<SecurityBaselineSettingState>>("settingStates"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User Principal Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? UserPrincipalName {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#nullable restore
 #else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }

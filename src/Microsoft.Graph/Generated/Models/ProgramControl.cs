@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProgramControl : Entity, IParsable {
         /// <summary>The controlId of the control, in particular the identifier of an access review. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ControlId {
             get { return BackingStore?.Get<string?>("controlId"); }
             set { BackingStore?.Set("controlId", value); }
         }
+#nullable restore
 #else
         public string ControlId {
             get { return BackingStore?.Get<string>("controlId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ControlTypeId {
             get { return BackingStore?.Get<string?>("controlTypeId"); }
             set { BackingStore?.Set("controlTypeId", value); }
         }
+#nullable restore
 #else
         public string ControlTypeId {
             get { return BackingStore?.Get<string>("controlTypeId"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user who created the program control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UserIdentity? Owner {
             get { return BackingStore?.Get<UserIdentity?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#nullable restore
 #else
         public UserIdentity Owner {
             get { return BackingStore?.Get<UserIdentity>("owner"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The program this control is part of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Program? Program {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Program?>("program"); }
             set { BackingStore?.Set("program", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Program Program {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Program>("program"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The programId of the program this control is a part of. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProgramId {
             get { return BackingStore?.Get<string?>("programId"); }
             set { BackingStore?.Set("programId", value); }
         }
+#nullable restore
 #else
         public string ProgramId {
             get { return BackingStore?.Get<string>("programId"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The resource, a group or an app, targeted by this program control&apos;s access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ProgramResource? Resource {
             get { return BackingStore?.Get<ProgramResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#nullable restore
 #else
         public ProgramResource Resource {
             get { return BackingStore?.Get<ProgramResource>("resource"); }
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The life cycle status of the control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Status {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#nullable restore
 #else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }

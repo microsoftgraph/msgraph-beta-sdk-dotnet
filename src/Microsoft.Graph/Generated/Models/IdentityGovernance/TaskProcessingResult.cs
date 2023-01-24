@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>Describes why the taskProcessingResult has failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FailureReason {
             get { return BackingStore?.Get<string?>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
         }
+#nullable restore
 #else
         public string FailureReason {
             get { return BackingStore?.Get<string>("failureReason"); }
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.User? Subject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.User Subject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("subject"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
 #endif
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject? TaskObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject TaskObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }

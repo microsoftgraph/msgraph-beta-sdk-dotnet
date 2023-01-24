@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Applications and user actions included in and excluded from the policy. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessApplications? Applications {
             get { return BackingStore?.Get<ConditionalAccessApplications?>("applications"); }
             set { BackingStore?.Set("applications", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessApplications Applications {
             get { return BackingStore?.Get<ConditionalAccessApplications>("applications"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessClientApplications? ClientApplications {
             get { return BackingStore?.Get<ConditionalAccessClientApplications?>("clientApplications"); }
             set { BackingStore?.Set("clientApplications", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessClientApplications ClientApplications {
             get { return BackingStore?.Get<ConditionalAccessClientApplications>("clientApplications"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ConditionalAccessClientApp?>? ClientAppTypes {
             get { return BackingStore?.Get<List<ConditionalAccessClientApp?>?>("clientAppTypes"); }
             set { BackingStore?.Set("clientAppTypes", value); }
         }
+#nullable restore
 #else
         public List<ConditionalAccessClientApp?> ClientAppTypes {
             get { return BackingStore?.Get<List<ConditionalAccessClientApp?>>("clientAppTypes"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Devices in the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessDevices? Devices {
             get { return BackingStore?.Get<ConditionalAccessDevices?>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessDevices Devices {
             get { return BackingStore?.Get<ConditionalAccessDevices>("devices"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Device states in the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessDeviceStates? DeviceStates {
             get { return BackingStore?.Get<ConditionalAccessDeviceStates?>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessDeviceStates DeviceStates {
             get { return BackingStore?.Get<ConditionalAccessDeviceStates>("deviceStates"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Locations included in and excluded from the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessLocations? Locations {
             get { return BackingStore?.Get<ConditionalAccessLocations?>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessLocations Locations {
             get { return BackingStore?.Get<ConditionalAccessLocations>("locations"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Platforms included in and excluded from the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessPlatforms? Platforms {
             get { return BackingStore?.Get<ConditionalAccessPlatforms?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessPlatforms Platforms {
             get { return BackingStore?.Get<ConditionalAccessPlatforms>("platforms"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RiskLevel?>? ServicePrincipalRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>?>("servicePrincipalRiskLevels"); }
             set { BackingStore?.Set("servicePrincipalRiskLevels", value); }
         }
+#nullable restore
 #else
         public List<RiskLevel?> ServicePrincipalRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>>("servicePrincipalRiskLevels"); }
@@ -123,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RiskLevel?>? SignInRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>?>("signInRiskLevels"); }
             set { BackingStore?.Set("signInRiskLevels", value); }
         }
+#nullable restore
 #else
         public List<RiskLevel?> SignInRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>>("signInRiskLevels"); }
@@ -135,10 +155,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RiskLevel?>? UserRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>?>("userRiskLevels"); }
             set { BackingStore?.Set("userRiskLevels", value); }
         }
+#nullable restore
 #else
         public List<RiskLevel?> UserRiskLevels {
             get { return BackingStore?.Get<List<RiskLevel?>>("userRiskLevels"); }
@@ -147,10 +169,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ConditionalAccessUsers? Users {
             get { return BackingStore?.Get<ConditionalAccessUsers?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
+#nullable restore
 #else
         public ConditionalAccessUsers Users {
             get { return BackingStore?.Get<ConditionalAccessUsers>("users"); }

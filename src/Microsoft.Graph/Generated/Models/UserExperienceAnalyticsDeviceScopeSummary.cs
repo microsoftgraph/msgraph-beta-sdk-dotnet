@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the user experience analytics device scope Unique Identifiers that are enabled and finished recalculating the report metric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? CompletedDeviceScopeIds {
             get { return BackingStore?.Get<List<string>?>("completedDeviceScopeIds"); }
             set { BackingStore?.Set("completedDeviceScopeIds", value); }
         }
+#nullable restore
 #else
         public List<string> CompletedDeviceScopeIds {
             get { return BackingStore?.Get<List<string>>("completedDeviceScopeIds"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of user experience analytics device scope Unique Identitfiers that are enabled but there is insufficient data to calculate results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? InsufficientDataDeviceScopeIds {
             get { return BackingStore?.Get<List<string>?>("insufficientDataDeviceScopeIds"); }
             set { BackingStore?.Set("insufficientDataDeviceScopeIds", value); }
         }
+#nullable restore
 #else
         public List<string> InsufficientDataDeviceScopeIds {
             get { return BackingStore?.Get<List<string>>("insufficientDataDeviceScopeIds"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

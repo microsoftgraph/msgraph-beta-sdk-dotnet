@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryReviewSet : DataSet, IParsable {
         /// <summary>Represents files within the review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryFile>? Files {
             get { return BackingStore?.Get<List<EdiscoveryFile>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryFile> Files {
             get { return BackingStore?.Get<List<EdiscoveryFile>>("files"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Represents queries within the review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryReviewSetQuery>? Queries {
             get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>?>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryReviewSetQuery> Queries {
             get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>("queries"); }

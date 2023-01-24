@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DomainDnsSrvRecord : DomainDnsRecord, IParsable {
         /// <summary>Value to use when configuring the Target property of the SRV record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? NameTarget {
             get { return BackingStore?.Get<string?>("nameTarget"); }
             set { BackingStore?.Set("nameTarget", value); }
         }
+#nullable restore
 #else
         public string NameTarget {
             get { return BackingStore?.Get<string>("nameTarget"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Value to use when configuring the protocol property of the SRV record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Protocol {
             get { return BackingStore?.Get<string?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
+#nullable restore
 #else
         public string Protocol {
             get { return BackingStore?.Get<string>("protocol"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Value to use when configuring the service property of the SRV record at the DNS host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Service {
             get { return BackingStore?.Get<string?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#nullable restore
 #else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }

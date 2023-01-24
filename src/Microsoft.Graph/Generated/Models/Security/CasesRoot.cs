@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class CasesRoot : Entity, IParsable {
         /// <summary>The ediscoveryCases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EdiscoveryCase>? EdiscoveryCases {
             get { return BackingStore?.Get<List<EdiscoveryCase>?>("ediscoveryCases"); }
             set { BackingStore?.Set("ediscoveryCases", value); }
         }
+#nullable restore
 #else
         public List<EdiscoveryCase> EdiscoveryCases {
             get { return BackingStore?.Get<List<EdiscoveryCase>>("ediscoveryCases"); }

@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan 
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public BusinessScenarioTaskTargetBase? Target {
             get { return BackingStore?.Get<BusinessScenarioTaskTargetBase?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#nullable restore
 #else
         public BusinessScenarioTaskTargetBase Target {
             get { return BackingStore?.Get<BusinessScenarioTaskTargetBase>("target"); }

@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies foreground and background bandwidth usage using percentages, absolutes, or hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeliveryOptimizationBandwidth? BandwidthMode {
             get { return BackingStore?.Get<DeliveryOptimizationBandwidth?>("bandwidthMode"); }
             set { BackingStore?.Set("bandwidthMode", value); }
         }
+#nullable restore
 #else
         public DeliveryOptimizationBandwidth BandwidthMode {
             get { return BackingStore?.Get<DeliveryOptimizationBandwidth>("bandwidthMode"); }
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies cache servers host names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? CacheServerHostNames {
             get { return BackingStore?.Get<List<string>?>("cacheServerHostNames"); }
             set { BackingStore?.Set("cacheServerHostNames", value); }
         }
+#nullable restore
 #else
         public List<string> CacheServerHostNames {
             get { return BackingStore?.Get<List<string>>("cacheServerHostNames"); }
@@ -56,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies to restrict peer selection to a specfic source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeliveryOptimizationGroupIdSource? GroupIdSource {
             get { return BackingStore?.Get<DeliveryOptimizationGroupIdSource?>("groupIdSource"); }
             set { BackingStore?.Set("groupIdSource", value); }
         }
+#nullable restore
 #else
         public DeliveryOptimizationGroupIdSource GroupIdSource {
             get { return BackingStore?.Get<DeliveryOptimizationGroupIdSource>("groupIdSource"); }
@@ -73,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies the maximum cache size that Delivery Optimization either as a percentage or in GB.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeliveryOptimizationMaxCacheSize? MaximumCacheSize {
             get { return BackingStore?.Get<DeliveryOptimizationMaxCacheSize?>("maximumCacheSize"); }
             set { BackingStore?.Set("maximumCacheSize", value); }
         }
+#nullable restore
 #else
         public DeliveryOptimizationMaxCacheSize MaximumCacheSize {
             get { return BackingStore?.Get<DeliveryOptimizationMaxCacheSize>("maximumCacheSize"); }
@@ -105,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Specifies the drive that Delivery Optimization should use for its cache.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ModifyCacheLocation {
             get { return BackingStore?.Get<string?>("modifyCacheLocation"); }
             set { BackingStore?.Set("modifyCacheLocation", value); }
         }
+#nullable restore
 #else
         public string ModifyCacheLocation {
             get { return BackingStore?.Get<string>("modifyCacheLocation"); }

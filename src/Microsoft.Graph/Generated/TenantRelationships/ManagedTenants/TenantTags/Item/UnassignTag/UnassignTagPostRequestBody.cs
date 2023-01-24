@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenantIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TenantIds {
             get { return BackingStore?.Get<List<string>?>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
         }
+#nullable restore
 #else
         public List<string> TenantIds {
             get { return BackingStore?.Get<List<string>>("tenantIds"); }

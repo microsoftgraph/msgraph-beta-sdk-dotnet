@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyTenantRestrictions : CrossTenantAccessPolicyB2BSetting, IParsable {
         /// <summary>The devices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DevicesFilter? Devices {
             get { return BackingStore?.Get<DevicesFilter?>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
+#nullable restore
 #else
         public DevicesFilter Devices {
             get { return BackingStore?.Get<DevicesFilter>("devices"); }

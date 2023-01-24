@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The IP address or FQDN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IpAddressOrFQDN {
             get { return BackingStore?.Get<string?>("ipAddressOrFQDN"); }
             set { BackingStore?.Set("ipAddressOrFQDN", value); }
         }
+#nullable restore
 #else
         public string IpAddressOrFQDN {
             get { return BackingStore?.Get<string>("ipAddressOrFQDN"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Proxy IP or FQDN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Proxy {
             get { return BackingStore?.Get<string?>("proxy"); }
             set { BackingStore?.Set("proxy", value); }
         }
+#nullable restore
 #else
         public string Proxy {
             get { return BackingStore?.Get<string>("proxy"); }

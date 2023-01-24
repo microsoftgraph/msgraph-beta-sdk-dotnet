@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Enrollment Token used by the User to enroll their device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? EnrollmentToken {
             get { return BackingStore?.Get<string?>("enrollmentToken"); }
             set { BackingStore?.Set("enrollmentToken", value); }
         }
+#nullable restore
 #else
         public string EnrollmentToken {
             get { return BackingStore?.Get<string>("enrollmentToken"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>String used to generate a QR code for the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? QrCodeContent {
             get { return BackingStore?.Get<string?>("qrCodeContent"); }
             set { BackingStore?.Set("qrCodeContent", value); }
         }
+#nullable restore
 #else
         public string QrCodeContent {
             get { return BackingStore?.Get<string>("qrCodeContent"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Generated QR code for the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MimeContent? QrCodeImage {
             get { return BackingStore?.Get<MimeContent?>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
+#nullable restore
 #else
         public MimeContent QrCodeImage {
             get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }

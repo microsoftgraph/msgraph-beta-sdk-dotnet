@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCre
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Id {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#nullable restore
 #else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }

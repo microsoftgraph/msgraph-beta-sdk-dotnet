@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The communicationSpeaker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? CommunicationSpeaker {
             get { return BackingStore?.Get<TeamworkPeripheral?>("communicationSpeaker"); }
             set { BackingStore?.Set("communicationSpeaker", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral CommunicationSpeaker {
             get { return BackingStore?.Get<TeamworkPeripheral>("communicationSpeaker"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The contentCamera property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? ContentCamera {
             get { return BackingStore?.Get<TeamworkPeripheral?>("contentCamera"); }
             set { BackingStore?.Set("contentCamera", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral ContentCamera {
             get { return BackingStore?.Get<TeamworkPeripheral>("contentCamera"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The microphone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? Microphone {
             get { return BackingStore?.Get<TeamworkPeripheral?>("microphone"); }
             set { BackingStore?.Set("microphone", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral Microphone {
             get { return BackingStore?.Get<TeamworkPeripheral>("microphone"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The roomCamera property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? RoomCamera {
             get { return BackingStore?.Get<TeamworkPeripheral?>("roomCamera"); }
             set { BackingStore?.Set("roomCamera", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral RoomCamera {
             get { return BackingStore?.Get<TeamworkPeripheral>("roomCamera"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The speaker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? Speaker {
             get { return BackingStore?.Get<TeamworkPeripheral?>("speaker"); }
             set { BackingStore?.Set("speaker", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral Speaker {
             get { return BackingStore?.Get<TeamworkPeripheral>("speaker"); }

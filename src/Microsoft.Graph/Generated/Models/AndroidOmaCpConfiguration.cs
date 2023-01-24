@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidOmaCpConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? ConfigurationXml {
             get { return BackingStore?.Get<byte[]?>("configurationXml"); }
             set { BackingStore?.Set("configurationXml", value); }
         }
+#nullable restore
 #else
         public byte[] ConfigurationXml {
             get { return BackingStore?.Get<byte[]>("configurationXml"); }

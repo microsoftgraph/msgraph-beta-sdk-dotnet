@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ParticipantLeftNotification : Entity, IParsable {
         /// <summary>The call property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Call? Call {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Call?>("call"); }
             set { BackingStore?.Set("call", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Call Call {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Call>("call"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ID of the participant under the policy who has left the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParticipantId {
             get { return BackingStore?.Get<string?>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
+#nullable restore
 #else
         public string ParticipantId {
             get { return BackingStore?.Get<string>("participantId"); }

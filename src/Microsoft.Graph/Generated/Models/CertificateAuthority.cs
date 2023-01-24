@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Required. The base64 encoded string representing the public certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Certificate {
             get { return BackingStore?.Get<byte[]?>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
+#nullable restore
 #else
         public byte[] Certificate {
             get { return BackingStore?.Get<byte[]>("certificate"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL of the certificate revocation list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CertificateRevocationListUrl {
             get { return BackingStore?.Get<string?>("certificateRevocationListUrl"); }
             set { BackingStore?.Set("certificateRevocationListUrl", value); }
         }
+#nullable restore
 #else
         public string CertificateRevocationListUrl {
             get { return BackingStore?.Get<string>("certificateRevocationListUrl"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeltaCertificateRevocationListUrl {
             get { return BackingStore?.Get<string?>("deltaCertificateRevocationListUrl"); }
             set { BackingStore?.Set("deltaCertificateRevocationListUrl", value); }
         }
+#nullable restore
 #else
         public string DeltaCertificateRevocationListUrl {
             get { return BackingStore?.Get<string>("deltaCertificateRevocationListUrl"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The issuer of the certificate, calculated from the certificate value. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Issuer {
             get { return BackingStore?.Get<string?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
+#nullable restore
 #else
         public string Issuer {
             get { return BackingStore?.Get<string>("issuer"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The subject key identifier of the certificate, calculated from the certificate value. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? IssuerSki {
             get { return BackingStore?.Get<string?>("issuerSki"); }
             set { BackingStore?.Set("issuerSki", value); }
         }
+#nullable restore
 #else
         public string IssuerSki {
             get { return BackingStore?.Get<string>("issuerSki"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

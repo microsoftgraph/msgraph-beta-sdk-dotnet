@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.SearchE
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The importedDeviceIdentities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ImportedDeviceIdentity>? ImportedDeviceIdentities {
             get { return BackingStore?.Get<List<ImportedDeviceIdentity>?>("importedDeviceIdentities"); }
             set { BackingStore?.Set("importedDeviceIdentities", value); }
         }
+#nullable restore
 #else
         public List<ImportedDeviceIdentity> ImportedDeviceIdentities {
             get { return BackingStore?.Get<List<ImportedDeviceIdentity>>("importedDeviceIdentities"); }

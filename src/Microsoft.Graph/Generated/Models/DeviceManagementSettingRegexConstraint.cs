@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingRegexConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The RegEx pattern to match against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Regex {
             get { return BackingStore?.Get<string?>("regex"); }
             set { BackingStore?.Set("regex", value); }
         }
+#nullable restore
 #else
         public string Regex {
             get { return BackingStore?.Get<string>("regex"); }

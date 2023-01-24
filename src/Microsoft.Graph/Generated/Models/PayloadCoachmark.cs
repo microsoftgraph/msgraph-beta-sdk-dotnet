@@ -13,53 +13,61 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The coachmarkLocation property</summary>
+        /// <summary>The coachmark location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.CoachmarkLocation? CoachmarkLocation {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CoachmarkLocation?>("coachmarkLocation"); }
             set { BackingStore?.Set("coachmarkLocation", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.CoachmarkLocation CoachmarkLocation {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CoachmarkLocation>("coachmarkLocation"); }
             set { BackingStore?.Set("coachmarkLocation", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>The description about the coachmark.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The indicator property</summary>
+        /// <summary>The coachmark indicator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Indicator {
             get { return BackingStore?.Get<string?>("indicator"); }
             set { BackingStore?.Set("indicator", value); }
         }
+#nullable restore
 #else
         public string Indicator {
             get { return BackingStore?.Get<string>("indicator"); }
             set { BackingStore?.Set("indicator", value); }
         }
 #endif
-        /// <summary>The isValid property</summary>
+        /// <summary>Indicates whether the coachmark is valid or not.</summary>
         public bool? IsValid {
             get { return BackingStore?.Get<bool?>("isValid"); }
             set { BackingStore?.Set("isValid", value); }
         }
-        /// <summary>The language property</summary>
+        /// <summary>The coachmark language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Language {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+#nullable restore
 #else
         public string Language {
             get { return BackingStore?.Get<string>("language"); }
@@ -68,22 +76,26 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The order property</summary>
+        /// <summary>The coachmark order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Order {
             get { return BackingStore?.Get<string?>("order"); }
             set { BackingStore?.Set("order", value); }
         }
+#nullable restore
 #else
         public string Order {
             get { return BackingStore?.Get<string>("order"); }

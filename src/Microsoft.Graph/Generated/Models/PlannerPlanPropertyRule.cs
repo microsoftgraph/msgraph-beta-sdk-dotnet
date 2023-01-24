@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerPlanPropertyRule : PlannerPropertyRule, IParsable {
         /// <summary>The buckets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Buckets {
             get { return BackingStore?.Get<List<string>?>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
+#nullable restore
 #else
         public List<string> Buckets {
             get { return BackingStore?.Get<List<string>>("buckets"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The categoryDescriptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerFieldRules? CategoryDescriptions {
             get { return BackingStore?.Get<PlannerFieldRules?>("categoryDescriptions"); }
             set { BackingStore?.Set("categoryDescriptions", value); }
         }
+#nullable restore
 #else
         public PlannerFieldRules CategoryDescriptions {
             get { return BackingStore?.Get<PlannerFieldRules>("categoryDescriptions"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The tasks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Tasks {
             get { return BackingStore?.Get<List<string>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#nullable restore
 #else
         public List<string> Tasks {
             get { return BackingStore?.Get<List<string>>("tasks"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PlannerFieldRules? Title {
             get { return BackingStore?.Get<PlannerFieldRules?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public PlannerFieldRules Title {
             get { return BackingStore?.Get<PlannerFieldRules>("title"); }

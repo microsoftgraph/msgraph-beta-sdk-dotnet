@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SharedDriveItem : BaseItem, IParsable {
         /// <summary>Used to access the underlying driveItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DriveItem? DriveItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("driveItem"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All driveItems contained in the sharing root. This collection cannot be enumerated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Microsoft.Graph.Beta.Models.DriveItem>? Items {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#nullable restore
 #else
         public List<Microsoft.Graph.Beta.Models.DriveItem> Items {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>>("items"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Used to access the underlying list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.List? List {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List?>("list"); }
             set { BackingStore?.Set("list", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.List List {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List>("list"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Used to access the underlying listItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ListItem? ListItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem?>("listItem"); }
             set { BackingStore?.Set("listItem", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ListItem ListItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem>("listItem"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Information about the owner of the shared item being referenced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Owner {
             get { return BackingStore?.Get<IdentitySet?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#nullable restore
 #else
         public IdentitySet Owner {
             get { return BackingStore?.Get<IdentitySet>("owner"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Used to access the permission representing the underlying sharing link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Permission? Permission {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Permission?>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Permission Permission {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Permission>("permission"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The root property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DriveItem? Root {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("root"); }
             set { BackingStore?.Set("root", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DriveItem Root {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("root"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Used to access the underlying site</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Site? Site {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Site?>("site"); }
             set { BackingStore?.Set("site", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Site Site {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Site>("site"); }

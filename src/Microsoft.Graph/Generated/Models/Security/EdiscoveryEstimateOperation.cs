@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>eDiscovery search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EdiscoverySearch? Search {
             get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#nullable restore
 #else
         public EdiscoverySearch Search {
             get { return BackingStore?.Get<EdiscoverySearch>("search"); }

@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class LogonUser : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Domain of user account used to logon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountDomain {
             get { return BackingStore?.Get<string?>("accountDomain"); }
             set { BackingStore?.Set("accountDomain", value); }
         }
+#nullable restore
 #else
         public string AccountDomain {
             get { return BackingStore?.Get<string>("accountDomain"); }
@@ -20,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Account name of user account used to logon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountName {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#nullable restore
 #else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
@@ -54,10 +58,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>User logon ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LogonId {
             get { return BackingStore?.Get<string?>("logonId"); }
             set { BackingStore?.Set("logonId", value); }
         }
+#nullable restore
 #else
         public string LogonId {
             get { return BackingStore?.Get<string>("logonId"); }
@@ -66,10 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<LogonType?>? LogonTypes {
             get { return BackingStore?.Get<List<LogonType?>?>("logonTypes"); }
             set { BackingStore?.Set("logonTypes", value); }
         }
+#nullable restore
 #else
         public List<LogonType?> LogonTypes {
             get { return BackingStore?.Get<List<LogonType?>>("logonTypes"); }
@@ -78,10 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

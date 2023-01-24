@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ProtectByTemplateAction : InformationProtectionAction, IParsable {
         /// <summary>The GUID of the Azure Information Protection template to apply to the information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TemplateId {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#nullable restore
 #else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }

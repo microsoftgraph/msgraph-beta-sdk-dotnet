@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cost center associated with the user. Returned only on $select. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CostCenter {
             get { return BackingStore?.Get<string?>("costCenter"); }
             set { BackingStore?.Set("costCenter", value); }
         }
+#nullable restore
 #else
         public string CostCenter {
             get { return BackingStore?.Get<string>("costCenter"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the division in which the user works. Returned only on $select. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Division {
             get { return BackingStore?.Get<string?>("division"); }
             set { BackingStore?.Set("division", value); }
         }
+#nullable restore
 #else
         public string Division {
             get { return BackingStore?.Get<string>("division"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

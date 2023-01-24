@@ -67,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Enable lockdown mode for always-on VPN.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? VpnAlwaysOnPackageIdentifier {
             get { return BackingStore?.Get<string?>("vpnAlwaysOnPackageIdentifier"); }
             set { BackingStore?.Set("vpnAlwaysOnPackageIdentifier", value); }
         }
+#nullable restore
 #else
         public string VpnAlwaysOnPackageIdentifier {
             get { return BackingStore?.Get<string>("vpnAlwaysOnPackageIdentifier"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MembershipRule {
             get { return BackingStore?.Get<string?>("membershipRule"); }
             set { BackingStore?.Set("membershipRule", value); }
         }
+#nullable restore
 #else
         public string MembershipRule {
             get { return BackingStore?.Get<string>("membershipRule"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides a detailed anaylsis of the membership evaluation result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ExpressionEvaluationDetails? MembershipRuleEvaluationDetails {
             get { return BackingStore?.Get<ExpressionEvaluationDetails?>("membershipRuleEvaluationDetails"); }
             set { BackingStore?.Set("membershipRuleEvaluationDetails", value); }
         }
+#nullable restore
 #else
         public ExpressionEvaluationDetails MembershipRuleEvaluationDetails {
             get { return BackingStore?.Get<ExpressionEvaluationDetails>("membershipRuleEvaluationDetails"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

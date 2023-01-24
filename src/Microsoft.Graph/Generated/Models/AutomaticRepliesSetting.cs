@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ExternalReplyMessage {
             get { return BackingStore?.Get<string?>("externalReplyMessage"); }
             set { BackingStore?.Set("externalReplyMessage", value); }
         }
+#nullable restore
 #else
         public string ExternalReplyMessage {
             get { return BackingStore?.Get<string>("externalReplyMessage"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The automatic reply to send to the audience internal to the signed-in user&apos;s organization, if Status is AlwaysEnabled or Scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InternalReplyMessage {
             get { return BackingStore?.Get<string?>("internalReplyMessage"); }
             set { BackingStore?.Set("internalReplyMessage", value); }
         }
+#nullable restore
 #else
         public string InternalReplyMessage {
             get { return BackingStore?.Get<string>("internalReplyMessage"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The date and time that automatic replies are set to end, if Status is set to Scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? ScheduledEndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledEndDateTime"); }
             set { BackingStore?.Set("scheduledEndDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone ScheduledEndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledEndDateTime"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The date and time that automatic replies are set to begin, if Status is set to Scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? ScheduledStartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("scheduledStartDateTime"); }
             set { BackingStore?.Set("scheduledStartDateTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone ScheduledStartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledStartDateTime"); }

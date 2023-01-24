@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargeted
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceConfigurationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DeviceConfigurationIds {
             get { return BackingStore?.Get<List<string>?>("deviceConfigurationIds"); }
             set { BackingStore?.Set("deviceConfigurationIds", value); }
         }
+#nullable restore
 #else
         public List<string> DeviceConfigurationIds {
             get { return BackingStore?.Get<List<string>>("deviceConfigurationIds"); }

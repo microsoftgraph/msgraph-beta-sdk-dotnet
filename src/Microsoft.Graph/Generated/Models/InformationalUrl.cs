@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>CDN URL to the application&apos;s logo, Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LogoUrl {
             get { return BackingStore?.Get<string?>("logoUrl"); }
             set { BackingStore?.Set("logoUrl", value); }
         }
+#nullable restore
 #else
         public string LogoUrl {
             get { return BackingStore?.Get<string>("logoUrl"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Link to the application&apos;s marketing page. For example, https://www.contoso.com/app/marketing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MarketingUrl {
             get { return BackingStore?.Get<string?>("marketingUrl"); }
             set { BackingStore?.Set("marketingUrl", value); }
         }
+#nullable restore
 #else
         public string MarketingUrl {
             get { return BackingStore?.Get<string>("marketingUrl"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Link to the application&apos;s privacy statement. For example, https://www.contoso.com/app/privacy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrivacyStatementUrl {
             get { return BackingStore?.Get<string?>("privacyStatementUrl"); }
             set { BackingStore?.Set("privacyStatementUrl", value); }
         }
+#nullable restore
 #else
         public string PrivacyStatementUrl {
             get { return BackingStore?.Get<string>("privacyStatementUrl"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Link to the application&apos;s support page. For example, https://www.contoso.com/app/support</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SupportUrl {
             get { return BackingStore?.Get<string?>("supportUrl"); }
             set { BackingStore?.Set("supportUrl", value); }
         }
+#nullable restore
 #else
         public string SupportUrl {
             get { return BackingStore?.Get<string>("supportUrl"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Link to the application&apos;s terms of service statement. For example, https://www.contoso.com/app/termsofservice</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TermsOfServiceUrl {
             get { return BackingStore?.Get<string?>("termsOfServiceUrl"); }
             set { BackingStore?.Set("termsOfServiceUrl", value); }
         }
+#nullable restore
 #else
         public string TermsOfServiceUrl {
             get { return BackingStore?.Get<string>("termsOfServiceUrl"); }

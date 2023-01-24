@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApplicationTemplate : Entity, IParsable {
         /// <summary>The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design &amp; hosting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Categories {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#nullable restore
 #else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A description of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The home page URL of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HomePageUrl {
             get { return BackingStore?.Get<string?>("homePageUrl"); }
             set { BackingStore?.Set("homePageUrl", value); }
         }
+#nullable restore
 #else
         public string HomePageUrl {
             get { return BackingStore?.Get<string>("homePageUrl"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The informationalUrls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.InformationalUrls? InformationalUrls {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InformationalUrls?>("informationalUrls"); }
             set { BackingStore?.Set("informationalUrls", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.InformationalUrls InformationalUrls {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InformationalUrls>("informationalUrls"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL to get the logo for this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LogoUrl {
             get { return BackingStore?.Get<string?>("logoUrl"); }
             set { BackingStore?.Set("logoUrl", value); }
         }
+#nullable restore
 #else
         public string LogoUrl {
             get { return BackingStore?.Get<string>("logoUrl"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the publisher for this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Publisher {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#nullable restore
 #else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The supportedClaimConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.SupportedClaimConfiguration? SupportedClaimConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SupportedClaimConfiguration?>("supportedClaimConfiguration"); }
             set { BackingStore?.Set("supportedClaimConfiguration", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.SupportedClaimConfiguration SupportedClaimConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SupportedClaimConfiguration>("supportedClaimConfiguration"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of provisioning modes supported by this application. The only valid value is sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SupportedProvisioningTypes {
             get { return BackingStore?.Get<List<string>?>("supportedProvisioningTypes"); }
             set { BackingStore?.Set("supportedProvisioningTypes", value); }
         }
+#nullable restore
 #else
         public List<string> SupportedProvisioningTypes {
             get { return BackingStore?.Get<List<string>>("supportedProvisioningTypes"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? SupportedSingleSignOnModes {
             get { return BackingStore?.Get<List<string>?>("supportedSingleSignOnModes"); }
             set { BackingStore?.Set("supportedSingleSignOnModes", value); }
         }
+#nullable restore
 #else
         public List<string> SupportedSingleSignOnModes {
             get { return BackingStore?.Get<List<string>>("supportedSingleSignOnModes"); }

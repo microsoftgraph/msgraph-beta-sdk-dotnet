@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SearchAggregation>? Aggregations {
             get { return BackingStore?.Get<List<SearchAggregation>?>("aggregations"); }
             set { BackingStore?.Set("aggregations", value); }
         }
+#nullable restore
 #else
         public List<SearchAggregation> Aggregations {
             get { return BackingStore?.Get<List<SearchAggregation>>("aggregations"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SearchHit>? Hits {
             get { return BackingStore?.Get<List<SearchHit>?>("hits"); }
             set { BackingStore?.Set("hits", value); }
         }
+#nullable restore
 #else
         public List<SearchHit> Hits {
             get { return BackingStore?.Get<List<SearchHit>>("hits"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

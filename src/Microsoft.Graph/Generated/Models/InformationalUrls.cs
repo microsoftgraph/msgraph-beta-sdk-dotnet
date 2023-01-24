@@ -13,10 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The appSignUpUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AppSignUpUrl {
             get { return BackingStore?.Get<string?>("appSignUpUrl"); }
             set { BackingStore?.Set("appSignUpUrl", value); }
         }
+#nullable restore
 #else
         public string AppSignUpUrl {
             get { return BackingStore?.Get<string>("appSignUpUrl"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The singleSignOnDocumentationUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SingleSignOnDocumentationUrl {
             get { return BackingStore?.Get<string?>("singleSignOnDocumentationUrl"); }
             set { BackingStore?.Set("singleSignOnDocumentationUrl", value); }
         }
+#nullable restore
 #else
         public string SingleSignOnDocumentationUrl {
             get { return BackingStore?.Get<string>("singleSignOnDocumentationUrl"); }

@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Choice Setting Value Default Template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationChoiceSettingValueDefaultTemplate? DefaultValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationChoiceSettingValueDefaultTemplate DefaultValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefaultTemplate>("defaultValue"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Recommended definition override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate? RecommendedValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate?>("recommendedValueDefinition"); }
             set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RecommendedValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
@@ -54,10 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Required definition override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate? RequiredValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate?>("requiredValueDefinition"); }
             set { BackingStore?.Set("requiredValueDefinition", value); }
         }
+#nullable restore
 #else
         public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate RequiredValueDefinition {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>("requiredValueDefinition"); }
@@ -66,10 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Setting Value Template Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SettingValueTemplateId {
             get { return BackingStore?.Get<string?>("settingValueTemplateId"); }
             set { BackingStore?.Set("settingValueTemplateId", value); }
         }
+#nullable restore
 #else
         public string SettingValueTemplateId {
             get { return BackingStore?.Get<string>("settingValueTemplateId"); }

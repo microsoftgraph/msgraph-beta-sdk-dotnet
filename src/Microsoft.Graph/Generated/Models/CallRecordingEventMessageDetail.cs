@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CallRecordingEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Unique identifier of the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CallId {
             get { return BackingStore?.Get<string?>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
+#nullable restore
 #else
         public string CallId {
             get { return BackingStore?.Get<string>("callId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name for the call recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CallRecordingDisplayName {
             get { return BackingStore?.Get<string?>("callRecordingDisplayName"); }
             set { BackingStore?.Set("callRecordingDisplayName", value); }
         }
+#nullable restore
 #else
         public string CallRecordingDisplayName {
             get { return BackingStore?.Get<string>("callRecordingDisplayName"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Call recording URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CallRecordingUrl {
             get { return BackingStore?.Get<string?>("callRecordingUrl"); }
             set { BackingStore?.Set("callRecordingUrl", value); }
         }
+#nullable restore
 #else
         public string CallRecordingUrl {
             get { return BackingStore?.Get<string>("callRecordingUrl"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? Initiator {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#nullable restore
 #else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Organizer of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? MeetingOrganizer {
             get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
+#nullable restore
 #else
         public IdentitySet MeetingOrganizer {
             get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }

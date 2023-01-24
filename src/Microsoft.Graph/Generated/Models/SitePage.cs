@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SitePage : BaseItem, IParsable {
         /// <summary>Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.CanvasLayout? CanvasLayout {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CanvasLayout?>("canvasLayout"); }
             set { BackingStore?.Set("canvasLayout", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.CanvasLayout CanvasLayout {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CanvasLayout>("canvasLayout"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Inherited from baseItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ContentTypeInfo? ContentType {
             get { return BackingStore?.Get<ContentTypeInfo?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#nullable restore
 #else
         public ContentTypeInfo ContentType {
             get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The publishing status and the MM.mm version of the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PublicationFacet? PublishingState {
             get { return BackingStore?.Get<PublicationFacet?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
+#nullable restore
 #else
         public PublicationFacet PublishingState {
             get { return BackingStore?.Get<PublicationFacet>("publishingState"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Reactions information for the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ReactionsFacet? Reactions {
             get { return BackingStore?.Get<ReactionsFacet?>("reactions"); }
             set { BackingStore?.Set("reactions", value); }
         }
+#nullable restore
 #else
         public ReactionsFacet Reactions {
             get { return BackingStore?.Get<ReactionsFacet>("reactions"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Url of the sitePage&apos;s thumbnail image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ThumbnailWebUrl {
             get { return BackingStore?.Get<string?>("thumbnailWebUrl"); }
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
+#nullable restore
 #else
         public string ThumbnailWebUrl {
             get { return BackingStore?.Get<string>("thumbnailWebUrl"); }
@@ -87,10 +97,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Title of the sitePage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Title {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#nullable restore
 #else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
@@ -99,10 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Title area on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.TitleArea? TitleArea {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TitleArea?>("titleArea"); }
             set { BackingStore?.Set("titleArea", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.TitleArea TitleArea {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TitleArea>("titleArea"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of webparts on the SharePoint page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<WebPart>? WebParts {
             get { return BackingStore?.Get<List<WebPart>?>("webParts"); }
             set { BackingStore?.Set("webParts", value); }
         }
+#nullable restore
 #else
         public List<WebPart> WebParts {
             get { return BackingStore?.Get<List<WebPart>>("webParts"); }

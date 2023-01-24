@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationCombinationConfiguration : Entity, IParsable {
         /// <summary>Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that&apos;s defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is &apos;fido2&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AuthenticationMethodModes?>? AppliesToCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("appliesToCombinations"); }
             set { BackingStore?.Set("appliesToCombinations", value); }
         }
+#nullable restore
 #else
         public List<AuthenticationMethodModes?> AppliesToCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("appliesToCombinations"); }

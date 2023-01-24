@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingDefinition : Entity, IParsable {
         /// <summary>Collection of constraints for the setting value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConstraint>? Constraints {
             get { return BackingStore?.Get<List<DeviceManagementConstraint>?>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConstraint> Constraints {
             get { return BackingStore?.Get<List<DeviceManagementConstraint>>("constraints"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Collection of dependencies on other settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementSettingDependency>? Dependencies {
             get { return BackingStore?.Get<List<DeviceManagementSettingDependency>?>("dependencies"); }
             set { BackingStore?.Set("dependencies", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementSettingDependency> Dependencies {
             get { return BackingStore?.Get<List<DeviceManagementSettingDependency>>("dependencies"); }
@@ -34,10 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The setting&apos;s description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -46,10 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The setting&apos;s display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -58,10 +66,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Url to setting documentation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DocumentationUrl {
             get { return BackingStore?.Get<string?>("documentationUrl"); }
             set { BackingStore?.Set("documentationUrl", value); }
         }
+#nullable restore
 #else
         public string DocumentationUrl {
             get { return BackingStore?.Get<string>("documentationUrl"); }
@@ -70,10 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>subtitle of the setting header for more details about the category/section</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HeaderSubtitle {
             get { return BackingStore?.Get<string?>("headerSubtitle"); }
             set { BackingStore?.Set("headerSubtitle", value); }
         }
+#nullable restore
 #else
         public string HeaderSubtitle {
             get { return BackingStore?.Get<string>("headerSubtitle"); }
@@ -82,10 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>title of the setting header represents a category/section of a setting/settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? HeaderTitle {
             get { return BackingStore?.Get<string?>("headerTitle"); }
             set { BackingStore?.Set("headerTitle", value); }
         }
+#nullable restore
 #else
         public string HeaderTitle {
             get { return BackingStore?.Get<string>("headerTitle"); }
@@ -99,10 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Keywords associated with the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Keywords {
             get { return BackingStore?.Get<List<string>?>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
+#nullable restore
 #else
         public List<string> Keywords {
             get { return BackingStore?.Get<List<string>>("keywords"); }
@@ -111,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Placeholder text as an example of valid input</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PlaceholderText {
             get { return BackingStore?.Get<string?>("placeholderText"); }
             set { BackingStore?.Set("placeholderText", value); }
         }
+#nullable restore
 #else
         public string PlaceholderText {
             get { return BackingStore?.Get<string>("placeholderText"); }

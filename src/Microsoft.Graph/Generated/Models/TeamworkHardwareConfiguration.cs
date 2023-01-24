@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The compute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? Compute {
             get { return BackingStore?.Get<TeamworkPeripheral?>("compute"); }
             set { BackingStore?.Set("compute", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral Compute {
             get { return BackingStore?.Get<TeamworkPeripheral>("compute"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The hdmiIngest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public TeamworkPeripheral? HdmiIngest {
             get { return BackingStore?.Get<TeamworkPeripheral?>("hdmiIngest"); }
             set { BackingStore?.Set("hdmiIngest", value); }
         }
+#nullable restore
 #else
         public TeamworkPeripheral HdmiIngest {
             get { return BackingStore?.Get<TeamworkPeripheral>("hdmiIngest"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The CPU model on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ProcessorModel {
             get { return BackingStore?.Get<string?>("processorModel"); }
             set { BackingStore?.Set("processorModel", value); }
         }
+#nullable restore
 #else
         public string ProcessorModel {
             get { return BackingStore?.Get<string>("processorModel"); }

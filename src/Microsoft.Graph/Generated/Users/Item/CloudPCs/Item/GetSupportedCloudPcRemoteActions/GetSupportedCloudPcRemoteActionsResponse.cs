@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetSupportedCloudPcRemot
     public class GetSupportedCloudPcRemoteActionsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CloudPcRemoteActionCapability>? Value {
             get { return BackingStore?.Get<List<CloudPcRemoteActionCapability>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<CloudPcRemoteActionCapability> Value {
             get { return BackingStore?.Get<List<CloudPcRemoteActionCapability>>("value"); }

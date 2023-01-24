@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationDropdownList : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized string value identifying the default choice of the list of items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public GroupPolicyPresentationDropdownListItem? DefaultItem {
             get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem?>("defaultItem"); }
             set { BackingStore?.Set("defaultItem", value); }
         }
+#nullable restore
 #else
         public GroupPolicyPresentationDropdownListItem DefaultItem {
             get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem>("defaultItem"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a set of localized display names and their associated values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GroupPolicyPresentationDropdownListItem>? Items {
             get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#nullable restore
 #else
         public List<GroupPolicyPresentationDropdownListItem> Items {
             get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>>("items"); }

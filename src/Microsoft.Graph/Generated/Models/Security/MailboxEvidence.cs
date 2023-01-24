@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class MailboxEvidence : AlertEvidence, IParsable {
         /// <summary>The name associated with the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The primary email address of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PrimaryAddress {
             get { return BackingStore?.Get<string?>("primaryAddress"); }
             set { BackingStore?.Set("primaryAddress", value); }
         }
+#nullable restore
 #else
         public string PrimaryAddress {
             get { return BackingStore?.Get<string>("primaryAddress"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The user account of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.UserAccount? UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount?>("userAccount"); }
             set { BackingStore?.Set("userAccount", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.UserAccount UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount>("userAccount"); }

@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.CreateRemoteHelpSession {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The sessionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SessionType {
             get { return BackingStore?.Get<string?>("sessionType"); }
             set { BackingStore?.Set("sessionType", value); }
         }
+#nullable restore
 #else
         public string SessionType {
             get { return BackingStore?.Get<string>("sessionType"); }

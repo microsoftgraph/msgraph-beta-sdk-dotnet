@@ -5,24 +5,28 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AttackSimulationRoot : Entity, IParsable {
-        /// <summary>The operations property</summary>
+        /// <summary>Represents an attack simulation training operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AttackSimulationOperation>? Operations {
             get { return BackingStore?.Get<List<AttackSimulationOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<AttackSimulationOperation> Operations {
             get { return BackingStore?.Get<List<AttackSimulationOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
-        /// <summary>The payloads property</summary>
+        /// <summary>Represents an attack simulation training campaign payload in a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Payload>? Payloads {
             get { return BackingStore?.Get<List<Payload>?>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
+#nullable restore
 #else
         public List<Payload> Payloads {
             get { return BackingStore?.Get<List<Payload>>("payloads"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents simulation automation created to run on a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SimulationAutomation>? SimulationAutomations {
             get { return BackingStore?.Get<List<SimulationAutomation>?>("simulationAutomations"); }
             set { BackingStore?.Set("simulationAutomations", value); }
         }
+#nullable restore
 #else
         public List<SimulationAutomation> SimulationAutomations {
             get { return BackingStore?.Get<List<SimulationAutomation>>("simulationAutomations"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents an attack simulation training campaign in a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Simulation>? Simulations {
             get { return BackingStore?.Get<List<Simulation>?>("simulations"); }
             set { BackingStore?.Set("simulations", value); }
         }
+#nullable restore
 #else
         public List<Simulation> Simulations {
             get { return BackingStore?.Get<List<Simulation>>("simulations"); }

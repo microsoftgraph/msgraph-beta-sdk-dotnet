@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the specific location in the workload associated with the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Location {
             get { return BackingStore?.Get<string?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#nullable restore
 #else
         public string Location {
             get { return BackingStore?.Get<string>("location"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The name of the workload associated with the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceName {
             get { return BackingStore?.Get<string?>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
         }
+#nullable restore
 #else
         public string ServiceName {
             get { return BackingStore?.Get<string>("serviceName"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Additional information about the status of the event creation request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? StatusInformation {
             get { return BackingStore?.Get<string?>("statusInformation"); }
             set { BackingStore?.Set("statusInformation", value); }
         }
+#nullable restore
 #else
         public string StatusInformation {
             get { return BackingStore?.Get<string>("statusInformation"); }

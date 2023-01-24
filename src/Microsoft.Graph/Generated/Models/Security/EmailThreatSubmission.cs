@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class EmailThreatSubmission : ThreatSubmission, IParsable {
         /// <summary>If the email is phishing simulation, this field will not be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo? AttackSimulationInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo?>("attackSimulationInfo"); }
             set { BackingStore?.Set("attackSimulationInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo AttackSimulationInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo>("attackSimulationInfo"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Specifies the internet message id of the email being submitted. This information is present in the email header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InternetMessageId {
             get { return BackingStore?.Get<string?>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
+#nullable restore
 #else
         public string InternetMessageId {
             get { return BackingStore?.Get<string>("internetMessageId"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Specifies the email address (in smtp format) of the recipient who received the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RecipientEmailAddress {
             get { return BackingStore?.Get<string?>("recipientEmailAddress"); }
             set { BackingStore?.Set("recipientEmailAddress", value); }
         }
+#nullable restore
 #else
         public string RecipientEmailAddress {
             get { return BackingStore?.Get<string>("recipientEmailAddress"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Specifies the email address of the sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Sender {
             get { return BackingStore?.Get<string?>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
+#nullable restore
 #else
         public string Sender {
             get { return BackingStore?.Get<string>("sender"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Specifies the IP address of the sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SenderIP {
             get { return BackingStore?.Get<string?>("senderIP"); }
             set { BackingStore?.Set("senderIP", value); }
         }
+#nullable restore
 #else
         public string SenderIP {
             get { return BackingStore?.Get<string>("senderIP"); }
@@ -77,10 +87,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Specifies the subject of the email .</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Subject {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#nullable restore
 #else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction? TenantAllowOrBlockListAction {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction?>("tenantAllowOrBlockListAction"); }
             set { BackingStore?.Set("tenantAllowOrBlockListAction", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction TenantAllowOrBlockListAction {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction>("tenantAllowOrBlockListAction"); }

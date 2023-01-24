@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class EducationFeedbackResourceOutcome : EducationOutcome, IParsable {
         /// <summary>The actual feedback resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationResource? FeedbackResource {
             get { return BackingStore?.Get<EducationResource?>("feedbackResource"); }
             set { BackingStore?.Set("feedbackResource", value); }
         }
+#nullable restore
 #else
         public EducationResource FeedbackResource {
             get { return BackingStore?.Get<EducationResource>("feedbackResource"); }

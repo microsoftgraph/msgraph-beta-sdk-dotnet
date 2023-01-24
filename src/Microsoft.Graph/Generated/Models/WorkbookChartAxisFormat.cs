@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartAxisFormat : Entity, IParsable {
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartFont? Font {
             get { return BackingStore?.Get<WorkbookChartFont?>("font"); }
             set { BackingStore?.Set("font", value); }
         }
+#nullable restore
 #else
         public WorkbookChartFont Font {
             get { return BackingStore?.Get<WorkbookChartFont>("font"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents chart line formatting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartLineFormat? Line {
             get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
             set { BackingStore?.Set("line", value); }
         }
+#nullable restore
 #else
         public WorkbookChartLineFormat Line {
             get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }

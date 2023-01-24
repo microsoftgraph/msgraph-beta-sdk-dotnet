@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class Session : Entity, IParsable {
         /// <summary>Endpoint that answered the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Endpoint? Callee {
             get { return BackingStore?.Get<Endpoint?>("callee"); }
             set { BackingStore?.Set("callee", value); }
         }
+#nullable restore
 #else
         public Endpoint Callee {
             get { return BackingStore?.Get<Endpoint>("callee"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>Endpoint that initiated the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Endpoint? Caller {
             get { return BackingStore?.Get<Endpoint?>("caller"); }
             set { BackingStore?.Set("caller", value); }
         }
+#nullable restore
 #else
         public Endpoint Caller {
             get { return BackingStore?.Get<Endpoint>("caller"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Failure information associated with the session if the session failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.CallRecords.FailureInfo? FailureInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo?>("failureInfo"); }
             set { BackingStore?.Set("failureInfo", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.CallRecords.FailureInfo FailureInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo>("failureInfo"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Modality?>? Modalities {
             get { return BackingStore?.Get<List<Modality?>?>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
+#nullable restore
 #else
         public List<Modality?> Modalities {
             get { return BackingStore?.Get<List<Modality?>>("modalities"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
 #endif
         /// <summary>The list of segments involved in the session. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Segment>? Segments {
             get { return BackingStore?.Get<List<Segment>?>("segments"); }
             set { BackingStore?.Set("segments", value); }
         }
+#nullable restore
 #else
         public List<Segment> Segments {
             get { return BackingStore?.Get<List<Segment>>("segments"); }

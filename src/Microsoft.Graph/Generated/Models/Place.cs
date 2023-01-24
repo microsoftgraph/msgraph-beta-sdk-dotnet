@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Place : Entity, IParsable {
         /// <summary>The street address of the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PhysicalAddress? Address {
             get { return BackingStore?.Get<PhysicalAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#nullable restore
 #else
         public PhysicalAddress Address {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name associated with the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the place location in latitude, longitude and (optionally) altitude coordinates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public OutlookGeoCoordinates? GeoCoordinates {
             get { return BackingStore?.Get<OutlookGeoCoordinates?>("geoCoordinates"); }
             set { BackingStore?.Set("geoCoordinates", value); }
         }
+#nullable restore
 #else
         public OutlookGeoCoordinates GeoCoordinates {
             get { return BackingStore?.Get<OutlookGeoCoordinates>("geoCoordinates"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The phone number of the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Phone {
             get { return BackingStore?.Get<string?>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
+#nullable restore
 #else
         public string Phone {
             get { return BackingStore?.Get<string>("phone"); }

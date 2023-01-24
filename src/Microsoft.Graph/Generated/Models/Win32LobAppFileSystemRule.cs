@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The file or folder comparison value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ComparisonValue {
             get { return BackingStore?.Get<string?>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
+#nullable restore
 #else
         public string ComparisonValue {
             get { return BackingStore?.Get<string>("comparisonValue"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The file or folder name to look up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileOrFolderName {
             get { return BackingStore?.Get<string?>("fileOrFolderName"); }
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
+#nullable restore
 #else
         public string FileOrFolderName {
             get { return BackingStore?.Get<string>("fileOrFolderName"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The file or folder path to look up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Path {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#nullable restore
 #else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }

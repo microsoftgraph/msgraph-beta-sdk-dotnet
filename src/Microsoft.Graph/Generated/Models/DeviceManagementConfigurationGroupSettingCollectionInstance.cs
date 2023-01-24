@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationGroupSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable {
         /// <summary>A collection of GroupSetting values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationGroupSettingValue>? GroupSettingCollectionValue {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValue>?>("groupSettingCollectionValue"); }
             set { BackingStore?.Set("groupSettingCollectionValue", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationGroupSettingValue> GroupSettingCollectionValue {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValue>>("groupSettingCollectionValue"); }

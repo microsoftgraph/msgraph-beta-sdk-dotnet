@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Approval : Entity, IParsable {
         /// <summary>The steps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ApprovalStep>? Steps {
             get { return BackingStore?.Get<List<ApprovalStep>?>("steps"); }
             set { BackingStore?.Set("steps", value); }
         }
+#nullable restore
 #else
         public List<ApprovalStep> Steps {
             get { return BackingStore?.Get<List<ApprovalStep>>("steps"); }

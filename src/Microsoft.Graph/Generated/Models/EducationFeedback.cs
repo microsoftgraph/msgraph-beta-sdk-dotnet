@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>User who created the feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? FeedbackBy {
             get { return BackingStore?.Get<IdentitySet?>("feedbackBy"); }
             set { BackingStore?.Set("feedbackBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet FeedbackBy {
             get { return BackingStore?.Get<IdentitySet>("feedbackBy"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public EducationItemBody? Text {
             get { return BackingStore?.Get<EducationItemBody?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#nullable restore
 #else
         public EducationItemBody Text {
             get { return BackingStore?.Get<EducationItemBody>("text"); }

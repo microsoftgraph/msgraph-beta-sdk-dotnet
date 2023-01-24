@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date format for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DateFormat {
             get { return BackingStore?.Get<string?>("dateFormat"); }
             set { BackingStore?.Set("dateFormat", value); }
         }
+#nullable restore
 #else
         public string DateFormat {
             get { return BackingStore?.Get<string>("dateFormat"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -50,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The time format for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TimeFormat {
             get { return BackingStore?.Get<string?>("timeFormat"); }
             set { BackingStore?.Set("timeFormat", value); }
         }
+#nullable restore
 #else
         public string TimeFormat {
             get { return BackingStore?.Get<string>("timeFormat"); }
@@ -62,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The time zone to which the office hours apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TimeZone {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#nullable restore
 #else
         public string TimeZone {
             get { return BackingStore?.Get<string>("timeZone"); }

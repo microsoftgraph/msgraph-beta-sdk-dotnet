@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class RetentionEvent : Entity, IParsable {
         /// <summary>The user who created the retentionEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Optional information about the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Name of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The eventPropagationResults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EventPropagationResult>? EventPropagationResults {
             get { return BackingStore?.Get<List<EventPropagationResult>?>("eventPropagationResults"); }
             set { BackingStore?.Set("eventPropagationResults", value); }
         }
+#nullable restore
 #else
         public List<EventPropagationResult> EventPropagationResults {
             get { return BackingStore?.Get<List<EventPropagationResult>>("eventPropagationResults"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<EventQuery>? EventQueries {
             get { return BackingStore?.Get<List<EventQuery>?>("eventQueries"); }
             set { BackingStore?.Set("eventQueries", value); }
         }
+#nullable restore
 #else
         public List<EventQuery> EventQueries {
             get { return BackingStore?.Get<List<EventQuery>>("eventQueries"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>The eventStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RetentionEventStatus? EventStatus {
             get { return BackingStore?.Get<RetentionEventStatus?>("eventStatus"); }
             set { BackingStore?.Set("eventStatus", value); }
         }
+#nullable restore
 #else
         public RetentionEventStatus EventStatus {
             get { return BackingStore?.Get<RetentionEventStatus>("eventStatus"); }
@@ -89,10 +101,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>The user who last modified the retentionEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
@@ -111,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Specifies the event that will start the retention period for labels that use this event type when an event is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Security.RetentionEventType? RetentionEventType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType?>("retentionEventType"); }
             set { BackingStore?.Set("retentionEventType", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Security.RetentionEventType RetentionEventType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType>("retentionEventType"); }

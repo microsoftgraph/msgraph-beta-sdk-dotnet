@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class ContentType : Entity, IParsable {
         /// <summary>List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? AssociatedHubsUrls {
             get { return BackingStore?.Get<List<string>?>("associatedHubsUrls"); }
             set { BackingStore?.Set("associatedHubsUrls", value); }
         }
+#nullable restore
 #else
         public List<string> AssociatedHubsUrls {
             get { return BackingStore?.Get<List<string>>("associatedHubsUrls"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Parent contentType from which this content type is derived.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ContentType? Base {
             get { return BackingStore?.Get<ContentType?>("base"); }
             set { BackingStore?.Set("base", value); }
         }
+#nullable restore
 #else
         public ContentType Base {
             get { return BackingStore?.Get<ContentType>("base"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of content types that are ancestors of this content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ContentType>? BaseTypes {
             get { return BackingStore?.Get<List<ContentType>?>("baseTypes"); }
             set { BackingStore?.Set("baseTypes", value); }
         }
+#nullable restore
 #else
         public List<ContentType> BaseTypes {
             get { return BackingStore?.Get<List<ContentType>>("baseTypes"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of columns that are required by this content type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ColumnLink>? ColumnLinks {
             get { return BackingStore?.Get<List<ColumnLink>?>("columnLinks"); }
             set { BackingStore?.Set("columnLinks", value); }
         }
+#nullable restore
 #else
         public List<ColumnLink> ColumnLinks {
             get { return BackingStore?.Get<List<ColumnLink>>("columnLinks"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Column order information in a content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ColumnDefinition>? ColumnPositions {
             get { return BackingStore?.Get<List<ColumnDefinition>?>("columnPositions"); }
             set { BackingStore?.Set("columnPositions", value); }
         }
+#nullable restore
 #else
         public List<ColumnDefinition> ColumnPositions {
             get { return BackingStore?.Get<List<ColumnDefinition>>("columnPositions"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of column definitions for this contentType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ColumnDefinition>? Columns {
             get { return BackingStore?.Get<List<ColumnDefinition>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#nullable restore
 #else
         public List<ColumnDefinition> Columns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("columns"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The descriptive text for the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Document Set metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.DocumentSet? DocumentSet {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DocumentSet?>("documentSet"); }
             set { BackingStore?.Set("documentSet", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.DocumentSet DocumentSet {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DocumentSet>("documentSet"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DocumentSetContent? DocumentTemplate {
             get { return BackingStore?.Get<DocumentSetContent?>("documentTemplate"); }
             set { BackingStore?.Set("documentTemplate", value); }
         }
+#nullable restore
 #else
         public DocumentSetContent DocumentTemplate {
             get { return BackingStore?.Get<DocumentSetContent>("documentTemplate"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the group this content type belongs to. Helps organize related content types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Group {
             get { return BackingStore?.Get<string?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
+#nullable restore
 #else
         public string Group {
             get { return BackingStore?.Get<string>("group"); }
@@ -132,10 +152,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ItemReference? InheritedFrom {
             get { return BackingStore?.Get<ItemReference?>("inheritedFrom"); }
             set { BackingStore?.Set("inheritedFrom", value); }
         }
+#nullable restore
 #else
         public ItemReference InheritedFrom {
             get { return BackingStore?.Get<ItemReference>("inheritedFrom"); }
@@ -149,10 +171,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The name of the content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Name {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#nullable restore
 #else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -161,10 +185,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specifies the order in which the content type appears in the selection UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ContentTypeOrder? Order {
             get { return BackingStore?.Get<ContentTypeOrder?>("order"); }
             set { BackingStore?.Set("order", value); }
         }
+#nullable restore
 #else
         public ContentTypeOrder Order {
             get { return BackingStore?.Get<ContentTypeOrder>("order"); }
@@ -173,10 +199,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The unique identifier of the content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ParentId {
             get { return BackingStore?.Get<string?>("parentId"); }
             set { BackingStore?.Set("parentId", value); }
         }
+#nullable restore
 #else
         public string ParentId {
             get { return BackingStore?.Get<string>("parentId"); }

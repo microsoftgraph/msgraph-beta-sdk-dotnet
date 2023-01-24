@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementEnumValueCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementEnumValue>? Value {
             get { return BackingStore?.Get<List<DeviceManagementEnumValue>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementEnumValue> Value {
             get { return BackingStore?.Get<List<DeviceManagementEnumValue>>("value"); }

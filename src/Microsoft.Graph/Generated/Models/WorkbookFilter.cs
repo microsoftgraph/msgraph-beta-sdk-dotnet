@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookFilter : Entity, IParsable {
         /// <summary>The criteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookFilterCriteria? Criteria {
             get { return BackingStore?.Get<WorkbookFilterCriteria?>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
+#nullable restore
 #else
         public WorkbookFilterCriteria Criteria {
             get { return BackingStore?.Get<WorkbookFilterCriteria>("criteria"); }

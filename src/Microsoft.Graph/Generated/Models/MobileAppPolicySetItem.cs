@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Settings of the MobileAppPolicySetItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MobileAppAssignmentSettings? Settings {
             get { return BackingStore?.Get<MobileAppAssignmentSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#nullable restore
 #else
         public MobileAppAssignmentSettings Settings {
             get { return BackingStore?.Get<MobileAppAssignmentSettings>("settings"); }

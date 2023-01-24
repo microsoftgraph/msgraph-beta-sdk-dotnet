@@ -55,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>the local IP address for the media session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LocalIPAddress {
             get { return BackingStore?.Get<string?>("localIPAddress"); }
             set { BackingStore?.Set("localIPAddress", value); }
         }
+#nullable restore
 #else
         public string LocalIPAddress {
             get { return BackingStore?.Get<string>("localIPAddress"); }
@@ -112,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -129,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The remote IP address for the media session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RemoteIPAddress {
             get { return BackingStore?.Get<string?>("remoteIPAddress"); }
             set { BackingStore?.Set("remoteIPAddress", value); }
         }
+#nullable restore
 #else
         public string RemoteIPAddress {
             get { return BackingStore?.Get<string>("remoteIPAddress"); }

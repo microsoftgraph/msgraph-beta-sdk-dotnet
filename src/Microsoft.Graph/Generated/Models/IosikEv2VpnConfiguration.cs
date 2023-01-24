@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>AlwaysOn Configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public AppleVpnAlwaysOnConfiguration? AlwaysOnConfiguration {
             get { return BackingStore?.Get<AppleVpnAlwaysOnConfiguration?>("alwaysOnConfiguration"); }
             set { BackingStore?.Set("alwaysOnConfiguration", value); }
         }
+#nullable restore
 #else
         public AppleVpnAlwaysOnConfiguration AlwaysOnConfiguration {
             get { return BackingStore?.Get<AppleVpnAlwaysOnConfiguration>("alwaysOnConfiguration"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Child Security Association Parameters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosVpnSecurityAssociationParameters? ChildSecurityAssociationParameters {
             get { return BackingStore?.Get<IosVpnSecurityAssociationParameters?>("childSecurityAssociationParameters"); }
             set { BackingStore?.Set("childSecurityAssociationParameters", value); }
         }
+#nullable restore
 #else
         public IosVpnSecurityAssociationParameters ChildSecurityAssociationParameters {
             get { return BackingStore?.Get<IosVpnSecurityAssociationParameters>("childSecurityAssociationParameters"); }
@@ -96,10 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Address of the IKEv2 server. Must be a FQDN, UserFQDN, network address, or ASN1DN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RemoteIdentifier {
             get { return BackingStore?.Get<string?>("remoteIdentifier"); }
             set { BackingStore?.Set("remoteIdentifier", value); }
         }
+#nullable restore
 #else
         public string RemoteIdentifier {
             get { return BackingStore?.Get<string>("remoteIdentifier"); }
@@ -108,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Security Association Parameters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IosVpnSecurityAssociationParameters? SecurityAssociationParameters {
             get { return BackingStore?.Get<IosVpnSecurityAssociationParameters?>("securityAssociationParameters"); }
             set { BackingStore?.Set("securityAssociationParameters", value); }
         }
+#nullable restore
 #else
         public IosVpnSecurityAssociationParameters SecurityAssociationParameters {
             get { return BackingStore?.Get<IosVpnSecurityAssociationParameters>("securityAssociationParameters"); }
@@ -120,10 +128,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Common name of the IKEv2 Server Certificate used in Server Authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServerCertificateCommonName {
             get { return BackingStore?.Get<string?>("serverCertificateCommonName"); }
             set { BackingStore?.Set("serverCertificateCommonName", value); }
         }
+#nullable restore
 #else
         public string ServerCertificateCommonName {
             get { return BackingStore?.Get<string>("serverCertificateCommonName"); }
@@ -132,10 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Issuer Common name of the IKEv2 Server Certificate issuer used in Authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServerCertificateIssuerCommonName {
             get { return BackingStore?.Get<string?>("serverCertificateIssuerCommonName"); }
             set { BackingStore?.Set("serverCertificateIssuerCommonName", value); }
         }
+#nullable restore
 #else
         public string ServerCertificateIssuerCommonName {
             get { return BackingStore?.Get<string>("serverCertificateIssuerCommonName"); }
@@ -149,10 +161,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Used when Shared Secret Authentication is selected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SharedSecret {
             get { return BackingStore?.Get<string?>("sharedSecret"); }
             set { BackingStore?.Set("sharedSecret", value); }
         }
+#nullable restore
 #else
         public string SharedSecret {
             get { return BackingStore?.Get<string>("sharedSecret"); }
@@ -161,10 +175,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The maximum TLS version to be used with EAP-TLS authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TlsMaximumVersion {
             get { return BackingStore?.Get<string?>("tlsMaximumVersion"); }
             set { BackingStore?.Set("tlsMaximumVersion", value); }
         }
+#nullable restore
 #else
         public string TlsMaximumVersion {
             get { return BackingStore?.Get<string>("tlsMaximumVersion"); }
@@ -173,10 +189,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The minimum TLS version to be used with EAP-TLS authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TlsMinimumVersion {
             get { return BackingStore?.Get<string?>("tlsMinimumVersion"); }
             set { BackingStore?.Set("tlsMinimumVersion", value); }
         }
+#nullable restore
 #else
         public string TlsMinimumVersion {
             get { return BackingStore?.Get<string>("tlsMinimumVersion"); }

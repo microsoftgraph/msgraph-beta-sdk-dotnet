@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class List : BaseItem, IParsable {
         /// <summary>The recent activities that took place within this list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ItemActivityOLD>? Activities {
             get { return BackingStore?.Get<List<ItemActivityOLD>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#nullable restore
 #else
         public List<ItemActivityOLD> Activities {
             get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The columns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ColumnDefinition>? Columns {
             get { return BackingStore?.Get<List<ColumnDefinition>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#nullable restore
 #else
         public List<ColumnDefinition> Columns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("columns"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The contentTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ContentType>? ContentTypes {
             get { return BackingStore?.Get<List<ContentType>?>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
+#nullable restore
 #else
         public List<ContentType> ContentTypes {
             get { return BackingStore?.Get<List<ContentType>>("contentTypes"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayable title of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Drive? Drive {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive?>("drive"); }
             set { BackingStore?.Set("drive", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Drive Drive {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive>("drive"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>All items contained in the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ListItem>? Items {
             get { return BackingStore?.Get<List<ListItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#nullable restore
 #else
         public List<ListItem> Items {
             get { return BackingStore?.Get<List<ListItem>>("items"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Provides additional details about the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ListInfo? List_prop {
             get { return BackingStore?.Get<ListInfo?>("list"); }
             set { BackingStore?.Set("list", value); }
         }
+#nullable restore
 #else
         public ListInfo List_prop {
             get { return BackingStore?.Get<ListInfo>("list"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The collection of long running operations for the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<RichLongRunningOperation>? Operations {
             get { return BackingStore?.Get<List<RichLongRunningOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#nullable restore
 #else
         public List<RichLongRunningOperation> Operations {
             get { return BackingStore?.Get<List<RichLongRunningOperation>>("operations"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sharepointIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.SharepointIds? SharepointIds {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds?>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The set of subscriptions on the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Subscription>? Subscriptions {
             get { return BackingStore?.Get<List<Subscription>?>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
+#nullable restore
 #else
         public List<Subscription> Subscriptions {
             get { return BackingStore?.Get<List<Subscription>>("subscriptions"); }
@@ -127,10 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If present, indicates that this is a system-managed list. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public SystemFacet? System {
             get { return BackingStore?.Get<SystemFacet?>("system"); }
             set { BackingStore?.Set("system", value); }
         }
+#nullable restore
 #else
         public SystemFacet System {
             get { return BackingStore?.Get<SystemFacet>("system"); }

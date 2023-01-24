@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Error description corresponding to erroneous execution of the device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ErrorDescription {
             get { return BackingStore?.Get<string?>("errorDescription"); }
             set { BackingStore?.Set("errorDescription", value); }
         }
+#nullable restore
 #else
         public string ErrorDescription {
             get { return BackingStore?.Get<string>("errorDescription"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The managed devices that executes the device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.ManagedDevice? ManagedDevice {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice?>("managedDevice"); }
             set { BackingStore?.Set("managedDevice", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>("managedDevice"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Details of execution output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ResultMessage {
             get { return BackingStore?.Get<string?>("resultMessage"); }
             set { BackingStore?.Set("resultMessage", value); }
         }
+#nullable restore
 #else
         public string ResultMessage {
             get { return BackingStore?.Get<string>("resultMessage"); }

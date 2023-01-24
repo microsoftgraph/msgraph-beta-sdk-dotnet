@@ -77,7 +77,9 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task DeleteAsync(Action<ResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task DeleteAsync(Action<ResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -94,7 +96,9 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<ResourceSpecificPermissionGrant?> GetAsync(Action<ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<ResourceSpecificPermissionGrant> GetAsync(Action<ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -112,7 +116,9 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<ResourceSpecificPermissionGrant?> PatchAsync(ResourceSpecificPermissionGrant body, Action<ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
 #else
         public async Task<ResourceSpecificPermissionGrant> PatchAsync(ResourceSpecificPermissionGrant body, Action<ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
@@ -129,7 +135,9 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<ResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToDeleteRequestInformation(Action<ResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -151,7 +159,9 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item {
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToGetRequestInformation(Action<ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToGetRequestInformation(Action<ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -176,7 +186,9 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item {
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestInformation ToPatchRequestInformation(ResourceSpecificPermissionGrant body, Action<ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
 #else
         public RequestInformation ToPatchRequestInformation(ResourceSpecificPermissionGrant body, Action<ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
@@ -218,16 +230,20 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item {
         public class ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24expand")]
             public string[]? Expand { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("%24select")]
             public string[]? Select { get; set; }
+#nullable restore
 #else
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

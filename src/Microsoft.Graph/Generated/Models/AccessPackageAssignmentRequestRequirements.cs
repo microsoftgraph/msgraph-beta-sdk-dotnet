@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Answers that have already been provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageAnswer>? ExistingAnswers {
             get { return BackingStore?.Get<List<AccessPackageAnswer>?>("existingAnswers"); }
             set { BackingStore?.Set("existingAnswers", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageAnswer> ExistingAnswers {
             get { return BackingStore?.Get<List<AccessPackageAnswer>>("existingAnswers"); }
@@ -47,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -59,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The description of the policy that the user is trying to request access using.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyDescription {
             get { return BackingStore?.Get<string?>("policyDescription"); }
             set { BackingStore?.Set("policyDescription", value); }
         }
+#nullable restore
 #else
         public string PolicyDescription {
             get { return BackingStore?.Get<string>("policyDescription"); }
@@ -71,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the policy that the user is trying to request access using.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyDisplayName {
             get { return BackingStore?.Get<string?>("policyDisplayName"); }
             set { BackingStore?.Set("policyDisplayName", value); }
         }
+#nullable restore
 #else
         public string PolicyDisplayName {
             get { return BackingStore?.Get<string>("policyDisplayName"); }
@@ -83,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyId {
             get { return BackingStore?.Get<string?>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
+#nullable restore
 #else
         public string PolicyId {
             get { return BackingStore?.Get<string>("policyId"); }
@@ -95,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Questions that are configured on the policy. The questions can be required or optional; callers can determine whether a question is required or optional based on the isRequired property on accessPackageQuestion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AccessPackageQuestion>? Questions {
             get { return BackingStore?.Get<List<AccessPackageQuestion>?>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
+#nullable restore
 #else
         public List<AccessPackageQuestion> Questions {
             get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
@@ -107,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Schedule restrictions enforced, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RequestSchedule? Schedule {
             get { return BackingStore?.Get<RequestSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#nullable restore
 #else
         public RequestSchedule Schedule {
             get { return BackingStore?.Get<RequestSchedule>("schedule"); }

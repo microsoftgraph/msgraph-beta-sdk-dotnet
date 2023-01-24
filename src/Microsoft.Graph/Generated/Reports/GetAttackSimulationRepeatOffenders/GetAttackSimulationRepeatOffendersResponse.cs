@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders {
     public class GetAttackSimulationRepeatOffendersResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AttackSimulationRepeatOffender>? Value {
             get { return BackingStore?.Get<List<AttackSimulationRepeatOffender>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<AttackSimulationRepeatOffender> Value {
             get { return BackingStore?.Get<List<AttackSimulationRepeatOffender>>("value"); }

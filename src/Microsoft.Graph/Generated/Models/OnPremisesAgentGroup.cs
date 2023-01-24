@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesAgentGroup : Entity, IParsable {
         /// <summary>List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<OnPremisesAgent>? Agents {
             get { return BackingStore?.Get<List<OnPremisesAgent>?>("agents"); }
             set { BackingStore?.Set("agents", value); }
         }
+#nullable restore
 #else
         public List<OnPremisesAgent> Agents {
             get { return BackingStore?.Get<List<OnPremisesAgent>>("agents"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Display name of the onPremisesAgentGroup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PublishedResource>? PublishedResources {
             get { return BackingStore?.Get<List<PublishedResource>?>("publishedResources"); }
             set { BackingStore?.Set("publishedResources", value); }
         }
+#nullable restore
 #else
         public List<PublishedResource> PublishedResources {
             get { return BackingStore?.Get<List<PublishedResource>>("publishedResources"); }

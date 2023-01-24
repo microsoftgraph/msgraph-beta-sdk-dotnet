@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class SubmissionUserIdentity : Identity, IParsable {
         /// <summary>The email of user who is making the submission when logged in (delegated token case).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Email {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#nullable restore
 #else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }

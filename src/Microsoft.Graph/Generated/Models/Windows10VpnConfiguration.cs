@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Windows10VpnConfiguration : WindowsVpnConfiguration, IParsable {
         /// <summary>Associated Apps. This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<Windows10AssociatedApps>? AssociatedApps {
             get { return BackingStore?.Get<List<Windows10AssociatedApps>?>("associatedApps"); }
             set { BackingStore?.Set("associatedApps", value); }
         }
+#nullable restore
 #else
         public List<Windows10AssociatedApps> AssociatedApps {
             get { return BackingStore?.Get<List<Windows10AssociatedApps>>("associatedApps"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Cryptography Suite security settings for IKEv2 VPN in Windows10 and above</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.CryptographySuite? CryptographySuite {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CryptographySuite?>("cryptographySuite"); }
             set { BackingStore?.Set("cryptographySuite", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.CryptographySuite CryptographySuite {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CryptographySuite>("cryptographySuite"); }
@@ -41,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>DNS rules. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VpnDnsRule>? DnsRules {
             get { return BackingStore?.Get<List<VpnDnsRule>?>("dnsRules"); }
             set { BackingStore?.Set("dnsRules", value); }
         }
+#nullable restore
 #else
         public List<VpnDnsRule> DnsRules {
             get { return BackingStore?.Get<List<VpnDnsRule>>("dnsRules"); }
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Specify DNS suffixes to add to the DNS search list to properly route short names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? DnsSuffixes {
             get { return BackingStore?.Get<List<string>?>("dnsSuffixes"); }
             set { BackingStore?.Set("dnsSuffixes", value); }
         }
+#nullable restore
 #else
         public List<string> DnsSuffixes {
             get { return BackingStore?.Get<List<string>>("dnsSuffixes"); }
@@ -65,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Extensible Authentication Protocol (EAP) XML. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? EapXml {
             get { return BackingStore?.Get<byte[]?>("eapXml"); }
             set { BackingStore?.Set("eapXml", value); }
         }
+#nullable restore
 #else
         public byte[] EapXml {
             get { return BackingStore?.Get<byte[]>("eapXml"); }
@@ -107,10 +117,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WindowsCertificateProfileBase? IdentityCertificate {
             get { return BackingStore?.Get<WindowsCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#nullable restore
 #else
         public WindowsCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<WindowsCertificateProfileBase>("identityCertificate"); }
@@ -119,10 +131,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>ID of the Microsoft Tunnel site associated with the VPN profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? MicrosoftTunnelSiteId {
             get { return BackingStore?.Get<string?>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
+#nullable restore
 #else
         public string MicrosoftTunnelSiteId {
             get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
@@ -141,10 +155,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Proxy Server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Windows10VpnProxyServer? ProxyServer {
             get { return BackingStore?.Get<Windows10VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
+#nullable restore
 #else
         public Windows10VpnProxyServer ProxyServer {
             get { return BackingStore?.Get<Windows10VpnProxyServer>("proxyServer"); }
@@ -158,10 +174,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Routes (optional for third-party providers). This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VpnRoute>? Routes {
             get { return BackingStore?.Get<List<VpnRoute>?>("routes"); }
             set { BackingStore?.Set("routes", value); }
         }
+#nullable restore
 #else
         public List<VpnRoute> Routes {
             get { return BackingStore?.Get<List<VpnRoute>>("routes"); }
@@ -170,10 +188,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Single sign-on Extended Key Usage (EKU).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public ExtendedKeyUsage? SingleSignOnEku {
             get { return BackingStore?.Get<ExtendedKeyUsage?>("singleSignOnEku"); }
             set { BackingStore?.Set("singleSignOnEku", value); }
         }
+#nullable restore
 #else
         public ExtendedKeyUsage SingleSignOnEku {
             get { return BackingStore?.Get<ExtendedKeyUsage>("singleSignOnEku"); }
@@ -182,10 +202,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Single sign-on issuer hash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SingleSignOnIssuerHash {
             get { return BackingStore?.Get<string?>("singleSignOnIssuerHash"); }
             set { BackingStore?.Set("singleSignOnIssuerHash", value); }
         }
+#nullable restore
 #else
         public string SingleSignOnIssuerHash {
             get { return BackingStore?.Get<string>("singleSignOnIssuerHash"); }
@@ -194,10 +216,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Traffic rules. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<VpnTrafficRule>? TrafficRules {
             get { return BackingStore?.Get<List<VpnTrafficRule>?>("trafficRules"); }
             set { BackingStore?.Set("trafficRules", value); }
         }
+#nullable restore
 #else
         public List<VpnTrafficRule> TrafficRules {
             get { return BackingStore?.Get<List<VpnTrafficRule>>("trafficRules"); }
@@ -206,10 +230,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Trusted Network Domains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TrustedNetworkDomains {
             get { return BackingStore?.Get<List<string>?>("trustedNetworkDomains"); }
             set { BackingStore?.Set("trustedNetworkDomains", value); }
         }
+#nullable restore
 #else
         public List<string> TrustedNetworkDomains {
             get { return BackingStore?.Get<List<string>>("trustedNetworkDomains"); }
@@ -218,10 +244,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Windows Information Protection (WIP) domain to associate with this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? WindowsInformationProtectionDomain {
             get { return BackingStore?.Get<string?>("windowsInformationProtectionDomain"); }
             set { BackingStore?.Set("windowsInformationProtectionDomain", value); }
         }
+#nullable restore
 #else
         public string WindowsInformationProtectionDomain {
             get { return BackingStore?.Get<string>("windowsInformationProtectionDomain"); }

@@ -22,10 +22,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MacOSCertificateProfileBase? IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<MacOSCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
+#nullable restore
 #else
         public MacOSCertificateProfileBase IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<MacOSCertificateProfileBase>("identityCertificateForClientAuthentication"); }
@@ -39,10 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS, EAP-FAST or PEAP. This property masks usernames with the text you enter. For example, if you use &apos;anonymous&apos;, each user that authenticates with this Wi-Fi connection using their real username is displayed as &apos;anonymous&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OuterIdentityPrivacyTemporaryValue {
             get { return BackingStore?.Get<string?>("outerIdentityPrivacyTemporaryValue"); }
             set { BackingStore?.Set("outerIdentityPrivacyTemporaryValue", value); }
         }
+#nullable restore
 #else
         public string OuterIdentityPrivacyTemporaryValue {
             get { return BackingStore?.Get<string>("outerIdentityPrivacyTemporaryValue"); }
@@ -51,10 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public MacOSTrustedRootCertificate? RootCertificateForServerValidation {
             get { return BackingStore?.Get<MacOSTrustedRootCertificate?>("rootCertificateForServerValidation"); }
             set { BackingStore?.Set("rootCertificateForServerValidation", value); }
         }
+#nullable restore
 #else
         public MacOSTrustedRootCertificate RootCertificateForServerValidation {
             get { return BackingStore?.Get<MacOSTrustedRootCertificate>("rootCertificateForServerValidation"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MacOSTrustedRootCertificate>? RootCertificatesForServerValidation {
             get { return BackingStore?.Get<List<MacOSTrustedRootCertificate>?>("rootCertificatesForServerValidation"); }
             set { BackingStore?.Set("rootCertificatesForServerValidation", value); }
         }
+#nullable restore
 #else
         public List<MacOSTrustedRootCertificate> RootCertificatesForServerValidation {
             get { return BackingStore?.Get<List<MacOSTrustedRootCertificate>>("rootCertificatesForServerValidation"); }
@@ -75,10 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users devices when they connect to this Wi-Fi network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? TrustedServerCertificateNames {
             get { return BackingStore?.Get<List<string>?>("trustedServerCertificateNames"); }
             set { BackingStore?.Set("trustedServerCertificateNames", value); }
         }
+#nullable restore
 #else
         public List<string> TrustedServerCertificateNames {
             get { return BackingStore?.Get<List<string>>("trustedServerCertificateNames"); }

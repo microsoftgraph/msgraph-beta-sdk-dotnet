@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class OmaSettingStringXml : OmaSetting, IParsable {
         /// <summary>File name associated with the Value property (.xml).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? FileName {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#nullable restore
 #else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Value. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? Value {
             get { return BackingStore?.Get<byte[]?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public byte[] Value {
             get { return BackingStore?.Get<byte[]>("value"); }

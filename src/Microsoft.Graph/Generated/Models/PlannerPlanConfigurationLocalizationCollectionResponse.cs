@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class PlannerPlanConfigurationLocalizationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<PlannerPlanConfigurationLocalization>? Value {
             get { return BackingStore?.Get<List<PlannerPlanConfigurationLocalization>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<PlannerPlanConfigurationLocalization> Value {
             get { return BackingStore?.Get<List<PlannerPlanConfigurationLocalization>>("value"); }

@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A geo-region where the service is deployed, such as ProdNoam.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CloudServiceDeploymentEnvironment {
             get { return BackingStore?.Get<string?>("cloudServiceDeploymentEnvironment"); }
             set { BackingStore?.Set("cloudServiceDeploymentEnvironment", value); }
         }
+#nullable restore
 #else
         public string CloudServiceDeploymentEnvironment {
             get { return BackingStore?.Get<string>("cloudServiceDeploymentEnvironment"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A unique deployment identifier assigned by Azure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CloudServiceDeploymentId {
             get { return BackingStore?.Get<string?>("cloudServiceDeploymentId"); }
             set { BackingStore?.Set("cloudServiceDeploymentId", value); }
         }
+#nullable restore
 #else
         public string CloudServiceDeploymentId {
             get { return BackingStore?.Get<string>("cloudServiceDeploymentId"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure deployed cloud service instance name, such as FrontEnd_IN_3.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CloudServiceInstanceName {
             get { return BackingStore?.Get<string?>("cloudServiceInstanceName"); }
             set { BackingStore?.Set("cloudServiceInstanceName", value); }
         }
+#nullable restore
 #else
         public string CloudServiceInstanceName {
             get { return BackingStore?.Get<string>("cloudServiceInstanceName"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The Azure deployed cloud service name, such as contoso.cloudapp.net.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CloudServiceName {
             get { return BackingStore?.Get<string?>("cloudServiceName"); }
             set { BackingStore?.Set("cloudServiceName", value); }
         }
+#nullable restore
 #else
         public string CloudServiceName {
             get { return BackingStore?.Get<string>("cloudServiceName"); }
@@ -68,10 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Any additional description, such as VTC Bldg 30/21.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceDescription {
             get { return BackingStore?.Get<string?>("deviceDescription"); }
             set { BackingStore?.Set("deviceDescription", value); }
         }
+#nullable restore
 #else
         public string DeviceDescription {
             get { return BackingStore?.Get<string>("deviceDescription"); }
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The user media agent name, such as Cisco SX80.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -97,10 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<TeleconferenceDeviceMediaQuality>? MediaQualityList {
             get { return BackingStore?.Get<List<TeleconferenceDeviceMediaQuality>?>("mediaQualityList"); }
             set { BackingStore?.Set("mediaQualityList", value); }
         }
+#nullable restore
 #else
         public List<TeleconferenceDeviceMediaQuality> MediaQualityList {
             get { return BackingStore?.Get<List<TeleconferenceDeviceMediaQuality>>("mediaQualityList"); }
@@ -109,10 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

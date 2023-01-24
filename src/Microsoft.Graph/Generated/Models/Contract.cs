@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class Contract : DirectoryObject, IParsable {
         /// <summary>The contractType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ContractType {
             get { return BackingStore?.Get<string?>("contractType"); }
             set { BackingStore?.Set("contractType", value); }
         }
+#nullable restore
 #else
         public string ContractType {
             get { return BackingStore?.Get<string>("contractType"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The defaultDomainName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultDomainName {
             get { return BackingStore?.Get<string?>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
+#nullable restore
 #else
         public string DefaultDomainName {
             get { return BackingStore?.Get<string>("defaultDomainName"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }

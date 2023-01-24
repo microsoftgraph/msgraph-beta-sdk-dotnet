@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Custom XML commands that configures the VPN connection. (UTF8 byte encoding)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public byte[]? CustomXml {
             get { return BackingStore?.Get<byte[]?>("customXml"); }
             set { BackingStore?.Set("customXml", value); }
         }
+#nullable restore
 #else
         public byte[] CustomXml {
             get { return BackingStore?.Get<byte[]>("customXml"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Custom Xml file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomXmlFileName {
             get { return BackingStore?.Get<string?>("customXmlFileName"); }
             set { BackingStore?.Set("customXmlFileName", value); }
         }
+#nullable restore
 #else
         public string CustomXmlFileName {
             get { return BackingStore?.Get<string>("customXmlFileName"); }

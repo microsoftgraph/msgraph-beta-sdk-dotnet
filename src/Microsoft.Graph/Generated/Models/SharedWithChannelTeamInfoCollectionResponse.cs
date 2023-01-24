@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class SharedWithChannelTeamInfoCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SharedWithChannelTeamInfo>? Value {
             get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<SharedWithChannelTeamInfo> Value {
             get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>>("value"); }

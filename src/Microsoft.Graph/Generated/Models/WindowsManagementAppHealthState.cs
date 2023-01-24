@@ -10,10 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsManagementAppHealthState : Entity, IParsable {
         /// <summary>Name of the device on which Windows management app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceName {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#nullable restore
 #else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Windows 10 OS version of the device on which Windows management app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DeviceOSVersion {
             get { return BackingStore?.Get<string?>("deviceOSVersion"); }
             set { BackingStore?.Set("deviceOSVersion", value); }
         }
+#nullable restore
 #else
         public string DeviceOSVersion {
             get { return BackingStore?.Get<string>("deviceOSVersion"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Windows management app installed version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InstalledVersion {
             get { return BackingStore?.Get<string?>("installedVersion"); }
             set { BackingStore?.Set("installedVersion", value); }
         }
+#nullable restore
 #else
         public string InstalledVersion {
             get { return BackingStore?.Get<string>("installedVersion"); }

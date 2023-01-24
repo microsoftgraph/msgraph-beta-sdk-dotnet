@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class GeneralLedgerEntry : Entity, IParsable {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Account? Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account?>("account"); }
             set { BackingStore?.Set("account", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Account Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
@@ -25,10 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The accountNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AccountNumber {
             get { return BackingStore?.Get<string?>("accountNumber"); }
             set { BackingStore?.Set("accountNumber", value); }
         }
+#nullable restore
 #else
         public string AccountNumber {
             get { return BackingStore?.Get<string>("accountNumber"); }
@@ -47,10 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The documentNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DocumentNumber {
             get { return BackingStore?.Get<string?>("documentNumber"); }
             set { BackingStore?.Set("documentNumber", value); }
         }
+#nullable restore
 #else
         public string DocumentNumber {
             get { return BackingStore?.Get<string>("documentNumber"); }
@@ -71,10 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The documentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DocumentType {
             get { return BackingStore?.Get<string?>("documentType"); }
             set { BackingStore?.Set("documentType", value); }
         }
+#nullable restore
 #else
         public string DocumentType {
             get { return BackingStore?.Get<string>("documentType"); }

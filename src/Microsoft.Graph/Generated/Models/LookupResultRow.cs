@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class LookupResultRow : Entity, IParsable {
         /// <summary>The row property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Row {
             get { return BackingStore?.Get<string?>("row"); }
             set { BackingStore?.Set("row", value); }
         }
+#nullable restore
 #else
         public string Row {
             get { return BackingStore?.Get<string>("row"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WindowsInformationProtectionDesktopApp : WindowsInformationProtectionApp, IParsable {
         /// <summary>The binary name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BinaryName {
             get { return BackingStore?.Get<string?>("binaryName"); }
             set { BackingStore?.Set("binaryName", value); }
         }
+#nullable restore
 #else
         public string BinaryName {
             get { return BackingStore?.Get<string>("binaryName"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The high binary version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BinaryVersionHigh {
             get { return BackingStore?.Get<string?>("binaryVersionHigh"); }
             set { BackingStore?.Set("binaryVersionHigh", value); }
         }
+#nullable restore
 #else
         public string BinaryVersionHigh {
             get { return BackingStore?.Get<string>("binaryVersionHigh"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The lower binary version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? BinaryVersionLow {
             get { return BackingStore?.Get<string?>("binaryVersionLow"); }
             set { BackingStore?.Set("binaryVersionLow", value); }
         }
+#nullable restore
 #else
         public string BinaryVersionLow {
             get { return BackingStore?.Get<string>("binaryVersionLow"); }

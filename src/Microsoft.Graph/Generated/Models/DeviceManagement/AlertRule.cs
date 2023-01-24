@@ -12,10 +12,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         }
         /// <summary>The rule description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
 #endif
         /// <summary>The display name of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         }
         /// <summary>The notification channels of the rule selected by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<NotificationChannel>? NotificationChannels {
             get { return BackingStore?.Get<List<NotificationChannel>?>("notificationChannels"); }
             set { BackingStore?.Set("notificationChannels", value); }
         }
+#nullable restore
 #else
         public List<NotificationChannel> NotificationChannels {
             get { return BackingStore?.Get<List<NotificationChannel>>("notificationChannels"); }
@@ -63,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         }
         /// <summary>The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public RuleThreshold? Threshold {
             get { return BackingStore?.Get<RuleThreshold?>("threshold"); }
             set { BackingStore?.Set("threshold", value); }
         }
+#nullable restore
 #else
         public RuleThreshold Threshold {
             get { return BackingStore?.Get<RuleThreshold>("threshold"); }

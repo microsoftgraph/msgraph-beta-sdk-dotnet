@@ -18,10 +18,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CustomUpdateTimeWindow>? CustomUpdateTimeWindows {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>?>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
+#nullable restore
 #else
         public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }
@@ -30,10 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>If left unspecified, devices will update to the latest version of the OS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DesiredOsVersion {
             get { return BackingStore?.Get<string?>("desiredOsVersion"); }
             set { BackingStore?.Set("desiredOsVersion", value); }
         }
+#nullable restore
 #else
         public string DesiredOsVersion {
             get { return BackingStore?.Get<string>("desiredOsVersion"); }
@@ -52,10 +56,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DayOfWeekObject?>? ScheduledInstallDays {
             get { return BackingStore?.Get<List<DayOfWeekObject?>?>("scheduledInstallDays"); }
             set { BackingStore?.Set("scheduledInstallDays", value); }
         }
+#nullable restore
 #else
         public List<DayOfWeekObject?> ScheduledInstallDays {
             get { return BackingStore?.Get<List<DayOfWeekObject?>>("scheduledInstallDays"); }

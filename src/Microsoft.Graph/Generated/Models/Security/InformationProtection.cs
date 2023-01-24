@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
     public class InformationProtection : Entity, IParsable {
         /// <summary>Read the Microsoft Purview Information Protection policy settings for the user or organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public InformationProtectionPolicySetting? LabelPolicySettings {
             get { return BackingStore?.Get<InformationProtectionPolicySetting?>("labelPolicySettings"); }
             set { BackingStore?.Set("labelPolicySettings", value); }
         }
+#nullable restore
 #else
         public InformationProtectionPolicySetting LabelPolicySettings {
             get { return BackingStore?.Get<InformationProtectionPolicySetting>("labelPolicySettings"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Read the Microsoft Purview Information Protection labels for the user or organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SensitivityLabel>? SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
+#nullable restore
 #else
         public List<SensitivityLabel> SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }

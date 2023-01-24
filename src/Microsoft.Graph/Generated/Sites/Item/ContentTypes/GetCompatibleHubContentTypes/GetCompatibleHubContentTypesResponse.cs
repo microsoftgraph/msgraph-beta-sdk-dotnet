@@ -8,10 +8,12 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.GetCompatibleHubContentTy
     public class GetCompatibleHubContentTypesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ContentType>? Value {
             get { return BackingStore?.Get<List<ContentType>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#nullable restore
 #else
         public List<ContentType> Value {
             get { return BackingStore?.Get<List<ContentType>>("value"); }

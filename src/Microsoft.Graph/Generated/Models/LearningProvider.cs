@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class LearningProvider : Entity, IParsable {
         /// <summary>The display name that appears in Viva Learning. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Learning catalog items for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<LearningContent>? LearningContents {
             get { return BackingStore?.Get<List<LearningContent>?>("learningContents"); }
             set { BackingStore?.Set("learningContents", value); }
         }
+#nullable restore
 #else
         public List<LearningContent> LearningContents {
             get { return BackingStore?.Get<List<LearningContent>>("learningContents"); }
@@ -36,10 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Authentication URL to access the courses for the provider. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LoginWebUrl {
             get { return BackingStore?.Get<string?>("loginWebUrl"); }
             set { BackingStore?.Set("loginWebUrl", value); }
         }
+#nullable restore
 #else
         public string LoginWebUrl {
             get { return BackingStore?.Get<string>("loginWebUrl"); }
@@ -48,10 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The long logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LongLogoWebUrlForDarkTheme {
             get { return BackingStore?.Get<string?>("longLogoWebUrlForDarkTheme"); }
             set { BackingStore?.Set("longLogoWebUrlForDarkTheme", value); }
         }
+#nullable restore
 #else
         public string LongLogoWebUrlForDarkTheme {
             get { return BackingStore?.Get<string>("longLogoWebUrlForDarkTheme"); }
@@ -60,10 +68,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The long logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering  within the Viva Learning app. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? LongLogoWebUrlForLightTheme {
             get { return BackingStore?.Get<string?>("longLogoWebUrlForLightTheme"); }
             set { BackingStore?.Set("longLogoWebUrlForLightTheme", value); }
         }
+#nullable restore
 #else
         public string LongLogoWebUrlForLightTheme {
             get { return BackingStore?.Get<string>("longLogoWebUrlForLightTheme"); }
@@ -72,10 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The square logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SquareLogoWebUrlForDarkTheme {
             get { return BackingStore?.Get<string?>("squareLogoWebUrlForDarkTheme"); }
             set { BackingStore?.Set("squareLogoWebUrlForDarkTheme", value); }
         }
+#nullable restore
 #else
         public string SquareLogoWebUrlForDarkTheme {
             get { return BackingStore?.Get<string>("squareLogoWebUrlForDarkTheme"); }
@@ -84,10 +96,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The square logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SquareLogoWebUrlForLightTheme {
             get { return BackingStore?.Get<string?>("squareLogoWebUrlForLightTheme"); }
             set { BackingStore?.Set("squareLogoWebUrlForLightTheme", value); }
         }
+#nullable restore
 #else
         public string SquareLogoWebUrlForLightTheme {
             get { return BackingStore?.Get<string>("squareLogoWebUrlForLightTheme"); }

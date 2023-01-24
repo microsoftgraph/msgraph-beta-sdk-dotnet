@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
         /// <summary>Default option for choice setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DefaultOptionId {
             get { return BackingStore?.Get<string?>("defaultOptionId"); }
             set { BackingStore?.Set("defaultOptionId", value); }
         }
+#nullable restore
 #else
         public string DefaultOptionId {
             get { return BackingStore?.Get<string>("defaultOptionId"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Options for the setting that can be selected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DeviceManagementConfigurationOptionDefinition>? Options {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinition>?>("options"); }
             set { BackingStore?.Set("options", value); }
         }
+#nullable restore
 #else
         public List<DeviceManagementConfigurationOptionDefinition> Options {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinition>>("options"); }

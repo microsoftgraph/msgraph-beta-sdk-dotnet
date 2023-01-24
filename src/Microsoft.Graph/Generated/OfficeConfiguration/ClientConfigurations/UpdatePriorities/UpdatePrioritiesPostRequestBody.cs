@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.UpdatePr
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The officeConfigurationPolicyIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? OfficeConfigurationPolicyIds {
             get { return BackingStore?.Get<List<string>?>("officeConfigurationPolicyIds"); }
             set { BackingStore?.Set("officeConfigurationPolicyIds", value); }
         }
+#nullable restore
 #else
         public List<string> OfficeConfigurationPolicyIds {
             get { return BackingStore?.Get<List<string>>("officeConfigurationPolicyIds"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.UpdatePr
 #endif
         /// <summary>The officeConfigurationPriorities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<int?>? OfficeConfigurationPriorities {
             get { return BackingStore?.Get<List<int?>?>("officeConfigurationPriorities"); }
             set { BackingStore?.Set("officeConfigurationPriorities", value); }
         }
+#nullable restore
 #else
         public List<int?> OfficeConfigurationPriorities {
             get { return BackingStore?.Get<List<int?>>("officeConfigurationPriorities"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BookingAppointment : Entity, IParsable {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AdditionalInformation {
             get { return BackingStore?.Get<string?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
+#nullable restore
 #else
         public string AdditionalInformation {
             get { return BackingStore?.Get<string>("additionalInformation"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The URL of the meeting to join anonymously.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AnonymousJoinWebUrl {
             get { return BackingStore?.Get<string?>("anonymousJoinWebUrl"); }
             set { BackingStore?.Set("anonymousJoinWebUrl", value); }
         }
+#nullable restore
 #else
         public string AnonymousJoinWebUrl {
             get { return BackingStore?.Get<string>("anonymousJoinWebUrl"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The SMTP address of the bookingCustomer who is booking the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomerEmailAddress {
             get { return BackingStore?.Get<string?>("customerEmailAddress"); }
             set { BackingStore?.Set("customerEmailAddress", value); }
         }
+#nullable restore
 #else
         public string CustomerEmailAddress {
             get { return BackingStore?.Get<string>("customerEmailAddress"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomerId {
             get { return BackingStore?.Get<string?>("customerId"); }
             set { BackingStore?.Set("customerId", value); }
         }
+#nullable restore
 #else
         public string CustomerId {
             get { return BackingStore?.Get<string>("customerId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents location information for the bookingCustomer who is booking the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Location? CustomerLocation {
             get { return BackingStore?.Get<Location?>("customerLocation"); }
             set { BackingStore?.Set("customerLocation", value); }
         }
+#nullable restore
 #else
         public Location CustomerLocation {
             get { return BackingStore?.Get<Location>("customerLocation"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The customer&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomerName {
             get { return BackingStore?.Get<string?>("customerName"); }
             set { BackingStore?.Set("customerName", value); }
         }
+#nullable restore
 #else
         public string CustomerName {
             get { return BackingStore?.Get<string>("customerName"); }
@@ -79,10 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomerNotes {
             get { return BackingStore?.Get<string?>("customerNotes"); }
             set { BackingStore?.Set("customerNotes", value); }
         }
+#nullable restore
 #else
         public string CustomerNotes {
             get { return BackingStore?.Get<string>("customerNotes"); }
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The customer&apos;s phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomerPhone {
             get { return BackingStore?.Get<string?>("customerPhone"); }
             set { BackingStore?.Set("customerPhone", value); }
         }
+#nullable restore
 #else
         public string CustomerPhone {
             get { return BackingStore?.Get<string>("customerPhone"); }
@@ -103,10 +119,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingCustomerInformationBase>? Customers {
             get { return BackingStore?.Get<List<BookingCustomerInformationBase>?>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
+#nullable restore
 #else
         public List<BookingCustomerInformationBase> Customers {
             get { return BackingStore?.Get<List<BookingCustomerInformationBase>>("customers"); }
@@ -115,10 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The time zone of the customer. For a list of possible values, see dateTimeTimeZone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? CustomerTimeZone {
             get { return BackingStore?.Get<string?>("customerTimeZone"); }
             set { BackingStore?.Set("customerTimeZone", value); }
         }
+#nullable restore
 #else
         public string CustomerTimeZone {
             get { return BackingStore?.Get<string>("customerTimeZone"); }
@@ -132,10 +152,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The end property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? End {
             get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone End {
             get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
@@ -154,10 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The date, time, and time zone of the invoice for this appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? InvoiceDate {
             get { return BackingStore?.Get<DateTimeTimeZone?>("invoiceDate"); }
             set { BackingStore?.Set("invoiceDate", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone InvoiceDate {
             get { return BackingStore?.Get<DateTimeTimeZone>("invoiceDate"); }
@@ -166,10 +190,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the invoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InvoiceId {
             get { return BackingStore?.Get<string?>("invoiceId"); }
             set { BackingStore?.Set("invoiceId", value); }
         }
+#nullable restore
 #else
         public string InvoiceId {
             get { return BackingStore?.Get<string>("invoiceId"); }
@@ -183,10 +209,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The URL of the invoice in Microsoft Bookings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InvoiceUrl {
             get { return BackingStore?.Get<string?>("invoiceUrl"); }
             set { BackingStore?.Set("invoiceUrl", value); }
         }
+#nullable restore
 #else
         public string InvoiceUrl {
             get { return BackingStore?.Get<string>("invoiceUrl"); }
@@ -200,10 +228,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The URL of the online meeting for the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? JoinWebUrl {
             get { return BackingStore?.Get<string?>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
+#nullable restore
 #else
         public string JoinWebUrl {
             get { return BackingStore?.Get<string>("joinWebUrl"); }
@@ -217,10 +247,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The onlineMeetingUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OnlineMeetingUrl {
             get { return BackingStore?.Get<string?>("onlineMeetingUrl"); }
             set { BackingStore?.Set("onlineMeetingUrl", value); }
         }
+#nullable restore
 #else
         public string OnlineMeetingUrl {
             get { return BackingStore?.Get<string>("onlineMeetingUrl"); }
@@ -254,10 +286,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<BookingReminder>? Reminders {
             get { return BackingStore?.Get<List<BookingReminder>?>("reminders"); }
             set { BackingStore?.Set("reminders", value); }
         }
+#nullable restore
 #else
         public List<BookingReminder> Reminders {
             get { return BackingStore?.Get<List<BookingReminder>>("reminders"); }
@@ -266,10 +300,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SelfServiceAppointmentId {
             get { return BackingStore?.Get<string?>("selfServiceAppointmentId"); }
             set { BackingStore?.Set("selfServiceAppointmentId", value); }
         }
+#nullable restore
 #else
         public string SelfServiceAppointmentId {
             get { return BackingStore?.Get<string>("selfServiceAppointmentId"); }
@@ -278,10 +314,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The ID of the bookingService associated with this appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceId {
             get { return BackingStore?.Get<string?>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
+#nullable restore
 #else
         public string ServiceId {
             get { return BackingStore?.Get<string>("serviceId"); }
@@ -290,10 +328,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The location where the service is delivered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Location? ServiceLocation {
             get { return BackingStore?.Get<Location?>("serviceLocation"); }
             set { BackingStore?.Set("serviceLocation", value); }
         }
+#nullable restore
 #else
         public Location ServiceLocation {
             get { return BackingStore?.Get<Location>("serviceLocation"); }
@@ -302,10 +342,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceName {
             get { return BackingStore?.Get<string?>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
         }
+#nullable restore
 #else
         public string ServiceName {
             get { return BackingStore?.Get<string>("serviceName"); }
@@ -314,10 +356,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceNotes {
             get { return BackingStore?.Get<string?>("serviceNotes"); }
             set { BackingStore?.Set("serviceNotes", value); }
         }
+#nullable restore
 #else
         public string ServiceNotes {
             get { return BackingStore?.Get<string>("serviceNotes"); }
@@ -331,10 +375,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The ID of each bookingStaffMember who is scheduled in this appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? StaffMemberIds {
             get { return BackingStore?.Get<List<string>?>("staffMemberIds"); }
             set { BackingStore?.Set("staffMemberIds", value); }
         }
+#nullable restore
 #else
         public List<string> StaffMemberIds {
             get { return BackingStore?.Get<List<string>>("staffMemberIds"); }
@@ -343,10 +389,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? Start {
             get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone Start {
             get { return BackingStore?.Get<DateTimeTimeZone>("start"); }

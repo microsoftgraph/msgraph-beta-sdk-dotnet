@@ -20,10 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The Upn of the user that granted consent for this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GrantedByUpn {
             get { return BackingStore?.Get<string?>("grantedByUpn"); }
             set { BackingStore?.Set("grantedByUpn", value); }
         }
+#nullable restore
 #else
         public string GrantedByUpn {
             get { return BackingStore?.Get<string>("grantedByUpn"); }
@@ -32,10 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The UserId of the user that granted consent for this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? GrantedByUserId {
             get { return BackingStore?.Get<string?>("grantedByUserId"); }
             set { BackingStore?.Set("grantedByUserId", value); }
         }
+#nullable restore
 #else
         public string GrantedByUserId {
             get { return BackingStore?.Get<string>("grantedByUserId"); }
@@ -44,10 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name of the service work flow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ServiceDisplayName {
             get { return BackingStore?.Get<string?>("serviceDisplayName"); }
             set { BackingStore?.Set("serviceDisplayName", value); }
         }
+#nullable restore
 #else
         public string ServiceDisplayName {
             get { return BackingStore?.Get<string>("serviceDisplayName"); }
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The TermsUrl for the data sharing consent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? TermsUrl {
             get { return BackingStore?.Get<string?>("termsUrl"); }
             set { BackingStore?.Set("termsUrl", value); }
         }
+#nullable restore
 #else
         public string TermsUrl {
             get { return BackingStore?.Get<string>("termsUrl"); }

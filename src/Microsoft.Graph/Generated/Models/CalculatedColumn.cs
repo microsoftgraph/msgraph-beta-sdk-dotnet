@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Format {
             get { return BackingStore?.Get<string?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#nullable restore
 #else
         public string Format {
             get { return BackingStore?.Get<string>("format"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The formula used to compute the value for this column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Formula {
             get { return BackingStore?.Get<string?>("formula"); }
             set { BackingStore?.Set("formula", value); }
         }
+#nullable restore
 #else
         public string Formula {
             get { return BackingStore?.Get<string>("formula"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OutputType {
             get { return BackingStore?.Get<string?>("outputType"); }
             set { BackingStore?.Set("outputType", value); }
         }
+#nullable restore
 #else
         public string OutputType {
             get { return BackingStore?.Get<string>("outputType"); }

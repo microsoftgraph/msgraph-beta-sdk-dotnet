@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class CalendarPermission : Entity, IParsable {
         /// <summary>List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<CalendarRoleType?>? AllowedRoles {
             get { return BackingStore?.Get<List<CalendarRoleType?>?>("allowedRoles"); }
             set { BackingStore?.Set("allowedRoles", value); }
         }
+#nullable restore
 #else
         public List<CalendarRoleType?> AllowedRoles {
             get { return BackingStore?.Get<List<CalendarRoleType?>>("allowedRoles"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents a sharee or delegate who has access to the calendar. For the &apos;My Organization&apos; sharee, the address property is null. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.EmailAddress? EmailAddress {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.EmailAddress EmailAddress {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress>("emailAddress"); }

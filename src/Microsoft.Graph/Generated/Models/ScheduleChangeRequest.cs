@@ -17,10 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The managerActionMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagerActionMessage {
             get { return BackingStore?.Get<string?>("managerActionMessage"); }
             set { BackingStore?.Set("managerActionMessage", value); }
         }
+#nullable restore
 #else
         public string ManagerActionMessage {
             get { return BackingStore?.Get<string>("managerActionMessage"); }
@@ -29,10 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The managerUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ManagerUserId {
             get { return BackingStore?.Get<string?>("managerUserId"); }
             set { BackingStore?.Set("managerUserId", value); }
         }
+#nullable restore
 #else
         public string ManagerUserId {
             get { return BackingStore?.Get<string>("managerUserId"); }
@@ -46,10 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The senderMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SenderMessage {
             get { return BackingStore?.Get<string?>("senderMessage"); }
             set { BackingStore?.Set("senderMessage", value); }
         }
+#nullable restore
 #else
         public string SenderMessage {
             get { return BackingStore?.Get<string>("senderMessage"); }
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The senderUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? SenderUserId {
             get { return BackingStore?.Get<string?>("senderUserId"); }
             set { BackingStore?.Set("senderUserId", value); }
         }
+#nullable restore
 #else
         public string SenderUserId {
             get { return BackingStore?.Get<string>("senderUserId"); }

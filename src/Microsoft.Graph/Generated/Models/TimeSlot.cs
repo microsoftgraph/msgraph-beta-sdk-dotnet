@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The end property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? End {
             get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone End {
             get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? Start {
             get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone Start {
             get { return BackingStore?.Get<DateTimeTimeZone>("start"); }

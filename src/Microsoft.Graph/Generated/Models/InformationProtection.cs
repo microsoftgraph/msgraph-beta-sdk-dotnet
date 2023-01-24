@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class InformationProtection : Entity, IParsable {
         /// <summary>The bitlocker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.Bitlocker? Bitlocker {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Bitlocker?>("bitlocker"); }
             set { BackingStore?.Set("bitlocker", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Bitlocker Bitlocker {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Bitlocker>("bitlocker"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The dataLossPreventionPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<DataLossPreventionPolicy>? DataLossPreventionPolicies {
             get { return BackingStore?.Get<List<DataLossPreventionPolicy>?>("dataLossPreventionPolicies"); }
             set { BackingStore?.Set("dataLossPreventionPolicies", value); }
         }
+#nullable restore
 #else
         public List<DataLossPreventionPolicy> DataLossPreventionPolicies {
             get { return BackingStore?.Get<List<DataLossPreventionPolicy>>("dataLossPreventionPolicies"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public InformationProtectionPolicy? Policy {
             get { return BackingStore?.Get<InformationProtectionPolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
+#nullable restore
 #else
         public InformationProtectionPolicy Policy {
             get { return BackingStore?.Get<InformationProtectionPolicy>("policy"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sensitivityLabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<SensitivityLabel>? SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
+#nullable restore
 #else
         public List<SensitivityLabel> SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The sensitivityPolicySettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.SensitivityPolicySettings? SensitivityPolicySettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityPolicySettings?>("sensitivityPolicySettings"); }
             set { BackingStore?.Set("sensitivityPolicySettings", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.SensitivityPolicySettings SensitivityPolicySettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>("sensitivityPolicySettings"); }
@@ -67,10 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The threatAssessmentRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<ThreatAssessmentRequest>? ThreatAssessmentRequests {
             get { return BackingStore?.Get<List<ThreatAssessmentRequest>?>("threatAssessmentRequests"); }
             set { BackingStore?.Set("threatAssessmentRequests", value); }
         }
+#nullable restore
 #else
         public List<ThreatAssessmentRequest> ThreatAssessmentRequests {
             get { return BackingStore?.Get<List<ThreatAssessmentRequest>>("threatAssessmentRequests"); }

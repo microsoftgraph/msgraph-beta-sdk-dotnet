@@ -11,10 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftTunnelSite : Entity, IParsable {
         /// <summary>The site&apos;s description (optional)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? Description {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#nullable restore
 #else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
@@ -23,10 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The display name for the site. This property is required when a site is created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? DisplayName {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#nullable restore
 #else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
@@ -35,10 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The site&apos;s Internal Network Access Probe URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? InternalNetworkProbeUrl {
             get { return BackingStore?.Get<string?>("internalNetworkProbeUrl"); }
             set { BackingStore?.Set("internalNetworkProbeUrl", value); }
         }
+#nullable restore
 #else
         public string InternalNetworkProbeUrl {
             get { return BackingStore?.Get<string>("internalNetworkProbeUrl"); }
@@ -47,10 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration? MicrosoftTunnelConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration?>("microsoftTunnelConfiguration"); }
             set { BackingStore?.Set("microsoftTunnelConfiguration", value); }
         }
+#nullable restore
 #else
         public Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration MicrosoftTunnelConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>("microsoftTunnelConfiguration"); }
@@ -59,10 +67,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MicrosoftTunnelServer>? MicrosoftTunnelServers {
             get { return BackingStore?.Get<List<MicrosoftTunnelServer>?>("microsoftTunnelServers"); }
             set { BackingStore?.Set("microsoftTunnelServers", value); }
         }
+#nullable restore
 #else
         public List<MicrosoftTunnelServer> MicrosoftTunnelServers {
             get { return BackingStore?.Get<List<MicrosoftTunnelServer>>("microsoftTunnelServers"); }
@@ -71,10 +81,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The site&apos;s public domain name or IP address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PublicAddress {
             get { return BackingStore?.Get<string?>("publicAddress"); }
             set { BackingStore?.Set("publicAddress", value); }
         }
+#nullable restore
 #else
         public string PublicAddress {
             get { return BackingStore?.Get<string>("publicAddress"); }
@@ -83,10 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>List of Scope Tags for this Entity instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#nullable restore
 #else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }

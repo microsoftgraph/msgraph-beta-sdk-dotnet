@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The admin defined name for assignment filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentFilterDisplayName {
             get { return BackingStore?.Get<string?>("assignmentFilterDisplayName"); }
             set { BackingStore?.Set("assignmentFilterDisplayName", value); }
         }
+#nullable restore
 #else
         public string AssignmentFilterDisplayName {
             get { return BackingStore?.Get<string>("assignmentFilterDisplayName"); }
@@ -28,10 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Unique identifier for the assignment filter object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? AssignmentFilterId {
             get { return BackingStore?.Get<string?>("assignmentFilterId"); }
             set { BackingStore?.Set("assignmentFilterId", value); }
         }
+#nullable restore
 #else
         public string AssignmentFilterId {
             get { return BackingStore?.Get<string>("assignmentFilterId"); }
@@ -55,10 +59,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>A collection of filter types and their corresponding evaluation results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<AssignmentFilterTypeAndEvaluationResult>? AssignmentFilterTypeAndEvaluationResults {
             get { return BackingStore?.Get<List<AssignmentFilterTypeAndEvaluationResult>?>("assignmentFilterTypeAndEvaluationResults"); }
             set { BackingStore?.Set("assignmentFilterTypeAndEvaluationResults", value); }
         }
+#nullable restore
 #else
         public List<AssignmentFilterTypeAndEvaluationResult> AssignmentFilterTypeAndEvaluationResults {
             get { return BackingStore?.Get<List<AssignmentFilterTypeAndEvaluationResult>>("assignmentFilterTypeAndEvaluationResults"); }
@@ -79,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }

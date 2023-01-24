@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartDataLabelFormat : Entity, IParsable {
         /// <summary>Represents the fill format of the current chart data label. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartFill? Fill {
             get { return BackingStore?.Get<WorkbookChartFill?>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
+#nullable restore
 #else
         public WorkbookChartFill Fill {
             get { return BackingStore?.Get<WorkbookChartFill>("fill"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public WorkbookChartFont? Font {
             get { return BackingStore?.Get<WorkbookChartFont?>("font"); }
             set { BackingStore?.Set("font", value); }
         }
+#nullable restore
 #else
         public WorkbookChartFont Font {
             get { return BackingStore?.Get<WorkbookChartFont>("font"); }

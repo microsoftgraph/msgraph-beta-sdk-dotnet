@@ -16,10 +16,12 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.ExceptionO
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The NewReminderTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public DateTimeTimeZone? NewReminderTime {
             get { return BackingStore?.Get<DateTimeTimeZone?>("newReminderTime"); }
             set { BackingStore?.Set("newReminderTime", value); }
         }
+#nullable restore
 #else
         public DateTimeTimeZone NewReminderTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("newReminderTime"); }

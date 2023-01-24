@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class BaseItemVersion : Entity, IParsable {
         /// <summary>Identity of the user which last modified the version. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public IdentitySet? LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#nullable restore
 #else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
@@ -24,10 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Indicates the publication status of this particular version. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public PublicationFacet? Publication {
             get { return BackingStore?.Get<PublicationFacet?>("publication"); }
             set { BackingStore?.Set("publication", value); }
         }
+#nullable restore
 #else
         public PublicationFacet Publication {
             get { return BackingStore?.Get<PublicationFacet>("publication"); }

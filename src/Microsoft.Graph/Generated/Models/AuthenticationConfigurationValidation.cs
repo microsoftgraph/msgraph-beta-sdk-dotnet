@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GenericError>? Errors {
             get { return BackingStore?.Get<List<GenericError>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
+#nullable restore
 #else
         public List<GenericError> Errors {
             get { return BackingStore?.Get<List<GenericError>>("errors"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The warnings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<GenericError>? Warnings {
             get { return BackingStore?.Get<List<GenericError>?>("warnings"); }
             set { BackingStore?.Set("warnings", value); }
         }
+#nullable restore
 #else
         public List<GenericError> Warnings {
             get { return BackingStore?.Get<List<GenericError>>("warnings"); }

@@ -7,10 +7,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicyAssignment : Entity, IParsable {
         /// <summary>The policy that&apos;s associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public UnifiedRoleManagementPolicy? Policy {
             get { return BackingStore?.Get<UnifiedRoleManagementPolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
+#nullable restore
 #else
         public UnifiedRoleManagementPolicy Policy {
             get { return BackingStore?.Get<UnifiedRoleManagementPolicy>("policy"); }
@@ -19,10 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The id of the policy. Inherited from entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? PolicyId {
             get { return BackingStore?.Get<string?>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
+#nullable restore
 #else
         public string PolicyId {
             get { return BackingStore?.Get<string>("policyId"); }
@@ -31,10 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? RoleDefinitionId {
             get { return BackingStore?.Get<string?>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
+#nullable restore
 #else
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
@@ -43,10 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScopeId {
             get { return BackingStore?.Get<string?>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
+#nullable restore
 #else
         public string ScopeId {
             get { return BackingStore?.Get<string>("scopeId"); }
@@ -55,10 +63,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? ScopeType {
             get { return BackingStore?.Get<string?>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
+#nullable restore
 #else
         public string ScopeType {
             get { return BackingStore?.Get<string>("scopeType"); }

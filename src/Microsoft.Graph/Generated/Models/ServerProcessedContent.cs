@@ -15,10 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MetaDataKeyStringPair>? ComponentDependencies {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>?>("componentDependencies"); }
             set { BackingStore?.Set("componentDependencies", value); }
         }
+#nullable restore
 #else
         public List<MetaDataKeyStringPair> ComponentDependencies {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>>("componentDependencies"); }
@@ -27,10 +29,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A key-value map where keys are string identifier and values are object of custom key-value pair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MetaDataKeyValuePair>? CustomMetadata {
             get { return BackingStore?.Get<List<MetaDataKeyValuePair>?>("customMetadata"); }
             set { BackingStore?.Set("customMetadata", value); }
         }
+#nullable restore
 #else
         public List<MetaDataKeyValuePair> CustomMetadata {
             get { return BackingStore?.Get<List<MetaDataKeyValuePair>>("customMetadata"); }
@@ -39,10 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MetaDataKeyStringPair>? HtmlStrings {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>?>("htmlStrings"); }
             set { BackingStore?.Set("htmlStrings", value); }
         }
+#nullable restore
 #else
         public List<MetaDataKeyStringPair> HtmlStrings {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>>("htmlStrings"); }
@@ -51,10 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MetaDataKeyStringPair>? ImageSources {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>?>("imageSources"); }
             set { BackingStore?.Set("imageSources", value); }
         }
+#nullable restore
 #else
         public List<MetaDataKeyStringPair> ImageSources {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>>("imageSources"); }
@@ -63,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MetaDataKeyStringPair>? Links {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+#nullable restore
 #else
         public List<MetaDataKeyStringPair> Links {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>>("links"); }
@@ -75,10 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public string? OdataType {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#nullable restore
 #else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -87,10 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>A key-value map where keys are string identifiers and values are strings that should be search indexed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<MetaDataKeyStringPair>? SearchablePlainTexts {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>?>("searchablePlainTexts"); }
             set { BackingStore?.Set("searchablePlainTexts", value); }
         }
+#nullable restore
 #else
         public List<MetaDataKeyStringPair> SearchablePlainTexts {
             get { return BackingStore?.Get<List<MetaDataKeyStringPair>>("searchablePlainTexts"); }
