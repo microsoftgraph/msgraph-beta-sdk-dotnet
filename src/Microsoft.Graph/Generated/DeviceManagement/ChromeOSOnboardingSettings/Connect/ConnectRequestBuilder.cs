@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Conne
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ChromeOSOnboardingStatus??> PostAsync(ConnectPostRequestBody body, Action<ConnectRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ChromeOSOnboardingStatus?> PostAsync(ConnectPostRequestBody body, Action<ConnectRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
         public async Task<ChromeOSOnboardingStatus?> PostAsync(ConnectPostRequestBody body, Action<ConnectRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
