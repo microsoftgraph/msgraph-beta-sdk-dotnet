@@ -22,6 +22,7 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
+- Use concurrent dictionary for serialization registry to avoid race conditions.
 - Adds support for nullable reference types.
 - Latest metadata updates from 24th January 2023 snapshot.
     </PackageReleaseNotes>
