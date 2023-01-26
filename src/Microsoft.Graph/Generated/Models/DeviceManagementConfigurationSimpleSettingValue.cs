@@ -4,12 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Simple setting value
-    /// </summary>
     public class DeviceManagementConfigurationSimpleSettingValue : DeviceManagementConfigurationSettingValue, IParsable {
         /// <summary>
-        /// Instantiates a new deviceManagementConfigurationSimpleSettingValue and sets the default values.
+        /// Instantiates a new DeviceManagementConfigurationSimpleSettingValue and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSimpleSettingValue() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue";

@@ -7,6 +7,9 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.18.0-preview] - 2023-01-16
+
+- Adds support for nullable reference types.
 - Latest metadata updates from 24th January 2023 snapshot.
 
 ## [5.17.0-preview] - 2023-01-16

@@ -5,7 +5,7 @@
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <AssemblyTitle>Microsoft Graph Beta Client Library</AssemblyTitle>
     <Authors>Microsoft</Authors>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <PreserveCompilationContext>false</PreserveCompilationContext>
     <AssemblyName>Microsoft.Graph.Beta</AssemblyName>
@@ -22,11 +22,11 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Fixed a regression where passing custom base url would not be reflected in the requests.
-- Latest metadata updates from 12th January 2023 snapshot
+- Adds support for nullable reference types.
+- Latest metadata updates from 24th January 2023 snapshot.
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>5.17.0</VersionPrefix>
+    <VersionPrefix>5.18.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->
@@ -42,6 +42,14 @@
     <NoWarn>1701;1702;1705;1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>bin\Release\Microsoft.Graph.Beta.xml</DocumentationFile>
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
+    <DocumentationFile>bin\Debug\Microsoft.Graph.Beta.xml</DocumentationFile>
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.1|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.Beta.xml</DocumentationFile>
     <NoWarn>1701;1702;1705;1591</NoWarn>
   </PropertyGroup>
