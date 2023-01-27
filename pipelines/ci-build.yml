@@ -8,8 +8,7 @@ trigger:
       - master
 pr: none
 
-pool:
-  vmImage: 'windows-latest'
+pool: 1es-windows-latest
 
 variables:
   BuildConfiguration: 'release'
@@ -76,16 +75,28 @@ steps:
   displayName: 'Set project ready to sign'
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet build'
+  displayName: 'dotnet build netstandard2.0'
   inputs:
     projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj'
-    arguments: '-c $(BuildConfiguration) --no-incremental'
+    arguments: '-c $(BuildConfiguration) --no-incremental -f netstandard2.0 --no-restore'
+    
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build netstandard2.1'
+  inputs:
+    projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj'
+    arguments: '-c $(BuildConfiguration) --no-incremental -f netstandard2.1 --no-restore'
 
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build test project'
+  inputs:
+    projects: '$(Build.SourcesDirectory)\tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj'
+    arguments: '-c $(BuildConfiguration) --no-incremental --no-restore'
+    
 - task: DotNetCoreCLI@2
   displayName: 'run tests'
   inputs:
     command: 'test'
-    arguments: '--configuration $(BuildConfiguration) --verbosity normal'
+    arguments: '--configuration $(BuildConfiguration) --no-build --verbosity normal'
 
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
   displayName: 'ESRP DLL Strong Name (Microsoft.Graph.Beta)'
