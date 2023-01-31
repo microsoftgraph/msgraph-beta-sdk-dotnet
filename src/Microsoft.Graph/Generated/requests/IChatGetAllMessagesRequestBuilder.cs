@@ -24,5 +24,46 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         IChatGetAllMessagesRequest Request(IEnumerable<Option> options = null);
+        /// <summary>
+        /// Gets the request builder for ChatMessageDeltaRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageDeltaRequestBuilder"/>.</returns>
+        IChatMessageDeltaRequestBuilder Delta();
+        /// <summary>
+        /// Gets the request builder for ChatMessageSetReactionRequestBuilder.
+        /// </summary>
+        /// <param name="reactionType">A reactionType parameter for the OData method call.</param>
+        /// <returns>The <see cref="IChatMessageSetReactionRequestBuilder"/>.</returns>
+        IChatMessageSetReactionRequestBuilder SetReaction(
+            string reactionType);
+        /// <summary>
+        /// Gets the request builder for ChatMessageSoftDeleteRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageSoftDeleteRequestBuilder"/>.</returns>
+        IChatMessageSoftDeleteRequestBuilder SoftDelete();
+        /// <summary>
+        /// Gets the request builder for ChatMessageUndoSoftDeleteRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageUndoSoftDeleteRequestBuilder"/>.</returns>
+        IChatMessageUndoSoftDeleteRequestBuilder UndoSoftDelete();
+        /// <summary>
+        /// Gets the request builder for ChatMessageUnsetReactionRequestBuilder.
+        /// </summary>
+        /// <param name="reactionType">A reactionType parameter for the OData method call.</param>
+        /// <returns>The <see cref="IChatMessageUnsetReactionRequestBuilder"/>.</returns>
+        IChatMessageUnsetReactionRequestBuilder UnsetReaction(
+            string reactionType);
+        /// <summary>
+        /// Gets the request builder for HostedContents.
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageHostedContentRequestBuilder"/>.</returns>
+        IChatMessageHostedContentRequestBuilder HostedContents  { get; }
+        /// <summary>
+        /// Gets the request builder for Replies.
+        /// Replies for a specified message. Supports $expand for channel messages.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageRequestBuilder"/>.</returns>
+        IChatMessageRequestBuilder Replies  { get; }
     }
 }

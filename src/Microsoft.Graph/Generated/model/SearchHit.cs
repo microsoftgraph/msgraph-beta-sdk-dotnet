@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentSource.
-        /// The name of the content source which the externalItem is part of .
+        /// The name of the content source that the externalItem is part of.
         /// </summary>
         [JsonPropertyName("contentSource")]
         public string ContentSource { get; set; }
@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isCollapsed.
+        /// Indicates whether the current result is collapses when the collapseProperties property is used.
         /// </summary>
         [JsonPropertyName("isCollapsed")]
         public bool? IsCollapsed { get; set; }

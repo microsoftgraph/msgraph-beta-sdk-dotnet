@@ -22,30 +22,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed headers.
+        /// The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.
         /// </summary>
         [JsonPropertyName("allowedHeaders")]
         public IEnumerable<string> AllowedHeaders { get; set; }
     
         /// <summary>
         /// Gets or sets allowed methods.
+        /// The HTTP request methods that the origin domain may use for a CORS request.
         /// </summary>
         [JsonPropertyName("allowedMethods")]
         public IEnumerable<string> AllowedMethods { get; set; }
     
         /// <summary>
         /// Gets or sets allowed origins.
+        /// The origin domains that are permitted to make a request against the service via CORS. The origin domain is the domain from which the request originates. The origin must be an exact case-sensitive match with the origin that the user agent sends to the service.
         /// </summary>
         [JsonPropertyName("allowedOrigins")]
         public IEnumerable<string> AllowedOrigins { get; set; }
     
         /// <summary>
         /// Gets or sets max age in seconds.
+        /// The maximum amount of time that a browser should cache the response to the preflight OPTIONS request.
         /// </summary>
         [JsonPropertyName("maxAgeInSeconds")]
         public Int32? MaxAgeInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
+        /// Resource within the application segment for which CORS permissions are granted. / grants permission for the whole app segment.
         /// </summary>
         [JsonPropertyName("resource")]
         public string Resource { get; set; }

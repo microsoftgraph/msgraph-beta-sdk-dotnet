@@ -226,8 +226,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Drives.
         /// </summary>
-        /// <returns>The <see cref="IUserDrivesCollectionRequestBuilder"/>.</returns>
-        IUserDrivesCollectionRequestBuilder Drives { get; }
+        /// <returns>The <see cref="IUserDrivesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserDrivesCollectionWithReferencesRequestBuilder Drives { get; }
 
         /// <summary>
         /// Gets the request builder for FollowedSites.

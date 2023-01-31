@@ -99,7 +99,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed by.
-        /// Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, rpaBox, unknownFutureValue. Read-only.
+        /// Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue, rpaBox. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: rpaBox. Read-only.
         /// </summary>
         [JsonPropertyName("managedBy")]
         public CloudPcManagementService? ManagedBy { get; set; }

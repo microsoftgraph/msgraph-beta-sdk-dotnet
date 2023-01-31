@@ -294,6 +294,34 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetFormsUserActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetFormsUserActivityCountsRequestBuilder"/>.</returns>
+        IReportRootGetFormsUserActivityCountsRequestBuilder GetFormsUserActivityCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetFormsUserActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetFormsUserActivityUserCountsRequestBuilder"/>.</returns>
+        IReportRootGetFormsUserActivityUserCountsRequestBuilder GetFormsUserActivityUserCounts(
+            string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetFormsUserActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetFormsUserActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetFormsUserActivityUserDetailRequestBuilder GetFormsUserActivityUserDetail(
+            Date date);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetFormsUserActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetFormsUserActivityUserDetailRequestBuilder"/>.</returns>
+        IReportRootGetFormsUserActivityUserDetailRequestBuilder GetFormsUserActivityUserDetail(
+            string period);
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetM365AppPlatformUserCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetM365AppPlatformUserCountsRequestBuilder"/>.</returns>

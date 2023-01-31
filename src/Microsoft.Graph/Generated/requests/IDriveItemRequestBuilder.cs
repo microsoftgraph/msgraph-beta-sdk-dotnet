@@ -46,8 +46,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Analytics.
         /// </summary>
-        /// <returns>The <see cref="IItemAnalyticsWithReferenceRequestBuilder"/>.</returns>
-        IItemAnalyticsWithReferenceRequestBuilder Analytics { get; }
+        /// <returns>The <see cref="IItemAnalyticsRequestBuilder"/>.</returns>
+        IItemAnalyticsRequestBuilder Analytics { get; }
 
         /// <summary>
         /// Gets the request builder for Children.
@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for ListItem.
         /// </summary>
-        /// <returns>The <see cref="IListItemRequestBuilder"/>.</returns>
-        IListItemRequestBuilder ListItem { get; }
+        /// <returns>The <see cref="IListItemWithReferenceRequestBuilder"/>.</returns>
+        IListItemWithReferenceRequestBuilder ListItem { get; }
 
         /// <summary>
         /// Gets the request builder for Permissions.

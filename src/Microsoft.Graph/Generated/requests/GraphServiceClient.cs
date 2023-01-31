@@ -1152,17 +1152,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceDrive request builder.
-        /// </summary>
-        public virtual IDriveRequestBuilder Drive
-        {
-            get
-            {
-                return new DriveRequestBuilder(this.BaseUrl + "/drive", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceTermStore request builder.
         /// </summary>
         public virtual Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore
