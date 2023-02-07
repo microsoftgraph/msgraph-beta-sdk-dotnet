@@ -66,7 +66,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// </summary>
         /// <returns>The <see cref="IWorkflowActivateRequestBuilder"/>.</returns>
         IWorkflowActivateRequestBuilder Activate(
-            IEnumerable<User> subjects = null);
+            IEnumerable<Microsoft.Graph.User> subjects = null);
 
         /// <summary>
         /// Gets the request builder for WorkflowCreateNewVersion.

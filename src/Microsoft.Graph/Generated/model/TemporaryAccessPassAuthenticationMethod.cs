@@ -36,13 +36,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets is usable.
-        /// The state of the authentication method that indicates whether it's currently usable by the user.
-        /// </summary>
-        [JsonPropertyName("isUsable")]
-        public bool? IsUsable { get; set; }
-    
-        /// <summary>
         /// Gets or sets is usable once.
         /// Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.
         /// </summary>
@@ -55,13 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("lifetimeInMinutes")]
         public Int32? LifetimeInMinutes { get; set; }
-    
-        /// <summary>
-        /// Gets or sets method usability reason.
-        /// Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.
-        /// </summary>
-        [JsonPropertyName("methodUsabilityReason")]
-        public string MethodUsabilityReason { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.

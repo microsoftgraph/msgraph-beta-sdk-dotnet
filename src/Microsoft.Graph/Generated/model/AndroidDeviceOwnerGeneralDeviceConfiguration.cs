@@ -499,6 +499,20 @@ namespace Microsoft.Graph
         public bool? KioskModeWiFiConfigurationEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets locate device lost mode enabled.
+        /// Indicates whether or not LocateDevice for devices with lost mode (COBO, COPE) is enabled.
+        /// </summary>
+        [JsonPropertyName("locateDeviceLostModeEnabled")]
+        public bool? LocateDeviceLostModeEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets locate device userless disabled.
+        /// Indicates whether or not LocateDevice for userless (COSU) devices is disabled.
+        /// </summary>
+        [JsonPropertyName("locateDeviceUserlessDisabled")]
+        public bool? LocateDeviceUserlessDisabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets microphone force mute.
         /// Indicates whether or not to block unmuting the microphone on the device.
         /// </summary>

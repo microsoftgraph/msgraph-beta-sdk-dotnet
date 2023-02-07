@@ -94,5 +94,15 @@ namespace Microsoft.Graph
         /// </summary>
         SurfaceHub = 14,
 	
+        /// <summary>
+        /// Bash Script
+        /// </summary>
+        BashScript = 19,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 20,
+	
     }
 }

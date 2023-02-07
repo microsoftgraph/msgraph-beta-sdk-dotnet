@@ -34,5 +34,20 @@ namespace Microsoft.Graph
         /// </summary>
         User = 2,
 	
+        /// <summary>
+        /// Account Driven User Enrollment
+        /// </summary>
+        AccountDrivenUserEnrollment = 3,
+	
+        /// <summary>
+        /// Web Device Enrollment
+        /// </summary>
+        WebDeviceEnrollment = 4,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 5,
+	
     }
 }

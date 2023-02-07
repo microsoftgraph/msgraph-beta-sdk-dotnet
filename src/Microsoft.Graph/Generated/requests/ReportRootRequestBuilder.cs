@@ -550,6 +550,58 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetFormsUserActivityCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetFormsUserActivityCountsRequestBuilder"/>.</returns>
+        public IReportRootGetFormsUserActivityCountsRequestBuilder GetFormsUserActivityCounts(
+            string period)
+        {
+            return new ReportRootGetFormsUserActivityCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getFormsUserActivityCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetFormsUserActivityUserCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetFormsUserActivityUserCountsRequestBuilder"/>.</returns>
+        public IReportRootGetFormsUserActivityUserCountsRequestBuilder GetFormsUserActivityUserCounts(
+            string period)
+        {
+            return new ReportRootGetFormsUserActivityUserCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getFormsUserActivityUserCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetFormsUserActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetFormsUserActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetFormsUserActivityUserDetailRequestBuilder GetFormsUserActivityUserDetail(
+            Date date)
+        {
+            return new ReportRootGetFormsUserActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getFormsUserActivityUserDetail"),
+                this.Client,
+                date);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetFormsUserActivityUserDetail.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetFormsUserActivityUserDetailRequestBuilder"/>.</returns>
+        public IReportRootGetFormsUserActivityUserDetailRequestBuilder GetFormsUserActivityUserDetail(
+            string period)
+        {
+            return new ReportRootGetFormsUserActivityUserDetailRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getFormsUserActivityUserDetail"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetM365AppPlatformUserCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetM365AppPlatformUserCountsRequestBuilder"/>.</returns>

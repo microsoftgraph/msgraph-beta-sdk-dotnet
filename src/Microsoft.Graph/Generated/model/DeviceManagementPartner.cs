@@ -71,25 +71,11 @@ namespace Microsoft.Graph
         public string SingleTenantAppId { get; set; }
     
         /// <summary>
-        /// Gets or sets when partner devices will be marked as non compliant.
-        /// DateTime in UTC when PartnerDevices will be marked as NonCompliant. This will become obselete soon.
-        /// </summary>
-        [JsonPropertyName("whenPartnerDevicesWillBeMarkedAsNonCompliant")]
-        public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliant { get; set; }
-    
-        /// <summary>
         /// Gets or sets when partner devices will be marked as non compliant date time.
         /// DateTime in UTC when PartnerDevices will be marked as NonCompliant
         /// </summary>
         [JsonPropertyName("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime")]
         public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime { get; set; }
-    
-        /// <summary>
-        /// Gets or sets when partner devices will be removed.
-        /// DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.
-        /// </summary>
-        [JsonPropertyName("whenPartnerDevicesWillBeRemoved")]
-        public DateTimeOffset? WhenPartnerDevicesWillBeRemoved { get; set; }
     
         /// <summary>
         /// Gets or sets when partner devices will be removed date time.

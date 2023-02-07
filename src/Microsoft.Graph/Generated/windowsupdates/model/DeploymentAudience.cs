@@ -21,6 +21,13 @@ namespace Microsoft.Graph.WindowsUpdates
     {
     
         /// <summary>
+        /// Gets or sets applicable content.
+        /// Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+        /// </summary>
+        [JsonPropertyName("applicableContent")]
+        public IEnumerable<ApplicableContent> ApplicableContent { get; set; }
+    
+        /// <summary>
         /// Gets or sets exclusions.
         /// Specifies the assets to exclude from the audience.
         /// </summary>

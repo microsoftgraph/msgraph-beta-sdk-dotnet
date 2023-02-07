@@ -58,8 +58,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Windows.
         /// </summary>
-        /// <returns>The <see cref="Microsoft.Graph.WindowsUpdates.IWindowsRequestBuilder"/>.</returns>
-        Microsoft.Graph.WindowsUpdates.IWindowsRequestBuilder Windows { get; }
+        /// <returns>The <see cref="IAdminWindowsRequestBuilder"/>.</returns>
+        IAdminWindowsRequestBuilder Windows { get; }
     
     }
 }

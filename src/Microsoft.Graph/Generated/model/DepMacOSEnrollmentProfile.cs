@@ -85,46 +85,11 @@ namespace Microsoft.Graph
         public bool? ICloudStorageDisabled { get; set; }
     
         /// <summary>
-        /// Gets or sets is local primary account.
-        /// Indicates whether the profile is a local account
-        /// </summary>
-        [JsonPropertyName("isLocalPrimaryAccount")]
-        public bool? IsLocalPrimaryAccount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is primary user.
-        /// Indicates whether the profile is a primary user
-        /// </summary>
-        [JsonPropertyName("isPrimaryUser")]
-        public bool? IsPrimaryUser { get; set; }
-    
-        /// <summary>
-        /// Gets or sets lock primary account info.
-        /// Indicates whether the primary account information will be locked
-        /// </summary>
-        [JsonPropertyName("lockPrimaryAccountInfo")]
-        public bool? LockPrimaryAccountInfo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets managed local user short name.
-        /// Indicates whether or not this is the short name of the local account to manage
-        /// </summary>
-        [JsonPropertyName("managedLocalUserShortName")]
-        public bool? ManagedLocalUserShortName { get; set; }
-    
-        /// <summary>
         /// Gets or sets pass code disabled.
         /// Indicates if Passcode setup pane is disabled
         /// </summary>
         [JsonPropertyName("passCodeDisabled")]
         public bool? PassCodeDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets prefill account info.
-        /// Indicates whether the user will prefill their account info
-        /// </summary>
-        [JsonPropertyName("prefillAccountInfo")]
-        public bool? PrefillAccountInfo { get; set; }
     
         /// <summary>
         /// Gets or sets primary account full name.
@@ -141,32 +106,11 @@ namespace Microsoft.Graph
         public string PrimaryAccountUserName { get; set; }
     
         /// <summary>
-        /// Gets or sets primary user.
-        /// Indicates who the primary user of the profile is
-        /// </summary>
-        [JsonPropertyName("primaryUser")]
-        public string PrimaryUser { get; set; }
-    
-        /// <summary>
-        /// Gets or sets primary user full name.
-        /// Indicates who the primary user of the profile is
-        /// </summary>
-        [JsonPropertyName("primaryUserFullName")]
-        public string PrimaryUserFullName { get; set; }
-    
-        /// <summary>
         /// Gets or sets registration disabled.
         /// Indicates if registration is disabled
         /// </summary>
         [JsonPropertyName("registrationDisabled")]
         public bool? RegistrationDisabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets request requires network tether.
-        /// Indicates if the device is network-tethered to run the command
-        /// </summary>
-        [JsonPropertyName("requestRequiresNetworkTether")]
-        public bool? RequestRequiresNetworkTether { get; set; }
     
         /// <summary>
         /// Gets or sets set primary setup account as regular user.

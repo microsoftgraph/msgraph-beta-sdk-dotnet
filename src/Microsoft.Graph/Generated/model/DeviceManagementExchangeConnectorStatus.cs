@@ -39,5 +39,10 @@ namespace Microsoft.Graph
         /// </summary>
         Disconnected = 3,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
+	
     }
 }

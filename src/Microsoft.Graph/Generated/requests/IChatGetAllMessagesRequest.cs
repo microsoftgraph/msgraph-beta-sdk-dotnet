@@ -37,6 +37,41 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<ChatGetAllMessagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 
+        /// <summary>
+        /// Issues the PATCH request.
+        /// </summary>
+        /// <param name="chatmessage">The ChatMessage object set with the properties to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await for async call.</returns>
+        System.Threading.Tasks.Task<IChatGetAllMessagesCollectionPage> PatchAsync(ChatMessage chatmessage,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="chatmessage">The ChatMessage object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        System.Threading.Tasks.Task<GraphResponse<ChatGetAllMessagesCollectionResponse>> PatchResponseAsync(ChatMessage chatmessage, CancellationToken cancellationToken = default);
+
+
+        /// <summary>
+        /// Issues the PUT request.
+        /// </summary>
+        /// <param name="chatmessage">The ChatMessage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await for async call.</returns>
+        System.Threading.Tasks.Task<IChatGetAllMessagesCollectionPage> PutAsync(ChatMessage chatmessage,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="chatmessage">The ChatMessage object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        System.Threading.Tasks.Task<GraphResponse<ChatGetAllMessagesCollectionResponse>> PutResponseAsync(ChatMessage chatmessage, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Adds the specified expand value to the request.

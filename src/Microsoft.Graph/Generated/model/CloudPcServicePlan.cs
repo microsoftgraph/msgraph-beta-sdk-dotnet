@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public Int32? StorageInGB { get; set; }
     
         /// <summary>
+        /// Gets or sets supported solution.
+        /// </summary>
+        [JsonPropertyName("supportedSolution")]
+        public CloudPcManagementService? SupportedSolution { get; set; }
+    
+        /// <summary>
         /// Gets or sets type.
         /// The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
         /// </summary>

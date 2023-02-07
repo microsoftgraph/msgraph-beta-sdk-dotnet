@@ -71,6 +71,12 @@ namespace Microsoft.Graph
         public string Owner { get; set; }
     
         /// <summary>
+        /// Gets or sets shared with containers.
+        /// </summary>
+        [JsonPropertyName("sharedWithContainers")]
+        public IEnumerable<PlannerSharedWithContainer> SharedWithContainers { get; set; }
+    
+        /// <summary>
         /// Gets or sets title.
         /// Required. Title of the plan.
         /// </summary>

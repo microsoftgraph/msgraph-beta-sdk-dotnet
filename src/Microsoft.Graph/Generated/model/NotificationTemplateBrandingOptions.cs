@@ -50,5 +50,10 @@ namespace Microsoft.Graph
         /// </summary>
         IncludeDeviceDetails = 16,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 32,
+	
     }
 }

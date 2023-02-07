@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public IEnumerable<AuthenticationMethodModes> AuthenticationCombinations { get; set; }
     
         /// <summary>
+        /// Gets or sets combinations.
+        /// </summary>
+        [JsonPropertyName("combinations")]
+        public IEnumerable<AuthenticationMethodModes> Combinations { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication method modes.
         /// Names and descriptions of all valid authentication method modes in the system.
         /// </summary>

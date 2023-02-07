@@ -101,12 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Windows.
         /// </summary>
-        /// <returns>The <see cref="Microsoft.Graph.WindowsUpdates.IWindowsRequestBuilder"/>.</returns>
-        public Microsoft.Graph.WindowsUpdates.IWindowsRequestBuilder Windows
+        /// <returns>The <see cref="IAdminWindowsRequestBuilder"/>.</returns>
+        public IAdminWindowsRequestBuilder Windows
         {
             get
             {
-                return new Microsoft.Graph.WindowsUpdates.WindowsRequestBuilder(this.AppendSegmentToRequestUrl("windows"), this.Client);
+                return new AdminWindowsRequestBuilder(this.AppendSegmentToRequestUrl("windows"), this.Client);
             }
         }
     

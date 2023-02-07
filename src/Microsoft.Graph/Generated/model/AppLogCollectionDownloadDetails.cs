@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appLogDecryptionAlgorithm.
-        /// DecryptionAlgorithm for Content. Possible values are: aes256.
+        /// Decryption algorithm for Content. Default is ASE256. Possible values are: aes256, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("appLogDecryptionAlgorithm")]
         public AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets decryptionKey.
-        /// DecryptionKey as string
+        /// Decryption key that used to decrypt the log.
         /// </summary>
         [JsonPropertyName("decryptionKey")]
         public string DecryptionKey { get; set; }
     
         /// <summary>
         /// Gets or sets downloadUrl.
-        /// Download SAS Url for completed AppLogUploadRequest
+        /// Download SAS (Shared Access Signature) Url for completed app log request.
         /// </summary>
         [JsonPropertyName("downloadUrl")]
         public string DownloadUrl { get; set; }

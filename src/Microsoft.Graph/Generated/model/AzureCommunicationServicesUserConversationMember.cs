@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets azure communication services id.
+        /// Azure Communication Services ID of the user.
         /// </summary>
         [JsonPropertyName("azureCommunicationServicesId")]
         public string AzureCommunicationServicesId { get; set; }

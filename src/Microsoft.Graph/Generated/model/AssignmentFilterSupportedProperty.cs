@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supportedValues.
-        /// List of all supported values for this propery, empty if everything is supported.
+        /// List of all supported values for this property, empty if everything is supported.
         /// </summary>
         [JsonPropertyName("supportedValues")]
         public IEnumerable<string> SupportedValues { get; set; }

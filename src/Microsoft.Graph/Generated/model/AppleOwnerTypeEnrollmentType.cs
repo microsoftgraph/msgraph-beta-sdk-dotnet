@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets enrollmentType.
-        /// The enrollment type. Possible values are: unknown, device, user.
+        /// The enrollment type. Possible values are: unknown, device, user, accountDrivenUserEnrollment, webDeviceEnrollment, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("enrollmentType")]
         public AppleUserInitiatedEnrollmentType? EnrollmentType { get; set; }

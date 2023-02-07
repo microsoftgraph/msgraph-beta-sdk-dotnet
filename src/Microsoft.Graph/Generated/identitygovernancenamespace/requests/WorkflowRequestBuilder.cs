@@ -115,7 +115,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// </summary>
         /// <returns>The <see cref="IWorkflowActivateRequestBuilder"/>.</returns>
         public IWorkflowActivateRequestBuilder Activate(
-            IEnumerable<User> subjects = null)
+            IEnumerable<Microsoft.Graph.User> subjects = null)
         {
             return new WorkflowActivateRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.identityGovernance.activate"),

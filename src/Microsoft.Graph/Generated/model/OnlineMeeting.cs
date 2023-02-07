@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
     
         /// <summary>
+        /// Gets or sets allow participants to change name.
+        /// </summary>
+        [JsonPropertyName("allowParticipantsToChangeName")]
+        public bool? AllowParticipantsToChangeName { get; set; }
+    
+        /// <summary>
         /// Gets or sets allow teamwork reactions.
         /// Indicates if Teams reactions are enabled for the meeting.
         /// </summary>
@@ -185,6 +191,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("recording")]
         public Stream Recording { get; set; }
+    
+        /// <summary>
+        /// Gets or sets share meeting chat history default.
+        /// </summary>
+        [JsonPropertyName("shareMeetingChatHistoryDefault")]
+        public MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.

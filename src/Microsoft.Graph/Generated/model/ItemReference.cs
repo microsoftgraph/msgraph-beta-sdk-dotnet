@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets driveId.
-        /// Unique identifier of the drive instance that contains the item. Read-only.
+        /// Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
         /// </summary>
         [JsonPropertyName("driveId")]
         public string DriveId { get; set; }
     
         /// <summary>
         /// Gets or sets driveType.
-        /// Identifies the type of drive. See [drive][] resource for values.
+        /// Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.
         /// </summary>
         [JsonPropertyName("driveType")]
         public string DriveType { get; set; }
     
         /// <summary>
         /// Gets or sets id.
-        /// Unique identifier of the item in the drive. Read-only.
+        /// Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets siteId.
-        /// For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+        /// For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
         /// </summary>
         [JsonPropertyName("siteId")]
         public string SiteId { get; set; }

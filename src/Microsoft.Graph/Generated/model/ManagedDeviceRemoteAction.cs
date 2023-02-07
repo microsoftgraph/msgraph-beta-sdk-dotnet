@@ -104,5 +104,10 @@ namespace Microsoft.Graph
         /// </summary>
         InitiateMobileDeviceManagementKeyRecovery = 16,
 	
+        /// <summary>
+        /// Initiate On Demand Proactive Remediation
+        /// </summary>
+        InitiateOnDemandProactiveRemediation = 17,
+	
     }
 }

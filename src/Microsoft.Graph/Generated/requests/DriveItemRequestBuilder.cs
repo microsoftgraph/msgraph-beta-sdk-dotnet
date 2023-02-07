@@ -77,12 +77,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Analytics.
         /// </summary>
-        /// <returns>The <see cref="IItemAnalyticsWithReferenceRequestBuilder"/>.</returns>
-        public IItemAnalyticsWithReferenceRequestBuilder Analytics
+        /// <returns>The <see cref="IItemAnalyticsRequestBuilder"/>.</returns>
+        public IItemAnalyticsRequestBuilder Analytics
         {
             get
             {
-                return new ItemAnalyticsWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("analytics"), this.Client);
+                return new ItemAnalyticsRequestBuilder(this.AppendSegmentToRequestUrl("analytics"), this.Client);
             }
         }
 

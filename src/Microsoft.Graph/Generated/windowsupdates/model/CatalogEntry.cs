@@ -31,7 +31,7 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets deployable until date time.
-        /// The date on which the content is no longer available to deploy using the service. Read-only.
+        /// The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("deployableUntilDateTime")]
         public DateTimeOffset? DeployableUntilDateTime { get; set; }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets release date time.
-        /// The release date for the content. Read-only.
+        /// The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("releaseDateTime")]
         public DateTimeOffset? ReleaseDateTime { get; set; }

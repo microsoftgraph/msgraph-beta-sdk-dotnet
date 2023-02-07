@@ -294,6 +294,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.TermsAndConditions.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.ServiceNowConnections != null && deviceManagementToInitialize.ServiceNowConnections.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ServiceNowConnections.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ServiceNowConnectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.ServiceNowConnections.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.CartToClassAssociations != null && deviceManagementToInitialize.CartToClassAssociations.CurrentPage != null)
                 {
                     deviceManagementToInitialize.CartToClassAssociations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.CartToClassAssociationsNextLink);
@@ -732,11 +738,11 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDevicesWithoutCloudIdentity.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
-                if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvents != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvents.CurrentPage != null)
+                if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvent != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvent.CurrentPage != null)
                 {
-                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEventsNextLink);
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvent.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEventNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
-                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvent.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess != null && deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.CurrentPage != null)
                 {

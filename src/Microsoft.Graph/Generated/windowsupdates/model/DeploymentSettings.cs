@@ -22,25 +22,39 @@ namespace Microsoft.Graph.WindowsUpdates
     {
 
         /// <summary>
+        /// Gets or sets contentApplicability.
+        /// Settings for governing whether content is applicable to a device.
+        /// </summary>
+        [JsonPropertyName("contentApplicability")]
+        public ContentApplicabilitySettings ContentApplicability { get; set; }
+    
+        /// <summary>
+        /// Gets or sets expedite.
+        /// Settings for governing whether updates should be expedited.
+        /// </summary>
+        [JsonPropertyName("expedite")]
+        public ExpediteSettings Expedite { get; set; }
+    
+        /// <summary>
         /// Gets or sets monitoring.
-        /// Settings governing conditions to monitor and automated actions to take.
+        /// Settings for governing conditions to monitor and automated actions to take.
         /// </summary>
         [JsonPropertyName("monitoring")]
         public MonitoringSettings Monitoring { get; set; }
     
         /// <summary>
-        /// Gets or sets rollout.
-        /// Settings governing how the content is rolled out.
+        /// Gets or sets schedule.
+        /// Settings for governing how and when the content is rolled out.
         /// </summary>
-        [JsonPropertyName("rollout")]
-        public RolloutSettings Rollout { get; set; }
+        [JsonPropertyName("schedule")]
+        public ScheduleSettings Schedule { get; set; }
     
         /// <summary>
-        /// Gets or sets safeguard.
-        /// Settings governing safeguard holds on offering content.
+        /// Gets or sets userExperience.
+        /// Settings for governing end user update experience.
         /// </summary>
-        [JsonPropertyName("safeguard")]
-        public SafeguardSettings Safeguard { get; set; }
+        [JsonPropertyName("userExperience")]
+        public UserExperienceSettings UserExperience { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

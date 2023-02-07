@@ -30,24 +30,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets alternate url.
+        /// If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
         /// </summary>
         [JsonPropertyName("alternateUrl")]
         public string AlternateUrl { get; set; }
     
         /// <summary>
         /// Gets or sets external url.
+        /// The published external URL for the application segment; for example, https://intranet.contoso.com/.
         /// </summary>
         [JsonPropertyName("externalUrl")]
         public string ExternalUrl { get; set; }
     
         /// <summary>
         /// Gets or sets internal url.
+        /// The internal URL of the application segment; for example, https://intranet/.
         /// </summary>
         [JsonPropertyName("internalUrl")]
         public string InternalUrl { get; set; }
     
         /// <summary>
         /// Gets or sets cors configurations.
+        /// A collection of CORS Rule definitions for a particular application segment.
         /// </summary>
         [JsonPropertyName("corsConfigurations")]
         public IWebApplicationSegmentCorsConfigurationsCollectionPage CorsConfigurations { get; set; }
