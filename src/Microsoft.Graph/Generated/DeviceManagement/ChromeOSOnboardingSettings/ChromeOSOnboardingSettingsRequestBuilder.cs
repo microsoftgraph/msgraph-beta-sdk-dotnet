@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Connect;
 using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Count;
-using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Disconnect;
 using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Item;
+using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.MicrosoftGraphConnect;
+using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.MicrosoftGraphDisconnect;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
     /// Provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class ChromeOSOnboardingSettingsRequestBuilder {
-        /// <summary>Provides operations to call the connect method.</summary>
-        public ConnectRequestBuilder Connect { get =>
-            new ConnectRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the connect method.</summary>
+        public MicrosoftGraphConnectRequestBuilder MicrosoftGraphConnect { get =>
+            new MicrosoftGraphConnectRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the disconnect method.</summary>
-        public DisconnectRequestBuilder Disconnect { get =>
-            new DisconnectRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDisconnectRequestBuilder MicrosoftGraphDisconnect { get =>
+            new MicrosoftGraphDisconnectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
         /// <summary>Provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
         public ChromeOSOnboardingSettingsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("chromeOSOnboardingSettings%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("chromeOSOnboardingSettings%2Did", position);
             return new ChromeOSOnboardingSettingsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/chromeOSOnboardingSettings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Me.Outlook.MasterCategories;
-using Microsoft.Graph.Beta.Me.Outlook.SupportedLanguages;
-using Microsoft.Graph.Beta.Me.Outlook.SupportedTimeZones;
-using Microsoft.Graph.Beta.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard;
+using Microsoft.Graph.Beta.Me.Outlook.MicrosoftGraphSupportedLanguages;
+using Microsoft.Graph.Beta.Me.Outlook.MicrosoftGraphSupportedTimeZones;
+using Microsoft.Graph.Beta.Me.Outlook.MicrosoftGraphSupportedTimeZonesWithTimeZoneStandard;
 using Microsoft.Graph.Beta.Me.Outlook.TaskFolders;
 using Microsoft.Graph.Beta.Me.Outlook.TaskGroups;
 using Microsoft.Graph.Beta.Me.Outlook.Tasks;
@@ -23,6 +23,14 @@ namespace Microsoft.Graph.Beta.Me.Outlook {
         /// <summary>Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.</summary>
         public MasterCategoriesRequestBuilder MasterCategories { get =>
             new MasterCategoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the supportedLanguages method.</summary>
+        public MicrosoftGraphSupportedLanguagesRequestBuilder MicrosoftGraphSupportedLanguages { get =>
+            new MicrosoftGraphSupportedLanguagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the supportedTimeZones method.</summary>
+        public MicrosoftGraphSupportedTimeZonesRequestBuilder MicrosoftGraphSupportedTimeZones { get =>
+            new MicrosoftGraphSupportedTimeZonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -65,7 +73,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/outlook{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -89,24 +97,12 @@ namespace Microsoft.Graph.Beta.Me.Outlook {
             return await RequestAdapter.SendAsync<OutlookUser>(requestInfo, OutlookUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Provides operations to call the supportedLanguages method.
-        /// </summary>
-        public SupportedLanguagesRequestBuilder SupportedLanguages() {
-            return new SupportedLanguagesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the supportedTimeZones method.
-        /// </summary>
-        public SupportedTimeZonesRequestBuilder SupportedTimeZones() {
-            return new SupportedTimeZonesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
         /// Provides operations to call the supportedTimeZones method.
         /// </summary>
         /// <param name="timeZoneStandard">Usage: TimeZoneStandard=&apos;{TimeZoneStandard}&apos;</param>
-        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder SupportedTimeZonesWithTimeZoneStandard(string timeZoneStandard) {
+        public MicrosoftGraphSupportedTimeZonesWithTimeZoneStandardRequestBuilder MicrosoftGraphSupportedTimeZonesWithTimeZoneStandard(string timeZoneStandard) {
             if(string.IsNullOrEmpty(timeZoneStandard)) throw new ArgumentNullException(nameof(timeZoneStandard));
-            return new SupportedTimeZonesWithTimeZoneStandardRequestBuilder(PathParameters, RequestAdapter, timeZoneStandard);
+            return new MicrosoftGraphSupportedTimeZonesWithTimeZoneStandardRequestBuilder(PathParameters, RequestAdapter, timeZoneStandard);
         }
         /// <summary>
         /// Selective Outlook services available to the user. Read-only. Nullable.

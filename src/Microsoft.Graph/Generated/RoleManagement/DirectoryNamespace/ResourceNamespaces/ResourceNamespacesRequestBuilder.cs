@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespa
         /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.</summary>
         public UnifiedRbacResourceNamespaceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("unifiedRbacResourceNamespace%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("unifiedRbacResourceNamespace%2Did", position);
             return new UnifiedRbacResourceNamespaceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespa
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/roleManagement/directory/resourceNamespaces{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

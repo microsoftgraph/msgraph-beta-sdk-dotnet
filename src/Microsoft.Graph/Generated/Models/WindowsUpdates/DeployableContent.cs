@@ -42,11 +42,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.windowsUpdates.expeditedQualityUpdateReference" => new ExpeditedQualityUpdateReference(),
-                "#microsoft.graph.windowsUpdates.featureUpdateReference" => new FeatureUpdateReference(),
-                "#microsoft.graph.windowsUpdates.qualityUpdateReference" => new QualityUpdateReference(),
-                "#microsoft.graph.windowsUpdates.softwareUpdateReference" => new SoftwareUpdateReference(),
-                "#microsoft.graph.windowsUpdates.windowsUpdateReference" => new WindowsUpdateReference(),
+                "#microsoft.graph.windowsUpdates.catalogContent" => new CatalogContent(),
                 _ => new DeployableContent(),
             };
         }

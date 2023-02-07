@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/governanceRoleDefinitions/{governanceRoleDefinition%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from governanceRoleDefinitions by key (id)
+        /// Delete entity from governanceRoleDefinitions
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from governanceRoleDefinitions by key (id)
+        /// Get entity from governanceRoleDefinitions by key
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             return await RequestAdapter.SendAsync<GovernanceRoleDefinition>(requestInfo, GovernanceRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in governanceRoleDefinitions by key (id)
+        /// Update entity in governanceRoleDefinitions
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             return await RequestAdapter.SendAsync<GovernanceRoleDefinition>(requestInfo, GovernanceRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from governanceRoleDefinitions by key (id)
+        /// Delete entity from governanceRoleDefinitions
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from governanceRoleDefinitions by key (id)
+        /// Get entity from governanceRoleDefinitions by key
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in governanceRoleDefinitions by key (id)
+        /// Update entity in governanceRoleDefinitions
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             }
         }
         /// <summary>
-        /// Get entity from governanceRoleDefinitions by key (id)
+        /// Get entity from governanceRoleDefinitions by key
         /// </summary>
         public class GovernanceRoleDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

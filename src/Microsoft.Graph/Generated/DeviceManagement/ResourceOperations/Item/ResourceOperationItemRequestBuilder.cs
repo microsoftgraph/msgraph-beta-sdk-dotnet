@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid;
+using Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.MicrosoftGraphGetScopesForUserWithUserid;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
         /// Provides operations to call the getScopesForUser method.
         /// </summary>
         /// <param name="userid">Usage: userid=&apos;{userid}&apos;</param>
-        public GetScopesForUserWithUseridRequestBuilder GetScopesForUserWithUserid(string userid) {
+        public MicrosoftGraphGetScopesForUserWithUseridRequestBuilder MicrosoftGraphGetScopesForUserWithUserid(string userid) {
             if(string.IsNullOrEmpty(userid)) throw new ArgumentNullException(nameof(userid));
-            return new GetScopesForUserWithUseridRequestBuilder(PathParameters, RequestAdapter, userid);
+            return new MicrosoftGraphGetScopesForUserWithUseridRequestBuilder(PathParameters, RequestAdapter, userid);
         }
         /// <summary>
         /// Update the navigation property resourceOperations in deviceManagement

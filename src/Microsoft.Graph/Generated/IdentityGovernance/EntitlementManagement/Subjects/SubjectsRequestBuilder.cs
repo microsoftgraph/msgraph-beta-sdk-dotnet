@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
         /// <summary>Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageSubjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("accessPackageSubject%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("accessPackageSubject%2Did", position);
             return new AccessPackageSubjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/subjects{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

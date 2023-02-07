@@ -43,11 +43,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The creationDateTime property</summary>
-        public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
-            set { BackingStore?.Set("creationDateTime", value); }
-        }
         /// <summary>The display name of the key as given by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +94,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"attestationCertificates", n => { AttestationCertificates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"attestationLevel", n => { AttestationLevel = n.GetEnumValue<AttestationLevel>(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"model", n => { Model = n.GetStringValue(); } },
             };
@@ -115,7 +109,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("attestationCertificates", AttestationCertificates);
             writer.WriteEnumValue<AttestationLevel>("attestationLevel", AttestationLevel);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("model", Model);
         }

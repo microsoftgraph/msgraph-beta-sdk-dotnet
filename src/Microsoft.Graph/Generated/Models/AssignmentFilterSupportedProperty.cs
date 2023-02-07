@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("supportedOperators", value); }
         }
 #endif
-        /// <summary>List of all supported values for this propery, empty if everything is supported.</summary>
+        /// <summary>List of all supported values for this property, empty if everything is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SupportedValues {

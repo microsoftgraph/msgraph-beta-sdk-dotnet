@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.DirectoryObjects.Count;
-using Microsoft.Graph.Beta.DirectoryObjects.GetByIds;
-using Microsoft.Graph.Beta.DirectoryObjects.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.DirectoryObjects.Item;
-using Microsoft.Graph.Beta.DirectoryObjects.ValidateProperties;
+using Microsoft.Graph.Beta.DirectoryObjects.MicrosoftGraphGetByIds;
+using Microsoft.Graph.Beta.DirectoryObjects.MicrosoftGraphGetUserOwnedObjects;
+using Microsoft.Graph.Beta.DirectoryObjects.MicrosoftGraphValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -23,12 +23,16 @@ namespace Microsoft.Graph.Beta.DirectoryObjects {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public GetByIdsRequestBuilder GetByIds { get =>
-            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetByIdsRequestBuilder MicrosoftGraphGetByIds { get =>
+            new MicrosoftGraphGetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
-            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetUserOwnedObjectsRequestBuilder MicrosoftGraphGetUserOwnedObjects { get =>
+            new MicrosoftGraphGetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the validateProperties method.</summary>
+        public MicrosoftGraphValidatePropertiesRequestBuilder MicrosoftGraphValidateProperties { get =>
+            new MicrosoftGraphValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -36,14 +40,10 @@ namespace Microsoft.Graph.Beta.DirectoryObjects {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
-            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the collection of directoryObject entities.</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("directoryObject%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("directoryObject%2Did", position);
             return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.DirectoryObjects {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/directoryObjects{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

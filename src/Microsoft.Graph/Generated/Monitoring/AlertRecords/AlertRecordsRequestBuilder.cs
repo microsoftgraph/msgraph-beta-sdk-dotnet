@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Monitoring.AlertRecords.Count;
-using Microsoft.Graph.Beta.Monitoring.AlertRecords.GetPortalNotifications;
 using Microsoft.Graph.Beta.Monitoring.AlertRecords.Item;
+using Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getPortalNotifications method.</summary>
+        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder MicrosoftGraphDeviceManagementGetPortalNotifications { get =>
+            new MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords {
         /// <summary>Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.</summary>
         public AlertRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("alertRecord%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("alertRecord%2Did", position);
             return new AlertRecordItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,7 +59,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/monitoring/alertRecords{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -78,12 +82,6 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AlertRecordCollectionResponse>(requestInfo, AlertRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getPortalNotifications method.
-        /// </summary>
-        public GetPortalNotificationsRequestBuilder GetPortalNotifications() {
-            return new GetPortalNotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create new navigation property to alertRecords for monitoring

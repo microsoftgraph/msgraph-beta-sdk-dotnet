@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Count;
-using Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Delta;
 using Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Item;
+using Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.MicrosoftGraphDelta;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
+            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders {
         /// <summary>Provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.</summary>
         public Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Item.ContactFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("contactFolder%2Did1", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("contactFolder%2Did1", position);
             return new Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders.Item.ContactFolderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,15 +59,9 @@ namespace Microsoft.Graph.Beta.Me.ContactFolders.Item.ChildFolders {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/contactFolders/{contactFolder%2Did}/childFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the delta method.
-        /// </summary>
-        public DeltaRequestBuilder Delta() {
-            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get a collection of child folders under the specified contact folder.

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
         /// <summary>Provides operations to manage the attributeSets property of the microsoft.graph.directory entity.</summary>
         public AttributeSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("attributeSet%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("attributeSet%2Did", position);
             return new AttributeSetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/directory/attributeSets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

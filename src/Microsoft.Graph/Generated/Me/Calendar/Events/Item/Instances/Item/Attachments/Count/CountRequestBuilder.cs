@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.Attachment
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/calendar/events/{event%2Did}/instances/{event%2Did1}/attachments/$count{?%24filter}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Communications.CallRecords;
 using Microsoft.Graph.Beta.Communications.Calls;
-using Microsoft.Graph.Beta.Communications.GetPresencesByUserId;
+using Microsoft.Graph.Beta.Communications.MicrosoftGraphGetPresencesByUserId;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings;
 using Microsoft.Graph.Beta.Communications.Presences;
 using Microsoft.Graph.Beta.Models;
@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.Communications {
             new CallsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPresencesByUserId method.</summary>
-        public GetPresencesByUserIdRequestBuilder GetPresencesByUserId { get =>
-            new GetPresencesByUserIdRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetPresencesByUserIdRequestBuilder MicrosoftGraphGetPresencesByUserId { get =>
+            new MicrosoftGraphGetPresencesByUserIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.</summary>
         public OnlineMeetingsRequestBuilder OnlineMeetings { get =>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Communications {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/communications{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

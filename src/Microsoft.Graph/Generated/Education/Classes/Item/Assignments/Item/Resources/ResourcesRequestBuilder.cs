@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
         /// <summary>Provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.</summary>
         public EducationAssignmentResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("educationAssignmentResource%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("educationAssignmentResource%2Did", position);
             return new EducationAssignmentResourceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

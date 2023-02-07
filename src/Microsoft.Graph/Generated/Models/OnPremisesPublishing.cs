@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Represents the application segment collection for an on-premises wildcard application.</summary>
+        /// <summary>The onPremisesApplicationSegments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OnPremisesApplicationSegment>? OnPremisesApplicationSegments {
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesApplicationSegments", value); }
         }
 #endif
-        /// <summary>The segmentsConfiguration property</summary>
+        /// <summary>Represents the collection of application segments for an on-premises wildcard application that&apos;s published through Azure AD Application Proxy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SegmentConfiguration? SegmentsConfiguration {

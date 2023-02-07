@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Currency;
 using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Customer;
-using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.MakeInvoice;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.MicrosoftGraphMakeInvoice;
+using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.MicrosoftGraphSend;
 using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.PaymentTerm;
 using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.SalesQuoteLines;
-using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Send;
 using Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.ShipmentMethod;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -29,8 +29,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
             new CustomerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the makeInvoice method.</summary>
-        public MakeInvoiceRequestBuilder MakeInvoice { get =>
-            new MakeInvoiceRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphMakeInvoiceRequestBuilder MicrosoftGraphMakeInvoice { get =>
+            new MicrosoftGraphMakeInvoiceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the send method.</summary>
+        public MicrosoftGraphSendRequestBuilder MicrosoftGraphSend { get =>
+            new MicrosoftGraphSendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -43,10 +47,6 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
         /// <summary>Provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.</summary>
         public SalesQuoteLinesRequestBuilder SalesQuoteLines { get =>
             new SalesQuoteLinesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the send method.</summary>
-        public SendRequestBuilder Send { get =>
-            new SendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shipmentMethod property of the microsoft.graph.salesQuote entity.</summary>
         public ShipmentMethodRequestBuilder ShipmentMethod { get =>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

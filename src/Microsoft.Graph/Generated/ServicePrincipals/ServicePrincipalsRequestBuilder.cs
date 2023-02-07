@@ -1,11 +1,11 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.ServicePrincipals.Count;
-using Microsoft.Graph.Beta.ServicePrincipals.Delta;
-using Microsoft.Graph.Beta.ServicePrincipals.GetByIds;
-using Microsoft.Graph.Beta.ServicePrincipals.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item;
-using Microsoft.Graph.Beta.ServicePrincipals.ValidateProperties;
+using Microsoft.Graph.Beta.ServicePrincipals.MicrosoftGraphDelta;
+using Microsoft.Graph.Beta.ServicePrincipals.MicrosoftGraphGetByIds;
+using Microsoft.Graph.Beta.ServicePrincipals.MicrosoftGraphGetUserOwnedObjects;
+using Microsoft.Graph.Beta.ServicePrincipals.MicrosoftGraphValidateProperties;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -23,13 +23,21 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
+            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public GetByIdsRequestBuilder GetByIds { get =>
-            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetByIdsRequestBuilder MicrosoftGraphGetByIds { get =>
+            new MicrosoftGraphGetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
-            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetUserOwnedObjectsRequestBuilder MicrosoftGraphGetUserOwnedObjects { get =>
+            new MicrosoftGraphGetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the validateProperties method.</summary>
+        public MicrosoftGraphValidatePropertiesRequestBuilder MicrosoftGraphValidateProperties { get =>
+            new MicrosoftGraphValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -37,14 +45,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
-            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>
         public ServicePrincipalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("servicePrincipal%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("servicePrincipal%2Did", position);
             return new ServicePrincipalItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -70,15 +74,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/servicePrincipals{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the delta method.
-        /// </summary>
-        public DeltaRequestBuilder Delta() {
-            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of servicePrincipal objects.
@@ -109,10 +107,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal?> PostAsync(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipal?> PostAsync(ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal> PostAsync(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipal> PostAsync(ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServicePrincipal>(requestInfo, Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Retrieve a list of servicePrincipal objects.
@@ -155,10 +153,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ServicePrincipal body, Action<ServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {

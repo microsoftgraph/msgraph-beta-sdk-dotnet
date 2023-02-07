@@ -33,6 +33,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationMethodModes", value); }
         }
 #endif
+        /// <summary>The combinations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>? Combinations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>?>("combinations"); }
+            set { BackingStore?.Set("combinations", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> Combinations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("combinations"); }
+            set { BackingStore?.Set("combinations", value); }
+        }
+#endif
         /// <summary>A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationCombinations", n => { AuthenticationCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>()?.ToList(); } },
                 {"authenticationMethodModes", n => { AuthenticationMethodModes = n.GetCollectionOfObjectValues<AuthenticationMethodModeDetail>(AuthenticationMethodModeDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"combinations", n => { Combinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>()?.ToList(); } },
                 {"policies", n => { Policies = n.GetCollectionOfObjectValues<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -74,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>("authenticationCombinations", AuthenticationCombinations);
             writer.WriteCollectionOfObjectValues<AuthenticationMethodModeDetail>("authenticationMethodModes", AuthenticationMethodModes);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>("combinations", Combinations);
             writer.WriteCollectionOfObjectValues<AuthenticationStrengthPolicy>("policies", Policies);
         }
     }

@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Count;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadLinks;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.MicrosoftGraphGetIosAvailableUpdateVersions;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.MicrosoftGraphGetTargetedUsersAndDevices;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.MicrosoftGraphHasPayloadLinks;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,13 +22,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getIosAvailableUpdateVersions method.</summary>
+        public MicrosoftGraphGetIosAvailableUpdateVersionsRequestBuilder MicrosoftGraphGetIosAvailableUpdateVersions { get =>
+            new MicrosoftGraphGetIosAvailableUpdateVersionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getTargetedUsersAndDevices method.</summary>
-        public GetTargetedUsersAndDevicesRequestBuilder GetTargetedUsersAndDevices { get =>
-            new GetTargetedUsersAndDevicesRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetTargetedUsersAndDevicesRequestBuilder MicrosoftGraphGetTargetedUsersAndDevices { get =>
+            new MicrosoftGraphGetTargetedUsersAndDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
-        public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
-            new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphHasPayloadLinksRequestBuilder MicrosoftGraphHasPayloadLinks { get =>
+            new MicrosoftGraphHasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -39,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations {
         /// <summary>Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
         public DeviceConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("deviceConfiguration%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("deviceConfiguration%2Did", position);
             return new DeviceConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -65,7 +69,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/deviceConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -87,12 +91,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceConfigurationCollectionResponse>(requestInfo, DeviceConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getIosAvailableUpdateVersions method.
-        /// </summary>
-        public GetIosAvailableUpdateVersionsRequestBuilder GetIosAvailableUpdateVersions() {
-            return new GetIosAvailableUpdateVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create new navigation property to deviceConfigurations for deviceManagement

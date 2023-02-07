@@ -2,11 +2,11 @@ using Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.Customers;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions;
-using Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability;
-using Microsoft.Graph.Beta.BookingBusinesses.Item.Publish;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.MicrosoftGraphGetStaffAvailability;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.MicrosoftGraphPublish;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.MicrosoftGraphUnpublish;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.Services;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers;
-using Microsoft.Graph.Beta.BookingBusinesses.Item.Unpublish;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -39,15 +39,19 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             new CustomQuestionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getStaffAvailability method.</summary>
-        public GetStaffAvailabilityRequestBuilder GetStaffAvailability { get =>
-            new GetStaffAvailabilityRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetStaffAvailabilityRequestBuilder MicrosoftGraphGetStaffAvailability { get =>
+            new MicrosoftGraphGetStaffAvailabilityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the publish method.</summary>
+        public MicrosoftGraphPublishRequestBuilder MicrosoftGraphPublish { get =>
+            new MicrosoftGraphPublishRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unpublish method.</summary>
+        public MicrosoftGraphUnpublishRequestBuilder MicrosoftGraphUnpublish { get =>
+            new MicrosoftGraphUnpublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the publish method.</summary>
-        public PublishRequestBuilder Publish { get =>
-            new PublishRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.</summary>
@@ -57,10 +61,6 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         /// <summary>Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.</summary>
         public StaffMembersRequestBuilder StaffMembers { get =>
             new StaffMembersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unpublish method.</summary>
-        public UnpublishRequestBuilder Unpublish { get =>
-            new UnpublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

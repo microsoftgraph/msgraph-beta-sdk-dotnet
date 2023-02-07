@@ -29,8 +29,8 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
 #endif
         /// <summary>Date when the error occured.</summary>
         public DateTimeOffset? Date {
-            get { return BackingStore?.Get<DateTimeOffset?>("date"); }
-            set { BackingStore?.Set("date", value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("Date"); }
+            set { BackingStore?.Set("Date", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.GenerateDownloadUrl;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.MicrosoftGraphCreateDownloadUrl;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.MicrosoftGraphGenerateDownloadUrl;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
     /// </summary>
     public class MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder {
         /// <summary>Provides operations to call the createDownloadUrl method.</summary>
-        public CreateDownloadUrlRequestBuilder CreateDownloadUrl { get =>
-            new CreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCreateDownloadUrlRequestBuilder MicrosoftGraphCreateDownloadUrl { get =>
+            new MicrosoftGraphCreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the generateDownloadUrl method.</summary>
-        public GenerateDownloadUrlRequestBuilder GenerateDownloadUrl { get =>
-            new GenerateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGenerateDownloadUrlRequestBuilder MicrosoftGraphGenerateDownloadUrl { get =>
+            new MicrosoftGraphGenerateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelServerLogCollectionResponses/{microsoftTunnelServerLogCollectionResponse%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

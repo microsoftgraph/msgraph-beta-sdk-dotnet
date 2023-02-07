@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TimeSpan?>("accountSetupDuration"); }
             set { BackingStore?.Set("accountSetupDuration", value); }
         }
-        /// <summary>The accountSetupStatus property</summary>
+        /// <summary>Deployment states for Autopilot devices</summary>
         public WindowsAutopilotDeploymentState? AccountSetupStatus {
             get { return BackingStore?.Get<WindowsAutopilotDeploymentState?>("accountSetupStatus"); }
             set { BackingStore?.Set("accountSetupStatus", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("deploymentStartDateTime"); }
             set { BackingStore?.Set("deploymentStartDateTime", value); }
         }
-        /// <summary>The deploymentState property</summary>
+        /// <summary>Deployment states for Autopilot devices</summary>
         public WindowsAutopilotDeploymentState? DeploymentState {
             get { return BackingStore?.Get<WindowsAutopilotDeploymentState?>("deploymentState"); }
             set { BackingStore?.Set("deploymentState", value); }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TimeSpan?>("deviceSetupDuration"); }
             set { BackingStore?.Set("deviceSetupDuration", value); }
         }
-        /// <summary>The deviceSetupStatus property</summary>
+        /// <summary>Deployment states for Autopilot devices</summary>
         public WindowsAutopilotDeploymentState? DeviceSetupStatus {
             get { return BackingStore?.Get<WindowsAutopilotDeploymentState?>("deviceSetupStatus"); }
             set { BackingStore?.Set("deviceSetupStatus", value); }

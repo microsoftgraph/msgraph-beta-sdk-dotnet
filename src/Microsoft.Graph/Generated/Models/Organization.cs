@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
         }
-        /// <summary>The partnerTenantType property</summary>
+        /// <summary>The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.</summary>
         public Microsoft.Graph.Beta.Models.PartnerTenantType? PartnerTenantType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PartnerTenantType?>("partnerTenantType"); }
             set { BackingStore?.Set("partnerTenantType", value); }

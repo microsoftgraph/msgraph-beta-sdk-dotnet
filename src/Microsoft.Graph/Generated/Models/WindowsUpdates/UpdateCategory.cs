@@ -3,5 +3,6 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         Feature,
         Quality,
         UnknownFutureValue,
+        Driver,
     }
 }

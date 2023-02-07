@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.GovernanceRoleAssignments.Count;
-using Microsoft.Graph.Beta.GovernanceRoleAssignments.Export;
 using Microsoft.Graph.Beta.GovernanceRoleAssignments.Item;
+using Microsoft.Graph.Beta.GovernanceRoleAssignments.MicrosoftGraphExport;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the export method.</summary>
+        public MicrosoftGraphExportRequestBuilder MicrosoftGraphExport { get =>
+            new MicrosoftGraphExportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments {
         /// <summary>Provides operations to manage the collection of governanceRoleAssignment entities.</summary>
         public GovernanceRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("governanceRoleAssignment%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("governanceRoleAssignment%2Did", position);
             return new GovernanceRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,15 +59,9 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/governanceRoleAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the export method.
-        /// </summary>
-        public ExportRequestBuilder Export() {
-            return new ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get entities from governanceRoleAssignments

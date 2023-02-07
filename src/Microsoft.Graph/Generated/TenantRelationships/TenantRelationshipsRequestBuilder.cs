@@ -2,9 +2,9 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers;
 using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships;
-using Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainNameWithDomainName;
-using Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenantIdWithTenantId;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants;
+using Microsoft.Graph.Beta.TenantRelationships.MicrosoftGraphFindTenantInformationByDomainNameWithDomainName;
+using Microsoft.Graph.Beta.TenantRelationships.MicrosoftGraphFindTenantInformationByTenantIdWithTenantId;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -59,25 +59,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/tenantRelationships{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the findTenantInformationByDomainName method.
-        /// </summary>
-        /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
-        public FindTenantInformationByDomainNameWithDomainNameRequestBuilder FindTenantInformationByDomainNameWithDomainName(string domainName) {
-            if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
-            return new FindTenantInformationByDomainNameWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
-        }
-        /// <summary>
-        /// Provides operations to call the findTenantInformationByTenantId method.
-        /// </summary>
-        /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
-        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder FindTenantInformationByTenantIdWithTenantId(string tenantId) {
-            if(string.IsNullOrEmpty(tenantId)) throw new ArgumentNullException(nameof(tenantId));
-            return new FindTenantInformationByTenantIdWithTenantIdRequestBuilder(PathParameters, RequestAdapter, tenantId);
         }
         /// <summary>
         /// Get tenantRelationships
@@ -97,6 +81,22 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TenantRelationship>(requestInfo, TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the findTenantInformationByDomainName method.
+        /// </summary>
+        /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
+        public MicrosoftGraphFindTenantInformationByDomainNameWithDomainNameRequestBuilder MicrosoftGraphFindTenantInformationByDomainNameWithDomainName(string domainName) {
+            if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
+            return new MicrosoftGraphFindTenantInformationByDomainNameWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
+        }
+        /// <summary>
+        /// Provides operations to call the findTenantInformationByTenantId method.
+        /// </summary>
+        /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
+        public MicrosoftGraphFindTenantInformationByTenantIdWithTenantIdRequestBuilder MicrosoftGraphFindTenantInformationByTenantIdWithTenantId(string tenantId) {
+            if(string.IsNullOrEmpty(tenantId)) throw new ArgumentNullException(nameof(tenantId));
+            return new MicrosoftGraphFindTenantInformationByTenantIdWithTenantIdRequestBuilder(PathParameters, RequestAdapter, tenantId);
         }
         /// <summary>
         /// Update tenantRelationships

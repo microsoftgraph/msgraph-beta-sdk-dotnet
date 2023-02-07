@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Decisions {
         /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReview entity.</summary>
         public AccessReviewDecisionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("accessReviewDecision%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("accessReviewDecision%2Did", position);
             return new AccessReviewDecisionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Decisions {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/decisions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

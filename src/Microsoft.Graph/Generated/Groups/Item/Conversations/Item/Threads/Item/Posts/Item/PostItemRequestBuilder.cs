@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Attachments;
 using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Extensions;
-using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Forward;
 using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.InReplyTo;
 using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Mentions;
+using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.MicrosoftGraphForward;
+using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.MicrosoftGraphReply;
 using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.MultiValueExtendedProperties;
-using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Reply;
 using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -29,10 +29,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the forward method.</summary>
-        public ForwardRequestBuilder Forward { get =>
-            new ForwardRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the inReplyTo property of the microsoft.graph.post entity.</summary>
         public InReplyToRequestBuilder InReplyTo { get =>
             new InReplyToRequestBuilder(PathParameters, RequestAdapter);
@@ -41,16 +37,20 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         public MentionsRequestBuilder Mentions { get =>
             new MentionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the forward method.</summary>
+        public MicrosoftGraphForwardRequestBuilder MicrosoftGraphForward { get =>
+            new MicrosoftGraphForwardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reply method.</summary>
+        public MicrosoftGraphReplyRequestBuilder MicrosoftGraphReply { get =>
+            new MicrosoftGraphReplyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
             new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the reply method.</summary>
-        public ReplyRequestBuilder Reply { get =>
-            new ReplyRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.</summary>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -93,17 +93,17 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Post?> GetAsync(Action<PostItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Post?> GetAsync(Action<PostItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Post> GetAsync(Action<PostItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Post> GetAsync(Action<PostItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Post>(requestInfo, Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Post>(requestInfo, Post.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property posts in groups
@@ -113,10 +113,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Post?> PatchAsync(Microsoft.Graph.Beta.Models.Post body, Action<PostItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Post?> PatchAsync(Post body, Action<PostItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Post> PatchAsync(Microsoft.Graph.Beta.Models.Post body, Action<PostItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Post> PatchAsync(Post body, Action<PostItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Post>(requestInfo, Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Post>(requestInfo, Post.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get posts from groups
@@ -159,10 +159,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Post body, Action<PostItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Post body, Action<PostItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Post body, Action<PostItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Post body, Action<PostItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {

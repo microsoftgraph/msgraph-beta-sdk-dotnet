@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies {
         /// <summary>Gets an item from the Microsoft.Graph.Beta.servicePrincipals.item.claimsMappingPolicies.item collection</summary>
         public ClaimsMappingPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("claimsMappingPolicy%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("claimsMappingPolicy%2Did", position);
             return new ClaimsMappingPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

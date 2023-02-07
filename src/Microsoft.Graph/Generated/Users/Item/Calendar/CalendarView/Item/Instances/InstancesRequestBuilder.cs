@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Count;
-using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Delta;
 using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item;
+using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.MicrosoftGraphDelta;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
+            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances {
         /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
         public Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("event%2Did1", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("event%2Did1", position);
             return new Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,15 +59,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/calendar/calendarView/{event%2Did}/instances{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the delta method.
-        /// </summary>
-        public DeltaRequestBuilder Delta() {
-            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns theoccurrences and exceptions of the event in the specified time range.

@@ -39,7 +39,6 @@ using Microsoft.Graph.Beta.DirectoryRoleTemplates;
 using Microsoft.Graph.Beta.DirectorySettingTemplates;
 using Microsoft.Graph.Beta.DomainDnsRecords;
 using Microsoft.Graph.Beta.Domains;
-using Microsoft.Graph.Beta.Drive;
 using Microsoft.Graph.Beta.Drives;
 using Microsoft.Graph.Beta.Education;
 using Microsoft.Graph.Beta.EmployeeExperience;
@@ -292,10 +291,6 @@ namespace Microsoft.Graph.Beta {
         /// <summary>Provides operations to manage the collection of domain entities.</summary>
         public DomainsRequestBuilder Domains { get =>
             new DomainsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the drive singleton.</summary>
-        public DriveRequestBuilder Drive { get =>
-            new DriveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of drive entities.</summary>
         public DrivesRequestBuilder Drives { get =>

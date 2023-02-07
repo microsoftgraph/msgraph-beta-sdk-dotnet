@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.CreateToken;
-using Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.RevokeToken;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.MicrosoftGraphCreateToken;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.MicrosoftGraphRevokeToken;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,17 +16,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
     /// </summary>
     public class AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder {
         /// <summary>Provides operations to call the createToken method.</summary>
-        public CreateTokenRequestBuilder CreateToken { get =>
-            new CreateTokenRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCreateTokenRequestBuilder MicrosoftGraphCreateToken { get =>
+            new MicrosoftGraphCreateTokenRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the revokeToken method.</summary>
+        public MicrosoftGraphRevokeTokenRequestBuilder MicrosoftGraphRevokeToken { get =>
+            new MicrosoftGraphRevokeTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the revokeToken method.</summary>
-        public RevokeTokenRequestBuilder RevokeToken { get =>
-            new RevokeTokenRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/androidDeviceOwnerEnrollmentProfiles/{androidDeviceOwnerEnrollmentProfile%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

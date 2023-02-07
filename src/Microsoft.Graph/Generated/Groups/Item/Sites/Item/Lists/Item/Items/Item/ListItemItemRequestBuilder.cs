@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.Activities;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.Analytics;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.CreateLink;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.DocumentSetVersions;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.DriveItem;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.Fields;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.MicrosoftGraphCreateLink;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.Versions;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -29,10 +29,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item {
         public AnalyticsRequestBuilder Analytics { get =>
             new AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the createLink method.</summary>
-        public CreateLinkRequestBuilder CreateLink { get =>
-            new CreateLinkRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.</summary>
         public DocumentSetVersionsRequestBuilder DocumentSetVersions { get =>
             new DocumentSetVersionsRequestBuilder(PathParameters, RequestAdapter);
@@ -44,6 +40,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item {
         /// <summary>Provides operations to manage the fields property of the microsoft.graph.listItem entity.</summary>
         public FieldsRequestBuilder Fields { get =>
             new FieldsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the createLink method.</summary>
+        public MicrosoftGraphCreateLinkRequestBuilder MicrosoftGraphCreateLink { get =>
+            new MicrosoftGraphCreateLinkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -102,18 +102,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Provides operations to call the getActivitiesByInterval method.
-        /// </summary>
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
-        /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
-        public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime) {
-            if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
-            if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
-            if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
-            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
-        }
-        /// <summary>
         /// All items contained in the list.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -131,6 +119,18 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ListItem>(requestInfo, Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the getActivitiesByInterval method.
+        /// </summary>
+        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        public MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime) {
+            if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
+            if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
+            if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
+            return new MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
         }
         /// <summary>
         /// Update the navigation property items in groups

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoiceLines {
         /// <summary>Provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.</summary>
         public PurchaseInvoiceLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("purchaseInvoiceLine%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("purchaseInvoiceLine%2Did", position);
             return new PurchaseInvoiceLineItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoiceLines {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoiceLines{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

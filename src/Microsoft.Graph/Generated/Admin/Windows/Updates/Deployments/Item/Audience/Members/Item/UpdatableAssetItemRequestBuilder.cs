@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.AddMembers;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.AddMembersById;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.RemoveMembers;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.RemoveMembersById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.MicrosoftGraphWindowsUpdatesAddMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.MicrosoftGraphWindowsUpdatesAddMembersById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.MicrosoftGraphWindowsUpdatesRemoveMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.MicrosoftGraphWindowsUpdatesRemoveMembersById;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
@@ -18,23 +18,23 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
     /// </summary>
     public class UpdatableAssetItemRequestBuilder {
         /// <summary>Provides operations to call the addMembers method.</summary>
-        public AddMembersRequestBuilder AddMembers { get =>
-            new AddMembersRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesAddMembersRequestBuilder MicrosoftGraphWindowsUpdatesAddMembers { get =>
+            new MicrosoftGraphWindowsUpdatesAddMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the addMembersById method.</summary>
-        public AddMembersByIdRequestBuilder AddMembersById { get =>
-            new AddMembersByIdRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder MicrosoftGraphWindowsUpdatesAddMembersById { get =>
+            new MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeMembers method.</summary>
+        public MicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilder MicrosoftGraphWindowsUpdatesRemoveMembers { get =>
+            new MicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeMembersById method.</summary>
+        public MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder MicrosoftGraphWindowsUpdatesRemoveMembersById { get =>
+            new MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the removeMembers method.</summary>
-        public RemoveMembersRequestBuilder RemoveMembers { get =>
-            new RemoveMembersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the removeMembersById method.</summary>
-        public RemoveMembersByIdRequestBuilder RemoveMembersById { get =>
-            new RemoveMembersByIdRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience/members/{updatableAsset%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

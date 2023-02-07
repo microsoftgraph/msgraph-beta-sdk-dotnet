@@ -1,9 +1,9 @@
-using Microsoft.Graph.Beta.DirectoryRoles.Item.CheckMemberGroups;
-using Microsoft.Graph.Beta.DirectoryRoles.Item.CheckMemberObjects;
-using Microsoft.Graph.Beta.DirectoryRoles.Item.GetMemberGroups;
-using Microsoft.Graph.Beta.DirectoryRoles.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.DirectoryRoles.Item.Members;
-using Microsoft.Graph.Beta.DirectoryRoles.Item.Restore;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphCheckMemberGroups;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphCheckMemberObjects;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphGetMemberGroups;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphGetMemberObjects;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphRestore;
 using Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -20,34 +20,34 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
     /// Provides operations to manage the collection of directoryRole entities.
     /// </summary>
     public class DirectoryRoleItemRequestBuilder {
-        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
-            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
-            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
-            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
-            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.directoryRole entity.</summary>
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
+        public MicrosoftGraphCheckMemberGroupsRequestBuilder MicrosoftGraphCheckMemberGroups { get =>
+            new MicrosoftGraphCheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
+        public MicrosoftGraphCheckMemberObjectsRequestBuilder MicrosoftGraphCheckMemberObjects { get =>
+            new MicrosoftGraphCheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getMemberGroups method.</summary>
+        public MicrosoftGraphGetMemberGroupsRequestBuilder MicrosoftGraphGetMemberGroups { get =>
+            new MicrosoftGraphGetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getMemberObjects method.</summary>
+        public MicrosoftGraphGetMemberObjectsRequestBuilder MicrosoftGraphGetMemberObjects { get =>
+            new MicrosoftGraphGetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public MicrosoftGraphRestoreRequestBuilder MicrosoftGraphRestore { get =>
+            new MicrosoftGraphRestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the restore method.</summary>
-        public RestoreRequestBuilder Restore { get =>
-            new RestoreRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.</summary>
         public ScopedMembersRequestBuilder ScopedMembers { get =>
             new ScopedMembersRequestBuilder(PathParameters, RequestAdapter);
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from directoryRoles by key (id)
+        /// Delete entity from directoryRoles
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
             return await RequestAdapter.SendAsync<DirectoryRole>(requestInfo, DirectoryRole.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in directoryRoles by key (id)
+        /// Update entity in directoryRoles
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
             return await RequestAdapter.SendAsync<DirectoryRole>(requestInfo, DirectoryRole.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from directoryRoles by key (id)
+        /// Delete entity from directoryRoles
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in directoryRoles by key (id)
+        /// Update entity in directoryRoles
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

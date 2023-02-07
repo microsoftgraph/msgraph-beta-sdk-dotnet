@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.Item.BucketTaskBoardF
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/bucketTaskBoardFormat{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.Item.BucketTaskBoardF
             return await RequestAdapter.SendAsync<PlannerBucketTaskBoardTaskFormat>(requestInfo, PlannerBucketTaskBoardTaskFormat.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+        /// Update the navigation property bucketTaskBoardFormat in me
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.Item.BucketTaskBoardF
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+        /// Update the navigation property bucketTaskBoardFormat in me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

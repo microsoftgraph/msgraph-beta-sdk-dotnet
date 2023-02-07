@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.ApplyTags;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.Export;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.Run;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityApplyTags;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityExport;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityRun;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,12 +17,16 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
     /// </summary>
     public class EdiscoveryReviewSetQueryItemRequestBuilder {
         /// <summary>Provides operations to call the applyTags method.</summary>
-        public ApplyTagsRequestBuilder ApplyTags { get =>
-            new ApplyTagsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityApplyTagsRequestBuilder MicrosoftGraphSecurityApplyTags { get =>
+            new MicrosoftGraphSecurityApplyTagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the export method.</summary>
-        public ExportRequestBuilder Export { get =>
-            new ExportRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityExportRequestBuilder MicrosoftGraphSecurityExport { get =>
+            new MicrosoftGraphSecurityExportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the run method.</summary>
+        public MicrosoftGraphSecurityRunRequestBuilder MicrosoftGraphSecurityRun { get =>
+            new MicrosoftGraphSecurityRunRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -53,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries/{ediscoveryReviewSetQuery%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -115,12 +119,6 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EdiscoveryReviewSetQuery>(requestInfo, EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the run method.
-        /// </summary>
-        public RunRequestBuilder Run() {
-            return new RunRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Delete navigation property queries for security

@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Me.DirectReports.Count;
 using Microsoft.Graph.Beta.Me.DirectReports.Item;
-using Microsoft.Graph.Beta.Me.DirectReports.OrgContact;
-using Microsoft.Graph.Beta.Me.DirectReports.User;
+using Microsoft.Graph.Beta.Me.DirectReports.MicrosoftGraphOrgContact;
+using Microsoft.Graph.Beta.Me.DirectReports.MicrosoftGraphUser;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,8 +22,12 @@ namespace Microsoft.Graph.Beta.Me.DirectReports {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public OrgContactRequestBuilder OrgContact { get =>
-            new OrgContactRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphOrgContactRequestBuilder MicrosoftGraphOrgContact { get =>
+            new MicrosoftGraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to user.</summary>
+        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
+            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -31,14 +35,10 @@ namespace Microsoft.Graph.Beta.Me.DirectReports {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Casts the previous resource to user.</summary>
-        public UserRequestBuilder User { get =>
-            new UserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the directReports property of the microsoft.graph.user entity.</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("directoryObject%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("directoryObject%2Did", position);
             return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Me.DirectReports {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/directReports{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

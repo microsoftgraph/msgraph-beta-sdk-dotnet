@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
     /// <summary>
-    /// Provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.
+    /// Provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
     /// </summary>
     public class DeploymentItemRequestBuilder {
         /// <summary>Provides operations to manage the audience property of the microsoft.graph.windowsUpdates.deployment entity.</summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deployments created using the deployment service. Read-only.
+        /// Deployments created using the deployment service.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Deployments created using the deployment service. Read-only.
+        /// Deployments created using the deployment service.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -205,7 +205,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             }
         }
         /// <summary>
-        /// Deployments created using the deployment service. Read-only.
+        /// Deployments created using the deployment service.
         /// </summary>
         public class DeploymentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

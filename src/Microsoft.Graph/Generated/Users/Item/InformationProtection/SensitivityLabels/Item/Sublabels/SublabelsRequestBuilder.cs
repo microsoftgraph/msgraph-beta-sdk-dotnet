@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Count;
-using Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Evaluate;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Item;
+using Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels.MicrosoftGraphEvaluate;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluate method.</summary>
-        public EvaluateRequestBuilder Evaluate { get =>
-            new EvaluateRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEvaluateRequestBuilder MicrosoftGraphEvaluate { get =>
+            new MicrosoftGraphEvaluateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
         /// <summary>Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.</summary>
         public Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Item.SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("sensitivityLabel%2Did1", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("sensitivityLabel%2Did1", position);
             return new Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Item.SensitivityLabelItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/sublabels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

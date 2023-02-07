@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.CaseExportOperation;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Count;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.MicrosoftGraphEdiscoveryCaseExportOperation;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,13 +16,13 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations {
     /// Provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
     /// </summary>
     public class OperationsRequestBuilder {
-        /// <summary>Casts the previous resource to caseExportOperation.</summary>
-        public CaseExportOperationRequestBuilder CaseExportOperation { get =>
-            new CaseExportOperationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to caseExportOperation.</summary>
+        public MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder MicrosoftGraphEdiscoveryCaseExportOperation { get =>
+            new MicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations {
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.</summary>
         public CaseOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("caseOperation%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("caseOperation%2Did", position);
             return new CaseOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

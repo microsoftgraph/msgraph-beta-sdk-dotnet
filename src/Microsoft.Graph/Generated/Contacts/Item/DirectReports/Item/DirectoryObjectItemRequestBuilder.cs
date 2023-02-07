@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item.OrgContact;
-using Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item.User;
+using Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item.MicrosoftGraphOrgContact;
+using Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item.MicrosoftGraphUser;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,8 +16,12 @@ namespace Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item {
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public OrgContactRequestBuilder OrgContact { get =>
-            new OrgContactRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphOrgContactRequestBuilder MicrosoftGraphOrgContact { get =>
+            new MicrosoftGraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to user.</summary>
+        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
+            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -25,10 +29,6 @@ namespace Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Casts the previous resource to user.</summary>
-        public UserRequestBuilder User { get =>
-            new UserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         /// </summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/contacts/{orgContact%2Did}/directReports/{directoryObject%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

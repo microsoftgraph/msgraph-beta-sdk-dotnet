@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.Count;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.Item;
-using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.MicrosoftGraphSummarizeDevicePerformanceDevicesWithSummarizeBy;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         /// <summary>Provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.</summary>
         public UserExperienceAnalyticsDevicePerformanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("userExperienceAnalyticsDevicePerformance%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("userExperienceAnalyticsDevicePerformance%2Did", position);
             return new UserExperienceAnalyticsDevicePerformanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/userExperienceAnalyticsDevicePerformance{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -79,6 +79,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsDevicePerformanceCollectionResponse>(requestInfo, UserExperienceAnalyticsDevicePerformanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
+        /// Provides operations to call the summarizeDevicePerformanceDevices method.
+        /// </summary>
+        /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
+        public MicrosoftGraphSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder MicrosoftGraphSummarizeDevicePerformanceDevicesWithSummarizeBy(string summarizeBy) {
+            if(string.IsNullOrEmpty(summarizeBy)) throw new ArgumentNullException(nameof(summarizeBy));
+            return new MicrosoftGraphSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder(PathParameters, RequestAdapter, summarizeBy);
+        }
+        /// <summary>
         /// Create new navigation property to userExperienceAnalyticsDevicePerformance for deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
@@ -98,14 +106,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the summarizeDevicePerformanceDevices method.
-        /// </summary>
-        /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
-        public SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder SummarizeDevicePerformanceDevicesWithSummarizeBy(string summarizeBy) {
-            if(string.IsNullOrEmpty(summarizeBy)) throw new ArgumentNullException(nameof(summarizeBy));
-            return new SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder(PathParameters, RequestAdapter, summarizeBy);
         }
         /// <summary>
         /// User experience analytics device performance

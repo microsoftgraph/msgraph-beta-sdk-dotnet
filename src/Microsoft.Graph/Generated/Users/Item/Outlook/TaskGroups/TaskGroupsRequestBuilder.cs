@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups {
         /// <summary>Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.</summary>
         public OutlookTaskGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("outlookTaskGroup%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("outlookTaskGroup%2Did", position);
             return new OutlookTaskGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/outlook/taskGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Identity.ApiConnectors.Item.UploadClientCertificate;
+using Microsoft.Graph.Beta.Identity.ApiConnectors.Item.MicrosoftGraphUploadClientCertificate;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
     /// Provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
     /// </summary>
     public class IdentityApiConnectorItemRequestBuilder {
+        /// <summary>Provides operations to call the uploadClientCertificate method.</summary>
+        public MicrosoftGraphUploadClientCertificateRequestBuilder MicrosoftGraphUploadClientCertificate { get =>
+            new MicrosoftGraphUploadClientCertificateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the uploadClientCertificate method.</summary>
-        public UploadClientCertificateRequestBuilder UploadClientCertificate { get =>
-            new UploadClientCertificateRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identity/apiConnectors/{identityApiConnector%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

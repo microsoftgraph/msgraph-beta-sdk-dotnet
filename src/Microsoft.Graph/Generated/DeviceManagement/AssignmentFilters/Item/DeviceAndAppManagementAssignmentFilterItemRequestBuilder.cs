@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties;
+using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.MicrosoftGraphGetSupportedProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,6 +14,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
     /// Provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceAndAppManagementAssignmentFilterItemRequestBuilder {
+        /// <summary>Provides operations to call the getSupportedProperties method.</summary>
+        public MicrosoftGraphGetSupportedPropertiesRequestBuilder MicrosoftGraphGetSupportedProperties { get =>
+            new MicrosoftGraphGetSupportedPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -43,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/assignmentFilters/{deviceAndAppManagementAssignmentFilter%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -84,12 +88,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getSupportedProperties method.
-        /// </summary>
-        public GetSupportedPropertiesRequestBuilder GetSupportedProperties() {
-            return new GetSupportedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Update the navigation property assignmentFilters in deviceManagement

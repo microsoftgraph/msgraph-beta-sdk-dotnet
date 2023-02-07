@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.CalendarView.Count;
-using Microsoft.Graph.Beta.Users.Item.CalendarView.Delta;
 using Microsoft.Graph.Beta.Users.Item.CalendarView.Item;
+using Microsoft.Graph.Beta.Users.Item.CalendarView.MicrosoftGraphDelta;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarView {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
+            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarView {
         /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.user entity.</summary>
         public EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("event%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("event%2Did", position);
             return new EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,15 +59,9 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarView {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/calendarView{?startDateTime*,endDateTime*,%24top,%24skip,%24filter,%24count,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the delta method.
-        /// </summary>
-        public DeltaRequestBuilder Delta() {
-            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// The calendar view for the calendar. Read-only. Nullable.

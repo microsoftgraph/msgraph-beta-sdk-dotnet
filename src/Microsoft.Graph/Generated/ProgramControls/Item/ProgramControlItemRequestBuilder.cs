@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/programControls/{programControl%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from programControls by key (id)
+        /// Get entity from programControls by key
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item {
             return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, ProgramControl.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in programControls by key (id)
+        /// Update entity in programControls
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from programControls by key (id)
+        /// Get entity from programControls by key
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in programControls by key (id)
+        /// Update entity in programControls
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -206,7 +206,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item {
             }
         }
         /// <summary>
-        /// Get entity from programControls by key (id)
+        /// Get entity from programControls by key
         /// </summary>
         public class ProgramControlItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

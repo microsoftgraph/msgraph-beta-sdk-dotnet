@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Count;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.MicrosoftGraphGetSourceImages;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getSourceImages method.</summary>
+        public MicrosoftGraphGetSourceImagesRequestBuilder MicrosoftGraphGetSourceImages { get =>
+            new MicrosoftGraphGetSourceImagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
         /// <summary>Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.</summary>
         public CloudPcDeviceImageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("cloudPcDeviceImage%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("cloudPcDeviceImage%2Did", position);
             return new CloudPcDeviceImageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -78,12 +82,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudPcDeviceImageCollectionResponse>(requestInfo, CloudPcDeviceImageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getSourceImages method.
-        /// </summary>
-        public GetSourceImagesRequestBuilder GetSourceImages() {
-            return new GetSourceImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.

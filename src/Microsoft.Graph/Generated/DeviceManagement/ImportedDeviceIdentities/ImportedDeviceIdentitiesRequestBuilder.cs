@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.Count;
-using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList;
 using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.Item;
-using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities;
+using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.MicrosoftGraphImportDeviceIdentityList;
+using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.MicrosoftGraphSearchExistingIdentities;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,23 +22,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the importDeviceIdentityList method.</summary>
-        public ImportDeviceIdentityListRequestBuilder ImportDeviceIdentityList { get =>
-            new ImportDeviceIdentityListRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphImportDeviceIdentityListRequestBuilder MicrosoftGraphImportDeviceIdentityList { get =>
+            new MicrosoftGraphImportDeviceIdentityListRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the searchExistingIdentities method.</summary>
+        public MicrosoftGraphSearchExistingIdentitiesRequestBuilder MicrosoftGraphSearchExistingIdentities { get =>
+            new MicrosoftGraphSearchExistingIdentitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the searchExistingIdentities method.</summary>
-        public SearchExistingIdentitiesRequestBuilder SearchExistingIdentities { get =>
-            new SearchExistingIdentitiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.</summary>
         public ImportedDeviceIdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("importedDeviceIdentity%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("importedDeviceIdentity%2Did", position);
             return new ImportedDeviceIdentityItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/importedDeviceIdentities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

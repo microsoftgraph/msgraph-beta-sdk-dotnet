@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Functions;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.ParseExpression;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.MicrosoftGraphFilterOperators;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.MicrosoftGraphFunctions;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.MicrosoftGraphParseExpression;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,9 +21,17 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         public DirectoriesRequestBuilder Directories { get =>
             new DirectoriesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the filterOperators method.</summary>
+        public MicrosoftGraphFilterOperatorsRequestBuilder MicrosoftGraphFilterOperators { get =>
+            new MicrosoftGraphFilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the functions method.</summary>
+        public MicrosoftGraphFunctionsRequestBuilder MicrosoftGraphFunctions { get =>
+            new MicrosoftGraphFunctionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the parseExpression method.</summary>
-        public ParseExpressionRequestBuilder ParseExpression { get =>
-            new ParseExpressionRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphParseExpressionRequestBuilder MicrosoftGraphParseExpression { get =>
+            new MicrosoftGraphParseExpressionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -54,7 +62,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}/schema{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -76,18 +84,6 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the filterOperators method.
-        /// </summary>
-        public FilterOperatorsRequestBuilder FilterOperators() {
-            return new FilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the functions method.
-        /// </summary>
-        public FunctionsRequestBuilder Functions() {
-            return new FunctionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Default synchronization schema for the jobs based on this template.

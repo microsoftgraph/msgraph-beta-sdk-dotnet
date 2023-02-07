@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.Count;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.Item;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.MicrosoftGraphGetAuditActivityTypes;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getAuditActivityTypes method.</summary>
+        public MicrosoftGraphGetAuditActivityTypesRequestBuilder MicrosoftGraphGetAuditActivityTypes { get =>
+            new MicrosoftGraphGetAuditActivityTypesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.</summary>
         public CloudPcAuditEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("cloudPcAuditEvent%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("cloudPcAuditEvent%2Did", position);
             return new CloudPcAuditEventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/auditEvents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -78,12 +82,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudPcAuditEventCollectionResponse>(requestInfo, CloudPcAuditEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getAuditActivityTypes method.
-        /// </summary>
-        public GetAuditActivityTypesRequestBuilder GetAuditActivityTypes() {
-            return new GetAuditActivityTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create new navigation property to auditEvents for deviceManagement

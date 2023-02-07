@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Unique identifier of the drive instance that contains the item. Read-only.</summary>
+        /// <summary>Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DriveId {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("driveId", value); }
         }
 #endif
-        /// <summary>Identifies the type of drive. See [drive][] resource for values.</summary>
+        /// <summary>Identifies the type of drive. Only returned if the item is located in a [drive][].  See [drive][] resource for values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DriveType {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("driveType", value); }
         }
 #endif
-        /// <summary>Unique identifier of the item in the drive. Read-only.</summary>
+        /// <summary>Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharepointIds", value); }
         }
 #endif
-        /// <summary>For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.</summary>
+        /// <summary>For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SiteId {

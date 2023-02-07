@@ -3,10 +3,10 @@ using Microsoft.Graph.Beta.Drives.Item.Bundles;
 using Microsoft.Graph.Beta.Drives.Item.Following;
 using Microsoft.Graph.Beta.Drives.Item.Items;
 using Microsoft.Graph.Beta.Drives.Item.List;
-using Microsoft.Graph.Beta.Drives.Item.Recent;
+using Microsoft.Graph.Beta.Drives.Item.MicrosoftGraphRecent;
+using Microsoft.Graph.Beta.Drives.Item.MicrosoftGraphSearchWithQ;
+using Microsoft.Graph.Beta.Drives.Item.MicrosoftGraphSharedWithMe;
 using Microsoft.Graph.Beta.Drives.Item.Root;
-using Microsoft.Graph.Beta.Drives.Item.SearchWithQ;
-using Microsoft.Graph.Beta.Drives.Item.SharedWithMe;
 using Microsoft.Graph.Beta.Drives.Item.Special;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -42,6 +42,14 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// <summary>Provides operations to manage the list property of the microsoft.graph.drive entity.</summary>
         public ListRequestBuilder List { get =>
             new ListRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the recent method.</summary>
+        public MicrosoftGraphRecentRequestBuilder MicrosoftGraphRecent { get =>
+            new MicrosoftGraphRecentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the sharedWithMe method.</summary>
+        public MicrosoftGraphSharedWithMeRequestBuilder MicrosoftGraphSharedWithMe { get =>
+            new MicrosoftGraphSharedWithMeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -80,12 +88,12 @@ namespace Microsoft.Graph.Beta.Drives.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/drives/{drive%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from drives by key (id)
+        /// Delete entity from drives
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +132,15 @@ namespace Microsoft.Graph.Beta.Drives.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Drive>(requestInfo, Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in drives by key (id)
+        /// Provides operations to call the search method.
+        /// </summary>
+        /// <param name="q">Usage: q=&apos;{q}&apos;</param>
+        public MicrosoftGraphSearchWithQRequestBuilder MicrosoftGraphSearchWithQ(string q) {
+            if(string.IsNullOrEmpty(q)) throw new ArgumentNullException(nameof(q));
+            return new MicrosoftGraphSearchWithQRequestBuilder(PathParameters, RequestAdapter, q);
+        }
+        /// <summary>
+        /// Update entity in drives
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -145,27 +161,7 @@ namespace Microsoft.Graph.Beta.Drives.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Drive>(requestInfo, Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Provides operations to call the recent method.
-        /// </summary>
-        public RecentRequestBuilder Recent() {
-            return new RecentRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the search method.
-        /// </summary>
-        /// <param name="q">Usage: q=&apos;{q}&apos;</param>
-        public SearchWithQRequestBuilder SearchWithQ(string q) {
-            if(string.IsNullOrEmpty(q)) throw new ArgumentNullException(nameof(q));
-            return new SearchWithQRequestBuilder(PathParameters, RequestAdapter, q);
-        }
-        /// <summary>
-        /// Provides operations to call the sharedWithMe method.
-        /// </summary>
-        public SharedWithMeRequestBuilder SharedWithMe() {
-            return new SharedWithMeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Delete entity from drives by key (id)
+        /// Delete entity from drives
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -215,7 +211,7 @@ namespace Microsoft.Graph.Beta.Drives.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in drives by key (id)
+        /// Update entity in drives
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -59,5 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         MoveDeviceToOrganizationalUnit,
         /// <summary>Add device action of InitiateMobileDeviceManagementKeyRecovery</summary>
         InitiateMobileDeviceManagementKeyRecovery,
+        /// <summary>Add device action of InitiateOnDemandProactiveRemediation</summary>
+        InitiateOnDemandProactiveRemediation,
     }
 }

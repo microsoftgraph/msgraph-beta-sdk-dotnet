@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.HostedContents;
-using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.SetReaction;
-using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.SoftDelete;
-using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.UndoSoftDelete;
-using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.UnsetReaction;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.MicrosoftGraphSetReaction;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.MicrosoftGraphSoftDelete;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.MicrosoftGraphUndoSoftDelete;
+using Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item.MicrosoftGraphUnsetReaction;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -22,26 +22,26 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item 
         public HostedContentsRequestBuilder HostedContents { get =>
             new HostedContentsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the setReaction method.</summary>
+        public MicrosoftGraphSetReactionRequestBuilder MicrosoftGraphSetReaction { get =>
+            new MicrosoftGraphSetReactionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the softDelete method.</summary>
+        public MicrosoftGraphSoftDeleteRequestBuilder MicrosoftGraphSoftDelete { get =>
+            new MicrosoftGraphSoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the undoSoftDelete method.</summary>
+        public MicrosoftGraphUndoSoftDeleteRequestBuilder MicrosoftGraphUndoSoftDelete { get =>
+            new MicrosoftGraphUndoSoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unsetReaction method.</summary>
+        public MicrosoftGraphUnsetReactionRequestBuilder MicrosoftGraphUnsetReaction { get =>
+            new MicrosoftGraphUnsetReactionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the setReaction method.</summary>
-        public SetReactionRequestBuilder SetReaction { get =>
-            new SetReactionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the softDelete method.</summary>
-        public SoftDeleteRequestBuilder SoftDelete { get =>
-            new SoftDeleteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the undoSoftDelete method.</summary>
-        public UndoSoftDeleteRequestBuilder UndoSoftDelete { get =>
-            new UndoSoftDeleteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unsetReaction method.</summary>
-        public UnsetReactionRequestBuilder UnsetReaction { get =>
-            new UnsetReactionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages.Item.Replies.Item 
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

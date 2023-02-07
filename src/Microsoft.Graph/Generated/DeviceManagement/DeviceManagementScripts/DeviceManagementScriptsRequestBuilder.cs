@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Count;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.HasPayloadLinks;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.MicrosoftGraphHasPayloadLinks;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
-        public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
-            new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphHasPayloadLinksRequestBuilder MicrosoftGraphHasPayloadLinks { get =>
+            new MicrosoftGraphHasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
         /// <summary>Provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.</summary>
         public DeviceManagementScriptItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("deviceManagementScript%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("deviceManagementScript%2Did", position);
             return new DeviceManagementScriptItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/deviceManagementScripts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

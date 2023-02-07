@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Count;
-using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMethodModeWithAuthenticationMethodModes;
 using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item;
+using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.MicrosoftGraphFindByMethodModeWithAuthenticationMethodModes;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
         /// <summary>Provides operations to manage the authenticationStrengthPolicies property of the microsoft.graph.policyRoot entity.</summary>
         public AuthenticationStrengthPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("authenticationStrengthPolicy%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("authenticationStrengthPolicy%2Did", position);
             return new AuthenticationStrengthPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,17 +55,9 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/policies/authenticationStrengthPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the findByMethodMode method.
-        /// </summary>
-        /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
-        public FindByMethodModeWithAuthenticationMethodModesRequestBuilder FindByMethodModeWithAuthenticationMethodModes(string authenticationMethodModes) {
-            if(string.IsNullOrEmpty(authenticationMethodModes)) throw new ArgumentNullException(nameof(authenticationMethodModes));
-            return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);
         }
         /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
@@ -86,6 +78,14 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicyCollectionResponse>(requestInfo, AuthenticationStrengthPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the findByMethodMode method.
+        /// </summary>
+        /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
+        public MicrosoftGraphFindByMethodModeWithAuthenticationMethodModesRequestBuilder MicrosoftGraphFindByMethodModeWithAuthenticationMethodModes(string authenticationMethodModes) {
+            if(string.IsNullOrEmpty(authenticationMethodModes)) throw new ArgumentNullException(nameof(authenticationMethodModes));
+            return new MicrosoftGraphFindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);
         }
         /// <summary>
         /// Create a new custom authenticationStrengthPolicy object.

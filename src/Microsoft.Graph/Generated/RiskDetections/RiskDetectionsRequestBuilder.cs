@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
         /// <summary>Provides operations to manage the collection of riskDetection entities.</summary>
         public RiskDetectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("riskDetection%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("riskDetection%2Did", position);
             return new RiskDetectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/riskDetections{?%24top,%24search,%24filter,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

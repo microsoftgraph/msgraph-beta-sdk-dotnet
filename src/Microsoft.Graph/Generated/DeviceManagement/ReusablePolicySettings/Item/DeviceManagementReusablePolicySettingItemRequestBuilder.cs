@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.Clone;
+using Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.MicrosoftGraphClone;
 using Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
     /// </summary>
     public class DeviceManagementReusablePolicySettingItemRequestBuilder {
         /// <summary>Provides operations to call the clone method.</summary>
-        public CloneRequestBuilder Clone { get =>
-            new CloneRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCloneRequestBuilder MicrosoftGraphClone { get =>
+            new MicrosoftGraphCloneRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

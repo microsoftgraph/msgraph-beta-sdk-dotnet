@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.TeamsTemplates {
         /// <summary>Provides operations to manage the collection of teamsTemplate entities.</summary>
         public TeamsTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("teamsTemplate%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("teamsTemplate%2Did", position);
             return new TeamsTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.TeamsTemplates {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/teamsTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

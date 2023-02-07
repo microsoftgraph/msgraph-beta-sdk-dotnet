@@ -55,6 +55,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
+        /// <summary>Defines whether users can be synchronized from the partner tenant. Key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CrossTenantUserSyncInbound? UserSyncInbound {
+            get { return BackingStore?.Get<CrossTenantUserSyncInbound?>("userSyncInbound"); }
+            set { BackingStore?.Set("userSyncInbound", value); }
+        }
+#nullable restore
+#else
+        public CrossTenantUserSyncInbound UserSyncInbound {
+            get { return BackingStore?.Get<CrossTenantUserSyncInbound>("userSyncInbound"); }
+            set { BackingStore?.Set("userSyncInbound", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new crossTenantIdentitySyncPolicyPartner and sets the default values.
         /// </summary>
@@ -78,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"userSyncInbound", n => { UserSyncInbound = n.GetObjectValue<CrossTenantUserSyncInbound>(CrossTenantUserSyncInbound.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteObjectValue<CrossTenantUserSyncInbound>("userSyncInbound", UserSyncInbound);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.App.OnlineMeetings.Count;
-using Microsoft.Graph.Beta.App.OnlineMeetings.CreateOrGet;
 using Microsoft.Graph.Beta.App.OnlineMeetings.Item;
+using Microsoft.Graph.Beta.App.OnlineMeetings.MicrosoftGraphCreateOrGet;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createOrGet method.</summary>
-        public CreateOrGetRequestBuilder CreateOrGet { get =>
-            new CreateOrGetRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCreateOrGetRequestBuilder MicrosoftGraphCreateOrGet { get =>
+            new MicrosoftGraphCreateOrGetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings {
         /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.</summary>
         public OnlineMeetingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("onlineMeeting%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("onlineMeeting%2Did", position);
             return new OnlineMeetingItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/app/onlineMeetings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

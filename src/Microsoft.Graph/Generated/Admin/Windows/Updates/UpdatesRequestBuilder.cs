@@ -1,9 +1,11 @@
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -14,14 +16,18 @@ using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
     /// <summary>
-    /// Provides operations to manage the updates property of the microsoft.graph.windowsUpdates.windows entity.
+    /// Provides operations to manage the updates property of the microsoft.graph.adminWindows entity.
     /// </summary>
     public class UpdatesRequestBuilder {
-        /// <summary>Provides operations to manage the catalog property of the microsoft.graph.windowsUpdates.updates entity.</summary>
+        /// <summary>Provides operations to manage the catalog property of the microsoft.graph.adminWindowsUpdates entity.</summary>
         public CatalogRequestBuilder Catalog { get =>
             new CatalogRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.</summary>
+        /// <summary>Provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.</summary>
+        public DeploymentAudiencesRequestBuilder DeploymentAudiences { get =>
+            new DeploymentAudiencesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.</summary>
         public DeploymentsRequestBuilder Deployments { get =>
             new DeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,13 +35,17 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.</summary>
+        /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.</summary>
         public ResourceConnectionsRequestBuilder ResourceConnections { get =>
             new ResourceConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.</summary>
+        /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.</summary>
         public UpdatableAssetsRequestBuilder UpdatableAssets { get =>
             new UpdatableAssetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.</summary>
+        public UpdatePoliciesRequestBuilder UpdatePolicies { get =>
+            new UpdatePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -62,7 +72,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/windows/updates{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -86,23 +96,23 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+        /// Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates?> GetAsync(Action<UpdatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindowsUpdates?> GetAsync(Action<UpdatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates> GetAsync(Action<UpdatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindowsUpdates> GetAsync(Action<UpdatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.Updates.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdminWindowsUpdates>(requestInfo, AdminWindowsUpdates.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property updates in admin
@@ -112,10 +122,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates?> PatchAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates body, Action<UpdatesRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindowsUpdates?> PatchAsync(AdminWindowsUpdates body, Action<UpdatesRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates> PatchAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates body, Action<UpdatesRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindowsUpdates> PatchAsync(AdminWindowsUpdates body, Action<UpdatesRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
@@ -123,7 +133,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.Updates.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdminWindowsUpdates>(requestInfo, AdminWindowsUpdates.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Delete navigation property updates for admin
@@ -150,7 +160,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
             return requestInfo;
         }
         /// <summary>
-        /// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+        /// Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,10 +192,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates body, Action<UpdatesRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(AdminWindowsUpdates body, Action<UpdatesRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates body, Action<UpdatesRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(AdminWindowsUpdates body, Action<UpdatesRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -220,7 +230,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
             }
         }
         /// <summary>
-        /// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+        /// Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
         /// </summary>
         public class UpdatesRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

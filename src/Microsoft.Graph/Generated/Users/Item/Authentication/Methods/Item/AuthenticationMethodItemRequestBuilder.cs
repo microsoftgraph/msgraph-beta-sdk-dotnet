@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.DisableSmsSignIn;
-using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.EnableSmsSignIn;
-using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassword;
+using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.MicrosoftGraphDisableSmsSignIn;
+using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.MicrosoftGraphEnableSmsSignIn;
+using Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.MicrosoftGraphResetPassword;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,21 +17,21 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item {
     /// </summary>
     public class AuthenticationMethodItemRequestBuilder {
         /// <summary>Provides operations to call the disableSmsSignIn method.</summary>
-        public DisableSmsSignInRequestBuilder DisableSmsSignIn { get =>
-            new DisableSmsSignInRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDisableSmsSignInRequestBuilder MicrosoftGraphDisableSmsSignIn { get =>
+            new MicrosoftGraphDisableSmsSignInRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enableSmsSignIn method.</summary>
-        public EnableSmsSignInRequestBuilder EnableSmsSignIn { get =>
-            new EnableSmsSignInRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEnableSmsSignInRequestBuilder MicrosoftGraphEnableSmsSignIn { get =>
+            new MicrosoftGraphEnableSmsSignInRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the resetPassword method.</summary>
+        public MicrosoftGraphResetPasswordRequestBuilder MicrosoftGraphResetPassword { get =>
+            new MicrosoftGraphResetPasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the resetPassword method.</summary>
-        public ResetPasswordRequestBuilder ResetPassword { get =>
-            new ResetPasswordRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/authentication/methods/{authenticationMethod%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

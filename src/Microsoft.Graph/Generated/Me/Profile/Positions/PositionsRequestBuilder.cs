@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions {
         /// <summary>Provides operations to manage the positions property of the microsoft.graph.profile entity.</summary>
         public WorkPositionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("workPosition%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("workPosition%2Did", position);
             return new WorkPositionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/profile/positions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

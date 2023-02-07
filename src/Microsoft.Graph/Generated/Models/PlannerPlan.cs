@@ -108,6 +108,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("owner", value); }
         }
 #endif
+        /// <summary>The sharedWithContainers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<PlannerSharedWithContainer>? SharedWithContainers {
+            get { return BackingStore?.Get<List<PlannerSharedWithContainer>?>("sharedWithContainers"); }
+            set { BackingStore?.Set("sharedWithContainers", value); }
+        }
+#nullable restore
+#else
+        public List<PlannerSharedWithContainer> SharedWithContainers {
+            get { return BackingStore?.Get<List<PlannerSharedWithContainer>>("sharedWithContainers"); }
+            set { BackingStore?.Set("sharedWithContainers", value); }
+        }
+#endif
         /// <summary>Collection of tasks in the plan. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +171,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"creationSource", n => { CreationSource = n.GetObjectValue<PlannerPlanCreation>(PlannerPlanCreation.CreateFromDiscriminatorValue); } },
                 {"details", n => { Details = n.GetObjectValue<PlannerPlanDetails>(PlannerPlanDetails.CreateFromDiscriminatorValue); } },
                 {"owner", n => { Owner = n.GetStringValue(); } },
+                {"sharedWithContainers", n => { SharedWithContainers = n.GetCollectionOfObjectValues<PlannerSharedWithContainer>(PlannerSharedWithContainer.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
             };
@@ -176,6 +191,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PlannerPlanCreation>("creationSource", CreationSource);
             writer.WriteObjectValue<PlannerPlanDetails>("details", Details);
             writer.WriteStringValue("owner", Owner);
+            writer.WriteCollectionOfObjectValues<PlannerSharedWithContainer>("sharedWithContainers", SharedWithContainers);
             writer.WriteCollectionOfObjectValues<PlannerTask>("tasks", Tasks);
             writer.WriteStringValue("title", Title);
         }

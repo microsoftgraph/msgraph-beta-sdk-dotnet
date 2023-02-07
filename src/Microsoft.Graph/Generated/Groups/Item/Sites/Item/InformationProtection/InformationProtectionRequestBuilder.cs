@@ -1,13 +1,13 @@
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Bitlocker;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.DataLossPreventionPolicies;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.DecryptBuffer;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.EncryptBuffer;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.MicrosoftGraphDecryptBuffer;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.MicrosoftGraphEncryptBuffer;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.MicrosoftGraphSignDigest;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.MicrosoftGraphVerifySignature;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Policy;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SensitivityLabels;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SensitivityPolicySettings;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SignDigest;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.ThreatAssessmentRequests;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.VerifySignature;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -32,12 +32,20 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection {
             new DataLossPreventionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decryptBuffer method.</summary>
-        public DecryptBufferRequestBuilder DecryptBuffer { get =>
-            new DecryptBufferRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDecryptBufferRequestBuilder MicrosoftGraphDecryptBuffer { get =>
+            new MicrosoftGraphDecryptBufferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the encryptBuffer method.</summary>
-        public EncryptBufferRequestBuilder EncryptBuffer { get =>
-            new EncryptBufferRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEncryptBufferRequestBuilder MicrosoftGraphEncryptBuffer { get =>
+            new MicrosoftGraphEncryptBufferRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the signDigest method.</summary>
+        public MicrosoftGraphSignDigestRequestBuilder MicrosoftGraphSignDigest { get =>
+            new MicrosoftGraphSignDigestRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the verifySignature method.</summary>
+        public MicrosoftGraphVerifySignatureRequestBuilder MicrosoftGraphVerifySignature { get =>
+            new MicrosoftGraphVerifySignatureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -55,20 +63,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection {
         public SensitivityPolicySettingsRequestBuilder SensitivityPolicySettings { get =>
             new SensitivityPolicySettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the signDigest method.</summary>
-        public SignDigestRequestBuilder SignDigest { get =>
-            new SignDigestRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.</summary>
         public ThreatAssessmentRequestsRequestBuilder ThreatAssessmentRequests { get =>
             new ThreatAssessmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Provides operations to call the verifySignature method.</summary>
-        public VerifySignatureRequestBuilder VerifySignature { get =>
-            new VerifySignatureRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new InformationProtectionRequestBuilder and sets the default values.
         /// </summary>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

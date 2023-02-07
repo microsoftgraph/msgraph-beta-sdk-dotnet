@@ -1,19 +1,19 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Accept;
 using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Attachments;
 using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Calendar;
-using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Cancel;
-using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Decline;
-using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.DismissReminder;
 using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurrences;
 using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Extensions;
-using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Forward;
 using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Instances;
+using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.MicrosoftGraphAccept;
+using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.MicrosoftGraphCancel;
+using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.MicrosoftGraphDecline;
+using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.MicrosoftGraphDismissReminder;
+using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.MicrosoftGraphForward;
+using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.MicrosoftGraphSnoozeReminder;
+using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.MicrosoftGraphTentativelyAccept;
 using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.SingleValueExtendedProperties;
-using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.SnoozeReminder;
-using Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.TentativelyAccept;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -27,10 +27,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item {
     /// Provides operations to manage the events property of the microsoft.graph.calendar entity.
     /// </summary>
     public class EventItemRequestBuilder {
-        /// <summary>Provides operations to call the accept method.</summary>
-        public AcceptRequestBuilder Accept { get =>
-            new AcceptRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
         public AttachmentsRequestBuilder Attachments { get =>
             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -38,18 +34,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item {
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.event entity.</summary>
         public Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Calendar.CalendarRequestBuilder Calendar { get =>
             new Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel { get =>
-            new CancelRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the decline method.</summary>
-        public DeclineRequestBuilder Decline { get =>
-            new DeclineRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the dismissReminder method.</summary>
-        public DismissReminderRequestBuilder DismissReminder { get =>
-            new DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
         public ExceptionOccurrencesRequestBuilder ExceptionOccurrences { get =>
@@ -59,13 +43,37 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item {
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the forward method.</summary>
-        public ForwardRequestBuilder Forward { get =>
-            new ForwardRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
         public InstancesRequestBuilder Instances { get =>
             new InstancesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the accept method.</summary>
+        public MicrosoftGraphAcceptRequestBuilder MicrosoftGraphAccept { get =>
+            new MicrosoftGraphAcceptRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the cancel method.</summary>
+        public MicrosoftGraphCancelRequestBuilder MicrosoftGraphCancel { get =>
+            new MicrosoftGraphCancelRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the decline method.</summary>
+        public MicrosoftGraphDeclineRequestBuilder MicrosoftGraphDecline { get =>
+            new MicrosoftGraphDeclineRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the dismissReminder method.</summary>
+        public MicrosoftGraphDismissReminderRequestBuilder MicrosoftGraphDismissReminder { get =>
+            new MicrosoftGraphDismissReminderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the forward method.</summary>
+        public MicrosoftGraphForwardRequestBuilder MicrosoftGraphForward { get =>
+            new MicrosoftGraphForwardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the snoozeReminder method.</summary>
+        public MicrosoftGraphSnoozeReminderRequestBuilder MicrosoftGraphSnoozeReminder { get =>
+            new MicrosoftGraphSnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the tentativelyAccept method.</summary>
+        public MicrosoftGraphTentativelyAcceptRequestBuilder MicrosoftGraphTentativelyAccept { get =>
+            new MicrosoftGraphTentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
@@ -78,14 +86,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item {
         /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.</summary>
         public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
             new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the snoozeReminder method.</summary>
-        public SnoozeReminderRequestBuilder SnoozeReminder { get =>
-            new SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the tentativelyAccept method.</summary>
-        public TentativelyAcceptRequestBuilder TentativelyAccept { get =>
-            new TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/calendar/events/{event%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

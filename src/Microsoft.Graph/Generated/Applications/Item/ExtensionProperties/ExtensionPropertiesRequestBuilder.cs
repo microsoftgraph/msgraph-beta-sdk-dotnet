@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ExtensionProperties {
         /// <summary>Provides operations to manage the extensionProperties property of the microsoft.graph.application entity.</summary>
         public ExtensionPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("extensionProperty%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("extensionProperty%2Did", position);
             return new ExtensionPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ExtensionProperties {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/applications/{application%2Did}/extensionProperties{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

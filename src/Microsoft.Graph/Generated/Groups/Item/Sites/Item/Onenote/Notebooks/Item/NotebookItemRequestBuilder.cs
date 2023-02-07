@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.CopyNotebook;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.MicrosoftGraphCopyNotebook;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.Sections;
 using Microsoft.Graph.Beta.Models;
@@ -17,8 +17,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item {
     /// </summary>
     public class NotebookItemRequestBuilder {
         /// <summary>Provides operations to call the copyNotebook method.</summary>
-        public CopyNotebookRequestBuilder CopyNotebook { get =>
-            new CopyNotebookRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCopyNotebookRequestBuilder MicrosoftGraphCopyNotebook { get =>
+            new MicrosoftGraphCopyNotebookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/notebooks/{notebook%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

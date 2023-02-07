@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Terms.Item.Childr
         /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.term entity.</summary>
         public Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item.TermItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("term%2Did1", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("term%2Did1", position);
             return new Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item.TermItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Terms.Item.Childr
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}/children{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

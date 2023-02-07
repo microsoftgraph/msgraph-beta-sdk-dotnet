@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.RunHealthChecks;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.UpdateAdDomainPassword;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.MicrosoftGraphRunHealthChecks;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.MicrosoftGraphUpdateAdDomainPassword;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,18 +15,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
     /// Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
     public class CloudPcOnPremisesConnectionItemRequestBuilder {
+        /// <summary>Provides operations to call the runHealthChecks method.</summary>
+        public MicrosoftGraphRunHealthChecksRequestBuilder MicrosoftGraphRunHealthChecks { get =>
+            new MicrosoftGraphRunHealthChecksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateAdDomainPassword method.</summary>
+        public MicrosoftGraphUpdateAdDomainPasswordRequestBuilder MicrosoftGraphUpdateAdDomainPassword { get =>
+            new MicrosoftGraphUpdateAdDomainPasswordRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the runHealthChecks method.</summary>
-        public RunHealthChecksRequestBuilder RunHealthChecks { get =>
-            new RunHealthChecksRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateAdDomainPassword method.</summary>
-        public UpdateAdDomainPasswordRequestBuilder UpdateAdDomainPassword { get =>
-            new UpdateAdDomainPasswordRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

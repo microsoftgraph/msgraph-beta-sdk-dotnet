@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.Identity.IdentityProviders.AvailableProviderTypes;
 using Microsoft.Graph.Beta.Identity.IdentityProviders.Count;
 using Microsoft.Graph.Beta.Identity.IdentityProviders.Item;
+using Microsoft.Graph.Beta.Identity.IdentityProviders.MicrosoftGraphAvailableProviderTypes;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.Identity.IdentityProviders {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the availableProviderTypes method.</summary>
+        public MicrosoftGraphAvailableProviderTypesRequestBuilder MicrosoftGraphAvailableProviderTypes { get =>
+            new MicrosoftGraphAvailableProviderTypesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,15 +33,9 @@ namespace Microsoft.Graph.Beta.Identity.IdentityProviders {
         /// <summary>Provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.</summary>
         public IdentityProviderBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("identityProviderBase%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("identityProviderBase%2Did", position);
             return new IdentityProviderBaseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>
-        /// Provides operations to call the availableProviderTypes method.
-        /// </summary>
-        public AvailableProviderTypesRequestBuilder AvailableProviderTypes() {
-            return new AvailableProviderTypesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new IdentityProvidersRequestBuilder and sets the default values.
         /// </summary>
@@ -61,7 +59,7 @@ namespace Microsoft.Graph.Beta.Identity.IdentityProviders {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identity/identityProviders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -86,7 +84,7 @@ namespace Microsoft.Graph.Beta.Identity.IdentityProviders {
             return await RequestAdapter.SendAsync<IdentityProviderBaseCollectionResponse>(requestInfo, IdentityProviderBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create an identity provider resource that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
+        /// Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-post-identityproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -134,7 +132,7 @@ namespace Microsoft.Graph.Beta.Identity.IdentityProviders {
             return requestInfo;
         }
         /// <summary>
-        /// Create an identity provider resource that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
+        /// Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

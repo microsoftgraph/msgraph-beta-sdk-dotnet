@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Operations {
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.onenote entity.</summary>
         public OnenoteOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("onenoteOperation%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("onenoteOperation%2Did", position);
             return new OnenoteOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Operations {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/onenote/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

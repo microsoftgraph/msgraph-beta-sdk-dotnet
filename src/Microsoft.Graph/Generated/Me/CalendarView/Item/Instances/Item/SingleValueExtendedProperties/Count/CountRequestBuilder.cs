@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.SingleValueEx
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/calendarView/{event%2Did}/instances/{event%2Did1}/singleValueExtendedProperties/$count{?%24search,%24filter}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

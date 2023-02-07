@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.Cancel;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.MicrosoftGraphCancel;
 using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.RoleInfo;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
     /// </summary>
     public class PrivilegedRoleAssignmentRequestItemRequestBuilder {
         /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel { get =>
-            new CancelRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCancelRequestBuilder MicrosoftGraphCancel { get =>
+            new MicrosoftGraphCancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from privilegedRoleAssignmentRequests by key (id)
+        /// Delete entity from privilegedRoleAssignmentRequests
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from privilegedRoleAssignmentRequests by key (id)
+        /// Get entity from privilegedRoleAssignmentRequests by key
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in privilegedRoleAssignmentRequests by key (id)
+        /// Update entity in privilegedRoleAssignmentRequests
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from privilegedRoleAssignmentRequests by key (id)
+        /// Delete entity from privilegedRoleAssignmentRequests
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from privilegedRoleAssignmentRequests by key (id)
+        /// Get entity from privilegedRoleAssignmentRequests by key
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in privilegedRoleAssignmentRequests by key (id)
+        /// Update entity in privilegedRoleAssignmentRequests
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
             }
         }
         /// <summary>
-        /// Get entity from privilegedRoleAssignmentRequests by key (id)
+        /// Get entity from privilegedRoleAssignmentRequests by key
         /// </summary>
         public class PrivilegedRoleAssignmentRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

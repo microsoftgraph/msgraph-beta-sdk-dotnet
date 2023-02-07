@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item.ConsentToDataSharing;
+using Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item.MicrosoftGraphConsentToDataSharing;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item {
     /// </summary>
     public class DataSharingConsentItemRequestBuilder {
         /// <summary>Provides operations to call the consentToDataSharing method.</summary>
-        public ConsentToDataSharingRequestBuilder ConsentToDataSharing { get =>
-            new ConsentToDataSharingRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphConsentToDataSharingRequestBuilder MicrosoftGraphConsentToDataSharing { get =>
+            new MicrosoftGraphConsentToDataSharingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/dataSharingConsents/{dataSharingConsent%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

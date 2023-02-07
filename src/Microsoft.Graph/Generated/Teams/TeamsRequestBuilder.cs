@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Teams.AllMessages;
 using Microsoft.Graph.Beta.Teams.Count;
-using Microsoft.Graph.Beta.Teams.GetAllMessages;
 using Microsoft.Graph.Beta.Teams.Item;
+using Microsoft.Graph.Beta.Teams.MicrosoftGraphAllMessages;
+using Microsoft.Graph.Beta.Teams.MicrosoftGraphGetAllMessages;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,6 +21,14 @@ namespace Microsoft.Graph.Beta.Teams {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the allMessages method.</summary>
+        public MicrosoftGraphAllMessagesRequestBuilder MicrosoftGraphAllMessages { get =>
+            new MicrosoftGraphAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllMessages method.</summary>
+        public MicrosoftGraphGetAllMessagesRequestBuilder MicrosoftGraphGetAllMessages { get =>
+            new MicrosoftGraphGetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -30,15 +38,9 @@ namespace Microsoft.Graph.Beta.Teams {
         /// <summary>Provides operations to manage the collection of team entities.</summary>
         public TeamItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("team%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("team%2Did", position);
             return new TeamItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>
-        /// Provides operations to call the allMessages method.
-        /// </summary>
-        public AllMessagesRequestBuilder AllMessages() {
-            return new AllMessagesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new TeamsRequestBuilder and sets the default values.
         /// </summary>
@@ -62,15 +64,9 @@ namespace Microsoft.Graph.Beta.Teams {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/teams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the getAllMessages method.
-        /// </summary>
-        public GetAllMessagesRequestBuilder GetAllMessages() {
-            return new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// List all teams in an organization.

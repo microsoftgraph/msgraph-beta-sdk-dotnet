@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item.ValidateAuthenticationConfiguration;
+using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item.MicrosoftGraphValidateAuthenticationConfiguration;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
     /// Provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
     /// </summary>
     public class CustomAuthenticationExtensionItemRequestBuilder {
+        /// <summary>Provides operations to call the validateAuthenticationConfiguration method.</summary>
+        public MicrosoftGraphValidateAuthenticationConfigurationRequestBuilder MicrosoftGraphValidateAuthenticationConfiguration { get =>
+            new MicrosoftGraphValidateAuthenticationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Provides operations to call the validateAuthenticationConfiguration method.</summary>
-        public ValidateAuthenticationConfigurationRequestBuilder ValidateAuthenticationConfiguration { get =>
-            new ValidateAuthenticationConfigurationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new CustomAuthenticationExtensionItemRequestBuilder and sets the default values.
         /// </summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

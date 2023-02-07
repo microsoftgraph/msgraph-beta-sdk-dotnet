@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Security.Alerts.Count;
 using Microsoft.Graph.Beta.Security.Alerts.Item;
-using Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts;
+using Microsoft.Graph.Beta.Security.Alerts.MicrosoftGraphUpdateAlerts;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,20 +20,20 @@ namespace Microsoft.Graph.Beta.Security.Alerts {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the updateAlerts method.</summary>
+        public MicrosoftGraphUpdateAlertsRequestBuilder MicrosoftGraphUpdateAlerts { get =>
+            new MicrosoftGraphUpdateAlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the updateAlerts method.</summary>
-        public UpdateAlertsRequestBuilder UpdateAlerts { get =>
-            new UpdateAlertsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
         public AlertItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("alert%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("alert%2Did", position);
             return new AlertItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/security/alerts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Communications.CallRecords.Count;
-using Microsoft.Graph.Beta.Communications.CallRecords.GetDirectRoutingCallsWithFromDateTimeWithToDateTime;
-using Microsoft.Graph.Beta.Communications.CallRecords.GetPstnCallsWithFromDateTimeWithToDateTime;
 using Microsoft.Graph.Beta.Communications.CallRecords.Item;
+using Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime;
+using Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime;
 using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
         /// <summary>Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.</summary>
         public CallRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("callRecord%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("callRecord%2Did", position);
             return new CallRecordItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/communications/callRecords{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -84,20 +84,20 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
         /// </summary>
         /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
         /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
-        public GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder GetDirectRoutingCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
+        public MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
             _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
             _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
-            return new GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
+            return new MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
         }
         /// <summary>
         /// Provides operations to call the getPstnCalls method.
         /// </summary>
         /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
         /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
-        public GetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder GetPstnCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
+        public MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
             _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
             _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
-            return new GetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
+            return new MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
         }
         /// <summary>
         /// Create new navigation property to callRecords for communications

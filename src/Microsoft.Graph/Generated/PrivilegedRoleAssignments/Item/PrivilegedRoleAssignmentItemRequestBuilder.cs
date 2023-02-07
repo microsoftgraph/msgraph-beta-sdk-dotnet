@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakeEligible;
-using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MicrosoftGraphMakeEligible;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MicrosoftGraphMakePermanent;
 using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,12 +17,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
     /// </summary>
     public class PrivilegedRoleAssignmentItemRequestBuilder {
         /// <summary>Provides operations to call the makeEligible method.</summary>
-        public MakeEligibleRequestBuilder MakeEligible { get =>
-            new MakeEligibleRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphMakeEligibleRequestBuilder MicrosoftGraphMakeEligible { get =>
+            new MicrosoftGraphMakeEligibleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the makePermanent method.</summary>
-        public MakePermanentRequestBuilder MakePermanent { get =>
-            new MakePermanentRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphMakePermanentRequestBuilder MicrosoftGraphMakePermanent { get =>
+            new MicrosoftGraphMakePermanentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignment>(requestInfo, PrivilegedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in privilegedRoleAssignments by key (id)
+        /// Update entity in privilegedRoleAssignments
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in privilegedRoleAssignments by key (id)
+        /// Update entity in privilegedRoleAssignments
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

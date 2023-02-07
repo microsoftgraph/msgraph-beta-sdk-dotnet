@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Item.Attachments;
-using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Item.Complete;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Item.MicrosoftGraphComplete;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Item.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties;
 using Microsoft.Kiota.Abstractions;
@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Item {
             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the complete method.</summary>
-        public CompleteRequestBuilder Complete { get =>
-            new CompleteRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCompleteRequestBuilder MicrosoftGraphComplete { get =>
+            new MicrosoftGraphCompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTask entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item.Tasks.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/outlook/taskFolders/{outlookTaskFolder%2Did}/tasks/{outlookTask%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

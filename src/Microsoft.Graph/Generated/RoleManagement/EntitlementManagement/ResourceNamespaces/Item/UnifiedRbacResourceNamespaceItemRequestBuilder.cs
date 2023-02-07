@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces.Item.ImportResourceActions;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces.Item.MicrosoftGraphImportResourceActions;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces.Item.ResourceActions;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
     /// </summary>
     public class UnifiedRbacResourceNamespaceItemRequestBuilder {
         /// <summary>Provides operations to call the importResourceActions method.</summary>
-        public ImportResourceActionsRequestBuilder ImportResourceActions { get =>
-            new ImportResourceActionsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphImportResourceActionsRequestBuilder MicrosoftGraphImportResourceActions { get =>
+            new MicrosoftGraphImportResourceActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/roleManagement/entitlementManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

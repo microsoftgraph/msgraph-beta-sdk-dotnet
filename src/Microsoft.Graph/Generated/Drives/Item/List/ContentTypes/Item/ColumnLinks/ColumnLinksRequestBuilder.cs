@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.ColumnLinks {
         /// <summary>Provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.</summary>
         public ColumnLinkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("columnLink%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("columnLink%2Did", position);
             return new ColumnLinkItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.ColumnLinks {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/drives/{drive%2Did}/list/contentTypes/{contentType%2Did}/columnLinks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

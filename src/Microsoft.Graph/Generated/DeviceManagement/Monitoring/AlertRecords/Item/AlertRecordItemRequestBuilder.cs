@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item.SetPortalNotificationAsSent;
+using Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item.MicrosoftGraphDeviceManagementSetPortalNotificationAsSent;
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item {
     /// Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
     /// </summary>
     public class AlertRecordItemRequestBuilder {
+        /// <summary>Provides operations to call the setPortalNotificationAsSent method.</summary>
+        public MicrosoftGraphDeviceManagementSetPortalNotificationAsSentRequestBuilder MicrosoftGraphDeviceManagementSetPortalNotificationAsSent { get =>
+            new MicrosoftGraphDeviceManagementSetPortalNotificationAsSentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the setPortalNotificationAsSent method.</summary>
-        public SetPortalNotificationAsSentRequestBuilder SetPortalNotificationAsSent { get =>
-            new SetPortalNotificationAsSentRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/monitoring/alertRecords/{alertRecord%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

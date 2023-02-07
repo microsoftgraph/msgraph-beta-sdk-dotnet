@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
+        /// <summary>The allowParticipantsToChangeName property</summary>
+        public bool? AllowParticipantsToChangeName {
+            get { return BackingStore?.Get<bool?>("allowParticipantsToChangeName"); }
+            set { BackingStore?.Set("allowParticipantsToChangeName", value); }
+        }
         /// <summary>Indicates if Teams reactions are enabled for the meeting.</summary>
         public bool? AllowTeamworkReactions {
             get { return BackingStore?.Get<bool?>("allowTeamworkReactions"); }
@@ -302,6 +307,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registration", value); }
         }
 #endif
+        /// <summary>The shareMeetingChatHistoryDefault property</summary>
+        public MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault {
+            get { return BackingStore?.Get<MeetingChatHistoryDefaultMode?>("shareMeetingChatHistoryDefault"); }
+            set { BackingStore?.Set("shareMeetingChatHistoryDefault", value); }
+        }
         /// <summary>The meeting start time in UTC.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
@@ -393,6 +403,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 {"allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
                 {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
+                {"allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
                 {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 {"alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
                 {"anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfEnumValues<OnlineMeetingRole>()?.ToList(); } },
@@ -417,6 +428,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
                 {"recording", n => { Recording = n.GetByteArrayValue(); } },
                 {"registration", n => { Registration = n.GetObjectValue<MeetingRegistration>(MeetingRegistration.CreateFromDiscriminatorValue); } },
+                {"shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<MeetingChatHistoryDefaultMode>(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"subject", n => { Subject = n.GetStringValue(); } },
                 {"transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<CallTranscript>(CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -435,6 +447,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowAttendeeToEnableCamera", AllowAttendeeToEnableCamera);
             writer.WriteBoolValue("allowAttendeeToEnableMic", AllowAttendeeToEnableMic);
             writer.WriteEnumValue<OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
+            writer.WriteBoolValue("allowParticipantsToChangeName", AllowParticipantsToChangeName);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);
             writer.WriteCollectionOfEnumValues<OnlineMeetingRole>("anonymizeIdentityForRoles", AnonymizeIdentityForRoles);
@@ -459,6 +472,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
             writer.WriteByteArrayValue("recording", Recording);
             writer.WriteObjectValue<MeetingRegistration>("registration", Registration);
+            writer.WriteEnumValue<MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("subject", Subject);
             writer.WriteCollectionOfObjectValues<CallTranscript>("transcripts", Transcripts);

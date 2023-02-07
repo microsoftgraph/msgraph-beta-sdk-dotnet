@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// AppLogCollectionRequest Entity.
+    /// Entity for AppLogCollectionRequest contains all logs values.
     /// </summary>
     public class AppLogCollectionRequest : Entity, IParsable {
-        /// <summary>Time at which the upload log request reached a terminal state</summary>
+        /// <summary>Time at which the upload log request reached a completed state if not completed yet NULL will be returned.</summary>
         public DateTimeOffset? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customLogFolders", value); }
         }
 #endif
-        /// <summary>Error message if any during the upload process</summary>
+        /// <summary>Indicates error message if any during the upload process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage {

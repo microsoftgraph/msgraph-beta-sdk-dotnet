@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Admin.Windows.Updates;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to manage the updates property of the microsoft.graph.windowsUpdates.windows entity.</summary>
+        /// <summary>Provides operations to manage the updates property of the microsoft.graph.adminWindows entity.</summary>
         public UpdatesRequestBuilder Updates { get =>
             new UpdatesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/windows{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -71,23 +71,23 @@ namespace Microsoft.Graph.Beta.Admin.Windows {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A container for all Windows Update for Business deployment service functionality. Read-only.
+        /// A container for all Windows administrator functionalities. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows?> GetAsync(Action<WindowsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindows?> GetAsync(Action<WindowsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows> GetAsync(Action<WindowsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindows> GetAsync(Action<WindowsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.Windows.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdminWindows>(requestInfo, AdminWindows.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property windows in admin
@@ -97,10 +97,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows?> PatchAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.Windows body, Action<WindowsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindows?> PatchAsync(AdminWindows body, Action<WindowsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows> PatchAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.Windows body, Action<WindowsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindows> PatchAsync(AdminWindows body, Action<WindowsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.Windows.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdminWindows>(requestInfo, AdminWindows.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Delete navigation property windows for admin
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows {
             return requestInfo;
         }
         /// <summary>
-        /// A container for all Windows Update for Business deployment service functionality. Read-only.
+        /// A container for all Windows administrator functionalities. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,10 +167,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.Windows body, Action<WindowsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(AdminWindows body, Action<WindowsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.Windows body, Action<WindowsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(AdminWindows body, Action<WindowsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -205,7 +205,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows {
             }
         }
         /// <summary>
-        /// A container for all Windows Update for Business deployment service functionality. Read-only.
+        /// A container for all Windows administrator functionalities. Read-only.
         /// </summary>
         public class WindowsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

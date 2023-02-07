@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.Count;
-using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.GetOrder;
 using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.Item;
-using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.SetOrder;
+using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.MicrosoftGraphGetOrder;
+using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.MicrosoftGraphSetOrder;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,20 +21,24 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getOrder method.</summary>
+        public MicrosoftGraphGetOrderRequestBuilder MicrosoftGraphGetOrder { get =>
+            new MicrosoftGraphGetOrderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setOrder method.</summary>
+        public MicrosoftGraphSetOrderRequestBuilder MicrosoftGraphSetOrder { get =>
+            new MicrosoftGraphSetOrderRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the setOrder method.</summary>
-        public SetOrderRequestBuilder SetOrder { get =>
-            new SetOrderRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
         public IdentityUserFlowAttributeAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("identityUserFlowAttributeAssignment%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("identityUserFlowAttributeAssignment%2Did", position);
             return new IdentityUserFlowAttributeAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -60,7 +64,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userAttributeAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -83,12 +87,6 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<IdentityUserFlowAttributeAssignmentCollectionResponse>(requestInfo, IdentityUserFlowAttributeAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getOrder method.
-        /// </summary>
-        public GetOrderRequestBuilder GetOrder() {
-            return new GetOrderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create a new identityUserFlowAttributeAssignment object in a b2cIdentityUserFlow.

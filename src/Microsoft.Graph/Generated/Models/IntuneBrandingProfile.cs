@@ -144,6 +144,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("disableClientTelemetry"); }
             set { BackingStore?.Set("disableClientTelemetry", value); }
         }
+        /// <summary>Boolean that indicates if Device Category Selection will be shown in Company Portal</summary>
+        public bool? DisableDeviceCategorySelection {
+            get { return BackingStore?.Get<bool?>("disableDeviceCategorySelection"); }
+            set { BackingStore?.Set("disableDeviceCategorySelection", value); }
+        }
         /// <summary>Company/organization name that is displayed to end users</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -377,6 +382,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"customCantSeePrivacyMessage", n => { CustomCantSeePrivacyMessage = n.GetStringValue(); } },
                 {"customPrivacyMessage", n => { CustomPrivacyMessage = n.GetStringValue(); } },
                 {"disableClientTelemetry", n => { DisableClientTelemetry = n.GetBoolValue(); } },
+                {"disableDeviceCategorySelection", n => { DisableDeviceCategorySelection = n.GetBoolValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"enrollmentAvailability", n => { EnrollmentAvailability = n.GetEnumValue<EnrollmentAvailabilityOptions>(); } },
                 {"isDefaultProfile", n => { IsDefaultProfile = n.GetBoolValue(); } },
@@ -419,6 +425,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("customCantSeePrivacyMessage", CustomCantSeePrivacyMessage);
             writer.WriteStringValue("customPrivacyMessage", CustomPrivacyMessage);
             writer.WriteBoolValue("disableClientTelemetry", DisableClientTelemetry);
+            writer.WriteBoolValue("disableDeviceCategorySelection", DisableDeviceCategorySelection);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<EnrollmentAvailabilityOptions>("enrollmentAvailability", EnrollmentAvailability);
             writer.WriteBoolValue("isDefaultProfile", IsDefaultProfile);

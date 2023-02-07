@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.CreateServerLogCollectionRequest;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GenerateServerLogCollectionRequest;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetrics;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.MicrosoftGraphCreateServerLogCollectionRequest;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.MicrosoftGraphGenerateServerLogCollectionRequest;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.MicrosoftGraphGetHealthMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.MicrosoftGraphGetHealthMetricTimeSeries;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,20 +18,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
     /// </summary>
     public class MicrosoftTunnelServerItemRequestBuilder {
         /// <summary>Provides operations to call the createServerLogCollectionRequest method.</summary>
-        public CreateServerLogCollectionRequestRequestBuilder CreateServerLogCollectionRequest { get =>
-            new CreateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCreateServerLogCollectionRequestRequestBuilder MicrosoftGraphCreateServerLogCollectionRequest { get =>
+            new MicrosoftGraphCreateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the generateServerLogCollectionRequest method.</summary>
-        public GenerateServerLogCollectionRequestRequestBuilder GenerateServerLogCollectionRequest { get =>
-            new GenerateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGenerateServerLogCollectionRequestRequestBuilder MicrosoftGraphGenerateServerLogCollectionRequest { get =>
+            new MicrosoftGraphGenerateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getHealthMetrics method.</summary>
-        public GetHealthMetricsRequestBuilder GetHealthMetrics { get =>
-            new GetHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetHealthMetricsRequestBuilder MicrosoftGraphGetHealthMetrics { get =>
+            new MicrosoftGraphGetHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getHealthMetricTimeSeries method.</summary>
-        public GetHealthMetricTimeSeriesRequestBuilder GetHealthMetricTimeSeries { get =>
-            new GetHealthMetricTimeSeriesRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetHealthMetricTimeSeriesRequestBuilder MicrosoftGraphGetHealthMetricTimeSeries { get =>
+            new MicrosoftGraphGetHealthMetricTimeSeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoftTunnelServers/{microsoftTunnelServer%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

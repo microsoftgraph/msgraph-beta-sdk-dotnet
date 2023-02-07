@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Count;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.MicrosoftGraphCreateMigrationReport;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createMigrationReport method.</summary>
-        public CreateMigrationReportRequestBuilder CreateMigrationReport { get =>
-            new CreateMigrationReportRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCreateMigrationReportRequestBuilder MicrosoftGraphCreateMigrationReport { get =>
+            new MicrosoftGraphCreateMigrationReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
         /// <summary>Provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.</summary>
         public GroupPolicyMigrationReportItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("groupPolicyMigrationReport%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("groupPolicyMigrationReport%2Did", position);
             return new GroupPolicyMigrationReportItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/groupPolicyMigrationReports{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

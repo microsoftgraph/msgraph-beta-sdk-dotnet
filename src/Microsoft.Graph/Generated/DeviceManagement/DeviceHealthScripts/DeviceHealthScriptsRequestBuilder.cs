@@ -1,8 +1,8 @@
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.AreGlobalScriptsAvailable;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Count;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.EnableGlobalScripts;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.GetRemediationSummary;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.MicrosoftGraphAreGlobalScriptsAvailable;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.MicrosoftGraphEnableGlobalScripts;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.MicrosoftGraphGetRemediationSummary;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,9 +22,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the areGlobalScriptsAvailable method.</summary>
+        public MicrosoftGraphAreGlobalScriptsAvailableRequestBuilder MicrosoftGraphAreGlobalScriptsAvailable { get =>
+            new MicrosoftGraphAreGlobalScriptsAvailableRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the enableGlobalScripts method.</summary>
-        public EnableGlobalScriptsRequestBuilder EnableGlobalScripts { get =>
-            new EnableGlobalScriptsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEnableGlobalScriptsRequestBuilder MicrosoftGraphEnableGlobalScripts { get =>
+            new MicrosoftGraphEnableGlobalScriptsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getRemediationSummary method.</summary>
+        public MicrosoftGraphGetRemediationSummaryRequestBuilder MicrosoftGraphGetRemediationSummary { get =>
+            new MicrosoftGraphGetRemediationSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -35,15 +43,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts {
         /// <summary>Provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.</summary>
         public DeviceHealthScriptItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("deviceHealthScript%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("deviceHealthScript%2Did", position);
             return new DeviceHealthScriptItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>
-        /// Provides operations to call the areGlobalScriptsAvailable method.
-        /// </summary>
-        public AreGlobalScriptsAvailableRequestBuilder AreGlobalScriptsAvailable() {
-            return new AreGlobalScriptsAvailableRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new DeviceHealthScriptsRequestBuilder and sets the default values.
         /// </summary>
@@ -67,7 +69,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/deviceHealthScripts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -89,12 +91,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceHealthScriptCollectionResponse>(requestInfo, DeviceHealthScriptCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getRemediationSummary method.
-        /// </summary>
-        public GetRemediationSummaryRequestBuilder GetRemediationSummary() {
-            return new GetRemediationSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create new navigation property to deviceHealthScripts for deviceManagement

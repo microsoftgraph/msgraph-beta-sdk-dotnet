@@ -1,6 +1,6 @@
+using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.MicrosoftGraphUpgrade;
 using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.TeamsApp;
 using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.TeamsAppDefinition;
-using Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.Upgrade;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,6 +16,10 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item {
     /// Provides operations to manage the installedApps property of the microsoft.graph.chat entity.
     /// </summary>
     public class TeamsAppInstallationItemRequestBuilder {
+        /// <summary>Provides operations to call the upgrade method.</summary>
+        public MicrosoftGraphUpgradeRequestBuilder MicrosoftGraphUpgrade { get =>
+            new MicrosoftGraphUpgradeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -27,10 +31,6 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item {
         /// <summary>Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.</summary>
         public TeamsAppDefinitionRequestBuilder TeamsAppDefinition { get =>
             new TeamsAppDefinitionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the upgrade method.</summary>
-        public UpgradeRequestBuilder Upgrade { get =>
-            new UpgradeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/chats/{chat%2Did}/installedApps/{teamsAppInstallation%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

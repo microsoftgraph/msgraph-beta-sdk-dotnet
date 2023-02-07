@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CustomExtensionCalloutResult : AuthenticationEventHandlerResult, IParsable {
-        /// <summary>The calloutDateTime property</summary>
+        /// <summary>When the API transaction was initiated, the date and time information uses ISO 8601 format and is always in UTC time. Example: midnight on Jan 1, 2014, is reported as 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CalloutDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("calloutDateTime"); }
             set { BackingStore?.Set("calloutDateTime", value); }
         }
-        /// <summary>The customExtensionId property</summary>
+        /// <summary>Identifier of the custom extension that was called.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomExtensionId {
@@ -24,17 +24,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customExtensionId", value); }
         }
 #endif
-        /// <summary>The errorCode property</summary>
+        /// <summary>Error code that was returned when the last API attempt failed.</summary>
         public int? ErrorCode {
             get { return BackingStore?.Get<int?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>The httpStatus property</summary>
+        /// <summary>The HTTP status code that was returned by the target API endpoint after the last API attempt.</summary>
         public int? HttpStatus {
             get { return BackingStore?.Get<int?>("httpStatus"); }
             set { BackingStore?.Set("httpStatus", value); }
         }
-        /// <summary>The numberOfAttempts property</summary>
+        /// <summary>The number of API calls to the customer&apos;s API.</summary>
         public int? NumberOfAttempts {
             get { return BackingStore?.Get<int?>("numberOfAttempts"); }
             set { BackingStore?.Set("numberOfAttempts", value); }

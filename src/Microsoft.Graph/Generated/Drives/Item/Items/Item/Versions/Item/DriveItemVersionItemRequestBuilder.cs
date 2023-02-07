@@ -1,5 +1,5 @@
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item.Content;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item.RestoreVersion;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item.MicrosoftGraphRestoreVersion;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item {
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the restoreVersion method.</summary>
+        public MicrosoftGraphRestoreVersionRequestBuilder MicrosoftGraphRestoreVersion { get =>
+            new MicrosoftGraphRestoreVersionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the restoreVersion method.</summary>
-        public RestoreVersionRequestBuilder RestoreVersion { get =>
-            new RestoreVersionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/versions/{driveItemVersion%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

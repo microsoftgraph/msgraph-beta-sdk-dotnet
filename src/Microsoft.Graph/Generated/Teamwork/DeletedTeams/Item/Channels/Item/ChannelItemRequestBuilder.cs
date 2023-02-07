@@ -1,12 +1,12 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.CompleteMigration;
-using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.FilesFolder;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages;
-using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.ProvisionEmail;
-using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.RemoveEmail;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.MicrosoftGraphCompleteMigration;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.MicrosoftGraphProvisionEmail;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.MicrosoftGraphRemoveEmail;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWithTeams;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Tabs;
 using Microsoft.Kiota.Abstractions;
@@ -22,10 +22,6 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
     /// Provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
     /// </summary>
     public class ChannelItemRequestBuilder {
-        /// <summary>Provides operations to call the completeMigration method.</summary>
-        public CompleteMigrationRequestBuilder CompleteMigration { get =>
-            new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public FilesFolderRequestBuilder FilesFolder { get =>
             new FilesFolderRequestBuilder(PathParameters, RequestAdapter);
@@ -38,16 +34,24 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
         public MessagesRequestBuilder Messages { get =>
             new MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the completeMigration method.</summary>
+        public MicrosoftGraphCompleteMigrationRequestBuilder MicrosoftGraphCompleteMigration { get =>
+            new MicrosoftGraphCompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the doesUserHaveAccess method.</summary>
+        public MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName { get =>
+            new MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the provisionEmail method.</summary>
-        public ProvisionEmailRequestBuilder ProvisionEmail { get =>
-            new ProvisionEmailRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphProvisionEmailRequestBuilder MicrosoftGraphProvisionEmail { get =>
+            new MicrosoftGraphProvisionEmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeEmail method.</summary>
-        public RemoveEmailRequestBuilder RemoveEmail { get =>
-            new RemoveEmailRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphRemoveEmailRequestBuilder MicrosoftGraphRemoveEmail { get =>
+            new MicrosoftGraphRemoveEmailRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Path parameters for the request</summary>
+        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.</summary>
@@ -83,7 +87,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -105,12 +109,6 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the doesUserHaveAccess method.
-        /// </summary>
-        public DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName() {
-            return new DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// The channels those are either shared with this deleted team or created in this deleted team.

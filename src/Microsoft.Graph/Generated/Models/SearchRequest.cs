@@ -213,13 +213,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The stored_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Stored_fields {
+        public List<string>? StoredFields {
             get { return BackingStore?.Get<List<string>?>("stored_fields"); }
             set { BackingStore?.Set("stored_fields", value); }
         }
 #nullable restore
 #else
-        public List<string> Stored_fields {
+        public List<string> StoredFields {
             get { return BackingStore?.Get<List<string>>("stored_fields"); }
             set { BackingStore?.Set("stored_fields", value); }
         }
@@ -265,7 +265,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"sharePointOneDriveOptions", n => { SharePointOneDriveOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharePointOneDriveOptions>(Microsoft.Graph.Beta.Models.SharePointOneDriveOptions.CreateFromDiscriminatorValue); } },
                 {"size", n => { Size = n.GetIntValue(); } },
                 {"sortProperties", n => { SortProperties = n.GetCollectionOfObjectValues<SortProperty>(SortProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"stored_fields", n => { Stored_fields = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"stored_fields", n => { StoredFields = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"trimDuplicates", n => { TrimDuplicates = n.GetBoolValue(); } },
             };
         }
@@ -291,7 +291,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharePointOneDriveOptions>("sharePointOneDriveOptions", SharePointOneDriveOptions);
             writer.WriteIntValue("size", Size);
             writer.WriteCollectionOfObjectValues<SortProperty>("sortProperties", SortProperties);
-            writer.WriteCollectionOfPrimitiveValues<string>("stored_fields", Stored_fields);
+            writer.WriteCollectionOfPrimitiveValues<string>("stored_fields", StoredFields);
             writer.WriteBoolValue("trimDuplicates", TrimDuplicates);
             writer.WriteAdditionalData(AdditionalData);
         }

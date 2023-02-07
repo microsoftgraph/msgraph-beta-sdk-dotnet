@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Assign;
 using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Assignments;
+using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.MicrosoftGraphAssign;
 using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.PolicyPayload;
 using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.UserPreferencePayload;
 using Microsoft.Kiota.Abstractions;
@@ -17,13 +17,13 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
     /// Provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
     /// </summary>
     public class OfficeClientConfigurationItemRequestBuilder {
-        /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign { get =>
-            new AssignRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.officeClientConfiguration entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the assign method.</summary>
+        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
+            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/officeConfiguration/clientConfigurations/{officeClientConfiguration%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

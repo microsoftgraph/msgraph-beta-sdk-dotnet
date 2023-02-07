@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Count;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.EnrollAssets;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.EnrollAssetsById;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.UnenrollAssets;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.UnenrollAssetsById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.MicrosoftGraphWindowsUpdatesEnrollAssets;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.MicrosoftGraphWindowsUpdatesEnrollAssetsById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.MicrosoftGraphWindowsUpdatesUnenrollAssets;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.MicrosoftGraphWindowsUpdatesUnenrollAssetsById;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
@@ -24,31 +24,31 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enrollAssets method.</summary>
-        public EnrollAssetsRequestBuilder EnrollAssets { get =>
-            new EnrollAssetsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder MicrosoftGraphWindowsUpdatesEnrollAssets { get =>
+            new MicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enrollAssetsById method.</summary>
-        public EnrollAssetsByIdRequestBuilder EnrollAssetsById { get =>
-            new EnrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder MicrosoftGraphWindowsUpdatesEnrollAssetsById { get =>
+            new MicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unenrollAssets method.</summary>
+        public MicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder MicrosoftGraphWindowsUpdatesUnenrollAssets { get =>
+            new MicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unenrollAssetsById method.</summary>
+        public MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder MicrosoftGraphWindowsUpdatesUnenrollAssetsById { get =>
+            new MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the unenrollAssets method.</summary>
-        public UnenrollAssetsRequestBuilder UnenrollAssets { get =>
-            new UnenrollAssetsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unenrollAssetsById method.</summary>
-        public UnenrollAssetsByIdRequestBuilder UnenrollAssetsById { get =>
-            new UnenrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.</summary>
         public UpdatableAssetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("updatableAsset%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("updatableAsset%2Did", position);
             return new UpdatableAssetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

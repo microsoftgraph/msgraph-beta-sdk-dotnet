@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item.Endpoint;
-using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item.ServicePrincipal;
-using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item.User;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item.MicrosoftGraphEndpoint;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item.MicrosoftGraphServicePrincipal;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item.MicrosoftGraphUser;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,23 +17,23 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item {
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public EndpointRequestBuilder Endpoint { get =>
-            new EndpointRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEndpointRequestBuilder MicrosoftGraphEndpoint { get =>
+            new MicrosoftGraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to servicePrincipal.</summary>
+        public MicrosoftGraphServicePrincipalRequestBuilder MicrosoftGraphServicePrincipal { get =>
+            new MicrosoftGraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to user.</summary>
+        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
+            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public ServicePrincipalRequestBuilder ServicePrincipal { get =>
-            new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Casts the previous resource to user.</summary>
-        public UserRequestBuilder User { get =>
-            new UserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         /// </summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredUsers/{directoryObject%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

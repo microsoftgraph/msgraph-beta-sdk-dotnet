@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Tabs.Item.TeamsApp {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/chats/{chat%2Did}/tabs/{teamsTab%2Did}/teamsApp{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

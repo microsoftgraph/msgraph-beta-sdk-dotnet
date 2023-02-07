@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Reports.AuthenticationMethods.MicrosoftGraphUsersRegisteredByFeature;
+using Microsoft.Graph.Beta.Reports.AuthenticationMethods.MicrosoftGraphUsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles;
+using Microsoft.Graph.Beta.Reports.AuthenticationMethods.MicrosoftGraphUsersRegisteredByMethod;
+using Microsoft.Graph.Beta.Reports.AuthenticationMethods.MicrosoftGraphUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDetails;
-using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByFeature;
-using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles;
-using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByMethod;
-using Microsoft.Graph.Beta.Reports.AuthenticationMethods.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -18,6 +18,14 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
     /// Provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.
     /// </summary>
     public class AuthenticationMethodsRequestBuilder {
+        /// <summary>Provides operations to call the usersRegisteredByFeature method.</summary>
+        public MicrosoftGraphUsersRegisteredByFeatureRequestBuilder MicrosoftGraphUsersRegisteredByFeature { get =>
+            new MicrosoftGraphUsersRegisteredByFeatureRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the usersRegisteredByMethod method.</summary>
+        public MicrosoftGraphUsersRegisteredByMethodRequestBuilder MicrosoftGraphUsersRegisteredByMethod { get =>
+            new MicrosoftGraphUsersRegisteredByMethodRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -51,7 +59,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/authenticationMethods{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -92,6 +100,26 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the usersRegisteredByFeature method.
+        /// </summary>
+        /// <param name="includedUserRoles">Usage: includedUserRoles=&apos;{includedUserRoles}&apos;</param>
+        /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
+        public MicrosoftGraphUsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder MicrosoftGraphUsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
+            if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
+            if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
+            return new MicrosoftGraphUsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
+        }
+        /// <summary>
+        /// Provides operations to call the usersRegisteredByMethod method.
+        /// </summary>
+        /// <param name="includedUserRoles">Usage: includedUserRoles=&apos;{includedUserRoles}&apos;</param>
+        /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
+        public MicrosoftGraphUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder MicrosoftGraphUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
+            if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
+            if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
+            return new MicrosoftGraphUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
         }
         /// <summary>
         /// Update the navigation property authenticationMethods in reports
@@ -191,38 +219,6 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Provides operations to call the usersRegisteredByFeature method.
-        /// </summary>
-        public UsersRegisteredByFeatureRequestBuilder UsersRegisteredByFeature() {
-            return new UsersRegisteredByFeatureRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the usersRegisteredByFeature method.
-        /// </summary>
-        /// <param name="includedUserRoles">Usage: includedUserRoles=&apos;{includedUserRoles}&apos;</param>
-        /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
-        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
-            if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
-            if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
-            return new UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
-        }
-        /// <summary>
-        /// Provides operations to call the usersRegisteredByMethod method.
-        /// </summary>
-        public UsersRegisteredByMethodRequestBuilder UsersRegisteredByMethod() {
-            return new UsersRegisteredByMethodRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the usersRegisteredByMethod method.
-        /// </summary>
-        /// <param name="includedUserRoles">Usage: includedUserRoles=&apos;{includedUserRoles}&apos;</param>
-        /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
-        public UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
-            if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
-            if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
-            return new UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

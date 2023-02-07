@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item.CopyToNotebook;
-using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item.CopyToSectionGroup;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item.MicrosoftGraphCopyToNotebook;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item.MicrosoftGraphCopyToSectionGroup;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item.Pages;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item.ParentNotebook;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item.ParentSectionGroup;
@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item {
     /// </summary>
     public class OnenoteSectionItemRequestBuilder {
         /// <summary>Provides operations to call the copyToNotebook method.</summary>
-        public CopyToNotebookRequestBuilder CopyToNotebook { get =>
-            new CopyToNotebookRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCopyToNotebookRequestBuilder MicrosoftGraphCopyToNotebook { get =>
+            new MicrosoftGraphCopyToNotebookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the copyToSectionGroup method.</summary>
-        public CopyToSectionGroupRequestBuilder CopyToSectionGroup { get =>
-            new CopyToSectionGroupRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCopyToSectionGroupRequestBuilder MicrosoftGraphCopyToSectionGroup { get =>
+            new MicrosoftGraphCopyToSectionGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.</summary>
         public PagesRequestBuilder Pages { get =>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/sites/{site%2Did}/onenote/notebooks/{notebook%2Did}/sections/{onenoteSection%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

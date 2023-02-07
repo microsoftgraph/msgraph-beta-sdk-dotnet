@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.App.Calls.Item.Participants.Count;
-using Microsoft.Graph.Beta.App.Calls.Item.Participants.Invite;
 using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item;
-using Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll;
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.MicrosoftGraphInvite;
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.MicrosoftGraphMuteAll;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the invite method.</summary>
-        public InviteRequestBuilder Invite { get =>
-            new InviteRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphInviteRequestBuilder MicrosoftGraphInvite { get =>
+            new MicrosoftGraphInviteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the muteAll method.</summary>
-        public MuteAllRequestBuilder MuteAll { get =>
-            new MuteAllRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphMuteAllRequestBuilder MicrosoftGraphMuteAll { get =>
+            new MicrosoftGraphMuteAllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
         /// <summary>Provides operations to manage the participants property of the microsoft.graph.call entity.</summary>
         public ParticipantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("participant%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("participant%2Did", position);
             return new ParticipantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/app/calls/{call%2Did}/participants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

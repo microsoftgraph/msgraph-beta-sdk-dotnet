@@ -1,8 +1,8 @@
-using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.Cancel;
+using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.MicrosoftGraphCancel;
+using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.MicrosoftGraphUpdateRequest;
 using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.Resource;
 using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.RoleDefinition;
 using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.Subject;
-using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.UpdateRequest;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,8 +19,12 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
     /// </summary>
     public class GovernanceRoleAssignmentRequestItemRequestBuilder {
         /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel { get =>
-            new CancelRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCancelRequestBuilder MicrosoftGraphCancel { get =>
+            new MicrosoftGraphCancelRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateRequest method.</summary>
+        public MicrosoftGraphUpdateRequestRequestBuilder MicrosoftGraphUpdateRequest { get =>
+            new MicrosoftGraphUpdateRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -37,10 +41,6 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
         /// <summary>Provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignmentRequest entity.</summary>
         public SubjectRequestBuilder Subject { get =>
             new SubjectRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateRequest method.</summary>
-        public UpdateRequestRequestBuilder UpdateRequest { get =>
-            new UpdateRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/governanceRoleAssignmentRequests/{governanceRoleAssignmentRequest%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from governanceRoleAssignmentRequests by key (id)
+        /// Delete entity from governanceRoleAssignmentRequests
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from governanceRoleAssignmentRequests by key (id)
+        /// Get entity from governanceRoleAssignmentRequests by key
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequest>(requestInfo, GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in governanceRoleAssignmentRequests by key (id)
+        /// Update entity in governanceRoleAssignmentRequests
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequest>(requestInfo, GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from governanceRoleAssignmentRequests by key (id)
+        /// Delete entity from governanceRoleAssignmentRequests
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from governanceRoleAssignmentRequests by key (id)
+        /// Get entity from governanceRoleAssignmentRequests by key
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in governanceRoleAssignmentRequests by key (id)
+        /// Update entity in governanceRoleAssignmentRequests
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
             }
         }
         /// <summary>
-        /// Get entity from governanceRoleAssignmentRequests by key (id)
+        /// Get entity from governanceRoleAssignmentRequests by key
         /// </summary>
         public class GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

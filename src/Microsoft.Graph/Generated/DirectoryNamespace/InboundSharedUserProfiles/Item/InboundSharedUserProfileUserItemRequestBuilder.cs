@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item.ExportPersonalData;
-using Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item.RemovePersonalData;
+using Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item.MicrosoftGraphExportPersonalData;
+using Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item.MicrosoftGraphRemovePersonalData;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,15 +16,15 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
     /// </summary>
     public class InboundSharedUserProfileUserItemRequestBuilder {
         /// <summary>Provides operations to call the exportPersonalData method.</summary>
-        public ExportPersonalDataRequestBuilder ExportPersonalData { get =>
-            new ExportPersonalDataRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphExportPersonalDataRequestBuilder MicrosoftGraphExportPersonalData { get =>
+            new MicrosoftGraphExportPersonalDataRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removePersonalData method.</summary>
+        public MicrosoftGraphRemovePersonalDataRequestBuilder MicrosoftGraphRemovePersonalData { get =>
+            new MicrosoftGraphRemovePersonalDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the removePersonalData method.</summary>
-        public RemovePersonalDataRequestBuilder RemovePersonalData { get =>
-            new RemovePersonalDataRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectivityResult", value); }
         }
 #endif
-        /// <summary>The diskEncryptionState property</summary>
+        /// <summary>The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.</summary>
         public CloudPcDiskEncryptionState? DiskEncryptionState {
             get { return BackingStore?.Get<CloudPcDiskEncryptionState?>("diskEncryptionState"); }
             set { BackingStore?.Set("diskEncryptionState", value); }

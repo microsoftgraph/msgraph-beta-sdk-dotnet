@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ActionStep : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The actionUrl property</summary>
+        /// <summary>A link to the documentation or Azure portal page that is associated with the action step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ActionUrl? ActionUrl {
@@ -41,12 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The stepNumber property</summary>
+        /// <summary>Indicates the position for this action in the order of the collection of actions to be taken.</summary>
         public long? StepNumber {
             get { return BackingStore?.Get<long?>("stepNumber"); }
             set { BackingStore?.Set("stepNumber", value); }
         }
-        /// <summary>The text property</summary>
+        /// <summary>Friendly description of the action to take.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text {

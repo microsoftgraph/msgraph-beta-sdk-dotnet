@@ -31,42 +31,47 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V10_0 {
+        public bool? V100 {
             get { return BackingStore?.Get<bool?>("v10_0"); }
             set { BackingStore?.Set("v10_0", value); }
         }
         /// <summary>When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V11_0 {
+        public bool? V110 {
             get { return BackingStore?.Get<bool?>("v11_0"); }
             set { BackingStore?.Set("v11_0", value); }
         }
         /// <summary>When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V12_0 {
+        public bool? V120 {
             get { return BackingStore?.Get<bool?>("v12_0"); }
             set { BackingStore?.Set("v12_0", value); }
         }
         /// <summary>When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V13_0 {
+        public bool? V130 {
             get { return BackingStore?.Get<bool?>("v13_0"); }
             set { BackingStore?.Set("v13_0", value); }
         }
         /// <summary>When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V14_0 {
+        public bool? V140 {
             get { return BackingStore?.Get<bool?>("v14_0"); }
             set { BackingStore?.Set("v14_0", value); }
         }
         /// <summary>When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V15_0 {
+        public bool? V150 {
             get { return BackingStore?.Get<bool?>("v15_0"); }
             set { BackingStore?.Set("v15_0", value); }
         }
+        /// <summary>When TRUE, only Version 16.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        public bool? V160 {
+            get { return BackingStore?.Get<bool?>("v16_0"); }
+            set { BackingStore?.Set("v16_0", value); }
+        }
         /// <summary>When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V8_0 {
+        public bool? V80 {
             get { return BackingStore?.Get<bool?>("v8_0"); }
             set { BackingStore?.Set("v8_0", value); }
         }
         /// <summary>When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
-        public bool? V9_0 {
+        public bool? V90 {
             get { return BackingStore?.Get<bool?>("v9_0"); }
             set { BackingStore?.Set("v9_0", value); }
         }
@@ -91,14 +96,15 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"v10_0", n => { V10_0 = n.GetBoolValue(); } },
-                {"v11_0", n => { V11_0 = n.GetBoolValue(); } },
-                {"v12_0", n => { V12_0 = n.GetBoolValue(); } },
-                {"v13_0", n => { V13_0 = n.GetBoolValue(); } },
-                {"v14_0", n => { V14_0 = n.GetBoolValue(); } },
-                {"v15_0", n => { V15_0 = n.GetBoolValue(); } },
-                {"v8_0", n => { V8_0 = n.GetBoolValue(); } },
-                {"v9_0", n => { V9_0 = n.GetBoolValue(); } },
+                {"v10_0", n => { V100 = n.GetBoolValue(); } },
+                {"v11_0", n => { V110 = n.GetBoolValue(); } },
+                {"v12_0", n => { V120 = n.GetBoolValue(); } },
+                {"v13_0", n => { V130 = n.GetBoolValue(); } },
+                {"v14_0", n => { V140 = n.GetBoolValue(); } },
+                {"v15_0", n => { V150 = n.GetBoolValue(); } },
+                {"v16_0", n => { V160 = n.GetBoolValue(); } },
+                {"v8_0", n => { V80 = n.GetBoolValue(); } },
+                {"v9_0", n => { V90 = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -108,14 +114,15 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteBoolValue("v10_0", V10_0);
-            writer.WriteBoolValue("v11_0", V11_0);
-            writer.WriteBoolValue("v12_0", V12_0);
-            writer.WriteBoolValue("v13_0", V13_0);
-            writer.WriteBoolValue("v14_0", V14_0);
-            writer.WriteBoolValue("v15_0", V15_0);
-            writer.WriteBoolValue("v8_0", V8_0);
-            writer.WriteBoolValue("v9_0", V9_0);
+            writer.WriteBoolValue("v10_0", V100);
+            writer.WriteBoolValue("v11_0", V110);
+            writer.WriteBoolValue("v12_0", V120);
+            writer.WriteBoolValue("v13_0", V130);
+            writer.WriteBoolValue("v14_0", V140);
+            writer.WriteBoolValue("v15_0", V150);
+            writer.WriteBoolValue("v16_0", V160);
+            writer.WriteBoolValue("v8_0", V80);
+            writer.WriteBoolValue("v9_0", V90);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

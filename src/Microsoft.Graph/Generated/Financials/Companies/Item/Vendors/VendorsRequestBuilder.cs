@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors {
         /// <summary>Provides operations to manage the vendors property of the microsoft.graph.company entity.</summary>
         public VendorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("vendor%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("vendor%2Did", position);
             return new VendorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/vendors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

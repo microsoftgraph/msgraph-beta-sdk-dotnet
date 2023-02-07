@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Count;
 using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item;
-using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup;
+using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.MicrosoftGraphRenewGroup;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the renewGroup method.</summary>
+        public MicrosoftGraphRenewGroupRequestBuilder MicrosoftGraphRenewGroup { get =>
+            new MicrosoftGraphRenewGroupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the renewGroup method.</summary>
-        public RenewGroupRequestBuilder RenewGroup { get =>
-            new RenewGroupRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies {
         /// <summary>Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.</summary>
         public GroupLifecyclePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("groupLifecyclePolicy%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("groupLifecyclePolicy%2Did", position);
             return new GroupLifecyclePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

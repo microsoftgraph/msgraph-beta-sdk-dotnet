@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Publish;
+using Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.MicrosoftGraphPublish;
 using Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.SharedCookies;
 using Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Sites;
 using Microsoft.Graph.Beta.Models;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
     /// Provides operations to manage the siteLists property of the microsoft.graph.internetExplorerMode entity.
     /// </summary>
     public class BrowserSiteListItemRequestBuilder {
+        /// <summary>Provides operations to call the publish method.</summary>
+        public MicrosoftGraphPublishRequestBuilder MicrosoftGraphPublish { get =>
+            new MicrosoftGraphPublishRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the publish method.</summary>
-        public PublishRequestBuilder Publish { get =>
-            new PublishRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the sharedCookies property of the microsoft.graph.browserSiteList entity.</summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/edge/internetExplorerMode/siteLists/{browserSiteList%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

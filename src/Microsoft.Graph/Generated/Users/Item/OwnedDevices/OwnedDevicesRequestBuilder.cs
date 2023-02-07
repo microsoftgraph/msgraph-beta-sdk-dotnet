@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.OwnedDevices.Count;
-using Microsoft.Graph.Beta.Users.Item.OwnedDevices.Device;
-using Microsoft.Graph.Beta.Users.Item.OwnedDevices.Endpoint;
 using Microsoft.Graph.Beta.Users.Item.OwnedDevices.Item;
+using Microsoft.Graph.Beta.Users.Item.OwnedDevices.MicrosoftGraphDevice;
+using Microsoft.Graph.Beta.Users.Item.OwnedDevices.MicrosoftGraphEndpoint;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedDevices {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public DeviceRequestBuilder Device { get =>
-            new DeviceRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDeviceRequestBuilder MicrosoftGraphDevice { get =>
+            new MicrosoftGraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public EndpointRequestBuilder Endpoint { get =>
-            new EndpointRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEndpointRequestBuilder MicrosoftGraphEndpoint { get =>
+            new MicrosoftGraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedDevices {
         /// <summary>Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("directoryObject%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("directoryObject%2Did", position);
             return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedDevices {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/ownedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

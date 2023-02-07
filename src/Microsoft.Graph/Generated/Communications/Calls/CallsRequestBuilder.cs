@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Communications.Calls.Count;
 using Microsoft.Graph.Beta.Communications.Calls.Item;
-using Microsoft.Graph.Beta.Communications.Calls.LogTeleconferenceDeviceQuality;
+using Microsoft.Graph.Beta.Communications.Calls.MicrosoftGraphLogTeleconferenceDeviceQuality;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the logTeleconferenceDeviceQuality method.</summary>
-        public LogTeleconferenceDeviceQualityRequestBuilder LogTeleconferenceDeviceQuality { get =>
-            new LogTeleconferenceDeviceQualityRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphLogTeleconferenceDeviceQualityRequestBuilder MicrosoftGraphLogTeleconferenceDeviceQuality { get =>
+            new MicrosoftGraphLogTeleconferenceDeviceQualityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
         /// <summary>Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.</summary>
         public CallItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("call%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("call%2Did", position);
             return new CallItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/communications/calls{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

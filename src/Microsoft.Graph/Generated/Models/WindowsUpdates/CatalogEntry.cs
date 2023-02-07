@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class CatalogEntry : Entity, IParsable {
-        /// <summary>The date on which the content is no longer available to deploy using the service. Read-only.</summary>
+        /// <summary>The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? DeployableUntilDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("deployableUntilDateTime"); }
             set { BackingStore?.Set("deployableUntilDateTime", value); }
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The release date for the content. Read-only.</summary>
+        /// <summary>The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ReleaseDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
             set { BackingStore?.Set("releaseDateTime", value); }
@@ -37,6 +37,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry" => new DriverUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new FeatureUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new QualityUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry" => new SoftwareUpdateCatalogEntry(),

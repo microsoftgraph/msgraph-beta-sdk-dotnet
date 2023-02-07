@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
         /// <summary>Gets an item from the Microsoft.Graph.Beta.education.classes.item.members.item collection</summary>
         public EducationUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("educationUser%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("educationUser%2Did", position);
             return new EducationUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

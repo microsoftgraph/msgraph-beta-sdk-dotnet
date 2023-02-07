@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureCommunicationServicesUserConversationMember : ConversationMember, IParsable {
-        /// <summary>The azureCommunicationServicesId property</summary>
+        /// <summary>Azure Communication Services ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureCommunicationServicesId {

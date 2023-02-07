@@ -3,10 +3,10 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.Health;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.MicrosoftGraphRestart;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.MicrosoftGraphRunDiagnostics;
+using Microsoft.Graph.Beta.Teamwork.Devices.Item.MicrosoftGraphUpdateSoftware;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations;
-using Microsoft.Graph.Beta.Teamwork.Devices.Item.Restart;
-using Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics;
-using Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -32,6 +32,18 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         public HealthRequestBuilder Health { get =>
             new HealthRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the restart method.</summary>
+        public MicrosoftGraphRestartRequestBuilder MicrosoftGraphRestart { get =>
+            new MicrosoftGraphRestartRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the runDiagnostics method.</summary>
+        public MicrosoftGraphRunDiagnosticsRequestBuilder MicrosoftGraphRunDiagnostics { get =>
+            new MicrosoftGraphRunDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateSoftware method.</summary>
+        public MicrosoftGraphUpdateSoftwareRequestBuilder MicrosoftGraphUpdateSoftware { get =>
+            new MicrosoftGraphUpdateSoftwareRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
@@ -40,18 +52,6 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the restart method.</summary>
-        public RestartRequestBuilder Restart { get =>
-            new RestartRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the runDiagnostics method.</summary>
-        public RunDiagnosticsRequestBuilder RunDiagnostics { get =>
-            new RunDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateSoftware method.</summary>
-        public UpdateSoftwareRequestBuilder UpdateSoftware { get =>
-            new UpdateSoftwareRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

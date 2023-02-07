@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.GroupAssignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.MicrosoftGraphAssign;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.RunSummary;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.UserRunStates;
 using Microsoft.Graph.Beta.Models;
@@ -19,10 +19,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item {
     /// Provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceManagementScriptItemRequestBuilder {
-        /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign { get =>
-            new AssignRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceManagementScript entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -34,6 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item {
         /// <summary>Provides operations to manage the groupAssignments property of the microsoft.graph.deviceManagementScript entity.</summary>
         public GroupAssignmentsRequestBuilder GroupAssignments { get =>
             new GroupAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the assign method.</summary>
+        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
+            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

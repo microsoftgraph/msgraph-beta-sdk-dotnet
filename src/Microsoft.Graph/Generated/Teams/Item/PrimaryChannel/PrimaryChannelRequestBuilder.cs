@@ -1,12 +1,12 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.CompleteMigration;
-using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.FilesFolder;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Members;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Messages;
-using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.ProvisionEmail;
-using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.RemoveEmail;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.MicrosoftGraphCompleteMigration;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.MicrosoftGraphProvisionEmail;
+using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.MicrosoftGraphRemoveEmail;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Tabs;
 using Microsoft.Kiota.Abstractions;
@@ -22,10 +22,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
     /// Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
     /// </summary>
     public class PrimaryChannelRequestBuilder {
-        /// <summary>Provides operations to call the completeMigration method.</summary>
-        public CompleteMigrationRequestBuilder CompleteMigration { get =>
-            new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public FilesFolderRequestBuilder FilesFolder { get =>
             new FilesFolderRequestBuilder(PathParameters, RequestAdapter);
@@ -38,16 +34,24 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         public MessagesRequestBuilder Messages { get =>
             new MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the completeMigration method.</summary>
+        public MicrosoftGraphCompleteMigrationRequestBuilder MicrosoftGraphCompleteMigration { get =>
+            new MicrosoftGraphCompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the doesUserHaveAccess method.</summary>
+        public MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName { get =>
+            new MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the provisionEmail method.</summary>
-        public ProvisionEmailRequestBuilder ProvisionEmail { get =>
-            new ProvisionEmailRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphProvisionEmailRequestBuilder MicrosoftGraphProvisionEmail { get =>
+            new MicrosoftGraphProvisionEmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeEmail method.</summary>
-        public RemoveEmailRequestBuilder RemoveEmail { get =>
-            new RemoveEmailRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphRemoveEmailRequestBuilder MicrosoftGraphRemoveEmail { get =>
+            new MicrosoftGraphRemoveEmailRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Path parameters for the request</summary>
+        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.</summary>
@@ -83,7 +87,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/teams/{team%2Did}/primaryChannel{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -105,12 +109,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the doesUserHaveAccess method.
-        /// </summary>
-        public DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName() {
-            return new DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get the default channel, **General**, of a team.

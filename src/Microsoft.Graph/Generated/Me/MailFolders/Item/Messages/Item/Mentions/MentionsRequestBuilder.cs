@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Mentions {
         /// <summary>Provides operations to manage the mentions property of the microsoft.graph.message entity.</summary>
         public MentionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("mention%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("mention%2Did", position);
             return new MentionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Mentions {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/mentions{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

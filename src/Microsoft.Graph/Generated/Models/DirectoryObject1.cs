@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("outboundSharedUserProfiles", value); }
         }
 #endif
-        /// <summary>The recommendations property</summary>
+        /// <summary>List of recommended improvements to improve tenant posture.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Recommendation>? Recommendations {

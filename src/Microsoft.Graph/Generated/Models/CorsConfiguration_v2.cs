@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CorsConfiguration_v2 : Entity, IParsable {
-        /// <summary>The allowedHeaders property</summary>
+        /// <summary>The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedHeaders {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedHeaders", value); }
         }
 #endif
-        /// <summary>The allowedMethods property</summary>
+        /// <summary>The HTTP request methods that the origin domain may use for a CORS request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedMethods {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedMethods", value); }
         }
 #endif
-        /// <summary>The allowedOrigins property</summary>
+        /// <summary>The origin domains that are permitted to make a request against the service via CORS. The origin domain is the domain from which the request originates. The origin must be an exact case-sensitive match with the origin that the user agent sends to the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedOrigins {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedOrigins", value); }
         }
 #endif
-        /// <summary>The maxAgeInSeconds property</summary>
+        /// <summary>The maximum amount of time that a browser should cache the response to the preflight OPTIONS request.</summary>
         public int? MaxAgeInSeconds {
             get { return BackingStore?.Get<int?>("maxAgeInSeconds"); }
             set { BackingStore?.Set("maxAgeInSeconds", value); }
         }
-        /// <summary>The resource property</summary>
+        /// <summary>Resource within the application segment for which CORS permissions are granted. / grants permission for the whole app segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Resource {

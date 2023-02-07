@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.</summary>
         public Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Item.PrivilegedRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("privilegedRoleAssignment%2Did1", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("privilegedRoleAssignment%2Did1", position);
             return new Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Item.PrivilegedRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/assignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

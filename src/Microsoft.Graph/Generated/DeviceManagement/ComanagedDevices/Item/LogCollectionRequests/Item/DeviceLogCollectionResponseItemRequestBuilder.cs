@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.LogCollectionRequests.Item.MicrosoftGraphCreateDownloadUrl;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.LogCollect
     /// </summary>
     public class DeviceLogCollectionResponseItemRequestBuilder {
         /// <summary>Provides operations to call the createDownloadUrl method.</summary>
-        public CreateDownloadUrlRequestBuilder CreateDownloadUrl { get =>
-            new CreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCreateDownloadUrlRequestBuilder MicrosoftGraphCreateDownloadUrl { get =>
+            new MicrosoftGraphCreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.LogCollect
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/logCollectionRequests/{deviceLogCollectionResponse%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Count;
-using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.GetRoleScopeTagsById;
-using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag;
 using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item;
+using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.MicrosoftGraphGetRoleScopeTagsById;
+using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.MicrosoftGraphHasCustomRoleScopeTag;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,8 +22,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRoleScopeTagsById method.</summary>
-        public GetRoleScopeTagsByIdRequestBuilder GetRoleScopeTagsById { get =>
-            new GetRoleScopeTagsByIdRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetRoleScopeTagsByIdRequestBuilder MicrosoftGraphGetRoleScopeTagsById { get =>
+            new MicrosoftGraphGetRoleScopeTagsByIdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the hasCustomRoleScopeTag method.</summary>
+        public MicrosoftGraphHasCustomRoleScopeTagRequestBuilder MicrosoftGraphHasCustomRoleScopeTag { get =>
+            new MicrosoftGraphHasCustomRoleScopeTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -34,7 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags {
         /// <summary>Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.</summary>
         public RoleScopeTagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("roleScopeTag%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("roleScopeTag%2Did", position);
             return new RoleScopeTagItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -60,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/roleScopeTags{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -82,12 +86,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RoleScopeTagCollectionResponse>(requestInfo, RoleScopeTagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the hasCustomRoleScopeTag method.
-        /// </summary>
-        public HasCustomRoleScopeTagRequestBuilder HasCustomRoleScopeTag() {
-            return new HasCustomRoleScopeTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create new navigation property to roleScopeTags for deviceManagement

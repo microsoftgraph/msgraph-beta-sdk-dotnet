@@ -1,11 +1,11 @@
-using Microsoft.Graph.Beta.AccessReviews.Item.ApplyDecisions;
 using Microsoft.Graph.Beta.AccessReviews.Item.Decisions;
 using Microsoft.Graph.Beta.AccessReviews.Item.Instances;
+using Microsoft.Graph.Beta.AccessReviews.Item.MicrosoftGraphApplyDecisions;
+using Microsoft.Graph.Beta.AccessReviews.Item.MicrosoftGraphResetDecisions;
+using Microsoft.Graph.Beta.AccessReviews.Item.MicrosoftGraphSendReminder;
+using Microsoft.Graph.Beta.AccessReviews.Item.MicrosoftGraphStop;
 using Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions;
-using Microsoft.Graph.Beta.AccessReviews.Item.ResetDecisions;
 using Microsoft.Graph.Beta.AccessReviews.Item.Reviewers;
-using Microsoft.Graph.Beta.AccessReviews.Item.SendReminder;
-using Microsoft.Graph.Beta.AccessReviews.Item.Stop;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,10 +21,6 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
     /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class AccessReviewItemRequestBuilder {
-        /// <summary>Provides operations to call the applyDecisions method.</summary>
-        public ApplyDecisionsRequestBuilder ApplyDecisions { get =>
-            new ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReview entity.</summary>
         public DecisionsRequestBuilder Decisions { get =>
             new DecisionsRequestBuilder(PathParameters, RequestAdapter);
@@ -32,6 +28,22 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         /// <summary>Provides operations to manage the instances property of the microsoft.graph.accessReview entity.</summary>
         public InstancesRequestBuilder Instances { get =>
             new InstancesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the applyDecisions method.</summary>
+        public MicrosoftGraphApplyDecisionsRequestBuilder MicrosoftGraphApplyDecisions { get =>
+            new MicrosoftGraphApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the resetDecisions method.</summary>
+        public MicrosoftGraphResetDecisionsRequestBuilder MicrosoftGraphResetDecisions { get =>
+            new MicrosoftGraphResetDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the sendReminder method.</summary>
+        public MicrosoftGraphSendReminderRequestBuilder MicrosoftGraphSendReminder { get =>
+            new MicrosoftGraphSendReminderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stop method.</summary>
+        public MicrosoftGraphStopRequestBuilder MicrosoftGraphStop { get =>
+            new MicrosoftGraphStopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.</summary>
         public MyDecisionsRequestBuilder MyDecisions { get =>
@@ -41,21 +53,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the resetDecisions method.</summary>
-        public ResetDecisionsRequestBuilder ResetDecisions { get =>
-            new ResetDecisionsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.</summary>
         public ReviewersRequestBuilder Reviewers { get =>
             new ReviewersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the sendReminder method.</summary>
-        public SendReminderRequestBuilder SendReminder { get =>
-            new SendReminderRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the stop method.</summary>
-        public StopRequestBuilder Stop { get =>
-            new StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

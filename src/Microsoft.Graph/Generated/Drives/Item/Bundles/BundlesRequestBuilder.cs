@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Bundles {
         /// <summary>Provides operations to manage the bundles property of the microsoft.graph.drive entity.</summary>
         public DriveItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("driveItem%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("driveItem%2Did", position);
             return new DriveItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,13 +54,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Bundles {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/drives/{drive%2Did}/bundles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get a list of all the [bundles][bundle] in a user&apos;s drive.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bundle-list?view=graph-rest-1.0" />
+        /// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +78,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Bundles {
             return await RequestAdapter.SendAsync<DriveItemCollectionResponse>(requestInfo, DriveItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of all the [bundles][bundle] in a user&apos;s drive.
+        /// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,7 +104,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Bundles {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of all the [bundles][bundle] in a user&apos;s drive.
+        /// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         /// </summary>
         public class BundlesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

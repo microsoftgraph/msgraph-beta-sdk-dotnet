@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item.IncidentReport;
+using Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item.MicrosoftGraphIncidentReport;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,6 +14,10 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Is
     /// Provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
     /// </summary>
     public class ServiceHealthIssueItemRequestBuilder {
+        /// <summary>Provides operations to call the incidentReport method.</summary>
+        public MicrosoftGraphIncidentReportRequestBuilder MicrosoftGraphIncidentReport { get =>
+            new MicrosoftGraphIncidentReportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -43,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Is
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/serviceAnnouncement/healthOverviews/{serviceHealth%2Did}/issues/{serviceHealthIssue%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -84,12 +88,6 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Is
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the incidentReport method.
-        /// </summary>
-        public IncidentReportRequestBuilder IncidentReport() {
-            return new IncidentReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Update the navigation property issues in admin

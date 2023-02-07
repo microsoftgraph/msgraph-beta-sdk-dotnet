@@ -246,6 +246,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("progressTaskBoardFormat", value); }
         }
 #endif
+        /// <summary>The recurrence property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerTaskRecurrence? Recurrence {
+            get { return BackingStore?.Get<PlannerTaskRecurrence?>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
+        }
+#nullable restore
+#else
+        public PlannerTaskRecurrence Recurrence {
+            get { return BackingStore?.Get<PlannerTaskRecurrence>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
+        }
+#endif
         /// <summary>Number of external references that exist on the task.</summary>
         public int? ReferenceCount {
             get { return BackingStore?.Get<int?>("referenceCount"); }
@@ -310,6 +324,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"previewType", n => { PreviewType = n.GetEnumValue<PlannerPreviewType>(); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
                 {"progressTaskBoardFormat", n => { ProgressTaskBoardFormat = n.GetObjectValue<PlannerProgressTaskBoardTaskFormat>(PlannerProgressTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
+                {"recurrence", n => { Recurrence = n.GetObjectValue<PlannerTaskRecurrence>(PlannerTaskRecurrence.CreateFromDiscriminatorValue); } },
                 {"referenceCount", n => { ReferenceCount = n.GetIntValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
@@ -345,6 +360,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<PlannerPreviewType>("previewType", PreviewType);
             writer.WriteIntValue("priority", Priority);
             writer.WriteObjectValue<PlannerProgressTaskBoardTaskFormat>("progressTaskBoardFormat", ProgressTaskBoardFormat);
+            writer.WriteObjectValue<PlannerTaskRecurrence>("recurrence", Recurrence);
             writer.WriteIntValue("referenceCount", ReferenceCount);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("title", Title);

@@ -8,12 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     /// Entity which represents a connection to Mobile threat defense partner.
     /// </summary>
     public class MobileThreatDefenseConnector : Entity, IParsable {
-        /// <summary>For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune</summary>
+        /// <summary>When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.</summary>
         public bool? AllowPartnerToCollectIOSApplicationMetadata {
             get { return BackingStore?.Get<bool?>("allowPartnerToCollectIOSApplicationMetadata"); }
             set { BackingStore?.Set("allowPartnerToCollectIOSApplicationMetadata", value); }
         }
-        /// <summary>For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about personally installed applications from Intune</summary>
+        /// <summary>When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.</summary>
         public bool? AllowPartnerToCollectIOSPersonalApplicationMetadata {
             get { return BackingStore?.Get<bool?>("allowPartnerToCollectIOSPersonalApplicationMetadata"); }
             set { BackingStore?.Set("allowPartnerToCollectIOSPersonalApplicationMetadata", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("androidEnabled"); }
             set { BackingStore?.Set("androidEnabled", value); }
         }
-        /// <summary>For Android, set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.</summary>
+        /// <summary>When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.</summary>
         public bool? AndroidMobileApplicationManagementEnabled {
             get { return BackingStore?.Get<bool?>("androidMobileApplicationManagementEnabled"); }
             set { BackingStore?.Set("androidMobileApplicationManagementEnabled", value); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("iosEnabled"); }
             set { BackingStore?.Set("iosEnabled", value); }
         }
-        /// <summary>For IOS, get or set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.</summary>
+        /// <summary>When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.</summary>
         public bool? IosMobileApplicationManagementEnabled {
             get { return BackingStore?.Get<bool?>("iosMobileApplicationManagementEnabled"); }
             set { BackingStore?.Set("iosMobileApplicationManagementEnabled", value); }
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("macEnabled"); }
             set { BackingStore?.Set("macEnabled", value); }
         }
-        /// <summary>When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.</summary>
+        /// <summary>When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.</summary>
         public bool? MicrosoftDefenderForEndpointAttachEnabled {
             get { return BackingStore?.Get<bool?>("microsoftDefenderForEndpointAttachEnabled"); }
             set { BackingStore?.Set("microsoftDefenderForEndpointAttachEnabled", value); }
@@ -83,12 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("partnerUnsupportedOsVersionBlocked"); }
             set { BackingStore?.Set("partnerUnsupportedOsVersionBlocked", value); }
         }
-        /// <summary>For Windows, set whether Intune must receive data from the data sync partner prior to marking a device compliant</summary>
+        /// <summary>When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.</summary>
         public bool? WindowsDeviceBlockedOnMissingPartnerData {
             get { return BackingStore?.Get<bool?>("windowsDeviceBlockedOnMissingPartnerData"); }
             set { BackingStore?.Set("windowsDeviceBlockedOnMissingPartnerData", value); }
         }
-        /// <summary>For Windows, get or set whether data from the data sync partner should be used during compliance evaluations</summary>
+        /// <summary>When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.</summary>
         public bool? WindowsEnabled {
             get { return BackingStore?.Get<bool?>("windowsEnabled"); }
             set { BackingStore?.Set("windowsEnabled", value); }

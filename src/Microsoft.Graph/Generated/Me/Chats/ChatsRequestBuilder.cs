@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.Me.Chats.AllMessages;
 using Microsoft.Graph.Beta.Me.Chats.Count;
-using Microsoft.Graph.Beta.Me.Chats.GetAllMessages;
 using Microsoft.Graph.Beta.Me.Chats.Item;
+using Microsoft.Graph.Beta.Me.Chats.MicrosoftGraphAllMessages;
+using Microsoft.Graph.Beta.Me.Chats.MicrosoftGraphGetAllMessages;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,6 +21,14 @@ namespace Microsoft.Graph.Beta.Me.Chats {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the allMessages method.</summary>
+        public MicrosoftGraphAllMessagesRequestBuilder MicrosoftGraphAllMessages { get =>
+            new MicrosoftGraphAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllMessages method.</summary>
+        public MicrosoftGraphGetAllMessagesRequestBuilder MicrosoftGraphGetAllMessages { get =>
+            new MicrosoftGraphGetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -30,15 +38,9 @@ namespace Microsoft.Graph.Beta.Me.Chats {
         /// <summary>Provides operations to manage the chats property of the microsoft.graph.user entity.</summary>
         public ChatItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("chat%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("chat%2Did", position);
             return new ChatItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>
-        /// Provides operations to call the allMessages method.
-        /// </summary>
-        public AllMessagesRequestBuilder AllMessages() {
-            return new AllMessagesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new ChatsRequestBuilder and sets the default values.
         /// </summary>
@@ -62,15 +64,9 @@ namespace Microsoft.Graph.Beta.Me.Chats {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/chats{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the getAllMessages method.
-        /// </summary>
-        public GetAllMessagesRequestBuilder GetAllMessages() {
-            return new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.

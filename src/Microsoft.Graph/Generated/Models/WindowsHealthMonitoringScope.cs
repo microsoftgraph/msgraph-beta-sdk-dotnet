@@ -9,5 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         BootPerformance,
         /// <summary>Windows updates events</summary>
         WindowsUpdates,
+        /// <summary>PrivilegeManagement</summary>
+        PrivilegeManagement,
     }
 }
