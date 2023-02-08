@@ -40,5 +40,10 @@ namespace Microsoft.Graph
         /// </summary>
         WindowsUpdates = 4,
 	
+        /// <summary>
+        /// Privilege Management
+        /// </summary>
+        PrivilegeManagement = 8,
+	
     }
 }

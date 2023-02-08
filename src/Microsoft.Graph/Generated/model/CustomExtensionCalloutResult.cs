@@ -29,30 +29,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets calloutDateTime.
+        /// When the API transaction was initiated, the date and time information uses ISO 8601 format and is always in UTC time. Example: midnight on Jan 1, 2014, is reported as 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("calloutDateTime")]
         public DateTimeOffset? CalloutDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets customExtensionId.
+        /// Identifier of the custom extension that was called.
         /// </summary>
         [JsonPropertyName("customExtensionId")]
         public string CustomExtensionId { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
+        /// Error code that was returned when the last API attempt failed.
         /// </summary>
         [JsonPropertyName("errorCode")]
         public Int32? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets httpStatus.
+        /// The HTTP status code that was returned by the target API endpoint after the last API attempt.
         /// </summary>
         [JsonPropertyName("httpStatus")]
         public Int32? HttpStatus { get; set; }
     
         /// <summary>
         /// Gets or sets numberOfAttempts.
+        /// The number of API calls to the customer's API.
         /// </summary>
         [JsonPropertyName("numberOfAttempts")]
         public Int32? NumberOfAttempts { get; set; }

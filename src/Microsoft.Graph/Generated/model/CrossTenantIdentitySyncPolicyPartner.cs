@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         public string TenantId { get; set; }
     
         /// <summary>
+        /// Gets or sets user sync inbound.
+        /// Defines whether users can be synchronized from the partner tenant. Key.
+        /// </summary>
+        [JsonPropertyName("userSyncInbound")]
+        public CrossTenantUserSyncInbound UserSyncInbound { get; set; }
+    
+        /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
         [JsonPropertyName("@odata.type")]

@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets region group.
-        /// The geographic group this region belongs to. Multiple regions can belong to one region group. For example, the europeUnion region group contains the Northern Europe and Western Europe regions. A customer can select a region group when provisioning a Cloud PC; however, the Cloud PC will be put under one of the regions under the group based on resource capacity. The region with more quota will be chosen. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, norway, switzerland，southKorea, unknownFutureValue. Read-only.
+        /// The geographic group this region belongs to. Multiple regions can belong to one region group. For example, the europeUnion region group contains the Northern Europe and Western Europe regions. A customer can select a region group when provisioning a Cloud PC; however, the Cloud PC will be put under one of the regions under the group based on resource capacity. The region with more quota will be chosen. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland，southKorea. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: norway, switzerland，southKorea. Read-only.
         /// </summary>
         [JsonPropertyName("regionGroup")]
         public CloudPcRegionGroup? RegionGroup { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supported solution.
-        /// The supported service or solution for the region. The possible values are: windows365, devBox, rpaBox, unknownFutureValue. Read-only.
+        /// The supported service or solution for the region. The possible values are: windows365, devBox, unknownFutureValue, rpaBox. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: rpaBox. Read-only.
         /// </summary>
         [JsonPropertyName("supportedSolution")]
         public CloudPcManagementService? SupportedSolution { get; set; }

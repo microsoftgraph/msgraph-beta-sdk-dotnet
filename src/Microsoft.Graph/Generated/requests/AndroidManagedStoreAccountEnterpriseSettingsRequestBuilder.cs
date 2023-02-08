@@ -51,6 +51,19 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsAddApps.
+        /// </summary>
+        /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsAddAppsRequestBuilder"/>.</returns>
+        public IAndroidManagedStoreAccountEnterpriseSettingsAddAppsRequestBuilder AddApps(
+            IEnumerable<string> productIds = null)
+        {
+            return new AndroidManagedStoreAccountEnterpriseSettingsAddAppsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.addApps"),
+                this.Client,
+                productIds);
+        }
+
+        /// <summary>
         /// Gets the request builder for AndroidManagedStoreAccountEnterpriseSettingsApproveApps.
         /// </summary>
         /// <returns>The <see cref="IAndroidManagedStoreAccountEnterpriseSettingsApproveAppsRequestBuilder"/>.</returns>

@@ -34,5 +34,10 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         UnknownFutureValue = 2,
 	
+        /// <summary>
+        /// Driver
+        /// </summary>
+        Driver = 3,
+	
     }
 }

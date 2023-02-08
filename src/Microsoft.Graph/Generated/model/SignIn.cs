@@ -44,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applied event listeners.
+        /// Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.
         /// </summary>
         [JsonPropertyName("appliedEventListeners")]
         public IEnumerable<AppliedAuthenticationEventListener> AppliedEventListeners { get; set; }

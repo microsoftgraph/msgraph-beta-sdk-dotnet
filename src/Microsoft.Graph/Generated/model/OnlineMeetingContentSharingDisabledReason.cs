@@ -16,18 +16,19 @@ namespace Microsoft.Graph
     /// The enum OnlineMeetingContentSharingDisabledReason.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
+	[System.Flags]
     public enum OnlineMeetingContentSharingDisabledReason
     {
     
         /// <summary>
         /// Watermark Protection
         /// </summary>
-        WatermarkProtection = 0,
+        WatermarkProtection = 1,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 1,
+        UnknownFutureValue = 2,
 	
     }
 }

@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AuthenticationStrengthPolicyFindByMethodModeRequest.
     /// </summary>
+    [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead.")]
     public partial class AuthenticationStrengthPolicyFindByMethodModeRequest : BaseRequest, IAuthenticationStrengthPolicyFindByMethodModeRequest
     {
         /// <summary>

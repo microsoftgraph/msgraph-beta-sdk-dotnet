@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// Brief title for the page that the links directs to.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets url.
+        /// The URL to the documentation or Azure portal page.
         /// </summary>
         [JsonPropertyName("url")]
         public string Url { get; set; }

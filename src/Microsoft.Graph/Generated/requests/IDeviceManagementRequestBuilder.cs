@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         IDeviceManagementTermsAndConditionsCollectionRequestBuilder TermsAndConditions { get; }
 
         /// <summary>
+        /// Gets the request builder for ServiceNowConnections.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementServiceNowConnectionsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementServiceNowConnectionsCollectionRequestBuilder ServiceNowConnections { get; }
+
+        /// <summary>
         /// Gets the request builder for AdvancedThreatProtectionOnboardingStateSummary.
         /// </summary>
         /// <returns>The <see cref="IAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder"/>.</returns>
@@ -626,10 +632,10 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionRequestBuilder UserExperienceAnalyticsDevicesWithoutCloudIdentity { get; }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsDeviceTimelineEvents.
+        /// Gets the request builder for UserExperienceAnalyticsDeviceTimelineEvent.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder UserExperienceAnalyticsDeviceTimelineEvents { get; }
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventCollectionRequestBuilder UserExperienceAnalyticsDeviceTimelineEvent { get; }
 
         /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsImpactingProcess.

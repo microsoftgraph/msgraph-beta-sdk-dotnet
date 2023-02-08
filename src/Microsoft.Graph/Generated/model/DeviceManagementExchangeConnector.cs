@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets exchange connector type.
-        /// The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated.
+        /// The type of Exchange Connector Configured. Possible values are: onPremises, hosted, serviceToService, dedicated, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("exchangeConnectorType")]
         public DeviceManagementExchangeConnectorType? ExchangeConnectorType { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected.
+        /// Exchange Connector Status. Possible values are: none, connectionPending, connected, disconnected, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public DeviceManagementExchangeConnectorStatus? Status { get; set; }

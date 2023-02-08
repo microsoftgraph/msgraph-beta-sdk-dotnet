@@ -51,10 +51,10 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets windows.
-        /// A container for all Windows Update for Business deployment service functionality. Read-only.
+        /// A container for all Windows administrator functionalities. Read-only.
         /// </summary>
         [JsonPropertyName("windows")]
-        public Microsoft.Graph.WindowsUpdates.Windows Windows { get; set; }
+        public AdminWindows Windows { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

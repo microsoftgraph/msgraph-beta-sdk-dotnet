@@ -122,6 +122,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner tenant type.
+        /// The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
         /// </summary>
         [JsonPropertyName("partnerTenantType")]
         public PartnerTenantType? PartnerTenantType { get; set; }

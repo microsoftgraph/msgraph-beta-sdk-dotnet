@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets actionUrl.
+        /// A link to the documentation or Azure portal page that is associated with the action step.
         /// </summary>
         [JsonPropertyName("actionUrl")]
         public ActionUrl ActionUrl { get; set; }
     
         /// <summary>
         /// Gets or sets stepNumber.
+        /// Indicates the position for this action in the order of the collection of actions to be taken.
         /// </summary>
         [JsonPropertyName("stepNumber")]
         public Int64? StepNumber { get; set; }
     
         /// <summary>
         /// Gets or sets text.
+        /// Friendly description of the action to take.
         /// </summary>
         [JsonPropertyName("text")]
         public string Text { get; set; }

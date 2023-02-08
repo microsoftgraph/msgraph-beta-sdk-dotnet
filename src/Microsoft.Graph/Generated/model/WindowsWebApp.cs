@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets app url.
-        /// The web app URL.
+        /// Indicates the Windows web app URL. Example: 'https://www.contoso.com'
         /// </summary>
         [JsonPropertyName("appUrl")]
         public string AppUrl { get; set; }

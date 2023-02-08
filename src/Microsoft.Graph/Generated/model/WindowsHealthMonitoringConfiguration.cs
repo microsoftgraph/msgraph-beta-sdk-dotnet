@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets config device health monitoring scope.
-        /// Specifies set of events collected from the device where health monitoring is enabled. Possible values are: undefined, healthMonitoring, bootPerformance, windowsUpdates.
+        /// Specifies set of events collected from the device where health monitoring is enabled. Possible values are: undefined, healthMonitoring, bootPerformance, windowsUpdates, privilegeManagement.
         /// </summary>
         [JsonPropertyName("configDeviceHealthMonitoringScope")]
         public WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope { get; set; }

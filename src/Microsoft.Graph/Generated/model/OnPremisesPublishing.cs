@@ -121,7 +121,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets onPremisesApplicationSegments.
-        /// Represents the application segment collection for an on-premises wildcard application.
         /// </summary>
         [Obsolete("The onPremisesApplicationSegment type is deprecated and will being used on June 01, 2023. Please use the new applicationSegment type.")]
         [JsonPropertyName("onPremisesApplicationSegments")]
@@ -129,6 +128,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets segmentsConfiguration.
+        /// Represents the collection of application segments for an on-premises wildcard application that's published through Azure AD Application Proxy.
         /// </summary>
         [JsonPropertyName("segmentsConfiguration")]
         public SegmentConfiguration SegmentsConfiguration { get; set; }

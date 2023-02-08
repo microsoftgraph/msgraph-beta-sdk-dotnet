@@ -39,5 +39,10 @@ namespace Microsoft.Graph
         /// </summary>
         Dedicated = 3,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
+	
     }
 }

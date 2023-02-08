@@ -282,6 +282,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.DetectedApps.AdditionalData = managedDeviceToInitialize.AdditionalData;
                 }
+                if (managedDeviceToInitialize.DeviceHealthScriptStates != null && managedDeviceToInitialize.DeviceHealthScriptStates.CurrentPage != null)
+                {
+                    managedDeviceToInitialize.DeviceHealthScriptStates.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.DeviceHealthScriptStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedDeviceToInitialize.DeviceHealthScriptStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
+                }
                 if (managedDeviceToInitialize.LogCollectionRequests != null && managedDeviceToInitialize.LogCollectionRequests.CurrentPage != null)
                 {
                     managedDeviceToInitialize.LogCollectionRequests.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.LogCollectionRequestsNextLink);

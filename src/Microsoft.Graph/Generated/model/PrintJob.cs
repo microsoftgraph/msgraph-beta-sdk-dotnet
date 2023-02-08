@@ -54,6 +54,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The name of the print job.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

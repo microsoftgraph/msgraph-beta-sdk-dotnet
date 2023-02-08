@@ -53,8 +53,15 @@ namespace Microsoft.Graph
         /// Gets or sets domain join configuration.
         /// Specifies how Cloud PCs will join Azure Active Directory.
         /// </summary>
+        [Obsolete("The domainJoinConfiguration is deprecated and will stop returning data on June 30, 2023. Please use the new domainJoinConfigurations instead.")]
         [JsonPropertyName("domainJoinConfiguration")]
         public CloudPcDomainJoinConfiguration DomainJoinConfiguration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets domain join configurations.
+        /// </summary>
+        [JsonPropertyName("domainJoinConfigurations")]
+        public IEnumerable<CloudPcDomainJoinConfiguration> DomainJoinConfigurations { get; set; }
     
         /// <summary>
         /// Gets or sets enable single sign on.
@@ -99,7 +106,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed by.
-        /// Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, rpaBox, unknownFutureValue. Read-only.
+        /// Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue, rpaBox. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: rpaBox. Read-only.
         /// </summary>
         [JsonPropertyName("managedBy")]
         public CloudPcManagementService? ManagedBy { get; set; }

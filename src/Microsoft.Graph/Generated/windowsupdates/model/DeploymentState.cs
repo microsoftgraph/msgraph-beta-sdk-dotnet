@@ -22,6 +22,13 @@ namespace Microsoft.Graph.WindowsUpdates
     {
 
         /// <summary>
+        /// Gets or sets effectiveValue.
+        /// Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
+        /// </summary>
+        [JsonPropertyName("effectiveValue")]
+        public DeploymentStateValue? EffectiveValue { get; set; }
+    
+        /// <summary>
         /// Gets or sets reasons.
         /// Specifies the reasons the deployment has its state value. Read-only.
         /// </summary>
@@ -34,13 +41,6 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         [JsonPropertyName("requestedValue")]
         public RequestedDeploymentStateValue? RequestedValue { get; set; }
-    
-        /// <summary>
-        /// Gets or sets value.
-        /// Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
-        /// </summary>
-        [JsonPropertyName("value")]
-        public DeploymentStateValue? Value { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

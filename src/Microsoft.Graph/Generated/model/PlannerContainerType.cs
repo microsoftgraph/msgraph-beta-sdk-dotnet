@@ -39,5 +39,10 @@ namespace Microsoft.Graph
         /// </summary>
         Project = 4,
 	
+        /// <summary>
+        /// Drive Item
+        /// </summary>
+        DriveItem = 5,
+	
     }
 }

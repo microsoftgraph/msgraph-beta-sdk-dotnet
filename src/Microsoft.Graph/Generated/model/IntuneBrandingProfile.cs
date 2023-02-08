@@ -92,6 +92,13 @@ namespace Microsoft.Graph
         public bool? DisableClientTelemetry { get; set; }
     
         /// <summary>
+        /// Gets or sets disable device category selection.
+        /// Boolean that indicates if Device Category Selection will be shown in Company Portal
+        /// </summary>
+        [JsonPropertyName("disableDeviceCategorySelection")]
+        public bool? DisableDeviceCategorySelection { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// Company/organization name that is displayed to end users
         /// </summary>

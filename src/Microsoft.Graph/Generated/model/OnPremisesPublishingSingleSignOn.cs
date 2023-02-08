@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets singleSignOnMode.
-        /// The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
+        /// The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
         /// </summary>
         [JsonPropertyName("singleSignOnMode")]
         public SingleSignOnMode? SingleSignOnMode { get; set; }

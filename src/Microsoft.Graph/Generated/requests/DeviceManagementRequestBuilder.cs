@@ -195,6 +195,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ServiceNowConnections.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementServiceNowConnectionsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementServiceNowConnectionsCollectionRequestBuilder ServiceNowConnections
+        {
+            get
+            {
+                return new DeviceManagementServiceNowConnectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("serviceNowConnections"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AdvancedThreatProtectionOnboardingStateSummary.
         /// </summary>
         /// <returns>The <see cref="IAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder"/>.</returns>
@@ -1239,14 +1251,14 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsDeviceTimelineEvents.
+        /// Gets the request builder for UserExperienceAnalyticsDeviceTimelineEvent.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder UserExperienceAnalyticsDeviceTimelineEvents
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventCollectionRequestBuilder UserExperienceAnalyticsDeviceTimelineEvent
         {
             get
             {
-                return new DeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsDeviceTimelineEvents"), this.Client);
+                return new DeviceManagementUserExperienceAnalyticsDeviceTimelineEventCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsDeviceTimelineEvent"), this.Client);
             }
         }
 

@@ -65,6 +65,74 @@ namespace Microsoft.Graph
 
 
         /// <summary>
+        /// Issues the PATCH request.
+        /// </summary>
+        /// <param name="chatmessage">The ChatMessage object set with the properties to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await for async call.</returns>
+        public async System.Threading.Tasks.Task<IChatAllMessagesCollectionPage> PatchAsync(ChatMessage chatmessage,
+            CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.PATCH;
+            var response = await this.SendAsync<ChatAllMessagesCollectionResponse>(chatmessage, cancellationToken).ConfigureAwait(false);
+            if (response?.Value?.CurrentPage != null)
+            {
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
+                return response.Value;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="chatmessage">The ChatMessage object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChatAllMessagesCollectionResponse>> PatchResponseAsync(ChatMessage chatmessage, CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ChatAllMessagesCollectionResponse>(chatmessage, cancellationToken);
+        }
+
+        /// <summary>
+        /// Issues the PUT request.
+        /// </summary>
+        /// <param name="chatmessage">The ChatMessage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await for async call.</returns>
+        public async System.Threading.Tasks.Task<IChatAllMessagesCollectionPage> PutAsync(ChatMessage chatmessage,
+            CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.PUT;
+            var response = await this.SendAsync<ChatAllMessagesCollectionResponse>(chatmessage, cancellationToken).ConfigureAwait(false);
+            if (response?.Value?.CurrentPage != null)
+            {
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
+                return response.Value;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="chatmessage">The ChatMessage object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChatAllMessagesCollectionResponse>> PutResponseAsync(ChatMessage chatmessage, CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ChatAllMessagesCollectionResponse>(chatmessage, cancellationToken);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

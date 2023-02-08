@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets completed date time.
-        /// Time at which the upload log request reached a terminal state
+        /// Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
         /// </summary>
         [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
@@ -37,14 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets error message.
-        /// Error message if any during the upload process
+        /// Indicates error message if any during the upload process.
         /// </summary>
         [JsonPropertyName("errorMessage")]
         public string ErrorMessage { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// Log upload status. Possible values are: pending, completed, failed.
+        /// Indicates the status for the app log collection request if it is pending, completed or failed, Default is pending. Possible values are: pending, completed, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public AppLogUploadState? Status { get; set; }

@@ -163,6 +163,12 @@ namespace Microsoft.Graph
         public Int32? Priority { get; set; }
     
         /// <summary>
+        /// Gets or sets recurrence.
+        /// </summary>
+        [JsonPropertyName("recurrence")]
+        public PlannerTaskRecurrence Recurrence { get; set; }
+    
+        /// <summary>
         /// Gets or sets reference count.
         /// Number of external references that exist on the task.
         /// </summary>

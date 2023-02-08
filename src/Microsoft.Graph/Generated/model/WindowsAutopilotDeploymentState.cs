@@ -54,5 +54,10 @@ namespace Microsoft.Graph
         /// </summary>
         Disabled = 6,
 	
+        /// <summary>
+        /// Success On Retry
+        /// </summary>
+        SuccessOnRetry = 7,
+	
     }
 }

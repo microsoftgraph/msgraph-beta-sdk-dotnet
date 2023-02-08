@@ -74,6 +74,12 @@ namespace Microsoft.Graph
         IDeviceCategoryRequestBuilder DeviceCategory { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceHealthScriptStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder DeviceHealthScriptStates { get; }
+
+        /// <summary>
         /// Gets the request builder for LogCollectionRequests.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceLogCollectionRequestsCollectionRequestBuilder"/>.</returns>
@@ -199,6 +205,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceInitiateMobileDeviceManagementKeyRecoveryRequestBuilder"/>.</returns>
         IManagedDeviceInitiateMobileDeviceManagementKeyRecoveryRequestBuilder InitiateMobileDeviceManagementKeyRecovery();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceInitiateOnDemandProactiveRemediation.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceInitiateOnDemandProactiveRemediationRequestBuilder"/>.</returns>
+        IManagedDeviceInitiateOnDemandProactiveRemediationRequestBuilder InitiateOnDemandProactiveRemediation(
+            string scriptPolicyId);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceLocateDevice.

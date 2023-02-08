@@ -148,6 +148,13 @@ namespace Microsoft.Graph
         public WindowsMalwareOverview WindowsMalwareOverview { get; set; }
     
         /// <summary>
+        /// Gets or sets connector status.
+        /// The list of connector status for the tenant.
+        /// </summary>
+        [JsonPropertyName("connectorStatus")]
+        public IEnumerable<ConnectorStatusDetails> ConnectorStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets monitoring.
         /// </summary>
         [JsonPropertyName("monitoring")]
@@ -284,6 +291,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("termsAndConditions@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string TermsAndConditionsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service now connections.
+        /// A list of ServiceNowConnections
+        /// </summary>
+        [JsonPropertyName("serviceNowConnections")]
+        public IDeviceManagementServiceNowConnectionsCollectionPage ServiceNowConnections { get; set; }
+
+        /// <summary>
+        /// Gets or sets serviceNowConnectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("serviceNowConnections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ServiceNowConnectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection onboarding state summary.
@@ -1406,18 +1427,18 @@ namespace Microsoft.Graph
         public string UserExperienceAnalyticsDevicesWithoutCloudIdentityNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets user experience analytics device timeline events.
-        /// The user experience analytics device events entity contains NRT device timeline events details.
+        /// Gets or sets user experience analytics device timeline event.
+        /// The user experience analytics device events entity contains NRT device timeline event details.
         /// </summary>
-        [JsonPropertyName("userExperienceAnalyticsDeviceTimelineEvents")]
-        public IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionPage UserExperienceAnalyticsDeviceTimelineEvents { get; set; }
+        [JsonPropertyName("userExperienceAnalyticsDeviceTimelineEvent")]
+        public IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventCollectionPage UserExperienceAnalyticsDeviceTimelineEvent { get; set; }
 
         /// <summary>
-        /// Gets or sets userExperienceAnalyticsDeviceTimelineEventsNextLink.
+        /// Gets or sets userExperienceAnalyticsDeviceTimelineEventNextLink.
         /// </summary>
-        [JsonPropertyName("userExperienceAnalyticsDeviceTimelineEvents@odata.nextLink")]
+        [JsonPropertyName("userExperienceAnalyticsDeviceTimelineEvent@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
-        public string UserExperienceAnalyticsDeviceTimelineEventsNextLink { get; set; }
+        public string UserExperienceAnalyticsDeviceTimelineEventNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics impacting process.

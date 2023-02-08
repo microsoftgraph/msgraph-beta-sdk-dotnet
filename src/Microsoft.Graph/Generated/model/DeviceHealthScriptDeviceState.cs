@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets remediation state.
-        /// Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.
+        /// Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("remediationState")]
         public RemediationState? RemediationState { get; set; }

@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type NotifyUserAction.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<NotifyUserAction>))]
     public partial class NotifyUserAction : DlpActionInfo
     {
         /// <summary>
@@ -39,12 +38,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("emailText")]
         public string EmailText { get; set; }
-    
-        /// <summary>
-        /// Gets or sets overrideOption.
-        /// </summary>
-        [JsonPropertyName("overrideOption")]
-        public OverrideOption? OverrideOption { get; set; }
     
         /// <summary>
         /// Gets or sets policyTip.

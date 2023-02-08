@@ -43,5 +43,85 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for ChatMessageDeltaRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageDeltaRequestBuilder"/>.</returns>
+        public IChatMessageDeltaRequestBuilder Delta()
+        {
+            return new ChatMessageDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for ChatMessageSetReactionRequestBuilder.
+        /// </summary>
+        /// <param name="reactionType">A reactionType parameter for the OData method call.</param>
+        /// <returns>The <see cref="IChatMessageSetReactionRequestBuilder"/>.</returns>
+        public IChatMessageSetReactionRequestBuilder SetReaction(
+            string reactionType)
+        {
+            return new ChatMessageSetReactionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setReaction"),
+                this.Client,
+                reactionType);
+        }
+        /// <summary>
+        /// Gets the request builder for ChatMessageSoftDeleteRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageSoftDeleteRequestBuilder"/>.</returns>
+        public IChatMessageSoftDeleteRequestBuilder SoftDelete()
+        {
+            return new ChatMessageSoftDeleteRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.softDelete"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for ChatMessageUndoSoftDeleteRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageUndoSoftDeleteRequestBuilder"/>.</returns>
+        public IChatMessageUndoSoftDeleteRequestBuilder UndoSoftDelete()
+        {
+            return new ChatMessageUndoSoftDeleteRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.undoSoftDelete"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for ChatMessageUnsetReactionRequestBuilder.
+        /// </summary>
+        /// <param name="reactionType">A reactionType parameter for the OData method call.</param>
+        /// <returns>The <see cref="IChatMessageUnsetReactionRequestBuilder"/>.</returns>
+        public IChatMessageUnsetReactionRequestBuilder UnsetReaction(
+            string reactionType)
+        {
+            return new ChatMessageUnsetReactionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unsetReaction"),
+                this.Client,
+                reactionType);
+        }
+        /// <summary>
+        /// Gets the request builder for HostedContents.
+        /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageHostedContentRequestBuilder"/>.</returns>
+        public IChatMessageHostedContentRequestBuilder HostedContents
+        {
+            get
+            {
+                return new ChatMessageHostedContentRequestBuilder(this.AppendSegmentToRequestUrl("hostedContents"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Replies.
+        /// Replies for a specified message. Supports $expand for channel messages.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageRequestBuilder"/>.</returns>
+        public IChatMessageRequestBuilder Replies
+        {
+            get
+            {
+                return new ChatMessageRequestBuilder(this.AppendSegmentToRequestUrl("replies"), this.Client);
+            }
+        }
     }
 }

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AuthenticationStrength.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationStrengthRootRequestBuilder"/>.</returns>
+        public IAuthenticationStrengthRootRequestBuilder AuthenticationStrength
+        {
+            get
+            {
+                return new AuthenticationStrengthRootRequestBuilder(this.AppendSegmentToRequestUrl("authenticationStrength"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AuthenticationStrengths.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationStrengthRootRequestBuilder"/>.</returns>

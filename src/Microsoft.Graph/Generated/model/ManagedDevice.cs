@@ -232,7 +232,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ethernet mac address.
-        /// Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
+        /// Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("ethernetMacAddress")]
         public string EthernetMacAddress { get; set; }
@@ -505,7 +505,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sku number.
-        /// Device sku number, see also: https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
+        /// Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
         /// </summary>
         [JsonPropertyName("skuNumber")]
         public Int32? SkuNumber { get; set; }
@@ -677,6 +677,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceCategory")]
         public DeviceCategory DeviceCategory { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device health script states.
+        /// Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("deviceHealthScriptStates")]
+        public IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesPage DeviceHealthScriptStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceHealthScriptStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceHealthScriptStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DeviceHealthScriptStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets log collection requests.

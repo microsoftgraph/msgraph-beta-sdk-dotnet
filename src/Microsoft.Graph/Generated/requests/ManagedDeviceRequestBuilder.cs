@@ -135,6 +135,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceHealthScriptStates.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder DeviceHealthScriptStates
+        {
+            get
+            {
+                return new ManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("deviceHealthScriptStates"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for LogCollectionRequests.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceLogCollectionRequestsCollectionRequestBuilder"/>.</returns>
@@ -370,6 +382,19 @@ namespace Microsoft.Graph
             return new ManagedDeviceInitiateMobileDeviceManagementKeyRecoveryRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.initiateMobileDeviceManagementKeyRecovery"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceInitiateOnDemandProactiveRemediation.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceInitiateOnDemandProactiveRemediationRequestBuilder"/>.</returns>
+        public IManagedDeviceInitiateOnDemandProactiveRemediationRequestBuilder InitiateOnDemandProactiveRemediation(
+            string scriptPolicyId)
+        {
+            return new ManagedDeviceInitiateOnDemandProactiveRemediationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.initiateOnDemandProactiveRemediation"),
+                this.Client,
+                scriptPolicyId);
         }
 
         /// <summary>

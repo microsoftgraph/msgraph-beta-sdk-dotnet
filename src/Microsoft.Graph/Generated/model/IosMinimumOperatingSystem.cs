@@ -64,6 +64,13 @@ namespace Microsoft.Graph
         public bool? V15_0 { get; set; }
     
         /// <summary>
+        /// Gets or sets v16_0.
+        /// When TRUE, only Version 16.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+        /// </summary>
+        [JsonPropertyName("v16_0")]
+        public bool? V16_0 { get; set; }
+    
+        /// <summary>
         /// Gets or sets v8_0.
         /// When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         /// </summary>

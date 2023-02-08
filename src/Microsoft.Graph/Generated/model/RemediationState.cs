@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         ScriptError = 4,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 5,
+	
     }
 }

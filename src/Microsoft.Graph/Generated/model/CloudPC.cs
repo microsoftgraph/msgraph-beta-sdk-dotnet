@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets disk encryption state.
+        /// The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("diskEncryptionState")]
         public CloudPcDiskEncryptionState? DiskEncryptionState { get; set; }

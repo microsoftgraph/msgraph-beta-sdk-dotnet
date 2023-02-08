@@ -35,6 +35,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recommendations.
+        /// List of recommended improvements to improve tenant posture.
         /// </summary>
         [JsonPropertyName("recommendations")]
         public IDirectoryRecommendationsCollectionPage Recommendations { get; set; }
