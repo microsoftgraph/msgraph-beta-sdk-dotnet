@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WebApplicationSegment : ApplicationSegment, IParsable {
-        /// <summary>The alternateUrl property</summary>
+        /// <summary>If you&apos;re configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlternateUrl {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alternateUrl", value); }
         }
 #endif
-        /// <summary>The corsConfigurations property</summary>
+        /// <summary>A collection of CORS Rule definitions for a particular application segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CorsConfiguration_v2>? CorsConfigurations {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("corsConfigurations", value); }
         }
 #endif
-        /// <summary>The externalUrl property</summary>
+        /// <summary>The published external URL for the application segment; for example, https://intranet.contoso.com/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalUrl {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalUrl", value); }
         }
 #endif
-        /// <summary>The internalUrl property</summary>
+        /// <summary>The internal URL of the application segment; for example, https://intranet/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InternalUrl {

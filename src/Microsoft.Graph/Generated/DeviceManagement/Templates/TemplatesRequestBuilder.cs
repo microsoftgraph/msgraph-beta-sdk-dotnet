@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.Templates.Count;
-using Microsoft.Graph.Beta.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies;
 using Microsoft.Graph.Beta.DeviceManagement.Templates.Item;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.MicrosoftGraphImportOffice365DeviceConfigurationPolicies;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the importOffice365DeviceConfigurationPolicies method.</summary>
-        public ImportOffice365DeviceConfigurationPoliciesRequestBuilder ImportOffice365DeviceConfigurationPolicies { get =>
-            new ImportOffice365DeviceConfigurationPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphImportOffice365DeviceConfigurationPoliciesRequestBuilder MicrosoftGraphImportOffice365DeviceConfigurationPolicies { get =>
+            new MicrosoftGraphImportOffice365DeviceConfigurationPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates {
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.</summary>
         public DeviceManagementTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("deviceManagementTemplate%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("deviceManagementTemplate%2Did", position);
             return new DeviceManagementTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/templates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

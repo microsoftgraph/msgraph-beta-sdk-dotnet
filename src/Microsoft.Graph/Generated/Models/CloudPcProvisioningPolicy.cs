@@ -89,6 +89,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
 #endif
+        /// <summary>The domainJoinConfigurations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CloudPcDomainJoinConfiguration>? DomainJoinConfigurations {
+            get { return BackingStore?.Get<List<CloudPcDomainJoinConfiguration>?>("domainJoinConfigurations"); }
+            set { BackingStore?.Set("domainJoinConfigurations", value); }
+        }
+#nullable restore
+#else
+        public List<CloudPcDomainJoinConfiguration> DomainJoinConfigurations {
+            get { return BackingStore?.Get<List<CloudPcDomainJoinConfiguration>>("domainJoinConfigurations"); }
+            set { BackingStore?.Set("domainJoinConfigurations", value); }
+        }
+#endif
         /// <summary>The enableSingleSignOn property</summary>
         public bool? EnableSingleSignOn {
             get { return BackingStore?.Get<bool?>("enableSingleSignOn"); }
@@ -208,6 +222,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
+                {"domainJoinConfigurations", n => { DomainJoinConfigurations = n.GetCollectionOfObjectValues<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"enableSingleSignOn", n => { EnableSingleSignOn = n.GetBoolValue(); } },
                 {"gracePeriodInHours", n => { GracePeriodInHours = n.GetIntValue(); } },
                 {"imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
@@ -234,6 +249,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<CloudPcDomainJoinConfiguration>("domainJoinConfiguration", DomainJoinConfiguration);
+            writer.WriteCollectionOfObjectValues<CloudPcDomainJoinConfiguration>("domainJoinConfigurations", DomainJoinConfigurations);
             writer.WriteBoolValue("enableSingleSignOn", EnableSingleSignOn);
             writer.WriteIntValue("gracePeriodInHours", GracePeriodInHours);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);

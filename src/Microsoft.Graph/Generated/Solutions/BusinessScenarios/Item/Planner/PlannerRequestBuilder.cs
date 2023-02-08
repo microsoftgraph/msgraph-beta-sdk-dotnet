@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan;
+using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.MicrosoftGraphGetPlan;
 using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration;
 using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration;
 using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks;
@@ -18,8 +18,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner {
     /// </summary>
     public class PlannerRequestBuilder {
         /// <summary>Provides operations to call the getPlan method.</summary>
-        public GetPlanRequestBuilder GetPlan { get =>
-            new GetPlanRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetPlanRequestBuilder MicrosoftGraphGetPlan { get =>
+            new MicrosoftGraphGetPlanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

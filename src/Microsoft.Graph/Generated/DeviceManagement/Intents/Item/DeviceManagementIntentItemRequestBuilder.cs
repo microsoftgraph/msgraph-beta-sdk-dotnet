@@ -1,14 +1,14 @@
-using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories;
-using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CompareWithTemplateId;
-using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CreateCopy;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceSettingStateSummaries;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStateSummary;
-using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MicrosoftGraphAssign;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MicrosoftGraphCompareWithTemplateId;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MicrosoftGraphCreateCopy;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MicrosoftGraphMigrateToTemplate;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MicrosoftGraphUpdateSettings;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Settings;
-using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UpdateSettings;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStates;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStateSummary;
 using Microsoft.Graph.Beta.Models;
@@ -26,10 +26,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
     /// Provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceManagementIntentItemRequestBuilder {
-        /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign { get =>
-            new AssignRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceManagementIntent entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -37,10 +33,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.deviceManagementIntent entity.</summary>
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the createCopy method.</summary>
-        public CreateCopyRequestBuilder CreateCopy { get =>
-            new CreateCopyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceManagementIntent entity.</summary>
         public DeviceSettingStateSummariesRequestBuilder DeviceSettingStateSummaries { get =>
@@ -54,9 +46,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
         public DeviceStateSummaryRequestBuilder DeviceStateSummary { get =>
             new DeviceStateSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the assign method.</summary>
+        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
+            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the createCopy method.</summary>
+        public MicrosoftGraphCreateCopyRequestBuilder MicrosoftGraphCreateCopy { get =>
+            new MicrosoftGraphCreateCopyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the migrateToTemplate method.</summary>
-        public MigrateToTemplateRequestBuilder MigrateToTemplate { get =>
-            new MigrateToTemplateRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphMigrateToTemplateRequestBuilder MicrosoftGraphMigrateToTemplate { get =>
+            new MicrosoftGraphMigrateToTemplateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateSettings method.</summary>
+        public MicrosoftGraphUpdateSettingsRequestBuilder MicrosoftGraphUpdateSettings { get =>
+            new MicrosoftGraphUpdateSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -65,10 +69,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementIntent entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateSettings method.</summary>
-        public UpdateSettingsRequestBuilder UpdateSettings { get =>
-            new UpdateSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -79,14 +79,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
         /// <summary>Provides operations to manage the userStateSummary property of the microsoft.graph.deviceManagementIntent entity.</summary>
         public UserStateSummaryRequestBuilder UserStateSummary { get =>
             new UserStateSummaryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the compare method.
-        /// </summary>
-        /// <param name="templateId">Usage: templateId=&apos;{templateId}&apos;</param>
-        public CompareWithTemplateIdRequestBuilder CompareWithTemplateId(string templateId) {
-            if(string.IsNullOrEmpty(templateId)) throw new ArgumentNullException(nameof(templateId));
-            return new CompareWithTemplateIdRequestBuilder(PathParameters, RequestAdapter, templateId);
         }
         /// <summary>
         /// Instantiates a new DeviceManagementIntentItemRequestBuilder and sets the default values.
@@ -111,7 +103,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -152,6 +144,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceManagementIntent>(requestInfo, DeviceManagementIntent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the compare method.
+        /// </summary>
+        /// <param name="templateId">Usage: templateId=&apos;{templateId}&apos;</param>
+        public MicrosoftGraphCompareWithTemplateIdRequestBuilder MicrosoftGraphCompareWithTemplateId(string templateId) {
+            if(string.IsNullOrEmpty(templateId)) throw new ArgumentNullException(nameof(templateId));
+            return new MicrosoftGraphCompareWithTemplateIdRequestBuilder(PathParameters, RequestAdapter, templateId);
         }
         /// <summary>
         /// Update the navigation property intents in deviceManagement

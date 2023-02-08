@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEv
         /// <summary>Provides operations to manage the assignmentFilterEvaluationStatusDetails property of the microsoft.graph.managedDevice entity.</summary>
         public AssignmentFilterEvaluationStatusDetailsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("assignmentFilterEvaluationStatusDetails%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("assignmentFilterEvaluationStatusDetails%2Did", position);
             return new AssignmentFilterEvaluationStatusDetailsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEv
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/assignmentFilterEvaluationStatusDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

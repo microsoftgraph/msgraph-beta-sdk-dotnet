@@ -1,11 +1,11 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Close;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.MicrosoftGraphSecurityClose;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.MicrosoftGraphSecurityReopen;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Operations;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Reopen;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Settings;
@@ -23,10 +23,6 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item {
     /// Provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
     /// </summary>
     public class EdiscoveryCaseItemRequestBuilder {
-        /// <summary>Provides operations to call the close method.</summary>
-        public CloseRequestBuilder Close { get =>
-            new CloseRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.</summary>
         public CustodiansRequestBuilder Custodians { get =>
             new CustodiansRequestBuilder(PathParameters, RequestAdapter);
@@ -34,6 +30,14 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item {
         /// <summary>Provides operations to manage the legalHolds property of the microsoft.graph.security.ediscoveryCase entity.</summary>
         public LegalHoldsRequestBuilder LegalHolds { get =>
             new LegalHoldsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the close method.</summary>
+        public MicrosoftGraphSecurityCloseRequestBuilder MicrosoftGraphSecurityClose { get =>
+            new MicrosoftGraphSecurityCloseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reopen method.</summary>
+        public MicrosoftGraphSecurityReopenRequestBuilder MicrosoftGraphSecurityReopen { get =>
+            new MicrosoftGraphSecurityReopenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.</summary>
         public NoncustodialDataSourcesRequestBuilder NoncustodialDataSources { get =>
@@ -45,10 +49,6 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the reopen method.</summary>
-        public ReopenRequestBuilder Reopen { get =>
-            new ReopenRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.</summary>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

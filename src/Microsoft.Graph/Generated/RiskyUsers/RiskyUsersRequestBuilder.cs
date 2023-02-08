@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.RiskyUsers.ConfirmCompromised;
 using Microsoft.Graph.Beta.RiskyUsers.Count;
-using Microsoft.Graph.Beta.RiskyUsers.Dismiss;
 using Microsoft.Graph.Beta.RiskyUsers.Item;
+using Microsoft.Graph.Beta.RiskyUsers.MicrosoftGraphConfirmCompromised;
+using Microsoft.Graph.Beta.RiskyUsers.MicrosoftGraphDismiss;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.RiskyUsers {
     /// Provides operations to manage the collection of riskyUser entities.
     /// </summary>
     public class RiskyUsersRequestBuilder {
-        /// <summary>Provides operations to call the confirmCompromised method.</summary>
-        public ConfirmCompromisedRequestBuilder ConfirmCompromised { get =>
-            new ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the confirmCompromised method.</summary>
+        public MicrosoftGraphConfirmCompromisedRequestBuilder MicrosoftGraphConfirmCompromised { get =>
+            new MicrosoftGraphConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the dismiss method.</summary>
-        public DismissRequestBuilder Dismiss { get =>
-            new DismissRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDismissRequestBuilder MicrosoftGraphDismiss { get =>
+            new MicrosoftGraphDismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers {
         /// <summary>Provides operations to manage the collection of riskyUser entities.</summary>
         public RiskyUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("riskyUser%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("riskyUser%2Did", position);
             return new RiskyUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/riskyUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

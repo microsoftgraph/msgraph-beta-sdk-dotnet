@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item.Assignments;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item.SetPriority;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item.MicrosoftGraphAssign;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.Item.MicrosoftGraphSetPriority;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,22 +16,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.I
     /// Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceEnrollmentConfigurationItemRequestBuilder {
-        /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign { get =>
-            new AssignRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the assign method.</summary>
+        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
+            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setPriority method.</summary>
+        public MicrosoftGraphSetPriorityRequestBuilder MicrosoftGraphSetPriority { get =>
+            new MicrosoftGraphSetPriorityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the setPriority method.</summary>
-        public SetPriorityRequestBuilder SetPriority { get =>
-            new SetPriorityRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.I
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.PrivilegedApproval.Count;
 using Microsoft.Graph.Beta.PrivilegedApproval.Item;
-using Microsoft.Graph.Beta.PrivilegedApproval.MyRequests;
+using Microsoft.Graph.Beta.PrivilegedApproval.MicrosoftGraphMyRequests;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the myRequests method.</summary>
+        public MicrosoftGraphMyRequestsRequestBuilder MicrosoftGraphMyRequests { get =>
+            new MicrosoftGraphMyRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
         /// <summary>Provides operations to manage the collection of privilegedApproval entities.</summary>
         public PrivilegedApprovalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("privilegedApproval%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("privilegedApproval%2Did", position);
             return new PrivilegedApprovalItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,7 +59,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/privilegedApproval{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -78,12 +82,6 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PrivilegedApprovalCollectionResponse>(requestInfo, PrivilegedApprovalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the myRequests method.
-        /// </summary>
-        public MyRequestsRequestBuilder MyRequests() {
-            return new MyRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Use this API to create a new privilegedApproval.

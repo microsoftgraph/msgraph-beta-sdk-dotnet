@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies;
@@ -21,6 +22,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public AuthenticationContextClassReferencesRequestBuilder AuthenticationContextClassReferences { get =>
             new AuthenticationContextClassReferencesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the authenticationStrength property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        public AuthenticationStrengthRequestBuilder AuthenticationStrength { get =>
+            new AuthenticationStrengthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationStrengths property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public AuthenticationStrengthsRequestBuilder AuthenticationStrengths { get =>
@@ -67,7 +72,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identity/conditionalAccess{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.MessageTraces {
         /// <summary>Provides operations to manage the collection of messageTrace entities.</summary>
         public MessageTraceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("messageTrace%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("messageTrace%2Did", position);
             return new MessageTraceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.MessageTraces {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/messageTraces{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -84,17 +83,17 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             set { BackingStore?.Set("sharepoint", value); }
         }
 #endif
-        /// <summary>A container for all Windows Update for Business deployment service functionality. Read-only.</summary>
+        /// <summary>A container for all Windows administrator functionalities. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.Windows? Windows {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows?>("windows"); }
+        public Microsoft.Graph.Beta.Models.AdminWindows? Windows {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminWindows?>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.Windows Windows {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>("windows"); }
+        public Microsoft.Graph.Beta.Models.AdminWindows Windows {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminWindows>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
 #endif
@@ -123,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
                 {"reportSettings", n => { ReportSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdminReportSettings>(Microsoft.Graph.Beta.Models.AdminReportSettings.CreateFromDiscriminatorValue); } },
                 {"serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
                 {"sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint>(Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint.CreateFromDiscriminatorValue); } },
-                {"windows", n => { Windows = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>(Microsoft.Graph.Beta.Models.WindowsUpdates.Windows.CreateFromDiscriminatorValue); } },
+                {"windows", n => { Windows = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdminWindows>(Microsoft.Graph.Beta.Models.AdminWindows.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -137,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AdminReportSettings>("reportSettings", ReportSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint>("sharepoint", Sharepoint);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Windows>("windows", Windows);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AdminWindows>("windows", Windows);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

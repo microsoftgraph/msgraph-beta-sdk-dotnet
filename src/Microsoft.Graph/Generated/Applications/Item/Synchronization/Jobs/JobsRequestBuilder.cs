@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Count;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.ValidateCredentials;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.MicrosoftGraphValidateCredentials;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,20 +20,20 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the validateCredentials method.</summary>
+        public MicrosoftGraphValidateCredentialsRequestBuilder MicrosoftGraphValidateCredentials { get =>
+            new MicrosoftGraphValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Provides operations to call the validateCredentials method.</summary>
-        public ValidateCredentialsRequestBuilder ValidateCredentials { get =>
-            new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
         public SynchronizationJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("synchronizationJob%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("synchronizationJob%2Did", position);
             return new SynchronizationJobItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/applications/{application%2Did}/synchronization/jobs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

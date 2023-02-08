@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Count;
-using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Delta;
-using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.DeltaWithToken;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item;
+using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.MicrosoftGraphDelta;
+using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.MicrosoftGraphDeltaWithToken;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,6 +21,10 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
+            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -30,7 +34,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items {
         /// <summary>Provides operations to manage the items property of the microsoft.graph.list entity.</summary>
         public ListItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("listItem%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("listItem%2Did", position);
             return new ListItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -56,23 +60,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the delta method.
-        /// </summary>
-        public DeltaRequestBuilder Delta() {
-            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the delta method.
-        /// </summary>
-        /// <param name="token">Usage: token=&apos;{token}&apos;</param>
-        public DeltaWithTokenRequestBuilder DeltaWithToken(string token) {
-            if(string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));
-            return new DeltaWithTokenRequestBuilder(PathParameters, RequestAdapter, token);
         }
         /// <summary>
         /// Get the collection of [items][item] in a [list][].
@@ -93,6 +83,14 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ListItemCollectionResponse>(requestInfo, ListItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the delta method.
+        /// </summary>
+        /// <param name="token">Usage: token=&apos;{token}&apos;</param>
+        public MicrosoftGraphDeltaWithTokenRequestBuilder MicrosoftGraphDeltaWithToken(string token) {
+            if(string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));
+            return new MicrosoftGraphDeltaWithTokenRequestBuilder(PathParameters, RequestAdapter, token);
         }
         /// <summary>
         /// Create a new [listItem][] in a [list][].

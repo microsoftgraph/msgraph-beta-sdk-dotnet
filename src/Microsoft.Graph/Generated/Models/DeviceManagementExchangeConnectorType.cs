@@ -9,5 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         ServiceToService,
         /// <summary>Connects to O365 Dedicated Exchange environment.</summary>
         Dedicated,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

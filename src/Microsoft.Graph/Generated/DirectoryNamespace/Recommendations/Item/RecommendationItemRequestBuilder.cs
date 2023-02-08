@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Complete;
-using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Dismiss;
-using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone;
-using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Reactivate;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.MicrosoftGraphComplete;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.MicrosoftGraphDismiss;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.MicrosoftGraphPostpone;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.MicrosoftGraphReactivate;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,23 +18,23 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
     /// </summary>
     public class RecommendationItemRequestBuilder {
         /// <summary>Provides operations to call the complete method.</summary>
-        public CompleteRequestBuilder Complete { get =>
-            new CompleteRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCompleteRequestBuilder MicrosoftGraphComplete { get =>
+            new MicrosoftGraphCompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismiss method.</summary>
-        public DismissRequestBuilder Dismiss { get =>
-            new DismissRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDismissRequestBuilder MicrosoftGraphDismiss { get =>
+            new MicrosoftGraphDismissRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the postpone method.</summary>
+        public MicrosoftGraphPostponeRequestBuilder MicrosoftGraphPostpone { get =>
+            new MicrosoftGraphPostponeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reactivate method.</summary>
+        public MicrosoftGraphReactivateRequestBuilder MicrosoftGraphReactivate { get =>
+            new MicrosoftGraphReactivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the postpone method.</summary>
-        public PostponeRequestBuilder Postpone { get =>
-            new PostponeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reactivate method.</summary>
-        public ReactivateRequestBuilder Reactivate { get =>
-            new ReactivateRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/directory/recommendations/{recommendation%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get recommendations from directory
+        /// List of recommended improvements to improve tenant posture.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get recommendations from directory
+        /// List of recommended improvements to improve tenant posture.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
             }
         }
         /// <summary>
-        /// Get recommendations from directory
+        /// List of recommended improvements to improve tenant posture.
         /// </summary>
         public class RecommendationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

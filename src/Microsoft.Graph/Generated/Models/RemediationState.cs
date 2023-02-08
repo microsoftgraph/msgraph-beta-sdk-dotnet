@@ -11,5 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         RemediationFailed,
         /// <summary>Remediation script execution encountered and error or timed out</summary>
         ScriptError,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

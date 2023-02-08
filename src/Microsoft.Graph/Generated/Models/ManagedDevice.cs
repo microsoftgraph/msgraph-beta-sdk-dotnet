@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Devices that are managed or pre-enrolled through Intune
-    /// </summary>
     public class ManagedDevice : Entity, IParsable {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AadRegistered {
@@ -291,6 +288,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceHealthAttestationState", value); }
         }
 #endif
+        /// <summary>Results of device health scripts that ran for this device. Default is empty list. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DeviceHealthScriptPolicyState>? DeviceHealthScriptStates {
+            get { return BackingStore?.Get<List<DeviceHealthScriptPolicyState>?>("deviceHealthScriptStates"); }
+            set { BackingStore?.Set("deviceHealthScriptStates", value); }
+        }
+#nullable restore
+#else
+        public List<DeviceHealthScriptPolicyState> DeviceHealthScriptStates {
+            get { return BackingStore?.Get<List<DeviceHealthScriptPolicyState>>("deviceHealthScriptStates"); }
+            set { BackingStore?.Set("deviceHealthScriptStates", value); }
+        }
+#endif
         /// <summary>Name of the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -372,7 +383,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enrollmentProfileName", value); }
         }
 #endif
-        /// <summary>Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
+        /// <summary>Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EthernetMacAddress {
@@ -771,7 +782,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skuFamily", value); }
         }
 #endif
-        /// <summary>Device sku number, see also: https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.</summary>
+        /// <summary>Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.</summary>
         public int? SkuNumber {
             get { return BackingStore?.Get<int?>("skuNumber"); }
             set { BackingStore?.Set("skuNumber", value); }
@@ -974,6 +985,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceEnrollmentType", n => { DeviceEnrollmentType = n.GetEnumValue<DeviceEnrollmentType>(); } },
                 {"deviceFirmwareConfigurationInterfaceManaged", n => { DeviceFirmwareConfigurationInterfaceManaged = n.GetBoolValue(); } },
                 {"deviceHealthAttestationState", n => { DeviceHealthAttestationState = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceHealthAttestationState>(Microsoft.Graph.Beta.Models.DeviceHealthAttestationState.CreateFromDiscriminatorValue); } },
+                {"deviceHealthScriptStates", n => { DeviceHealthScriptStates = n.GetCollectionOfObjectValues<DeviceHealthScriptPolicyState>(DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"deviceRegistrationState", n => { DeviceRegistrationState = n.GetEnumValue<DeviceRegistrationState>(); } },
                 {"deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
@@ -1061,6 +1073,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<DeviceConfigurationState>("deviceConfigurationStates", DeviceConfigurationStates);
             writer.WriteEnumValue<DeviceEnrollmentType>("deviceEnrollmentType", DeviceEnrollmentType);
             writer.WriteBoolValue("deviceFirmwareConfigurationInterfaceManaged", DeviceFirmwareConfigurationInterfaceManaged);
+            writer.WriteCollectionOfObjectValues<DeviceHealthScriptPolicyState>("deviceHealthScriptStates", DeviceHealthScriptStates);
             writer.WriteEnumValue<DeviceRegistrationState>("deviceRegistrationState", DeviceRegistrationState);
             writer.WriteEnumValue<DeviceType>("deviceType", DeviceType);
             writer.WriteEnumValue<DeviceManagementExchangeAccessState>("exchangeAccessState", ExchangeAccessState);

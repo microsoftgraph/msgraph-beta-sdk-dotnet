@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Shares.Item.Permission.Grant;
-using Microsoft.Graph.Beta.Shares.Item.Permission.RevokeGrants;
+using Microsoft.Graph.Beta.Shares.Item.Permission.MicrosoftGraphGrant;
+using Microsoft.Graph.Beta.Shares.Item.Permission.MicrosoftGraphRevokeGrants;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -16,17 +16,17 @@ namespace Microsoft.Graph.Beta.Shares.Item.Permission {
     /// </summary>
     public class PermissionRequestBuilder {
         /// <summary>Provides operations to call the grant method.</summary>
-        public GrantRequestBuilder Grant { get =>
-            new GrantRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGrantRequestBuilder MicrosoftGraphGrant { get =>
+            new MicrosoftGraphGrantRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the revokeGrants method.</summary>
+        public MicrosoftGraphRevokeGrantsRequestBuilder MicrosoftGraphRevokeGrants { get =>
+            new MicrosoftGraphRevokeGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the revokeGrants method.</summary>
-        public RevokeGrantsRequestBuilder RevokeGrants { get =>
-            new RevokeGrantsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Permission {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/shares/{sharedDriveItem%2Did}/permission{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

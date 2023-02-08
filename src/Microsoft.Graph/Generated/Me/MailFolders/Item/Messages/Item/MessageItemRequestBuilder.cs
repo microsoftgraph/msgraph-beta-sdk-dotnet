@@ -1,18 +1,18 @@
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Attachments;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Copy;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.CreateForward;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.CreateReply;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.CreateReplyAll;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Extensions;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Forward;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Mentions;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Move;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphCopy;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphCreateForward;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphCreateReply;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphCreateReplyAll;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphForward;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphMove;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphReply;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphReplyAll;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphSend;
+using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MicrosoftGraphUnsubscribe;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MultiValueExtendedProperties;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Reply;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.ReplyAll;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Send;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.SingleValueExtendedProperties;
-using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Unsubscribe;
 using Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Value;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -37,37 +37,53 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the copy method.</summary>
-        public CopyRequestBuilder Copy { get =>
-            new CopyRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the createForward method.</summary>
-        public CreateForwardRequestBuilder CreateForward { get =>
-            new CreateForwardRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the createReply method.</summary>
-        public CreateReplyRequestBuilder CreateReply { get =>
-            new CreateReplyRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the createReplyAll method.</summary>
-        public CreateReplyAllRequestBuilder CreateReplyAll { get =>
-            new CreateReplyAllRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.message entity.</summary>
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the forward method.</summary>
-        public ForwardRequestBuilder Forward { get =>
-            new ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mentions property of the microsoft.graph.message entity.</summary>
         public MentionsRequestBuilder Mentions { get =>
             new MentionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the copy method.</summary>
+        public MicrosoftGraphCopyRequestBuilder MicrosoftGraphCopy { get =>
+            new MicrosoftGraphCopyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the createForward method.</summary>
+        public MicrosoftGraphCreateForwardRequestBuilder MicrosoftGraphCreateForward { get =>
+            new MicrosoftGraphCreateForwardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the createReply method.</summary>
+        public MicrosoftGraphCreateReplyRequestBuilder MicrosoftGraphCreateReply { get =>
+            new MicrosoftGraphCreateReplyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the createReplyAll method.</summary>
+        public MicrosoftGraphCreateReplyAllRequestBuilder MicrosoftGraphCreateReplyAll { get =>
+            new MicrosoftGraphCreateReplyAllRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the forward method.</summary>
+        public MicrosoftGraphForwardRequestBuilder MicrosoftGraphForward { get =>
+            new MicrosoftGraphForwardRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the move method.</summary>
-        public MoveRequestBuilder Move { get =>
-            new MoveRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphMoveRequestBuilder MicrosoftGraphMove { get =>
+            new MicrosoftGraphMoveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reply method.</summary>
+        public MicrosoftGraphReplyRequestBuilder MicrosoftGraphReply { get =>
+            new MicrosoftGraphReplyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyAll method.</summary>
+        public MicrosoftGraphReplyAllRequestBuilder MicrosoftGraphReplyAll { get =>
+            new MicrosoftGraphReplyAllRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the send method.</summary>
+        public MicrosoftGraphSendRequestBuilder MicrosoftGraphSend { get =>
+            new MicrosoftGraphSendRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unsubscribe method.</summary>
+        public MicrosoftGraphUnsubscribeRequestBuilder MicrosoftGraphUnsubscribe { get =>
+            new MicrosoftGraphUnsubscribeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
@@ -75,27 +91,11 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the reply method.</summary>
-        public ReplyRequestBuilder Reply { get =>
-            new ReplyRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the replyAll method.</summary>
-        public ReplyAllRequestBuilder ReplyAll { get =>
-            new ReplyAllRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the send method.</summary>
-        public SendRequestBuilder Send { get =>
-            new SendRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.</summary>
         public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
             new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unsubscribe method.</summary>
-        public UnsubscribeRequestBuilder Unsubscribe { get =>
-            new UnsubscribeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/mailFolders/{mailFolder%2Did}/messages/{message%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from onPremisesPublishingProfiles by key (id)
+        /// Delete entity from onPremisesPublishingProfiles
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from onPremisesPublishingProfiles by key (id)
+        /// Get entity from onPremisesPublishingProfiles by key
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             return await RequestAdapter.SendAsync<OnPremisesPublishingProfile>(requestInfo, OnPremisesPublishingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in onPremisesPublishingProfiles by key (id)
+        /// Update entity in onPremisesPublishingProfiles
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             return await RequestAdapter.SendAsync<OnPremisesPublishingProfile>(requestInfo, OnPremisesPublishingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from onPremisesPublishingProfiles by key (id)
+        /// Delete entity from onPremisesPublishingProfiles
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from onPremisesPublishingProfiles by key (id)
+        /// Get entity from onPremisesPublishingProfiles by key
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in onPremisesPublishingProfiles by key (id)
+        /// Update entity in onPremisesPublishingProfiles
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             }
         }
         /// <summary>
-        /// Get entity from onPremisesPublishingProfiles by key (id)
+        /// Get entity from onPremisesPublishingProfiles by key
         /// </summary>
         public class OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

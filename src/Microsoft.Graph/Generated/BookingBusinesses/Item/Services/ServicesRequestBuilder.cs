@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services {
         /// <summary>Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.</summary>
         public BookingServiceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("bookingService%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("bookingService%2Did", position);
             return new BookingServiceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/services{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

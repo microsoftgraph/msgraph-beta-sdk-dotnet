@@ -6,39 +6,6 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SearchHit : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The _id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? _id {
-            get { return BackingStore?.Get<string?>("_id"); }
-            set { BackingStore?.Set("_id", value); }
-        }
-#nullable restore
-#else
-        public string _id {
-            get { return BackingStore?.Get<string>("_id"); }
-            set { BackingStore?.Set("_id", value); }
-        }
-#endif
-        /// <summary>The _score property</summary>
-        public int? _score {
-            get { return BackingStore?.Get<int?>("_score"); }
-            set { BackingStore?.Set("_score", value); }
-        }
-        /// <summary>The _source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public Entity? _source {
-            get { return BackingStore?.Get<Entity?>("_source"); }
-            set { BackingStore?.Set("_source", value); }
-        }
-#nullable restore
-#else
-        public Entity _source {
-            get { return BackingStore?.Get<Entity>("_source"); }
-            set { BackingStore?.Set("_source", value); }
-        }
-#endif
         /// <summary>The _summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The name of the content source which the externalItem is part of .</summary>
+        /// <summary>The name of the content source that the externalItem is part of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentSource {
@@ -88,7 +55,21 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("hitId", value); }
         }
 #endif
-        /// <summary>The isCollapsed property</summary>
+        /// <summary>The _id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id {
+            get { return BackingStore?.Get<string?>("_id"); }
+            set { BackingStore?.Set("_id", value); }
+        }
+#nullable restore
+#else
+        public string Id {
+            get { return BackingStore?.Get<string>("_id"); }
+            set { BackingStore?.Set("_id", value); }
+        }
+#endif
+        /// <summary>Indicates whether the current result is collapses when the collapseProperties property is used.</summary>
         public bool? IsCollapsed {
             get { return BackingStore?.Get<bool?>("isCollapsed"); }
             set { BackingStore?.Set("isCollapsed", value); }
@@ -140,6 +121,25 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resultTemplateId", value); }
         }
 #endif
+        /// <summary>The _score property</summary>
+        public int? Score {
+            get { return BackingStore?.Get<int?>("_score"); }
+            set { BackingStore?.Set("_score", value); }
+        }
+        /// <summary>The _source property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Entity? Source {
+            get { return BackingStore?.Get<Entity?>("_source"); }
+            set { BackingStore?.Set("_source", value); }
+        }
+#nullable restore
+#else
+        public Entity Source {
+            get { return BackingStore?.Get<Entity>("_source"); }
+            set { BackingStore?.Set("_source", value); }
+        }
+#endif
         /// <summary>A summary of the result, if a summary is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,17 +174,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"_id", n => { _id = n.GetStringValue(); } },
-                {"_score", n => { _score = n.GetIntValue(); } },
-                {"_source", n => { _source = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
                 {"_summary", n => { _summary = n.GetStringValue(); } },
                 {"contentSource", n => { ContentSource = n.GetStringValue(); } },
                 {"hitId", n => { HitId = n.GetStringValue(); } },
+                {"_id", n => { Id = n.GetStringValue(); } },
                 {"isCollapsed", n => { IsCollapsed = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"rank", n => { Rank = n.GetIntValue(); } },
                 {"resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
                 {"resultTemplateId", n => { ResultTemplateId = n.GetStringValue(); } },
+                {"_score", n => { Score = n.GetIntValue(); } },
+                {"_source", n => { Source = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
                 {"summary", n => { Summary = n.GetStringValue(); } },
             };
         }
@@ -194,17 +194,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("_id", _id);
-            writer.WriteIntValue("_score", _score);
-            writer.WriteObjectValue<Entity>("_source", _source);
             writer.WriteStringValue("_summary", _summary);
             writer.WriteStringValue("contentSource", ContentSource);
             writer.WriteStringValue("hitId", HitId);
+            writer.WriteStringValue("_id", Id);
             writer.WriteBoolValue("isCollapsed", IsCollapsed);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("rank", Rank);
             writer.WriteObjectValue<Entity>("resource", Resource);
             writer.WriteStringValue("resultTemplateId", ResultTemplateId);
+            writer.WriteIntValue("_score", Score);
+            writer.WriteObjectValue<Entity>("_source", Source);
             writer.WriteStringValue("summary", Summary);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog {
     /// <summary>
-    /// Provides operations to manage the catalog property of the microsoft.graph.windowsUpdates.updates entity.
+    /// Provides operations to manage the catalog property of the microsoft.graph.adminWindowsUpdates entity.
     /// </summary>
     public class CatalogRequestBuilder {
         /// <summary>Provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.</summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/windows/updates/catalog{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

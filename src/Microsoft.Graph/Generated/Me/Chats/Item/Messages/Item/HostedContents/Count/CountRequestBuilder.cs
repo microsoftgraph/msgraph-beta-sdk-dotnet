@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Messages.Item.HostedContents.Count 
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/chats/{chat%2Did}/messages/{chatMessage%2Did}/hostedContents/$count{?%24search,%24filter}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

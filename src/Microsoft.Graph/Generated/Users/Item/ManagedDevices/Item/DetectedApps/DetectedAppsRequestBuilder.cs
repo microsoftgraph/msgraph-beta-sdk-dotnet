@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps {
         /// <summary>Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.</summary>
         public DetectedAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("detectedApp%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("detectedApp%2Did", position);
             return new DetectedAppItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/detectedApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

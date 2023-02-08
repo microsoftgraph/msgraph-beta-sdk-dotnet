@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup;
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.MicrosoftGraphLookup;
 using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
     /// </summary>
     public class ExactMatchDataStoreItemRequestBuilder {
         /// <summary>Provides operations to call the lookup method.</summary>
-        public LookupRequestBuilder Lookup { get =>
-            new LookupRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphLookupRequestBuilder MicrosoftGraphLookup { get =>
+            new MicrosoftGraphLookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

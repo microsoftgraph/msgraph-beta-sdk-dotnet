@@ -4,7 +4,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovernment
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.MicrosoftGraphGetEffectivePermissions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
@@ -52,6 +52,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// <summary>Provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.</summary>
         public GalleryImagesRequestBuilder GalleryImages { get =>
             new GalleryImagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
+        public MicrosoftGraphGetEffectivePermissionsRequestBuilder MicrosoftGraphGetEffectivePermissions { get =>
+            new MicrosoftGraphGetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.</summary>
         public OnPremisesConnectionsRequestBuilder OnPremisesConnections { get =>
@@ -118,7 +122,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -159,12 +163,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VirtualEndpoint>(requestInfo, Microsoft.Graph.Beta.Models.VirtualEndpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getEffectivePermissions method.
-        /// </summary>
-        public GetEffectivePermissionsRequestBuilder GetEffectivePermissions() {
-            return new GetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Update the navigation property virtualEndpoint in deviceManagement

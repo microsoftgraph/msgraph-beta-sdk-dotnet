@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/businessFlowTemplates/{businessFlowTemplate%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from businessFlowTemplates by key (id)
+        /// Delete entity from businessFlowTemplates
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from businessFlowTemplates by key (id)
+        /// Get entity from businessFlowTemplates by key
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             return await RequestAdapter.SendAsync<BusinessFlowTemplate>(requestInfo, BusinessFlowTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in businessFlowTemplates by key (id)
+        /// Update entity in businessFlowTemplates
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             return await RequestAdapter.SendAsync<BusinessFlowTemplate>(requestInfo, BusinessFlowTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from businessFlowTemplates by key (id)
+        /// Delete entity from businessFlowTemplates
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from businessFlowTemplates by key (id)
+        /// Get entity from businessFlowTemplates by key
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in businessFlowTemplates by key (id)
+        /// Update entity in businessFlowTemplates
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates.Item {
             }
         }
         /// <summary>
-        /// Get entity from businessFlowTemplates by key (id)
+        /// Get entity from businessFlowTemplates by key
         /// </summary>
         public class BusinessFlowTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

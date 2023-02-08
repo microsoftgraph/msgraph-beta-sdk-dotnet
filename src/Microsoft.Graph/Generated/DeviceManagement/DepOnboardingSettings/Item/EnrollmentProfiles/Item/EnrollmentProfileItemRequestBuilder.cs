@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.ExportMobileConfig;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.SetDefaultProfile;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.UpdateDeviceProfileAssignment;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.MicrosoftGraphExportMobileConfig;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.MicrosoftGraphSetDefaultProfile;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.MicrosoftGraphUpdateDeviceProfileAssignment;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,18 +16,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
     /// Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
     /// </summary>
     public class EnrollmentProfileItemRequestBuilder {
+        /// <summary>Provides operations to call the exportMobileConfig method.</summary>
+        public MicrosoftGraphExportMobileConfigRequestBuilder MicrosoftGraphExportMobileConfig { get =>
+            new MicrosoftGraphExportMobileConfigRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setDefaultProfile method.</summary>
+        public MicrosoftGraphSetDefaultProfileRequestBuilder MicrosoftGraphSetDefaultProfile { get =>
+            new MicrosoftGraphSetDefaultProfileRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateDeviceProfileAssignment method.</summary>
+        public MicrosoftGraphUpdateDeviceProfileAssignmentRequestBuilder MicrosoftGraphUpdateDeviceProfileAssignment { get =>
+            new MicrosoftGraphUpdateDeviceProfileAssignmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the setDefaultProfile method.</summary>
-        public SetDefaultProfileRequestBuilder SetDefaultProfile { get =>
-            new SetDefaultProfileRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateDeviceProfileAssignment method.</summary>
-        public UpdateDeviceProfileAssignmentRequestBuilder UpdateDeviceProfileAssignment { get =>
-            new UpdateDeviceProfileAssignmentRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -53,7 +57,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -75,12 +79,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the exportMobileConfig method.
-        /// </summary>
-        public ExportMobileConfigRequestBuilder ExportMobileConfig() {
-            return new ExportMobileConfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// The enrollment profiles.

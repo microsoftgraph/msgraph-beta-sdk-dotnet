@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Count;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.MicrosoftGraphGetStorageAccountsWithSubscriptionId;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.MicrosoftGraphGetSubscriptions;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,6 +21,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getSubscriptions method.</summary>
+        public MicrosoftGraphGetSubscriptionsRequestBuilder MicrosoftGraphGetSubscriptions { get =>
+            new MicrosoftGraphGetSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -30,7 +34,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         /// <summary>Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.</summary>
         public CloudPcSnapshotItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("cloudPcSnapshot%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("cloudPcSnapshot%2Did", position);
             return new CloudPcSnapshotItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -56,7 +60,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/snapshots{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -84,15 +88,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         /// Provides operations to call the getStorageAccounts method.
         /// </summary>
         /// <param name="subscriptionId">Usage: subscriptionId=&apos;{subscriptionId}&apos;</param>
-        public GetStorageAccountsWithSubscriptionIdRequestBuilder GetStorageAccountsWithSubscriptionId(string subscriptionId) {
+        public MicrosoftGraphGetStorageAccountsWithSubscriptionIdRequestBuilder MicrosoftGraphGetStorageAccountsWithSubscriptionId(string subscriptionId) {
             if(string.IsNullOrEmpty(subscriptionId)) throw new ArgumentNullException(nameof(subscriptionId));
-            return new GetStorageAccountsWithSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, subscriptionId);
-        }
-        /// <summary>
-        /// Provides operations to call the getSubscriptions method.
-        /// </summary>
-        public GetSubscriptionsRequestBuilder GetSubscriptions() {
-            return new GetSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+            return new MicrosoftGraphGetStorageAccountsWithSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, subscriptionId);
         }
         /// <summary>
         /// Create new navigation property to snapshots for deviceManagement

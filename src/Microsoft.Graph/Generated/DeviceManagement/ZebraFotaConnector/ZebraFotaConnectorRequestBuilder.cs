@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaApps;
-using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect;
-using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Disconnect;
-using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments;
+using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.MicrosoftGraphApproveFotaApps;
+using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.MicrosoftGraphConnect;
+using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.MicrosoftGraphDisconnect;
+using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.MicrosoftGraphHasActiveDeployments;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,20 +18,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector {
     /// </summary>
     public class ZebraFotaConnectorRequestBuilder {
         /// <summary>Provides operations to call the approveFotaApps method.</summary>
-        public ApproveFotaAppsRequestBuilder ApproveFotaApps { get =>
-            new ApproveFotaAppsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphApproveFotaAppsRequestBuilder MicrosoftGraphApproveFotaApps { get =>
+            new MicrosoftGraphApproveFotaAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the connect method.</summary>
-        public ConnectRequestBuilder Connect { get =>
-            new ConnectRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphConnectRequestBuilder MicrosoftGraphConnect { get =>
+            new MicrosoftGraphConnectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the disconnect method.</summary>
-        public DisconnectRequestBuilder Disconnect { get =>
-            new DisconnectRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDisconnectRequestBuilder MicrosoftGraphDisconnect { get =>
+            new MicrosoftGraphDisconnectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasActiveDeployments method.</summary>
-        public HasActiveDeploymentsRequestBuilder HasActiveDeployments { get =>
-            new HasActiveDeploymentsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphHasActiveDeploymentsRequestBuilder MicrosoftGraphHasActiveDeployments { get =>
+            new MicrosoftGraphHasActiveDeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/zebraFotaConnector{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

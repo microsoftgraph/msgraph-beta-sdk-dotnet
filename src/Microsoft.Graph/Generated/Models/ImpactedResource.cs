@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ImpactedResource : Entity, IParsable {
-        /// <summary>The addedDateTime property</summary>
+        /// <summary>The date and time when the impactedResource object was initially associated with the recommendation.</summary>
         public DateTimeOffset? AddedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("addedDateTime"); }
             set { BackingStore?.Set("addedDateTime", value); }
         }
-        /// <summary>The additionalDetails property</summary>
+        /// <summary>Additional information unique to the impactedResource to help contextualize the recommendation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<KeyValue>? AdditionalDetails {
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #endif
-        /// <summary>The apiUrl property</summary>
+        /// <summary>The URL link to the corresponding Azure AD resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiUrl {
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("apiUrl", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Friendly name of the Azure AD resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Name of the user or service that last updated the status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastModifiedBy {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the status was last updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastModifiedDateTime {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>The user responsible for maintaining the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Owner {
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("owner", value); }
         }
 #endif
-        /// <summary>The portalUrl property</summary>
+        /// <summary>The URL link to the corresponding Azure AD portal page of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PortalUrl {
@@ -108,17 +108,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("portalUrl", value); }
         }
 #endif
-        /// <summary>The postponeUntilDateTime property</summary>
+        /// <summary>The future date and time when the status of a postponed impactedResource will be active again.</summary>
         public DateTimeOffset? PostponeUntilDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("postponeUntilDateTime"); }
             set { BackingStore?.Set("postponeUntilDateTime", value); }
         }
-        /// <summary>The rank property</summary>
+        /// <summary>Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.</summary>
         public int? Rank {
             get { return BackingStore?.Get<int?>("rank"); }
             set { BackingStore?.Set("rank", value); }
         }
-        /// <summary>The recommendationId property</summary>
+        /// <summary>The unique identifier of the recommendation that the resource is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecommendationId {
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recommendationId", value); }
         }
 #endif
-        /// <summary>The resourceType property</summary>
+        /// <summary>Indicates the type of Azure AD resource. Examples include user, application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceType {
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RecommendationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The subjectId property</summary>
+        /// <summary>The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubjectId {

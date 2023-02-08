@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Count;
-using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration;
-using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.HasPayloadLinks;
 using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item;
+using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.MicrosoftGraphCreateEnrollmentNotificationConfiguration;
+using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.MicrosoftGraphHasPayloadLinks;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createEnrollmentNotificationConfiguration method.</summary>
-        public CreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration { get =>
-            new CreateEnrollmentNotificationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCreateEnrollmentNotificationConfigurationRequestBuilder MicrosoftGraphCreateEnrollmentNotificationConfiguration { get =>
+            new MicrosoftGraphCreateEnrollmentNotificationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
-        public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
-            new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphHasPayloadLinksRequestBuilder MicrosoftGraphHasPayloadLinks { get =>
+            new MicrosoftGraphHasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
         /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
         public DeviceEnrollmentConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("deviceEnrollmentConfiguration%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("deviceEnrollmentConfiguration%2Did", position);
             return new DeviceEnrollmentConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/deviceEnrollmentConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -1,5 +1,5 @@
+using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.MicrosoftGraphReply;
 using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts;
-using Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Reply;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,15 +15,15 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item {
     /// Provides operations to manage the threads property of the microsoft.graph.conversation entity.
     /// </summary>
     public class ConversationThreadItemRequestBuilder {
+        /// <summary>Provides operations to call the reply method.</summary>
+        public MicrosoftGraphReplyRequestBuilder MicrosoftGraphReply { get =>
+            new MicrosoftGraphReplyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the posts property of the microsoft.graph.conversationThread entity.</summary>
         public PostsRequestBuilder Posts { get =>
             new PostsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reply method.</summary>
-        public ReplyRequestBuilder Reply { get =>
-            new ReplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

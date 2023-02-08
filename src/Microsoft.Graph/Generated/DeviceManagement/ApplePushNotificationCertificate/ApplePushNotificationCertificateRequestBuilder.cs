@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest;
-using Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest;
+using Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.MicrosoftGraphDownloadApplePushNotificationCertificateSigningRequest;
+using Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.MicrosoftGraphGenerateApplePushNotificationCertificateSigningRequest;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,9 +15,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
     /// Provides operations to manage the applePushNotificationCertificate property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class ApplePushNotificationCertificateRequestBuilder {
+        /// <summary>Provides operations to call the downloadApplePushNotificationCertificateSigningRequest method.</summary>
+        public MicrosoftGraphDownloadApplePushNotificationCertificateSigningRequestRequestBuilder MicrosoftGraphDownloadApplePushNotificationCertificateSigningRequest { get =>
+            new MicrosoftGraphDownloadApplePushNotificationCertificateSigningRequestRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the generateApplePushNotificationCertificateSigningRequest method.</summary>
-        public GenerateApplePushNotificationCertificateSigningRequestRequestBuilder GenerateApplePushNotificationCertificateSigningRequest { get =>
-            new GenerateApplePushNotificationCertificateSigningRequestRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGenerateApplePushNotificationCertificateSigningRequestRequestBuilder MicrosoftGraphGenerateApplePushNotificationCertificateSigningRequest { get =>
+            new MicrosoftGraphGenerateApplePushNotificationCertificateSigningRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -48,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/applePushNotificationCertificate{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -70,12 +74,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the downloadApplePushNotificationCertificateSigningRequest method.
-        /// </summary>
-        public DownloadApplePushNotificationCertificateSigningRequestRequestBuilder DownloadApplePushNotificationCertificateSigningRequest() {
-            return new DownloadApplePushNotificationCertificateSigningRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Apple push notification certificate.

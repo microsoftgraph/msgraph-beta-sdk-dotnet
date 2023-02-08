@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Me.Activities.Count;
 using Microsoft.Graph.Beta.Me.Activities.Item;
-using Microsoft.Graph.Beta.Me.Activities.Recent;
+using Microsoft.Graph.Beta.Me.Activities.MicrosoftGraphRecent;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.Me.Activities {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the recent method.</summary>
+        public MicrosoftGraphRecentRequestBuilder MicrosoftGraphRecent { get =>
+            new MicrosoftGraphRecentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.Activities {
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.user entity.</summary>
         public UserActivityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("userActivity%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("userActivity%2Did", position);
             return new UserActivityItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,7 +59,7 @@ namespace Microsoft.Graph.Beta.Me.Activities {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/activities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -98,12 +102,6 @@ namespace Microsoft.Graph.Beta.Me.Activities {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserActivity>(requestInfo, UserActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the recent method.
-        /// </summary>
-        public RecentRequestBuilder Recent() {
-            return new RecentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get activities from me

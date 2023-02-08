@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories.Count;
-using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories.Delta;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories.Item;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories.MicrosoftGraphDelta;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories.Ref;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -21,6 +21,10 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categorie
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
+            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the collection of educationRoot entities.</summary>
@@ -34,7 +38,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categorie
         /// <summary>Gets an item from the Microsoft.Graph.Beta.education.classes.item.assignments.item.categories.item collection</summary>
         public EducationCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("educationCategory%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("educationCategory%2Did", position);
             return new EducationCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -60,15 +64,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categorie
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/categories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the delta method.
-        /// </summary>
-        public DeltaRequestBuilder Delta() {
-            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.

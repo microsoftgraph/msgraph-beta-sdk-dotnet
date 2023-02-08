@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey;
-using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey;
-using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate;
-using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadPkcs12;
-using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.MicrosoftGraphGenerateKey;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.MicrosoftGraphGetActiveKey;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.MicrosoftGraphUploadCertificate;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.MicrosoftGraphUploadPkcs12;
+using Microsoft.Graph.Beta.TrustFramework.KeySets.Item.MicrosoftGraphUploadSecret;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -19,25 +19,29 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
     /// </summary>
     public class TrustFrameworkKeySetItemRequestBuilder {
         /// <summary>Provides operations to call the generateKey method.</summary>
-        public GenerateKeyRequestBuilder GenerateKey { get =>
-            new GenerateKeyRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGenerateKeyRequestBuilder MicrosoftGraphGenerateKey { get =>
+            new MicrosoftGraphGenerateKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getActiveKey method.</summary>
+        public MicrosoftGraphGetActiveKeyRequestBuilder MicrosoftGraphGetActiveKey { get =>
+            new MicrosoftGraphGetActiveKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the uploadCertificate method.</summary>
+        public MicrosoftGraphUploadCertificateRequestBuilder MicrosoftGraphUploadCertificate { get =>
+            new MicrosoftGraphUploadCertificateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the uploadPkcs12 method.</summary>
+        public MicrosoftGraphUploadPkcs12RequestBuilder MicrosoftGraphUploadPkcs12 { get =>
+            new MicrosoftGraphUploadPkcs12RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the uploadSecret method.</summary>
+        public MicrosoftGraphUploadSecretRequestBuilder MicrosoftGraphUploadSecret { get =>
+            new MicrosoftGraphUploadSecretRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the uploadCertificate method.</summary>
-        public UploadCertificateRequestBuilder UploadCertificate { get =>
-            new UploadCertificateRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the uploadPkcs12 method.</summary>
-        public UploadPkcs12RequestBuilder UploadPkcs12 { get =>
-            new UploadPkcs12RequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the uploadSecret method.</summary>
-        public UploadSecretRequestBuilder UploadSecret { get =>
-            new UploadSecretRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -63,7 +67,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -85,12 +89,6 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getActiveKey method.
-        /// </summary>
-        public GetActiveKeyRequestBuilder GetActiveKey() {
-            return new GetActiveKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get keySets from trustFramework

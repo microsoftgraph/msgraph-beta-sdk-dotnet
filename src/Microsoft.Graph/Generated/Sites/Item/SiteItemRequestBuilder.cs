@@ -6,12 +6,12 @@ using Microsoft.Graph.Beta.Sites.Item.ContentTypes;
 using Microsoft.Graph.Beta.Sites.Item.Drive;
 using Microsoft.Graph.Beta.Sites.Item.Drives;
 using Microsoft.Graph.Beta.Sites.Item.ExternalColumns;
-using Microsoft.Graph.Beta.Sites.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
-using Microsoft.Graph.Beta.Sites.Item.GetApplicableContentTypesForListWithListId;
-using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection;
 using Microsoft.Graph.Beta.Sites.Item.Items;
 using Microsoft.Graph.Beta.Sites.Item.Lists;
+using Microsoft.Graph.Beta.Sites.Item.MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
+using Microsoft.Graph.Beta.Sites.Item.MicrosoftGraphGetApplicableContentTypesForListWithListId;
+using Microsoft.Graph.Beta.Sites.Item.MicrosoftGraphGetByPathWithPath;
 using Microsoft.Graph.Beta.Sites.Item.Onenote;
 using Microsoft.Graph.Beta.Sites.Item.Operations;
 using Microsoft.Graph.Beta.Sites.Item.Pages;
@@ -120,29 +120,9 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/sites/{site%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the getActivitiesByInterval method.
-        /// </summary>
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
-        /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
-        public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime) {
-            if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
-            if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
-            if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
-            return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
-        }
-        /// <summary>
-        /// Provides operations to call the getApplicableContentTypesForList method.
-        /// </summary>
-        /// <param name="listId">Usage: listId=&apos;{listId}&apos;</param>
-        public GetApplicableContentTypesForListWithListIdRequestBuilder GetApplicableContentTypesForListWithListId(string listId) {
-            if(string.IsNullOrEmpty(listId)) throw new ArgumentNullException(nameof(listId));
-            return new GetApplicableContentTypesForListWithListIdRequestBuilder(PathParameters, RequestAdapter, listId);
         }
         /// <summary>
         /// Retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
@@ -165,15 +145,35 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Site>(requestInfo, Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
+        /// Provides operations to call the getActivitiesByInterval method.
+        /// </summary>
+        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        public MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime) {
+            if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
+            if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
+            if(string.IsNullOrEmpty(startDateTime)) throw new ArgumentNullException(nameof(startDateTime));
+            return new MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getApplicableContentTypesForList method.
+        /// </summary>
+        /// <param name="listId">Usage: listId=&apos;{listId}&apos;</param>
+        public MicrosoftGraphGetApplicableContentTypesForListWithListIdRequestBuilder MicrosoftGraphGetApplicableContentTypesForListWithListId(string listId) {
+            if(string.IsNullOrEmpty(listId)) throw new ArgumentNullException(nameof(listId));
+            return new MicrosoftGraphGetApplicableContentTypesForListWithListIdRequestBuilder(PathParameters, RequestAdapter, listId);
+        }
+        /// <summary>
         /// Provides operations to call the getByPath method.
         /// </summary>
         /// <param name="path">Usage: path=&apos;{path}&apos;</param>
-        public GetByPathWithPathRequestBuilder GetByPathWithPath(string path) {
+        public MicrosoftGraphGetByPathWithPathRequestBuilder MicrosoftGraphGetByPathWithPath(string path) {
             if(string.IsNullOrEmpty(path)) throw new ArgumentNullException(nameof(path));
-            return new GetByPathWithPathRequestBuilder(PathParameters, RequestAdapter, path);
+            return new MicrosoftGraphGetByPathWithPathRequestBuilder(PathParameters, RequestAdapter, path);
         }
         /// <summary>
-        /// Update entity in sites by key (id)
+        /// Update entity in sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in sites by key (id)
+        /// Update entity in sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

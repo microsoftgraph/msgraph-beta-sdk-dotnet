@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations.AvailableProviderTypes;
 using Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations.Count;
 using Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations.Item;
+using Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations.MicrosoftGraphAvailableProviderTypes;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the availableProviderTypes method.</summary>
+        public MicrosoftGraphAvailableProviderTypesRequestBuilder MicrosoftGraphAvailableProviderTypes { get =>
+            new MicrosoftGraphAvailableProviderTypesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,15 +33,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations {
         /// <summary>Provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.</summary>
         public IdentityProviderBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("identityProviderBase%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("identityProviderBase%2Did", position);
             return new IdentityProviderBaseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>
-        /// Provides operations to call the availableProviderTypes method.
-        /// </summary>
-        public AvailableProviderTypesRequestBuilder AvailableProviderTypes() {
-            return new AvailableProviderTypesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
         /// </summary>
@@ -61,7 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/directory/federationConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

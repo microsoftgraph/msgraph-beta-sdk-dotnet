@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
 #endif
-        /// <summary>The appliedEventListeners property</summary>
+        /// <summary>Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AppliedAuthenticationEventListener>? AppliedEventListeners {
@@ -488,13 +488,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RiskEventTypes_v2 {
+        public List<string>? RiskEventTypesV2 {
             get { return BackingStore?.Get<List<string>?>("riskEventTypes_v2"); }
             set { BackingStore?.Set("riskEventTypes_v2", value); }
         }
 #nullable restore
 #else
-        public List<string> RiskEventTypes_v2 {
+        public List<string> RiskEventTypesV2 {
             get { return BackingStore?.Get<List<string>>("riskEventTypes_v2"); }
             set { BackingStore?.Set("riskEventTypes_v2", value); }
         }
@@ -780,7 +780,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"resourceServicePrincipalId", n => { ResourceServicePrincipalId = n.GetStringValue(); } },
                 {"resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
                 {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
-                {"riskEventTypes_v2", n => { RiskEventTypes_v2 = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"riskEventTypes_v2", n => { RiskEventTypesV2 = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<RiskLevel>(); } },
                 {"riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<RiskLevel>(); } },
                 {"riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
@@ -852,7 +852,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("resourceServicePrincipalId", ResourceServicePrincipalId);
             writer.WriteStringValue("resourceTenantId", ResourceTenantId);
             writer.WriteEnumValue<RiskDetail>("riskDetail", RiskDetail);
-            writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes_v2", RiskEventTypes_v2);
+            writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes_v2", RiskEventTypesV2);
             writer.WriteEnumValue<RiskLevel>("riskLevelAggregated", RiskLevelAggregated);
             writer.WriteEnumValue<RiskLevel>("riskLevelDuringSignIn", RiskLevelDuringSignIn);
             writer.WriteEnumValue<RiskState>("riskState", RiskState);

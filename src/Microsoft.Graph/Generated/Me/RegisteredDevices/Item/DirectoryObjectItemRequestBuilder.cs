@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Me.RegisteredDevices.Item.Device;
-using Microsoft.Graph.Beta.Me.RegisteredDevices.Item.Endpoint;
+using Microsoft.Graph.Beta.Me.RegisteredDevices.Item.MicrosoftGraphDevice;
+using Microsoft.Graph.Beta.Me.RegisteredDevices.Item.MicrosoftGraphEndpoint;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.Me.RegisteredDevices.Item {
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to device.</summary>
-        public DeviceRequestBuilder Device { get =>
-            new DeviceRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDeviceRequestBuilder MicrosoftGraphDevice { get =>
+            new MicrosoftGraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public EndpointRequestBuilder Endpoint { get =>
-            new EndpointRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEndpointRequestBuilder MicrosoftGraphEndpoint { get =>
+            new MicrosoftGraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Me.RegisteredDevices.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/registeredDevices/{directoryObject%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

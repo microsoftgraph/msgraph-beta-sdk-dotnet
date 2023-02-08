@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CountriesRegions {
         /// <summary>Provides operations to manage the countriesRegions property of the microsoft.graph.company entity.</summary>
         public CountryRegionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("countryRegion%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("countryRegion%2Did", position);
             return new CountryRegionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CountriesRegions {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/countriesRegions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

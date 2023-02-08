@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Add;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Count;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Item;
+using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.MicrosoftGraphAdd;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -16,13 +16,13 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Member
     /// Provides operations to manage the members property of the microsoft.graph.team entity.
     /// </summary>
     public class MembersRequestBuilder {
-        /// <summary>Provides operations to call the add method.</summary>
-        public AddRequestBuilder Add { get =>
-            new AddRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the add method.</summary>
+        public MicrosoftGraphAddRequestBuilder MicrosoftGraphAdd { get =>
+            new MicrosoftGraphAddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Member
         /// <summary>Provides operations to manage the members property of the microsoft.graph.team entity.</summary>
         public ConversationMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("conversationMember%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("conversationMember%2Did", position);
             return new ConversationMemberItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Member
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

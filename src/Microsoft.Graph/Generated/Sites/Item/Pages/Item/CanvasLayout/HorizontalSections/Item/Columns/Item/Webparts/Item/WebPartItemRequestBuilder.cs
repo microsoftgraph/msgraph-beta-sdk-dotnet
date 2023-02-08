@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.HorizontalSections.Item.Columns.Item.Webparts.Item.GetPositionOfWebPart;
+using Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.HorizontalSections.Item.Columns.Item.Webparts.Item.MicrosoftGraphGetPositionOfWebPart;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.HorizontalSect
     /// </summary>
     public class WebPartItemRequestBuilder {
         /// <summary>Provides operations to call the getPositionOfWebPart method.</summary>
-        public GetPositionOfWebPartRequestBuilder GetPositionOfWebPart { get =>
-            new GetPositionOfWebPartRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetPositionOfWebPartRequestBuilder MicrosoftGraphGetPositionOfWebPart { get =>
+            new MicrosoftGraphGetPositionOfWebPartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.HorizontalSect
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/sites/{site%2Did}/pages/{sitePage%2Did}/canvasLayout/horizontalSections/{horizontalSection%2Did}/columns/{horizontalSectionColumn%2Did}/webparts/{webPart%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

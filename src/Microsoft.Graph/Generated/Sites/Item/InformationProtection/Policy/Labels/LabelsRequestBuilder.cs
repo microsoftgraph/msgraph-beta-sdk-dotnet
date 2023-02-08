@@ -1,11 +1,11 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.Count;
-using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.EvaluateApplication;
-using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.EvaluateClassificationResults;
-using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.EvaluateRemoval;
-using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.ExtractLabel;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.Item;
+using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.MicrosoftGraphEvaluateApplication;
+using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.MicrosoftGraphEvaluateClassificationResults;
+using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.MicrosoftGraphEvaluateRemoval;
+using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.MicrosoftGraphExtractLabel;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -24,20 +24,20 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateApplication method.</summary>
-        public EvaluateApplicationRequestBuilder EvaluateApplication { get =>
-            new EvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEvaluateApplicationRequestBuilder MicrosoftGraphEvaluateApplication { get =>
+            new MicrosoftGraphEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
-        public EvaluateClassificationResultsRequestBuilder EvaluateClassificationResults { get =>
-            new EvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEvaluateClassificationResultsRequestBuilder MicrosoftGraphEvaluateClassificationResults { get =>
+            new MicrosoftGraphEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateRemoval method.</summary>
-        public EvaluateRemovalRequestBuilder EvaluateRemoval { get =>
-            new EvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEvaluateRemovalRequestBuilder MicrosoftGraphEvaluateRemoval { get =>
+            new MicrosoftGraphEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the extractLabel method.</summary>
-        public ExtractLabelRequestBuilder ExtractLabel { get =>
-            new ExtractLabelRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphExtractLabelRequestBuilder MicrosoftGraphExtractLabel { get =>
+            new MicrosoftGraphExtractLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels {
         /// <summary>Provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.</summary>
         public InformationProtectionLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("informationProtectionLabel%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("informationProtectionLabel%2Did", position);
             return new InformationProtectionLabelItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/sites/{site%2Did}/informationProtection/policy/labels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

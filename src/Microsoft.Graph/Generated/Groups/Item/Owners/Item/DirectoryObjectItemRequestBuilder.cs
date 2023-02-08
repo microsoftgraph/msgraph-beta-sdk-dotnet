@@ -1,10 +1,10 @@
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Application;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Device;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Group;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.OrgContact;
+using Microsoft.Graph.Beta.Groups.Item.Owners.Item.MicrosoftGraphApplication;
+using Microsoft.Graph.Beta.Groups.Item.Owners.Item.MicrosoftGraphDevice;
+using Microsoft.Graph.Beta.Groups.Item.Owners.Item.MicrosoftGraphGroup;
+using Microsoft.Graph.Beta.Groups.Item.Owners.Item.MicrosoftGraphOrgContact;
+using Microsoft.Graph.Beta.Groups.Item.Owners.Item.MicrosoftGraphServicePrincipal;
+using Microsoft.Graph.Beta.Groups.Item.Owners.Item.MicrosoftGraphUser;
 using Microsoft.Graph.Beta.Groups.Item.Owners.Item.Ref;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.ServicePrincipal;
-using Microsoft.Graph.Beta.Groups.Item.Owners.Item.User;
 using Microsoft.Kiota.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -17,20 +17,28 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners.Item {
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to application.</summary>
-        public ApplicationRequestBuilder Application { get =>
-            new ApplicationRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphApplicationRequestBuilder MicrosoftGraphApplication { get =>
+            new MicrosoftGraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public DeviceRequestBuilder Device { get =>
-            new DeviceRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDeviceRequestBuilder MicrosoftGraphDevice { get =>
+            new MicrosoftGraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public GroupRequestBuilder Group { get =>
-            new GroupRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGroupRequestBuilder MicrosoftGraphGroup { get =>
+            new MicrosoftGraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public OrgContactRequestBuilder OrgContact { get =>
-            new OrgContactRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphOrgContactRequestBuilder MicrosoftGraphOrgContact { get =>
+            new MicrosoftGraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to servicePrincipal.</summary>
+        public MicrosoftGraphServicePrincipalRequestBuilder MicrosoftGraphServicePrincipal { get =>
+            new MicrosoftGraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to user.</summary>
+        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
+            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -40,16 +48,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public ServicePrincipalRequestBuilder ServicePrincipal { get =>
-            new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Casts the previous resource to user.</summary>
-        public UserRequestBuilder User { get =>
-            new UserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         /// </summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/owners/{directoryObject%2Did}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The effectiveValue property</summary>
+        public DeploymentStateValue? EffectiveValue {
+            get { return BackingStore?.Get<DeploymentStateValue?>("effectiveValue"); }
+            set { BackingStore?.Set("effectiveValue", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,11 +51,6 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<RequestedDeploymentStateValue?>("requestedValue"); }
             set { BackingStore?.Set("requestedValue", value); }
         }
-        /// <summary>The value property</summary>
-        public DeploymentStateValue? Value {
-            get { return BackingStore?.Get<DeploymentStateValue?>("value"); }
-            set { BackingStore?.Set("value", value); }
-        }
         /// <summary>
         /// Instantiates a new deploymentState and sets the default values.
         /// </summary>
@@ -71,10 +71,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"effectiveValue", n => { EffectiveValue = n.GetEnumValue<DeploymentStateValue>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reasons", n => { Reasons = n.GetCollectionOfObjectValues<DeploymentStateReason>(DeploymentStateReason.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"requestedValue", n => { RequestedValue = n.GetEnumValue<RequestedDeploymentStateValue>(); } },
-                {"value", n => { Value = n.GetEnumValue<DeploymentStateValue>(); } },
             };
         }
         /// <summary>
@@ -83,10 +83,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<DeploymentStateValue>("effectiveValue", EffectiveValue);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<DeploymentStateReason>("reasons", Reasons);
             writer.WriteEnumValue<RequestedDeploymentStateValue>("requestedValue", RequestedValue);
-            writer.WriteEnumValue<DeploymentStateValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

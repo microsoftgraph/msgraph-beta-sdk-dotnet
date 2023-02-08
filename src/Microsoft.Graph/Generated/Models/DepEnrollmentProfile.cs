@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("siriDisabled"); }
             set { BackingStore?.Set("siriDisabled", value); }
         }
-        /// <summary>Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.</summary>
+        /// <summary>Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.</summary>
         public bool? SupervisedModeEnabled {
             get { return BackingStore?.Get<bool?>("supervisedModeEnabled"); }
             set { BackingStore?.Set("supervisedModeEnabled", value); }

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks.Item.ProgressTaskBoardFormat {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/planner/tasks/{plannerTask%2Did}/progressTaskBoardFormat{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks.Item.ProgressTaskBoardFormat {
             return await RequestAdapter.SendAsync<PlannerProgressTaskBoardTaskFormat>(requestInfo, PlannerProgressTaskBoardTaskFormat.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+        /// Update the navigation property progressTaskBoardFormat in planner
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks.Item.ProgressTaskBoardFormat {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+        /// Update the navigation property progressTaskBoardFormat in planner
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

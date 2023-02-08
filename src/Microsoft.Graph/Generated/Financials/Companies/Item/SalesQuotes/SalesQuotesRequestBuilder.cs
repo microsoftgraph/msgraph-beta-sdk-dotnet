@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes {
         /// <summary>Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.</summary>
         public SalesQuoteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("salesQuote%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("salesQuote%2Did", position);
             return new SalesQuoteItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuotes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

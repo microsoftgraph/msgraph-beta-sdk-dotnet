@@ -5,6 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class DeploymentAudience : Entity, IParsable {
+        /// <summary>Content eligible to deploy to devices in the audience. Not nullable. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>? ApplicableContent {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>?>("applicableContent"); }
+            set { BackingStore?.Set("applicableContent", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent> ApplicableContent {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>>("applicableContent"); }
+            set { BackingStore?.Set("applicableContent", value); }
+        }
+#endif
         /// <summary>Specifies the assets to exclude from the audience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"applicableContent", n => { ApplicableContent = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>(Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"exclusions", n => { Exclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"members", n => { Members = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -57,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>("applicableContent", ApplicableContent);
             writer.WriteCollectionOfObjectValues<UpdatableAsset>("exclusions", Exclusions);
             writer.WriteCollectionOfObjectValues<UpdatableAsset>("members", Members);
         }

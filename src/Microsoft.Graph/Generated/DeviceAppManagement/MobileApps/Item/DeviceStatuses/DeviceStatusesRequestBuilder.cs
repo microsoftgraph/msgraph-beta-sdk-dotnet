@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.DeviceStatuse
         /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.mobileApp entity.</summary>
         public MobileAppInstallStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("mobileAppInstallStatus%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("mobileAppInstallStatus%2Did", position);
             return new MobileAppInstallStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.DeviceStatuse
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/deviceStatuses{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

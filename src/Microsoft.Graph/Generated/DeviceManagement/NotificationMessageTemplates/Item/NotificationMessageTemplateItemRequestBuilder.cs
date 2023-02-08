@@ -1,5 +1,5 @@
 using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages;
-using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Item.SendTestMessage;
+using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Item.MicrosoftGraphSendTestMessage;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Ite
         public LocalizedNotificationMessagesRequestBuilder LocalizedNotificationMessages { get =>
             new LocalizedNotificationMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the sendTestMessage method.</summary>
+        public MicrosoftGraphSendTestMessageRequestBuilder MicrosoftGraphSendTestMessage { get =>
+            new MicrosoftGraphSendTestMessageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the sendTestMessage method.</summary>
-        public SendTestMessageRequestBuilder SendTestMessage { get =>
-            new SendTestMessageRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Ite
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

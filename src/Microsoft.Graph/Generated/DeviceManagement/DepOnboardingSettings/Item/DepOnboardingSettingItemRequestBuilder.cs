@@ -1,13 +1,13 @@
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultIosEnrollmentProfile;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ShareForSchoolDataSyncService;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.MicrosoftGraphGenerateEncryptionPublicKey;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.MicrosoftGraphGetEncryptionPublicKey;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.MicrosoftGraphShareForSchoolDataSyncService;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.MicrosoftGraphSyncWithAppleDeviceEnrollmentProgram;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.MicrosoftGraphUnshareForSchoolDataSyncService;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.MicrosoftGraphUploadDepToken;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -35,34 +35,38 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         public EnrollmentProfilesRequestBuilder EnrollmentProfiles { get =>
             new EnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the generateEncryptionPublicKey method.</summary>
-        public GenerateEncryptionPublicKeyRequestBuilder GenerateEncryptionPublicKey { get =>
-            new GenerateEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.</summary>
         public ImportedAppleDeviceIdentitiesRequestBuilder ImportedAppleDeviceIdentities { get =>
             new ImportedAppleDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the generateEncryptionPublicKey method.</summary>
+        public MicrosoftGraphGenerateEncryptionPublicKeyRequestBuilder MicrosoftGraphGenerateEncryptionPublicKey { get =>
+            new MicrosoftGraphGenerateEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getEncryptionPublicKey method.</summary>
+        public MicrosoftGraphGetEncryptionPublicKeyRequestBuilder MicrosoftGraphGetEncryptionPublicKey { get =>
+            new MicrosoftGraphGetEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the shareForSchoolDataSyncService method.</summary>
+        public MicrosoftGraphShareForSchoolDataSyncServiceRequestBuilder MicrosoftGraphShareForSchoolDataSyncService { get =>
+            new MicrosoftGraphShareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the syncWithAppleDeviceEnrollmentProgram method.</summary>
+        public MicrosoftGraphSyncWithAppleDeviceEnrollmentProgramRequestBuilder MicrosoftGraphSyncWithAppleDeviceEnrollmentProgram { get =>
+            new MicrosoftGraphSyncWithAppleDeviceEnrollmentProgramRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unshareForSchoolDataSyncService method.</summary>
+        public MicrosoftGraphUnshareForSchoolDataSyncServiceRequestBuilder MicrosoftGraphUnshareForSchoolDataSyncService { get =>
+            new MicrosoftGraphUnshareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the uploadDepToken method.</summary>
+        public MicrosoftGraphUploadDepTokenRequestBuilder MicrosoftGraphUploadDepToken { get =>
+            new MicrosoftGraphUploadDepTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the shareForSchoolDataSyncService method.</summary>
-        public ShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService { get =>
-            new ShareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the syncWithAppleDeviceEnrollmentProgram method.</summary>
-        public SyncWithAppleDeviceEnrollmentProgramRequestBuilder SyncWithAppleDeviceEnrollmentProgram { get =>
-            new SyncWithAppleDeviceEnrollmentProgramRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unshareForSchoolDataSyncService method.</summary>
-        public UnshareForSchoolDataSyncServiceRequestBuilder UnshareForSchoolDataSyncService { get =>
-            new UnshareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the uploadDepToken method.</summary>
-        public UploadDepTokenRequestBuilder UploadDepToken { get =>
-            new UploadDepTokenRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -88,7 +92,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -129,12 +133,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DepOnboardingSetting>(requestInfo, DepOnboardingSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getEncryptionPublicKey method.
-        /// </summary>
-        public GetEncryptionPublicKeyRequestBuilder GetEncryptionPublicKey() {
-            return new GetEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Update the navigation property depOnboardingSettings in deviceManagement

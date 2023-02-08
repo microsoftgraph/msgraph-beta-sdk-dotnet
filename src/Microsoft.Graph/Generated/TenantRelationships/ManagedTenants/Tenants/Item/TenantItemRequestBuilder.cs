@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.OffboardTenant;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.ResetTenantOnboardingStatus;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsOffboardTenant;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsResetTenantOnboardingStatus;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -16,17 +16,17 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item {
     /// </summary>
     public class TenantItemRequestBuilder {
         /// <summary>Provides operations to call the offboardTenant method.</summary>
-        public OffboardTenantRequestBuilder OffboardTenant { get =>
-            new OffboardTenantRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsOffboardTenantRequestBuilder MicrosoftGraphManagedTenantsOffboardTenant { get =>
+            new MicrosoftGraphManagedTenantsOffboardTenantRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the resetTenantOnboardingStatus method.</summary>
+        public MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder MicrosoftGraphManagedTenantsResetTenantOnboardingStatus { get =>
+            new MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the resetTenantOnboardingStatus method.</summary>
-        public ResetTenantOnboardingStatusRequestBuilder ResetTenantOnboardingStatus { get =>
-            new ResetTenantOnboardingStatusRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenants/{tenant%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

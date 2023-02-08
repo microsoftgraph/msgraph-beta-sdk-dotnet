@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserFlowIdentityProvid
         /// <summary>Gets an item from the Microsoft.Graph.Beta.identity.b2xUserFlows.item.userFlowIdentityProviders.item collection</summary>
         public IdentityProviderBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("identityProviderBase%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("identityProviderBase%2Did", position);
             return new IdentityProviderBaseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserFlowIdentityProvid
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userFlowIdentityProviders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

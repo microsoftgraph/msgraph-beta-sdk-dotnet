@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Count;
-using Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Item;
+using Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.MicrosoftGraphGetPolicySummaryWithPolicyId;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         /// <summary>Provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.</summary>
         public ConfigManagerCollectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("configManagerCollection%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("configManagerCollection%2Did", position);
             return new ConfigManagerCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/configManagerCollections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         /// Provides operations to call the getPolicySummary method.
         /// </summary>
         /// <param name="policyId">Usage: policyId=&apos;{policyId}&apos;</param>
-        public GetPolicySummaryWithPolicyIdRequestBuilder GetPolicySummaryWithPolicyId(string policyId) {
+        public MicrosoftGraphGetPolicySummaryWithPolicyIdRequestBuilder MicrosoftGraphGetPolicySummaryWithPolicyId(string policyId) {
             if(string.IsNullOrEmpty(policyId)) throw new ArgumentNullException(nameof(policyId));
-            return new GetPolicySummaryWithPolicyIdRequestBuilder(PathParameters, RequestAdapter, policyId);
+            return new MicrosoftGraphGetPolicySummaryWithPolicyIdRequestBuilder(PathParameters, RequestAdapter, policyId);
         }
         /// <summary>
         /// Create new navigation property to configManagerCollections for deviceManagement

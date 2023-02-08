@@ -2,10 +2,10 @@ using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackag
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.AccessPackageCatalog;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.AccessPackageResourceRoleScopes;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.AccessPackagesIncompatibleWith;
-using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.GetApplicablePolicyRequirements;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.IncompatibleAccessPackages;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.IncompatibleGroups;
-using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.MoveToCatalog;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.MicrosoftGraphGetApplicablePolicyRequirements;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.MicrosoftGraphMoveToCatalog;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -37,10 +37,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public AccessPackagesIncompatibleWithRequestBuilder AccessPackagesIncompatibleWith { get =>
             new AccessPackagesIncompatibleWithRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the getApplicablePolicyRequirements method.</summary>
-        public GetApplicablePolicyRequirementsRequestBuilder GetApplicablePolicyRequirements { get =>
-            new GetApplicablePolicyRequirementsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the incompatibleAccessPackages property of the microsoft.graph.accessPackage entity.</summary>
         public IncompatibleAccessPackagesRequestBuilder IncompatibleAccessPackages { get =>
             new IncompatibleAccessPackagesRequestBuilder(PathParameters, RequestAdapter);
@@ -49,9 +45,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public IncompatibleGroupsRequestBuilder IncompatibleGroups { get =>
             new IncompatibleGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getApplicablePolicyRequirements method.</summary>
+        public MicrosoftGraphGetApplicablePolicyRequirementsRequestBuilder MicrosoftGraphGetApplicablePolicyRequirements { get =>
+            new MicrosoftGraphGetApplicablePolicyRequirementsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the moveToCatalog method.</summary>
-        public MoveToCatalogRequestBuilder MoveToCatalog { get =>
-            new MoveToCatalogRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphMoveToCatalogRequestBuilder MicrosoftGraphMoveToCatalog { get =>
+            new MicrosoftGraphMoveToCatalogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackage{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

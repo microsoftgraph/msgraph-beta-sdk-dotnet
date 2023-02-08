@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.Categories;
-using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId;
-using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.CreateInstance;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.MicrosoftGraphCompareWithTemplateId;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.MicrosoftGraphCreateInstance;
 using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.Settings;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createInstance method.</summary>
-        public CreateInstanceRequestBuilder CreateInstance { get =>
-            new CreateInstanceRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCreateInstanceRequestBuilder MicrosoftGraphCreateInstance { get =>
+            new MicrosoftGraphCreateInstanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -35,14 +35,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>
-        /// Provides operations to call the compare method.
-        /// </summary>
-        /// <param name="templateId">Usage: templateId=&apos;{templateId}&apos;</param>
-        public CompareWithTemplateIdRequestBuilder CompareWithTemplateId(string templateId) {
-            if(string.IsNullOrEmpty(templateId)) throw new ArgumentNullException(nameof(templateId));
-            return new CompareWithTemplateIdRequestBuilder(PathParameters, RequestAdapter, templateId);
-        }
         /// <summary>
         /// Instantiates a new DeviceManagementTemplateItemRequestBuilder and sets the default values.
         /// </summary>
@@ -66,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/migratableTo/{deviceManagementTemplate%2Did1}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -107,6 +99,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceManagementTemplate>(requestInfo, DeviceManagementTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the compare method.
+        /// </summary>
+        /// <param name="templateId">Usage: templateId=&apos;{templateId}&apos;</param>
+        public MicrosoftGraphCompareWithTemplateIdRequestBuilder MicrosoftGraphCompareWithTemplateId(string templateId) {
+            if(string.IsNullOrEmpty(templateId)) throw new ArgumentNullException(nameof(templateId));
+            return new MicrosoftGraphCompareWithTemplateIdRequestBuilder(PathParameters, RequestAdapter, templateId);
         }
         /// <summary>
         /// Update the navigation property migratableTo in deviceManagement

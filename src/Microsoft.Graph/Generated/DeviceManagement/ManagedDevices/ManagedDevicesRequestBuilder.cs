@@ -1,12 +1,12 @@
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWithUpn;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCloudPc;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudPc;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkSetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Count;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.DownloadAppDiagnostics;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.ExecuteAction;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item;
-using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MoveDevicesToOU;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MicrosoftGraphAppDiagnosticsWithUpn;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MicrosoftGraphBulkReprovisionCloudPc;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MicrosoftGraphBulkRestoreCloudPc;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MicrosoftGraphBulkSetCloudPcReviewStatus;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MicrosoftGraphDownloadAppDiagnostics;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MicrosoftGraphExecuteAction;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MicrosoftGraphMoveDevicesToOU;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,33 +22,33 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices {
     /// Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class ManagedDevicesRequestBuilder {
-        /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
-        public BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc { get =>
-            new BulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the bulkRestoreCloudPc method.</summary>
-        public BulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc { get =>
-            new BulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the bulkSetCloudPcReviewStatus method.</summary>
-        public BulkSetCloudPcReviewStatusRequestBuilder BulkSetCloudPcReviewStatus { get =>
-            new BulkSetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
+        public MicrosoftGraphBulkReprovisionCloudPcRequestBuilder MicrosoftGraphBulkReprovisionCloudPc { get =>
+            new MicrosoftGraphBulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the bulkRestoreCloudPc method.</summary>
+        public MicrosoftGraphBulkRestoreCloudPcRequestBuilder MicrosoftGraphBulkRestoreCloudPc { get =>
+            new MicrosoftGraphBulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the bulkSetCloudPcReviewStatus method.</summary>
+        public MicrosoftGraphBulkSetCloudPcReviewStatusRequestBuilder MicrosoftGraphBulkSetCloudPcReviewStatus { get =>
+            new MicrosoftGraphBulkSetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the downloadAppDiagnostics method.</summary>
-        public DownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics { get =>
-            new DownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDownloadAppDiagnosticsRequestBuilder MicrosoftGraphDownloadAppDiagnostics { get =>
+            new MicrosoftGraphDownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the executeAction method.</summary>
-        public ExecuteActionRequestBuilder ExecuteAction { get =>
-            new ExecuteActionRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphExecuteActionRequestBuilder MicrosoftGraphExecuteAction { get =>
+            new MicrosoftGraphExecuteActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the moveDevicesToOU method.</summary>
-        public MoveDevicesToOURequestBuilder MoveDevicesToOU { get =>
-            new MoveDevicesToOURequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphMoveDevicesToOURequestBuilder MicrosoftGraphMoveDevicesToOU { get =>
+            new MicrosoftGraphMoveDevicesToOURequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -59,17 +59,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices {
         /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.</summary>
         public ManagedDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("managedDevice%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("managedDevice%2Did", position);
             return new ManagedDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>
-        /// Provides operations to call the appDiagnostics method.
-        /// </summary>
-        /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
-        public AppDiagnosticsWithUpnRequestBuilder AppDiagnosticsWithUpn(string upn) {
-            if(string.IsNullOrEmpty(upn)) throw new ArgumentNullException(nameof(upn));
-            return new AppDiagnosticsWithUpnRequestBuilder(PathParameters, RequestAdapter, upn);
-        }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
         /// </summary>
@@ -93,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/managedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -115,6 +107,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ManagedDeviceCollectionResponse>(requestInfo, ManagedDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the appDiagnostics method.
+        /// </summary>
+        /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
+        public MicrosoftGraphAppDiagnosticsWithUpnRequestBuilder MicrosoftGraphAppDiagnosticsWithUpn(string upn) {
+            if(string.IsNullOrEmpty(upn)) throw new ArgumentNullException(nameof(upn));
+            return new MicrosoftGraphAppDiagnosticsWithUpnRequestBuilder(PathParameters, RequestAdapter, upn);
         }
         /// <summary>
         /// Create new navigation property to managedDevices for deviceManagement

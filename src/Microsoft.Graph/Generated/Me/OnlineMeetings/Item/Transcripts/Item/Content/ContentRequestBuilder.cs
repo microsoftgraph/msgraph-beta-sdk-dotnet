@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Transcripts.Item.Content {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/transcripts/{callTranscript%2Did}/content";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

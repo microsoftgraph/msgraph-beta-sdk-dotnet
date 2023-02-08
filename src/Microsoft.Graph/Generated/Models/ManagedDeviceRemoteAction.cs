@@ -24,5 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
         CollectDiagnostics,
         /// <summary>Name of action to initiate MDM key recovery</summary>
         InitiateMobileDeviceManagementKeyRecovery,
+        /// <summary>Name of action to initiate On Demand Proactive Remediation</summary>
+        InitiateOnDemandProactiveRemediation,
     }
 }

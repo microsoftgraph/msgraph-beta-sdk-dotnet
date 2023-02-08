@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets {
         /// <summary>Provides operations to manage the sets property of the microsoft.graph.termStore.group entity.</summary>
         public SetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("set%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("set%2Did", position);
             return new SetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/termStore/groups/{group%2Did}/sets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

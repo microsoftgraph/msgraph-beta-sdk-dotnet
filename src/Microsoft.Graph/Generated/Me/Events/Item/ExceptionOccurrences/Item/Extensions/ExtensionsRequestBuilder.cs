@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Extensio
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
         public ExtensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("extension%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("extension%2Did", position);
             return new ExtensionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Extensio
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/extensions{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

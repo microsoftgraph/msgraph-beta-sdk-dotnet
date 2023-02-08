@@ -1,13 +1,13 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Activate;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.ApplyHold;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.LastIndexOperation;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Release;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.RemoveHold;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.MicrosoftGraphSecurityActivate;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.MicrosoftGraphSecurityApplyHold;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.MicrosoftGraphSecurityRelease;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.MicrosoftGraphSecurityRemoveHold;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.MicrosoftGraphSecurityUpdateIndex;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.SiteSources;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UnifiedGroupSources;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UpdateIndex;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UserSources;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -22,28 +22,32 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
     /// Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
     /// </summary>
     public class EdiscoveryCustodianItemRequestBuilder {
-        /// <summary>Provides operations to call the activate method.</summary>
-        public ActivateRequestBuilder Activate { get =>
-            new ActivateRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the applyHold method.</summary>
-        public ApplyHoldRequestBuilder ApplyHold { get =>
-            new ApplyHoldRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the lastIndexOperation property of the microsoft.graph.security.ediscoveryCustodian entity.</summary>
         public LastIndexOperationRequestBuilder LastIndexOperation { get =>
             new LastIndexOperationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the activate method.</summary>
+        public MicrosoftGraphSecurityActivateRequestBuilder MicrosoftGraphSecurityActivate { get =>
+            new MicrosoftGraphSecurityActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the applyHold method.</summary>
+        public MicrosoftGraphSecurityApplyHoldRequestBuilder MicrosoftGraphSecurityApplyHold { get =>
+            new MicrosoftGraphSecurityApplyHoldRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the release method.</summary>
-        public ReleaseRequestBuilder Release { get =>
-            new ReleaseRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityReleaseRequestBuilder MicrosoftGraphSecurityRelease { get =>
+            new MicrosoftGraphSecurityReleaseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeHold method.</summary>
-        public RemoveHoldRequestBuilder RemoveHold { get =>
-            new RemoveHoldRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityRemoveHoldRequestBuilder MicrosoftGraphSecurityRemoveHold { get =>
+            new MicrosoftGraphSecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the updateIndex method.</summary>
+        public MicrosoftGraphSecurityUpdateIndexRequestBuilder MicrosoftGraphSecurityUpdateIndex { get =>
+            new MicrosoftGraphSecurityUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Path parameters for the request</summary>
+        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryCustodian entity.</summary>
@@ -53,10 +57,6 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
         /// <summary>Provides operations to manage the unifiedGroupSources property of the microsoft.graph.security.ediscoveryCustodian entity.</summary>
         public UnifiedGroupSourcesRequestBuilder UnifiedGroupSources { get =>
             new UnifiedGroupSourcesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateIndex method.</summary>
-        public UpdateIndexRequestBuilder UpdateIndex { get =>
-            new UpdateIndexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

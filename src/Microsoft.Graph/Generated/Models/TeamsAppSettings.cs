@@ -5,6 +5,11 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppSettings : Entity, IParsable {
+        /// <summary>The allowUserRequestsForAppAccess property</summary>
+        public bool? AllowUserRequestsForAppAccess {
+            get { return BackingStore?.Get<bool?>("allowUserRequestsForAppAccess"); }
+            set { BackingStore?.Set("allowUserRequestsForAppAccess", value); }
+        }
         /// <summary>Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.</summary>
         public bool? IsChatResourceSpecificConsentEnabled {
             get { return BackingStore?.Get<bool?>("isChatResourceSpecificConsentEnabled"); }
@@ -23,6 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowUserRequestsForAppAccess", n => { AllowUserRequestsForAppAccess = n.GetBoolValue(); } },
                 {"isChatResourceSpecificConsentEnabled", n => { IsChatResourceSpecificConsentEnabled = n.GetBoolValue(); } },
             };
         }
@@ -33,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteBoolValue("allowUserRequestsForAppAccess", AllowUserRequestsForAppAccess);
             writer.WriteBoolValue("isChatResourceSpecificConsentEnabled", IsChatResourceSpecificConsentEnabled);
         }
     }

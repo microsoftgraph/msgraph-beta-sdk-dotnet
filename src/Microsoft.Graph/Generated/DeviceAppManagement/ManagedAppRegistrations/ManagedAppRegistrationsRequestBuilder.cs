@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Count;
-using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item;
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.MicrosoftGraphGetUserIdsWithFlaggedAppRegistration;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getUserIdsWithFlaggedAppRegistration method.</summary>
+        public MicrosoftGraphGetUserIdsWithFlaggedAppRegistrationRequestBuilder MicrosoftGraphGetUserIdsWithFlaggedAppRegistration { get =>
+            new MicrosoftGraphGetUserIdsWithFlaggedAppRegistrationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations {
         /// <summary>Provides operations to manage the managedAppRegistrations property of the microsoft.graph.deviceAppManagement entity.</summary>
         public ManagedAppRegistrationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("managedAppRegistration%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("managedAppRegistration%2Did", position);
             return new ManagedAppRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceAppManagement/managedAppRegistrations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -77,12 +81,6 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ManagedAppRegistrationCollectionResponse>(requestInfo, ManagedAppRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getUserIdsWithFlaggedAppRegistration method.
-        /// </summary>
-        public GetUserIdsWithFlaggedAppRegistrationRequestBuilder GetUserIdsWithFlaggedAppRegistration() {
-            return new GetUserIdsWithFlaggedAppRegistrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create new navigation property to managedAppRegistrations for deviceAppManagement

@@ -1,14 +1,14 @@
-using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.DeviceSettingStateSummaries;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.DeviceStatuses;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.DeviceStatusOverview;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupAssignments;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.MicrosoftGraphAssign;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.MicrosoftGraphAssignedAccessMultiModeProfiles;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.MicrosoftGraphGetOmaSettingPlainTextValueWithSecretReferenceValueId;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.MicrosoftGraphWindowsPrivacyAccessControls;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.UserStatuses;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.UserStatusOverview;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.WindowsPrivacyAccessControls;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,14 +24,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item {
     /// Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceConfigurationItemRequestBuilder {
-        /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign { get =>
-            new AssignRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the assignedAccessMultiModeProfiles method.</summary>
-        public AssignedAccessMultiModeProfilesRequestBuilder AssignedAccessMultiModeProfiles { get =>
-            new AssignedAccessMultiModeProfilesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceConfiguration entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -52,6 +44,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item {
         public GroupAssignmentsRequestBuilder GroupAssignments { get =>
             new GroupAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the assign method.</summary>
+        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
+            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the assignedAccessMultiModeProfiles method.</summary>
+        public MicrosoftGraphAssignedAccessMultiModeProfilesRequestBuilder MicrosoftGraphAssignedAccessMultiModeProfiles { get =>
+            new MicrosoftGraphAssignedAccessMultiModeProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the windowsPrivacyAccessControls method.</summary>
+        public MicrosoftGraphWindowsPrivacyAccessControlsRequestBuilder MicrosoftGraphWindowsPrivacyAccessControls { get =>
+            new MicrosoftGraphWindowsPrivacyAccessControlsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -65,10 +69,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item {
         /// <summary>Provides operations to manage the userStatusOverview property of the microsoft.graph.deviceConfiguration entity.</summary>
         public UserStatusOverviewRequestBuilder UserStatusOverview { get =>
             new UserStatusOverviewRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the windowsPrivacyAccessControls method.</summary>
-        public WindowsPrivacyAccessControlsRequestBuilder WindowsPrivacyAccessControls { get =>
-            new WindowsPrivacyAccessControlsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DeviceConfigurationItemRequestBuilder and sets the default values.
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item {
         /// Provides operations to call the getOmaSettingPlainTextValue method.
         /// </summary>
         /// <param name="secretReferenceValueId">Usage: secretReferenceValueId=&apos;{secretReferenceValueId}&apos;</param>
-        public GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder GetOmaSettingPlainTextValueWithSecretReferenceValueId(string secretReferenceValueId) {
+        public MicrosoftGraphGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder MicrosoftGraphGetOmaSettingPlainTextValueWithSecretReferenceValueId(string secretReferenceValueId) {
             if(string.IsNullOrEmpty(secretReferenceValueId)) throw new ArgumentNullException(nameof(secretReferenceValueId));
-            return new GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(PathParameters, RequestAdapter, secretReferenceValueId);
+            return new MicrosoftGraphGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(PathParameters, RequestAdapter, secretReferenceValueId);
         }
         /// <summary>
         /// Update the navigation property deviceConfigurations in deviceManagement

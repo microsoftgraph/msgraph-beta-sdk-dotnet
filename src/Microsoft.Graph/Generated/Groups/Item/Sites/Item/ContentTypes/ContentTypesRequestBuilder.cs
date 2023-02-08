@@ -1,8 +1,8 @@
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.AddCopy;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.AddCopyFromContentTypeHub;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Count;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.GetCompatibleHubContentTypes;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.MicrosoftGraphAddCopy;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.MicrosoftGraphAddCopyFromContentTypeHub;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.MicrosoftGraphGetCompatibleHubContentTypes;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,17 +18,21 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes {
     /// Provides operations to manage the contentTypes property of the microsoft.graph.site entity.
     /// </summary>
     public class ContentTypesRequestBuilder {
-        /// <summary>Provides operations to call the addCopy method.</summary>
-        public AddCopyRequestBuilder AddCopy { get =>
-            new AddCopyRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the addCopyFromContentTypeHub method.</summary>
-        public AddCopyFromContentTypeHubRequestBuilder AddCopyFromContentTypeHub { get =>
-            new AddCopyFromContentTypeHubRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the addCopy method.</summary>
+        public MicrosoftGraphAddCopyRequestBuilder MicrosoftGraphAddCopy { get =>
+            new MicrosoftGraphAddCopyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the addCopyFromContentTypeHub method.</summary>
+        public MicrosoftGraphAddCopyFromContentTypeHubRequestBuilder MicrosoftGraphAddCopyFromContentTypeHub { get =>
+            new MicrosoftGraphAddCopyFromContentTypeHubRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getCompatibleHubContentTypes method.</summary>
+        public MicrosoftGraphGetCompatibleHubContentTypesRequestBuilder MicrosoftGraphGetCompatibleHubContentTypes { get =>
+            new MicrosoftGraphGetCompatibleHubContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -39,7 +43,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes {
         /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.site entity.</summary>
         public ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("contentType%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("contentType%2Did", position);
             return new ContentTypeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -65,7 +69,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/contentTypes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -88,12 +92,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ContentTypeCollectionResponse>(requestInfo, ContentTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getCompatibleHubContentTypes method.
-        /// </summary>
-        public GetCompatibleHubContentTypesRequestBuilder GetCompatibleHubContentTypes() {
-            return new GetCompatibleHubContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Create a new [contentType][] for a [site][].

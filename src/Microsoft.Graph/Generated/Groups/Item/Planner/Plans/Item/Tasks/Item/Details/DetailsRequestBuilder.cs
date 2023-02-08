@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Tasks.Item.Details
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/details{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Tasks.Item.Details
             return await RequestAdapter.SendAsync<PlannerTaskDetails>(requestInfo, PlannerTaskDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of **plannerTaskDetails** object.
+        /// Update the navigation property details in groups
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Tasks.Item.Details
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of **plannerTaskDetails** object.
+        /// Update the navigation property details in groups
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

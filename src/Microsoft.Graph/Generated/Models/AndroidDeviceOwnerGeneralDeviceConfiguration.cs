@@ -466,6 +466,16 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("kioskModeWiFiConfigurationEnabled"); }
             set { BackingStore?.Set("kioskModeWiFiConfigurationEnabled", value); }
         }
+        /// <summary>Indicates whether or not LocateDevice for devices with lost mode (COBO, COPE) is enabled.</summary>
+        public bool? LocateDeviceLostModeEnabled {
+            get { return BackingStore?.Get<bool?>("locateDeviceLostModeEnabled"); }
+            set { BackingStore?.Set("locateDeviceLostModeEnabled", value); }
+        }
+        /// <summary>Indicates whether or not LocateDevice for userless (COSU) devices is disabled.</summary>
+        public bool? LocateDeviceUserlessDisabled {
+            get { return BackingStore?.Get<bool?>("locateDeviceUserlessDisabled"); }
+            set { BackingStore?.Set("locateDeviceUserlessDisabled", value); }
+        }
         /// <summary>Indicates whether or not to block unmuting the microphone on the device.</summary>
         public bool? MicrophoneForceMute {
             get { return BackingStore?.Get<bool?>("microphoneForceMute"); }
@@ -950,6 +960,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"kioskModeWallpaperUrl", n => { KioskModeWallpaperUrl = n.GetStringValue(); } },
                 {"kioskModeWifiAllowedSsids", n => { KioskModeWifiAllowedSsids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"kioskModeWiFiConfigurationEnabled", n => { KioskModeWiFiConfigurationEnabled = n.GetBoolValue(); } },
+                {"locateDeviceLostModeEnabled", n => { LocateDeviceLostModeEnabled = n.GetBoolValue(); } },
+                {"locateDeviceUserlessDisabled", n => { LocateDeviceUserlessDisabled = n.GetBoolValue(); } },
                 {"microphoneForceMute", n => { MicrophoneForceMute = n.GetBoolValue(); } },
                 {"microsoftLauncherConfigurationEnabled", n => { MicrosoftLauncherConfigurationEnabled = n.GetBoolValue(); } },
                 {"microsoftLauncherCustomWallpaperAllowUserModification", n => { MicrosoftLauncherCustomWallpaperAllowUserModification = n.GetBoolValue(); } },
@@ -1093,6 +1105,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("kioskModeWallpaperUrl", KioskModeWallpaperUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("kioskModeWifiAllowedSsids", KioskModeWifiAllowedSsids);
             writer.WriteBoolValue("kioskModeWiFiConfigurationEnabled", KioskModeWiFiConfigurationEnabled);
+            writer.WriteBoolValue("locateDeviceLostModeEnabled", LocateDeviceLostModeEnabled);
+            writer.WriteBoolValue("locateDeviceUserlessDisabled", LocateDeviceUserlessDisabled);
             writer.WriteBoolValue("microphoneForceMute", MicrophoneForceMute);
             writer.WriteBoolValue("microsoftLauncherConfigurationEnabled", MicrosoftLauncherConfigurationEnabled);
             writer.WriteBoolValue("microsoftLauncherCustomWallpaperAllowUserModification", MicrosoftLauncherCustomWallpaperAllowUserModification);

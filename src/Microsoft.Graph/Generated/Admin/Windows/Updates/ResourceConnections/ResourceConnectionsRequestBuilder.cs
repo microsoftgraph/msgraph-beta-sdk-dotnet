@@ -12,7 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
     /// <summary>
-    /// Provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.
+    /// Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
     /// </summary>
     public class ResourceConnectionsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
@@ -25,10 +25,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.</summary>
+        /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.</summary>
         public ResourceConnectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("resourceConnection%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("resourceConnection%2Did", position);
             return new ResourceConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,13 +54,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/windows/updates/resourceConnections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
         /// Get a list of the resourceConnection objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowsupdates-updates-list-resourceconnections?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/adminwindowsupdates-list-resourceconnections?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
         }
         /// <summary>
         /// Create a new operationalInsightsConnection object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowsupdates-updates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/adminwindowsupdates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

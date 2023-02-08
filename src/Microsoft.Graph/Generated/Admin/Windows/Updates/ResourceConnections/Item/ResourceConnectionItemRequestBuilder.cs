@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
     /// <summary>
-    /// Provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.
+    /// Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
     /// </summary>
     public class ResourceConnectionItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

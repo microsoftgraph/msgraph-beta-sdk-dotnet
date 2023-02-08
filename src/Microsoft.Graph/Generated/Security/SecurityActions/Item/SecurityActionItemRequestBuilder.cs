@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityAction;
+using Microsoft.Graph.Beta.Security.SecurityActions.Item.MicrosoftGraphCancelSecurityAction;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
     /// </summary>
     public class SecurityActionItemRequestBuilder {
         /// <summary>Provides operations to call the cancelSecurityAction method.</summary>
-        public CancelSecurityActionRequestBuilder CancelSecurityAction { get =>
-            new CancelSecurityActionRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCancelSecurityActionRequestBuilder MicrosoftGraphCancelSecurityAction { get =>
+            new MicrosoftGraphCancelSecurityActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/security/securityActions/{securityAction%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

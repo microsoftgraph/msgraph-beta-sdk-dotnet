@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.MicrosoftGraphShare;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.OfferShiftRequests;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.OpenShiftChangeRequests;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.OpenShifts;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.SchedulingGroups;
-using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.Share;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.Shifts;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.SwapShiftsChangeRequests;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.TimeCards;
@@ -24,6 +24,10 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
     /// Provides operations to manage the schedule property of the microsoft.graph.team entity.
     /// </summary>
     public class ScheduleRequestBuilder {
+        /// <summary>Provides operations to call the share method.</summary>
+        public MicrosoftGraphShareRequestBuilder MicrosoftGraphShare { get =>
+            new MicrosoftGraphShareRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.</summary>
         public OfferShiftRequestsRequestBuilder OfferShiftRequests { get =>
             new OfferShiftRequestsRequestBuilder(PathParameters, RequestAdapter);
@@ -43,10 +47,6 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         /// <summary>Provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.</summary>
         public SchedulingGroupsRequestBuilder SchedulingGroups { get =>
             new SchedulingGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the share method.</summary>
-        public ShareRequestBuilder Share { get =>
-            new ShareRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shifts property of the microsoft.graph.schedule entity.</summary>
         public ShiftsRequestBuilder Shifts { get =>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

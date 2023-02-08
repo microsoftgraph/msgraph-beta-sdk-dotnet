@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Cancel;
-using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Commit;
-using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Renew;
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.MicrosoftGraphCancel;
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.MicrosoftGraphCommit;
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.MicrosoftGraphRenew;
 using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions.Item.UploadAgent;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -18,19 +18,19 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
     /// </summary>
     public class ExactMatchSessionItemRequestBuilder {
         /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel { get =>
-            new CancelRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCancelRequestBuilder MicrosoftGraphCancel { get =>
+            new MicrosoftGraphCancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the commit method.</summary>
-        public CommitRequestBuilder Commit { get =>
-            new CommitRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCommitRequestBuilder MicrosoftGraphCommit { get =>
+            new MicrosoftGraphCommitRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the renew method.</summary>
+        public MicrosoftGraphRenewRequestBuilder MicrosoftGraphRenew { get =>
+            new MicrosoftGraphRenewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the renew method.</summary>
-        public RenewRequestBuilder Renew { get =>
-            new RenewRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the uploadAgent property of the microsoft.graph.exactMatchSession entity.</summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

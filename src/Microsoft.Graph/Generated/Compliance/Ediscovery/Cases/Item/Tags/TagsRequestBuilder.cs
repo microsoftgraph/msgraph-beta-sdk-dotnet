@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Count;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.MicrosoftGraphEdiscoveryAsHierarchy;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the asHierarchy method.</summary>
+        public MicrosoftGraphEdiscoveryAsHierarchyRequestBuilder MicrosoftGraphEdiscoveryAsHierarchy { get =>
+            new MicrosoftGraphEdiscoveryAsHierarchyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,15 +33,9 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
         /// <summary>Provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.</summary>
         public TagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("tag%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("tag%2Did", position);
             return new TagItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>
-        /// Provides operations to call the asHierarchy method.
-        /// </summary>
-        public AsHierarchyRequestBuilder AsHierarchy() {
-            return new AsHierarchyRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new TagsRequestBuilder and sets the default values.
         /// </summary>
@@ -61,7 +59,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

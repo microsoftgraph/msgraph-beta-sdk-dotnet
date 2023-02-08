@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors;
-using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Pause;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.MicrosoftGraphPause;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.MicrosoftGraphReset;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.MicrosoftGraphResume;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.MicrosoftGraphStart;
+using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.MicrosoftGraphUploadUrl;
 using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileStatus;
-using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Reset;
-using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Resume;
-using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start;
-using Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,30 +24,34 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         public ErrorsRequestBuilder Errors { get =>
             new ErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the pause method.</summary>
+        public MicrosoftGraphPauseRequestBuilder MicrosoftGraphPause { get =>
+            new MicrosoftGraphPauseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reset method.</summary>
+        public MicrosoftGraphResetRequestBuilder MicrosoftGraphReset { get =>
+            new MicrosoftGraphResetRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the resume method.</summary>
+        public MicrosoftGraphResumeRequestBuilder MicrosoftGraphResume { get =>
+            new MicrosoftGraphResumeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the start method.</summary>
+        public MicrosoftGraphStartRequestBuilder MicrosoftGraphStart { get =>
+            new MicrosoftGraphStartRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the uploadUrl method.</summary>
+        public MicrosoftGraphUploadUrlRequestBuilder MicrosoftGraphUploadUrl { get =>
+            new MicrosoftGraphUploadUrlRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the pause method.</summary>
-        public PauseRequestBuilder Pause { get =>
-            new PauseRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the profileStatus property of the microsoft.graph.educationSynchronizationProfile entity.</summary>
         public ProfileStatusRequestBuilder ProfileStatus { get =>
             new ProfileStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the reset method.</summary>
-        public ResetRequestBuilder Reset { get =>
-            new ResetRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the resume method.</summary>
-        public ResumeRequestBuilder Resume { get =>
-            new ResumeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the start method.</summary>
-        public StartRequestBuilder Start { get =>
-            new StartRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -73,7 +77,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -213,12 +217,6 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Provides operations to call the uploadUrl method.
-        /// </summary>
-        public UploadUrlRequestBuilder UploadUrl() {
-            return new UploadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

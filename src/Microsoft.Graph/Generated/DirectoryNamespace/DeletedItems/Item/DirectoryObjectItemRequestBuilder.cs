@@ -1,11 +1,11 @@
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.Application;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.CheckMemberGroups;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.GetMemberGroups;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.GetMemberObjects;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.Group;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.Restore;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.User;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphApplication;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphCheckMemberGroups;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphCheckMemberObjects;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphGetMemberGroups;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphGetMemberObjects;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphGroup;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphRestore;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphUser;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,43 +22,43 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to application.</summary>
-        public ApplicationRequestBuilder Application { get =>
-            new ApplicationRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphApplicationRequestBuilder MicrosoftGraphApplication { get =>
+            new MicrosoftGraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
-            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCheckMemberGroupsRequestBuilder MicrosoftGraphCheckMemberGroups { get =>
+            new MicrosoftGraphCheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
-            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCheckMemberObjectsRequestBuilder MicrosoftGraphCheckMemberObjects { get =>
+            new MicrosoftGraphCheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
-            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetMemberGroupsRequestBuilder MicrosoftGraphGetMemberGroups { get =>
+            new MicrosoftGraphGetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
-            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetMemberObjectsRequestBuilder MicrosoftGraphGetMemberObjects { get =>
+            new MicrosoftGraphGetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public GroupRequestBuilder Group { get =>
-            new GroupRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGroupRequestBuilder MicrosoftGraphGroup { get =>
+            new MicrosoftGraphGroupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public MicrosoftGraphRestoreRequestBuilder MicrosoftGraphRestore { get =>
+            new MicrosoftGraphRestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to user.</summary>
+        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
+            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the restore method.</summary>
-        public RestoreRequestBuilder Restore { get =>
-            new RestoreRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Casts the previous resource to user.</summary>
-        public UserRequestBuilder User { get =>
-            new UserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         /// </summary>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/directory/deletedItems/{directoryObject%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

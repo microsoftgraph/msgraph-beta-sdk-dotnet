@@ -24,11 +24,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("emailText", value); }
         }
 #endif
-        /// <summary>The overrideOption property</summary>
-        public Microsoft.Graph.Beta.Models.OverrideOption? OverrideOption {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OverrideOption?>("overrideOption"); }
-            set { BackingStore?.Set("overrideOption", value); }
-        }
         /// <summary>The policyTip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,7 +67,6 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"actionLastModifiedDateTime", n => { ActionLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"emailText", n => { EmailText = n.GetStringValue(); } },
-                {"overrideOption", n => { OverrideOption = n.GetEnumValue<OverrideOption>(); } },
                 {"policyTip", n => { PolicyTip = n.GetStringValue(); } },
                 {"recipients", n => { Recipients = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -86,7 +80,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("actionLastModifiedDateTime", ActionLastModifiedDateTime);
             writer.WriteStringValue("emailText", EmailText);
-            writer.WriteEnumValue<OverrideOption>("overrideOption", OverrideOption);
             writer.WriteStringValue("policyTip", PolicyTip);
             writer.WriteCollectionOfPrimitiveValues<string>("recipients", Recipients);
         }

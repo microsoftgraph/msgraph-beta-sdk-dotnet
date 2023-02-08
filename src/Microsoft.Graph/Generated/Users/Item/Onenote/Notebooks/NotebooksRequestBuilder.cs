@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.Count;
-using Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.GetNotebookFromWebUrl;
-using Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks;
 using Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.Item;
+using Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.MicrosoftGraphGetNotebookFromWebUrl;
+using Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getNotebookFromWebUrl method.</summary>
-        public GetNotebookFromWebUrlRequestBuilder GetNotebookFromWebUrl { get =>
-            new GetNotebookFromWebUrlRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetNotebookFromWebUrlRequestBuilder MicrosoftGraphGetNotebookFromWebUrl { get =>
+            new MicrosoftGraphGetNotebookFromWebUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks {
         /// <summary>Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.</summary>
         public NotebookItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("notebook%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("notebook%2Did", position);
             return new NotebookItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user%2Did}/onenote/notebooks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks {
         /// Provides operations to call the getRecentNotebooks method.
         /// </summary>
         /// <param name="includePersonalNotebooks">Usage: includePersonalNotebooks={includePersonalNotebooks}</param>
-        public GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder GetRecentNotebooksWithIncludePersonalNotebooks(bool? includePersonalNotebooks) {
+        public MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks(bool? includePersonalNotebooks) {
             _ = includePersonalNotebooks ?? throw new ArgumentNullException(nameof(includePersonalNotebooks));
-            return new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(PathParameters, RequestAdapter, includePersonalNotebooks);
+            return new MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(PathParameters, RequestAdapter, includePersonalNotebooks);
         }
         /// <summary>
         /// Create a new OneNote notebook.

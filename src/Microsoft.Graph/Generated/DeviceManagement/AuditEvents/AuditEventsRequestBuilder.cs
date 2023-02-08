@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.AuditEvents.Count;
-using Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory;
-using Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditCategories;
 using Microsoft.Graph.Beta.DeviceManagement.AuditEvents.Item;
+using Microsoft.Graph.Beta.DeviceManagement.AuditEvents.MicrosoftGraphGetAuditActivityTypesWithCategory;
+using Microsoft.Graph.Beta.DeviceManagement.AuditEvents.MicrosoftGraphGetAuditCategories;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,6 +21,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getAuditCategories method.</summary>
+        public MicrosoftGraphGetAuditCategoriesRequestBuilder MicrosoftGraphGetAuditCategories { get =>
+            new MicrosoftGraphGetAuditCategoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -30,7 +34,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.</summary>
         public AuditEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("auditEvent%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("auditEvent%2Did", position);
             return new AuditEventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -56,7 +60,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/auditEvents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -83,15 +87,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         /// Provides operations to call the getAuditActivityTypes method.
         /// </summary>
         /// <param name="category">Usage: category=&apos;{category}&apos;</param>
-        public GetAuditActivityTypesWithCategoryRequestBuilder GetAuditActivityTypesWithCategory(string category) {
+        public MicrosoftGraphGetAuditActivityTypesWithCategoryRequestBuilder MicrosoftGraphGetAuditActivityTypesWithCategory(string category) {
             if(string.IsNullOrEmpty(category)) throw new ArgumentNullException(nameof(category));
-            return new GetAuditActivityTypesWithCategoryRequestBuilder(PathParameters, RequestAdapter, category);
-        }
-        /// <summary>
-        /// Provides operations to call the getAuditCategories method.
-        /// </summary>
-        public GetAuditCategoriesRequestBuilder GetAuditCategories() {
-            return new GetAuditCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            return new MicrosoftGraphGetAuditActivityTypesWithCategoryRequestBuilder(PathParameters, RequestAdapter, category);
         }
         /// <summary>
         /// Create new navigation property to auditEvents for deviceManagement

@@ -1,8 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.AcquireAccessToken;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Ping;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.MicrosoftGraphAcquireAccessToken;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.MicrosoftGraphPing;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,18 +18,26 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
     /// Provides operations to manage the synchronization property of the microsoft.graph.servicePrincipal entity.
     /// </summary>
     public class SynchronizationRequestBuilder {
-        /// <summary>Provides operations to call the acquireAccessToken method.</summary>
-        public AcquireAccessTokenRequestBuilder AcquireAccessToken { get =>
-            new AcquireAccessTokenRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
         public JobsRequestBuilder Jobs { get =>
             new JobsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the acquireAccessToken method.</summary>
+        public MicrosoftGraphAcquireAccessTokenRequestBuilder MicrosoftGraphAcquireAccessToken { get =>
+            new MicrosoftGraphAcquireAccessTokenRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the Ping method.</summary>
+        public MicrosoftGraphPingRequestBuilder MicrosoftGraphPing { get =>
+            new MicrosoftGraphPingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The secrets property</summary>
+        public SecretsRequestBuilder Secrets { get =>
+            new SecretsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.synchronization entity.</summary>
         public TemplatesRequestBuilder Templates { get =>
             new TemplatesRequestBuilder(PathParameters, RequestAdapter);
@@ -58,7 +67,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -120,12 +129,6 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Synchronization>(requestInfo, Microsoft.Graph.Beta.Models.Synchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the Ping method.
-        /// </summary>
-        public PingRequestBuilder Ping() {
-            return new PingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Delete navigation property synchronization for servicePrincipals

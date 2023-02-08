@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
         /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
         public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("agreementAcceptance%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("agreementAcceptance%2Did", position);
             return new AgreementAcceptanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/agreementAcceptances{?%24search,%24select}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

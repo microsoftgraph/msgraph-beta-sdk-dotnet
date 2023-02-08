@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Reports.Security.GetAttackSimulationRepeatOffenders;
-using Microsoft.Graph.Beta.Reports.Security.GetAttackSimulationSimulationUserCoverage;
-using Microsoft.Graph.Beta.Reports.Security.GetAttackSimulationTrainingUserCoverage;
+using Microsoft.Graph.Beta.Reports.Security.MicrosoftGraphGetAttackSimulationRepeatOffenders;
+using Microsoft.Graph.Beta.Reports.Security.MicrosoftGraphGetAttackSimulationSimulationUserCoverage;
+using Microsoft.Graph.Beta.Reports.Security.MicrosoftGraphGetAttackSimulationTrainingUserCoverage;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -16,6 +16,18 @@ namespace Microsoft.Graph.Beta.Reports.Security {
     /// Provides operations to manage the security property of the microsoft.graph.reportRoot entity.
     /// </summary>
     public class SecurityRequestBuilder {
+        /// <summary>Provides operations to call the getAttackSimulationRepeatOffenders method.</summary>
+        public MicrosoftGraphGetAttackSimulationRepeatOffendersRequestBuilder MicrosoftGraphGetAttackSimulationRepeatOffenders { get =>
+            new MicrosoftGraphGetAttackSimulationRepeatOffendersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAttackSimulationSimulationUserCoverage method.</summary>
+        public MicrosoftGraphGetAttackSimulationSimulationUserCoverageRequestBuilder MicrosoftGraphGetAttackSimulationSimulationUserCoverage { get =>
+            new MicrosoftGraphGetAttackSimulationSimulationUserCoverageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAttackSimulationTrainingUserCoverage method.</summary>
+        public MicrosoftGraphGetAttackSimulationTrainingUserCoverageRequestBuilder MicrosoftGraphGetAttackSimulationTrainingUserCoverage { get =>
+            new MicrosoftGraphGetAttackSimulationTrainingUserCoverageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -45,7 +57,7 @@ namespace Microsoft.Graph.Beta.Reports.Security {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/security{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -86,24 +98,6 @@ namespace Microsoft.Graph.Beta.Reports.Security {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SecurityReportsRoot>(requestInfo, SecurityReportsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getAttackSimulationRepeatOffenders method.
-        /// </summary>
-        public GetAttackSimulationRepeatOffendersRequestBuilder GetAttackSimulationRepeatOffenders() {
-            return new GetAttackSimulationRepeatOffendersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the getAttackSimulationSimulationUserCoverage method.
-        /// </summary>
-        public GetAttackSimulationSimulationUserCoverageRequestBuilder GetAttackSimulationSimulationUserCoverage() {
-            return new GetAttackSimulationSimulationUserCoverageRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the getAttackSimulationTrainingUserCoverage method.
-        /// </summary>
-        public GetAttackSimulationTrainingUserCoverageRequestBuilder GetAttackSimulationTrainingUserCoverage() {
-            return new GetAttackSimulationTrainingUserCoverageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Update the navigation property security in reports

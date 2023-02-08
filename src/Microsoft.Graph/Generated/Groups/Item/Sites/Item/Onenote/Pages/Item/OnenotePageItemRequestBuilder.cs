@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item.Content;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item.CopyToSection;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item.OnenotePatchContent;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item.MicrosoftGraphCopyToSection;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item.MicrosoftGraphOnenotePatchContent;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item.MicrosoftGraphPreview;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item.ParentNotebook;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item.ParentSection;
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item.Preview;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,12 +24,16 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item {
             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the copyToSection method.</summary>
-        public CopyToSectionRequestBuilder CopyToSection { get =>
-            new CopyToSectionRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCopyToSectionRequestBuilder MicrosoftGraphCopyToSection { get =>
+            new MicrosoftGraphCopyToSectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the onenotePatchContent method.</summary>
-        public OnenotePatchContentRequestBuilder OnenotePatchContent { get =>
-            new OnenotePatchContentRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphOnenotePatchContentRequestBuilder MicrosoftGraphOnenotePatchContent { get =>
+            new MicrosoftGraphOnenotePatchContentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the preview method.</summary>
+        public MicrosoftGraphPreviewRequestBuilder MicrosoftGraphPreview { get =>
+            new MicrosoftGraphPreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the parentNotebook property of the microsoft.graph.onenotePage entity.</summary>
         public ParentNotebookRequestBuilder ParentNotebook { get =>
@@ -68,7 +72,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/pages/{onenotePage%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -130,12 +134,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the preview method.
-        /// </summary>
-        public PreviewRequestBuilder Preview() {
-            return new PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Delete navigation property pages for groups

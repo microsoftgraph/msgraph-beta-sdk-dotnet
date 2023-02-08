@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
         /// <summary>Provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.</summary>
         public SharedEmailDomainInvitationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("sharedEmailDomainInvitation%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("sharedEmailDomainInvitation%2Did", position);
             return new SharedEmailDomainInvitationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/domains/{domain%2Did}/sharedEmailDomainInvitations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

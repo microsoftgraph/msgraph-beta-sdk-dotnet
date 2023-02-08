@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Complete;
-using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Dismiss;
-using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Postpone;
-using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Reactivate;
+using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.MicrosoftGraphComplete;
+using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.MicrosoftGraphDismiss;
+using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.MicrosoftGraphPostpone;
+using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.MicrosoftGraphReactivate;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,23 +18,23 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
     /// </summary>
     public class ImpactedResourceItemRequestBuilder {
         /// <summary>Provides operations to call the complete method.</summary>
-        public CompleteRequestBuilder Complete { get =>
-            new CompleteRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCompleteRequestBuilder MicrosoftGraphComplete { get =>
+            new MicrosoftGraphCompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismiss method.</summary>
-        public DismissRequestBuilder Dismiss { get =>
-            new DismissRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDismissRequestBuilder MicrosoftGraphDismiss { get =>
+            new MicrosoftGraphDismissRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the postpone method.</summary>
+        public MicrosoftGraphPostponeRequestBuilder MicrosoftGraphPostpone { get =>
+            new MicrosoftGraphPostponeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reactivate method.</summary>
+        public MicrosoftGraphReactivateRequestBuilder MicrosoftGraphReactivate { get =>
+            new MicrosoftGraphReactivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the postpone method.</summary>
-        public PostponeRequestBuilder Postpone { get =>
-            new PostponeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reactivate method.</summary>
-        public ReactivateRequestBuilder Reactivate { get =>
-            new ReactivateRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/directory/impactedResources/{impactedResource%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

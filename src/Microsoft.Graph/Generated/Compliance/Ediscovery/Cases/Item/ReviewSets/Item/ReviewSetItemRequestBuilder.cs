@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.AddToReviewSet;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Export;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.MicrosoftGraphEdiscoveryAddToReviewSet;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.MicrosoftGraphEdiscoveryExport;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -17,12 +17,12 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item 
     /// </summary>
     public class ReviewSetItemRequestBuilder {
         /// <summary>Provides operations to call the addToReviewSet method.</summary>
-        public AddToReviewSetRequestBuilder AddToReviewSet { get =>
-            new AddToReviewSetRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryAddToReviewSetRequestBuilder MicrosoftGraphEdiscoveryAddToReviewSet { get =>
+            new MicrosoftGraphEdiscoveryAddToReviewSetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the export method.</summary>
-        public ExportRequestBuilder Export { get =>
-            new ExportRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryExportRequestBuilder MicrosoftGraphEdiscoveryExport { get =>
+            new MicrosoftGraphEdiscoveryExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item 
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/reviewSets/{reviewSet%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

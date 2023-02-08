@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.AssignTag;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.UnassignTag;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.MicrosoftGraphManagedTenantsAssignTag;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.MicrosoftGraphManagedTenantsUnassignTag;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -16,17 +16,17 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
     /// </summary>
     public class TenantTagItemRequestBuilder {
         /// <summary>Provides operations to call the assignTag method.</summary>
-        public AssignTagRequestBuilder AssignTag { get =>
-            new AssignTagRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsAssignTagRequestBuilder MicrosoftGraphManagedTenantsAssignTag { get =>
+            new MicrosoftGraphManagedTenantsAssignTagRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unassignTag method.</summary>
+        public MicrosoftGraphManagedTenantsUnassignTagRequestBuilder MicrosoftGraphManagedTenantsUnassignTag { get =>
+            new MicrosoftGraphManagedTenantsUnassignTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the unassignTag method.</summary>
-        public UnassignTagRequestBuilder UnassignTag { get =>
-            new UnassignTagRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/tenantRelationships/managedTenants/tenantTags/{tenantTag%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

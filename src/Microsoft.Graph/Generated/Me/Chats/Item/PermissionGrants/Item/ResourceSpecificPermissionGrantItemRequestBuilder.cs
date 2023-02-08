@@ -1,8 +1,8 @@
-using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.CheckMemberGroups;
-using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.CheckMemberObjects;
-using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.GetMemberGroups;
-using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.GetMemberObjects;
-using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.Restore;
+using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.MicrosoftGraphCheckMemberGroups;
+using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.MicrosoftGraphCheckMemberObjects;
+using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.MicrosoftGraphGetMemberGroups;
+using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.MicrosoftGraphGetMemberObjects;
+using Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item.MicrosoftGraphRestore;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,29 +19,29 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item {
     /// </summary>
     public class ResourceSpecificPermissionGrantItemRequestBuilder {
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
-            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCheckMemberGroupsRequestBuilder MicrosoftGraphCheckMemberGroups { get =>
+            new MicrosoftGraphCheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
-            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphCheckMemberObjectsRequestBuilder MicrosoftGraphCheckMemberObjects { get =>
+            new MicrosoftGraphCheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
-            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetMemberGroupsRequestBuilder MicrosoftGraphGetMemberGroups { get =>
+            new MicrosoftGraphGetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
-            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetMemberObjectsRequestBuilder MicrosoftGraphGetMemberObjects { get =>
+            new MicrosoftGraphGetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public MicrosoftGraphRestoreRequestBuilder MicrosoftGraphRestore { get =>
+            new MicrosoftGraphRestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the restore method.</summary>
-        public RestoreRequestBuilder Restore { get =>
-            new RestoreRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PermissionGrants.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/chats/{chat%2Did}/permissionGrants/{resourceSpecificPermissionGrant%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarView.Item.ExceptionOccurrences.Count;
-using Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarView.Item.ExceptionOccurrences.Delta;
 using Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarView.Item.ExceptionOccurrences.Item;
+using Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarView.Item.ExceptionOccurrences.MicrosoftGraphDelta;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarView.Item.ExceptionO
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
+            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,7 +33,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarView.Item.ExceptionO
         /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
         public Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarView.Item.ExceptionOccurrences.Item.EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("event%2Did1", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("event%2Did1", position);
             return new Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarView.Item.ExceptionOccurrences.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -55,15 +59,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarView.Item.ExceptionO
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/calendar/calendarView/{event%2Did}/exceptionOccurrences{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the delta method.
-        /// </summary>
-        public DeltaRequestBuilder Delta() {
-            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get exceptionOccurrences from groups

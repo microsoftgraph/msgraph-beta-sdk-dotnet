@@ -1,9 +1,9 @@
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Close;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.MicrosoftGraphEdiscoveryClose;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.MicrosoftGraphEdiscoveryReopen;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Reopen;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections;
@@ -23,10 +23,6 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
     /// Provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
     /// </summary>
     public class CaseItemRequestBuilder {
-        /// <summary>Provides operations to call the close method.</summary>
-        public CloseRequestBuilder Close { get =>
-            new CloseRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.</summary>
         public CustodiansRequestBuilder Custodians { get =>
             new CustodiansRequestBuilder(PathParameters, RequestAdapter);
@@ -34,6 +30,14 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
         /// <summary>Provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.</summary>
         public LegalHoldsRequestBuilder LegalHolds { get =>
             new LegalHoldsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the close method.</summary>
+        public MicrosoftGraphEdiscoveryCloseRequestBuilder MicrosoftGraphEdiscoveryClose { get =>
+            new MicrosoftGraphEdiscoveryCloseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reopen method.</summary>
+        public MicrosoftGraphEdiscoveryReopenRequestBuilder MicrosoftGraphEdiscoveryReopen { get =>
+            new MicrosoftGraphEdiscoveryReopenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.</summary>
         public NoncustodialDataSourcesRequestBuilder NoncustodialDataSources { get =>
@@ -45,10 +49,6 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the reopen method.</summary>
-        public ReopenRequestBuilder Reopen { get =>
-            new ReopenRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the reviewSets property of the microsoft.graph.ediscovery.case entity.</summary>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

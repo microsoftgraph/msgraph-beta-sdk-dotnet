@@ -70,20 +70,10 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("singleTenantAppId", value); }
         }
 #endif
-        /// <summary>DateTime in UTC when PartnerDevices will be marked as NonCompliant. This will become obselete soon.</summary>
-        public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliant {
-            get { return BackingStore?.Get<DateTimeOffset?>("whenPartnerDevicesWillBeMarkedAsNonCompliant"); }
-            set { BackingStore?.Set("whenPartnerDevicesWillBeMarkedAsNonCompliant", value); }
-        }
         /// <summary>DateTime in UTC when PartnerDevices will be marked as NonCompliant</summary>
         public DateTimeOffset? WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime"); }
             set { BackingStore?.Set("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", value); }
-        }
-        /// <summary>DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.</summary>
-        public DateTimeOffset? WhenPartnerDevicesWillBeRemoved {
-            get { return BackingStore?.Get<DateTimeOffset?>("whenPartnerDevicesWillBeRemoved"); }
-            set { BackingStore?.Set("whenPartnerDevicesWillBeRemoved", value); }
         }
         /// <summary>DateTime in UTC when PartnerDevices will be removed</summary>
         public DateTimeOffset? WhenPartnerDevicesWillBeRemovedDateTime {
@@ -110,9 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"partnerAppType", n => { PartnerAppType = n.GetEnumValue<DeviceManagementPartnerAppType>(); } },
                 {"partnerState", n => { PartnerState = n.GetEnumValue<DeviceManagementPartnerTenantState>(); } },
                 {"singleTenantAppId", n => { SingleTenantAppId = n.GetStringValue(); } },
-                {"whenPartnerDevicesWillBeMarkedAsNonCompliant", n => { WhenPartnerDevicesWillBeMarkedAsNonCompliant = n.GetDateTimeOffsetValue(); } },
                 {"whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", n => { WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime = n.GetDateTimeOffsetValue(); } },
-                {"whenPartnerDevicesWillBeRemoved", n => { WhenPartnerDevicesWillBeRemoved = n.GetDateTimeOffsetValue(); } },
                 {"whenPartnerDevicesWillBeRemovedDateTime", n => { WhenPartnerDevicesWillBeRemovedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -130,9 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<DeviceManagementPartnerAppType>("partnerAppType", PartnerAppType);
             writer.WriteEnumValue<DeviceManagementPartnerTenantState>("partnerState", PartnerState);
             writer.WriteStringValue("singleTenantAppId", SingleTenantAppId);
-            writer.WriteDateTimeOffsetValue("whenPartnerDevicesWillBeMarkedAsNonCompliant", WhenPartnerDevicesWillBeMarkedAsNonCompliant);
             writer.WriteDateTimeOffsetValue("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime);
-            writer.WriteDateTimeOffsetValue("whenPartnerDevicesWillBeRemoved", WhenPartnerDevicesWillBeRemoved);
             writer.WriteDateTimeOffsetValue("whenPartnerDevicesWillBeRemovedDateTime", WhenPartnerDevicesWillBeRemovedDateTime);
         }
     }

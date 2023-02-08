@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Count;
 using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item;
-using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.UpdatePriorities;
+using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.MicrosoftGraphUpdatePriorities;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,20 +20,20 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the updatePriorities method.</summary>
+        public MicrosoftGraphUpdatePrioritiesRequestBuilder MicrosoftGraphUpdatePriorities { get =>
+            new MicrosoftGraphUpdatePrioritiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the updatePriorities method.</summary>
-        public UpdatePrioritiesRequestBuilder UpdatePriorities { get =>
-            new UpdatePrioritiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.</summary>
         public OfficeClientConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("officeClientConfiguration%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("officeClientConfiguration%2Did", position);
             return new OfficeClientConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/officeConfiguration/clientConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

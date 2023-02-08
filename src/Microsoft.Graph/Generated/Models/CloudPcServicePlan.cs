@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("storageInGB"); }
             set { BackingStore?.Set("storageInGB", value); }
         }
+        /// <summary>The supportedSolution property</summary>
+        public CloudPcManagementService? SupportedSolution {
+            get { return BackingStore?.Get<CloudPcManagementService?>("supportedSolution"); }
+            set { BackingStore?.Set("supportedSolution", value); }
+        }
         /// <summary>The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.</summary>
         public CloudPcServicePlanType? Type {
             get { return BackingStore?.Get<CloudPcServicePlanType?>("type"); }
@@ -60,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"ramInGB", n => { RamInGB = n.GetIntValue(); } },
                 {"storageInGB", n => { StorageInGB = n.GetIntValue(); } },
+                {"supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
                 {"type", n => { Type = n.GetEnumValue<CloudPcServicePlanType>(); } },
                 {"userProfileInGB", n => { UserProfileInGB = n.GetIntValue(); } },
                 {"vCpuCount", n => { VCpuCount = n.GetIntValue(); } },
@@ -75,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("ramInGB", RamInGB);
             writer.WriteIntValue("storageInGB", StorageInGB);
+            writer.WriteEnumValue<CloudPcManagementService>("supportedSolution", SupportedSolution);
             writer.WriteEnumValue<CloudPcServicePlanType>("type", Type);
             writer.WriteIntValue("userProfileInGB", UserProfileInGB);
             writer.WriteIntValue("vCpuCount", VCpuCount);

@@ -430,6 +430,20 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("configurationSettings", value); }
         }
 #endif
+        /// <summary>The list of connector status for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>? ConnectorStatus {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>?>("connectorStatus"); }
+            set { BackingStore?.Set("connectorStatus", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails> ConnectorStatus {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>>("connectorStatus"); }
+            set { BackingStore?.Set("connectorStatus", value); }
+        }
+#endif
         /// <summary>A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1393,6 +1407,20 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("roleScopeTags", value); }
         }
 #endif
+        /// <summary>A list of ServiceNowConnections</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.ServiceNowConnection>? ServiceNowConnections {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceNowConnection>?>("serviceNowConnections"); }
+            set { BackingStore?.Set("serviceNowConnections", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.ServiceNowConnection> ServiceNowConnections {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceNowConnection>>("serviceNowConnections"); }
+            set { BackingStore?.Set("serviceNowConnections", value); }
+        }
+#endif
         /// <summary>The device management intent setting definitions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1982,18 +2010,18 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("userExperienceAnalyticsDevicesWithoutCloudIdentity", value); }
         }
 #endif
-        /// <summary>The user experience analytics device events entity contains NRT device timeline events details.</summary>
+        /// <summary>The user experience analytics device events entity contains NRT device timeline event details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents>? UserExperienceAnalyticsDeviceTimelineEvents {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents>?>("userExperienceAnalyticsDeviceTimelineEvents"); }
-            set { BackingStore?.Set("userExperienceAnalyticsDeviceTimelineEvents", value); }
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>? UserExperienceAnalyticsDeviceTimelineEvent {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>?>("userExperienceAnalyticsDeviceTimelineEvent"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceTimelineEvent", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents> UserExperienceAnalyticsDeviceTimelineEvents {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents>>("userExperienceAnalyticsDeviceTimelineEvents"); }
-            set { BackingStore?.Set("userExperienceAnalyticsDeviceTimelineEvents", value); }
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent> UserExperienceAnalyticsDeviceTimelineEvent {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>>("userExperienceAnalyticsDeviceTimelineEvent"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceTimelineEvent", value); }
         }
 #endif
         /// <summary>User experience analytics impacting process</summary>
@@ -2432,6 +2460,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"configurationPolicies", n => { ConfigurationPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"configurationPolicyTemplates", n => { ConfigurationPolicyTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"configurationSettings", n => { ConfigurationSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"connectorStatus", n => { ConnectorStatus = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>(Microsoft.Graph.Beta.Models.ConnectorStatusDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"dataProcessorServiceForWindowsFeaturesOnboarding", n => { DataProcessorServiceForWindowsFeaturesOnboarding = n.GetObjectValue<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding>(Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding.CreateFromDiscriminatorValue); } },
                 {"dataSharingConsents", n => { DataSharingConsents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DataSharingConsent>(Microsoft.Graph.Beta.Models.DataSharingConsent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"depOnboardingSettings", n => { DepOnboardingSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DepOnboardingSetting>(Microsoft.Graph.Beta.Models.DepOnboardingSetting.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -2504,6 +2533,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleDefinition>(Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTag>(Microsoft.Graph.Beta.Models.RoleScopeTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"serviceNowConnections", n => { ServiceNowConnections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceNowConnection>(Microsoft.Graph.Beta.Models.ServiceNowConnection.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementSettings>(Microsoft.Graph.Beta.Models.DeviceManagementSettings.CreateFromDiscriminatorValue); } },
                 {"softwareUpdateStatusSummary", n => { SoftwareUpdateStatusSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>(Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary.CreateFromDiscriminatorValue); } },
@@ -2548,7 +2578,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"userExperienceAnalyticsDeviceStartupProcesses", n => { UserExperienceAnalyticsDeviceStartupProcesses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsDeviceStartupProcessPerformance", n => { UserExperienceAnalyticsDeviceStartupProcessPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsDevicesWithoutCloudIdentity", n => { UserExperienceAnalyticsDevicesWithoutCloudIdentity = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDeviceTimelineEvents", n => { UserExperienceAnalyticsDeviceTimelineEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"userExperienceAnalyticsDeviceTimelineEvent", n => { UserExperienceAnalyticsDeviceTimelineEvent = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsImpactingProcess", n => { UserExperienceAnalyticsImpactingProcess = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsMetricHistory", n => { UserExperienceAnalyticsMetricHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsModelScores", n => { UserExperienceAnalyticsModelScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -2617,6 +2647,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>("configurationPolicies", ConfigurationPolicies);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>("configurationPolicyTemplates", ConfigurationPolicyTemplates);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>("configurationSettings", ConfigurationSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>("connectorStatus", ConnectorStatus);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding>("dataProcessorServiceForWindowsFeaturesOnboarding", DataProcessorServiceForWindowsFeaturesOnboarding);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DataSharingConsent>("dataSharingConsents", DataSharingConsents);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DepOnboardingSetting>("depOnboardingSettings", DepOnboardingSettings);
@@ -2686,6 +2717,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>("roleAssignments", RoleAssignments);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleDefinition>("roleDefinitions", RoleDefinitions);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTag>("roleScopeTags", RoleScopeTags);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceNowConnection>("serviceNowConnections", ServiceNowConnections);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>("settingDefinitions", SettingDefinitions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementSettings>("settings", Settings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>("softwareUpdateStatusSummary", SoftwareUpdateStatusSummary);
@@ -2729,7 +2761,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>("userExperienceAnalyticsDeviceStartupProcesses", UserExperienceAnalyticsDeviceStartupProcesses);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>("userExperienceAnalyticsDeviceStartupProcessPerformance", UserExperienceAnalyticsDeviceStartupProcessPerformance);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>("userExperienceAnalyticsDevicesWithoutCloudIdentity", UserExperienceAnalyticsDevicesWithoutCloudIdentity);
-            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents>("userExperienceAnalyticsDeviceTimelineEvents", UserExperienceAnalyticsDeviceTimelineEvents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>("userExperienceAnalyticsDeviceTimelineEvent", UserExperienceAnalyticsDeviceTimelineEvent);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>("userExperienceAnalyticsImpactingProcess", UserExperienceAnalyticsImpactingProcess);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>("userExperienceAnalyticsMetricHistory", UserExperienceAnalyticsMetricHistory);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>("userExperienceAnalyticsModelScores", UserExperienceAnalyticsModelScores);

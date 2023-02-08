@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes {
         /// <summary>Provides operations to manage the notes property of the microsoft.graph.profile entity.</summary>
         public PersonAnnotationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("personAnnotation%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("personAnnotation%2Did", position);
             return new PersonAnnotationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/profile/notes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

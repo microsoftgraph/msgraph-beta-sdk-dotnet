@@ -1,12 +1,12 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Pause;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Restart;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.MicrosoftGraphPause;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.MicrosoftGraphProvisionOnDemand;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.MicrosoftGraphRestart;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.MicrosoftGraphStart;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.MicrosoftGraphStop;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.MicrosoftGraphValidateCredentials;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Start;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Stop;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ValidateCredentials;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,40 +20,40 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item 
     /// Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
     /// </summary>
     public class SynchronizationJobItemRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to call the pause method.</summary>
-        public PauseRequestBuilder Pause { get =>
-            new PauseRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphPauseRequestBuilder MicrosoftGraphPause { get =>
+            new MicrosoftGraphPauseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the provisionOnDemand method.</summary>
-        public ProvisionOnDemandRequestBuilder ProvisionOnDemand { get =>
-            new ProvisionOnDemandRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphProvisionOnDemandRequestBuilder MicrosoftGraphProvisionOnDemand { get =>
+            new MicrosoftGraphProvisionOnDemandRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the restart method.</summary>
+        public MicrosoftGraphRestartRequestBuilder MicrosoftGraphRestart { get =>
+            new MicrosoftGraphRestartRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the start method.</summary>
+        public MicrosoftGraphStartRequestBuilder MicrosoftGraphStart { get =>
+            new MicrosoftGraphStartRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stop method.</summary>
+        public MicrosoftGraphStopRequestBuilder MicrosoftGraphStop { get =>
+            new MicrosoftGraphStopRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the validateCredentials method.</summary>
+        public MicrosoftGraphValidateCredentialsRequestBuilder MicrosoftGraphValidateCredentials { get =>
+            new MicrosoftGraphValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Path parameters for the request</summary>
+        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the restart method.</summary>
-        public RestartRequestBuilder Restart { get =>
-            new RestartRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the schema property of the microsoft.graph.synchronizationJob entity.</summary>
         public SchemaRequestBuilder Schema { get =>
             new SchemaRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the start method.</summary>
-        public StartRequestBuilder Start { get =>
-            new StartRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the stop method.</summary>
-        public StopRequestBuilder Stop { get =>
-            new StopRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Provides operations to call the validateCredentials method.</summary>
-        public ValidateCredentialsRequestBuilder ValidateCredentials { get =>
-            new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new SynchronizationJobItemRequestBuilder and sets the default values.
         /// </summary>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item 
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

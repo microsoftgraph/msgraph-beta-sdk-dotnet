@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.GetFinalAttachment;
-using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.GetFinalReport;
+using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.MicrosoftGraphGetFinalAttachment;
+using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.MicrosoftGraphGetFinalReport;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Team;
 using Microsoft.Kiota.Abstractions;
@@ -17,6 +17,14 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item {
     /// Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
     /// </summary>
     public class SubjectRightsRequestItemRequestBuilder {
+        /// <summary>Provides operations to call the getFinalAttachment method.</summary>
+        public MicrosoftGraphGetFinalAttachmentRequestBuilder MicrosoftGraphGetFinalAttachment { get =>
+            new MicrosoftGraphGetFinalAttachmentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getFinalReport method.</summary>
+        public MicrosoftGraphGetFinalReportRequestBuilder MicrosoftGraphGetFinalReport { get =>
+            new MicrosoftGraphGetFinalReportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.</summary>
         public NotesRequestBuilder Notes { get =>
             new NotesRequestBuilder(PathParameters, RequestAdapter);
@@ -54,7 +62,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/security/subjectRightsRequests/{subjectRightsRequest%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -95,18 +103,6 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SubjectRightsRequest>(requestInfo, SubjectRightsRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getFinalAttachment method.
-        /// </summary>
-        public GetFinalAttachmentRequestBuilder GetFinalAttachment() {
-            return new GetFinalAttachmentRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>
-        /// Provides operations to call the getFinalReport method.
-        /// </summary>
-        public GetFinalReportRequestBuilder GetFinalReport() {
-            return new GetFinalReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Update the navigation property subjectRightsRequests in security

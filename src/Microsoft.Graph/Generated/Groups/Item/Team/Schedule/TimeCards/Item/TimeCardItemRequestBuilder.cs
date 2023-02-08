@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.ClockOut;
-using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.Confirm;
-using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.EndBreak;
-using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.StartBreak;
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.MicrosoftGraphClockOut;
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.MicrosoftGraphConfirm;
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.MicrosoftGraphEndBreak;
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.MicrosoftGraphStartBreak;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,25 +18,25 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item {
     /// </summary>
     public class TimeCardItemRequestBuilder {
         /// <summary>Provides operations to call the clockOut method.</summary>
-        public ClockOutRequestBuilder ClockOut { get =>
-            new ClockOutRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphClockOutRequestBuilder MicrosoftGraphClockOut { get =>
+            new MicrosoftGraphClockOutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the confirm method.</summary>
-        public ConfirmRequestBuilder Confirm { get =>
-            new ConfirmRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphConfirmRequestBuilder MicrosoftGraphConfirm { get =>
+            new MicrosoftGraphConfirmRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the endBreak method.</summary>
-        public EndBreakRequestBuilder EndBreak { get =>
-            new EndBreakRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEndBreakRequestBuilder MicrosoftGraphEndBreak { get =>
+            new MicrosoftGraphEndBreakRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startBreak method.</summary>
+        public MicrosoftGraphStartBreakRequestBuilder MicrosoftGraphStartBreak { get =>
+            new MicrosoftGraphStartBreakRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the startBreak method.</summary>
-        public StartBreakRequestBuilder StartBreak { get =>
-            new StartBreakRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/schedule/timeCards/{timeCard%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

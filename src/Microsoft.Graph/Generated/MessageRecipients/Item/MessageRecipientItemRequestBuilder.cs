@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/messageRecipients/{messageRecipient%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from messageRecipients by key (id)
+        /// Delete entity from messageRecipients
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from messageRecipients by key (id)
+        /// Get entity from messageRecipients by key
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item {
             return await RequestAdapter.SendAsync<MessageRecipient>(requestInfo, MessageRecipient.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in messageRecipients by key (id)
+        /// Update entity in messageRecipients
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item {
             return await RequestAdapter.SendAsync<MessageRecipient>(requestInfo, MessageRecipient.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from messageRecipients by key (id)
+        /// Delete entity from messageRecipients
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from messageRecipients by key (id)
+        /// Get entity from messageRecipients by key
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in messageRecipients by key (id)
+        /// Update entity in messageRecipients
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -205,7 +205,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item {
             }
         }
         /// <summary>
-        /// Get entity from messageRecipients by key (id)
+        /// Get entity from messageRecipients by key
         /// </summary>
         public class MessageRecipientItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

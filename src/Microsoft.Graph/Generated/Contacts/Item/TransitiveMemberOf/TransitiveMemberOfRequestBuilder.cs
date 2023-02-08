@@ -1,11 +1,11 @@
-using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.Application;
 using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.Count;
-using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.Device;
-using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.Group;
 using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.Item;
-using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.OrgContact;
-using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.ServicePrincipal;
-using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.User;
+using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.MicrosoftGraphApplication;
+using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.MicrosoftGraphDevice;
+using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.MicrosoftGraphGroup;
+using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.MicrosoftGraphOrgContact;
+using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.MicrosoftGraphServicePrincipal;
+using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.MicrosoftGraphUser;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,44 +21,44 @@ namespace Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf {
     /// Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
     /// </summary>
     public class TransitiveMemberOfRequestBuilder {
-        /// <summary>Casts the previous resource to application.</summary>
-        public ApplicationRequestBuilder Application { get =>
-            new ApplicationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Casts the previous resource to application.</summary>
+        public MicrosoftGraphApplicationRequestBuilder MicrosoftGraphApplication { get =>
+            new MicrosoftGraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to device.</summary>
-        public DeviceRequestBuilder Device { get =>
-            new DeviceRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDeviceRequestBuilder MicrosoftGraphDevice { get =>
+            new MicrosoftGraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public GroupRequestBuilder Group { get =>
-            new GroupRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGroupRequestBuilder MicrosoftGraphGroup { get =>
+            new MicrosoftGraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public OrgContactRequestBuilder OrgContact { get =>
-            new OrgContactRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphOrgContactRequestBuilder MicrosoftGraphOrgContact { get =>
+            new MicrosoftGraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to servicePrincipal.</summary>
+        public MicrosoftGraphServicePrincipalRequestBuilder MicrosoftGraphServicePrincipal { get =>
+            new MicrosoftGraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to user.</summary>
+        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
+            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public ServicePrincipalRequestBuilder ServicePrincipal { get =>
-            new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Casts the previous resource to user.</summary>
-        public UserRequestBuilder User { get =>
-            new UserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("directoryObject%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("directoryObject%2Did", position);
             return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/contacts/{orgContact%2Did}/transitiveMemberOf{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

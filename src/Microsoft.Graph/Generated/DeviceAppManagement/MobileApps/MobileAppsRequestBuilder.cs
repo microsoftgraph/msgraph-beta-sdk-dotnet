@@ -1,11 +1,11 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Count;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.HasPayloadLinks;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ManagedMobileLobApp;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MobileLobApp;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MicrosoftGraphGetMobileAppCountWithStatus;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MicrosoftGraphGetTopMobileAppsWithStatusWithCount;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MicrosoftGraphHasPayloadLinks;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MicrosoftGraphManagedMobileLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MicrosoftGraphMobileLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.MicrosoftGraphValidateXml;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -26,16 +26,20 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
-        public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
-            new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphHasPayloadLinksRequestBuilder MicrosoftGraphHasPayloadLinks { get =>
+            new MicrosoftGraphHasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
-        public ManagedMobileLobAppRequestBuilder ManagedMobileLobApp { get =>
-            new ManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedMobileLobAppRequestBuilder MicrosoftGraphManagedMobileLobApp { get =>
+            new MicrosoftGraphManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to mobileLobApp.</summary>
-        public MobileLobAppRequestBuilder MobileLobApp { get =>
-            new MobileLobAppRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphMobileLobAppRequestBuilder MicrosoftGraphMobileLobApp { get =>
+            new MicrosoftGraphMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the validateXml method.</summary>
+        public MicrosoftGraphValidateXmlRequestBuilder MicrosoftGraphValidateXml { get =>
+            new MicrosoftGraphValidateXmlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -43,14 +47,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Provides operations to call the validateXml method.</summary>
-        public ValidateXmlRequestBuilder ValidateXml { get =>
-            new ValidateXmlRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
         public MobileAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("mobileApp%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("mobileApp%2Did", position);
             return new MobileAppItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -103,19 +103,19 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         /// Provides operations to call the getMobileAppCount method.
         /// </summary>
         /// <param name="status">Usage: status=&apos;{status}&apos;</param>
-        public GetMobileAppCountWithStatusRequestBuilder GetMobileAppCountWithStatus(string status) {
+        public MicrosoftGraphGetMobileAppCountWithStatusRequestBuilder MicrosoftGraphGetMobileAppCountWithStatus(string status) {
             if(string.IsNullOrEmpty(status)) throw new ArgumentNullException(nameof(status));
-            return new GetMobileAppCountWithStatusRequestBuilder(PathParameters, RequestAdapter, status);
+            return new MicrosoftGraphGetMobileAppCountWithStatusRequestBuilder(PathParameters, RequestAdapter, status);
         }
         /// <summary>
         /// Provides operations to call the getTopMobileApps method.
         /// </summary>
         /// <param name="count">Usage: count={count}</param>
         /// <param name="status">Usage: status=&apos;{status}&apos;</param>
-        public GetTopMobileAppsWithStatusWithCountRequestBuilder GetTopMobileAppsWithStatusWithCount(long? count, string status) {
+        public MicrosoftGraphGetTopMobileAppsWithStatusWithCountRequestBuilder MicrosoftGraphGetTopMobileAppsWithStatusWithCount(long? count, string status) {
             _ = count ?? throw new ArgumentNullException(nameof(count));
             if(string.IsNullOrEmpty(status)) throw new ArgumentNullException(nameof(status));
-            return new GetTopMobileAppsWithStatusWithCountRequestBuilder(PathParameters, RequestAdapter, count, status);
+            return new MicrosoftGraphGetTopMobileAppsWithStatusWithCountRequestBuilder(PathParameters, RequestAdapter, count, status);
         }
         /// <summary>
         /// Create new navigation property to mobileApps for deviceAppManagement

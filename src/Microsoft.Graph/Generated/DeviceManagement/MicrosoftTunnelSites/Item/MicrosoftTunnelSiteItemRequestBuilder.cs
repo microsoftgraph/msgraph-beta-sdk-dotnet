@@ -1,6 +1,6 @@
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftGraphRequestUpgrade;
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelConfiguration;
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.RequestUpgrade;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,6 +16,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item {
     /// Provides operations to manage the microsoftTunnelSites property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class MicrosoftTunnelSiteItemRequestBuilder {
+        /// <summary>Provides operations to call the requestUpgrade method.</summary>
+        public MicrosoftGraphRequestUpgradeRequestBuilder MicrosoftGraphRequestUpgrade { get =>
+            new MicrosoftGraphRequestUpgradeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the microsoftTunnelConfiguration property of the microsoft.graph.microsoftTunnelSite entity.</summary>
         public MicrosoftTunnelConfigurationRequestBuilder MicrosoftTunnelConfiguration { get =>
             new MicrosoftTunnelConfigurationRequestBuilder(PathParameters, RequestAdapter);
@@ -28,10 +32,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the requestUpgrade method.</summary>
-        public RequestUpgradeRequestBuilder RequestUpgrade { get =>
-            new RequestUpgradeRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

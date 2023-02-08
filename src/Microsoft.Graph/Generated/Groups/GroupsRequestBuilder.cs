@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Groups.Count;
-using Microsoft.Graph.Beta.Groups.Delta;
-using Microsoft.Graph.Beta.Groups.EvaluateDynamicMembership;
-using Microsoft.Graph.Beta.Groups.GetByIds;
-using Microsoft.Graph.Beta.Groups.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Groups.Item;
-using Microsoft.Graph.Beta.Groups.ValidateProperties;
+using Microsoft.Graph.Beta.Groups.MicrosoftGraphDelta;
+using Microsoft.Graph.Beta.Groups.MicrosoftGraphEvaluateDynamicMembership;
+using Microsoft.Graph.Beta.Groups.MicrosoftGraphGetByIds;
+using Microsoft.Graph.Beta.Groups.MicrosoftGraphGetUserOwnedObjects;
+using Microsoft.Graph.Beta.Groups.MicrosoftGraphValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,17 +24,25 @@ namespace Microsoft.Graph.Beta.Groups {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
+            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
-        public EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership { get =>
-            new EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEvaluateDynamicMembershipRequestBuilder MicrosoftGraphEvaluateDynamicMembership { get =>
+            new MicrosoftGraphEvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public GetByIdsRequestBuilder GetByIds { get =>
-            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetByIdsRequestBuilder MicrosoftGraphGetByIds { get =>
+            new MicrosoftGraphGetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
-            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetUserOwnedObjectsRequestBuilder MicrosoftGraphGetUserOwnedObjects { get =>
+            new MicrosoftGraphGetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the validateProperties method.</summary>
+        public MicrosoftGraphValidatePropertiesRequestBuilder MicrosoftGraphValidateProperties { get =>
+            new MicrosoftGraphValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -42,14 +50,10 @@ namespace Microsoft.Graph.Beta.Groups {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
-            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the collection of group entities.</summary>
         public GroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("group%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("group%2Did", position);
             return new GroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -75,15 +79,9 @@ namespace Microsoft.Graph.Beta.Groups {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/groups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
-        }
-        /// <summary>
-        /// Provides operations to call the delta method.
-        /// </summary>
-        public DeltaRequestBuilder Delta() {
-            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// List all the groups available in an organization, excluding dynamic distribution groups. To retrieve dynamic distribution groups, use the Exchange admin center. This operation returns by default only a subset of the more commonly used properties for each group. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the group and specify the properties in a `$select` OData query option. The **hasMembersWithLicenseErrors** and **isArchived** properties are an exception and are not returned in the `$select` query.

@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The eventType property</summary>
+        /// <summary>The type of authentication event that triggered the custom extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.</summary>
         public AuthenticationEventType? EventType {
             get { return BackingStore?.Get<AuthenticationEventType?>("eventType"); }
             set { BackingStore?.Set("eventType", value); }
         }
-        /// <summary>The executedListenerId property</summary>
+        /// <summary>ID of the Event Listener that was executed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExecutedListenerId {
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("executedListenerId", value); }
         }
 #endif
-        /// <summary>The handlerResult property</summary>
+        /// <summary>The result from the listening client, such as an Azure Logic App and Azure Functions, of this authentication event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationEventHandlerResult? HandlerResult {

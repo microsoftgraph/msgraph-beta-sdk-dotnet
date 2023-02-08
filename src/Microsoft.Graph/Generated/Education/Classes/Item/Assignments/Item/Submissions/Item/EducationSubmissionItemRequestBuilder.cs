@@ -1,11 +1,11 @@
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.MicrosoftGraphReassign;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.MicrosoftGraphReturn;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.MicrosoftGraphSetUpResourcesFolder;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.MicrosoftGraphSubmit;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.MicrosoftGraphUnsubmit;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Outcomes;
-using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Reassign;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Resources;
-using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Return;
-using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.SetUpResourcesFolder;
-using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Submit;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.SubmittedResources;
-using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Unsubmit;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,41 +21,41 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissio
     /// Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
     /// </summary>
     public class EducationSubmissionItemRequestBuilder {
+        /// <summary>Provides operations to call the reassign method.</summary>
+        public MicrosoftGraphReassignRequestBuilder MicrosoftGraphReassign { get =>
+            new MicrosoftGraphReassignRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the return method.</summary>
+        public MicrosoftGraphReturnRequestBuilder MicrosoftGraphReturn { get =>
+            new MicrosoftGraphReturnRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setUpResourcesFolder method.</summary>
+        public MicrosoftGraphSetUpResourcesFolderRequestBuilder MicrosoftGraphSetUpResourcesFolder { get =>
+            new MicrosoftGraphSetUpResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the submit method.</summary>
+        public MicrosoftGraphSubmitRequestBuilder MicrosoftGraphSubmit { get =>
+            new MicrosoftGraphSubmitRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unsubmit method.</summary>
+        public MicrosoftGraphUnsubmitRequestBuilder MicrosoftGraphUnsubmit { get =>
+            new MicrosoftGraphUnsubmitRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.</summary>
         public OutcomesRequestBuilder Outcomes { get =>
             new OutcomesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the reassign method.</summary>
-        public ReassignRequestBuilder Reassign { get =>
-            new ReassignRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the resources property of the microsoft.graph.educationSubmission entity.</summary>
         public ResourcesRequestBuilder Resources { get =>
             new ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the return method.</summary>
-        public ReturnRequestBuilder Return { get =>
-            new ReturnRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setUpResourcesFolder method.</summary>
-        public SetUpResourcesFolderRequestBuilder SetUpResourcesFolder { get =>
-            new SetUpResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the submit method.</summary>
-        public SubmitRequestBuilder Submit { get =>
-            new SubmitRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.</summary>
         public SubmittedResourcesRequestBuilder SubmittedResources { get =>
             new SubmittedResourcesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unsubmit method.</summary>
-        public UnsubmitRequestBuilder Unsubmit { get =>
-            new UnsubmitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissio
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

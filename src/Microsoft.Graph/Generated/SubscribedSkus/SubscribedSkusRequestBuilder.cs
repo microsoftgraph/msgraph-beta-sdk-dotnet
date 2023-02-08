@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
         /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
         public SubscribedSkuItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("subscribedSku%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("subscribedSku%2Did", position);
             return new SubscribedSkuItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/subscribedSkus{?%24search,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

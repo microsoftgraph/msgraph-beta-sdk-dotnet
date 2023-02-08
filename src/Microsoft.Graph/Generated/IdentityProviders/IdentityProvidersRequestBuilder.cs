@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.IdentityProviders.AvailableProviderTypes;
 using Microsoft.Graph.Beta.IdentityProviders.Count;
 using Microsoft.Graph.Beta.IdentityProviders.Item;
+using Microsoft.Graph.Beta.IdentityProviders.MicrosoftGraphAvailableProviderTypes;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the availableProviderTypes method.</summary>
+        public MicrosoftGraphAvailableProviderTypesRequestBuilder MicrosoftGraphAvailableProviderTypes { get =>
+            new MicrosoftGraphAvailableProviderTypesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -29,15 +33,9 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
         /// <summary>Provides operations to manage the collection of identityProvider entities.</summary>
         public IdentityProviderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("identityProvider%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("identityProvider%2Did", position);
             return new IdentityProviderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>
-        /// Provides operations to call the availableProviderTypes method.
-        /// </summary>
-        public AvailableProviderTypesRequestBuilder AvailableProviderTypes() {
-            return new AvailableProviderTypesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new IdentityProvidersRequestBuilder and sets the default values.
         /// </summary>
@@ -61,7 +59,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/identityProviders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

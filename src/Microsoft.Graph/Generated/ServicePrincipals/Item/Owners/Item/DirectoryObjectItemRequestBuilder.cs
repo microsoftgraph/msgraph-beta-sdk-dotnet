@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.Endpoint;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.MicrosoftGraphEndpoint;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.MicrosoftGraphServicePrincipal;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.MicrosoftGraphUser;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.Ref;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.ServicePrincipal;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.User;
 using Microsoft.Kiota.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -14,8 +14,16 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item {
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public EndpointRequestBuilder Endpoint { get =>
-            new EndpointRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEndpointRequestBuilder MicrosoftGraphEndpoint { get =>
+            new MicrosoftGraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to servicePrincipal.</summary>
+        public MicrosoftGraphServicePrincipalRequestBuilder MicrosoftGraphServicePrincipal { get =>
+            new MicrosoftGraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to user.</summary>
+        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
+            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -25,16 +33,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public ServicePrincipalRequestBuilder ServicePrincipal { get =>
-            new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Casts the previous resource to user.</summary>
-        public UserRequestBuilder User { get =>
-            new UserRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         /// </summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/owners/{directoryObject%2Did}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

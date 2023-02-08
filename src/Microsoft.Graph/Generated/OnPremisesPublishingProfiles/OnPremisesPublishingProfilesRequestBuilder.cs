@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles {
         /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
         public OnPremisesPublishingProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("onPremisesPublishingProfile%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("onPremisesPublishingProfile%2Did", position);
             return new OnPremisesPublishingProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/onPremisesPublishingProfiles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

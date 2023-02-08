@@ -1,8 +1,8 @@
-using Microsoft.Graph.Beta.Me.Presence.ClearPresence;
-using Microsoft.Graph.Beta.Me.Presence.ClearUserPreferredPresence;
-using Microsoft.Graph.Beta.Me.Presence.SetPresence;
-using Microsoft.Graph.Beta.Me.Presence.SetStatusMessage;
-using Microsoft.Graph.Beta.Me.Presence.SetUserPreferredPresence;
+using Microsoft.Graph.Beta.Me.Presence.MicrosoftGraphClearPresence;
+using Microsoft.Graph.Beta.Me.Presence.MicrosoftGraphClearUserPreferredPresence;
+using Microsoft.Graph.Beta.Me.Presence.MicrosoftGraphSetPresence;
+using Microsoft.Graph.Beta.Me.Presence.MicrosoftGraphSetStatusMessage;
+using Microsoft.Graph.Beta.Me.Presence.MicrosoftGraphSetUserPreferredPresence;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,29 +19,29 @@ namespace Microsoft.Graph.Beta.Me.Presence {
     /// </summary>
     public class PresenceRequestBuilder {
         /// <summary>Provides operations to call the clearPresence method.</summary>
-        public ClearPresenceRequestBuilder ClearPresence { get =>
-            new ClearPresenceRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphClearPresenceRequestBuilder MicrosoftGraphClearPresence { get =>
+            new MicrosoftGraphClearPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clearUserPreferredPresence method.</summary>
-        public ClearUserPreferredPresenceRequestBuilder ClearUserPreferredPresence { get =>
-            new ClearUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphClearUserPreferredPresenceRequestBuilder MicrosoftGraphClearUserPreferredPresence { get =>
+            new MicrosoftGraphClearUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setPresence method.</summary>
+        public MicrosoftGraphSetPresenceRequestBuilder MicrosoftGraphSetPresence { get =>
+            new MicrosoftGraphSetPresenceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setStatusMessage method.</summary>
+        public MicrosoftGraphSetStatusMessageRequestBuilder MicrosoftGraphSetStatusMessage { get =>
+            new MicrosoftGraphSetStatusMessageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
+        public MicrosoftGraphSetUserPreferredPresenceRequestBuilder MicrosoftGraphSetUserPreferredPresence { get =>
+            new MicrosoftGraphSetUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the setPresence method.</summary>
-        public SetPresenceRequestBuilder SetPresence { get =>
-            new SetPresenceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setStatusMessage method.</summary>
-        public SetStatusMessageRequestBuilder SetStatusMessage { get =>
-            new SetStatusMessageRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
-        public SetUserPreferredPresenceRequestBuilder SetUserPreferredPresence { get =>
-            new SetUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Me.Presence {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/presence{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -91,8 +91,8 @@ namespace Microsoft.Graph.Beta.Me.Presence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0" />
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Me.Presence {
             return requestInfo;
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Me.Presence {
             }
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         public class PresenceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

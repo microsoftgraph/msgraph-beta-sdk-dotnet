@@ -1,13 +1,13 @@
-using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.AcceptRecommendations;
-using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ApplyDecisions;
-using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.BatchRecordDecisions;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ContactedReviewers;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Definition;
-using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ResetDecisions;
-using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.SendReminder;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.MicrosoftGraphAcceptRecommendations;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.MicrosoftGraphApplyDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.MicrosoftGraphBatchRecordDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.MicrosoftGraphResetDecisions;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.MicrosoftGraphSendReminder;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.MicrosoftGraphStop;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages;
-using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stop;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -23,18 +23,6 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item {
     /// Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
     /// </summary>
     public class AccessReviewInstanceItemRequestBuilder {
-        /// <summary>Provides operations to call the acceptRecommendations method.</summary>
-        public AcceptRecommendationsRequestBuilder AcceptRecommendations { get =>
-            new AcceptRecommendationsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the applyDecisions method.</summary>
-        public ApplyDecisionsRequestBuilder ApplyDecisions { get =>
-            new ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
-        public BatchRecordDecisionsRequestBuilder BatchRecordDecisions { get =>
-            new BatchRecordDecisionsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.</summary>
         public ContactedReviewersRequestBuilder ContactedReviewers { get =>
             new ContactedReviewersRequestBuilder(PathParameters, RequestAdapter);
@@ -47,25 +35,37 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item {
         public DefinitionRequestBuilder Definition { get =>
             new DefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the acceptRecommendations method.</summary>
+        public MicrosoftGraphAcceptRecommendationsRequestBuilder MicrosoftGraphAcceptRecommendations { get =>
+            new MicrosoftGraphAcceptRecommendationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the applyDecisions method.</summary>
+        public MicrosoftGraphApplyDecisionsRequestBuilder MicrosoftGraphApplyDecisions { get =>
+            new MicrosoftGraphApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the batchRecordDecisions method.</summary>
+        public MicrosoftGraphBatchRecordDecisionsRequestBuilder MicrosoftGraphBatchRecordDecisions { get =>
+            new MicrosoftGraphBatchRecordDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the resetDecisions method.</summary>
+        public MicrosoftGraphResetDecisionsRequestBuilder MicrosoftGraphResetDecisions { get =>
+            new MicrosoftGraphResetDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the sendReminder method.</summary>
+        public MicrosoftGraphSendReminderRequestBuilder MicrosoftGraphSendReminder { get =>
+            new MicrosoftGraphSendReminderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stop method.</summary>
+        public MicrosoftGraphStopRequestBuilder MicrosoftGraphStop { get =>
+            new MicrosoftGraphStopRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the resetDecisions method.</summary>
-        public ResetDecisionsRequestBuilder ResetDecisions { get =>
-            new ResetDecisionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the sendReminder method.</summary>
-        public SendReminderRequestBuilder SendReminder { get =>
-            new SendReminderRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.</summary>
         public StagesRequestBuilder Stages { get =>
             new StagesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the stop method.</summary>
-        public StopRequestBuilder Stop { get =>
-            new StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

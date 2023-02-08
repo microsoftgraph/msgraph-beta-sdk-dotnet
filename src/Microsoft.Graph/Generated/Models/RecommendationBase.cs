@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RecommendationBase : Entity, IParsable {
-        /// <summary>The actionSteps property</summary>
+        /// <summary>List of actions to take to complete a recommendation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ActionStep>? ActionSteps {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("actionSteps", value); }
         }
 #endif
-        /// <summary>The benefits property</summary>
+        /// <summary>An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Benefits {
@@ -38,17 +38,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RecommendationCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the recommendation was detected as applicable to your directory.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The currentScore property</summary>
+        /// <summary>The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.</summary>
         public double? CurrentScore {
             get { return BackingStore?.Get<double?>("currentScore"); }
             set { BackingStore?.Set("currentScore", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The title of the recommendation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The featureAreas property</summary>
+        /// <summary>The directory feature that the recommendation is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RecommendationFeatureAreas?>? FeatureAreas {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("featureAreas", value); }
         }
 #endif
-        /// <summary>The impactedResources property</summary>
+        /// <summary>The list of directory objects associated with the recommendation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ImpactedResource>? ImpactedResources {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("impactedResources", value); }
         }
 #endif
-        /// <summary>The impactStartDateTime property</summary>
+        /// <summary>The future date and time when a recommendation should be completed.</summary>
         public DateTimeOffset? ImpactStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("impactStartDateTime"); }
             set { BackingStore?.Set("impactStartDateTime", value); }
         }
-        /// <summary>The impactType property</summary>
+        /// <summary>Indicates the scope of impact of a recommendation. Tenant level indicates that the recommendation impacts the whole tenant. Other possible values include users, applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImpactType {
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("impactType", value); }
         }
 #endif
-        /// <summary>The insights property</summary>
+        /// <summary>Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Insights {
@@ -123,12 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("insights", value); }
         }
 #endif
-        /// <summary>The lastCheckedDateTime property</summary>
+        /// <summary>The most recent date and time a recommendation was deemed applicable to your directory.</summary>
         public DateTimeOffset? LastCheckedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckedDateTime"); }
             set { BackingStore?.Set("lastCheckedDateTime", value); }
         }
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Name of the user who last updated the status of the recommendation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastModifiedBy {
@@ -142,17 +142,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time the status of a recommendation was last updated.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The maxScore property</summary>
+        /// <summary>The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.</summary>
         public double? MaxScore {
             get { return BackingStore?.Get<double?>("maxScore"); }
             set { BackingStore?.Set("maxScore", value); }
         }
-        /// <summary>The postponeUntilDateTime property</summary>
+        /// <summary>The future date and time when the status of a postponed recommendation will be active again.</summary>
         public DateTimeOffset? PostponeUntilDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("postponeUntilDateTime"); }
             set { BackingStore?.Set("postponeUntilDateTime", value); }
@@ -162,12 +162,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RecommendationPriority?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
-        /// <summary>The recommendationType property</summary>
+        /// <summary>Friendly shortname to identify the recommendation. The possible values are: adfsAppsMigration, enableDesktopSSO, enablePHS, enableProvisioning, switchFromPerUserMFA, tenantMFA, thirdPartyApps, turnOffPerUserMFA, useAuthenticatorApp, useMyApps, staleApps, staleAppCreds, applicationCredentialExpiry, servicePrincipalKeyExpiry, adminMFAV2, blockLegacyAuthentication, integratedApps, mfaRegistrationV2, pwagePolicyNew, passwordHashSync, oneAdmin, roleOverlap, selfServicePasswordReset, signinRiskPolicy, userRiskPolicy, verifyAppPublisher, privateLinkForAAD, appRoleAssignmentsGroups, appRoleAssignmentsUsers, managedIdentity, overprivilegedApps, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.RecommendationType? RecommendationType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecommendationType?>("recommendationType"); }
             set { BackingStore?.Set("recommendationType", value); }
         }
-        /// <summary>The remediationImpact property</summary>
+        /// <summary>Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RemediationImpact {

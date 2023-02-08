@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.PrivilegedRoles.Item.Assignments;
-using Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate;
-using Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfDeactivate;
+using Microsoft.Graph.Beta.PrivilegedRoles.Item.MicrosoftGraphSelfActivate;
+using Microsoft.Graph.Beta.PrivilegedRoles.Item.MicrosoftGraphSelfDeactivate;
 using Microsoft.Graph.Beta.PrivilegedRoles.Item.Settings;
 using Microsoft.Graph.Beta.PrivilegedRoles.Item.Summary;
 using Microsoft.Kiota.Abstractions;
@@ -22,18 +22,18 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the selfActivate method.</summary>
+        public MicrosoftGraphSelfActivateRequestBuilder MicrosoftGraphSelfActivate { get =>
+            new MicrosoftGraphSelfActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the selfDeactivate method.</summary>
+        public MicrosoftGraphSelfDeactivateRequestBuilder MicrosoftGraphSelfDeactivate { get =>
+            new MicrosoftGraphSelfDeactivateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to call the selfActivate method.</summary>
-        public SelfActivateRequestBuilder SelfActivate { get =>
-            new SelfActivateRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the selfDeactivate method.</summary>
-        public SelfDeactivateRequestBuilder SelfDeactivate { get =>
-            new SelfDeactivateRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.privilegedRole entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/privilegedRoles/{privilegedRole%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from privilegedRoles by key (id)
+        /// Delete entity from privilegedRoles
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
             return await RequestAdapter.SendAsync<PrivilegedRole>(requestInfo, PrivilegedRole.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in privilegedRoles by key (id)
+        /// Update entity in privilegedRoles
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
             return await RequestAdapter.SendAsync<PrivilegedRole>(requestInfo, PrivilegedRole.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from privilegedRoles by key (id)
+        /// Delete entity from privilegedRoles
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in privilegedRoles by key (id)
+        /// Update entity in privilegedRoles
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

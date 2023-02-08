@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.Account;
 using Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.JournalLines;
-using Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.Post;
+using Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.MicrosoftGraphPost;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
         public JournalLinesRequestBuilder JournalLines { get =>
             new JournalLinesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the post method.</summary>
+        public MicrosoftGraphPostRequestBuilder MicrosoftGraphPost { get =>
+            new MicrosoftGraphPostRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>Provides operations to call the post method.</summary>
-        public PostRequestBuilder Post { get =>
-            new PostRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

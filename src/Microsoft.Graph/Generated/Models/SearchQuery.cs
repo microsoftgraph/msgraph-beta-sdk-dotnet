@@ -27,20 +27,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The query_string property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public SearchQueryString? Query_string {
-            get { return BackingStore?.Get<SearchQueryString?>("query_string"); }
-            set { BackingStore?.Set("query_string", value); }
-        }
-#nullable restore
-#else
-        public SearchQueryString Query_string {
-            get { return BackingStore?.Get<SearchQueryString>("query_string"); }
-            set { BackingStore?.Set("query_string", value); }
-        }
-#endif
         /// <summary>The search query containing the search terms. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,7 +76,6 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"query_string", n => { Query_string = n.GetObjectValue<SearchQueryString>(SearchQueryString.CreateFromDiscriminatorValue); } },
                 {"queryString", n => { QueryString = n.GetStringValue(); } },
                 {"queryTemplate", n => { QueryTemplate = n.GetStringValue(); } },
             };
@@ -102,7 +87,6 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<SearchQueryString>("query_string", Query_string);
             writer.WriteStringValue("queryString", QueryString);
             writer.WriteStringValue("queryTemplate", QueryTemplate);
             writer.WriteAdditionalData(AdditionalData);

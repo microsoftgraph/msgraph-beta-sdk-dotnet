@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.Count;
-using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.EvaluateApplication;
-using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.EvaluateClassificationResults;
-using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.EvaluateRemoval;
-using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.ExtractContentLabel;
 using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.Item;
+using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateApplication;
+using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults;
+using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateRemoval;
+using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions;
@@ -24,20 +24,20 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateApplication method.</summary>
-        public EvaluateApplicationRequestBuilder EvaluateApplication { get =>
-            new EvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityEvaluateApplicationRequestBuilder MicrosoftGraphSecurityEvaluateApplication { get =>
+            new MicrosoftGraphSecurityEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
-        public EvaluateClassificationResultsRequestBuilder EvaluateClassificationResults { get =>
-            new EvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder MicrosoftGraphSecurityEvaluateClassificationResults { get =>
+            new MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateRemoval method.</summary>
-        public EvaluateRemovalRequestBuilder EvaluateRemoval { get =>
-            new EvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityEvaluateRemovalRequestBuilder MicrosoftGraphSecurityEvaluateRemoval { get =>
+            new MicrosoftGraphSecurityEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the extractContentLabel method.</summary>
-        public ExtractContentLabelRequestBuilder ExtractContentLabel { get =>
-            new ExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder MicrosoftGraphSecurityExtractContentLabel { get =>
+            new MicrosoftGraphSecurityExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.</summary>
         public SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("sensitivityLabel%2Did", position);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("sensitivityLabel%2Did", position);
             return new SensitivityLabelItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/security/informationProtection/sensitivityLabels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

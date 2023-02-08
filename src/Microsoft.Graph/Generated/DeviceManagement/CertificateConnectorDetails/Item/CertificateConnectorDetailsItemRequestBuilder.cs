@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetrics;
-using Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetricTimeSeries;
+using Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.MicrosoftGraphGetHealthMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.MicrosoftGraphGetHealthMetricTimeSeries;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
     /// </summary>
     public class CertificateConnectorDetailsItemRequestBuilder {
         /// <summary>Provides operations to call the getHealthMetrics method.</summary>
-        public GetHealthMetricsRequestBuilder GetHealthMetrics { get =>
-            new GetHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetHealthMetricsRequestBuilder MicrosoftGraphGetHealthMetrics { get =>
+            new MicrosoftGraphGetHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getHealthMetricTimeSeries method.</summary>
-        public GetHealthMetricTimeSeriesRequestBuilder GetHealthMetricTimeSeries { get =>
-            new GetHealthMetricTimeSeriesRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphGetHealthMetricTimeSeriesRequestBuilder MicrosoftGraphGetHealthMetricTimeSeries { get =>
+            new MicrosoftGraphGetHealthMetricTimeSeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/deviceManagement/certificateConnectorDetails/{certificateConnectorDetails%2Did}{?%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
-            urlTplParams.Add("request-raw-url", rawUrl);
+            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }

@@ -4,5 +4,6 @@ namespace Microsoft.Graph.Beta.Models {
         UnknownFutureValue,
         Roster,
         Project,
+        DriveItem,
     }
 }
