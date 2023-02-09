@@ -22,12 +22,11 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Use concurrent dictionary for serialization registry to avoid race conditions.
-- Adds support for nullable reference types.
-- Latest metadata updates from 24th January 2023 snapshot.
+- [Breaking] Namespace and Request Builder renaming to align to paths defined in metadata (https://github.com/microsoft/kiota/issues/2209)
+- Latest metadata updates from 7th February 2023 snapshot.
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>5.18.0</VersionPrefix>
+    <VersionPrefix>5.19.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->

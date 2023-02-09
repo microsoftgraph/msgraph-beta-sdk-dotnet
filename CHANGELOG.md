@@ -7,10 +7,12 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.19.0-preview] - 2023-02-09
+
 - [Breaking] Namespace and Request Builder renaming to align to paths defined in metadata (https://github.com/microsoft/kiota/issues/2209)
 - Latest metadata updates from 7th February 2023 snapshot.
 
-## [5.18.0-preview] - 2023-01-16
+## [5.18.0-preview] - 2023-01-25
 
 - Adds support for nullable reference types.
 - Latest metadata updates from 24th January 2023 snapshot.
