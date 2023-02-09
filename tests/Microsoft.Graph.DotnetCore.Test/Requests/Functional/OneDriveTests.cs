@@ -2,6 +2,10 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Children;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.MicrosoftGraphCreateLink;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.MicrosoftGraphInvite;
+
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     using System;
@@ -10,10 +14,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     using System.Net.Http;
     using System.Threading.Tasks;
     using Xunit;
-    using Microsoft.Graph.Beta.Drive.Items.Item.CreateLink;
-    using Microsoft.Graph.Beta.Drive.Items.Item.Invite;
     using Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions;
-    using Microsoft.Graph.Beta.Drives.Item.Root.Children;
     using Microsoft.Graph.Beta.Models;
     using Microsoft.Graph.Beta;
     
@@ -23,7 +24,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         public async Task OneDriveSharedWithMe()
         {
 
-            var sharedDriveItems = await graphClient.Drives["driveId"].SharedWithMe().GetAsync();
+            var sharedDriveItems = await graphClient.Drives["driveId"].MicrosoftGraphSharedWithMe.GetAsync();
             var permissionsPage = await graphClient.Drives["driveId"].Items[sharedDriveItems.Value[0].Id].Permissions.GetAsync();
             var permissions = new List<Permission>();
             permissions.AddRange(permissionsPage.Value);
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 // Get the collection of drive items. We'll only use one.
-                var driveItems = await graphClient.Drives["driveId"].Root.Children.GetAsync();
+                var driveItems = await graphClient.Drives["driveId"].Items[""].Children.GetAsync();
 
                 foreach (var item in driveItems.Value)
                 {
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             {
                 var driveItems = new List<DriveItem>();
 
-                var driveItemsPage = await graphClient.Drives["driveId"].Root.Children.GetAsync(requestConfiguration => requestConfiguration.QueryParameters.Top = 4);
+                var driveItemsPage = await graphClient.Drives["driveId"].Items[""].Children.GetAsync(requestConfiguration => requestConfiguration.QueryParameters.Top = 4);
 
                 Assert.NotNull(driveItemsPage);
 
@@ -163,7 +164,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             try
             {
-                var driveItems = await graphClient.Drives["driveId"].Root.Children.GetAsync();
+                var driveItems = await graphClient.Drives["driveId"].Items[""].Children.GetAsync();
 
                 foreach (var item in driveItems.Value)
                 {
@@ -189,7 +190,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 var driveItems = await graphClient.Drives["driveId"]
-                                                     .Root
+                                                     .Items[""]
                                                      .Children
                                                      .GetAsync();
 
@@ -232,7 +233,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_search
-                var driveItems = await graphClient.Drives["driveId"].SearchWithQ("employee services").GetAsync();
+                var driveItems = await graphClient.Drives["driveId"].MicrosoftGraphSearchWithQ("employee services").GetAsync();
 
                 // Expecting two results.
                 Assert.Equal(2, driveItems.Value.Count);
@@ -250,7 +251,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             try
             {
-                var itemToShare = await graphClient.Drives["driveId"].Root
+                var itemToShare = await graphClient.Drives["driveId"].Items[""]
                                                             .Children
                                                             .GetAsync(requestConfiguration => requestConfiguration.QueryParameters.Filter = "startswith(name,'Timesheet')");
                 
@@ -259,7 +260,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var requestBody = new CreateLinkPostRequestBody { Type = "edit", Scope = "organization" };
                 var permission = await graphClient.Drives["driveId"].Root
                                                            .ItemWithPath(itemToShare.Value[0].Name)
-                                                           .CreateLink
+                                                           .MicrosoftGraphCreateLink
                                                            .PostAsync(requestBody);
 
                 Assert.Equal("organization", permission.Link.Scope);
@@ -281,7 +282,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 // Get the item to share with another user.
-                var itemToShare = await graphClient.Drives["driveId"].Root
+                var itemToShare = await graphClient.Drives["driveId"].Items[""]
                                                             .Children
                                                             .GetAsync(requestConfiguration => requestConfiguration.QueryParameters.Filter = "startswith(name,'Timesheet')");
                 Assert.StartsWith("Timesheet", itemToShare.Value[0].Name);
@@ -312,7 +313,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var inviteCollection = await graphClient.Drives["driveId"]
                                                            .Root
                                                            .ItemWithPath(itemToShare.Value[0].Name)
-                                                           .Invite
+                                                           .MicrosoftGraphInvite
                                                            .PostAsync(invitePostBody);
 
                 Assert.Equal("Alex Wilber", inviteCollection.Value[0].GrantedTo.User.DisplayName);

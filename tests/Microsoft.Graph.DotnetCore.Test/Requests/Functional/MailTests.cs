@@ -5,7 +5,7 @@
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     using Microsoft.Graph.Beta.Models;
-    using Microsoft.Graph.Beta.Me.SendMail;
+    using Microsoft.Graph.Beta.Me.MicrosoftGraphSendMail;
     using Microsoft.Graph.DotnetCore.Test.Requests.Functional.Resources;
     using System;
     using System.Collections.Generic;
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     SaveToSentItems = true
                 };
                 // Send email to the test user.
-                await graphClient.Me.SendMail.PostAsync(sendMailBody);
+                await graphClient.Me.MicrosoftGraphSendMail.PostAsync(sendMailBody);
 
                 // Check the we found the sent email in the sent items folder.
                 var mailFolderMessagesCollectionPage = await graphClient.Me.MailFolders["sentitems"].Messages.GetAsync(requestConfiguration => requestConfiguration.QueryParameters.Filter = "Subject eq '" + message.Subject + "'");
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     Message = message,
                     SaveToSentItems = true
                 };
-                await graphClient.Me.SendMail.PostAsync(sendMailBody);
+                await graphClient.Me.MicrosoftGraphSendMail.PostAsync(sendMailBody);
             }
             catch (ApiException e)
             {

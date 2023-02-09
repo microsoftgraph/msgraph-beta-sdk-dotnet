@@ -228,7 +228,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 OnenotePagePreview pagePreview = await graphClient.Me
                                                                   .Onenote
                                                                   .Pages[pageId]
-                                                                  .Preview()
+                                                                  .MicrosoftGraphPreview
                                                                   .GetAsync();
 
                 Assert.NotNull(pagePreview);

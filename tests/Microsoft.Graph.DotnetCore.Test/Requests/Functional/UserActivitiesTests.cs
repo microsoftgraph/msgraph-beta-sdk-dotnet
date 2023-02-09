@@ -144,7 +144,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 // Get recent user activities
                 //var getRecentResponse = await graphClient.Me.Activities.Recent().GetAsync(requestConfiguration => requestConfiguration.QueryParameters.Expand = new string[] { "historyItems" });
-                var getRecentResponse = await graphClient.Me.Activities.Recent().GetAsync();
+                var getRecentResponse = await graphClient.Me.Activities.MicrosoftGraphRecent.GetAsync();
 
                 Assert.NotNull(getRecentResponse);
 

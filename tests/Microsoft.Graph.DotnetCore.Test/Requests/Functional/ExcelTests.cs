@@ -33,7 +33,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             // Check that this item hasn't already been created. 
             // https://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_search
-            var searchResults = await graphClient.Drives["driveId"].Root.SearchWithQ(fileName).GetAsync();
+            var searchResults = await graphClient.Drives["driveId"].Items[""].MicrosoftGraphSearchWithQ(fileName).GetAsync();
             foreach (var r in searchResults.Value)
             {
                 if (r.Name != fileName)
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // https://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_search
             // TODO fix the metadata
             // var excelWorkbookDriveItem = await graphClient.Drives["driveId"].Root.Children.PostAsync(excelWorkbook);
-            var excelWorkbookDriveItem = await graphClient.Drives["driveId"].Root.Children[""].GetAsync();
+            var excelWorkbookDriveItem = await graphClient.Drives["driveId"].Items[""].Children[""].GetAsync();
             
             //var excelWorkbookDriveItem = await graphClient.Me.Drive.Root.Children.Request().Filter($"name eq '{fileName}'").GetAsync();
             //await OneDriveDeleteTestFile(excelWorkbookDriveItem.CurrentPage.FirstOrDefault().Id, 3000);
