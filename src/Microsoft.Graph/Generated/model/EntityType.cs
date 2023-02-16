@@ -79,5 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         ChatMessage = 12,
 	
+        /// <summary>
+        /// Qna
+        /// </summary>
+        Qna = 16,
+	
     }
 }

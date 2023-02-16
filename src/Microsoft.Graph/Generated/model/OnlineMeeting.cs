@@ -221,6 +221,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets watermark protection.
+        /// Specifies whether a watermark applies for different entities.
         /// </summary>
         [JsonPropertyName("watermarkProtection")]
         public WatermarkProtectionValues WatermarkProtection { get; set; }

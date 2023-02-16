@@ -8,49 +8,31 @@
 // Template Source: EnumType.cs.tt
 
 
-namespace Microsoft.Graph.Ediscovery
+namespace Microsoft.Graph
 {
-    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum ExportOptions.
+    /// The enum CloudPcSnapshotType.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-	[System.Flags]
-    public enum ExportOptions
+    public enum CloudPcSnapshotType
     {
     
         /// <summary>
-        /// Original Files
+        /// Automatic
         /// </summary>
-        OriginalFiles = 1,
+        Automatic = 0,
 	
         /// <summary>
-        /// Text
+        /// Manual
         /// </summary>
-        Text = 2,
-	
-        /// <summary>
-        /// Pdf Replacement
-        /// </summary>
-        PdfReplacement = 4,
-	
-        /// <summary>
-        /// File Info
-        /// </summary>
-        [Obsolete("The fileInfo will be deprecated on April 30, 2023.")]
-        FileInfo = 8,
-	
-        /// <summary>
-        /// Tags
-        /// </summary>
-        Tags = 16,
+        Manual = 1,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 32,
+        UnknownFutureValue = 2,
 	
     }
 }

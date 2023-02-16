@@ -70,6 +70,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets restricted experience.
+        /// Indicates the reason or reasons why media content from this participant is restricted.
         /// </summary>
         [JsonPropertyName("restrictedExperience")]
         public OnlineMeetingRestricted RestrictedExperience { get; set; }

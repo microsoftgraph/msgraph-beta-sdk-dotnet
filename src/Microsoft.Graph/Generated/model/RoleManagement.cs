@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         public RbacApplicationMultiple CloudPC { get; set; }
     
         /// <summary>
+        /// Gets or sets exchange.
+        /// </summary>
+        [JsonPropertyName("exchange")]
+        public UnifiedRbacApplication Exchange { get; set; }
+    
+        /// <summary>
         /// Gets or sets entitlement management.
         /// The RbacApplication for Entitlement Management
         /// </summary>

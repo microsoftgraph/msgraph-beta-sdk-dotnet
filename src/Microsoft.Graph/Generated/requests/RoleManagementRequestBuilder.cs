@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Exchange.
+        /// </summary>
+        /// <returns>The <see cref="IUnifiedRbacApplicationRequestBuilder"/>.</returns>
+        public IUnifiedRbacApplicationRequestBuilder Exchange
+        {
+            get
+            {
+                return new UnifiedRbacApplicationRequestBuilder(this.AppendSegmentToRequestUrl("exchange"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for EntitlementManagement.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRequestBuilder"/>.</returns>

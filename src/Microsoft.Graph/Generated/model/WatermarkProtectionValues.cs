@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isEnabledForContentSharing.
+        /// Indicates whether to apply a watermark to any shared content.
         /// </summary>
         [JsonPropertyName("isEnabledForContentSharing")]
         public bool? IsEnabledForContentSharing { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabledForVideo.
+        /// Indicates whether to apply a watermark to everyone's video feed.
         /// </summary>
         [JsonPropertyName("isEnabledForVideo")]
         public bool? IsEnabledForVideo { get; set; }

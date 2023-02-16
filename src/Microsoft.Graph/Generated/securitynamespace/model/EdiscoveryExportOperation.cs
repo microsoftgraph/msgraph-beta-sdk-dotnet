@@ -33,6 +33,7 @@ namespace Microsoft.Graph.SecurityNamespace
         /// Gets or sets azure blob container.
         /// The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
         /// </summary>
+        [Obsolete("The azureBlobContainer will be deprecated on April 30, 2023.")]
         [JsonPropertyName("azureBlobContainer")]
         public string AzureBlobContainer { get; set; }
     
@@ -40,6 +41,7 @@ namespace Microsoft.Graph.SecurityNamespace
         /// Gets or sets azure blob token.
         /// The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
         /// </summary>
+        [Obsolete("The azureBlobToken will be deprecated on April 30, 2023.")]
         [JsonPropertyName("azureBlobToken")]
         public string AzureBlobToken { get; set; }
     
@@ -49,6 +51,12 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets export file metadata.
+        /// </summary>
+        [JsonPropertyName("exportFileMetadata")]
+        public ExportFileMetadata ExportFileMetadata { get; set; }
     
         /// <summary>
         /// Gets or sets export options.
@@ -67,6 +75,7 @@ namespace Microsoft.Graph.SecurityNamespace
         /// <summary>
         /// Gets or sets output folder id.
         /// </summary>
+        [Obsolete("The outputFolderId will be deprecated on April 30, 2023.")]
         [JsonPropertyName("outputFolderId")]
         public string OutputFolderId { get; set; }
     

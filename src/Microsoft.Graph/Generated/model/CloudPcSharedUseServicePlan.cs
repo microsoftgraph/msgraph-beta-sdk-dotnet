@@ -22,18 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name of the shared-use service plan.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets total count.
+        /// Total number of shared-use service plans purchased by the customer.
         /// </summary>
         [JsonPropertyName("totalCount")]
         public Int32? TotalCount { get; set; }
     
         /// <summary>
         /// Gets or sets used count.
+        /// The number of service plans that the account uses.
         /// </summary>
         [JsonPropertyName("usedCount")]
         public Int32? UsedCount { get; set; }

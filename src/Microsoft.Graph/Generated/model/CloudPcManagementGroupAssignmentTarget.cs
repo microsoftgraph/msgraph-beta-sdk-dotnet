@@ -29,13 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets groupId.
-        /// The id of the assignment's target group
+        /// The ID of the target group for the assignment.
         /// </summary>
         [JsonPropertyName("groupId")]
         public string GroupId { get; set; }
     
         /// <summary>
         /// Gets or sets servicePlanId.
+        /// The unique identifier for the service plan that indicates which size of the Cloud PC to provision for the user. Use a null value, when the provisioningType is dedicated.
         /// </summary>
         [JsonPropertyName("servicePlanId")]
         public string ServicePlanId { get; set; }

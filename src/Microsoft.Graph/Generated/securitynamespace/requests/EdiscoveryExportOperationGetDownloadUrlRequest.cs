@@ -18,6 +18,7 @@ namespace Microsoft.Graph.SecurityNamespace
     /// <summary>
     /// The type EdiscoveryExportOperationGetDownloadUrlRequest.
     /// </summary>
+    [Obsolete("The getDownloadUrl endpoint will be deprecated on April 30, 2023. Please use exportFilesMetadata API instead.")]
     public partial class EdiscoveryExportOperationGetDownloadUrlRequest : Microsoft.Graph.BaseRequest, IEdiscoveryExportOperationGetDownloadUrlRequest
     {
         /// <summary>

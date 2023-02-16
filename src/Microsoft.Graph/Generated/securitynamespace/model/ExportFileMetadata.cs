@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.SecurityNamespace
 {
     using System;
     using System.Collections.Generic;
@@ -15,25 +15,29 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type OnlineMeetingRestricted.
+    /// The type ExportFileMetadata.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<OnlineMeetingRestricted>))]
-    public partial class OnlineMeetingRestricted
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ExportFileMetadata>))]
+    public partial class ExportFileMetadata
     {
 
         /// <summary>
-        /// Gets or sets contentSharingDisabled.
-        /// Specifies the reason why shared content from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
+        /// Gets or sets downloadUrl.
         /// </summary>
-        [JsonPropertyName("contentSharingDisabled")]
-        public OnlineMeetingContentSharingDisabledReason? ContentSharingDisabled { get; set; }
+        [JsonPropertyName("downloadUrl")]
+        public string DownloadUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets videoDisabled.
-        /// Specifies the reason why video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
+        /// Gets or sets fileName.
         /// </summary>
-        [JsonPropertyName("videoDisabled")]
-        public OnlineMeetingVideoDisabledReason? VideoDisabled { get; set; }
+        [JsonPropertyName("fileName")]
+        public string FileName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets size.
+        /// </summary>
+        [JsonPropertyName("size")]
+        public Int64? Size { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
