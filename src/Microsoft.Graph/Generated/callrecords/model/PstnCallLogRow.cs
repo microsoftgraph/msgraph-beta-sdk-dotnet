@@ -79,7 +79,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets currency.
-        /// Type of currency used to calculate the cost of the call (ISO 4217).
+        /// Type of currency used to calculate the cost of the call. For details, see ISO 4217.
         /// </summary>
         [JsonPropertyName("currency")]
         public string Currency { get; set; }
@@ -149,14 +149,14 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets tenantCountryCode.
-        /// Country code of the tenant, ISO 3166-1 alpha-2.
+        /// Country code of the tenant. For details, see ISO 3166-1 alpha-2.
         /// </summary>
         [JsonPropertyName("tenantCountryCode")]
         public string TenantCountryCode { get; set; }
     
         /// <summary>
         /// Gets or sets usageCountryCode.
-        /// Country code of the user, ISO 3166-1 alpha-2.
+        /// Country code of the user. For details, see ISO 3166-1 alpha-2.
         /// </summary>
         [JsonPropertyName("usageCountryCode")]
         public string UsageCountryCode { get; set; }
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets userPrincipalName.
-        /// UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
+        /// The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

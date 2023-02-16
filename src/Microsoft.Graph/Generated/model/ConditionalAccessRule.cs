@@ -134,5 +134,55 @@ namespace Microsoft.Graph
         /// </summary>
         AllDeviceStates = 22,
 	
+        /// <summary>
+        /// Anonymized IPAddress
+        /// </summary>
+        AnonymizedIPAddress = 23,
+	
+        /// <summary>
+        /// Unfamiliar Features
+        /// </summary>
+        UnfamiliarFeatures = 24,
+	
+        /// <summary>
+        /// Nation State IPAddress
+        /// </summary>
+        NationStateIPAddress = 25,
+	
+        /// <summary>
+        /// Real Time Threat Intelligence
+        /// </summary>
+        RealTimeThreatIntelligence = 26,
+	
+        /// <summary>
+        /// Internal Guest
+        /// </summary>
+        InternalGuest = 27,
+	
+        /// <summary>
+        /// B2b Collaboration Guest
+        /// </summary>
+        B2bCollaborationGuest = 28,
+	
+        /// <summary>
+        /// B2b Collaboration Member
+        /// </summary>
+        B2bCollaborationMember = 29,
+	
+        /// <summary>
+        /// B2b Direct Connect User
+        /// </summary>
+        B2bDirectConnectUser = 30,
+	
+        /// <summary>
+        /// Other External User
+        /// </summary>
+        OtherExternalUser = 31,
+	
+        /// <summary>
+        /// Service Provider
+        /// </summary>
+        ServiceProvider = 32,
+	
     }
 }

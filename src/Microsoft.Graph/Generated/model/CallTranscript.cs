@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content.
-        /// A field representing the content of the transcript. Read-only.
+        /// A field that represents the content of the transcript. Read-only.
         /// </summary>
         [JsonPropertyName("content")]
         public Stream Content { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Date and time at which the transcript was created. Read-only.
+        /// Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }

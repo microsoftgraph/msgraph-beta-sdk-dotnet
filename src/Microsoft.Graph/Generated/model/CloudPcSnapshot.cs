@@ -36,11 +36,23 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets expiration date time.
+        /// </summary>
+        [JsonPropertyName("expirationDateTime")]
+        public DateTimeOffset? ExpirationDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets last restored date time.
         /// The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastRestoredDateTime")]
         public DateTimeOffset? LastRestoredDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets snapshot type.
+        /// </summary>
+        [JsonPropertyName("snapshotType")]
+        public CloudPcSnapshotType? SnapshotType { get; set; }
     
         /// <summary>
         /// Gets or sets status.

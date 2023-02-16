@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets user id.
-        /// ID of the user.
+        /// Microsoft Account ID of the user.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

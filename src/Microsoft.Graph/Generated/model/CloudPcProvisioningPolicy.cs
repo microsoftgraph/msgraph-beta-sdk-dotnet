@@ -65,6 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enable single sign on.
+        /// True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
         /// </summary>
         [JsonPropertyName("enableSingleSignOn")]
         public bool? EnableSingleSignOn { get; set; }
@@ -127,6 +128,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioning type.
+        /// Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy was created. Possible values are: dedicated, shared, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("provisioningType")]
         public CloudPcProvisioningType? ProvisioningType { get; set; }
@@ -140,7 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignments.
-        /// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
+        /// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
         /// </summary>
         [JsonPropertyName("assignments")]
         public ICloudPcProvisioningPolicyAssignmentsCollectionPage Assignments { get; set; }

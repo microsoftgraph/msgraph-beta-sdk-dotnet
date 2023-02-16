@@ -23,13 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enable memauto enroll.
-        /// Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+        /// Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM). The default value is false.
         /// </summary>
         [JsonPropertyName("enableMEMAutoEnroll")]
         public bool? EnableMEMAutoEnroll { get; set; }
     
         /// <summary>
         /// Gets or sets enable single sign on.
+        /// True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
         /// </summary>
         [JsonPropertyName("enableSingleSignOn")]
         public bool? EnableSingleSignOn { get; set; }
