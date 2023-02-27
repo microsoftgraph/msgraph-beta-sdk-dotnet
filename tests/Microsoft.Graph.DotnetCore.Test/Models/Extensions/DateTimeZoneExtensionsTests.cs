@@ -46,6 +46,26 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
         }
 
         [Fact]
+        public void ToDateTimeOffset_Should_Convert_DateTimeTimeZone_To_DateTimeOffset_With_Non_UTC()
+        {
+            DateTimeTimeZone dateTimeTimeZone = new DateTimeTimeZone
+            {
+                TimeZone = "Eastern Standard Time",
+                DateTime = "2019-01-25T06:37:39.8058788"
+            };
+
+            DateTime dateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeFormat, CultureInfo.InvariantCulture);
+            TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone);
+            TimeSpan offset = timeZoneInfo.GetUtcOffset(dateTime);
+            dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Unspecified);
+
+            var expectedDateTimeOffset = new DateTimeOffset(dateTime, offset);
+            var actualDateTimeOffset = dateTimeTimeZone.ToDateTimeOffset();
+
+            Assert.Equal(expectedDateTimeOffset, actualDateTimeOffset);
+        }
+
+        [Fact]
         public void FromDateTime_Should_Convert_DateTime_To_DateTimeTimeZone()
         {
             DateTimeStyles dateTimeStyles = DateTimeStyles.RoundtripKind;
