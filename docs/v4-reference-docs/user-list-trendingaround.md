@@ -1,0 +1,71 @@
+---
+title: "List trendingAround"
+description: "Calculated insight that returns the list of items trending around a user."
+author: "yyuank"
+ms.localizationpriority: medium
+ms.prod: "users"
+doc_type: apiPageType
+---
+
+# List trendingAround
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Calculated insight that returns the list of items trending around a user.
+
+**Note:** This API will be deprecated and replaced by the [Trending API](../resources/insights-trending.md).
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | Sites.Read.All    |
+|Delegated (personal Microsoft account) | Not supported.    |
+|Application | Sites.Read.All |
+
+## HTTP request
+```http
+GET /me/trendingAround
+GET /users/{id | userPrincipalName}/trendingAround
+GET /drive/root/createdByUser/trendingAround
+GET /drive/root/lastModifiedByUser/trendingAround
+```
+## Optional query parameters
+This method supports the [OData Query Parameters](/graph/query-parameters) to help customize the response.
+
+## Request headers
+| Header         | Value                      |
+|:---------------|:---------------------------|
+| Authorization  | Bearer {token}. Required.  |
+| Content-Type   | application/json           |
+
+## Request body
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a 200 OK response code and collection of [driveItem](../resources/driveitem.md) objects in the response body.
+
+## Example
+##### Request
+```http
+GET https://graph.microsoft.com/beta/me/trendingAround
+```
+##### Response
+Here is an example of the response. Note: The response object shown here might be shortened for readability.
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "id": "id-value",
+  "name": "name-value",
+  "DateTimeCreated": "DateTimeCreated-value",
+  "DateTimeLastModified": "DateTimeLastModified-value",
+  "webUrl": "webUrl-value",
+}
+```

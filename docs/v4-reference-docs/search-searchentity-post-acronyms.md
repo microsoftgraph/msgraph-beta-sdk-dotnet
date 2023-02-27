@@ -1,0 +1,126 @@
+---
+title: "Create acronym"
+description: "Create a new acronym object."
+author: "jakeost-msft"
+ms.localizationpriority: medium
+ms.prod: "search"
+doc_type: apiPageType
+---
+
+# Create acronym
+Namespace: microsoft.graph.search
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Create a new [acronym](../resources/search-acronym.md) object.
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+|Permission type|Permissions (from least to most privileged)|
+|:---|:---|
+|Delegated (work or school account)| SearchConfiguration.Read.All, SearchConfiguration.ReadWrite.All |
+|Delegated (personal Microsoft account)| Not supported. |
+|Application| SearchConfiguration.Read.All, SearchConfiguration.ReadWrite.All |
+
+## HTTP request
+
+<!-- {
+  "blockType": "ignored"
+}
+-->
+``` http
+POST /search/acronyms
+```
+
+## Request headers
+|Name|Description|
+|:---|:---|
+|Authorization|Bearer {token}. Required.|
+|Content-Type|application/json. Required.|
+
+## Request body
+In the request body, supply a JSON representation of the [acronym](../resources/search-acronym.md) object.
+
+The following table shows the properties that are available when you create an [acronym](../resources/search-acronym.md).
+
+|Property|Type|Description|
+|:---|:---|:---|
+|description|String|A brief description of the acronym that gives users more info about the acronym and what it stands for. Inherited from [searchAnswer](../resources/search-searchAnswer.md).|
+|displayName|String|The actual short form or acronym. Inherited from [searchAnswer](../resources/search-searchAnswer.md).|
+|standsFor|String collection|What the acronym stands for.|
+|state|microsoft.graph.search.answerState|State of the acronym. Possible values are: `published`, `draft`, `excluded`, or `unknownFutureValue`.|
+|webUrl|String|The URL of the page or website where users can go for more information about the acronym. Inherited from [searchAnswer](../resources/search-searchAnswer.md).|
+
+
+
+## Response
+
+If successful, this method returns a `200 Ok` response code.
+
+## Examples
+
+### Request
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "create_acronym_from_acronyms"
+}-->
+```http
+POST https://graph.microsoft.com/beta/search/acronyms
+Content-Type: application/json
+
+{
+  "displayName": "DNN",
+  "standsFor": "Deep Neural Network",
+  "description": "A deep neural network is a neural network with a certain level of complexity, a neural network with more than two layers.",
+  "webUrl": "http://microsoft.com/deep-neural-network",
+  "state": "draft"
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var acronym = new Microsoft.Graph.Search.Acronym
+{
+	DisplayName = "DNN",
+	StandsFor = "Deep Neural Network",
+	Description = "A deep neural network is a neural network with a certain level of complexity, a neural network with more than two layers.",
+	WebUrl = "http://microsoft.com/deep-neural-network",
+	State = Microsoft.Graph.Search.AnswerState.Draft
+};
+
+await graphClient.Search.Acronyms
+	.Request()
+	.AddAsync(acronym);
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+### Response
+Here is an example of the response.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.search.acronym"
+}-->
+```http
+HTTP/1.1 200 Ok
+Content-Type: application/json
+
+{
+  "id": "733b26d5-af76-4eea-ac69-1a0ce8716897"
+}
+```
+

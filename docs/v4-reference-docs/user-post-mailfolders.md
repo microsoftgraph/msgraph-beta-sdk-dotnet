@@ -1,0 +1,137 @@
+---
+title: "Create MailFolder"
+description: "Use this API to create a new mail folder in the root folder of the user's mailbox."
+ms.localizationpriority: medium
+author: "abheek-das"
+ms.prod: "outlook"
+doc_type: apiPageType
+---
+
+# Create MailFolder
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Use this API to create a new mail folder in the root folder of the user's mailbox.
+
+If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | Mail.ReadWrite    |
+|Delegated (personal Microsoft account) | Mail.ReadWrite    |
+|Application | Mail.ReadWrite |
+
+## HTTP request
+<!-- { "blockType": "ignored" } -->
+```http
+POST /me/mailFolders
+POST /users/{id | userPrincipalName}/mailFolders
+```
+## Request headers
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer {token}. Required.  |
+| Content-Type  | application/json  |
+
+## Request body
+In the request body, provide a JSON object with the following parameters. **displayName** and **isHidden** are the only writable property for a 
+[mailFolder](../resources/mailfolder.md) object.
+
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|displayName|String|The display name of the new folder.|
+|isHidden|Boolean|Indicates whether the new folder is hidden. The default value is `false`. Setting the property is optional. Once set, you cannot update this property. See more information in [Hidden mail folders](../resources/mailfolder.md#hidden-mail-folders)|
+
+## Response
+
+If successful, this method returns `201 Created` response code and a [mailFolder](../resources/mailfolder.md) object in the response body.
+
+## Example
+### Request
+Here is an example of the request.
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "create_mailfolder_from_user"
+}-->
+```http
+POST https://graph.microsoft.com/beta/me/mailFolders
+Content-type: application/json
+
+{
+  "displayName": "Clutter",
+  "isHidden": true
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var mailFolder = new MailFolder
+{
+	DisplayName = "Clutter",
+	IsHidden = true
+};
+
+await graphClient.Me.MailFolders
+	.Request()
+	.AddAsync(mailFolder);
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+### Response
+Here is an example of the response. 
+
+>**Note:** The response object shown here might be shortened for readability.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.mailFolder"
+} -->
+```http
+HTTP/1.1 201 Created
+Content-type: application/json
+
+{
+  "id": "hN2Y5OGRhNGYwODEALgAAA0DAKbvJvFhJgcT3lZpkhNQBAA1",
+  "displayName": "Clutter",
+  "parentFolderId": "AQMkADlmOGQwZmU3LWVjOWMtNDhiYgAtODcxNy1",
+  "childFolderCount": 99,
+  "unreadItemCount": 99,
+  "totalItemCount": 99,
+  "wellKnownName": null,
+  "isHidden": true
+}
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!--
+{
+  "type": "#page.annotation",
+  "description": "Create MailFolder",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+  ]
+}
+-->
+
+

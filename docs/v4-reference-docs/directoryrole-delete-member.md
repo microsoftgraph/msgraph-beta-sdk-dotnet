@@ -1,0 +1,144 @@
+---
+title: "Remove directory role member"
+description: "Remove a member from a directoryRole."
+author: "DougKirschner"
+ms.localizationpriority: medium
+ms.prod: "directory-management"
+doc_type: apiPageType
+---
+
+# Remove directory role member
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Remove a member from a directoryRole.
+
+You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see [Role template IDs](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#role-template-ids).
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | RoleManagement.ReadWrite.Directory    |
+|Delegated (personal Microsoft account) | Not supported.    |
+|Application | RoleManagement.ReadWrite.Directory |
+
+## HTTP request
+
+You can address the directory role using either its **id** or **roleTemplateId**.
+<!-- { "blockType": "ignored" } -->
+```http
+DELETE /directoryRoles/{role-id}/members/{id}/$ref
+DELETE /directoryRoles(roleTemplateId='{roleTemplateId}')/members/{id}/$ref
+```
+> [!CAUTION]
+> If `/$ref` is not appended to the request and the calling app has permissions to manage the member object, the object will also be deleted from Azure Active Directory (Azure AD); otherwise, a `403 Forbidden` error is returned. You can restore specific objects through the [Restore deleted items API](directory-deleteditems-restore.md).
+
+## Request headers
+
+| Name       | Description|
+|:---------------|:--------|
+| Authorization  | Bearer {token}. Required. |
+
+## Request body
+
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `204 No Content` response code. It does not return anything in the response body.
+
+## Examples
+
+### Example 1: Remove directory role member using role objectId
+
+#### Request
+
+In this example, replace `f8e85ed8-f66f-4058-b170-3efae8b9c6e5` with the **id** value of the directory role and `bb165b45-151c-4cf6-9911-cd7188912848` with the **id** value of the user or directory object that you wish to unassign from the directory role.
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "delete_directoryobject_from_directoryrole"
+}-->
+
+```http
+DELETE https://graph.microsoft.com/beta/directoryRoles/f8e85ed8-f66f-4058-b170-3efae8b9c6e5/members/bb165b45-151c-4cf6-9911-cd7188912848/$ref
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+await graphClient.DirectoryRoles["{directoryRole-id}"].Members["{directoryObject-id}"].Reference
+	.Request()
+	.DeleteAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+<!-- {
+  "blockType": "response",
+  "truncated": true
+} -->
+
+```http
+HTTP/1.1 204 No Content
+```
+
+### Example 2: Remove directory role member using roleTemplateId
+
+#### Request
+
+The following is an example of the request. Replace `9f06204d-73c1-4d4c-880a-6edb90606fd8` with the value of your roleTemplateId and `bb165b45-151c-4cf6-9911-cd7188912848` with the **id** value of your user of directory object.
+
+<!-- {
+  "blockType": "request",
+  "name": "delete_directoryobject_from_directoryrole_templateId"
+}-->
+
+```http
+DELETE https://graph.microsoft.com/beta/directoryRoles(roleTemplateId='9f06204d-73c1-4d4c-880a-6edb90606fd85')/members/bb165b45-151c-4cf6-9911-cd7188912848/$ref
+```
+
+
+
+#### Response
+<!-- {
+  "blockType": "response",
+  "truncated": true
+} -->
+
+```http
+HTTP/1.1 204 No Content
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!--
+{
+  "type": "#page.annotation",
+  "description": "Delete a member",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+  ]
+}
+-->
+
+

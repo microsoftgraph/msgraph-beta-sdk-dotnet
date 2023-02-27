@@ -1,0 +1,197 @@
+---
+title: "Get directorySetting"
+description: "Retrieve the properties of a specific directory setting object."
+author: "adimitui"
+ms.localizationpriority: medium
+ms.prod: "directory-management"
+doc_type: apiPageType
+---
+
+# Get directorySetting
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Retrieve the properties of a specific directory setting object.
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+
+### List tenant-wide settings
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | Directory.Read.All, Directory.ReadWrite.All    |
+|Delegated (personal Microsoft account) | Not supported.    |
+|Application | Directory.Read.All, Directory.ReadWrite.All |
+
+### List group-specific settings
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | Group.Read.All, Group.ReadWrite.All    |
+|Delegated (personal Microsoft account) | Not supported.    |
+|Application | Group.Read.All, Group.ReadWrite.All  |
+
+
+## HTTP request
+
+<!-- { "blockType": "ignored" } -->
+
+Get a tenant-wide setting.
+
+```http
+GET /settings/{directorySettingId}
+```
+
+<!-- { "blockType": "ignored" } -->
+Get a group-specific setting.
+```http
+GET /groups/{groupId}/settings/{directorySettingId}
+```
+
+## Optional query parameters
+This method supports the `$select` [OData query parameters](/graph/query-parameters) to help customize the response.
+
+## Request headers
+| Name      |Description|
+|:----------|:----------|
+| Authorization  | Bearer {token}. Required.|
+
+## Request body
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and [directorySetting](../resources/directorysetting.md) object in the response body.
+
+## Example
+### Request
+Here is an example of the request.
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "get_directorysetting"
+}-->
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/settings/f0b2d6f5-097d-4177-91af-a24e530b53cc
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var directorySetting = await graphClient.Settings["{directorySetting-id}"]
+	.Request()
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+### Response
+The following is an example of the response. 
+>**Note:** The response object shown here might be shortened for readability.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.directorySetting"
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#settings/$entity",
+  "id": "f0b2d6f5-097d-4177-91af-a24e530b53cc",
+  "displayName": "Group.Unified",
+  "templateId": "62375ab9-6b52-47ed-826b-58e47e0e304b",
+  "values": [
+    {
+      "name": "NewUnifiedGroupWritebackDefault",
+      "value": "false"
+    },
+    {
+      "name": "EnableMIPLabels",
+      "value": "true"
+    },
+    {
+      "name": "CustomBlockedWordsList",
+      "value": ""
+    },
+    {
+      "name": "EnableMSStandardBlockedWords",
+      "value": "true"
+    },
+    {
+      "name": "ClassificationDescriptions",
+      "value": ""
+    },
+    {
+      "name": "DefaultClassification",
+      "value": ""
+    },
+    {
+      "name": "PrefixSuffixNamingRequirement",
+      "value": "[Contoso-][GroupName]"
+    },
+    {
+      "name": "AllowGuestsToBeGroupOwner",
+      "value": "false"
+    },
+    {
+      "name": "AllowGuestsToAccessGroups",
+      "value": "true"
+    },
+    {
+      "name": "GuestUsageGuidelinesUrl",
+      "value": "https://privacy.contoso.com/privacystatement"
+    },
+    {
+      "name": "GroupCreationAllowedGroupId",
+      "value": ""
+    },
+    {
+      "name": "AllowToAddGuests",
+      "value": "true"
+    },
+    {
+      "name": "UsageGuidelinesUrl",
+      "value": ""
+    },
+    {
+      "name": "ClassificationList",
+      "value": ""
+    },
+    {
+      "name": "EnableGroupCreation",
+      "value": "true"
+    }
+  ]
+}
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!--
+{
+  "type": "#page.annotation",
+  "description": "Get directorySetting",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+  ]
+}
+-->

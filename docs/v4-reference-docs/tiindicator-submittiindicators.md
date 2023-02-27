@@ -1,0 +1,233 @@
+---
+title: "tiIndicator: submitTiIndicators"
+description: "Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests."
+ms.localizationpriority: medium
+author: "preetikr"
+ms.prod: "security"
+doc_type: apiPageType
+---
+
+# tiIndicator: submitTiIndicators
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+| Permission type | Permissions (from least to most privileged) |
+|:---------------------------------------|:--------------------------------------------|
+| Delegated (work or school account)     | ThreatIndicators.ReadWrite.OwnedBy |
+| Delegated (personal Microsoft account) | Not supported. |
+| Application                            | ThreatIndicators.ReadWrite.OwnedBy |
+
+## HTTP request
+
+<!-- { "blockType": "ignored" } -->
+
+```http
+POST /security/tiIndicators/submitTiIndicators
+```
+
+## Request headers
+
+| Name          | Description   |
+|:--------------|:--------------|
+| Authorization | Bearer {code} |
+
+## Request body
+
+In the request body, provide a JSON object with the following parameters.
+
+| Parameter    | Type        | Description |
+|:-------------|:------------|:------------|
+|value|tiIndicator collection| JSON collection of **tiIndicators** to be created. |
+
+For each tiIndicator, supply a JSON representation of a [tiIndicator](../resources/tiindicator.md) object containing at least one [email](../resources/tiindicator.md#indicator-observables---email), [file](../resources/tiindicator.md#indicator-observables---file), or [network](../resources/tiindicator.md#indicator-observables---network) observable, and the following required fields: `action`, `description`, `expirationDateTime`, `targetProduct`, `threatType`, `tlpLevel`.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a collection of [tiIndicator](../resources/tiindicator.md) objects in the response body.  If there is an error, this method returns a `206 Partial Content` response code.  See [Errors](../resources/security-error-codes.md#threat-indicator-bulk-action-errors) for more information.
+
+## Examples
+
+The following example shows how to call this API.
+
+### Request
+
+The following is an example of the request.
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "tiindicator_submittiindicators",
+  "isCollection":"true"
+}-->
+
+```http
+POST https://graph.microsoft.com/beta/security/tiIndicators/submitTiIndicators
+Content-Type: application/json
+
+{
+  "value": [
+    {
+      "activityGroupNames": [],
+      "confidence": 0,
+      "description": "This is a canary indicator for demo purpose. Take no action on any observables set in this indicator.",
+      "expirationDateTime": "2019-03-01T21:44:03.1668987+00:00",
+      "externalId": "Test--8586509942423126760MS164-0",
+      "fileHashType": "sha256",
+      "fileHashValue": "b555c45c5b1b01304217e72118d6ca1b14b7013644a078273cea27bbdc1cf9d6",
+      "killChain": [],
+      "malwareFamilyNames": [],
+      "severity": 0,
+      "tags": [],
+      "targetProduct": "Azure Sentinel",
+      "threatType": "WatchList",
+      "tlpLevel": "green",
+    },
+    {
+      "activityGroupNames": [],
+      "confidence": 0,
+      "description": "This is a canary indicator for demo purpose. Take no action on any observables set in this indicator.",
+      "expirationDateTime": "2019-03-01T21:44:03.1748779+00:00",
+      "externalId": "Test--8586509942423126760MS164-1",
+      "fileHashType": "sha256",
+      "fileHashValue": "1796b433950990b28d6a22456c9d2b58ced1bdfcdf5f16f7e39d6b9bdca4213b",
+      "killChain": [],
+      "malwareFamilyNames": [],
+      "severity": 0,
+      "tags": [],
+      "targetProduct": "Azure Sentinel",
+      "threatType": "WatchList",
+      "tlpLevel": "green",
+    }
+  ]
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var value = new List<TiIndicator>()
+{
+	new TiIndicator
+	{
+		ActivityGroupNames = new List<String>()
+		{
+		},
+		Confidence = 0,
+		Description = "This is a canary indicator for demo purpose. Take no action on any observables set in this indicator.",
+		ExpirationDateTime = DateTimeOffset.Parse("2019-03-01T21:44:03.1668987+00:00"),
+		ExternalId = "Test--8586509942423126760MS164-0",
+		FileHashType = FileHashType.Sha256,
+		FileHashValue = "b555c45c5b1b01304217e72118d6ca1b14b7013644a078273cea27bbdc1cf9d6",
+		KillChain = new List<String>()
+		{
+		},
+		MalwareFamilyNames = new List<String>()
+		{
+		},
+		Severity = 0,
+		Tags = new List<String>()
+		{
+		},
+		TargetProduct = "Azure Sentinel",
+		ThreatType = "WatchList",
+		TlpLevel = TlpLevel.Green
+	},
+	new TiIndicator
+	{
+		ActivityGroupNames = new List<String>()
+		{
+		},
+		Confidence = 0,
+		Description = "This is a canary indicator for demo purpose. Take no action on any observables set in this indicator.",
+		ExpirationDateTime = DateTimeOffset.Parse("2019-03-01T21:44:03.1748779+00:00"),
+		ExternalId = "Test--8586509942423126760MS164-1",
+		FileHashType = FileHashType.Sha256,
+		FileHashValue = "1796b433950990b28d6a22456c9d2b58ced1bdfcdf5f16f7e39d6b9bdca4213b",
+		KillChain = new List<String>()
+		{
+		},
+		MalwareFamilyNames = new List<String>()
+		{
+		},
+		Severity = 0,
+		Tags = new List<String>()
+		{
+		},
+		TargetProduct = "Azure Sentinel",
+		ThreatType = "WatchList",
+		TlpLevel = TlpLevel.Green
+	}
+};
+
+await graphClient.Security.TiIndicators
+	.SubmitTiIndicators(value)
+	.Request()
+	.PostAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+### Response
+
+The following is an example of the response.
+
+> [!NOTE]
+> The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.tiIndicator",
+  "isCollection": true
+} -->
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.tiIndicator",
+      "id": "c6fb948b-89c5-3bba-a2cd-a9d9a1e430e4",
+      "azureTenantId": "XXXXXXXXXXXXXXXXXXXXX",
+      "action": null,
+      "additionalInformation": null,
+      "activityGroupNames": [],
+      "confidence": 0,
+      "description": "This is a test indicator for demo purpose. Take no action on any observables set in this indicator.",
+    }
+  ]
+}
+```
+
+<!-- uuid: 16cd6b66-4b1a-43a1-adaf-3a886856ed98
+2019-02-04 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "tiIndicator: submitTiIndicators",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+  ]
+}-->
+
+
