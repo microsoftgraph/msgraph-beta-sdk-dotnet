@@ -2,21 +2,17 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
+using Microsoft.Graph.Beta;
+using Microsoft.Kiota.Abstractions;
 using Xunit;
+using Microsoft.Graph.DotnetCore.Test.Mocks;
+using Microsoft.Graph.Beta.Models.ODataErrors;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
-    public class FunctionRequestTests : RequestTestBase
+    public class FunctionRequestTests
     {
         /// <summary>
         /// Tests building a request for a function with no parameteres (delta).
@@ -24,167 +20,50 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void NoParameters()
         {
-            var expectedRequestUrl = string.Format("{0}/me/drive/root/microsoft.graph.delta()", graphBaseUrl);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUrl = string.Format("{0}/drives/id/items/id/delta()", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var deltaRequestBuilder = this.graphServiceClient.Me.Drive.Root.Delta() as DriveItemDeltaRequestBuilder;
-
-            Assert.NotNull(deltaRequestBuilder);
-            Assert.Equal(expectedRequestUrl, deltaRequestBuilder.RequestUrl);
-
-            var deltaRequest = deltaRequestBuilder.Request() as DriveItemDeltaRequest;
-            Assert.NotNull(deltaRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(deltaRequest.RequestUrl));
-            Assert.Equal("GET", deltaRequest.Method.ToString());
+            var requestInformation = graphServiceClient.Drives["id"].Items["id"].Delta.ToGetRequestInformation();
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
         }
-
-        /// <summary>
-        /// Tests building a request while passing a null value to a function's only parameter, which is nullable (search).
-        /// </summary>
-        [Fact]
-        public void OptionalParameter_ParameterNull()
-        {
-            var methodBaseUrl = string.Format("{0}/me/drive/root/microsoft.graph.search", this.graphBaseUrl);
-            var expectedRequestUrl = string.Format("{0}(q=null)", methodBaseUrl);
-
-            var searchRequestBuilder = this.graphServiceClient.Me.Drive.Root.Search() as DriveItemSearchRequestBuilder;
-
-            Assert.NotNull(searchRequestBuilder);
-            Assert.Equal(expectedRequestUrl, searchRequestBuilder.RequestUrl);
-
-            var searchRequest = searchRequestBuilder.Request() as DriveItemSearchRequest;
-            Assert.NotNull(searchRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(searchRequest.RequestUrl));
-            Assert.Equal("GET", searchRequest.Method.ToString());
-        }
-
+        
         /// <summary>
         /// Tests building a request while passing a value to a function's only parameter, which is nullable (search).
         /// </summary>
         [Fact]
         public void OptionalParameter_ParameterSet()
         {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var q = "value";
 
-            var methodBaseUrl = string.Format("{0}/me/drive/root/microsoft.graph.search", this.graphBaseUrl);
+            var methodBaseUrl = string.Format("{0}/drives/id/items/id/search", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             var expectedRequestUrl = string.Format("{0}(q='{1}')", methodBaseUrl, q);
 
-            var searchRequestBuilder = this.graphServiceClient.Me.Drive.Root.Search(q) as DriveItemSearchRequestBuilder;
-
-            Assert.NotNull(searchRequestBuilder);
-            Assert.Equal(expectedRequestUrl, searchRequestBuilder.RequestUrl);
-
-            var searchRequest = searchRequestBuilder.Request() as DriveItemSearchRequest;
-            Assert.NotNull(searchRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(searchRequest.RequestUrl));
-            Assert.Equal("GET", searchRequest.Method.ToString());
+            var requestInformation = graphServiceClient.Drives["id"].Items["id"].SearchWithQ(q).ToGetRequestInformation();
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
         }
-
-        /// <summary>
-        /// Tests building a request while passing a null value to a function's nullable parameter (reminderView).
-        /// </summary>
-        [Fact]
-        public void RequiredAndOptionalParameters_OptionalParameterNull()
-        {
-            var startDateTime = "now";
-
-            var methodBaseUrl = string.Format("{0}/me/microsoft.graph.reminderView", this.graphBaseUrl);
-            var expectedRequestUrl = string.Format("{0}(startDateTime='{1}',endDateTime=null)", methodBaseUrl, startDateTime);
-
-            var reminderViewRequestBuilder = this.graphServiceClient.Me.ReminderView(startDateTime) as UserReminderViewRequestBuilder;
-
-            Assert.NotNull(reminderViewRequestBuilder);
-            Assert.Equal(expectedRequestUrl, reminderViewRequestBuilder.RequestUrl);
-
-            var reminderViewRequest = reminderViewRequestBuilder.Request() as UserReminderViewRequest;
-            Assert.NotNull(reminderViewRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal("GET", reminderViewRequest.Method.ToString());
-        }
-
+        
         /// <summary>
         /// Tests building a request while passing a value to a function's nullable parameter (reminderView).
         /// </summary>
         [Fact]
         public void RequiredAndOptionalParameters_AllParametersSet()
         {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var startDateTime = "now";
             var endDateTime = "later";
 
-            var methodBaseUrl = string.Format("{0}/me/microsoft.graph.reminderView", this.graphBaseUrl);
-            var expectedRequestUrl = string.Format("{0}(startDateTime='{1}',endDateTime='{2}')", methodBaseUrl, startDateTime, endDateTime);
+            var methodBaseUrl = string.Format("{0}/me/reminderView", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            var expectedRequestUrl = string.Format("{0}(StartDateTime='{2}',EndDateTime='{1}')", methodBaseUrl, startDateTime, endDateTime);
 
-            var reminderViewRequestBuilder = this.graphServiceClient.Me.ReminderView(startDateTime, endDateTime) as UserReminderViewRequestBuilder;
-
-            Assert.NotNull(reminderViewRequestBuilder);
-            Assert.Equal(expectedRequestUrl, reminderViewRequestBuilder.RequestUrl);
-
-            var reminderViewRequest = reminderViewRequestBuilder.Request() as UserReminderViewRequest;
-            Assert.NotNull(reminderViewRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal("GET", reminderViewRequest.Method.ToString());
-        }
-
-        /// <summary>
-        /// Tests the GetAsync() method for a function that returns a collection (reminderView).
-        /// </summary>
-        [Fact]
-        public async System.Threading.Tasks.Task CollectionReturnType_GetAsync()
-        {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
-            {
-                httpResponseMessage.Content = streamContent;
-
-                var nextQueryKey = "key";
-                var nextQueryValue = "value";
-
-                var methodBaseUrl = string.Format("{0}/me/microsoft.graph.reminderView", this.graphBaseUrl);
-                var requestUrl = string.Format("{0}(startDateTime='now',endDateTime='later')", methodBaseUrl);
-                var nextPageRequestUrl = string.Format("{0}?{1}={2}", requestUrl, nextQueryKey, nextQueryValue);
-                var nextPageRequestUrlElement = JsonDocument.Parse(string.Format("\"{0}\"", nextPageRequestUrl)).RootElement;
-
-                this.httpProvider.Setup(
-                    provider => provider.SendAsync(
-                        It.Is<HttpRequestMessage>(
-                            request => request.RequestUri.ToString().StartsWith(requestUrl)
-                                && request.Method == HttpMethod.Get),
-                        HttpCompletionOption.ResponseContentRead,
-                        CancellationToken.None))
-                    .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
-
-                var userReminderViewCollectionPage = new UserReminderViewCollectionPage
-                {
-                    new Reminder { EventId = "id 1" },
-                    new Reminder { EventId = "id 2" },
-                };
-
-                var userReminderViewCollectionResponse = new UserReminderViewCollectionResponse
-                {
-                    Value = userReminderViewCollectionPage,
-                    NextLink = nextPageRequestUrl
-                };
-
-                this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<UserReminderViewCollectionResponse>(It.IsAny<Stream>()))
-                    .Returns(userReminderViewCollectionResponse);
-
-                var returnedCollectionPage = await this.graphServiceClient.Me.ReminderView("now", "later").Request().GetAsync() as UserReminderViewCollectionPage;
-
-                Assert.NotNull(returnedCollectionPage);
-                Assert.Equal(userReminderViewCollectionPage, returnedCollectionPage);
-                Assert.Equal(
-                    userReminderViewCollectionResponse.AdditionalData,
-                    returnedCollectionPage.AdditionalData);
-
-                var nextPageRequest = returnedCollectionPage.NextPageRequest as UserReminderViewRequest;
-
-                Assert.NotNull(nextPageRequest);
-                Assert.Equal(new Uri(requestUrl), new Uri(nextPageRequest.RequestUrl));
-                Assert.Equal(1, nextPageRequest.QueryOptions.Count);
-                Assert.Equal(nextQueryKey, nextPageRequest.QueryOptions[0].Name);
-                Assert.Equal(nextQueryValue, nextPageRequest.QueryOptions[0].Value);
-            }
+            var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime(startDateTime, endDateTime).ToGetRequestInformation();
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
         }
 
         /// <summary>
@@ -193,13 +72,14 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void RequiredAndOptionalParameters_RequiredParameterNull()
         {
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             try
             {
-                Assert.Throws<ServiceException>(() => this.graphServiceClient.Me.ReminderView(null).Request());
+                Assert.Throws<ArgumentNullException>(() => graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime("",""));
             }
-            catch (ServiceException serviceException)
+            catch (ODataError serviceException)
             {
-                Assert.True(serviceException.IsMatch(GraphErrorCode.InvalidRequest.ToString()));
                 Assert.Equal(
                     "startDateTime is a required parameter for this method request.",
                     serviceException.Error.Message);
@@ -209,71 +89,18 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         }
 
         /// <summary>
-        /// Tests the Expand() method on a function request (reminderView).
-        /// </summary>
-        [Fact]
-        public void Expand()
-        {
-            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.reminderView(startDateTime='now',endDateTime=null)", this.graphBaseUrl);
-
-            var reminderViewRequest = this.graphServiceClient.Me.ReminderView("now").Request().Expand("value") as UserReminderViewRequest;
-
-            Assert.NotNull(reminderViewRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal(1, reminderViewRequest.QueryOptions.Count);
-            Assert.Equal("$expand", reminderViewRequest.QueryOptions[0].Name);
-            Assert.Equal("value", reminderViewRequest.QueryOptions[0].Value);
-        }
-
-        /// <summary>
-        /// Tests the Select() method on a function request (reminderView).
-        /// </summary>
-        [Fact]
-        public void Select()
-        {
-            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.reminderView(startDateTime='now',endDateTime=null)", this.graphBaseUrl);
-
-            var reminderViewRequest = this.graphServiceClient.Me.ReminderView("now").Request().Select("value") as UserReminderViewRequest;
-
-            Assert.NotNull(reminderViewRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal(1, reminderViewRequest.QueryOptions.Count);
-            Assert.Equal("$select", reminderViewRequest.QueryOptions[0].Name);
-            Assert.Equal("value", reminderViewRequest.QueryOptions[0].Value);
-        }
-
-        /// <summary>
         /// Tests the Top() method on a function request that returns a collection (reminderView).
         /// </summary>
         [Fact]
         public void Top()
         {
-            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.reminderView(startDateTime='now',endDateTime=null)", this.graphBaseUrl);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUrl = string.Format("{0}/me/reminderView(StartDateTime='now',EndDateTime='then')?%24top=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var reminderViewRequest = this.graphServiceClient.Me.ReminderView("now").Request().Top(1) as UserReminderViewRequest;
-
-            Assert.NotNull(reminderViewRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal(1, reminderViewRequest.QueryOptions.Count);
-            Assert.Equal("$top", reminderViewRequest.QueryOptions[0].Name);
-            Assert.Equal("1", reminderViewRequest.QueryOptions[0].Value);
-        }
-
-        /// <summary>
-        /// Tests the Filter() method on a function request that returns a collection (reminderView).
-        /// </summary>
-        [Fact]
-        public void Filter()
-        {
-            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.reminderView(startDateTime='now',endDateTime=null)", this.graphBaseUrl);
-
-            var reminderViewRequest = this.graphServiceClient.Me.ReminderView("now").Request().Filter("value") as UserReminderViewRequest;
-
-            Assert.NotNull(reminderViewRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal(1, reminderViewRequest.QueryOptions.Count);
-            Assert.Equal("$filter", reminderViewRequest.QueryOptions[0].Name);
-            Assert.Equal("value", reminderViewRequest.QueryOptions[0].Value);
+            var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime("then","now").ToGetRequestInformation( requestConfiguration =>requestConfiguration.QueryParameters.Top =1 );
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
         }
 
         /// <summary>
@@ -282,98 +109,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void Skip()
         {
-            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.reminderView(startDateTime='now',endDateTime=null)", this.graphBaseUrl);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUrl = string.Format("{0}/me/reminderView(StartDateTime='now',EndDateTime='then')?%24skip=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var reminderViewRequest = this.graphServiceClient.Me.ReminderView("now").Request().Skip(1) as UserReminderViewRequest;
-
-            Assert.NotNull(reminderViewRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal(1, reminderViewRequest.QueryOptions.Count);
-            Assert.Equal("$skip", reminderViewRequest.QueryOptions[0].Name);
-            Assert.Equal("1", reminderViewRequest.QueryOptions[0].Value);
+            var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime("then","now").ToGetRequestInformation( requestConfiguration =>requestConfiguration.QueryParameters.Skip =1 );
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
         }
-
-        /// <summary>
-        /// Tests the OrderBy() method on a function request that returns a collection (reminderView).
-        /// </summary>
-        [Fact]
-        public void OrderBy()
-        {
-            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.reminderView(startDateTime='now',endDateTime=null)", this.graphBaseUrl);
-
-            var reminderViewRequest = this.graphServiceClient.Me.ReminderView("now").Request().OrderBy("value") as UserReminderViewRequest;
-
-            Assert.NotNull(reminderViewRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(reminderViewRequest.RequestUrl));
-            Assert.Equal(1, reminderViewRequest.QueryOptions.Count);
-            Assert.Equal("$orderby", reminderViewRequest.QueryOptions[0].Name);
-            Assert.Equal("value", reminderViewRequest.QueryOptions[0].Value);
-        }
-
-
-        #region Composable functions with Excel
-
-        const string driveId = "driveId";
-        const string fieldId = "fileId";
-        const string sheetId = "sheetId";
-        const string rangeAddress = "A1:B2";
-
-        /// <summary>
-        /// Tests that we can stack two composed functions with the only the last function having an argument.
-        /// Ad hoc tested this in GE.
-        /// </summary>
-        [Fact]
-        public void ComposableFunctionWithComposedFunction()
-        {
-            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range()/microsoft.graph.boundingRect(anotherRange='A1:B2')", this.graphBaseUrl);
-            var boundRectRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Range().BoundingRect(rangeAddress).Request() as WorkbookRangeBoundingRectRequest;
-
-            Assert.NotNull(boundRectRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(boundRectRequest.RequestUrl));
-        }
-
-        /// <summary>
-        /// Tests that we can stack two composed functions with the only the last function having an argument with a composed navigation property.
-        /// </summary>
-        [Fact]
-        public void ComposableFunctionWithComposedNavigation()
-        {
-            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range()/microsoft.graph.boundingRect(anotherRange='A1:B2')/format", this.graphBaseUrl);
-            var formatRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Range().BoundingRect(rangeAddress).Format.Request() as WorkbookRangeFormatRequest;
-
-            Assert.NotNull(formatRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(formatRequest.RequestUrl));
-        }
-
-        /// <summary>
-        /// Tests that we can stack two composed functions with the only the last function having an argument with a composed action.
-        /// </summary>
-        [Fact]
-        public void ComposableFunctionWithComposedAction()
-        {
-            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range()/microsoft.graph.boundingRect(anotherRange='A1:B2')/microsoft.graph.delete", this.graphBaseUrl);
-            var deleteRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Range().BoundingRect(rangeAddress).Delete("Up").Request() as WorkbookRangeDeleteRequest;
-
-            Assert.NotNull(deleteRequest);
-            Assert.NotNull(deleteRequest.RequestBody);
-            Assert.Equal("Up", deleteRequest.RequestBody.Shift);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(deleteRequest.RequestUrl));
-        }
-
-        /// <summary>
-        /// Test that a function can be bound to collection. This is not testing composability.
-        /// Ad hoc tested this in GE.
-        /// </summary>
-        [Fact]
-        public void FunctionBoundToCollection()
-        {
-            var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/charts/microsoft.graph.count()", this.graphBaseUrl);
-            var chartCountRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Charts.Count().Request() as WorkbookChartCountRequest;
-
-            Assert.NotNull(chartCountRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(chartCountRequest.RequestUrl));
-        }
-
-        #endregion
     }
 }

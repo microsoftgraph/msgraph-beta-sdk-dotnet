@@ -1,0 +1,101 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class PrintDocument : Entity, IParsable {
+        /// <summary>The configuration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PrinterDocumentConfiguration? Configuration {
+            get { return BackingStore?.Get<PrinterDocumentConfiguration?>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
+        }
+#nullable restore
+#else
+        public PrinterDocumentConfiguration Configuration {
+            get { return BackingStore?.Get<PrinterDocumentConfiguration>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
+        }
+#endif
+        /// <summary>The document&apos;s content (MIME) type. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContentType {
+            get { return BackingStore?.Get<string?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#nullable restore
+#else
+        public string ContentType {
+            get { return BackingStore?.Get<string>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#endif
+        /// <summary>The document&apos;s name. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The downloadedDateTime property</summary>
+        public DateTimeOffset? DownloadedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("downloadedDateTime"); }
+            set { BackingStore?.Set("downloadedDateTime", value); }
+        }
+        /// <summary>The document&apos;s size in bytes. Read-only.</summary>
+        public long? Size {
+            get { return BackingStore?.Get<long?>("size"); }
+            set { BackingStore?.Set("size", value); }
+        }
+        /// <summary>The uploadedDateTime property</summary>
+        public DateTimeOffset? UploadedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("uploadedDateTime"); }
+            set { BackingStore?.Set("uploadedDateTime", value); }
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        public static new PrintDocument CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrintDocument();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"configuration", n => { Configuration = n.GetObjectValue<PrinterDocumentConfiguration>(PrinterDocumentConfiguration.CreateFromDiscriminatorValue); } },
+                {"contentType", n => { ContentType = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"downloadedDateTime", n => { DownloadedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"size", n => { Size = n.GetLongValue(); } },
+                {"uploadedDateTime", n => { UploadedDateTime = n.GetDateTimeOffsetValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteObjectValue<PrinterDocumentConfiguration>("configuration", Configuration);
+            writer.WriteStringValue("contentType", ContentType);
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("downloadedDateTime", DownloadedDateTime);
+            writer.WriteLongValue("size", Size);
+            writer.WriteDateTimeOffsetValue("uploadedDateTime", UploadedDateTime);
+        }
+    }
+}

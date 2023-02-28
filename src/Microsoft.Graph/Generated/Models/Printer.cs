@@ -1,0 +1,137 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class Printer : PrinterBase, IParsable {
+        /// <summary>The acceptingJobs property</summary>
+        public bool? AcceptingJobs {
+            get { return BackingStore?.Get<bool?>("acceptingJobs"); }
+            set { BackingStore?.Set("acceptingJobs", value); }
+        }
+        /// <summary>The connectors that are associated with the printer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<PrintConnector>? Connectors {
+            get { return BackingStore?.Get<List<PrintConnector>?>("connectors"); }
+            set { BackingStore?.Set("connectors", value); }
+        }
+#nullable restore
+#else
+        public List<PrintConnector> Connectors {
+            get { return BackingStore?.Get<List<PrintConnector>>("connectors"); }
+            set { BackingStore?.Set("connectors", value); }
+        }
+#endif
+        /// <summary>True if the printer has a physical device for printing. Read-only.</summary>
+        public bool? HasPhysicalDevice {
+            get { return BackingStore?.Get<bool?>("hasPhysicalDevice"); }
+            set { BackingStore?.Set("hasPhysicalDevice", value); }
+        }
+        /// <summary>True if the printer is shared; false otherwise. Read-only.</summary>
+        public bool? IsShared {
+            get { return BackingStore?.Get<bool?>("isShared"); }
+            set { BackingStore?.Set("isShared", value); }
+        }
+        /// <summary>The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.</summary>
+        public DateTimeOffset? LastSeenDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
+            set { BackingStore?.Set("lastSeenDateTime", value); }
+        }
+        /// <summary>The DateTimeOffset when the printer was registered. Read-only.</summary>
+        public DateTimeOffset? RegisteredDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("registeredDateTime"); }
+            set { BackingStore?.Set("registeredDateTime", value); }
+        }
+        /// <summary>The share property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PrinterShare? Share {
+            get { return BackingStore?.Get<PrinterShare?>("share"); }
+            set { BackingStore?.Set("share", value); }
+        }
+#nullable restore
+#else
+        public PrinterShare Share {
+            get { return BackingStore?.Get<PrinterShare>("share"); }
+            set { BackingStore?.Set("share", value); }
+        }
+#endif
+        /// <summary>The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<PrinterShare>? Shares {
+            get { return BackingStore?.Get<List<PrinterShare>?>("shares"); }
+            set { BackingStore?.Set("shares", value); }
+        }
+#nullable restore
+#else
+        public List<PrinterShare> Shares {
+            get { return BackingStore?.Get<List<PrinterShare>>("shares"); }
+            set { BackingStore?.Set("shares", value); }
+        }
+#endif
+        /// <summary>A list of task triggers that are associated with the printer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<PrintTaskTrigger>? TaskTriggers {
+            get { return BackingStore?.Get<List<PrintTaskTrigger>?>("taskTriggers"); }
+            set { BackingStore?.Set("taskTriggers", value); }
+        }
+#nullable restore
+#else
+        public List<PrintTaskTrigger> TaskTriggers {
+            get { return BackingStore?.Get<List<PrintTaskTrigger>>("taskTriggers"); }
+            set { BackingStore?.Set("taskTriggers", value); }
+        }
+#endif
+        /// <summary>
+        /// Instantiates a new printer and sets the default values.
+        /// </summary>
+        public Printer() : base() {
+            OdataType = "#microsoft.graph.printer";
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        public static new Printer CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Printer();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acceptingJobs", n => { AcceptingJobs = n.GetBoolValue(); } },
+                {"connectors", n => { Connectors = n.GetCollectionOfObjectValues<PrintConnector>(PrintConnector.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"hasPhysicalDevice", n => { HasPhysicalDevice = n.GetBoolValue(); } },
+                {"isShared", n => { IsShared = n.GetBoolValue(); } },
+                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"registeredDateTime", n => { RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"share", n => { Share = n.GetObjectValue<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue); } },
+                {"shares", n => { Shares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"taskTriggers", n => { TaskTriggers = n.GetCollectionOfObjectValues<PrintTaskTrigger>(PrintTaskTrigger.CreateFromDiscriminatorValue)?.ToList(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteBoolValue("acceptingJobs", AcceptingJobs);
+            writer.WriteCollectionOfObjectValues<PrintConnector>("connectors", Connectors);
+            writer.WriteBoolValue("hasPhysicalDevice", HasPhysicalDevice);
+            writer.WriteBoolValue("isShared", IsShared);
+            writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
+            writer.WriteDateTimeOffsetValue("registeredDateTime", RegisteredDateTime);
+            writer.WriteObjectValue<PrinterShare>("share", Share);
+            writer.WriteCollectionOfObjectValues<PrinterShare>("shares", Shares);
+            writer.WriteCollectionOfObjectValues<PrintTaskTrigger>("taskTriggers", TaskTriggers);
+        }
+    }
+}

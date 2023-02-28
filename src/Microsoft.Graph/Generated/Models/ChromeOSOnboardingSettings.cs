@@ -1,0 +1,72 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity that represents a Chromebook tenant settings
+    /// </summary>
+    public class ChromeOSOnboardingSettings : Entity, IParsable {
+        /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>
+        public DateTimeOffset? LastDirectorySyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastDirectorySyncDateTime"); }
+            set { BackingStore?.Set("lastDirectorySyncDateTime", value); }
+        }
+        /// <summary>The ChromebookTenant&apos;s LastModifiedDateTime</summary>
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>The onboarding status of the tenant.</summary>
+        public Microsoft.Graph.Beta.Models.OnboardingStatus? OnboardingStatus {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnboardingStatus?>("onboardingStatus"); }
+            set { BackingStore?.Set("onboardingStatus", value); }
+        }
+        /// <summary>The ChromebookTenant&apos;s OwnerUserPrincipalName</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerUserPrincipalName {
+            get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
+            set { BackingStore?.Set("ownerUserPrincipalName", value); }
+        }
+#nullable restore
+#else
+        public string OwnerUserPrincipalName {
+            get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
+            set { BackingStore?.Set("ownerUserPrincipalName", value); }
+        }
+#endif
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        public static new ChromeOSOnboardingSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ChromeOSOnboardingSettings();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"lastDirectorySyncDateTime", n => { LastDirectorySyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
+                {"ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteDateTimeOffsetValue("lastDirectorySyncDateTime", LastDirectorySyncDateTime);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<OnboardingStatus>("onboardingStatus", OnboardingStatus);
+            writer.WriteStringValue("ownerUserPrincipalName", OwnerUserPrincipalName);
+        }
+    }
+}

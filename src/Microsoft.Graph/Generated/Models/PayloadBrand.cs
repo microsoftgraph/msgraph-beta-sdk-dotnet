@@ -1,0 +1,25 @@
+namespace Microsoft.Graph.Beta.Models {
+    public enum PayloadBrand {
+        Unknown,
+        Other,
+        AmericanExpress,
+        CapitalOne,
+        Dhl,
+        DocuSign,
+        Dropbox,
+        Facebook,
+        FirstAmerican,
+        Microsoft,
+        Netflix,
+        Scotiabank,
+        SendGrid,
+        StewartTitle,
+        Tesco,
+        WellsFargo,
+        SyrinxCloud,
+        Adobe,
+        Teams,
+        Zoom,
+        UnknownFutureValue,
+    }
+}

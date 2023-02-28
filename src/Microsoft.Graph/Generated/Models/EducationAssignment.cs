@@ -1,0 +1,339 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class EducationAssignment : Entity, IParsable {
+        /// <summary>Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.</summary>
+        public EducationAddedStudentAction? AddedStudentAction {
+            get { return BackingStore?.Get<EducationAddedStudentAction?>("addedStudentAction"); }
+            set { BackingStore?.Set("addedStudentAction", value); }
+        }
+        /// <summary>Optional field to control the assignment behavior  for adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.</summary>
+        public EducationAddToCalendarOptions? AddToCalendarAction {
+            get { return BackingStore?.Get<EducationAddToCalendarOptions?>("addToCalendarAction"); }
+            set { BackingStore?.Set("addToCalendarAction", value); }
+        }
+        /// <summary>Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.</summary>
+        public bool? AllowLateSubmissions {
+            get { return BackingStore?.Get<bool?>("allowLateSubmissions"); }
+            set { BackingStore?.Set("allowLateSubmissions", value); }
+        }
+        /// <summary>Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.</summary>
+        public bool? AllowStudentsToAddResourcesToSubmission {
+            get { return BackingStore?.Get<bool?>("allowStudentsToAddResourcesToSubmission"); }
+            set { BackingStore?.Set("allowStudentsToAddResourcesToSubmission", value); }
+        }
+        /// <summary>The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        public DateTimeOffset? AssignDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("assignDateTime"); }
+            set { BackingStore?.Set("assignDateTime", value); }
+        }
+        /// <summary>The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        public DateTimeOffset? AssignedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("assignedDateTime"); }
+            set { BackingStore?.Set("assignedDateTime", value); }
+        }
+        /// <summary>Which users, or whole class should receive a submission object once the assignment is published.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public EducationAssignmentRecipient? AssignTo {
+            get { return BackingStore?.Get<EducationAssignmentRecipient?>("assignTo"); }
+            set { BackingStore?.Set("assignTo", value); }
+        }
+#nullable restore
+#else
+        public EducationAssignmentRecipient AssignTo {
+            get { return BackingStore?.Get<EducationAssignmentRecipient>("assignTo"); }
+            set { BackingStore?.Set("assignTo", value); }
+        }
+#endif
+        /// <summary>When set, enables users to easily find assignments of a given type.  Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<EducationCategory>? Categories {
+            get { return BackingStore?.Get<List<EducationCategory>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#nullable restore
+#else
+        public List<EducationCategory> Categories {
+            get { return BackingStore?.Get<List<EducationCategory>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#endif
+        /// <summary>Class which this assignment belongs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClassId {
+            get { return BackingStore?.Get<string?>("classId"); }
+            set { BackingStore?.Set("classId", value); }
+        }
+#nullable restore
+#else
+        public string ClassId {
+            get { return BackingStore?.Get<string>("classId"); }
+            set { BackingStore?.Set("classId", value); }
+        }
+#endif
+        /// <summary>Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        public DateTimeOffset? CloseDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("closeDateTime"); }
+            set { BackingStore?.Set("closeDateTime", value); }
+        }
+        /// <summary>Who created the assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#nullable restore
+#else
+        public IdentitySet CreatedBy {
+            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#endif
+        /// <summary>Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
+        /// <summary>Name of the assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        public DateTimeOffset? DueDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
+            set { BackingStore?.Set("dueDateTime", value); }
+        }
+        /// <summary>Folder URL where all the feedback file resources for this assignment are stored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FeedbackResourcesFolderUrl {
+            get { return BackingStore?.Get<string?>("feedbackResourcesFolderUrl"); }
+            set { BackingStore?.Set("feedbackResourcesFolderUrl", value); }
+        }
+#nullable restore
+#else
+        public string FeedbackResourcesFolderUrl {
+            get { return BackingStore?.Get<string>("feedbackResourcesFolderUrl"); }
+            set { BackingStore?.Set("feedbackResourcesFolderUrl", value); }
+        }
+#endif
+        /// <summary>How the assignment will be graded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public EducationAssignmentGradeType? Grading {
+            get { return BackingStore?.Get<EducationAssignmentGradeType?>("grading"); }
+            set { BackingStore?.Set("grading", value); }
+        }
+#nullable restore
+#else
+        public EducationAssignmentGradeType Grading {
+            get { return BackingStore?.Get<EducationAssignmentGradeType>("grading"); }
+            set { BackingStore?.Set("grading", value); }
+        }
+#endif
+        /// <summary>Instructions for the assignment.  This along with the display name tell the student what to do.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public EducationItemBody? Instructions {
+            get { return BackingStore?.Get<EducationItemBody?>("instructions"); }
+            set { BackingStore?.Set("instructions", value); }
+        }
+#nullable restore
+#else
+        public EducationItemBody Instructions {
+            get { return BackingStore?.Get<EducationItemBody>("instructions"); }
+            set { BackingStore?.Set("instructions", value); }
+        }
+#endif
+        /// <summary>Who last modified the assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public IdentitySet LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
+        /// <summary>Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        public DateTimeOffset? LastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NotificationChannelUrl {
+            get { return BackingStore?.Get<string?>("notificationChannelUrl"); }
+            set { BackingStore?.Set("notificationChannelUrl", value); }
+        }
+#nullable restore
+#else
+        public string NotificationChannelUrl {
+            get { return BackingStore?.Get<string>("notificationChannelUrl"); }
+            set { BackingStore?.Set("notificationChannelUrl", value); }
+        }
+#endif
+        /// <summary>Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<EducationAssignmentResource>? Resources {
+            get { return BackingStore?.Get<List<EducationAssignmentResource>?>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#nullable restore
+#else
+        public List<EducationAssignmentResource> Resources {
+            get { return BackingStore?.Get<List<EducationAssignmentResource>>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#endif
+        /// <summary>Folder URL where all the file resources for this assignment are stored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourcesFolderUrl {
+            get { return BackingStore?.Get<string?>("resourcesFolderUrl"); }
+            set { BackingStore?.Set("resourcesFolderUrl", value); }
+        }
+#nullable restore
+#else
+        public string ResourcesFolderUrl {
+            get { return BackingStore?.Get<string>("resourcesFolderUrl"); }
+            set { BackingStore?.Set("resourcesFolderUrl", value); }
+        }
+#endif
+        /// <summary>When set, the grading rubric attached to this assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public EducationRubric? Rubric {
+            get { return BackingStore?.Get<EducationRubric?>("rubric"); }
+            set { BackingStore?.Set("rubric", value); }
+        }
+#nullable restore
+#else
+        public EducationRubric Rubric {
+            get { return BackingStore?.Get<EducationRubric>("rubric"); }
+            set { BackingStore?.Set("rubric", value); }
+        }
+#endif
+        /// <summary>Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.</summary>
+        public EducationAssignmentStatus? Status {
+            get { return BackingStore?.Get<EducationAssignmentStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<EducationSubmission>? Submissions {
+            get { return BackingStore?.Get<List<EducationSubmission>?>("submissions"); }
+            set { BackingStore?.Set("submissions", value); }
+        }
+#nullable restore
+#else
+        public List<EducationSubmission> Submissions {
+            get { return BackingStore?.Get<List<EducationSubmission>>("submissions"); }
+            set { BackingStore?.Set("submissions", value); }
+        }
+#endif
+        /// <summary>The deep link URL for the given assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#nullable restore
+#else
+        public string WebUrl {
+            get { return BackingStore?.Get<string>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#endif
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        public static new EducationAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new EducationAssignment();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"addedStudentAction", n => { AddedStudentAction = n.GetEnumValue<EducationAddedStudentAction>(); } },
+                {"addToCalendarAction", n => { AddToCalendarAction = n.GetEnumValue<EducationAddToCalendarOptions>(); } },
+                {"allowLateSubmissions", n => { AllowLateSubmissions = n.GetBoolValue(); } },
+                {"allowStudentsToAddResourcesToSubmission", n => { AllowStudentsToAddResourcesToSubmission = n.GetBoolValue(); } },
+                {"assignDateTime", n => { AssignDateTime = n.GetDateTimeOffsetValue(); } },
+                {"assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"assignTo", n => { AssignTo = n.GetObjectValue<EducationAssignmentRecipient>(EducationAssignmentRecipient.CreateFromDiscriminatorValue); } },
+                {"categories", n => { Categories = n.GetCollectionOfObjectValues<EducationCategory>(EducationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"classId", n => { ClassId = n.GetStringValue(); } },
+                {"closeDateTime", n => { CloseDateTime = n.GetDateTimeOffsetValue(); } },
+                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
+                {"feedbackResourcesFolderUrl", n => { FeedbackResourcesFolderUrl = n.GetStringValue(); } },
+                {"grading", n => { Grading = n.GetObjectValue<EducationAssignmentGradeType>(EducationAssignmentGradeType.CreateFromDiscriminatorValue); } },
+                {"instructions", n => { Instructions = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"notificationChannelUrl", n => { NotificationChannelUrl = n.GetStringValue(); } },
+                {"resources", n => { Resources = n.GetCollectionOfObjectValues<EducationAssignmentResource>(EducationAssignmentResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"resourcesFolderUrl", n => { ResourcesFolderUrl = n.GetStringValue(); } },
+                {"rubric", n => { Rubric = n.GetObjectValue<EducationRubric>(EducationRubric.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<EducationAssignmentStatus>(); } },
+                {"submissions", n => { Submissions = n.GetCollectionOfObjectValues<EducationSubmission>(EducationSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteEnumValue<EducationAddedStudentAction>("addedStudentAction", AddedStudentAction);
+            writer.WriteEnumValue<EducationAddToCalendarOptions>("addToCalendarAction", AddToCalendarAction);
+            writer.WriteBoolValue("allowLateSubmissions", AllowLateSubmissions);
+            writer.WriteBoolValue("allowStudentsToAddResourcesToSubmission", AllowStudentsToAddResourcesToSubmission);
+            writer.WriteObjectValue<EducationAssignmentRecipient>("assignTo", AssignTo);
+            writer.WriteCollectionOfObjectValues<EducationCategory>("categories", Categories);
+            writer.WriteStringValue("classId", ClassId);
+            writer.WriteDateTimeOffsetValue("closeDateTime", CloseDateTime);
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
+            writer.WriteObjectValue<EducationAssignmentGradeType>("grading", Grading);
+            writer.WriteObjectValue<EducationItemBody>("instructions", Instructions);
+            writer.WriteStringValue("notificationChannelUrl", NotificationChannelUrl);
+            writer.WriteCollectionOfObjectValues<EducationAssignmentResource>("resources", Resources);
+            writer.WriteObjectValue<EducationRubric>("rubric", Rubric);
+            writer.WriteCollectionOfObjectValues<EducationSubmission>("submissions", Submissions);
+        }
+    }
+}

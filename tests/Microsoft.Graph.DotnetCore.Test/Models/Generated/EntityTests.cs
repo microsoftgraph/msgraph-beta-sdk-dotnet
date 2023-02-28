@@ -7,6 +7,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Models.Generated
     using System.Linq;
     using System.Reflection;
     using Xunit;
+    using Microsoft.Graph.Beta.Models;
+    
     public class EntityTests
     {
         [Fact]
@@ -20,7 +22,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models.Generated
 
             var defaultConstructor = constructors.First();
             Assert.False(defaultConstructor.IsPrivate);
-            Assert.False(defaultConstructor.IsPublic);
+            Assert.True(defaultConstructor.IsPublic);
             Assert.False(defaultConstructor.IsStatic);
             Assert.False(defaultConstructor.GetParameters().Any());
         }

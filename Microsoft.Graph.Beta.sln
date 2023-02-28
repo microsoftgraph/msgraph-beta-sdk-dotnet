@@ -1,10 +1,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.Beta", "src\Microsoft.Graph\Microsoft.Graph.Beta.csproj", "{660FA73B-987D-4085-A230-1B04F7EAEFBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.DotnetCore.Test", "tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj", "{A46FC884-EDDC-4617-9B52-37017A90241D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Graph.DotnetCore.Test", "tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj", "{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,22 +34,22 @@ Global
 		{660FA73B-987D-4085-A230-1B04F7EAEFBC}.Release|x64.Build.0 = Release|Any CPU
 		{660FA73B-987D-4085-A230-1B04F7EAEFBC}.Release|x86.ActiveCfg = Release|Any CPU
 		{660FA73B-987D-4085-A230-1B04F7EAEFBC}.Release|x86.Build.0 = Release|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|ARM.Build.0 = Debug|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|x64.Build.0 = Debug|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Debug|x86.Build.0 = Debug|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|ARM.ActiveCfg = Release|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|ARM.Build.0 = Release|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|x64.ActiveCfg = Release|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|x64.Build.0 = Release|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|x86.ActiveCfg = Release|Any CPU
-		{A46FC884-EDDC-4617-9B52-37017A90241D}.Release|x86.Build.0 = Release|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Debug|ARM.Build.0 = Debug|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Debug|x64.Build.0 = Debug|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Debug|x86.Build.0 = Debug|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Release|ARM.ActiveCfg = Release|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Release|ARM.Build.0 = Release|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Release|x64.ActiveCfg = Release|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Release|x64.Build.0 = Release|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Release|x86.ActiveCfg = Release|Any CPU
+		{15DE269F-3B76-461C-9954-EC2A8FF9B9E8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,20 +1,23 @@
-﻿using Xunit;
-using Async = System.Threading.Tasks;
-
+﻿
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
+    using Microsoft.Graph.Beta.Models;
+    using Microsoft.Graph.Beta.Models.ODataErrors;
+    using System.Threading.Tasks;
+    using Xunit;
+
     public class GroupTests : GraphTestBase
     {
         /// <summary>
         /// Create a team on a group.
         /// </summary>
         [Fact(Skip = "No CI set up for functional tests")]
-        public async Async.Task GroupCreateTeam()
+        public async Task GroupCreateTeam()
         {
             try
             {
                 // Get a groups collection. We'll use the first entry to add the team. Results in a call to the service.
-                IGraphServiceGroupsCollectionPage groupPage = await graphClient.Groups.Request().GetAsync();
+                var groupPage = await graphClient.Groups.GetAsync();
 
                 // Create a team with settings.
                 Team team = new Team()
@@ -26,9 +29,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 };
 
                 // Add a team to the group.  Results in a call to the service.
-                await graphClient.Groups[groupPage[8].Id].Team.Request().PutAsync(team);
+                //TODO should be PUT
+                await graphClient.Groups[groupPage.Value[8].Id].Team.PatchAsync(team);
             }
-            catch (ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, e.Error.ToString());
             }

@@ -1,0 +1,102 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class MobileAppInstallSummary : Entity, IParsable {
+        /// <summary>Number of Devices that have failed to install this app.</summary>
+        public int? FailedDeviceCount {
+            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
+            set { BackingStore?.Set("failedDeviceCount", value); }
+        }
+        /// <summary>Number of Users that have 1 or more device that failed to install this app.</summary>
+        public int? FailedUserCount {
+            get { return BackingStore?.Get<int?>("failedUserCount"); }
+            set { BackingStore?.Set("failedUserCount", value); }
+        }
+        /// <summary>Number of Devices that have successfully installed this app.</summary>
+        public int? InstalledDeviceCount {
+            get { return BackingStore?.Get<int?>("installedDeviceCount"); }
+            set { BackingStore?.Set("installedDeviceCount", value); }
+        }
+        /// <summary>Number of Users whose devices have all succeeded to install this app.</summary>
+        public int? InstalledUserCount {
+            get { return BackingStore?.Get<int?>("installedUserCount"); }
+            set { BackingStore?.Set("installedUserCount", value); }
+        }
+        /// <summary>Number of Devices that are not applicable for this app.</summary>
+        public int? NotApplicableDeviceCount {
+            get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
+            set { BackingStore?.Set("notApplicableDeviceCount", value); }
+        }
+        /// <summary>Number of Users whose devices were all not applicable for this app.</summary>
+        public int? NotApplicableUserCount {
+            get { return BackingStore?.Get<int?>("notApplicableUserCount"); }
+            set { BackingStore?.Set("notApplicableUserCount", value); }
+        }
+        /// <summary>Number of Devices that does not have this app installed.</summary>
+        public int? NotInstalledDeviceCount {
+            get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
+            set { BackingStore?.Set("notInstalledDeviceCount", value); }
+        }
+        /// <summary>Number of Users that have 1 or more devices that did not install this app.</summary>
+        public int? NotInstalledUserCount {
+            get { return BackingStore?.Get<int?>("notInstalledUserCount"); }
+            set { BackingStore?.Set("notInstalledUserCount", value); }
+        }
+        /// <summary>Number of Devices that have been notified to install this app.</summary>
+        public int? PendingInstallDeviceCount {
+            get { return BackingStore?.Get<int?>("pendingInstallDeviceCount"); }
+            set { BackingStore?.Set("pendingInstallDeviceCount", value); }
+        }
+        /// <summary>Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.</summary>
+        public int? PendingInstallUserCount {
+            get { return BackingStore?.Get<int?>("pendingInstallUserCount"); }
+            set { BackingStore?.Set("pendingInstallUserCount", value); }
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        public static new MobileAppInstallSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MobileAppInstallSummary();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                {"failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
+                {"installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
+                {"installedUserCount", n => { InstalledUserCount = n.GetIntValue(); } },
+                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                {"notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
+                {"notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
+                {"notInstalledUserCount", n => { NotInstalledUserCount = n.GetIntValue(); } },
+                {"pendingInstallDeviceCount", n => { PendingInstallDeviceCount = n.GetIntValue(); } },
+                {"pendingInstallUserCount", n => { PendingInstallUserCount = n.GetIntValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteIntValue("failedDeviceCount", FailedDeviceCount);
+            writer.WriteIntValue("failedUserCount", FailedUserCount);
+            writer.WriteIntValue("installedDeviceCount", InstalledDeviceCount);
+            writer.WriteIntValue("installedUserCount", InstalledUserCount);
+            writer.WriteIntValue("notApplicableDeviceCount", NotApplicableDeviceCount);
+            writer.WriteIntValue("notApplicableUserCount", NotApplicableUserCount);
+            writer.WriteIntValue("notInstalledDeviceCount", NotInstalledDeviceCount);
+            writer.WriteIntValue("notInstalledUserCount", NotInstalledUserCount);
+            writer.WriteIntValue("pendingInstallDeviceCount", PendingInstallDeviceCount);
+            writer.WriteIntValue("pendingInstallUserCount", PendingInstallUserCount);
+        }
+    }
+}

@@ -1,0 +1,70 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows update catalog item entity
+    /// </summary>
+    public class WindowsUpdateCatalogItem : Entity, IParsable {
+        /// <summary>The display name for the catalog item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The last supported date for a catalog item</summary>
+        public DateTimeOffset? EndOfSupportDate {
+            get { return BackingStore?.Get<DateTimeOffset?>("endOfSupportDate"); }
+            set { BackingStore?.Set("endOfSupportDate", value); }
+        }
+        /// <summary>The date the catalog item was released</summary>
+        public DateTimeOffset? ReleaseDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
+            set { BackingStore?.Set("releaseDateTime", value); }
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        public static new WindowsUpdateCatalogItem CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.windowsFeatureUpdateCatalogItem" => new WindowsFeatureUpdateCatalogItem(),
+                "#microsoft.graph.windowsQualityUpdateCatalogItem" => new WindowsQualityUpdateCatalogItem(),
+                _ => new WindowsUpdateCatalogItem(),
+            };
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endOfSupportDate", n => { EndOfSupportDate = n.GetDateTimeOffsetValue(); } },
+                {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("endOfSupportDate", EndOfSupportDate);
+            writer.WriteDateTimeOffsetValue("releaseDateTime", ReleaseDateTime);
+        }
+    }
+}

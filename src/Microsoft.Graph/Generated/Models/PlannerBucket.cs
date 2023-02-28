@@ -1,0 +1,112 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class PlannerBucket : PlannerDelta, IParsable {
+        /// <summary>Contains information about the origin of the bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerBucketCreation? CreationSource {
+            get { return BackingStore?.Get<PlannerBucketCreation?>("creationSource"); }
+            set { BackingStore?.Set("creationSource", value); }
+        }
+#nullable restore
+#else
+        public PlannerBucketCreation CreationSource {
+            get { return BackingStore?.Get<PlannerBucketCreation>("creationSource"); }
+            set { BackingStore?.Set("creationSource", value); }
+        }
+#endif
+        /// <summary>Name of the bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#nullable restore
+#else
+        public string Name {
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#endif
+        /// <summary>Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrderHint {
+            get { return BackingStore?.Get<string?>("orderHint"); }
+            set { BackingStore?.Set("orderHint", value); }
+        }
+#nullable restore
+#else
+        public string OrderHint {
+            get { return BackingStore?.Get<string>("orderHint"); }
+            set { BackingStore?.Set("orderHint", value); }
+        }
+#endif
+        /// <summary>Plan ID to which the bucket belongs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlanId {
+            get { return BackingStore?.Get<string?>("planId"); }
+            set { BackingStore?.Set("planId", value); }
+        }
+#nullable restore
+#else
+        public string PlanId {
+            get { return BackingStore?.Get<string>("planId"); }
+            set { BackingStore?.Set("planId", value); }
+        }
+#endif
+        /// <summary>Read-only. Nullable. The collection of tasks in the bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<PlannerTask>? Tasks {
+            get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#nullable restore
+#else
+        public List<PlannerTask> Tasks {
+            get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#endif
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        public static new PlannerBucket CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PlannerBucket();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"creationSource", n => { CreationSource = n.GetObjectValue<PlannerBucketCreation>(PlannerBucketCreation.CreateFromDiscriminatorValue); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"orderHint", n => { OrderHint = n.GetStringValue(); } },
+                {"planId", n => { PlanId = n.GetStringValue(); } },
+                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteObjectValue<PlannerBucketCreation>("creationSource", CreationSource);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("orderHint", OrderHint);
+            writer.WriteStringValue("planId", PlanId);
+            writer.WriteCollectionOfObjectValues<PlannerTask>("tasks", Tasks);
+        }
+    }
+}

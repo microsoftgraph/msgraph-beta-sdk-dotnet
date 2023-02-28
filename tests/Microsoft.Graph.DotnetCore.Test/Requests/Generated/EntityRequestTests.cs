@@ -1,150 +1,110 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading;
-using System.Threading.Tasks;
+using Microsoft.Graph.Beta;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Serialization.Json;
 using Xunit;
+using Microsoft.Graph.DotnetCore.Test.Mocks;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
-    public class EntityRequestTests : RequestTestBase
+    public class EntityRequestTests
     {
         [Fact]
         public async System.Threading.Tasks.Task GetAsync_InitializeCollectionProperties()
         {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var expectedChildrenPage = new List<DriveItem>()
             {
-                httpResponseMessage.Content = streamContent;
+                new DriveItem { Id = "id" }
+            };
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/drive/items/id";
-                this.httpProvider.Setup(
-                    provider => provider.SendAsync(
-                        It.Is<HttpRequestMessage>(
-                            request => request.RequestUri.ToString().Equals(requestUrl)),
-                        HttpCompletionOption.ResponseContentRead,
-                        CancellationToken.None))
-                    .Returns(System.Threading.Tasks.Task.FromResult<HttpResponseMessage>(httpResponseMessage));
+            var expectedItemResponse = new DriveItem
+            {
+                Children = expectedChildrenPage,
+            };
 
-                var expectedChildrenPage = new DriveItemChildrenCollectionPage
-                {
-                    new DriveItem { Id = "id" }
-                };
+            mockRequestAdapter.Setup(
+                adapter => adapter.SendAsync(It.IsAny<RequestInformation>(),DriveItem.CreateFromDiscriminatorValue, It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(),It.IsAny<CancellationToken>() )
+            ).ReturnsAsync(expectedItemResponse);
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
+            ).Returns(new JsonSerializationWriter()); 
+            
+            var item = await graphServiceClient.Drives["id"].Items["id"].GetAsync();
 
-                var expectedItemResponse = new DriveItem
-                {
-                    ChildrenNextLink =  requestUrl + "/next",
-                    Children = expectedChildrenPage,
-                };
-
-                this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<DriveItem>(It.IsAny<Stream>()))
-                    .Returns(expectedItemResponse);
-
-                var item = await this.graphServiceClient.Me.Drive.Items["id"].Request().GetAsync();
-
-                Assert.NotNull(item);
-                Assert.NotNull(item.Children);
-                Assert.Equal(1, item.Children.CurrentPage.Count);
-                Assert.Equal("id", item.Children.CurrentPage[0].Id);
-                Assert.Equal(expectedItemResponse.AdditionalData, item.Children.AdditionalData);
-                var nextPageRequest = item.Children.NextPageRequest as DriveItemChildrenCollectionRequest;
-                Assert.NotNull(nextPageRequest);
-                Assert.Equal(new Uri(requestUrl + "/next"), new Uri(nextPageRequest.RequestUrl));
-            }
+            Assert.NotNull(item);
+            Assert.NotNull(item.Children);
+            Assert.Single(item.Children);
+            Assert.Equal("id", item.Children[0].Id);
         }
 
         [Fact]
         public async System.Threading.Tasks.Task DeleteAsync()
         {
-            using (var httpResponseMessage = new HttpResponseMessage(HttpStatusCode.NoContent))
-            {
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/drive/items/id";
-                this.httpProvider.Setup(
-                    provider => provider.SendAsync(
-                        It.Is<HttpRequestMessage>(
-                            request =>
-                                request.Method == HttpMethod.Delete
-                                && request.RequestUri.ToString().Equals(requestUrl)),
-                        HttpCompletionOption.ResponseContentRead,
-                        CancellationToken.None))
-                    .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
-                this.serializer.Setup(serializer => 
-                            serializer.DeserializeObject<DriveItem>(It.IsAny<Stream>()))
-                                .Returns(default(DriveItem));
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            using var httpResponseMessage = new HttpResponseMessage(HttpStatusCode.NoContent);
+            var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/drive/items/id";
 
-                await this.graphServiceClient.Me.Drive.Items["id"].Request().DeleteAsync();
-            }
+            await graphServiceClient.Drives["id"].Items["id"].DeleteAsync();
         }
 
         [Fact]
         public void Expand()
         {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/drive/items/id");
-            var itemRequest = this.graphServiceClient.Me.Drive.Items["id"].Request().Expand("value") as DriveItemRequest;
-
-            Assert.NotNull(itemRequest);
-            Assert.Equal(expectedRequestUri, new Uri(itemRequest.RequestUrl));
-            Assert.Equal(1, itemRequest.QueryOptions.Count);
-            Assert.Equal("$expand", itemRequest.QueryOptions[0].Name);
-            Assert.Equal("value", itemRequest.QueryOptions[0].Value);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/drives/driveId/items/id?%24expand=value");
+            var requestInformation = graphServiceClient.Drives["driveId"].Items["id"].ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Expand = new []{"value"});
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(expectedRequestUri, requestInformation.URI);
         }
 
         [Fact]
         public void Select()
-        {
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/drive/items/id");
-            var itemRequest = this.graphServiceClient.Me.Drive.Items["id"].Request().Select("value") as DriveItemRequest;
-
-            Assert.NotNull(itemRequest);
-            Assert.Equal(expectedRequestUri, new Uri(itemRequest.RequestUrl));
-            Assert.Equal(1, itemRequest.QueryOptions.Count);
-            Assert.Equal("$select", itemRequest.QueryOptions[0].Name);
-            Assert.Equal("value", itemRequest.QueryOptions[0].Value);
+        {            
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/drives/driveId/items/id?%24select=value");
+            var requestInformation = graphServiceClient.Drives["driveId"].Items["id"].ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"value"});
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(expectedRequestUri, requestInformation.URI);
         }
 
         [Fact]
         public async System.Threading.Tasks.Task UpdateAsync_EntityWithNoCollecitonProperties()
         {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
-            {
-                httpResponseMessage.Content = streamContent;
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/contacts/id";
-                this.httpProvider.Setup(
-                        provider => provider.SendAsync(
-                            It.Is<HttpRequestMessage>(
-                                request =>
-                                    string.Equals(request.Method.ToString().ToUpperInvariant(), "PATCH")
-                                    && string.Equals(request.Content.Headers.ContentType.ToString(), "application/json")
-                                    && request.RequestUri.ToString().Equals(requestUrl)),
-                            HttpCompletionOption.ResponseContentRead,
-                            CancellationToken.None))
-                        .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
+            var contactToUpdate = new Contact { Id = "id" };
 
-                var contactToUpdate = new Contact { Id = "id" };
-                
-                this.serializer.Setup(serializer => serializer.DeserializeObject<Contact>(It.IsAny<Stream>())).Returns(contactToUpdate);
+            mockRequestAdapter.Setup(
+                adapter => adapter.SendAsync(It.IsAny<RequestInformation>(),Contact.CreateFromDiscriminatorValue, It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(),It.IsAny<CancellationToken>() )
+            ).ReturnsAsync(contactToUpdate);
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
+            ).Returns(new JsonSerializationWriter()); 
+            
+            var contactResponse = await graphServiceClient.Me.Contacts["id"].PatchAsync(contactToUpdate);
 
-                var contactResponse = await this.graphServiceClient.Me.Contacts["id"].Request().UpdateAsync(contactToUpdate);
-
-                Assert.Equal(contactToUpdate, contactResponse);
-            }
+            Assert.Equal(contactToUpdate, contactResponse);
         }
-
+                
         [Fact]
         public async System.Threading.Tasks.Task UpdateAsync()
         {
@@ -153,32 +113,22 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 
         private async System.Threading.Tasks.Task RequestWithItemInBody(bool isUpdate)
         {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
-            {
-                httpResponseMessage.Content = streamContent;
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/drive/items/id";
-                this.httpProvider.Setup(
-                        provider => provider.SendAsync(
-                            It.Is<HttpRequestMessage>(
-                                request =>
-                                    string.Equals(request.Method.ToString().ToUpperInvariant(), isUpdate ? "PATCH" : "PUT")
-                                    && string.Equals(request.Content.Headers.ContentType.ToString(), "application/json")
-                                    && request.RequestUri.ToString().Equals(requestUrl)),
-                            HttpCompletionOption.ResponseContentRead,
-                            CancellationToken.None))
-                        .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
-                
-                this.serializer.Setup(serializer => serializer.DeserializeObject<DriveItem>(It.IsAny<Stream>())).Returns(new DriveItem { Id = "id" });
+            var expectedITem = new DriveItem() { Id = "id" };
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SendAsync(It.IsAny<RequestInformation>(),DriveItem.CreateFromDiscriminatorValue, It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(),It.IsAny<CancellationToken>() )
+            ).ReturnsAsync(expectedITem);
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
+            ).Returns(new JsonSerializationWriter()); 
+            
+            var itemResponse = await graphServiceClient.Drives["id"].Items["id"].PatchAsync(new DriveItem());
 
-                var itemResponse = isUpdate
-                    ? await this.graphServiceClient.Me.Drive.Items["id"].Request().UpdateAsync(new DriveItem())
-                    : await this.graphServiceClient.Me.Drive.Items["id"].Request().CreateAsync(new DriveItem());
-
-                Assert.Equal("id", itemResponse.Id);
-            }
+            Assert.Equal("id", itemResponse.Id);
         }
     }
 }

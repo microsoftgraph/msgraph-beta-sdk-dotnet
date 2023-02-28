@@ -2,82 +2,74 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph;
+using Microsoft.Kiota.Abstractions;
 using Moq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
 using System.Threading;
-using System.Threading.Tasks;
+using Microsoft.Graph.Beta;
+using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Serialization.Json;
 using Xunit;
+using Microsoft.Graph.DotnetCore.Test.Mocks;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
-    public class MediaEntityStreamRequestTests : RequestTestBase
+    public class MediaEntityStreamRequestTests
     {
         [Fact]
         public void RequestBuilder()
         {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/photo/$value");
-            var profilePhotoContentRequestBuilder = this.graphServiceClient.Me.Photo.Content as ProfilePhotoContentRequestBuilder;
-
-            Assert.NotNull(profilePhotoContentRequestBuilder);
-            Assert.Equal(expectedRequestUri, new Uri(profilePhotoContentRequestBuilder.RequestUrl));
+            var requestInformation = graphServiceClient.Me.Photo.Content.ToGetRequestInformation();
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(expectedRequestUri, requestInformation.URI);
         }
 
         [Fact]
         public async System.Threading.Tasks.Task GetAsync()
         {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
-            {
-                httpResponseMessage.Content = streamContent;
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            using var httpResponseMessage = new HttpResponseMessage();
+            
+            var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/photo/$value";
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/photo/$value";
-                this.httpProvider.Setup(
-                    provider => provider.SendAsync(
-                        It.Is<HttpRequestMessage>(
-                            request => request.RequestUri.ToString().StartsWith(requestUrl)
-                                && request.Method == HttpMethod.Get),
-                        HttpCompletionOption.ResponseContentRead,
-                        CancellationToken.None))
-                    .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
-
-                using (var returnedResponseStream = await this.graphServiceClient.Me.Photo.Content.Request().GetAsync())
-                {
-                    Assert.Equal(await httpResponseMessage.Content.ReadAsStreamAsync(), returnedResponseStream);
-                }
-            }
+            mockRequestAdapter.Setup(
+                adapter => adapter.SendPrimitiveAsync<Stream>(
+                    It.IsAny<RequestInformation>(),
+                    It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(), 
+                    It.IsAny<CancellationToken>())
+            ).ReturnsAsync(await httpResponseMessage.Content.ReadAsStreamAsync());
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
+            ).Returns(new JsonSerializationWriter()); 
+            
+            await using var returnedResponseStream = await graphServiceClient.Me.Photo.Content.GetAsync();
+            Assert.Equal(await httpResponseMessage.Content.ReadAsStreamAsync(), returnedResponseStream);
         }
 
         [Fact]
         public async System.Threading.Tasks.Task PutAsync()
         {
-            using (var requestStream = new MemoryStream())
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
-            {
-                httpResponseMessage.Content = streamContent;
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            using var httpResponseMessage = new HttpResponseMessage();
+            var responseHandler = new NativeResponseHandler(){ Value = httpResponseMessage };
+            using var contentStream = new MemoryStream();
+            
+            var requestInformation =  graphServiceClient.Me.Photo.Content.ToPutRequestInformation(contentStream);
+            requestInformation.SetResponseHandler(responseHandler);
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/photo/$value";
-                this.httpProvider.Setup(
-                    provider => provider.SendAsync(
-                        It.Is<HttpRequestMessage>(
-                            request => request.RequestUri.ToString().StartsWith(requestUrl)
-                                && request.Method == HttpMethod.Put),
-                        HttpCompletionOption.ResponseContentRead,
-                        CancellationToken.None))
-                    .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
+            await graphServiceClient.RequestAdapter.SendPrimitiveAsync<Stream>(requestInformation);
 
-                using (var returnedResponseStream = await this.graphServiceClient.Me.Photo.Content.Request().PutAsync(requestStream))
-                {
-                    Assert.Equal(await httpResponseMessage.Content.ReadAsStreamAsync(), returnedResponseStream);
-                }
-            }
+            using var returnedResponseStream =  await ((HttpResponseMessage)responseHandler.Value).Content.ReadAsStreamAsync();
+            Assert.Equal(await httpResponseMessage.Content.ReadAsStreamAsync(), returnedResponseStream);
         }
     }
 }

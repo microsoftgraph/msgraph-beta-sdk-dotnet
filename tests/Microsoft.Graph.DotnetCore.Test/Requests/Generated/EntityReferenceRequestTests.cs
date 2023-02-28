@@ -1,21 +1,21 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Graph.Beta;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Serialization;
 using Xunit;
+using Microsoft.Graph.DotnetCore.Test.Mocks;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
-    public class EntityReferenceRequestTests : RequestTestBase
+    public class EntityReferenceRequestTests
     {
         /// <summary>
         /// Tests building a request for an entity's $ref navigation.
@@ -23,15 +23,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void BuildRequest()
         {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/groups/groupId/members/memberId/$ref");
-            var memberReferenceRequestBuilder = this.graphServiceClient.Groups["groupId"].Members["memberId"].Reference as DirectoryObjectReferenceRequestBuilder;
-
-            Assert.NotNull(memberReferenceRequestBuilder);
-            Assert.Equal(expectedRequestUri, new Uri(memberReferenceRequestBuilder.RequestUrl));
-
-            var memberReferenceRequest = memberReferenceRequestBuilder.Request() as DirectoryObjectReferenceRequest;
-            Assert.NotNull(memberReferenceRequest);
-            Assert.Equal(expectedRequestUri, new Uri(memberReferenceRequest.RequestUrl));
+            var requestInformation = graphServiceClient.Groups["groupId"].Members["memberId"].Ref.ToDeleteRequestInformation();
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(expectedRequestUri, requestInformation.URI);
         }
 
         /// <summary>
@@ -40,28 +37,14 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public async System.Threading.Tasks.Task DeleteAsync()
         {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
-            {
-                var requestUrl = string.Format("{0}/groups/groupId/members/memberId/$ref", this.graphBaseUrl);
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
 
-                this.httpProvider.Setup(
-                    provider => provider.SendAsync(
-                        It.Is<HttpRequestMessage>(
-                            request => request.RequestUri.ToString().Equals(requestUrl)
-                                && request.Method == HttpMethod.Delete),
-                        HttpCompletionOption.ResponseContentRead,
-                        CancellationToken.None))
-                    .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
-
-                this.serializer.Setup(serializer => 
-                        serializer.DeserializeObject<DirectoryObject>(It.IsAny<Stream>()))
-                            .Returns(default(DirectoryObject));
-
-
-                await this.graphServiceClient.Groups["groupId"].Members["memberId"].Reference.Request().DeleteAsync();
-            }
+            mockRequestAdapter.Setup(
+                adapter => adapter.SendNoContentAsync(It.IsAny<RequestInformation>(), It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(),It.IsAny<CancellationToken>() )
+            ).Callback(() => {}).Returns(Task.CompletedTask);
+            
+            await graphServiceClient.Groups["groupId"].Members["memberId"].Ref.DeleteAsync();
         }
     }
 }
