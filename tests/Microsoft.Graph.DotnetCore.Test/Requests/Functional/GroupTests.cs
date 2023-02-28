@@ -2,6 +2,7 @@
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     using Microsoft.Graph.Beta.Models;
+    using Microsoft.Graph.Beta.Models.ODataErrors;
     using System.Threading.Tasks;
     using Xunit;
 
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 //TODO should be PUT
                 await graphClient.Groups[groupPage.Value[8].Id].Team.PatchAsync(team);
             }
-            catch (ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, e.Error.ToString());
             }

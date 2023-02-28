@@ -5,6 +5,7 @@
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     using Microsoft.Graph.Beta.Models;
+    using Microsoft.Graph.Beta.Models.ODataErrors;
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Xunit;
@@ -26,7 +27,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.NotNull(e);
                 Assert.Equal(openTypeExtension.ExtensionName, e.Id); // The extension name and identifier should match.
             }
-            catch (ServiceException e)
+            catch (ODataError e)
             {
                 if (e.Error.Message == "An extension already exists with given id.")
                 {

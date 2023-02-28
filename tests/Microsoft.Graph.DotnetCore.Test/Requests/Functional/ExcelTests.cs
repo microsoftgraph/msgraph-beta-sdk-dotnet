@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -14,10 +14,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     using System.Threading.Tasks;
     using Xunit;
     using Microsoft.Graph.Beta.Models;
+    using Microsoft.Graph.Beta.Models.ODataErrors;
+
     /// <summary>
     /// The tests in this class cover the Excel REST API.
     /// </summary>
-    
+
     public class ExcelTests : GraphTestBase
     {
         [Fact (Skip = "No CI set up for functional tests")]
@@ -33,7 +35,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             // Check that this item hasn't already been created. 
             // https://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_search
-            var searchResults = await graphClient.Drives["driveId"].Items[""].MicrosoftGraphSearchWithQ(fileName).GetAsync();
+            var searchResults = await graphClient.Drives["driveId"].Items[""].SearchWithQ(fileName).GetAsync();
             foreach (var r in searchResults.Value)
             {
                 if (r.Name != fileName)
@@ -93,7 +95,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // https://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_delete
                 await graphClient.Drives["driveId"].Items[fileId].DeleteAsync(requestConfiguration => requestConfiguration.Headers.Add("if-match","*"));
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 if (e.Error.Code == "resourceModified")
                     Assert.True(false, "Error code: " + e.Error.Code + ", message: " + e.Error.Message);

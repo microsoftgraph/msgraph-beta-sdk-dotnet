@@ -5,6 +5,7 @@
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     using Microsoft.Graph.Beta.Models;
+    using Microsoft.Graph.Beta.Models.ODataErrors;
     using System.Threading.Tasks;
     using Xunit;
     public class Given_a_valid_SharePoint_Site : GraphTestBase
@@ -22,7 +23,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.True(siteSearchResults.Value.Count > 0);
 
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
@@ -45,7 +46,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.True(drives.Value.Count > 0);
 
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
@@ -79,7 +80,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // Assert.True(library.Count > 0);
 
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
@@ -97,7 +98,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 Assert.NotNull(site);
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
