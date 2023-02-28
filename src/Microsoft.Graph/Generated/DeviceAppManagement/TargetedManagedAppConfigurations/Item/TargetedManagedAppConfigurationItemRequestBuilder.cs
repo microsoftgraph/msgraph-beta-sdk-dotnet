@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Apps;
+using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assign;
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.DeploymentSummary;
-using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.MicrosoftGraphAssign;
-using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.MicrosoftGraphTargetApps;
+using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.TargetApps;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,6 +22,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         public AppsRequestBuilder Apps { get =>
             new AppsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -30,18 +34,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         public DeploymentSummaryRequestBuilder DeploymentSummary { get =>
             new DeploymentSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the targetApps method.</summary>
-        public MicrosoftGraphTargetAppsRequestBuilder MicrosoftGraphTargetApps { get =>
-            new MicrosoftGraphTargetAppsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the targetApps method.</summary>
+        public TargetAppsRequestBuilder TargetApps { get =>
+            new TargetAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

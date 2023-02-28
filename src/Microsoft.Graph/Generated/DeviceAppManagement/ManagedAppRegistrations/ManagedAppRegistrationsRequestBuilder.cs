@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item;
-using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.MicrosoftGraphGetUserIdsWithFlaggedAppRegistration;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserIdsWithFlaggedAppRegistration method.</summary>
-        public MicrosoftGraphGetUserIdsWithFlaggedAppRegistrationRequestBuilder MicrosoftGraphGetUserIdsWithFlaggedAppRegistration { get =>
-            new MicrosoftGraphGetUserIdsWithFlaggedAppRegistrationRequestBuilder(PathParameters, RequestAdapter);
+        public GetUserIdsWithFlaggedAppRegistrationRequestBuilder GetUserIdsWithFlaggedAppRegistration { get =>
+            new GetUserIdsWithFlaggedAppRegistrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

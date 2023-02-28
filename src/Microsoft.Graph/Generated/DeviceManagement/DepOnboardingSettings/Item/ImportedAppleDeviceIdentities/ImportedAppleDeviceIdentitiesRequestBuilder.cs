@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.Item;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.MicrosoftGraphImportAppleDeviceIdentityList;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the importAppleDeviceIdentityList method.</summary>
-        public MicrosoftGraphImportAppleDeviceIdentityListRequestBuilder MicrosoftGraphImportAppleDeviceIdentityList { get =>
-            new MicrosoftGraphImportAppleDeviceIdentityListRequestBuilder(PathParameters, RequestAdapter);
+        public ImportAppleDeviceIdentityListRequestBuilder ImportAppleDeviceIdentityList { get =>
+            new ImportAppleDeviceIdentityListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.MicrosoftGraphResetToSystemDefault;
+using Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.ResetToSystemDefault;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
     /// Provides operations to manage the default property of the microsoft.graph.crossTenantAccessPolicy entity.
     /// </summary>
     public class DefaultRequestBuilder {
-        /// <summary>Provides operations to call the resetToSystemDefault method.</summary>
-        public MicrosoftGraphResetToSystemDefaultRequestBuilder MicrosoftGraphResetToSystemDefault { get =>
-            new MicrosoftGraphResetToSystemDefaultRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the resetToSystemDefault method.</summary>
+        public ResetToSystemDefaultRequestBuilder ResetToSystemDefault { get =>
+            new ResetToSystemDefaultRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

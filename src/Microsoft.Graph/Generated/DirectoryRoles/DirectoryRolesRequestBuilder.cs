@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.DirectoryRoles.Count;
+using Microsoft.Graph.Beta.DirectoryRoles.Delta;
+using Microsoft.Graph.Beta.DirectoryRoles.GetByIds;
+using Microsoft.Graph.Beta.DirectoryRoles.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.DirectoryRoles.Item;
-using Microsoft.Graph.Beta.DirectoryRoles.MicrosoftGraphDelta;
-using Microsoft.Graph.Beta.DirectoryRoles.MicrosoftGraphGetByIds;
-using Microsoft.Graph.Beta.DirectoryRoles.MicrosoftGraphGetUserOwnedObjects;
-using Microsoft.Graph.Beta.DirectoryRoles.MicrosoftGraphValidateProperties;
+using Microsoft.Graph.Beta.DirectoryRoles.ValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,20 +24,16 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
-            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public MicrosoftGraphGetByIdsRequestBuilder MicrosoftGraphGetByIds { get =>
-            new MicrosoftGraphGetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public MicrosoftGraphGetUserOwnedObjectsRequestBuilder MicrosoftGraphGetUserOwnedObjects { get =>
-            new MicrosoftGraphGetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public MicrosoftGraphValidatePropertiesRequestBuilder MicrosoftGraphValidateProperties { get =>
-            new MicrosoftGraphValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -45,6 +41,10 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validateProperties method.</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the collection of directoryRole entities.</summary>
         public DirectoryRoleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

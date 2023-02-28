@@ -1,5 +1,5 @@
+using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Cancel;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Group;
-using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.MicrosoftGraphCancel;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Principal;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.TargetSchedule;
 using Microsoft.Graph.Beta.Models;
@@ -17,13 +17,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
     /// Provides operations to manage the eligibilityScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.
     /// </summary>
     public class PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder {
+        /// <summary>Provides operations to call the cancel method.</summary>
+        public CancelRequestBuilder Cancel { get =>
+            new CancelRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the group property of the microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest entity.</summary>
         public Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Group.GroupRequestBuilder Group { get =>
             new Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.EligibilityScheduleRequests.Item.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the cancel method.</summary>
-        public MicrosoftGraphCancelRequestBuilder MicrosoftGraphCancel { get =>
-            new MicrosoftGraphCancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

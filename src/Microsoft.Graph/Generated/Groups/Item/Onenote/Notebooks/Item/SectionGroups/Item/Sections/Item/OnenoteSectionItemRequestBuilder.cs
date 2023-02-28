@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.MicrosoftGraphCopyToNotebook;
-using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.MicrosoftGraphCopyToSectionGroup;
+using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.CopyToNotebook;
+using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.CopyToSectionGroup;
 using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages;
 using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.ParentNotebook;
 using Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.ParentSectionGroup;
@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item.SectionGroups.
     /// </summary>
     public class OnenoteSectionItemRequestBuilder {
         /// <summary>Provides operations to call the copyToNotebook method.</summary>
-        public MicrosoftGraphCopyToNotebookRequestBuilder MicrosoftGraphCopyToNotebook { get =>
-            new MicrosoftGraphCopyToNotebookRequestBuilder(PathParameters, RequestAdapter);
+        public CopyToNotebookRequestBuilder CopyToNotebook { get =>
+            new CopyToNotebookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the copyToSectionGroup method.</summary>
-        public MicrosoftGraphCopyToSectionGroupRequestBuilder MicrosoftGraphCopyToSectionGroup { get =>
-            new MicrosoftGraphCopyToSectionGroupRequestBuilder(PathParameters, RequestAdapter);
+        public CopyToSectionGroupRequestBuilder CopyToSectionGroup { get =>
+            new CopyToSectionGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.</summary>
         public PagesRequestBuilder Pages { get =>

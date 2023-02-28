@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.RoleManagement.CloudPC;
 using Microsoft.Graph.Beta.RoleManagement.DeviceManagement;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement;
+using Microsoft.Graph.Beta.RoleManagement.Exchange;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -32,6 +33,10 @@ namespace Microsoft.Graph.Beta.RoleManagement {
         /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.</summary>
         public EntitlementManagementRequestBuilder EntitlementManagement { get =>
             new EntitlementManagementRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the exchange property of the microsoft.graph.roleManagement entity.</summary>
+        public ExchangeRequestBuilder Exchange { get =>
+            new ExchangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

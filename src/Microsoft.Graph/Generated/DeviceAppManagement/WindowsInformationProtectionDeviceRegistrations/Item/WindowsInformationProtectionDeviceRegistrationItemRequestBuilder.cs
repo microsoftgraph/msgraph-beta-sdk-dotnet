@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item.MicrosoftGraphWipe;
+using Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item.Wipe;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionD
     /// Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.deviceAppManagement entity.
     /// </summary>
     public class WindowsInformationProtectionDeviceRegistrationItemRequestBuilder {
-        /// <summary>Provides operations to call the wipe method.</summary>
-        public MicrosoftGraphWipeRequestBuilder MicrosoftGraphWipe { get =>
-            new MicrosoftGraphWipeRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the wipe method.</summary>
+        public WipeRequestBuilder Wipe { get =>
+            new WipeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new WindowsInformationProtectionDeviceRegistrationItemRequestBuilder and sets the default values.
         /// </summary>

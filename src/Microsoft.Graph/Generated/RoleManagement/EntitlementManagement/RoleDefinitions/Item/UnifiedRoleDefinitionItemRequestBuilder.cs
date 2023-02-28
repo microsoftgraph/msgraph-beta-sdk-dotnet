@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefinitions.Item.AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom;
-using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefinitions.Item.MicrosoftGraphAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -15,13 +15,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefiniti
     /// Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
     /// </summary>
     public class UnifiedRoleDefinitionItemRequestBuilder {
+        /// <summary>Provides operations to call the assignedPrincipals method.</summary>
+        public AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId { get =>
+            new AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.</summary>
         public InheritsPermissionsFromRequestBuilder InheritsPermissionsFrom { get =>
             new InheritsPermissionsFromRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the assignedPrincipals method.</summary>
-        public MicrosoftGraphAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder MicrosoftGraphAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId { get =>
-            new MicrosoftGraphAssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

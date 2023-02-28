@@ -426,7 +426,7 @@ namespace Microsoft.Graph.Beta {
         public PermissionGrantsRequestBuilder PermissionGrants { get =>
             new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the collection of place entities.</summary>
+        /// <summary>The places property</summary>
         public PlacesRequestBuilder Places { get =>
             new PlacesRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -13,6 +13,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     using System.Collections.Generic;
     using System.Net.Http.Headers;
     using Microsoft.Graph.DotnetCore.Test.Requests.Functional.Resources;
+    using Microsoft.Graph.Beta.Models.ODataErrors;
 
     public class OneNoteTests : GraphTestBase
     {
@@ -228,7 +229,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 OnenotePagePreview pagePreview = await graphClient.Me
                                                                   .Onenote
                                                                   .Pages[pageId]
-                                                                  .MicrosoftGraphPreview
+                                                                  .Preview
                                                                   .GetAsync();
 
                 Assert.NotNull(pagePreview);
@@ -367,12 +368,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     await TestPageCleanUp();
                 }
                 else
-                    throw new ServiceException(
-                        new Error
-                        {
-                            Code = response.StatusCode.ToString(),
-                            Message = await response.Content.ReadAsStringAsync()
-                        });
+                    throw new ServiceException(await response.Content.ReadAsStringAsync());
             }
             catch (ApiException e)
             {
@@ -427,7 +423,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 await TestPageCleanUp();
 
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Error code: {e.Error.Code}");
             }
@@ -493,7 +489,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     await TestPageCleanUp();
                 }
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Error code: {e.Error.Code}");
             }
@@ -557,7 +553,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // Send the request and get the response.
                 await graphClient.RequestAdapter.SendNoContentAsync(requestInformation);
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Error code: {e.Error.Code}");
             }
@@ -679,7 +675,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 await TestPageCleanUp();
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Error code: {e.Error.Code}");
             }

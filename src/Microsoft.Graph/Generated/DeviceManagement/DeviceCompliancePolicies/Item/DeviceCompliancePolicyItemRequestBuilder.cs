@@ -1,9 +1,9 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.DeviceSettingStateSummaries;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.DeviceStatuses;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.DeviceStatusOverview;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.MicrosoftGraphAssign;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.MicrosoftGraphScheduleActionsForRules;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduledActionsForRule;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.UserStatuses;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.UserStatusOverview;
@@ -22,6 +22,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
     /// Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceCompliancePolicyItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -38,18 +42,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
         public DeviceStatusOverviewRequestBuilder DeviceStatusOverview { get =>
             new DeviceStatusOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the scheduleActionsForRules method.</summary>
-        public MicrosoftGraphScheduleActionsForRulesRequestBuilder MicrosoftGraphScheduleActionsForRules { get =>
-            new MicrosoftGraphScheduleActionsForRulesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the scheduleActionsForRules method.</summary>
+        public ScheduleActionsForRulesRequestBuilder ScheduleActionsForRules { get =>
+            new ScheduleActionsForRulesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         public ScheduledActionsForRuleRequestBuilder ScheduledActionsForRule { get =>
             new ScheduledActionsForRuleRequestBuilder(PathParameters, RequestAdapter);

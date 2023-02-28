@@ -1,6 +1,6 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.MicrosoftGraphAssign;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.RunSummary;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -17,6 +17,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item {
     /// Provides operations to manage the deviceComplianceScripts property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceComplianceScriptItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceComplianceScript entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -24,10 +28,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item {
         /// <summary>Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.</summary>
         public DeviceRunStatesRequestBuilder DeviceRunStates { get =>
             new DeviceRunStatesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

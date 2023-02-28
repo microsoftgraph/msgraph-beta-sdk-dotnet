@@ -1,8 +1,8 @@
+using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.AddCopy;
+using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.AddCopyFromContentTypeHub;
 using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Count;
+using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.GetCompatibleHubContentTypes;
 using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item;
-using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.MicrosoftGraphAddCopy;
-using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.MicrosoftGraphAddCopyFromContentTypeHub;
-using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.MicrosoftGraphGetCompatibleHubContentTypes;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,21 +18,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes {
     /// Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
     /// </summary>
     public class ContentTypesRequestBuilder {
+        /// <summary>Provides operations to call the addCopy method.</summary>
+        public AddCopyRequestBuilder AddCopy { get =>
+            new AddCopyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the addCopyFromContentTypeHub method.</summary>
+        public AddCopyFromContentTypeHubRequestBuilder AddCopyFromContentTypeHub { get =>
+            new AddCopyFromContentTypeHubRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the addCopy method.</summary>
-        public MicrosoftGraphAddCopyRequestBuilder MicrosoftGraphAddCopy { get =>
-            new MicrosoftGraphAddCopyRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the addCopyFromContentTypeHub method.</summary>
-        public MicrosoftGraphAddCopyFromContentTypeHubRequestBuilder MicrosoftGraphAddCopyFromContentTypeHub { get =>
-            new MicrosoftGraphAddCopyFromContentTypeHubRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the getCompatibleHubContentTypes method.</summary>
-        public MicrosoftGraphGetCompatibleHubContentTypesRequestBuilder MicrosoftGraphGetCompatibleHubContentTypes { get =>
-            new MicrosoftGraphGetCompatibleHubContentTypesRequestBuilder(PathParameters, RequestAdapter);
+        public GetCompatibleHubContentTypesRequestBuilder GetCompatibleHubContentTypes { get =>
+            new GetCompatibleHubContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Count;
 using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item;
-using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.MicrosoftGraphUpdatePriorities;
+using Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.UpdatePriorities;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the updatePriorities method.</summary>
-        public MicrosoftGraphUpdatePrioritiesRequestBuilder MicrosoftGraphUpdatePriorities { get =>
-            new MicrosoftGraphUpdatePrioritiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the updatePriorities method.</summary>
+        public UpdatePrioritiesRequestBuilder UpdatePriorities { get =>
+            new UpdatePrioritiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.</summary>

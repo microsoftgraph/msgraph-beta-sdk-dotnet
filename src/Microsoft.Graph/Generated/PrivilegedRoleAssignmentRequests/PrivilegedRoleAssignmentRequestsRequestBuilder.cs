@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Count;
 using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item;
-using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.MicrosoftGraphMy;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.My;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the my method.</summary>
-        public MicrosoftGraphMyRequestBuilder MicrosoftGraphMy { get =>
-            new MicrosoftGraphMyRequestBuilder(PathParameters, RequestAdapter);
+        public MyRequestBuilder My { get =>
+            new MyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

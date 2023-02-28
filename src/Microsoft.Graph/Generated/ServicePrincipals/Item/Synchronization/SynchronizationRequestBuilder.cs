@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.AcquireAccessToken;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.MicrosoftGraphAcquireAccessToken;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.MicrosoftGraphPing;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Ping;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Secrets;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates;
 using Microsoft.Kiota.Abstractions;
@@ -18,20 +18,20 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
     /// Provides operations to manage the synchronization property of the microsoft.graph.servicePrincipal entity.
     /// </summary>
     public class SynchronizationRequestBuilder {
+        /// <summary>Provides operations to call the acquireAccessToken method.</summary>
+        public AcquireAccessTokenRequestBuilder AcquireAccessToken { get =>
+            new AcquireAccessTokenRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
         public JobsRequestBuilder Jobs { get =>
             new JobsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the acquireAccessToken method.</summary>
-        public MicrosoftGraphAcquireAccessTokenRequestBuilder MicrosoftGraphAcquireAccessToken { get =>
-            new MicrosoftGraphAcquireAccessTokenRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the Ping method.</summary>
-        public MicrosoftGraphPingRequestBuilder MicrosoftGraphPing { get =>
-            new MicrosoftGraphPingRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the Ping method.</summary>
+        public PingRequestBuilder Ping { get =>
+            new PingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>The secrets property</summary>

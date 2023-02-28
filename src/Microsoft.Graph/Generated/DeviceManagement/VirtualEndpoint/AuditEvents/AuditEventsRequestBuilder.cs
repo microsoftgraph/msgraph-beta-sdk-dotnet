@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.Count;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.GetAuditActivityTypes;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.Item;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.MicrosoftGraphGetAuditActivityTypes;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAuditActivityTypes method.</summary>
-        public MicrosoftGraphGetAuditActivityTypesRequestBuilder MicrosoftGraphGetAuditActivityTypes { get =>
-            new MicrosoftGraphGetAuditActivityTypesRequestBuilder(PathParameters, RequestAdapter);
+        public GetAuditActivityTypesRequestBuilder GetAuditActivityTypes { get =>
+            new GetAuditActivityTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

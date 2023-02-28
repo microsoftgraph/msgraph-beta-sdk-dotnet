@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Names.Item.MicrosoftGraphRange;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Names.Item.RangeNamespace;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Names.Item.Worksheet;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -15,12 +15,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.N
     /// Provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.
     /// </summary>
     public class WorkbookNamedItemItemRequestBuilder {
-        /// <summary>Provides operations to call the range method.</summary>
-        public MicrosoftGraphRangeRequestBuilder MicrosoftGraphRange { get =>
-            new MicrosoftGraphRangeRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the range method.</summary>
+        public RangeRequestBuilder Range { get =>
+            new RangeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

@@ -1,8 +1,8 @@
-using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.MicrosoftGraphCancel;
-using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.MicrosoftGraphUpdateRequest;
+using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.Cancel;
 using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.Resource;
 using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.RoleDefinition;
 using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.Subject;
+using Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item.UpdateRequest;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,12 +19,8 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
     /// </summary>
     public class GovernanceRoleAssignmentRequestItemRequestBuilder {
         /// <summary>Provides operations to call the cancel method.</summary>
-        public MicrosoftGraphCancelRequestBuilder MicrosoftGraphCancel { get =>
-            new MicrosoftGraphCancelRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateRequest method.</summary>
-        public MicrosoftGraphUpdateRequestRequestBuilder MicrosoftGraphUpdateRequest { get =>
-            new MicrosoftGraphUpdateRequestRequestBuilder(PathParameters, RequestAdapter);
+        public CancelRequestBuilder Cancel { get =>
+            new CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -41,6 +37,10 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests.Item {
         /// <summary>Provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignmentRequest entity.</summary>
         public SubjectRequestBuilder Subject { get =>
             new SubjectRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateRequest method.</summary>
+        public UpdateRequestRequestBuilder UpdateRequest { get =>
+            new UpdateRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

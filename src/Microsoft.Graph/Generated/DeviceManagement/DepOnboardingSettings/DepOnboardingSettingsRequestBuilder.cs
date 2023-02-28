@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime;
 using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.MicrosoftGraphGetExpiringVppTokenCountWithExpiringBeforeDateTime;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         /// Provides operations to call the getExpiringVppTokenCount method.
         /// </summary>
         /// <param name="expiringBeforeDateTime">Usage: expiringBeforeDateTime=&apos;{expiringBeforeDateTime}&apos;</param>
-        public MicrosoftGraphGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder MicrosoftGraphGetExpiringVppTokenCountWithExpiringBeforeDateTime(string expiringBeforeDateTime) {
+        public GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder GetExpiringVppTokenCountWithExpiringBeforeDateTime(string expiringBeforeDateTime) {
             if(string.IsNullOrEmpty(expiringBeforeDateTime)) throw new ArgumentNullException(nameof(expiringBeforeDateTime));
-            return new MicrosoftGraphGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder(PathParameters, RequestAdapter, expiringBeforeDateTime);
+            return new GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder(PathParameters, RequestAdapter, expiringBeforeDateTime);
         }
         /// <summary>
         /// Create new navigation property to depOnboardingSettings for deviceManagement

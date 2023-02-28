@@ -1,8 +1,8 @@
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.DataBodyRange;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.MicrosoftGraphDataBodyRange;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.MicrosoftGraphHeaderRowRange;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.MicrosoftGraphRange;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.MicrosoftGraphTotalRowRange;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.HeaderRowRange;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.RangeNamespace;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.TotalRowRange;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,30 +18,30 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
     /// Provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
     /// </summary>
     public class WorkbookTableColumnItemRequestBuilder {
+        /// <summary>Provides operations to call the dataBodyRange method.</summary>
+        public DataBodyRangeRequestBuilder DataBodyRange { get =>
+            new DataBodyRangeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the filter property of the microsoft.graph.workbookTableColumn entity.</summary>
         public FilterRequestBuilder Filter { get =>
             new FilterRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the dataBodyRange method.</summary>
-        public MicrosoftGraphDataBodyRangeRequestBuilder MicrosoftGraphDataBodyRange { get =>
-            new MicrosoftGraphDataBodyRangeRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the headerRowRange method.</summary>
-        public MicrosoftGraphHeaderRowRangeRequestBuilder MicrosoftGraphHeaderRowRange { get =>
-            new MicrosoftGraphHeaderRowRangeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the range method.</summary>
-        public MicrosoftGraphRangeRequestBuilder MicrosoftGraphRange { get =>
-            new MicrosoftGraphRangeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the totalRowRange method.</summary>
-        public MicrosoftGraphTotalRowRangeRequestBuilder MicrosoftGraphTotalRowRange { get =>
-            new MicrosoftGraphTotalRowRangeRequestBuilder(PathParameters, RequestAdapter);
+        public HeaderRowRangeRequestBuilder HeaderRowRange { get =>
+            new HeaderRowRangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the range method.</summary>
+        public RangeRequestBuilder Range { get =>
+            new RangeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the totalRowRange method.</summary>
+        public TotalRowRangeRequestBuilder TotalRowRange { get =>
+            new TotalRowRangeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

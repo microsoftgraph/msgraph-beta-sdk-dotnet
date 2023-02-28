@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Item.Tenants.Item.MicrosoftGraphRemovePersonalData;
+using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Item.Tenants.Item.RemovePersonalData;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
     /// Provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
     /// </summary>
     public class TenantReferenceTenantItemRequestBuilder {
-        /// <summary>Provides operations to call the removePersonalData method.</summary>
-        public MicrosoftGraphRemovePersonalDataRequestBuilder MicrosoftGraphRemovePersonalData { get =>
-            new MicrosoftGraphRemovePersonalDataRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the removePersonalData method.</summary>
+        public RemovePersonalDataRequestBuilder RemovePersonalData { get =>
+            new RemovePersonalDataRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

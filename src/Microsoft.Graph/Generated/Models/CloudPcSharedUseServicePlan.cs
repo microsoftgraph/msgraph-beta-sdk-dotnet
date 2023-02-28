@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcSharedUseServicePlan : Entity, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the shared-use service plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The totalCount property</summary>
+        /// <summary>Total number of shared-use service plans purchased by the customer.</summary>
         public int? TotalCount {
             get { return BackingStore?.Get<int?>("totalCount"); }
             set { BackingStore?.Set("totalCount", value); }
         }
-        /// <summary>The usedCount property</summary>
+        /// <summary>The number of service plans that the account uses.</summary>
         public int? UsedCount {
             get { return BackingStore?.Get<int?>("usedCount"); }
             set { BackingStore?.Set("usedCount", value); }

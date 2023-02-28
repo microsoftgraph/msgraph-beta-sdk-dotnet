@@ -1,9 +1,9 @@
+using Microsoft.Graph.Beta.DirectoryRoles.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.DirectoryRoles.Item.Members;
-using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphCheckMemberGroups;
-using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphCheckMemberObjects;
-using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphGetMemberGroups;
-using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphGetMemberObjects;
-using Microsoft.Graph.Beta.DirectoryRoles.Item.MicrosoftGraphRestore;
+using Microsoft.Graph.Beta.DirectoryRoles.Item.Restore;
 using Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -20,34 +20,34 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
     /// Provides operations to manage the collection of directoryRole entities.
     /// </summary>
     public class DirectoryRoleItemRequestBuilder {
+        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
+        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
+            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
+        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
+            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getMemberGroups method.</summary>
+        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
+            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getMemberObjects method.</summary>
+        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
+            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.directoryRole entity.</summary>
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public MicrosoftGraphCheckMemberGroupsRequestBuilder MicrosoftGraphCheckMemberGroups { get =>
-            new MicrosoftGraphCheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public MicrosoftGraphCheckMemberObjectsRequestBuilder MicrosoftGraphCheckMemberObjects { get =>
-            new MicrosoftGraphCheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public MicrosoftGraphGetMemberGroupsRequestBuilder MicrosoftGraphGetMemberGroups { get =>
-            new MicrosoftGraphGetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public MicrosoftGraphGetMemberObjectsRequestBuilder MicrosoftGraphGetMemberObjects { get =>
-            new MicrosoftGraphGetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the restore method.</summary>
-        public MicrosoftGraphRestoreRequestBuilder MicrosoftGraphRestore { get =>
-            new MicrosoftGraphRestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.</summary>
         public ScopedMembersRequestBuilder ScopedMembers { get =>
             new ScopedMembersRequestBuilder(PathParameters, RequestAdapter);

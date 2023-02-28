@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Count;
+using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Enable;
+using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform;
+using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetState;
 using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item;
-using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.MicrosoftGraphEnable;
-using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.MicrosoftGraphGetPlatformSupportedPropertiesWithPlatform;
-using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.MicrosoftGraphGetState;
-using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.MicrosoftGraphValidateFilter;
+using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,16 +24,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enable method.</summary>
-        public MicrosoftGraphEnableRequestBuilder MicrosoftGraphEnable { get =>
-            new MicrosoftGraphEnableRequestBuilder(PathParameters, RequestAdapter);
+        public EnableRequestBuilder Enable { get =>
+            new EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getState method.</summary>
-        public MicrosoftGraphGetStateRequestBuilder MicrosoftGraphGetState { get =>
-            new MicrosoftGraphGetStateRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateFilter method.</summary>
-        public MicrosoftGraphValidateFilterRequestBuilder MicrosoftGraphValidateFilter { get =>
-            new MicrosoftGraphValidateFilterRequestBuilder(PathParameters, RequestAdapter);
+        public GetStateRequestBuilder GetState { get =>
+            new GetStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -41,6 +37,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validateFilter method.</summary>
+        public ValidateFilterRequestBuilder ValidateFilter { get =>
+            new ValidateFilterRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.</summary>
         public DeviceAndAppManagementAssignmentFilterItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters {
         /// Provides operations to call the getPlatformSupportedProperties method.
         /// </summary>
         /// <param name="platform">Usage: platform=&apos;{platform}&apos;</param>
-        public MicrosoftGraphGetPlatformSupportedPropertiesWithPlatformRequestBuilder MicrosoftGraphGetPlatformSupportedPropertiesWithPlatform(string platform) {
+        public GetPlatformSupportedPropertiesWithPlatformRequestBuilder GetPlatformSupportedPropertiesWithPlatform(string platform) {
             if(string.IsNullOrEmpty(platform)) throw new ArgumentNullException(nameof(platform));
-            return new MicrosoftGraphGetPlatformSupportedPropertiesWithPlatformRequestBuilder(PathParameters, RequestAdapter, platform);
+            return new GetPlatformSupportedPropertiesWithPlatformRequestBuilder(PathParameters, RequestAdapter, platform);
         }
         /// <summary>
         /// Create new navigation property to assignmentFilters for deviceManagement

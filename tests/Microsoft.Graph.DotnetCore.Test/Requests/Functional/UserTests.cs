@@ -4,9 +4,9 @@
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
-    using Microsoft.Graph.Beta.Me.MicrosoftGraphGetMailTips;
-    using Microsoft.Graph.Beta.Me.MicrosoftGraphGetMemberGroups;
-    using AssignLicensePostRequestBody = Microsoft.Graph.Beta.Me.MicrosoftGraphAssignLicense.AssignLicensePostRequestBody;
+    using Microsoft.Graph.Beta.Me.GetMailTips;
+    using Microsoft.Graph.Beta.Me.GetMemberGroups;
+    using AssignLicensePostRequestBody = Microsoft.Graph.Beta.Me.AssignLicense.AssignLicensePostRequestBody;
     using Microsoft.Graph.DotnetCore.Test.Requests.Functional.Resources;
     using Microsoft.Graph.Beta.Models;
     using System;
@@ -14,6 +14,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     using System.IO;
     using System.Threading.Tasks;
     using Xunit;
+    using Microsoft.Graph.Beta.Models.ODataErrors;
+
     public class UserTests : GraphTestBase
     {
         [Fact(Skip = "No CI set up for functional tests - add email addresses to run this test.")]
@@ -34,7 +36,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 {
                     EmailAddresses = emailAddresses, MailTipsOptions = mailTipsOptions
                 };
-                var mailTipsCollectionPage = await graphClient.Me.MicrosoftGraphGetMailTips.PostAsync(requestBody);
+                var mailTipsCollectionPage = await graphClient.Me.GetMailTips.PostAsync(requestBody);
 
                 foreach (var mt in mailTipsCollectionPage.Value)
                 {
@@ -182,7 +184,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     Assert.StartsWith("A", u.DisplayName, StringComparison.OrdinalIgnoreCase);
                 }
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
@@ -201,7 +203,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 Assert.NotNull(originalPhoto);
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 if (e.Error.Code == "ErrorItemNotFound")
                 {
@@ -228,7 +230,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     await graphClient.Me.Photo.Content.PutAsync(ms);
                 }
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
@@ -243,7 +245,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var user = await graphClient.Me.GetAsync();
                 Assert.NotNull(user.UserPrincipalName);
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
             }
@@ -259,7 +261,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.NotNull(managerDirObj);
                 Assert.False(managerDirObj.DisplayName == "", "The display name of the user's manager is not set.");
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
             }
@@ -284,7 +286,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 await graphClient.Me.Manager.Ref.PutAsync(reference);
                 Assert.NotNull(managerDirObj);
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
             }
@@ -301,11 +303,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     AddLicenses = new List<AssignedLicense>(),
                     RemoveLicenses = new ()
                 };
-                var user = await graphClient.Me.MicrosoftGraphAssignLicense.PostAsync(requestBody);
+                var user = await graphClient.Me.AssignLicense.PostAsync(requestBody);
                 Assert.Null(user);
 
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.Equal("Request_BadRequest", e.Error.Code);
             }
@@ -320,7 +322,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             try
             {
-                var getMemberGroupsRequest = graphClient.Me.MicrosoftGraphGetMemberGroups;
+                var getMemberGroupsRequest = graphClient.Me.GetMemberGroups;
                 var requestBody = new GetMemberGroupsPostRequestBody
                 {
                     SecurityEnabledOnly = true
@@ -331,7 +333,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.Equal("POST", getMemberGroupsRequest.ToPostRequestInformation(requestBody).HttpMethod.ToString());
                 Assert.True(requestBody.SecurityEnabledOnly.Value);
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
             }
@@ -346,11 +348,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             try
             {
-                var getMemberGroupsRequest = graphClient.Me.MicrosoftGraphGetMemberGroups;
+                var getMemberGroupsRequest = graphClient.Me.GetMemberGroups;
                 var requestBody = new GetMemberGroupsPostRequestBody();
                 var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync(requestBody);
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.Equal("Request_BadRequest", e.Error.Code);
             }
@@ -381,7 +383,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // Update the user back to me.
                 await graphClient.Users[me.UserPrincipalName].PatchAsync(oldMe);
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
             }

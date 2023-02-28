@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.Attachments;
-using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.MicrosoftGraphComplete;
+using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.Complete;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties;
 using Microsoft.Kiota.Abstractions;
@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.It
             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the complete method.</summary>
-        public MicrosoftGraphCompleteRequestBuilder MicrosoftGraphComplete { get =>
-            new MicrosoftGraphCompleteRequestBuilder(PathParameters, RequestAdapter);
+        public CompleteRequestBuilder Complete { get =>
+            new CompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTask entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>

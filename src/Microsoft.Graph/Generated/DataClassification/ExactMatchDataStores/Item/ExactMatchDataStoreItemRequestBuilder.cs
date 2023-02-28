@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.MicrosoftGraphLookup;
+using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup;
 using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
     /// </summary>
     public class ExactMatchDataStoreItemRequestBuilder {
         /// <summary>Provides operations to call the lookup method.</summary>
-        public MicrosoftGraphLookupRequestBuilder MicrosoftGraphLookup { get =>
-            new MicrosoftGraphLookupRequestBuilder(PathParameters, RequestAdapter);
+        public LookupRequestBuilder Lookup { get =>
+            new LookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

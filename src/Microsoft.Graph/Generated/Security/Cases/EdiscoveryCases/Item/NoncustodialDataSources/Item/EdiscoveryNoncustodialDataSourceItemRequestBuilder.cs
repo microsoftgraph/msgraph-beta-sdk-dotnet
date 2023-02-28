@@ -2,10 +2,10 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.DataSource;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.LastIndexOperation;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityApplyHold;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityRelease;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityRemoveHold;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.MicrosoftGraphSecurityUpdateIndex;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.SecurityApplyHold;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.SecurityRelease;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.SecurityRemoveHold;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialDataSources.Item.SecurityUpdateIndex;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -27,26 +27,26 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
         public LastIndexOperationRequestBuilder LastIndexOperation { get =>
             new LastIndexOperationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the applyHold method.</summary>
-        public MicrosoftGraphSecurityApplyHoldRequestBuilder MicrosoftGraphSecurityApplyHold { get =>
-            new MicrosoftGraphSecurityApplyHoldRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the release method.</summary>
-        public MicrosoftGraphSecurityReleaseRequestBuilder MicrosoftGraphSecurityRelease { get =>
-            new MicrosoftGraphSecurityReleaseRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the removeHold method.</summary>
-        public MicrosoftGraphSecurityRemoveHoldRequestBuilder MicrosoftGraphSecurityRemoveHold { get =>
-            new MicrosoftGraphSecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateIndex method.</summary>
-        public MicrosoftGraphSecurityUpdateIndexRequestBuilder MicrosoftGraphSecurityUpdateIndex { get =>
-            new MicrosoftGraphSecurityUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the applyHold method.</summary>
+        public SecurityApplyHoldRequestBuilder SecurityApplyHold { get =>
+            new SecurityApplyHoldRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the release method.</summary>
+        public SecurityReleaseRequestBuilder SecurityRelease { get =>
+            new SecurityReleaseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeHold method.</summary>
+        public SecurityRemoveHoldRequestBuilder SecurityRemoveHold { get =>
+            new SecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateIndex method.</summary>
+        public SecurityUpdateIndexRequestBuilder SecurityUpdateIndex { get =>
+            new SecurityUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

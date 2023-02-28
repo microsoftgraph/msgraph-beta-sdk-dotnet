@@ -1,11 +1,11 @@
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetNoncompliantDevicesToRetire;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.MicrosoftGraphGetDevicesScheduledToRetire;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.MicrosoftGraphGetNoncompliantDevicesToRetire;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.MicrosoftGraphHasPayloadLinks;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.MicrosoftGraphRefreshDeviceComplianceReportSummarization;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.MicrosoftGraphSetScheduledRetireState;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.MicrosoftGraphValidateComplianceScript;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -26,35 +26,35 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicesScheduledToRetire method.</summary>
-        public MicrosoftGraphGetDevicesScheduledToRetireRequestBuilder MicrosoftGraphGetDevicesScheduledToRetire { get =>
-            new MicrosoftGraphGetDevicesScheduledToRetireRequestBuilder(PathParameters, RequestAdapter);
+        public GetDevicesScheduledToRetireRequestBuilder GetDevicesScheduledToRetire { get =>
+            new GetDevicesScheduledToRetireRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getNoncompliantDevicesToRetire method.</summary>
-        public MicrosoftGraphGetNoncompliantDevicesToRetireRequestBuilder MicrosoftGraphGetNoncompliantDevicesToRetire { get =>
-            new MicrosoftGraphGetNoncompliantDevicesToRetireRequestBuilder(PathParameters, RequestAdapter);
+        public GetNoncompliantDevicesToRetireRequestBuilder GetNoncompliantDevicesToRetire { get =>
+            new GetNoncompliantDevicesToRetireRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
-        public MicrosoftGraphHasPayloadLinksRequestBuilder MicrosoftGraphHasPayloadLinks { get =>
-            new MicrosoftGraphHasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the refreshDeviceComplianceReportSummarization method.</summary>
-        public MicrosoftGraphRefreshDeviceComplianceReportSummarizationRequestBuilder MicrosoftGraphRefreshDeviceComplianceReportSummarization { get =>
-            new MicrosoftGraphRefreshDeviceComplianceReportSummarizationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setScheduledRetireState method.</summary>
-        public MicrosoftGraphSetScheduledRetireStateRequestBuilder MicrosoftGraphSetScheduledRetireState { get =>
-            new MicrosoftGraphSetScheduledRetireStateRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateComplianceScript method.</summary>
-        public MicrosoftGraphValidateComplianceScriptRequestBuilder MicrosoftGraphValidateComplianceScript { get =>
-            new MicrosoftGraphValidateComplianceScriptRequestBuilder(PathParameters, RequestAdapter);
+        public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
+            new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the refreshDeviceComplianceReportSummarization method.</summary>
+        public RefreshDeviceComplianceReportSummarizationRequestBuilder RefreshDeviceComplianceReportSummarization { get =>
+            new RefreshDeviceComplianceReportSummarizationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the setScheduledRetireState method.</summary>
+        public SetScheduledRetireStateRequestBuilder SetScheduledRetireState { get =>
+            new SetScheduledRetireStateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validateComplianceScript method.</summary>
+        public ValidateComplianceScriptRequestBuilder ValidateComplianceScript { get =>
+            new ValidateComplianceScriptRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.</summary>
         public DeviceCompliancePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

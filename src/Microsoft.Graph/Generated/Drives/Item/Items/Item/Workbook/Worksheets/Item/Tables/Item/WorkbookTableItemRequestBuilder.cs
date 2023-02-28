@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.ClearFilters;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.MicrosoftGraphClearFilters;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.MicrosoftGraphConvertToRange;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.MicrosoftGraphDataBodyRange;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.MicrosoftGraphHeaderRowRange;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.MicrosoftGraphRange;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.MicrosoftGraphReapplyFilters;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.MicrosoftGraphTotalRowRange;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.ConvertToRange;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.DataBodyRange;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.HeaderRowRange;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.RangeNamespace;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.ReapplyFilters;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Rows;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.TotalRowRange;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -24,40 +24,36 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
     /// Provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.
     /// </summary>
     public class WorkbookTableItemRequestBuilder {
+        /// <summary>Provides operations to call the clearFilters method.</summary>
+        public ClearFiltersRequestBuilder ClearFilters { get =>
+            new ClearFiltersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.workbookTable entity.</summary>
         public ColumnsRequestBuilder Columns { get =>
             new ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the clearFilters method.</summary>
-        public MicrosoftGraphClearFiltersRequestBuilder MicrosoftGraphClearFilters { get =>
-            new MicrosoftGraphClearFiltersRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the convertToRange method.</summary>
-        public MicrosoftGraphConvertToRangeRequestBuilder MicrosoftGraphConvertToRange { get =>
-            new MicrosoftGraphConvertToRangeRequestBuilder(PathParameters, RequestAdapter);
+        public ConvertToRangeRequestBuilder ConvertToRange { get =>
+            new ConvertToRangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dataBodyRange method.</summary>
-        public MicrosoftGraphDataBodyRangeRequestBuilder MicrosoftGraphDataBodyRange { get =>
-            new MicrosoftGraphDataBodyRangeRequestBuilder(PathParameters, RequestAdapter);
+        public DataBodyRangeRequestBuilder DataBodyRange { get =>
+            new DataBodyRangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the headerRowRange method.</summary>
-        public MicrosoftGraphHeaderRowRangeRequestBuilder MicrosoftGraphHeaderRowRange { get =>
-            new MicrosoftGraphHeaderRowRangeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the range method.</summary>
-        public MicrosoftGraphRangeRequestBuilder MicrosoftGraphRange { get =>
-            new MicrosoftGraphRangeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reapplyFilters method.</summary>
-        public MicrosoftGraphReapplyFiltersRequestBuilder MicrosoftGraphReapplyFilters { get =>
-            new MicrosoftGraphReapplyFiltersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the totalRowRange method.</summary>
-        public MicrosoftGraphTotalRowRangeRequestBuilder MicrosoftGraphTotalRowRange { get =>
-            new MicrosoftGraphTotalRowRangeRequestBuilder(PathParameters, RequestAdapter);
+        public HeaderRowRangeRequestBuilder HeaderRowRange { get =>
+            new HeaderRowRangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the range method.</summary>
+        public RangeRequestBuilder Range { get =>
+            new RangeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reapplyFilters method.</summary>
+        public ReapplyFiltersRequestBuilder ReapplyFilters { get =>
+            new ReapplyFiltersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the rows property of the microsoft.graph.workbookTable entity.</summary>
@@ -67,6 +63,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
         /// <summary>Provides operations to manage the sort property of the microsoft.graph.workbookTable entity.</summary>
         public SortRequestBuilder Sort { get =>
             new SortRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the totalRowRange method.</summary>
+        public TotalRowRangeRequestBuilder TotalRowRange { get =>
+            new TotalRowRangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

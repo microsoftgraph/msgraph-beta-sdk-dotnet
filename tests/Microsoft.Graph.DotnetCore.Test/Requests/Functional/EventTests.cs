@@ -8,7 +8,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Xunit;
-    using Microsoft.Graph.Beta.Me.MicrosoftGraphFindMeetingTimes;
+    using Microsoft.Graph.Beta.Me.FindMeetingTimes;
     using Microsoft.Graph.Beta.Models;
     
     public class EventTests : GraphTestBase
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 IsOrganizerOptional = true,
                 ReturnSuggestionReasons = false
             };
-            MeetingTimeSuggestionsResult resultsFromISO8601 = await graphClient.Me.MicrosoftGraphFindMeetingTimes.PostAsync(requestBody1);
+            MeetingTimeSuggestionsResult resultsFromISO8601 = await graphClient.Me.FindMeetingTimes.PostAsync(requestBody1);
 
             var requestBody = new FindMeetingTimesPostRequestBody
             {
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 MinimumAttendeePercentage = 10.0,
                 MaxCandidates = 2
             };
-            MeetingTimeSuggestionsResult resultsFromTimeSpan = await graphClient.Me.MicrosoftGraphFindMeetingTimes.PostAsync(requestBody);
+            MeetingTimeSuggestionsResult resultsFromTimeSpan = await graphClient.Me.FindMeetingTimes.PostAsync(requestBody);
 
             Assert.NotNull(resultsFromTimeSpan);
             // Make sure that our custom serialization results are the same for both scenarios.

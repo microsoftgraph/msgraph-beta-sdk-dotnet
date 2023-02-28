@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets;
 using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item;
-using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.MicrosoftGraphGetPolicySets;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicySets method.</summary>
-        public MicrosoftGraphGetPolicySetsRequestBuilder MicrosoftGraphGetPolicySets { get =>
-            new MicrosoftGraphGetPolicySetsRequestBuilder(PathParameters, RequestAdapter);
+        public GetPolicySetsRequestBuilder GetPolicySets { get =>
+            new GetPolicySetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.CellWithRowWithColumn;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.MicrosoftGraphCellWithRowWithColumn;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.MicrosoftGraphRange;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.MicrosoftGraphRangeWithAddress;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.MicrosoftGraphUsedRange;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.MicrosoftGraphUsedRangeWithValuesOnly;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Names;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotTables;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Protection;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeNamespace;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.RangeWithAddress;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRangeWithValuesOnly;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -27,14 +27,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
         public ChartsRequestBuilder Charts { get =>
             new ChartsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the range method.</summary>
-        public MicrosoftGraphRangeRequestBuilder MicrosoftGraphRange { get =>
-            new MicrosoftGraphRangeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the usedRange method.</summary>
-        public MicrosoftGraphUsedRangeRequestBuilder MicrosoftGraphUsedRange { get =>
-            new MicrosoftGraphUsedRangeRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.</summary>
         public NamesRequestBuilder Names { get =>
             new NamesRequestBuilder(PathParameters, RequestAdapter);
@@ -49,6 +41,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
         public ProtectionRequestBuilder Protection { get =>
             new ProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the range method.</summary>
+        public RangeRequestBuilder Range { get =>
+            new RangeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.</summary>
@@ -57,6 +53,20 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the usedRange method.</summary>
+        public UsedRangeRequestBuilder UsedRange { get =>
+            new UsedRangeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to call the cell method.
+        /// </summary>
+        /// <param name="column">Usage: column={column}</param>
+        /// <param name="row">Usage: row={row}</param>
+        public CellWithRowWithColumnRequestBuilder CellWithRowWithColumn(int? column, int? row) {
+            _ = column ?? throw new ArgumentNullException(nameof(column));
+            _ = row ?? throw new ArgumentNullException(nameof(row));
+            return new CellWithRowWithColumnRequestBuilder(PathParameters, RequestAdapter, column, row);
+        }
         /// <summary>
         /// Instantiates a new WorkbookWorksheetItemRequestBuilder and sets the default values.
         /// </summary>
@@ -123,32 +133,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Provides operations to call the cell method.
-        /// </summary>
-        /// <param name="column">Usage: column={column}</param>
-        /// <param name="row">Usage: row={row}</param>
-        public MicrosoftGraphCellWithRowWithColumnRequestBuilder MicrosoftGraphCellWithRowWithColumn(int? column, int? row) {
-            _ = column ?? throw new ArgumentNullException(nameof(column));
-            _ = row ?? throw new ArgumentNullException(nameof(row));
-            return new MicrosoftGraphCellWithRowWithColumnRequestBuilder(PathParameters, RequestAdapter, column, row);
-        }
-        /// <summary>
-        /// Provides operations to call the range method.
-        /// </summary>
-        /// <param name="address">Usage: address=&apos;{address}&apos;</param>
-        public MicrosoftGraphRangeWithAddressRequestBuilder MicrosoftGraphRangeWithAddress(string address) {
-            if(string.IsNullOrEmpty(address)) throw new ArgumentNullException(nameof(address));
-            return new MicrosoftGraphRangeWithAddressRequestBuilder(PathParameters, RequestAdapter, address);
-        }
-        /// <summary>
-        /// Provides operations to call the usedRange method.
-        /// </summary>
-        /// <param name="valuesOnly">Usage: valuesOnly={valuesOnly}</param>
-        public MicrosoftGraphUsedRangeWithValuesOnlyRequestBuilder MicrosoftGraphUsedRangeWithValuesOnly(bool? valuesOnly) {
-            _ = valuesOnly ?? throw new ArgumentNullException(nameof(valuesOnly));
-            return new MicrosoftGraphUsedRangeWithValuesOnlyRequestBuilder(PathParameters, RequestAdapter, valuesOnly);
-        }
-        /// <summary>
         /// Update the navigation property worksheets in drives
         /// </summary>
         /// <param name="body">The request body</param>
@@ -168,6 +152,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the range method.
+        /// </summary>
+        /// <param name="address">Usage: address=&apos;{address}&apos;</param>
+        public RangeWithAddressRequestBuilder RangeWithAddress(string address) {
+            if(string.IsNullOrEmpty(address)) throw new ArgumentNullException(nameof(address));
+            return new RangeWithAddressRequestBuilder(PathParameters, RequestAdapter, address);
         }
         /// <summary>
         /// Delete navigation property worksheets for drives
@@ -246,6 +238,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Provides operations to call the usedRange method.
+        /// </summary>
+        /// <param name="valuesOnly">Usage: valuesOnly={valuesOnly}</param>
+        public UsedRangeWithValuesOnlyRequestBuilder UsedRangeWithValuesOnly(bool? valuesOnly) {
+            _ = valuesOnly ?? throw new ArgumentNullException(nameof(valuesOnly));
+            return new UsedRangeWithValuesOnlyRequestBuilder(PathParameters, RequestAdapter, valuesOnly);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

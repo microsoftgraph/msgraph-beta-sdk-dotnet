@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Settings.MicrosoftGraphSecurityResetToDefault;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Settings.SecurityResetToDefault;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Settings {
     /// Provides operations to manage the settings property of the microsoft.graph.security.ediscoveryCase entity.
     /// </summary>
     public class SettingsRequestBuilder {
-        /// <summary>Provides operations to call the resetToDefault method.</summary>
-        public MicrosoftGraphSecurityResetToDefaultRequestBuilder MicrosoftGraphSecurityResetToDefault { get =>
-            new MicrosoftGraphSecurityResetToDefaultRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the resetToDefault method.</summary>
+        public SecurityResetToDefaultRequestBuilder SecurityResetToDefault { get =>
+            new SecurityResetToDefaultRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

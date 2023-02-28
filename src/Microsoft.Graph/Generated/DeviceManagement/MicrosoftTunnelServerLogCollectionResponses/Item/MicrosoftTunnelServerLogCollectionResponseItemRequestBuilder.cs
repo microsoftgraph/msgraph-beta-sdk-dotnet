@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.MicrosoftGraphCreateDownloadUrl;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.MicrosoftGraphGenerateDownloadUrl;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.GenerateDownloadUrl;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
     /// </summary>
     public class MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder {
         /// <summary>Provides operations to call the createDownloadUrl method.</summary>
-        public MicrosoftGraphCreateDownloadUrlRequestBuilder MicrosoftGraphCreateDownloadUrl { get =>
-            new MicrosoftGraphCreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
+        public CreateDownloadUrlRequestBuilder CreateDownloadUrl { get =>
+            new CreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the generateDownloadUrl method.</summary>
-        public MicrosoftGraphGenerateDownloadUrlRequestBuilder MicrosoftGraphGenerateDownloadUrl { get =>
-            new MicrosoftGraphGenerateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
+        public GenerateDownloadUrlRequestBuilder GenerateDownloadUrl { get =>
+            new GenerateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

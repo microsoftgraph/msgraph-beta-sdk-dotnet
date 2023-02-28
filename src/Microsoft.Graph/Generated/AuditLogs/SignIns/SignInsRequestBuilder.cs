@@ -1,7 +1,7 @@
+using Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmCompromised;
+using Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe;
 using Microsoft.Graph.Beta.AuditLogs.SignIns.Count;
 using Microsoft.Graph.Beta.AuditLogs.SignIns.Item;
-using Microsoft.Graph.Beta.AuditLogs.SignIns.MicrosoftGraphConfirmCompromised;
-using Microsoft.Graph.Beta.AuditLogs.SignIns.MicrosoftGraphConfirmSafe;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns {
     /// Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
     /// </summary>
     public class SignInsRequestBuilder {
+        /// <summary>Provides operations to call the confirmCompromised method.</summary>
+        public ConfirmCompromisedRequestBuilder ConfirmCompromised { get =>
+            new ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the confirmSafe method.</summary>
+        public ConfirmSafeRequestBuilder ConfirmSafe { get =>
+            new ConfirmSafeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the confirmCompromised method.</summary>
-        public MicrosoftGraphConfirmCompromisedRequestBuilder MicrosoftGraphConfirmCompromised { get =>
-            new MicrosoftGraphConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the confirmSafe method.</summary>
-        public MicrosoftGraphConfirmSafeRequestBuilder MicrosoftGraphConfirmSafe { get =>
-            new MicrosoftGraphConfirmSafeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

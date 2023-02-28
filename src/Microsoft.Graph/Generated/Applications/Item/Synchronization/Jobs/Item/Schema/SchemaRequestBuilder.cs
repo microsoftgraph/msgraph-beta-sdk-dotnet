@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.Directories;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.MicrosoftGraphFilterOperators;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.MicrosoftGraphFunctions;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.MicrosoftGraphParseExpression;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.FilterOperators;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.Functions;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
             new DirectoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the filterOperators method.</summary>
-        public MicrosoftGraphFilterOperatorsRequestBuilder MicrosoftGraphFilterOperators { get =>
-            new MicrosoftGraphFilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
+        public FilterOperatorsRequestBuilder FilterOperators { get =>
+            new FilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the functions method.</summary>
-        public MicrosoftGraphFunctionsRequestBuilder MicrosoftGraphFunctions { get =>
-            new MicrosoftGraphFunctionsRequestBuilder(PathParameters, RequestAdapter);
+        public FunctionsRequestBuilder Functions { get =>
+            new FunctionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the parseExpression method.</summary>
-        public MicrosoftGraphParseExpressionRequestBuilder MicrosoftGraphParseExpression { get =>
-            new MicrosoftGraphParseExpressionRequestBuilder(PathParameters, RequestAdapter);
+        public ParseExpressionRequestBuilder ParseExpression { get =>
+            new ParseExpressionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

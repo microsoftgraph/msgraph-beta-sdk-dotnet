@@ -6,6 +6,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
     using System.IO;
     using System.Threading.Tasks;
+    using Microsoft.Graph.Beta.Models.ODataErrors;
     using Xunit;
     /// <summary>
     /// Ad hoc functional tests to make sure that the Reports API works.
@@ -20,7 +21,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 // Create the request message.
-                var getOffice365ActiveUserCountsRequest = graphClient.Reports.MicrosoftGraphGetOffice365ActiveUserCountsWithPeriod("D7").ToGetRequestInformation();
+                var getOffice365ActiveUserCountsRequest = graphClient.Reports.GetOffice365ActiveUserCountsWithPeriod("D7").ToGetRequestInformation();
 
                 // Send the request and get the response. It will automatically follow the redirect to get the Report file.
                 var responseStream = await graphClient.RequestAdapter.SendPrimitiveAsync<Stream>(getOffice365ActiveUserCountsRequest);
@@ -34,7 +35,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.Contains("Exchange", csvReportFile);
                 Assert.Contains("SharePoint", csvReportFile);
             }
-            catch (Microsoft.Graph.ServiceException e)
+            catch (ODataError e)
             {
                 Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
             }

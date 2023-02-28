@@ -1,13 +1,13 @@
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Application;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.CloseSession;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.CreateSession;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.MicrosoftGraphCloseSession;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.MicrosoftGraphCreateSession;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.MicrosoftGraphRefreshSession;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.MicrosoftGraphSessionInfoResourceWithKey;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.MicrosoftGraphTableRowOperationResultWithKey;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Operations;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.RefreshSession;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.SessionInfoResourceWithKey;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.TableRowOperationResultWithKey;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets;
 using Microsoft.Graph.Beta.Models;
@@ -29,25 +29,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook {
         public ApplicationRequestBuilder Application { get =>
             new ApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the closeSession method.</summary>
+        public CloseSessionRequestBuilder CloseSession { get =>
+            new CloseSessionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the comments property of the microsoft.graph.workbook entity.</summary>
         public CommentsRequestBuilder Comments { get =>
             new CommentsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the createSession method.</summary>
+        public CreateSessionRequestBuilder CreateSession { get =>
+            new CreateSessionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the functions property of the microsoft.graph.workbook entity.</summary>
         public FunctionsRequestBuilder Functions { get =>
             new FunctionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the closeSession method.</summary>
-        public MicrosoftGraphCloseSessionRequestBuilder MicrosoftGraphCloseSession { get =>
-            new MicrosoftGraphCloseSessionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the createSession method.</summary>
-        public MicrosoftGraphCreateSessionRequestBuilder MicrosoftGraphCreateSession { get =>
-            new MicrosoftGraphCreateSessionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the refreshSession method.</summary>
-        public MicrosoftGraphRefreshSessionRequestBuilder MicrosoftGraphRefreshSession { get =>
-            new MicrosoftGraphRefreshSessionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the names property of the microsoft.graph.workbook entity.</summary>
         public NamesRequestBuilder Names { get =>
@@ -59,6 +55,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the refreshSession method.</summary>
+        public RefreshSessionRequestBuilder RefreshSession { get =>
+            new RefreshSessionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the tables property of the microsoft.graph.workbook entity.</summary>
@@ -137,22 +137,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Workbook>(requestInfo, Microsoft.Graph.Beta.Models.Workbook.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Provides operations to call the sessionInfoResource method.
-        /// </summary>
-        /// <param name="key">Usage: key=&apos;{key}&apos;</param>
-        public MicrosoftGraphSessionInfoResourceWithKeyRequestBuilder MicrosoftGraphSessionInfoResourceWithKey(string key) {
-            if(string.IsNullOrEmpty(key)) throw new ArgumentNullException(nameof(key));
-            return new MicrosoftGraphSessionInfoResourceWithKeyRequestBuilder(PathParameters, RequestAdapter, key);
-        }
-        /// <summary>
-        /// Provides operations to call the tableRowOperationResult method.
-        /// </summary>
-        /// <param name="key">Usage: key=&apos;{key}&apos;</param>
-        public MicrosoftGraphTableRowOperationResultWithKeyRequestBuilder MicrosoftGraphTableRowOperationResultWithKey(string key) {
-            if(string.IsNullOrEmpty(key)) throw new ArgumentNullException(nameof(key));
-            return new MicrosoftGraphTableRowOperationResultWithKeyRequestBuilder(PathParameters, RequestAdapter, key);
-        }
-        /// <summary>
         /// Update the navigation property workbook in drives
         /// </summary>
         /// <param name="body">The request body</param>
@@ -172,6 +156,22 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Workbook>(requestInfo, Microsoft.Graph.Beta.Models.Workbook.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the sessionInfoResource method.
+        /// </summary>
+        /// <param name="key">Usage: key=&apos;{key}&apos;</param>
+        public SessionInfoResourceWithKeyRequestBuilder SessionInfoResourceWithKey(string key) {
+            if(string.IsNullOrEmpty(key)) throw new ArgumentNullException(nameof(key));
+            return new SessionInfoResourceWithKeyRequestBuilder(PathParameters, RequestAdapter, key);
+        }
+        /// <summary>
+        /// Provides operations to call the tableRowOperationResult method.
+        /// </summary>
+        /// <param name="key">Usage: key=&apos;{key}&apos;</param>
+        public TableRowOperationResultWithKeyRequestBuilder TableRowOperationResultWithKey(string key) {
+            if(string.IsNullOrEmpty(key)) throw new ArgumentNullException(nameof(key));
+            return new TableRowOperationResultWithKeyRequestBuilder(PathParameters, RequestAdapter, key);
         }
         /// <summary>
         /// Delete navigation property workbook for drives

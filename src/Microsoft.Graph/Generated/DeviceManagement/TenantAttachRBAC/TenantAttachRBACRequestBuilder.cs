@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.MicrosoftGraphEnable;
-using Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.MicrosoftGraphGetState;
+using Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.Enable;
+using Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.GetState;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC {
     /// </summary>
     public class TenantAttachRBACRequestBuilder {
         /// <summary>Provides operations to call the enable method.</summary>
-        public MicrosoftGraphEnableRequestBuilder MicrosoftGraphEnable { get =>
-            new MicrosoftGraphEnableRequestBuilder(PathParameters, RequestAdapter);
+        public EnableRequestBuilder Enable { get =>
+            new EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getState method.</summary>
-        public MicrosoftGraphGetStateRequestBuilder MicrosoftGraphGetState { get =>
-            new MicrosoftGraphGetStateRequestBuilder(PathParameters, RequestAdapter);
+        public GetStateRequestBuilder GetState { get =>
+            new GetStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

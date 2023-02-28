@@ -1,14 +1,14 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.AppDiagnosticsWithUpn;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkReprovisionCloudPc;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkRestoreCloudPc;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Count;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadAppDiagnostics;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.MicrosoftGraphAppDiagnosticsWithUpn;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.MicrosoftGraphBulkReprovisionCloudPc;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.MicrosoftGraphBulkRestoreCloudPc;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.MicrosoftGraphBulkSetCloudPcReviewStatus;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.MicrosoftGraphDownloadAppDiagnostics;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.MicrosoftGraphExecuteAction;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.MicrosoftGraphMoveDevicesToOU;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.MoveDevicesToOU;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -22,33 +22,33 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
     /// Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
     /// </summary>
     public class ManagedDevicesRequestBuilder {
+        /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
+        public BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc { get =>
+            new BulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the bulkRestoreCloudPc method.</summary>
+        public BulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc { get =>
+            new BulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the bulkSetCloudPcReviewStatus method.</summary>
+        public BulkSetCloudPcReviewStatusRequestBuilder BulkSetCloudPcReviewStatus { get =>
+            new BulkSetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
-        public MicrosoftGraphBulkReprovisionCloudPcRequestBuilder MicrosoftGraphBulkReprovisionCloudPc { get =>
-            new MicrosoftGraphBulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the bulkRestoreCloudPc method.</summary>
-        public MicrosoftGraphBulkRestoreCloudPcRequestBuilder MicrosoftGraphBulkRestoreCloudPc { get =>
-            new MicrosoftGraphBulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the bulkSetCloudPcReviewStatus method.</summary>
-        public MicrosoftGraphBulkSetCloudPcReviewStatusRequestBuilder MicrosoftGraphBulkSetCloudPcReviewStatus { get =>
-            new MicrosoftGraphBulkSetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the downloadAppDiagnostics method.</summary>
-        public MicrosoftGraphDownloadAppDiagnosticsRequestBuilder MicrosoftGraphDownloadAppDiagnostics { get =>
-            new MicrosoftGraphDownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
+        public DownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics { get =>
+            new DownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the executeAction method.</summary>
-        public MicrosoftGraphExecuteActionRequestBuilder MicrosoftGraphExecuteAction { get =>
-            new MicrosoftGraphExecuteActionRequestBuilder(PathParameters, RequestAdapter);
+        public ExecuteActionRequestBuilder ExecuteAction { get =>
+            new ExecuteActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the moveDevicesToOU method.</summary>
-        public MicrosoftGraphMoveDevicesToOURequestBuilder MicrosoftGraphMoveDevicesToOU { get =>
-            new MicrosoftGraphMoveDevicesToOURequestBuilder(PathParameters, RequestAdapter);
+        public MoveDevicesToOURequestBuilder MoveDevicesToOU { get =>
+            new MoveDevicesToOURequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -62,6 +62,14 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("managedDevice%2Did", position);
             return new ManagedDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
+        /// <summary>
+        /// Provides operations to call the appDiagnostics method.
+        /// </summary>
+        /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
+        public AppDiagnosticsWithUpnRequestBuilder AppDiagnosticsWithUpn(string upn) {
+            if(string.IsNullOrEmpty(upn)) throw new ArgumentNullException(nameof(upn));
+            return new AppDiagnosticsWithUpnRequestBuilder(PathParameters, RequestAdapter, upn);
+        }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
         /// </summary>
@@ -107,14 +115,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ManagedDeviceCollectionResponse>(requestInfo, ManagedDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the appDiagnostics method.
-        /// </summary>
-        /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
-        public MicrosoftGraphAppDiagnosticsWithUpnRequestBuilder MicrosoftGraphAppDiagnosticsWithUpn(string upn) {
-            if(string.IsNullOrEmpty(upn)) throw new ArgumentNullException(nameof(upn));
-            return new MicrosoftGraphAppDiagnosticsWithUpnRequestBuilder(PathParameters, RequestAdapter, upn);
         }
         /// <summary>
         /// Create new navigation property to managedDevices for users

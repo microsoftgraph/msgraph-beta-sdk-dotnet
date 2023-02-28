@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item.MicrosoftGraphBeginOnboarding;
-using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item.MicrosoftGraphDisconnect;
+using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item.BeginOnboarding;
+using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item.Disconnect;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item {
     /// </summary>
     public class RemoteAssistancePartnerItemRequestBuilder {
         /// <summary>Provides operations to call the beginOnboarding method.</summary>
-        public MicrosoftGraphBeginOnboardingRequestBuilder MicrosoftGraphBeginOnboarding { get =>
-            new MicrosoftGraphBeginOnboardingRequestBuilder(PathParameters, RequestAdapter);
+        public BeginOnboardingRequestBuilder BeginOnboarding { get =>
+            new BeginOnboardingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the disconnect method.</summary>
-        public MicrosoftGraphDisconnectRequestBuilder MicrosoftGraphDisconnect { get =>
-            new MicrosoftGraphDisconnectRequestBuilder(PathParameters, RequestAdapter);
+        public DisconnectRequestBuilder Disconnect { get =>
+            new DisconnectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

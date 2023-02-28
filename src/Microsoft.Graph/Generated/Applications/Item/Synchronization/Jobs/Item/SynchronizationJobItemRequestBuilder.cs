@@ -1,10 +1,10 @@
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.MicrosoftGraphPause;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.MicrosoftGraphProvisionOnDemand;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.MicrosoftGraphRestart;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.MicrosoftGraphStart;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.MicrosoftGraphStop;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.MicrosoftGraphValidateCredentials;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Pause;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.ProvisionOnDemand;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Restart;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Start;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Stop;
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.ValidateCredentials;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,40 +20,40 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item {
     /// Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
     /// </summary>
     public class SynchronizationJobItemRequestBuilder {
-        /// <summary>Provides operations to call the pause method.</summary>
-        public MicrosoftGraphPauseRequestBuilder MicrosoftGraphPause { get =>
-            new MicrosoftGraphPauseRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the provisionOnDemand method.</summary>
-        public MicrosoftGraphProvisionOnDemandRequestBuilder MicrosoftGraphProvisionOnDemand { get =>
-            new MicrosoftGraphProvisionOnDemandRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the restart method.</summary>
-        public MicrosoftGraphRestartRequestBuilder MicrosoftGraphRestart { get =>
-            new MicrosoftGraphRestartRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the start method.</summary>
-        public MicrosoftGraphStartRequestBuilder MicrosoftGraphStart { get =>
-            new MicrosoftGraphStartRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the stop method.</summary>
-        public MicrosoftGraphStopRequestBuilder MicrosoftGraphStop { get =>
-            new MicrosoftGraphStopRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateCredentials method.</summary>
-        public MicrosoftGraphValidateCredentialsRequestBuilder MicrosoftGraphValidateCredentials { get =>
-            new MicrosoftGraphValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the pause method.</summary>
+        public PauseRequestBuilder Pause { get =>
+            new PauseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the provisionOnDemand method.</summary>
+        public ProvisionOnDemandRequestBuilder ProvisionOnDemand { get =>
+            new ProvisionOnDemandRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the restart method.</summary>
+        public RestartRequestBuilder Restart { get =>
+            new RestartRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the schema property of the microsoft.graph.synchronizationJob entity.</summary>
         public SchemaRequestBuilder Schema { get =>
             new SchemaRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the start method.</summary>
+        public StartRequestBuilder Start { get =>
+            new StartRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stop method.</summary>
+        public StopRequestBuilder Stop { get =>
+            new StopRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validateCredentials method.</summary>
+        public ValidateCredentialsRequestBuilder ValidateCredentials { get =>
+            new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new SynchronizationJobItemRequestBuilder and sets the default values.
         /// </summary>

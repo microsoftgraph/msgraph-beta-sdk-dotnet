@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Count;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Item;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.MicrosoftGraphGetSourceImages;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSourceImages method.</summary>
-        public MicrosoftGraphGetSourceImagesRequestBuilder MicrosoftGraphGetSourceImages { get =>
-            new MicrosoftGraphGetSourceImagesRequestBuilder(PathParameters, RequestAdapter);
+        public GetSourceImagesRequestBuilder GetSourceImages { get =>
+            new GetSourceImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

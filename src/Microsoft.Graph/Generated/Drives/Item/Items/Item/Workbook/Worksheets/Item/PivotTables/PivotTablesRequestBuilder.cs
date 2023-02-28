@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotTables.Count;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotTables.Item;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotTables.MicrosoftGraphRefreshAll;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.PivotTables.RefreshAll;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.P
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the refreshAll method.</summary>
-        public MicrosoftGraphRefreshAllRequestBuilder MicrosoftGraphRefreshAll { get =>
-            new MicrosoftGraphRefreshAllRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the refreshAll method.</summary>
+        public RefreshAllRequestBuilder RefreshAll { get =>
+            new RefreshAllRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

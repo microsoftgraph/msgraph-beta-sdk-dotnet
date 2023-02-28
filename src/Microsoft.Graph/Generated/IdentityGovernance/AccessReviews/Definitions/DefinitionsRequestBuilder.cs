@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Count;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.FilterByCurrentUserWithOn;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item;
-using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.MicrosoftGraphFilterByCurrentUserWithOn;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -60,6 +60,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
+        /// Provides operations to call the filterByCurrentUser method.
+        /// </summary>
+        /// <param name="on">Usage: on=&apos;{on}&apos;</param>
+        public FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on) {
+            if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
+            return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
+        }
+        /// <summary>
         /// Retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0" />
         /// </summary>
@@ -78,14 +86,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AccessReviewScheduleDefinitionCollectionResponse>(requestInfo, AccessReviewScheduleDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the filterByCurrentUser method.
-        /// </summary>
-        /// <param name="on">Usage: on=&apos;{on}&apos;</param>
-        public MicrosoftGraphFilterByCurrentUserWithOnRequestBuilder MicrosoftGraphFilterByCurrentUserWithOn(string on) {
-            if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
-            return new MicrosoftGraphFilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
         /// Create a new accessReviewScheduleDefinition object.

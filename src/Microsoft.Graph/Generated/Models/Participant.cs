@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recordingInfo", value); }
         }
 #endif
-        /// <summary>The restrictedExperience property</summary>
+        /// <summary>Indicates the reason or reasons why media content from this participant is restricted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public OnlineMeetingRestricted? RestrictedExperience {

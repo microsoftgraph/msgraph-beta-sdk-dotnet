@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJobs;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.MicrosoftGraphGetDailyAggregatedRemoteConnectionReports;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.MicrosoftGraphGetRealTimeRemoteConnectionLatencyWithCloudPcId;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.MicrosoftGraphGetRealTimeRemoteConnectionStatusWithCloudPcId;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.MicrosoftGraphGetRemoteConnectionHistoricalReports;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.MicrosoftGraphGetSharedUseLicenseUsageReport;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.MicrosoftGraphGetTotalAggregatedRemoteConnectionReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDailyAggregatedRemoteConnectionReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionLatencyWithCloudPcId;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionStatusWithCloudPcId;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -25,20 +25,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
             new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDailyAggregatedRemoteConnectionReports method.</summary>
-        public MicrosoftGraphGetDailyAggregatedRemoteConnectionReportsRequestBuilder MicrosoftGraphGetDailyAggregatedRemoteConnectionReports { get =>
-            new MicrosoftGraphGetDailyAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetDailyAggregatedRemoteConnectionReportsRequestBuilder GetDailyAggregatedRemoteConnectionReports { get =>
+            new GetDailyAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRemoteConnectionHistoricalReports method.</summary>
-        public MicrosoftGraphGetRemoteConnectionHistoricalReportsRequestBuilder MicrosoftGraphGetRemoteConnectionHistoricalReports { get =>
-            new MicrosoftGraphGetRemoteConnectionHistoricalReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetRemoteConnectionHistoricalReportsRequestBuilder GetRemoteConnectionHistoricalReports { get =>
+            new GetRemoteConnectionHistoricalReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSharedUseLicenseUsageReport method.</summary>
-        public MicrosoftGraphGetSharedUseLicenseUsageReportRequestBuilder MicrosoftGraphGetSharedUseLicenseUsageReport { get =>
-            new MicrosoftGraphGetSharedUseLicenseUsageReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetSharedUseLicenseUsageReportRequestBuilder GetSharedUseLicenseUsageReport { get =>
+            new GetSharedUseLicenseUsageReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getTotalAggregatedRemoteConnectionReports method.</summary>
-        public MicrosoftGraphGetTotalAggregatedRemoteConnectionReportsRequestBuilder MicrosoftGraphGetTotalAggregatedRemoteConnectionReports { get =>
-            new MicrosoftGraphGetTotalAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetTotalAggregatedRemoteConnectionReportsRequestBuilder GetTotalAggregatedRemoteConnectionReports { get =>
+            new GetTotalAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -115,17 +115,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// Provides operations to call the getRealTimeRemoteConnectionLatency method.
         /// </summary>
         /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
-        public MicrosoftGraphGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder MicrosoftGraphGetRealTimeRemoteConnectionLatencyWithCloudPcId(string cloudPcId) {
+        public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionLatencyWithCloudPcId(string cloudPcId) {
             if(string.IsNullOrEmpty(cloudPcId)) throw new ArgumentNullException(nameof(cloudPcId));
-            return new MicrosoftGraphGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder(PathParameters, RequestAdapter, cloudPcId);
+            return new GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder(PathParameters, RequestAdapter, cloudPcId);
         }
         /// <summary>
         /// Provides operations to call the getRealTimeRemoteConnectionStatus method.
         /// </summary>
         /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
-        public MicrosoftGraphGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder MicrosoftGraphGetRealTimeRemoteConnectionStatusWithCloudPcId(string cloudPcId) {
+        public GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionStatusWithCloudPcId(string cloudPcId) {
             if(string.IsNullOrEmpty(cloudPcId)) throw new ArgumentNullException(nameof(cloudPcId));
-            return new MicrosoftGraphGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder(PathParameters, RequestAdapter, cloudPcId);
+            return new GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder(PathParameters, RequestAdapter, cloudPcId);
         }
         /// <summary>
         /// Update the navigation property reports in deviceManagement

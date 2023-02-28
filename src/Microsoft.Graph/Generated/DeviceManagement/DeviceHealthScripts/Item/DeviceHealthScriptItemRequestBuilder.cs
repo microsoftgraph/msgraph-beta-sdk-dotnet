@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.DeviceRunStates;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.MicrosoftGraphAssign;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.MicrosoftGraphGetGlobalScriptHighestAvailableVersion;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.MicrosoftGraphGetRemediationHistory;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.MicrosoftGraphUpdateGlobalScript;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.GetGlobalScriptHighestAvailableVersion;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.GetRemediationHistory;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSummary;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
     /// Provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceHealthScriptItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceHealthScript entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -28,21 +32,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         public DeviceRunStatesRequestBuilder DeviceRunStates { get =>
             new DeviceRunStatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the getGlobalScriptHighestAvailableVersion method.</summary>
-        public MicrosoftGraphGetGlobalScriptHighestAvailableVersionRequestBuilder MicrosoftGraphGetGlobalScriptHighestAvailableVersion { get =>
-            new MicrosoftGraphGetGlobalScriptHighestAvailableVersionRequestBuilder(PathParameters, RequestAdapter);
+        public GetGlobalScriptHighestAvailableVersionRequestBuilder GetGlobalScriptHighestAvailableVersion { get =>
+            new GetGlobalScriptHighestAvailableVersionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRemediationHistory method.</summary>
-        public MicrosoftGraphGetRemediationHistoryRequestBuilder MicrosoftGraphGetRemediationHistory { get =>
-            new MicrosoftGraphGetRemediationHistoryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateGlobalScript method.</summary>
-        public MicrosoftGraphUpdateGlobalScriptRequestBuilder MicrosoftGraphUpdateGlobalScript { get =>
-            new MicrosoftGraphUpdateGlobalScriptRequestBuilder(PathParameters, RequestAdapter);
+        public GetRemediationHistoryRequestBuilder GetRemediationHistory { get =>
+            new GetRemediationHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -51,6 +47,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         /// <summary>Provides operations to manage the runSummary property of the microsoft.graph.deviceHealthScript entity.</summary>
         public RunSummaryRequestBuilder RunSummary { get =>
             new RunSummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateGlobalScript method.</summary>
+        public UpdateGlobalScriptRequestBuilder UpdateGlobalScript { get =>
+            new UpdateGlobalScriptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

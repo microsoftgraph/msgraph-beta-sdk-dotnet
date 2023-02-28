@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.MicrosoftGraphEdiscoveryAddToReviewSet;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.MicrosoftGraphEdiscoveryExport;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.EdiscoveryAddToReviewSet;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.EdiscoveryExport;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -17,12 +17,12 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item 
     /// </summary>
     public class ReviewSetItemRequestBuilder {
         /// <summary>Provides operations to call the addToReviewSet method.</summary>
-        public MicrosoftGraphEdiscoveryAddToReviewSetRequestBuilder MicrosoftGraphEdiscoveryAddToReviewSet { get =>
-            new MicrosoftGraphEdiscoveryAddToReviewSetRequestBuilder(PathParameters, RequestAdapter);
+        public EdiscoveryAddToReviewSetRequestBuilder EdiscoveryAddToReviewSet { get =>
+            new EdiscoveryAddToReviewSetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the export method.</summary>
-        public MicrosoftGraphEdiscoveryExportRequestBuilder MicrosoftGraphEdiscoveryExport { get =>
-            new MicrosoftGraphEdiscoveryExportRequestBuilder(PathParameters, RequestAdapter);
+        public EdiscoveryExportRequestBuilder EdiscoveryExport { get =>
+            new EdiscoveryExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

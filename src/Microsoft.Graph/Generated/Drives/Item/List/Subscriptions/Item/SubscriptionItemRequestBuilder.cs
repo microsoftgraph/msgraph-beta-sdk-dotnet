@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Drives.Item.List.Subscriptions.Item.MicrosoftGraphReauthorize;
+using Microsoft.Graph.Beta.Drives.Item.List.Subscriptions.Item.Reauthorize;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Subscriptions.Item {
     /// Provides operations to manage the subscriptions property of the microsoft.graph.list entity.
     /// </summary>
     public class SubscriptionItemRequestBuilder {
-        /// <summary>Provides operations to call the reauthorize method.</summary>
-        public MicrosoftGraphReauthorizeRequestBuilder MicrosoftGraphReauthorize { get =>
-            new MicrosoftGraphReauthorizeRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the reauthorize method.</summary>
+        public ReauthorizeRequestBuilder Reauthorize { get =>
+            new ReauthorizeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

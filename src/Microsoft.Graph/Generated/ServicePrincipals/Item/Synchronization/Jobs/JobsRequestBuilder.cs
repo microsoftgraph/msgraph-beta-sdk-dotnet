@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Count;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.MicrosoftGraphValidateCredentials;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the validateCredentials method.</summary>
-        public MicrosoftGraphValidateCredentialsRequestBuilder MicrosoftGraphValidateCredentials { get =>
-            new MicrosoftGraphValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validateCredentials method.</summary>
+        public ValidateCredentialsRequestBuilder ValidateCredentials { get =>
+            new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
         public SynchronizationJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

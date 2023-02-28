@@ -69,6 +69,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("entitlementManagement", value); }
         }
 #endif
+        /// <summary>The exchange property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UnifiedRbacApplication? Exchange {
+            get { return BackingStore?.Get<UnifiedRbacApplication?>("exchange"); }
+            set { BackingStore?.Set("exchange", value); }
+        }
+#nullable restore
+#else
+        public UnifiedRbacApplication Exchange {
+            get { return BackingStore?.Get<UnifiedRbacApplication>("exchange"); }
+            set { BackingStore?.Set("exchange", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceManagement", n => { DeviceManagement = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
                 {"directory", n => { Directory = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
                 {"entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
+                {"exchange", n => { Exchange = n.GetObjectValue<UnifiedRbacApplication>(UnifiedRbacApplication.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -120,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<RbacApplicationMultiple>("deviceManagement", DeviceManagement);
             writer.WriteObjectValue<RbacApplication>("directory", Directory);
             writer.WriteObjectValue<RbacApplication>("entitlementManagement", EntitlementManagement);
+            writer.WriteObjectValue<UnifiedRbacApplication>("exchange", Exchange);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

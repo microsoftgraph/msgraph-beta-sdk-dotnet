@@ -1,7 +1,6 @@
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.Count;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.Item;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.MicrosoftGraphCount;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.MicrosoftGraphItemAtWithIndex;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.ItemAtWithIndex;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,13 +16,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
     /// Provides operations to manage the points property of the microsoft.graph.workbookChartSeries entity.
     /// </summary>
     public class PointsRequestBuilder {
-        /// <summary>Provides operations to count the resources in the collection.</summary>
+        /// <summary>Provides operations to call the count method.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the count method.</summary>
-        public MicrosoftGraphCountRequestBuilder MicrosoftGraphCount { get =>
-            new MicrosoftGraphCountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -65,8 +60,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve a list of chartpoint objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chartpoint-list?view=graph-rest-1.0" />
+        /// Retrieve a list of chartpoints objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chartseries-list-points?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,9 +83,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         /// Provides operations to call the itemAt method.
         /// </summary>
         /// <param name="index">Usage: index={index}</param>
-        public MicrosoftGraphItemAtWithIndexRequestBuilder MicrosoftGraphItemAtWithIndex(int? index) {
+        public ItemAtWithIndexRequestBuilder ItemAtWithIndex(int? index) {
             _ = index ?? throw new ArgumentNullException(nameof(index));
-            return new MicrosoftGraphItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
+            return new ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
         }
         /// <summary>
         /// Use this API to create a new ChartPoint.
@@ -115,7 +110,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return await RequestAdapter.SendAsync<WorkbookChartPoint>(requestInfo, WorkbookChartPoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of chartpoint objects.
+        /// Retrieve a list of chartpoints objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,7 +164,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of chartpoint objects.
+        /// Retrieve a list of chartpoints objects.
         /// </summary>
         public class PointsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.ExecutionScope;
-using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate;
-using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion;
-using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.IdentityGovernanceActivate;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.IdentityGovernanceCreateNewVersion;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.IdentityGovernanceRestore;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.UserProcessingResults;
@@ -26,16 +26,16 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             new ExecutionScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the activate method.</summary>
-        public MicrosoftGraphIdentityGovernanceActivateRequestBuilder MicrosoftGraphIdentityGovernanceActivate { get =>
-            new MicrosoftGraphIdentityGovernanceActivateRequestBuilder(PathParameters, RequestAdapter);
+        public IdentityGovernanceActivateRequestBuilder IdentityGovernanceActivate { get =>
+            new IdentityGovernanceActivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createNewVersion method.</summary>
-        public MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder MicrosoftGraphIdentityGovernanceCreateNewVersion { get =>
-            new MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder(PathParameters, RequestAdapter);
+        public IdentityGovernanceCreateNewVersionRequestBuilder IdentityGovernanceCreateNewVersion { get =>
+            new IdentityGovernanceCreateNewVersionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public MicrosoftGraphIdentityGovernanceRestoreRequestBuilder MicrosoftGraphIdentityGovernanceRestore { get =>
-            new MicrosoftGraphIdentityGovernanceRestoreRequestBuilder(PathParameters, RequestAdapter);
+        public IdentityGovernanceRestoreRequestBuilder IdentityGovernanceRestore { get =>
+            new IdentityGovernanceRestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

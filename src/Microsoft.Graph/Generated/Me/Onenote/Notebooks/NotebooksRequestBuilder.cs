@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Me.Onenote.Notebooks.Count;
+using Microsoft.Graph.Beta.Me.Onenote.Notebooks.GetNotebookFromWebUrl;
+using Microsoft.Graph.Beta.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks;
 using Microsoft.Graph.Beta.Me.Onenote.Notebooks.Item;
-using Microsoft.Graph.Beta.Me.Onenote.Notebooks.MicrosoftGraphGetNotebookFromWebUrl;
-using Microsoft.Graph.Beta.Me.Onenote.Notebooks.MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getNotebookFromWebUrl method.</summary>
-        public MicrosoftGraphGetNotebookFromWebUrlRequestBuilder MicrosoftGraphGetNotebookFromWebUrl { get =>
-            new MicrosoftGraphGetNotebookFromWebUrlRequestBuilder(PathParameters, RequestAdapter);
+        public GetNotebookFromWebUrlRequestBuilder GetNotebookFromWebUrl { get =>
+            new GetNotebookFromWebUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks {
         /// Provides operations to call the getRecentNotebooks method.
         /// </summary>
         /// <param name="includePersonalNotebooks">Usage: includePersonalNotebooks={includePersonalNotebooks}</param>
-        public MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooks(bool? includePersonalNotebooks) {
+        public GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder GetRecentNotebooksWithIncludePersonalNotebooks(bool? includePersonalNotebooks) {
             _ = includePersonalNotebooks ?? throw new ArgumentNullException(nameof(includePersonalNotebooks));
-            return new MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(PathParameters, RequestAdapter, includePersonalNotebooks);
+            return new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(PathParameters, RequestAdapter, includePersonalNotebooks);
         }
         /// <summary>
         /// Create a new OneNote notebook.

@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Count;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.FilterByCurrentUserWithOn;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item;
-using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.MicrosoftGraphFilterByCurrentUserWithOn;
-using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.MicrosoftGraphRecordAllDecisions;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.RecordAllDecisions;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the recordAllDecisions method.</summary>
-        public MicrosoftGraphRecordAllDecisionsRequestBuilder MicrosoftGraphRecordAllDecisions { get =>
-            new MicrosoftGraphRecordAllDecisionsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the recordAllDecisions method.</summary>
+        public RecordAllDecisionsRequestBuilder RecordAllDecisions { get =>
+            new RecordAllDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
@@ -65,6 +65,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
+        /// Provides operations to call the filterByCurrentUser method.
+        /// </summary>
+        /// <param name="on">Usage: on=&apos;{on}&apos;</param>
+        public FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on) {
+            if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
+            return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
+        }
+        /// <summary>
         /// Represents an Azure AD access review decision on an instance of a review.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,14 +90,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AccessReviewInstanceDecisionItemCollectionResponse>(requestInfo, AccessReviewInstanceDecisionItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the filterByCurrentUser method.
-        /// </summary>
-        /// <param name="on">Usage: on=&apos;{on}&apos;</param>
-        public MicrosoftGraphFilterByCurrentUserWithOnRequestBuilder MicrosoftGraphFilterByCurrentUserWithOn(string on) {
-            if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
-            return new MicrosoftGraphFilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
         /// Create new navigation property to decisions for identityGovernance

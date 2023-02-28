@@ -10,12 +10,12 @@ using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppStatuses;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks;
 using Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtectionPolicies;
-using Microsoft.Graph.Beta.DeviceAppManagement.MicrosoftGraphSyncMicrosoftStoreForBusinessApps;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCategories;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps;
 using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets;
 using Microsoft.Graph.Beta.DeviceAppManagement.SymantecCodeSigningCertificate;
+using Microsoft.Graph.Beta.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps;
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations;
 using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens;
 using Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies;
@@ -87,10 +87,6 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         public MdmWindowsInformationProtectionPoliciesRequestBuilder MdmWindowsInformationProtectionPolicies { get =>
             new MdmWindowsInformationProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the syncMicrosoftStoreForBusinessApps method.</summary>
-        public MicrosoftGraphSyncMicrosoftStoreForBusinessAppsRequestBuilder MicrosoftGraphSyncMicrosoftStoreForBusinessApps { get =>
-            new MicrosoftGraphSyncMicrosoftStoreForBusinessAppsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.</summary>
         public MobileAppCategoriesRequestBuilder MobileAppCategories { get =>
             new MobileAppCategoriesRequestBuilder(PathParameters, RequestAdapter);
@@ -114,6 +110,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         /// <summary>Provides operations to manage the symantecCodeSigningCertificate property of the microsoft.graph.deviceAppManagement entity.</summary>
         public SymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate { get =>
             new SymantecCodeSigningCertificateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the syncMicrosoftStoreForBusinessApps method.</summary>
+        public SyncMicrosoftStoreForBusinessAppsRequestBuilder SyncMicrosoftStoreForBusinessApps { get =>
+            new SyncMicrosoftStoreForBusinessAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
         public TargetedManagedAppConfigurationsRequestBuilder TargetedManagedAppConfigurations { get =>

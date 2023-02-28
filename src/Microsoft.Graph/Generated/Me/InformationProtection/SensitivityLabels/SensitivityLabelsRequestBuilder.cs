@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.Count;
+using Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.Evaluate;
 using Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.Item;
-using Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.MicrosoftGraphEvaluate;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluate method.</summary>
-        public MicrosoftGraphEvaluateRequestBuilder MicrosoftGraphEvaluate { get =>
-            new MicrosoftGraphEvaluateRequestBuilder(PathParameters, RequestAdapter);
+        public EvaluateRequestBuilder Evaluate { get =>
+            new EvaluateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

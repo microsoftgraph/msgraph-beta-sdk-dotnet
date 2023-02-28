@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.AllMessages;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Count;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.GetAllMessages;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item;
-using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.MicrosoftGraphAllMessages;
-using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.MicrosoftGraphGetAllMessages;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels {
     /// Provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
     /// </summary>
     public class ChannelsRequestBuilder {
+        /// <summary>Provides operations to call the allMessages method.</summary>
+        public AllMessagesRequestBuilder AllMessages { get =>
+            new AllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the allMessages method.</summary>
-        public MicrosoftGraphAllMessagesRequestBuilder MicrosoftGraphAllMessages { get =>
-            new MicrosoftGraphAllMessagesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the getAllMessages method.</summary>
-        public MicrosoftGraphGetAllMessagesRequestBuilder MicrosoftGraphGetAllMessages { get =>
-            new MicrosoftGraphGetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        public GetAllMessagesRequestBuilder GetAllMessages { get =>
+            new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

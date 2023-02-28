@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories;
-using Microsoft.Graph.Beta.Education.Me.Assignments.Item.MicrosoftGraphPublish;
-using Microsoft.Graph.Beta.Education.Me.Assignments.Item.MicrosoftGraphSetUpFeedbackResourcesFolder;
-using Microsoft.Graph.Beta.Education.Me.Assignments.Item.MicrosoftGraphSetUpResourcesFolder;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Publish;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Rubric;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.SetUpFeedbackResourcesFolder;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.SetUpResourcesFolder;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Submissions;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -24,20 +24,12 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the publish method.</summary>
-        public MicrosoftGraphPublishRequestBuilder MicrosoftGraphPublish { get =>
-            new MicrosoftGraphPublishRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setUpFeedbackResourcesFolder method.</summary>
-        public MicrosoftGraphSetUpFeedbackResourcesFolderRequestBuilder MicrosoftGraphSetUpFeedbackResourcesFolder { get =>
-            new MicrosoftGraphSetUpFeedbackResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setUpResourcesFolder method.</summary>
-        public MicrosoftGraphSetUpResourcesFolderRequestBuilder MicrosoftGraphSetUpResourcesFolder { get =>
-            new MicrosoftGraphSetUpResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the publish method.</summary>
+        public PublishRequestBuilder Publish { get =>
+            new PublishRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.</summary>
@@ -47,6 +39,14 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
         /// <summary>Provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.</summary>
         public RubricRequestBuilder Rubric { get =>
             new RubricRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setUpFeedbackResourcesFolder method.</summary>
+        public SetUpFeedbackResourcesFolderRequestBuilder SetUpFeedbackResourcesFolder { get =>
+            new SetUpFeedbackResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setUpResourcesFolder method.</summary>
+        public SetUpResourcesFolderRequestBuilder SetUpResourcesFolder { get =>
+            new SetUpResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.</summary>
         public SubmissionsRequestBuilder Submissions { get =>

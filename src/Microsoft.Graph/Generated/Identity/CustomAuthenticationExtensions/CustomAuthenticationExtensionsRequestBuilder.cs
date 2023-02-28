@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Count;
 using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item;
-using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.MicrosoftGraphValidateAuthenticationConfiguration;
+using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.ValidateAuthenticationConfiguration;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the validateAuthenticationConfiguration method.</summary>
-        public MicrosoftGraphValidateAuthenticationConfigurationRequestBuilder MicrosoftGraphValidateAuthenticationConfiguration { get =>
-            new MicrosoftGraphValidateAuthenticationConfigurationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validateAuthenticationConfiguration method.</summary>
+        public ValidateAuthenticationConfigurationRequestBuilder ValidateAuthenticationConfiguration { get =>
+            new ValidateAuthenticationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.</summary>
         public CustomAuthenticationExtensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

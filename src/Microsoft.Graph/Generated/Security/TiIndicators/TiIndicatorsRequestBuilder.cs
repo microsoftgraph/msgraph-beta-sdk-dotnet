@@ -1,11 +1,11 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Security.TiIndicators.Count;
+using Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators;
+using Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId;
 using Microsoft.Graph.Beta.Security.TiIndicators.Item;
-using Microsoft.Graph.Beta.Security.TiIndicators.MicrosoftGraphDeleteTiIndicators;
-using Microsoft.Graph.Beta.Security.TiIndicators.MicrosoftGraphDeleteTiIndicatorsByExternalId;
-using Microsoft.Graph.Beta.Security.TiIndicators.MicrosoftGraphSubmitTiIndicators;
-using Microsoft.Graph.Beta.Security.TiIndicators.MicrosoftGraphUpdateTiIndicators;
+using Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators;
+using Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -24,25 +24,25 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteTiIndicators method.</summary>
-        public MicrosoftGraphDeleteTiIndicatorsRequestBuilder MicrosoftGraphDeleteTiIndicators { get =>
-            new MicrosoftGraphDeleteTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        public DeleteTiIndicatorsRequestBuilder DeleteTiIndicators { get =>
+            new DeleteTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteTiIndicatorsByExternalId method.</summary>
-        public MicrosoftGraphDeleteTiIndicatorsByExternalIdRequestBuilder MicrosoftGraphDeleteTiIndicatorsByExternalId { get =>
-            new MicrosoftGraphDeleteTiIndicatorsByExternalIdRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the submitTiIndicators method.</summary>
-        public MicrosoftGraphSubmitTiIndicatorsRequestBuilder MicrosoftGraphSubmitTiIndicators { get =>
-            new MicrosoftGraphSubmitTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateTiIndicators method.</summary>
-        public MicrosoftGraphUpdateTiIndicatorsRequestBuilder MicrosoftGraphUpdateTiIndicators { get =>
-            new MicrosoftGraphUpdateTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        public DeleteTiIndicatorsByExternalIdRequestBuilder DeleteTiIndicatorsByExternalId { get =>
+            new DeleteTiIndicatorsByExternalIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the submitTiIndicators method.</summary>
+        public SubmitTiIndicatorsRequestBuilder SubmitTiIndicators { get =>
+            new SubmitTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateTiIndicators method.</summary>
+        public UpdateTiIndicatorsRequestBuilder UpdateTiIndicators { get =>
+            new UpdateTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.</summary>

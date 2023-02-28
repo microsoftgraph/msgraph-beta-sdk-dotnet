@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.AppConsent;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess;
+using Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts;
 using Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -43,6 +44,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to manage the roleManagementAlerts property of the microsoft.graph.identityGovernance entity.</summary>
+        public RoleManagementAlertsRequestBuilder RoleManagementAlerts { get =>
+            new RoleManagementAlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.</summary>
         public TermsOfUseRequestBuilder TermsOfUse { get =>
             new TermsOfUseRequestBuilder(PathParameters, RequestAdapter);

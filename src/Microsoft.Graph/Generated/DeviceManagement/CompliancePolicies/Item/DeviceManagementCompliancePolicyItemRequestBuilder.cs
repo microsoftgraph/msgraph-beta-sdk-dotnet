@@ -1,7 +1,7 @@
+using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Assignments;
-using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.MicrosoftGraphAssign;
-using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.MicrosoftGraphSetScheduledActions;
 using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.ScheduledActionsForRule;
+using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions;
 using Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Settings;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -18,17 +18,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item {
     /// Provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceManagementCompliancePolicyItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceManagementCompliancePolicy entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setScheduledActions method.</summary>
-        public MicrosoftGraphSetScheduledActionsRequestBuilder MicrosoftGraphSetScheduledActions { get =>
-            new MicrosoftGraphSetScheduledActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -37,6 +33,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item {
         /// <summary>Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceManagementCompliancePolicy entity.</summary>
         public ScheduledActionsForRuleRequestBuilder ScheduledActionsForRule { get =>
             new ScheduledActionsForRuleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setScheduledActions method.</summary>
+        public SetScheduledActionsRequestBuilder SetScheduledActions { get =>
+            new SetScheduledActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementCompliancePolicy entity.</summary>
         public SettingsRequestBuilder Settings { get =>

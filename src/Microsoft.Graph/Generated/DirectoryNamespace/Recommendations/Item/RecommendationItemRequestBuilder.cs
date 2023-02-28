@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.MicrosoftGraphComplete;
-using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.MicrosoftGraphDismiss;
-using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.MicrosoftGraphPostpone;
-using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.MicrosoftGraphReactivate;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Complete;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Dismiss;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Reactivate;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,23 +18,23 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
     /// </summary>
     public class RecommendationItemRequestBuilder {
         /// <summary>Provides operations to call the complete method.</summary>
-        public MicrosoftGraphCompleteRequestBuilder MicrosoftGraphComplete { get =>
-            new MicrosoftGraphCompleteRequestBuilder(PathParameters, RequestAdapter);
+        public CompleteRequestBuilder Complete { get =>
+            new CompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismiss method.</summary>
-        public MicrosoftGraphDismissRequestBuilder MicrosoftGraphDismiss { get =>
-            new MicrosoftGraphDismissRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the postpone method.</summary>
-        public MicrosoftGraphPostponeRequestBuilder MicrosoftGraphPostpone { get =>
-            new MicrosoftGraphPostponeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reactivate method.</summary>
-        public MicrosoftGraphReactivateRequestBuilder MicrosoftGraphReactivate { get =>
-            new MicrosoftGraphReactivateRequestBuilder(PathParameters, RequestAdapter);
+        public DismissRequestBuilder Dismiss { get =>
+            new DismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the postpone method.</summary>
+        public PostponeRequestBuilder Postpone { get =>
+            new PostponeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reactivate method.</summary>
+        public ReactivateRequestBuilder Reactivate { get =>
+            new ReactivateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

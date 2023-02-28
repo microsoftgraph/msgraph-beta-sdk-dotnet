@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Count;
+using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMethodModeWithAuthenticationMethodModes;
 using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item;
-using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.MicrosoftGraphFindByMethodModeWithAuthenticationMethodModes;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -60,6 +60,14 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
+        /// Provides operations to call the findByMethodMode method.
+        /// </summary>
+        /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
+        public FindByMethodModeWithAuthenticationMethodModesRequestBuilder FindByMethodModeWithAuthenticationMethodModes(string authenticationMethodModes) {
+            if(string.IsNullOrEmpty(authenticationMethodModes)) throw new ArgumentNullException(nameof(authenticationMethodModes));
+            return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);
+        }
+        /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0" />
         /// </summary>
@@ -78,14 +86,6 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicyCollectionResponse>(requestInfo, AuthenticationStrengthPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the findByMethodMode method.
-        /// </summary>
-        /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
-        public MicrosoftGraphFindByMethodModeWithAuthenticationMethodModesRequestBuilder MicrosoftGraphFindByMethodModeWithAuthenticationMethodModes(string authenticationMethodModes) {
-            if(string.IsNullOrEmpty(authenticationMethodModes)) throw new ArgumentNullException(nameof(authenticationMethodModes));
-            return new MicrosoftGraphFindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);
         }
         /// <summary>
         /// Create a new custom authenticationStrengthPolicy object.

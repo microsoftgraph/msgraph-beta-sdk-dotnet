@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Drives.Item.List.Items.Item.DocumentSetVersions.Item.MicrosoftGraphRestore;
+using Microsoft.Graph.Beta.Drives.Item.List.Items.Item.DocumentSetVersions.Item.Restore;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.DocumentSetVersions.I
     /// Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
     /// </summary>
     public class DocumentSetVersionItemRequestBuilder {
-        /// <summary>Provides operations to call the restore method.</summary>
-        public MicrosoftGraphRestoreRequestBuilder MicrosoftGraphRestore { get =>
-            new MicrosoftGraphRestoreRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

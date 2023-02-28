@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.MicrosoftGraphApply;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.MicrosoftGraphClear;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.MicrosoftGraphReapply;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.Apply;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.Clear;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Sort.Reapply;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,19 +17,19 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
     /// </summary>
     public class SortRequestBuilder {
         /// <summary>Provides operations to call the apply method.</summary>
-        public MicrosoftGraphApplyRequestBuilder MicrosoftGraphApply { get =>
-            new MicrosoftGraphApplyRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyRequestBuilder Apply { get =>
+            new ApplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clear method.</summary>
-        public MicrosoftGraphClearRequestBuilder MicrosoftGraphClear { get =>
-            new MicrosoftGraphClearRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reapply method.</summary>
-        public MicrosoftGraphReapplyRequestBuilder MicrosoftGraphReapply { get =>
-            new MicrosoftGraphReapplyRequestBuilder(PathParameters, RequestAdapter);
+        public ClearRequestBuilder Clear { get =>
+            new ClearRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the reapply method.</summary>
+        public ReapplyRequestBuilder Reapply { get =>
+            new ReapplyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

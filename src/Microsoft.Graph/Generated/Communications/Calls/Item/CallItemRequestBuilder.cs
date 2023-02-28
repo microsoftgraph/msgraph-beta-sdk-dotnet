@@ -1,22 +1,22 @@
+using Microsoft.Graph.Beta.Communications.Calls.Item.AddLargeGalleryView;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Answer;
 using Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups;
+using Microsoft.Graph.Beta.Communications.Calls.Item.CancelMediaProcessing;
+using Microsoft.Graph.Beta.Communications.Calls.Item.ChangeScreenSharingRole;
 using Microsoft.Graph.Beta.Communications.Calls.Item.ContentSharingSessions;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphAddLargeGalleryView;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphAnswer;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphCancelMediaProcessing;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphChangeScreenSharingRole;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphKeepAlive;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphMute;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphPlayPrompt;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphRecord;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphRecordResponse;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphRedirect;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphReject;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphSubscribeToTone;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphTransfer;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphUnmute;
-using Microsoft.Graph.Beta.Communications.Calls.Item.MicrosoftGraphUpdateRecordingStatus;
+using Microsoft.Graph.Beta.Communications.Calls.Item.KeepAlive;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Mute;
 using Microsoft.Graph.Beta.Communications.Calls.Item.Operations;
 using Microsoft.Graph.Beta.Communications.Calls.Item.Participants;
+using Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Record;
+using Microsoft.Graph.Beta.Communications.Calls.Item.RecordResponse;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Redirect;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Reject;
+using Microsoft.Graph.Beta.Communications.Calls.Item.SubscribeToTone;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Transfer;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Unmute;
+using Microsoft.Graph.Beta.Communications.Calls.Item.UpdateRecordingStatus;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -32,73 +32,37 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item {
     /// Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
     /// </summary>
     public class CallItemRequestBuilder {
+        /// <summary>Provides operations to call the addLargeGalleryView method.</summary>
+        public AddLargeGalleryViewRequestBuilder AddLargeGalleryView { get =>
+            new AddLargeGalleryViewRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the answer method.</summary>
+        public AnswerRequestBuilder Answer { get =>
+            new AnswerRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.</summary>
         public AudioRoutingGroupsRequestBuilder AudioRoutingGroups { get =>
             new AudioRoutingGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the cancelMediaProcessing method.</summary>
+        public CancelMediaProcessingRequestBuilder CancelMediaProcessing { get =>
+            new CancelMediaProcessingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the changeScreenSharingRole method.</summary>
+        public ChangeScreenSharingRoleRequestBuilder ChangeScreenSharingRole { get =>
+            new ChangeScreenSharingRoleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.</summary>
         public ContentSharingSessionsRequestBuilder ContentSharingSessions { get =>
             new ContentSharingSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the addLargeGalleryView method.</summary>
-        public MicrosoftGraphAddLargeGalleryViewRequestBuilder MicrosoftGraphAddLargeGalleryView { get =>
-            new MicrosoftGraphAddLargeGalleryViewRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the answer method.</summary>
-        public MicrosoftGraphAnswerRequestBuilder MicrosoftGraphAnswer { get =>
-            new MicrosoftGraphAnswerRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the cancelMediaProcessing method.</summary>
-        public MicrosoftGraphCancelMediaProcessingRequestBuilder MicrosoftGraphCancelMediaProcessing { get =>
-            new MicrosoftGraphCancelMediaProcessingRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the changeScreenSharingRole method.</summary>
-        public MicrosoftGraphChangeScreenSharingRoleRequestBuilder MicrosoftGraphChangeScreenSharingRole { get =>
-            new MicrosoftGraphChangeScreenSharingRoleRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the keepAlive method.</summary>
-        public MicrosoftGraphKeepAliveRequestBuilder MicrosoftGraphKeepAlive { get =>
-            new MicrosoftGraphKeepAliveRequestBuilder(PathParameters, RequestAdapter);
+        public KeepAliveRequestBuilder KeepAlive { get =>
+            new KeepAliveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the mute method.</summary>
-        public MicrosoftGraphMuteRequestBuilder MicrosoftGraphMute { get =>
-            new MicrosoftGraphMuteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the playPrompt method.</summary>
-        public MicrosoftGraphPlayPromptRequestBuilder MicrosoftGraphPlayPrompt { get =>
-            new MicrosoftGraphPlayPromptRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the record method.</summary>
-        public MicrosoftGraphRecordRequestBuilder MicrosoftGraphRecord { get =>
-            new MicrosoftGraphRecordRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the recordResponse method.</summary>
-        public MicrosoftGraphRecordResponseRequestBuilder MicrosoftGraphRecordResponse { get =>
-            new MicrosoftGraphRecordResponseRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the redirect method.</summary>
-        public MicrosoftGraphRedirectRequestBuilder MicrosoftGraphRedirect { get =>
-            new MicrosoftGraphRedirectRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reject method.</summary>
-        public MicrosoftGraphRejectRequestBuilder MicrosoftGraphReject { get =>
-            new MicrosoftGraphRejectRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the subscribeToTone method.</summary>
-        public MicrosoftGraphSubscribeToToneRequestBuilder MicrosoftGraphSubscribeToTone { get =>
-            new MicrosoftGraphSubscribeToToneRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the transfer method.</summary>
-        public MicrosoftGraphTransferRequestBuilder MicrosoftGraphTransfer { get =>
-            new MicrosoftGraphTransferRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unmute method.</summary>
-        public MicrosoftGraphUnmuteRequestBuilder MicrosoftGraphUnmute { get =>
-            new MicrosoftGraphUnmuteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateRecordingStatus method.</summary>
-        public MicrosoftGraphUpdateRecordingStatusRequestBuilder MicrosoftGraphUpdateRecordingStatus { get =>
-            new MicrosoftGraphUpdateRecordingStatusRequestBuilder(PathParameters, RequestAdapter);
+        public MuteRequestBuilder Mute { get =>
+            new MuteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.call entity.</summary>
         public OperationsRequestBuilder Operations { get =>
@@ -110,8 +74,44 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the playPrompt method.</summary>
+        public PlayPromptRequestBuilder PlayPrompt { get =>
+            new PlayPromptRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the record method.</summary>
+        public RecordRequestBuilder Record { get =>
+            new RecordRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the recordResponse method.</summary>
+        public RecordResponseRequestBuilder RecordResponse { get =>
+            new RecordResponseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the redirect method.</summary>
+        public RedirectRequestBuilder Redirect { get =>
+            new RedirectRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reject method.</summary>
+        public RejectRequestBuilder Reject { get =>
+            new RejectRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the subscribeToTone method.</summary>
+        public SubscribeToToneRequestBuilder SubscribeToTone { get =>
+            new SubscribeToToneRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the transfer method.</summary>
+        public TransferRequestBuilder Transfer { get =>
+            new TransferRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unmute method.</summary>
+        public UnmuteRequestBuilder Unmute { get =>
+            new UnmuteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateRecordingStatus method.</summary>
+        public UpdateRecordingStatusRequestBuilder UpdateRecordingStatus { get =>
+            new UpdateRecordingStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.MicrosoftGraphGetPlan;
+using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan;
 using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConfiguration;
 using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration;
 using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks;
@@ -18,8 +18,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner {
     /// </summary>
     public class PlannerRequestBuilder {
         /// <summary>Provides operations to call the getPlan method.</summary>
-        public MicrosoftGraphGetPlanRequestBuilder MicrosoftGraphGetPlan { get =>
-            new MicrosoftGraphGetPlanRequestBuilder(PathParameters, RequestAdapter);
+        public GetPlanRequestBuilder GetPlan { get =>
+            new GetPlanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

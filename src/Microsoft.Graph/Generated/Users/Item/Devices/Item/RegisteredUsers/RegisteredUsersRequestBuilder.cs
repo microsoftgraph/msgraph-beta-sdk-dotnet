@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Count;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphEndpoint;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphServicePrincipal;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.GraphUser;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.Item;
-using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.MicrosoftGraphEndpoint;
-using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.MicrosoftGraphServicePrincipal;
-using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers.MicrosoftGraphUser;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public MicrosoftGraphEndpointRequestBuilder MicrosoftGraphEndpoint { get =>
-            new MicrosoftGraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+        public GraphEndpointRequestBuilder GraphEndpoint { get =>
+            new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public MicrosoftGraphServicePrincipalRequestBuilder MicrosoftGraphServicePrincipal { get =>
-            new MicrosoftGraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        public GraphServicePrincipalRequestBuilder GraphServicePrincipal { get =>
+            new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
-            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
+        public GraphUserRequestBuilder GraphUser { get =>
+            new GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

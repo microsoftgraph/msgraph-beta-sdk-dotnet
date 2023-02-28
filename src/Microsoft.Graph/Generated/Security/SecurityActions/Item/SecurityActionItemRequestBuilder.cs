@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Security.SecurityActions.Item.MicrosoftGraphCancelSecurityAction;
+using Microsoft.Graph.Beta.Security.SecurityActions.Item.CancelSecurityAction;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
     /// </summary>
     public class SecurityActionItemRequestBuilder {
         /// <summary>Provides operations to call the cancelSecurityAction method.</summary>
-        public MicrosoftGraphCancelSecurityActionRequestBuilder MicrosoftGraphCancelSecurityAction { get =>
-            new MicrosoftGraphCancelSecurityActionRequestBuilder(PathParameters, RequestAdapter);
+        public CancelSecurityActionRequestBuilder CancelSecurityAction { get =>
+            new CancelSecurityActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

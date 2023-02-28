@@ -4,7 +4,7 @@ using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlert
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.AlertRule;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.ApiNotifications;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.EmailNotifications;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.MicrosoftGraphManagedTenantsAddUserInputLog;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.ManagedTenantsAddUserInputLog;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
             new EmailNotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the addUserInputLog method.</summary>
-        public MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilder MicrosoftGraphManagedTenantsAddUserInputLog { get =>
-            new MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedTenantsAddUserInputLogRequestBuilder ManagedTenantsAddUserInputLog { get =>
+            new ManagedTenantsAddUserInputLogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

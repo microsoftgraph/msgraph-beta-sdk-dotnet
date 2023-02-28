@@ -4,7 +4,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovernment
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.MicrosoftGraphGetEffectivePermissions;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
             new GalleryImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
-        public MicrosoftGraphGetEffectivePermissionsRequestBuilder MicrosoftGraphGetEffectivePermissions { get =>
-            new MicrosoftGraphGetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
+        public GetEffectivePermissionsRequestBuilder GetEffectivePermissions { get =>
+            new GetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.</summary>
         public OnPremisesConnectionsRequestBuilder OnPremisesConnections { get =>

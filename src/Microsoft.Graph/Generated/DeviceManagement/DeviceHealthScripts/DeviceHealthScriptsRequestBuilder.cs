@@ -1,8 +1,8 @@
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.AreGlobalScriptsAvailable;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Count;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.EnableGlobalScripts;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.GetRemediationSummary;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.MicrosoftGraphAreGlobalScriptsAvailable;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.MicrosoftGraphEnableGlobalScripts;
-using Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.MicrosoftGraphGetRemediationSummary;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,21 +18,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts {
     /// Provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceHealthScriptsRequestBuilder {
+        /// <summary>Provides operations to call the areGlobalScriptsAvailable method.</summary>
+        public AreGlobalScriptsAvailableRequestBuilder AreGlobalScriptsAvailable { get =>
+            new AreGlobalScriptsAvailableRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the areGlobalScriptsAvailable method.</summary>
-        public MicrosoftGraphAreGlobalScriptsAvailableRequestBuilder MicrosoftGraphAreGlobalScriptsAvailable { get =>
-            new MicrosoftGraphAreGlobalScriptsAvailableRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the enableGlobalScripts method.</summary>
-        public MicrosoftGraphEnableGlobalScriptsRequestBuilder MicrosoftGraphEnableGlobalScripts { get =>
-            new MicrosoftGraphEnableGlobalScriptsRequestBuilder(PathParameters, RequestAdapter);
+        public EnableGlobalScriptsRequestBuilder EnableGlobalScripts { get =>
+            new EnableGlobalScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRemediationSummary method.</summary>
-        public MicrosoftGraphGetRemediationSummaryRequestBuilder MicrosoftGraphGetRemediationSummary { get =>
-            new MicrosoftGraphGetRemediationSummaryRequestBuilder(PathParameters, RequestAdapter);
+        public GetRemediationSummaryRequestBuilder GetRemediationSummary { get =>
+            new GetRemediationSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

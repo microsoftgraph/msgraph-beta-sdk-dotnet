@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assign;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.DeviceStatuses;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedMobileLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMobileLobApp;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.InstallSummary;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MicrosoftGraphAssign;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MicrosoftGraphGetRelatedAppStatesWithUserPrincipalNameWithDeviceId;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MicrosoftGraphManagedMobileLobApp;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MicrosoftGraphMobileLobApp;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.MicrosoftGraphUpdateRelationships;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -24,6 +24,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
     /// Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
     /// </summary>
     public class MobileAppItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -36,25 +40,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         public DeviceStatusesRequestBuilder DeviceStatuses { get =>
             new DeviceStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
+        public GraphManagedMobileLobAppRequestBuilder GraphManagedMobileLobApp { get =>
+            new GraphManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to mobileLobApp.</summary>
+        public GraphMobileLobAppRequestBuilder GraphMobileLobApp { get =>
+            new GraphMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the installSummary property of the microsoft.graph.mobileApp entity.</summary>
         public InstallSummaryRequestBuilder InstallSummary { get =>
             new InstallSummaryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
-        public MicrosoftGraphManagedMobileLobAppRequestBuilder MicrosoftGraphManagedMobileLobApp { get =>
-            new MicrosoftGraphManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Casts the previous resource to mobileLobApp.</summary>
-        public MicrosoftGraphMobileLobAppRequestBuilder MicrosoftGraphMobileLobApp { get =>
-            new MicrosoftGraphMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateRelationships method.</summary>
-        public MicrosoftGraphUpdateRelationshipsRequestBuilder MicrosoftGraphUpdateRelationships { get =>
-            new MicrosoftGraphUpdateRelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -64,6 +60,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the updateRelationships method.</summary>
+        public UpdateRelationshipsRequestBuilder UpdateRelationships { get =>
+            new UpdateRelationshipsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.</summary>
@@ -140,10 +140,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         /// </summary>
         /// <param name="deviceId">Usage: deviceId=&apos;{deviceId}&apos;</param>
         /// <param name="userPrincipalName">Usage: userPrincipalName=&apos;{userPrincipalName}&apos;</param>
-        public MicrosoftGraphGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder MicrosoftGraphGetRelatedAppStatesWithUserPrincipalNameWithDeviceId(string deviceId, string userPrincipalName) {
+        public GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder GetRelatedAppStatesWithUserPrincipalNameWithDeviceId(string deviceId, string userPrincipalName) {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
             if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
-            return new MicrosoftGraphGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId, userPrincipalName);
+            return new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId, userPrincipalName);
         }
         /// <summary>
         /// Update the navigation property mobileApps in deviceAppManagement

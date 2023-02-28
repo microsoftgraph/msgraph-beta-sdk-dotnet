@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item.MicrosoftGraphRange;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item.RangeNamespace;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.
     /// Provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
     /// </summary>
     public class WorkbookTableRowItemRequestBuilder {
-        /// <summary>Provides operations to call the range method.</summary>
-        public MicrosoftGraphRangeRequestBuilder MicrosoftGraphRange { get =>
-            new MicrosoftGraphRangeRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the range method.</summary>
+        public RangeRequestBuilder Range { get =>
+            new RangeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

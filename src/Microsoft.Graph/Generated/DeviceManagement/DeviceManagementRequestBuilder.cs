@@ -50,9 +50,22 @@ using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts;
 using Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools;
+using Microsoft.Graph.Beta.DeviceManagement.EnableAndroidDeviceAdministratorEnrollment;
+using Microsoft.Graph.Beta.DeviceManagement.EnableLegacyPcManagement;
+using Microsoft.Graph.Beta.DeviceManagement.EnableUnlicensedAdminstrators;
+using Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter;
 using Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies;
 using Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy;
+using Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails;
+using Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails;
+using Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary;
+using Microsoft.Graph.Beta.DeviceManagement.GetComanagementEligibleDevicesSummary;
+using Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissions;
+using Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope;
+using Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds;
+using Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource;
+using Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles;
@@ -69,24 +82,6 @@ using Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceOverview;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphEnableAndroidDeviceAdministratorEnrollment;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphEnableLegacyPcManagement;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphEnableUnlicensedAdminstrators;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphEvaluateAssignmentFilter;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphGetAssignedRoleDetails;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphGetAssignmentFiltersStatusDetails;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphGetComanagedDevicesSummary;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphGetComanagementEligibleDevicesSummary;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphGetEffectivePermissions;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphGetEffectivePermissionsWithScope;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphGetRoleScopeTagsByIdsWithIds;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphGetRoleScopeTagsByResourceWithResource;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphGetSuggestedEnrollmentLimitWithEnrollmentType;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphScopedForResourceWithResource;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphSendCustomNotificationToCompanyPortal;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphUserExperienceAnalyticsSummarizedDeviceScopes;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftGraphVerifyWindowsEnrollmentAutoDiscoveryWithDomainName;
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations;
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds;
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses;
@@ -108,6 +103,8 @@ using Microsoft.Graph.Beta.DeviceManagement.ReusableSettings;
 using Microsoft.Graph.Beta.DeviceManagement.RoleAssignments;
 using Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions;
 using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags;
+using Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource;
+using Microsoft.Graph.Beta.DeviceManagement.SendCustomNotificationToCompanyPortal;
 using Microsoft.Graph.Beta.DeviceManagement.ServiceNowConnections;
 using Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions;
 using Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary;
@@ -157,10 +154,13 @@ using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsOverview;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsScoreHistory;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizedDeviceScopes;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereMetrics;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereModelPerformance;
 using Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates;
+using Microsoft.Graph.Beta.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint;
 using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities;
@@ -398,6 +398,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public EmbeddedSIMActivationCodePoolsRequestBuilder EmbeddedSIMActivationCodePools { get =>
             new EmbeddedSIMActivationCodePoolsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the enableAndroidDeviceAdministratorEnrollment method.</summary>
+        public EnableAndroidDeviceAdministratorEnrollmentRequestBuilder EnableAndroidDeviceAdministratorEnrollment { get =>
+            new EnableAndroidDeviceAdministratorEnrollmentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the enableLegacyPcManagement method.</summary>
+        public EnableLegacyPcManagementRequestBuilder EnableLegacyPcManagement { get =>
+            new EnableLegacyPcManagementRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the enableUnlicensedAdminstrators method.</summary>
+        public EnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators { get =>
+            new EnableUnlicensedAdminstratorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the evaluateAssignmentFilter method.</summary>
+        public EvaluateAssignmentFilterRequestBuilder EvaluateAssignmentFilter { get =>
+            new EvaluateAssignmentFilterRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the exchangeConnectors property of the microsoft.graph.deviceManagement entity.</summary>
         public ExchangeConnectorsRequestBuilder ExchangeConnectors { get =>
             new ExchangeConnectorsRequestBuilder(PathParameters, RequestAdapter);
@@ -409,6 +425,26 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>Provides operations to manage the exchangeOnPremisesPolicy property of the microsoft.graph.deviceManagement entity.</summary>
         public ExchangeOnPremisesPolicyRequestBuilder ExchangeOnPremisesPolicy { get =>
             new ExchangeOnPremisesPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAssignedRoleDetails method.</summary>
+        public GetAssignedRoleDetailsRequestBuilder GetAssignedRoleDetails { get =>
+            new GetAssignedRoleDetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAssignmentFiltersStatusDetails method.</summary>
+        public GetAssignmentFiltersStatusDetailsRequestBuilder GetAssignmentFiltersStatusDetails { get =>
+            new GetAssignmentFiltersStatusDetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getComanagedDevicesSummary method.</summary>
+        public GetComanagedDevicesSummaryRequestBuilder GetComanagedDevicesSummary { get =>
+            new GetComanagedDevicesSummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getComanagementEligibleDevicesSummary method.</summary>
+        public GetComanagementEligibleDevicesSummaryRequestBuilder GetComanagementEligibleDevicesSummary { get =>
+            new GetComanagementEligibleDevicesSummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
+        public GetEffectivePermissionsRequestBuilder GetEffectivePermissions { get =>
+            new GetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.</summary>
         public GroupPolicyCategoriesRequestBuilder GroupPolicyCategories { get =>
@@ -473,54 +509,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.</summary>
         public ManagedDevicesRequestBuilder ManagedDevices { get =>
             new ManagedDevicesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the enableAndroidDeviceAdministratorEnrollment method.</summary>
-        public MicrosoftGraphEnableAndroidDeviceAdministratorEnrollmentRequestBuilder MicrosoftGraphEnableAndroidDeviceAdministratorEnrollment { get =>
-            new MicrosoftGraphEnableAndroidDeviceAdministratorEnrollmentRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the enableLegacyPcManagement method.</summary>
-        public MicrosoftGraphEnableLegacyPcManagementRequestBuilder MicrosoftGraphEnableLegacyPcManagement { get =>
-            new MicrosoftGraphEnableLegacyPcManagementRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the enableUnlicensedAdminstrators method.</summary>
-        public MicrosoftGraphEnableUnlicensedAdminstratorsRequestBuilder MicrosoftGraphEnableUnlicensedAdminstrators { get =>
-            new MicrosoftGraphEnableUnlicensedAdminstratorsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the evaluateAssignmentFilter method.</summary>
-        public MicrosoftGraphEvaluateAssignmentFilterRequestBuilder MicrosoftGraphEvaluateAssignmentFilter { get =>
-            new MicrosoftGraphEvaluateAssignmentFilterRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getAssignedRoleDetails method.</summary>
-        public MicrosoftGraphGetAssignedRoleDetailsRequestBuilder MicrosoftGraphGetAssignedRoleDetails { get =>
-            new MicrosoftGraphGetAssignedRoleDetailsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getAssignmentFiltersStatusDetails method.</summary>
-        public MicrosoftGraphGetAssignmentFiltersStatusDetailsRequestBuilder MicrosoftGraphGetAssignmentFiltersStatusDetails { get =>
-            new MicrosoftGraphGetAssignmentFiltersStatusDetailsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getComanagedDevicesSummary method.</summary>
-        public MicrosoftGraphGetComanagedDevicesSummaryRequestBuilder MicrosoftGraphGetComanagedDevicesSummary { get =>
-            new MicrosoftGraphGetComanagedDevicesSummaryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getComanagementEligibleDevicesSummary method.</summary>
-        public MicrosoftGraphGetComanagementEligibleDevicesSummaryRequestBuilder MicrosoftGraphGetComanagementEligibleDevicesSummary { get =>
-            new MicrosoftGraphGetComanagementEligibleDevicesSummaryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
-        public MicrosoftGraphGetEffectivePermissionsRequestBuilder MicrosoftGraphGetEffectivePermissions { get =>
-            new MicrosoftGraphGetEffectivePermissionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the sendCustomNotificationToCompanyPortal method.</summary>
-        public MicrosoftGraphSendCustomNotificationToCompanyPortalRequestBuilder MicrosoftGraphSendCustomNotificationToCompanyPortal { get =>
-            new MicrosoftGraphSendCustomNotificationToCompanyPortalRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the userExperienceAnalyticsSummarizedDeviceScopes method.</summary>
-        public MicrosoftGraphUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder MicrosoftGraphUserExperienceAnalyticsSummarizedDeviceScopes { get =>
-            new MicrosoftGraphUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.</summary>
-        public MicrosoftGraphUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder MicrosoftGraphUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices { get =>
-            new MicrosoftGraphUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
         public MicrosoftTunnelConfigurationsRequestBuilder MicrosoftTunnelConfigurations { get =>
@@ -609,6 +597,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.</summary>
         public RoleScopeTagsRequestBuilder RoleScopeTags { get =>
             new RoleScopeTagsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the sendCustomNotificationToCompanyPortal method.</summary>
+        public SendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal { get =>
+            new SendCustomNotificationToCompanyPortalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the serviceNowConnections property of the microsoft.graph.deviceManagement entity.</summary>
         public ServiceNowConnectionsRequestBuilder ServiceNowConnections { get =>
@@ -808,6 +800,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public UserExperienceAnalyticsScoreHistoryRequestBuilder UserExperienceAnalyticsScoreHistory { get =>
             new UserExperienceAnalyticsScoreHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the userExperienceAnalyticsSummarizedDeviceScopes method.</summary>
+        public UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder UserExperienceAnalyticsSummarizedDeviceScopes { get =>
+            new UserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the userExperienceAnalyticsSummarizeWorkFromAnywhereDevices method.</summary>
+        public UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder UserExperienceAnalyticsSummarizeWorkFromAnywhereDevices { get =>
+            new UserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property of the microsoft.graph.deviceManagement entity.</summary>
         public UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric { get =>
             new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder(PathParameters, RequestAdapter);
@@ -930,49 +930,33 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// Provides operations to call the getEffectivePermissions method.
         /// </summary>
         /// <param name="scope">Usage: scope=&apos;{scope}&apos;</param>
-        public MicrosoftGraphGetEffectivePermissionsWithScopeRequestBuilder MicrosoftGraphGetEffectivePermissionsWithScope(string scope) {
+        public GetEffectivePermissionsWithScopeRequestBuilder GetEffectivePermissionsWithScope(string scope) {
             if(string.IsNullOrEmpty(scope)) throw new ArgumentNullException(nameof(scope));
-            return new MicrosoftGraphGetEffectivePermissionsWithScopeRequestBuilder(PathParameters, RequestAdapter, scope);
+            return new GetEffectivePermissionsWithScopeRequestBuilder(PathParameters, RequestAdapter, scope);
         }
         /// <summary>
         /// Provides operations to call the getRoleScopeTagsByIds method.
         /// </summary>
         /// <param name="ids">Usage: ids={ids}</param>
-        public MicrosoftGraphGetRoleScopeTagsByIdsWithIdsRequestBuilder MicrosoftGraphGetRoleScopeTagsByIdsWithIds(string ids) {
+        public GetRoleScopeTagsByIdsWithIdsRequestBuilder GetRoleScopeTagsByIdsWithIds(string ids) {
             if(string.IsNullOrEmpty(ids)) throw new ArgumentNullException(nameof(ids));
-            return new MicrosoftGraphGetRoleScopeTagsByIdsWithIdsRequestBuilder(PathParameters, RequestAdapter, ids);
+            return new GetRoleScopeTagsByIdsWithIdsRequestBuilder(PathParameters, RequestAdapter, ids);
         }
         /// <summary>
         /// Provides operations to call the getRoleScopeTagsByResource method.
         /// </summary>
         /// <param name="resource">Usage: resource=&apos;{resource}&apos;</param>
-        public MicrosoftGraphGetRoleScopeTagsByResourceWithResourceRequestBuilder MicrosoftGraphGetRoleScopeTagsByResourceWithResource(string resource) {
+        public GetRoleScopeTagsByResourceWithResourceRequestBuilder GetRoleScopeTagsByResourceWithResource(string resource) {
             if(string.IsNullOrEmpty(resource)) throw new ArgumentNullException(nameof(resource));
-            return new MicrosoftGraphGetRoleScopeTagsByResourceWithResourceRequestBuilder(PathParameters, RequestAdapter, resource);
+            return new GetRoleScopeTagsByResourceWithResourceRequestBuilder(PathParameters, RequestAdapter, resource);
         }
         /// <summary>
         /// Provides operations to call the getSuggestedEnrollmentLimit method.
         /// </summary>
         /// <param name="enrollmentType">Usage: enrollmentType=&apos;{enrollmentType}&apos;</param>
-        public MicrosoftGraphGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder MicrosoftGraphGetSuggestedEnrollmentLimitWithEnrollmentType(string enrollmentType) {
+        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder GetSuggestedEnrollmentLimitWithEnrollmentType(string enrollmentType) {
             if(string.IsNullOrEmpty(enrollmentType)) throw new ArgumentNullException(nameof(enrollmentType));
-            return new MicrosoftGraphGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(PathParameters, RequestAdapter, enrollmentType);
-        }
-        /// <summary>
-        /// Provides operations to call the scopedForResource method.
-        /// </summary>
-        /// <param name="resource">Usage: resource=&apos;{resource}&apos;</param>
-        public MicrosoftGraphScopedForResourceWithResourceRequestBuilder MicrosoftGraphScopedForResourceWithResource(string resource) {
-            if(string.IsNullOrEmpty(resource)) throw new ArgumentNullException(nameof(resource));
-            return new MicrosoftGraphScopedForResourceWithResourceRequestBuilder(PathParameters, RequestAdapter, resource);
-        }
-        /// <summary>
-        /// Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
-        /// </summary>
-        /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
-        public MicrosoftGraphVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder MicrosoftGraphVerifyWindowsEnrollmentAutoDiscoveryWithDomainName(string domainName) {
-            if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
-            return new MicrosoftGraphVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
+            return new GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(PathParameters, RequestAdapter, enrollmentType);
         }
         /// <summary>
         /// Update deviceManagement
@@ -994,6 +978,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the scopedForResource method.
+        /// </summary>
+        /// <param name="resource">Usage: resource=&apos;{resource}&apos;</param>
+        public ScopedForResourceWithResourceRequestBuilder ScopedForResourceWithResource(string resource) {
+            if(string.IsNullOrEmpty(resource)) throw new ArgumentNullException(nameof(resource));
+            return new ScopedForResourceWithResourceRequestBuilder(PathParameters, RequestAdapter, resource);
         }
         /// <summary>
         /// Get deviceManagement
@@ -1048,6 +1040,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
+        /// </summary>
+        /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
+        public VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(string domainName) {
+            if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
+            return new VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
         }
         /// <summary>
         /// Get deviceManagement

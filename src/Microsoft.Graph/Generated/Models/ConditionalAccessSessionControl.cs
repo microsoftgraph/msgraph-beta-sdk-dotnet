@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.applicationEnforcedRestrictionsSessionControl" => new ApplicationEnforcedRestrictionsSessionControl(),
                 "#microsoft.graph.cloudAppSecuritySessionControl" => new CloudAppSecuritySessionControl(),
                 "#microsoft.graph.persistentBrowserSessionControl" => new PersistentBrowserSessionControl(),
+                "#microsoft.graph.secureSignInSessionControl" => new SecureSignInSessionControl(),
                 "#microsoft.graph.signInFrequencySessionControl" => new SignInFrequencySessionControl(),
                 _ => new ConditionalAccessSessionControl(),
             };

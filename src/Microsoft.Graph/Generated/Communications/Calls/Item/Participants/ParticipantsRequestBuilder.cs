@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Count;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Invite;
 using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item;
-using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.MicrosoftGraphInvite;
-using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.MicrosoftGraphMuteAll;
+using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.MuteAll;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the invite method.</summary>
-        public MicrosoftGraphInviteRequestBuilder MicrosoftGraphInvite { get =>
-            new MicrosoftGraphInviteRequestBuilder(PathParameters, RequestAdapter);
+        public InviteRequestBuilder Invite { get =>
+            new InviteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the muteAll method.</summary>
-        public MicrosoftGraphMuteAllRequestBuilder MicrosoftGraphMuteAll { get =>
-            new MicrosoftGraphMuteAllRequestBuilder(PathParameters, RequestAdapter);
+        public MuteAllRequestBuilder MuteAll { get =>
+            new MuteAllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

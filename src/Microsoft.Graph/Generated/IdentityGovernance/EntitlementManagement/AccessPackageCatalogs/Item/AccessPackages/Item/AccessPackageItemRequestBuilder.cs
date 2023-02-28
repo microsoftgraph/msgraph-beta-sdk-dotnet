@@ -2,10 +2,10 @@ using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackag
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.AccessPackageCatalog;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.AccessPackageResourceRoleScopes;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.AccessPackagesIncompatibleWith;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.GetApplicablePolicyRequirements;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleAccessPackages;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleGroups;
-using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.MicrosoftGraphGetApplicablePolicyRequirements;
-using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.MicrosoftGraphMoveToCatalog;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.MoveToCatalog;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -37,6 +37,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public AccessPackagesIncompatibleWithRequestBuilder AccessPackagesIncompatibleWith { get =>
             new AccessPackagesIncompatibleWithRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getApplicablePolicyRequirements method.</summary>
+        public GetApplicablePolicyRequirementsRequestBuilder GetApplicablePolicyRequirements { get =>
+            new GetApplicablePolicyRequirementsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the incompatibleAccessPackages property of the microsoft.graph.accessPackage entity.</summary>
         public IncompatibleAccessPackagesRequestBuilder IncompatibleAccessPackages { get =>
             new IncompatibleAccessPackagesRequestBuilder(PathParameters, RequestAdapter);
@@ -45,13 +49,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public IncompatibleGroupsRequestBuilder IncompatibleGroups { get =>
             new IncompatibleGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the getApplicablePolicyRequirements method.</summary>
-        public MicrosoftGraphGetApplicablePolicyRequirementsRequestBuilder MicrosoftGraphGetApplicablePolicyRequirements { get =>
-            new MicrosoftGraphGetApplicablePolicyRequirementsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the moveToCatalog method.</summary>
-        public MicrosoftGraphMoveToCatalogRequestBuilder MicrosoftGraphMoveToCatalog { get =>
-            new MicrosoftGraphMoveToCatalogRequestBuilder(PathParameters, RequestAdapter);
+        public MoveToCatalogRequestBuilder MoveToCatalog { get =>
+            new MoveToCatalogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

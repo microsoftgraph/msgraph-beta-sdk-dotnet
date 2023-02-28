@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alternateResourceUrl", value); }
         }
 #endif
-        /// <summary>A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.</summary>
+        /// <summary>A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CloudPcProvisioningPolicyAssignment>? Assignments {
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("domainJoinConfigurations", value); }
         }
 #endif
-        /// <summary>The enableSingleSignOn property</summary>
+        /// <summary>True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn&apos;t support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</summary>
         public bool? EnableSingleSignOn {
             get { return BackingStore?.Get<bool?>("enableSingleSignOn"); }
             set { BackingStore?.Set("enableSingleSignOn", value); }
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesConnectionId", value); }
         }
 #endif
-        /// <summary>The provisioningType property</summary>
+        /// <summary>Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn&apos;t specified when you create the cloudPcProvisioningPolicy. You can&apos;t change this property after the cloudPcProvisioningPolicy was created. Possible values are: dedicated, shared, unknownFutureValue.</summary>
         public CloudPcProvisioningType? ProvisioningType {
             get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }

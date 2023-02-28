@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates {
         /// <summary>
         /// Provides operations to manage the deviceHealthScriptStates property of the microsoft.graph.managedDevice entity.
         /// </summary>
-        /// <param name="deviceId">key: deviceId of deviceHealthScriptPolicyState</param>
-        /// <param name="id">key: id of deviceHealthScriptPolicyState</param>
-        /// <param name="policyId">key: policyId of deviceHealthScriptPolicyState</param>
+        /// <param name="deviceId">Property in multi-part unique identifier of deviceHealthScriptPolicyState</param>
+        /// <param name="id">Property in multi-part unique identifier of deviceHealthScriptPolicyState</param>
+        /// <param name="policyId">Property in multi-part unique identifier of deviceHealthScriptPolicyState</param>
         public WithIdWithPolicyIdWithDeviceIdRequestBuilder WithIdWithPolicyIdWithDeviceId(string deviceId, string id, string policyId) {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
             if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));

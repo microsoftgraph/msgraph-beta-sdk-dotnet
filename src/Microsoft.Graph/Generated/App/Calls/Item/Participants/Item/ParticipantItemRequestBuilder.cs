@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.MicrosoftGraphMute;
-using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.MicrosoftGraphStartHoldMusic;
-using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.MicrosoftGraphStopHoldMusic;
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.Mute;
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StartHoldMusic;
+using Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StopHoldMusic;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,21 +17,21 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
     /// </summary>
     public class ParticipantItemRequestBuilder {
         /// <summary>Provides operations to call the mute method.</summary>
-        public MicrosoftGraphMuteRequestBuilder MicrosoftGraphMute { get =>
-            new MicrosoftGraphMuteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the startHoldMusic method.</summary>
-        public MicrosoftGraphStartHoldMusicRequestBuilder MicrosoftGraphStartHoldMusic { get =>
-            new MicrosoftGraphStartHoldMusicRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the stopHoldMusic method.</summary>
-        public MicrosoftGraphStopHoldMusicRequestBuilder MicrosoftGraphStopHoldMusic { get =>
-            new MicrosoftGraphStopHoldMusicRequestBuilder(PathParameters, RequestAdapter);
+        public MuteRequestBuilder Mute { get =>
+            new MuteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the startHoldMusic method.</summary>
+        public StartHoldMusicRequestBuilder StartHoldMusic { get =>
+            new StartHoldMusicRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stopHoldMusic method.</summary>
+        public StopHoldMusicRequestBuilder StopHoldMusic { get =>
+            new StopHoldMusicRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

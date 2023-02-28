@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories;
-using Microsoft.Graph.Beta.Users.Item.Outlook.MicrosoftGraphSupportedLanguages;
-using Microsoft.Graph.Beta.Users.Item.Outlook.MicrosoftGraphSupportedTimeZones;
-using Microsoft.Graph.Beta.Users.Item.Outlook.MicrosoftGraphSupportedTimeZonesWithTimeZoneStandard;
+using Microsoft.Graph.Beta.Users.Item.Outlook.SupportedLanguages;
+using Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZones;
+using Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups;
 using Microsoft.Graph.Beta.Users.Item.Outlook.Tasks;
@@ -24,18 +24,18 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook {
         public MasterCategoriesRequestBuilder MasterCategories { get =>
             new MasterCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the supportedLanguages method.</summary>
-        public MicrosoftGraphSupportedLanguagesRequestBuilder MicrosoftGraphSupportedLanguages { get =>
-            new MicrosoftGraphSupportedLanguagesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the supportedTimeZones method.</summary>
-        public MicrosoftGraphSupportedTimeZonesRequestBuilder MicrosoftGraphSupportedTimeZones { get =>
-            new MicrosoftGraphSupportedTimeZonesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the supportedLanguages method.</summary>
+        public SupportedLanguagesRequestBuilder SupportedLanguages { get =>
+            new SupportedLanguagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the supportedTimeZones method.</summary>
+        public SupportedTimeZonesRequestBuilder SupportedTimeZones { get =>
+            new SupportedTimeZonesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.</summary>
         public TaskFoldersRequestBuilder TaskFolders { get =>
             new TaskFoldersRequestBuilder(PathParameters, RequestAdapter);
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook {
         /// Provides operations to call the supportedTimeZones method.
         /// </summary>
         /// <param name="timeZoneStandard">Usage: TimeZoneStandard=&apos;{TimeZoneStandard}&apos;</param>
-        public MicrosoftGraphSupportedTimeZonesWithTimeZoneStandardRequestBuilder MicrosoftGraphSupportedTimeZonesWithTimeZoneStandard(string timeZoneStandard) {
+        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder SupportedTimeZonesWithTimeZoneStandard(string timeZoneStandard) {
             if(string.IsNullOrEmpty(timeZoneStandard)) throw new ArgumentNullException(nameof(timeZoneStandard));
-            return new MicrosoftGraphSupportedTimeZonesWithTimeZoneStandardRequestBuilder(PathParameters, RequestAdapter, timeZoneStandard);
+            return new SupportedTimeZonesWithTimeZoneStandardRequestBuilder(PathParameters, RequestAdapter, timeZoneStandard);
         }
         /// <summary>
         /// Selective Outlook services available to the user. Read-only. Nullable.

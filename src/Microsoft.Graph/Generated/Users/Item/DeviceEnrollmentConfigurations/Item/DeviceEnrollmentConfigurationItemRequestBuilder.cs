@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.Assign;
 using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.Assignments;
-using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.MicrosoftGraphAssign;
-using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.MicrosoftGraphSetPriority;
+using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item.SetPriority;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -16,22 +16,22 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations.Item {
     /// Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.
     /// </summary>
     public class DeviceEnrollmentConfigurationItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setPriority method.</summary>
-        public MicrosoftGraphSetPriorityRequestBuilder MicrosoftGraphSetPriority { get =>
-            new MicrosoftGraphSetPriorityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the setPriority method.</summary>
+        public SetPriorityRequestBuilder SetPriority { get =>
+            new SetPriorityRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

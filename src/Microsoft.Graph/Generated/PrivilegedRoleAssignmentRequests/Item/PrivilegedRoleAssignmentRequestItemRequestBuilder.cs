@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.MicrosoftGraphCancel;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.Cancel;
 using Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.RoleInfo;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item {
     /// </summary>
     public class PrivilegedRoleAssignmentRequestItemRequestBuilder {
         /// <summary>Provides operations to call the cancel method.</summary>
-        public MicrosoftGraphCancelRequestBuilder MicrosoftGraphCancel { get =>
-            new MicrosoftGraphCancelRequestBuilder(PathParameters, RequestAdapter);
+        public CancelRequestBuilder Cancel { get =>
+            new CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

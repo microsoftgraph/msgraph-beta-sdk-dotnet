@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Count;
 using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item;
-using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.MicrosoftGraphRenewGroup;
+using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the renewGroup method.</summary>
-        public MicrosoftGraphRenewGroupRequestBuilder MicrosoftGraphRenewGroup { get =>
-            new MicrosoftGraphRenewGroupRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the renewGroup method.</summary>
+        public RenewGroupRequestBuilder RenewGroup { get =>
+            new RenewGroupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

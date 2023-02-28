@@ -15,18 +15,18 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         public async Task DeltaLinkDriveItem()
         {
             // Get our first delta page.
-            var driveItemDeltaCollectionPage = await graphClient.Drives["driveId"].Items[""].MicrosoftGraphDelta.GetAsync();
+            var driveItemDeltaCollectionPage = await graphClient.Drives["driveId"].Items[""].Delta.GetAsync();
 
             // Go through all of the delta pages so that we can get the delta link on the last page.
             while (driveItemDeltaCollectionPage.OdataNextLink != null)
             {
-                driveItemDeltaCollectionPage = await new Microsoft.Graph.Beta.Drives.Item.Items.Item.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(driveItemDeltaCollectionPage.OdataNextLink, graphClient.RequestAdapter).GetAsync();
+                driveItemDeltaCollectionPage = await new Microsoft.Graph.Beta.Drives.Item.Items.Item.Delta.DeltaRequestBuilder(driveItemDeltaCollectionPage.OdataNextLink, graphClient.RequestAdapter).GetAsync();
             }
 
             // Now let's use the deltalink to make sure there aren't any changes. There shouldn't be.
             if (driveItemDeltaCollectionPage.OdataDeltaLink != null)
             {
-                driveItemDeltaCollectionPage = await new Microsoft.Graph.Beta.Drives.Item.Items.Item.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(driveItemDeltaCollectionPage.OdataDeltaLink, graphClient.RequestAdapter).GetAsync();
+                driveItemDeltaCollectionPage = await new Microsoft.Graph.Beta.Drives.Item.Items.Item.Delta.DeltaRequestBuilder(driveItemDeltaCollectionPage.OdataDeltaLink, graphClient.RequestAdapter).GetAsync();
             }
             Assert.Empty(driveItemDeltaCollectionPage.Value);
 
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // Now let's use the deltalink to make sure there aren't any changes. 
             if (driveItemDeltaCollectionPage.OdataDeltaLink != null)
             {
-                driveItemDeltaCollectionPage = await new Microsoft.Graph.Beta.Drives.Item.Items.Item.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(driveItemDeltaCollectionPage.OdataDeltaLink, graphClient.RequestAdapter).GetAsync();
+                driveItemDeltaCollectionPage = await new Microsoft.Graph.Beta.Drives.Item.Items.Item.Delta.DeltaRequestBuilder(driveItemDeltaCollectionPage.OdataDeltaLink, graphClient.RequestAdapter).GetAsync();
             }
 
             // We expect two changes, one new item, and the root folder will have a change.
@@ -54,18 +54,18 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         public async Task DeltaLinkMessages()
         {
             // Get our first delta page.
-            var messagesDeltaCollectionPage = await graphClient.Me.MailFolders["inbox"].Messages.MicrosoftGraphDelta.GetAsync();
+            var messagesDeltaCollectionPage = await graphClient.Me.MailFolders["inbox"].Messages.Delta.GetAsync();
 
             // Go through all of the delta pages so that we can get the delta link on the last page.
             while (messagesDeltaCollectionPage.OdataNextLink != null)
             {
-                messagesDeltaCollectionPage = await new Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsync();
+                messagesDeltaCollectionPage = await new Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsync();
             }
             
             // Now let's use the deltalink to make sure there aren't any changes. There shouldn't be.
             if (messagesDeltaCollectionPage.OdataDeltaLink != null)
             {
-                messagesDeltaCollectionPage = await new Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsync();
+                messagesDeltaCollectionPage = await new Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsync();
             }
             Assert.Empty(messagesDeltaCollectionPage.Value);
 
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // Now let's use the deltalink to make sure there aren't any changes. We expect to see a new message.
             if (messagesDeltaCollectionPage.OdataDeltaLink != null)
             {
-                messagesDeltaCollectionPage = await new Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsync();
+                messagesDeltaCollectionPage = await new Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsync();
             }
 
             // We expect two changes, one new item, and the root folder will have a change.
@@ -86,20 +86,20 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         public async Task UserDeltaLink()
         {
             // Get our first delta page.
-            var userDeltaCollectionPage = await graphClient.Users.MicrosoftGraphDelta.GetAsync();
+            var userDeltaCollectionPage = await graphClient.Users.Delta.GetAsync();
             //var userDeltaCollectionPage = userDeltaCollectionPageResult.Value;
             
             // Go through all of the delta pages so that we can get the delta link on the last page.
             while (userDeltaCollectionPage.OdataNextLink != null)
             {
-                userDeltaCollectionPage = await new Microsoft.Graph.Beta.Users.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(userDeltaCollectionPage.OdataNextLink, graphClient.RequestAdapter).GetAsync();
+                userDeltaCollectionPage = await new Microsoft.Graph.Beta.Users.Delta.DeltaRequestBuilder(userDeltaCollectionPage.OdataNextLink, graphClient.RequestAdapter).GetAsync();
             }
 
             // Now let's use the deltalink to make sure there aren't any changes. We won't test this collection
             // since other tests could be making changes to the users in the org.
             if (userDeltaCollectionPage.OdataDeltaLink != null)
             {
-                userDeltaCollectionPage = await new Microsoft.Graph.Beta.Users.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(userDeltaCollectionPage.OdataDeltaLink, graphClient.RequestAdapter).GetAsync();
+                userDeltaCollectionPage = await new Microsoft.Graph.Beta.Users.Delta.DeltaRequestBuilder(userDeltaCollectionPage.OdataDeltaLink, graphClient.RequestAdapter).GetAsync();
             }
         }
 
@@ -107,18 +107,18 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         public async Task GroupDeltaLink()
         {
             // Get our first delta page.
-            var groupDeltaCollectionPage = await graphClient.Groups.MicrosoftGraphDelta.GetAsync();
+            var groupDeltaCollectionPage = await graphClient.Groups.Delta.GetAsync();
 
             // Go through all of the delta pages so that we can get the delta link on the last page.
             while (groupDeltaCollectionPage.OdataNextLink != null)
             {
-                groupDeltaCollectionPage = await new Microsoft.Graph.Beta.Groups.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(groupDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsync();
+                groupDeltaCollectionPage = await new Microsoft.Graph.Beta.Groups.Delta.DeltaRequestBuilder(groupDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsync();
             }
 
             // Now let's use the deltalink to make sure there aren't any changes.
             if (groupDeltaCollectionPage.OdataDeltaLink != null)
             {
-                groupDeltaCollectionPage = await new Microsoft.Graph.Beta.Groups.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(groupDeltaCollectionPage.OdataDeltaLink,graphClient.RequestAdapter).GetAsync();
+                groupDeltaCollectionPage = await new Microsoft.Graph.Beta.Groups.Delta.DeltaRequestBuilder(groupDeltaCollectionPage.OdataDeltaLink,graphClient.RequestAdapter).GetAsync();
 
                 // This could be false in case a change has occurred to a group since the last deltapage.
                 Assert.True((groupDeltaCollectionPage.Value.Count == 0), "groupDeltaCollectionPage has unexpected entry.");
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // Call with the deltalink. We have to wait since there is some latency between the time that the 
             // group is created and the time when the delta is registered.
             await Task.Delay(10000);
-            groupDeltaCollectionPage = await new Microsoft.Graph.Beta.Groups.MicrosoftGraphDelta.MicrosoftGraphDeltaRequestBuilder(groupDeltaCollectionPage.OdataDeltaLink,graphClient.RequestAdapter).GetAsync();
+            groupDeltaCollectionPage = await new Microsoft.Graph.Beta.Groups.Delta.DeltaRequestBuilder(groupDeltaCollectionPage.OdataDeltaLink,graphClient.RequestAdapter).GetAsync();
 
             Assert.True((groupDeltaCollectionPage.Value.Count == 1));
 

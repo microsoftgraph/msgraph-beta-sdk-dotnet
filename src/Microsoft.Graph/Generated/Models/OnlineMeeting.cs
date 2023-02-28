@@ -373,7 +373,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("virtualAppointment", value); }
         }
 #endif
-        /// <summary>The watermarkProtection property</summary>
+        /// <summary>Specifies whether a watermark applies for different entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WatermarkProtectionValues? WatermarkProtection {

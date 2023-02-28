@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories.Item.MicrosoftGraphDiscover;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories.Item.Discover;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
     /// </summary>
     public class DirectoryDefinitionItemRequestBuilder {
         /// <summary>Provides operations to call the discover method.</summary>
-        public MicrosoftGraphDiscoverRequestBuilder MicrosoftGraphDiscover { get =>
-            new MicrosoftGraphDiscoverRequestBuilder(PathParameters, RequestAdapter);
+        public DiscoverRequestBuilder Discover { get =>
+            new DiscoverRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

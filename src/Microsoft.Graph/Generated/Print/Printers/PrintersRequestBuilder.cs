@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Print.Printers.Count;
+using Microsoft.Graph.Beta.Print.Printers.Create;
 using Microsoft.Graph.Beta.Print.Printers.Item;
-using Microsoft.Graph.Beta.Print.Printers.MicrosoftGraphCreate;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Print.Printers {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the create method.</summary>
-        public MicrosoftGraphCreateRequestBuilder MicrosoftGraphCreate { get =>
-            new MicrosoftGraphCreateRequestBuilder(PathParameters, RequestAdapter);
+        public CreateRequestBuilder Create { get =>
+            new CreateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

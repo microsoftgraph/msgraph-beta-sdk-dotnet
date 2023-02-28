@@ -1,7 +1,7 @@
+using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Connect;
 using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Disconnect;
 using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Item;
-using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.MicrosoftGraphConnect;
-using Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.MicrosoftGraphDisconnect;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
     /// Provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class ChromeOSOnboardingSettingsRequestBuilder {
+        /// <summary>Provides operations to call the connect method.</summary>
+        public ConnectRequestBuilder Connect { get =>
+            new ConnectRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the connect method.</summary>
-        public MicrosoftGraphConnectRequestBuilder MicrosoftGraphConnect { get =>
-            new MicrosoftGraphConnectRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the disconnect method.</summary>
-        public MicrosoftGraphDisconnectRequestBuilder MicrosoftGraphDisconnect { get =>
-            new MicrosoftGraphDisconnectRequestBuilder(PathParameters, RequestAdapter);
+        public DisconnectRequestBuilder Disconnect { get =>
+            new DisconnectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

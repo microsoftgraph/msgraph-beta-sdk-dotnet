@@ -23,5 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         UnknownFutureValue,
         DeviceFilterIncludeRuleNotMatched,
         AllDeviceStates,
+        AnonymizedIPAddress,
+        UnfamiliarFeatures,
+        NationStateIPAddress,
+        RealTimeThreatIntelligence,
+        InternalGuest,
+        B2bCollaborationGuest,
+        B2bCollaborationMember,
+        B2bDirectConnectUser,
+        OtherExternalUser,
+        ServiceProvider,
     }
 }

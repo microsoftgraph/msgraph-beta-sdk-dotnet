@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Application.MicrosoftGraphCalculate;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Application.Calculate;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Application {
     /// </summary>
     public class ApplicationRequestBuilder {
         /// <summary>Provides operations to call the calculate method.</summary>
-        public MicrosoftGraphCalculateRequestBuilder MicrosoftGraphCalculate { get =>
-            new MicrosoftGraphCalculateRequestBuilder(PathParameters, RequestAdapter);
+        public CalculateRequestBuilder Calculate { get =>
+            new CalculateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

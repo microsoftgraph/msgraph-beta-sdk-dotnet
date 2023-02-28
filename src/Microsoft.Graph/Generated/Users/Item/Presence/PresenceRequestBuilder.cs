@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Users.Item.Presence.MicrosoftGraphClearPresence;
-using Microsoft.Graph.Beta.Users.Item.Presence.MicrosoftGraphClearUserPreferredPresence;
-using Microsoft.Graph.Beta.Users.Item.Presence.MicrosoftGraphSetPresence;
-using Microsoft.Graph.Beta.Users.Item.Presence.MicrosoftGraphSetStatusMessage;
-using Microsoft.Graph.Beta.Users.Item.Presence.MicrosoftGraphSetUserPreferredPresence;
+using Microsoft.Graph.Beta.Users.Item.Presence.ClearPresence;
+using Microsoft.Graph.Beta.Users.Item.Presence.ClearUserPreferredPresence;
+using Microsoft.Graph.Beta.Users.Item.Presence.SetPresence;
+using Microsoft.Graph.Beta.Users.Item.Presence.SetStatusMessage;
+using Microsoft.Graph.Beta.Users.Item.Presence.SetUserPreferredPresence;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -19,29 +19,29 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence {
     /// </summary>
     public class PresenceRequestBuilder {
         /// <summary>Provides operations to call the clearPresence method.</summary>
-        public MicrosoftGraphClearPresenceRequestBuilder MicrosoftGraphClearPresence { get =>
-            new MicrosoftGraphClearPresenceRequestBuilder(PathParameters, RequestAdapter);
+        public ClearPresenceRequestBuilder ClearPresence { get =>
+            new ClearPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clearUserPreferredPresence method.</summary>
-        public MicrosoftGraphClearUserPreferredPresenceRequestBuilder MicrosoftGraphClearUserPreferredPresence { get =>
-            new MicrosoftGraphClearUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setPresence method.</summary>
-        public MicrosoftGraphSetPresenceRequestBuilder MicrosoftGraphSetPresence { get =>
-            new MicrosoftGraphSetPresenceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setStatusMessage method.</summary>
-        public MicrosoftGraphSetStatusMessageRequestBuilder MicrosoftGraphSetStatusMessage { get =>
-            new MicrosoftGraphSetStatusMessageRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
-        public MicrosoftGraphSetUserPreferredPresenceRequestBuilder MicrosoftGraphSetUserPreferredPresence { get =>
-            new MicrosoftGraphSetUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
+        public ClearUserPreferredPresenceRequestBuilder ClearUserPreferredPresence { get =>
+            new ClearUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the setPresence method.</summary>
+        public SetPresenceRequestBuilder SetPresence { get =>
+            new SetPresenceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setStatusMessage method.</summary>
+        public SetStatusMessageRequestBuilder SetStatusMessage { get =>
+            new SetStatusMessageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
+        public SetUserPreferredPresenceRequestBuilder SetUserPreferredPresence { get =>
+            new SetUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

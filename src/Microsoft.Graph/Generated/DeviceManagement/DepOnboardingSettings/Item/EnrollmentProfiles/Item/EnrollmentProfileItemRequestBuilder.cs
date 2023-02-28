@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.MicrosoftGraphExportMobileConfig;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.MicrosoftGraphSetDefaultProfile;
-using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.MicrosoftGraphUpdateDeviceProfileAssignment;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.ExportMobileConfig;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.SetDefaultProfile;
+using Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.UpdateDeviceProfileAssignment;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,21 +17,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
     /// </summary>
     public class EnrollmentProfileItemRequestBuilder {
         /// <summary>Provides operations to call the exportMobileConfig method.</summary>
-        public MicrosoftGraphExportMobileConfigRequestBuilder MicrosoftGraphExportMobileConfig { get =>
-            new MicrosoftGraphExportMobileConfigRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setDefaultProfile method.</summary>
-        public MicrosoftGraphSetDefaultProfileRequestBuilder MicrosoftGraphSetDefaultProfile { get =>
-            new MicrosoftGraphSetDefaultProfileRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateDeviceProfileAssignment method.</summary>
-        public MicrosoftGraphUpdateDeviceProfileAssignmentRequestBuilder MicrosoftGraphUpdateDeviceProfileAssignment { get =>
-            new MicrosoftGraphUpdateDeviceProfileAssignmentRequestBuilder(PathParameters, RequestAdapter);
+        public ExportMobileConfigRequestBuilder ExportMobileConfig { get =>
+            new ExportMobileConfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the setDefaultProfile method.</summary>
+        public SetDefaultProfileRequestBuilder SetDefaultProfile { get =>
+            new SetDefaultProfileRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateDeviceProfileAssignment method.</summary>
+        public UpdateDeviceProfileAssignmentRequestBuilder UpdateDeviceProfileAssignment { get =>
+            new UpdateDeviceProfileAssignmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

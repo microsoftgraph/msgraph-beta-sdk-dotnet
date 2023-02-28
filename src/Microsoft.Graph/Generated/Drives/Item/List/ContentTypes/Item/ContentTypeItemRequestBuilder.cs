@@ -1,13 +1,13 @@
+using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.AssociateWithHubSites;
 using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Base;
 using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.BaseTypes;
 using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.ColumnLinks;
 using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.ColumnPositions;
 using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Columns;
-using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.MicrosoftGraphAssociateWithHubSites;
-using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.MicrosoftGraphCopyToDefaultContentLocation;
-using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.MicrosoftGraphIsPublished;
-using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.MicrosoftGraphPublish;
-using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.MicrosoftGraphUnpublish;
+using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.CopyToDefaultContentLocation;
+using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.IsPublished;
+using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Publish;
+using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Unpublish;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +23,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item {
     /// Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
     /// </summary>
     public class ContentTypeItemRequestBuilder {
+        /// <summary>Provides operations to call the associateWithHubSites method.</summary>
+        public AssociateWithHubSitesRequestBuilder AssociateWithHubSites { get =>
+            new AssociateWithHubSitesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the base property of the microsoft.graph.contentType entity.</summary>
         public BaseRequestBuilder Base { get =>
             new BaseRequestBuilder(PathParameters, RequestAdapter);
@@ -43,30 +47,26 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item {
         public ColumnsRequestBuilder Columns { get =>
             new ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the associateWithHubSites method.</summary>
-        public MicrosoftGraphAssociateWithHubSitesRequestBuilder MicrosoftGraphAssociateWithHubSites { get =>
-            new MicrosoftGraphAssociateWithHubSitesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the copyToDefaultContentLocation method.</summary>
-        public MicrosoftGraphCopyToDefaultContentLocationRequestBuilder MicrosoftGraphCopyToDefaultContentLocation { get =>
-            new MicrosoftGraphCopyToDefaultContentLocationRequestBuilder(PathParameters, RequestAdapter);
+        public CopyToDefaultContentLocationRequestBuilder CopyToDefaultContentLocation { get =>
+            new CopyToDefaultContentLocationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isPublished method.</summary>
-        public MicrosoftGraphIsPublishedRequestBuilder MicrosoftGraphIsPublished { get =>
-            new MicrosoftGraphIsPublishedRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the publish method.</summary>
-        public MicrosoftGraphPublishRequestBuilder MicrosoftGraphPublish { get =>
-            new MicrosoftGraphPublishRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unpublish method.</summary>
-        public MicrosoftGraphUnpublishRequestBuilder MicrosoftGraphUnpublish { get =>
-            new MicrosoftGraphUnpublishRequestBuilder(PathParameters, RequestAdapter);
+        public IsPublishedRequestBuilder IsPublished { get =>
+            new IsPublishedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the publish method.</summary>
+        public PublishRequestBuilder Publish { get =>
+            new PublishRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the unpublish method.</summary>
+        public UnpublishRequestBuilder Unpublish { get =>
+            new UnpublishRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

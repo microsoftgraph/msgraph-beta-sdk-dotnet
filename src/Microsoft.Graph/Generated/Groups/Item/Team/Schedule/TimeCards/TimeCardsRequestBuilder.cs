@@ -1,6 +1,6 @@
+using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.ClockIn;
 using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Count;
 using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item;
-using Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.MicrosoftGraphClockIn;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,13 +16,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards {
     /// Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
     /// </summary>
     public class TimeCardsRequestBuilder {
+        /// <summary>Provides operations to call the clockIn method.</summary>
+        public ClockInRequestBuilder ClockIn { get =>
+            new ClockInRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the clockIn method.</summary>
-        public MicrosoftGraphClockInRequestBuilder MicrosoftGraphClockIn { get =>
-            new MicrosoftGraphClockInRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

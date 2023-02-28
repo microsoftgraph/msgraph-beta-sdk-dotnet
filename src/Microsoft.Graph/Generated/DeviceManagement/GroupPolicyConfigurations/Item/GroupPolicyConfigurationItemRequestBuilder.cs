@@ -1,7 +1,7 @@
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.DefinitionValues;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.MicrosoftGraphAssign;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.MicrosoftGraphUpdateDefinitionValues;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,6 +17,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item {
     /// Provides operations to manage the groupPolicyConfigurations property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class GroupPolicyConfigurationItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.groupPolicyConfiguration entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
@@ -25,18 +29,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item {
         public DefinitionValuesRequestBuilder DefinitionValues { get =>
             new DefinitionValuesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateDefinitionValues method.</summary>
-        public MicrosoftGraphUpdateDefinitionValuesRequestBuilder MicrosoftGraphUpdateDefinitionValues { get =>
-            new MicrosoftGraphUpdateDefinitionValuesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the updateDefinitionValues method.</summary>
+        public UpdateDefinitionValuesRequestBuilder UpdateDefinitionValues { get =>
+            new UpdateDefinitionValuesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

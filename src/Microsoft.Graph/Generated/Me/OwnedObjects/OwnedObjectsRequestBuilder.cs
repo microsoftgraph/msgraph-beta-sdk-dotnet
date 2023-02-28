@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Me.OwnedObjects.Count;
+using Microsoft.Graph.Beta.Me.OwnedObjects.GraphApplication;
+using Microsoft.Graph.Beta.Me.OwnedObjects.GraphGroup;
+using Microsoft.Graph.Beta.Me.OwnedObjects.GraphServicePrincipal;
 using Microsoft.Graph.Beta.Me.OwnedObjects.Item;
-using Microsoft.Graph.Beta.Me.OwnedObjects.MicrosoftGraphApplication;
-using Microsoft.Graph.Beta.Me.OwnedObjects.MicrosoftGraphGroup;
-using Microsoft.Graph.Beta.Me.OwnedObjects.MicrosoftGraphServicePrincipal;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Me.OwnedObjects {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to application.</summary>
-        public MicrosoftGraphApplicationRequestBuilder MicrosoftGraphApplication { get =>
-            new MicrosoftGraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+        public GraphApplicationRequestBuilder GraphApplication { get =>
+            new GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public MicrosoftGraphGroupRequestBuilder MicrosoftGraphGroup { get =>
-            new MicrosoftGraphGroupRequestBuilder(PathParameters, RequestAdapter);
+        public GraphGroupRequestBuilder GraphGroup { get =>
+            new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public MicrosoftGraphServicePrincipalRequestBuilder MicrosoftGraphServicePrincipal { get =>
-            new MicrosoftGraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        public GraphServicePrincipalRequestBuilder GraphServicePrincipal { get =>
+            new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

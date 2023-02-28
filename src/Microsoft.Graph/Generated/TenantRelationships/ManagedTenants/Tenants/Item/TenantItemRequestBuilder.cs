@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsOffboardTenant;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsResetTenantOnboardingStatus;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.ManagedTenantsOffboardTenant;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.ManagedTenantsResetTenantOnboardingStatus;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item {
     /// </summary>
     public class TenantItemRequestBuilder {
         /// <summary>Provides operations to call the offboardTenant method.</summary>
-        public MicrosoftGraphManagedTenantsOffboardTenantRequestBuilder MicrosoftGraphManagedTenantsOffboardTenant { get =>
-            new MicrosoftGraphManagedTenantsOffboardTenantRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedTenantsOffboardTenantRequestBuilder ManagedTenantsOffboardTenant { get =>
+            new ManagedTenantsOffboardTenantRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetTenantOnboardingStatus method.</summary>
-        public MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder MicrosoftGraphManagedTenantsResetTenantOnboardingStatus { get =>
-            new MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedTenantsResetTenantOnboardingStatusRequestBuilder ManagedTenantsResetTenantOnboardingStatus { get =>
+            new ManagedTenantsResetTenantOnboardingStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

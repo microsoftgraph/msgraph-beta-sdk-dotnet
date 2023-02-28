@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Protection.MicrosoftGraphProtect;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Protection.MicrosoftGraphUnprotect;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Protection.Protect;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Protection.Unprotect;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,18 +15,18 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.P
     /// Provides operations to manage the protection property of the microsoft.graph.workbookWorksheet entity.
     /// </summary>
     public class ProtectionRequestBuilder {
-        /// <summary>Provides operations to call the protect method.</summary>
-        public MicrosoftGraphProtectRequestBuilder MicrosoftGraphProtect { get =>
-            new MicrosoftGraphProtectRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unprotect method.</summary>
-        public MicrosoftGraphUnprotectRequestBuilder MicrosoftGraphUnprotect { get =>
-            new MicrosoftGraphUnprotectRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the protect method.</summary>
+        public ProtectRequestBuilder Protect { get =>
+            new ProtectRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the unprotect method.</summary>
+        public UnprotectRequestBuilder Unprotect { get =>
+            new UnprotectRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

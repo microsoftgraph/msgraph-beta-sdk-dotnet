@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams;
 using Microsoft.Graph.Beta.Teamwork.Devices;
-using Microsoft.Graph.Beta.Teamwork.MicrosoftGraphSendActivityNotificationToRecipients;
+using Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients;
 using Microsoft.Graph.Beta.Teamwork.TeamsAppSettings;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates;
 using Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations;
@@ -27,14 +27,14 @@ namespace Microsoft.Graph.Beta.Teamwork {
         public DevicesRequestBuilder Devices { get =>
             new DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the sendActivityNotificationToRecipients method.</summary>
-        public MicrosoftGraphSendActivityNotificationToRecipientsRequestBuilder MicrosoftGraphSendActivityNotificationToRecipients { get =>
-            new MicrosoftGraphSendActivityNotificationToRecipientsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the sendActivityNotificationToRecipients method.</summary>
+        public SendActivityNotificationToRecipientsRequestBuilder SendActivityNotificationToRecipients { get =>
+            new SendActivityNotificationToRecipientsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the teamsAppSettings property of the microsoft.graph.teamwork entity.</summary>
         public TeamsAppSettingsRequestBuilder TeamsAppSettings { get =>
             new TeamsAppSettingsRequestBuilder(PathParameters, RequestAdapter);

@@ -1,25 +1,25 @@
+using Microsoft.Graph.Beta.Applications.Item.AddKey;
+using Microsoft.Graph.Beta.Applications.Item.AddPassword;
 using Microsoft.Graph.Beta.Applications.Item.AppManagementPolicies;
+using Microsoft.Graph.Beta.Applications.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.Applications.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Applications.Item.ConnectorGroup;
 using Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf;
 using Microsoft.Graph.Beta.Applications.Item.ExtensionProperties;
 using Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials;
+using Microsoft.Graph.Beta.Applications.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.Applications.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.Applications.Item.HomeRealmDiscoveryPolicies;
 using Microsoft.Graph.Beta.Applications.Item.Logo;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphAddKey;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphAddPassword;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphCheckMemberGroups;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphCheckMemberObjects;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphGetMemberGroups;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphGetMemberObjects;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphRemoveKey;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphRemovePassword;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphRestore;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphSetVerifiedPublisher;
-using Microsoft.Graph.Beta.Applications.Item.MicrosoftGraphUnsetVerifiedPublisher;
 using Microsoft.Graph.Beta.Applications.Item.Owners;
+using Microsoft.Graph.Beta.Applications.Item.RemoveKey;
+using Microsoft.Graph.Beta.Applications.Item.RemovePassword;
+using Microsoft.Graph.Beta.Applications.Item.Restore;
+using Microsoft.Graph.Beta.Applications.Item.SetVerifiedPublisher;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization;
 using Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies;
 using Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies;
+using Microsoft.Graph.Beta.Applications.Item.UnsetVerifiedPublisher;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -35,9 +35,25 @@ namespace Microsoft.Graph.Beta.Applications.Item {
     /// Provides operations to manage the collection of application entities.
     /// </summary>
     public class ApplicationItemRequestBuilder {
+        /// <summary>Provides operations to call the addKey method.</summary>
+        public AddKeyRequestBuilder AddKey { get =>
+            new AddKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the addPassword method.</summary>
+        public AddPasswordRequestBuilder AddPassword { get =>
+            new AddPasswordRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.application entity.</summary>
         public AppManagementPoliciesRequestBuilder AppManagementPolicies { get =>
             new AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
+        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
+            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
+        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
+            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectorGroup property of the microsoft.graph.application entity.</summary>
         public ConnectorGroupRequestBuilder ConnectorGroup { get =>
@@ -55,6 +71,14 @@ namespace Microsoft.Graph.Beta.Applications.Item {
         public FederatedIdentityCredentialsRequestBuilder FederatedIdentityCredentials { get =>
             new FederatedIdentityCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getMemberGroups method.</summary>
+        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
+            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getMemberObjects method.</summary>
+        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
+            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.</summary>
         public HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies { get =>
             new HomeRealmDiscoveryPoliciesRequestBuilder(PathParameters, RequestAdapter);
@@ -63,58 +87,30 @@ namespace Microsoft.Graph.Beta.Applications.Item {
         public LogoRequestBuilder Logo { get =>
             new LogoRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the addKey method.</summary>
-        public MicrosoftGraphAddKeyRequestBuilder MicrosoftGraphAddKey { get =>
-            new MicrosoftGraphAddKeyRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the addPassword method.</summary>
-        public MicrosoftGraphAddPasswordRequestBuilder MicrosoftGraphAddPassword { get =>
-            new MicrosoftGraphAddPasswordRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public MicrosoftGraphCheckMemberGroupsRequestBuilder MicrosoftGraphCheckMemberGroups { get =>
-            new MicrosoftGraphCheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public MicrosoftGraphCheckMemberObjectsRequestBuilder MicrosoftGraphCheckMemberObjects { get =>
-            new MicrosoftGraphCheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public MicrosoftGraphGetMemberGroupsRequestBuilder MicrosoftGraphGetMemberGroups { get =>
-            new MicrosoftGraphGetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public MicrosoftGraphGetMemberObjectsRequestBuilder MicrosoftGraphGetMemberObjects { get =>
-            new MicrosoftGraphGetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the removeKey method.</summary>
-        public MicrosoftGraphRemoveKeyRequestBuilder MicrosoftGraphRemoveKey { get =>
-            new MicrosoftGraphRemoveKeyRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the removePassword method.</summary>
-        public MicrosoftGraphRemovePasswordRequestBuilder MicrosoftGraphRemovePassword { get =>
-            new MicrosoftGraphRemovePasswordRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the restore method.</summary>
-        public MicrosoftGraphRestoreRequestBuilder MicrosoftGraphRestore { get =>
-            new MicrosoftGraphRestoreRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setVerifiedPublisher method.</summary>
-        public MicrosoftGraphSetVerifiedPublisherRequestBuilder MicrosoftGraphSetVerifiedPublisher { get =>
-            new MicrosoftGraphSetVerifiedPublisherRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unsetVerifiedPublisher method.</summary>
-        public MicrosoftGraphUnsetVerifiedPublisherRequestBuilder MicrosoftGraphUnsetVerifiedPublisher { get =>
-            new MicrosoftGraphUnsetVerifiedPublisherRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.application entity.</summary>
         public OwnersRequestBuilder Owners { get =>
             new OwnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the removeKey method.</summary>
+        public RemoveKeyRequestBuilder RemoveKey { get =>
+            new RemoveKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removePassword method.</summary>
+        public RemovePasswordRequestBuilder RemovePassword { get =>
+            new RemovePasswordRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setVerifiedPublisher method.</summary>
+        public SetVerifiedPublisherRequestBuilder SetVerifiedPublisher { get =>
+            new SetVerifiedPublisherRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the synchronization property of the microsoft.graph.application entity.</summary>
         public SynchronizationRequestBuilder Synchronization { get =>
             new SynchronizationRequestBuilder(PathParameters, RequestAdapter);
@@ -126,6 +122,10 @@ namespace Microsoft.Graph.Beta.Applications.Item {
         /// <summary>Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.application entity.</summary>
         public TokenLifetimePoliciesRequestBuilder TokenLifetimePolicies { get =>
             new TokenLifetimePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unsetVerifiedPublisher method.</summary>
+        public UnsetVerifiedPublisherRequestBuilder UnsetVerifiedPublisher { get =>
+            new UnsetVerifiedPublisherRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

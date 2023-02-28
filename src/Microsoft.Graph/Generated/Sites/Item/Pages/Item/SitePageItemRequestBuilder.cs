@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout;
-using Microsoft.Graph.Beta.Sites.Item.Pages.Item.MicrosoftGraphGetWebPartsByPosition;
-using Microsoft.Graph.Beta.Sites.Item.Pages.Item.MicrosoftGraphPublish;
+using Microsoft.Graph.Beta.Sites.Item.Pages.Item.GetWebPartsByPosition;
+using Microsoft.Graph.Beta.Sites.Item.Pages.Item.Publish;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Item.WebParts;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -22,15 +22,15 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item {
             new CanvasLayoutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWebPartsByPosition method.</summary>
-        public MicrosoftGraphGetWebPartsByPositionRequestBuilder MicrosoftGraphGetWebPartsByPosition { get =>
-            new MicrosoftGraphGetWebPartsByPositionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the publish method.</summary>
-        public MicrosoftGraphPublishRequestBuilder MicrosoftGraphPublish { get =>
-            new MicrosoftGraphPublishRequestBuilder(PathParameters, RequestAdapter);
+        public GetWebPartsByPositionRequestBuilder GetWebPartsByPosition { get =>
+            new GetWebPartsByPositionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the publish method.</summary>
+        public PublishRequestBuilder Publish { get =>
+            new PublishRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

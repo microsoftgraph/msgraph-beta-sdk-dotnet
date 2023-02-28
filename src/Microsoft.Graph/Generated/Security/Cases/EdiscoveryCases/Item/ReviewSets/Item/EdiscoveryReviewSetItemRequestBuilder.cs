@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityAddToReviewSet;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityExport;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.SecurityAddToReviewSet;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.SecurityExport;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,14 +21,6 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         public FilesRequestBuilder Files { get =>
             new FilesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the addToReviewSet method.</summary>
-        public MicrosoftGraphSecurityAddToReviewSetRequestBuilder MicrosoftGraphSecurityAddToReviewSet { get =>
-            new MicrosoftGraphSecurityAddToReviewSetRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the export method.</summary>
-        public MicrosoftGraphSecurityExportRequestBuilder MicrosoftGraphSecurityExport { get =>
-            new MicrosoftGraphSecurityExportRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.</summary>
@@ -37,6 +29,14 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the addToReviewSet method.</summary>
+        public SecurityAddToReviewSetRequestBuilder SecurityAddToReviewSet { get =>
+            new SecurityAddToReviewSetRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the export method.</summary>
+        public SecurityExportRequestBuilder SecurityExport { get =>
+            new SecurityExportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

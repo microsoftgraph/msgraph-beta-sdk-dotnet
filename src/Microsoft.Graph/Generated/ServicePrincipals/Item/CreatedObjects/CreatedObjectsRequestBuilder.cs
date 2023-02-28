@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects.GraphServicePrincipal;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects.Item;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects.MicrosoftGraphServicePrincipal;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public MicrosoftGraphServicePrincipalRequestBuilder MicrosoftGraphServicePrincipal { get =>
-            new MicrosoftGraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        public GraphServicePrincipalRequestBuilder GraphServicePrincipal { get =>
+            new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

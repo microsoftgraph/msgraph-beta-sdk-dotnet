@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Count;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.MicrosoftGraphCreateMigrationReport;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createMigrationReport method.</summary>
-        public MicrosoftGraphCreateMigrationReportRequestBuilder MicrosoftGraphCreateMigrationReport { get =>
-            new MicrosoftGraphCreateMigrationReportRequestBuilder(PathParameters, RequestAdapter);
+        public CreateMigrationReportRequestBuilder CreateMigrationReport { get =>
+            new CreateMigrationReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

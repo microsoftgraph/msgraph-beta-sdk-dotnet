@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.MicrosoftGraphCopyNotebook;
+using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.CopyNotebook;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.Sections;
 using Microsoft.Kiota.Abstractions;
@@ -17,8 +17,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item {
     /// </summary>
     public class NotebookItemRequestBuilder {
         /// <summary>Provides operations to call the copyNotebook method.</summary>
-        public MicrosoftGraphCopyNotebookRequestBuilder MicrosoftGraphCopyNotebook { get =>
-            new MicrosoftGraphCopyNotebookRequestBuilder(PathParameters, RequestAdapter);
+        public CopyNotebookRequestBuilder CopyNotebook { get =>
+            new CopyNotebookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

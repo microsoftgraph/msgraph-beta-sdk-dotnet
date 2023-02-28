@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Axes.SeriesAxis.MinorGridlines.Format.Line.MicrosoftGraphClear;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Axes.SeriesAxis.MinorGridlines.Format.Line.Clear;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
     /// </summary>
     public class LineRequestBuilder {
         /// <summary>Provides operations to call the clear method.</summary>
-        public MicrosoftGraphClearRequestBuilder MicrosoftGraphClear { get =>
-            new MicrosoftGraphClearRequestBuilder(PathParameters, RequestAdapter);
+        public ClearRequestBuilder Clear { get =>
+            new ClearRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

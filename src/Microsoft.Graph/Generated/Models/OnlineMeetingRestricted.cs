@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The contentSharingDisabled property</summary>
+        /// <summary>Specifies the reason why shared content from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.</summary>
         public OnlineMeetingContentSharingDisabledReason? ContentSharingDisabled {
             get { return BackingStore?.Get<OnlineMeetingContentSharingDisabledReason?>("contentSharingDisabled"); }
             set { BackingStore?.Set("contentSharingDisabled", value); }
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The videoDisabled property</summary>
+        /// <summary>Specifies the reason why video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.</summary>
         public OnlineMeetingVideoDisabledReason? VideoDisabled {
             get { return BackingStore?.Get<OnlineMeetingVideoDisabledReason?>("videoDisabled"); }
             set { BackingStore?.Set("videoDisabled", value); }

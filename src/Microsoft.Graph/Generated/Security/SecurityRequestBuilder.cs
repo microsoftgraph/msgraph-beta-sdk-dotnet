@@ -12,11 +12,11 @@ using Microsoft.Graph.Beta.Security.Incidents;
 using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Labels;
-using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery;
 using Microsoft.Graph.Beta.Security.ProviderTenantSettings;
 using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Beta.Security.SecureScores;
 using Microsoft.Graph.Beta.Security.SecurityActions;
+using Microsoft.Graph.Beta.Security.SecurityRunHuntingQuery;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests;
 using Microsoft.Graph.Beta.Security.ThreatSubmission;
 using Microsoft.Graph.Beta.Security.TiIndicators;
@@ -84,10 +84,6 @@ namespace Microsoft.Graph.Beta.Security {
         public LabelsRequestBuilder Labels { get =>
             new LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the runHuntingQuery method.</summary>
-        public MicrosoftGraphSecurityRunHuntingQueryRequestBuilder MicrosoftGraphSecurityRunHuntingQuery { get =>
-            new MicrosoftGraphSecurityRunHuntingQueryRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.</summary>
@@ -107,6 +103,10 @@ namespace Microsoft.Graph.Beta.Security {
         /// <summary>Provides operations to manage the securityActions property of the microsoft.graph.security entity.</summary>
         public SecurityActionsRequestBuilder SecurityActions { get =>
             new SecurityActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the runHuntingQuery method.</summary>
+        public SecurityRunHuntingQueryRequestBuilder SecurityRunHuntingQuery { get =>
+            new SecurityRunHuntingQueryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.</summary>
         public SubjectRightsRequestsRequestBuilder SubjectRightsRequests { get =>

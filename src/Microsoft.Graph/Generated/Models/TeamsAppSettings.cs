@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppSettings : Entity, IParsable {
-        /// <summary>The allowUserRequestsForAppAccess property</summary>
+        /// <summary>Indicates whether Teams users are allowed to request admins access to certain Teams apps.</summary>
         public bool? AllowUserRequestsForAppAccess {
             get { return BackingStore?.Get<bool?>("allowUserRequestsForAppAccess"); }
             set { BackingStore?.Set("allowUserRequestsForAppAccess", value); }

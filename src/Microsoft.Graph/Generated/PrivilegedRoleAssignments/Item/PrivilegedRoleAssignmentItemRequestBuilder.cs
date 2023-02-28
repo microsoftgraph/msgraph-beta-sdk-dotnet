@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MicrosoftGraphMakeEligible;
-using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MicrosoftGraphMakePermanent;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakeEligible;
+using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent;
 using Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,12 +17,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item {
     /// </summary>
     public class PrivilegedRoleAssignmentItemRequestBuilder {
         /// <summary>Provides operations to call the makeEligible method.</summary>
-        public MicrosoftGraphMakeEligibleRequestBuilder MicrosoftGraphMakeEligible { get =>
-            new MicrosoftGraphMakeEligibleRequestBuilder(PathParameters, RequestAdapter);
+        public MakeEligibleRequestBuilder MakeEligible { get =>
+            new MakeEligibleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the makePermanent method.</summary>
-        public MicrosoftGraphMakePermanentRequestBuilder MicrosoftGraphMakePermanent { get =>
-            new MicrosoftGraphMakePermanentRequestBuilder(PathParameters, RequestAdapter);
+        public MakePermanentRequestBuilder MakePermanent { get =>
+            new MakePermanentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
