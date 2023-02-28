@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.AllMessages;
 using Microsoft.Graph.Beta.Teams.Count;
+using Microsoft.Graph.Beta.Teams.GetAllMessages;
 using Microsoft.Graph.Beta.Teams.Item;
-using Microsoft.Graph.Beta.Teams.MicrosoftGraphAllMessages;
-using Microsoft.Graph.Beta.Teams.MicrosoftGraphGetAllMessages;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.Teams {
     /// Provides operations to manage the collection of team entities.
     /// </summary>
     public class TeamsRequestBuilder {
+        /// <summary>Provides operations to call the allMessages method.</summary>
+        public AllMessagesRequestBuilder AllMessages { get =>
+            new AllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the allMessages method.</summary>
-        public MicrosoftGraphAllMessagesRequestBuilder MicrosoftGraphAllMessages { get =>
-            new MicrosoftGraphAllMessagesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the getAllMessages method.</summary>
-        public MicrosoftGraphGetAllMessagesRequestBuilder MicrosoftGraphGetAllMessages { get =>
-            new MicrosoftGraphGetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        public GetAllMessagesRequestBuilder GetAllMessages { get =>
+            new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

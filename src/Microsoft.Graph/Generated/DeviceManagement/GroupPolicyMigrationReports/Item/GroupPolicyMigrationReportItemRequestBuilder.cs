@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicySettingMappings;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.MicrosoftGraphUpdateScopeTags;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.UnsupportedGroupPolicyExtensions;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.UpdateScopeTags;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,10 +20,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         public GroupPolicySettingMappingsRequestBuilder GroupPolicySettingMappings { get =>
             new GroupPolicySettingMappingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the updateScopeTags method.</summary>
-        public MicrosoftGraphUpdateScopeTagsRequestBuilder MicrosoftGraphUpdateScopeTags { get =>
-            new MicrosoftGraphUpdateScopeTagsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -31,6 +27,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         /// <summary>Provides operations to manage the unsupportedGroupPolicyExtensions property of the microsoft.graph.groupPolicyMigrationReport entity.</summary>
         public UnsupportedGroupPolicyExtensionsRequestBuilder UnsupportedGroupPolicyExtensions { get =>
             new UnsupportedGroupPolicyExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateScopeTags method.</summary>
+        public UpdateScopeTagsRequestBuilder UpdateScopeTags { get =>
+            new UpdateScopeTagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.MicrosoftGraphCreateDownloadUrl;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
     /// </summary>
     public class DeviceLogCollectionResponseItemRequestBuilder {
         /// <summary>Provides operations to call the createDownloadUrl method.</summary>
-        public MicrosoftGraphCreateDownloadUrlRequestBuilder MicrosoftGraphCreateDownloadUrl { get =>
-            new MicrosoftGraphCreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
+        public CreateDownloadUrlRequestBuilder CreateDownloadUrl { get =>
+            new CreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

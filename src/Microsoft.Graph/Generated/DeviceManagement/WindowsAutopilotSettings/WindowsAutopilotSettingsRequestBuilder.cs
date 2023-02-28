@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotSettings.MicrosoftGraphSync;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotSettings.Sync;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotSettings {
     /// Provides operations to manage the windowsAutopilotSettings property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class WindowsAutopilotSettingsRequestBuilder {
-        /// <summary>Provides operations to call the sync method.</summary>
-        public MicrosoftGraphSyncRequestBuilder MicrosoftGraphSync { get =>
-            new MicrosoftGraphSyncRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the sync method.</summary>
+        public SyncRequestBuilder Sync { get =>
+            new SyncRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

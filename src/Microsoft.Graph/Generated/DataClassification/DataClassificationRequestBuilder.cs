@@ -1,3 +1,5 @@
+using Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches;
+using Microsoft.Graph.Beta.DataClassification.ClassifyFile;
 using Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs;
 using Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs;
 using Microsoft.Graph.Beta.DataClassification.EvaluateDlpPoliciesJobs;
@@ -5,8 +7,6 @@ using Microsoft.Graph.Beta.DataClassification.EvaluateLabelJobs;
 using Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores;
 using Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents;
 using Microsoft.Graph.Beta.DataClassification.Jobs;
-using Microsoft.Graph.Beta.DataClassification.MicrosoftGraphClassifyExactMatches;
-using Microsoft.Graph.Beta.DataClassification.MicrosoftGraphClassifyFile;
 using Microsoft.Graph.Beta.DataClassification.SensitiveTypes;
 using Microsoft.Graph.Beta.DataClassification.SensitivityLabels;
 using Microsoft.Graph.Beta.Models;
@@ -24,6 +24,14 @@ namespace Microsoft.Graph.Beta.DataClassification {
     /// Provides operations to manage the dataClassificationService singleton.
     /// </summary>
     public class DataClassificationRequestBuilder {
+        /// <summary>Provides operations to call the classifyExactMatches method.</summary>
+        public ClassifyExactMatchesRequestBuilder ClassifyExactMatches { get =>
+            new ClassifyExactMatchesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the classifyFile method.</summary>
+        public ClassifyFileRequestBuilder ClassifyFile { get =>
+            new ClassifyFileRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.</summary>
         public ClassifyFileJobsRequestBuilder ClassifyFileJobs { get =>
             new ClassifyFileJobsRequestBuilder(PathParameters, RequestAdapter);
@@ -51,14 +59,6 @@ namespace Microsoft.Graph.Beta.DataClassification {
         /// <summary>Provides operations to manage the jobs property of the microsoft.graph.dataClassificationService entity.</summary>
         public JobsRequestBuilder Jobs { get =>
             new JobsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the classifyExactMatches method.</summary>
-        public MicrosoftGraphClassifyExactMatchesRequestBuilder MicrosoftGraphClassifyExactMatches { get =>
-            new MicrosoftGraphClassifyExactMatchesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the classifyFile method.</summary>
-        public MicrosoftGraphClassifyFileRequestBuilder MicrosoftGraphClassifyFile { get =>
-            new MicrosoftGraphClassifyFileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

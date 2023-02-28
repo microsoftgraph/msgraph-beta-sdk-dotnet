@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.MicrosoftGraphUpdateStatus;
+using Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
     /// Provides operations to manage the deviceAppManagementTasks property of the microsoft.graph.deviceAppManagement entity.
     /// </summary>
     public class DeviceAppManagementTaskItemRequestBuilder {
-        /// <summary>Provides operations to call the updateStatus method.</summary>
-        public MicrosoftGraphUpdateStatusRequestBuilder MicrosoftGraphUpdateStatus { get =>
-            new MicrosoftGraphUpdateStatusRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the updateStatus method.</summary>
+        public UpdateStatusRequestBuilder UpdateStatus { get =>
+            new UpdateStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

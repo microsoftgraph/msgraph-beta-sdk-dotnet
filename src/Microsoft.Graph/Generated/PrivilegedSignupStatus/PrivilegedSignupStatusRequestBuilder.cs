@@ -1,11 +1,11 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup;
 using Microsoft.Graph.Beta.PrivilegedSignupStatus.Count;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp;
 using Microsoft.Graph.Beta.PrivilegedSignupStatus.Item;
-using Microsoft.Graph.Beta.PrivilegedSignupStatus.MicrosoftGraphCanSignUp;
-using Microsoft.Graph.Beta.PrivilegedSignupStatus.MicrosoftGraphCompleteSetup;
-using Microsoft.Graph.Beta.PrivilegedSignupStatus.MicrosoftGraphIsSignedUp;
-using Microsoft.Graph.Beta.PrivilegedSignupStatus.MicrosoftGraphSignUp;
+using Microsoft.Graph.Beta.PrivilegedSignupStatus.SignUp;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -19,30 +19,30 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus {
     /// Provides operations to manage the collection of privilegedSignupStatus entities.
     /// </summary>
     public class PrivilegedSignupStatusRequestBuilder {
+        /// <summary>Provides operations to call the canSignUp method.</summary>
+        public CanSignUpRequestBuilder CanSignUp { get =>
+            new CanSignUpRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the completeSetup method.</summary>
+        public CompleteSetupRequestBuilder CompleteSetup { get =>
+            new CompleteSetupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the canSignUp method.</summary>
-        public MicrosoftGraphCanSignUpRequestBuilder MicrosoftGraphCanSignUp { get =>
-            new MicrosoftGraphCanSignUpRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the completeSetup method.</summary>
-        public MicrosoftGraphCompleteSetupRequestBuilder MicrosoftGraphCompleteSetup { get =>
-            new MicrosoftGraphCompleteSetupRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the isSignedUp method.</summary>
-        public MicrosoftGraphIsSignedUpRequestBuilder MicrosoftGraphIsSignedUp { get =>
-            new MicrosoftGraphIsSignedUpRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the signUp method.</summary>
-        public MicrosoftGraphSignUpRequestBuilder MicrosoftGraphSignUp { get =>
-            new MicrosoftGraphSignUpRequestBuilder(PathParameters, RequestAdapter);
+        public IsSignedUpRequestBuilder IsSignedUp { get =>
+            new IsSignedUpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the signUp method.</summary>
+        public SignUpRequestBuilder SignUp { get =>
+            new SignUpRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the collection of privilegedSignupStatus entities.</summary>

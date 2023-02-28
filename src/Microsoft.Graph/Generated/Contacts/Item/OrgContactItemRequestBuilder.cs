@@ -1,11 +1,11 @@
+using Microsoft.Graph.Beta.Contacts.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.Contacts.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Contacts.Item.DirectReports;
+using Microsoft.Graph.Beta.Contacts.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.Contacts.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.Contacts.Item.Manager;
 using Microsoft.Graph.Beta.Contacts.Item.MemberOf;
-using Microsoft.Graph.Beta.Contacts.Item.MicrosoftGraphCheckMemberGroups;
-using Microsoft.Graph.Beta.Contacts.Item.MicrosoftGraphCheckMemberObjects;
-using Microsoft.Graph.Beta.Contacts.Item.MicrosoftGraphGetMemberGroups;
-using Microsoft.Graph.Beta.Contacts.Item.MicrosoftGraphGetMemberObjects;
-using Microsoft.Graph.Beta.Contacts.Item.MicrosoftGraphRestore;
+using Microsoft.Graph.Beta.Contacts.Item.Restore;
 using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf;
 using Microsoft.Graph.Beta.Contacts.Item.TransitiveReports;
 using Microsoft.Graph.Beta.Models;
@@ -23,9 +23,25 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
     /// Provides operations to manage the collection of orgContact entities.
     /// </summary>
     public class OrgContactItemRequestBuilder {
+        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
+        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
+            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
+        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
+            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the directReports property of the microsoft.graph.orgContact entity.</summary>
         public DirectReportsRequestBuilder DirectReports { get =>
             new DirectReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getMemberGroups method.</summary>
+        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
+            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getMemberObjects method.</summary>
+        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
+            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the manager property of the microsoft.graph.orgContact entity.</summary>
         public ManagerRequestBuilder Manager { get =>
@@ -35,30 +51,14 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         public MemberOfRequestBuilder MemberOf { get =>
             new MemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public MicrosoftGraphCheckMemberGroupsRequestBuilder MicrosoftGraphCheckMemberGroups { get =>
-            new MicrosoftGraphCheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public MicrosoftGraphCheckMemberObjectsRequestBuilder MicrosoftGraphCheckMemberObjects { get =>
-            new MicrosoftGraphCheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public MicrosoftGraphGetMemberGroupsRequestBuilder MicrosoftGraphGetMemberGroups { get =>
-            new MicrosoftGraphGetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public MicrosoftGraphGetMemberObjectsRequestBuilder MicrosoftGraphGetMemberObjects { get =>
-            new MicrosoftGraphGetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the restore method.</summary>
-        public MicrosoftGraphRestoreRequestBuilder MicrosoftGraphRestore { get =>
-            new MicrosoftGraphRestoreRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.</summary>
         public TransitiveMemberOfRequestBuilder TransitiveMemberOf { get =>
             new TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);

@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.Count;
 using Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.Item;
-using Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.MicrosoftGraphQueryByPlatformType;
+using Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the queryByPlatformType method.</summary>
-        public MicrosoftGraphQueryByPlatformTypeRequestBuilder MicrosoftGraphQueryByPlatformType { get =>
-            new MicrosoftGraphQueryByPlatformTypeRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the queryByPlatformType method.</summary>
+        public QueryByPlatformTypeRequestBuilder QueryByPlatformType { get =>
+            new QueryByPlatformTypeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

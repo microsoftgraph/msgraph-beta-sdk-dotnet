@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.HorizontalSections.Item.Columns.Item.Webparts.Item.MicrosoftGraphGetPositionOfWebPart;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.HorizontalSections.Item.Columns.Item.Webparts.Item.GetPositionOfWebPart;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ho
     /// </summary>
     public class WebPartItemRequestBuilder {
         /// <summary>Provides operations to call the getPositionOfWebPart method.</summary>
-        public MicrosoftGraphGetPositionOfWebPartRequestBuilder MicrosoftGraphGetPositionOfWebPart { get =>
-            new MicrosoftGraphGetPositionOfWebPartRequestBuilder(PathParameters, RequestAdapter);
+        public GetPositionOfWebPartRequestBuilder GetPositionOfWebPart { get =>
+            new GetPositionOfWebPartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

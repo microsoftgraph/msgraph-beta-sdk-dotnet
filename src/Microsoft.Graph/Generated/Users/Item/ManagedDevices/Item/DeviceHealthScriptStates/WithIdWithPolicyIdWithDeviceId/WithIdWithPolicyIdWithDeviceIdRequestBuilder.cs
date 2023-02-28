@@ -22,10 +22,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceHealthScript
         /// <summary>
         /// Instantiates a new WithIdWithPolicyIdWithDeviceIdRequestBuilder and sets the default values.
         /// </summary>
-        /// <param name="deviceId">key: deviceId of deviceHealthScriptPolicyState</param>
-        /// <param name="id">key: id of deviceHealthScriptPolicyState</param>
+        /// <param name="deviceId">Property in multi-part unique identifier of deviceHealthScriptPolicyState</param>
+        /// <param name="id">Property in multi-part unique identifier of deviceHealthScriptPolicyState</param>
         /// <param name="pathParameters">Path parameters for the request</param>
-        /// <param name="policyId">key: policyId of deviceHealthScriptPolicyState</param>
+        /// <param name="policyId">Property in multi-part unique identifier of deviceHealthScriptPolicyState</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithIdWithPolicyIdWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string deviceId = "", string id = "", string policyId = "") {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));

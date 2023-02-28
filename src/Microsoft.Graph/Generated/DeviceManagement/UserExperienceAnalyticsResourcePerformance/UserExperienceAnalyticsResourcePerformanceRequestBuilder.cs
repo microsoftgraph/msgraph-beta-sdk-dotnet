@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.Count;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.Item;
-using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.MicrosoftGraphSummarizeDeviceResourcePerformanceWithSummarizeBy;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -79,14 +79,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsResourcePerformanceCollectionResponse>(requestInfo, UserExperienceAnalyticsResourcePerformanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Provides operations to call the summarizeDeviceResourcePerformance method.
-        /// </summary>
-        /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
-        public MicrosoftGraphSummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder MicrosoftGraphSummarizeDeviceResourcePerformanceWithSummarizeBy(string summarizeBy) {
-            if(string.IsNullOrEmpty(summarizeBy)) throw new ArgumentNullException(nameof(summarizeBy));
-            return new MicrosoftGraphSummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(PathParameters, RequestAdapter, summarizeBy);
-        }
-        /// <summary>
         /// Create new navigation property to userExperienceAnalyticsResourcePerformance for deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,6 +98,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the summarizeDeviceResourcePerformance method.
+        /// </summary>
+        /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
+        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder SummarizeDeviceResourcePerformanceWithSummarizeBy(string summarizeBy) {
+            if(string.IsNullOrEmpty(summarizeBy)) throw new ArgumentNullException(nameof(summarizeBy));
+            return new SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(PathParameters, RequestAdapter, summarizeBy);
         }
         /// <summary>
         /// User experience analytics resource performance

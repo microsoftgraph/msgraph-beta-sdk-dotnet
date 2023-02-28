@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignments.Count;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignments.Export;
 using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignments.Item;
-using Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignments.MicrosoftGraphExport;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the export method.</summary>
-        public MicrosoftGraphExportRequestBuilder MicrosoftGraphExport { get =>
-            new MicrosoftGraphExportRequestBuilder(PathParameters, RequestAdapter);
+        public ExportRequestBuilder Export { get =>
+            new ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

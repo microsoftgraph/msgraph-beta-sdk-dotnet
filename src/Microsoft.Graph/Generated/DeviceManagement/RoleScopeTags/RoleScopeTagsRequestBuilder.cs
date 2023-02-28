@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Count;
+using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.GetRoleScopeTagsById;
+using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag;
 using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item;
-using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.MicrosoftGraphGetRoleScopeTagsById;
-using Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.MicrosoftGraphHasCustomRoleScopeTag;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRoleScopeTagsById method.</summary>
-        public MicrosoftGraphGetRoleScopeTagsByIdRequestBuilder MicrosoftGraphGetRoleScopeTagsById { get =>
-            new MicrosoftGraphGetRoleScopeTagsByIdRequestBuilder(PathParameters, RequestAdapter);
+        public GetRoleScopeTagsByIdRequestBuilder GetRoleScopeTagsById { get =>
+            new GetRoleScopeTagsByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasCustomRoleScopeTag method.</summary>
-        public MicrosoftGraphHasCustomRoleScopeTagRequestBuilder MicrosoftGraphHasCustomRoleScopeTag { get =>
-            new MicrosoftGraphHasCustomRoleScopeTagRequestBuilder(PathParameters, RequestAdapter);
+        public HasCustomRoleScopeTagRequestBuilder HasCustomRoleScopeTag { get =>
+            new HasCustomRoleScopeTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

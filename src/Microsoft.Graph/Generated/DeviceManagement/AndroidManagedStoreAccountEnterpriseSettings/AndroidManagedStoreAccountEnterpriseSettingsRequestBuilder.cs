@@ -1,11 +1,11 @@
-using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.MicrosoftGraphAddApps;
-using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.MicrosoftGraphApproveApps;
-using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.MicrosoftGraphCompleteSignup;
-using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.MicrosoftGraphCreateGooglePlayWebToken;
-using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.MicrosoftGraphRequestSignupUrl;
-using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.MicrosoftGraphSetAndroidDeviceOwnerFullyManagedEnrollmentState;
-using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.MicrosoftGraphSyncApps;
-using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.MicrosoftGraphUnbind;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.AddApps;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CompleteSignup;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SyncApps;
+using Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.Unbind;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,41 +22,41 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
     /// </summary>
     public class AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder {
         /// <summary>Provides operations to call the addApps method.</summary>
-        public MicrosoftGraphAddAppsRequestBuilder MicrosoftGraphAddApps { get =>
-            new MicrosoftGraphAddAppsRequestBuilder(PathParameters, RequestAdapter);
+        public AddAppsRequestBuilder AddApps { get =>
+            new AddAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the approveApps method.</summary>
-        public MicrosoftGraphApproveAppsRequestBuilder MicrosoftGraphApproveApps { get =>
-            new MicrosoftGraphApproveAppsRequestBuilder(PathParameters, RequestAdapter);
+        public ApproveAppsRequestBuilder ApproveApps { get =>
+            new ApproveAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the completeSignup method.</summary>
-        public MicrosoftGraphCompleteSignupRequestBuilder MicrosoftGraphCompleteSignup { get =>
-            new MicrosoftGraphCompleteSignupRequestBuilder(PathParameters, RequestAdapter);
+        public CompleteSignupRequestBuilder CompleteSignup { get =>
+            new CompleteSignupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createGooglePlayWebToken method.</summary>
-        public MicrosoftGraphCreateGooglePlayWebTokenRequestBuilder MicrosoftGraphCreateGooglePlayWebToken { get =>
-            new MicrosoftGraphCreateGooglePlayWebTokenRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the requestSignupUrl method.</summary>
-        public MicrosoftGraphRequestSignupUrlRequestBuilder MicrosoftGraphRequestSignupUrl { get =>
-            new MicrosoftGraphRequestSignupUrlRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setAndroidDeviceOwnerFullyManagedEnrollmentState method.</summary>
-        public MicrosoftGraphSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder MicrosoftGraphSetAndroidDeviceOwnerFullyManagedEnrollmentState { get =>
-            new MicrosoftGraphSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the syncApps method.</summary>
-        public MicrosoftGraphSyncAppsRequestBuilder MicrosoftGraphSyncApps { get =>
-            new MicrosoftGraphSyncAppsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unbind method.</summary>
-        public MicrosoftGraphUnbindRequestBuilder MicrosoftGraphUnbind { get =>
-            new MicrosoftGraphUnbindRequestBuilder(PathParameters, RequestAdapter);
+        public CreateGooglePlayWebTokenRequestBuilder CreateGooglePlayWebToken { get =>
+            new CreateGooglePlayWebTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the requestSignupUrl method.</summary>
+        public RequestSignupUrlRequestBuilder RequestSignupUrl { get =>
+            new RequestSignupUrlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setAndroidDeviceOwnerFullyManagedEnrollmentState method.</summary>
+        public SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder SetAndroidDeviceOwnerFullyManagedEnrollmentState { get =>
+            new SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the syncApps method.</summary>
+        public SyncAppsRequestBuilder SyncApps { get =>
+            new SyncAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unbind method.</summary>
+        public UnbindRequestBuilder Unbind { get =>
+            new UnbindRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

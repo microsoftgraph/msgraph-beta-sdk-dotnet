@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.MicrosoftGraphManagedTenantsChangeDeploymentStatus;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.ManagedTenantsChangeDeploymentStatus;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.TemplateStepVersion;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
     /// </summary>
     public class ManagementTemplateStepDeploymentItemRequestBuilder {
         /// <summary>Provides operations to call the changeDeploymentStatus method.</summary>
-        public MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilder MicrosoftGraphManagedTenantsChangeDeploymentStatus { get =>
-            new MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedTenantsChangeDeploymentStatusRequestBuilder ManagedTenantsChangeDeploymentStatus { get =>
+            new ManagedTenantsChangeDeploymentStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

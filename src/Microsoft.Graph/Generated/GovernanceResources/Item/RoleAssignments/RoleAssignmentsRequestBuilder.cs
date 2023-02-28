@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Count;
+using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Export;
 using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item;
-using Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.MicrosoftGraphExport;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the export method.</summary>
-        public MicrosoftGraphExportRequestBuilder MicrosoftGraphExport { get =>
-            new MicrosoftGraphExportRequestBuilder(PathParameters, RequestAdapter);
+        public ExportRequestBuilder Export { get =>
+            new ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

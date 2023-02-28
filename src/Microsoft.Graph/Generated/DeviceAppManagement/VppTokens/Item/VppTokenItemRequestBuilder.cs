@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.MicrosoftGraphRevokeLicenses;
-using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.MicrosoftGraphSyncLicenses;
+using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.RevokeLicenses;
+using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.SyncLicenses;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,18 +15,18 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item {
     /// Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
     /// </summary>
     public class VppTokenItemRequestBuilder {
-        /// <summary>Provides operations to call the revokeLicenses method.</summary>
-        public MicrosoftGraphRevokeLicensesRequestBuilder MicrosoftGraphRevokeLicenses { get =>
-            new MicrosoftGraphRevokeLicensesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the syncLicenses method.</summary>
-        public MicrosoftGraphSyncLicensesRequestBuilder MicrosoftGraphSyncLicenses { get =>
-            new MicrosoftGraphSyncLicensesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the revokeLicenses method.</summary>
+        public RevokeLicensesRequestBuilder RevokeLicenses { get =>
+            new RevokeLicensesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the syncLicenses method.</summary>
+        public SyncLicensesRequestBuilder SyncLicenses { get =>
+            new SyncLicensesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

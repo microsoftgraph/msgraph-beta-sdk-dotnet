@@ -1,25 +1,25 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Teams.Item.AllChannels;
+using Microsoft.Graph.Beta.Teams.Item.Archive;
 using Microsoft.Graph.Beta.Teams.Item.Channels;
+using Microsoft.Graph.Beta.Teams.Item.Clone;
+using Microsoft.Graph.Beta.Teams.Item.CompleteMigration;
 using Microsoft.Graph.Beta.Teams.Item.Group;
 using Microsoft.Graph.Beta.Teams.Item.IncomingChannels;
 using Microsoft.Graph.Beta.Teams.Item.InstalledApps;
 using Microsoft.Graph.Beta.Teams.Item.Members;
-using Microsoft.Graph.Beta.Teams.Item.MicrosoftGraphArchive;
-using Microsoft.Graph.Beta.Teams.Item.MicrosoftGraphClone;
-using Microsoft.Graph.Beta.Teams.Item.MicrosoftGraphCompleteMigration;
-using Microsoft.Graph.Beta.Teams.Item.MicrosoftGraphSendActivityNotification;
-using Microsoft.Graph.Beta.Teams.Item.MicrosoftGraphUnarchive;
 using Microsoft.Graph.Beta.Teams.Item.Operations;
 using Microsoft.Graph.Beta.Teams.Item.Owners;
 using Microsoft.Graph.Beta.Teams.Item.PermissionGrants;
 using Microsoft.Graph.Beta.Teams.Item.Photo;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel;
 using Microsoft.Graph.Beta.Teams.Item.Schedule;
+using Microsoft.Graph.Beta.Teams.Item.SendActivityNotification;
 using Microsoft.Graph.Beta.Teams.Item.Tags;
 using Microsoft.Graph.Beta.Teams.Item.Template;
 using Microsoft.Graph.Beta.Teams.Item.TemplateDefinition;
+using Microsoft.Graph.Beta.Teams.Item.Unarchive;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -37,9 +37,21 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         public AllChannelsRequestBuilder AllChannels { get =>
             new AllChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the archive method.</summary>
+        public ArchiveRequestBuilder Archive { get =>
+            new ArchiveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the channels property of the microsoft.graph.team entity.</summary>
         public ChannelsRequestBuilder Channels { get =>
             new ChannelsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the clone method.</summary>
+        public CloneRequestBuilder Clone { get =>
+            new CloneRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the completeMigration method.</summary>
+        public CompleteMigrationRequestBuilder CompleteMigration { get =>
+            new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the group property of the microsoft.graph.team entity.</summary>
         public GroupRequestBuilder Group { get =>
@@ -56,26 +68,6 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         /// <summary>Provides operations to manage the members property of the microsoft.graph.team entity.</summary>
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the archive method.</summary>
-        public MicrosoftGraphArchiveRequestBuilder MicrosoftGraphArchive { get =>
-            new MicrosoftGraphArchiveRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the clone method.</summary>
-        public MicrosoftGraphCloneRequestBuilder MicrosoftGraphClone { get =>
-            new MicrosoftGraphCloneRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the completeMigration method.</summary>
-        public MicrosoftGraphCompleteMigrationRequestBuilder MicrosoftGraphCompleteMigration { get =>
-            new MicrosoftGraphCompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the sendActivityNotification method.</summary>
-        public MicrosoftGraphSendActivityNotificationRequestBuilder MicrosoftGraphSendActivityNotification { get =>
-            new MicrosoftGraphSendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unarchive method.</summary>
-        public MicrosoftGraphUnarchiveRequestBuilder MicrosoftGraphUnarchive { get =>
-            new MicrosoftGraphUnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.team entity.</summary>
         public OperationsRequestBuilder Operations { get =>
@@ -105,6 +97,10 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         public ScheduleRequestBuilder Schedule { get =>
             new ScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the sendActivityNotification method.</summary>
+        public SendActivityNotificationRequestBuilder SendActivityNotification { get =>
+            new SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the tags property of the microsoft.graph.team entity.</summary>
         public TagsRequestBuilder Tags { get =>
             new TagsRequestBuilder(PathParameters, RequestAdapter);
@@ -116,6 +112,10 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         /// <summary>Provides operations to manage the templateDefinition property of the microsoft.graph.team entity.</summary>
         public TemplateDefinitionRequestBuilder TemplateDefinition { get =>
             new TemplateDefinitionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unarchive method.</summary>
+        public UnarchiveRequestBuilder Unarchive { get =>
+            new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

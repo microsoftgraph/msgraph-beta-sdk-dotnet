@@ -1,5 +1,5 @@
+using Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.Assignments;
-using Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.MicrosoftGraphAssign;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,13 +15,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item {
     /// Provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class IntuneBrandingProfileItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.intuneBrandingProfile entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.Item.MicrosoftGraphTriggerDeviceScopeAction;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScopes.Item.TriggerDeviceScopeAction;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
     /// Provides operations to manage the userExperienceAnalyticsDeviceScopes property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class UserExperienceAnalyticsDeviceScopeItemRequestBuilder {
-        /// <summary>Provides operations to call the triggerDeviceScopeAction method.</summary>
-        public MicrosoftGraphTriggerDeviceScopeActionRequestBuilder MicrosoftGraphTriggerDeviceScopeAction { get =>
-            new MicrosoftGraphTriggerDeviceScopeActionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the triggerDeviceScopeAction method.</summary>
+        public TriggerDeviceScopeActionRequestBuilder TriggerDeviceScopeAction { get =>
+            new TriggerDeviceScopeActionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

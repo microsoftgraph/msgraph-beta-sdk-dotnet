@@ -1,7 +1,7 @@
+using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.ConfirmCompromised;
 using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Count;
+using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Dismiss;
 using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item;
-using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.MicrosoftGraphConfirmCompromised;
-using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.MicrosoftGraphDismiss;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
     /// Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
     /// </summary>
     public class RiskyUsersRequestBuilder {
+        /// <summary>Provides operations to call the confirmCompromised method.</summary>
+        public ConfirmCompromisedRequestBuilder ConfirmCompromised { get =>
+            new ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the confirmCompromised method.</summary>
-        public MicrosoftGraphConfirmCompromisedRequestBuilder MicrosoftGraphConfirmCompromised { get =>
-            new MicrosoftGraphConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the dismiss method.</summary>
-        public MicrosoftGraphDismissRequestBuilder MicrosoftGraphDismiss { get =>
-            new MicrosoftGraphDismissRequestBuilder(PathParameters, RequestAdapter);
+        public DismissRequestBuilder Dismiss { get =>
+            new DismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **riskyUser** object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             return await RequestAdapter.SendAsync<RiskyUser>(requestInfo, RiskyUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **riskyUser** object.
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **riskyUser** object.
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
         /// </summary>
         public class RiskyUsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

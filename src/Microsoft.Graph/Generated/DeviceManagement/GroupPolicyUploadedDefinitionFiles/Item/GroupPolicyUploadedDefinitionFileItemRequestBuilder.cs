@@ -1,9 +1,9 @@
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.AddLanguageFiles;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.GroupPolicyOperations;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.MicrosoftGraphAddLanguageFiles;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.MicrosoftGraphRemove;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.MicrosoftGraphRemoveLanguageFiles;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.MicrosoftGraphUpdateLanguageFiles;
-using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.MicrosoftGraphUploadNewVersion;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.Remove;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.RemoveLanguageFiles;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.UpdateLanguageFiles;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.UploadNewVersion;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,34 +19,34 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
     /// Provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class GroupPolicyUploadedDefinitionFileItemRequestBuilder {
+        /// <summary>Provides operations to call the addLanguageFiles method.</summary>
+        public AddLanguageFilesRequestBuilder AddLanguageFiles { get =>
+            new AddLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the groupPolicyOperations property of the microsoft.graph.groupPolicyUploadedDefinitionFile entity.</summary>
         public GroupPolicyOperationsRequestBuilder GroupPolicyOperations { get =>
             new GroupPolicyOperationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the addLanguageFiles method.</summary>
-        public MicrosoftGraphAddLanguageFilesRequestBuilder MicrosoftGraphAddLanguageFiles { get =>
-            new MicrosoftGraphAddLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the remove method.</summary>
-        public MicrosoftGraphRemoveRequestBuilder MicrosoftGraphRemove { get =>
-            new MicrosoftGraphRemoveRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the removeLanguageFiles method.</summary>
-        public MicrosoftGraphRemoveLanguageFilesRequestBuilder MicrosoftGraphRemoveLanguageFiles { get =>
-            new MicrosoftGraphRemoveLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateLanguageFiles method.</summary>
-        public MicrosoftGraphUpdateLanguageFilesRequestBuilder MicrosoftGraphUpdateLanguageFiles { get =>
-            new MicrosoftGraphUpdateLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the uploadNewVersion method.</summary>
-        public MicrosoftGraphUploadNewVersionRequestBuilder MicrosoftGraphUploadNewVersion { get =>
-            new MicrosoftGraphUploadNewVersionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the remove method.</summary>
+        public RemoveRequestBuilder Remove { get =>
+            new RemoveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeLanguageFiles method.</summary>
+        public RemoveLanguageFilesRequestBuilder RemoveLanguageFiles { get =>
+            new RemoveLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the updateLanguageFiles method.</summary>
+        public UpdateLanguageFilesRequestBuilder UpdateLanguageFiles { get =>
+            new UpdateLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the uploadNewVersion method.</summary>
+        public UploadNewVersionRequestBuilder UploadNewVersion { get =>
+            new UploadNewVersionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isEnabledForContentSharing property</summary>
+        /// <summary>Indicates whether to apply a watermark to any shared content.</summary>
         public bool? IsEnabledForContentSharing {
             get { return BackingStore?.Get<bool?>("isEnabledForContentSharing"); }
             set { BackingStore?.Set("isEnabledForContentSharing", value); }
         }
-        /// <summary>The isEnabledForVideo property</summary>
+        /// <summary>Indicates whether to apply a watermark to everyone&apos;s video feed.</summary>
         public bool? IsEnabledForVideo {
             get { return BackingStore?.Get<bool?>("isEnabledForVideo"); }
             set { BackingStore?.Set("isEnabledForVideo", value); }

@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Count;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.SecurityAsHierarchy;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -20,14 +20,14 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the asHierarchy method.</summary>
-        public MicrosoftGraphSecurityAsHierarchyRequestBuilder MicrosoftGraphSecurityAsHierarchy { get =>
-            new MicrosoftGraphSecurityAsHierarchyRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the asHierarchy method.</summary>
+        public SecurityAsHierarchyRequestBuilder SecurityAsHierarchy { get =>
+            new SecurityAsHierarchyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the tags property of the microsoft.graph.security.ediscoveryCase entity.</summary>

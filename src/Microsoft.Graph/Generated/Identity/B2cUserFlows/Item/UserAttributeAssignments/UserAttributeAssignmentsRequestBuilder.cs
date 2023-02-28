@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.Count;
+using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.GetOrder;
 using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.Item;
-using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.MicrosoftGraphGetOrder;
-using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.MicrosoftGraphSetOrder;
+using Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.SetOrder;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,17 +22,17 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getOrder method.</summary>
-        public MicrosoftGraphGetOrderRequestBuilder MicrosoftGraphGetOrder { get =>
-            new MicrosoftGraphGetOrderRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setOrder method.</summary>
-        public MicrosoftGraphSetOrderRequestBuilder MicrosoftGraphSetOrder { get =>
-            new MicrosoftGraphSetOrderRequestBuilder(PathParameters, RequestAdapter);
+        public GetOrderRequestBuilder GetOrder { get =>
+            new GetOrderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the setOrder method.</summary>
+        public SetOrderRequestBuilder SetOrder { get =>
+            new SetOrderRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>

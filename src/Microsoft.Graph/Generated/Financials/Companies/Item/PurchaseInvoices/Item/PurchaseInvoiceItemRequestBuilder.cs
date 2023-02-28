@@ -1,5 +1,5 @@
 using Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item.Currency;
-using Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item.MicrosoftGraphPost;
+using Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item.Post;
 using Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item.PurchaseInvoiceLines;
 using Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item.Vendor;
 using Microsoft.Graph.Beta.Models;
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
         public CurrencyRequestBuilder Currency { get =>
             new CurrencyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the post method.</summary>
-        public MicrosoftGraphPostRequestBuilder MicrosoftGraphPost { get =>
-            new MicrosoftGraphPostRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the post method.</summary>
+        public PostRequestBuilder PostPath { get =>
+            new PostRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.</summary>
         public PurchaseInvoiceLinesRequestBuilder PurchaseInvoiceLines { get =>
             new PurchaseInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);

@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.Count;
+using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateApplication;
+using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateClassificationResults;
+using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemoval;
+using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.ExtractLabel;
 using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.Item;
-using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.MicrosoftGraphEvaluateApplication;
-using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.MicrosoftGraphEvaluateClassificationResults;
-using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.MicrosoftGraphEvaluateRemoval;
-using Microsoft.Graph.Beta.InformationProtection.Policy.Labels.MicrosoftGraphExtractLabel;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,20 +24,20 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateApplication method.</summary>
-        public MicrosoftGraphEvaluateApplicationRequestBuilder MicrosoftGraphEvaluateApplication { get =>
-            new MicrosoftGraphEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
+        public EvaluateApplicationRequestBuilder EvaluateApplication { get =>
+            new EvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
-        public MicrosoftGraphEvaluateClassificationResultsRequestBuilder MicrosoftGraphEvaluateClassificationResults { get =>
-            new MicrosoftGraphEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
+        public EvaluateClassificationResultsRequestBuilder EvaluateClassificationResults { get =>
+            new EvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateRemoval method.</summary>
-        public MicrosoftGraphEvaluateRemovalRequestBuilder MicrosoftGraphEvaluateRemoval { get =>
-            new MicrosoftGraphEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
+        public EvaluateRemovalRequestBuilder EvaluateRemoval { get =>
+            new EvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the extractLabel method.</summary>
-        public MicrosoftGraphExtractLabelRequestBuilder MicrosoftGraphExtractLabel { get =>
-            new MicrosoftGraphExtractLabelRequestBuilder(PathParameters, RequestAdapter);
+        public ExtractLabelRequestBuilder ExtractLabel { get =>
+            new ExtractLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

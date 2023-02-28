@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Me.Activities.Count;
 using Microsoft.Graph.Beta.Me.Activities.Item;
-using Microsoft.Graph.Beta.Me.Activities.MicrosoftGraphRecent;
+using Microsoft.Graph.Beta.Me.Activities.Recent;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Me.Activities {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the recent method.</summary>
-        public MicrosoftGraphRecentRequestBuilder MicrosoftGraphRecent { get =>
-            new MicrosoftGraphRecentRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the recent method.</summary>
+        public RecentRequestBuilder Recent { get =>
+            new RecentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

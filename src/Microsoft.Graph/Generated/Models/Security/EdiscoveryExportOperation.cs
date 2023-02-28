@@ -47,6 +47,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("description", value); }
         }
 #endif
+        /// <summary>The exportFileMetadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>? ExportFileMetadata {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>?>("exportFileMetadata"); }
+            set { BackingStore?.Set("exportFileMetadata", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata> ExportFileMetadata {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>>("exportFileMetadata"); }
+            set { BackingStore?.Set("exportFileMetadata", value); }
+        }
+#endif
         /// <summary>The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.</summary>
         public Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportOptions?>("exportOptions"); }
@@ -129,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"azureBlobContainer", n => { AzureBlobContainer = n.GetStringValue(); } },
                 {"azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
+                {"exportFileMetadata", n => { ExportFileMetadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>(Microsoft.Graph.Beta.Models.Security.ExportFileMetadata.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
                 {"exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
                 {"outputFolderId", n => { OutputFolderId = n.GetStringValue(); } },
@@ -147,6 +162,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteStringValue("azureBlobContainer", AzureBlobContainer);
             writer.WriteStringValue("azureBlobToken", AzureBlobToken);
             writer.WriteStringValue("description", Description);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>("exportFileMetadata", ExportFileMetadata);
             writer.WriteEnumValue<ExportOptions>("exportOptions", ExportOptions);
             writer.WriteEnumValue<ExportFileStructure>("exportStructure", ExportStructure);
             writer.WriteStringValue("outputFolderId", OutputFolderId);

@@ -12,5 +12,6 @@ namespace Microsoft.Graph.Beta.Models {
         Acronym,
         Bookmark,
         ChatMessage,
+        Qna,
     }
 }

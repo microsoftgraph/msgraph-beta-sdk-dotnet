@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Count;
+using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration;
+using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.HasPayloadLinks;
 using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item;
-using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.MicrosoftGraphCreateEnrollmentNotificationConfiguration;
-using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.MicrosoftGraphHasPayloadLinks;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createEnrollmentNotificationConfiguration method.</summary>
-        public MicrosoftGraphCreateEnrollmentNotificationConfigurationRequestBuilder MicrosoftGraphCreateEnrollmentNotificationConfiguration { get =>
-            new MicrosoftGraphCreateEnrollmentNotificationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        public CreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration { get =>
+            new CreateEnrollmentNotificationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
-        public MicrosoftGraphHasPayloadLinksRequestBuilder MicrosoftGraphHasPayloadLinks { get =>
-            new MicrosoftGraphHasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
+        public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
+            new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

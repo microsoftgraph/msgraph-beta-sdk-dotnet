@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcOrganizationSettings : Entity, IParsable {
-        /// <summary>Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.</summary>
+        /// <summary>Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM). The default value is false.</summary>
         public bool? EnableMEMAutoEnroll {
             get { return BackingStore?.Get<bool?>("enableMEMAutoEnroll"); }
             set { BackingStore?.Set("enableMEMAutoEnroll", value); }
         }
-        /// <summary>The enableSingleSignOn property</summary>
+        /// <summary>True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn&apos;t support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</summary>
         public bool? EnableSingleSignOn {
             get { return BackingStore?.Get<bool?>("enableSingleSignOn"); }
             set { BackingStore?.Set("enableSingleSignOn", value); }

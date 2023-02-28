@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Item.C
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A field representing the content of the transcript. Read-only.
+        /// A field that represents the content of the transcript. Read-only.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Item.C
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A field representing the content of the transcript. Read-only.
+        /// A field that represents the content of the transcript. Read-only.
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Item.C
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A field representing the content of the transcript. Read-only.
+        /// A field that represents the content of the transcript. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Item.C
             return requestInfo;
         }
         /// <summary>
-        /// A field representing the content of the transcript. Read-only.
+        /// A field that represents the content of the transcript. Read-only.
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

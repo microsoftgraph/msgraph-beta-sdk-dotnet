@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.MicrosoftGraphGetSupportedProperties;
+using Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
     /// </summary>
     public class DeviceAndAppManagementAssignmentFilterItemRequestBuilder {
         /// <summary>Provides operations to call the getSupportedProperties method.</summary>
-        public MicrosoftGraphGetSupportedPropertiesRequestBuilder MicrosoftGraphGetSupportedProperties { get =>
-            new MicrosoftGraphGetSupportedPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        public GetSupportedPropertiesRequestBuilder GetSupportedProperties { get =>
+            new GetSupportedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

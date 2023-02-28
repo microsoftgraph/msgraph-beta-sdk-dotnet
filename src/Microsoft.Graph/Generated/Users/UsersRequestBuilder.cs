@@ -1,13 +1,13 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Count;
+using Microsoft.Graph.Beta.Users.Delta;
+using Microsoft.Graph.Beta.Users.GetByIds;
+using Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers;
+using Microsoft.Graph.Beta.Users.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Users.Item;
-using Microsoft.Graph.Beta.Users.MicrosoftGraphDelta;
-using Microsoft.Graph.Beta.Users.MicrosoftGraphGetByIds;
-using Microsoft.Graph.Beta.Users.MicrosoftGraphGetManagedAppBlockedUsers;
-using Microsoft.Graph.Beta.Users.MicrosoftGraphGetUserOwnedObjects;
-using Microsoft.Graph.Beta.Users.MicrosoftGraphValidatePassword;
-using Microsoft.Graph.Beta.Users.MicrosoftGraphValidateProperties;
+using Microsoft.Graph.Beta.Users.ValidatePassword;
+using Microsoft.Graph.Beta.Users.ValidateProperties;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -26,28 +26,20 @@ namespace Microsoft.Graph.Beta.Users {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
-            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public MicrosoftGraphGetByIdsRequestBuilder MicrosoftGraphGetByIds { get =>
-            new MicrosoftGraphGetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getManagedAppBlockedUsers method.</summary>
-        public MicrosoftGraphGetManagedAppBlockedUsersRequestBuilder MicrosoftGraphGetManagedAppBlockedUsers { get =>
-            new MicrosoftGraphGetManagedAppBlockedUsersRequestBuilder(PathParameters, RequestAdapter);
+        public GetManagedAppBlockedUsersRequestBuilder GetManagedAppBlockedUsers { get =>
+            new GetManagedAppBlockedUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public MicrosoftGraphGetUserOwnedObjectsRequestBuilder MicrosoftGraphGetUserOwnedObjects { get =>
-            new MicrosoftGraphGetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validatePassword method.</summary>
-        public MicrosoftGraphValidatePasswordRequestBuilder MicrosoftGraphValidatePassword { get =>
-            new MicrosoftGraphValidatePasswordRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public MicrosoftGraphValidatePropertiesRequestBuilder MicrosoftGraphValidateProperties { get =>
-            new MicrosoftGraphValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -55,6 +47,14 @@ namespace Microsoft.Graph.Beta.Users {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validatePassword method.</summary>
+        public ValidatePasswordRequestBuilder ValidatePassword { get =>
+            new ValidatePasswordRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the validateProperties method.</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the collection of user entities.</summary>
         public UserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Users {
         public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/users{?%24top,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Users {
         public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/users{?%24top,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -241,9 +241,6 @@ namespace Microsoft.Graph.Beta.Users {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
 #endif
-            /// <summary>Skip the first n items</summary>
-            [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }

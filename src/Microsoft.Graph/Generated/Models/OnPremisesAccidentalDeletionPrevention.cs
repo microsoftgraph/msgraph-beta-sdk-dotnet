@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage.</summary>
+        /// <summary>The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.</summary>
         public OnPremisesDirectorySynchronizationDeletionPreventionType? SynchronizationPreventionType {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationDeletionPreventionType?>("synchronizationPreventionType"); }
             set { BackingStore?.Set("synchronizationPreventionType", value); }

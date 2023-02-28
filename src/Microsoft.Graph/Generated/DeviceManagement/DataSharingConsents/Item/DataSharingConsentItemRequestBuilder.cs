@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item.MicrosoftGraphConsentToDataSharing;
+using Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item.ConsentToDataSharing;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item {
     /// </summary>
     public class DataSharingConsentItemRequestBuilder {
         /// <summary>Provides operations to call the consentToDataSharing method.</summary>
-        public MicrosoftGraphConsentToDataSharingRequestBuilder MicrosoftGraphConsentToDataSharing { get =>
-            new MicrosoftGraphConsentToDataSharingRequestBuilder(PathParameters, RequestAdapter);
+        public ConsentToDataSharingRequestBuilder ConsentToDataSharing { get =>
+            new ConsentToDataSharingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

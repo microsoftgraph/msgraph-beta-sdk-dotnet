@@ -1,7 +1,7 @@
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assignments;
-using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.MicrosoftGraphAssign;
-using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.MicrosoftGraphCreateCopy;
-using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.MicrosoftGraphReorder;
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy;
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Reorder;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Settings;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -18,24 +18,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item {
     /// Provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceManagementConfigurationPolicyItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the createCopy method.</summary>
-        public MicrosoftGraphCreateCopyRequestBuilder MicrosoftGraphCreateCopy { get =>
-            new MicrosoftGraphCreateCopyRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reorder method.</summary>
-        public MicrosoftGraphReorderRequestBuilder MicrosoftGraphReorder { get =>
-            new MicrosoftGraphReorderRequestBuilder(PathParameters, RequestAdapter);
+        public CreateCopyRequestBuilder CreateCopy { get =>
+            new CreateCopyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the reorder method.</summary>
+        public ReorderRequestBuilder Reorder { get =>
+            new ReorderRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.</summary>

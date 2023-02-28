@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Me.DirectReports.Item.MicrosoftGraphOrgContact;
-using Microsoft.Graph.Beta.Me.DirectReports.Item.MicrosoftGraphUser;
+using Microsoft.Graph.Beta.Me.DirectReports.Item.GraphOrgContact;
+using Microsoft.Graph.Beta.Me.DirectReports.Item.GraphUser;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.Me.DirectReports.Item {
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public MicrosoftGraphOrgContactRequestBuilder MicrosoftGraphOrgContact { get =>
-            new MicrosoftGraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+        public GraphOrgContactRequestBuilder GraphOrgContact { get =>
+            new GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
-            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
+        public GraphUserRequestBuilder GraphUser { get =>
+            new GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -1,9 +1,8 @@
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Add;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Count;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.MicrosoftGraphAdd;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.MicrosoftGraphCount;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.MicrosoftGraphItemAtWithIndex;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.MicrosoftGraphItemWithName;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemAtWithIndex;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,17 +18,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
     /// Provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
     /// </summary>
     public class ChartsRequestBuilder {
-        /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the add method.</summary>
-        public MicrosoftGraphAddRequestBuilder MicrosoftGraphAdd { get =>
-            new MicrosoftGraphAddRequestBuilder(PathParameters, RequestAdapter);
+        public AddRequestBuilder Add { get =>
+            new AddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the count method.</summary>
-        public MicrosoftGraphCountRequestBuilder MicrosoftGraphCount { get =>
-            new MicrosoftGraphCountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -94,17 +89,17 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         /// Provides operations to call the itemAt method.
         /// </summary>
         /// <param name="index">Usage: index={index}</param>
-        public MicrosoftGraphItemAtWithIndexRequestBuilder MicrosoftGraphItemAtWithIndex(int? index) {
+        public ItemAtWithIndexRequestBuilder ItemAtWithIndex(int? index) {
             _ = index ?? throw new ArgumentNullException(nameof(index));
-            return new MicrosoftGraphItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
+            return new ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
         }
         /// <summary>
         /// Provides operations to call the item method.
         /// </summary>
         /// <param name="name">Usage: name=&apos;{name}&apos;</param>
-        public MicrosoftGraphItemWithNameRequestBuilder MicrosoftGraphItemWithName(string name) {
+        public ItemWithNameRequestBuilder ItemWithName(string name) {
             if(string.IsNullOrEmpty(name)) throw new ArgumentNullException(nameof(name));
-            return new MicrosoftGraphItemWithNameRequestBuilder(PathParameters, RequestAdapter, name);
+            return new ItemWithNameRequestBuilder(PathParameters, RequestAdapter, name);
         }
         /// <summary>
         /// Use this API to create a new Chart.

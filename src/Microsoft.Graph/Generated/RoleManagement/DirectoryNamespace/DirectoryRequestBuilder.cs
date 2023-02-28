@@ -1,7 +1,5 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.MicrosoftGraphRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
-using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.MicrosoftGraphRoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespaces;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentApprovals;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignments;
@@ -12,6 +10,8 @@ using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleDefinitions;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilityScheduleInstances;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilityScheduleRequests;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilitySchedules;
+using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
+using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.TransitiveRoleAssignments;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -26,14 +26,6 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace {
     /// Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
     /// </summary>
     public class DirectoryRequestBuilder {
-        /// <summary>Provides operations to call the roleScheduleInstances method.</summary>
-        public MicrosoftGraphRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder MicrosoftGraphRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId { get =>
-            new MicrosoftGraphRoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the roleSchedules method.</summary>
-        public MicrosoftGraphRoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder MicrosoftGraphRoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId { get =>
-            new MicrosoftGraphRoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
@@ -77,6 +69,14 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace {
         /// <summary>Provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.</summary>
         public RoleEligibilitySchedulesRequestBuilder RoleEligibilitySchedules { get =>
             new RoleEligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the roleScheduleInstances method.</summary>
+        public RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId { get =>
+            new RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the roleSchedules method.</summary>
+        public RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId { get =>
+            new RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.rbacApplication entity.</summary>
         public TransitiveRoleAssignmentsRequestBuilder TransitiveRoleAssignments { get =>

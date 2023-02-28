@@ -88,6 +88,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("persistentBrowser", value); }
         }
 #endif
+        /// <summary>The secureSignInSession property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public SecureSignInSessionControl? SecureSignInSession {
+            get { return BackingStore?.Get<SecureSignInSessionControl?>("secureSignInSession"); }
+            set { BackingStore?.Set("secureSignInSession", value); }
+        }
+#nullable restore
+#else
+        public SecureSignInSessionControl SecureSignInSession {
+            get { return BackingStore?.Get<SecureSignInSessionControl>("secureSignInSession"); }
+            set { BackingStore?.Set("secureSignInSession", value); }
+        }
+#endif
         /// <summary>Session control to enforce signin frequency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"disableResilienceDefaults", n => { DisableResilienceDefaults = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"persistentBrowser", n => { PersistentBrowser = n.GetObjectValue<PersistentBrowserSessionControl>(PersistentBrowserSessionControl.CreateFromDiscriminatorValue); } },
+                {"secureSignInSession", n => { SecureSignInSession = n.GetObjectValue<SecureSignInSessionControl>(SecureSignInSessionControl.CreateFromDiscriminatorValue); } },
                 {"signInFrequency", n => { SignInFrequency = n.GetObjectValue<SignInFrequencySessionControl>(SignInFrequencySessionControl.CreateFromDiscriminatorValue); } },
             };
         }
@@ -143,6 +158,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("disableResilienceDefaults", DisableResilienceDefaults);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<PersistentBrowserSessionControl>("persistentBrowser", PersistentBrowser);
+            writer.WriteObjectValue<SecureSignInSessionControl>("secureSignInSession", SecureSignInSession);
             writer.WriteObjectValue<SignInFrequencySessionControl>("signInFrequency", SignInFrequency);
             writer.WriteAdditionalData(AdditionalData);
         }

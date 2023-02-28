@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Exclusions;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.MicrosoftGraphWindowsUpdatesUpdateAudience;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.MicrosoftGraphWindowsUpdatesUpdateAudienceById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.WindowsUpdatesUpdateAudience;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.WindowsUpdatesUpdateAudienceById;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
@@ -25,20 +25,20 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item {
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the updateAudience method.</summary>
-        public MicrosoftGraphWindowsUpdatesUpdateAudienceRequestBuilder MicrosoftGraphWindowsUpdatesUpdateAudience { get =>
-            new MicrosoftGraphWindowsUpdatesUpdateAudienceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateAudienceById method.</summary>
-        public MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder MicrosoftGraphWindowsUpdatesUpdateAudienceById { get =>
-            new MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the updateAudience method.</summary>
+        public WindowsUpdatesUpdateAudienceRequestBuilder WindowsUpdatesUpdateAudience { get =>
+            new WindowsUpdatesUpdateAudienceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateAudienceById method.</summary>
+        public WindowsUpdatesUpdateAudienceByIdRequestBuilder WindowsUpdatesUpdateAudienceById { get =>
+            new WindowsUpdatesUpdateAudienceByIdRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new DeploymentAudienceItemRequestBuilder and sets the default values.
         /// </summary>

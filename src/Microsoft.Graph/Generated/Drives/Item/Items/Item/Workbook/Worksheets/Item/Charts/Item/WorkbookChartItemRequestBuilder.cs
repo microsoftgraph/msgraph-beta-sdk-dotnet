@@ -1,14 +1,14 @@
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Axes;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.DataLabels;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Format;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Image;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Legend;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.MicrosoftGraphImage;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.MicrosoftGraphImageWithWidth;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.MicrosoftGraphImageWithWidthWithHeight;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.MicrosoftGraphImageWithWidthWithHeightWithFittingMode;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.MicrosoftGraphSetData;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.MicrosoftGraphSetPosition;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetData;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Worksheet;
 using Microsoft.Graph.Beta.Models;
@@ -38,21 +38,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         public FormatRequestBuilder Format { get =>
             new FormatRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the image method.</summary>
+        public ImageRequestBuilder Image { get =>
+            new ImageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the legend property of the microsoft.graph.workbookChart entity.</summary>
         public LegendRequestBuilder Legend { get =>
             new LegendRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the image method.</summary>
-        public MicrosoftGraphImageRequestBuilder MicrosoftGraphImage { get =>
-            new MicrosoftGraphImageRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setData method.</summary>
-        public MicrosoftGraphSetDataRequestBuilder MicrosoftGraphSetData { get =>
-            new MicrosoftGraphSetDataRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setPosition method.</summary>
-        public MicrosoftGraphSetPositionRequestBuilder MicrosoftGraphSetPosition { get =>
-            new MicrosoftGraphSetPositionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -61,6 +53,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         /// <summary>Provides operations to manage the series property of the microsoft.graph.workbookChart entity.</summary>
         public SeriesRequestBuilder Series { get =>
             new SeriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setData method.</summary>
+        public SetDataRequestBuilder SetData { get =>
+            new SetDataRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setPosition method.</summary>
+        public SetPositionRequestBuilder SetPosition { get =>
+            new SetPositionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the title property of the microsoft.graph.workbookChart entity.</summary>
         public TitleRequestBuilder Title { get =>
@@ -141,19 +141,19 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         /// Provides operations to call the image method.
         /// </summary>
         /// <param name="width">Usage: width={width}</param>
-        public MicrosoftGraphImageWithWidthRequestBuilder MicrosoftGraphImageWithWidth(int? width) {
+        public ImageWithWidthRequestBuilder ImageWithWidth(int? width) {
             _ = width ?? throw new ArgumentNullException(nameof(width));
-            return new MicrosoftGraphImageWithWidthRequestBuilder(PathParameters, RequestAdapter, width);
+            return new ImageWithWidthRequestBuilder(PathParameters, RequestAdapter, width);
         }
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
-        public MicrosoftGraphImageWithWidthWithHeightRequestBuilder MicrosoftGraphImageWithWidthWithHeight(int? height, int? width) {
+        public ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width) {
             _ = height ?? throw new ArgumentNullException(nameof(height));
             _ = width ?? throw new ArgumentNullException(nameof(width));
-            return new MicrosoftGraphImageWithWidthWithHeightRequestBuilder(PathParameters, RequestAdapter, height, width);
+            return new ImageWithWidthWithHeightRequestBuilder(PathParameters, RequestAdapter, height, width);
         }
         /// <summary>
         /// Provides operations to call the image method.
@@ -161,11 +161,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         /// <param name="fittingMode">Usage: fittingMode=&apos;{fittingMode}&apos;</param>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
-        public MicrosoftGraphImageWithWidthWithHeightWithFittingModeRequestBuilder MicrosoftGraphImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width) {
+        public ImageWithWidthWithHeightWithFittingModeRequestBuilder ImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width) {
             if(string.IsNullOrEmpty(fittingMode)) throw new ArgumentNullException(nameof(fittingMode));
             _ = height ?? throw new ArgumentNullException(nameof(height));
             _ = width ?? throw new ArgumentNullException(nameof(width));
-            return new MicrosoftGraphImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
+            return new ImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
         }
         /// <summary>
         /// Update the navigation property charts in drives

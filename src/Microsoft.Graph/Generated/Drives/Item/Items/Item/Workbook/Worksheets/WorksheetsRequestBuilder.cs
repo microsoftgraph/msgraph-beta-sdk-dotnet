@@ -1,6 +1,6 @@
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Add;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Count;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.MicrosoftGraphAdd;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,13 +16,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets {
     /// Provides operations to manage the worksheets property of the microsoft.graph.workbook entity.
     /// </summary>
     public class WorksheetsRequestBuilder {
+        /// <summary>Provides operations to call the add method.</summary>
+        public AddRequestBuilder Add { get =>
+            new AddRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the add method.</summary>
-        public MicrosoftGraphAddRequestBuilder MicrosoftGraphAdd { get =>
-            new MicrosoftGraphAddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -1,5 +1,5 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assignments;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Item.MicrosoftGraphAssign;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,13 +15,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
     /// Provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
     public class CloudPcUserSettingItemRequestBuilder {
+        /// <summary>Provides operations to call the assign method.</summary>
+        public AssignRequestBuilder Assign { get =>
+            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.cloudPcUserSetting entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the assign method.</summary>
-        public MicrosoftGraphAssignRequestBuilder MicrosoftGraphAssign { get =>
-            new MicrosoftGraphAssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

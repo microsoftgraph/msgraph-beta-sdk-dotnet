@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Add;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Count;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.Item;
-using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members.MicrosoftGraphAdd;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -16,13 +16,13 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Members {
     /// Provides operations to manage the members property of the microsoft.graph.channel entity.
     /// </summary>
     public class MembersRequestBuilder {
+        /// <summary>Provides operations to call the add method.</summary>
+        public AddRequestBuilder Add { get =>
+            new AddRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the add method.</summary>
-        public MicrosoftGraphAddRequestBuilder MicrosoftGraphAdd { get =>
-            new MicrosoftGraphAddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

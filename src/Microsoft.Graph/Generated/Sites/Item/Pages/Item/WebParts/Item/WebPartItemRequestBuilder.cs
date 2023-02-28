@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Sites.Item.Pages.Item.WebParts.Item.MicrosoftGraphGetPositionOfWebPart;
+using Microsoft.Graph.Beta.Sites.Item.Pages.Item.WebParts.Item.GetPositionOfWebPart;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.WebParts.Item {
     /// </summary>
     public class WebPartItemRequestBuilder {
         /// <summary>Provides operations to call the getPositionOfWebPart method.</summary>
-        public MicrosoftGraphGetPositionOfWebPartRequestBuilder MicrosoftGraphGetPositionOfWebPart { get =>
-            new MicrosoftGraphGetPositionOfWebPartRequestBuilder(PathParameters, RequestAdapter);
+        public GetPositionOfWebPartRequestBuilder GetPositionOfWebPart { get =>
+            new GetPositionOfWebPartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

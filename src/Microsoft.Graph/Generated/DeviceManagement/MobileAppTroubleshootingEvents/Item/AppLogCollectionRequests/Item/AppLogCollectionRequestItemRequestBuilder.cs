@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Item.MicrosoftGraphCreateDownloadUrl;
+using Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Item.CreateDownloadUrl;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.I
     /// </summary>
     public class AppLogCollectionRequestItemRequestBuilder {
         /// <summary>Provides operations to call the createDownloadUrl method.</summary>
-        public MicrosoftGraphCreateDownloadUrlRequestBuilder MicrosoftGraphCreateDownloadUrl { get =>
-            new MicrosoftGraphCreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
+        public CreateDownloadUrlRequestBuilder CreateDownloadUrl { get =>
+            new CreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

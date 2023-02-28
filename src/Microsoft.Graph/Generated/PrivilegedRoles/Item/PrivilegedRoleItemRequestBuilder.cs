@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.PrivilegedRoles.Item.Assignments;
-using Microsoft.Graph.Beta.PrivilegedRoles.Item.MicrosoftGraphSelfActivate;
-using Microsoft.Graph.Beta.PrivilegedRoles.Item.MicrosoftGraphSelfDeactivate;
+using Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate;
+using Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfDeactivate;
 using Microsoft.Graph.Beta.PrivilegedRoles.Item.Settings;
 using Microsoft.Graph.Beta.PrivilegedRoles.Item.Summary;
 using Microsoft.Kiota.Abstractions;
@@ -22,18 +22,18 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the selfActivate method.</summary>
-        public MicrosoftGraphSelfActivateRequestBuilder MicrosoftGraphSelfActivate { get =>
-            new MicrosoftGraphSelfActivateRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the selfDeactivate method.</summary>
-        public MicrosoftGraphSelfDeactivateRequestBuilder MicrosoftGraphSelfDeactivate { get =>
-            new MicrosoftGraphSelfDeactivateRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the selfActivate method.</summary>
+        public SelfActivateRequestBuilder SelfActivate { get =>
+            new SelfActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the selfDeactivate method.</summary>
+        public SelfDeactivateRequestBuilder SelfDeactivate { get =>
+            new SelfDeactivateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.privilegedRole entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);

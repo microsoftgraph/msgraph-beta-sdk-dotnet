@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.Count;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.Item;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.MicrosoftGraphManagedTenantsTenantSearch;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.ManagedTenantsTenantSearch;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tenantSearch method.</summary>
-        public MicrosoftGraphManagedTenantsTenantSearchRequestBuilder MicrosoftGraphManagedTenantsTenantSearch { get =>
-            new MicrosoftGraphManagedTenantsTenantSearchRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedTenantsTenantSearchRequestBuilder ManagedTenantsTenantSearch { get =>
+            new ManagedTenantsTenantSearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

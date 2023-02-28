@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId;
 using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item;
-using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.MicrosoftGraphGetLicensesForAppWithBundleId;
-using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.MicrosoftGraphSyncLicenseCounts;
+using Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.SyncLicenseCounts;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,14 +21,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the syncLicenseCounts method.</summary>
-        public MicrosoftGraphSyncLicenseCountsRequestBuilder MicrosoftGraphSyncLicenseCounts { get =>
-            new MicrosoftGraphSyncLicenseCountsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the syncLicenseCounts method.</summary>
+        public SyncLicenseCountsRequestBuilder SyncLicenseCounts { get =>
+            new SyncLicenseCountsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.</summary>
@@ -87,9 +87,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
         /// Provides operations to call the getLicensesForApp method.
         /// </summary>
         /// <param name="bundleId">Usage: bundleId=&apos;{bundleId}&apos;</param>
-        public MicrosoftGraphGetLicensesForAppWithBundleIdRequestBuilder MicrosoftGraphGetLicensesForAppWithBundleId(string bundleId) {
+        public GetLicensesForAppWithBundleIdRequestBuilder GetLicensesForAppWithBundleId(string bundleId) {
             if(string.IsNullOrEmpty(bundleId)) throw new ArgumentNullException(nameof(bundleId));
-            return new MicrosoftGraphGetLicensesForAppWithBundleIdRequestBuilder(PathParameters, RequestAdapter, bundleId);
+            return new GetLicensesForAppWithBundleIdRequestBuilder(PathParameters, RequestAdapter, bundleId);
         }
         /// <summary>
         /// Create new navigation property to vppTokens for deviceAppManagement

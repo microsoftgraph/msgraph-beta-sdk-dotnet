@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Count;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.MicrosoftGraphGetStorageAccountsWithSubscriptionId;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.MicrosoftGraphGetSubscriptions;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSubscriptions method.</summary>
-        public MicrosoftGraphGetSubscriptionsRequestBuilder MicrosoftGraphGetSubscriptions { get =>
-            new MicrosoftGraphGetSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        public GetSubscriptionsRequestBuilder GetSubscriptions { get =>
+            new GetSubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         /// Provides operations to call the getStorageAccounts method.
         /// </summary>
         /// <param name="subscriptionId">Usage: subscriptionId=&apos;{subscriptionId}&apos;</param>
-        public MicrosoftGraphGetStorageAccountsWithSubscriptionIdRequestBuilder MicrosoftGraphGetStorageAccountsWithSubscriptionId(string subscriptionId) {
+        public GetStorageAccountsWithSubscriptionIdRequestBuilder GetStorageAccountsWithSubscriptionId(string subscriptionId) {
             if(string.IsNullOrEmpty(subscriptionId)) throw new ArgumentNullException(nameof(subscriptionId));
-            return new MicrosoftGraphGetStorageAccountsWithSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, subscriptionId);
+            return new GetStorageAccountsWithSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, subscriptionId);
         }
         /// <summary>
         /// Create new navigation property to snapshots for deviceManagement

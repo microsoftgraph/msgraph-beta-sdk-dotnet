@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.MicrosoftGraphGetFinalAttachment;
-using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.MicrosoftGraphGetFinalReport;
+using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.GetFinalAttachment;
+using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.GetFinalReport;
 using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes;
 using Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Team;
 using Microsoft.Kiota.Abstractions;
@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
     /// </summary>
     public class SubjectRightsRequestItemRequestBuilder {
         /// <summary>Provides operations to call the getFinalAttachment method.</summary>
-        public MicrosoftGraphGetFinalAttachmentRequestBuilder MicrosoftGraphGetFinalAttachment { get =>
-            new MicrosoftGraphGetFinalAttachmentRequestBuilder(PathParameters, RequestAdapter);
+        public GetFinalAttachmentRequestBuilder GetFinalAttachment { get =>
+            new GetFinalAttachmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFinalReport method.</summary>
-        public MicrosoftGraphGetFinalReportRequestBuilder MicrosoftGraphGetFinalReport { get =>
-            new MicrosoftGraphGetFinalReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetFinalReportRequestBuilder GetFinalReport { get =>
+            new GetFinalReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.</summary>
         public NotesRequestBuilder Notes { get =>

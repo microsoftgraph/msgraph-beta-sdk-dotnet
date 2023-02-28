@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.MicrosoftGraphCancel;
-using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.MicrosoftGraphUpdateRequest;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.Cancel;
 using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.Resource;
 using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.RoleDefinition;
 using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.Subject;
+using Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item.UpdateRequest;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -19,12 +19,8 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
     /// </summary>
     public class GovernanceRoleAssignmentRequestItemRequestBuilder {
         /// <summary>Provides operations to call the cancel method.</summary>
-        public MicrosoftGraphCancelRequestBuilder MicrosoftGraphCancel { get =>
-            new MicrosoftGraphCancelRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateRequest method.</summary>
-        public MicrosoftGraphUpdateRequestRequestBuilder MicrosoftGraphUpdateRequest { get =>
-            new MicrosoftGraphUpdateRequestRequestBuilder(PathParameters, RequestAdapter);
+        public CancelRequestBuilder Cancel { get =>
+            new CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -41,6 +37,10 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
         /// <summary>Provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignmentRequest entity.</summary>
         public SubjectRequestBuilder Subject { get =>
             new SubjectRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateRequest method.</summary>
+        public UpdateRequestRequestBuilder UpdateRequest { get =>
+            new UpdateRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

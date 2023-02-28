@@ -1,15 +1,15 @@
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApply;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyBottomItemsFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyBottomPercentFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyCellColorFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyCustomFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyDynamicFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyFontColorFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyIconFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyTopItemsFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyTopPercentFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphApplyValuesFilter;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.MicrosoftGraphClear;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.Apply;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyBottomItemsFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyBottomPercentFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyCellColorFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyCustomFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyFontColorFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyIconFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyTopItemsFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyTopPercentFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.ApplyValuesFilter;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item.Filter.Clear;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -26,52 +26,52 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
     /// </summary>
     public class FilterRequestBuilder {
         /// <summary>Provides operations to call the apply method.</summary>
-        public MicrosoftGraphApplyRequestBuilder MicrosoftGraphApply { get =>
-            new MicrosoftGraphApplyRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyRequestBuilder Apply { get =>
+            new ApplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyBottomItemsFilter method.</summary>
-        public MicrosoftGraphApplyBottomItemsFilterRequestBuilder MicrosoftGraphApplyBottomItemsFilter { get =>
-            new MicrosoftGraphApplyBottomItemsFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyBottomItemsFilterRequestBuilder ApplyBottomItemsFilter { get =>
+            new ApplyBottomItemsFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyBottomPercentFilter method.</summary>
-        public MicrosoftGraphApplyBottomPercentFilterRequestBuilder MicrosoftGraphApplyBottomPercentFilter { get =>
-            new MicrosoftGraphApplyBottomPercentFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyBottomPercentFilterRequestBuilder ApplyBottomPercentFilter { get =>
+            new ApplyBottomPercentFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyCellColorFilter method.</summary>
-        public MicrosoftGraphApplyCellColorFilterRequestBuilder MicrosoftGraphApplyCellColorFilter { get =>
-            new MicrosoftGraphApplyCellColorFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyCellColorFilterRequestBuilder ApplyCellColorFilter { get =>
+            new ApplyCellColorFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyCustomFilter method.</summary>
-        public MicrosoftGraphApplyCustomFilterRequestBuilder MicrosoftGraphApplyCustomFilter { get =>
-            new MicrosoftGraphApplyCustomFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyCustomFilterRequestBuilder ApplyCustomFilter { get =>
+            new ApplyCustomFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyDynamicFilter method.</summary>
-        public MicrosoftGraphApplyDynamicFilterRequestBuilder MicrosoftGraphApplyDynamicFilter { get =>
-            new MicrosoftGraphApplyDynamicFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyDynamicFilterRequestBuilder ApplyDynamicFilter { get =>
+            new ApplyDynamicFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyFontColorFilter method.</summary>
-        public MicrosoftGraphApplyFontColorFilterRequestBuilder MicrosoftGraphApplyFontColorFilter { get =>
-            new MicrosoftGraphApplyFontColorFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyFontColorFilterRequestBuilder ApplyFontColorFilter { get =>
+            new ApplyFontColorFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyIconFilter method.</summary>
-        public MicrosoftGraphApplyIconFilterRequestBuilder MicrosoftGraphApplyIconFilter { get =>
-            new MicrosoftGraphApplyIconFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyIconFilterRequestBuilder ApplyIconFilter { get =>
+            new ApplyIconFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyTopItemsFilter method.</summary>
-        public MicrosoftGraphApplyTopItemsFilterRequestBuilder MicrosoftGraphApplyTopItemsFilter { get =>
-            new MicrosoftGraphApplyTopItemsFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyTopItemsFilterRequestBuilder ApplyTopItemsFilter { get =>
+            new ApplyTopItemsFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyTopPercentFilter method.</summary>
-        public MicrosoftGraphApplyTopPercentFilterRequestBuilder MicrosoftGraphApplyTopPercentFilter { get =>
-            new MicrosoftGraphApplyTopPercentFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyTopPercentFilterRequestBuilder ApplyTopPercentFilter { get =>
+            new ApplyTopPercentFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyValuesFilter method.</summary>
-        public MicrosoftGraphApplyValuesFilterRequestBuilder MicrosoftGraphApplyValuesFilter { get =>
-            new MicrosoftGraphApplyValuesFilterRequestBuilder(PathParameters, RequestAdapter);
+        public ApplyValuesFilterRequestBuilder ApplyValuesFilter { get =>
+            new ApplyValuesFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clear method.</summary>
-        public MicrosoftGraphClearRequestBuilder MicrosoftGraphClear { get =>
-            new MicrosoftGraphClearRequestBuilder(PathParameters, RequestAdapter);
+        public ClearRequestBuilder Clear { get =>
+            new ClearRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

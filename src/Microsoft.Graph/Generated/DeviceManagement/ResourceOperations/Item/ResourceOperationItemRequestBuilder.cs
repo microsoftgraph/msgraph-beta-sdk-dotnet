@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.MicrosoftGraphGetScopesForUserWithUserid;
+using Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
         /// Provides operations to call the getScopesForUser method.
         /// </summary>
         /// <param name="userid">Usage: userid=&apos;{userid}&apos;</param>
-        public MicrosoftGraphGetScopesForUserWithUseridRequestBuilder MicrosoftGraphGetScopesForUserWithUserid(string userid) {
+        public GetScopesForUserWithUseridRequestBuilder GetScopesForUserWithUserid(string userid) {
             if(string.IsNullOrEmpty(userid)) throw new ArgumentNullException(nameof(userid));
-            return new MicrosoftGraphGetScopesForUserWithUseridRequestBuilder(PathParameters, RequestAdapter, userid);
+            return new GetScopesForUserWithUseridRequestBuilder(PathParameters, RequestAdapter, userid);
         }
         /// <summary>
         /// Update the navigation property resourceOperations in deviceManagement

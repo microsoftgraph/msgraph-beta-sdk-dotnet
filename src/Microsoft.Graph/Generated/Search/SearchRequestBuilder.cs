@@ -2,8 +2,8 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Search.Acronyms;
 using Microsoft.Graph.Beta.Search.Bookmarks;
-using Microsoft.Graph.Beta.Search.MicrosoftGraphQuery;
 using Microsoft.Graph.Beta.Search.Qnas;
+using Microsoft.Graph.Beta.Search.Query;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -25,15 +25,15 @@ namespace Microsoft.Graph.Beta.Search {
         public BookmarksRequestBuilder Bookmarks { get =>
             new BookmarksRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the query method.</summary>
-        public MicrosoftGraphQueryRequestBuilder MicrosoftGraphQuery { get =>
-            new MicrosoftGraphQueryRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.</summary>
         public QnasRequestBuilder Qnas { get =>
             new QnasRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the query method.</summary>
+        public QueryRequestBuilder Query { get =>
+            new QueryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }

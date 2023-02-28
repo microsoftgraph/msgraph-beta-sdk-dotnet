@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners.Item.MicrosoftGraphTerminate;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners.Item.Terminate;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners.Item {
     /// Provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceManagementPartnerItemRequestBuilder {
-        /// <summary>Provides operations to call the terminate method.</summary>
-        public MicrosoftGraphTerminateRequestBuilder MicrosoftGraphTerminate { get =>
-            new MicrosoftGraphTerminateRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the terminate method.</summary>
+        public TerminateRequestBuilder Terminate { get =>
+            new TerminateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

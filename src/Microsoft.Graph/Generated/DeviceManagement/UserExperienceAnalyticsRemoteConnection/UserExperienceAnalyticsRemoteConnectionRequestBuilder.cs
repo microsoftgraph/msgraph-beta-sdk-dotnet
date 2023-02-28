@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.Count;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.Item;
-using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.MicrosoftGraphSummarizeDeviceRemoteConnectionWithSummarizeBy;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -79,14 +79,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteCon
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsRemoteConnectionCollectionResponse>(requestInfo, UserExperienceAnalyticsRemoteConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Provides operations to call the summarizeDeviceRemoteConnection method.
-        /// </summary>
-        /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
-        public MicrosoftGraphSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder MicrosoftGraphSummarizeDeviceRemoteConnectionWithSummarizeBy(string summarizeBy) {
-            if(string.IsNullOrEmpty(summarizeBy)) throw new ArgumentNullException(nameof(summarizeBy));
-            return new MicrosoftGraphSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder(PathParameters, RequestAdapter, summarizeBy);
-        }
-        /// <summary>
         /// Create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,6 +98,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteCon
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the summarizeDeviceRemoteConnection method.
+        /// </summary>
+        /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
+        public SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder SummarizeDeviceRemoteConnectionWithSummarizeBy(string summarizeBy) {
+            if(string.IsNullOrEmpty(summarizeBy)) throw new ArgumentNullException(nameof(summarizeBy));
+            return new SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder(PathParameters, RequestAdapter, summarizeBy);
         }
         /// <summary>
         /// User experience analytics remote connection

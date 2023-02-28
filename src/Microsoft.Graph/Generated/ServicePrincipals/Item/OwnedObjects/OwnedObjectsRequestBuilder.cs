@@ -1,11 +1,11 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Count;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphApplication;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphEndpoint;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphGroup;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.GraphServicePrincipal;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.Item;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.MicrosoftGraphApplication;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.MicrosoftGraphEndpoint;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.MicrosoftGraphGroup;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects.MicrosoftGraphServicePrincipal;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -24,20 +24,20 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to application.</summary>
-        public MicrosoftGraphApplicationRequestBuilder MicrosoftGraphApplication { get =>
-            new MicrosoftGraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+        public GraphApplicationRequestBuilder GraphApplication { get =>
+            new GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public MicrosoftGraphEndpointRequestBuilder MicrosoftGraphEndpoint { get =>
-            new MicrosoftGraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+        public GraphEndpointRequestBuilder GraphEndpoint { get =>
+            new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public MicrosoftGraphGroupRequestBuilder MicrosoftGraphGroup { get =>
-            new MicrosoftGraphGroupRequestBuilder(PathParameters, RequestAdapter);
+        public GraphGroupRequestBuilder GraphGroup { get =>
+            new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public MicrosoftGraphServicePrincipalRequestBuilder MicrosoftGraphServicePrincipal { get =>
-            new MicrosoftGraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        public GraphServicePrincipalRequestBuilder GraphServicePrincipal { get =>
+            new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -1,15 +1,15 @@
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphChangeUserAccountType;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphEndGracePeriod;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphGetCloudPcConnectivityHistory;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphGetCloudPcLaunchInfo;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphGetShiftWorkCloudPcAccessState;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphGetSupportedCloudPcRemoteActions;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphReboot;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphRename;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphReprovision;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphRestore;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphRetryPartnerAgentInstallation;
-using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.MicrosoftGraphTroubleshoot;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.ChangeUserAccountType;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.EndGracePeriod;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetCloudPcConnectivityHistory;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetCloudPcLaunchInfo;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetShiftWorkCloudPcAccessState;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetSupportedCloudPcRemoteActions;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reboot;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetryPartnerAgentInstallation;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -26,57 +26,57 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
     /// </summary>
     public class CloudPCItemRequestBuilder {
         /// <summary>Provides operations to call the changeUserAccountType method.</summary>
-        public MicrosoftGraphChangeUserAccountTypeRequestBuilder MicrosoftGraphChangeUserAccountType { get =>
-            new MicrosoftGraphChangeUserAccountTypeRequestBuilder(PathParameters, RequestAdapter);
+        public ChangeUserAccountTypeRequestBuilder ChangeUserAccountType { get =>
+            new ChangeUserAccountTypeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the endGracePeriod method.</summary>
-        public MicrosoftGraphEndGracePeriodRequestBuilder MicrosoftGraphEndGracePeriod { get =>
-            new MicrosoftGraphEndGracePeriodRequestBuilder(PathParameters, RequestAdapter);
+        public EndGracePeriodRequestBuilder EndGracePeriod { get =>
+            new EndGracePeriodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcConnectivityHistory method.</summary>
-        public MicrosoftGraphGetCloudPcConnectivityHistoryRequestBuilder MicrosoftGraphGetCloudPcConnectivityHistory { get =>
-            new MicrosoftGraphGetCloudPcConnectivityHistoryRequestBuilder(PathParameters, RequestAdapter);
+        public GetCloudPcConnectivityHistoryRequestBuilder GetCloudPcConnectivityHistory { get =>
+            new GetCloudPcConnectivityHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcLaunchInfo method.</summary>
-        public MicrosoftGraphGetCloudPcLaunchInfoRequestBuilder MicrosoftGraphGetCloudPcLaunchInfo { get =>
-            new MicrosoftGraphGetCloudPcLaunchInfoRequestBuilder(PathParameters, RequestAdapter);
+        public GetCloudPcLaunchInfoRequestBuilder GetCloudPcLaunchInfo { get =>
+            new GetCloudPcLaunchInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getShiftWorkCloudPcAccessState method.</summary>
-        public MicrosoftGraphGetShiftWorkCloudPcAccessStateRequestBuilder MicrosoftGraphGetShiftWorkCloudPcAccessState { get =>
-            new MicrosoftGraphGetShiftWorkCloudPcAccessStateRequestBuilder(PathParameters, RequestAdapter);
+        public GetShiftWorkCloudPcAccessStateRequestBuilder GetShiftWorkCloudPcAccessState { get =>
+            new GetShiftWorkCloudPcAccessStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSupportedCloudPcRemoteActions method.</summary>
-        public MicrosoftGraphGetSupportedCloudPcRemoteActionsRequestBuilder MicrosoftGraphGetSupportedCloudPcRemoteActions { get =>
-            new MicrosoftGraphGetSupportedCloudPcRemoteActionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reboot method.</summary>
-        public MicrosoftGraphRebootRequestBuilder MicrosoftGraphReboot { get =>
-            new MicrosoftGraphRebootRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the rename method.</summary>
-        public MicrosoftGraphRenameRequestBuilder MicrosoftGraphRename { get =>
-            new MicrosoftGraphRenameRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reprovision method.</summary>
-        public MicrosoftGraphReprovisionRequestBuilder MicrosoftGraphReprovision { get =>
-            new MicrosoftGraphReprovisionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the restore method.</summary>
-        public MicrosoftGraphRestoreRequestBuilder MicrosoftGraphRestore { get =>
-            new MicrosoftGraphRestoreRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
-        public MicrosoftGraphRetryPartnerAgentInstallationRequestBuilder MicrosoftGraphRetryPartnerAgentInstallation { get =>
-            new MicrosoftGraphRetryPartnerAgentInstallationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the troubleshoot method.</summary>
-        public MicrosoftGraphTroubleshootRequestBuilder MicrosoftGraphTroubleshoot { get =>
-            new MicrosoftGraphTroubleshootRequestBuilder(PathParameters, RequestAdapter);
+        public GetSupportedCloudPcRemoteActionsRequestBuilder GetSupportedCloudPcRemoteActions { get =>
+            new GetSupportedCloudPcRemoteActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the reboot method.</summary>
+        public RebootRequestBuilder Reboot { get =>
+            new RebootRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the rename method.</summary>
+        public RenameRequestBuilder Rename { get =>
+            new RenameRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reprovision method.</summary>
+        public ReprovisionRequestBuilder Reprovision { get =>
+            new ReprovisionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
+        public RetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation { get =>
+            new RetryPartnerAgentInstallationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the troubleshoot method.</summary>
+        public TroubleshootRequestBuilder Troubleshoot { get =>
+            new TroubleshootRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

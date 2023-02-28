@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityApplyTags;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityExport;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityRun;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.SecurityApplyTags;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.SecurityExport;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.SecurityRun;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -16,22 +16,22 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
     /// Provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
     /// </summary>
     public class EdiscoveryReviewSetQueryItemRequestBuilder {
-        /// <summary>Provides operations to call the applyTags method.</summary>
-        public MicrosoftGraphSecurityApplyTagsRequestBuilder MicrosoftGraphSecurityApplyTags { get =>
-            new MicrosoftGraphSecurityApplyTagsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the export method.</summary>
-        public MicrosoftGraphSecurityExportRequestBuilder MicrosoftGraphSecurityExport { get =>
-            new MicrosoftGraphSecurityExportRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the run method.</summary>
-        public MicrosoftGraphSecurityRunRequestBuilder MicrosoftGraphSecurityRun { get =>
-            new MicrosoftGraphSecurityRunRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the applyTags method.</summary>
+        public SecurityApplyTagsRequestBuilder SecurityApplyTags { get =>
+            new SecurityApplyTagsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the export method.</summary>
+        public SecurityExportRequestBuilder SecurityExport { get =>
+            new SecurityExportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the run method.</summary>
+        public SecurityRunRequestBuilder SecurityRun { get =>
+            new SecurityRunRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

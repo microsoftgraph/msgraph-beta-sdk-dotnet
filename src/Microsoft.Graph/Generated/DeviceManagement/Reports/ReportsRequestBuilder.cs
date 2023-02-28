@@ -1,65 +1,65 @@
 using Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfigurations;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetActiveMalwareReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetActiveMalwareSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetAllCertificatesReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetAppsInstallSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetAppStatusOverviewReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetCachedReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetCertificatesReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetCompliancePoliciesReportForDevice;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetCompliancePolicyDevicesReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetCompliancePolicyDeviceSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetCompliancePolicyNonComplianceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetCompliancePolicyNonComplianceSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetComplianceSettingDetailsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetComplianceSettingNonComplianceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetComplianceSettingsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigManagerDevicePolicyStatusReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigurationPoliciesReportForDevice;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigurationPolicyDevicesReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigurationPolicyDeviceSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigurationPolicyNonComplianceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigurationPolicyNonComplianceSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigurationPolicySettingsDeviceSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigurationSettingDetailsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigurationSettingNonComplianceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetConfigurationSettingsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetDeviceConfigurationPolicySettingsSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetDeviceConfigurationPolicyStatusSummary;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetDeviceInstallStatusReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetDeviceManagementIntentPerSettingContributingProfiles;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetDeviceManagementIntentSettingsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetDeviceNonComplianceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetDevicesWithoutCompliancePolicyReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetEncryptionReportForDevices;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetEnrollmentConfigurationPoliciesByDevice;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetFailedMobileAppsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetFailedMobileAppsSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetGroupPolicySettingsDeviceSettingsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetHistoricalReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetMalwareSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetMobileApplicationManagementAppConfigurationReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetMobileApplicationManagementAppRegistrationSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetNoncompliantDevicesAndSettingsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetPolicyNonComplianceMetadata;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetPolicyNonComplianceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetPolicyNonComplianceSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetQuietTimePolicyUsersReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetQuietTimePolicyUserSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetRelatedAppsStatusReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetRemoteAssistanceSessionsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetReportFilters;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetSettingNonComplianceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetUnhealthyDefenderAgentsReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetUnhealthyFirewallReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetUnhealthyFirewallSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetUserInstallStatusReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetWindowsQualityUpdateAlertSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetWindowsUpdateAlertsPerPolicyPerDeviceReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetWindowsUpdateAlertSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.MicrosoftGraphGetZebraFotaDeploymentReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAllCertificatesReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppsInstallSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppStatusOverviewReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesReportForDevice;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDevicesReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDeviceSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingDetailsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingNonComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigManagerDevicePolicyStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPoliciesReportForDevice;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDevicesReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDeviceSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicySettingsDeviceSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingDetailsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingNonComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationSettingsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicySettingsSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPolicyStatusSummary;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetEncryptionReportForDevices;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetGroupPolicySettingsDeviceSettingsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetHistoricalReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetMalwareSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppConfigurationReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetMobileApplicationManagementAppRegistrationSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetNoncompliantDevicesAndSettingsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceMetadata;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetRelatedAppsStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetReportFilters;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetSettingNonComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyDefenderAgentsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUserInstallStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -84,244 +84,244 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
             new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getActiveMalwareReport method.</summary>
-        public MicrosoftGraphGetActiveMalwareReportRequestBuilder MicrosoftGraphGetActiveMalwareReport { get =>
-            new MicrosoftGraphGetActiveMalwareReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetActiveMalwareReportRequestBuilder GetActiveMalwareReport { get =>
+            new GetActiveMalwareReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getActiveMalwareSummaryReport method.</summary>
-        public MicrosoftGraphGetActiveMalwareSummaryReportRequestBuilder MicrosoftGraphGetActiveMalwareSummaryReport { get =>
-            new MicrosoftGraphGetActiveMalwareSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetActiveMalwareSummaryReportRequestBuilder GetActiveMalwareSummaryReport { get =>
+            new GetActiveMalwareSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllCertificatesReport method.</summary>
-        public MicrosoftGraphGetAllCertificatesReportRequestBuilder MicrosoftGraphGetAllCertificatesReport { get =>
-            new MicrosoftGraphGetAllCertificatesReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetAllCertificatesReportRequestBuilder GetAllCertificatesReport { get =>
+            new GetAllCertificatesReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAppsInstallSummaryReport method.</summary>
-        public MicrosoftGraphGetAppsInstallSummaryReportRequestBuilder MicrosoftGraphGetAppsInstallSummaryReport { get =>
-            new MicrosoftGraphGetAppsInstallSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetAppsInstallSummaryReportRequestBuilder GetAppsInstallSummaryReport { get =>
+            new GetAppsInstallSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAppStatusOverviewReport method.</summary>
-        public MicrosoftGraphGetAppStatusOverviewReportRequestBuilder MicrosoftGraphGetAppStatusOverviewReport { get =>
-            new MicrosoftGraphGetAppStatusOverviewReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetAppStatusOverviewReportRequestBuilder GetAppStatusOverviewReport { get =>
+            new GetAppStatusOverviewReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCachedReport method.</summary>
-        public MicrosoftGraphGetCachedReportRequestBuilder MicrosoftGraphGetCachedReport { get =>
-            new MicrosoftGraphGetCachedReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCachedReportRequestBuilder GetCachedReport { get =>
+            new GetCachedReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCertificatesReport method.</summary>
-        public MicrosoftGraphGetCertificatesReportRequestBuilder MicrosoftGraphGetCertificatesReport { get =>
-            new MicrosoftGraphGetCertificatesReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCertificatesReportRequestBuilder GetCertificatesReport { get =>
+            new GetCertificatesReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePoliciesReportForDevice method.</summary>
-        public MicrosoftGraphGetCompliancePoliciesReportForDeviceRequestBuilder MicrosoftGraphGetCompliancePoliciesReportForDevice { get =>
-            new MicrosoftGraphGetCompliancePoliciesReportForDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public GetCompliancePoliciesReportForDeviceRequestBuilder GetCompliancePoliciesReportForDevice { get =>
+            new GetCompliancePoliciesReportForDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyDevicesReport method.</summary>
-        public MicrosoftGraphGetCompliancePolicyDevicesReportRequestBuilder MicrosoftGraphGetCompliancePolicyDevicesReport { get =>
-            new MicrosoftGraphGetCompliancePolicyDevicesReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCompliancePolicyDevicesReportRequestBuilder GetCompliancePolicyDevicesReport { get =>
+            new GetCompliancePolicyDevicesReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyDeviceSummaryReport method.</summary>
-        public MicrosoftGraphGetCompliancePolicyDeviceSummaryReportRequestBuilder MicrosoftGraphGetCompliancePolicyDeviceSummaryReport { get =>
-            new MicrosoftGraphGetCompliancePolicyDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCompliancePolicyDeviceSummaryReportRequestBuilder GetCompliancePolicyDeviceSummaryReport { get =>
+            new GetCompliancePolicyDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyNonComplianceReport method.</summary>
-        public MicrosoftGraphGetCompliancePolicyNonComplianceReportRequestBuilder MicrosoftGraphGetCompliancePolicyNonComplianceReport { get =>
-            new MicrosoftGraphGetCompliancePolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCompliancePolicyNonComplianceReportRequestBuilder GetCompliancePolicyNonComplianceReport { get =>
+            new GetCompliancePolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCompliancePolicyNonComplianceSummaryReport method.</summary>
-        public MicrosoftGraphGetCompliancePolicyNonComplianceSummaryReportRequestBuilder MicrosoftGraphGetCompliancePolicyNonComplianceSummaryReport { get =>
-            new MicrosoftGraphGetCompliancePolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCompliancePolicyNonComplianceSummaryReportRequestBuilder GetCompliancePolicyNonComplianceSummaryReport { get =>
+            new GetCompliancePolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getComplianceSettingDetailsReport method.</summary>
-        public MicrosoftGraphGetComplianceSettingDetailsReportRequestBuilder MicrosoftGraphGetComplianceSettingDetailsReport { get =>
-            new MicrosoftGraphGetComplianceSettingDetailsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetComplianceSettingDetailsReportRequestBuilder GetComplianceSettingDetailsReport { get =>
+            new GetComplianceSettingDetailsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getComplianceSettingNonComplianceReport method.</summary>
-        public MicrosoftGraphGetComplianceSettingNonComplianceReportRequestBuilder MicrosoftGraphGetComplianceSettingNonComplianceReport { get =>
-            new MicrosoftGraphGetComplianceSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetComplianceSettingNonComplianceReportRequestBuilder GetComplianceSettingNonComplianceReport { get =>
+            new GetComplianceSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getComplianceSettingsReport method.</summary>
-        public MicrosoftGraphGetComplianceSettingsReportRequestBuilder MicrosoftGraphGetComplianceSettingsReport { get =>
-            new MicrosoftGraphGetComplianceSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetComplianceSettingsReportRequestBuilder GetComplianceSettingsReport { get =>
+            new GetComplianceSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigManagerDevicePolicyStatusReport method.</summary>
-        public MicrosoftGraphGetConfigManagerDevicePolicyStatusReportRequestBuilder MicrosoftGraphGetConfigManagerDevicePolicyStatusReport { get =>
-            new MicrosoftGraphGetConfigManagerDevicePolicyStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigManagerDevicePolicyStatusReportRequestBuilder GetConfigManagerDevicePolicyStatusReport { get =>
+            new GetConfigManagerDevicePolicyStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPoliciesReportForDevice method.</summary>
-        public MicrosoftGraphGetConfigurationPoliciesReportForDeviceRequestBuilder MicrosoftGraphGetConfigurationPoliciesReportForDevice { get =>
-            new MicrosoftGraphGetConfigurationPoliciesReportForDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationPoliciesReportForDeviceRequestBuilder GetConfigurationPoliciesReportForDevice { get =>
+            new GetConfigurationPoliciesReportForDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyDevicesReport method.</summary>
-        public MicrosoftGraphGetConfigurationPolicyDevicesReportRequestBuilder MicrosoftGraphGetConfigurationPolicyDevicesReport { get =>
-            new MicrosoftGraphGetConfigurationPolicyDevicesReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationPolicyDevicesReportRequestBuilder GetConfigurationPolicyDevicesReport { get =>
+            new GetConfigurationPolicyDevicesReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyDeviceSummaryReport method.</summary>
-        public MicrosoftGraphGetConfigurationPolicyDeviceSummaryReportRequestBuilder MicrosoftGraphGetConfigurationPolicyDeviceSummaryReport { get =>
-            new MicrosoftGraphGetConfigurationPolicyDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationPolicyDeviceSummaryReportRequestBuilder GetConfigurationPolicyDeviceSummaryReport { get =>
+            new GetConfigurationPolicyDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyNonComplianceReport method.</summary>
-        public MicrosoftGraphGetConfigurationPolicyNonComplianceReportRequestBuilder MicrosoftGraphGetConfigurationPolicyNonComplianceReport { get =>
-            new MicrosoftGraphGetConfigurationPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationPolicyNonComplianceReportRequestBuilder GetConfigurationPolicyNonComplianceReport { get =>
+            new GetConfigurationPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicyNonComplianceSummaryReport method.</summary>
-        public MicrosoftGraphGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder MicrosoftGraphGetConfigurationPolicyNonComplianceSummaryReport { get =>
-            new MicrosoftGraphGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder GetConfigurationPolicyNonComplianceSummaryReport { get =>
+            new GetConfigurationPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationPolicySettingsDeviceSummaryReport method.</summary>
-        public MicrosoftGraphGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder MicrosoftGraphGetConfigurationPolicySettingsDeviceSummaryReport { get =>
-            new MicrosoftGraphGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder GetConfigurationPolicySettingsDeviceSummaryReport { get =>
+            new GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationSettingDetailsReport method.</summary>
-        public MicrosoftGraphGetConfigurationSettingDetailsReportRequestBuilder MicrosoftGraphGetConfigurationSettingDetailsReport { get =>
-            new MicrosoftGraphGetConfigurationSettingDetailsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationSettingDetailsReportRequestBuilder GetConfigurationSettingDetailsReport { get =>
+            new GetConfigurationSettingDetailsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationSettingNonComplianceReport method.</summary>
-        public MicrosoftGraphGetConfigurationSettingNonComplianceReportRequestBuilder MicrosoftGraphGetConfigurationSettingNonComplianceReport { get =>
-            new MicrosoftGraphGetConfigurationSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationSettingNonComplianceReportRequestBuilder GetConfigurationSettingNonComplianceReport { get =>
+            new GetConfigurationSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConfigurationSettingsReport method.</summary>
-        public MicrosoftGraphGetConfigurationSettingsReportRequestBuilder MicrosoftGraphGetConfigurationSettingsReport { get =>
-            new MicrosoftGraphGetConfigurationSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetConfigurationSettingsReportRequestBuilder GetConfigurationSettingsReport { get =>
+            new GetConfigurationSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceConfigurationPolicySettingsSummaryReport method.</summary>
-        public MicrosoftGraphGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder MicrosoftGraphGetDeviceConfigurationPolicySettingsSummaryReport { get =>
-            new MicrosoftGraphGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder GetDeviceConfigurationPolicySettingsSummaryReport { get =>
+            new GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceConfigurationPolicyStatusSummary method.</summary>
-        public MicrosoftGraphGetDeviceConfigurationPolicyStatusSummaryRequestBuilder MicrosoftGraphGetDeviceConfigurationPolicyStatusSummary { get =>
-            new MicrosoftGraphGetDeviceConfigurationPolicyStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
+        public GetDeviceConfigurationPolicyStatusSummaryRequestBuilder GetDeviceConfigurationPolicyStatusSummary { get =>
+            new GetDeviceConfigurationPolicyStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceInstallStatusReport method.</summary>
-        public MicrosoftGraphGetDeviceInstallStatusReportRequestBuilder MicrosoftGraphGetDeviceInstallStatusReport { get =>
-            new MicrosoftGraphGetDeviceInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetDeviceInstallStatusReportRequestBuilder GetDeviceInstallStatusReport { get =>
+            new GetDeviceInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.</summary>
-        public MicrosoftGraphGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder MicrosoftGraphGetDeviceManagementIntentPerSettingContributingProfiles { get =>
-            new MicrosoftGraphGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(PathParameters, RequestAdapter);
+        public GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder GetDeviceManagementIntentPerSettingContributingProfiles { get =>
+            new GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceManagementIntentSettingsReport method.</summary>
-        public MicrosoftGraphGetDeviceManagementIntentSettingsReportRequestBuilder MicrosoftGraphGetDeviceManagementIntentSettingsReport { get =>
-            new MicrosoftGraphGetDeviceManagementIntentSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetDeviceManagementIntentSettingsReportRequestBuilder GetDeviceManagementIntentSettingsReport { get =>
+            new GetDeviceManagementIntentSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDeviceNonComplianceReport method.</summary>
-        public MicrosoftGraphGetDeviceNonComplianceReportRequestBuilder MicrosoftGraphGetDeviceNonComplianceReport { get =>
-            new MicrosoftGraphGetDeviceNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetDeviceNonComplianceReportRequestBuilder GetDeviceNonComplianceReport { get =>
+            new GetDeviceNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicesWithoutCompliancePolicyReport method.</summary>
-        public MicrosoftGraphGetDevicesWithoutCompliancePolicyReportRequestBuilder MicrosoftGraphGetDevicesWithoutCompliancePolicyReport { get =>
-            new MicrosoftGraphGetDevicesWithoutCompliancePolicyReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport { get =>
+            new GetDevicesWithoutCompliancePolicyReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEncryptionReportForDevices method.</summary>
-        public MicrosoftGraphGetEncryptionReportForDevicesRequestBuilder MicrosoftGraphGetEncryptionReportForDevices { get =>
-            new MicrosoftGraphGetEncryptionReportForDevicesRequestBuilder(PathParameters, RequestAdapter);
+        public GetEncryptionReportForDevicesRequestBuilder GetEncryptionReportForDevices { get =>
+            new GetEncryptionReportForDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEnrollmentConfigurationPoliciesByDevice method.</summary>
-        public MicrosoftGraphGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder MicrosoftGraphGetEnrollmentConfigurationPoliciesByDevice { get =>
-            new MicrosoftGraphGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder GetEnrollmentConfigurationPoliciesByDevice { get =>
+            new GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFailedMobileAppsReport method.</summary>
-        public MicrosoftGraphGetFailedMobileAppsReportRequestBuilder MicrosoftGraphGetFailedMobileAppsReport { get =>
-            new MicrosoftGraphGetFailedMobileAppsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetFailedMobileAppsReportRequestBuilder GetFailedMobileAppsReport { get =>
+            new GetFailedMobileAppsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFailedMobileAppsSummaryReport method.</summary>
-        public MicrosoftGraphGetFailedMobileAppsSummaryReportRequestBuilder MicrosoftGraphGetFailedMobileAppsSummaryReport { get =>
-            new MicrosoftGraphGetFailedMobileAppsSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetFailedMobileAppsSummaryReportRequestBuilder GetFailedMobileAppsSummaryReport { get =>
+            new GetFailedMobileAppsSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getGroupPolicySettingsDeviceSettingsReport method.</summary>
-        public MicrosoftGraphGetGroupPolicySettingsDeviceSettingsReportRequestBuilder MicrosoftGraphGetGroupPolicySettingsDeviceSettingsReport { get =>
-            new MicrosoftGraphGetGroupPolicySettingsDeviceSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetGroupPolicySettingsDeviceSettingsReportRequestBuilder GetGroupPolicySettingsDeviceSettingsReport { get =>
+            new GetGroupPolicySettingsDeviceSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getHistoricalReport method.</summary>
-        public MicrosoftGraphGetHistoricalReportRequestBuilder MicrosoftGraphGetHistoricalReport { get =>
-            new MicrosoftGraphGetHistoricalReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetHistoricalReportRequestBuilder GetHistoricalReport { get =>
+            new GetHistoricalReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMalwareSummaryReport method.</summary>
-        public MicrosoftGraphGetMalwareSummaryReportRequestBuilder MicrosoftGraphGetMalwareSummaryReport { get =>
-            new MicrosoftGraphGetMalwareSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetMalwareSummaryReportRequestBuilder GetMalwareSummaryReport { get =>
+            new GetMalwareSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMobileApplicationManagementAppConfigurationReport method.</summary>
-        public MicrosoftGraphGetMobileApplicationManagementAppConfigurationReportRequestBuilder MicrosoftGraphGetMobileApplicationManagementAppConfigurationReport { get =>
-            new MicrosoftGraphGetMobileApplicationManagementAppConfigurationReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetMobileApplicationManagementAppConfigurationReportRequestBuilder GetMobileApplicationManagementAppConfigurationReport { get =>
+            new GetMobileApplicationManagementAppConfigurationReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMobileApplicationManagementAppRegistrationSummaryReport method.</summary>
-        public MicrosoftGraphGetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder MicrosoftGraphGetMobileApplicationManagementAppRegistrationSummaryReport { get =>
-            new MicrosoftGraphGetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder GetMobileApplicationManagementAppRegistrationSummaryReport { get =>
+            new GetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getNoncompliantDevicesAndSettingsReport method.</summary>
-        public MicrosoftGraphGetNoncompliantDevicesAndSettingsReportRequestBuilder MicrosoftGraphGetNoncompliantDevicesAndSettingsReport { get =>
-            new MicrosoftGraphGetNoncompliantDevicesAndSettingsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetNoncompliantDevicesAndSettingsReportRequestBuilder GetNoncompliantDevicesAndSettingsReport { get =>
+            new GetNoncompliantDevicesAndSettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicyNonComplianceMetadata method.</summary>
-        public MicrosoftGraphGetPolicyNonComplianceMetadataRequestBuilder MicrosoftGraphGetPolicyNonComplianceMetadata { get =>
-            new MicrosoftGraphGetPolicyNonComplianceMetadataRequestBuilder(PathParameters, RequestAdapter);
+        public GetPolicyNonComplianceMetadataRequestBuilder GetPolicyNonComplianceMetadata { get =>
+            new GetPolicyNonComplianceMetadataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicyNonComplianceReport method.</summary>
-        public MicrosoftGraphGetPolicyNonComplianceReportRequestBuilder MicrosoftGraphGetPolicyNonComplianceReport { get =>
-            new MicrosoftGraphGetPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetPolicyNonComplianceReportRequestBuilder GetPolicyNonComplianceReport { get =>
+            new GetPolicyNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPolicyNonComplianceSummaryReport method.</summary>
-        public MicrosoftGraphGetPolicyNonComplianceSummaryReportRequestBuilder MicrosoftGraphGetPolicyNonComplianceSummaryReport { get =>
-            new MicrosoftGraphGetPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetPolicyNonComplianceSummaryReportRequestBuilder GetPolicyNonComplianceSummaryReport { get =>
+            new GetPolicyNonComplianceSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getQuietTimePolicyUsersReport method.</summary>
-        public MicrosoftGraphGetQuietTimePolicyUsersReportRequestBuilder MicrosoftGraphGetQuietTimePolicyUsersReport { get =>
-            new MicrosoftGraphGetQuietTimePolicyUsersReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetQuietTimePolicyUsersReportRequestBuilder GetQuietTimePolicyUsersReport { get =>
+            new GetQuietTimePolicyUsersReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getQuietTimePolicyUserSummaryReport method.</summary>
-        public MicrosoftGraphGetQuietTimePolicyUserSummaryReportRequestBuilder MicrosoftGraphGetQuietTimePolicyUserSummaryReport { get =>
-            new MicrosoftGraphGetQuietTimePolicyUserSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetQuietTimePolicyUserSummaryReportRequestBuilder GetQuietTimePolicyUserSummaryReport { get =>
+            new GetQuietTimePolicyUserSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRelatedAppsStatusReport method.</summary>
-        public MicrosoftGraphGetRelatedAppsStatusReportRequestBuilder MicrosoftGraphGetRelatedAppsStatusReport { get =>
-            new MicrosoftGraphGetRelatedAppsStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetRelatedAppsStatusReportRequestBuilder GetRelatedAppsStatusReport { get =>
+            new GetRelatedAppsStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRemoteAssistanceSessionsReport method.</summary>
-        public MicrosoftGraphGetRemoteAssistanceSessionsReportRequestBuilder MicrosoftGraphGetRemoteAssistanceSessionsReport { get =>
-            new MicrosoftGraphGetRemoteAssistanceSessionsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetRemoteAssistanceSessionsReportRequestBuilder GetRemoteAssistanceSessionsReport { get =>
+            new GetRemoteAssistanceSessionsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getReportFilters method.</summary>
-        public MicrosoftGraphGetReportFiltersRequestBuilder MicrosoftGraphGetReportFilters { get =>
-            new MicrosoftGraphGetReportFiltersRequestBuilder(PathParameters, RequestAdapter);
+        public GetReportFiltersRequestBuilder GetReportFilters { get =>
+            new GetReportFiltersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSettingNonComplianceReport method.</summary>
-        public MicrosoftGraphGetSettingNonComplianceReportRequestBuilder MicrosoftGraphGetSettingNonComplianceReport { get =>
-            new MicrosoftGraphGetSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport { get =>
+            new GetSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUnhealthyDefenderAgentsReport method.</summary>
-        public MicrosoftGraphGetUnhealthyDefenderAgentsReportRequestBuilder MicrosoftGraphGetUnhealthyDefenderAgentsReport { get =>
-            new MicrosoftGraphGetUnhealthyDefenderAgentsReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetUnhealthyDefenderAgentsReportRequestBuilder GetUnhealthyDefenderAgentsReport { get =>
+            new GetUnhealthyDefenderAgentsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUnhealthyFirewallReport method.</summary>
-        public MicrosoftGraphGetUnhealthyFirewallReportRequestBuilder MicrosoftGraphGetUnhealthyFirewallReport { get =>
-            new MicrosoftGraphGetUnhealthyFirewallReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetUnhealthyFirewallReportRequestBuilder GetUnhealthyFirewallReport { get =>
+            new GetUnhealthyFirewallReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUnhealthyFirewallSummaryReport method.</summary>
-        public MicrosoftGraphGetUnhealthyFirewallSummaryReportRequestBuilder MicrosoftGraphGetUnhealthyFirewallSummaryReport { get =>
-            new MicrosoftGraphGetUnhealthyFirewallSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetUnhealthyFirewallSummaryReportRequestBuilder GetUnhealthyFirewallSummaryReport { get =>
+            new GetUnhealthyFirewallSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserInstallStatusReport method.</summary>
-        public MicrosoftGraphGetUserInstallStatusReportRequestBuilder MicrosoftGraphGetUserInstallStatusReport { get =>
-            new MicrosoftGraphGetUserInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetUserInstallStatusReportRequestBuilder GetUserInstallStatusReport { get =>
+            new GetUserInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport method.</summary>
-        public MicrosoftGraphGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder MicrosoftGraphGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport { get =>
-            new MicrosoftGraphGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport { get =>
+            new GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsQualityUpdateAlertSummaryReport method.</summary>
-        public MicrosoftGraphGetWindowsQualityUpdateAlertSummaryReportRequestBuilder MicrosoftGraphGetWindowsQualityUpdateAlertSummaryReport { get =>
-            new MicrosoftGraphGetWindowsQualityUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetWindowsQualityUpdateAlertSummaryReportRequestBuilder GetWindowsQualityUpdateAlertSummaryReport { get =>
+            new GetWindowsQualityUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsUpdateAlertsPerPolicyPerDeviceReport method.</summary>
-        public MicrosoftGraphGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder MicrosoftGraphGetWindowsUpdateAlertsPerPolicyPerDeviceReport { get =>
-            new MicrosoftGraphGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsUpdateAlertsPerPolicyPerDeviceReport { get =>
+            new GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsUpdateAlertSummaryReport method.</summary>
-        public MicrosoftGraphGetWindowsUpdateAlertSummaryReportRequestBuilder MicrosoftGraphGetWindowsUpdateAlertSummaryReport { get =>
-            new MicrosoftGraphGetWindowsUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetWindowsUpdateAlertSummaryReportRequestBuilder GetWindowsUpdateAlertSummaryReport { get =>
+            new GetWindowsUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getZebraFotaDeploymentReport method.</summary>
-        public MicrosoftGraphGetZebraFotaDeploymentReportRequestBuilder MicrosoftGraphGetZebraFotaDeploymentReport { get =>
-            new MicrosoftGraphGetZebraFotaDeploymentReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport { get =>
+            new GetZebraFotaDeploymentReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

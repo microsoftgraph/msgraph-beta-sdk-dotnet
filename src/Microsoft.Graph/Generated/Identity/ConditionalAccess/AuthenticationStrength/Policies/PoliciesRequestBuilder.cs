@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.Count;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.Item;
-using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.MicrosoftGraphFindByMethodModeWithAuthenticationMethodModes;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -60,6 +60,14 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             RequestAdapter = requestAdapter;
         }
         /// <summary>
+        /// Provides operations to call the findByMethodMode method.
+        /// </summary>
+        /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
+        public FindByMethodModeWithAuthenticationMethodModesRequestBuilder FindByMethodModeWithAuthenticationMethodModes(string authenticationMethodModes) {
+            if(string.IsNullOrEmpty(authenticationMethodModes)) throw new ArgumentNullException(nameof(authenticationMethodModes));
+            return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);
+        }
+        /// <summary>
         /// A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,14 +85,6 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicyCollectionResponse>(requestInfo, AuthenticationStrengthPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the findByMethodMode method.
-        /// </summary>
-        /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
-        public MicrosoftGraphFindByMethodModeWithAuthenticationMethodModesRequestBuilder MicrosoftGraphFindByMethodModeWithAuthenticationMethodModes(string authenticationMethodModes) {
-            if(string.IsNullOrEmpty(authenticationMethodModes)) throw new ArgumentNullException(nameof(authenticationMethodModes));
-            return new MicrosoftGraphFindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);
         }
         /// <summary>
         /// Create new navigation property to policies for identity

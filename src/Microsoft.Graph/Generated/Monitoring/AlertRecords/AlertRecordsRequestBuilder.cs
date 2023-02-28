@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Monitoring.AlertRecords.Count;
+using Microsoft.Graph.Beta.Monitoring.AlertRecords.DeviceManagementGetPortalNotifications;
 using Microsoft.Graph.Beta.Monitoring.AlertRecords.Item;
-using Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPortalNotifications method.</summary>
-        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder MicrosoftGraphDeviceManagementGetPortalNotifications { get =>
-            new MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceManagementGetPortalNotificationsRequestBuilder DeviceManagementGetPortalNotifications { get =>
+            new DeviceManagementGetPortalNotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

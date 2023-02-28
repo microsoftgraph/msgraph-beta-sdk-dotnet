@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Me.OwnedDevices.Count;
+using Microsoft.Graph.Beta.Me.OwnedDevices.GraphDevice;
+using Microsoft.Graph.Beta.Me.OwnedDevices.GraphEndpoint;
 using Microsoft.Graph.Beta.Me.OwnedDevices.Item;
-using Microsoft.Graph.Beta.Me.OwnedDevices.MicrosoftGraphDevice;
-using Microsoft.Graph.Beta.Me.OwnedDevices.MicrosoftGraphEndpoint;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.Me.OwnedDevices {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public MicrosoftGraphDeviceRequestBuilder MicrosoftGraphDevice { get =>
-            new MicrosoftGraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public GraphDeviceRequestBuilder GraphDevice { get =>
+            new GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public MicrosoftGraphEndpointRequestBuilder MicrosoftGraphEndpoint { get =>
-            new MicrosoftGraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+        public GraphEndpointRequestBuilder GraphEndpoint { get =>
+            new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

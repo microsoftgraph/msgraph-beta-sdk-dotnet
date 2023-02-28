@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Count;
+using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Delta;
 using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item;
-using Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.MicrosoftGraphDelta;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
-            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

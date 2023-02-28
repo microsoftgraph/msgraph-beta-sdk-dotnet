@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.PrivilegedApproval.Count;
 using Microsoft.Graph.Beta.PrivilegedApproval.Item;
-using Microsoft.Graph.Beta.PrivilegedApproval.MicrosoftGraphMyRequests;
+using Microsoft.Graph.Beta.PrivilegedApproval.MyRequests;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the myRequests method.</summary>
-        public MicrosoftGraphMyRequestsRequestBuilder MicrosoftGraphMyRequests { get =>
-            new MicrosoftGraphMyRequestsRequestBuilder(PathParameters, RequestAdapter);
+        public MyRequestsRequestBuilder MyRequests { get =>
+            new MyRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

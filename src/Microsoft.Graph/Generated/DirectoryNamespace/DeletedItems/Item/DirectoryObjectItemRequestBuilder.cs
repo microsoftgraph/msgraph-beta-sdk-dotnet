@@ -1,11 +1,11 @@
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphApplication;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphCheckMemberGroups;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphCheckMemberObjects;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphGetMemberGroups;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphGetMemberObjects;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphGroup;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphRestore;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.MicrosoftGraphUser;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.CheckMemberGroups;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.GetMemberGroups;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.GetMemberObjects;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.GraphApplication;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.GraphGroup;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.GraphUser;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.Restore;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,42 +21,42 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
     /// Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
-        /// <summary>Casts the previous resource to application.</summary>
-        public MicrosoftGraphApplicationRequestBuilder MicrosoftGraphApplication { get =>
-            new MicrosoftGraphApplicationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public MicrosoftGraphCheckMemberGroupsRequestBuilder MicrosoftGraphCheckMemberGroups { get =>
-            new MicrosoftGraphCheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
+            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public MicrosoftGraphCheckMemberObjectsRequestBuilder MicrosoftGraphCheckMemberObjects { get =>
-            new MicrosoftGraphCheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
+            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public MicrosoftGraphGetMemberGroupsRequestBuilder MicrosoftGraphGetMemberGroups { get =>
-            new MicrosoftGraphGetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
+            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public MicrosoftGraphGetMemberObjectsRequestBuilder MicrosoftGraphGetMemberObjects { get =>
-            new MicrosoftGraphGetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
+            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to application.</summary>
+        public GraphApplicationRequestBuilder GraphApplication { get =>
+            new GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public MicrosoftGraphGroupRequestBuilder MicrosoftGraphGroup { get =>
-            new MicrosoftGraphGroupRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the restore method.</summary>
-        public MicrosoftGraphRestoreRequestBuilder MicrosoftGraphRestore { get =>
-            new MicrosoftGraphRestoreRequestBuilder(PathParameters, RequestAdapter);
+        public GraphGroupRequestBuilder GraphGroup { get =>
+            new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
-            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
+        public GraphUserRequestBuilder GraphUser { get =>
+            new GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

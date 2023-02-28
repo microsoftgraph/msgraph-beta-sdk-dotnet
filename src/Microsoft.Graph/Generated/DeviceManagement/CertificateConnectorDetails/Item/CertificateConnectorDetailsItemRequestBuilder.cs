@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.MicrosoftGraphGetHealthMetrics;
-using Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.MicrosoftGraphGetHealthMetricTimeSeries;
+using Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetricTimeSeries;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
     /// </summary>
     public class CertificateConnectorDetailsItemRequestBuilder {
         /// <summary>Provides operations to call the getHealthMetrics method.</summary>
-        public MicrosoftGraphGetHealthMetricsRequestBuilder MicrosoftGraphGetHealthMetrics { get =>
-            new MicrosoftGraphGetHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
+        public GetHealthMetricsRequestBuilder GetHealthMetrics { get =>
+            new GetHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getHealthMetricTimeSeries method.</summary>
-        public MicrosoftGraphGetHealthMetricTimeSeriesRequestBuilder MicrosoftGraphGetHealthMetricTimeSeries { get =>
-            new MicrosoftGraphGetHealthMetricTimeSeriesRequestBuilder(PathParameters, RequestAdapter);
+        public GetHealthMetricTimeSeriesRequestBuilder GetHealthMetricTimeSeries { get =>
+            new GetHealthMetricTimeSeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

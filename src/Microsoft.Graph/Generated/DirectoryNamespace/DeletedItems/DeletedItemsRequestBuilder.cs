@@ -1,11 +1,12 @@
 using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Count;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Delta;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GetByIds;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GetUserOwnedObjects;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GraphApplication;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GraphGroup;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GraphUser;
 using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.MicrosoftGraphApplication;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.MicrosoftGraphGetByIds;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.MicrosoftGraphGetUserOwnedObjects;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.MicrosoftGraphGroup;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.MicrosoftGraphUser;
-using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.MicrosoftGraphValidateProperties;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.ValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -25,29 +26,29 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Casts the previous resource to application.</summary>
-        public MicrosoftGraphApplicationRequestBuilder MicrosoftGraphApplication { get =>
-            new MicrosoftGraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+        /// <summary>Provides operations to call the delta method.</summary>
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public MicrosoftGraphGetByIdsRequestBuilder MicrosoftGraphGetByIds { get =>
-            new MicrosoftGraphGetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public MicrosoftGraphGetUserOwnedObjectsRequestBuilder MicrosoftGraphGetUserOwnedObjects { get =>
-            new MicrosoftGraphGetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to application.</summary>
+        public GraphApplicationRequestBuilder GraphApplication { get =>
+            new GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public MicrosoftGraphGroupRequestBuilder MicrosoftGraphGroup { get =>
-            new MicrosoftGraphGroupRequestBuilder(PathParameters, RequestAdapter);
+        public GraphGroupRequestBuilder GraphGroup { get =>
+            new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
-            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public MicrosoftGraphValidatePropertiesRequestBuilder MicrosoftGraphValidateProperties { get =>
-            new MicrosoftGraphValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        public GraphUserRequestBuilder GraphUser { get =>
+            new GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -55,6 +56,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validateProperties method.</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.</summary>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Applications.Count;
+using Microsoft.Graph.Beta.Applications.Delta;
+using Microsoft.Graph.Beta.Applications.GetByIds;
+using Microsoft.Graph.Beta.Applications.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Applications.Item;
-using Microsoft.Graph.Beta.Applications.MicrosoftGraphDelta;
-using Microsoft.Graph.Beta.Applications.MicrosoftGraphGetByIds;
-using Microsoft.Graph.Beta.Applications.MicrosoftGraphGetUserOwnedObjects;
-using Microsoft.Graph.Beta.Applications.MicrosoftGraphValidateProperties;
+using Microsoft.Graph.Beta.Applications.ValidateProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -24,20 +24,16 @@ namespace Microsoft.Graph.Beta.Applications {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
-            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public MicrosoftGraphGetByIdsRequestBuilder MicrosoftGraphGetByIds { get =>
-            new MicrosoftGraphGetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public MicrosoftGraphGetUserOwnedObjectsRequestBuilder MicrosoftGraphGetUserOwnedObjects { get =>
-            new MicrosoftGraphGetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public MicrosoftGraphValidatePropertiesRequestBuilder MicrosoftGraphValidateProperties { get =>
-            new MicrosoftGraphValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -45,6 +41,10 @@ namespace Microsoft.Graph.Beta.Applications {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validateProperties method.</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the collection of application entities.</summary>
         public ApplicationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

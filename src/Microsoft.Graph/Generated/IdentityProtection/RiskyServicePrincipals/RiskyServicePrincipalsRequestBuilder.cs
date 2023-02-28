@@ -1,7 +1,7 @@
+using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.ConfirmCompromised;
 using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Count;
+using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss;
 using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item;
-using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.MicrosoftGraphConfirmCompromised;
-using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.MicrosoftGraphDismiss;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,17 +17,17 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
     /// Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
     /// </summary>
     public class RiskyServicePrincipalsRequestBuilder {
+        /// <summary>Provides operations to call the confirmCompromised method.</summary>
+        public ConfirmCompromisedRequestBuilder ConfirmCompromised { get =>
+            new ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the confirmCompromised method.</summary>
-        public MicrosoftGraphConfirmCompromisedRequestBuilder MicrosoftGraphConfirmCompromised { get =>
-            new MicrosoftGraphConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the dismiss method.</summary>
-        public MicrosoftGraphDismissRequestBuilder MicrosoftGraphDismiss { get =>
-            new MicrosoftGraphDismissRequestBuilder(PathParameters, RequestAdapter);
+        public DismissRequestBuilder Dismiss { get =>
+            new DismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

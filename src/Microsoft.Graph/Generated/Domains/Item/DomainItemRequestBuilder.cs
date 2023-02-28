@@ -1,11 +1,11 @@
 using Microsoft.Graph.Beta.Domains.Item.DomainNameReferences;
 using Microsoft.Graph.Beta.Domains.Item.FederationConfiguration;
-using Microsoft.Graph.Beta.Domains.Item.MicrosoftGraphForceDelete;
-using Microsoft.Graph.Beta.Domains.Item.MicrosoftGraphPromote;
-using Microsoft.Graph.Beta.Domains.Item.MicrosoftGraphVerify;
+using Microsoft.Graph.Beta.Domains.Item.ForceDelete;
+using Microsoft.Graph.Beta.Domains.Item.Promote;
 using Microsoft.Graph.Beta.Domains.Item.ServiceConfigurationRecords;
 using Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations;
 using Microsoft.Graph.Beta.Domains.Item.VerificationDnsRecords;
+using Microsoft.Graph.Beta.Domains.Item.Verify;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -30,19 +30,15 @@ namespace Microsoft.Graph.Beta.Domains.Item {
             new FederationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forceDelete method.</summary>
-        public MicrosoftGraphForceDeleteRequestBuilder MicrosoftGraphForceDelete { get =>
-            new MicrosoftGraphForceDeleteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the promote method.</summary>
-        public MicrosoftGraphPromoteRequestBuilder MicrosoftGraphPromote { get =>
-            new MicrosoftGraphPromoteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the verify method.</summary>
-        public MicrosoftGraphVerifyRequestBuilder MicrosoftGraphVerify { get =>
-            new MicrosoftGraphVerifyRequestBuilder(PathParameters, RequestAdapter);
+        public ForceDeleteRequestBuilder ForceDelete { get =>
+            new ForceDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to call the promote method.</summary>
+        public PromoteRequestBuilder Promote { get =>
+            new PromoteRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.</summary>
@@ -58,6 +54,10 @@ namespace Microsoft.Graph.Beta.Domains.Item {
         /// <summary>Provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.</summary>
         public VerificationDnsRecordsRequestBuilder VerificationDnsRecords { get =>
             new VerificationDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the verify method.</summary>
+        public VerifyRequestBuilder Verify { get =>
+            new VerifyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DomainItemRequestBuilder and sets the default values.

@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding.Item.MicrosoftGraphDisable;
-using Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding.Item.MicrosoftGraphEnable;
+using Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding.Item.Disable;
+using Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding.Item.Enable;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding
     /// </summary>
     public class OemWarrantyInformationOnboardingItemRequestBuilder {
         /// <summary>Provides operations to call the disable method.</summary>
-        public MicrosoftGraphDisableRequestBuilder MicrosoftGraphDisable { get =>
-            new MicrosoftGraphDisableRequestBuilder(PathParameters, RequestAdapter);
+        public DisableRequestBuilder Disable { get =>
+            new DisableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enable method.</summary>
-        public MicrosoftGraphEnableRequestBuilder MicrosoftGraphEnable { get =>
-            new MicrosoftGraphEnableRequestBuilder(PathParameters, RequestAdapter);
+        public EnableRequestBuilder Enable { get =>
+            new EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

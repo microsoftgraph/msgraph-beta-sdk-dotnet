@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.MicrosoftGraphWindowsUpdatesAddMembers;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.MicrosoftGraphWindowsUpdatesAddMembersById;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.MicrosoftGraphWindowsUpdatesRemoveMembers;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.MicrosoftGraphWindowsUpdatesRemoveMembersById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.WindowsUpdatesAddMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.WindowsUpdatesAddMembersById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.WindowsUpdatesRemoveMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.WindowsUpdatesRemoveMembersById;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions;
@@ -17,28 +17,28 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
     /// Provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
     /// </summary>
     public class UpdatableAssetItemRequestBuilder {
-        /// <summary>Provides operations to call the addMembers method.</summary>
-        public MicrosoftGraphWindowsUpdatesAddMembersRequestBuilder MicrosoftGraphWindowsUpdatesAddMembers { get =>
-            new MicrosoftGraphWindowsUpdatesAddMembersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the addMembersById method.</summary>
-        public MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder MicrosoftGraphWindowsUpdatesAddMembersById { get =>
-            new MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the removeMembers method.</summary>
-        public MicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilder MicrosoftGraphWindowsUpdatesRemoveMembers { get =>
-            new MicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the removeMembersById method.</summary>
-        public MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder MicrosoftGraphWindowsUpdatesRemoveMembersById { get =>
-            new MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the addMembers method.</summary>
+        public WindowsUpdatesAddMembersRequestBuilder WindowsUpdatesAddMembers { get =>
+            new WindowsUpdatesAddMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the addMembersById method.</summary>
+        public WindowsUpdatesAddMembersByIdRequestBuilder WindowsUpdatesAddMembersById { get =>
+            new WindowsUpdatesAddMembersByIdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeMembers method.</summary>
+        public WindowsUpdatesRemoveMembersRequestBuilder WindowsUpdatesRemoveMembers { get =>
+            new WindowsUpdatesRemoveMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeMembersById method.</summary>
+        public WindowsUpdatesRemoveMembersByIdRequestBuilder WindowsUpdatesRemoveMembersById { get =>
+            new WindowsUpdatesRemoveMembersByIdRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new UpdatableAssetItemRequestBuilder and sets the default values.
         /// </summary>

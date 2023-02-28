@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Item.Replies.Count;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Item.Replies.Delta;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Item.Replies.Item;
-using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Item.Replies.MicrosoftGraphDelta;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public MicrosoftGraphDeltaRequestBuilder MicrosoftGraphDelta { get =>
-            new MicrosoftGraphDeltaRequestBuilder(PathParameters, RequestAdapter);
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

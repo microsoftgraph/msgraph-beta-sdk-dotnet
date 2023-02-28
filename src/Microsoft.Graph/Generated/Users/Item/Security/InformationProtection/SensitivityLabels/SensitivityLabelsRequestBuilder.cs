@@ -2,10 +2,10 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Count;
 using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.Item;
-using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateApplication;
-using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults;
-using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateRemoval;
-using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SecurityEvaluateApplication;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SecurityEvaluateClassificationResults;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SecurityEvaluateRemoval;
+using Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.SecurityExtractContentLabel;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -23,26 +23,26 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the evaluateApplication method.</summary>
-        public MicrosoftGraphSecurityEvaluateApplicationRequestBuilder MicrosoftGraphSecurityEvaluateApplication { get =>
-            new MicrosoftGraphSecurityEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
-        public MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder MicrosoftGraphSecurityEvaluateClassificationResults { get =>
-            new MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the evaluateRemoval method.</summary>
-        public MicrosoftGraphSecurityEvaluateRemovalRequestBuilder MicrosoftGraphSecurityEvaluateRemoval { get =>
-            new MicrosoftGraphSecurityEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the extractContentLabel method.</summary>
-        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder MicrosoftGraphSecurityExtractContentLabel { get =>
-            new MicrosoftGraphSecurityExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the evaluateApplication method.</summary>
+        public SecurityEvaluateApplicationRequestBuilder SecurityEvaluateApplication { get =>
+            new SecurityEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
+        public SecurityEvaluateClassificationResultsRequestBuilder SecurityEvaluateClassificationResults { get =>
+            new SecurityEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the evaluateRemoval method.</summary>
+        public SecurityEvaluateRemovalRequestBuilder SecurityEvaluateRemoval { get =>
+            new SecurityEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the extractContentLabel method.</summary>
+        public SecurityExtractContentLabelRequestBuilder SecurityExtractContentLabel { get =>
+            new SecurityExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.</summary>

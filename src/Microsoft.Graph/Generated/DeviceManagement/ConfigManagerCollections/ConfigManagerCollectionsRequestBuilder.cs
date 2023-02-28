@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.Item;
-using Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.MicrosoftGraphGetPolicySummaryWithPolicyId;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         /// Provides operations to call the getPolicySummary method.
         /// </summary>
         /// <param name="policyId">Usage: policyId=&apos;{policyId}&apos;</param>
-        public MicrosoftGraphGetPolicySummaryWithPolicyIdRequestBuilder MicrosoftGraphGetPolicySummaryWithPolicyId(string policyId) {
+        public GetPolicySummaryWithPolicyIdRequestBuilder GetPolicySummaryWithPolicyId(string policyId) {
             if(string.IsNullOrEmpty(policyId)) throw new ArgumentNullException(nameof(policyId));
-            return new MicrosoftGraphGetPolicySummaryWithPolicyIdRequestBuilder(PathParameters, RequestAdapter, policyId);
+            return new GetPolicySummaryWithPolicyIdRequestBuilder(PathParameters, RequestAdapter, policyId);
         }
         /// <summary>
         /// Create new navigation property to configManagerCollections for deviceManagement

@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.ApplicationTemplates.Item.MicrosoftGraphInstantiate;
+using Microsoft.Graph.Beta.ApplicationTemplates.Item.Instantiate;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.ApplicationTemplates.Item {
     /// </summary>
     public class ApplicationTemplateItemRequestBuilder {
         /// <summary>Provides operations to call the instantiate method.</summary>
-        public MicrosoftGraphInstantiateRequestBuilder MicrosoftGraphInstantiate { get =>
-            new MicrosoftGraphInstantiateRequestBuilder(PathParameters, RequestAdapter);
+        public InstantiateRequestBuilder Instantiate { get =>
+            new InstantiateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

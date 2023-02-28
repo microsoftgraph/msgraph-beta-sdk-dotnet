@@ -1,10 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Users.Item.Calendar.AllowedCalendarSharingRolesWithUser;
 using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarPermissions;
 using Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView;
 using Microsoft.Graph.Beta.Users.Item.Calendar.Events;
-using Microsoft.Graph.Beta.Users.Item.Calendar.MicrosoftGraphAllowedCalendarSharingRolesWithUser;
-using Microsoft.Graph.Beta.Users.Item.Calendar.MicrosoftGraphGetSchedule;
+using Microsoft.Graph.Beta.Users.Item.Calendar.GetSchedule;
 using Microsoft.Graph.Beta.Users.Item.Calendar.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.Calendar.SingleValueExtendedProperties;
 using Microsoft.Kiota.Abstractions;
@@ -33,8 +33,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar {
             new EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSchedule method.</summary>
-        public MicrosoftGraphGetScheduleRequestBuilder MicrosoftGraphGetSchedule { get =>
-            new MicrosoftGraphGetScheduleRequestBuilder(PathParameters, RequestAdapter);
+        public GetScheduleRequestBuilder GetSchedule { get =>
+            new GetScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
@@ -50,6 +50,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>
+        /// Provides operations to call the allowedCalendarSharingRoles method.
+        /// </summary>
+        /// <param name="user">Usage: User=&apos;{User}&apos;</param>
+        public AllowedCalendarSharingRolesWithUserRequestBuilder AllowedCalendarSharingRolesWithUser(string user) {
+            if(string.IsNullOrEmpty(user)) throw new ArgumentNullException(nameof(user));
+            return new AllowedCalendarSharingRolesWithUserRequestBuilder(PathParameters, RequestAdapter, user);
+        }
         /// <summary>
         /// Instantiates a new CalendarRequestBuilder and sets the default values.
         /// </summary>
@@ -96,14 +104,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Calendar>(requestInfo, Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the allowedCalendarSharingRoles method.
-        /// </summary>
-        /// <param name="user">Usage: User=&apos;{User}&apos;</param>
-        public MicrosoftGraphAllowedCalendarSharingRolesWithUserRequestBuilder MicrosoftGraphAllowedCalendarSharingRolesWithUser(string user) {
-            if(string.IsNullOrEmpty(user)) throw new ArgumentNullException(nameof(user));
-            return new MicrosoftGraphAllowedCalendarSharingRolesWithUserRequestBuilder(PathParameters, RequestAdapter, user);
         }
         /// <summary>
         /// Update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.

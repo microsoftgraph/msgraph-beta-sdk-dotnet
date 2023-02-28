@@ -1,10 +1,10 @@
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignResourceAccountToDevice;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignUserToDevice;
 using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.DeploymentProfile;
 using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.IntendedDeploymentProfile;
-using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.MicrosoftGraphAssignResourceAccountToDevice;
-using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.MicrosoftGraphAssignUserToDevice;
-using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.MicrosoftGraphUnassignResourceAccountFromDevice;
-using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.MicrosoftGraphUnassignUserFromDevice;
-using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.MicrosoftGraphUpdateDeviceProperties;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignResourceAccountFromDevice;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignUserFromDevice;
+using Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UpdateDeviceProperties;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -20,6 +20,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
     /// Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class WindowsAutopilotDeviceIdentityItemRequestBuilder {
+        /// <summary>Provides operations to call the assignResourceAccountToDevice method.</summary>
+        public AssignResourceAccountToDeviceRequestBuilder AssignResourceAccountToDevice { get =>
+            new AssignResourceAccountToDeviceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the assignUserToDevice method.</summary>
+        public AssignUserToDeviceRequestBuilder AssignUserToDevice { get =>
+            new AssignUserToDeviceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the deploymentProfile property of the microsoft.graph.windowsAutopilotDeviceIdentity entity.</summary>
         public DeploymentProfileRequestBuilder DeploymentProfile { get =>
             new DeploymentProfileRequestBuilder(PathParameters, RequestAdapter);
@@ -28,30 +36,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         public IntendedDeploymentProfileRequestBuilder IntendedDeploymentProfile { get =>
             new IntendedDeploymentProfileRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the assignResourceAccountToDevice method.</summary>
-        public MicrosoftGraphAssignResourceAccountToDeviceRequestBuilder MicrosoftGraphAssignResourceAccountToDevice { get =>
-            new MicrosoftGraphAssignResourceAccountToDeviceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the assignUserToDevice method.</summary>
-        public MicrosoftGraphAssignUserToDeviceRequestBuilder MicrosoftGraphAssignUserToDevice { get =>
-            new MicrosoftGraphAssignUserToDeviceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unassignResourceAccountFromDevice method.</summary>
-        public MicrosoftGraphUnassignResourceAccountFromDeviceRequestBuilder MicrosoftGraphUnassignResourceAccountFromDevice { get =>
-            new MicrosoftGraphUnassignResourceAccountFromDeviceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the unassignUserFromDevice method.</summary>
-        public MicrosoftGraphUnassignUserFromDeviceRequestBuilder MicrosoftGraphUnassignUserFromDevice { get =>
-            new MicrosoftGraphUnassignUserFromDeviceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the updateDeviceProperties method.</summary>
-        public MicrosoftGraphUpdateDevicePropertiesRequestBuilder MicrosoftGraphUpdateDeviceProperties { get =>
-            new MicrosoftGraphUpdateDevicePropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the unassignResourceAccountFromDevice method.</summary>
+        public UnassignResourceAccountFromDeviceRequestBuilder UnassignResourceAccountFromDevice { get =>
+            new UnassignResourceAccountFromDeviceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unassignUserFromDevice method.</summary>
+        public UnassignUserFromDeviceRequestBuilder UnassignUserFromDevice { get =>
+            new UnassignUserFromDeviceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateDeviceProperties method.</summary>
+        public UpdateDevicePropertiesRequestBuilder UpdateDeviceProperties { get =>
+            new UpdateDevicePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

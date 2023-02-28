@@ -1,8 +1,8 @@
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryActivate;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryApplyHold;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryRelease;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryRemoveHold;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.MicrosoftGraphEdiscoveryUpdateIndex;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.EdiscoveryActivate;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.EdiscoveryApplyHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.EdiscoveryRelease;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.EdiscoveryRemoveHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.EdiscoveryUpdateIndex;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.SiteSources;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.UserSources;
@@ -22,24 +22,24 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item 
     /// </summary>
     public class CustodianItemRequestBuilder {
         /// <summary>Provides operations to call the activate method.</summary>
-        public MicrosoftGraphEdiscoveryActivateRequestBuilder MicrosoftGraphEdiscoveryActivate { get =>
-            new MicrosoftGraphEdiscoveryActivateRequestBuilder(PathParameters, RequestAdapter);
+        public EdiscoveryActivateRequestBuilder EdiscoveryActivate { get =>
+            new EdiscoveryActivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyHold method.</summary>
-        public MicrosoftGraphEdiscoveryApplyHoldRequestBuilder MicrosoftGraphEdiscoveryApplyHold { get =>
-            new MicrosoftGraphEdiscoveryApplyHoldRequestBuilder(PathParameters, RequestAdapter);
+        public EdiscoveryApplyHoldRequestBuilder EdiscoveryApplyHold { get =>
+            new EdiscoveryApplyHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the release method.</summary>
-        public MicrosoftGraphEdiscoveryReleaseRequestBuilder MicrosoftGraphEdiscoveryRelease { get =>
-            new MicrosoftGraphEdiscoveryReleaseRequestBuilder(PathParameters, RequestAdapter);
+        public EdiscoveryReleaseRequestBuilder EdiscoveryRelease { get =>
+            new EdiscoveryReleaseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeHold method.</summary>
-        public MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder MicrosoftGraphEdiscoveryRemoveHold { get =>
-            new MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
+        public EdiscoveryRemoveHoldRequestBuilder EdiscoveryRemoveHold { get =>
+            new EdiscoveryRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateIndex method.</summary>
-        public MicrosoftGraphEdiscoveryUpdateIndexRequestBuilder MicrosoftGraphEdiscoveryUpdateIndex { get =>
-            new MicrosoftGraphEdiscoveryUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
+        public EdiscoveryUpdateIndexRequestBuilder EdiscoveryUpdateIndex { get =>
+            new EdiscoveryUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

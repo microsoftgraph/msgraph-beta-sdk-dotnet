@@ -1,9 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.PermissionGrants.Delta;
+using Microsoft.Graph.Beta.PermissionGrants.GetByIds;
+using Microsoft.Graph.Beta.PermissionGrants.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.PermissionGrants.Item;
-using Microsoft.Graph.Beta.PermissionGrants.MicrosoftGraphGetByIds;
-using Microsoft.Graph.Beta.PermissionGrants.MicrosoftGraphGetUserOwnedObjects;
-using Microsoft.Graph.Beta.PermissionGrants.MicrosoftGraphValidateProperties;
+using Microsoft.Graph.Beta.PermissionGrants.ValidateProperties;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,17 +18,17 @@ namespace Microsoft.Graph.Beta.PermissionGrants {
     /// Provides operations to manage the collection of resourceSpecificPermissionGrant entities.
     /// </summary>
     public class PermissionGrantsRequestBuilder {
+        /// <summary>Provides operations to call the delta method.</summary>
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public MicrosoftGraphGetByIdsRequestBuilder MicrosoftGraphGetByIds { get =>
-            new MicrosoftGraphGetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        public GetByIdsRequestBuilder GetByIds { get =>
+            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public MicrosoftGraphGetUserOwnedObjectsRequestBuilder MicrosoftGraphGetUserOwnedObjects { get =>
-            new MicrosoftGraphGetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public MicrosoftGraphValidatePropertiesRequestBuilder MicrosoftGraphValidateProperties { get =>
-            new MicrosoftGraphValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
+            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -35,6 +36,10 @@ namespace Microsoft.Graph.Beta.PermissionGrants {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to call the validateProperties method.</summary>
+        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
+            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the collection of resourceSpecificPermissionGrant entities.</summary>
         public ResourceSpecificPermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

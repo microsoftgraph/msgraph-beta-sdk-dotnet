@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.MicrosoftGraphCreateServerLogCollectionRequest;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.MicrosoftGraphGenerateServerLogCollectionRequest;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.MicrosoftGraphGetHealthMetrics;
-using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.MicrosoftGraphGetHealthMetricTimeSeries;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.CreateServerLogCollectionRequest;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GenerateServerLogCollectionRequest;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetrics;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,20 +18,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
     /// </summary>
     public class MicrosoftTunnelServerItemRequestBuilder {
         /// <summary>Provides operations to call the createServerLogCollectionRequest method.</summary>
-        public MicrosoftGraphCreateServerLogCollectionRequestRequestBuilder MicrosoftGraphCreateServerLogCollectionRequest { get =>
-            new MicrosoftGraphCreateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
+        public CreateServerLogCollectionRequestRequestBuilder CreateServerLogCollectionRequest { get =>
+            new CreateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the generateServerLogCollectionRequest method.</summary>
-        public MicrosoftGraphGenerateServerLogCollectionRequestRequestBuilder MicrosoftGraphGenerateServerLogCollectionRequest { get =>
-            new MicrosoftGraphGenerateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
+        public GenerateServerLogCollectionRequestRequestBuilder GenerateServerLogCollectionRequest { get =>
+            new GenerateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getHealthMetrics method.</summary>
-        public MicrosoftGraphGetHealthMetricsRequestBuilder MicrosoftGraphGetHealthMetrics { get =>
-            new MicrosoftGraphGetHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
+        public GetHealthMetricsRequestBuilder GetHealthMetrics { get =>
+            new GetHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getHealthMetricTimeSeries method.</summary>
-        public MicrosoftGraphGetHealthMetricTimeSeriesRequestBuilder MicrosoftGraphGetHealthMetricTimeSeries { get =>
-            new MicrosoftGraphGetHealthMetricTimeSeriesRequestBuilder(PathParameters, RequestAdapter);
+        public GetHealthMetricTimeSeriesRequestBuilder GetHealthMetricTimeSeries { get =>
+            new GetHealthMetricTimeSeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

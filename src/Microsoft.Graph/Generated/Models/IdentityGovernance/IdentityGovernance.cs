@@ -97,6 +97,20 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("privilegedAccess", value); }
         }
 #endif
+        /// <summary>The roleManagementAlerts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.RoleManagementAlert? RoleManagementAlerts {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoleManagementAlert?>("roleManagementAlerts"); }
+            set { BackingStore?.Set("roleManagementAlerts", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.RoleManagementAlert RoleManagementAlerts {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoleManagementAlert>("roleManagementAlerts"); }
+            set { BackingStore?.Set("roleManagementAlerts", value); }
+        }
+#endif
         /// <summary>The termsOfUse property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +151,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<LifecycleWorkflowsContainer>(LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"privilegedAccess", n => { PrivilegedAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>(Microsoft.Graph.Beta.Models.PrivilegedAccessRoot.CreateFromDiscriminatorValue); } },
+                {"roleManagementAlerts", n => { RoleManagementAlerts = n.GetObjectValue<Microsoft.Graph.Beta.Models.RoleManagementAlert>(Microsoft.Graph.Beta.Models.RoleManagementAlert.CreateFromDiscriminatorValue); } },
                 {"termsOfUse", n => { TermsOfUse = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsOfUseContainer>(Microsoft.Graph.Beta.Models.TermsOfUseContainer.CreateFromDiscriminatorValue); } },
             };
         }
@@ -152,6 +167,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             writer.WriteObjectValue<LifecycleWorkflowsContainer>("lifecycleWorkflows", LifecycleWorkflows);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>("privilegedAccess", PrivilegedAccess);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RoleManagementAlert>("roleManagementAlerts", RoleManagementAlerts);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TermsOfUseContainer>("termsOfUse", TermsOfUse);
             writer.WriteAdditionalData(AdditionalData);
         }

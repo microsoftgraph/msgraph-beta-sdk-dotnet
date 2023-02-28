@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Count;
+using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.GraphDevice;
+using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.GraphEndpoint;
 using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.Item;
-using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.MicrosoftGraphDevice;
-using Microsoft.Graph.Beta.Users.Item.RegisteredDevices.MicrosoftGraphEndpoint;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.Users.Item.RegisteredDevices {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public MicrosoftGraphDeviceRequestBuilder MicrosoftGraphDevice { get =>
-            new MicrosoftGraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+        public GraphDeviceRequestBuilder GraphDevice { get =>
+            new GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public MicrosoftGraphEndpointRequestBuilder MicrosoftGraphEndpoint { get =>
-            new MicrosoftGraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+        public GraphEndpointRequestBuilder GraphEndpoint { get =>
+            new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

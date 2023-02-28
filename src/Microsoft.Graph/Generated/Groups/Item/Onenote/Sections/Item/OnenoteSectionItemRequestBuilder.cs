@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item.MicrosoftGraphCopyToNotebook;
-using Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item.MicrosoftGraphCopyToSectionGroup;
+using Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item.CopyToNotebook;
+using Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item.CopyToSectionGroup;
 using Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item.Pages;
 using Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item.ParentNotebook;
 using Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item.ParentSectionGroup;
@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item {
     /// </summary>
     public class OnenoteSectionItemRequestBuilder {
         /// <summary>Provides operations to call the copyToNotebook method.</summary>
-        public MicrosoftGraphCopyToNotebookRequestBuilder MicrosoftGraphCopyToNotebook { get =>
-            new MicrosoftGraphCopyToNotebookRequestBuilder(PathParameters, RequestAdapter);
+        public CopyToNotebookRequestBuilder CopyToNotebook { get =>
+            new CopyToNotebookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the copyToSectionGroup method.</summary>
-        public MicrosoftGraphCopyToSectionGroupRequestBuilder MicrosoftGraphCopyToSectionGroup { get =>
-            new MicrosoftGraphCopyToSectionGroupRequestBuilder(PathParameters, RequestAdapter);
+        public CopyToSectionGroupRequestBuilder CopyToSectionGroup { get =>
+            new CopyToSectionGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.</summary>
         public PagesRequestBuilder Pages { get =>

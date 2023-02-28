@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Count;
+using Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.HasPayloadLinks;
 using Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item;
-using Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.MicrosoftGraphHasPayloadLinks;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
-        public MicrosoftGraphHasPayloadLinksRequestBuilder MicrosoftGraphHasPayloadLinks { get =>
-            new MicrosoftGraphHasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
+        public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
+            new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

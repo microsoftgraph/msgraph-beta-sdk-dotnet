@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.Format.Fill.MicrosoftGraphClear;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.Format.Fill.MicrosoftGraphSetSolidColor;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.Format.Fill.Clear;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.Format.Fill.SetSolidColor;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -16,17 +16,17 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
     /// </summary>
     public class FillRequestBuilder {
         /// <summary>Provides operations to call the clear method.</summary>
-        public MicrosoftGraphClearRequestBuilder MicrosoftGraphClear { get =>
-            new MicrosoftGraphClearRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the setSolidColor method.</summary>
-        public MicrosoftGraphSetSolidColorRequestBuilder MicrosoftGraphSetSolidColor { get =>
-            new MicrosoftGraphSetSolidColorRequestBuilder(PathParameters, RequestAdapter);
+        public ClearRequestBuilder Clear { get =>
+            new ClearRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the setSolidColor method.</summary>
+        public SetSolidColorRequestBuilder SetSolidColor { get =>
+            new SetSolidColorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

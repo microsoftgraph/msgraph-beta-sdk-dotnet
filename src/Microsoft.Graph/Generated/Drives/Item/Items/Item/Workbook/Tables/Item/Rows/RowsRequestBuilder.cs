@@ -1,8 +1,7 @@
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Add;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Count;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.MicrosoftGraphAdd;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.MicrosoftGraphCount;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.MicrosoftGraphItemAtWithIndex;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.ItemAtWithIndex;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,17 +17,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows 
     /// Provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
     /// </summary>
     public class RowsRequestBuilder {
-        /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the add method.</summary>
-        public MicrosoftGraphAddRequestBuilder MicrosoftGraphAdd { get =>
-            new MicrosoftGraphAddRequestBuilder(PathParameters, RequestAdapter);
+        public AddRequestBuilder Add { get =>
+            new AddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the count method.</summary>
-        public MicrosoftGraphCountRequestBuilder MicrosoftGraphCount { get =>
-            new MicrosoftGraphCountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -71,7 +66,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows 
         }
         /// <summary>
         /// Retrieve a list of tablerow objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tablerow-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/table-list-rows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,9 +88,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Rows 
         /// Provides operations to call the itemAt method.
         /// </summary>
         /// <param name="index">Usage: index={index}</param>
-        public MicrosoftGraphItemAtWithIndexRequestBuilder MicrosoftGraphItemAtWithIndex(int? index) {
+        public ItemAtWithIndexRequestBuilder ItemAtWithIndex(int? index) {
             _ = index ?? throw new ArgumentNullException(nameof(index));
-            return new MicrosoftGraphItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
+            return new ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
         }
         /// <summary>
         /// Add rows to the end of a table.  Note that the API can accept multiple rows data using this API. Adding one row at a time can lead to performance degradation. The recommended approach is to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a `504 HTTP` error. The appropriate response to this error is to repeat the request.

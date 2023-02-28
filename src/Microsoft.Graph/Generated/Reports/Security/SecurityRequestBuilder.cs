@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Reports.Security.MicrosoftGraphGetAttackSimulationRepeatOffenders;
-using Microsoft.Graph.Beta.Reports.Security.MicrosoftGraphGetAttackSimulationSimulationUserCoverage;
-using Microsoft.Graph.Beta.Reports.Security.MicrosoftGraphGetAttackSimulationTrainingUserCoverage;
+using Microsoft.Graph.Beta.Reports.Security.GetAttackSimulationRepeatOffenders;
+using Microsoft.Graph.Beta.Reports.Security.GetAttackSimulationSimulationUserCoverage;
+using Microsoft.Graph.Beta.Reports.Security.GetAttackSimulationTrainingUserCoverage;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -17,16 +17,16 @@ namespace Microsoft.Graph.Beta.Reports.Security {
     /// </summary>
     public class SecurityRequestBuilder {
         /// <summary>Provides operations to call the getAttackSimulationRepeatOffenders method.</summary>
-        public MicrosoftGraphGetAttackSimulationRepeatOffendersRequestBuilder MicrosoftGraphGetAttackSimulationRepeatOffenders { get =>
-            new MicrosoftGraphGetAttackSimulationRepeatOffendersRequestBuilder(PathParameters, RequestAdapter);
+        public GetAttackSimulationRepeatOffendersRequestBuilder GetAttackSimulationRepeatOffenders { get =>
+            new GetAttackSimulationRepeatOffendersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAttackSimulationSimulationUserCoverage method.</summary>
-        public MicrosoftGraphGetAttackSimulationSimulationUserCoverageRequestBuilder MicrosoftGraphGetAttackSimulationSimulationUserCoverage { get =>
-            new MicrosoftGraphGetAttackSimulationSimulationUserCoverageRequestBuilder(PathParameters, RequestAdapter);
+        public GetAttackSimulationSimulationUserCoverageRequestBuilder GetAttackSimulationSimulationUserCoverage { get =>
+            new GetAttackSimulationSimulationUserCoverageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAttackSimulationTrainingUserCoverage method.</summary>
-        public MicrosoftGraphGetAttackSimulationTrainingUserCoverageRequestBuilder MicrosoftGraphGetAttackSimulationTrainingUserCoverage { get =>
-            new MicrosoftGraphGetAttackSimulationTrainingUserCoverageRequestBuilder(PathParameters, RequestAdapter);
+        public GetAttackSimulationTrainingUserCoverageRequestBuilder GetAttackSimulationTrainingUserCoverage { get =>
+            new GetAttackSimulationTrainingUserCoverageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

@@ -1,5 +1,5 @@
 using Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item.Assignments;
-using Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item.MicrosoftGraphSetPriority;
+using Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item.SetPriority;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the setPriority method.</summary>
-        public MicrosoftGraphSetPriorityRequestBuilder MicrosoftGraphSetPriority { get =>
-            new MicrosoftGraphSetPriorityRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the setPriority method.</summary>
+        public SetPriorityRequestBuilder SetPriority { get =>
+            new SetPriorityRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>

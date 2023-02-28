@@ -24,10 +24,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as&apos;2014-01-01T00:00:00Z&apos;.</summary>
+        public DateTimeOffset? ExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
+        }
         /// <summary>The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastRestoredDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRestoredDateTime"); }
             set { BackingStore?.Set("lastRestoredDateTime", value); }
+        }
+        /// <summary>The type of snapshot. indicates how the snapshot is to be created. Possible values are automatic, manual. Default value is automatic.</summary>
+        public CloudPcSnapshotType? SnapshotType {
+            get { return BackingStore?.Get<CloudPcSnapshotType?>("snapshotType"); }
+            set { BackingStore?.Set("snapshotType", value); }
         }
         /// <summary>The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.</summary>
         public CloudPcSnapshotStatus? Status {
@@ -49,7 +59,9 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastRestoredDateTime", n => { LastRestoredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"snapshotType", n => { SnapshotType = n.GetEnumValue<CloudPcSnapshotType>(); } },
                 {"status", n => { Status = n.GetEnumValue<CloudPcSnapshotStatus>(); } },
             };
         }
@@ -62,7 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("cloudPcId", CloudPcId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteDateTimeOffsetValue("lastRestoredDateTime", LastRestoredDateTime);
+            writer.WriteEnumValue<CloudPcSnapshotType>("snapshotType", SnapshotType);
             writer.WriteEnumValue<CloudPcSnapshotStatus>("status", Status);
         }
     }

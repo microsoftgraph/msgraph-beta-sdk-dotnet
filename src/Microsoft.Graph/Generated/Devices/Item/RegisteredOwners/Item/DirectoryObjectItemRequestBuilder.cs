@@ -1,6 +1,6 @@
-using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.MicrosoftGraphEndpoint;
-using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.MicrosoftGraphServicePrincipal;
-using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.MicrosoftGraphUser;
+using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.GraphEndpoint;
+using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.GraphServicePrincipal;
+using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.GraphUser;
 using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.Ref;
 using Microsoft.Kiota.Abstractions;
 using System;
@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item {
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public MicrosoftGraphEndpointRequestBuilder MicrosoftGraphEndpoint { get =>
-            new MicrosoftGraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+        public GraphEndpointRequestBuilder GraphEndpoint { get =>
+            new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public MicrosoftGraphServicePrincipalRequestBuilder MicrosoftGraphServicePrincipal { get =>
-            new MicrosoftGraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+        public GraphServicePrincipalRequestBuilder GraphServicePrincipal { get =>
+            new GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public MicrosoftGraphUserRequestBuilder MicrosoftGraphUser { get =>
-            new MicrosoftGraphUserRequestBuilder(PathParameters, RequestAdapter);
+        public GraphUserRequestBuilder GraphUser { get =>
+            new GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

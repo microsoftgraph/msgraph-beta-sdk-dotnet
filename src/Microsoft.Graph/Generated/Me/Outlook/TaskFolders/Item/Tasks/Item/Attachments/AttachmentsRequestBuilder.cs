@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item.Attachments.Count;
+using Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item.Attachments.CreateUploadSession;
 using Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item.Attachments.Item;
-using Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item.Attachments.MicrosoftGraphCreateUploadSession;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item.Attachment
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createUploadSession method.</summary>
-        public MicrosoftGraphCreateUploadSessionRequestBuilder MicrosoftGraphCreateUploadSession { get =>
-            new MicrosoftGraphCreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
+        public CreateUploadSessionRequestBuilder CreateUploadSession { get =>
+            new CreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

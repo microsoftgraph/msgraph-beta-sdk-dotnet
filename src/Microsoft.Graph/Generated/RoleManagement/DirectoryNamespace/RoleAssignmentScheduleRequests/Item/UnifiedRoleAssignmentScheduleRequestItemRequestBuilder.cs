@@ -2,8 +2,8 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.ActivatedUsing;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.AppScope;
+using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.Cancel;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.DirectoryScope;
-using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.MicrosoftGraphCancel;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.Principal;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.RoleDefinition;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests.Item.TargetSchedule;
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
         public AppScopeRequestBuilder AppScope { get =>
             new AppScopeRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the cancel method.</summary>
+        public CancelRequestBuilder Cancel { get =>
+            new CancelRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.</summary>
         public DirectoryScopeRequestBuilder DirectoryScope { get =>
             new DirectoryScopeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the cancel method.</summary>
-        public MicrosoftGraphCancelRequestBuilder MicrosoftGraphCancel { get =>
-            new MicrosoftGraphCancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

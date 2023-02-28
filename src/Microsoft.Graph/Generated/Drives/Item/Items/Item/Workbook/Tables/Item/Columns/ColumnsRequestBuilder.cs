@@ -1,8 +1,7 @@
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Add;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Count;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.MicrosoftGraphAdd;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.MicrosoftGraphCount;
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.MicrosoftGraphItemAtWithIndex;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -18,17 +17,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
     /// Provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
     /// </summary>
     public class ColumnsRequestBuilder {
-        /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the add method.</summary>
-        public MicrosoftGraphAddRequestBuilder MicrosoftGraphAdd { get =>
-            new MicrosoftGraphAddRequestBuilder(PathParameters, RequestAdapter);
+        public AddRequestBuilder Add { get =>
+            new AddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the count method.</summary>
-        public MicrosoftGraphCountRequestBuilder MicrosoftGraphCount { get =>
-            new MicrosoftGraphCountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -71,7 +66,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
         }
         /// <summary>
         /// Retrieve a list of tablecolumn objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/table-list-columns?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,9 +88,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
         /// Provides operations to call the itemAt method.
         /// </summary>
         /// <param name="index">Usage: index={index}</param>
-        public MicrosoftGraphItemAtWithIndexRequestBuilder MicrosoftGraphItemAtWithIndex(int? index) {
+        public ItemAtWithIndexRequestBuilder ItemAtWithIndex(int? index) {
             _ = index ?? throw new ArgumentNullException(nameof(index));
-            return new MicrosoftGraphItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
+            return new ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
         }
         /// <summary>
         /// Use this API to create a new TableColumn.

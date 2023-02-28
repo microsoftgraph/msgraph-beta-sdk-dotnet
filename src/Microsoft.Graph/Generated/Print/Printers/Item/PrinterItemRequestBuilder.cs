@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Print.Printers.Item.Connectors;
-using Microsoft.Graph.Beta.Print.Printers.Item.MicrosoftGraphGetCapabilities;
-using Microsoft.Graph.Beta.Print.Printers.Item.MicrosoftGraphResetDefaults;
-using Microsoft.Graph.Beta.Print.Printers.Item.MicrosoftGraphRestoreFactoryDefaults;
+using Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities;
+using Microsoft.Graph.Beta.Print.Printers.Item.ResetDefaults;
+using Microsoft.Graph.Beta.Print.Printers.Item.RestoreFactoryDefaults;
 using Microsoft.Graph.Beta.Print.Printers.Item.Share;
 using Microsoft.Graph.Beta.Print.Printers.Item.Shares;
 using Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers;
@@ -25,21 +25,21 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
             new ConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCapabilities method.</summary>
-        public MicrosoftGraphGetCapabilitiesRequestBuilder MicrosoftGraphGetCapabilities { get =>
-            new MicrosoftGraphGetCapabilitiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the resetDefaults method.</summary>
-        public MicrosoftGraphResetDefaultsRequestBuilder MicrosoftGraphResetDefaults { get =>
-            new MicrosoftGraphResetDefaultsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the restoreFactoryDefaults method.</summary>
-        public MicrosoftGraphRestoreFactoryDefaultsRequestBuilder MicrosoftGraphRestoreFactoryDefaults { get =>
-            new MicrosoftGraphRestoreFactoryDefaultsRequestBuilder(PathParameters, RequestAdapter);
+        public GetCapabilitiesRequestBuilder GetCapabilities { get =>
+            new GetCapabilitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to call the resetDefaults method.</summary>
+        public ResetDefaultsRequestBuilder ResetDefaults { get =>
+            new ResetDefaultsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the restoreFactoryDefaults method.</summary>
+        public RestoreFactoryDefaultsRequestBuilder RestoreFactoryDefaults { get =>
+            new RestoreFactoryDefaultsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the share property of the microsoft.graph.printer entity.</summary>
         public ShareRequestBuilder Share { get =>
             new ShareRequestBuilder(PathParameters, RequestAdapter);

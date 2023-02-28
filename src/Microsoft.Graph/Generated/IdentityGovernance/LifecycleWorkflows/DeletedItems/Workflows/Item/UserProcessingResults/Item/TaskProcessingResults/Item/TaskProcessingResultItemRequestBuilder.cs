@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.UserProcessingResults.Item.TaskProcessingResults.Item.MicrosoftGraphIdentityGovernanceResume;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.UserProcessingResults.Item.TaskProcessingResults.Item.IdentityGovernanceResume;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.UserProcessingResults.Item.TaskProcessingResults.Item.Subject;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.UserProcessingResults.Item.TaskProcessingResults.Item.TaskNamespace;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
@@ -17,8 +17,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
     /// </summary>
     public class TaskProcessingResultItemRequestBuilder {
         /// <summary>Provides operations to call the resume method.</summary>
-        public MicrosoftGraphIdentityGovernanceResumeRequestBuilder MicrosoftGraphIdentityGovernanceResume { get =>
-            new MicrosoftGraphIdentityGovernanceResumeRequestBuilder(PathParameters, RequestAdapter);
+        public IdentityGovernanceResumeRequestBuilder IdentityGovernanceResume { get =>
+            new IdentityGovernanceResumeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
