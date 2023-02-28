@@ -1,0 +1,122 @@
+---
+title: "servicePrincipal: deletePasswordSingleSignOnCredentials"
+description: "Delete single sign-on credentials using a password for a user or group."
+ms.localizationpriority: medium
+author: "sureshja"
+ms.prod: "applications"
+doc_type: "apiPageType"
+---
+
+# servicePrincipal: deletePasswordSingleSignOnCredentials
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Delete single sign-on credentials using a password for a user or group.
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+| Permission type                        | Permissions (from least to most privileged) |
+|:---------------------------------------|:--------------------------------------------|
+| Delegated (work or school account)     | Application.ReadWrite.All and Directory.Read.All, Directory.ReadWrite.All |
+| Delegated (personal Microsoft account) | Not supported. |
+| Application                            | Application.ReadWrite.All and Directory.Read.All, Directory.ReadWrite.All |
+
+> [!NOTE]
+> Users can create credentials for themselves. Service principal owners and admins with the following roles can create credentials for any user or group: GlobalAdministrator, ApplicationAdministrator, CloudApplicationAdministrator. To learn more, see [Directory roles](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles).
+
+## HTTP request
+
+You can address the service principal using either its **id** or **appId**. **id** and **appId** are referred to as the **Object ID** and **Application (Client) ID**, respectively, in the Azure portal.
+<!-- { "blockType": "ignored" } -->
+
+```http
+POST /servicePrincipals/{id}/deletePasswordSingleSignOnCredentials
+POST /servicePrincipals(appId='{appId}')/deletePasswordSingleSignOnCredentials
+```
+
+## Request headers
+
+| Name          | Description   |
+|:--------------|:--------------|
+| Authorization | Bearer {token}. Required. |
+| Content-Type  | application/json. Required.  |
+
+## Request body
+
+In the request body, provide a JSON object with the following parameters.
+
+| Parameter    | Type        | Description |
+|:-------------|:------------|:------------|
+|id|String|The ID of the user or group this credential set belongs to.|
+
+## Response
+
+If successful, this method returns a `204 No Content` response code. It does not return anything in the response body.
+
+## Examples
+
+### Request
+
+The following is an example of a request.
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "serviceprincipal_deletepasswordsinglesignoncredentials"
+}-->
+
+```http
+POST https://graph.microsoft.com/beta/servicePrincipals/{id}/deletePasswordSingleSignOnCredentials
+Content-type: application/json
+
+{
+  "id": "5793aa3b-cca9-4794-679a240f8b58"
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var id = "5793aa3b-cca9-4794-679a240f8b58";
+
+await graphClient.ServicePrincipals["{servicePrincipal-id}"]
+	.DeletePasswordSingleSignOnCredentials(id)
+	.Request()
+	.PostAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+### Response
+
+The following is an example of the response.
+<!-- {
+  "blockType": "response"
+} -->
+
+```http
+HTTP/1.1 204 No Content
+```
+
+<!-- uuid: 16cd6b66-4b1a-43a1-adaf-3a886856ed98
+2019-02-04 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "servicePrincipal: deletePasswordSingleSignOnCredentials",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": ""
+}-->

@@ -1,0 +1,145 @@
+---
+title: "printer: create"
+description: Creates (registers) a printer with the Universal Print service.
+author: braedenp-msft
+ms.localizationpriority: medium
+ms.prod: cloud-printing
+doc_type: apiPageType
+---
+
+# printer: create
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Create (register) a printer with the Universal Print service. This is a long-running operation and as such, it returns a [printerCreateOperation](../resources/printercreateoperation.md) that can be used to track and verify the registration of the printer.
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+In addition to the following permissions, the user's tenant must have an active Universal Print subscription. The signed in user must be a [Printer Administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#printer-administrator).
+
+|Permission type | Permissions (from least to most privileged) |
+|:---------------|:--------------------------------------------|
+|Delegated (work or school account)| Printer.Create, Printer.ReadWrite.All, Printer.FullControl.All |
+|Delegated (personal Microsoft account)|Not Supported.|
+|Application| Not supported. |
+
+## HTTP request
+<!-- { "blockType": "ignored" } -->
+```http
+POST /print/printers/create
+```
+## Request headers
+| Name       | Description|
+|:-----------|:-----------|
+| Authorization | Bearer {token}. Required. |
+| Content-type  | application/json. Required.|
+
+## Request body
+In the request body, provide a JSON object with the following properties.
+
+| Parameter      | Type    |Description| Required? |
+|:---------------|:--------|:----------|:----------|
+|displayName|String|The display name to assign to the printer.|Yes|
+|manufacturer|String|The manufacturer of the printer.|Yes|
+|model|String|The model of the printer.|Yes|
+|physicalDeviceId|String|The physical device UUID of the printer. Required if the `hasPhysicalDevice` property is true.|No|
+|hasPhysicalDevice|Boolean|True if the printer has physical output device, false otherwise. If omitted, the default value is true.|No|
+|certificateSigningRequest|[printCertificateSigningRequest](../resources/printcertificatesigningrequest.md)|The X.509 Certificate Signing Request (CSR) for the certificate created and used by the printer to identify itself.|Yes|
+|connectorId|String|Id of Connector acting as proxy to the printer.|No|
+
+## Response
+If successful, this method returns a `202 Accepted` response code and a link to the associated [printerCreateOperation](../resources/printercreateoperation.md) in the `Operation-Location` header.
+
+Making a GET request to the linked URL can be used to get the status of an ongoing printer registration. Once printer registration has completed successfully, a GET request to the linked URL will contain the created printer object and registered certificate.
+
+## Example
+### Request
+The following is an example of the request.
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "create_printer"
+}-->
+```http
+POST https://graph.microsoft.com/beta/print/printers/create
+Content-type: application/json
+
+{
+  "displayName": "Test Printer",
+  "manufacturer": "Test Printer Manufacturer",
+  "model": "Test Printer Model",
+  "physicalDeviceId": null,
+  "hasPhysicalDevice": false,
+  "certificateSigningRequest": { 
+    "content": "{content}",
+    "transportKey": "{sampleTransportKey}"
+  },
+  "connectorId": null
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var displayName = "Test Printer";
+
+var manufacturer = "Test Printer Manufacturer";
+
+var model = "Test Printer Model";
+
+String physicalDeviceId = null;
+
+var hasPhysicalDevice = false;
+
+var certificateSigningRequest = new PrintCertificateSigningRequestObject
+{
+	Content = "{content}",
+	TransportKey = "{sampleTransportKey}"
+};
+
+String connectorId = null;
+
+await graphClient.Print.Printers
+	.Create(displayName,manufacturer,model,certificateSigningRequest,physicalDeviceId,hasPhysicalDevice,connectorId)
+	.Request()
+	.PostAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+### Response
+The following is an example of the response.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true
+} -->
+```http
+HTTP/1.1 202 Accepted
+Operation-Location: https://graph.microsoft.com/beta/print/operations/f221760a-52e8-4c11-b8c5-5dfaef3a49db
+Retry-After: 5
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "printers: create",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": ""
+}-->

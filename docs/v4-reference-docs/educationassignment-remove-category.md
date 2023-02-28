@@ -1,0 +1,81 @@
+---
+title: "Remove educationCategory"
+description: "Remove an existing educationCategory from this educationAssignment."
+ms.localizationpriority: medium
+author: "dipakboyed"
+ms.prod: "education"
+ms.collection: "education"
+doc_type: apiPageType
+---
+
+# Remove educationCategory
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Remove an [educationCategory](../resources/educationcategory.md) from an [educationAssignment](../resources/educationassignment.md). Only teachers can perform this operation.
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) |  EduAssignments.ReadWriteBasic, EduAssignments.ReadWrite  |
+|Delegated (personal Microsoft account) |  Not supported.  |
+|Application | Not supported.  | 
+
+## HTTP request
+<!-- { "blockType": "ignored" } -->
+```http
+DELETE /education/classes/{id}/assignments/{id}/categories/{id}/$ref
+```
+## Request headers
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer {token}. Required.  |
+
+## Request body
+Do not supply a request body for this method.
+
+## Response
+If successful, this method returns a `204 No Content` response code.
+
+## Example
+### Request
+The following is an example of the request.
+<!-- {
+  "blockType": "ignored",
+  "name": "add_educationcategory_to_educationassignment",
+  "sampleKeys": ["11021", "19002", "ec98f158-341d-4fea-9f8c-14a250d489ac"]
+}-->
+```http
+DELETE https://graph.microsoft.com/beta/education/classes/11021/assignments/19002/categories/ec98f158-341d-4fea-9f8c-14a250d489ac/$ref
+```
+
+### Response
+The following is an example of the response. 
+
+<!-- {
+  "blockType": "ignored",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.educationAssignmentResource"
+} -->
+```http
+HTTP/1.1 204 No Content
+```
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!--
+{
+  "type": "#page.annotation",
+  "description": "Remove an educationCategory from an educationAssignment",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": []
+}
+-->
+
+

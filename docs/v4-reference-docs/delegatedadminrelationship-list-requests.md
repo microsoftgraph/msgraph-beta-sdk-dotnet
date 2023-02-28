@@ -1,0 +1,123 @@
+---
+title: "List requests"
+description: "Get a list of the delegatedAdminRelationshipRequest objects and their properties."
+author: "adtangir"
+ms.localizationpriority: medium
+ms.prod: "customer-relationship-management"
+doc_type: apiPageType
+---
+
+# List requests
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Get a list of the [delegatedAdminRelationshipRequest](../resources/delegatedadminrelationshiprequest.md) objects and their properties.
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+|Permission type|Permissions (from least to most privileged)|
+|:---|:---|
+|Delegated (work or school account)| DelegatedAdminRelationship.Read.All, DelegatedAdminRelationship.ReadWrite.All |
+|Delegated (personal Microsoft account)| Not supported. |
+|Application| Not supported. |
+
+## HTTP request
+
+<!-- {
+  "blockType": "ignored"
+}
+-->
+``` http
+GET /tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationshipId}/requests
+```
+
+## Optional query parameters
+This method supports the `$expand`, `$select`, `$filter`, `$top`, `$count`, and `$skipToken`  [OData query parameters](/graph/query-parameters) to help customize the response.
+
+## Request headers
+|Name|Description|
+|:---|:---|
+|Authorization|Bearer {token}. Required.|
+
+## Request body
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and a collection of [delegatedAdminRelationshipRequest](../resources/delegatedadminrelationshiprequest.md) objects in the response body.
+
+Each **delegatedAdminRelationshipRequest** object contains an **@odata.etag** property as per RFC2616.
+
+## Examples
+
+### Request
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "list_delegatedadminrelationshiprequest",
+  "sampleKeys": ["5d027261-d21f-4aa9-b7db-7fa1f56fb163-8777b240-c6f0-4469-9e98-a3205431b836"]
+}
+-->
+``` http
+GET https://graph.microsoft.com/beta/tenantRelationships/delegatedAdminRelationships/5d027261-d21f-4aa9-b7db-7fa1f56fb163-8777b240-c6f0-4469-9e98-a3205431b836/requests
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var requests = await graphClient.TenantRelationships.DelegatedAdminRelationships["{delegatedAdminRelationship-id}"].Requests
+	.Request()
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+### Response
+>**Note:** The response object shown here might be shortened for readability.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "Collection(microsoft.graph.delegatedAdminRelationshipRequest)"
+}
+-->
+``` http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/beta/tenantRelationships/$metadata#requests",
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.delegatedAdminRelationshipRequest",
+      "@odata.etag": "W/\"JyIxODAwZTY4My0wMDAwLTAyMDAtMDAwMC02MTU0OWFmMDAwMDAiJw==\"",
+      "id": "ae5a6b9e-6355-43dd-b708-48486b69c3ff",
+      "action": "lockForApproval",
+      "status": "succeeded",
+      "createdDateTime": "2022-02-01T06:14:55.5398865Z",
+      "lastModifiedDateTime": "2022-02-01T06:14:55.5398865Z"
+    },
+    {
+      "@odata.type": "#microsoft.graph.delegatedAdminRelationshipRequest",
+      "@odata.etag": "W/\"JyIxODAwZTY4My0wMDAwLTAyMDAtMDAwMC02MTU0OWFmMDAwMDAiJw==\"",
+      "id": "8a1b6676-5c12-47ba-8d3a-1d38387b0909",
+      "action": "terminate",
+      "status": "running",
+      "createdDateTime": "2022-03-02T06:11:55.5398865Z",
+      "lastModifiedDateTime": "2022-03-02T06:11:55.5398865Z"
+    }
+  ]
+}
+```
+

@@ -1,0 +1,306 @@
+---
+title: "List mailFolders"
+description: "Get all the mail folders in the signed-in user's mailbox."
+ms.localizationpriority: medium
+doc_type: apiPageType
+author: "abheek-das"
+ms.prod: "outlook"
+---
+
+# List mailFolders
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Get all the mail folders in the specified user's mailbox, including any [mail search folders](../resources/mailsearchfolder.md).
+
+By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | Mail.ReadBasic, Mail.Read, Mail.ReadWrite    |
+|Delegated (personal Microsoft account) | Mail.ReadBasic, Mail.Read, Mail.ReadWrite    |
+|Application | Mail.ReadBasic.All, Mail.Read, Mail.ReadWrite |
+
+## HTTP request
+
+To get all the mail folders in the specified user's mailbox, excluding those that are hidden:
+<!-- { "blockType": "ignored" } -->
+```http
+GET /me/mailFolders
+GET /users/{id | userPrincipalName}/mailFolders
+```
+
+To include _hidden_ mail folders in the response:
+<!-- { "blockType": "ignored" } -->
+```http
+GET /me/mailFolders/?includeHiddenFolders=true
+GET /users/{id | userPrincipalName}/mailFolders/?includeHiddenFolders=true
+```
+
+## Query parameters
+To return a list of all mailFolders including those that are hidden (their **isHidden** property is true), in the request URL, specify the 
+`includeHiddenFolders` query parameter as `true`, as shown in the [HTTP request](#http-request) section.
+
+This method also supports [OData query parameters](/graph/query-parameters) to help customize the response.
+
+## Request headers
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer {token}. Required.  |
+
+## Request body
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and collection of [mailFolder](../resources/mailfolder.md) objects in the response body.
+## Examples
+
+### Example 1: List mail folders in the signed-in user's mailbox
+
+This example includes a **mailSearchFolder** object in the response. The mail search folder is a child folder under the Inbox with the display name "Weekly digests".
+
+#### Request
+The following is an example of the request.
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "get_mailfolders"
+}-->
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/me/mailFolders
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var mailFolders = await graphClient.Me.MailFolders
+	.Request()
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+The following is an example of the response. 
+
+>**Note:** The response object shown here might be shortened for readability. 
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.mailFolder",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users('68ca8ec0-11f8-456b-a785-70d9936650d5')/mailFolders",
+    "value": [
+        {
+            "id": "AQMkADYAAAIBXQAAAA==",
+            "displayName": "Archive",
+            "parentFolderId": "AQMkADYAAAIBCAAAAA==",
+            "childFolderCount": 0,
+            "unreadItemCount": 0,
+            "totalItemCount": 0,
+            "wellKnownName": "archive",
+            "isHidden": false
+        },
+        {
+            "id": "AQMkADYAAAIBFQAAAA==",
+            "displayName": "Conversation History",
+            "parentFolderId": "AQMkADYAAAIBCAAAAA==",
+            "childFolderCount": 1,
+            "unreadItemCount": 0,
+            "totalItemCount": 0,
+            "wellKnownName": "conversationhistory",
+            "isHidden": false
+        },
+        {
+            "id": "AQMkADYAAAIBCgAAAA==",
+            "displayName": "Deleted Items",
+            "parentFolderId": "AQMkADYAAAIBCAAAAA==",
+            "childFolderCount": 0,
+            "unreadItemCount": 0,
+            "totalItemCount": 0,
+            "wellKnownName": "deleteditems",
+            "isHidden": false
+        },
+        {
+            "id": "AQMkADYAAAIBDwAAAA==",
+            "displayName": "Drafts",
+            "parentFolderId": "AQMkADYAAAIBCAAAAA==",
+            "childFolderCount": 0,
+            "unreadItemCount": 0,
+            "totalItemCount": 0,
+            "wellKnownName": "drafts",
+            "isHidden": false
+        },
+        {
+            "id": "AQMkADYAAAIBDAAAAA==",
+            "displayName": "Inbox",
+            "parentFolderId": "AQMkADYAAAIBCAAAAA==",
+            "childFolderCount": 1,
+            "unreadItemCount": 70,
+            "totalItemCount": 71,
+            "wellKnownName": "inbox",
+            "isHidden": false
+        },
+        {
+            "@odata.type": "#microsoft.graph.mailSearchFolder",
+            "id": "AAMkADYRAAAZg1yTAAA=",
+            "displayName": "Weekly digests",
+            "parentFolderId": "AQMkADYAAAIBDAAAAA==",
+            "childFolderCount": 0,
+            "unreadItemCount": 4,
+            "totalItemCount": 5,
+            "wellKnownName": null,
+            "isHidden": false,
+            "isSupported": true,
+            "filterQuery": "contains(subject, 'weekly digest')"
+        },
+        {
+            "id": "AQMkADYAAAIBGQAAAA==",
+            "displayName": "Junk Email",
+            "parentFolderId": "AQMkADYAAAIBCAAAAA==",
+            "childFolderCount": 0,
+            "unreadItemCount": 0,
+            "totalItemCount": 0,
+            "wellKnownName": "junkemail",
+            "isHidden": false
+        },
+        {
+            "id": "AQMkADYAAAIBCwAAAA==",
+            "displayName": "Outbox",
+            "parentFolderId": "AQMkADYAAAIBCAAAAA==",
+            "childFolderCount": 0,
+            "unreadItemCount": 0,
+            "totalItemCount": 0,
+            "wellKnownName": "outbox",
+            "isHidden": false
+        },
+        {
+            "id": "AQMkADYAAAIBCQAAAA==",
+            "displayName": "Sent Items",
+            "parentFolderId": "AQMkADYAAAIBCAAAAA==",
+            "childFolderCount": 0,
+            "unreadItemCount": 0,
+            "totalItemCount": 0,
+            "wellKnownName": "sentitems",
+            "isHidden": false
+        }
+    ]
+}
+```
+
+
+### Example 2: Include hidden folders in the signed-in user's mailbox
+
+The next example uses the `includeHiddenFolders` query parameter to get a list of mail folders including hidden mail folders. The response includes the "Clutters" folder that has the **isHidden** set to true.
+
+#### Request
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "get_hiddenmailfolders"
+}-->
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/me/mailFolders/?includeHiddenFolders=true
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var queryOptions = new List<QueryOption>()
+{
+	new QueryOption("includeHiddenFolders", "true")
+};
+
+var mailFolders = await graphClient.Me.MailFolders
+	.Request( queryOptions )
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+The following is an example of the response.
+
+>**Note:** The response object shown here is shortened for readability, and doesn't include all the default folders in a user mailbox.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.mailFolder",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users('68ca8ec0-11f8-456b-a785-70d9936650d5')/mailFolders",
+    "value": [
+        {
+            "id": "AAMkADg3NTY5MDg4LWMzYmQtNDQzNi05OTgwLWAAA=",
+            "displayName": "Clutters",
+            "parentFolderId": "AAMkADg3NTY5MDg4LWMzYmQtEIAAA=",
+            "childFolderCount": 0,
+            "unreadItemCount": 0,
+            "totalItemCount": 0,
+            "wellKnownName": null,
+            "isHidden": true
+        },
+        {
+            "id": "AAMkADg3NTY5MDg4LWMzYmQtNDQzNi05OTgwLWAAA=",
+            "displayName": "Conversation History",
+            "parentFolderId": "AAMkADg3NTY5MDg4LWMzYmQtEIAAA=",
+            "childFolderCount": 1,
+            "unreadItemCount": 0,
+            "totalItemCount": 0,
+            "wellKnownName": "conversationhistory",
+            "isHidden": false
+        }
+    ]
+}
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!--
+{
+  "type": "#page.annotation",
+  "description": "List mailFolders",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+  ]
+}
+-->

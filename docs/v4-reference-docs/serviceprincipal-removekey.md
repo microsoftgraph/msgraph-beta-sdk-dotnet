@@ -1,0 +1,112 @@
+---
+title: "servicePrincipal: removeKey"
+description: "Remove a key credential from a servicePrincipal"
+ms.localizationpriority: medium
+author: "sureshja"
+ms.prod: "applications"
+doc_type: "apiPageType"
+---
+
+# servicePrincipal: removeKey
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Remove a key credential from a [servicePrincipal](../resources/serviceprincipal.md). This method along with [addKey](serviceprincipal-addkey.md) can be used by a servicePrincipal to automate rolling its expiring keys.
+
+> [!NOTE]
+> [Create servicePrincipal](../api/serviceprincipal-post-serviceprincipals.md) and
+[Update servicePrincipal](../api/serviceprincipal-update.md) operations can continue to be used to add and update key credentials for any servicePrincipal with or without a user's context.
+
+As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+
+## Permissions
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | Application.ReadWrite.All, Directory.ReadWrite.All   |
+|Delegated (personal Microsoft account) | None.    |
+|Application | Application.ReadWrite.OwnedBy, Application.ReadWrite.All, Directory.ReadWrite.All |
+
+## HTTP request
+
+You can address the service principal using either its **id** or **appId**. **id** and **appId** are referred to as the **Object ID** and **Application (Client) ID**, respectively, in the Azure portal.
+<!-- { "blockType": "ignored" } -->
+
+```http
+POST /serviceprincipals/{id}/removeKey
+POST /serviceprincipals(appId='{appId}')/removeKey
+```
+
+## Request headers
+
+| Name           | Description                |
+|:---------------|:---------------------------|
+| Authorization  | Bearer {token}. Required.  |
+| Content-Type   | application/json. Required.|
+
+## Request body
+
+In the request body, provide the following required properties.
+
+| Property	| Type | Description|
+|:----------|:-----|:-----------|
+| keyId     | Guid | The unique identifier for the password.|
+| proof | String | A self-signed JWT token used as a proof of possession of the existing keys. This JWT token must be signed using the private key of one of the servicePrincipal's existing valid certificates. The token should contain the following claims:<ul><li>`aud` - Audience needs to be `00000002-0000-0000-c000-000000000000`.</li><li>`iss` - Issuer needs to be the __id__  of the servicePrincipal that is making the call.</li><li>`nbf` - Not before time.</li><li>`exp` - Expiration time should be `nbf` + 10 mins.</li></ul><br>For steps to generate this proof of possession token, see [Generating proof of possession tokens for rolling keys](/graph/application-rollkey-prooftoken).|
+
+## Response
+
+If successful, this method returns a `204 No content` response code.
+
+## Examples
+
+The following example shows how to call this API.
+
+### Request
+
+The following is an example of the request.
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "serviceprincipal_removekey"
+}-->
+
+```http
+POST https://graph.microsoft.com/beta/serviceprincipals/{id}/removeKey
+Content-Type: application/json
+
+{
+    "keyId": "f0b0b335-1d71-4883-8f98-567911bfdca6",
+    "proof":"eyJ0eXAiOiJ..."
+}
+```
+
+### Response
+
+The following is an example of the response.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true
+} -->
+
+```http
+HTTP/1.1 204 No Content
+```
+
+<!-- uuid: 16cd6b66-4b1a-43a1-adaf-3a886856ed98
+2019-02-04 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "servicePrincipal: removeKey",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": ""
+}-->
+
+
+

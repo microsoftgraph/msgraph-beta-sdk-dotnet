@@ -1,0 +1,416 @@
+---
+title: "List group transitive members"
+description: "Get a list of the group's members."
+ms.localizationpriority: medium
+author: "psaffaie"
+ms.prod: "groups"
+doc_type: apiPageType
+---
+
+# List group transitive members
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Get a list of the group's members. A group can different object types as members. For more information about supported member types for different groups, see [Group membership](../resources/groups-overview.md#group-membership).
+
+This operation is transitive and returns a flat list of all nested members. An attempt to filter by an OData cast that represents an unsupported member type returns a `400 Bad Request` error with the `Request_UnsupportedQuery` code.
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+| Permission type                        | Permissions (from least to most privileged)                                                              |
+| :------------------------------------- | :------------------------------------------------------------------------------------------------------- |
+| Delegated (work or school account)     | GroupMember.Read.All, Group.Read.All, GroupMember.ReadWrite.All, Group.ReadWrite.All, Directory.Read.All |
+| Delegated (personal Microsoft account) | Not supported.                                                                                           |
+| Application                            | GroupMember.Read.All, Group.Read.All, GroupMember.ReadWrite.All, Group.ReadWrite.All, Directory.Read.All |
+
+> **Note:** To list the members of a hidden membership group, the _Member.Read.Hidden_ permission is required.
+
+
+When an application queries a relationship that returns a directoryObject type collection, if it does not have permission to read a certain derived type (like device), members of that type are returned but with limited information. With this behaviour applications can request the least privileged permissions they need, rather than rely on the set of *Directory.** permissions. For details, see [Limited information returned for inaccessible member objects](/graph/permissions-overview#limited-information-returned-for-inaccessible-member-objects).
+
+## HTTP request
+
+<!-- { "blockType": "ignored" } -->
+
+```http
+GET /groups/{id}/transitiveMembers
+```
+
+## Optional query parameters
+
+This method supports the [OData query parameters](/graph/query-parameters) to help customize the response, including `$search`, `$count`, and `$filter`. You can use `$search` on the **displayName** and **description** properties. When items are added or updated for this resource, they are specially indexed for use with the `$count` and `$search` query parameters. There can be a slight delay between when an item is added or updated and when it is available in the index.
+
+This API returns up to 100 member objects by default. The maximum page size that you can request through the `$top` query parameter is 999 objects.
+
+To filter the results on the OData type, such as `microsoft.graph.user` or `microsoft.graph.group`, you must use the [advanced query parameters](/graph/aad-advanced-queries). That is, the **ConsistencyLevel** header set to `eventual` and the `$count=true` query string.
+
+## Request headers
+
+| Name             | Description                                                                                                                                                                                                       |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorization    | Bearer {token}. Required.                                                                                                                                                                                         |
+| ConsistencyLevel | eventual. This header and `$count` are required when using the `$search`, `$filter`, `$orderby`, or OData cast query parameters. It uses an index that might not be up-to-date with recent changes to the object. |
+
+## Request body
+
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and collection of [directoryObject](../resources/directoryobject.md) objects in the response body.
+
+ An attempt to filter by an OData cast that represents an unsupported member type returns a `400 Bad Request` error with the `Request_UnsupportedQuery` code. For example, `/groups/{id}}/transitiveMembers/microsoft.graph.group` when the group is a Microsoft 365 group will return this error, because Microsoft 365 groups cannot have other groups as members.
+
+## Examples
+
+### Example 1: Get the transitive membership of a group
+
+#### Request
+
+The following is an example of the request.
+
+# [HTTP](#tab/http)
+
+<!-- {
+  "blockType": "request",
+  "name": "get_group_transitivemembers"
+}-->
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/groups/{id}/transitiveMembers
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var transitiveMembers = await graphClient.Groups["{group-id}"].TransitiveMembers
+	.Request()
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.directoryObject",
+  "isCollection": true
+} -->
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "value": [
+    {
+      "id": "11111111-2222-3333-4444-555555555555",
+      "mail": "group1@contoso.com",
+      "mailEnabled": true,
+      "mailNickname": "Contoso1",
+      "securityEnabled": true
+    }
+  ]
+}
+```
+
+### Example 2: Get only a count of transitive membership
+
+#### Request
+
+The following is an example of the request.
+
+<!-- {
+  "blockType": "ignored",
+  "name": "get_group_transitivemembers_count"
+}-->
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/groups/{id}/transitiveMembers/$count
+ConsistencyLevel: eventual
+```
+
+#### Response
+
+The following is an example of the response.
+
+<!-- {
+  "blockType": "response"
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: text/plain
+
+893
+```
+
+### Example 3: Use the microsoft.graph.group OData cast to get only members that are groups
+
+#### Request
+
+The following is an example of the request.
+
+# [HTTP](#tab/http)
+
+<!-- {
+  "blockType": "request",
+  "name": "get_group_transitivemembers_odataCast"
+}-->
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/groups/{id}/transitivemembers/microsoft.graph.group?$count=true
+ConsistencyLevel: eventual
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var queryOptions = new List<QueryOption>()
+{
+	new QueryOption("$count", "true")
+};
+
+var group = await graphClient.Groups["{group-id}"].TransitiveMembers
+	.Request( queryOptions )
+	.Header("ConsistencyLevel","eventual")
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.group",
+  "isCollection": true
+} -->
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#groups",
+  "@odata.count": 2,
+  "value": [
+    {
+      "@odata.id": "https://graph.microsoft.com/v2/927c6607-8060-4f4a-a5f8-34964ac78d70/directoryObjects/4d0ef681-e88f-42a3-a2db-e6bf1e249e10/Microsoft.DirectoryServices.Group",
+      "id": "4d0ef681-e88f-42a3-a2db-e6bf1e249e10",
+      "organizationId": "927c6607-8060-4f4a-a5f8-34964ac78d70",
+      "description": null,
+      "displayName": "Executives",
+      "groupTypes": [],
+      "mail": "Executives@contoso.com",
+      "mailEnabled": true,
+      "mailNickname": "Executives",
+    },
+    {
+      "@odata.id": "https://graph.microsoft.com/v2/927c6607-8060-4f4a-a5f8-34964ac78d70/directoryObjects/d9fb0c47-c783-40a1-bce1-53b52ada51fc/Microsoft.DirectoryServices.Group",
+      "id": "d9fb0c47-c783-40a1-bce1-53b52ada51fc",
+      "organizationId": "927c6607-8060-4f4a-a5f8-34964ac78d70",
+      "displayName": "Project Falcon",
+      "groupTypes": [],
+      "mail": "Falcon@contoso.com",
+      "mailEnabled": true,
+      "mailNickname": "Falcon",
+    }
+  ]
+}
+```
+
+### Example 4: Use OData cast and $search to get membership in groups with display names that contain the letters 'tier' including a count of returned objects
+
+#### Request
+
+The following is an example of the request.
+
+# [HTTP](#tab/http)
+
+<!-- {
+  "blockType": "request",
+  "name": "get_tier_count"
+}-->
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/groups/{id}/transitiveMembers/microsoft.graph.user?$count=true&$orderBy=displayName&$search="displayName:tier"&$select=displayName,id
+ConsistencyLevel: eventual
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var queryOptions = new List<QueryOption>()
+{
+	new QueryOption("$count", "true"),
+	new QueryOption("$search", "\"displayName:tier\"")
+};
+
+var user = await graphClient.Groups["{group-id}"].TransitiveMembers
+	.Request( queryOptions )
+	.Header("ConsistencyLevel","eventual")
+	.Select("displayName,id")
+	.OrderBy("displayName")
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.group",
+  "isCollection": true
+} -->
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "@odata.context":"https://graph.microsoft.com/beta/$metadata#groups(displayName,id)",
+  "@odata.count":7,
+  "value":[
+    {
+      "displayName":"Contoso-tier Query Notification",
+      "id":"11111111-2222-3333-4444-555555555555"
+    }
+  ]
+}
+```
+
+### Example 5: Use OData cast and $filter to get user membership in groups with a display name that starts with 'A' including a count of returned objects
+
+#### Request
+
+The following is an example of the request.
+
+# [HTTP](#tab/http)
+
+<!-- {
+  "blockType": "request",
+  "name": "list_groups_transitivemembers_startswith"
+}-->
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/groups/{id}/transitiveMembers/microsoft.graph.user?$count=true&$orderBy=displayName&$filter=startswith(displayName, 'a')
+ConsistencyLevel: eventual
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var queryOptions = new List<QueryOption>()
+{
+	new QueryOption("$count", "true")
+};
+
+var user = await graphClient.Groups["{group-id}"].TransitiveMembers
+	.Request( queryOptions )
+	.Header("ConsistencyLevel","eventual")
+	.Filter("startswith(displayName, 'a')")
+	.OrderBy("displayName")
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+> **Note:** The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.group",
+  "isCollection": true
+} -->
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "@odata.context":"https://graph.microsoft.com/beta/$metadata#groups",
+  "@odata.count":76,
+  "value":[
+    {
+      "displayName":"AAD Contoso Users",
+      "mail":"AADContoso_Users@contoso.com",
+      "mailEnabled":true,
+      "mailNickname":"AADContoso_Users",
+      "securityEnabled":true
+    }
+  ]
+}
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!--
+{
+  "type": "#page.annotation",
+  "description": "List transitive group members",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+  ]
+}
+-->

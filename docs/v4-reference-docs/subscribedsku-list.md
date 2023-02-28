@@ -1,0 +1,137 @@
+---
+title: "List subscribedSkus"
+description: "Retrieve the list of commercial subscriptions that an organization has acquired."
+ms.localizationpriority: medium
+author: "SumitParikh"
+ms.prod: "directory-management"
+doc_type: apiPageType
+---
+
+# List subscribedSkus
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see [Product names and service plan identifiers for licensing](/azure/active-directory/enterprise-users/licensing-service-plan-reference).
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | Organization.Read.All, Directory.Read.All, Directory.ReadWrite.All    |
+|Delegated (personal Microsoft account) | Not supported.    |
+|Application | Organization.Read.All, Directory.Read.All, Organization.ReadWrite.All, Directory.ReadWrite.All |
+
+## HTTP request
+<!-- { "blockType": "ignored" } -->
+```http
+GET /subscribedSkus
+```
+## Optional query parameters
+
+This method supports only the `$select` [OData query parameter](/graph//query-parameters) to help customize the response. It does not support `$filter`.
+
+## Request headers
+
+| Name       | Description|
+|:-----------|:----------|
+| Authorization  | Bearer {token}. Required. |
+
+## Request body
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and collection of [subscribedSku](../resources/subscribedsku.md) objects in the response body.
+## Example
+### Request
+Here is an example of the request.
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "get_subscribedskus"
+}-->
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/subscribedSkus
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var subscribedSkus = await graphClient.SubscribedSkus
+	.Request()
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+### Response
+The following is an example of the response. 
+>**Note:** The response object shown here might be shortened for readability.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.subscribedSku",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "value": [
+    {
+      "capabilityStatus": "Enabled",
+      "consumedUnits": 20,
+      "prepaidUnits": {
+        "enabled": 20,
+        "suspended": 0,
+        "warning": 0
+      },
+      "servicePlans": [
+        {
+          "servicePlanId": "113feb6c-3fe4-4440-bddc-54d774bf0318",
+          "servicePlanName": "EXCHANGE_S_FOUNDATION",
+          "provisioningStatus": "Success",
+          "appliesTo": "Company"
+        }
+      ],
+      "skuId": "b05e124f-c7cc-45a0-a6aa-8cf78c946968",
+      "skuPartNumber": "EMSPREMIUM"
+    }
+  ]
+}
+```
+
+## See also
+
++ [Product names and service plan identifiers for licensing](/azure/active-directory/enterprise-users/licensing-service-plan-reference)
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!--
+{
+  "type": "#page.annotation",
+  "description": "List subscribedSkus",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+  ]
+}
+-->
+
+

@@ -1,0 +1,137 @@
+---
+title: "Update inferenceClassificationOverride"
+description: "Change the **classifyAs** field of a Focused Inbox override as specified. "
+ms.localizationpriority: medium
+doc_type: apiPageType
+author: "abheek-das"
+ms.prod: mail
+---
+
+# Update inferenceClassificationOverride
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Change the **classifyAs** field of a [focused Inbox](../resources/manage-focused-inbox.md) override as specified.
+
+You cannot use PATCH to change any other fields in an [inferenceClassificationOverride](../resources/inferenceclassificationoverride.md) instance.
+
+If an override exists for a sender and the sender changes his/her display name, you can use [POST](inferenceclassification-post-overrides.md) to force an update to the name field in the existing override.
+
+If an override exists for a sender and the sender changes his/her SMTP address, [deleting](inferenceclassificationoverride-delete.md) the existing override and [creating](inferenceclassification-post-overrides.md) a new one with
+the new SMTP address is the only way to "update" the override for this sender.
+
+## Permissions
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account) | Mail.ReadWrite    |
+|Delegated (personal Microsoft account) | Mail.ReadWrite    |
+|Application | Mail.ReadWrite |
+
+## HTTP request
+<!-- { "blockType": "ignored" } -->
+```http
+PATCH /me/inferenceClassification/overrides/{id}
+PATCH /users/{id}/inferenceClassification/overrides/{id}
+```
+
+## Request headers
+| Name       | Type | Description|
+|:---------------|:--------|:----------|
+| Authorization  | string  | Bearer {token}. Required. |
+| Content-Type | string  | Nature of the data in the body of an entity. Required. |
+
+## Request body
+In the request body, supply the new value for **classifyAs**. For best performance you shouldn't include existing values that are not changing.
+
+| Property	   | Type	|Description|
+|:---------------|:--------|:----------|
+|classifyAs|string| Specifies how incoming messages from a specific sender should always be classified as. Possible values are: `focused`, `other`.|
+
+## Response
+
+If successful, this method returns a `200 OK` response code and updated [inferenceClassificationOverride](../resources/inferenceclassificationoverride.md) object in the response body.
+## Example
+### Request
+The following example changes the override for the SMTP address randiw@adatum.onmicrosoft.com from `other` to `focused`.
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "update_inferenceclassificationoverride"
+}-->
+```http
+PATCH https://graph.microsoft.com/beta/me/inferenceClassification/overrides/{id}
+Content-type: application/json
+
+{
+  "classifyAs": "focused"
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var inferenceClassificationOverride = new InferenceClassificationOverride
+{
+	ClassifyAs = InferenceClassificationType.Focused
+};
+
+await graphClient.Me.InferenceClassification.Overrides["{inferenceClassificationOverride-id}"]
+	.Request()
+	.UpdateAsync(inferenceClassificationOverride);
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+### Response
+The following is an example of the response. 
+
+>**Note:** The response object shown here might be shortened for readability.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.inferenceClassificationOverride"
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "classifyAs": "focused",
+  "senderEmailAddress": {
+    "name": "Randi Welch",
+    "address": "randiw@adatum.onmicrosoft.com"
+  },
+  "id": "98f5bdef-576a-404d-a2ea-07a3cf34af4r"
+}
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!--
+{
+  "type": "#page.annotation",
+  "description": "Update inferenceclassificationoverride",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+  ]
+}
+-->
+
+

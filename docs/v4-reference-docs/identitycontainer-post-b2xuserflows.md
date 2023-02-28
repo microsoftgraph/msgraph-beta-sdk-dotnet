@@ -1,0 +1,345 @@
+---
+title: "Create b2xIdentityUserFlow"
+description: "Create a new b2xIdentityUserFlow object."
+ms.localizationpriority: medium
+doc_type: apiPageType
+author: "jkdouglas"
+ms.prod: "identity-and-sign-in"
+---
+
+# Create b2xIdentityUserFlow
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Create a new [b2xIdentityUserFlow](../resources/b2xidentityuserflow.md) object.
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+|Permission type      | Permissions (from least to most privileged)              |
+|:--------------------|:---------------------------------------------------------|
+|Delegated (work or school account)|IdentityUserFlow.ReadWrite.All|
+|Delegated (personal Microsoft account)| Not supported.|
+|Application|IdentityUserFlow.ReadWrite.All|
+
+The work or school account needs to belong to one of the following roles:
+
+* Global administrator
+* External Identity User Flow administrator
+
+## HTTP request
+
+<!-- { "blockType": "ignored" } -->
+
+```http
+POST /identity/b2xUserFlows
+```
+
+## Request headers
+
+|Name|Description|
+|:---------------|:----------|
+|Authorization|Bearer {token}. Required.|
+|Content-Type|application/json. Required.|
+
+## Request body
+
+In the request body, provide a JSON representation of a [b2xIdentityUserFlow](../resources/b2xidentityuserflow.md).
+
+|Property|Type|Description|
+|:---------------|:--------|:----------|
+|id|String|Required. The name of the user flow. The name will be pre-pended with `B2X_1` after creation.|
+|userFlowType|String|Required. The type of user flow you are creating. This value will always be `signUpOrSignIn`.|
+|userFlowTypeVersion|Float|Required. The version of the user flow. This value will always be 1.|
+|identityProviders|[identityProvider](../resources/identityprovider.md) collection|Optional. The identity providers you want to include in the user flow.|
+|apiConnectorConfiguration|[userFlowApiConnectorConfiguration](../resources/userflowapiconnectorconfiguration.md)|Optional. Configuration for enabling an API connector for use as part of the user flow.|
+
+## Response
+
+If successful, this method returns a `201 Created` response code and a Location header with a URI to the [b2xIdentityUserFlow](../resources/b2xidentityuserflow.md) object created for this request, with the `B2X_1` prefix added to the name. If unsuccessful, a `4xx` error will be returned with specific details.
+
+## Examples
+
+### Example 1: Create a user flow with the default values
+
+#### Request
+
+The following is an example of the request.
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "create_b2xuserflow_from_b2xuserflows"
+}
+-->
+
+``` http
+POST https://graph.microsoft.com/beta/identity/b2xUserFlows
+Content-type: application/json
+
+{
+    "id": "Partner",
+    "userFlowType": "signUpOrSignIn",
+    "userFlowTypeVersion": 1
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var b2xIdentityUserFlow = new B2xIdentityUserFlow
+{
+	Id = "Partner",
+	UserFlowType = UserFlowType.SignUpOrSignIn,
+	UserFlowTypeVersion = 1f
+};
+
+await graphClient.Identity.B2xUserFlows
+	.Request()
+	.AddAsync(b2xIdentityUserFlow);
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+**Note:** The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.b2xIdentityUserFlow"
+} -->
+
+```http
+HTTP/1.1 201 Created
+Location: https://graph.microsoft.com/beta/identity/b2xUserFlows/B2X_1_Partner
+Content-type: application/json
+
+{
+    "id": "B2X_1_Partner",
+    "userFlowType": "signUpOrSignIn",
+    "userFlowTypeVersion": 1
+}
+```
+
+### Example 2: Create a user flow with the default values and an identity provider
+
+#### Request
+
+The following is an example of the request.
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "create_b2xuserflow_from_b2xuserflows_identityProviders"
+}
+-->
+
+``` http
+POST https://graph.microsoft.com/beta/identity/b2xUserFlows
+Content-type: application/json
+
+{
+    "id": "Partner",
+    "userFlowType": "signUpOrSignIn",
+    "userFlowTypeVersion": 1,
+    "identityProviders": [
+        {
+            "id": "Facebook-OAuth",
+            "type": "Facebook",
+            "name": "Facebook"
+        }
+    ]
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var b2xIdentityUserFlow = new B2xIdentityUserFlow
+{
+	Id = "Partner",
+	UserFlowType = UserFlowType.SignUpOrSignIn,
+	UserFlowTypeVersion = 1f,
+	IdentityProviders = new B2xIdentityUserFlowIdentityProvidersCollectionWithReferencesPage()
+	{
+		new IdentityProvider
+		{
+			Id = "Facebook-OAuth",
+			Type = "Facebook",
+			Name = "Facebook"
+		}
+	}
+};
+
+await graphClient.Identity.B2xUserFlows
+	.Request()
+	.AddAsync(b2xIdentityUserFlow);
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+**Note:** The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.b2xIdentityUserFlow"
+} -->
+
+```http
+HTTP/1.1 201 Created
+Location: https://graph.microsoft.com/beta/identity/b2xUserFlows/B2X_1_Partner
+Content-type: application/json
+
+{
+    "id": "B2X_1_Partner",
+    "userFlowType": "signUpOrSignIn",
+    "userFlowTypeVersion": 1
+}
+```
+
+### Example 3: Create a user flow with the default values and configuration for API connectors
+
+#### Request
+
+The following is an example of the request.
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "create_b2xuserflow_from_b2xuserflows_apiconnectors"
+}
+-->
+
+``` http
+POST https://graph.microsoft.com/beta/identity/b2xUserFlows
+Content-type: application/json
+
+{
+    "id": "UserFlowWithAPIConnector",
+    "userFlowType": "signUpOrSignIn",
+    "userFlowTypeVersion": 1,
+    "apiConnectorConfiguration":{
+        "postFederationSignup":{
+            "@odata.id": "{apiConnectorId}"
+        },
+        "postAttributeCollection":{
+            "@odata.id": "{apiConnectorId}"
+        }
+    }
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var b2xIdentityUserFlow = new B2xIdentityUserFlow
+{
+	Id = "UserFlowWithAPIConnector",
+	UserFlowType = UserFlowType.SignUpOrSignIn,
+	UserFlowTypeVersion = 1f,
+	ApiConnectorConfiguration = new UserFlowApiConnectorConfiguration
+	{
+		PostFederationSignup = new IdentityApiConnector
+		{
+			AdditionalData = new Dictionary<string, object>()
+			{
+				{"@odata.id", "{apiConnectorId}"}
+			}
+		},
+		PostAttributeCollection = new IdentityApiConnector
+		{
+			AdditionalData = new Dictionary<string, object>()
+			{
+				{"@odata.id", "{apiConnectorId}"}
+			}
+		}
+	}
+};
+
+await graphClient.Identity.B2xUserFlows
+	.Request()
+	.AddAsync(b2xIdentityUserFlow);
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+**Note:** The response object shown here might be shortened for readability.
+
+**Note:** The `apiConnectorConfiguration` property always returns a '{}' value. To see full value with the navigation properties, use [this](../api/b2xidentityuserflow-get-apiConnectorConfiguration.md) API.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.b2xIdentityUserFlow"
+} -->
+
+```http
+HTTP/1.1 201 Created
+Location: https://graph.microsoft.com/beta/identity/b2xUserFlows/B2X_1_Partner
+Content-type: application/json
+
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#identity/b2xUserFlows/$entity",
+    "id": "B2X_1_UserFlowWithAPIConnector",
+    "userFlowType": "signUpOrSignIn",
+    "userFlowTypeVersion": 1,
+    "apiConnectorConfiguration": {}
+}
+```
+
+<!-- {
+  "type": "#page.annotation",
+  "description": "Create b2xUserFlow",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+    "Error: create_b2xUserFlow_from_b2xUserFlows/userFlowTypeVersion:\r\n      Expected type Single but actual was Int64. Property: userFlowTypeVersion, actual value: '1'",
+    "Error: create_b2xUserFlow_from_b2xUserFlows_identityProviders/userFlowTypeVersion:\r\n    Expected type Single but actual was Int64. Property: userFlowTypeVersion, actual value: '1'",
+    "Error: create_b2xUserFlow_from_b2xuserflows_apiconnectors/userFlowTypeVersion:\r\n      Expected type Single but actual was Int64. Property: userFlowTypeVersion, actual value: '1'"
+  ]
+}-->

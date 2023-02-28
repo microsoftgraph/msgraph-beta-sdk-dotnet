@@ -1,0 +1,308 @@
+---
+title: "Get place"
+description: "Retrieve the properties and relationships of a place object."
+ms.localizationpriority: medium
+author: "vrod9429"
+ms.prod: "outlook"
+doc_type: "apiPageType"
+---
+
+# Get place
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+Get the properties and relationships of a [place](../resources/place.md) object specified by either its ID or email address. 
+
+The **place** object can be one of the following types:
+
+* A [room](../resources/room.md), which includes rich properties such as an email address for the room, and accessibility, capacity, and device support. 
+* A [workspace](../resources/workspace.md), which includes properties such as an email address for the workspace, and accessibility and capacity. 
+* A [room list](../resources/roomlist.md), which includes an email address for the room list, and a navigation property to get the collection of **room** instances in that room list.
+
+The **room**, **workspace**, and **roomList** resources are derived from the **place** object.
+
+## Permissions
+
+One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+| Permission type                        | Permissions (from least to most privileged) |
+|:---------------------------------------|:--------------------------------------------|
+| Delegated (work or school account)     | Place.Read.All |
+| Delegated (personal Microsoft account) | Not supported |
+| Application                            | Place.Read.All |
+
+## HTTP request
+
+<!-- { "blockType": "ignored" } -->
+
+```http
+GET /places/{id}
+```
+
+## Optional query parameters
+Use `$select` to get specific **place** properties.
+
+For more information about OData query options, see [OData query parameters](/graph/query-parameters).
+
+## Request headers
+
+| Name          | Description               |
+|:--------------|:--------------------------|
+| Authorization | Bearer {token}. Required. |
+
+## Request body
+
+Do not supply a request body for this method.
+
+## Response
+
+If successful, this method returns a `200 OK` response code and the requested [place](../resources/place.md) object in the response body.
+
+## Examples
+
+### Example 1: Get a room
+#### Request
+
+The following example specifies the **id** of a **room** to get its properties.
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "sampleKeys": ["3162F1E1-C4C0-604B-51D8-91DA78989EB1"],
+  "name": "get_room"
+}-->
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/places/3162F1E1-C4C0-604B-51D8-91DA78989EB1
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var place = await graphClient.Places["{place-id}"]
+	.Request()
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+>**Note**: The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "name": "get_room",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.room"
+} -->
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#places/$entity",
+    "@odata.type": "#microsoft.graph.room",
+    "id": "3162F1E1-C4C0-604B-51D8-91DA78989EB1",
+    "emailAddress": "cf100@contoso.com",
+    "displayName": "Conf Room 100",
+    "address": {
+      "street": "4567 Main Street",
+      "city": "Buffalo",
+      "state": "NY",
+      "postalCode": "98052",
+      "countryOrRegion": "USA"
+    },
+    "geoCoordinates": {
+      "latitude": 47.640568390488626,
+      "longitude": -122.1293731033803
+    },
+    "phone": "000-000-0000",
+    "nickname": "Conf Room",
+    "label": "100",
+    "capacity": 50,
+    "building": "1",
+    "floorNumber": 1,
+    "isWheelChairAccessible": false,
+    "bookingType": "standard",
+    "tags": [
+      "bean bags"
+    ],
+    "audioDeviceName": null,
+    "videoDeviceName": null,
+    "displayDeviceName": "surface hub"
+}
+```
+### Example 2: Get a workspace
+#### Request
+
+The following example specifies the **id** of a **workspace** to get its properties.
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "sampleKeys": ["3162F1E1-C4C0-604B-51D8-91DA78989EB1"],
+  "name": "get_workspace"
+}-->
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/places/3162F1E1-C4C0-604B-51D8-91DA78989EB1
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var place = await graphClient.Places["{place-id}"]
+	.Request()
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+>**Note**: The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "name": "get_workspace",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.workspace"
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#places/$entity",
+    "@odata.type": "#microsoft.graph.workspace",
+    "id": "3162F1E1-C4C0-604B-51D8-91DA78989EB1",
+    "emailAddress": "ws100@contoso.com",
+    "displayName": "Workspace 100",
+    "address": {
+      "street": "4567 Main Street",
+      "city": "Buffalo",
+      "state": "NY",
+      "postalCode": "98052",
+      "countryOrRegion": "USA"
+    },
+    "geoCoordinates": {
+      "latitude": 47.640568390488626,
+      "longitude": -122.1293731033803
+    },
+    "phone": "000-000-0000",
+    "nickname": "Workspace",
+    "label": "100",
+    "capacity": 50,
+    "building": "1",
+    "floorNumber": 1,
+    "isWheelChairAccessible": false,
+    "tags": [
+      "bean bags"
+    ]
+}
+```
+### Example 3: Get a room list
+#### Request
+
+The following example specifies the **emailAddress** of a **roomList** to get its properties.
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "sampleKeys": ["bldg1@contoso.com"],
+  "name": "get_roomlist"
+}-->
+
+```msgraph-interactive
+GET https://graph.microsoft.com/beta/places/bldg1@contoso.com
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var place = await graphClient.Places["{place-id}"]
+	.Request()
+	.GetAsync();
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+The following is an example of the response.
+
+>**Note**: The response object shown here might be shortened for readability.
+
+<!-- {
+  "blockType": "response",
+  "name": "get_roomlist",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.roomList"
+} -->
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#places/$entity",
+  "@odata.type": "#microsoft.graph.roomList",
+  "id": "DC404124-302A-92AA-F98D-7B4DEB0C1705",
+  "displayName": "Building 1",
+  "address": {
+    "street": "4567 Main Street",
+    "city": "Buffalo",
+    "state": "NY",
+    "postalCode": "98052",
+    "countryOrRegion": "USA"
+  },
+  "geoCoordinates": null,
+  "phone": null,
+  "emailAddress": "bldg1@contoso.com"
+}
+```
+
+<!-- uuid: 16cd6b66-4b1a-43a1-adaf-3a886856ed98
+2019-02-04 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "Get place",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": ""
+}-->
+
+

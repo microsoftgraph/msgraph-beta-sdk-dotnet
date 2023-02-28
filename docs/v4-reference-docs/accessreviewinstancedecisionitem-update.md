@@ -1,0 +1,183 @@
+---
+title: "Update accessReviewInstanceDecisionItem"
+description: "Update an existing accessReviewInstanceDecisionItem object for which the calling user is the reviewer."
+ms.localizationpriority: medium
+author: "jyothig123"
+ms.prod: "governance"
+doc_type: apiPageType
+---
+
+# Update accessReviewInstanceDecisionItem
+
+Namespace: microsoft.graph
+
+> [!IMPORTANT]
+> APIs under the `/beta` version in Microsoft Graph are subject to change. Use of these APIs in production applications is not supported. To determine whether an API is available in v1.0, use the **Version** selector.
+
+Update access decisions, known as [accessReviewInstanceDecisionItems](../resources/accessreviewinstancedecisionitem.md), for which the user is the reviewer.
+
+>[!NOTE]
+>Any updates made to an **accessReviewInstanceDecisionItem** can only be made by calling users who are listed as reviewer for the parent [accessReviewInstance](../resources/accessreviewinstance.md).
+
+## Permissions
+One of the following permissions is required to call this API. Delegated permissions to personal Microsoft accounts are not supported. To learn more, including how to choose permissions, see [Permissions](/graph/permissions-reference).
+
+|Permission type                        | Permissions (from least to most privileged)              |
+|:--------------------------------------|:---------------------------------------------------------|
+|Delegated (work or school account)     | AccessReview.ReadWrite.All |
+|Delegated (personal Microsoft account)|Not supported.|
+
+## HTTP request
+
+To update a decision on an accessReviewInstance:
+<!-- { "blockType": "ignored" } -->
+```http
+PATCH /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}/decisions/{accessReviewInstanceDecisionItemId}
+```
+
+To update a decision on a stage of an accessReviewInstance that has multiple stages:
+<!-- { "blockType": "ignored" } -->
+```http
+PATCH /identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinitionId}/instances/{accessReviewInstanceId}/stages/{accessReviewStageId}/decisions/{accessReviewInstanceDecisionItemId}
+```
+
+## Request headers
+| Name         | Description |
+|:-------------|:------------|
+| Authorization|Bearer {token}. Required.|
+| Content-type | application/json. Required. |
+
+## Request body
+The following table shows the properties accepted to update an `accessReviewInstanceDecisionItem`.
+
+| Property     | Type       | Description |
+|:-------------|:------------|:------------|
+| decision  | String | Access decision for the entity being reviewed. Possible values are: `Approve` `Deny` `NotReviewed` `DontKnow`. Required.  |
+|  justification | String | Context of the review provided to admins. Required if justificationRequiredOnApproval is True on the accessReviewScheduleDefinition.  |
+
+## Response
+If successful, this method returns a `204 No Content` response code and no response body.
+
+
+## Examples
+
+### Example 1: Update a decision on an accessReviewInstance
+
+#### Request
+
+The following is an example of a decision to approve access for a user.
+
+
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "update_accessReviewDEfinitionInstanceDecisionsItem"
+}-->
+``` http
+PATCH https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/5eac5a70-7cd7-4f20-92b0-f9dba70dd7f0/instances/6444d4fd-ab55-4608-8cf9-c6702d172bcc/stages/9458f255-dff2-4d86-9a05-69438f49d7f8/decisions/e6cafba0-cbf0-4748-8868-0810c7f4cc06
+Content-Type: application/json
+
+{
+  "decision": "Approve",
+  "justification": "This person is still on my team",
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var accessReviewInstanceDecisionItem = new AccessReviewInstanceDecisionItem
+{
+	Decision = "Approve",
+	Justification = "This person is still on my team"
+};
+
+await graphClient.IdentityGovernance.AccessReviews.Definitions["{accessReviewScheduleDefinition-id}"].Instances["{accessReviewInstance-id}"].Stages["{accessReviewStage-id}"].Decisions["{accessReviewInstanceDecisionItem-id}"]
+	.Request()
+	.UpdateAsync(accessReviewInstanceDecisionItem);
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+<!-- {
+  "blockType": "response"
+} -->
+```http
+HTTP/1.1 204 Accepted
+```
+
+
+### Example 2: Update a decision on an stage in a multi-stage access review
+
+#### Request
+
+# [HTTP](#tab/http)
+<!-- {
+  "blockType": "request",
+  "name": "update_accessReviewDEfinitionInstanceDecisionsStage"
+}-->
+``` http
+PATCH https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/5eac5a70-7cd7-4f20-92b0-f9dba70dd7f0/instances/6444d4fd-ab55-4608-8cf9-c6702d172bcc/stages/9458f255-dff2-4d86-9a05-69438f49d7f8/decisions/e6cafba0-cbf0-4748-8868-0810c7f4cc06
+Content-Type: application/json
+
+{
+  "decision": "Approve",
+  "justification": "This person is still on my team",
+}
+```
+
+# [C#](#tab/csharp)
+
+```csharp
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var accessReviewInstanceDecisionItem = new AccessReviewInstanceDecisionItem
+{
+	Decision = "Approve",
+	Justification = "This person is still on my team"
+};
+
+await graphClient.IdentityGovernance.AccessReviews.Definitions["{accessReviewScheduleDefinition-id}"].Instances["{accessReviewInstance-id}"].Stages["{accessReviewStage-id}"].Decisions["{accessReviewInstanceDecisionItem-id}"]
+	.Request()
+	.UpdateAsync(accessReviewInstanceDecisionItem);
+
+```
+
+
+ [!IMPORTANT]
+ Microsoft Graph SDKs use the v1.0 version of the API by default, and do not support all the types, properties, and APIs available in the beta version. For details about accessing the beta API with the SDK, see [Use the Microsoft Graph SDKs with the beta API](/graph/sdks/use-beta).
+
+ For details about how to [add the SDK](/graph/sdks/sdk-installation) to your project and [create an authProvider](/graph/sdks/choose-authentication-providers) instance, see the [SDK documentation](/graph/sdks/sdks-overview).
+
+#### Response
+
+<!-- {
+  "blockType": "response"
+} -->
+```http
+HTTP/1.1 204 Accepted
+```
+
+<!--
+{
+  "type": "#page.annotation",
+  "description": "Update accessReviewInstanceDecisionItem",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "",
+  "suppressions": [
+  ]
+}
+-->
