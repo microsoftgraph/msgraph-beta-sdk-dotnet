@@ -19,6 +19,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customSettings", value); }
         }
 #endif
+        /// <summary>List of settings contained in this App Configuration policy</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DeviceManagementConfigurationSetting>? Settings {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public List<DeviceManagementConfigurationSetting> Settings {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new ManagedAppConfiguration and sets the default values.
         /// </summary>
@@ -43,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -53,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("customSettings", CustomSettings);
+            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSetting>("settings", Settings);
         }
     }
 }

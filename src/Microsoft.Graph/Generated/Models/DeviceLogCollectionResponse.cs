@@ -66,20 +66,16 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<double?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
-        /// <summary>The status of the log collection request</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status {
-            get { return BackingStore?.Get<string?>("status"); }
+        /// <summary>The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        public double? SizeInKB {
+            get { return BackingStore?.Get<double?>("sizeInKB"); }
+            set { BackingStore?.Set("sizeInKB", value); }
+        }
+        /// <summary>AppLogUploadStatus</summary>
+        public AppLogUploadState? Status {
+            get { return BackingStore?.Get<AppLogUploadState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-#nullable restore
-#else
-        public string Status {
-            get { return BackingStore?.Get<string>("status"); }
-            set { BackingStore?.Set("status", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -101,7 +97,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"receivedDateTimeUTC", n => { ReceivedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
                 {"requestedDateTimeUTC", n => { RequestedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
                 {"size", n => { Size = n.GetDoubleValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
+                {"sizeInKB", n => { SizeInKB = n.GetDoubleValue(); } },
+                {"status", n => { Status = n.GetEnumValue<AppLogUploadState>(); } },
             };
         }
         /// <summary>
@@ -119,7 +116,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("receivedDateTimeUTC", ReceivedDateTimeUTC);
             writer.WriteDateTimeOffsetValue("requestedDateTimeUTC", RequestedDateTimeUTC);
             writer.WriteDoubleValue("size", Size);
-            writer.WriteStringValue("status", Status);
+            writer.WriteDoubleValue("sizeInKB", SizeInKB);
+            writer.WriteEnumValue<AppLogUploadState>("status", Status);
         }
     }
 }

@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Date?>("reportRefreshDate"); }
             set { BackingStore?.Set("reportRefreshDate", value); }
         }
-        /// <summary>The teamsChannelMessages property</summary>
+        /// <summary>The number of channel messages in Teams team.</summary>
         public long? TeamsChannelMessages {
             get { return BackingStore?.Get<long?>("teamsChannelMessages"); }
             set { BackingStore?.Set("teamsChannelMessages", value); }
         }
-        /// <summary>The teamsMeetingsOrganized property</summary>
+        /// <summary>The number of meetings organized in Teams team.</summary>
         public long? TeamsMeetingsOrganized {
             get { return BackingStore?.Get<long?>("teamsMeetingsOrganized"); }
             set { BackingStore?.Set("teamsMeetingsOrganized", value); }

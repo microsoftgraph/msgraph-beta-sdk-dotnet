@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get the list of teamTemplate objects that are available for a tenant. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0" />
+        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return await RequestAdapter.SendAsync<TeamTemplate>(requestInfo, TeamTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the list of teamTemplate objects that are available for a tenant. 
+        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return requestInfo;
         }
         /// <summary>
-        /// Get the list of teamTemplate objects that are available for a tenant. 
+        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
         /// </summary>
         public class TeamTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

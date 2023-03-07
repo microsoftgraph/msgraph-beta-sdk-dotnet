@@ -13,6 +13,20 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The companionAppAllowedState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public AuthenticationMethodFeatureConfiguration? CompanionAppAllowedState {
+            get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("companionAppAllowedState"); }
+            set { BackingStore?.Set("companionAppAllowedState", value); }
+        }
+#nullable restore
+#else
+        public AuthenticationMethodFeatureConfiguration CompanionAppAllowedState {
+            get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("companionAppAllowedState"); }
+            set { BackingStore?.Set("companionAppAllowedState", value); }
+        }
+#endif
         /// <summary>Determines whether the user&apos;s Authenticator app will show them the client app they are signing into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"companionAppAllowedState", n => { CompanionAppAllowedState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
                 {"displayAppInformationRequiredState", n => { DisplayAppInformationRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
                 {"displayLocationInformationRequiredState", n => { DisplayLocationInformationRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
                 {"numberMatchingRequiredState", n => { NumberMatchingRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
@@ -101,6 +116,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<AuthenticationMethodFeatureConfiguration>("companionAppAllowedState", CompanionAppAllowedState);
             writer.WriteObjectValue<AuthenticationMethodFeatureConfiguration>("displayAppInformationRequiredState", DisplayAppInformationRequiredState);
             writer.WriteObjectValue<AuthenticationMethodFeatureConfiguration>("displayLocationInformationRequiredState", DisplayLocationInformationRequiredState);
             writer.WriteObjectValue<AuthenticationMethodFeatureConfiguration>("numberMatchingRequiredState", NumberMatchingRequiredState);

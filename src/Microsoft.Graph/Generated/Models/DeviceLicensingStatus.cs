@@ -14,9 +14,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This status is set when the Microsoft device identity verification fails.</summary>
         DeviceIdentityVerificationFailed,
         /// <summary>This status is set when the Microsoft account identity is being verified.</summary>
-        VerifyingMirosoftAccountIdentity,
+        VerifyingMicrosoftAccountIdentity,
         /// <summary>This status is set when the Microsoft account identity verification fails.</summary>
-        MirosoftAccountVerificationFailed,
+        MicrosoftAccountVerificationFailed,
         /// <summary>This status is set when the device license is being acquired.</summary>
         AcquiringDeviceLicense,
         /// <summary>This status is set when the device license is being refreshed.</summary>

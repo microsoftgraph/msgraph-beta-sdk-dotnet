@@ -33,5 +33,6 @@ namespace Microsoft.Graph.Beta.Models {
         B2bDirectConnectUser,
         OtherExternalUser,
         ServiceProvider,
+        MicrosoftAdminPortals,
     }
 }

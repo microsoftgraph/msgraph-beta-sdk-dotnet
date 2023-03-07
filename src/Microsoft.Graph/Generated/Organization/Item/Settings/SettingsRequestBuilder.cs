@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights;
 using Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDataAccess;
 using Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights;
 using Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties;
+using Microsoft.Graph.Beta.Organization.Item.Settings.Pronouns;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -39,6 +40,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         /// <summary>Provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.</summary>
         public ProfileCardPropertiesRequestBuilder ProfileCardProperties { get =>
             new ProfileCardPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the pronouns property of the microsoft.graph.organizationSettings entity.</summary>
+        public PronounsRequestBuilder Pronouns { get =>
+            new PronounsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }

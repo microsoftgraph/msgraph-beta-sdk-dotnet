@@ -76,6 +76,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
 #endif
+        /// <summary>The userId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#nullable restore
+#else
+        public string UserId {
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -102,6 +116,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"status", n => { Status = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -118,6 +133,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("userId", UserId);
         }
     }
 }

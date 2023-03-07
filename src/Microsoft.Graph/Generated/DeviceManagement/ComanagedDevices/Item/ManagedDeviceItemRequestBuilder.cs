@@ -45,6 +45,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveRemote
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RevokeAppleVppLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateBitLockerKeys;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateFileVaultKey;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateLocalAdminPassword;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SendCustomNotificationToCompanyPortal;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SetCloudPcReviewStatus;
@@ -260,6 +261,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item {
         /// <summary>Provides operations to call the rotateFileVaultKey method.</summary>
         public RotateFileVaultKeyRequestBuilder RotateFileVaultKey { get =>
             new RotateFileVaultKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the rotateLocalAdminPassword method.</summary>
+        public RotateLocalAdminPasswordRequestBuilder RotateLocalAdminPassword { get =>
+            new RotateLocalAdminPasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.</summary>
         public SecurityBaselineStatesRequestBuilder SecurityBaselineStates { get =>

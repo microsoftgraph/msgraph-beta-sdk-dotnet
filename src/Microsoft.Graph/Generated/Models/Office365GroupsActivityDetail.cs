@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("sharePointTotalFileCount"); }
             set { BackingStore?.Set("sharePointTotalFileCount", value); }
         }
-        /// <summary>The teamsChannelMessagesCount property</summary>
+        /// <summary>The number of channel messages in Teams team.</summary>
         public long? TeamsChannelMessagesCount {
             get { return BackingStore?.Get<long?>("teamsChannelMessagesCount"); }
             set { BackingStore?.Set("teamsChannelMessagesCount", value); }
         }
-        /// <summary>The teamsMeetingsOrganizedCount property</summary>
+        /// <summary>The number of meetings organized in Teams team.</summary>
         public long? TeamsMeetingsOrganizedCount {
             get { return BackingStore?.Get<long?>("teamsMeetingsOrganizedCount"); }
             set { BackingStore?.Set("teamsMeetingsOrganizedCount", value); }
