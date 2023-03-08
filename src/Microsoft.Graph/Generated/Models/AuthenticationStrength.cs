@@ -25,6 +25,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationStrengthId", value); }
         }
 #endif
+        /// <summary>The authenticationStrengthResult property</summary>
+        public Microsoft.Graph.Beta.Models.AuthenticationStrengthResult? AuthenticationStrengthResult {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationStrengthResult?>("authenticationStrengthResult"); }
+            set { BackingStore?.Set("authenticationStrengthResult", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the authentication strength.</summary>
@@ -76,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"authenticationStrengthId", n => { AuthenticationStrengthId = n.GetStringValue(); } },
+                {"authenticationStrengthResult", n => { AuthenticationStrengthResult = n.GetEnumValue<AuthenticationStrengthResult>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -87,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authenticationStrengthId", AuthenticationStrengthId);
+            writer.WriteEnumValue<AuthenticationStrengthResult>("authenticationStrengthResult", AuthenticationStrengthResult);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

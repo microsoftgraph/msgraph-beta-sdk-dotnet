@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Folder ID of an archive folder for the user. Read only.</summary>
+        /// <summary>Folder ID of an archive folder for the user. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ArchiveFolder {
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("timeZone", value); }
         }
 #endif
-        /// <summary>The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.</summary>
+        /// <summary>The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.UserPurpose? UserPurpose {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserPurpose?>("userPurpose"); }
             set { BackingStore?.Set("userPurpose", value); }

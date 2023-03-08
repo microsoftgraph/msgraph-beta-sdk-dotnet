@@ -1093,6 +1093,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.programControl" => new ProgramControl(),
                 "#microsoft.graph.programControlType" => new ProgramControlType(),
                 "#microsoft.graph.projectParticipation" => new ProjectParticipation(),
+                "#microsoft.graph.pronounsSettings" => new PronounsSettings(),
                 "#microsoft.graph.providerTenantSetting" => new ProviderTenantSetting(),
                 "#microsoft.graph.provisioningObjectSummary" => new ProvisioningObjectSummary(),
                 "#microsoft.graph.publishedResource" => new PublishedResource(),

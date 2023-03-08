@@ -361,7 +361,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("template", value); }
         }
 #endif
-        /// <summary>The templateDefinition property</summary>
+        /// <summary>Generic representation of a team template definition for a team with a specific structure and configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TeamTemplateDefinition? TemplateDefinition {

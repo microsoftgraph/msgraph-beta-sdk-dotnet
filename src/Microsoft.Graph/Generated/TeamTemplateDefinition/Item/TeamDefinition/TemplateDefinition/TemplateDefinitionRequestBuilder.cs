@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Templa
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get templateDefinition from teamTemplateDefinition
+        /// Generic representation of a team template definition for a team with a specific structure and configuration.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Templa
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamTemplateDefinition>(requestInfo, Microsoft.Graph.Beta.Models.TeamTemplateDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get templateDefinition from teamTemplateDefinition
+        /// Generic representation of a team template definition for a team with a specific structure and configuration.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Templa
             return requestInfo;
         }
         /// <summary>
-        /// Get templateDefinition from teamTemplateDefinition
+        /// Generic representation of a team template definition for a team with a specific structure and configuration.
         /// </summary>
         public class TemplateDefinitionRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

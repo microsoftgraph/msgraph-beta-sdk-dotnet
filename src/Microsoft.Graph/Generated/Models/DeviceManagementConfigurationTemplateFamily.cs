@@ -27,5 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
         Baseline,
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         UnknownFutureValue,
+        /// <summary>Template Family for device configuration scripts</summary>
+        DeviceConfigurationScripts,
     }
 }

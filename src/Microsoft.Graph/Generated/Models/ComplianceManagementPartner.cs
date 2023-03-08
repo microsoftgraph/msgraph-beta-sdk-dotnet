@@ -89,25 +89,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DeviceManagementPartnerTenantState?>("partnerState"); }
             set { BackingStore?.Set("partnerState", value); }
         }
-        /// <summary>User groups which enroll Windows devices through partner.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<ComplianceManagementPartnerAssignment>? WindowsEnrollmentAssignments {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>?>("windowsEnrollmentAssignments"); }
-            set { BackingStore?.Set("windowsEnrollmentAssignments", value); }
-        }
-#nullable restore
-#else
-        public List<ComplianceManagementPartnerAssignment> WindowsEnrollmentAssignments {
-            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("windowsEnrollmentAssignments"); }
-            set { BackingStore?.Set("windowsEnrollmentAssignments", value); }
-        }
-#endif
-        /// <summary>Partner onboarded for Windows devices.</summary>
-        public bool? WindowsOnboarded {
-            get { return BackingStore?.Get<bool?>("windowsOnboarded"); }
-            set { BackingStore?.Set("windowsOnboarded", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -130,8 +111,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"macOsEnrollmentAssignments", n => { MacOsEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"macOsOnboarded", n => { MacOsOnboarded = n.GetBoolValue(); } },
                 {"partnerState", n => { PartnerState = n.GetEnumValue<DeviceManagementPartnerTenantState>(); } },
-                {"windowsEnrollmentAssignments", n => { WindowsEnrollmentAssignments = n.GetCollectionOfObjectValues<ComplianceManagementPartnerAssignment>(ComplianceManagementPartnerAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsOnboarded", n => { WindowsOnboarded = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -150,8 +129,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ComplianceManagementPartnerAssignment>("macOsEnrollmentAssignments", MacOsEnrollmentAssignments);
             writer.WriteBoolValue("macOsOnboarded", MacOsOnboarded);
             writer.WriteEnumValue<DeviceManagementPartnerTenantState>("partnerState", PartnerState);
-            writer.WriteCollectionOfObjectValues<ComplianceManagementPartnerAssignment>("windowsEnrollmentAssignments", WindowsEnrollmentAssignments);
-            writer.WriteBoolValue("windowsOnboarded", WindowsOnboarded);
         }
     }
 }

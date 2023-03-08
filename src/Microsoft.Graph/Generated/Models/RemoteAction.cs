@@ -61,5 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         InitiateMobileDeviceManagementKeyRecovery,
         /// <summary>Add device action of InitiateOnDemandProactiveRemediation</summary>
         InitiateOnDemandProactiveRemediation,
+        /// <summary>Add device action of RotateLocalAdminPassword</summary>
+        RotateLocalAdminPassword,
     }
 }

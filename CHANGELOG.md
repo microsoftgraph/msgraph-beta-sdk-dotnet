@@ -7,6 +7,14 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.21.0-preview] - 2023-03-08
+
+- Latest metadata updates from 7th March 2023 snapshot.
+
+## [5.20.0-preview] - 2023-02-28
+
+- Latest metadata updates from 28th February 2023 snapshot.
+
 ## [5.19.0-preview] - 2023-02-09
 
 - [Breaking] Namespace and Request Builder renaming to align to paths defined in metadata (https://github.com/microsoft/kiota/issues/2209)

@@ -10,11 +10,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The creationDateTime property</summary>
-        public DateTimeOffset? CreationDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
-            set { BackingStore?.Set("creationDateTime", value); }
-        }
         /// <summary>For security, the password is always returned as null from a LIST or GET operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +44,6 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"password", n => { Password = n.GetStringValue(); } },
             };
         }
@@ -61,7 +55,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteStringValue("password", Password);
         }
     }

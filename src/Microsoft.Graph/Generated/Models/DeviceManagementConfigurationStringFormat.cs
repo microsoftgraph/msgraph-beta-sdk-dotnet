@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
         Json,
         /// <summary>Indicates a string that is expected to be a valid Datetime.</summary>
         DateTime,
+        /// <summary>Indicates a Windows SKU applicability value that maps to Intune.</summary>
         SurfaceHub,
         /// <summary>String whose value is a bash script</summary>
         BashScript,

@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("provisioningPolicyName", value); }
         }
 #endif
-        /// <summary>The provisioningType property</summary>
+        /// <summary>The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue. Default value is dedicated.</summary>
         public CloudPcProvisioningType? ProvisioningType {
             get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }

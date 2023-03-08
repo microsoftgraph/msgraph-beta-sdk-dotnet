@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CreateCopy;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceSettingStateSummaries;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStateSummary;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Settings;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UpdateSettings;
@@ -53,6 +54,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
         /// <summary>Provides operations to manage the deviceStateSummary property of the microsoft.graph.deviceManagementIntent entity.</summary>
         public DeviceStateSummaryRequestBuilder DeviceStateSummary { get =>
             new DeviceStateSummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getCustomizedSettings method.</summary>
+        public GetCustomizedSettingsRequestBuilder GetCustomizedSettings { get =>
+            new GetCustomizedSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the migrateToTemplate method.</summary>
         public MigrateToTemplateRequestBuilder MigrateToTemplate { get =>

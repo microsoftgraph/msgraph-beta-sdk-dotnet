@@ -19,11 +19,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The state of the provider. Optional.</summary>
-        public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>("isEnabled"); }
-            set { BackingStore?.Set("isEnabled", value); }
-        }
         /// <summary>Learning catalog items for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,7 +117,6 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"learningContents", n => { LearningContents = n.GetCollectionOfObjectValues<LearningContent>(LearningContent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"loginWebUrl", n => { LoginWebUrl = n.GetStringValue(); } },
                 {"longLogoWebUrlForDarkTheme", n => { LongLogoWebUrlForDarkTheme = n.GetStringValue(); } },
@@ -139,7 +133,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteCollectionOfObjectValues<LearningContent>("learningContents", LearningContents);
             writer.WriteStringValue("loginWebUrl", LoginWebUrl);
             writer.WriteStringValue("longLogoWebUrlForDarkTheme", LongLogoWebUrlForDarkTheme);

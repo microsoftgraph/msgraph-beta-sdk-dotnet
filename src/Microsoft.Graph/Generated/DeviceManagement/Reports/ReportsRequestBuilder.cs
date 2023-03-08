@@ -31,6 +31,9 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePoliciesComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePolicySettingsComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetEncryptionReportForDevices;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice;
@@ -206,6 +209,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
         /// <summary>Provides operations to call the getDeviceNonComplianceReport method.</summary>
         public GetDeviceNonComplianceReportRequestBuilder GetDeviceNonComplianceReport { get =>
             new GetDeviceNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getDevicePoliciesComplianceReport method.</summary>
+        public GetDevicePoliciesComplianceReportRequestBuilder GetDevicePoliciesComplianceReport { get =>
+            new GetDevicePoliciesComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getDevicePolicySettingsComplianceReport method.</summary>
+        public GetDevicePolicySettingsComplianceReportRequestBuilder GetDevicePolicySettingsComplianceReport { get =>
+            new GetDevicePolicySettingsComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getDevicesStatusBySettingReport method.</summary>
+        public GetDevicesStatusBySettingReportRequestBuilder GetDevicesStatusBySettingReport { get =>
+            new GetDevicesStatusBySettingReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicesWithoutCompliancePolicyReport method.</summary>
         public GetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport { get =>

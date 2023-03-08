@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Entity which represents a connection to Mobile threat defense partner.
+    /// Entity which represents a connection to Mobile Threat Defense partner.
     /// </summary>
     public class MobileThreatDefenseConnector : Entity, IParsable {
         /// <summary>When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.</summary>
