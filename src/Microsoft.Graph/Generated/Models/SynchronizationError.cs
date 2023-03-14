@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The code property</summary>
+        /// <summary>The error code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("code", value); }
         }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>The error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message {
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The tenantActionable property</summary>
+        /// <summary>The action to take to resolve the error.</summary>
         public bool? TenantActionable {
             get { return BackingStore?.Get<bool?>("tenantActionable"); }
             set { BackingStore?.Set("tenantActionable", value); }

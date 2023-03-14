@@ -9,6 +9,8 @@ using Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Restore;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetryPartnerAgentInstallation;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.Start;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.Stop;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Troubleshoot;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -72,6 +74,14 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
         public RetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation { get =>
             new RetryPartnerAgentInstallationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the start method.</summary>
+        public StartRequestBuilder Start { get =>
+            new StartRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stop method.</summary>
+        public StopRequestBuilder Stop { get =>
+            new StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the troubleshoot method.</summary>
         public TroubleshootRequestBuilder Troubleshoot { get =>

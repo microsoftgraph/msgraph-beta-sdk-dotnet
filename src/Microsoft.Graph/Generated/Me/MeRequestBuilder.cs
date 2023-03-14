@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Me.ActivateServicePlan;
 using Microsoft.Graph.Beta.Me.Activities;
 using Microsoft.Graph.Beta.Me.AgreementAcceptances;
 using Microsoft.Graph.Beta.Me.Analytics;
@@ -112,10 +111,6 @@ namespace Microsoft.Graph.Beta.Me {
     /// Provides operations to manage the user singleton.
     /// </summary>
     public class MeRequestBuilder {
-        /// <summary>Provides operations to call the activateServicePlan method.</summary>
-        public ActivateServicePlanRequestBuilder ActivateServicePlan { get =>
-            new ActivateServicePlanRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.user entity.</summary>
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
@@ -548,8 +543,8 @@ namespace Microsoft.Graph.Beta.Me {
             return new FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -600,7 +595,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -654,7 +649,7 @@ namespace Microsoft.Graph.Beta.Me {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
         public class MeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

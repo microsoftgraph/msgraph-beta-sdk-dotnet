@@ -66,6 +66,11 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.CreateLink {
             set { BackingStore?.Set("scope", value); }
         }
 #endif
+        /// <summary>The sendNotification property</summary>
+        public bool? SendNotification {
+            get { return BackingStore?.Get<bool?>("sendNotification"); }
+            set { BackingStore?.Set("sendNotification", value); }
+        }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +110,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.CreateLink {
                 {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
                 {"scope", n => { Scope = n.GetStringValue(); } },
+                {"sendNotification", n => { SendNotification = n.GetBoolValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -119,6 +125,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.CreateLink {
             writer.WriteCollectionOfObjectValues<DriveRecipient>("recipients", Recipients);
             writer.WriteBoolValue("retainInheritedPermissions", RetainInheritedPermissions);
             writer.WriteStringValue("scope", Scope);
+            writer.WriteBoolValue("sendNotification", SendNotification);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

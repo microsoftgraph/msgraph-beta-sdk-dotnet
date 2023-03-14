@@ -242,6 +242,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<AlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+        /// <summary>The systemTags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SystemTags {
+            get { return BackingStore?.Get<List<string>?>("systemTags"); }
+            set { BackingStore?.Set("systemTags", value); }
+        }
+#nullable restore
+#else
+        public List<string> SystemTags {
+            get { return BackingStore?.Get<List<string>>("systemTags"); }
+            set { BackingStore?.Set("systemTags", value); }
+        }
+#endif
         /// <summary>The Azure Active Directory tenant the alert was created in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -335,6 +349,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"serviceSource", n => { ServiceSource = n.GetEnumValue<ServiceSource>(); } },
                 {"severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
                 {"status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
+                {"systemTags", n => { SystemTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
                 {"threatDisplayName", n => { ThreatDisplayName = n.GetStringValue(); } },
                 {"threatFamilyName", n => { ThreatFamilyName = n.GetStringValue(); } },
@@ -372,6 +387,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteEnumValue<ServiceSource>("serviceSource", ServiceSource);
             writer.WriteEnumValue<AlertSeverity>("severity", Severity);
             writer.WriteEnumValue<AlertStatus>("status", Status);
+            writer.WriteCollectionOfPrimitiveValues<string>("systemTags", SystemTags);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("threatDisplayName", ThreatDisplayName);
             writer.WriteStringValue("threatFamilyName", ThreatFamilyName);

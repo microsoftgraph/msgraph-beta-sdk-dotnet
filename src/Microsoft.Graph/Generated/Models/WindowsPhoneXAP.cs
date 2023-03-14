@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Contains properties and inherited properties for Windows Phone XAP Line Of Business apps.
-    /// </summary>
     public class WindowsPhoneXAP : MobileLobApp, IParsable {
         /// <summary>The identity version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new windowsPhoneXAP and sets the default values.
+        /// Instantiates a new WindowsPhoneXAP and sets the default values.
         /// </summary>
         public WindowsPhoneXAP() : base() {
             OdataType = "#microsoft.graph.windowsPhoneXAP";

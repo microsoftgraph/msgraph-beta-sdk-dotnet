@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assignments.Item.AssignedUsers;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
     /// Provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.
     /// </summary>
     public class CloudPcProvisioningPolicyAssignmentItemRequestBuilder {
+        /// <summary>Provides operations to manage the assignedUsers property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.</summary>
+        public AssignedUsersRequestBuilder AssignedUsers { get =>
+            new AssignedUsersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>

@@ -1,6 +1,5 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Organization.Item.ActivateService;
 using Microsoft.Graph.Beta.Organization.Item.Branding;
 using Microsoft.Graph.Beta.Organization.Item.CertificateBasedAuthConfiguration;
 using Microsoft.Graph.Beta.Organization.Item.CheckMemberGroups;
@@ -24,10 +23,6 @@ namespace Microsoft.Graph.Beta.Organization.Item {
     /// Provides operations to manage the collection of organization entities.
     /// </summary>
     public class OrganizationItemRequestBuilder {
-        /// <summary>Provides operations to call the activateService method.</summary>
-        public ActivateServiceRequestBuilder ActivateService { get =>
-            new ActivateServiceRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the branding property of the microsoft.graph.organization entity.</summary>
         public BrandingRequestBuilder Branding { get =>
             new BrandingRequestBuilder(PathParameters, RequestAdapter);

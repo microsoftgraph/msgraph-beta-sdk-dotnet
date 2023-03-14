@@ -55,6 +55,25 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Indicates whether the Cloud PC supports switch functionality. If the value is true, it supports switch functionality; otherwise,  false.</summary>
+        public bool? Windows365SwitchCompatible {
+            get { return BackingStore?.Get<bool?>("windows365SwitchCompatible"); }
+            set { BackingStore?.Set("windows365SwitchCompatible", value); }
+        }
+        /// <summary>Indicates the reason the Cloud PC doesn&apos;t support switch. CPCOsVersionNotMeetRequirement indicates that the user needs to update their Cloud PC operation system version. CPCHardwareNotMeetRequirement indicates that the Cloud PC needs more CPU or RAM to support the functionality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Windows365SwitchNotCompatibleReason {
+            get { return BackingStore?.Get<string?>("windows365SwitchNotCompatibleReason"); }
+            set { BackingStore?.Set("windows365SwitchNotCompatibleReason", value); }
+        }
+#nullable restore
+#else
+        public string Windows365SwitchNotCompatibleReason {
+            get { return BackingStore?.Get<string>("windows365SwitchNotCompatibleReason"); }
+            set { BackingStore?.Set("windows365SwitchNotCompatibleReason", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new cloudPcLaunchInfo and sets the default values.
         /// </summary>
@@ -78,6 +97,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
                 {"cloudPcLaunchUrl", n => { CloudPcLaunchUrl = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"windows365SwitchCompatible", n => { Windows365SwitchCompatible = n.GetBoolValue(); } },
+                {"windows365SwitchNotCompatibleReason", n => { Windows365SwitchNotCompatibleReason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -89,6 +110,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("cloudPcId", CloudPcId);
             writer.WriteStringValue("cloudPcLaunchUrl", CloudPcLaunchUrl);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteBoolValue("windows365SwitchCompatible", Windows365SwitchCompatible);
+            writer.WriteStringValue("windows365SwitchNotCompatibleReason", Windows365SwitchNotCompatibleReason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

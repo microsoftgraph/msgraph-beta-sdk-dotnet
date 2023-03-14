@@ -5,6 +5,11 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable {
+        /// <summary>The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.</summary>
+        public MicrosoftAuthenticatorAuthenticationMethodClientAppName? ClientAppName {
+            get { return BackingStore?.Get<MicrosoftAuthenticatorAuthenticationMethodClientAppName?>("clientAppName"); }
+            set { BackingStore?.Set("clientAppName", value); }
+        }
         /// <summary>The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -85,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"clientAppName", n => { ClientAppName = n.GetEnumValue<MicrosoftAuthenticatorAuthenticationMethodClientAppName>(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"device", n => { Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
                 {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
@@ -99,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<MicrosoftAuthenticatorAuthenticationMethodClientAppName>("clientAppName", ClientAppName);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Device>("device", Device);
             writer.WriteStringValue("deviceTag", DeviceTag);

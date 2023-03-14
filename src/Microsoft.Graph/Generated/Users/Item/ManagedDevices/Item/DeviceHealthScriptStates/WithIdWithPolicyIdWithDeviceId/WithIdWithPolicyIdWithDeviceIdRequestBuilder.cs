@@ -53,6 +53,25 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceHealthScript
             RequestAdapter = requestAdapter;
         }
         /// <summary>
+        /// Delete navigation property deviceHealthScriptStates for users
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task DeleteAsync(Action<WithIdWithPolicyIdWithDeviceIdRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task DeleteAsync(Action<WithIdWithPolicyIdWithDeviceIdRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+        }
+        /// <summary>
         /// Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,6 +89,51 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceHealthScript
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceHealthScriptPolicyState>(requestInfo, DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Update the navigation property deviceHealthScriptStates in users
+        /// </summary>
+        /// <param name="body">Contains properties for policy run state of the device health script.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<DeviceHealthScriptPolicyState?> PatchAsync(DeviceHealthScriptPolicyState body, Action<WithIdWithPolicyIdWithDeviceIdRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<DeviceHealthScriptPolicyState> PatchAsync(DeviceHealthScriptPolicyState body, Action<WithIdWithPolicyIdWithDeviceIdRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<DeviceHealthScriptPolicyState>(requestInfo, DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Delete navigation property deviceHealthScriptStates for users
+        /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<WithIdWithPolicyIdWithDeviceIdRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<WithIdWithPolicyIdWithDeviceIdRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
+#endif
+            var requestInfo = new RequestInformation {
+                HttpMethod = Method.DELETE,
+                UrlTemplate = UrlTemplate,
+                PathParameters = PathParameters,
+            };
+            if (requestConfiguration != null) {
+                var requestConfig = new WithIdWithPolicyIdWithDeviceIdRequestBuilderDeleteRequestConfiguration();
+                requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddRequestOptions(requestConfig.Options);
+                requestInfo.AddHeaders(requestConfig.Headers);
+            }
+            return requestInfo;
         }
         /// <summary>
         /// Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
@@ -96,6 +160,50 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceHealthScript
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Update the navigation property deviceHealthScriptStates in users
+        /// </summary>
+        /// <param name="body">Contains properties for policy run state of the device health script.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(DeviceHealthScriptPolicyState body, Action<WithIdWithPolicyIdWithDeviceIdRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(DeviceHealthScriptPolicyState body, Action<WithIdWithPolicyIdWithDeviceIdRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation {
+                HttpMethod = Method.PATCH,
+                UrlTemplate = UrlTemplate,
+                PathParameters = PathParameters,
+            };
+            requestInfo.Headers.Add("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            if (requestConfiguration != null) {
+                var requestConfig = new WithIdWithPolicyIdWithDeviceIdRequestBuilderPatchRequestConfiguration();
+                requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddRequestOptions(requestConfig.Options);
+                requestInfo.AddHeaders(requestConfig.Headers);
+            }
+            return requestInfo;
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        public class WithIdWithPolicyIdWithDeviceIdRequestBuilderDeleteRequestConfiguration {
+            /// <summary>Request headers</summary>
+            public RequestHeaders Headers { get; set; }
+            /// <summary>Request options</summary>
+            public IList<IRequestOption> Options { get; set; }
+            /// <summary>
+            /// Instantiates a new WithIdWithPolicyIdWithDeviceIdRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// </summary>
+            public WithIdWithPolicyIdWithDeviceIdRequestBuilderDeleteRequestConfiguration() {
+                Options = new List<IRequestOption>();
+                Headers = new RequestHeaders();
+            }
         }
         /// <summary>
         /// Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
@@ -136,6 +244,22 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceHealthScript
             /// Instantiates a new WithIdWithPolicyIdWithDeviceIdRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WithIdWithPolicyIdWithDeviceIdRequestBuilderGetRequestConfiguration() {
+                Options = new List<IRequestOption>();
+                Headers = new RequestHeaders();
+            }
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        public class WithIdWithPolicyIdWithDeviceIdRequestBuilderPatchRequestConfiguration {
+            /// <summary>Request headers</summary>
+            public RequestHeaders Headers { get; set; }
+            /// <summary>Request options</summary>
+            public IList<IRequestOption> Options { get; set; }
+            /// <summary>
+            /// Instantiates a new WithIdWithPolicyIdWithDeviceIdRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// </summary>
+            public WithIdWithPolicyIdWithDeviceIdRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new RequestHeaders();
             }

@@ -5,6 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcProvisioningPolicyAssignment : Entity, IParsable {
+        /// <summary>The assignedUsers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<User>? AssignedUsers {
+            get { return BackingStore?.Get<List<User>?>("assignedUsers"); }
+            set { BackingStore?.Set("assignedUsers", value); }
+        }
+#nullable restore
+#else
+        public List<User> AssignedUsers {
+            get { return BackingStore?.Get<List<User>>("assignedUsers"); }
+            set { BackingStore?.Set("assignedUsers", value); }
+        }
+#endif
         /// <summary>The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignedUsers", n => { AssignedUsers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"target", n => { Target = n.GetObjectValue<CloudPcManagementAssignmentTarget>(CloudPcManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
@@ -42,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<User>("assignedUsers", AssignedUsers);
             writer.WriteObjectValue<CloudPcManagementAssignmentTarget>("target", Target);
         }
     }

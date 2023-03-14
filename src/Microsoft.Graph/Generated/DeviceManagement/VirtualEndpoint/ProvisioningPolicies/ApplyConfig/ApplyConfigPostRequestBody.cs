@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace Microsoft.Graph.Beta.Organization.Item.ActivateService {
-    public class ActivateServicePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ApplyConfig {
+    public class ApplyConfigPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -13,34 +13,24 @@ namespace Microsoft.Graph.Beta.Organization.Item.ActivateService {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The service property</summary>
+        /// <summary>The cloudPcIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Service {
-            get { return BackingStore?.Get<string?>("service"); }
-            set { BackingStore?.Set("service", value); }
+        public List<string>? CloudPcIds {
+            get { return BackingStore?.Get<List<string>?>("cloudPcIds"); }
+            set { BackingStore?.Set("cloudPcIds", value); }
         }
 #nullable restore
 #else
-        public string Service {
-            get { return BackingStore?.Get<string>("service"); }
-            set { BackingStore?.Set("service", value); }
+        public List<string> CloudPcIds {
+            get { return BackingStore?.Get<List<string>>("cloudPcIds"); }
+            set { BackingStore?.Set("cloudPcIds", value); }
         }
 #endif
-        /// <summary>The servicePlanId property</summary>
-        public Guid? ServicePlanId {
-            get { return BackingStore?.Get<Guid?>("servicePlanId"); }
-            set { BackingStore?.Set("servicePlanId", value); }
-        }
-        /// <summary>The skuId property</summary>
-        public Guid? SkuId {
-            get { return BackingStore?.Get<Guid?>("skuId"); }
-            set { BackingStore?.Set("skuId", value); }
-        }
         /// <summary>
-        /// Instantiates a new activateServicePostRequestBody and sets the default values.
+        /// Instantiates a new applyConfigPostRequestBody and sets the default values.
         /// </summary>
-        public ActivateServicePostRequestBody() {
+        public ApplyConfigPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -48,18 +38,16 @@ namespace Microsoft.Graph.Beta.Organization.Item.ActivateService {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ActivateServicePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ApplyConfigPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ActivateServicePostRequestBody();
+            return new ApplyConfigPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"service", n => { Service = n.GetStringValue(); } },
-                {"servicePlanId", n => { ServicePlanId = n.GetGuidValue(); } },
-                {"skuId", n => { SkuId = n.GetGuidValue(); } },
+                {"cloudPcIds", n => { CloudPcIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -68,9 +56,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.ActivateService {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("service", Service);
-            writer.WriteGuidValue("servicePlanId", ServicePlanId);
-            writer.WriteGuidValue("skuId", SkuId);
+            writer.WriteCollectionOfPrimitiveValues<string>("cloudPcIds", CloudPcIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

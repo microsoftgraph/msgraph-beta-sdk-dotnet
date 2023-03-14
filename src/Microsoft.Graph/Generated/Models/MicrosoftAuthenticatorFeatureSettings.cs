@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The companionAppAllowedState property</summary>
+        /// <summary>Determines whether users will be able to approve push notifications on other Microsoft applications such as Outlook Mobile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationMethodFeatureConfiguration? CompanionAppAllowedState {

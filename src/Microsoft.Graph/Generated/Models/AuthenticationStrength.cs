@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationStrengthId", value); }
         }
 #endif
-        /// <summary>The authenticationStrengthResult property</summary>
+        /// <summary>The result of the authentication strength. The possible values are: notSet, skippedForProofUp, satisfied, singleChallengeRequired, multipleChallengesRequired, singleRegistrationRequired, multipleRegistrationsRequired, cannotSatisfyDueToCombinationConfiguration, cannotSatisfy, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AuthenticationStrengthResult? AuthenticationStrengthResult {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationStrengthResult?>("authenticationStrengthResult"); }
             set { BackingStore?.Set("authenticationStrengthResult", value); }

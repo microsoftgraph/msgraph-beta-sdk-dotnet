@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contributors", value); }
         }
 #endif
-        /// <summary>The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.</summary>
+        /// <summary>The date and time when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("format", value); }
         }
 #endif
-        /// <summary>Indicates whether the content is active or not. Inactive content will not show up in the UI. The default value is true. Optional.</summary>
+        /// <summary>Indicates whether the content is active or not. Inactive content doesn&apos;t show up in the UI. The default value is true. Optional.</summary>
         public bool? IsActive {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("languageTag", value); }
         }
 #endif
-        /// <summary>The date when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.</summary>
+        /// <summary>The date and time when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assignments;
 using Microsoft.Graph.Beta.Models;
@@ -15,6 +16,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
     /// Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
     public class CloudPcProvisioningPolicyItemRequestBuilder {
+        /// <summary>Provides operations to call the apply method.</summary>
+        public ApplyRequestBuilder Apply { get =>
+            new ApplyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
