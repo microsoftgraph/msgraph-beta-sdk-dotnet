@@ -5,6 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SubjectRightsRequest : Entity, IParsable {
+        /// <summary>The approvers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<User>? Approvers {
+            get { return BackingStore?.Get<List<User>?>("approvers"); }
+            set { BackingStore?.Set("approvers", value); }
+        }
+#nullable restore
+#else
+        public List<User> Approvers {
+            get { return BackingStore?.Get<List<User>>("approvers"); }
+            set { BackingStore?.Set("approvers", value); }
+        }
+#endif
         /// <summary>Identity that the request is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,6 +38,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("closedDateTime"); }
             set { BackingStore?.Set("closedDateTime", value); }
         }
+        /// <summary>The collaborators property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<User>? Collaborators {
+            get { return BackingStore?.Get<List<User>?>("collaborators"); }
+            set { BackingStore?.Set("collaborators", value); }
+        }
+#nullable restore
+#else
+        public List<User> Collaborators {
+            get { return BackingStore?.Get<List<User>>("collaborators"); }
+            set { BackingStore?.Set("collaborators", value); }
+        }
+#endif
         /// <summary>KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -292,8 +320,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"approvers", n => { Approvers = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"assignedTo", n => { AssignedTo = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
                 {"closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"collaborators", n => { Collaborators = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"contentQuery", n => { ContentQuery = n.GetStringValue(); } },
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -327,8 +357,10 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<User>("approvers", Approvers);
             writer.WriteObjectValue<Identity>("assignedTo", AssignedTo);
             writer.WriteDateTimeOffsetValue("closedDateTime", ClosedDateTime);
+            writer.WriteCollectionOfObjectValues<User>("collaborators", Collaborators);
             writer.WriteStringValue("contentQuery", ContentQuery);
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

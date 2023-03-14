@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ApplyConfig;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Count;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item;
 using Microsoft.Graph.Beta.Models;
@@ -15,6 +16,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
     /// Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
     public class ProvisioningPoliciesRequestBuilder {
+        /// <summary>Provides operations to call the applyConfig method.</summary>
+        public ApplyConfigRequestBuilder ApplyConfig { get =>
+            new ApplyConfigRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);

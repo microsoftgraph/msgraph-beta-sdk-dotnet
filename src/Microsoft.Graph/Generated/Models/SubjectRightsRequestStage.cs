@@ -7,5 +7,6 @@ namespace Microsoft.Graph.Beta.Models {
         CaseResolved,
         ContentEstimate,
         UnknownFutureValue,
+        Approval,
     }
 }

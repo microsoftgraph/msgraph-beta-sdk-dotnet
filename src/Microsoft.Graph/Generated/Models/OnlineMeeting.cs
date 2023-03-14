@@ -20,7 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
-        /// <summary>The allowParticipantsToChangeName property</summary>
+        /// <summary>Specifies the mode of meeting chat.</summary>
+        public MeetingChatMode? AllowMeetingChat {
+            get { return BackingStore?.Get<MeetingChatMode?>("allowMeetingChat"); }
+            set { BackingStore?.Set("allowMeetingChat", value); }
+        }
+        /// <summary>Specifies if participants are allowed to rename themselves in an instance of the meeting.</summary>
         public bool? AllowParticipantsToChangeName {
             get { return BackingStore?.Get<bool?>("allowParticipantsToChangeName"); }
             set { BackingStore?.Set("allowParticipantsToChangeName", value); }
@@ -403,6 +408,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 {"allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
                 {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
+                {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
                 {"allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
                 {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 {"alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
@@ -447,6 +453,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowAttendeeToEnableCamera", AllowAttendeeToEnableCamera);
             writer.WriteBoolValue("allowAttendeeToEnableMic", AllowAttendeeToEnableMic);
             writer.WriteEnumValue<OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
+            writer.WriteEnumValue<MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
             writer.WriteBoolValue("allowParticipantsToChangeName", AllowParticipantsToChangeName);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);

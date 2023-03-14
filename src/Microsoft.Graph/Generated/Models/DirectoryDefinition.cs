@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("objects", value); }
         }
 #endif
-        /// <summary>The readOnly property</summary>
+        /// <summary>Whether this object is read-only.</summary>
         public bool? ReadOnly {
             get { return BackingStore?.Get<bool?>("readOnly"); }
             set { BackingStore?.Set("readOnly", value); }

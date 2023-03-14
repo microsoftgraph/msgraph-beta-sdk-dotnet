@@ -52,8 +52,8 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0" />
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0" />
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             }
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
         /// </summary>
         public class RegistrationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -1,6 +1,5 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Users.Item.ActivateServicePlan;
 using Microsoft.Graph.Beta.Users.Item.Activities;
 using Microsoft.Graph.Beta.Users.Item.AgreementAcceptances;
 using Microsoft.Graph.Beta.Users.Item.Analytics;
@@ -112,10 +111,6 @@ namespace Microsoft.Graph.Beta.Users.Item {
     /// Provides operations to manage the collection of user entities.
     /// </summary>
     public class UserItemRequestBuilder {
-        /// <summary>Provides operations to call the activateServicePlan method.</summary>
-        public ActivateServicePlanRequestBuilder ActivateServicePlan { get =>
-            new ActivateServicePlanRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.user entity.</summary>
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);

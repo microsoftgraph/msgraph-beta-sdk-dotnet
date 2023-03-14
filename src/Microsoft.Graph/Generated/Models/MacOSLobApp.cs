@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("childApps", value); }
         }
 #endif
-        /// <summary>The identity version. This property is being deprecated in 2211(November 2022).</summary>
+        /// <summary>The identity version. This property is deprecated starting  in 2211(November 2022).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityVersion {

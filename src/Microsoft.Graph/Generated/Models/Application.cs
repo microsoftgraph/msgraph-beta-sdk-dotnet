@@ -496,7 +496,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("spa", value); }
         }
 #endif
-        /// <summary>The synchronization property</summary>
+        /// <summary>Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Synchronization? Synchronization {

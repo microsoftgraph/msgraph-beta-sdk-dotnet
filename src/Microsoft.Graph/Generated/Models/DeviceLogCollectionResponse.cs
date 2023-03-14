@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// Windows Log Collection request entity.
     /// </summary>
     public class DeviceLogCollectionResponse : Entity, IParsable {
-        /// <summary>The User Principal Name (UPN) of the user that enrolled the device</summary>
+        /// <summary>The User Principal Name (UPN) of the user that enrolled the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnrolledByUser {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>The DateTime of the expiration of the logs</summary>
+        /// <summary>The DateTime of the expiration of the logs.</summary>
         public DateTimeOffset? ExpirationDateTimeUTC {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTimeUTC"); }
             set { BackingStore?.Set("expirationDateTimeUTC", value); }
         }
-        /// <summary>The UPN for who initiated the request</summary>
+        /// <summary>The UPN for who initiated the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InitiatedByUserPrincipalName {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
 #endif
-        /// <summary>The device Id</summary>
+        /// <summary>Indicates Intune device unique identifier.</summary>
         public Guid? ManagedDeviceId {
             get { return BackingStore?.Get<Guid?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
-        /// <summary>The DateTime the request was received</summary>
+        /// <summary>The DateTime the request was received.</summary>
         public DateTimeOffset? ReceivedDateTimeUTC {
             get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTimeUTC"); }
             set { BackingStore?.Set("receivedDateTimeUTC", value); }
         }
-        /// <summary>The DateTime of the request</summary>
+        /// <summary>The DateTime of the request.</summary>
         public DateTimeOffset? RequestedDateTimeUTC {
             get { return BackingStore?.Get<DateTimeOffset?>("requestedDateTimeUTC"); }
             set { BackingStore?.Set("requestedDateTimeUTC", value); }

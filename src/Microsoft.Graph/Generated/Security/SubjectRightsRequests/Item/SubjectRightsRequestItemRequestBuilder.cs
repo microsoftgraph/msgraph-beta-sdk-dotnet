@@ -1,5 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Approvers;
+using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Collaborators;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.GetFinalAttachment;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.GetFinalReport;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes;
@@ -17,6 +19,14 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item {
     /// Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
     /// </summary>
     public class SubjectRightsRequestItemRequestBuilder {
+        /// <summary>Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.</summary>
+        public ApproversRequestBuilder Approvers { get =>
+            new ApproversRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.</summary>
+        public CollaboratorsRequestBuilder Collaborators { get =>
+            new CollaboratorsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getFinalAttachment method.</summary>
         public GetFinalAttachmentRequestBuilder GetFinalAttachment { get =>
             new GetFinalAttachmentRequestBuilder(PathParameters, RequestAdapter);

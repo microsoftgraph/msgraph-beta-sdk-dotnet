@@ -392,7 +392,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Message and sets the default values.
+        /// Instantiates a new message and sets the default values.
         /// </summary>
         public Message() : base() {
             OdataType = "#microsoft.graph.message";

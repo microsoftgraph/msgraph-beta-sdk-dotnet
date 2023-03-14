@@ -47,6 +47,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("cloudPcGroupDisplayName", value); }
         }
 #endif
+        /// <summary>The cloudPcNamingTemplate property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CloudPcNamingTemplate {
+            get { return BackingStore?.Get<string?>("cloudPcNamingTemplate"); }
+            set { BackingStore?.Set("cloudPcNamingTemplate", value); }
+        }
+#nullable restore
+#else
+        public string CloudPcNamingTemplate {
+            get { return BackingStore?.Get<string>("cloudPcNamingTemplate"); }
+            set { BackingStore?.Set("cloudPcNamingTemplate", value); }
+        }
+#endif
         /// <summary>The provisioning policy description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -219,6 +233,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>(CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"cloudPcGroupDisplayName", n => { CloudPcGroupDisplayName = n.GetStringValue(); } },
+                {"cloudPcNamingTemplate", n => { CloudPcNamingTemplate = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
@@ -246,6 +261,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>("assignments", Assignments);
             writer.WriteStringValue("cloudPcGroupDisplayName", CloudPcGroupDisplayName);
+            writer.WriteStringValue("cloudPcNamingTemplate", CloudPcNamingTemplate);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<CloudPcDomainJoinConfiguration>("domainJoinConfiguration", DomainJoinConfiguration);

@@ -7,6 +7,14 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.22.0] - 2023-03-14
+
+### Added
+
+- Updated core version to fix delta link parsing in pageiterator
+- Updated core version to use range dependency for System.Text.Json and System.DiagnosticSource
+- Latest metadata updates from 14th March 2023
+
 ## [5.21.0-preview] - 2023-03-08
 
 - Latest metadata updates from 7th March 2023 snapshot.
