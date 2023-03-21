@@ -1686,7 +1686,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("showInAddressList"); }
             set { BackingStore?.Set("showInAddressList", value); }
         }
-        /// <summary>Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There&apos;s a known issue with retrieving this property.This property is not returned for a user who has never signed in or last signed in before April 2020.</summary>
+        /// <summary>Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.There&apos;s a known issue with retrieving this property.This property is not returned for a user who has never signed in or last signed in before April 2020.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.SignInActivity? SignInActivity {
@@ -1888,7 +1888,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new user and sets the default values.
+        /// Instantiates a new User and sets the default values.
         /// </summary>
         public User() : base() {
             OdataType = "#microsoft.graph.user";

@@ -1,6 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.TransitiveMemberOf.Count;
+using Microsoft.Graph.Beta.Users.Item.Devices.Item.TransitiveMemberOf.GraphAdministrativeUnit;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.TransitiveMemberOf.GraphGroup;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.TransitiveMemberOf.Item;
 using Microsoft.Kiota.Abstractions;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.TransitiveMemberOf {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to administrativeUnit.</summary>
+        public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
+            new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>

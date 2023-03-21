@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackageCustomWorkflowExtensions;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackageResourceRoles;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackageResources;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackageResourceScopes;
@@ -18,6 +19,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
     /// Provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
     /// </summary>
     public class AccessPackageCatalogItemRequestBuilder {
+        /// <summary>Provides operations to manage the accessPackageCustomWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.</summary>
+        public AccessPackageCustomWorkflowExtensionsRequestBuilder AccessPackageCustomWorkflowExtensions { get =>
+            new AccessPackageCustomWorkflowExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the accessPackageResourceRoles property of the microsoft.graph.accessPackageCatalog entity.</summary>
         public AccessPackageResourceRolesRequestBuilder AccessPackageResourceRoles { get =>
             new AccessPackageResourceRolesRequestBuilder(PathParameters, RequestAdapter);

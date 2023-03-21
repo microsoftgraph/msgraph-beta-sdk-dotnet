@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.TransitiveMemberOf.Item.GraphAdministrativeUnit;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.TransitiveMemberOf.Item.GraphGroup;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -14,6 +15,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.TransitiveMemberOf.Item {
     /// Provides operations to manage the transitiveMemberOf property of the microsoft.graph.servicePrincipal entity.
     /// </summary>
     public class DirectoryObjectItemRequestBuilder {
+        /// <summary>Casts the previous resource to administrativeUnit.</summary>
+        public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
+            new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>
             new GraphGroupRequestBuilder(PathParameters, RequestAdapter);

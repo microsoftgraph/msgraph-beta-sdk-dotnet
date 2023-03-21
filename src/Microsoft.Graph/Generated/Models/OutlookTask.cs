@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new outlookTask and sets the default values.
+        /// Instantiates a new OutlookTask and sets the default values.
         /// </summary>
         public OutlookTask() : base() {
             OdataType = "#microsoft.graph.outlookTask";

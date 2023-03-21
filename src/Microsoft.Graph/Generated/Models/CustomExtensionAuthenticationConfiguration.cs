@@ -42,6 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.azureAdPopTokenAuthentication" => new AzureAdPopTokenAuthentication(),
                 "#microsoft.graph.azureAdTokenAuthentication" => new AzureAdTokenAuthentication(),
                 _ => new CustomExtensionAuthenticationConfiguration(),
             };

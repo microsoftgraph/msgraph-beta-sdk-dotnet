@@ -57,6 +57,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>Information about all the custom extension calls that were made during the access package assignment request workflow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances {
+            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>?>("customExtensionCalloutInstances"); }
+            set { BackingStore?.Set("customExtensionCalloutInstances", value); }
+        }
+#nullable restore
+#else
+        public List<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances {
+            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>>("customExtensionCalloutInstances"); }
+            set { BackingStore?.Set("customExtensionCalloutInstances", value); }
+        }
+#endif
         /// <summary>A collection of custom workflow extension instances being run on an assignment request. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,6 +197,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"answers", n => { Answers = n.GetCollectionOfObjectValues<AccessPackageAnswer>(AccessPackageAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"completedDate", n => { CompletedDate = n.GetDateTimeOffsetValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<CustomExtensionCalloutInstance>(CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"customExtensionHandlerInstances", n => { CustomExtensionHandlerInstances = n.GetCollectionOfObjectValues<CustomExtensionHandlerInstance>(CustomExtensionHandlerInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
@@ -206,6 +221,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<AccessPackageAnswer>("answers", Answers);
             writer.WriteDateTimeOffsetValue("completedDate", CompletedDate);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteCollectionOfObjectValues<CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
             writer.WriteCollectionOfObjectValues<CustomExtensionHandlerInstance>("customExtensionHandlerInstances", CustomExtensionHandlerInstances);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteBoolValue("isValidationOnly", IsValidationOnly);
