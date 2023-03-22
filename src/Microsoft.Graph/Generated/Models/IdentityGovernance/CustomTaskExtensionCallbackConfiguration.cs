@@ -5,6 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class CustomTaskExtensionCallbackConfiguration : CustomExtensionCallbackConfiguration, IParsable {
+        /// <summary>The authorizedApps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.Application>? AuthorizedApps {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Application>?>("authorizedApps"); }
+            set { BackingStore?.Set("authorizedApps", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.Application> AuthorizedApps {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Application>>("authorizedApps"); }
+            set { BackingStore?.Set("authorizedApps", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new CustomTaskExtensionCallbackConfiguration and sets the default values.
         /// </summary>
@@ -24,6 +38,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"authorizedApps", n => { AuthorizedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Application>(Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -33,6 +48,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Application>("authorizedApps", AuthorizedApps);
         }
     }
 }

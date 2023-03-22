@@ -131,6 +131,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("catalogId", value); }
         }
 #endif
+        /// <summary>Information about all the custom extension calls that were made during the access package assignment workflow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CustomExtensionCalloutInstance>? CustomExtensionCalloutInstances {
+            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>?>("customExtensionCalloutInstances"); }
+            set { BackingStore?.Set("customExtensionCalloutInstances", value); }
+        }
+#nullable restore
+#else
+        public List<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances {
+            get { return BackingStore?.Get<List<CustomExtensionCalloutInstance>>("customExtensionCalloutInstances"); }
+            set { BackingStore?.Set("customExtensionCalloutInstances", value); }
+        }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ExpiredDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expiredDateTime"); }
@@ -205,6 +219,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"assignmentState", n => { AssignmentState = n.GetStringValue(); } },
                 {"assignmentStatus", n => { AssignmentStatus = n.GetStringValue(); } },
                 {"catalogId", n => { CatalogId = n.GetStringValue(); } },
+                {"customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<CustomExtensionCalloutInstance>(CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"expiredDateTime", n => { ExpiredDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isExtended", n => { IsExtended = n.GetBoolValue(); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
@@ -228,6 +243,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("assignmentState", AssignmentState);
             writer.WriteStringValue("assignmentStatus", AssignmentStatus);
             writer.WriteStringValue("catalogId", CatalogId);
+            writer.WriteCollectionOfObjectValues<CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
             writer.WriteDateTimeOffsetValue("expiredDateTime", ExpiredDateTime);
             writer.WriteBoolValue("isExtended", IsExtended);
             writer.WriteObjectValue<RequestSchedule>("schedule", Schedule);

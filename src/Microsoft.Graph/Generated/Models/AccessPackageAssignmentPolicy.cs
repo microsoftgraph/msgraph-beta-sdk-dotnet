@@ -99,6 +99,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customExtensionHandlers", value); }
         }
 #endif
+        /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CustomExtensionStageSetting>? CustomExtensionStageSettings {
+            get { return BackingStore?.Get<List<CustomExtensionStageSetting>?>("customExtensionStageSettings"); }
+            set { BackingStore?.Set("customExtensionStageSettings", value); }
+        }
+#nullable restore
+#else
+        public List<CustomExtensionStageSetting> CustomExtensionStageSettings {
+            get { return BackingStore?.Get<List<CustomExtensionStageSetting>>("customExtensionStageSettings"); }
+            set { BackingStore?.Set("customExtensionStageSettings", value); }
+        }
+#endif
         /// <summary>The description of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -219,6 +233,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"customExtensionHandlers", n => { CustomExtensionHandlers = n.GetCollectionOfObjectValues<CustomExtensionHandler>(CustomExtensionHandler.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"customExtensionStageSettings", n => { CustomExtensionStageSettings = n.GetCollectionOfObjectValues<CustomExtensionStageSetting>(CustomExtensionStageSetting.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
@@ -245,6 +260,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<CustomExtensionHandler>("customExtensionHandlers", CustomExtensionHandlers);
+            writer.WriteCollectionOfObjectValues<CustomExtensionStageSetting>("customExtensionStageSettings", CustomExtensionStageSettings);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("durationInDays", DurationInDays);

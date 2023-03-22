@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ExternalConnectors;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
+using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Graph.Beta.Models.Security;
@@ -72,7 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.accessPackageAssignment" => new AccessPackageAssignment(),
                 "#microsoft.graph.accessPackageAssignmentPolicy" => new AccessPackageAssignmentPolicy(),
                 "#microsoft.graph.accessPackageAssignmentRequest" => new AccessPackageAssignmentRequest(),
+                "#microsoft.graph.accessPackageAssignmentRequestWorkflowExtension" => new AccessPackageAssignmentRequestWorkflowExtension(),
                 "#microsoft.graph.accessPackageAssignmentResourceRole" => new AccessPackageAssignmentResourceRole(),
+                "#microsoft.graph.accessPackageAssignmentWorkflowExtension" => new AccessPackageAssignmentWorkflowExtension(),
                 "#microsoft.graph.accessPackageCatalog" => new AccessPackageCatalog(),
                 "#microsoft.graph.accessPackageResource" => new AccessPackageResource(),
                 "#microsoft.graph.accessPackageResourceEnvironment" => new AccessPackageResourceEnvironment(),
@@ -365,6 +368,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.customerPayment" => new CustomerPayment(),
                 "#microsoft.graph.customerPaymentJournal" => new CustomerPaymentJournal(),
                 "#microsoft.graph.customExtensionHandler" => new CustomExtensionHandler(),
+                "#microsoft.graph.customExtensionStageSetting" => new CustomExtensionStageSetting(),
                 "#microsoft.graph.customSecurityAttributeDefinition" => new CustomSecurityAttributeDefinition(),
                 "#microsoft.graph.dataClassificationService" => new DataClassificationService(),
                 "#microsoft.graph.dataLossPreventionPolicy" => new DataLossPreventionPolicy(),
@@ -711,6 +715,23 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.importedDeviceIdentityResult" => new ImportedDeviceIdentityResult(),
                 "#microsoft.graph.importedWindowsAutopilotDeviceIdentity" => new ImportedWindowsAutopilotDeviceIdentity(),
                 "#microsoft.graph.importedWindowsAutopilotDeviceIdentityUpload" => new ImportedWindowsAutopilotDeviceIdentityUpload(),
+                "#microsoft.graph.industryData.azureDataLakeConnector" => new AzureDataLakeConnector(),
+                "#microsoft.graph.industryData.fileDataConnector" => new FileDataConnector(),
+                "#microsoft.graph.industryData.fileValidateOperation" => new FileValidateOperation(),
+                "#microsoft.graph.industryData.inboundFileFlow" => new InboundFileFlow(),
+                "#microsoft.graph.industryData.inboundFlow" => new InboundFlow(),
+                "#microsoft.graph.industryData.inboundFlowActivity" => new InboundFlowActivity(),
+                "#microsoft.graph.industryData.industryDataActivity" => new IndustryDataActivity(),
+                "#microsoft.graph.industryData.industryDataConnector" => new IndustryDataConnector(),
+                "#microsoft.graph.industryData.industryDataRoot" => new IndustryDataRoot(),
+                "#microsoft.graph.industryData.industryDataRun" => new IndustryDataRun(),
+                "#microsoft.graph.industryData.industryDataRunActivity" => new IndustryDataRunActivity(),
+                "#microsoft.graph.industryData.outboundFlowActivity" => new OutboundFlowActivity(),
+                "#microsoft.graph.industryData.referenceDefinition" => new ReferenceDefinition(),
+                "#microsoft.graph.industryData.roleGroup" => new RoleGroup(),
+                "#microsoft.graph.industryData.sourceSystemDefinition" => new SourceSystemDefinition(),
+                "#microsoft.graph.industryData.validateOperation" => new ValidateOperation(),
+                "#microsoft.graph.industryData.yearTimePeriodDefinition" => new YearTimePeriodDefinition(),
                 "#microsoft.graph.inferenceClassification" => new InferenceClassification(),
                 "#microsoft.graph.inferenceClassificationOverride" => new InferenceClassificationOverride(),
                 "#microsoft.graph.informationProtection" => new InformationProtection(),

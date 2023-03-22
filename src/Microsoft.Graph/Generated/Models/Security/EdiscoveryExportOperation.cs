@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryExportOperation : CaseOperation, IParsable {
-        /// <summary>The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.</summary>
+        /// <summary>The azureBlobContainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureBlobContainer {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("azureBlobContainer", value); }
         }
 #endif
-        /// <summary>The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.</summary>
+        /// <summary>The azureBlobToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureBlobToken {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
-        /// <summary>The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.</summary>
+        /// <summary>The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30th, 2023. Going forward, the summary and load file are always included.</summary>
         public Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportOptions?>("exportOptions"); }
             set { BackingStore?.Set("exportOptions", value); }

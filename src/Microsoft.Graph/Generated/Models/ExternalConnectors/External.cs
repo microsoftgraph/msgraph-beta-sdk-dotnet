@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -25,6 +26,20 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public List<ExternalConnection> Connections {
             get { return BackingStore?.Get<List<ExternalConnection>>("connections"); }
             set { BackingStore?.Set("connections", value); }
+        }
+#endif
+        /// <summary>The industryData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public IndustryDataRoot? IndustryData {
+            get { return BackingStore?.Get<IndustryDataRoot?>("industryData"); }
+            set { BackingStore?.Set("industryData", value); }
+        }
+#nullable restore
+#else
+        public IndustryDataRoot IndustryData {
+            get { return BackingStore?.Get<IndustryDataRoot>("industryData"); }
+            set { BackingStore?.Set("industryData", value); }
         }
 #endif
         /// <summary>The OdataType property</summary>
@@ -62,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"connections", n => { Connections = n.GetCollectionOfObjectValues<ExternalConnection>(ExternalConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"industryData", n => { IndustryData = n.GetObjectValue<IndustryDataRoot>(IndustryDataRoot.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -72,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<ExternalConnection>("connections", Connections);
+            writer.WriteObjectValue<IndustryDataRoot>("industryData", IndustryData);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

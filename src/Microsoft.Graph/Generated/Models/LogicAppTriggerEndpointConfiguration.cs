@@ -47,6 +47,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subscriptionId", value); }
         }
 #endif
+        /// <summary>The URL to the logic app endpoint that will be triggered. Only required for app-only token scenarios where app is creating a customCalloutExtension without a signed-in user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url {
+            get { return BackingStore?.Get<string?>("url"); }
+            set { BackingStore?.Set("url", value); }
+        }
+#nullable restore
+#else
+        public string Url {
+            get { return BackingStore?.Get<string>("url"); }
+            set { BackingStore?.Set("url", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new LogicAppTriggerEndpointConfiguration and sets the default values.
         /// </summary>
@@ -69,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"logicAppWorkflowName", n => { LogicAppWorkflowName = n.GetStringValue(); } },
                 {"resourceGroupName", n => { ResourceGroupName = n.GetStringValue(); } },
                 {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("logicAppWorkflowName", LogicAppWorkflowName);
             writer.WriteStringValue("resourceGroupName", ResourceGroupName);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
+            writer.WriteStringValue("url", Url);
         }
     }
 }

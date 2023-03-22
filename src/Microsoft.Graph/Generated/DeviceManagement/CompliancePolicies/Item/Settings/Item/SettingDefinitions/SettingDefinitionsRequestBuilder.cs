@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Settings
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List of related Setting Definitions. This property is read-only.
+        /// List of related Setting Definitions
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Settings
             return await RequestAdapter.SendAsync<DeviceManagementConfigurationSettingDefinitionCollectionResponse>(requestInfo, DeviceManagementConfigurationSettingDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of related Setting Definitions. This property is read-only.
+        /// List of related Setting Definitions
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Settings
             return requestInfo;
         }
         /// <summary>
-        /// List of related Setting Definitions. This property is read-only.
+        /// List of related Setting Definitions
         /// </summary>
         public class SettingDefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

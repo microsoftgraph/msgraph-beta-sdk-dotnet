@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.External.Connections;
+using Microsoft.Graph.Beta.External.IndustryData;
 using Microsoft.Graph.Beta.Models.ExternalConnectors;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.External {
         /// <summary>Provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.</summary>
         public ConnectionsRequestBuilder Connections { get =>
             new ConnectionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the industryData property of the microsoft.graph.externalConnectors.external entity.</summary>
+        public IndustryDataRequestBuilder IndustryData { get =>
+            new IndustryDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
