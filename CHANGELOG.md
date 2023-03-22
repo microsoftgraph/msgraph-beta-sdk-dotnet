@@ -7,6 +7,14 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.23.0] - 2023-03-21
+
+### Added
+
+- Allows checking for status codes without parsing request bodies in batch requests (https://github.com/microsoftgraph/msgraph-sdk-dotnet-core/pull/626)
+- Updates kiota abstraction library dependencies to fix serialization errors.
+- Latest metadata updates from 21st March 2023
+
 ## [5.22.0] - 2023-03-14
 
 ### Added
