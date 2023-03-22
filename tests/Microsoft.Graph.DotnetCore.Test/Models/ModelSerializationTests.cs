@@ -9,6 +9,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
     using Microsoft.Graph.Beta.Models;
     using Microsoft.Kiota.Abstractions;
     using Microsoft.Kiota.Serialization.Json;
+    using System.Collections.Generic;
     using System.IO;
     using System.Text;
 
@@ -159,7 +160,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             Assert.Null(itemBody.AdditionalData);
         }
 
-        [Fact(Skip = "TODO fix pending odata.type bug")]
         public void SerializeDateValue()
         {
             var now = DateTimeOffset.UtcNow;
@@ -197,6 +197,32 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             Assert.NotNull(user);
             Assert.Equal(userId, user.Id);
             //Assert.Equal(testEtag, user.GetEtag());
+        }
+        [Fact]
+        public void TestPlannerAssigmentSerialization()
+        {
+            var planTask = new PlannerTask
+            {
+                PlanId = "PLAN_ID",
+                BucketId = "BUCKET_ID",
+                Title = "My Planner Task",
+                Assignments = new PlannerAssignments
+                {
+                    AdditionalData = new Dictionary<string, object>
+                    {
+                        {"USER_ID", new PlannerAssignment()}
+                    }
+                }
+            };
+
+            string expectedSerializedString = "{\"assignments\":{\"USER_ID\":{\"@odata.type\":\"#microsoft.graph.plannerAssignment\",\"orderHint\":\"!\"}},\"bucketId\":\"BUCKET_ID\",\"planId\":\"PLAN_ID\",\"title\":\"My Planner Task\"}";
+            using var jsonSerializerWriter = new JsonSerializationWriter();
+            jsonSerializerWriter.WriteObjectValue(string.Empty, planTask);
+            var serializedStream = jsonSerializerWriter.GetSerializedContent();
+
+            // Assert
+            var streamReader = new StreamReader(serializedStream);
+            Assert.Equal(expectedSerializedString, streamReader.ReadToEnd());
         }
     }
 }
