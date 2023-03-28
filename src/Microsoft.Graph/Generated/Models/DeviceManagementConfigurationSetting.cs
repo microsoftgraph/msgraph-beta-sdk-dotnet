@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// Setting instance within policy
     /// </summary>
     public class DeviceManagementConfigurationSetting : Entity, IParsable {
-        /// <summary>List of related Setting Definitions</summary>
+        /// <summary>List of related Setting Definitions. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DeviceManagementConfigurationSettingDefinition>? SettingDefinitions {

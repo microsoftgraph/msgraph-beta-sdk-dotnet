@@ -5,6 +5,11 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleDefinition : Entity, IParsable {
+        /// <summary>The allowedPrincipalTypes property</summary>
+        public AllowedRolePrincipalTypes? AllowedPrincipalTypes {
+            get { return BackingStore?.Get<AllowedRolePrincipalTypes?>("allowedPrincipalTypes"); }
+            set { BackingStore?.Set("allowedPrincipalTypes", value); }
+        }
         /// <summary>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedPrincipalTypes", n => { AllowedPrincipalTypes = n.GetEnumValue<AllowedRolePrincipalTypes>(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -144,6 +150,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<AllowedRolePrincipalTypes>("allowedPrincipalTypes", AllowedPrincipalTypes);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<UnifiedRoleDefinition>("inheritsPermissionsFrom", InheritsPermissionsFrom);

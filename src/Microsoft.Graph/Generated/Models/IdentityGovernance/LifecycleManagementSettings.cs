@@ -5,6 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class LifecycleManagementSettings : Entity, IParsable {
+        /// <summary>The emailSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.EmailSettings? EmailSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSettings?>("emailSettings"); }
+            set { BackingStore?.Set("emailSettings", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.EmailSettings EmailSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSettings>("emailSettings"); }
+            set { BackingStore?.Set("emailSettings", value); }
+        }
+#endif
         /// <summary>The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.</summary>
         public int? WorkflowScheduleIntervalInHours {
             get { return BackingStore?.Get<int?>("workflowScheduleIntervalInHours"); }
@@ -23,6 +37,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"emailSettings", n => { EmailSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailSettings>(Microsoft.Graph.Beta.Models.EmailSettings.CreateFromDiscriminatorValue); } },
                 {"workflowScheduleIntervalInHours", n => { WorkflowScheduleIntervalInHours = n.GetIntValue(); } },
             };
         }
@@ -33,6 +48,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EmailSettings>("emailSettings", EmailSettings);
             writer.WriteIntValue("workflowScheduleIntervalInHours", WorkflowScheduleIntervalInHours);
         }
     }

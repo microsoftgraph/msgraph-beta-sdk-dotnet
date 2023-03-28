@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta {
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    public class BaseGraphServiceClient {
+    public class BaseGraphServiceClient : BaseRequestBuilder {
         /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
         public AccessReviewDecisionsRequestBuilder AccessReviewDecisions { get =>
             new AccessReviewDecisionsRequestBuilder(PathParameters, RequestAdapter);
@@ -416,8 +416,6 @@ namespace Microsoft.Graph.Beta {
         public OrganizationRequestBuilder Organization { get =>
             new OrganizationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the collection of payloadResponse entities.</summary>
         public PayloadResponseRequestBuilder PayloadResponse { get =>
             new PayloadResponseRequestBuilder(PathParameters, RequestAdapter);
@@ -490,8 +488,6 @@ namespace Microsoft.Graph.Beta {
         public ReportsRequestBuilder Reports { get =>
             new ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the collection of riskDetection entities.</summary>
         public RiskDetectionsRequestBuilder RiskDetections { get =>
             new RiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
@@ -584,8 +580,6 @@ namespace Microsoft.Graph.Beta {
         public TrustFrameworkRequestBuilder TrustFramework { get =>
             new TrustFrameworkRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the collection of user entities.</summary>
         public UsersRequestBuilder Users { get =>
             new UsersRequestBuilder(PathParameters, RequestAdapter);
@@ -595,11 +589,7 @@ namespace Microsoft.Graph.Beta {
         /// </summary>
         /// <param name="backingStore">The backing store to use for the models.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BaseGraphServiceClient(IRequestAdapter requestAdapter, IBackingStoreFactory backingStore = default) {
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            PathParameters = new Dictionary<string, object>();
-            UrlTemplate = "{+baseurl}";
-            RequestAdapter = requestAdapter;
+        public BaseGraphServiceClient(IRequestAdapter requestAdapter, IBackingStoreFactory backingStore = default) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>()) {
             ApiClientBuilder.RegisterDefaultSerializer<JsonSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultSerializer<TextSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultSerializer<FormSerializationWriterFactory>();

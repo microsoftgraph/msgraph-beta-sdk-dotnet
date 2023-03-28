@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Me.Presence {
     /// <summary>
     /// Provides operations to manage the presence property of the microsoft.graph.user entity.
     /// </summary>
-    public class PresenceRequestBuilder {
+    public class PresenceRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the clearPresence method.</summary>
         public ClearPresenceRequestBuilder ClearPresence { get =>
             new ClearPresenceRequestBuilder(PathParameters, RequestAdapter);
@@ -26,10 +26,6 @@ namespace Microsoft.Graph.Beta.Me.Presence {
         public ClearUserPreferredPresenceRequestBuilder ClearUserPreferredPresence { get =>
             new ClearUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to call the setPresence method.</summary>
         public SetPresenceRequestBuilder SetPresence { get =>
             new SetPresenceRequestBuilder(PathParameters, RequestAdapter);
@@ -42,34 +38,19 @@ namespace Microsoft.Graph.Beta.Me.Presence {
         public SetUserPreferredPresenceRequestBuilder SetUserPreferredPresence { get =>
             new SetUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new PresenceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PresenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/presence{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public PresenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/presence{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PresenceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PresenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/presence{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public PresenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/presence{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property presence for me

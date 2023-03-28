@@ -11,41 +11,22 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetYammerDeviceUsageUserDetailWithD
     /// <summary>
     /// Provides operations to call the getYammerDeviceUsageUserDetail method.
     /// </summary>
-    public class GetYammerDeviceUsageUserDetailWithDateRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class GetYammerDeviceUsageUserDetailWithDateRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new GetYammerDeviceUsageUserDetailWithDateRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="date">Usage: date={date}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetYammerDeviceUsageUserDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/getYammerDeviceUsageUserDetail(date={date})";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (date is not null) urlTplParams.Add("date", date);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetYammerDeviceUsageUserDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) : base(requestAdapter, "{+baseurl}/print/reports/getYammerDeviceUsageUserDetail(date={date})", pathParameters) {
+            if (date is not null) PathParameters.Add("date", date);
         }
         /// <summary>
         /// Instantiates a new GetYammerDeviceUsageUserDetailWithDateRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetYammerDeviceUsageUserDetailWithDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/getYammerDeviceUsageUserDetail(date={date})";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetYammerDeviceUsageUserDetailWithDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/reports/getYammerDeviceUsageUserDetail(date={date})", rawUrl) {
         }
         /// <summary>
         /// Invoke function getYammerDeviceUsageUserDetail

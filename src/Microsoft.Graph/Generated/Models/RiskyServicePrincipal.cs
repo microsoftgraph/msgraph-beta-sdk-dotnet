@@ -52,6 +52,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("history", value); }
         }
 #endif
+        /// <summary>The isEnabled property</summary>
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
+        }
         /// <summary>Indicates whether Azure AD is currently processing the service principal&apos;s risky state.</summary>
         public bool? IsProcessing {
             get { return BackingStore?.Get<bool?>("isProcessing"); }
@@ -112,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"history", n => { History = n.GetCollectionOfObjectValues<RiskyServicePrincipalHistoryItem>(RiskyServicePrincipalHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"isProcessing", n => { IsProcessing = n.GetBoolValue(); } },
                 {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
                 {"riskLastUpdatedDateTime", n => { RiskLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -131,6 +137,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<RiskyServicePrincipalHistoryItem>("history", History);
+            writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isProcessing", IsProcessing);
             writer.WriteEnumValue<RiskDetail>("riskDetail", RiskDetail);
             writer.WriteDateTimeOffsetValue("riskLastUpdatedDateTime", RiskLastUpdatedDateTime);

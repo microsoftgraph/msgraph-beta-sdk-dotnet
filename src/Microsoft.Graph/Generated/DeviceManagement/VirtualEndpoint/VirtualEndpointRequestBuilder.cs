@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
     /// <summary>
     /// Provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class VirtualEndpointRequestBuilder {
+    public class VirtualEndpointRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.</summary>
         public AuditEventsRequestBuilder AuditEvents { get =>
             new AuditEventsRequestBuilder(PathParameters, RequestAdapter);
@@ -65,8 +65,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         public OrganizationSettingsRequestBuilder OrganizationSettings { get =>
             new OrganizationSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.</summary>
         public ProvisioningPoliciesRequestBuilder ProvisioningPolicies { get =>
             new ProvisioningPoliciesRequestBuilder(PathParameters, RequestAdapter);
@@ -75,8 +73,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         public ReportsRequestBuilder Reports { get =>
             new ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the servicePlans property of the microsoft.graph.virtualEndpoint entity.</summary>
         public ServicePlansRequestBuilder ServicePlans { get =>
             new ServicePlansRequestBuilder(PathParameters, RequestAdapter);
@@ -93,8 +89,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         public SupportedRegionsRequestBuilder SupportedRegions { get =>
             new SupportedRegionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public UserSettingsRequestBuilder UserSettings { get =>
             new UserSettingsRequestBuilder(PathParameters, RequestAdapter);
@@ -104,27 +98,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualEndpointRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public VirtualEndpointRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new VirtualEndpointRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VirtualEndpointRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public VirtualEndpointRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property virtualEndpoint for deviceManagement

@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as&apos;2014-01-01T00:00:00Z&apos;.</summary>
+        /// <summary>The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRestoredDateTime"); }
             set { BackingStore?.Set("lastRestoredDateTime", value); }
         }
-        /// <summary>The type of snapshot. indicates how the snapshot is to be created. Possible values are automatic, manual. Default value is automatic.</summary>
+        /// <summary>The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.</summary>
         public CloudPcSnapshotType? SnapshotType {
             get { return BackingStore?.Get<CloudPcSnapshotType?>("snapshotType"); }
             set { BackingStore?.Set("snapshotType", value); }

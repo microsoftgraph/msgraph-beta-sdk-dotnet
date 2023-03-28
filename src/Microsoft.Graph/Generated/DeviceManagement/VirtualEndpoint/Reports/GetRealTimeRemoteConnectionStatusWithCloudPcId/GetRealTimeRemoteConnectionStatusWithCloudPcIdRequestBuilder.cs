@@ -11,41 +11,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealT
     /// <summary>
     /// Provides operations to call the getRealTimeRemoteConnectionStatus method.
     /// </summary>
-    public class GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string cloudPcId = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionStatus(cloudPcId='{cloudPcId}')";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(cloudPcId)) urlTplParams.Add("cloudPcId", cloudPcId);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string cloudPcId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionStatus(cloudPcId='{cloudPcId}')", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(cloudPcId)) PathParameters.Add("cloudPcId", cloudPcId);
         }
         /// <summary>
         /// Instantiates a new GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionStatus(cloudPcId='{cloudPcId}')";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionStatus(cloudPcId='{cloudPcId}')", rawUrl) {
         }
         /// <summary>
         /// Invoke function getRealTimeRemoteConnectionStatus

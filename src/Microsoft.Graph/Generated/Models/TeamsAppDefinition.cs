@@ -10,6 +10,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TeamsAppInstallationScopes?>("allowedInstallationScopes"); }
             set { BackingStore?.Set("allowedInstallationScopes", value); }
         }
+        /// <summary>The authorization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public TeamsAppAuthorization? Authorization {
+            get { return BackingStore?.Get<TeamsAppAuthorization?>("authorization"); }
+            set { BackingStore?.Set("authorization", value); }
+        }
+#nullable restore
+#else
+        public TeamsAppAuthorization Authorization {
+            get { return BackingStore?.Get<TeamsAppAuthorization>("authorization"); }
+            set { BackingStore?.Set("authorization", value); }
+        }
+#endif
         /// <summary>The WebApplicationInfo.Id from the Teams app manifest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowedInstallationScopes", n => { AllowedInstallationScopes = n.GetEnumValue<TeamsAppInstallationScopes>(); } },
+                {"authorization", n => { Authorization = n.GetObjectValue<TeamsAppAuthorization>(TeamsAppAuthorization.CreateFromDiscriminatorValue); } },
                 {"azureADAppId", n => { AzureADAppId = n.GetStringValue(); } },
                 {"bot", n => { Bot = n.GetObjectValue<TeamworkBot>(TeamworkBot.CreateFromDiscriminatorValue); } },
                 {"colorIcon", n => { ColorIcon = n.GetObjectValue<TeamsAppIcon>(TeamsAppIcon.CreateFromDiscriminatorValue); } },
@@ -196,6 +211,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<TeamsAppInstallationScopes>("allowedInstallationScopes", AllowedInstallationScopes);
+            writer.WriteObjectValue<TeamsAppAuthorization>("authorization", Authorization);
             writer.WriteStringValue("azureADAppId", AzureADAppId);
             writer.WriteObjectValue<TeamworkBot>("bot", Bot);
             writer.WriteObjectValue<TeamsAppIcon>("colorIcon", ColorIcon);

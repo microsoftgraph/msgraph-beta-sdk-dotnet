@@ -378,7 +378,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions {
     /// <summary>
     /// Provides operations to manage the functions property of the microsoft.graph.workbook entity.
     /// </summary>
-    public class FunctionsRequestBuilder {
+    public class FunctionsRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the abs method.</summary>
         public AbsRequestBuilder Abs { get =>
             new AbsRequestBuilder(PathParameters, RequestAdapter);
@@ -476,8 +476,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions {
             new BahtTextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the base method.</summary>
-        public BaseRequestBuilder Base { get =>
-            new BaseRequestBuilder(PathParameters, RequestAdapter);
+        public BaseRequestBuilderEscaped Base { get =>
+            new BaseRequestBuilderEscaped(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the besselI method.</summary>
         public BesselIRequestBuilder BesselI { get =>
@@ -1395,8 +1395,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions {
         public OrRequestBuilder Or { get =>
             new OrRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to call the pduration method.</summary>
         public PdurationRequestBuilder Pduration { get =>
             new PdurationRequestBuilder(PathParameters, RequestAdapter);
@@ -1525,8 +1523,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions {
         public ReptRequestBuilder Rept { get =>
             new ReptRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to call the right method.</summary>
         public RightRequestBuilder Right { get =>
             new RightRequestBuilder(PathParameters, RequestAdapter);
@@ -1759,8 +1755,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions {
         public UpperRequestBuilder Upper { get =>
             new UpperRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to call the usdollar method.</summary>
         public UsdollarRequestBuilder Usdollar { get =>
             new UsdollarRequestBuilder(PathParameters, RequestAdapter);
@@ -1854,27 +1848,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FunctionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public FunctionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new FunctionsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FunctionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public FunctionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property functions for drives

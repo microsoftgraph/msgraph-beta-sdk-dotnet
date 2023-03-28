@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidLobApp : MobileLobApp, IParsable {
-        /// <summary>The Identity Name. This property is deprecated starting  in February 2023 (Release 2302).</summary>
+        /// <summary>The Identity Name. This property is being deprecated in 2302(February 2023).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityName {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityName", value); }
         }
 #endif
-        /// <summary>The identity version. This property is deprecated starting  in February 2023 (Release 2302).</summary>
+        /// <summary>The identity version. This property is being deprecated in 2302(February 2023).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityVersion {

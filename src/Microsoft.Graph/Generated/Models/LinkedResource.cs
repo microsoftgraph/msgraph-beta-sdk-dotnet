@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class LinkedResource : Entity, IParsable {
-        /// <summary>Field indicating the app name of the source that is sending the linkedResource.</summary>
+        /// <summary>The app name of the source that sends the linkedResource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationName {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("applicationName", value); }
         }
 #endif
-        /// <summary>Field indicating the title of the linkedResource.</summary>
+        /// <summary>The title of the linkedResource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Id of the object that is associated with this task on the third-party/partner system.</summary>
+        /// <summary>ID of the object that is associated with this task on the third-party/partner system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId {

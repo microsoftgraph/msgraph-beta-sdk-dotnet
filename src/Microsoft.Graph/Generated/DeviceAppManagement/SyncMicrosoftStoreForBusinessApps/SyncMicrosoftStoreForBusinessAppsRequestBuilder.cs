@@ -11,39 +11,20 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.SyncMicrosoftStoreForBusiness
     /// <summary>
     /// Provides operations to call the syncMicrosoftStoreForBusinessApps method.
     /// </summary>
-    public class SyncMicrosoftStoreForBusinessAppsRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class SyncMicrosoftStoreForBusinessAppsRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new SyncMicrosoftStoreForBusinessAppsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SyncMicrosoftStoreForBusinessAppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/syncMicrosoftStoreForBusinessApps";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public SyncMicrosoftStoreForBusinessAppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/syncMicrosoftStoreForBusinessApps", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new SyncMicrosoftStoreForBusinessAppsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SyncMicrosoftStoreForBusinessAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/syncMicrosoftStoreForBusinessApps";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public SyncMicrosoftStoreForBusinessAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/syncMicrosoftStoreForBusinessApps", rawUrl) {
         }
         /// <summary>
         /// Syncs Intune account with Microsoft Store For Business

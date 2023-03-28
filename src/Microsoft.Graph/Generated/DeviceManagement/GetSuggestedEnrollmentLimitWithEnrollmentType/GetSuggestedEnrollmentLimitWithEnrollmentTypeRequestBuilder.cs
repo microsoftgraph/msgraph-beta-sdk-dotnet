@@ -12,41 +12,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithE
     /// <summary>
     /// Provides operations to call the getSuggestedEnrollmentLimit method.
     /// </summary>
-    public class GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="enrollmentType">Usage: enrollmentType=&apos;{enrollmentType}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string enrollmentType = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(enrollmentType)) urlTplParams.Add("enrollmentType", enrollmentType);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string enrollmentType = "") : base(requestAdapter, "{+baseurl}/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(enrollmentType)) PathParameters.Add("enrollmentType", enrollmentType);
         }
         /// <summary>
         /// Instantiates a new GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')", rawUrl) {
         }
         /// <summary>
         /// Invoke function getSuggestedEnrollmentLimit

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item {
     /// <summary>
     /// Provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
     /// </summary>
-    public class OnlineMeetingItemRequestBuilder {
+    public class OnlineMeetingItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the media for the commsApplication entity.</summary>
         public AlternativeRecordingRequestBuilder AlternativeRecording { get =>
             new AlternativeRecordingRequestBuilder(PathParameters, RequestAdapter);
@@ -37,8 +37,6 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item {
         public MeetingAttendanceReportRequestBuilder MeetingAttendanceReport { get =>
             new MeetingAttendanceReportRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the media for the commsApplication entity.</summary>
         public RecordingRequestBuilder Recording { get =>
             new RecordingRequestBuilder(PathParameters, RequestAdapter);
@@ -47,14 +45,10 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item {
         public RegistrationRequestBuilder Registration { get =>
             new RegistrationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.</summary>
         public TranscriptsRequestBuilder Transcripts { get =>
             new TranscriptsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.</summary>
         public VirtualAppointmentRequestBuilder VirtualAppointment { get =>
             new VirtualAppointmentRequestBuilder(PathParameters, RequestAdapter);
@@ -64,27 +58,14 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnlineMeetingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public OnlineMeetingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnlineMeetingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public OnlineMeetingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property onlineMeetings for app

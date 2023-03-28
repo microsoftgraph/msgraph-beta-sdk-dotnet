@@ -5,20 +5,6 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class WorkflowVersion : WorkflowBase, IParsable {
-        /// <summary>The OdataType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OdataType {
-            get { return BackingStore?.Get<string?>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
-#nullable restore
-#else
-        public string OdataType {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
-#endif
         /// <summary>The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? VersionNumber {
             get { return BackingStore?.Get<int?>("versionNumber"); }
@@ -43,7 +29,6 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"versionNumber", n => { VersionNumber = n.GetIntValue(); } },
             };
         }
@@ -54,7 +39,6 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("versionNumber", VersionNumber);
         }
     }

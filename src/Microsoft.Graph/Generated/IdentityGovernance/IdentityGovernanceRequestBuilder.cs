@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
     /// <summary>
     /// Provides operations to manage the identityGovernance singleton.
     /// </summary>
-    public class IdentityGovernanceRequestBuilder {
+    public class IdentityGovernanceRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.</summary>
         public AccessReviewsRequestBuilder AccessReviews { get =>
             new AccessReviewsRequestBuilder(PathParameters, RequestAdapter);
@@ -36,14 +36,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
         public LifecycleWorkflowsRequestBuilder LifecycleWorkflows { get =>
             new LifecycleWorkflowsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the privilegedAccess property of the microsoft.graph.identityGovernance entity.</summary>
         public PrivilegedAccessRequestBuilder PrivilegedAccess { get =>
             new PrivilegedAccessRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the roleManagementAlerts property of the microsoft.graph.identityGovernance entity.</summary>
         public RoleManagementAlertsRequestBuilder RoleManagementAlerts { get =>
             new RoleManagementAlertsRequestBuilder(PathParameters, RequestAdapter);
@@ -52,34 +48,19 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
         public TermsOfUseRequestBuilder TermsOfUse { get =>
             new TermsOfUseRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IdentityGovernanceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/identityGovernance{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public IdentityGovernanceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IdentityGovernanceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/identityGovernance{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public IdentityGovernanceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Get identityGovernance

@@ -12,41 +12,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
     /// <summary>
     /// Provides operations to call the getPolicySummary method.
     /// </summary>
-    public class GetPolicySummaryWithPolicyIdRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class GetPolicySummaryWithPolicyIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new GetPolicySummaryWithPolicyIdRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="policyId">Usage: policyId=&apos;{policyId}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetPolicySummaryWithPolicyIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string policyId = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(policyId)) urlTplParams.Add("policyId", policyId);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetPolicySummaryWithPolicyIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string policyId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(policyId)) PathParameters.Add("policyId", policyId);
         }
         /// <summary>
         /// Instantiates a new GetPolicySummaryWithPolicyIdRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetPolicySummaryWithPolicyIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetPolicySummaryWithPolicyIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')", rawUrl) {
         }
         /// <summary>
         /// Invoke function getPolicySummary

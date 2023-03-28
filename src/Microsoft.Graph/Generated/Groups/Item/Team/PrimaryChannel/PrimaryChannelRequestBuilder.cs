@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel {
     /// <summary>
     /// Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
     /// </summary>
-    public class PrimaryChannelRequestBuilder {
+    public class PrimaryChannelRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the completeMigration method.</summary>
         public CompleteMigrationRequestBuilder CompleteMigration { get =>
             new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
@@ -42,8 +42,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel {
         public MessagesRequestBuilder Messages { get =>
             new MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to call the provisionEmail method.</summary>
         public ProvisionEmailRequestBuilder ProvisionEmail { get =>
             new ProvisionEmailRequestBuilder(PathParameters, RequestAdapter);
@@ -52,8 +50,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel {
         public RemoveEmailRequestBuilder RemoveEmail { get =>
             new RemoveEmailRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.</summary>
         public SharedWithTeamsRequestBuilder SharedWithTeams { get =>
             new SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
@@ -62,34 +58,19 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel {
         public TabsRequestBuilder Tabs { get =>
             new TabsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new PrimaryChannelRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrimaryChannelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/primaryChannel{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public PrimaryChannelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/primaryChannel{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PrimaryChannelRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrimaryChannelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups/{group%2Did}/team/primaryChannel{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public PrimaryChannelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/primaryChannel{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property primaryChannel for groups

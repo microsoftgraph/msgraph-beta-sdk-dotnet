@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MacOsLobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
-        /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
+        /// <summary>When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.</summary>
         public bool? UninstallOnDeviceRemoval {
             get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
             set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }

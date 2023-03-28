@@ -92,6 +92,7 @@ using Microsoft.Graph.Beta.DeviceManagement.Monitoring;
 using Microsoft.Graph.Beta.DeviceManagement.NdesConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates;
 using Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding;
+using Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings;
@@ -189,7 +190,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
     /// <summary>
     /// Provides operations to manage the deviceManagement singleton.
     /// </summary>
-    public class DeviceManagementRequestBuilder {
+    public class DeviceManagementRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the advancedThreatProtectionOnboardingStateSummary property of the microsoft.graph.deviceManagement entity.</summary>
         public AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder AdvancedThreatProtectionOnboardingStateSummary { get =>
             new AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder(PathParameters, RequestAdapter);
@@ -550,8 +551,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public OemWarrantyInformationOnboardingRequestBuilder OemWarrantyInformationOnboarding { get =>
             new OemWarrantyInformationOnboardingRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to manage the privilegeManagementElevations property of the microsoft.graph.deviceManagement entity.</summary>
+        public PrivilegeManagementElevationsRequestBuilder PrivilegeManagementElevations { get =>
+            new PrivilegeManagementElevationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.</summary>
         public RemoteActionAuditsRequestBuilder RemoteActionAudits { get =>
             new RemoteActionAuditsRequestBuilder(PathParameters, RequestAdapter);
@@ -568,8 +571,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public ReportsRequestBuilder Reports { get =>
             new ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.</summary>
         public ResourceAccessProfilesRequestBuilder ResourceAccessProfiles { get =>
             new ResourceAccessProfilesRequestBuilder(PathParameters, RequestAdapter);
@@ -638,8 +639,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public TroubleshootingEventsRequestBuilder TroubleshootingEvents { get =>
             new TroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.</summary>
         public UserExperienceAnalyticsAnomalyRequestBuilder UserExperienceAnalyticsAnomaly { get =>
             new UserExperienceAnalyticsAnomalyRequestBuilder(PathParameters, RequestAdapter);
@@ -885,27 +884,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public DeviceManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DeviceManagementRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public DeviceManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Get deviceManagement

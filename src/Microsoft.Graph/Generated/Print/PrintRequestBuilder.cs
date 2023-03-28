@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Print {
     /// <summary>
     /// Provides operations to manage the print singleton.
     /// </summary>
-    public class PrintRequestBuilder {
+    public class PrintRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the connectors property of the microsoft.graph.print entity.</summary>
         public ConnectorsRequestBuilder Connectors { get =>
             new ConnectorsRequestBuilder(PathParameters, RequestAdapter);
@@ -29,8 +29,6 @@ namespace Microsoft.Graph.Beta.Print {
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the printers property of the microsoft.graph.print entity.</summary>
         public PrintersRequestBuilder Printers { get =>
             new PrintersRequestBuilder(PathParameters, RequestAdapter);
@@ -43,8 +41,6 @@ namespace Microsoft.Graph.Beta.Print {
         public ReportsRequestBuilder Reports { get =>
             new ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the services property of the microsoft.graph.print entity.</summary>
         public ServicesRequestBuilder Services { get =>
             new ServicesRequestBuilder(PathParameters, RequestAdapter);
@@ -57,34 +53,19 @@ namespace Microsoft.Graph.Beta.Print {
         public TaskDefinitionsRequestBuilder TaskDefinitions { get =>
             new TaskDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new PrintRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrintRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public PrintRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PrintRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrintRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public PrintRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Get print
