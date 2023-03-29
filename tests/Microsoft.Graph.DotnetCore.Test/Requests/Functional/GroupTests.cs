@@ -29,8 +29,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 };
 
                 // Add a team to the group.  Results in a call to the service.
-                //TODO should be PUT
-                await graphClient.Groups[groupPage.Value[8].Id].Team.PatchAsync(team);
+                await graphClient.Groups[groupPage.Value[8].Id].Team.PutAsync(team);
             }
             catch (ODataError e)
             {

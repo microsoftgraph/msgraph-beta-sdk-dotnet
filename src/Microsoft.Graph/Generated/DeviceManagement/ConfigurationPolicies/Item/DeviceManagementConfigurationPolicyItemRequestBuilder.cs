@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item {
     /// <summary>
     /// Provides operations to manage the configurationPolicies property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class DeviceManagementConfigurationPolicyItemRequestBuilder {
+    public class DeviceManagementConfigurationPolicyItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
@@ -30,46 +30,27 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item {
         public CreateCopyRequestBuilder CreateCopy { get =>
             new CreateCopyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to call the reorder method.</summary>
         public ReorderRequestBuilder Reorder { get =>
             new ReorderRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationPolicyItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceManagementConfigurationPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public DeviceManagementConfigurationPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationPolicyItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceManagementConfigurationPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public DeviceManagementConfigurationPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property configurationPolicies for deviceManagement

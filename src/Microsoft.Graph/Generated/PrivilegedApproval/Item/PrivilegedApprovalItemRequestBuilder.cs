@@ -14,47 +14,28 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
     /// <summary>
     /// Provides operations to manage the collection of privilegedApproval entities.
     /// </summary>
-    public class PrivilegedApprovalItemRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
+    public class PrivilegedApprovalItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the request property of the microsoft.graph.privilegedApproval entity.</summary>
         public RequestRequestBuilder Request { get =>
             new RequestRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the roleInfo property of the microsoft.graph.privilegedApproval entity.</summary>
         public RoleInfoRequestBuilder RoleInfo { get =>
             new RoleInfoRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new PrivilegedApprovalItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegedApprovalItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public PrivilegedApprovalItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PrivilegedApprovalItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegedApprovalItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public PrivilegedApprovalItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete entity from privilegedApproval

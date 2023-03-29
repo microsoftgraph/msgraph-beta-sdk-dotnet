@@ -15,15 +15,11 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item {
     /// <summary>
     /// Provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
     /// </summary>
-    public class OutlookTaskFolderItemRequestBuilder {
+    public class OutlookTaskFolderItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
             new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.</summary>
         public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
             new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
@@ -32,34 +28,19 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item {
         public TasksRequestBuilder Tasks { get =>
             new TasksRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new OutlookTaskFolderItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutlookTaskFolderItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/outlook/taskFolders/{outlookTaskFolder%2Did}{?%24select}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public OutlookTaskFolderItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/taskFolders/{outlookTaskFolder%2Did}{?%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new OutlookTaskFolderItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutlookTaskFolderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/outlook/taskFolders/{outlookTaskFolder%2Did}{?%24select}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public OutlookTaskFolderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/taskFolders/{outlookTaskFolder%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property taskFolders for me

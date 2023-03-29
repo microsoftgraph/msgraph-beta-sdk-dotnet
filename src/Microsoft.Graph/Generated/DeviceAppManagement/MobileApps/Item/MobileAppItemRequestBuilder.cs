@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
     /// <summary>
     /// Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
     /// </summary>
-    public class MobileAppItemRequestBuilder {
+    public class MobileAppItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
@@ -52,20 +52,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         public InstallSummaryRequestBuilder InstallSummary { get =>
             new InstallSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
         public RelationshipsRequestBuilder Relationships { get =>
             new RelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to call the updateRelationships method.</summary>
         public UpdateRelationshipsRequestBuilder UpdateRelationships { get =>
             new UpdateRelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.</summary>
         public UserStatusesRequestBuilder UserStatuses { get =>
             new UserStatusesRequestBuilder(PathParameters, RequestAdapter);
@@ -75,27 +69,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MobileAppItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public MobileAppItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new MobileAppItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MobileAppItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public MobileAppItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property mobileApps for deviceAppManagement

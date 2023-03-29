@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
     /// <summary>
     /// Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class WindowsAutopilotDeviceIdentityItemRequestBuilder {
+    public class WindowsAutopilotDeviceIdentityItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the assignResourceAccountToDevice method.</summary>
         public AssignResourceAccountToDeviceRequestBuilder AssignResourceAccountToDevice { get =>
             new AssignResourceAccountToDeviceRequestBuilder(PathParameters, RequestAdapter);
@@ -36,10 +36,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         public IntendedDeploymentProfileRequestBuilder IntendedDeploymentProfile { get =>
             new IntendedDeploymentProfileRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to call the unassignResourceAccountFromDevice method.</summary>
         public UnassignResourceAccountFromDeviceRequestBuilder UnassignResourceAccountFromDevice { get =>
             new UnassignResourceAccountFromDeviceRequestBuilder(PathParameters, RequestAdapter);
@@ -52,34 +48,19 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         public UpdateDevicePropertiesRequestBuilder UpdateDeviceProperties { get =>
             new UpdateDevicePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new WindowsAutopilotDeviceIdentityItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WindowsAutopilotDeviceIdentityItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public WindowsAutopilotDeviceIdentityItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new WindowsAutopilotDeviceIdentityItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WindowsAutopilotDeviceIdentityItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public WindowsAutopilotDeviceIdentityItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement

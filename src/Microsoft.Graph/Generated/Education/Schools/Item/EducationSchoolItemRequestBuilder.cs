@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
     /// <summary>
     /// Provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
     /// </summary>
-    public class EducationSchoolItemRequestBuilder {
+    public class EducationSchoolItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the administrativeUnit property of the microsoft.graph.educationSchool entity.</summary>
         public AdministrativeUnitRequestBuilder AdministrativeUnit { get =>
             new AdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
@@ -24,12 +24,6 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
         public ClassesRequestBuilder Classes { get =>
             new ClassesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.educationSchool entity.</summary>
         public UsersRequestBuilder Users { get =>
             new UsersRequestBuilder(PathParameters, RequestAdapter);
@@ -39,27 +33,14 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationSchoolItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public EducationSchoolItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationSchoolItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/education/schools/{educationSchool%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public EducationSchoolItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property schools for education

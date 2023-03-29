@@ -19,6 +19,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("aggregatedPolicyCompliances", value); }
         }
 #endif
+        /// <summary>The appPerformances property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AppPerformance>? AppPerformances {
+            get { return BackingStore?.Get<List<AppPerformance>?>("appPerformances"); }
+            set { BackingStore?.Set("appPerformances", value); }
+        }
+#nullable restore
+#else
+        public List<AppPerformance> AppPerformances {
+            get { return BackingStore?.Get<List<AppPerformance>>("appPerformances"); }
+            set { BackingStore?.Set("appPerformances", value); }
+        }
+#endif
         /// <summary>The collection of audit events across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +117,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("credentialUserRegistrationsSummaries", value); }
         }
 #endif
+        /// <summary>The deviceAppPerformances property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DeviceAppPerformance>? DeviceAppPerformances {
+            get { return BackingStore?.Get<List<DeviceAppPerformance>?>("deviceAppPerformances"); }
+            set { BackingStore?.Set("deviceAppPerformances", value); }
+        }
+#nullable restore
+#else
+        public List<DeviceAppPerformance> DeviceAppPerformances {
+            get { return BackingStore?.Get<List<DeviceAppPerformance>>("deviceAppPerformances"); }
+            set { BackingStore?.Set("deviceAppPerformances", value); }
+        }
+#endif
         /// <summary>Summary information for device compliance policy setting states across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,6 +143,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public List<DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries {
             get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>>("deviceCompliancePolicySettingStateSummaries"); }
             set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
+        }
+#endif
+        /// <summary>The deviceHealthStatuses property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DeviceHealthStatus>? DeviceHealthStatuses {
+            get { return BackingStore?.Get<List<DeviceHealthStatus>?>("deviceHealthStatuses"); }
+            set { BackingStore?.Set("deviceHealthStatuses", value); }
+        }
+#nullable restore
+#else
+        public List<DeviceHealthStatus> DeviceHealthStatuses {
+            get { return BackingStore?.Get<List<DeviceHealthStatus>>("deviceHealthStatuses"); }
+            set { BackingStore?.Set("deviceHealthStatuses", value); }
         }
 #endif
         /// <summary>The collection of compliance for managed devices across managed tenants.</summary>
@@ -495,13 +537,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"aggregatedPolicyCompliances", n => { AggregatedPolicyCompliances = n.GetCollectionOfObjectValues<AggregatedPolicyCompliance>(AggregatedPolicyCompliance.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"appPerformances", n => { AppPerformances = n.GetCollectionOfObjectValues<AppPerformance>(AppPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<AuditEvent>(AuditEvent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"cloudPcConnections", n => { CloudPcConnections = n.GetCollectionOfObjectValues<CloudPcConnection>(CloudPcConnection.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"cloudPcDevices", n => { CloudPcDevices = n.GetCollectionOfObjectValues<CloudPcDevice>(CloudPcDevice.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"cloudPcsOverview", n => { CloudPcsOverview = n.GetCollectionOfObjectValues<CloudPcOverview>(CloudPcOverview.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"conditionalAccessPolicyCoverages", n => { ConditionalAccessPolicyCoverages = n.GetCollectionOfObjectValues<ConditionalAccessPolicyCoverage>(ConditionalAccessPolicyCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"credentialUserRegistrationsSummaries", n => { CredentialUserRegistrationsSummaries = n.GetCollectionOfObjectValues<CredentialUserRegistrationsSummary>(CredentialUserRegistrationsSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"deviceAppPerformances", n => { DeviceAppPerformances = n.GetCollectionOfObjectValues<DeviceAppPerformance>(DeviceAppPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceCompliancePolicySettingStateSummaries", n => { DeviceCompliancePolicySettingStateSummaries = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>(DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"deviceHealthStatuses", n => { DeviceHealthStatuses = n.GetCollectionOfObjectValues<DeviceHealthStatus>(DeviceHealthStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDeviceCompliances", n => { ManagedDeviceCompliances = n.GetCollectionOfObjectValues<ManagedDeviceCompliance>(ManagedDeviceCompliance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDeviceComplianceTrends", n => { ManagedDeviceComplianceTrends = n.GetCollectionOfObjectValues<ManagedDeviceComplianceTrend>(ManagedDeviceComplianceTrend.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedTenantAlertLogs", n => { ManagedTenantAlertLogs = n.GetCollectionOfObjectValues<ManagedTenantAlertLog>(ManagedTenantAlertLog.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -538,13 +583,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AggregatedPolicyCompliance>("aggregatedPolicyCompliances", AggregatedPolicyCompliances);
+            writer.WriteCollectionOfObjectValues<AppPerformance>("appPerformances", AppPerformances);
             writer.WriteCollectionOfObjectValues<AuditEvent>("auditEvents", AuditEvents);
             writer.WriteCollectionOfObjectValues<CloudPcConnection>("cloudPcConnections", CloudPcConnections);
             writer.WriteCollectionOfObjectValues<CloudPcDevice>("cloudPcDevices", CloudPcDevices);
             writer.WriteCollectionOfObjectValues<CloudPcOverview>("cloudPcsOverview", CloudPcsOverview);
             writer.WriteCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("conditionalAccessPolicyCoverages", ConditionalAccessPolicyCoverages);
             writer.WriteCollectionOfObjectValues<CredentialUserRegistrationsSummary>("credentialUserRegistrationsSummaries", CredentialUserRegistrationsSummaries);
+            writer.WriteCollectionOfObjectValues<DeviceAppPerformance>("deviceAppPerformances", DeviceAppPerformances);
             writer.WriteCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("deviceCompliancePolicySettingStateSummaries", DeviceCompliancePolicySettingStateSummaries);
+            writer.WriteCollectionOfObjectValues<DeviceHealthStatus>("deviceHealthStatuses", DeviceHealthStatuses);
             writer.WriteCollectionOfObjectValues<ManagedDeviceCompliance>("managedDeviceCompliances", ManagedDeviceCompliances);
             writer.WriteCollectionOfObjectValues<ManagedDeviceComplianceTrend>("managedDeviceComplianceTrends", ManagedDeviceComplianceTrends);
             writer.WriteCollectionOfObjectValues<ManagedTenantAlertLog>("managedTenantAlertLogs", ManagedTenantAlertLogs);

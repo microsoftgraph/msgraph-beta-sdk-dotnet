@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC {
     /// <summary>
     /// Provides operations to manage the tenantAttachRBAC property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class TenantAttachRBACRequestBuilder {
+    public class TenantAttachRBACRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the enable method.</summary>
         public EnableRequestBuilder Enable { get =>
             new EnableRequestBuilder(PathParameters, RequestAdapter);
@@ -23,38 +23,19 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC {
         public GetStateRequestBuilder GetState { get =>
             new GetStateRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new TenantAttachRBACRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TenantAttachRBACRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/tenantAttachRBAC{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public TenantAttachRBACRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/tenantAttachRBAC{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TenantAttachRBACRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TenantAttachRBACRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/tenantAttachRBAC{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public TenantAttachRBACRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/tenantAttachRBAC{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property tenantAttachRBAC for deviceManagement

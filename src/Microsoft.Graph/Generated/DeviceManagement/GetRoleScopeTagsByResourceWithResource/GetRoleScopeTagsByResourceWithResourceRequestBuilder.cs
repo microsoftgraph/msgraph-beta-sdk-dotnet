@@ -11,41 +11,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
     /// <summary>
     /// Provides operations to call the getRoleScopeTagsByResource method.
     /// </summary>
-    public class GetRoleScopeTagsByResourceWithResourceRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class GetRoleScopeTagsByResourceWithResourceRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new GetRoleScopeTagsByResourceWithResourceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="resource">Usage: resource=&apos;{resource}&apos;</param>
-        public GetRoleScopeTagsByResourceWithResourceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string resource = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/getRoleScopeTagsByResource(resource='{resource}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(resource)) urlTplParams.Add("resource", resource);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetRoleScopeTagsByResourceWithResourceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string resource = "") : base(requestAdapter, "{+baseurl}/deviceManagement/getRoleScopeTagsByResource(resource='{resource}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(resource)) PathParameters.Add("resource", resource);
         }
         /// <summary>
         /// Instantiates a new GetRoleScopeTagsByResourceWithResourceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetRoleScopeTagsByResourceWithResourceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/getRoleScopeTagsByResource(resource='{resource}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetRoleScopeTagsByResourceWithResourceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/getRoleScopeTagsByResource(resource='{resource}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getRoleScopeTagsByResource

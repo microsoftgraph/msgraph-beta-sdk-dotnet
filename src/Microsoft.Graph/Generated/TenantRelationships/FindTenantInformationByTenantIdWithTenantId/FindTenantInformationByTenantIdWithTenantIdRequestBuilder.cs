@@ -12,41 +12,22 @@ namespace Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenant
     /// <summary>
     /// Provides operations to call the findTenantInformationByTenantId method.
     /// </summary>
-    public class FindTenantInformationByTenantIdWithTenantIdRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class FindTenantInformationByTenantIdWithTenantIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new FindTenantInformationByTenantIdWithTenantIdRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
-        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string tenantId = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/tenantRelationships/findTenantInformationByTenantId(tenantId='{tenantId}')";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(tenantId)) urlTplParams.Add("tenantId", tenantId);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string tenantId = "") : base(requestAdapter, "{+baseurl}/tenantRelationships/findTenantInformationByTenantId(tenantId='{tenantId}')", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(tenantId)) PathParameters.Add("tenantId", tenantId);
         }
         /// <summary>
         /// Instantiates a new FindTenantInformationByTenantIdWithTenantIdRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/tenantRelationships/findTenantInformationByTenantId(tenantId='{tenantId}')";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/findTenantInformationByTenantId(tenantId='{tenantId}')", rawUrl) {
         }
         /// <summary>
         /// Invoke function findTenantInformationByTenantId

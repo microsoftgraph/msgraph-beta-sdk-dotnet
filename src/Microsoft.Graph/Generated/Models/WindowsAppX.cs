@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
             set { BackingStore?.Set("applicableArchitectures", value); }
         }
-        /// <summary>The Identity Name.</summary>
+        /// <summary>The identity name of the uploaded app package. For example: &apos;Contoso.DemoApp&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityName {
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityName", value); }
         }
 #endif
-        /// <summary>The Identity Publisher Hash.</summary>
+        /// <summary>The identity publisher hash of the uploaded app package. This is the hash of the publisher from the manifest. For example: &apos;AB82CD0XYZ&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityPublisherHash {
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityPublisherHash", value); }
         }
 #endif
-        /// <summary>The Identity Resource Identifier.</summary>
+        /// <summary>The identity resource identifier of the uploaded app package. For example: &apos;TestResourceId&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityResourceIdentifier {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
 #endif
-        /// <summary>The identity version.</summary>
+        /// <summary>The identity version of the uploaded app package. For example: &apos;1.0.0.0&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityVersion {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityVersion", value); }
         }
 #endif
-        /// <summary>Whether or not the app is a bundle.</summary>
+        /// <summary>When TRUE, indicates that the app is a bundle. When FALSE, indicates that the app is not a bundle. By default, property is set to FALSE.</summary>
         public bool? IsBundle {
             get { return BackingStore?.Get<bool?>("isBundle"); }
             set { BackingStore?.Set("isBundle", value); }

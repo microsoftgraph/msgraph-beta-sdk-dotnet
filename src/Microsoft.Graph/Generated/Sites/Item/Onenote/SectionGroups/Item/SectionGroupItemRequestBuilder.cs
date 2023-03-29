@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item {
     /// <summary>
     /// Provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
     /// </summary>
-    public class SectionGroupItemRequestBuilder {
+    public class SectionGroupItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the parentNotebook property of the microsoft.graph.sectionGroup entity.</summary>
         public ParentNotebookRequestBuilder ParentNotebook { get =>
             new ParentNotebookRequestBuilder(PathParameters, RequestAdapter);
@@ -25,10 +25,6 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item {
         public ParentSectionGroupRequestBuilder ParentSectionGroup { get =>
             new ParentSectionGroupRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.</summary>
         public Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder SectionGroups { get =>
             new Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder(PathParameters, RequestAdapter);
@@ -37,34 +33,19 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item {
         public SectionsRequestBuilder Sections { get =>
             new SectionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SectionGroupItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SectionGroupItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/sites/{site%2Did}/onenote/sectionGroups/{sectionGroup%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public SectionGroupItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/sectionGroups/{sectionGroup%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new SectionGroupItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SectionGroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/sites/{site%2Did}/onenote/sectionGroups/{sectionGroup%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public SectionGroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/sectionGroups/{sectionGroup%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property sectionGroups for sites

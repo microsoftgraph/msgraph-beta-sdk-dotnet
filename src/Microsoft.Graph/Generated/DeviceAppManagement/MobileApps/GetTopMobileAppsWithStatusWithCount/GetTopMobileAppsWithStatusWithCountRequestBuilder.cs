@@ -11,13 +11,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWi
     /// <summary>
     /// Provides operations to call the getTopMobileApps method.
     /// </summary>
-    public class GetTopMobileAppsWithStatusWithCountRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class GetTopMobileAppsWithStatusWithCountRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new GetTopMobileAppsWithStatusWithCountRequestBuilder and sets the default values.
         /// </summary>
@@ -25,29 +19,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWi
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="status">Usage: status=&apos;{status}&apos;</param>
-        public GetTopMobileAppsWithStatusWithCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, long? count = default, string status = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/getTopMobileApps(status='{status}',count={count}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (count is not null) urlTplParams.Add("count", count);
-            if (!string.IsNullOrWhiteSpace(status)) urlTplParams.Add("status", status);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetTopMobileAppsWithStatusWithCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, long? count = default, string status = "") : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/getTopMobileApps(status='{status}',count={count}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+            if (count is not null) PathParameters.Add("count", count);
+            if (!string.IsNullOrWhiteSpace(status)) PathParameters.Add("status", status);
         }
         /// <summary>
         /// Instantiates a new GetTopMobileAppsWithStatusWithCountRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetTopMobileAppsWithStatusWithCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/getTopMobileApps(status='{status}',count={count}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetTopMobileAppsWithStatusWithCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/getTopMobileApps(status='{status}',count={count}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getTopMobileApps

@@ -17,13 +17,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Custom
     /// <summary>
     /// Provides operations to manage the customer property of the microsoft.graph.salesQuote entity.
     /// </summary>
-    public class CustomerRequestBuilder {
+    public class CustomerRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the currency property of the microsoft.graph.customer entity.</summary>
         public CurrencyRequestBuilder Currency { get =>
             new CurrencyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the paymentMethod property of the microsoft.graph.customer entity.</summary>
         public PaymentMethodRequestBuilder PaymentMethod { get =>
             new PaymentMethodRequestBuilder(PathParameters, RequestAdapter);
@@ -36,40 +34,23 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Custom
         public PictureRequestBuilder Picture { get =>
             new PictureRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the shipmentMethod property of the microsoft.graph.customer entity.</summary>
         public ShipmentMethodRequestBuilder ShipmentMethod { get =>
             new ShipmentMethodRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new CustomerRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/customer{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public CustomerRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/customer{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new CustomerRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/customer{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public CustomerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/customer{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property customer for financials

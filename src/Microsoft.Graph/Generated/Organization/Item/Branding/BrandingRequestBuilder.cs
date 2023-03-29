@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding {
     /// <summary>
     /// Provides operations to manage the branding property of the microsoft.graph.organization entity.
     /// </summary>
-    public class BrandingRequestBuilder {
+    public class BrandingRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the media for the organization entity.</summary>
         public BackgroundImageRequestBuilder BackgroundImage { get =>
             new BackgroundImageRequestBuilder(PathParameters, RequestAdapter);
@@ -45,10 +45,6 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding {
         public LocalizationsRequestBuilder Localizations { get =>
             new LocalizationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the media for the organization entity.</summary>
         public SquareLogoRequestBuilder SquareLogo { get =>
             new SquareLogoRequestBuilder(PathParameters, RequestAdapter);
@@ -57,34 +53,19 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding {
         public SquareLogoDarkRequestBuilder SquareLogoDark { get =>
             new SquareLogoDarkRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new BrandingRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrandingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/organization/{organization%2Did}/branding{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public BrandingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new BrandingRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrandingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/organization/{organization%2Did}/branding{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public BrandingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.

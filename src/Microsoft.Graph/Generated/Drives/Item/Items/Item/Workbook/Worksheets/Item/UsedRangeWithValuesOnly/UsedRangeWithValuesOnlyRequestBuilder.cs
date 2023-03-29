@@ -12,41 +12,22 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.U
     /// <summary>
     /// Provides operations to call the usedRange method.
     /// </summary>
-    public class UsedRangeWithValuesOnlyRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class UsedRangeWithValuesOnlyRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new UsedRangeWithValuesOnlyRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="valuesOnly">Usage: valuesOnly={valuesOnly}</param>
-        public UsedRangeWithValuesOnlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, bool? valuesOnly = default) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/usedRange(valuesOnly={valuesOnly})";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (valuesOnly is not null) urlTplParams.Add("valuesOnly", valuesOnly);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public UsedRangeWithValuesOnlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, bool? valuesOnly = default) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/usedRange(valuesOnly={valuesOnly})", pathParameters) {
+            if (valuesOnly is not null) PathParameters.Add("valuesOnly", valuesOnly);
         }
         /// <summary>
         /// Instantiates a new UsedRangeWithValuesOnlyRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsedRangeWithValuesOnlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/usedRange(valuesOnly={valuesOnly})";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public UsedRangeWithValuesOnlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/usedRange(valuesOnly={valuesOnly})", rawUrl) {
         }
         /// <summary>
         /// Invoke function usedRange

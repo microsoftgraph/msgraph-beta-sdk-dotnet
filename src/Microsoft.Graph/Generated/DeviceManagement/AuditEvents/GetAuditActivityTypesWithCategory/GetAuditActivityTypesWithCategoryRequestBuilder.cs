@@ -11,41 +11,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditActivityType
     /// <summary>
     /// Provides operations to call the getAuditActivityTypes method.
     /// </summary>
-    public class GetAuditActivityTypesWithCategoryRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class GetAuditActivityTypesWithCategoryRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new GetAuditActivityTypesWithCategoryRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="category">Usage: category=&apos;{category}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAuditActivityTypesWithCategoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string category = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24top,%24skip,%24search,%24filter,%24count}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(category)) urlTplParams.Add("category", category);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetAuditActivityTypesWithCategoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string category = "") : base(requestAdapter, "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(category)) PathParameters.Add("category", category);
         }
         /// <summary>
         /// Instantiates a new GetAuditActivityTypesWithCategoryRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAuditActivityTypesWithCategoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24top,%24skip,%24search,%24filter,%24count}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetAuditActivityTypesWithCategoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/auditEvents/getAuditActivityTypes(category='{category}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getAuditActivityTypes

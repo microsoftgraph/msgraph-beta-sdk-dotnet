@@ -7,6 +7,13 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.24.0] - 2023-03-28
+
+### Added
+
+- Updates kiota abstraction library dependencies to reduce code size in generation.
+- Latest metadata updates from 28st March 2023
+
 ## [5.23.0] - 2023-03-21
 
 ### Added

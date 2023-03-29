@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
     /// <summary>
     /// Provides operations to manage the profile property of the microsoft.graph.user entity.
     /// </summary>
-    public class ProfileRequestBuilder {
+    public class ProfileRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the account property of the microsoft.graph.profile entity.</summary>
         public AccountRequestBuilder Account { get =>
             new AccountRequestBuilder(PathParameters, RequestAdapter);
@@ -80,8 +80,6 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         public PatentsRequestBuilder Patents { get =>
             new PatentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the phones property of the microsoft.graph.profile entity.</summary>
         public PhonesRequestBuilder Phones { get =>
             new PhonesRequestBuilder(PathParameters, RequestAdapter);
@@ -98,14 +96,10 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         public PublicationsRequestBuilder Publications { get =>
             new PublicationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the skills property of the microsoft.graph.profile entity.</summary>
         public SkillsRequestBuilder Skills { get =>
             new SkillsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.</summary>
         public WebAccountsRequestBuilder WebAccounts { get =>
             new WebAccountsRequestBuilder(PathParameters, RequestAdapter);
@@ -119,27 +113,14 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfileRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/profile{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ProfileRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ProfileRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/profile{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ProfileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Deletes a profile object from a user&apos;s account.

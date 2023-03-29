@@ -12,41 +12,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RetrieveRemo
     /// <summary>
     /// Provides operations to call the retrieveRemoteHelpSession method.
     /// </summary>
-    public class RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="sessionKey">Usage: sessionKey=&apos;{sessionKey}&apos;</param>
-        public RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string sessionKey = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/retrieveRemoteHelpSession(sessionKey='{sessionKey}')";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(sessionKey)) urlTplParams.Add("sessionKey", sessionKey);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string sessionKey = "") : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/retrieveRemoteHelpSession(sessionKey='{sessionKey}')", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(sessionKey)) PathParameters.Add("sessionKey", sessionKey);
         }
         /// <summary>
         /// Instantiates a new RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/retrieveRemoteHelpSession(sessionKey='{sessionKey}')";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/retrieveRemoteHelpSession(sessionKey='{sessionKey}')", rawUrl) {
         }
         /// <summary>
         /// Invoke function retrieveRemoteHelpSession

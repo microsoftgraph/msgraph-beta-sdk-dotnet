@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The Base Class of Device Enrollment Configuration
+    /// </summary>
     public class DeviceEnrollmentConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the device configuration profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

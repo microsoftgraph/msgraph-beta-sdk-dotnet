@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
     /// <summary>
     /// Provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.
     /// </summary>
-    public class ConditionalAccessRequestBuilder {
+    public class ConditionalAccessRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public AuthenticationContextClassReferencesRequestBuilder AuthenticationContextClassReferences { get =>
             new AuthenticationContextClassReferencesRequestBuilder(PathParameters, RequestAdapter);
@@ -35,46 +35,27 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         public NamedLocationsRequestBuilder NamedLocations { get =>
             new NamedLocationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public PoliciesRequestBuilder Policies { get =>
             new PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public TemplatesRequestBuilder Templates { get =>
             new TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ConditionalAccessRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConditionalAccessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/identity/conditionalAccess{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ConditionalAccessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ConditionalAccessRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConditionalAccessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/identity/conditionalAccess{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ConditionalAccessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property conditionalAccess for identity

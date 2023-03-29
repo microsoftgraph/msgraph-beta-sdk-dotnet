@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<int?>("totalRuns"); }
             set { BackingStore?.Set("totalRuns", value); }
         }
-        /// <summary>The totalTasks property</summary>
+        /// <summary>The total number of tasks processed by a workflow.</summary>
         public int? TotalTasks {
             get { return BackingStore?.Get<int?>("totalTasks"); }
             set { BackingStore?.Set("totalTasks", value); }
         }
-        /// <summary>The totalUsers property</summary>
+        /// <summary>The total number of users processed by a workflow.</summary>
         public int? TotalUsers {
             get { return BackingStore?.Get<int?>("totalUsers"); }
             set { BackingStore?.Set("totalUsers", value); }

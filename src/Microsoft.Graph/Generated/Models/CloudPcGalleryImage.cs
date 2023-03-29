@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.</summary>
+        /// <summary>The date in which this image is no longer within long-term support. The Cloud PC continues to provide short-term support. Read-only.</summary>
         public Date? EndDate {
             get { return BackingStore?.Get<Date?>("endDate"); }
             set { BackingStore?.Set("endDate", value); }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Date?>("expirationDate"); }
             set { BackingStore?.Set("expirationDate", value); }
         }
-        /// <summary>The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
+        /// <summary>The offer name of the gallery image. This value is passed to Azure to get the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Offer {
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("offerDisplayName", value); }
         }
 #endif
-        /// <summary>The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
+        /// <summary>The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Publisher {
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("sizeInGB"); }
             set { BackingStore?.Set("sizeInGB", value); }
         }
-        /// <summary>The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
+        /// <summary>The SKU name of the gallery image. This value is passed to Azure to get the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sku {

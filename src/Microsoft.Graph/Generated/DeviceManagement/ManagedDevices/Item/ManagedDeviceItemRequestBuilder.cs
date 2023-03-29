@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
     /// <summary>
     /// Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class ManagedDeviceItemRequestBuilder {
+    public class ManagedDeviceItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the activateDeviceEsim method.</summary>
         public ActivateDeviceEsimRequestBuilder ActivateDeviceEsim { get =>
             new ActivateDeviceEsimRequestBuilder(PathParameters, RequestAdapter);
@@ -194,8 +194,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         public OverrideComplianceStateRequestBuilder OverrideComplianceState { get =>
             new OverrideComplianceStateRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to call the playLostModeSound method.</summary>
         public PlayLostModeSoundRequestBuilder PlayLostModeSound { get =>
             new PlayLostModeSoundRequestBuilder(PathParameters, RequestAdapter);
@@ -224,8 +222,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         public ReprovisionCloudPcRequestBuilder ReprovisionCloudPc { get =>
             new ReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
         public RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance { get =>
             new RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
@@ -298,8 +294,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         public UpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount { get =>
             new UpdateWindowsDeviceAccountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.managedDevice entity.</summary>
         public UsersRequestBuilder Users { get =>
             new UsersRequestBuilder(PathParameters, RequestAdapter);
@@ -325,27 +319,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ManagedDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ManagedDeviceItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ManagedDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property managedDevices for deviceManagement

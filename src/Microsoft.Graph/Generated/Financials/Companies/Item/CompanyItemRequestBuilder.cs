@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
     /// <summary>
     /// Provides operations to manage the companies property of the microsoft.graph.financials entity.
     /// </summary>
-    public class CompanyItemRequestBuilder {
+    public class CompanyItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the accounts property of the microsoft.graph.company entity.</summary>
         public AccountsRequestBuilder Accounts { get =>
             new AccountsRequestBuilder(PathParameters, RequestAdapter);
@@ -116,8 +116,6 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
         public JournalsRequestBuilder Journals { get =>
             new JournalsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the paymentMethods property of the microsoft.graph.company entity.</summary>
         public PaymentMethodsRequestBuilder PaymentMethods { get =>
             new PaymentMethodsRequestBuilder(PathParameters, RequestAdapter);
@@ -138,8 +136,6 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
         public PurchaseInvoicesRequestBuilder PurchaseInvoices { get =>
             new PurchaseInvoicesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the salesCreditMemoLines property of the microsoft.graph.company entity.</summary>
         public SalesCreditMemoLinesRequestBuilder SalesCreditMemoLines { get =>
             new SalesCreditMemoLinesRequestBuilder(PathParameters, RequestAdapter);
@@ -188,8 +184,6 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
         public UnitsOfMeasureRequestBuilder UnitsOfMeasure { get =>
             new UnitsOfMeasureRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the vendors property of the microsoft.graph.company entity.</summary>
         public VendorsRequestBuilder Vendors { get =>
             new VendorsRequestBuilder(PathParameters, RequestAdapter);
@@ -199,27 +193,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompanyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public CompanyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new CompanyItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompanyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/financials/companies/{company%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public CompanyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Get companies from financials

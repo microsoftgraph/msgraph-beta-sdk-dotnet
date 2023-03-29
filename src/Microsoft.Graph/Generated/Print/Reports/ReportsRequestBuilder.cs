@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Print.Reports {
     /// <summary>
     /// Provides operations to manage the reports property of the microsoft.graph.print entity.
     /// </summary>
-    public class ReportsRequestBuilder {
+    public class ReportsRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.</summary>
         public ApplicationSignInDetailedSummaryRequestBuilder ApplicationSignInDetailedSummary { get =>
             new ApplicationSignInDetailedSummaryRequestBuilder(PathParameters, RequestAdapter);
@@ -248,16 +248,10 @@ namespace Microsoft.Graph.Beta.Print.Reports {
         public MonthlyPrintUsageSummariesByUserRequestBuilder MonthlyPrintUsageSummariesByUser { get =>
             new MonthlyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the security property of the microsoft.graph.reportRoot entity.</summary>
         public SecurityRequestBuilder Security { get =>
             new SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.</summary>
         public UserCredentialUsageDetailsRequestBuilder UserCredentialUsageDetails { get =>
             new UserCredentialUsageDetailsRequestBuilder(PathParameters, RequestAdapter);
@@ -267,27 +261,14 @@ namespace Microsoft.Graph.Beta.Print.Reports {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/reports{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ReportsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/reports{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property reports for print

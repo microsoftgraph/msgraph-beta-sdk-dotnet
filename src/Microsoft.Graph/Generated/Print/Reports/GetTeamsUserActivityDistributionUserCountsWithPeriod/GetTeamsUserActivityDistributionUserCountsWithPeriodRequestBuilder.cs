@@ -11,41 +11,22 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetTeamsUserActivityDistributionUse
     /// <summary>
     /// Provides operations to call the getTeamsUserActivityDistributionUserCounts method.
     /// </summary>
-    public class GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/getTeamsUserActivityDistributionUserCounts(period='{period}')";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(period)) urlTplParams.Add("period", period);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/print/reports/getTeamsUserActivityDistributionUserCounts(period='{period}')", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
         }
         /// <summary>
         /// Instantiates a new GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/getTeamsUserActivityDistributionUserCounts(period='{period}')";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/reports/getTeamsUserActivityDistributionUserCounts(period='{period}')", rawUrl) {
         }
         /// <summary>
         /// Invoke function getTeamsUserActivityDistributionUserCounts

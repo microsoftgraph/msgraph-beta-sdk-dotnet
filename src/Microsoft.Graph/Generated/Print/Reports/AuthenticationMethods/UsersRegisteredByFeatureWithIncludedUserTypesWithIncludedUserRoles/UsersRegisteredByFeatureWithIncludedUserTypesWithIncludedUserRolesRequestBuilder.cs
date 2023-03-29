@@ -12,13 +12,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods.UsersRegister
     /// <summary>
     /// Provides operations to call the usersRegisteredByFeature method.
     /// </summary>
-    public class UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder and sets the default values.
         /// </summary>
@@ -26,29 +20,16 @@ namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods.UsersRegister
         /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string includedUserRoles = "", string includedUserTypes = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/authenticationMethods/usersRegisteredByFeature(includedUserTypes='{includedUserTypes}',includedUserRoles='{includedUserRoles}')";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(includedUserRoles)) urlTplParams.Add("includedUserRoles", includedUserRoles);
-            if (!string.IsNullOrWhiteSpace(includedUserTypes)) urlTplParams.Add("includedUserTypes", includedUserTypes);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string includedUserRoles = "", string includedUserTypes = "") : base(requestAdapter, "{+baseurl}/print/reports/authenticationMethods/usersRegisteredByFeature(includedUserTypes='{includedUserTypes}',includedUserRoles='{includedUserRoles}')", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(includedUserRoles)) PathParameters.Add("includedUserRoles", includedUserRoles);
+            if (!string.IsNullOrWhiteSpace(includedUserTypes)) PathParameters.Add("includedUserTypes", includedUserTypes);
         }
         /// <summary>
         /// Instantiates a new UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/authenticationMethods/usersRegisteredByFeature(includedUserTypes='{includedUserTypes}',includedUserRoles='{includedUserRoles}')";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/reports/authenticationMethods/usersRegisteredByFeature(includedUserTypes='{includedUserTypes}',includedUserRoles='{includedUserRoles}')", rawUrl) {
         }
         /// <summary>
         /// Invoke function usersRegisteredByFeature

@@ -11,41 +11,22 @@ namespace Microsoft.Graph.Beta.Me.FindRoomsWithRoomList {
     /// <summary>
     /// Provides operations to call the findRooms method.
     /// </summary>
-    public class FindRoomsWithRoomListRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class FindRoomsWithRoomListRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new FindRoomsWithRoomListRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="roomList">Usage: RoomList=&apos;{RoomList}&apos;</param>
-        public FindRoomsWithRoomListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string roomList = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/findRooms(RoomList='{RoomList}'){?%24top,%24skip,%24search,%24filter,%24count}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(roomList)) urlTplParams.Add("RoomList", roomList);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public FindRoomsWithRoomListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string roomList = "") : base(requestAdapter, "{+baseurl}/me/findRooms(RoomList='{RoomList}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(roomList)) PathParameters.Add("RoomList", roomList);
         }
         /// <summary>
         /// Instantiates a new FindRoomsWithRoomListRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindRoomsWithRoomListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/findRooms(RoomList='{RoomList}'){?%24top,%24skip,%24search,%24filter,%24count}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public FindRoomsWithRoomListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/findRooms(RoomList='{RoomList}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
         }
         /// <summary>
         /// Invoke function findRooms

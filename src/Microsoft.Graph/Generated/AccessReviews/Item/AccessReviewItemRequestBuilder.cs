@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
     /// <summary>
     /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
-    public class AccessReviewItemRequestBuilder {
+    public class AccessReviewItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the applyDecisions method.</summary>
         public ApplyDecisionsRequestBuilder ApplyDecisions { get =>
             new ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
@@ -37,10 +37,6 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         public MyDecisionsRequestBuilder MyDecisions { get =>
             new MyDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to call the resetDecisions method.</summary>
         public ResetDecisionsRequestBuilder ResetDecisions { get =>
             new ResetDecisionsRequestBuilder(PathParameters, RequestAdapter);
@@ -57,34 +53,19 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         public StopRequestBuilder Stop { get =>
             new StopRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new AccessReviewItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessReviewItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public AccessReviewItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AccessReviewItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessReviewItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public AccessReviewItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, delete an accessReview object.

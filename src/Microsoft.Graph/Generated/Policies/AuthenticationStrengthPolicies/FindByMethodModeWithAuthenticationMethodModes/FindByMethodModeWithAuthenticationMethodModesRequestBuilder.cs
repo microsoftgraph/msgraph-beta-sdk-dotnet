@@ -11,41 +11,22 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMet
     /// <summary>
     /// Provides operations to call the findByMethodMode method.
     /// </summary>
-    public class FindByMethodModeWithAuthenticationMethodModesRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class FindByMethodModeWithAuthenticationMethodModesRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new FindByMethodModeWithAuthenticationMethodModesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindByMethodModeWithAuthenticationMethodModesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string authenticationMethodModes = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/policies/authenticationStrengthPolicies/findByMethodMode(authenticationMethodModes={authenticationMethodModes}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(authenticationMethodModes)) urlTplParams.Add("authenticationMethodModes", authenticationMethodModes);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public FindByMethodModeWithAuthenticationMethodModesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string authenticationMethodModes = "") : base(requestAdapter, "{+baseurl}/policies/authenticationStrengthPolicies/findByMethodMode(authenticationMethodModes={authenticationMethodModes}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(authenticationMethodModes)) PathParameters.Add("authenticationMethodModes", authenticationMethodModes);
         }
         /// <summary>
         /// Instantiates a new FindByMethodModeWithAuthenticationMethodModesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindByMethodModeWithAuthenticationMethodModesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/policies/authenticationStrengthPolicies/findByMethodMode(authenticationMethodModes={authenticationMethodModes}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public FindByMethodModeWithAuthenticationMethodModesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/authenticationStrengthPolicies/findByMethodMode(authenticationMethodModes={authenticationMethodModes}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
         }
         /// <summary>
         /// Invoke function findByMethodMode

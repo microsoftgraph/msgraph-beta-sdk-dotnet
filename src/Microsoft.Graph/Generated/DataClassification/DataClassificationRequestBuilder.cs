@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.DataClassification {
     /// <summary>
     /// Provides operations to manage the dataClassificationService singleton.
     /// </summary>
-    public class DataClassificationRequestBuilder {
+    public class DataClassificationRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the classifyExactMatches method.</summary>
         public ClassifyExactMatchesRequestBuilder ClassifyExactMatches { get =>
             new ClassifyExactMatchesRequestBuilder(PathParameters, RequestAdapter);
@@ -60,10 +60,6 @@ namespace Microsoft.Graph.Beta.DataClassification {
         public JobsRequestBuilder Jobs { get =>
             new JobsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the sensitiveTypes property of the microsoft.graph.dataClassificationService entity.</summary>
         public SensitiveTypesRequestBuilder SensitiveTypes { get =>
             new SensitiveTypesRequestBuilder(PathParameters, RequestAdapter);
@@ -72,34 +68,19 @@ namespace Microsoft.Graph.Beta.DataClassification {
         public SensitivityLabelsRequestBuilder SensitivityLabels { get =>
             new SensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DataClassificationRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DataClassificationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/dataClassification{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public DataClassificationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dataClassification{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DataClassificationRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DataClassificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/dataClassification{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public DataClassificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dataClassification{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Get dataClassification

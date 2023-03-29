@@ -116,6 +116,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("managementTemplateCollectionId", value); }
         }
 #endif
+        /// <summary>The regressedStepsCount property</summary>
+        public int? RegressedStepsCount {
+            get { return BackingStore?.Get<int?>("regressedStepsCount"); }
+            set { BackingStore?.Set("regressedStepsCount", value); }
+        }
+        /// <summary>The regressedUsersCount property</summary>
+        public int? RegressedUsersCount {
+            get { return BackingStore?.Get<int?>("regressedUsersCount"); }
+            set { BackingStore?.Set("regressedUsersCount", value); }
+        }
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +140,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
+        /// <summary>The unlicensedUsersCount property</summary>
+        public int? UnlicensedUsersCount {
+            get { return BackingStore?.Get<int?>("unlicensedUsersCount"); }
+            set { BackingStore?.Set("unlicensedUsersCount", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -158,7 +173,10 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managementTemplateCollectionDisplayName", n => { ManagementTemplateCollectionDisplayName = n.GetStringValue(); } },
                 {"managementTemplateCollectionId", n => { ManagementTemplateCollectionId = n.GetStringValue(); } },
+                {"regressedStepsCount", n => { RegressedStepsCount = n.GetIntValue(); } },
+                {"regressedUsersCount", n => { RegressedUsersCount = n.GetIntValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"unlicensedUsersCount", n => { UnlicensedUsersCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -183,7 +201,10 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
             writer.WriteStringValue("managementTemplateCollectionDisplayName", ManagementTemplateCollectionDisplayName);
             writer.WriteStringValue("managementTemplateCollectionId", ManagementTemplateCollectionId);
+            writer.WriteIntValue("regressedStepsCount", RegressedStepsCount);
+            writer.WriteIntValue("regressedUsersCount", RegressedUsersCount);
             writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteIntValue("unlicensedUsersCount", UnlicensedUsersCount);
         }
     }
 }

@@ -11,41 +11,22 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetMobileAppCountW
     /// <summary>
     /// Provides operations to call the getMobileAppCount method.
     /// </summary>
-    public class GetMobileAppCountWithStatusRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class GetMobileAppCountWithStatusRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new GetMobileAppCountWithStatusRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="status">Usage: status=&apos;{status}&apos;</param>
-        public GetMobileAppCountWithStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string status = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/getMobileAppCount(status='{status}')";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(status)) urlTplParams.Add("status", status);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetMobileAppCountWithStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string status = "") : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/getMobileAppCount(status='{status}')", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(status)) PathParameters.Add("status", status);
         }
         /// <summary>
         /// Instantiates a new GetMobileAppCountWithStatusRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetMobileAppCountWithStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/getMobileAppCount(status='{status}')";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public GetMobileAppCountWithStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/getMobileAppCount(status='{status}')", rawUrl) {
         }
         /// <summary>
         /// Invoke function getMobileAppCount

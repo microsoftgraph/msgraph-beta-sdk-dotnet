@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("aadDeviceId", value); }
         }
 #endif
-        /// <summary>The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.</summary>
+        /// <summary>The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CloudPcConnectivityResult? ConnectivityResult {

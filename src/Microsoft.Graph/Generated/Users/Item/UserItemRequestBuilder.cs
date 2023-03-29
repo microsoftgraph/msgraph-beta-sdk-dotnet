@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
     /// <summary>
     /// Provides operations to manage the collection of user entities.
     /// </summary>
-    public class UserItemRequestBuilder {
+    public class UserItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.user entity.</summary>
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
@@ -379,8 +379,6 @@ namespace Microsoft.Graph.Beta.Users.Item {
         public OwnedObjectsRequestBuilder OwnedObjects { get =>
             new OwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.</summary>
         public PendingAccessReviewInstancesRequestBuilder PendingAccessReviewInstances { get =>
             new PendingAccessReviewInstancesRequestBuilder(PathParameters, RequestAdapter);
@@ -421,8 +419,6 @@ namespace Microsoft.Graph.Beta.Users.Item {
         public ReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment { get =>
             new ReprocessLicenseAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
@@ -471,8 +467,6 @@ namespace Microsoft.Graph.Beta.Users.Item {
         public UnblockManagedAppsRequestBuilder UnblockManagedApps { get =>
             new UnblockManagedAppsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
         /// <summary>Provides operations to manage the usageRights property of the microsoft.graph.user entity.</summary>
         public UsageRightsRequestBuilder UsageRights { get =>
             new UsageRightsRequestBuilder(PathParameters, RequestAdapter);
@@ -502,27 +496,14 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public UserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new UserItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}{?%24select,%24expand}";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public UserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.

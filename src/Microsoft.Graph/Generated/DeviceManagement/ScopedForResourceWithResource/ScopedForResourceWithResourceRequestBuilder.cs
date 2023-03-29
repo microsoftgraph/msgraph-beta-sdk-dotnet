@@ -11,41 +11,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource {
     /// <summary>
     /// Provides operations to call the scopedForResource method.
     /// </summary>
-    public class ScopedForResourceWithResourceRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class ScopedForResourceWithResourceRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new ScopedForResourceWithResourceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="resource">Usage: resource=&apos;{resource}&apos;</param>
-        public ScopedForResourceWithResourceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string resource = "") {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/scopedForResource(resource='{resource}')";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (!string.IsNullOrWhiteSpace(resource)) urlTplParams.Add("resource", resource);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ScopedForResourceWithResourceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string resource = "") : base(requestAdapter, "{+baseurl}/deviceManagement/scopedForResource(resource='{resource}')", pathParameters) {
+            if (!string.IsNullOrWhiteSpace(resource)) PathParameters.Add("resource", resource);
         }
         /// <summary>
         /// Instantiates a new ScopedForResourceWithResourceRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScopedForResourceWithResourceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/deviceManagement/scopedForResource(resource='{resource}')";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public ScopedForResourceWithResourceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/scopedForResource(resource='{resource}')", rawUrl) {
         }
         /// <summary>
         /// Invoke function scopedForResource

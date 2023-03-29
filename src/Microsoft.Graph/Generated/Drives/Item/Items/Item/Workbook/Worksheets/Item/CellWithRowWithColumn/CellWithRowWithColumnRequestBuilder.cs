@@ -12,13 +12,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
     /// <summary>
     /// Provides operations to call the cell method.
     /// </summary>
-    public class CellWithRowWithColumnRequestBuilder {
-        /// <summary>Path parameters for the request</summary>
-        private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The request adapter to use to execute the requests.</summary>
-        private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Url template to use to build the URL for the current request builder</summary>
-        private string UrlTemplate { get; set; }
+    public class CellWithRowWithColumnRequestBuilder : BaseRequestBuilder {
         /// <summary>
         /// Instantiates a new CellWithRowWithColumnRequestBuilder and sets the default values.
         /// </summary>
@@ -26,29 +20,16 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="row">Usage: row={row}</param>
-        public CellWithRowWithColumnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? column = default, int? row = default) {
-            _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/cell(row={row},column={column})";
-            var urlTplParams = new Dictionary<string, object>(pathParameters);
-            if (column is not null) urlTplParams.Add("column", column);
-            if (row is not null) urlTplParams.Add("row", row);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public CellWithRowWithColumnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? column = default, int? row = default) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/cell(row={row},column={column})", pathParameters) {
+            if (column is not null) PathParameters.Add("column", column);
+            if (row is not null) PathParameters.Add("row", row);
         }
         /// <summary>
         /// Instantiates a new CellWithRowWithColumnRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CellWithRowWithColumnRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
-            if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
-            _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/cell(row={row},column={column})";
-            var urlTplParams = new Dictionary<string, object>();
-            if (!string.IsNullOrWhiteSpace(rawUrl)) urlTplParams.Add("request-raw-url", rawUrl);
-            PathParameters = urlTplParams;
-            RequestAdapter = requestAdapter;
+        public CellWithRowWithColumnRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/cell(row={row},column={column})", rawUrl) {
         }
         /// <summary>
         /// Invoke function cell
