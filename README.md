@@ -65,6 +65,8 @@ If you are looking to build the library locally for the purposes of contributing
 - Run `dotnet restore` from the command line in your package directory
 - Run `nuget restore` and `msbuild` from CLI or run Build from Visual Studio to restore Nuget packages and build the project
 
+> Due to long file names you may need to run `git config --system core.longpaths true` before cloning the repo to your system.
+
 ## License
 
 Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT [license](LICENSE.txt). See [Third Party Notices](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/master/THIRD%20PARTY%20NOTICES) for information on the packages referenced via NuGet.
