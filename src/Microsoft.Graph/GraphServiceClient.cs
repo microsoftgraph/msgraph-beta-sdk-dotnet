@@ -11,6 +11,7 @@ namespace Microsoft.Graph.Beta
     using System.Reflection;
     using Microsoft.Graph;
     using Microsoft.Graph.Core.Requests;
+    using Microsoft.Graph.Beta.Requests;
     using Microsoft.Kiota.Abstractions.Authentication;
     using Microsoft.Kiota.Authentication.Azure;
     using Microsoft.Kiota.Abstractions;
@@ -90,7 +91,7 @@ namespace Microsoft.Graph.Beta
         {
             get
             {
-                return new BatchRequestBuilder(this.RequestAdapter);
+                return new CustomBatchRequestBuilder(this.RequestAdapter);
             }
         }
         
