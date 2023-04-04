@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SitePage : BaseItem, IParsable {
         /// <summary>Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section</summary>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new sitePage and sets the default values.
+        /// Instantiates a new SitePage and sets the default values.
         /// </summary>
         public SitePage() : base() {
             OdataType = "#microsoft.graph.sitePage";

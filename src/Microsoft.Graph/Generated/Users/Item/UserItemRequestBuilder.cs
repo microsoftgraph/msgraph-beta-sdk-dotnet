@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Activities;
 using Microsoft.Graph.Beta.Users.Item.AgreementAcceptances;
 using Microsoft.Graph.Beta.Users.Item.Analytics;
@@ -11,8 +11,8 @@ using Microsoft.Graph.Beta.Users.Item.AssignLicense;
 using Microsoft.Graph.Beta.Users.Item.Authentication;
 using Microsoft.Graph.Beta.Users.Item.Calendar;
 using Microsoft.Graph.Beta.Users.Item.CalendarGroups;
-using Microsoft.Graph.Beta.Users.Item.Calendars;
 using Microsoft.Graph.Beta.Users.Item.CalendarView;
+using Microsoft.Graph.Beta.Users.Item.Calendars;
 using Microsoft.Graph.Beta.Users.Item.ChangePassword;
 using Microsoft.Graph.Beta.Users.Item.Chats;
 using Microsoft.Graph.Beta.Users.Item.CheckMemberGroups;
@@ -98,14 +98,14 @@ using Microsoft.Graph.Beta.Users.Item.WipeAndBlockManagedApps;
 using Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationByDeviceTag;
 using Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationsByAzureAdDeviceId;
 using Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationsByDeviceTag;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item {
     /// <summary>
     /// Provides operations to manage the collection of user entities.
@@ -513,17 +513,17 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<UserItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> DeleteAsync(Action<UserItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<UserItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> DeleteAsync(Action<UserItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Provides operations to call the exportDeviceAndAppManagementData method.

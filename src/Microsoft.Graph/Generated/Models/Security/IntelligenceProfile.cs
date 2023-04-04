@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class IntelligenceProfile : Entity, IParsable {
         /// <summary>A list of commonly-known aliases for the threat intelligence included in the intelligenceProfile.</summary>

@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories;
 using Microsoft.Graph.Beta.Users.Item.Outlook.SupportedLanguages;
 using Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZones;
@@ -7,14 +7,14 @@ using Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStan
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups;
 using Microsoft.Graph.Beta.Users.Item.Outlook.Tasks;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.Outlook {
     /// <summary>
     /// Provides operations to manage the outlook property of the microsoft.graph.user entity.

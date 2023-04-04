@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationAssignmentIndividualRecipient : EducationAssignmentRecipient, IParsable {
         /// <summary>A collection of ids of the recipients.</summary>

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskLocalGroup : WindowsKioskUser, IParsable {
         /// <summary>The name of the local group that will be locked to this kiosk configuration</summary>

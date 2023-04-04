@@ -1,10 +1,24 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidWorkProfileGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
+        /// <summary>Determine domains allow-list for accounts that can be added to work profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AllowedGoogleAccountDomains {
+            get { return BackingStore?.Get<List<string>?>("allowedGoogleAccountDomains"); }
+            set { BackingStore?.Set("allowedGoogleAccountDomains", value); }
+        }
+#nullable restore
+#else
+        public List<string> AllowedGoogleAccountDomains {
+            get { return BackingStore?.Get<List<string>>("allowedGoogleAccountDomains"); }
+            set { BackingStore?.Set("allowedGoogleAccountDomains", value); }
+        }
+#endif
         /// <summary>Indicates whether or not to block face unlock.</summary>
         public bool? PasswordBlockFaceUnlock {
             get { return BackingStore?.Get<bool?>("passwordBlockFaceUnlock"); }
@@ -83,6 +97,11 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? VpnEnableAlwaysOnLockdownMode {
             get { return BackingStore?.Get<bool?>("vpnEnableAlwaysOnLockdownMode"); }
             set { BackingStore?.Set("vpnEnableAlwaysOnLockdownMode", value); }
+        }
+        /// <summary>An enum representing possible values for account use in work profile.</summary>
+        public AndroidWorkProfileAccountUse? WorkProfileAccountUse {
+            get { return BackingStore?.Get<AndroidWorkProfileAccountUse?>("workProfileAccountUse"); }
+            set { BackingStore?.Set("workProfileAccountUse", value); }
         }
         /// <summary>Indicates whether to allow installation of apps from unknown sources.</summary>
         public bool? WorkProfileAllowAppInstallsFromUnknownSources {
@@ -258,6 +277,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"allowedGoogleAccountDomains", n => { AllowedGoogleAccountDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"passwordBlockFaceUnlock", n => { PasswordBlockFaceUnlock = n.GetBoolValue(); } },
                 {"passwordBlockFingerprintUnlock", n => { PasswordBlockFingerprintUnlock = n.GetBoolValue(); } },
                 {"passwordBlockIrisUnlock", n => { PasswordBlockIrisUnlock = n.GetBoolValue(); } },
@@ -272,6 +292,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
                 {"vpnAlwaysOnPackageIdentifier", n => { VpnAlwaysOnPackageIdentifier = n.GetStringValue(); } },
                 {"vpnEnableAlwaysOnLockdownMode", n => { VpnEnableAlwaysOnLockdownMode = n.GetBoolValue(); } },
+                {"workProfileAccountUse", n => { WorkProfileAccountUse = n.GetEnumValue<AndroidWorkProfileAccountUse>(); } },
                 {"workProfileAllowAppInstallsFromUnknownSources", n => { WorkProfileAllowAppInstallsFromUnknownSources = n.GetBoolValue(); } },
                 {"workProfileAllowWidgets", n => { WorkProfileAllowWidgets = n.GetBoolValue(); } },
                 {"workProfileBlockAddingAccounts", n => { WorkProfileBlockAddingAccounts = n.GetBoolValue(); } },
@@ -312,6 +333,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowedGoogleAccountDomains", AllowedGoogleAccountDomains);
             writer.WriteBoolValue("passwordBlockFaceUnlock", PasswordBlockFaceUnlock);
             writer.WriteBoolValue("passwordBlockFingerprintUnlock", PasswordBlockFingerprintUnlock);
             writer.WriteBoolValue("passwordBlockIrisUnlock", PasswordBlockIrisUnlock);
@@ -326,6 +348,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("securityRequireVerifyApps", SecurityRequireVerifyApps);
             writer.WriteStringValue("vpnAlwaysOnPackageIdentifier", VpnAlwaysOnPackageIdentifier);
             writer.WriteBoolValue("vpnEnableAlwaysOnLockdownMode", VpnEnableAlwaysOnLockdownMode);
+            writer.WriteEnumValue<AndroidWorkProfileAccountUse>("workProfileAccountUse", WorkProfileAccountUse);
             writer.WriteBoolValue("workProfileAllowAppInstallsFromUnknownSources", WorkProfileAllowAppInstallsFromUnknownSources);
             writer.WriteBoolValue("workProfileAllowWidgets", WorkProfileAllowWidgets);
             writer.WriteBoolValue("workProfileBlockAddingAccounts", WorkProfileBlockAddingAccounts);

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AospDeviceOwnerScepCertificateProfile : AospDeviceOwnerCertificateProfileBase, IParsable {
         /// <summary>Target store certificate. This collection can contain a maximum of 500 elements. Possible values are: user, machine.</summary>

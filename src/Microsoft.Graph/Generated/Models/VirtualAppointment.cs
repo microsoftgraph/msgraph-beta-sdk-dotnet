@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualAppointment : Entity, IParsable {
         /// <summary>The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.</summary>

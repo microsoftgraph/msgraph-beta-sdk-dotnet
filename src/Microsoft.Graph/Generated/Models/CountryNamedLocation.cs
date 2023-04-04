@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CountryNamedLocation : NamedLocation, IParsable {
         /// <summary>List of countries and/or regions in two-letter format specified by ISO 3166-2.</summary>

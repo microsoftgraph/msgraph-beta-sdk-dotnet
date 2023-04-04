@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SearchEntity : Entity, IParsable {
         /// <summary>Administrative answer in Microsoft Search results to define common acronyms in a organization.</summary>

@@ -6,11 +6,11 @@ using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Item.GraphServicePri
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Item.GraphUser;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Item.Ref;
 using Microsoft.Kiota.Abstractions;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Item {
     /// <summary>
     /// Builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\members\{directoryObject-id}

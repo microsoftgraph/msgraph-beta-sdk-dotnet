@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CustomAccessPackageWorkflowExtension : CustomCalloutExtension, IParsable {
         /// <summary>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new CustomAccessPackageWorkflowExtension and sets the default values.
+        /// Instantiates a new customAccessPackageWorkflowExtension and sets the default values.
         /// </summary>
         public CustomAccessPackageWorkflowExtension() : base() {
             OdataType = "#microsoft.graph.customAccessPackageWorkflowExtension";

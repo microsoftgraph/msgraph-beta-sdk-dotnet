@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MobileAppSupersedence : MobileAppRelationship, IParsable {
         /// <summary>The total number of apps directly or indirectly superseded by the child app.</summary>

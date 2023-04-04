@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ExternalActivity : Entity, IParsable {
         /// <summary>Represents an identity used to identify who is responsible for the activity.</summary>

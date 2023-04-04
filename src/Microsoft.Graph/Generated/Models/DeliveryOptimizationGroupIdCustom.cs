@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeliveryOptimizationGroupIdCustom : DeliveryOptimizationGroupIdSource, IParsable {
         /// <summary>Specifies an arbitrary group ID that the device belongs to</summary>

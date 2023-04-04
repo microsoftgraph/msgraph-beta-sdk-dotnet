@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class DeviceCompliancePolicySettingStateSummary : Entity, IParsable {
         /// <summary>The number of devices in a conflict state. Optional. Read-only.</summary>

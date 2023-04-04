@@ -4,20 +4,20 @@ using Microsoft.Graph.Beta.Security.ThreatIntelligence.ArticleIndicators;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostCookies;
-using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostTrackers;
-using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIndicators;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelProfiles;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIndicators;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.PassiveDnsRecords;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
     /// <summary>
     /// Provides operations to manage the threatIntelligence property of the microsoft.graph.security entity.
@@ -84,17 +84,17 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<ThreatIntelligenceRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> DeleteAsync(Action<ThreatIntelligenceRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<ThreatIntelligenceRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> DeleteAsync(Action<ThreatIntelligenceRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get threatIntelligence from security

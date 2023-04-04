@@ -8,14 +8,14 @@ using Microsoft.Graph.Beta.External.IndustryData.SourceSystems;
 using Microsoft.Graph.Beta.External.IndustryData.Years;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.External.IndustryData {
     /// <summary>
     /// Provides operations to manage the industryData property of the microsoft.graph.externalConnectors.external entity.

@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Accept;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Attachments;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item.Calendar;
@@ -13,14 +13,14 @@ using Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOccurr
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item.SnoozeReminder;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item.TentativelyAccept;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item {
     /// <summary>
     /// Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.

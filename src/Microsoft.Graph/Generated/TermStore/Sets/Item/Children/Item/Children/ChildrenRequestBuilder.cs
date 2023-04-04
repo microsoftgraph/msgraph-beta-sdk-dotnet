@@ -2,14 +2,14 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Graph.Beta.TermStore.Sets.Item.Children.Item.Children.Count;
 using Microsoft.Graph.Beta.TermStore.Sets.Item.Children.Item.Children.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.TermStore.Sets.Item.Children.Item.Children {
     /// <summary>
     /// Provides operations to manage the children property of the microsoft.graph.termStore.term entity.

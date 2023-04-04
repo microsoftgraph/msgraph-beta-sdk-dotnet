@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedRoleSettings : Entity, IParsable {
         /// <summary>true if the approval is required when activate the role. false if the approval is not required when activate the role.</summary>

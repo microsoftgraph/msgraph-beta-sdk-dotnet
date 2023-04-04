@@ -1,19 +1,19 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.Count;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.EvaluateApplication;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.EvaluateClassificationResults;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.EvaluateRemoval;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.ExtractLabel;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels {
     /// <summary>
     /// Provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RecommendLabelAction : InformationProtectionAction, IParsable {
         /// <summary>Actions to take if the label is accepted by the user.</summary>

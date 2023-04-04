@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RemoveContentFooterAction : InformationProtectionAction, IParsable {
         /// <summary>The name of the UI element of the footer to be removed.</summary>

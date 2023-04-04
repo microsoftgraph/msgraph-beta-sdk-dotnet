@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ExtensionProperty : DirectoryObject, IParsable {
         /// <summary>Display name of the application object on which this extension property is defined. Read-only.</summary>
@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dataType", value); }
         }
 #endif
+        /// <summary>The isMultiValued property</summary>
+        public bool? IsMultiValued {
+            get { return BackingStore?.Get<bool?>("isMultiValued"); }
+            set { BackingStore?.Set("isMultiValued", value); }
+        }
         /// <summary>Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.</summary>
         public bool? IsSyncedFromOnPremises {
             get { return BackingStore?.Get<bool?>("isSyncedFromOnPremises"); }
@@ -87,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 {"dataType", n => { DataType = n.GetStringValue(); } },
+                {"isMultiValued", n => { IsMultiValued = n.GetBoolValue(); } },
                 {"isSyncedFromOnPremises", n => { IsSyncedFromOnPremises = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"targetObjects", n => { TargetObjects = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -101,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("appDisplayName", AppDisplayName);
             writer.WriteStringValue("dataType", DataType);
+            writer.WriteBoolValue("isMultiValued", IsMultiValued);
             writer.WriteBoolValue("isSyncedFromOnPremises", IsSyncedFromOnPremises);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("targetObjects", TargetObjects);

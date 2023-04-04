@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ExternalConnection : Entity, IParsable {
         /// <summary>Collects configurable settings related to activities involving connector content.</summary>

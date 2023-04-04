@@ -1,13 +1,19 @@
+using System.Runtime.Serialization;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device enrollment join type.</summary>
     public enum JoinType {
         /// <summary>Unknown enrollment join type.</summary>
+        [EnumMember(Value = "unknown")]
         Unknown,
         /// <summary>The device is joined by Azure AD.</summary>
+        [EnumMember(Value = "azureADJoined")]
         AzureADJoined,
         /// <summary>The device is registered by Azure AD.</summary>
+        [EnumMember(Value = "azureADRegistered")]
         AzureADRegistered,
         /// <summary>The device is joined by hybrid Azure AD.</summary>
+        [EnumMember(Value = "hybridAzureADJoined")]
         HybridAzureADJoined,
     }
 }

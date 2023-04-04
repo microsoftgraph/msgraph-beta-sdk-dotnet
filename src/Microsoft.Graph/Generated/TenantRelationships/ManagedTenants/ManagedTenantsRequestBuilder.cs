@@ -11,8 +11,8 @@ using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUserRegi
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceAppPerformances;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceCompliancePolicySettingStateSummaries;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceHealthStatuses;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceCompliances;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceCompliances;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertLogs;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRuleDefinitions;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules;
@@ -20,31 +20,31 @@ using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlert
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantApiNotifications;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantEmailNotifications;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantTicketingEndpoints;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementIntents;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollectionTenantSummaries;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepTenantSummaries;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomizedInformation;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetailedInformation;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsDeviceMalwareStates;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtectionStates;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants {
     /// <summary>
     /// Provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.
@@ -219,17 +219,17 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<ManagedTenantsRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> DeleteAsync(Action<ManagedTenantsRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<ManagedTenantsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> DeleteAsync(Action<ManagedTenantsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The operations available to interact with the multi-tenant management platform.

@@ -2,16 +2,16 @@ using Microsoft.Graph.Beta.IdentityProtection.RiskDetections;
 using Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals;
 using Microsoft.Graph.Beta.IdentityProtection.RiskyUsers;
 using Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.IdentityProtection {
     /// <summary>
     /// Provides operations to manage the identityProtectionRoot singleton.

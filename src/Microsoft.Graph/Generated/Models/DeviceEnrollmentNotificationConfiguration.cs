@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceEnrollmentNotificationConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>Branding Options for the Message Template. Branding is defined in the Intune Admin Console.</summary>

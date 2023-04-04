@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MobileAppPolicySetItem : PolicySetItem, IParsable {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>

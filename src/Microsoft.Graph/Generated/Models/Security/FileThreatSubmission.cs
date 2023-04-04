@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class FileThreatSubmission : ThreatSubmission, IParsable {
         /// <summary>It specifies the file name to be submitted.</summary>

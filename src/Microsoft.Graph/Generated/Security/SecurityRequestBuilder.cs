@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Security.Alerts_v2;
 using Microsoft.Graph.Beta.Security.Alerts;
+using Microsoft.Graph.Beta.Security.Alerts_v2;
 using Microsoft.Graph.Beta.Security.AttackSimulation;
 using Microsoft.Graph.Beta.Security.Cases;
 using Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles;
@@ -21,17 +21,17 @@ using Microsoft.Graph.Beta.Security.SubjectRightsRequests;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence;
 using Microsoft.Graph.Beta.Security.ThreatSubmission;
 using Microsoft.Graph.Beta.Security.TiIndicators;
-using Microsoft.Graph.Beta.Security.Triggers;
 using Microsoft.Graph.Beta.Security.TriggerTypes;
+using Microsoft.Graph.Beta.Security.Triggers;
 using Microsoft.Graph.Beta.Security.UserSecurityProfiles;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Security {
     /// <summary>
     /// Provides operations to manage the security singleton.

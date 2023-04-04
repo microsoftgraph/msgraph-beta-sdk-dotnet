@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MobileAppDependency : MobileAppRelationship, IParsable {
         /// <summary>Indicates the dependency type associated with a relationship between two mobile apps.</summary>

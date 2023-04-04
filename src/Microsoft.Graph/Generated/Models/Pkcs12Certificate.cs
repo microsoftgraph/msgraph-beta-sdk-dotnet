@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Pkcs12Certificate : ApiAuthenticationConfigurationBase, IParsable {
         /// <summary>This is the password for the pfx file. Required. If no password is used, must still provide a value of &apos;&apos;.</summary>

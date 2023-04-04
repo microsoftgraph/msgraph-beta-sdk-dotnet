@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementTemplateCollectionTenantSummary : Entity, IParsable {
         /// <summary>The completeStepsCount property</summary>

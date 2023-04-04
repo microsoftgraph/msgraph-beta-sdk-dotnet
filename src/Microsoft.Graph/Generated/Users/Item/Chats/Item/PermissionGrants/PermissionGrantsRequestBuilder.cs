@@ -1,19 +1,19 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants.Count;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants.Delta;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants.GetByIds;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants.Item;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants.ValidateProperties;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants {
     /// <summary>
     /// Provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.

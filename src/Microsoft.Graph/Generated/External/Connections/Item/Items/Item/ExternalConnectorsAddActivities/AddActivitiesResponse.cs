@@ -1,10 +1,10 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ExternalConnectors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.ExternalConnectorsAddActivities {
     public class AddActivitiesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>

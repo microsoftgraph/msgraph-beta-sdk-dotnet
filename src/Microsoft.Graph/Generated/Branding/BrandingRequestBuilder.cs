@@ -6,16 +6,16 @@ using Microsoft.Graph.Beta.Branding.HeaderLogo;
 using Microsoft.Graph.Beta.Branding.Localizations;
 using Microsoft.Graph.Beta.Branding.SquareLogo;
 using Microsoft.Graph.Beta.Branding.SquareLogoDark;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Branding {
     /// <summary>
     /// Provides operations to manage the organizationalBranding singleton.

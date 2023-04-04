@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptIntegerParameter : DeviceHealthScriptParameter, IParsable {
         /// <summary>The default value of Integer param. Valid values -2147483648 to 2147483647</summary>

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EasEmailProfileConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>

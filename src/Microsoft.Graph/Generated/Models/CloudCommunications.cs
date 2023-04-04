@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudCommunications : Entity, IParsable {
         /// <summary>The callRecords property</summary>

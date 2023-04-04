@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidWorkProfileCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>

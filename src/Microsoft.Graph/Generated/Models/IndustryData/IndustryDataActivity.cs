@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class IndustryDataActivity : Entity, IParsable {
         /// <summary>The name of the activity. Maximum supported length is 100 characters.</summary>

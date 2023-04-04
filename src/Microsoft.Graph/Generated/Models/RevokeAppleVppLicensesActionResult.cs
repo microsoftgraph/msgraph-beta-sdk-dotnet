@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RevokeAppleVppLicensesActionResult : DeviceActionResult, IParsable {
         /// <summary>Total number of Apple Vpp licenses that failed to revoke</summary>

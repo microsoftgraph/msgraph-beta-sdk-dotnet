@@ -1,16 +1,16 @@
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Add;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Count;
 using Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members.Item;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.Members {
     /// <summary>
     /// Provides operations to manage the members property of the microsoft.graph.channel entity.

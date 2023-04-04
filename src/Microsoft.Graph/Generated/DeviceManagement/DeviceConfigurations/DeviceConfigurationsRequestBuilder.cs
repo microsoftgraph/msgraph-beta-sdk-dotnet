@@ -3,16 +3,16 @@ using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvailable
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadLinks;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations {
     /// <summary>
     /// Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.

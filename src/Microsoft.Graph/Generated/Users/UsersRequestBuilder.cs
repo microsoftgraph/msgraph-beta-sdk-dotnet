@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Count;
 using Microsoft.Graph.Beta.Users.Delta;
 using Microsoft.Graph.Beta.Users.GetByIds;
@@ -8,14 +8,14 @@ using Microsoft.Graph.Beta.Users.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Users.Item;
 using Microsoft.Graph.Beta.Users.ValidatePassword;
 using Microsoft.Graph.Beta.Users.ValidateProperties;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users {
     /// <summary>
     /// Provides operations to manage the collection of user entities.

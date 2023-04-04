@@ -1,9 +1,12 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The category entity stores the category of a group policy definition
+    /// </summary>
     public class GroupPolicyCategory : Entity, IParsable {
         /// <summary>The children categories</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

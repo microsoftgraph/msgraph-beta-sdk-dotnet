@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class IndustryDataRoot : Entity, IParsable {
         /// <summary>Set of connectors for importing data from source systems.</summary>

@@ -1,15 +1,15 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups.Count;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups {
     /// <summary>
     /// Provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return await RequestAdapter.SendAsync<ConnectorGroupCollectionResponse>(requestInfo, ConnectorGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a connectorGroup object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0" />
+        /// Create a new connectorGroup.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return requestInfo;
         }
         /// <summary>
-        /// Create a connectorGroup object.
+        /// Create a new connectorGroup.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

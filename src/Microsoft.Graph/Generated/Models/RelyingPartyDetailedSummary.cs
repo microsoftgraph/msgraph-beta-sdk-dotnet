@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RelyingPartyDetailedSummary : Entity, IParsable {
         /// <summary>Number of failed sign in on Active Directory Federation Service in the period specified.</summary>

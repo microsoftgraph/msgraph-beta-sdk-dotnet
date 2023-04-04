@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidEasEmailProfileConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.</summary>

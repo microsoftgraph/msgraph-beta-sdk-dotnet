@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageCatalog : Entity, IParsable {
         /// <summary>The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.</summary>

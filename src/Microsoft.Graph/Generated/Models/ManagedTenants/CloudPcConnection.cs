@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class CloudPcConnection : Entity, IParsable {
         /// <summary>The display name of the cloud PC connection. Required. Read-only.</summary>
