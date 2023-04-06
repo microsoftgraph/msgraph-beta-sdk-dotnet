@@ -7,14 +7,27 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
-## [5.24.0] - 2023-03-28
+## [5.25.0-preview] - 2023-04-06
+
+### Changed 
+
+- Fixes missing dateTime query parameters for bookingBusinesses (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1791)
+- Fixes missing exapand clauses for calendars and contactFolder (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1788)
+- Fixes return type when uploading small files to drive (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1718)
+- Fixes inconsistencies in errors when using batch requests. (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1782)
+
+### Added
+
+- Latest metadata updates from 6th April 2023
+
+## [5.24.0-preview] - 2023-03-28
 
 ### Added
 
 - Updates kiota abstraction library dependencies to reduce code size in generation.
 - Latest metadata updates from 28st March 2023
 
-## [5.23.0] - 2023-03-21
+## [5.23.0-preview] - 2023-03-21
 
 ### Added
 
@@ -22,7 +35,7 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 - Updates kiota abstraction library dependencies to fix serialization errors.
 - Latest metadata updates from 21st March 2023
 
-## [5.22.0] - 2023-03-14
+## [5.22.0-preview] - 2023-03-14
 
 ### Added
 
