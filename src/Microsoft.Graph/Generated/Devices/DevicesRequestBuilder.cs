@@ -4,16 +4,16 @@ using Microsoft.Graph.Beta.Devices.GetByIds;
 using Microsoft.Graph.Beta.Devices.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Devices.Item;
 using Microsoft.Graph.Beta.Devices.ValidateProperties;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Devices {
     /// <summary>
     /// Provides operations to manage the collection of device entities.

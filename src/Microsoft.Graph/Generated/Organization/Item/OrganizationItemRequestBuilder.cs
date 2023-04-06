@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Organization.Item.Branding;
 using Microsoft.Graph.Beta.Organization.Item.CertificateBasedAuthConfiguration;
 using Microsoft.Graph.Beta.Organization.Item.CheckMemberGroups;
@@ -10,14 +10,14 @@ using Microsoft.Graph.Beta.Organization.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.Organization.Item.Restore;
 using Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority;
 using Microsoft.Graph.Beta.Organization.Item.Settings;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Organization.Item {
     /// <summary>
     /// Provides operations to manage the collection of organization entities.

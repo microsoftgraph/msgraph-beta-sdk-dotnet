@@ -1,23 +1,34 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.BulkResize;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Count;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item;
-using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.ValidateBulkResize;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs {
     /// <summary>
     /// Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
     public class CloudPCsRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to call the bulkResize method.</summary>
+        public BulkResizeRequestBuilder BulkResize { get =>
+            new BulkResizeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the validateBulkResize method.</summary>
+        public ValidateBulkResizeRequestBuilder ValidateBulkResize { get =>
+            new ValidateBulkResizeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.</summary>
         public CloudPCItemRequestBuilder this[string position] { get {
@@ -58,6 +69,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudPCCollectionResponse>(requestInfo, CloudPCCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the getProvisionedCloudPCs method.
+        /// </summary>
+        /// <param name="groupId">Usage: groupId=&apos;{groupId}&apos;</param>
+        /// <param name="servicePlanId">Usage: servicePlanId=&apos;{servicePlanId}&apos;</param>
+        public GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder GetProvisionedCloudPCsWithGroupIdWithServicePlanId(string groupId, string servicePlanId) {
+            if(string.IsNullOrEmpty(groupId)) throw new ArgumentNullException(nameof(groupId));
+            if(string.IsNullOrEmpty(servicePlanId)) throw new ArgumentNullException(nameof(servicePlanId));
+            return new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(PathParameters, RequestAdapter, groupId, servicePlanId);
         }
         /// <summary>
         /// Create new navigation property to cloudPCs for deviceManagement

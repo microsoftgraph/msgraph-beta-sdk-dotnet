@@ -1,15 +1,15 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.UserStateSummary.Count;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.UserStateSummary.Item;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.UserStateSummary {
     /// <summary>
     /// Provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.

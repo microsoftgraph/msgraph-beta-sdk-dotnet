@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementComplexSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>The definitions of each property of the complex setting</summary>

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class OperationalInsightsConnection : ResourceConnection, IParsable {
         /// <summary>The name of the Azure resource group that contains the Log Analytics workspace.</summary>

@@ -12,10 +12,10 @@ using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Entity : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -386,6 +386,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.delegatedPermissionClassification" => new DelegatedPermissionClassification(),
                 "#microsoft.graph.deletedItemContainer" => new DeletedItemContainer(),
                 "#microsoft.graph.deletedTeam" => new DeletedTeam(),
+                "#microsoft.graph.deltaParticipants" => new DeltaParticipants(),
                 "#microsoft.graph.depEnrollmentBaseProfile" => new DepEnrollmentBaseProfile(),
                 "#microsoft.graph.depEnrollmentProfile" => new DepEnrollmentProfile(),
                 "#microsoft.graph.depIOSEnrollmentProfile" => new DepIOSEnrollmentProfile(),

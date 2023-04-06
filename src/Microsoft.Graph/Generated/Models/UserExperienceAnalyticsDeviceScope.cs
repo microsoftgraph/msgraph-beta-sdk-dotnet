@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsDeviceScope : Entity, IParsable {
         /// <summary>Indicates the creation date and time for the custom device scope.</summary>

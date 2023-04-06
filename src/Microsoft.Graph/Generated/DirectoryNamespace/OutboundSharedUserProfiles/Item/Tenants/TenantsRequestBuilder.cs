@@ -1,15 +1,15 @@
 using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Item.Tenants.Count;
 using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Item.Tenants.Item;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Item.Tenants {
     /// <summary>
     /// Provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
         public TenantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get tenants from directory
+        /// List the tenant references of an outboundSharedUserProfile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outboundshareduserprofile-list-tenants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
             return await RequestAdapter.SendAsync<TenantReference>(requestInfo, TenantReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get tenants from directory
+        /// List the tenant references of an outboundSharedUserProfile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get tenants from directory
+        /// List the tenant references of an outboundSharedUserProfile.
         /// </summary>
         public class TenantsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

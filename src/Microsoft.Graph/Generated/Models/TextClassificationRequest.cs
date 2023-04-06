@@ -1,10 +1,24 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TextClassificationRequest : Entity, IParsable {
+        /// <summary>The contentMetaData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ClassificationRequestContentMetaData? ContentMetaData {
+            get { return BackingStore?.Get<ClassificationRequestContentMetaData?>("contentMetaData"); }
+            set { BackingStore?.Set("contentMetaData", value); }
+        }
+#nullable restore
+#else
+        public ClassificationRequestContentMetaData ContentMetaData {
+            get { return BackingStore?.Get<ClassificationRequestContentMetaData>("contentMetaData"); }
+            set { BackingStore?.Set("contentMetaData", value); }
+        }
+#endif
         /// <summary>The fileExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"contentMetaData", n => { ContentMetaData = n.GetObjectValue<ClassificationRequestContentMetaData>(ClassificationRequestContentMetaData.CreateFromDiscriminatorValue); } },
                 {"fileExtension", n => { FileExtension = n.GetStringValue(); } },
                 {"matchTolerancesToInclude", n => { MatchTolerancesToInclude = n.GetEnumValue<MlClassificationMatchTolerance>(); } },
                 {"scopesToRun", n => { ScopesToRun = n.GetEnumValue<SensitiveTypeScope>(); } },
@@ -84,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<ClassificationRequestContentMetaData>("contentMetaData", ContentMetaData);
             writer.WriteStringValue("fileExtension", FileExtension);
             writer.WriteEnumValue<MlClassificationMatchTolerance>("matchTolerancesToInclude", MatchTolerancesToInclude);
             writer.WriteEnumValue<SensitiveTypeScope>("scopesToRun", ScopesToRun);

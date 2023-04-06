@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppFileSystemDetection : Win32LobAppDetection, IParsable {
         /// <summary>A value indicating whether this file or folder is for checking 32-bit app on 64-bit system</summary>

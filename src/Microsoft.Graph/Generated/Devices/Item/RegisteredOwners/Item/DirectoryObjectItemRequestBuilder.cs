@@ -3,11 +3,11 @@ using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.GraphServicePrinci
 using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.GraphUser;
 using Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item.Ref;
 using Microsoft.Kiota.Abstractions;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners.Item {
     /// <summary>
     /// Builds and executes requests for operations under \devices\{device-id}\registeredOwners\{directoryObject-id}

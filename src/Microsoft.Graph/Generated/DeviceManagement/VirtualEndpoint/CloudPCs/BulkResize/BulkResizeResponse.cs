@@ -1,21 +1,22 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace Microsoft.Graph.Beta.Models {
-    public class WindowsUpdateStateCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
+using System;
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.BulkResize {
+    public class BulkResizeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsUpdateState>? Value {
-            get { return BackingStore?.Get<List<WindowsUpdateState>?>("value"); }
+        public List<CloudPcRemoteActionResult>? Value {
+            get { return BackingStore?.Get<List<CloudPcRemoteActionResult>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<WindowsUpdateState> Value {
-            get { return BackingStore?.Get<List<WindowsUpdateState>>("value"); }
+        public List<CloudPcRemoteActionResult> Value {
+            get { return BackingStore?.Get<List<CloudPcRemoteActionResult>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
@@ -23,16 +24,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsUpdateStateCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new BulkResizeResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsUpdateStateCollectionResponse();
+            return new BulkResizeResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<WindowsUpdateState>(WindowsUpdateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<CloudPcRemoteActionResult>(CloudPcRemoteActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -42,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WindowsUpdateState>("value", Value);
+            writer.WriteCollectionOfObjectValues<CloudPcRemoteActionResult>("value", Value);
         }
     }
 }

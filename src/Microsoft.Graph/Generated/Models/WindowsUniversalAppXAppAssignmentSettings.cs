@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsUniversalAppXAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
-        /// <summary>Whether or not to use device execution context for Windows Universal AppX mobile app.</summary>
+        /// <summary>If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.</summary>
         public bool? UseDeviceContext {
             get { return BackingStore?.Get<bool?>("useDeviceContext"); }
             set { BackingStore?.Set("useDeviceContext", value); }

@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes {
     public class FindByMethodModeWithAuthenticationMethodModesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>

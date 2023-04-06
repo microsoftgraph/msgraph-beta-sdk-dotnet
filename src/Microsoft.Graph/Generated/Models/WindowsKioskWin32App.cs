@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskWin32App : WindowsKioskAppBase, IParsable {
         /// <summary>This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode</summary>

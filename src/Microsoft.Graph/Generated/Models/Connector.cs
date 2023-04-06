@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Connector : Entity, IParsable {
         /// <summary>The external IP address as detected by the the connector server. Read-only.</summary>

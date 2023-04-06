@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationIdentityMatchingConfiguration : EducationIdentitySynchronizationConfiguration, IParsable {
         /// <summary>Mapping between the user account and the options to use to uniquely identify the user to update.</summary>

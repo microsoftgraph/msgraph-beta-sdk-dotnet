@@ -1,17 +1,17 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Chats.AllMessages;
 using Microsoft.Graph.Beta.Users.Item.Chats.Count;
 using Microsoft.Graph.Beta.Users.Item.Chats.GetAllMessages;
 using Microsoft.Graph.Beta.Users.Item.Chats.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.Chats {
     /// <summary>
     /// Provides operations to manage the chats property of the microsoft.graph.user entity.

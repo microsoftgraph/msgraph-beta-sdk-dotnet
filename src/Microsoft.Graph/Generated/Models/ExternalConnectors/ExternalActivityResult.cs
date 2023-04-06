@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ExternalActivityResult : ExternalActivity, IParsable {
         /// <summary>Error information explaining failure to process external activity.</summary>

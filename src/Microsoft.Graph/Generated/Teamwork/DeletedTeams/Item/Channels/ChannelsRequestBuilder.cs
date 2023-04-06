@@ -1,17 +1,17 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.AllMessages;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Count;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.GetAllMessages;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels {
     /// <summary>
     /// Provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.

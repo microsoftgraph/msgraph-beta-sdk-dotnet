@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class UserAccount : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The user account&apos;s displayed name.</summary>
@@ -41,6 +41,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
         /// <summary>The name of the Active Directory domain of which the user is a member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +133,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             return new Dictionary<string, Action<IParseNode>> {
                 {"accountName", n => { AccountName = n.GetStringValue(); } },
                 {"azureAdUserId", n => { AzureAdUserId = n.GetStringValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"domainName", n => { DomainName = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -133,6 +148,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountName", AccountName);
             writer.WriteStringValue("azureAdUserId", AzureAdUserId);
+            writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("domainName", DomainName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class GovernanceRoleSetting : Entity, IParsable {
         /// <summary>The rule settings that are evaluated when an administrator tries to add an eligible role assignment.</summary>

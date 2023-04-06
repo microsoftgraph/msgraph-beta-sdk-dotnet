@@ -2,14 +2,14 @@ using Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Count;
 using Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
     /// <summary>
     /// Provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return await RequestAdapter.SendAsync<IndustryDataConnectorCollectionResponse>(requestInfo, IndustryDataConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new industryDataConnector object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0" />
+        /// Create a new azureDataLakeConnector object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new industryDataConnector object.
+        /// Create a new azureDataLakeConnector object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

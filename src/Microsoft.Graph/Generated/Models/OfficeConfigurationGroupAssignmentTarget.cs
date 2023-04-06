@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OfficeConfigurationGroupAssignmentTarget : OfficeConfigurationAssignmentTarget, IParsable {
         /// <summary>The Id of the AAD group we are targeting the device configuration to.</summary>

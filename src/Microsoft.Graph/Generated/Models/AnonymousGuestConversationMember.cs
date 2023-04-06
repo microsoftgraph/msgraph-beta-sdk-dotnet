@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AnonymousGuestConversationMember : ConversationMember, IParsable {
         /// <summary>Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.</summary>
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new anonymousGuestConversationMember and sets the default values.
+        /// Instantiates a new AnonymousGuestConversationMember and sets the default values.
         /// </summary>
         public AnonymousGuestConversationMember() : base() {
             OdataType = "#microsoft.graph.anonymousGuestConversationMember";

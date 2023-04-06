@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CanvasLayout : Entity, IParsable {
         /// <summary>Collection of horizontal sections on the SharePoint page.</summary>

@@ -2,16 +2,16 @@ using Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item.Currency;
 using Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item.Customer;
 using Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item.PaymentTerm;
 using Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item.SalesOrderLines;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item {
     /// <summary>
     /// Provides operations to manage the salesOrders property of the microsoft.graph.company entity.

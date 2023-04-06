@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Search {
     public class Bookmark : SearchAnswer, IParsable {
         /// <summary>Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.</summary>

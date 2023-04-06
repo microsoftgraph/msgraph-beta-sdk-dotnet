@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerTaskConfiguration : Entity, IParsable {
         /// <summary>Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.</summary>

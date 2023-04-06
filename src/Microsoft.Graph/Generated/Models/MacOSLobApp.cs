@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MacOSLobApp : MobileLobApp, IParsable {
         /// <summary>The build number of the package. This should match the package CFBundleShortVersionString of the .pkg file.</summary>
@@ -45,20 +45,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<MacOSLobChildApp> ChildApps {
             get { return BackingStore?.Get<List<MacOSLobChildApp>>("childApps"); }
             set { BackingStore?.Set("childApps", value); }
-        }
-#endif
-        /// <summary>The identity version. This property is being deprecated in 2211(November 2022).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IdentityVersion {
-            get { return BackingStore?.Get<string?>("identityVersion"); }
-            set { BackingStore?.Set("identityVersion", value); }
-        }
-#nullable restore
-#else
-        public string IdentityVersion {
-            get { return BackingStore?.Get<string>("identityVersion"); }
-            set { BackingStore?.Set("identityVersion", value); }
         }
 #endif
         /// <summary>When TRUE, indicates that the app&apos;s version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app&apos;s version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.</summary>
@@ -140,7 +126,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"buildNumber", n => { BuildNumber = n.GetStringValue(); } },
                 {"bundleId", n => { BundleId = n.GetStringValue(); } },
                 {"childApps", n => { ChildApps = n.GetCollectionOfObjectValues<MacOSLobChildApp>(MacOSLobChildApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
                 {"ignoreVersionDetection", n => { IgnoreVersionDetection = n.GetBoolValue(); } },
                 {"installAsManaged", n => { InstallAsManaged = n.GetBoolValue(); } },
                 {"md5Hash", n => { Md5Hash = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -159,7 +144,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("buildNumber", BuildNumber);
             writer.WriteStringValue("bundleId", BundleId);
             writer.WriteCollectionOfObjectValues<MacOSLobChildApp>("childApps", ChildApps);
-            writer.WriteStringValue("identityVersion", IdentityVersion);
             writer.WriteBoolValue("ignoreVersionDetection", IgnoreVersionDetection);
             writer.WriteBoolValue("installAsManaged", InstallAsManaged);
             writer.WriteCollectionOfPrimitiveValues<string>("md5Hash", Md5Hash);

@@ -2,14 +2,14 @@ using Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.DataConnector
 using Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.Year;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
     /// <summary>
     /// Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.

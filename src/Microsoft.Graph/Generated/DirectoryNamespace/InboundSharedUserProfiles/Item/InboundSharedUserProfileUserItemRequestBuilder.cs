@@ -1,15 +1,15 @@
 using Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item.ExportPersonalData;
 using Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item.RemovePersonalData;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item {
     /// <summary>
     /// Provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get inboundSharedUserProfiles from directory
+        /// A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get inboundSharedUserProfiles from directory
+        /// A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
             }
         }
         /// <summary>
-        /// Get inboundSharedUserProfiles from directory
+        /// A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
         /// </summary>
         public class InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

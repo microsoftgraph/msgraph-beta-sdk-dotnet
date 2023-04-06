@@ -1,16 +1,16 @@
 using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.Mute;
 using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.StartHoldMusic;
 using Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.StopHoldMusic;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item {
     /// <summary>
     /// Provides operations to manage the participants property of the microsoft.graph.call entity.

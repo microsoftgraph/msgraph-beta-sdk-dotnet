@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// The group policy configuration assignment entity assigns one or more AAD groups to a specific group policy configuration.

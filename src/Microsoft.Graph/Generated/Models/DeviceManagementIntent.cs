@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Entity that represents an intent to apply settings to a device
@@ -111,6 +111,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
             set { BackingStore?.Set("isAssigned", value); }
         }
+        /// <summary>Signifies whether or not the intent is being migrated to the configurationPolicies endpoint</summary>
+        public bool? IsMigratingToConfigurationPolicy {
+            get { return BackingStore?.Get<bool?>("isMigratingToConfigurationPolicy"); }
+            set { BackingStore?.Set("isMigratingToConfigurationPolicy", value); }
+        }
         /// <summary>When the intent was last modified</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -207,6 +212,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceStateSummary", n => { DeviceStateSummary = n.GetObjectValue<DeviceManagementIntentDeviceStateSummary>(DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                {"isMigratingToConfigurationPolicy", n => { IsMigratingToConfigurationPolicy = n.GetBoolValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -230,6 +236,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<DeviceManagementIntentDeviceStateSummary>("deviceStateSummary", DeviceStateSummary);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isAssigned", IsAssigned);
+            writer.WriteBoolValue("isMigratingToConfigurationPolicy", IsMigratingToConfigurationPolicy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteCollectionOfObjectValues<DeviceManagementSettingInstance>("settings", Settings);

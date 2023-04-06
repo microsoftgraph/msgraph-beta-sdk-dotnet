@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DirectorySetting : Entity, IParsable {
         /// <summary>Display name of this group of settings, which comes from the associated template. Read-only.</summary>

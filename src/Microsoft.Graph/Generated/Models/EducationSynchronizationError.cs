@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationError : Entity, IParsable {
         /// <summary>Represents the sync entity (school, section, student, teacher).</summary>

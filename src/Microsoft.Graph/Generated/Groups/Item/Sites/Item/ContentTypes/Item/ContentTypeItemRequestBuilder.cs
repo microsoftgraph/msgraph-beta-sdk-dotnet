@@ -8,16 +8,16 @@ using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item.CopyToDefaul
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item.IsPublished;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item.Publish;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item.Unpublish;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item {
     /// <summary>
     /// Provides operations to manage the contentTypes property of the microsoft.graph.site entity.

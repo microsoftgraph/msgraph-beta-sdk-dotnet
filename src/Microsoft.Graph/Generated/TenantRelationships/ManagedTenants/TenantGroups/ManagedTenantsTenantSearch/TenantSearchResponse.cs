@@ -1,10 +1,10 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ManagedTenants;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.ManagedTenantsTenantSearch {
     public class TenantSearchResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>

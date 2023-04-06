@@ -1,24 +1,24 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.Methods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.MicrosoftAuthenticatorMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.Operations;
-using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods;
+using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.PhoneMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.TemporaryAccessPassMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusinessMethods;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.Authentication {
     /// <summary>
     /// Provides operations to manage the authentication property of the microsoft.graph.user entity.

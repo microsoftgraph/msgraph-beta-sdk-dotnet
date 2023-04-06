@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerTaskRecurrence : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The nextInSeriesTaskId property</summary>
+        /// <summary>The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextInSeriesTaskId {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("nextInSeriesTaskId", value); }
         }
 #endif
-        /// <summary>The occurrenceId property</summary>
+        /// <summary>The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.</summary>
         public int? OccurrenceId {
             get { return BackingStore?.Get<int?>("occurrenceId"); }
             set { BackingStore?.Set("occurrenceId", value); }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The previousInSeriesTaskId property</summary>
+        /// <summary>The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreviousInSeriesTaskId {
@@ -60,12 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("previousInSeriesTaskId", value); }
         }
 #endif
-        /// <summary>The recurrenceStartDateTime property</summary>
+        /// <summary>The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId &gt;= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RecurrenceStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("recurrenceStartDateTime"); }
             set { BackingStore?.Set("recurrenceStartDateTime", value); }
         }
-        /// <summary>The schedule property</summary>
+        /// <summary>The schedule for recurrence. Clients define and edit recurrence by specifying the schedule. If nextInSeriesTaskId isn&apos;t assigned, clients may terminate the series by assigning null to this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerRecurrenceSchedule? Schedule {
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
-        /// <summary>The seriesId property</summary>
+        /// <summary>The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SeriesId {

@@ -1,21 +1,21 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Print.Connectors;
 using Microsoft.Graph.Beta.Print.Operations;
-using Microsoft.Graph.Beta.Print.Printers;
 using Microsoft.Graph.Beta.Print.PrinterShares;
+using Microsoft.Graph.Beta.Print.Printers;
 using Microsoft.Graph.Beta.Print.Reports;
 using Microsoft.Graph.Beta.Print.Services;
 using Microsoft.Graph.Beta.Print.Shares;
 using Microsoft.Graph.Beta.Print.TaskDefinitions;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Print {
     /// <summary>
     /// Provides operations to manage the print singleton.

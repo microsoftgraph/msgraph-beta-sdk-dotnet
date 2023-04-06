@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable {
         /// <summary>Setting to specify whether to allow ConnectedApps experience for this app.</summary>

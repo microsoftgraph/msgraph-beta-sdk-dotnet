@@ -3,16 +3,16 @@ using Microsoft.Graph.Beta.Communications.Calls;
 using Microsoft.Graph.Beta.Communications.GetPresencesByUserId;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings;
 using Microsoft.Graph.Beta.Communications.Presences;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Communications {
     /// <summary>
     /// Provides operations to manage the cloudCommunications singleton.

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MobilityManagementPolicy : Entity, IParsable {
         /// <summary>Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.</summary>

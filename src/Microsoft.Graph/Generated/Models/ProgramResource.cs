@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ProgramResource : Identity, IParsable {
         /// <summary>Type of the resource, indicating whether it is a group or an app.</summary>

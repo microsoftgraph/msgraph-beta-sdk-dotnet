@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskAzureADUser : WindowsKioskUser, IParsable {
         /// <summary>The ID of the AzureAD user that will be locked to this kiosk configuration</summary>

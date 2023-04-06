@@ -5,16 +5,16 @@ using Microsoft.Graph.Beta.DirectoryRoles.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.DirectoryRoles.Item.Members;
 using Microsoft.Graph.Beta.DirectoryRoles.Item.Restore;
 using Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
     /// <summary>
     /// Provides operations to manage the collection of directoryRole entities.

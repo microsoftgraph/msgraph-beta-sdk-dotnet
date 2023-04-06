@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class ReferenceDefinition : Entity, IParsable {
         /// <summary>The code value for the definition that must be unique within the referenceType.</summary>

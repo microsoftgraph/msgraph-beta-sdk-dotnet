@@ -1,14 +1,26 @@
+using System.Runtime.Serialization;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public enum TeamworkUserIdentityType {
+        [EnumMember(Value = "aadUser")]
         AadUser,
+        [EnumMember(Value = "onPremiseAadUser")]
         OnPremiseAadUser,
+        [EnumMember(Value = "anonymousGuest")]
         AnonymousGuest,
+        [EnumMember(Value = "federatedUser")]
         FederatedUser,
+        [EnumMember(Value = "personalMicrosoftAccountUser")]
         PersonalMicrosoftAccountUser,
+        [EnumMember(Value = "skypeUser")]
         SkypeUser,
+        [EnumMember(Value = "phoneUser")]
         PhoneUser,
+        [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "emailUser")]
         EmailUser,
+        [EnumMember(Value = "azureCommunicationServicesUser")]
         AzureCommunicationServicesUser,
     }
 }

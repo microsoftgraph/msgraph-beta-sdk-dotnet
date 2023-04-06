@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.</summary>

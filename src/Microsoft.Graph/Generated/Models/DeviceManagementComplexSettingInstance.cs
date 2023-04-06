@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementComplexSettingInstance : DeviceManagementSettingInstance, IParsable {
         /// <summary>The values that make up the complex setting</summary>

@@ -1,11 +1,11 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespaces;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentApprovals;
-using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignments;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentSchedules;
+using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignments;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleDefinitions;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilityScheduleInstances;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilityScheduleRequests;
@@ -13,14 +13,14 @@ using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilitySche
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.TransitiveRoleAssignments;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace {
     /// <summary>
     /// Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.

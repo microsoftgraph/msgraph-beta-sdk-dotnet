@@ -2,16 +2,16 @@ using Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item.Sche
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item.Schema.Functions;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item.Schema.ParseExpression;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item.Schema {
     /// <summary>
     /// Provides operations to manage the schema property of the microsoft.graph.synchronizationTemplate entity.

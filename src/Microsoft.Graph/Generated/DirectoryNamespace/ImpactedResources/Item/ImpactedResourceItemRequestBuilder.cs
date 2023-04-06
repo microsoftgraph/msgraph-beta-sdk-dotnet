@@ -2,16 +2,16 @@ using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Complete;
 using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Dismiss;
 using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Postpone;
 using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Reactivate;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
     /// <summary>
     /// Provides operations to manage the impactedResources property of the microsoft.graph.directory entity.

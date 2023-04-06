@@ -5,16 +5,16 @@ using Microsoft.Graph.Beta.Groups.GetByIds;
 using Microsoft.Graph.Beta.Groups.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Groups.Item;
 using Microsoft.Graph.Beta.Groups.ValidateProperties;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Groups {
     /// <summary>
     /// Provides operations to manage the collection of group entities.

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureCommunicationServicesUserIdentity : Identity, IParsable {
         /// <summary>The Azure Communication Services resource ID associated with the user.</summary>

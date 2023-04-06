@@ -3,13 +3,13 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAllCertificatesReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppsInstallSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppStatusOverviewReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppsInstallSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesReportForDevice;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDevicesReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDeviceSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyDevicesReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePolicyNonComplianceSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingDetailsReport;
@@ -17,8 +17,8 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingNonCompl
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetComplianceSettingsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigManagerDevicePolicyStatusReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPoliciesReportForDevice;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDevicesReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDeviceSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyDevicesReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetConfigurationPolicySettingsDeviceSummaryReport;
@@ -33,6 +33,11 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSet
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePoliciesComplianceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicePolicySettingsComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliacePolicyReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusByCompliancePolicySettingReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliacePolicyReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliancePolicySettingsReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusByPolicyPlatformComplianceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesStatusBySettingReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetEncryptionReportForDevices;
@@ -48,8 +53,8 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetNoncompliantDevicesAndSet
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceMetadata;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetPolicyNonComplianceSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUsersReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetRelatedAppsStatusReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetReportFilters;
@@ -58,21 +63,21 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyDefenderAgentsRe
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUserInstallStatusReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport;
-using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentReport;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
     /// <summary>
     /// Provides operations to manage the reports property of the microsoft.graph.deviceManagement entity.
@@ -218,9 +223,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
         public GetDevicePolicySettingsComplianceReportRequestBuilder GetDevicePolicySettingsComplianceReport { get =>
             new GetDevicePolicySettingsComplianceReportRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getDevicesStatusByPolicyPlatformComplianceReport method.</summary>
+        public GetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder GetDevicesStatusByPolicyPlatformComplianceReport { get =>
+            new GetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getDevicesStatusBySettingReport method.</summary>
         public GetDevicesStatusBySettingReportRequestBuilder GetDevicesStatusBySettingReport { get =>
             new GetDevicesStatusBySettingReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getDeviceStatusByCompliacePolicyReport method.</summary>
+        public GetDeviceStatusByCompliacePolicyReportRequestBuilder GetDeviceStatusByCompliacePolicyReport { get =>
+            new GetDeviceStatusByCompliacePolicyReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getDeviceStatusByCompliancePolicySettingReport method.</summary>
+        public GetDeviceStatusByCompliancePolicySettingReportRequestBuilder GetDeviceStatusByCompliancePolicySettingReport { get =>
+            new GetDeviceStatusByCompliancePolicySettingReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getDeviceStatusSummaryByCompliacePolicyReport method.</summary>
+        public GetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder GetDeviceStatusSummaryByCompliacePolicyReport { get =>
+            new GetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getDeviceStatusSummaryByCompliancePolicySettingsReport method.</summary>
+        public GetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder GetDeviceStatusSummaryByCompliancePolicySettingsReport { get =>
+            new GetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDevicesWithoutCompliancePolicyReport method.</summary>
         public GetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport { get =>

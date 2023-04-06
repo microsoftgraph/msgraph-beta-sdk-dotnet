@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators {
     public class FilterOperatorsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>

@@ -4,24 +4,24 @@ using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CompareWithTemplateId;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CreateCopy;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceSettingStateSummaries;
-using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStateSummary;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStates;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Settings;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UpdateSettings;
-using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStates;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStateSummary;
-using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStates;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item {
     /// <summary>
     /// Provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.

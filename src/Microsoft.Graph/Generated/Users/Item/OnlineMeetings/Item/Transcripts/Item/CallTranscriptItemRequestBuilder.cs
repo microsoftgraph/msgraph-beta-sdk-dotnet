@@ -1,14 +1,15 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Item.Content;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Item.MetadataContent;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Item {
     /// <summary>
     /// Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Item {
         /// <summary>Provides operations to manage the media for the user entity.</summary>
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the media for the user entity.</summary>
+        public MetadataContentRequestBuilder MetadataContent { get =>
+            new MetadataContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new CallTranscriptItemRequestBuilder and sets the default values.

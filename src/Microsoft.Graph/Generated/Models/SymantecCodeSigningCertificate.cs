@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SymantecCodeSigningCertificate : Entity, IParsable {
         /// <summary>The Windows Symantec Code-Signing Certificate in the raw data format.</summary>

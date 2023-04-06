@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppSettings : Entity, IParsable {
         /// <summary>Indicates whether Teams users are allowed to request admins access to certain Teams apps.</summary>

@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule.OfferShiftRequests;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule.OpenShiftChangeRequests;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule.OpenShifts;
@@ -11,14 +11,14 @@ using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule.T
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule.TimeOffReasons;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule.TimeOffRequests;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule.TimesOff;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule {
     /// <summary>
     /// Provides operations to manage the schedule property of the microsoft.graph.team entity.

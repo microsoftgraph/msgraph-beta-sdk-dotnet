@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsAssignedAccessProfile : Entity, IParsable {
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu.</summary>

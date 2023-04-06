@@ -1,10 +1,10 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.Ediscovery;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.EdiscoveryAsHierarchy {
     public class AsHierarchyResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>

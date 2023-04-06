@@ -1,19 +1,19 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights;
 using Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights;
 using Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDataAccess;
 using Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights;
 using Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties;
 using Microsoft.Graph.Beta.Organization.Item.Settings.Pronouns;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Organization.Item.Settings {
     /// <summary>
     /// Provides operations to manage the settings property of the microsoft.graph.organization entity.

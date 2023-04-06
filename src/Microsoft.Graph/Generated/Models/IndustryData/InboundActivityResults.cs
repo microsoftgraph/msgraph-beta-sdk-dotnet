@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class InboundActivityResults : IndustryDataActivityStatistics, IParsable {
         /// <summary>Number of errors encountered while processing the inbound flow.</summary>

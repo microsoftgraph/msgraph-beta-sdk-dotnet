@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     public class DeviceManagement : Entity, IParsable {
         /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CallTranscript : Entity, IParsable {
         /// <summary>A field that represents the content of the transcript. Read-only.</summary>
@@ -24,6 +24,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? MetadataContent {
+            get { return BackingStore?.Get<byte[]?>("metadataContent"); }
+            set { BackingStore?.Set("metadataContent", value); }
+        }
+#nullable restore
+#else
+        public byte[] MetadataContent {
+            get { return BackingStore?.Get<byte[]>("metadataContent"); }
+            set { BackingStore?.Set("metadataContent", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"content", n => { Content = n.GetByteArrayValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"metadataContent", n => { MetadataContent = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>
@@ -50,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteByteArrayValue("content", Content);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteByteArrayValue("metadataContent", MetadataContent);
         }
     }
 }

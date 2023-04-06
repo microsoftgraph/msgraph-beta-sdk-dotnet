@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.Item.Schedule.OfferShiftRequests;
 using Microsoft.Graph.Beta.Teams.Item.Schedule.OpenShiftChangeRequests;
 using Microsoft.Graph.Beta.Teams.Item.Schedule.OpenShifts;
@@ -11,14 +11,14 @@ using Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards;
 using Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffReasons;
 using Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests;
 using Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Teams.Item.Schedule {
     /// <summary>
     /// Provides operations to manage the schedule property of the microsoft.graph.team entity.

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class IosDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item.DeviceManagementSetPortalNotificationAsSent;
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item {
     /// <summary>
     /// Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.

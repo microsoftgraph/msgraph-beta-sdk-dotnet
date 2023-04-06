@@ -9,8 +9,8 @@ using Microsoft.Graph.Beta.Me.AssignLicense;
 using Microsoft.Graph.Beta.Me.Authentication;
 using Microsoft.Graph.Beta.Me.Calendar;
 using Microsoft.Graph.Beta.Me.CalendarGroups;
-using Microsoft.Graph.Beta.Me.Calendars;
 using Microsoft.Graph.Beta.Me.CalendarView;
+using Microsoft.Graph.Beta.Me.Calendars;
 using Microsoft.Graph.Beta.Me.ChangePassword;
 using Microsoft.Graph.Beta.Me.Chats;
 using Microsoft.Graph.Beta.Me.CheckMemberGroups;
@@ -96,16 +96,16 @@ using Microsoft.Graph.Beta.Me.WipeAndBlockManagedApps;
 using Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationByDeviceTag;
 using Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByAzureAdDeviceId;
 using Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByDeviceTag;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Me {
     /// <summary>
     /// Provides operations to manage the user singleton.
@@ -524,8 +524,8 @@ namespace Microsoft.Graph.Beta.Me {
             return new FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -576,7 +576,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -630,7 +630,7 @@ namespace Microsoft.Graph.Beta.Me {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
         public class MeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

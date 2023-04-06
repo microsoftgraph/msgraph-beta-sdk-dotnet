@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Participant : Entity, IParsable {
         /// <summary>The info property</summary>
@@ -76,6 +76,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recordingInfo", value); }
         }
 #endif
+        /// <summary>The removedState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.RemovedState? RemovedState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemovedState?>("removedState"); }
+            set { BackingStore?.Set("removedState", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.RemovedState RemovedState {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemovedState>("removedState"); }
+            set { BackingStore?.Set("removedState", value); }
+        }
+#endif
         /// <summary>Indicates the reason or reasons why media content from this participant is restricted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +104,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("restrictedExperience", value); }
         }
 #endif
+        /// <summary>The rosterSequenceNumber property</summary>
+        public long? RosterSequenceNumber {
+            get { return BackingStore?.Get<long?>("rosterSequenceNumber"); }
+            set { BackingStore?.Set("rosterSequenceNumber", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -110,7 +129,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"metadata", n => { Metadata = n.GetStringValue(); } },
                 {"recordingInfo", n => { RecordingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>(Microsoft.Graph.Beta.Models.RecordingInfo.CreateFromDiscriminatorValue); } },
+                {"removedState", n => { RemovedState = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemovedState>(Microsoft.Graph.Beta.Models.RemovedState.CreateFromDiscriminatorValue); } },
                 {"restrictedExperience", n => { RestrictedExperience = n.GetObjectValue<OnlineMeetingRestricted>(OnlineMeetingRestricted.CreateFromDiscriminatorValue); } },
+                {"rosterSequenceNumber", n => { RosterSequenceNumber = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -127,7 +148,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<MediaStream>("mediaStreams", MediaStreams);
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>("recordingInfo", RecordingInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemovedState>("removedState", RemovedState);
             writer.WriteObjectValue<OnlineMeetingRestricted>("restrictedExperience", RestrictedExperience);
+            writer.WriteLongValue("rosterSequenceNumber", RosterSequenceNumber);
         }
     }
 }

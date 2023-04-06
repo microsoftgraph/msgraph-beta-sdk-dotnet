@@ -17,16 +17,16 @@ using Microsoft.Graph.Beta.Me.Profile.Publications;
 using Microsoft.Graph.Beta.Me.Profile.Skills;
 using Microsoft.Graph.Beta.Me.Profile.WebAccounts;
 using Microsoft.Graph.Beta.Me.Profile.Websites;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Me.Profile {
     /// <summary>
     /// Provides operations to manage the profile property of the microsoft.graph.user entity.

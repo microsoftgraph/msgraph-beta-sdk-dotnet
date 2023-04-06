@@ -3,16 +3,16 @@ using Microsoft.Graph.Beta.Contracts.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Contracts.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.Contracts.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.Contracts.Item.Restore;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Contracts.Item {
     /// <summary>
     /// Provides operations to manage the collection of contract entities.

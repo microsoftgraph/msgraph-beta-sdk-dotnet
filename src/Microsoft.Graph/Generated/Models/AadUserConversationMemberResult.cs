@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AadUserConversationMemberResult : ActionResultPart, IParsable {
         /// <summary>The user object ID of the Azure AD user that was being added as part of the bulk operation.</summary>

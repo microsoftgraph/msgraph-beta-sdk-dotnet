@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class InformationProtection : Entity, IParsable {
         /// <summary>Read the Microsoft Purview Information Protection policy settings for the user or organization.</summary>

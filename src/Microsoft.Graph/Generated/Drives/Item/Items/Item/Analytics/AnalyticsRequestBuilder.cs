@@ -1,16 +1,16 @@
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics.AllTime;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics.ItemActivityStats;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics.LastSevenDays;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics {
     /// <summary>
     /// Provides operations to manage the analytics property of the microsoft.graph.driveItem entity.

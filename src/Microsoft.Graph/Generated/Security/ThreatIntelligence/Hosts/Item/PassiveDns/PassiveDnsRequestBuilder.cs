@@ -2,14 +2,14 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns.Count;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns {
     /// <summary>
     /// Provides operations to manage the passiveDns property of the microsoft.graph.security.host entity.
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns
         public PassiveDnsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/passiveDns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources.
+        /// Get a list of passiveDnsRecord resources associated to a host.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-host-list-passivedns?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns
             return await RequestAdapter.SendAsync<PassiveDnsRecordCollectionResponse>(requestInfo, PassiveDnsRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources.
+        /// Get a list of passiveDnsRecord resources associated to a host.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of passiveDnsRecord resources.
+        /// Get a list of passiveDnsRecord resources associated to a host.
         /// </summary>
         public class PassiveDnsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

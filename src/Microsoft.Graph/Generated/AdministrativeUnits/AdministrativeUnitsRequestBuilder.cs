@@ -4,16 +4,16 @@ using Microsoft.Graph.Beta.AdministrativeUnits.GetByIds;
 using Microsoft.Graph.Beta.AdministrativeUnits.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.AdministrativeUnits.Item;
 using Microsoft.Graph.Beta.AdministrativeUnits.ValidateProperties;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.AdministrativeUnits {
     /// <summary>
     /// Provides operations to manage the collection of administrativeUnit entities.
