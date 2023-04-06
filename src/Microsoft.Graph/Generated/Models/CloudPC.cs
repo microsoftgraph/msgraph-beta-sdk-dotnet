@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPC : Entity, IParsable {
         /// <summary>The Azure Active Directory (Azure AD) device ID of the Cloud PC.</summary>
@@ -165,6 +165,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("partnerAgentInstallResults", value); }
         }
 #endif
+        /// <summary>The powerState property</summary>
+        public CloudPcPowerState? PowerState {
+            get { return BackingStore?.Get<CloudPcPowerState?>("powerState"); }
+            set { BackingStore?.Set("powerState", value); }
+        }
         /// <summary>The provisioning policy ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -296,6 +301,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"onPremisesConnectionName", n => { OnPremisesConnectionName = n.GetStringValue(); } },
                 {"osVersion", n => { OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
                 {"partnerAgentInstallResults", n => { PartnerAgentInstallResults = n.GetCollectionOfObjectValues<CloudPcPartnerAgentInstallResult>(CloudPcPartnerAgentInstallResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"powerState", n => { PowerState = n.GetEnumValue<CloudPcPowerState>(); } },
                 {"provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
                 {"provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
                 {"provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
@@ -329,6 +335,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("onPremisesConnectionName", OnPremisesConnectionName);
             writer.WriteEnumValue<CloudPcOperatingSystem>("osVersion", OsVersion);
             writer.WriteCollectionOfObjectValues<CloudPcPartnerAgentInstallResult>("partnerAgentInstallResults", PartnerAgentInstallResults);
+            writer.WriteEnumValue<CloudPcPowerState>("powerState", PowerState);
             writer.WriteStringValue("provisioningPolicyId", ProvisioningPolicyId);
             writer.WriteStringValue("provisioningPolicyName", ProvisioningPolicyName);
             writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);

@@ -41,16 +41,16 @@ using Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf;
 using Microsoft.Graph.Beta.Groups.Item.TransitiveMembers;
 using Microsoft.Graph.Beta.Groups.Item.UnsubscribeByMail;
 using Microsoft.Graph.Beta.Groups.Item.ValidateProperties;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Groups.Item {
     /// <summary>
     /// Provides operations to manage the collection of group entities.

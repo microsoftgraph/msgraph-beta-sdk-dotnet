@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Shares.Item.List.Activities;
 using Microsoft.Graph.Beta.Shares.Item.List.Columns;
 using Microsoft.Graph.Beta.Shares.Item.List.ContentTypes;
@@ -7,14 +7,14 @@ using Microsoft.Graph.Beta.Shares.Item.List.Drive;
 using Microsoft.Graph.Beta.Shares.Item.List.Items;
 using Microsoft.Graph.Beta.Shares.Item.List.Operations;
 using Microsoft.Graph.Beta.Shares.Item.List.Subscriptions;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Shares.Item.List {
     /// <summary>
     /// Provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.

@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.CompleteMigration;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.FilesFolder;
@@ -9,14 +9,14 @@ using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.ProvisionEmail;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.RemoveEmail;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.SharedWithTeams;
 using Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Tabs;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
     /// <summary>
     /// Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.

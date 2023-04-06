@@ -1,14 +1,14 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.DriveItem.Content;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Activities.Item.DriveItem {
     /// <summary>
     /// Provides operations to manage the driveItem property of the microsoft.graph.itemActivityOLD entity.

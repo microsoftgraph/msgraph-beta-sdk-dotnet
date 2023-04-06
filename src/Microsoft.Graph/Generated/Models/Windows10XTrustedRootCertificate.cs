@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows10XTrustedRootCertificate : DeviceManagementResourceAccessProfileBase, IParsable {
         /// <summary>File name to display in UI.</summary>

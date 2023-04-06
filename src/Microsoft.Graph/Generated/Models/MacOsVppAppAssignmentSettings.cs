@@ -1,10 +1,20 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MacOsVppAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
+        /// <summary>When TRUE, indicates that the app should not be automatically updated with the latest version from Apple app store. When FALSE, indicates that the app may be auto updated. By default, this property is set to null which internally is treated as FALSE.</summary>
+        public bool? PreventAutoAppUpdate {
+            get { return BackingStore?.Get<bool?>("preventAutoAppUpdate"); }
+            set { BackingStore?.Set("preventAutoAppUpdate", value); }
+        }
+        /// <summary>When TRUE, indicates that the app should not be backed up to iCloud. When FALSE, indicates that the app may be backed up to iCloud. By default, this property is set to null which internally is treated as FALSE.</summary>
+        public bool? PreventManagedAppBackup {
+            get { return BackingStore?.Get<bool?>("preventManagedAppBackup"); }
+            set { BackingStore?.Set("preventManagedAppBackup", value); }
+        }
         /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
         public bool? UninstallOnDeviceRemoval {
             get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
@@ -34,6 +44,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"preventAutoAppUpdate", n => { PreventAutoAppUpdate = n.GetBoolValue(); } },
+                {"preventManagedAppBackup", n => { PreventManagedAppBackup = n.GetBoolValue(); } },
                 {"uninstallOnDeviceRemoval", n => { UninstallOnDeviceRemoval = n.GetBoolValue(); } },
                 {"useDeviceLicensing", n => { UseDeviceLicensing = n.GetBoolValue(); } },
             };
@@ -45,6 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteBoolValue("preventAutoAppUpdate", PreventAutoAppUpdate);
+            writer.WriteBoolValue("preventManagedAppBackup", PreventManagedAppBackup);
             writer.WriteBoolValue("uninstallOnDeviceRemoval", UninstallOnDeviceRemoval);
             writer.WriteBoolValue("useDeviceLicensing", UseDeviceLicensing);
         }

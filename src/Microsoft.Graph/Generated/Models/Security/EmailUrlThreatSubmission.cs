@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EmailUrlThreatSubmission : EmailThreatSubmission, IParsable {
         /// <summary>Specifies the url of the message to be submitted.</summary>

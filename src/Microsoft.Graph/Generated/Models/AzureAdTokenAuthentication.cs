@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureAdTokenAuthentication : CustomExtensionAuthenticationConfiguration, IParsable {
         /// <summary>The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.</summary>

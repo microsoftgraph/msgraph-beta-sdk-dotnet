@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AlternativeRecording;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendanceReports;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendeeReport;
@@ -8,14 +8,14 @@ using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Recording;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.VirtualAppointment;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item {
     /// <summary>
     /// Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.

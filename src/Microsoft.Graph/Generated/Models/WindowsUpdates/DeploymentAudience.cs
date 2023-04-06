@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class DeploymentAudience : Entity, IParsable {
         /// <summary>Content eligible to deploy to devices in the audience. Not nullable. Read-only.</summary>

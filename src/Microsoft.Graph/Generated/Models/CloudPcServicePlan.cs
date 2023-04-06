@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcServicePlan : Entity, IParsable {
         /// <summary>The name for the service plan. Read-only.</summary>
@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.</summary>
+        public CloudPcProvisioningType? ProvisioningType {
+            get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
+            set { BackingStore?.Set("provisioningType", value); }
+        }
         /// <summary>The size of the RAM in GB. Read-only.</summary>
         public int? RamInGB {
             get { return BackingStore?.Get<int?>("ramInGB"); }
@@ -63,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
                 {"ramInGB", n => { RamInGB = n.GetIntValue(); } },
                 {"storageInGB", n => { StorageInGB = n.GetIntValue(); } },
                 {"supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
@@ -79,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteIntValue("ramInGB", RamInGB);
             writer.WriteIntValue("storageInGB", StorageInGB);
             writer.WriteEnumValue<CloudPcManagementService>("supportedSolution", SupportedSolution);

@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MessageRules;
@@ -8,14 +8,14 @@ using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UserConfigurations;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item {
     /// <summary>
     /// Provides operations to manage the mailFolders property of the microsoft.graph.user entity.

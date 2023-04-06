@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartCustomExtension : CustomAuthenticationExtension, IParsable {
         /// <summary>The claimsForTokenConfiguration property</summary>

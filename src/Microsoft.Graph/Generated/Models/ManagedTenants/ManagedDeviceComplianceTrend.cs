@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagedDeviceComplianceTrend : Entity, IParsable {
         /// <summary>The number of devices with a compliant status. Required. Read-only.</summary>

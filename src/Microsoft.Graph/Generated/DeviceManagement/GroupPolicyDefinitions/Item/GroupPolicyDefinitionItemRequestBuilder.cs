@@ -3,16 +3,16 @@ using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Definiti
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.NextVersionDefinition;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.Presentations;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item.PreviousVersionDefinition;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions.Item {
     /// <summary>
     /// Provides operations to manage the groupPolicyDefinitions property of the microsoft.graph.deviceManagement entity.

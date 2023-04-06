@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.Commands;
@@ -12,14 +12,14 @@ using Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.Restore;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.TransitiveMemberOf;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item.UsageRights;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.Devices.Item {
     /// <summary>
     /// Provides operations to manage the devices property of the microsoft.graph.user entity.

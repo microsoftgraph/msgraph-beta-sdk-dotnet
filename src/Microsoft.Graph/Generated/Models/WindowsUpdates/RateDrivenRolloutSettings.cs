@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class RateDrivenRolloutSettings : GradualRolloutSettings, IParsable {
         /// <summary>Specifies the number of devices that are offered at the same time. When not set, all devices in the deployment are offered content at the same time.</summary>

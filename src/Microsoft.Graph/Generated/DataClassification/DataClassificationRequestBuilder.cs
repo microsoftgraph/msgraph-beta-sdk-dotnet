@@ -9,16 +9,16 @@ using Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents;
 using Microsoft.Graph.Beta.DataClassification.Jobs;
 using Microsoft.Graph.Beta.DataClassification.SensitiveTypes;
 using Microsoft.Graph.Beta.DataClassification.SensitivityLabels;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DataClassification {
     /// <summary>
     /// Provides operations to manage the dataClassificationService singleton.

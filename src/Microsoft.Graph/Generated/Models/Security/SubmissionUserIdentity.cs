@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class SubmissionUserIdentity : Identity, IParsable {
         /// <summary>The email of user who is making the submission when logged in (delegated token case).</summary>

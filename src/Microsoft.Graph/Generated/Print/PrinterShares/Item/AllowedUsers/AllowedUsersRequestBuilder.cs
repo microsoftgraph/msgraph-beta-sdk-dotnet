@@ -1,16 +1,16 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Count;
 using Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item;
 using Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Ref;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers {
     /// <summary>
     /// Provides operations to manage the allowedUsers property of the microsoft.graph.printerShare entity.

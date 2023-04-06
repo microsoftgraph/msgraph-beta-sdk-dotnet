@@ -1,11 +1,11 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentApprovals;
-using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignments;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentSchedules;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignments;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefinitions;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests;
@@ -13,14 +13,14 @@ using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityS
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.TransitiveRoleAssignments;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement {
     /// <summary>
     /// Provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.

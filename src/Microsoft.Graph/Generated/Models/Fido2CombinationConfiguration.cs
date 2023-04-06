@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Fido2CombinationConfiguration : AuthenticationCombinationConfiguration, IParsable {
         /// <summary>A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.</summary>

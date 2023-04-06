@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppPowerShellScriptRequirement : Win32LobAppRequirement, IParsable {
         /// <summary>Contains all supported Powershell Script output detection type.</summary>

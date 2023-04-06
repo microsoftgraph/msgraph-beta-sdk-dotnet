@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class AzureADDevice : UpdatableAsset, IParsable {
         /// <summary>Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.</summary>

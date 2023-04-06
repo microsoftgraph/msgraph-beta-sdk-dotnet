@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows81SCEPCertificateProfile : Windows81CertificateProfileBase, IParsable {
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>

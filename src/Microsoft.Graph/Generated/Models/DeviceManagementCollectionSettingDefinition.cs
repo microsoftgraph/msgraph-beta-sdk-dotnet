@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementCollectionSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>The Setting Definition ID that describes what each element of the collection looks like</summary>

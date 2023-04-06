@@ -2,14 +2,14 @@ using Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords;
 using Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules;
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring {
     /// <summary>
     /// Provides operations to manage the monitoring property of the microsoft.graph.deviceManagement entity.

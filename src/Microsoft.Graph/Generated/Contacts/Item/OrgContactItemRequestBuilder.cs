@@ -8,16 +8,16 @@ using Microsoft.Graph.Beta.Contacts.Item.MemberOf;
 using Microsoft.Graph.Beta.Contacts.Item.Restore;
 using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf;
 using Microsoft.Graph.Beta.Contacts.Item.TransitiveReports;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Contacts.Item {
     /// <summary>
     /// Provides operations to manage the collection of orgContact entities.

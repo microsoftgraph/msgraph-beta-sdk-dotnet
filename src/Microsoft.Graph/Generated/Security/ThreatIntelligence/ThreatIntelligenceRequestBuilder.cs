@@ -4,20 +4,20 @@ using Microsoft.Graph.Beta.Security.ThreatIntelligence.ArticleIndicators;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostCookies;
-using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostTrackers;
-using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIndicators;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelProfiles;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIndicators;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.PassiveDnsRecords;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
     /// <summary>
     /// Provides operations to manage the threatIntelligence property of the microsoft.graph.security entity.

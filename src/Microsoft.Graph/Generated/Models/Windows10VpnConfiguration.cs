@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows10VpnConfiguration : WindowsVpnConfiguration, IParsable {
         /// <summary>Associated Apps. This collection can contain a maximum of 10000 elements.</summary>

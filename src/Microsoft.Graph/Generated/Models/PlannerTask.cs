@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerTask : PlannerDelta, IParsable {
         /// <summary>Number of checklist items with value set to false, representing incomplete items.</summary>
@@ -246,7 +246,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("progressTaskBoardFormat", value); }
         }
 #endif
-        /// <summary>The recurrence property</summary>
+        /// <summary>Defines active or inactive recurrence for the task. null when the recurrence has never been defined for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerTaskRecurrence? Recurrence {

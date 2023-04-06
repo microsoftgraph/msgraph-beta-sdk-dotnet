@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftStoreForBusinessApp : MobileApp, IParsable {
         /// <summary>The collection of contained apps in a mobileApp acting as a package.</summary>

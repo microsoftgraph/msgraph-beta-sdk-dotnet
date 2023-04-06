@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class LogicAppTriggerEndpointConfiguration : CustomExtensionEndpointConfiguration, IParsable {
         /// <summary>The name of the logic app.</summary>

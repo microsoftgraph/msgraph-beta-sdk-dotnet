@@ -1,27 +1,40 @@
+using System.Runtime.Serialization;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported platform types for policies.</summary>
     public enum PolicyPlatformType {
         /// <summary>Android.</summary>
+        [EnumMember(Value = "android")]
         Android,
         /// <summary>AndroidForWork.</summary>
+        [EnumMember(Value = "androidForWork")]
         AndroidForWork,
         /// <summary>iOS.</summary>
+        [EnumMember(Value = "iOS")]
         IOS,
         /// <summary>MacOS.</summary>
+        [EnumMember(Value = "macOS")]
         MacOS,
         /// <summary>WindowsPhone 8.1.</summary>
+        [EnumMember(Value = "windowsPhone81")]
         WindowsPhone81,
         /// <summary>Windows 8.1 and later</summary>
+        [EnumMember(Value = "windows81AndLater")]
         Windows81AndLater,
         /// <summary>Windows 10 and later.</summary>
+        [EnumMember(Value = "windows10AndLater")]
         Windows10AndLater,
         /// <summary>AndroidWorkProfile.</summary>
+        [EnumMember(Value = "androidWorkProfile")]
         AndroidWorkProfile,
         /// <summary>Windows10XProfile.</summary>
+        [EnumMember(Value = "windows10XProfile")]
         Windows10XProfile,
         /// <summary>AndroidAOSPProfile.</summary>
+        [EnumMember(Value = "androidAOSP")]
         AndroidAOSP,
         /// <summary>All platforms.</summary>
+        [EnumMember(Value = "all")]
         All,
     }
 }

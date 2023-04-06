@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class TenantAllowOrBlockListAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.</summary>

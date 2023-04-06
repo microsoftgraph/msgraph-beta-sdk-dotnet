@@ -1,18 +1,18 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Presence.ClearPresence;
 using Microsoft.Graph.Beta.Users.Item.Presence.ClearUserPreferredPresence;
 using Microsoft.Graph.Beta.Users.Item.Presence.SetPresence;
 using Microsoft.Graph.Beta.Users.Item.Presence.SetStatusMessage;
 using Microsoft.Graph.Beta.Users.Item.Presence.SetUserPreferredPresence;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.Presence {
     /// <summary>
     /// Provides operations to manage the presence property of the microsoft.graph.user entity.
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
+        /// Get a user&apos;s presence information.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence {
             return requestInfo;
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Get a user&apos;s presence information.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -207,7 +207,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence {
             }
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Get a user&apos;s presence information.
         /// </summary>
         public class PresenceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppProductCodeDetection : Win32LobAppDetection, IParsable {
         /// <summary>The product code of Win32 Line of Business (LoB) app.</summary>

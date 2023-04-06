@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ConnectedOrganization : Entity, IParsable {
         /// <summary>UPN of the user who created this resource. Read-only.</summary>

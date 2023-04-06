@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RetentionDurationInDays : RetentionDuration, IParsable {
         /// <summary>Specifies the time period in days for which an item with the applied retention label will be retained for.</summary>

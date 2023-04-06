@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Activities;
 using Microsoft.Graph.Beta.Users.Item.AgreementAcceptances;
 using Microsoft.Graph.Beta.Users.Item.Analytics;
@@ -11,8 +11,8 @@ using Microsoft.Graph.Beta.Users.Item.AssignLicense;
 using Microsoft.Graph.Beta.Users.Item.Authentication;
 using Microsoft.Graph.Beta.Users.Item.Calendar;
 using Microsoft.Graph.Beta.Users.Item.CalendarGroups;
-using Microsoft.Graph.Beta.Users.Item.Calendars;
 using Microsoft.Graph.Beta.Users.Item.CalendarView;
+using Microsoft.Graph.Beta.Users.Item.Calendars;
 using Microsoft.Graph.Beta.Users.Item.ChangePassword;
 using Microsoft.Graph.Beta.Users.Item.Chats;
 using Microsoft.Graph.Beta.Users.Item.CheckMemberGroups;
@@ -98,14 +98,14 @@ using Microsoft.Graph.Beta.Users.Item.WipeAndBlockManagedApps;
 using Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationByDeviceTag;
 using Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationsByAzureAdDeviceId;
 using Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationsByDeviceTag;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item {
     /// <summary>
     /// Provides operations to manage the collection of user entities.

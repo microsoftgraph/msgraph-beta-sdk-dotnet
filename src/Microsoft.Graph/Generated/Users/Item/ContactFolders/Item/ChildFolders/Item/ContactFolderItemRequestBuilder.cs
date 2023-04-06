@@ -1,16 +1,16 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.Contacts;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.SingleValueExtendedProperties;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item {
     /// <summary>
     /// Provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.

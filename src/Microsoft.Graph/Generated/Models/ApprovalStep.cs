@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ApprovalStep : Entity, IParsable {
         /// <summary>Indicates whether the step is assigned to the calling user to review. Read-only.</summary>

@@ -4,16 +4,16 @@ using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Categories;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.DeviceStates;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.InstallSummary;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.UserStateSummary;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
     /// <summary>
     /// Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.

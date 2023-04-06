@@ -12,16 +12,16 @@ using Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.MultiValueExtendedPrope
 using Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.SnoozeReminder;
 using Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.TentativelyAccept;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Groups.Item.CalendarView.Item {
     /// <summary>
     /// Provides operations to manage the calendarView property of the microsoft.graph.group entity.

@@ -1,9 +1,9 @@
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsUpdateForBusinessConfiguration : DeviceConfiguration, IParsable {
         /// <summary>When TRUE, allows eligible Windows 10 devices to upgrade to Windows 11. When FALSE, implies the device stays on the existing operating system. Returned by default. Query parameters are not supported.</summary>
@@ -46,20 +46,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<WindowsDeliveryOptimizationMode?>("deliveryOptimizationMode"); }
             set { BackingStore?.Set("deliveryOptimizationMode", value); }
         }
-        /// <summary>Windows update for business configuration device states. This collection can contain a maximum of 500 elements.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<WindowsUpdateState>? DeviceUpdateStates {
-            get { return BackingStore?.Get<List<WindowsUpdateState>?>("deviceUpdateStates"); }
-            set { BackingStore?.Set("deviceUpdateStates", value); }
-        }
-#nullable restore
-#else
-        public List<WindowsUpdateState> DeviceUpdateStates {
-            get { return BackingStore?.Get<List<WindowsUpdateState>>("deviceUpdateStates"); }
-            set { BackingStore?.Set("deviceUpdateStates", value); }
-        }
-#endif
         /// <summary>When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.</summary>
         public bool? DriversExcluded {
             get { return BackingStore?.Get<bool?>("driversExcluded"); }
@@ -236,7 +222,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deadlineForQualityUpdatesInDays", n => { DeadlineForQualityUpdatesInDays = n.GetIntValue(); } },
                 {"deadlineGracePeriodInDays", n => { DeadlineGracePeriodInDays = n.GetIntValue(); } },
                 {"deliveryOptimizationMode", n => { DeliveryOptimizationMode = n.GetEnumValue<WindowsDeliveryOptimizationMode>(); } },
-                {"deviceUpdateStates", n => { DeviceUpdateStates = n.GetCollectionOfObjectValues<WindowsUpdateState>(WindowsUpdateState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"driversExcluded", n => { DriversExcluded = n.GetBoolValue(); } },
                 {"engagedRestartDeadlineInDays", n => { EngagedRestartDeadlineInDays = n.GetIntValue(); } },
                 {"engagedRestartSnoozeScheduleInDays", n => { EngagedRestartSnoozeScheduleInDays = n.GetIntValue(); } },
@@ -282,7 +267,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("deadlineForQualityUpdatesInDays", DeadlineForQualityUpdatesInDays);
             writer.WriteIntValue("deadlineGracePeriodInDays", DeadlineGracePeriodInDays);
             writer.WriteEnumValue<WindowsDeliveryOptimizationMode>("deliveryOptimizationMode", DeliveryOptimizationMode);
-            writer.WriteCollectionOfObjectValues<WindowsUpdateState>("deviceUpdateStates", DeviceUpdateStates);
             writer.WriteBoolValue("driversExcluded", DriversExcluded);
             writer.WriteIntValue("engagedRestartDeadlineInDays", EngagedRestartDeadlineInDays);
             writer.WriteIntValue("engagedRestartSnoozeScheduleInDays", EngagedRestartSnoozeScheduleInDays);

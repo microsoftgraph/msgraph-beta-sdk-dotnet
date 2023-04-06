@@ -4,6 +4,8 @@ using Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcLaunchInfo;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.GetShiftWorkCloudPcAccessState;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.GetSupportedCloudPcRemoteActions;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.PowerOff;
+using Microsoft.Graph.Beta.Me.CloudPCs.Item.PowerOn;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Reboot;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision;
@@ -12,16 +14,16 @@ using Microsoft.Graph.Beta.Me.CloudPCs.Item.RetryPartnerAgentInstallation;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Start;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Stop;
 using Microsoft.Graph.Beta.Me.CloudPCs.Item.Troubleshoot;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
     /// <summary>
     /// Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
@@ -50,6 +52,14 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         /// <summary>Provides operations to call the getSupportedCloudPcRemoteActions method.</summary>
         public GetSupportedCloudPcRemoteActionsRequestBuilder GetSupportedCloudPcRemoteActions { get =>
             new GetSupportedCloudPcRemoteActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the powerOff method.</summary>
+        public PowerOffRequestBuilder PowerOff { get =>
+            new PowerOffRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the powerOn method.</summary>
+        public PowerOnRequestBuilder PowerOn { get =>
+            new PowerOnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reboot method.</summary>
         public RebootRequestBuilder Reboot { get =>

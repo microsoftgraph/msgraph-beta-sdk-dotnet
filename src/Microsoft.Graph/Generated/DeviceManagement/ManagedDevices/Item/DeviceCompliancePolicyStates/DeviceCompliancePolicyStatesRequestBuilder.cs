@@ -1,15 +1,15 @@
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DeviceCompliancePolicyStates.Count;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DeviceCompliancePolicyStates.Item;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DeviceCompliancePolicyStates {
     /// <summary>
     /// Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.

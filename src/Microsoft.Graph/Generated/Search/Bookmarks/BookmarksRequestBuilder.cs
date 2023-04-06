@@ -2,14 +2,14 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Graph.Beta.Search.Bookmarks.Count;
 using Microsoft.Graph.Beta.Search.Bookmarks.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Search.Bookmarks {
     /// <summary>
     /// Provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.

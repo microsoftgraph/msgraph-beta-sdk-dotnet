@@ -6,14 +6,14 @@ using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDnsReverse;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Reputation;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Trackers;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item {
     /// <summary>
     /// Provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.

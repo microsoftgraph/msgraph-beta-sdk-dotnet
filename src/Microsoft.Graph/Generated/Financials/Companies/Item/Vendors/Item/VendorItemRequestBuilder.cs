@@ -2,16 +2,16 @@ using Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item.Currency;
 using Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item.PaymentMethod;
 using Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item.PaymentTerm;
 using Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item.Picture;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item {
     /// <summary>
     /// Provides operations to manage the vendors property of the microsoft.graph.company entity.

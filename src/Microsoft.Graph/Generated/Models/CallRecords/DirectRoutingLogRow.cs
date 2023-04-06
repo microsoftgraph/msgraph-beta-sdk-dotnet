@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class DirectRoutingLogRow : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -160,6 +160,20 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The otherPartyCountryCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OtherPartyCountryCode {
+            get { return BackingStore?.Get<string?>("otherPartyCountryCode"); }
+            set { BackingStore?.Set("otherPartyCountryCode", value); }
+        }
+#nullable restore
+#else
+        public string OtherPartyCountryCode {
+            get { return BackingStore?.Get<string>("otherPartyCountryCode"); }
+            set { BackingStore?.Set("otherPartyCountryCode", value); }
+        }
+#endif
         /// <summary>The datacenter used for signaling for both bypass and non-bypass calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -196,6 +210,20 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public string TrunkFullyQualifiedDomainName {
             get { return BackingStore?.Get<string>("trunkFullyQualifiedDomainName"); }
             set { BackingStore?.Set("trunkFullyQualifiedDomainName", value); }
+        }
+#endif
+        /// <summary>The userCountryCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserCountryCode {
+            get { return BackingStore?.Get<string?>("userCountryCode"); }
+            set { BackingStore?.Set("userCountryCode", value); }
+        }
+#nullable restore
+#else
+        public string UserCountryCode {
+            get { return BackingStore?.Get<string>("userCountryCode"); }
+            set { BackingStore?.Set("userCountryCode", value); }
         }
 #endif
         /// <summary>Display name of the user.</summary>
@@ -275,10 +303,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"mediaBypassEnabled", n => { MediaBypassEnabled = n.GetBoolValue(); } },
                 {"mediaPathLocation", n => { MediaPathLocation = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"otherPartyCountryCode", n => { OtherPartyCountryCode = n.GetStringValue(); } },
                 {"signalingLocation", n => { SignalingLocation = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"successfulCall", n => { SuccessfulCall = n.GetBoolValue(); } },
                 {"trunkFullyQualifiedDomainName", n => { TrunkFullyQualifiedDomainName = n.GetStringValue(); } },
+                {"userCountryCode", n => { UserCountryCode = n.GetStringValue(); } },
                 {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -305,10 +335,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteBoolValue("mediaBypassEnabled", MediaBypassEnabled);
             writer.WriteStringValue("mediaPathLocation", MediaPathLocation);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("otherPartyCountryCode", OtherPartyCountryCode);
             writer.WriteStringValue("signalingLocation", SignalingLocation);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteBoolValue("successfulCall", SuccessfulCall);
             writer.WriteStringValue("trunkFullyQualifiedDomainName", TrunkFullyQualifiedDomainName);
+            writer.WriteStringValue("userCountryCode", UserCountryCode);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

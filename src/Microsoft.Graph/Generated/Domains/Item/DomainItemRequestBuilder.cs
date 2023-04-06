@@ -6,16 +6,16 @@ using Microsoft.Graph.Beta.Domains.Item.ServiceConfigurationRecords;
 using Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations;
 using Microsoft.Graph.Beta.Domains.Item.VerificationDnsRecords;
 using Microsoft.Graph.Beta.Domains.Item.Verify;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Domains.Item {
     /// <summary>
     /// Provides operations to manage the collection of domain entities.

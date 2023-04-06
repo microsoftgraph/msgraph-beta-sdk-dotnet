@@ -1,19 +1,19 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Operations;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Pages;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Resources;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Sections;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
     /// <summary>
     /// Provides operations to manage the onenote property of the microsoft.graph.site entity.

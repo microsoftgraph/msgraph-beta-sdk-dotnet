@@ -1,21 +1,21 @@
 using Microsoft.Graph.Beta.Education.Classes.Item.AssignmentCategories;
 using Microsoft.Graph.Beta.Education.Classes.Item.AssignmentDefaults;
-using Microsoft.Graph.Beta.Education.Classes.Item.Assignments;
 using Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments;
 using Microsoft.Graph.Beta.Education.Classes.Item.Group;
 using Microsoft.Graph.Beta.Education.Classes.Item.Members;
 using Microsoft.Graph.Beta.Education.Classes.Item.Schools;
 using Microsoft.Graph.Beta.Education.Classes.Item.Teachers;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Education.Classes.Item {
     /// <summary>
     /// Provides operations to manage the classes property of the microsoft.graph.educationRoot entity.

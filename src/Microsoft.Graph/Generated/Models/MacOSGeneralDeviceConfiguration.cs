@@ -1,10 +1,15 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MacOSGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
+        /// <summary>When TRUE, activation lock is allowed when the devices is in the supervised mode. When FALSE, activation lock is not allowed. Default is false.</summary>
+        public bool? ActivationLockWhenSupervisedAllowed {
+            get { return BackingStore?.Get<bool?>("activationLockWhenSupervisedAllowed"); }
+            set { BackingStore?.Set("activationLockWhenSupervisedAllowed", value); }
+        }
         /// <summary>Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.</summary>
         public bool? AddingGameCenterFriendsBlocked {
             get { return BackingStore?.Get<bool?>("addingGameCenterFriendsBlocked"); }
@@ -346,6 +351,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activationLockWhenSupervisedAllowed", n => { ActivationLockWhenSupervisedAllowed = n.GetBoolValue(); } },
                 {"addingGameCenterFriendsBlocked", n => { AddingGameCenterFriendsBlocked = n.GetBoolValue(); } },
                 {"airDropBlocked", n => { AirDropBlocked = n.GetBoolValue(); } },
                 {"appleWatchBlockAutoUnlock", n => { AppleWatchBlockAutoUnlock = n.GetBoolValue(); } },
@@ -414,6 +420,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteBoolValue("activationLockWhenSupervisedAllowed", ActivationLockWhenSupervisedAllowed);
             writer.WriteBoolValue("addingGameCenterFriendsBlocked", AddingGameCenterFriendsBlocked);
             writer.WriteBoolValue("airDropBlocked", AirDropBlocked);
             writer.WriteBoolValue("appleWatchBlockAutoUnlock", AppleWatchBlockAutoUnlock);

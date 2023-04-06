@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.AllowedCalendarSharingRolesWithUser;
 using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarPermissions;
 using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView;
@@ -7,14 +7,14 @@ using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events;
 using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.GetSchedule;
 using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.SingleValueExtendedProperties;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item {
     /// <summary>
     /// Provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.

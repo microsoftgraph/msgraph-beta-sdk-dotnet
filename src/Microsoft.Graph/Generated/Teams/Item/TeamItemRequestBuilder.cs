@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.Item.AllChannels;
 using Microsoft.Graph.Beta.Teams.Item.Archive;
 using Microsoft.Graph.Beta.Teams.Item.Channels;
@@ -20,14 +20,14 @@ using Microsoft.Graph.Beta.Teams.Item.Tags;
 using Microsoft.Graph.Beta.Teams.Item.Template;
 using Microsoft.Graph.Beta.Teams.Item.TemplateDefinition;
 using Microsoft.Graph.Beta.Teams.Item.Unarchive;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Teams.Item {
     /// <summary>
     /// Provides operations to manage the collection of team entities.

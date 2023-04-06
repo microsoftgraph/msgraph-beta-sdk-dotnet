@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.Bitlocker;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.DataLossPreventionPolicies;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.DecryptBuffer;
@@ -10,14 +10,14 @@ using Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityPolicySet
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.SignDigest;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessmentRequests;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection.VerifySignature;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
     /// <summary>
     /// Provides operations to manage the informationProtection property of the microsoft.graph.user entity.

@@ -1,19 +1,19 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.PrivilegedSignupStatus.CanSignUp;
 using Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup;
 using Microsoft.Graph.Beta.PrivilegedSignupStatus.Count;
 using Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp;
 using Microsoft.Graph.Beta.PrivilegedSignupStatus.Item;
 using Microsoft.Graph.Beta.PrivilegedSignupStatus.SignUp;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.PrivilegedSignupStatus {
     /// <summary>
     /// Provides operations to manage the collection of privilegedSignupStatus entities.

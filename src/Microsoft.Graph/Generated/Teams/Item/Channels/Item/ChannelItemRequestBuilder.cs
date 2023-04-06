@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.FilesFolder;
@@ -9,14 +9,14 @@ using Microsoft.Graph.Beta.Teams.Item.Channels.Item.ProvisionEmail;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.RemoveEmail;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.SharedWithTeams;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Tabs;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
     /// <summary>
     /// Provides operations to manage the channels property of the microsoft.graph.team entity.

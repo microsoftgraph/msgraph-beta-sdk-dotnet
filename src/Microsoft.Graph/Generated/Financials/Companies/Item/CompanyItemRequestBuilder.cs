@@ -7,8 +7,8 @@ using Microsoft.Graph.Beta.Financials.Companies.Item.Currencies;
 using Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals;
 using Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments;
 using Microsoft.Graph.Beta.Financials.Companies.Item.Customers;
-using Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions;
 using Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues;
+using Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions;
 using Microsoft.Graph.Beta.Financials.Companies.Item.Employees;
 using Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries;
 using Microsoft.Graph.Beta.Financials.Companies.Item.ItemCategories;
@@ -33,16 +33,16 @@ using Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas;
 using Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups;
 using Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure;
 using Microsoft.Graph.Beta.Financials.Companies.Item.Vendors;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item {
     /// <summary>
     /// Provides operations to manage the companies property of the microsoft.graph.financials entity.

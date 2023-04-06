@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class FeatureUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable {
         /// <summary>The version of the feature update. Read-only.</summary>

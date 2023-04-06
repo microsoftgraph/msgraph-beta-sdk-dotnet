@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable {
         /// <summary>The patch version for the current android app registration</summary>

@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ExternalMeetingRegistrant : MeetingRegistrantBase, IParsable {
         /// <summary>The tenant ID of this registrant if in Azure Active Directory.</summary>

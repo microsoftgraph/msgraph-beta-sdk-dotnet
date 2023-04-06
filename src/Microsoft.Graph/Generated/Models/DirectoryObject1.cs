@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DirectoryObject1 : Entity, IParsable {
         /// <summary>Conceptual container for user and group directory objects.</summary>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("impactedResources", value); }
         }
 #endif
-        /// <summary>The inboundSharedUserProfiles property</summary>
+        /// <summary>A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<InboundSharedUserProfile>? InboundSharedUserProfiles {

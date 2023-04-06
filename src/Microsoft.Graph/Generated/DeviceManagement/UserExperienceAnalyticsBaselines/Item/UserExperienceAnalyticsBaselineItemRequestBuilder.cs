@@ -5,16 +5,16 @@ using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Ite
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.RebootAnalyticsMetrics;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.ResourcePerformanceMetrics;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.WorkFromAnywhereMetrics;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item {
     /// <summary>
     /// Provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.

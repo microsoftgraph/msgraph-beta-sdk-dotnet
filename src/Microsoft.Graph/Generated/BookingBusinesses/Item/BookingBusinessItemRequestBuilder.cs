@@ -1,22 +1,22 @@
 using Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView;
-using Microsoft.Graph.Beta.BookingBusinesses.Item.Customers;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions;
+using Microsoft.Graph.Beta.BookingBusinesses.Item.Customers;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.Publish;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.Services;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers;
 using Microsoft.Graph.Beta.BookingBusinesses.Item.Unpublish;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
     /// <summary>
     /// Provides operations to manage the collection of bookingBusiness entities.

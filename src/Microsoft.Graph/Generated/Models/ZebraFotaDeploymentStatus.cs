@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Describes the status for a single FOTA deployment.
@@ -25,6 +25,11 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? CompleteOrCanceledDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completeOrCanceledDateTime"); }
             set { BackingStore?.Set("completeOrCanceledDateTime", value); }
+        }
+        /// <summary>An error code indicating the failure reason, when the deployment state is createFailed. Possible values: See zebraFotaErrorCode enum.</summary>
+        public ZebraFotaErrorCode? ErrorCode {
+            get { return BackingStore?.Get<ZebraFotaErrorCode?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Date and time when the deployment status was updated from Zebra</summary>
         public DateTimeOffset? LastUpdatedDateTime {
@@ -122,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"cancelRequested", n => { CancelRequested = n.GetBoolValue(); } },
                 {"completeOrCanceledDateTime", n => { CompleteOrCanceledDateTime = n.GetDateTimeOffsetValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetEnumValue<ZebraFotaErrorCode>(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<ZebraFotaDeploymentState>(); } },
@@ -145,6 +151,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("cancelRequested", CancelRequested);
             writer.WriteDateTimeOffsetValue("completeOrCanceledDateTime", CompleteOrCanceledDateTime);
+            writer.WriteEnumValue<ZebraFotaErrorCode>("errorCode", ErrorCode);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ZebraFotaDeploymentState>("state", State);

@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Profile.Account;
 using Microsoft.Graph.Beta.Users.Item.Profile.Addresses;
 using Microsoft.Graph.Beta.Users.Item.Profile.Anniversaries;
@@ -19,14 +19,14 @@ using Microsoft.Graph.Beta.Users.Item.Profile.Publications;
 using Microsoft.Graph.Beta.Users.Item.Profile.Skills;
 using Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts;
 using Microsoft.Graph.Beta.Users.Item.Profile.Websites;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.Profile {
     /// <summary>
     /// Provides operations to manage the profile property of the microsoft.graph.user entity.

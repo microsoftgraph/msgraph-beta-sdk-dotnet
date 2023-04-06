@@ -2,14 +2,14 @@ using Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Count;
 using Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
     /// <summary>
     /// Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
         public InboundFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the inboundFileFlow objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0" />
+        /// Get a list of the inboundFlow objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the inboundFileFlow objects and their properties.
+        /// Get a list of the inboundFlow objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the inboundFileFlow objects and their properties.
+        /// Get a list of the inboundFlow objects and their properties.
         /// </summary>
         public class InboundFlowsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

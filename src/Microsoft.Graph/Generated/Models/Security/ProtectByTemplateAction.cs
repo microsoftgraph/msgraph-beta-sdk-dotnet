@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ProtectByTemplateAction : InformationProtectionAction, IParsable {
         /// <summary>The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.</summary>

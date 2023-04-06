@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.Health;
@@ -7,14 +7,14 @@ using Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.Restart;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics;
 using Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
     /// <summary>
     /// Provides operations to manage the devices property of the microsoft.graph.teamwork entity.

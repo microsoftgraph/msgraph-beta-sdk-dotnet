@@ -3,14 +3,14 @@ using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children;
 using Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Relations;
 using Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Set;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item {
     /// <summary>
     /// Provides operations to manage the terms property of the microsoft.graph.termStore.set entity.

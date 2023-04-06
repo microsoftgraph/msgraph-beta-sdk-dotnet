@@ -2,16 +2,16 @@ using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Count;
 using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration;
 using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.HasPayloadLinks;
 using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations {
     /// <summary>
     /// Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.

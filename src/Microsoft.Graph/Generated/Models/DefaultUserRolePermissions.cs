@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DefaultUserRolePermissions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? AllowedToCreateSecurityGroups {
             get { return BackingStore?.Get<bool?>("allowedToCreateSecurityGroups"); }
             set { BackingStore?.Set("allowedToCreateSecurityGroups", value); }
+        }
+        /// <summary>Indicates whether the default user role can create tenants.</summary>
+        public bool? AllowedToCreateTenants {
+            get { return BackingStore?.Get<bool?>("allowedToCreateTenants"); }
+            set { BackingStore?.Set("allowedToCreateTenants", value); }
         }
         /// <summary>Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.</summary>
         public bool? AllowedToReadBitlockerKeysForOwnedDevice {
@@ -69,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowedToCreateApps", n => { AllowedToCreateApps = n.GetBoolValue(); } },
                 {"allowedToCreateSecurityGroups", n => { AllowedToCreateSecurityGroups = n.GetBoolValue(); } },
+                {"allowedToCreateTenants", n => { AllowedToCreateTenants = n.GetBoolValue(); } },
                 {"allowedToReadBitlockerKeysForOwnedDevice", n => { AllowedToReadBitlockerKeysForOwnedDevice = n.GetBoolValue(); } },
                 {"allowedToReadOtherUsers", n => { AllowedToReadOtherUsers = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -82,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowedToCreateApps", AllowedToCreateApps);
             writer.WriteBoolValue("allowedToCreateSecurityGroups", AllowedToCreateSecurityGroups);
+            writer.WriteBoolValue("allowedToCreateTenants", AllowedToCreateTenants);
             writer.WriteBoolValue("allowedToReadBitlockerKeysForOwnedDevice", AllowedToReadBitlockerKeysForOwnedDevice);
             writer.WriteBoolValue("allowedToReadOtherUsers", AllowedToReadOtherUsers);
             writer.WriteStringValue("@odata.type", OdataType);

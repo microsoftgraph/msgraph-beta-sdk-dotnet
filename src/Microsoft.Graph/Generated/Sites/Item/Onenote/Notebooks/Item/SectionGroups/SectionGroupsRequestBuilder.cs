@@ -1,15 +1,15 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Count;
 using Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.Item.SectionGroups {
     /// <summary>
     /// Provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.

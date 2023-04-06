@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// VPN Traffic Rule definition.
@@ -143,6 +143,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<VpnTrafficRuleRoutingPolicyType?>("routingPolicyType"); }
             set { BackingStore?.Set("routingPolicyType", value); }
         }
+        /// <summary>Specify whether the rule applies to inbound traffic or outbound traffic.</summary>
+        public Microsoft.Graph.Beta.Models.VpnTrafficDirection? VpnTrafficDirection {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnTrafficDirection?>("vpnTrafficDirection"); }
+            set { BackingStore?.Set("vpnTrafficDirection", value); }
+        }
         /// <summary>
         /// Instantiates a new vpnTrafficRule and sets the default values.
         /// </summary>
@@ -174,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"remoteAddressRanges", n => { RemoteAddressRanges = n.GetCollectionOfObjectValues<IPv4Range>(IPv4Range.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remotePortRanges", n => { RemotePortRanges = n.GetCollectionOfObjectValues<NumberRange>(NumberRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"routingPolicyType", n => { RoutingPolicyType = n.GetEnumValue<VpnTrafficRuleRoutingPolicyType>(); } },
+                {"vpnTrafficDirection", n => { VpnTrafficDirection = n.GetEnumValue<VpnTrafficDirection>(); } },
             };
         }
         /// <summary>
@@ -193,6 +199,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<IPv4Range>("remoteAddressRanges", RemoteAddressRanges);
             writer.WriteCollectionOfObjectValues<NumberRange>("remotePortRanges", RemotePortRanges);
             writer.WriteEnumValue<VpnTrafficRuleRoutingPolicyType>("routingPolicyType", RoutingPolicyType);
+            writer.WriteEnumValue<VpnTrafficDirection>("vpnTrafficDirection", VpnTrafficDirection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

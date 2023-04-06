@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class BusinessScenarioPlanner : Entity, IParsable {
         /// <summary>The configuration of Planner plans that will be created for the scenario.</summary>

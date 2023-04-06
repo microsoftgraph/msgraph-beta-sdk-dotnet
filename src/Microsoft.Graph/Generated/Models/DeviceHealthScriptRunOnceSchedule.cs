@@ -1,9 +1,9 @@
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptRunOnceSchedule : DeviceHealthScriptTimeSchedule, IParsable {
         /// <summary>The date the script is scheduled to run. This collection can contain a maximum of 20 elements.</summary>

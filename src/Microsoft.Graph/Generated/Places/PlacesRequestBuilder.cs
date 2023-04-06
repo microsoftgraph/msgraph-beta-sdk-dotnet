@@ -2,11 +2,11 @@ using Microsoft.Graph.Beta.Places.Count;
 using Microsoft.Graph.Beta.Places.GraphRoom;
 using Microsoft.Graph.Beta.Places.Item;
 using Microsoft.Kiota.Abstractions;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 namespace Microsoft.Graph.Beta.Places {
     /// <summary>
     /// Builds and executes requests for operations under \places

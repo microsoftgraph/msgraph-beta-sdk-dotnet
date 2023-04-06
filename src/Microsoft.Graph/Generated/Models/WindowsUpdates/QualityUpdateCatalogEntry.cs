@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable {
         /// <summary>Indicates whether the content can be deployed as an expedited quality update. Read-only.</summary>

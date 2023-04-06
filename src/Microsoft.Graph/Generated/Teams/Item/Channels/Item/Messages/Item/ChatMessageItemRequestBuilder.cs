@@ -1,19 +1,19 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.HostedContents;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.Replies;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.SetReaction;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.SoftDelete;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.UndoSoftDelete;
 using Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.UnsetReaction;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item {
     /// <summary>
     /// Provides operations to manage the messages property of the microsoft.graph.channel entity.

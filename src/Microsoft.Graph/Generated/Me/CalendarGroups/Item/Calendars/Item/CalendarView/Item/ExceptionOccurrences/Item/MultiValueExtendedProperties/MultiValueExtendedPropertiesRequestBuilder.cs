@@ -1,15 +1,15 @@
 using Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.MultiValueExtendedProperties.Count;
 using Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.MultiValueExtendedProperties.Item;
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Kiota.Abstractions;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.MultiValueExtendedProperties {
     /// <summary>
     /// Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.

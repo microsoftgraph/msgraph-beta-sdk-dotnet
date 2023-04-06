@@ -1,5 +1,5 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.AppManagementPolicies;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.AppRoleAssignedTo;
@@ -7,8 +7,8 @@ using Microsoft.Graph.Beta.ServicePrincipals.Item.AppRoleAssignments;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies;
-using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatePasswordSingleSignOnCredentials;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassifications;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.DeletePasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Endpoints;
@@ -28,14 +28,14 @@ using Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.TokenLifetimePolicies;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.TransitiveMemberOf;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOnCredentials;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
     /// <summary>
     /// Provides operations to manage the collection of servicePrincipal entities.

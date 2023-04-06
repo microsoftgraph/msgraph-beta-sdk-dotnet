@@ -1,9 +1,9 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class PstnCallLogRow : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -220,6 +220,20 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("operator", value); }
         }
 #endif
+        /// <summary>The otherPartyCountryCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OtherPartyCountryCode {
+            get { return BackingStore?.Get<string?>("otherPartyCountryCode"); }
+            set { BackingStore?.Set("otherPartyCountryCode", value); }
+        }
+#nullable restore
+#else
+        public string OtherPartyCountryCode {
+            get { return BackingStore?.Get<string>("otherPartyCountryCode"); }
+            set { BackingStore?.Set("otherPartyCountryCode", value); }
+        }
+#endif
         /// <summary>Call start time.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
@@ -333,6 +347,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"licenseCapability", n => { LicenseCapability = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetStringValue(); } },
+                {"otherPartyCountryCode", n => { OtherPartyCountryCode = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"tenantCountryCode", n => { TenantCountryCode = n.GetStringValue(); } },
                 {"usageCountryCode", n => { UsageCountryCode = n.GetStringValue(); } },
@@ -365,6 +380,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteStringValue("licenseCapability", LicenseCapability);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operator", Operator);
+            writer.WriteStringValue("otherPartyCountryCode", OtherPartyCountryCode);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("tenantCountryCode", TenantCountryCode);
             writer.WriteStringValue("usageCountryCode", UsageCountryCode);

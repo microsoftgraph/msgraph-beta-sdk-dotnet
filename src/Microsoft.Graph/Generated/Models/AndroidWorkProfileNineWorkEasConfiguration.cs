@@ -1,8 +1,8 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidWorkProfileNineWorkEasConfiguration : AndroidWorkProfileEasEmailProfileBase, IParsable {
         /// <summary>Toggles syncing the calendar. If set to false the calendar is turned off on the device.</summary>

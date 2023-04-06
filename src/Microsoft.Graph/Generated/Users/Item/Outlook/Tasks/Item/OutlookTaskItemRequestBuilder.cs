@@ -1,17 +1,17 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Attachments;
 using Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete;
 using Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.SingleValueExtendedProperties;
-using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using System;
 namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item {
     /// <summary>
     /// Provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
