@@ -1,5 +1,5 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Models.TenantAdmin;
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Microsoft.Graph.Beta.Admin.Sharepoint.Settings {
     /// <summary>
-    /// Provides operations to manage the settings property of the microsoft.graph.tenantAdmin.sharepoint entity.
+    /// Provides operations to manage the settings property of the microsoft.graph.sharepoint entity.
     /// </summary>
     public class SettingsRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -54,17 +54,17 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint.Settings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TenantAdmin.Settings?> GetAsync(Action<SettingsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharepointSettings?> GetAsync(Action<SettingsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TenantAdmin.Settings> GetAsync(Action<SettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharepointSettings> GetAsync(Action<SettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TenantAdmin.Settings>(requestInfo, Microsoft.Graph.Beta.Models.TenantAdmin.Settings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharepointSettings>(requestInfo, SharepointSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Update one or more tenant-level settings for SharePoint and OneDrive.
@@ -75,10 +75,10 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint.Settings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TenantAdmin.Settings?> PatchAsync(Microsoft.Graph.Beta.Models.TenantAdmin.Settings body, Action<SettingsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharepointSettings?> PatchAsync(SharepointSettings body, Action<SettingsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TenantAdmin.Settings> PatchAsync(Microsoft.Graph.Beta.Models.TenantAdmin.Settings body, Action<SettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharepointSettings> PatchAsync(SharepointSettings body, Action<SettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint.Settings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TenantAdmin.Settings>(requestInfo, Microsoft.Graph.Beta.Models.TenantAdmin.Settings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharepointSettings>(requestInfo, SharepointSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Delete navigation property settings for admin
@@ -145,10 +145,10 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint.Settings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TenantAdmin.Settings body, Action<SettingsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(SharepointSettings body, Action<SettingsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.TenantAdmin.Settings body, Action<SettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(SharepointSettings body, Action<SettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
