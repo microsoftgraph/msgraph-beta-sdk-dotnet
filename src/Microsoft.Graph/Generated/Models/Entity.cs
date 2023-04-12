@@ -7,7 +7,6 @@ using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Models.TenantAdmin;
 using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -306,7 +305,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.claimsMappingPolicy" => new ClaimsMappingPolicy(),
                 "#microsoft.graph.classificationJobResponse" => new ClassificationJobResponse(),
                 "#microsoft.graph.cloudAppSecurityProfile" => new CloudAppSecurityProfile(),
-                "#microsoft.graph.cloudCommunications" => new CloudCommunications(),
                 "#microsoft.graph.cloudPC" => new CloudPC(),
                 "#microsoft.graph.cloudPcAuditEvent" => new CloudPcAuditEvent(),
                 "#microsoft.graph.cloudPCConnectivityIssue" => new CloudPCConnectivityIssue(),
@@ -1286,6 +1284,8 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.sharedInsight" => new SharedInsight(),
                 "#microsoft.graph.sharedPCConfiguration" => new SharedPCConfiguration(),
                 "#microsoft.graph.sharedWithChannelTeamInfo" => new SharedWithChannelTeamInfo(),
+                "#microsoft.graph.sharepoint" => new Sharepoint(),
+                "#microsoft.graph.sharepointSettings" => new SharepointSettings(),
                 "#microsoft.graph.shift" => new Shift(),
                 "#microsoft.graph.shiftPreferences" => new ShiftPreferences(),
                 "#microsoft.graph.shipmentMethod" => new ShipmentMethod(),
@@ -1356,8 +1356,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.telecomExpenseManagementPartner" => new TelecomExpenseManagementPartner(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new TemporaryAccessPassAuthenticationMethod(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new TemporaryAccessPassAuthenticationMethodConfiguration(),
-                "#microsoft.graph.tenantAdmin.settings" => new Microsoft.Graph.Beta.Models.TenantAdmin.Settings(),
-                "#microsoft.graph.tenantAdmin.sharepoint" => new Microsoft.Graph.Beta.Models.TenantAdmin.Sharepoint(),
                 "#microsoft.graph.tenantAppManagementPolicy" => new TenantAppManagementPolicy(),
                 "#microsoft.graph.tenantAttachRBAC" => new TenantAttachRBAC(),
                 "#microsoft.graph.tenantRelationshipAccessPolicyBase" => new TenantRelationshipAccessPolicyBase(),

@@ -7,12 +7,19 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.26.0-preview] - 2023-04-12
+
+### Changed
+
+- Latest metadata updates from 11th April 2023
+- Fixes disposing of implicitly constructed BaseGraphRequestAdapter (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1724
+
 ## [5.25.0-preview] - 2023-04-06
 
 ### Changed 
 
 - Fixes missing dateTime query parameters for bookingBusinesses (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1791)
-- Fixes missing exapand clauses for calendars and contactFolder (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1788)
+- Fixes missing expand clauses for calendars and contactFolder (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1788)
 - Fixes return type when uploading small files to drive (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1718)
 - Fixes inconsistencies in errors when using batch requests. (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1782)
 

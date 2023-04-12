@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 using System;
-namespace Microsoft.Graph.Beta.Models.TenantAdmin {
+namespace Microsoft.Graph.Beta.Models {
     public enum SharingCapabilities {
         [EnumMember(Value = "disabled")]
         Disabled,

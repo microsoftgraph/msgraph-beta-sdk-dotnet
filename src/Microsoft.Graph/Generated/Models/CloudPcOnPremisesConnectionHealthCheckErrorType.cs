@@ -120,6 +120,8 @@ namespace Microsoft.Graph.Beta.Models {
         InternalServerErrorVMDeploymentTimeout,
         [EnumMember(Value = "internalServerErrorUnableToRunDscScript")]
         InternalServerErrorUnableToRunDscScript,
+        [EnumMember(Value = "ssoCheckKerberosConfigurationError")]
+        SsoCheckKerberosConfigurationError,
         [EnumMember(Value = "internalServerUnknownError")]
         InternalServerUnknownError,
         [EnumMember(Value = "unknownFutureValue")]

@@ -363,6 +363,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("location", value); }
         }
 #endif
+        /// <summary>Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ManagedIdentity? ManagedServiceIdentity {
+            get { return BackingStore?.Get<ManagedIdentity?>("managedServiceIdentity"); }
+            set { BackingStore?.Set("managedServiceIdentity", value); }
+        }
+#nullable restore
+#else
+        public ManagedIdentity ManagedServiceIdentity {
+            get { return BackingStore?.Get<ManagedIdentity>("managedServiceIdentity"); }
+            set { BackingStore?.Set("managedServiceIdentity", value); }
+        }
+#endif
         /// <summary>The mfaDetail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -770,6 +784,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isInteractive", n => { IsInteractive = n.GetBoolValue(); } },
                 {"isTenantRestricted", n => { IsTenantRestricted = n.GetBoolValue(); } },
                 {"location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
+                {"managedServiceIdentity", n => { ManagedServiceIdentity = n.GetObjectValue<ManagedIdentity>(ManagedIdentity.CreateFromDiscriminatorValue); } },
                 {"mfaDetail", n => { MfaDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.MfaDetail>(Microsoft.Graph.Beta.Models.MfaDetail.CreateFromDiscriminatorValue); } },
                 {"networkLocationDetails", n => { NetworkLocationDetails = n.GetCollectionOfObjectValues<NetworkLocationDetail>(NetworkLocationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"originalRequestId", n => { OriginalRequestId = n.GetStringValue(); } },
@@ -842,6 +857,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isInteractive", IsInteractive);
             writer.WriteBoolValue("isTenantRestricted", IsTenantRestricted);
             writer.WriteObjectValue<SignInLocation>("location", Location);
+            writer.WriteObjectValue<ManagedIdentity>("managedServiceIdentity", ManagedServiceIdentity);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MfaDetail>("mfaDetail", MfaDetail);
             writer.WriteCollectionOfObjectValues<NetworkLocationDetail>("networkLocationDetails", NetworkLocationDetails);
             writer.WriteStringValue("originalRequestId", OriginalRequestId);

@@ -1888,7 +1888,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new user and sets the default values.
+        /// Instantiates a new User and sets the default values.
         /// </summary>
         public User() : base() {
             OdataType = "#microsoft.graph.user";

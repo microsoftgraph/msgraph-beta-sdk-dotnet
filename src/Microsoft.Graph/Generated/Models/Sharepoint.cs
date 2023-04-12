@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.TenantAdmin {
+namespace Microsoft.Graph.Beta.Models {
     public class Sharepoint : Entity, IParsable {
-        /// <summary>Represents the tenant-level settings for SharePoint and OneDrive.</summary>
+        /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TenantAdmin.Settings? Settings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Settings?>("settings"); }
+        public SharepointSettings? Settings {
+            get { return BackingStore?.Get<SharepointSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TenantAdmin.Settings Settings {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.Settings>("settings"); }
+        public SharepointSettings Settings {
+            get { return BackingStore?.Get<SharepointSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.Settings>(Microsoft.Graph.Beta.Models.TenantAdmin.Settings.CreateFromDiscriminatorValue); } },
+                {"settings", n => { Settings = n.GetObjectValue<SharepointSettings>(SharepointSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.Settings>("settings", Settings);
+            writer.WriteObjectValue<SharepointSettings>("settings", Settings);
         }
     }
 }

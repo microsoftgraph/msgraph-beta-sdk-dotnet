@@ -160,6 +160,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             Assert.Null(itemBody.AdditionalData);
         }
 
+        [Fact]
         public void SerializeDateValue()
         {
             var now = DateTimeOffset.UtcNow;
