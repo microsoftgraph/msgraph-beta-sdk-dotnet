@@ -53,6 +53,7 @@ using Microsoft.Graph.Beta.Me.JoinedGroups;
 using Microsoft.Graph.Beta.Me.JoinedTeams;
 using Microsoft.Graph.Beta.Me.LicenseDetails;
 using Microsoft.Graph.Beta.Me.MailFolders;
+using Microsoft.Graph.Beta.Me.MailboxSettings;
 using Microsoft.Graph.Beta.Me.ManagedAppRegistrations;
 using Microsoft.Graph.Beta.Me.ManagedDevices;
 using Microsoft.Graph.Beta.Me.Manager;
@@ -79,6 +80,7 @@ using Microsoft.Graph.Beta.Me.ReminderViewWithStartDateTimeWithEndDateTime;
 using Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement;
 using Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment;
 using Microsoft.Graph.Beta.Me.Restore;
+using Microsoft.Graph.Beta.Me.RetryServiceProvisioning;
 using Microsoft.Graph.Beta.Me.RevokeSignInSessions;
 using Microsoft.Graph.Beta.Me.ScopedRoleMemberOf;
 using Microsoft.Graph.Beta.Me.Security;
@@ -319,6 +321,10 @@ namespace Microsoft.Graph.Beta.Me {
         public LicenseDetailsRequestBuilder LicenseDetails { get =>
             new LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
         public MailFoldersRequestBuilder MailFolders { get =>
             new MailFoldersRequestBuilder(PathParameters, RequestAdapter);
@@ -423,6 +429,10 @@ namespace Microsoft.Graph.Beta.Me {
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
+        public RetryServiceProvisioningRequestBuilder RetryServiceProvisioning { get =>
+            new RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the revokeSignInSessions method.</summary>
         public RevokeSignInSessionsRequestBuilder RevokeSignInSessions { get =>
             new RevokeSignInSessionsRequestBuilder(PathParameters, RequestAdapter);
@@ -524,8 +534,8 @@ namespace Microsoft.Graph.Beta.Me {
             return new FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -576,7 +586,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -630,7 +640,7 @@ namespace Microsoft.Graph.Beta.Me {
             return requestInfo;
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
         /// </summary>
         public class MeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces {
         public ResourceNamespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement/exchange/resourceNamespaces{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get resourceNamespaces from roleManagement
+        /// Resource that represents a collection of related actions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces {
             return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespace>(requestInfo, UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get resourceNamespaces from roleManagement
+        /// Resource that represents a collection of related actions.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces {
             return requestInfo;
         }
         /// <summary>
-        /// Get resourceNamespaces from roleManagement
+        /// Resource that represents a collection of related actions.
         /// </summary>
         public class ResourceNamespacesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

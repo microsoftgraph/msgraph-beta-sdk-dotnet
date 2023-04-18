@@ -33,6 +33,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("containerId", value); }
         }
 #endif
+        /// <summary>The lastModifiedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public User? LastModifiedBy {
+            get { return BackingStore?.Get<User?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public User LastModifiedBy {
+            get { return BackingStore?.Get<User>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
         /// <summary>Navigation link to a member object. For example, to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"container", n => { Container = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"containerId", n => { ContainerId = n.GetStringValue(); } },
+                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<User>(User.CreateFromDiscriminatorValue); } },
                 {"member", n => { Member = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"memberId", n => { MemberId = n.GetStringValue(); } },
                 {"outlierContainerType", n => { OutlierContainerType = n.GetEnumValue<OutlierContainerType>(); } },
@@ -107,6 +122,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteObjectValue<DirectoryObject>("container", Container);
             writer.WriteStringValue("containerId", ContainerId);
+            writer.WriteObjectValue<User>("lastModifiedBy", LastModifiedBy);
             writer.WriteObjectValue<DirectoryObject>("member", Member);
             writer.WriteStringValue("memberId", MemberId);
             writer.WriteEnumValue<OutlierContainerType>("outlierContainerType", OutlierContainerType);

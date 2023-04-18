@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.SwapShiftsChangeRequest
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get swapShiftsChangeRequests from groups
+        /// The swap requests for shifts in the schedule.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.SwapShiftsChangeRequest
             return requestInfo;
         }
         /// <summary>
-        /// Get swapShiftsChangeRequests from groups
+        /// The swap requests for shifts in the schedule.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.SwapShiftsChangeRequest
             }
         }
         /// <summary>
-        /// Get swapShiftsChangeRequests from groups
+        /// The swap requests for shifts in the schedule.
         /// </summary>
         public class SwapShiftsChangeRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Value of the GroupSetting
-    /// </summary>
     public class DeviceManagementConfigurationGroupSettingValue : DeviceManagementConfigurationSettingValue, IParsable {
         /// <summary>Collection of child setting instances contained within this GroupSetting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new deviceManagementConfigurationGroupSettingValue and sets the default values.
+        /// Instantiates a new DeviceManagementConfigurationGroupSettingValue and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationGroupSettingValue() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationGroupSettingValue";

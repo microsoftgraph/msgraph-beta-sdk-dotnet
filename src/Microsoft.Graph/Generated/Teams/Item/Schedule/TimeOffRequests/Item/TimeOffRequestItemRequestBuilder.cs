@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get timeOffRequests from teams
+        /// The time off requests in the schedule.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get timeOffRequests from teams
+        /// The time off requests in the schedule.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             }
         }
         /// <summary>
-        /// Get timeOffRequests from teams
+        /// The time off requests in the schedule.
         /// </summary>
         public class TimeOffRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

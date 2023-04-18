@@ -767,6 +767,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("securityIdentifier", value); }
         }
 #endif
+        /// <summary>The serviceProvisioningErrors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ServiceProvisioningError>? ServiceProvisioningErrors {
+            get { return BackingStore?.Get<List<ServiceProvisioningError>?>("serviceProvisioningErrors"); }
+            set { BackingStore?.Set("serviceProvisioningErrors", value); }
+        }
+#nullable restore
+#else
+        public List<ServiceProvisioningError> ServiceProvisioningErrors {
+            get { return BackingStore?.Get<List<ServiceProvisioningError>>("serviceProvisioningErrors"); }
+            set { BackingStore?.Set("serviceProvisioningErrors", value); }
+        }
+#endif
         /// <summary>Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -993,6 +1007,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"resourceProvisioningOptions", n => { ResourceProvisioningOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"securityEnabled", n => { SecurityEnabled = n.GetBoolValue(); } },
                 {"securityIdentifier", n => { SecurityIdentifier = n.GetStringValue(); } },
+                {"serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<ServiceProvisioningError>(ServiceProvisioningError.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"settings", n => { Settings = n.GetCollectionOfObjectValues<DirectorySetting>(DirectorySetting.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"sites", n => { Sites = n.GetCollectionOfObjectValues<Site>(Site.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"team", n => { Team = n.GetObjectValue<Microsoft.Graph.Beta.Models.Team>(Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue); } },
@@ -1080,6 +1095,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("resourceProvisioningOptions", ResourceProvisioningOptions);
             writer.WriteBoolValue("securityEnabled", SecurityEnabled);
             writer.WriteStringValue("securityIdentifier", SecurityIdentifier);
+            writer.WriteCollectionOfObjectValues<ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);
             writer.WriteCollectionOfObjectValues<DirectorySetting>("settings", Settings);
             writer.WriteCollectionOfObjectValues<Site>("sites", Sites);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Team>("team", Team);

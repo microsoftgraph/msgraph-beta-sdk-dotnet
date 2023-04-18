@@ -100,7 +100,6 @@ using Microsoft.Graph.Beta.Settings;
 using Microsoft.Graph.Beta.Shares;
 using Microsoft.Graph.Beta.Sites;
 using Microsoft.Graph.Beta.Solutions;
-using Microsoft.Graph.Beta.Storage;
 using Microsoft.Graph.Beta.SubscribedSkus;
 using Microsoft.Graph.Beta.Subscriptions;
 using Microsoft.Graph.Beta.TeamTemplateDefinition;
@@ -535,10 +534,6 @@ namespace Microsoft.Graph.Beta {
         /// <summary>Provides operations to manage the solutionsRoot singleton.</summary>
         public SolutionsRequestBuilder Solutions { get =>
             new SolutionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the storage singleton.</summary>
-        public StorageRequestBuilder Storage { get =>
-            new StorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
         public SubscribedSkusRequestBuilder SubscribedSkus { get =>

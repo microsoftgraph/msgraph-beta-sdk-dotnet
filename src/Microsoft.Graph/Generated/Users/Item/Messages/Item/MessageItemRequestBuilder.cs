@@ -7,6 +7,8 @@ using Microsoft.Graph.Beta.Users.Item.Messages.Item.CreateReply;
 using Microsoft.Graph.Beta.Users.Item.Messages.Item.CreateReplyAll;
 using Microsoft.Graph.Beta.Users.Item.Messages.Item.Extensions;
 using Microsoft.Graph.Beta.Users.Item.Messages.Item.Forward;
+using Microsoft.Graph.Beta.Users.Item.Messages.Item.MarkAsJunk;
+using Microsoft.Graph.Beta.Users.Item.Messages.Item.MarkAsNotJunk;
 using Microsoft.Graph.Beta.Users.Item.Messages.Item.Mentions;
 using Microsoft.Graph.Beta.Users.Item.Messages.Item.Move;
 using Microsoft.Graph.Beta.Users.Item.Messages.Item.MultiValueExtendedProperties;
@@ -61,6 +63,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item {
         public ForwardRequestBuilder Forward { get =>
             new ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the markAsJunk method.</summary>
+        public MarkAsJunkRequestBuilder MarkAsJunk { get =>
+            new MarkAsJunkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the markAsNotJunk method.</summary>
+        public MarkAsNotJunkRequestBuilder MarkAsNotJunk { get =>
+            new MarkAsNotJunkRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the mentions property of the microsoft.graph.message entity.</summary>
         public MentionsRequestBuilder Mentions { get =>
             new MentionsRequestBuilder(PathParameters, RequestAdapter);
@@ -98,14 +108,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/messages/{message%2Did}{?%24select,%24expand}", pathParameters) {
+        public MessageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/messages/{message%2Did}{?includeHiddenMessages*,%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new MessageItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/messages/{message%2Did}{?%24select,%24expand}", rawUrl) {
+        public MessageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/messages/{message%2Did}{?includeHiddenMessages*,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property messages for users
@@ -273,6 +283,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item {
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
+#endif
+            /// <summary>Include Hidden Messages</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? IncludeHiddenMessages { get; set; }
+#nullable restore
+#else
+            public string IncludeHiddenMessages { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

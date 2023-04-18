@@ -13,11 +13,39 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The containerFilter property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.ContainerFilter? ContainerFilter {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContainerFilter?>("containerFilter"); }
+            set { BackingStore?.Set("containerFilter", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.ContainerFilter ContainerFilter {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContainerFilter>("containerFilter"); }
+            set { BackingStore?.Set("containerFilter", value); }
+        }
+#endif
         /// <summary>true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.</summary>
         public bool? Editable {
             get { return BackingStore?.Get<bool?>("editable"); }
             set { BackingStore?.Set("editable", value); }
         }
+        /// <summary>The groupFilter property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.GroupFilter? GroupFilter {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupFilter?>("groupFilter"); }
+            set { BackingStore?.Set("groupFilter", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.GroupFilter GroupFilter {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupFilter>("groupFilter"); }
+            set { BackingStore?.Set("groupFilter", value); }
+        }
+#endif
         /// <summary>Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,7 +169,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"containerFilter", n => { ContainerFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContainerFilter>(Microsoft.Graph.Beta.Models.ContainerFilter.CreateFromDiscriminatorValue); } },
                 {"editable", n => { Editable = n.GetBoolValue(); } },
+                {"groupFilter", n => { GroupFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.GroupFilter>(Microsoft.Graph.Beta.Models.GroupFilter.CreateFromDiscriminatorValue); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -158,7 +188,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContainerFilter>("containerFilter", ContainerFilter);
             writer.WriteBoolValue("editable", Editable);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GroupFilter>("groupFilter", GroupFilter);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<StringKeyStringValuePair>("metadata", Metadata);
             writer.WriteStringValue("name", Name);

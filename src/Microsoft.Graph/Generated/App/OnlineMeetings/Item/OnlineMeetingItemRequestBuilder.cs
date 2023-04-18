@@ -1,6 +1,7 @@
 using Microsoft.Graph.Beta.App.OnlineMeetings.Item.AlternativeRecording;
 using Microsoft.Graph.Beta.App.OnlineMeetings.Item.AttendanceReports;
 using Microsoft.Graph.Beta.App.OnlineMeetings.Item.AttendeeReport;
+using Microsoft.Graph.Beta.App.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl;
 using Microsoft.Graph.Beta.App.OnlineMeetings.Item.MeetingAttendanceReport;
 using Microsoft.Graph.Beta.App.OnlineMeetings.Item.Recording;
 using Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration;
@@ -32,6 +33,10 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item {
         /// <summary>Provides operations to manage the media for the commsApplication entity.</summary>
         public AttendeeReportRequestBuilder AttendeeReport { get =>
             new AttendeeReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getVirtualAppointmentJoinWebUrl method.</summary>
+        public GetVirtualAppointmentJoinWebUrlRequestBuilder GetVirtualAppointmentJoinWebUrl { get =>
+            new GetVirtualAppointmentJoinWebUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the meetingAttendanceReport property of the microsoft.graph.onlineMeeting entity.</summary>
         public MeetingAttendanceReportRequestBuilder MeetingAttendanceReport { get =>

@@ -313,6 +313,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("remoteItem", value); }
         }
 #endif
+        /// <summary>The retentionLabel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ItemRetentionLabel? RetentionLabel {
+            get { return BackingStore?.Get<ItemRetentionLabel?>("retentionLabel"); }
+            set { BackingStore?.Set("retentionLabel", value); }
+        }
+#nullable restore
+#else
+        public ItemRetentionLabel RetentionLabel {
+            get { return BackingStore?.Get<ItemRetentionLabel>("retentionLabel"); }
+            set { BackingStore?.Set("retentionLabel", value); }
+        }
+#endif
         /// <summary>If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -527,6 +541,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"photo", n => { Photo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Photo>(Microsoft.Graph.Beta.Models.Photo.CreateFromDiscriminatorValue); } },
                 {"publication", n => { Publication = n.GetObjectValue<PublicationFacet>(PublicationFacet.CreateFromDiscriminatorValue); } },
                 {"remoteItem", n => { RemoteItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemoteItem>(Microsoft.Graph.Beta.Models.RemoteItem.CreateFromDiscriminatorValue); } },
+                {"retentionLabel", n => { RetentionLabel = n.GetObjectValue<ItemRetentionLabel>(ItemRetentionLabel.CreateFromDiscriminatorValue); } },
                 {"root", n => { Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.Root>(Microsoft.Graph.Beta.Models.Root.CreateFromDiscriminatorValue); } },
                 {"searchResult", n => { SearchResult = n.GetObjectValue<Microsoft.Graph.Beta.Models.SearchResult>(Microsoft.Graph.Beta.Models.SearchResult.CreateFromDiscriminatorValue); } },
                 {"shared", n => { Shared = n.GetObjectValue<Microsoft.Graph.Beta.Models.Shared>(Microsoft.Graph.Beta.Models.Shared.CreateFromDiscriminatorValue); } },
@@ -571,6 +586,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Photo>("photo", Photo);
             writer.WriteObjectValue<PublicationFacet>("publication", Publication);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemoteItem>("remoteItem", RemoteItem);
+            writer.WriteObjectValue<ItemRetentionLabel>("retentionLabel", RetentionLabel);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Root>("root", Root);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SearchResult>("searchResult", SearchResult);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Shared>("shared", Shared);

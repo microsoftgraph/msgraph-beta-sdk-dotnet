@@ -7,6 +7,8 @@ using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Message
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.CreateReplyAll;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Extensions;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Forward;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsJunk;
+using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.MarkAsNotJunk;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Mentions;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.Move;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Messages.Item.MultiValueExtendedProperties;
@@ -60,6 +62,14 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
         /// <summary>Provides operations to call the forward method.</summary>
         public ForwardRequestBuilder Forward { get =>
             new ForwardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the markAsJunk method.</summary>
+        public MarkAsJunkRequestBuilder MarkAsJunk { get =>
+            new MarkAsJunkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the markAsNotJunk method.</summary>
+        public MarkAsNotJunkRequestBuilder MarkAsNotJunk { get =>
+            new MarkAsNotJunkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mentions property of the microsoft.graph.message entity.</summary>
         public MentionsRequestBuilder Mentions { get =>

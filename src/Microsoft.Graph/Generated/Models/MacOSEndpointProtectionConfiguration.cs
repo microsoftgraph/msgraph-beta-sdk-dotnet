@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// MacOS endpoint protection configuration profile.
+    /// </summary>
     public class MacOSEndpointProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Possible values of a property</summary>
         public Enablement? AdvancedThreatProtectionAutomaticSampleSubmission {
@@ -198,7 +201,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("gatekeeperBlockOverride", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSEndpointProtectionConfiguration and sets the default values.
+        /// Instantiates a new macOSEndpointProtectionConfiguration and sets the default values.
         /// </summary>
         public MacOSEndpointProtectionConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSEndpointProtectionConfiguration";

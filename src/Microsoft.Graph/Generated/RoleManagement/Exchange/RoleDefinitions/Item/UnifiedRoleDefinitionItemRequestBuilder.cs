@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get roleDefinitions from roleManagement
+        /// The roles allowed by RBAC providers and the permissions assigned to the roles.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get roleDefinitions from roleManagement
+        /// The roles allowed by RBAC providers and the permissions assigned to the roles.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions.Item {
             }
         }
         /// <summary>
-        /// Get roleDefinitions from roleManagement
+        /// The roles allowed by RBAC providers and the permissions assigned to the roles.
         /// </summary>
         public class UnifiedRoleDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

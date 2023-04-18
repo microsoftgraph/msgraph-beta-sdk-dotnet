@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSecret"); }
             set { BackingStore?.Set("isSecret", value); }
         }
-        /// <summary>Maximum length of string</summary>
+        /// <summary>Maximum length of string. Valid values 0 to 87516</summary>
         public long? MaximumLength {
             get { return BackingStore?.Get<long?>("maximumLength"); }
             set { BackingStore?.Set("maximumLength", value); }
         }
-        /// <summary>Minimum length of string</summary>
+        /// <summary>Minimum length of string. Valid values 0 to 87516</summary>
         public long? MinimumLength {
             get { return BackingStore?.Get<long?>("minimumLength"); }
             set { BackingStore?.Set("minimumLength", value); }
