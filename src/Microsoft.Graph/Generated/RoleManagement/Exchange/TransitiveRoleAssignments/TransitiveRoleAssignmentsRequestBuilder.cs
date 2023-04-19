@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.TransitiveRoleAssignments
         public TransitiveRoleAssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement/exchange/transitiveRoleAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get transitiveRoleAssignments from roleManagement
+        /// Resource to grant access to users or groups that are transitive.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.TransitiveRoleAssignments
             return await RequestAdapter.SendAsync<UnifiedRoleAssignment>(requestInfo, UnifiedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get transitiveRoleAssignments from roleManagement
+        /// Resource to grant access to users or groups that are transitive.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.TransitiveRoleAssignments
             return requestInfo;
         }
         /// <summary>
-        /// Get transitiveRoleAssignments from roleManagement
+        /// Resource to grant access to users or groups that are transitive.
         /// </summary>
         public class TransitiveRoleAssignmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

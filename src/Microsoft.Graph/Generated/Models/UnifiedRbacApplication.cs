@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRbacApplication : Entity, IParsable {
-        /// <summary>The resourceNamespaces property</summary>
+        /// <summary>Resource that represents a collection of related actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRbacResourceNamespace>? ResourceNamespaces {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourceNamespaces", value); }
         }
 #endif
-        /// <summary>The roleAssignments property</summary>
+        /// <summary>Resource to grant access to users or groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRoleAssignment>? RoleAssignments {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleAssignments", value); }
         }
 #endif
-        /// <summary>The roleDefinitions property</summary>
+        /// <summary>The roles allowed by RBAC providers and the permissions assigned to the roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRoleDefinition>? RoleDefinitions {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleDefinitions", value); }
         }
 #endif
-        /// <summary>The transitiveRoleAssignments property</summary>
+        /// <summary>Resource to grant access to users or groups that are transitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRoleAssignment>? TransitiveRoleAssignments {

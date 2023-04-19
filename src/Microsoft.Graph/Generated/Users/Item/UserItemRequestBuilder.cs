@@ -55,6 +55,7 @@ using Microsoft.Graph.Beta.Users.Item.JoinedGroups;
 using Microsoft.Graph.Beta.Users.Item.JoinedTeams;
 using Microsoft.Graph.Beta.Users.Item.LicenseDetails;
 using Microsoft.Graph.Beta.Users.Item.MailFolders;
+using Microsoft.Graph.Beta.Users.Item.MailboxSettings;
 using Microsoft.Graph.Beta.Users.Item.ManagedAppRegistrations;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices;
 using Microsoft.Graph.Beta.Users.Item.Manager;
@@ -81,6 +82,7 @@ using Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDateTi
 using Microsoft.Graph.Beta.Users.Item.RemoveAllDevicesFromManagement;
 using Microsoft.Graph.Beta.Users.Item.ReprocessLicenseAssignment;
 using Microsoft.Graph.Beta.Users.Item.Restore;
+using Microsoft.Graph.Beta.Users.Item.RetryServiceProvisioning;
 using Microsoft.Graph.Beta.Users.Item.RevokeSignInSessions;
 using Microsoft.Graph.Beta.Users.Item.ScopedRoleMemberOf;
 using Microsoft.Graph.Beta.Users.Item.Security;
@@ -319,6 +321,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         public LicenseDetailsRequestBuilder LicenseDetails { get =>
             new LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
         public MailFoldersRequestBuilder MailFolders { get =>
             new MailFoldersRequestBuilder(PathParameters, RequestAdapter);
@@ -422,6 +428,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
+        public RetryServiceProvisioningRequestBuilder RetryServiceProvisioning { get =>
+            new RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the revokeSignInSessions method.</summary>
         public RevokeSignInSessionsRequestBuilder RevokeSignInSessions { get =>

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Assignments.Item.AssignedUsers.Item.MailboxSettings;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
     /// Provides operations to manage the assignedUsers property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
     /// </summary>
     public class UserItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new UserItemRequestBuilder and sets the default values.
         /// </summary>

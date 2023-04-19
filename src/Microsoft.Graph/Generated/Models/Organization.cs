@@ -212,6 +212,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
         }
+        /// <summary>The partnerInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.PartnerInformation? PartnerInformation {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PartnerInformation?>("partnerInformation"); }
+            set { BackingStore?.Set("partnerInformation", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.PartnerInformation PartnerInformation {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PartnerInformation>("partnerInformation"); }
+            set { BackingStore?.Set("partnerInformation", value); }
+        }
+#endif
         /// <summary>The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.</summary>
         public Microsoft.Graph.Beta.Models.PartnerTenantType? PartnerTenantType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PartnerTenantType?>("partnerTenantType"); }
@@ -408,6 +422,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mobileDeviceManagementAuthority", n => { MobileDeviceManagementAuthority = n.GetEnumValue<MdmAuthority>(); } },
                 {"onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
+                {"partnerInformation", n => { PartnerInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.PartnerInformation>(Microsoft.Graph.Beta.Models.PartnerInformation.CreateFromDiscriminatorValue); } },
                 {"partnerTenantType", n => { PartnerTenantType = n.GetEnumValue<PartnerTenantType>(); } },
                 {"postalCode", n => { PostalCode = n.GetStringValue(); } },
                 {"preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
@@ -447,6 +462,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<MdmAuthority>("mobileDeviceManagementAuthority", MobileDeviceManagementAuthority);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PartnerInformation>("partnerInformation", PartnerInformation);
             writer.WriteEnumValue<PartnerTenantType>("partnerTenantType", PartnerTenantType);
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("preferredLanguage", PreferredLanguage);

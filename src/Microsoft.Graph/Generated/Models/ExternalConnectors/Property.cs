@@ -94,6 +94,20 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Specifies the property ranking hint. Developers can specify which properties are most important, allowing Microsoft Search to determine the search relevance of the content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint? RankingHint {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint?>("rankingHint"); }
+            set { BackingStore?.Set("rankingHint", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint RankingHint {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint>("rankingHint"); }
+            set { BackingStore?.Set("rankingHint", value); }
+        }
+#endif
         /// <summary>The type property</summary>
         public PropertyType? Type {
             get { return BackingStore?.Get<PropertyType?>("type"); }
@@ -128,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
                 {"labels", n => { Labels = n.GetCollectionOfEnumValues<Label>()?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"rankingHint", n => { RankingHint = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint>(Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint.CreateFromDiscriminatorValue); } },
                 {"type", n => { Type = n.GetEnumValue<PropertyType>(); } },
             };
         }
@@ -146,6 +161,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             writer.WriteCollectionOfEnumValues<Label>("labels", Labels);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint>("rankingHint", RankingHint);
             writer.WriteEnumValue<PropertyType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

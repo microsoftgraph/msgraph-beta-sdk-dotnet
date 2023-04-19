@@ -35,18 +35,18 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public MessagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/messages{?includeHiddenMessages*,%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new MessagesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public MessagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/messages{?includeHiddenMessages*,%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0" />
+        /// The messages in a mailbox or folder. Read-only. Nullable.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,8 +65,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages {
             return await RequestAdapter.SendAsync<MessageCollectionResponse>(requestInfo, MessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0" />
+        /// Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment.- Use a mention to call out another user in the new message.- Update the draft later to add content to the **body** or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single action, or create a draft to forward, to reply or to reply-all to an existing message.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Message>(requestInfo, Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// The messages in a mailbox or folder. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages {
             return requestInfo;
         }
         /// <summary>
-        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
+        /// Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment.- Use a mention to call out another user in the new message.- Update the draft later to add content to the **body** or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single action, or create a draft to forward, to reply or to reply-all to an existing message.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages {
             return requestInfo;
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// The messages in a mailbox or folder. Read-only. Nullable.
         /// </summary>
         public class MessagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
@@ -166,6 +166,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages {
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
+#endif
+            /// <summary>Include Hidden Messages</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? IncludeHiddenMessages { get; set; }
+#nullable restore
+#else
+            public string IncludeHiddenMessages { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

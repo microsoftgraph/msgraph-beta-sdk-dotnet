@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The callCharge property</summary>
+        /// <summary>Amount of money or cost of the SMS that is charged.</summary>
         public decimal? CallCharge {
             get { return BackingStore?.Get<decimal?>("callCharge"); }
             set { BackingStore?.Set("callCharge", value); }
         }
-        /// <summary>The currency property</summary>
+        /// <summary>Currency used to calculate the cost of the call. For details, see ISO 4217.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency {
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("currency", value); }
         }
 #endif
-        /// <summary>The destinationContext property</summary>
+        /// <summary>Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user&apos;s location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationContext {
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("destinationContext", value); }
         }
 #endif
-        /// <summary>The destinationName property</summary>
+        /// <summary>Country or region of a phone number that received the SMS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationName {
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("destinationName", value); }
         }
 #endif
-        /// <summary>The destinationNumber property</summary>
+        /// <summary>Partially obfuscated phone number that received the SMS. For details, see E.164.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationNumber {
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("destinationNumber", value); }
         }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier (GUID) for the SMS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("id", value); }
         }
 #endif
-        /// <summary>The licenseCapability property</summary>
+        /// <summary>The license used for the SMS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LicenseCapability {
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The otherPartyCountryCode property</summary>
+        /// <summary>For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OtherPartyCountryCode {
@@ -130,12 +130,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("otherPartyCountryCode", value); }
         }
 #endif
-        /// <summary>The sentDateTime property</summary>
+        /// <summary>The date and time when the SMS was sent.</summary>
         public DateTimeOffset? SentDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("sentDateTime"); }
             set { BackingStore?.Set("sentDateTime", value); }
         }
-        /// <summary>The smsId property</summary>
+        /// <summary>SMS identifier. Not guaranteed to be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SmsId {
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("smsId", value); }
         }
 #endif
-        /// <summary>The smsType property</summary>
+        /// <summary>Type of SMS such as outbound or inbound.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SmsType {
@@ -163,12 +163,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("smsType", value); }
         }
 #endif
-        /// <summary>The smsUnits property</summary>
+        /// <summary>Number of SMS units sent/received.</summary>
         public int? SmsUnits {
             get { return BackingStore?.Get<int?>("smsUnits"); }
             set { BackingStore?.Set("smsUnits", value); }
         }
-        /// <summary>The sourceNumber property</summary>
+        /// <summary>Partially obfuscated phone number that sent the SMS. For details, see E.164.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceNumber {
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("sourceNumber", value); }
         }
 #endif
-        /// <summary>The tenantCountryCode property</summary>
+        /// <summary>Country code of the tenant. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantCountryCode {
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("tenantCountryCode", value); }
         }
 #endif
-        /// <summary>The userCountryCode property</summary>
+        /// <summary>Country code of the user. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserCountryCode {
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userCountryCode", value); }
         }
 #endif
-        /// <summary>The userDisplayName property</summary>
+        /// <summary>Display name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserDisplayName {
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>The unique identifier (GUID) of the user in Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>The userPrincipalName property</summary>
+        /// <summary>The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user&apos;s SIP address, and can be same as the user&apos;s e-mail address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {

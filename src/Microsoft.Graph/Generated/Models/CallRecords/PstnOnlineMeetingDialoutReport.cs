@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The currency property</summary>
+        /// <summary>Currency used to calculate the cost of the call. For details, see ISO 4217.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("currency", value); }
         }
 #endif
-        /// <summary>The destinationContext property</summary>
+        /// <summary>Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user&apos;s location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationContext {
@@ -55,22 +55,22 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The totalCallCharge property</summary>
+        /// <summary>Total costs of all the calls within the selected time range, including call charges and connection fees.</summary>
         public decimal? TotalCallCharge {
             get { return BackingStore?.Get<decimal?>("totalCallCharge"); }
             set { BackingStore?.Set("totalCallCharge", value); }
         }
-        /// <summary>The totalCalls property</summary>
+        /// <summary>Total number of dial-out calls within the selected time range.</summary>
         public int? TotalCalls {
             get { return BackingStore?.Get<int?>("totalCalls"); }
             set { BackingStore?.Set("totalCalls", value); }
         }
-        /// <summary>The totalCallSeconds property</summary>
+        /// <summary>Total duration of all the calls within the selected time range, in seconds.</summary>
         public int? TotalCallSeconds {
             get { return BackingStore?.Get<int?>("totalCallSeconds"); }
             set { BackingStore?.Set("totalCallSeconds", value); }
         }
-        /// <summary>The usageLocation property</summary>
+        /// <summary>Country code of the user. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UsageLocation {
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("usageLocation", value); }
         }
 #endif
-        /// <summary>The userDisplayName property</summary>
+        /// <summary>Display name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserDisplayName {
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>The unique identifier (GUID) of the user in Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>The userPrincipalName property</summary>
+        /// <summary>The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user&apos;s SIP address, and can be same as the user&apos;s e-mail address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {

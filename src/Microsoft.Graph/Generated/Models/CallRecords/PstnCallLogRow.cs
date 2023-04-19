@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<PstnCallDurationSource?>("callDurationSource"); }
             set { BackingStore?.Set("callDurationSource", value); }
         }
-        /// <summary>Number dialed in E.164 format.</summary>
+        /// <summary>Number of the user or bot who received the call (E.164).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalleeNumber {
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("calleeNumber", value); }
         }
 #endif
-        /// <summary>Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.</summary>
+        /// <summary>Number of the user or bot who made the call (E.164).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallerNumber {
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("callId", value); }
         }
 #endif
-        /// <summary>Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.</summary>
+        /// <summary>Indicates whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallType {
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<decimal?>("connectionCharge"); }
             set { BackingStore?.Set("connectionCharge", value); }
         }
-        /// <summary>Type of currency used to calculate the cost of the call. For details, see ISO 4217.</summary>
+        /// <summary>Type of currency used to calculate the cost of the call (ISO 4217).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("currency", value); }
         }
 #endif
-        /// <summary>Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user&apos;s location.</summary>
+        /// <summary>Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user&apos;s location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationContext {
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>Unique call identifier. GUID.</summary>
+        /// <summary>Unique call identifier (GUID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("operator", value); }
         }
 #endif
-        /// <summary>The otherPartyCountryCode property</summary>
+        /// <summary>Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OtherPartyCountryCode {
@@ -281,7 +281,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>Calling user&apos;s ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).</summary>
+        /// <summary>The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {

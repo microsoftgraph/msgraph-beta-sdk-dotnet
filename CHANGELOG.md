@@ -7,6 +7,13 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.27.0-preview] - 2023-04-18
+
+- Latest metadata updates from 18th April 2023
+- Fixes missing /mailBoxSettings paths on user objects (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1712)
+- Adds response headers collection to ApiException object (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1755)
+- Fixes missing query parameters for mailFolders api (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1814)
+
 ## [5.26.0-preview] - 2023-04-12
 
 ### Changed

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.Runs.Item.UserProcessingResults.Item.TaskProcessingResults.Item.Subject.MailboxSettings;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
     /// Provides operations to manage the subject property of the microsoft.graph.identityGovernance.taskProcessingResult entity.
     /// </summary>
     public class SubjectRequestBuilder : BaseRequestBuilder {
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new SubjectRequestBuilder and sets the default values.
         /// </summary>

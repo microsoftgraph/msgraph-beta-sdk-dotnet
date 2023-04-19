@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.MailboxSettings;
 using Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Ref;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -10,6 +11,10 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item {
     /// Builds and executes requests for operations under \print\printerShares\{printerShare-id}\allowedUsers\{user-id}
     /// </summary>
     public class UserItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the collection of print entities.</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);

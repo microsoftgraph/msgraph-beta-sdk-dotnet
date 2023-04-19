@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get openShiftChangeRequests from teamwork
+        /// The open shift requests in the schedule.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
-        /// Get openShiftChangeRequests from teamwork
+        /// The open shift requests in the schedule.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             }
         }
         /// <summary>
-        /// Get openShiftChangeRequests from teamwork
+        /// The open shift requests in the schedule.
         /// </summary>
         public class OpenShiftChangeRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

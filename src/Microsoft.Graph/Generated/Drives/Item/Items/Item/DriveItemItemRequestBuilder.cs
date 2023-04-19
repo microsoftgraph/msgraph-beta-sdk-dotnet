@@ -18,6 +18,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Restore;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.SearchWithQ;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Subscriptions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails;
@@ -111,6 +112,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item {
         /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the retentionLabel property of the microsoft.graph.driveItem entity.</summary>
+        public RetentionLabelRequestBuilder RetentionLabel { get =>
+            new RetentionLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.</summary>
         public SubscriptionsRequestBuilder Subscriptions { get =>

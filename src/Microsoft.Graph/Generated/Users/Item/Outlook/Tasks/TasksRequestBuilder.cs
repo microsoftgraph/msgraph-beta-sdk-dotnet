@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks {
             return await RequestAdapter.SendAsync<OutlookTaskCollectionResponse>(requestInfo, OutlookTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create an Outlook task in the specified task folder. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time to be always midnight in the specified time zone.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0" />
+        /// Create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user&apos;s mailbox. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time to be always midnight in the specified time zone. By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookuser-post-tasks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks {
             return requestInfo;
         }
         /// <summary>
-        /// Create an Outlook task in the specified task folder. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time to be always midnight in the specified time zone.
+        /// Create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user&apos;s mailbox. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time to be always midnight in the specified time zone. By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

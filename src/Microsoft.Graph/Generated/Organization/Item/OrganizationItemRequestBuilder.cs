@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Organization.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Organization.Item.Extensions;
 using Microsoft.Graph.Beta.Organization.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.Organization.Item.GetMemberObjects;
+using Microsoft.Graph.Beta.Organization.Item.PartnerInformation;
 using Microsoft.Graph.Beta.Organization.Item.Restore;
 using Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority;
 using Microsoft.Graph.Beta.Organization.Item.Settings;
@@ -50,6 +51,10 @@ namespace Microsoft.Graph.Beta.Organization.Item {
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
         public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
             new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the partnerInformation property of the microsoft.graph.organization entity.</summary>
+        public PartnerInformationRequestBuilder PartnerInformation { get =>
+            new PartnerInformationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>

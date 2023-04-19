@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Number of the user or bot who received the call. E.164 format, but may include additional data.</summary>
+        /// <summary>Number of the user or bot who received the call (E.164 format, but may include additional data).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalleeNumber {
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<int?>("callEndSubReason"); }
             set { BackingStore?.Set("callEndSubReason", value); }
         }
-        /// <summary>Number of the user or bot who made the call. E.164 format, but may include additional data.</summary>
+        /// <summary>Number of the user or bot who made the call (E.164 format, but may include additional data).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallerNumber {
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("callType", value); }
         }
 #endif
-        /// <summary>Identifier for the call that you can use when calling Microsoft Support. GUID.</summary>
+        /// <summary>Identifier (GUID) for the call that you can use when calling Microsoft Support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CorrelationId {
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<DateTimeOffset?>("failureDateTime"); }
             set { BackingStore?.Set("failureDateTime", value); }
         }
-        /// <summary>The code with which the call ended, RFC 3261.</summary>
+        /// <summary>The code with which the call ended (RFC 3261).</summary>
         public int? FinalSipCode {
             get { return BackingStore?.Get<int?>("finalSipCode"); }
             set { BackingStore?.Set("finalSipCode", value); }
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("finalSipCodePhrase", value); }
         }
 #endif
-        /// <summary>Unique call identifier. GUID.</summary>
+        /// <summary>Unique call identifier (GUID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<bool?>("mediaBypassEnabled"); }
             set { BackingStore?.Set("mediaBypassEnabled", value); }
         }
-        /// <summary>The datacenter used for media path in non-bypass call.</summary>
+        /// <summary>The data center used for media path in non-bypass call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaPathLocation {
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The otherPartyCountryCode property</summary>
+        /// <summary>Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OtherPartyCountryCode {
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("otherPartyCountryCode", value); }
         }
 #endif
-        /// <summary>The datacenter used for signaling for both bypass and non-bypass calls.</summary>
+        /// <summary>The data center used for signaling for both bypass and non-bypass calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignalingLocation {
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("trunkFullyQualifiedDomainName", value); }
         }
 #endif
-        /// <summary>The userCountryCode property</summary>
+        /// <summary>Country code of the user. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserCountryCode {
@@ -240,7 +240,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>Calling user&apos;s ID in Graph. This and other user info will be null/empty for bot call types. GUID.</summary>
+        /// <summary>The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -254,7 +254,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user&apos;s SIP Address, and can be same as user&apos;s e-mail address.</summary>
+        /// <summary>The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user&apos;s SIP address, and can be same as the user&apos;s e-mail address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {

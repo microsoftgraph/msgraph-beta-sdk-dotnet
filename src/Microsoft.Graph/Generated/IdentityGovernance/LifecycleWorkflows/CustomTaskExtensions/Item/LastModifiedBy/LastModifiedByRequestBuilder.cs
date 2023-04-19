@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskExtensions.Item.LastModifiedBy.MailboxSettings;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
     /// Provides operations to manage the lastModifiedBy property of the microsoft.graph.identityGovernance.customTaskExtension entity.
     /// </summary>
     public class LastModifiedByRequestBuilder : BaseRequestBuilder {
+        /// <summary>The mailboxSettings property</summary>
+        public MailboxSettingsRequestBuilder MailboxSettings { get =>
+            new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new LastModifiedByRequestBuilder and sets the default values.
         /// </summary>
