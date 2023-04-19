@@ -72,19 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DeviceActionResult CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.activateDeviceEsimActionResult" => new ActivateDeviceEsimActionResult(),
-                "#microsoft.graph.configurationManagerActionResult" => new ConfigurationManagerActionResult(),
-                "#microsoft.graph.deleteUserFromSharedAppleDeviceActionResult" => new DeleteUserFromSharedAppleDeviceActionResult(),
-                "#microsoft.graph.locateDeviceActionResult" => new LocateDeviceActionResult(),
-                "#microsoft.graph.remoteLockActionResult" => new RemoteLockActionResult(),
-                "#microsoft.graph.resetPasscodeActionResult" => new ResetPasscodeActionResult(),
-                "#microsoft.graph.revokeAppleVppLicensesActionResult" => new RevokeAppleVppLicensesActionResult(),
-                "#microsoft.graph.rotateBitLockerKeysDeviceActionResult" => new RotateBitLockerKeysDeviceActionResult(),
-                "#microsoft.graph.windowsDefenderScanActionResult" => new WindowsDefenderScanActionResult(),
-                _ => new DeviceActionResult(),
-            };
+            return new DeviceActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model

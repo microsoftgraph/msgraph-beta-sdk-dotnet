@@ -40,13 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ApiAuthenticationConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.basicAuthentication" => new BasicAuthentication(),
-                "#microsoft.graph.clientCertificateAuthentication" => new ClientCertificateAuthentication(),
-                "#microsoft.graph.pkcs12Certificate" => new Pkcs12Certificate(),
-                _ => new ApiAuthenticationConfigurationBase(),
-            };
+            return new ApiAuthenticationConfigurationBase();
         }
         /// <summary>
         /// The deserialization information for the current model

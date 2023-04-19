@@ -40,13 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static GovernanceCriteria CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.groupMembershipGovernanceCriteria" => new GroupMembershipGovernanceCriteria(),
-                "#microsoft.graph.roleMembershipGovernanceCriteria" => new RoleMembershipGovernanceCriteria(),
-                "#microsoft.graph.userGovernanceCriteria" => new UserGovernanceCriteria(),
-                _ => new GovernanceCriteria(),
-            };
+            return new GovernanceCriteria();
         }
         /// <summary>
         /// The deserialization information for the current model

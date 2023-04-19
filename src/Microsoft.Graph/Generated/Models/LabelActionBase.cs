@@ -54,20 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static LabelActionBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.addFooter" => new AddFooter(),
-                "#microsoft.graph.addHeader" => new AddHeader(),
-                "#microsoft.graph.addWatermark" => new AddWatermark(),
-                "#microsoft.graph.encryptContent" => new EncryptContent(),
-                "#microsoft.graph.encryptWithTemplate" => new EncryptWithTemplate(),
-                "#microsoft.graph.encryptWithUserDefinedRights" => new EncryptWithUserDefinedRights(),
-                "#microsoft.graph.markContent" => new MarkContent(),
-                "#microsoft.graph.protectGroup" => new ProtectGroup(),
-                "#microsoft.graph.protectOnlineMeetingAction" => new ProtectOnlineMeetingAction(),
-                "#microsoft.graph.protectSite" => new ProtectSite(),
-                _ => new LabelActionBase(),
-            };
+            return new LabelActionBase();
         }
         /// <summary>
         /// The deserialization information for the current model

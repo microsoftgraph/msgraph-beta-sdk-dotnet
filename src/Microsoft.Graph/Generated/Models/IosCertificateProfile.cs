@@ -17,14 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new IosCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.iosCertificateProfileBase" => new IosCertificateProfileBase(),
-                "#microsoft.graph.iosImportedPFXCertificateProfile" => new IosImportedPFXCertificateProfile(),
-                "#microsoft.graph.iosPkcsCertificateProfile" => new IosPkcsCertificateProfile(),
-                "#microsoft.graph.iosScepCertificateProfile" => new IosScepCertificateProfile(),
-                _ => new IosCertificateProfile(),
-            };
+            return new IosCertificateProfile();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -59,13 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new WindowsVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.windows10VpnConfiguration" => new Windows10VpnConfiguration(),
-                "#microsoft.graph.windows81VpnConfiguration" => new Windows81VpnConfiguration(),
-                "#microsoft.graph.windowsPhone81VpnConfiguration" => new WindowsPhone81VpnConfiguration(),
-                _ => new WindowsVpnConfiguration(),
-            };
+            return new WindowsVpnConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

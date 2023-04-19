@@ -45,10 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.androidDeviceOwnerKioskModeApp" => new AndroidDeviceOwnerKioskModeApp(),
                 "#microsoft.graph.androidDeviceOwnerKioskModeFolderItem" => new AndroidDeviceOwnerKioskModeFolderItem(),
-                "#microsoft.graph.androidDeviceOwnerKioskModeManagedFolderReference" => new AndroidDeviceOwnerKioskModeManagedFolderReference(),
-                "#microsoft.graph.androidDeviceOwnerKioskModeWeblink" => new AndroidDeviceOwnerKioskModeWeblink(),
                 _ => new AndroidDeviceOwnerKioskModeHomeScreenItem(),
             };
         }

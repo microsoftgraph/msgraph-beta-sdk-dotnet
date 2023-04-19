@@ -58,7 +58,6 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.attackSimulationOperation" => new AttackSimulationOperation(),
-                "#microsoft.graph.industryData.fileValidateOperation" => new FileValidateOperation(),
                 "#microsoft.graph.industryData.validateOperation" => new ValidateOperation(),
                 "#microsoft.graph.richLongRunningOperation" => new RichLongRunningOperation(),
                 _ => new LongRunningOperation(),

@@ -45,16 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UserSet CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.connectedOrganizationMembers" => new ConnectedOrganizationMembers(),
-                "#microsoft.graph.externalSponsors" => new ExternalSponsors(),
-                "#microsoft.graph.groupMembers" => new GroupMembers(),
-                "#microsoft.graph.internalSponsors" => new InternalSponsors(),
-                "#microsoft.graph.requestorManager" => new RequestorManager(),
-                "#microsoft.graph.singleUser" => new SingleUser(),
-                _ => new UserSet(),
-            };
+            return new UserSet();
         }
         /// <summary>
         /// The deserialization information for the current model

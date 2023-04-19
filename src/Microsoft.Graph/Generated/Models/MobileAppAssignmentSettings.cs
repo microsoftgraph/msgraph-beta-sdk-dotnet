@@ -43,21 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static MobileAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.androidManagedStoreAppAssignmentSettings" => new AndroidManagedStoreAppAssignmentSettings(),
-                "#microsoft.graph.iosLobAppAssignmentSettings" => new IosLobAppAssignmentSettings(),
-                "#microsoft.graph.iosStoreAppAssignmentSettings" => new IosStoreAppAssignmentSettings(),
-                "#microsoft.graph.iosVppAppAssignmentSettings" => new IosVppAppAssignmentSettings(),
-                "#microsoft.graph.macOsLobAppAssignmentSettings" => new MacOsLobAppAssignmentSettings(),
-                "#microsoft.graph.macOsVppAppAssignmentSettings" => new MacOsVppAppAssignmentSettings(),
-                "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings" => new MicrosoftStoreForBusinessAppAssignmentSettings(),
-                "#microsoft.graph.win32LobAppAssignmentSettings" => new Win32LobAppAssignmentSettings(),
-                "#microsoft.graph.windowsAppXAppAssignmentSettings" => new WindowsAppXAppAssignmentSettings(),
-                "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings" => new WindowsUniversalAppXAppAssignmentSettings(),
-                "#microsoft.graph.winGetAppAssignmentSettings" => new WinGetAppAssignmentSettings(),
-                _ => new MobileAppAssignmentSettings(),
-            };
+            return new MobileAppAssignmentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

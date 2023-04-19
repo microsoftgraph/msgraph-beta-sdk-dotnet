@@ -53,7 +53,6 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.incomingCallOptions" => new IncomingCallOptions(),
-                "#microsoft.graph.outgoingCallOptions" => new OutgoingCallOptions(),
                 _ => new CallOptions(),
             };
         }

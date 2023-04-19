@@ -407,8 +407,6 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.calendarSharingMessage" => new CalendarSharingMessage(),
                 "#microsoft.graph.eventMessage" => new EventMessage(),
-                "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
-                "#microsoft.graph.eventMessageResponse" => new EventMessageResponse(),
                 _ => new Message(),
             };
         }

@@ -70,14 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AndroidCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.androidForWorkImportedPFXCertificateProfile" => new AndroidForWorkImportedPFXCertificateProfile(),
-                "#microsoft.graph.androidImportedPFXCertificateProfile" => new AndroidImportedPFXCertificateProfile(),
-                "#microsoft.graph.androidPkcsCertificateProfile" => new AndroidPkcsCertificateProfile(),
-                "#microsoft.graph.androidScepCertificateProfile" => new AndroidScepCertificateProfile(),
-                _ => new AndroidCertificateProfileBase(),
-            };
+            return new AndroidCertificateProfileBase();
         }
         /// <summary>
         /// The deserialization information for the current model

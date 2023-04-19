@@ -88,7 +88,6 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.windows10XCertificateProfile" => new Windows10XCertificateProfile(),
-                "#microsoft.graph.windows10XSCEPCertificateProfile" => new Windows10XSCEPCertificateProfile(),
                 "#microsoft.graph.windows10XTrustedRootCertificate" => new Windows10XTrustedRootCertificate(),
                 "#microsoft.graph.windows10XVpnConfiguration" => new Windows10XVpnConfiguration(),
                 "#microsoft.graph.windows10XWifiConfiguration" => new Windows10XWifiConfiguration(),

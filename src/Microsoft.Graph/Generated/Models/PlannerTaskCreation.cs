@@ -61,7 +61,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.plannerExternalTaskSource" => new PlannerExternalTaskSource(),
                 "#microsoft.graph.plannerTeamsPublicationInfo" => new PlannerTeamsPublicationInfo(),
                 _ => new PlannerTaskCreation(),
             };

@@ -229,12 +229,9 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionDefinition" => new DeviceManagementConfigurationChoiceSettingCollectionDefinition(),
                 "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition" => new DeviceManagementConfigurationChoiceSettingDefinition(),
                 "#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition" => new DeviceManagementConfigurationRedirectSettingDefinition(),
-                "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition" => new DeviceManagementConfigurationSettingGroupCollectionDefinition(),
                 "#microsoft.graph.deviceManagementConfigurationSettingGroupDefinition" => new DeviceManagementConfigurationSettingGroupDefinition(),
-                "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition" => new DeviceManagementConfigurationSimpleSettingCollectionDefinition(),
                 "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition" => new DeviceManagementConfigurationSimpleSettingDefinition(),
                 _ => new DeviceManagementConfigurationSettingDefinition(),
             };

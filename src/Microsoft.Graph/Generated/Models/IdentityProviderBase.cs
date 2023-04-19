@@ -31,7 +31,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.builtInIdentityProvider" => new BuiltInIdentityProvider(),
                 "#microsoft.graph.internalDomainFederation" => new InternalDomainFederation(),
                 "#microsoft.graph.openIdConnectIdentityProvider" => new OpenIdConnectIdentityProvider(),
-                "#microsoft.graph.samlOrWsFedExternalDomainFederation" => new SamlOrWsFedExternalDomainFederation(),
                 "#microsoft.graph.samlOrWsFedProvider" => new SamlOrWsFedProvider(),
                 "#microsoft.graph.socialIdentityProvider" => new SocialIdentityProvider(),
                 _ => new IdentityProviderBase(),

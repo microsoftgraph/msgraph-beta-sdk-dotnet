@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Device Configuration.
-    /// </summary>
     public class WindowsCertificateProfileBase : DeviceConfiguration, IParsable {
         /// <summary>Certificate Validity Period Options.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
@@ -39,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subjectNameFormat", value); }
         }
         /// <summary>
-        /// Instantiates a new windowsCertificateProfileBase and sets the default values.
+        /// Instantiates a new WindowsCertificateProfileBase and sets the default values.
         /// </summary>
         public WindowsCertificateProfileBase() : base() {
             OdataType = "#microsoft.graph.windowsCertificateProfileBase";
@@ -50,16 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new WindowsCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.windows10CertificateProfileBase" => new Windows10CertificateProfileBase(),
-                "#microsoft.graph.windows10ImportedPFXCertificateProfile" => new Windows10ImportedPFXCertificateProfile(),
-                "#microsoft.graph.windows10PkcsCertificateProfile" => new Windows10PkcsCertificateProfile(),
-                "#microsoft.graph.windows81CertificateProfileBase" => new Windows81CertificateProfileBase(),
-                "#microsoft.graph.windows81SCEPCertificateProfile" => new Windows81SCEPCertificateProfile(),
-                "#microsoft.graph.windowsPhone81ImportedPFXCertificateProfile" => new WindowsPhone81ImportedPFXCertificateProfile(),
-                _ => new WindowsCertificateProfileBase(),
-            };
+            return new WindowsCertificateProfileBase();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -74,7 +74,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.windowsAppX" => new WindowsAppX(),
                 "#microsoft.graph.windowsMobileMSI" => new WindowsMobileMSI(),
                 "#microsoft.graph.windowsPhone81AppX" => new WindowsPhone81AppX(),
-                "#microsoft.graph.windowsPhone81AppXBundle" => new WindowsPhone81AppXBundle(),
                 "#microsoft.graph.windowsPhoneXAP" => new WindowsPhoneXAP(),
                 "#microsoft.graph.windowsUniversalAppX" => new WindowsUniversalAppX(),
                 _ => new MobileLobApp(),

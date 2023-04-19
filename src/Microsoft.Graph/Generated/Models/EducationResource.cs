@@ -92,18 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static EducationResource CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.educationExcelResource" => new EducationExcelResource(),
-                "#microsoft.graph.educationExternalResource" => new EducationExternalResource(),
-                "#microsoft.graph.educationFileResource" => new EducationFileResource(),
-                "#microsoft.graph.educationLinkResource" => new EducationLinkResource(),
-                "#microsoft.graph.educationMediaResource" => new EducationMediaResource(),
-                "#microsoft.graph.educationPowerPointResource" => new EducationPowerPointResource(),
-                "#microsoft.graph.educationTeamsAppResource" => new EducationTeamsAppResource(),
-                "#microsoft.graph.educationWordResource" => new EducationWordResource(),
-                _ => new EducationResource(),
-            };
+            return new EducationResource();
         }
         /// <summary>
         /// The deserialization information for the current model

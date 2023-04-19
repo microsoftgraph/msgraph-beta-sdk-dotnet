@@ -48,14 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DeviceHealthScriptRunSchedule CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.deviceHealthScriptDailySchedule" => new DeviceHealthScriptDailySchedule(),
-                "#microsoft.graph.deviceHealthScriptHourlySchedule" => new DeviceHealthScriptHourlySchedule(),
-                "#microsoft.graph.deviceHealthScriptRunOnceSchedule" => new DeviceHealthScriptRunOnceSchedule(),
-                "#microsoft.graph.deviceHealthScriptTimeSchedule" => new DeviceHealthScriptTimeSchedule(),
-                _ => new DeviceHealthScriptRunSchedule(),
-            };
+            return new DeviceHealthScriptRunSchedule();
         }
         /// <summary>
         /// The deserialization information for the current model

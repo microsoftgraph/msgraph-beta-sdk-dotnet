@@ -40,12 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static AccessReviewRecommendationInsightSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.groupPeerOutlierRecommendationInsightSettings" => new GroupPeerOutlierRecommendationInsightSettings(),
-                "#microsoft.graph.userLastSignInRecommendationInsightSetting" => new UserLastSignInRecommendationInsightSetting(),
-                _ => new AccessReviewRecommendationInsightSetting(),
-            };
+            return new AccessReviewRecommendationInsightSetting();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -42,10 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.accessReviewInactiveUsersQueryScope" => new AccessReviewInactiveUsersQueryScope(),
-                "#microsoft.graph.accessReviewQueryScope" => new AccessReviewQueryScope(),
                 "#microsoft.graph.accessReviewReviewerScope" => new AccessReviewReviewerScope(),
-                "#microsoft.graph.principalResourceMembershipsScope" => new PrincipalResourceMembershipsScope(),
                 _ => new AccessReviewScope(),
             };
         }

@@ -41,7 +41,6 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.industryData.azureDataLakeConnector" => new AzureDataLakeConnector(),
                 "#microsoft.graph.industryData.fileDataConnector" => new FileDataConnector(),
                 _ => new IndustryDataConnector(),
             };

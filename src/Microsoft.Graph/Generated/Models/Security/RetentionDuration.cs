@@ -40,12 +40,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static RetentionDuration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.security.retentionDurationForever" => new RetentionDurationForever(),
-                "#microsoft.graph.security.retentionDurationInDays" => new RetentionDurationInDays(),
-                _ => new RetentionDuration(),
-            };
+            return new RetentionDuration();
         }
         /// <summary>
         /// The deserialization information for the current model

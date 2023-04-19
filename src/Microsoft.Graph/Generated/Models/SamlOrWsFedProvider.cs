@@ -81,7 +81,6 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.internalDomainFederation" => new InternalDomainFederation(),
-                "#microsoft.graph.samlOrWsFedExternalDomainFederation" => new SamlOrWsFedExternalDomainFederation(),
                 _ => new SamlOrWsFedProvider(),
             };
         }
