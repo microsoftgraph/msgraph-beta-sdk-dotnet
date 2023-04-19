@@ -43,13 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DeliveryOptimizationBandwidth CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.deliveryOptimizationBandwidthAbsolute" => new DeliveryOptimizationBandwidthAbsolute(),
-                "#microsoft.graph.deliveryOptimizationBandwidthHoursWithPercentage" => new DeliveryOptimizationBandwidthHoursWithPercentage(),
-                "#microsoft.graph.deliveryOptimizationBandwidthPercentage" => new DeliveryOptimizationBandwidthPercentage(),
-                _ => new DeliveryOptimizationBandwidth(),
-            };
+            return new DeliveryOptimizationBandwidth();
         }
         /// <summary>
         /// The deserialization information for the current model

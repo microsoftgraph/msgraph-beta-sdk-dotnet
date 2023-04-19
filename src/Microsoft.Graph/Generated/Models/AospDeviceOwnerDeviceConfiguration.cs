@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the AndroidDeviceOwnerAOSPDeviceConfiguration resource.
-    /// </summary>
     public class AospDeviceOwnerDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not the user is allowed to enable unknown sources setting. When set to true, user is not allowed to enable unknown sources settings.</summary>
         public bool? AppsBlockInstallFromUnknownSources {
@@ -79,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wifiBlockEditConfigurations", value); }
         }
         /// <summary>
-        /// Instantiates a new aospDeviceOwnerDeviceConfiguration and sets the default values.
+        /// Instantiates a new AospDeviceOwnerDeviceConfiguration and sets the default values.
         /// </summary>
         public AospDeviceOwnerDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.aospDeviceOwnerDeviceConfiguration";

@@ -54,12 +54,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Endpoint CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.callRecords.participantEndpoint" => new ParticipantEndpoint(),
-                "#microsoft.graph.callRecords.serviceEndpoint" => new ServiceEndpoint(),
-                _ => new Endpoint(),
-            };
+            return new Endpoint();
         }
         /// <summary>
         /// The deserialization information for the current model

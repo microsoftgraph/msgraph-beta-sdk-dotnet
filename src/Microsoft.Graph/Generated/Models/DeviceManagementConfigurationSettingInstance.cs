@@ -71,18 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DeviceManagementConfigurationSettingInstance CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionInstance" => new DeviceManagementConfigurationChoiceSettingCollectionInstance(),
-                "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance" => new DeviceManagementConfigurationChoiceSettingInstance(),
-                "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance" => new DeviceManagementConfigurationGroupSettingCollectionInstance(),
-                "#microsoft.graph.deviceManagementConfigurationGroupSettingInstance" => new DeviceManagementConfigurationGroupSettingInstance(),
-                "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionInstance" => new DeviceManagementConfigurationSettingGroupCollectionInstance(),
-                "#microsoft.graph.deviceManagementConfigurationSettingGroupInstance" => new DeviceManagementConfigurationSettingGroupInstance(),
-                "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance" => new DeviceManagementConfigurationSimpleSettingCollectionInstance(),
-                "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance" => new DeviceManagementConfigurationSimpleSettingInstance(),
-                _ => new DeviceManagementConfigurationSettingInstance(),
-            };
+            return new DeviceManagementConfigurationSettingInstance();
         }
         /// <summary>
         /// The deserialization information for the current model

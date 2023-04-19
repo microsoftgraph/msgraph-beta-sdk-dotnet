@@ -40,11 +40,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UpdatableAssetEnrollment CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.windowsUpdates.updateManagementEnrollment" => new UpdateManagementEnrollment(),
-                _ => new UpdatableAssetEnrollment(),
-            };
+            return new UpdatableAssetEnrollment();
         }
         /// <summary>
         /// The deserialization information for the current model

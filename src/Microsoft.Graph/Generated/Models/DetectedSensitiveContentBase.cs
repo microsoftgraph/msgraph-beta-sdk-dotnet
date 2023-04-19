@@ -78,7 +78,6 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.detectedSensitiveContent" => new DetectedSensitiveContent(),
                 "#microsoft.graph.exactMatchDetectedSensitiveContent" => new ExactMatchDetectedSensitiveContent(),
-                "#microsoft.graph.machineLearningDetectedSensitiveContent" => new MachineLearningDetectedSensitiveContent(),
                 _ => new DetectedSensitiveContentBase(),
             };
         }

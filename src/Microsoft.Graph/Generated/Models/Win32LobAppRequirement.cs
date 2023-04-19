@@ -62,13 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Win32LobAppRequirement CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.win32LobAppFileSystemRequirement" => new Win32LobAppFileSystemRequirement(),
-                "#microsoft.graph.win32LobAppPowerShellScriptRequirement" => new Win32LobAppPowerShellScriptRequirement(),
-                "#microsoft.graph.win32LobAppRegistryRequirement" => new Win32LobAppRegistryRequirement(),
-                _ => new Win32LobAppRequirement(),
-            };
+            return new Win32LobAppRequirement();
         }
         /// <summary>
         /// The deserialization information for the current model

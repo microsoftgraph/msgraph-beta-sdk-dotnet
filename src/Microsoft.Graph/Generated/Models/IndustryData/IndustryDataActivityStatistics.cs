@@ -73,11 +73,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static IndustryDataActivityStatistics CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.industryData.inboundActivityResults" => new InboundActivityResults(),
-                _ => new IndustryDataActivityStatistics(),
-            };
+            return new IndustryDataActivityStatistics();
         }
         /// <summary>
         /// The deserialization information for the current model

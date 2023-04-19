@@ -43,12 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UserExperienceAnalyticsInsightValue CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.insightValueDouble" => new InsightValueDouble(),
-                "#microsoft.graph.insightValueInt" => new InsightValueInt(),
-                _ => new UserExperienceAnalyticsInsightValue(),
-            };
+            return new UserExperienceAnalyticsInsightValue();
         }
         /// <summary>
         /// The deserialization information for the current model

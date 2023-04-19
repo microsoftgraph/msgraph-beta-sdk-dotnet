@@ -47,7 +47,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.exactMatchLookupJob" => new ExactMatchLookupJob(),
                 "#microsoft.graph.exactMatchSession" => new ExactMatchSession(),
                 "#microsoft.graph.exactMatchSessionBase" => new ExactMatchSessionBase(),
                 _ => new ExactMatchJobBase(),

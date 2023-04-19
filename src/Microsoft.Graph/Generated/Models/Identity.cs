@@ -72,13 +72,6 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.auditUserIdentity" => new AuditUserIdentity(),
-                "#microsoft.graph.azureCommunicationServicesUserIdentity" => new AzureCommunicationServicesUserIdentity(),
-                "#microsoft.graph.communicationsApplicationIdentity" => new CommunicationsApplicationIdentity(),
-                "#microsoft.graph.communicationsApplicationInstanceIdentity" => new CommunicationsApplicationInstanceIdentity(),
-                "#microsoft.graph.communicationsEncryptedIdentity" => new CommunicationsEncryptedIdentity(),
-                "#microsoft.graph.communicationsGuestIdentity" => new CommunicationsGuestIdentity(),
-                "#microsoft.graph.communicationsPhoneIdentity" => new CommunicationsPhoneIdentity(),
-                "#microsoft.graph.communicationsUserIdentity" => new CommunicationsUserIdentity(),
                 "#microsoft.graph.emailIdentity" => new EmailIdentity(),
                 "#microsoft.graph.initiator" => new Initiator(),
                 "#microsoft.graph.programResource" => new ProgramResource(),
@@ -86,9 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.provisioningServicePrincipal" => new ProvisioningServicePrincipal(),
                 "#microsoft.graph.provisioningSystem" => new ProvisioningSystem(),
                 "#microsoft.graph.security.submissionUserIdentity" => new SubmissionUserIdentity(),
-                "#microsoft.graph.servicePrincipalIdentity" => new ServicePrincipalIdentity(),
                 "#microsoft.graph.sharePointIdentity" => new SharePointIdentity(),
-                "#microsoft.graph.teamworkApplicationIdentity" => new TeamworkApplicationIdentity(),
                 "#microsoft.graph.teamworkConversationIdentity" => new TeamworkConversationIdentity(),
                 "#microsoft.graph.teamworkTagIdentity" => new TeamworkTagIdentity(),
                 "#microsoft.graph.teamworkUserIdentity" => new TeamworkUserIdentity(),

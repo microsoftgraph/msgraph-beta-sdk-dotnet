@@ -45,13 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static MeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.joinMeetingIdMeetingInfo" => new JoinMeetingIdMeetingInfo(),
-                "#microsoft.graph.organizerMeetingInfo" => new OrganizerMeetingInfo(),
-                "#microsoft.graph.tokenMeetingInfo" => new TokenMeetingInfo(),
-                _ => new MeetingInfo(),
-            };
+            return new MeetingInfo();
         }
         /// <summary>
         /// The deserialization information for the current model

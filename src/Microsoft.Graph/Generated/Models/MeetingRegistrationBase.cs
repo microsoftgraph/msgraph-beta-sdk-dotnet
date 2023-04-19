@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.externalMeetingRegistration" => new ExternalMeetingRegistration(),
                 "#microsoft.graph.meetingRegistration" => new MeetingRegistration(),
                 _ => new MeetingRegistrationBase(),
             };

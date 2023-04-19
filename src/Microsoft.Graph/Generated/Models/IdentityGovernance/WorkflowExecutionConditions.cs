@@ -40,12 +40,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static WorkflowExecutionConditions CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.identityGovernance.onDemandExecutionOnly" => new OnDemandExecutionOnly(),
-                "#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions" => new TriggerAndScopeBasedConditions(),
-                _ => new WorkflowExecutionConditions(),
-            };
+            return new WorkflowExecutionConditions();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -40,14 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static IdentitySource CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.azureActiveDirectoryTenant" => new AzureActiveDirectoryTenant(),
-                "#microsoft.graph.crossCloudAzureActiveDirectoryTenant" => new CrossCloudAzureActiveDirectoryTenant(),
-                "#microsoft.graph.domainIdentitySource" => new DomainIdentitySource(),
-                "#microsoft.graph.externalDomainFederation" => new ExternalDomainFederation(),
-                _ => new IdentitySource(),
-            };
+            return new IdentitySource();
         }
         /// <summary>
         /// The deserialization information for the current model
