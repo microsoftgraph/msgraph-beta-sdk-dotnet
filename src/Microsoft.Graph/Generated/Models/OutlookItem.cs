@@ -58,7 +58,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
                 "#microsoft.graph.eventMessageResponse" => new EventMessageResponse(),
                 "#microsoft.graph.message" => new Message(),
-                "#microsoft.graph.note" => new Note(),
                 "#microsoft.graph.outlookTask" => new OutlookTask(),
                 "#microsoft.graph.post" => new Post(),
                 _ => new OutlookItem(),

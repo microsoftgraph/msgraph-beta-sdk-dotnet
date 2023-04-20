@@ -47,8 +47,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.plannerBucketPropertyRule" => new PlannerBucketPropertyRule(),
-                "#microsoft.graph.plannerPlanPropertyRule" => new PlannerPlanPropertyRule(),
                 "#microsoft.graph.plannerTaskPropertyRule" => new PlannerTaskPropertyRule(),
                 _ => new PlannerPropertyRule(),
             };

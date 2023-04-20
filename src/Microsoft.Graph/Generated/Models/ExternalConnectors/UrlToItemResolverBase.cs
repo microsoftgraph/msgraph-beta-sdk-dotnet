@@ -45,11 +45,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UrlToItemResolverBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.externalConnectors.itemIdResolver" => new ItemIdResolver(),
-                _ => new UrlToItemResolverBase(),
-            };
+            return new UrlToItemResolverBase();
         }
         /// <summary>
         /// The deserialization information for the current model

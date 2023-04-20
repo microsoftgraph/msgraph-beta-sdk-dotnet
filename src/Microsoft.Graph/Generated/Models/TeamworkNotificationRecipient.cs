@@ -40,14 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static TeamworkNotificationRecipient CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.aadUserNotificationRecipient" => new AadUserNotificationRecipient(),
-                "#microsoft.graph.channelMembersNotificationRecipient" => new ChannelMembersNotificationRecipient(),
-                "#microsoft.graph.chatMembersNotificationRecipient" => new ChatMembersNotificationRecipient(),
-                "#microsoft.graph.teamMembersNotificationRecipient" => new TeamMembersNotificationRecipient(),
-                _ => new TeamworkNotificationRecipient(),
-            };
+            return new TeamworkNotificationRecipient();
         }
         /// <summary>
         /// The deserialization information for the current model

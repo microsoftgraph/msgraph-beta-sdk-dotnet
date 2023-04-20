@@ -62,15 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static MobileAppTroubleshootingHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.mobileAppTroubleshootingAppPolicyCreationHistory" => new MobileAppTroubleshootingAppPolicyCreationHistory(),
-                "#microsoft.graph.mobileAppTroubleshootingAppStateHistory" => new MobileAppTroubleshootingAppStateHistory(),
-                "#microsoft.graph.mobileAppTroubleshootingAppTargetHistory" => new MobileAppTroubleshootingAppTargetHistory(),
-                "#microsoft.graph.mobileAppTroubleshootingAppUpdateHistory" => new MobileAppTroubleshootingAppUpdateHistory(),
-                "#microsoft.graph.mobileAppTroubleshootingDeviceCheckinHistory" => new MobileAppTroubleshootingDeviceCheckinHistory(),
-                _ => new MobileAppTroubleshootingHistoryItem(),
-            };
+            return new MobileAppTroubleshootingHistoryItem();
         }
         /// <summary>
         /// The deserialization information for the current model

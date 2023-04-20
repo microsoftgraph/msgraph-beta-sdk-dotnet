@@ -97,24 +97,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static AlertEvidence CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.security.analyzedMessageEvidence" => new AnalyzedMessageEvidence(),
-                "#microsoft.graph.security.cloudApplicationEvidence" => new CloudApplicationEvidence(),
-                "#microsoft.graph.security.deviceEvidence" => new DeviceEvidence(),
-                "#microsoft.graph.security.fileEvidence" => new FileEvidence(),
-                "#microsoft.graph.security.ipEvidence" => new IpEvidence(),
-                "#microsoft.graph.security.mailboxEvidence" => new MailboxEvidence(),
-                "#microsoft.graph.security.mailClusterEvidence" => new MailClusterEvidence(),
-                "#microsoft.graph.security.oauthApplicationEvidence" => new OauthApplicationEvidence(),
-                "#microsoft.graph.security.processEvidence" => new ProcessEvidence(),
-                "#microsoft.graph.security.registryKeyEvidence" => new RegistryKeyEvidence(),
-                "#microsoft.graph.security.registryValueEvidence" => new RegistryValueEvidence(),
-                "#microsoft.graph.security.securityGroupEvidence" => new SecurityGroupEvidence(),
-                "#microsoft.graph.security.urlEvidence" => new UrlEvidence(),
-                "#microsoft.graph.security.userEvidence" => new UserEvidence(),
-                _ => new AlertEvidence(),
-            };
+            return new AlertEvidence();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -40,12 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static SegmentConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.ipSegmentConfiguration" => new IpSegmentConfiguration(),
-                "#microsoft.graph.webSegmentConfiguration" => new WebSegmentConfiguration(),
-                _ => new SegmentConfiguration(),
-            };
+            return new SegmentConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

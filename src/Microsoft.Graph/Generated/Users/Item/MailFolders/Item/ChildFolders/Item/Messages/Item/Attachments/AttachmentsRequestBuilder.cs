@@ -45,8 +45,8 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
         public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of attachment objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0" />
+        /// Retrieve a list of attachment objects attached to a message.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects.
+        /// Retrieve a list of attachment objects attached to a message.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of attachment objects.
+        /// Retrieve a list of attachment objects attached to a message.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -62,15 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DeviceAndAppManagementAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.allDevicesAssignmentTarget" => new AllDevicesAssignmentTarget(),
-                "#microsoft.graph.allLicensedUsersAssignmentTarget" => new AllLicensedUsersAssignmentTarget(),
-                "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new ConfigurationManagerCollectionAssignmentTarget(),
-                "#microsoft.graph.exclusionGroupAssignmentTarget" => new ExclusionGroupAssignmentTarget(),
-                "#microsoft.graph.groupAssignmentTarget" => new GroupAssignmentTarget(),
-                _ => new DeviceAndAppManagementAssignmentTarget(),
-            };
+            return new DeviceAndAppManagementAssignmentTarget();
         }
         /// <summary>
         /// The deserialization information for the current model

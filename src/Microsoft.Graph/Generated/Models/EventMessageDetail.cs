@@ -40,40 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static EventMessageDetail CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.callEndedEventMessageDetail" => new CallEndedEventMessageDetail(),
-                "#microsoft.graph.callRecordingEventMessageDetail" => new CallRecordingEventMessageDetail(),
-                "#microsoft.graph.callStartedEventMessageDetail" => new CallStartedEventMessageDetail(),
-                "#microsoft.graph.callTranscriptEventMessageDetail" => new CallTranscriptEventMessageDetail(),
-                "#microsoft.graph.channelAddedEventMessageDetail" => new ChannelAddedEventMessageDetail(),
-                "#microsoft.graph.channelDeletedEventMessageDetail" => new ChannelDeletedEventMessageDetail(),
-                "#microsoft.graph.channelDescriptionUpdatedEventMessageDetail" => new ChannelDescriptionUpdatedEventMessageDetail(),
-                "#microsoft.graph.channelRenamedEventMessageDetail" => new ChannelRenamedEventMessageDetail(),
-                "#microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail" => new ChannelSetAsFavoriteByDefaultEventMessageDetail(),
-                "#microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail" => new ChannelUnsetAsFavoriteByDefaultEventMessageDetail(),
-                "#microsoft.graph.chatRenamedEventMessageDetail" => new ChatRenamedEventMessageDetail(),
-                "#microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail" => new ConversationMemberRoleUpdatedEventMessageDetail(),
-                "#microsoft.graph.meetingPolicyUpdatedEventMessageDetail" => new MeetingPolicyUpdatedEventMessageDetail(),
-                "#microsoft.graph.membersAddedEventMessageDetail" => new MembersAddedEventMessageDetail(),
-                "#microsoft.graph.membersDeletedEventMessageDetail" => new MembersDeletedEventMessageDetail(),
-                "#microsoft.graph.membersJoinedEventMessageDetail" => new MembersJoinedEventMessageDetail(),
-                "#microsoft.graph.membersLeftEventMessageDetail" => new MembersLeftEventMessageDetail(),
-                "#microsoft.graph.messagePinnedEventMessageDetail" => new MessagePinnedEventMessageDetail(),
-                "#microsoft.graph.messageUnpinnedEventMessageDetail" => new MessageUnpinnedEventMessageDetail(),
-                "#microsoft.graph.tabUpdatedEventMessageDetail" => new TabUpdatedEventMessageDetail(),
-                "#microsoft.graph.teamArchivedEventMessageDetail" => new TeamArchivedEventMessageDetail(),
-                "#microsoft.graph.teamCreatedEventMessageDetail" => new TeamCreatedEventMessageDetail(),
-                "#microsoft.graph.teamDescriptionUpdatedEventMessageDetail" => new TeamDescriptionUpdatedEventMessageDetail(),
-                "#microsoft.graph.teamJoiningDisabledEventMessageDetail" => new TeamJoiningDisabledEventMessageDetail(),
-                "#microsoft.graph.teamJoiningEnabledEventMessageDetail" => new TeamJoiningEnabledEventMessageDetail(),
-                "#microsoft.graph.teamRenamedEventMessageDetail" => new TeamRenamedEventMessageDetail(),
-                "#microsoft.graph.teamsAppInstalledEventMessageDetail" => new TeamsAppInstalledEventMessageDetail(),
-                "#microsoft.graph.teamsAppRemovedEventMessageDetail" => new TeamsAppRemovedEventMessageDetail(),
-                "#microsoft.graph.teamsAppUpgradedEventMessageDetail" => new TeamsAppUpgradedEventMessageDetail(),
-                "#microsoft.graph.teamUnarchivedEventMessageDetail" => new TeamUnarchivedEventMessageDetail(),
-                _ => new EventMessageDetail(),
-            };
+            return new EventMessageDetail();
         }
         /// <summary>
         /// The deserialization information for the current model

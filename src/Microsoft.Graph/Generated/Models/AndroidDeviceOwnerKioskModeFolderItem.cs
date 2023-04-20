@@ -17,12 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AndroidDeviceOwnerKioskModeFolderItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.androidDeviceOwnerKioskModeApp" => new AndroidDeviceOwnerKioskModeApp(),
-                "#microsoft.graph.androidDeviceOwnerKioskModeWeblink" => new AndroidDeviceOwnerKioskModeWeblink(),
-                _ => new AndroidDeviceOwnerKioskModeFolderItem(),
-            };
+            return new AndroidDeviceOwnerKioskModeFolderItem();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won&apos;t show up as having changed when using delta.</summary>
+        /// <summary>The display name of the identity. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Unique identifier for the identity.</summary>
+        /// <summary>The identifier of the identity. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {
@@ -72,13 +72,6 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.auditUserIdentity" => new AuditUserIdentity(),
-                "#microsoft.graph.azureCommunicationServicesUserIdentity" => new AzureCommunicationServicesUserIdentity(),
-                "#microsoft.graph.communicationsApplicationIdentity" => new CommunicationsApplicationIdentity(),
-                "#microsoft.graph.communicationsApplicationInstanceIdentity" => new CommunicationsApplicationInstanceIdentity(),
-                "#microsoft.graph.communicationsEncryptedIdentity" => new CommunicationsEncryptedIdentity(),
-                "#microsoft.graph.communicationsGuestIdentity" => new CommunicationsGuestIdentity(),
-                "#microsoft.graph.communicationsPhoneIdentity" => new CommunicationsPhoneIdentity(),
-                "#microsoft.graph.communicationsUserIdentity" => new CommunicationsUserIdentity(),
                 "#microsoft.graph.emailIdentity" => new EmailIdentity(),
                 "#microsoft.graph.initiator" => new Initiator(),
                 "#microsoft.graph.programResource" => new ProgramResource(),
@@ -86,9 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.provisioningServicePrincipal" => new ProvisioningServicePrincipal(),
                 "#microsoft.graph.provisioningSystem" => new ProvisioningSystem(),
                 "#microsoft.graph.security.submissionUserIdentity" => new SubmissionUserIdentity(),
-                "#microsoft.graph.servicePrincipalIdentity" => new ServicePrincipalIdentity(),
                 "#microsoft.graph.sharePointIdentity" => new SharePointIdentity(),
-                "#microsoft.graph.teamworkApplicationIdentity" => new TeamworkApplicationIdentity(),
                 "#microsoft.graph.teamworkConversationIdentity" => new TeamworkConversationIdentity(),
                 "#microsoft.graph.teamworkTagIdentity" => new TeamworkTagIdentity(),
                 "#microsoft.graph.teamworkUserIdentity" => new TeamworkUserIdentity(),

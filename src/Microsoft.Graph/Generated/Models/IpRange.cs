@@ -42,10 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.iPv4CidrRange" => new IPv4CidrRange(),
                 "#microsoft.graph.iPv4Range" => new IPv4Range(),
-                "#microsoft.graph.iPv6CidrRange" => new IPv6CidrRange(),
-                "#microsoft.graph.iPv6Range" => new IPv6Range(),
                 _ => new IpRange(),
             };
         }

@@ -5,9 +5,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10TeamGeneralConfiguration resource.
-    /// </summary>
     public class Windows10TeamGeneralConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not to Block Azure Operational Insights.</summary>
         public bool? AzureOperationalInsightsBlockTelemetry {
@@ -137,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("welcomeScreenMeetingInformation", value); }
         }
         /// <summary>
-        /// Instantiates a new windows10TeamGeneralConfiguration and sets the default values.
+        /// Instantiates a new Windows10TeamGeneralConfiguration and sets the default values.
         /// </summary>
         public Windows10TeamGeneralConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10TeamGeneralConfiguration";

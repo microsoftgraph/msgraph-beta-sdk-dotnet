@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("keyStrength", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsHelloForBusinessAuthenticationMethod and sets the default values.
+        /// Instantiates a new windowsHelloForBusinessAuthenticationMethod and sets the default values.
         /// </summary>
         public WindowsHelloForBusinessAuthenticationMethod() : base() {
             OdataType = "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod";

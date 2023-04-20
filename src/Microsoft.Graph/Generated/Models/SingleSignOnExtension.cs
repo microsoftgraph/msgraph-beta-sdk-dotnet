@@ -45,19 +45,8 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.credentialSingleSignOnExtension" => new CredentialSingleSignOnExtension(),
-                "#microsoft.graph.iosAzureAdSingleSignOnExtension" => new IosAzureAdSingleSignOnExtension(),
-                "#microsoft.graph.iosCredentialSingleSignOnExtension" => new IosCredentialSingleSignOnExtension(),
-                "#microsoft.graph.iosKerberosSingleSignOnExtension" => new IosKerberosSingleSignOnExtension(),
-                "#microsoft.graph.iosRedirectSingleSignOnExtension" => new IosRedirectSingleSignOnExtension(),
                 "#microsoft.graph.iosSingleSignOnExtension" => new IosSingleSignOnExtension(),
-                "#microsoft.graph.kerberosSingleSignOnExtension" => new KerberosSingleSignOnExtension(),
-                "#microsoft.graph.macOSAzureAdSingleSignOnExtension" => new MacOSAzureAdSingleSignOnExtension(),
-                "#microsoft.graph.macOSCredentialSingleSignOnExtension" => new MacOSCredentialSingleSignOnExtension(),
-                "#microsoft.graph.macOSKerberosSingleSignOnExtension" => new MacOSKerberosSingleSignOnExtension(),
-                "#microsoft.graph.macOSRedirectSingleSignOnExtension" => new MacOSRedirectSingleSignOnExtension(),
                 "#microsoft.graph.macOSSingleSignOnExtension" => new MacOSSingleSignOnExtension(),
-                "#microsoft.graph.redirectSingleSignOnExtension" => new RedirectSingleSignOnExtension(),
                 _ => new SingleSignOnExtension(),
             };
         }

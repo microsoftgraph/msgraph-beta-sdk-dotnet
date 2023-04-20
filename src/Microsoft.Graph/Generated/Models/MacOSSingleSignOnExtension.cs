@@ -17,14 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new MacOSSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.macOSAzureAdSingleSignOnExtension" => new MacOSAzureAdSingleSignOnExtension(),
-                "#microsoft.graph.macOSCredentialSingleSignOnExtension" => new MacOSCredentialSingleSignOnExtension(),
-                "#microsoft.graph.macOSKerberosSingleSignOnExtension" => new MacOSKerberosSingleSignOnExtension(),
-                "#microsoft.graph.macOSRedirectSingleSignOnExtension" => new MacOSRedirectSingleSignOnExtension(),
-                _ => new MacOSSingleSignOnExtension(),
-            };
+            return new MacOSSingleSignOnExtension();
         }
         /// <summary>
         /// The deserialization information for the current model
