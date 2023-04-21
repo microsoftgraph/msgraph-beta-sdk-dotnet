@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems {
         public SourceSystemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/sourceSystems{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the sourceSystemDefinition objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-1.0" />
+        /// Set of source definitions that represents real-world external systems.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems {
             return await RequestAdapter.SendAsync<SourceSystemDefinitionCollectionResponse>(requestInfo, SourceSystemDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new sourceSystemDefinition object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-1.0" />
+        /// Create new navigation property to sourceSystems for external
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems {
             return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the sourceSystemDefinition objects and their properties.
+        /// Set of source definitions that represents real-world external systems.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new sourceSystemDefinition object.
+        /// Create new navigation property to sourceSystems for external
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the sourceSystemDefinition objects and their properties.
+        /// Set of source definitions that represents real-world external systems.
         /// </summary>
         public class SourceSystemsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

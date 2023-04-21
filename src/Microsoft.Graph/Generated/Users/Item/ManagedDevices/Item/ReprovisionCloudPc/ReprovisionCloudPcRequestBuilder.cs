@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ReprovisionCloudPc
         public ReprovisionCloudPcRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/reprovisionCloudPc", rawUrl) {
         }
         /// <summary>
-        /// Reprovision a Cloud PC with an Intune managed device ID.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0" />
+        /// Invoke action reprovisionCloudPc
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ReprovisionCloudPc
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Reprovision a Cloud PC with an Intune managed device ID.
+        /// Invoke action reprovisionCloudPc
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

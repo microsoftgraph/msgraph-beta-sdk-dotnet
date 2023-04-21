@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
 #endif
-        /// <summary>The authenticationStrength property</summary>
+        /// <summary>Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationStrengthRoot? AuthenticationStrength {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationStrength", value); }
         }
 #endif
-        /// <summary>Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .</summary>
+        /// <summary>The authenticationStrengths property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationStrengthRoot? AuthenticationStrengths {

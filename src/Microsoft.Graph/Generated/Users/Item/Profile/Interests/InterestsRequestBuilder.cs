@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Interests {
         public InterestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/interests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of personInterest objects from a user&apos;s profile.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-1.0" />
+        /// Provides detailed information about interests the user has associated with themselves in various services.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Interests {
             return await RequestAdapter.SendAsync<PersonInterestCollectionResponse>(requestInfo, PersonInterestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new personInterest.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/profile-post-interests?view=graph-rest-1.0" />
+        /// Create new navigation property to interests for users
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Interests {
             return await RequestAdapter.SendAsync<PersonInterest>(requestInfo, PersonInterest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of personInterest objects from a user&apos;s profile.
+        /// Provides detailed information about interests the user has associated with themselves in various services.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Interests {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new personInterest.
+        /// Create new navigation property to interests for users
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Interests {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of personInterest objects from a user&apos;s profile.
+        /// Provides detailed information about interests the user has associated with themselves in various services.
         /// </summary>
         public class InterestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

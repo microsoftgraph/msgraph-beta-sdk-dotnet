@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolic
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-1.0" />
+        /// The policy that represents the security defaults that protect against common attacks.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolic
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>(requestInfo, Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolic
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+        /// The policy that represents the security defaults that protect against common attacks.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolic
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
+        /// Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +181,7 @@ namespace Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolic
             }
         }
         /// <summary>
-        /// Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+        /// The policy that represents the security defaults that protect against common attacks.
         /// </summary>
         public class IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

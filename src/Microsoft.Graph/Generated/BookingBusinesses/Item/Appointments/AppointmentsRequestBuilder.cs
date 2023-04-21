@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments {
         public AppointmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/appointments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of bookingAppointment objects for the specified bookingBusiness.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0" />
+        /// All the appointments of this business. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments {
             return await RequestAdapter.SendAsync<BookingAppointmentCollectionResponse>(requestInfo, BookingAppointmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new bookingAppointment for the specified bookingBusiness.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0" />
+        /// Create new navigation property to appointments for bookingBusinesses
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments {
             return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of bookingAppointment objects for the specified bookingBusiness.
+        /// All the appointments of this business. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new bookingAppointment for the specified bookingBusiness.
+        /// Create new navigation property to appointments for bookingBusinesses
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of bookingAppointment objects for the specified bookingBusiness.
+        /// All the appointments of this business. Read-only. Nullable.
         /// </summary>
         public class AppointmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

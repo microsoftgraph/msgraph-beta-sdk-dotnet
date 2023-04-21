@@ -117,6 +117,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("phoneMethods", value); }
         }
 #endif
+        /// <summary>The settings and preferences for to the sign-in experience of a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.SignInPreferences? SignInPreferences {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInPreferences?>("signInPreferences"); }
+            set { BackingStore?.Set("signInPreferences", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.SignInPreferences SignInPreferences {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInPreferences>("signInPreferences"); }
+            set { BackingStore?.Set("signInPreferences", value); }
+        }
+#endif
         /// <summary>The softwareOathMethods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -180,6 +194,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"passwordlessMicrosoftAuthenticatorMethods", n => { PasswordlessMicrosoftAuthenticatorMethods = n.GetCollectionOfObjectValues<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"passwordMethods", n => { PasswordMethods = n.GetCollectionOfObjectValues<PasswordAuthenticationMethod>(PasswordAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"phoneMethods", n => { PhoneMethods = n.GetCollectionOfObjectValues<PhoneAuthenticationMethod>(PhoneAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"signInPreferences", n => { SignInPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInPreferences>(Microsoft.Graph.Beta.Models.SignInPreferences.CreateFromDiscriminatorValue); } },
                 {"softwareOathMethods", n => { SoftwareOathMethods = n.GetCollectionOfObjectValues<SoftwareOathAuthenticationMethod>(SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"temporaryAccessPassMethods", n => { TemporaryAccessPassMethods = n.GetCollectionOfObjectValues<TemporaryAccessPassAuthenticationMethod>(TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"windowsHelloForBusinessMethods", n => { WindowsHelloForBusinessMethods = n.GetCollectionOfObjectValues<WindowsHelloForBusinessAuthenticationMethod>(WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -200,6 +215,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>("passwordlessMicrosoftAuthenticatorMethods", PasswordlessMicrosoftAuthenticatorMethods);
             writer.WriteCollectionOfObjectValues<PasswordAuthenticationMethod>("passwordMethods", PasswordMethods);
             writer.WriteCollectionOfObjectValues<PhoneAuthenticationMethod>("phoneMethods", PhoneMethods);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInPreferences>("signInPreferences", SignInPreferences);
             writer.WriteCollectionOfObjectValues<SoftwareOathAuthenticationMethod>("softwareOathMethods", SoftwareOathMethods);
             writer.WriteCollectionOfObjectValues<TemporaryAccessPassAuthenticationMethod>("temporaryAccessPassMethods", TemporaryAccessPassMethods);
             writer.WriteCollectionOfObjectValues<WindowsHelloForBusinessAuthenticationMethod>("windowsHelloForBusinessMethods", WindowsHelloForBusinessMethods);

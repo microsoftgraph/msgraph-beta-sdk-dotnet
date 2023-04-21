@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDaily
         public GetDailyAggregatedRemoteConnectionReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getDailyAggregatedRemoteConnectionReports", rawUrl) {
         }
         /// <summary>
-        /// Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-1.0" />
+        /// Invoke action getDailyAggregatedRemoteConnectionReports
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDaily
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
+        /// Invoke action getDailyAggregatedRemoteConnectionReports
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -51,7 +51,6 @@ namespace Microsoft.Graph.Beta.Users.Item.MemberOf {
         }
         /// <summary>
         /// The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

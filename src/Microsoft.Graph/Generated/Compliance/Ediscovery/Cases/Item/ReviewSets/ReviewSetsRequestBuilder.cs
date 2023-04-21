@@ -59,8 +59,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets {
             return await RequestAdapter.SendAsync<ReviewSetCollectionResponse>(requestInfo, ReviewSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-1.0" />
+        /// Create new navigation property to reviewSets for compliance
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +106,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.
+        /// Create new navigation property to reviewSets for compliance
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

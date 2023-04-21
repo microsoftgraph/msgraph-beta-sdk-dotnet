@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders {
         public ChildFoldersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a collection of child folders under the specified contact folder.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0" />
+        /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,8 +64,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders {
             return await RequestAdapter.SendAsync<ContactFolderCollectionResponse>(requestInfo, ContactFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user&apos;s default contact folder.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0" />
+        /// Create new navigation property to childFolders for users
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +85,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders {
             return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a collection of child folders under the specified contact folder.
+        /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user&apos;s default contact folder.
+        /// Create new navigation property to childFolders for users
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +139,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Get a collection of child folders under the specified contact folder.
+        /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
         /// </summary>
         public class ChildFoldersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

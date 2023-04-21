@@ -5,6 +5,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccessGroup : Entity, IParsable {
+        /// <summary>The assignmentApprovals property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Approval>? AssignmentApprovals {
+            get { return BackingStore?.Get<List<Approval>?>("assignmentApprovals"); }
+            set { BackingStore?.Set("assignmentApprovals", value); }
+        }
+#nullable restore
+#else
+        public List<Approval> AssignmentApprovals {
+            get { return BackingStore?.Get<List<Approval>>("assignmentApprovals"); }
+            set { BackingStore?.Set("assignmentApprovals", value); }
+        }
+#endif
         /// <summary>The assignmentScheduleInstances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +116,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignmentApprovals", n => { AssignmentApprovals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"assignmentScheduleInstances", n => { AssignmentScheduleInstances = n.GetCollectionOfObjectValues<PrivilegedAccessGroupAssignmentScheduleInstance>(PrivilegedAccessGroupAssignmentScheduleInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"assignmentScheduleRequests", n => { AssignmentScheduleRequests = n.GetCollectionOfObjectValues<PrivilegedAccessGroupAssignmentScheduleRequest>(PrivilegedAccessGroupAssignmentScheduleRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"assignmentSchedules", n => { AssignmentSchedules = n.GetCollectionOfObjectValues<PrivilegedAccessGroupAssignmentSchedule>(PrivilegedAccessGroupAssignmentSchedule.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -117,6 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<Approval>("assignmentApprovals", AssignmentApprovals);
             writer.WriteCollectionOfObjectValues<PrivilegedAccessGroupAssignmentScheduleInstance>("assignmentScheduleInstances", AssignmentScheduleInstances);
             writer.WriteCollectionOfObjectValues<PrivilegedAccessGroupAssignmentScheduleRequest>("assignmentScheduleRequests", AssignmentScheduleRequests);
             writer.WriteCollectionOfObjectValues<PrivilegedAccessGroupAssignmentSchedule>("assignmentSchedules", AssignmentSchedules);

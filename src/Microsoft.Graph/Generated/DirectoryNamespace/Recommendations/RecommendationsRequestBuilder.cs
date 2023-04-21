@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations {
         public RecommendationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/recommendations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the recommendation objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directory-list-recommendation?view=graph-rest-1.0" />
+        /// List of recommended improvements to improve tenant posture.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations {
             return await RequestAdapter.SendAsync<Recommendation>(requestInfo, Recommendation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the recommendation objects and their properties.
+        /// List of recommended improvements to improve tenant posture.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the recommendation objects and their properties.
+        /// List of recommended improvements to improve tenant posture.
         /// </summary>
         public class RecommendationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
         public LabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/informationProtection/policy/labels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a collection of information protection labels available to the user or to the organization.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/informationprotectionpolicy-list-labels?view=graph-rest-1.0" />
+        /// Get labels from informationProtection
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +100,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
             return await RequestAdapter.SendAsync<InformationProtectionLabel>(requestInfo, InformationProtectionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a collection of information protection labels available to the user or to the organization.
+        /// Get labels from informationProtection
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +154,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
             return requestInfo;
         }
         /// <summary>
-        /// Get a collection of information protection labels available to the user or to the organization.
+        /// Get labels from informationProtection
         /// </summary>
         public class LabelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

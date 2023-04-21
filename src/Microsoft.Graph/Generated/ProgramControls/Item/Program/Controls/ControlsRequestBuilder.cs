@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls {
         public ControlsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/programControls/{programControl%2Did}/program/controls{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, list all the programControl objects, linked to a particular program.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/program-listcontrols?view=graph-rest-1.0" />
+        /// Controls associated with the program.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls {
             return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, ProgramControl.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, list all the programControl objects, linked to a particular program.
+        /// Controls associated with the program.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls {
             return requestInfo;
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, list all the programControl objects, linked to a particular program.
+        /// Controls associated with the program.
         /// </summary>
         public class ControlsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

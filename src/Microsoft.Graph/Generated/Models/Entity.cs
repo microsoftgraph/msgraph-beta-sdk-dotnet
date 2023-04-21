@@ -384,7 +384,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.delegatedPermissionClassification" => new DelegatedPermissionClassification(),
                 "#microsoft.graph.deletedItemContainer" => new DeletedItemContainer(),
                 "#microsoft.graph.deletedTeam" => new DeletedTeam(),
-                "#microsoft.graph.deltaParticipants" => new DeltaParticipants(),
                 "#microsoft.graph.depEnrollmentBaseProfile" => new DepEnrollmentBaseProfile(),
                 "#microsoft.graph.depEnrollmentProfile" => new DepEnrollmentProfile(),
                 "#microsoft.graph.depIOSEnrollmentProfile" => new DepIOSEnrollmentProfile(),

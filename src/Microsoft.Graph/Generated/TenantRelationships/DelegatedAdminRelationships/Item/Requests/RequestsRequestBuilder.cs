@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         public RequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship%2Did}/requests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the delegatedAdminRelationshipRequest objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0" />
+        /// The requests associated with the delegated admin relationship.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return await RequestAdapter.SendAsync<DelegatedAdminRelationshipRequestCollectionResponse>(requestInfo, DelegatedAdminRelationshipRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new delegatedAdminRelationshipRequest object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0" />
+        /// Create new navigation property to requests for tenantRelationships
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return await RequestAdapter.SendAsync<DelegatedAdminRelationshipRequest>(requestInfo, DelegatedAdminRelationshipRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the delegatedAdminRelationshipRequest objects and their properties.
+        /// The requests associated with the delegated admin relationship.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return requestInfo;
         }
         /// <summary>
-        /// Create a new delegatedAdminRelationshipRequest object.
+        /// Create new navigation property to requests for tenantRelationships
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the delegatedAdminRelationshipRequest objects and their properties.
+        /// The requests associated with the delegated admin relationship.
         /// </summary>
         public class RequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

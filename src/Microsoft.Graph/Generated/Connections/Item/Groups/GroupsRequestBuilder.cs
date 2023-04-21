@@ -59,8 +59,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups {
             return await RequestAdapter.SendAsync<ExternalGroupCollectionResponse>(requestInfo, ExternalGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new externalGroup object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0" />
+        /// Create new navigation property to groups for connections
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +106,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new externalGroup object.
+        /// Create new navigation property to groups for connections
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

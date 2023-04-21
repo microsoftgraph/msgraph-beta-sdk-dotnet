@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
         public InboundFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the inboundFileFlow objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0" />
+        /// Set of data import flow activities to bring data into the canonical store via a connector.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return await RequestAdapter.SendAsync<InboundFlowCollectionResponse>(requestInfo, InboundFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new inboundFileFlow object. The following prerequisite resources are required when you create an **inboundFileFlow**:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0" />
+        /// Create new navigation property to inboundFlows for external
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the inboundFileFlow objects and their properties.
+        /// Set of data import flow activities to bring data into the canonical store via a connector.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new inboundFileFlow object. The following prerequisite resources are required when you create an **inboundFileFlow**:
+        /// Create new navigation property to inboundFlows for external
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the inboundFileFlow objects and their properties.
+        /// Set of data import flow activities to bring data into the canonical store via a connector.
         /// </summary>
         public class InboundFlowsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

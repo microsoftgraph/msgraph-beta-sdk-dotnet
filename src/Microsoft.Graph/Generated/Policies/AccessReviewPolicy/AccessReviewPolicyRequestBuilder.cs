@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewPolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewpolicy-get?view=graph-rest-1.0" />
+        /// The policy that contains directory-level access review settings.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of an accessReviewPolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewpolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property accessReviewPolicy in policies
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewPolicy object.
+        /// The policy that contains directory-level access review settings.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an accessReviewPolicy object.
+        /// Update the navigation property accessReviewPolicy in policies
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +181,7 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewPolicy object.
+        /// The policy that contains directory-level access review settings.
         /// </summary>
         public class AccessReviewPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

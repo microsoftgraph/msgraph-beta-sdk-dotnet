@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.UnhideForUser {
         public UnhideForUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/chats/{chat%2Did}/unhideForUser", rawUrl) {
         }
         /// <summary>
-        /// Unhide a chat for a user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0" />
+        /// Invoke action unhideForUser
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.UnhideForUser {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Unhide a chat for a user.
+        /// Invoke action unhideForUser
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

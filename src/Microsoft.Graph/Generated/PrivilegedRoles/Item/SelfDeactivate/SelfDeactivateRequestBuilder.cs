@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfDeactivate {
         public SelfDeactivateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedRoles/{privilegedRole%2Did}/selfDeactivate", rawUrl) {
         }
         /// <summary>
-        /// Deactivate the role that is assigned to the requestor.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedrole-selfdeactivate?view=graph-rest-1.0" />
+        /// Invoke action selfDeactivate
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +47,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfDeactivate {
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignment>(requestInfo, PrivilegedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deactivate the role that is assigned to the requestor.
+        /// Invoke action selfDeactivate
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

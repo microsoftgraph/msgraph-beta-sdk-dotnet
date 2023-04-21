@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Columns {
         public ColumnsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/columns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0" />
+        /// The collection of column definitions reusable across lists under this site.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Columns {
             return await RequestAdapter.SendAsync<ColumnDefinitionCollectionResponse>(requestInfo, ColumnDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0" />
+        /// Create new navigation property to columns for groups
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Columns {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
+        /// The collection of column definitions reusable across lists under this site.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Columns {
             return requestInfo;
         }
         /// <summary>
-        /// Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
+        /// Create new navigation property to columns for groups
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Columns {
             return requestInfo;
         }
         /// <summary>
-        /// Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
+        /// The collection of column definitions reusable across lists under this site.
         /// </summary>
         public class ColumnsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

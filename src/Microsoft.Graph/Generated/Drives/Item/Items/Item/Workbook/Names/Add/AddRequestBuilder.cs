@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Add {
         public AddRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/add", rawUrl) {
         }
         /// <summary>
-        /// Adds a new name to the collection of the given scope using the user&apos;s locale for the formula.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/nameditem-add?view=graph-rest-1.0" />
+        /// Invoke action add
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Add {
             return await RequestAdapter.SendAsync<WorkbookNamedItem>(requestInfo, WorkbookNamedItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Adds a new name to the collection of the given scope using the user&apos;s locale for the formula.
+        /// Invoke action add
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.Details {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **plannerTaskDetails** object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Additional details about the task.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +67,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.Details {
         }
         /// <summary>
         /// Update the navigation property details in users
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.Details {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **plannerTaskDetails** object.
+        /// Read-only. Nullable. Additional details about the task.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,7 +181,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks.Item.Details {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **plannerTaskDetails** object.
+        /// Read-only. Nullable. Additional details about the task.
         /// </summary>
         public class DetailsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.DocumentSetVersi
         public DocumentSetVersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/documentSetVersions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the versions of a document set item in a list.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0" />
+        /// Version information for a document set version created by a user.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.DocumentSetVersi
             return await RequestAdapter.SendAsync<DocumentSetVersionCollectionResponse>(requestInfo, DocumentSetVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new version of a document set item in a list.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0" />
+        /// Create new navigation property to documentSetVersions for sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.DocumentSetVersi
             return await RequestAdapter.SendAsync<DocumentSetVersion>(requestInfo, DocumentSetVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the versions of a document set item in a list.
+        /// Version information for a document set version created by a user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.DocumentSetVersi
             return requestInfo;
         }
         /// <summary>
-        /// Create a new version of a document set item in a list.
+        /// Create new navigation property to documentSetVersions for sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.DocumentSetVersi
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the versions of a document set item in a list.
+        /// Version information for a document set version created by a user.
         /// </summary>
         public class DocumentSetVersionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

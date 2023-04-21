@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartfont object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chartfont-get?view=graph-rest-1.0" />
+        /// Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return await RequestAdapter.SendAsync<WorkbookChartFont>(requestInfo, WorkbookChartFont.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of chartfont object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chartfont-update?view=graph-rest-1.0" />
+        /// Update the navigation property font in drives
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartfont object.
+        /// Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of chartfont object.
+        /// Update the navigation property font in drives
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +181,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartfont object.
+        /// Represents the font attributes (font name, font size, color, etc.) for a chart axis element. Read-only.
         /// </summary>
         public class FontRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

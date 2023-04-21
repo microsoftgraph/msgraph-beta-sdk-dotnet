@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks.GetNotebookFromWebUrl {
         public GetNotebookFromWebUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/notebooks/getNotebookFromWebUrl", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0" />
+        /// Invoke action getNotebookFromWebUrl
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks.GetNotebookFromWebUrl {
             return await RequestAdapter.SendAsync<CopyNotebookModel>(requestInfo, CopyNotebookModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
+        /// Invoke action getNotebookFromWebUrl
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

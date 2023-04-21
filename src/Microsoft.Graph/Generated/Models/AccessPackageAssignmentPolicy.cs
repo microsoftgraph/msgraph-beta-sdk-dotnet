@@ -212,6 +212,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestorSettings", value); }
         }
 #endif
+        /// <summary>Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.VerifiableCredentialSettings? VerifiableCredentialSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiableCredentialSettings?>("verifiableCredentialSettings"); }
+            set { BackingStore?.Set("verifiableCredentialSettings", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.VerifiableCredentialSettings VerifiableCredentialSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiableCredentialSettings>("verifiableCredentialSettings"); }
+            set { BackingStore?.Set("verifiableCredentialSettings", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -243,6 +257,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"requestApprovalSettings", n => { RequestApprovalSettings = n.GetObjectValue<ApprovalSettings>(ApprovalSettings.CreateFromDiscriminatorValue); } },
                 {"requestorSettings", n => { RequestorSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestorSettings>(Microsoft.Graph.Beta.Models.RequestorSettings.CreateFromDiscriminatorValue); } },
+                {"verifiableCredentialSettings", n => { VerifiableCredentialSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialSettings>(Microsoft.Graph.Beta.Models.VerifiableCredentialSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -270,6 +285,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<AccessPackageQuestion>("questions", Questions);
             writer.WriteObjectValue<ApprovalSettings>("requestApprovalSettings", RequestApprovalSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RequestorSettings>("requestorSettings", RequestorSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialSettings>("verifiableCredentialSettings", VerifiableCredentialSettings);
         }
     }
 }

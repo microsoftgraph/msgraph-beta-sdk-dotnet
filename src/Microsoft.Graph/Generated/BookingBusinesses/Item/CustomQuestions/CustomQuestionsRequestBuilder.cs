@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
         public CustomQuestionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/customQuestions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the bookingCustomQuestion resources associated with a bookingBusiness.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0" />
+        /// All the custom questions of this business. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
             return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the bookingCustomQuestion resources associated with a bookingBusiness.
+        /// All the custom questions of this business. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
             return requestInfo;
         }
         /// <summary>
-        /// Get the bookingCustomQuestion resources associated with a bookingBusiness.
+        /// All the custom questions of this business. Read-only. Nullable.
         /// </summary>
         public class CustomQuestionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

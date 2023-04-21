@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get authenticationStrength from identity
+        /// Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return requestInfo;
         }
         /// <summary>
-        /// Get authenticationStrength from identity
+        /// Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             }
         }
         /// <summary>
-        /// Get authenticationStrength from identity
+        /// Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
         /// </summary>
         public class AuthenticationStrengthRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages {
         public GalleryImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/galleryImages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List the properties and relationships of the cloudPcGalleryImage objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0" />
+        /// The gallery image resource on Cloud PC.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages {
             return await RequestAdapter.SendAsync<CloudPcGalleryImage>(requestInfo, CloudPcGalleryImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List the properties and relationships of the cloudPcGalleryImage objects.
+        /// The gallery image resource on Cloud PC.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages {
             return requestInfo;
         }
         /// <summary>
-        /// List the properties and relationships of the cloudPcGalleryImage objects.
+        /// The gallery image resource on Cloud PC.
         /// </summary>
         public class GalleryImagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

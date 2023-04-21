@@ -1,13 +1,10 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class AccessReviewDecisionCollectionResponse : BaseCollectionPaginationCountResponse, IBackedModel, IParsable {
-        /// <summary>Stores model information.</summary>
-        public IBackingStore BackingStore { get; private set; }
+    public class AccessReviewDecisionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,12 +19,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
 #endif
-        /// <summary>
-        /// Instantiates a new AccessReviewDecisionCollectionResponse and sets the default values.
-        /// </summary>
-        public AccessReviewDecisionCollectionResponse() : base() {
-            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

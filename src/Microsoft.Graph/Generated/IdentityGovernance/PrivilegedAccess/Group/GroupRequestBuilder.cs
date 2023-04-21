@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentApprovals;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleRequests;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.AssignmentSchedules;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group {
     /// Provides operations to manage the group property of the microsoft.graph.privilegedAccessRoot entity.
     /// </summary>
     public class GroupRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the assignmentApprovals property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        public AssignmentApprovalsRequestBuilder AssignmentApprovals { get =>
+            new AssignmentApprovalsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the assignmentScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.</summary>
         public AssignmentScheduleInstancesRequestBuilder AssignmentScheduleInstances { get =>
             new AssignmentScheduleInstancesRequestBuilder(PathParameters, RequestAdapter);

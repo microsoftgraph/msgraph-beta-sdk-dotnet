@@ -77,8 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-1.0" />
+        /// Selective Planner services available to the user. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +97,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
         }
         /// <summary>
         /// Update the navigation property planner in users
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/planneruser-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -143,7 +141,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// Selective Planner services available to the user. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -213,7 +211,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// Selective Planner services available to the user. Read-only. Nullable.
         /// </summary>
         public class PlannerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

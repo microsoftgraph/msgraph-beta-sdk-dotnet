@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
         public GroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/group{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-get-group?view=graph-rest-1.0" />
+        /// Get group from education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +47,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
+        /// Get group from education
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +73,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
+        /// Get group from education
         /// </summary>
         public class GroupRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

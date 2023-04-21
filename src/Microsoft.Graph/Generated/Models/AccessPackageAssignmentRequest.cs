@@ -179,6 +179,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
+        /// <summary>The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<VerifiedCredentialData>? VerifiedCredentialsData {
+            get { return BackingStore?.Get<List<VerifiedCredentialData>?>("verifiedCredentialsData"); }
+            set { BackingStore?.Set("verifiedCredentialsData", value); }
+        }
+#nullable restore
+#else
+        public List<VerifiedCredentialData> VerifiedCredentialsData {
+            get { return BackingStore?.Get<List<VerifiedCredentialData>>("verifiedCredentialsData"); }
+            set { BackingStore?.Set("verifiedCredentialsData", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -207,6 +221,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"requestStatus", n => { RequestStatus = n.GetStringValue(); } },
                 {"requestType", n => { RequestType = n.GetStringValue(); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                {"verifiedCredentialsData", n => { VerifiedCredentialsData = n.GetCollectionOfObjectValues<VerifiedCredentialData>(VerifiedCredentialData.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -231,6 +246,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("requestStatus", RequestStatus);
             writer.WriteStringValue("requestType", RequestType);
             writer.WriteObjectValue<RequestSchedule>("schedule", Schedule);
+            writer.WriteCollectionOfObjectValues<VerifiedCredentialData>("verifiedCredentialsData", VerifiedCredentialsData);
         }
     }
 }

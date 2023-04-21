@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.EdiscoveryClose 
         public EdiscoveryCloseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/ediscovery.close", rawUrl) {
         }
         /// <summary>
-        /// Close an eDiscovery case. For details, see Close a case.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-case-close?view=graph-rest-1.0" />
+        /// Invoke action close
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.EdiscoveryClose 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Close an eDiscovery case. For details, see Close a case.
+        /// Invoke action close
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

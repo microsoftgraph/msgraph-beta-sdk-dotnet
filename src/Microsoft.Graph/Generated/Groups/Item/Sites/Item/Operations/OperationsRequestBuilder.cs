@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Operations {
         public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of richLongRunningOperations associated with a site.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0" />
+        /// The collection of long running operations for the site.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Operations {
             return await RequestAdapter.SendAsync<RichLongRunningOperation>(requestInfo, RichLongRunningOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the list of richLongRunningOperations associated with a site.
+        /// The collection of long running operations for the site.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Operations {
             return requestInfo;
         }
         /// <summary>
-        /// Get the list of richLongRunningOperations associated with a site.
+        /// The collection of long running operations for the site.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

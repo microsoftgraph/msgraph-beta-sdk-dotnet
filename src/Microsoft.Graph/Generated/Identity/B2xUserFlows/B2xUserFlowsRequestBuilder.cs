@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows {
         public B2xUserFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of b2xIdentityUserFlow objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-list-b2xuserflows?view=graph-rest-1.0" />
+        /// Represents entry point for B2X and self-service sign-up identity userflows.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows {
             return await RequestAdapter.SendAsync<B2xIdentityUserFlowCollectionResponse>(requestInfo, B2xIdentityUserFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new b2xIdentityUserFlow object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-post-b2xuserflows?view=graph-rest-1.0" />
+        /// Create new navigation property to b2xUserFlows for identity
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows {
             return await RequestAdapter.SendAsync<B2xIdentityUserFlow>(requestInfo, B2xIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of b2xIdentityUserFlow objects.
+        /// Represents entry point for B2X and self-service sign-up identity userflows.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new b2xIdentityUserFlow object.
+        /// Create new navigation property to b2xUserFlows for identity
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of b2xIdentityUserFlow objects.
+        /// Represents entry point for B2X and self-service sign-up identity userflows.
         /// </summary>
         public class B2xUserFlowsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

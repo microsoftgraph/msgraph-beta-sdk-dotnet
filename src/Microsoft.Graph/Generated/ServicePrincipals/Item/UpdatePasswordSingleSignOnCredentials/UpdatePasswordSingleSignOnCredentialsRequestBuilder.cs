@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
         public UpdatePasswordSingleSignOnCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/updatePasswordSingleSignOnCredentials", rawUrl) {
         }
         /// <summary>
-        /// Update single sign-on credentials using a password for a user or group.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-updatepasswordsinglesignoncredentials?view=graph-rest-1.0" />
+        /// Invoke action updatePasswordSingleSignOnCredentials
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update single sign-on credentials using a password for a user or group.
+        /// Invoke action updatePasswordSingleSignOnCredentials
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

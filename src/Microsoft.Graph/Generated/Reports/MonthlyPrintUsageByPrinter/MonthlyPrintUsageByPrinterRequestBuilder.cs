@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByPrinter {
         public MonthlyPrintUsageByPrinterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/monthlyPrintUsageByPrinter{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of monthly print usage summaries, grouped by printer.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyprinter?view=graph-rest-1.0" />
+        /// Get monthlyPrintUsageByPrinter from reports
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByPrinter {
             return await RequestAdapter.SendAsync<PrintUsageByPrinter>(requestInfo, PrintUsageByPrinter.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of monthly print usage summaries, grouped by printer.
+        /// Get monthlyPrintUsageByPrinter from reports
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByPrinter {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of monthly print usage summaries, grouped by printer.
+        /// Get monthlyPrintUsageByPrinter from reports
         /// </summary>
         public class MonthlyPrintUsageByPrinterRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/members/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0" />
+        /// All users in the class. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +68,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+        /// All users in the class. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+        /// All users in the class. Nullable.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.RefreshSession {
         public RefreshSessionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/refreshSession", rawUrl) {
         }
         /// <summary>
-        /// Use this API to refresh an existing workbook session. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/workbook-refreshsession?view=graph-rest-1.0" />
+        /// Invoke action refreshSession
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.RefreshSession {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Use this API to refresh an existing workbook session. 
+        /// Invoke action refreshSession
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

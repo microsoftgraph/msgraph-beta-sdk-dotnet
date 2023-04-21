@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}/users/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of users at a school.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0" />
+        /// Users in the school. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +68,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of users at a school.
+        /// Users in the school. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of users at a school.
+        /// Users in the school. Nullable.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.AddCopy {
         public AddCopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/addCopy", rawUrl) {
         }
         /// <summary>
-        /// Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0" />
+        /// Invoke action addCopy
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.AddCopy {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+        /// Invoke action addCopy
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

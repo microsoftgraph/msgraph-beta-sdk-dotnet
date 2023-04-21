@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Reset {
         public ResetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/reset", rawUrl) {
         }
         /// <summary>
-        /// Reset the sync of a specific school data synchronization profile in the tenant.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationsynchronizationprofile-reset?view=graph-rest-1.0" />
+        /// Invoke action reset
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Reset {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Reset the sync of a specific school data synchronization profile in the tenant.
+        /// Invoke action reset
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

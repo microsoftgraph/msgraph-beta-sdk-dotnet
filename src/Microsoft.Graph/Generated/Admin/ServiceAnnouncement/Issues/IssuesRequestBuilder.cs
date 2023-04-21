@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues {
         public IssuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/issues{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve serviceHealthIssue resources from the **issues** navigation property. This operation retrieves information about all service health issues that exist for the tenant.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0" />
+        /// A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues {
             return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve serviceHealthIssue resources from the **issues** navigation property. This operation retrieves information about all service health issues that exist for the tenant.
+        /// A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve serviceHealthIssue resources from the **issues** navigation property. This operation retrieves information about all service health issues that exist for the tenant.
+        /// A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// </summary>
         public class IssuesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.MarkChatUnreadForUser {
         public MarkChatUnreadForUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/markChatUnreadForUser", rawUrl) {
         }
         /// <summary>
-        /// Mark a chat as unread for a user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0" />
+        /// Invoke action markChatUnreadForUser
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.MarkChatUnreadForUser {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Mark a chat as unread for a user.
+        /// Invoke action markChatUnreadForUser
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
