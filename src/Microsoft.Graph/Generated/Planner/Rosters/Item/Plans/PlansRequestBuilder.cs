@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Plans {
         public PlansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/planner/rosters/{plannerRoster%2Did}/plans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the plannerPlans contained by the plannerRoster.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerroster-list-plans?view=graph-rest-1.0" />
+        /// Retrieves the plans contained by the plannerRoster.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +59,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Plans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the plannerPlans contained by the plannerRoster.
+        /// Retrieves the plans contained by the plannerRoster.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Plans {
             return requestInfo;
         }
         /// <summary>
-        /// Get the plannerPlans contained by the plannerRoster.
+        /// Retrieves the plans contained by the plannerRoster.
         /// </summary>
         public class PlansRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

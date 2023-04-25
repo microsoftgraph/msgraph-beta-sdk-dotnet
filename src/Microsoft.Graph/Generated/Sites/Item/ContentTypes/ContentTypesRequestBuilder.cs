@@ -55,8 +55,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes {
         public ContentTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/contentTypes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the collection of [contentType][contentType] resources in a [site][].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0" />
+        /// The collection of content types defined for this site.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes {
             return await RequestAdapter.SendAsync<ContentTypeCollectionResponse>(requestInfo, ContentTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new [contentType][] for a [site][].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0" />
+        /// Create new navigation property to contentTypes for sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +95,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the collection of [contentType][contentType] resources in a [site][].
+        /// The collection of content types defined for this site.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new [contentType][] for a [site][].
+        /// Create new navigation property to contentTypes for sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes {
             return requestInfo;
         }
         /// <summary>
-        /// Get the collection of [contentType][contentType] resources in a [site][].
+        /// The collection of content types defined for this site.
         /// </summary>
         public class ContentTypesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

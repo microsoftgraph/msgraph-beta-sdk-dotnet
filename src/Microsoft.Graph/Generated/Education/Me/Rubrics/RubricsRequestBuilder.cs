@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Rubrics {
         public RubricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/me/rubrics{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of educationRubric objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-1.0" />
+        /// When set, the grading rubric attached to the assignment.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Rubrics {
             return await RequestAdapter.SendAsync<EducationRubricCollectionResponse>(requestInfo, EducationRubricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new educationRubric object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-1.0" />
+        /// Create new navigation property to rubrics for education
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Rubrics {
             return await RequestAdapter.SendAsync<EducationRubric>(requestInfo, EducationRubric.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of educationRubric objects.
+        /// When set, the grading rubric attached to the assignment.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Rubrics {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new educationRubric object.
+        /// Create new navigation property to rubrics for education
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Rubrics {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of educationRubric objects.
+        /// When set, the grading rubric attached to the assignment.
         /// </summary>
         public class RubricsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>List of policies delivered to the device as last checkin.</summary>
+        /// <summary>The appliedPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AppliedPolicies {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Last device check-in time in UTC.</summary>
+        /// <summary>The checkinDateTime property</summary>
         public DateTimeOffset? CheckinDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("checkinDateTime"); }
             set { BackingStore?.Set("checkinDateTime", value); }
         }
-        /// <summary>Device name trying to check-in.</summary>
+        /// <summary>The deviceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceName {
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
-        /// <summary>Device platform trying to check-in.</summary>
+        /// <summary>The devicePlatform property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DevicePlatform {
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("devicePlatform", value); }
         }
 #endif
-        /// <summary>Device platform version trying to check-in.</summary>
+        /// <summary>The devicePlatformVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DevicePlatformVersion {
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("devicePlatformVersion", value); }
         }
 #endif
-        /// <summary>Error message if any associated for the last checkin.</summary>
+        /// <summary>The errorMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>User identifier using the device.</summary>
+        /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>User principal name using the device.</summary>
+        /// <summary>The userPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #endif
-        /// <summary>If the last checkin was successful.</summary>
+        /// <summary>The wasSuccessful property</summary>
         public bool? WasSuccessful {
             get { return BackingStore?.Get<bool?>("wasSuccessful"); }
             set { BackingStore?.Set("wasSuccessful", value); }

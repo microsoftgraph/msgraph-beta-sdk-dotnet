@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationsynchronizationprofilestatus-get?view=graph-rest-1.0" />
+        /// The synchronization status.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +111,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
             return requestInfo;
         }
         /// <summary>
-        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
+        /// The synchronization status.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,7 +181,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
             }
         }
         /// <summary>
-        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
+        /// The synchronization status.
         /// </summary>
         public class ProfileStatusRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

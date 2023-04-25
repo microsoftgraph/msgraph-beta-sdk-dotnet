@@ -59,8 +59,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return await RequestAdapter.SendAsync<PlannerRosterCollectionResponse>(requestInfo, PlannerRosterCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new plannerRoster object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/planner-post-rosters?view=graph-rest-1.0" />
+        /// Create new navigation property to rosters for planner
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +106,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new plannerRoster object.
+        /// Create new navigation property to rosters for planner
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

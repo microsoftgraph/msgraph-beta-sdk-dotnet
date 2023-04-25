@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.Sections {
         public SectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/sectionGroups/{sectionGroup%2Did}/sections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects from the specified section group.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0" />
+        /// The sections in the section group. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.Sections {
             return await RequestAdapter.SendAsync<OnenoteSectionCollectionResponse>(requestInfo, OnenoteSectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new section in the specified section group.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0" />
+        /// Create new navigation property to sections for sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.Sections {
             return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, OnenoteSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects from the specified section group.
+        /// The sections in the section group. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.Sections {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new section in the specified section group.
+        /// Create new navigation property to sections for sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.Sections {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of onenoteSection objects from the specified section group.
+        /// The sections in the section group. Read-only. Nullable.
         /// </summary>
         public class SectionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

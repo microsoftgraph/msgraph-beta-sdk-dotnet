@@ -67,8 +67,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar {
         public CalendarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user&apos;s calendar:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendar-get?view=graph-rest-1.0" />
+        /// The user&apos;s primary calendar. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,8 +86,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Calendar>(requestInfo, Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendar-update?view=graph-rest-1.0" />
+        /// Update the navigation property calendar in me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,7 +107,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Calendar>(requestInfo, Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user&apos;s calendar:
+        /// The user&apos;s primary calendar. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
+        /// Update the navigation property calendar in me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,7 +161,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user&apos;s calendar:
+        /// The user&apos;s primary calendar. Read-only.
         /// </summary>
         public class CalendarRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

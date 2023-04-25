@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies {
         public ClaimsMappingPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/claimsMappingPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of claimsMappingPolicy objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/claimsmappingpolicy-list?view=graph-rest-1.0" />
+        /// The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies {
             return await RequestAdapter.SendAsync<ClaimsMappingPolicyCollectionResponse>(requestInfo, ClaimsMappingPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new claimsMappingPolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/claimsmappingpolicy-post-claimsmappingpolicies?view=graph-rest-1.0" />
+        /// Create new navigation property to claimsMappingPolicies for policies
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies {
             return await RequestAdapter.SendAsync<ClaimsMappingPolicy>(requestInfo, ClaimsMappingPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of claimsMappingPolicy objects.
+        /// The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new claimsMappingPolicy object.
+        /// Create new navigation property to claimsMappingPolicies for policies
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of claimsMappingPolicy objects.
+        /// The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
         /// </summary>
         public class ClaimsMappingPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

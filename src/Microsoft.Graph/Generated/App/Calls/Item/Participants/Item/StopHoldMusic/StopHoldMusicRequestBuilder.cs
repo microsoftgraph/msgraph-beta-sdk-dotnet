@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StopHoldMusic {
         public StopHoldMusicRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/participants/{participant%2Did}/stopHoldMusic", rawUrl) {
         }
         /// <summary>
-        /// Reincorporate a participant previously put on hold to the call.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0" />
+        /// Invoke action stopHoldMusic
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StopHoldMusic {
             return await RequestAdapter.SendAsync<StopHoldMusicOperation>(requestInfo, StopHoldMusicOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Reincorporate a participant previously put on hold to the call.
+        /// Invoke action stopHoldMusic
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

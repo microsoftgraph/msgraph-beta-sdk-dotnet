@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsDomainJoinConfiguration and sets the default values.
+        /// Instantiates a new windowsDomainJoinConfiguration and sets the default values.
         /// </summary>
         public WindowsDomainJoinConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsDomainJoinConfiguration";

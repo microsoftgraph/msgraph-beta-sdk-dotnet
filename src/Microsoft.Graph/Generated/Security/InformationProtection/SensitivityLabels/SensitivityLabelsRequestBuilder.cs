@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels 
         public SensitivityLabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/informationProtection/sensitivityLabels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of sensitivityLabel objects associated with a user or organization.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-informationprotection-list-sensitivitylabels?view=graph-rest-1.0" />
+        /// Read the Microsoft Purview Information Protection labels for the user or organization.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +100,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels 
             return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of sensitivityLabel objects associated with a user or organization.
+        /// Read the Microsoft Purview Information Protection labels for the user or organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels 
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of sensitivityLabel objects associated with a user or organization.
+        /// Read the Microsoft Purview Information Protection labels for the user or organization.
         /// </summary>
         public class SensitivityLabelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

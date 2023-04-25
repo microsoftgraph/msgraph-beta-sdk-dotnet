@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
         public MasterCategoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/masterCategories{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get all the categories that have been defined for the user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0" />
+        /// A list of categories defined for the user.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
             return await RequestAdapter.SendAsync<OutlookCategoryCollectionResponse>(requestInfo, OutlookCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create an outlookCategory object in the user&apos;s master list of categories.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0" />
+        /// Create new navigation property to masterCategories for users
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get all the categories that have been defined for the user.
+        /// A list of categories defined for the user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
             return requestInfo;
         }
         /// <summary>
-        /// Create an outlookCategory object in the user&apos;s master list of categories.
+        /// Create new navigation property to masterCategories for users
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
             return requestInfo;
         }
         /// <summary>
-        /// Get all the categories that have been defined for the user.
+        /// A list of categories defined for the user.
         /// </summary>
         public class MasterCategoriesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

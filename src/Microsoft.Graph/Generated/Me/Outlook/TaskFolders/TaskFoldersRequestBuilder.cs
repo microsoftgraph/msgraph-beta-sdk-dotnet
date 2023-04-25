@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
         public TaskFoldersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/taskFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get all the Outlook task folders in the user&apos;s mailbox.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0" />
+        /// Get taskFolders from me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return await RequestAdapter.SendAsync<OutlookTaskFolderCollectionResponse>(requestInfo, OutlookTaskFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a task folder in the default task group (`My Tasks`) of the user&apos;s mailbox.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0" />
+        /// Create new navigation property to taskFolders for me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get all the Outlook task folders in the user&apos;s mailbox.
+        /// Get taskFolders from me
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a task folder in the default task group (`My Tasks`) of the user&apos;s mailbox.
+        /// Create new navigation property to taskFolders for me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Get all the Outlook task folders in the user&apos;s mailbox.
+        /// Get taskFolders from me
         /// </summary>
         public class TaskFoldersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

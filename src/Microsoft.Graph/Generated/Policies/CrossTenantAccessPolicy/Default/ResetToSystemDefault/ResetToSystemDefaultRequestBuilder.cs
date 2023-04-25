@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.ResetToS
         public ResetToSystemDefaultRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/default/resetToSystemDefault", rawUrl) {
         }
         /// <summary>
-        /// Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0" />
+        /// Invoke action resetToSystemDefault
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default.ResetToS
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
+        /// Invoke action resetToSystemDefault
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

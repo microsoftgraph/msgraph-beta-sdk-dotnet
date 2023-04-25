@@ -28,7 +28,6 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.AlternativeRec
         }
         /// <summary>
         /// The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Promote {
         public PromoteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/{domain%2Did}/promote", rawUrl) {
         }
         /// <summary>
-        /// Promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0" />
+        /// Invoke action promote
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Promote {
             return await RequestAdapter.SendAsync<PromoteResponse>(requestInfo, PromoteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
+        /// Invoke action promote
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

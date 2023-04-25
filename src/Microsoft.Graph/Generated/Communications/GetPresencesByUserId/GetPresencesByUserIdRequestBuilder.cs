@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Communications.GetPresencesByUserId {
         public GetPresencesByUserIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/getPresencesByUserId", rawUrl) {
         }
         /// <summary>
-        /// Get the presence information for multiple users.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0" />
+        /// Invoke action getPresencesByUserId
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Communications.GetPresencesByUserId {
             return await RequestAdapter.SendAsync<GetPresencesByUserIdResponse>(requestInfo, GetPresencesByUserIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the presence information for multiple users.
+        /// Invoke action getPresencesByUserId
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

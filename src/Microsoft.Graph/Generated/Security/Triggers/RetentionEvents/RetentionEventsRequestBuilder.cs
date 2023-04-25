@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents {
         public RetentionEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/triggers/retentionEvents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the retentionEvent objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0" />
+        /// Get retentionEvents from security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents {
             return await RequestAdapter.SendAsync<RetentionEventCollectionResponse>(requestInfo, RetentionEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new retentionEvent object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-retentionevent-post?view=graph-rest-1.0" />
+        /// Create new navigation property to retentionEvents for security
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents {
             return await RequestAdapter.SendAsync<RetentionEvent>(requestInfo, RetentionEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the retentionEvent objects and their properties.
+        /// Get retentionEvents from security
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new retentionEvent object.
+        /// Create new navigation property to retentionEvents for security
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the retentionEvent objects and their properties.
+        /// Get retentionEvents from security
         /// </summary>
         public class RetentionEventsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

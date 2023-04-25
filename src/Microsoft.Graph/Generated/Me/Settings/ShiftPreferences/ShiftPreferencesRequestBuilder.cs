@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ShiftPreferences {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a shiftPreferences object by ID.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0" />
+        /// The shift preferences for the user.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ShiftPreferences {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ShiftPreferences>(requestInfo, Microsoft.Graph.Beta.Models.ShiftPreferences.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties and relationships of a shiftPreferences object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0" />
+        /// Update the navigation property shiftPreferences in me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ShiftPreferences {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a shiftPreferences object by ID.
+        /// The shift preferences for the user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ShiftPreferences {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties and relationships of a shiftPreferences object.
+        /// Update the navigation property shiftPreferences in me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ShiftPreferences {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a shiftPreferences object by ID.
+        /// The shift preferences for the user.
         /// </summary>
         public class ShiftPreferencesRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

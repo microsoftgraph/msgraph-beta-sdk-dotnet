@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of privilegedRoleSummary object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedrolesummary-get?view=graph-rest-1.0" />
+        /// The summary information for this role. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +111,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of privilegedRoleSummary object.
+        /// The summary information for this role. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,7 +181,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of privilegedRoleSummary object.
+        /// The summary information for this role. Read-only. Nullable.
         /// </summary>
         public class SummaryRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

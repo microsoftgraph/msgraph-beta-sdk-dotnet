@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the role settings for the given role. A privilegedRoleSettings object will be returned.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedrolesettings-get?view=graph-rest-1.0" />
+        /// The settings for this role. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings {
             return await RequestAdapter.SendAsync<PrivilegedRoleSettings>(requestInfo, PrivilegedRoleSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the role settings for the given role setting. A privilegedRoleSettings object will be returned.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedrolesettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property settings in privilegedApproval
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the role settings for the given role. A privilegedRoleSettings object will be returned.
+        /// The settings for this role. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the role settings for the given role setting. A privilegedRoleSettings object will be returned.
+        /// Update the navigation property settings in privilegedApproval
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +181,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings {
             }
         }
         /// <summary>
-        /// Retrieve the role settings for the given role. A privilegedRoleSettings object will be returned.
+        /// The settings for this role. Read-only. Nullable.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

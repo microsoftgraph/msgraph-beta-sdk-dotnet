@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
         public ServiceManagementDetailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer%2Did}/serviceManagementDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-1.0" />
+        /// Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
             return await RequestAdapter.SendAsync<DelegatedAdminServiceManagementDetail>(requestInfo, DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
+        /// Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
+        /// Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.
         /// </summary>
         public class ServiceManagementDetailsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

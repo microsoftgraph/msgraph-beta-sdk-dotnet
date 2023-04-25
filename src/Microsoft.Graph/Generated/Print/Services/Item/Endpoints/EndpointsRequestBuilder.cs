@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints {
         public EndpointsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/services/{printService%2Did}/endpoints{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of endpoints exposed by a print service.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0" />
+        /// Endpoints that can be used to access the service. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints {
             return await RequestAdapter.SendAsync<PrintServiceEndpoint>(requestInfo, PrintServiceEndpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of endpoints exposed by a print service.
+        /// Endpoints that can be used to access the service. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of endpoints exposed by a print service.
+        /// Endpoints that can be used to access the service. Read-only. Nullable.
         /// </summary>
         public class EndpointsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

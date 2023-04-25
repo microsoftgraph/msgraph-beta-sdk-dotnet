@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
         public UserFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/userFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of userflows.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityuserflow-list?view=graph-rest-1.0" />
+        /// Get userFlows from identity
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return await RequestAdapter.SendAsync<IdentityUserFlowCollectionResponse>(requestInfo, IdentityUserFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new userFlow object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityuserflow-post-userflows?view=graph-rest-1.0" />
+        /// Create new navigation property to userFlows for identity
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return await RequestAdapter.SendAsync<IdentityUserFlow>(requestInfo, IdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of userflows.
+        /// Get userFlows from identity
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new userFlow object.
+        /// Create new navigation property to userFlows for identity
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of userflows.
+        /// Get userFlows from identity
         /// </summary>
         public class UserFlowsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

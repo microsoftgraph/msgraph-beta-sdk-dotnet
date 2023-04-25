@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unfavorite {
         public UnfavoriteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/messages/unfavorite", rawUrl) {
         }
         /// <summary>
-        /// Remove the favorite status of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0" />
+        /// Invoke action unfavorite
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unfavorite {
             return await RequestAdapter.SendAsync<UnfavoriteResponse>(requestInfo, UnfavoriteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Remove the favorite status of serviceUpdateMessages for the signed in user.
+        /// Invoke action unfavorite
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

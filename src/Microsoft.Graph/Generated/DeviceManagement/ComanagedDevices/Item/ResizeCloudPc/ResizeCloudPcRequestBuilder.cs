@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeClou
         public ResizeCloudPcRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/resizeCloudPc", rawUrl) {
         }
         /// <summary>
-        /// Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0" />
+        /// Invoke action resizeCloudPc
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeClou
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+        /// Invoke action resizeCloudPc
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

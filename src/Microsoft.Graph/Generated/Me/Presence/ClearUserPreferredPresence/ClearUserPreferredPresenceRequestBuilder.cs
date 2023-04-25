@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Me.Presence.ClearUserPreferredPresence {
         public ClearUserPreferredPresenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/presence/clearUserPreferredPresence", rawUrl) {
         }
         /// <summary>
-        /// Clear the preferred availability and activity status for a user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0" />
+        /// Invoke action clearUserPreferredPresence
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Me.Presence.ClearUserPreferredPresence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Clear the preferred availability and activity status for a user.
+        /// Invoke action clearUserPreferredPresence
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

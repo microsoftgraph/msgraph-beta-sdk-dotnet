@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Restore {
         public RestoreRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}/restore", rawUrl) {
         }
         /// <summary>
-        /// Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0" />
+        /// Invoke action restore
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Restore {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
+        /// Invoke action restore
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

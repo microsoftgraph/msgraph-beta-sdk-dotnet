@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings.Ediscov
         public EdiscoveryResetToDefaultRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/settings/ediscovery.resetToDefault", rawUrl) {
         }
         /// <summary>
-        /// Reset a caseSettings object to the default values.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-casesettings-resettodefault?view=graph-rest-1.0" />
+        /// Invoke action resetToDefault
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings.Ediscov
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Reset a caseSettings object to the default values.
+        /// Invoke action resetToDefault
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

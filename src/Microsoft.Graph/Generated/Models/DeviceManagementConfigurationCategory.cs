@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// Device Management Configuration Policy
     /// </summary>
     public class DeviceManagementConfigurationCategory : Entity, IParsable {
-        /// <summary>Description of the category header</summary>
+        /// <summary>Description of the category header in policy summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CategoryDescription {
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("childCategoryIds", value); }
         }
 #endif
-        /// <summary>Description of the item</summary>
+        /// <summary>Description of the category. For example: Display</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Display name of the item</summary>
+        /// <summary>Name of the category. For example: Device Lock</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Help text of the item</summary>
+        /// <summary>Help text of the category. Give more details of the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HelpText {
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>Parent id of the category.</summary>
+        /// <summary>Direct parent id of the category. If the category is the root, the parent id is same as its id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentCategoryId {

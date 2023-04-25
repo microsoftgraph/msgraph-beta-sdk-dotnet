@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPoli
         public AggregatedPolicyCompliancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/aggregatedPolicyCompliances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the aggregatedPolicyCompliance objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-aggregatedpolicycompliances?view=graph-rest-1.0" />
+        /// Aggregate view of device compliance policies across managed tenants.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPoli
             return await RequestAdapter.SendAsync<AggregatedPolicyCompliance>(requestInfo, AggregatedPolicyCompliance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the aggregatedPolicyCompliance objects and their properties.
+        /// Aggregate view of device compliance policies across managed tenants.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPoli
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the aggregatedPolicyCompliance objects and their properties.
+        /// Aggregate view of device compliance policies across managed tenants.
         /// </summary>
         public class AggregatedPolicyCompliancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

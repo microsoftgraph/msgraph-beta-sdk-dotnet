@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the activity status of a Microsoft Teams-enabled device. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamworkdeviceactivity-get?view=graph-rest-1.0" />
+        /// The activity properties that change based on the device usage.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +111,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity {
             return requestInfo;
         }
         /// <summary>
-        /// Get the activity status of a Microsoft Teams-enabled device. 
+        /// The activity properties that change based on the device usage.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,7 +181,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Activity {
             }
         }
         /// <summary>
-        /// Get the activity status of a Microsoft Teams-enabled device. 
+        /// The activity properties that change based on the device usage.
         /// </summary>
         public class ActivityRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -83,20 +83,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("printerShares", value); }
         }
 #endif
-        /// <summary>The reports property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public ReportRoot? Reports {
-            get { return BackingStore?.Get<ReportRoot?>("reports"); }
-            set { BackingStore?.Set("reports", value); }
-        }
-#nullable restore
-#else
-        public ReportRoot Reports {
-            get { return BackingStore?.Get<ReportRoot>("reports"); }
-            set { BackingStore?.Set("reports", value); }
-        }
-#endif
         /// <summary>The list of available Universal Print service endpoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,7 +164,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<PrintOperation>(PrintOperation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"printers", n => { Printers = n.GetCollectionOfObjectValues<Printer>(Printer.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"printerShares", n => { PrinterShares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"reports", n => { Reports = n.GetObjectValue<ReportRoot>(ReportRoot.CreateFromDiscriminatorValue); } },
                 {"services", n => { Services = n.GetCollectionOfObjectValues<PrintService>(PrintService.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"settings", n => { Settings = n.GetObjectValue<PrintSettings>(PrintSettings.CreateFromDiscriminatorValue); } },
                 {"shares", n => { Shares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -196,7 +181,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<PrintOperation>("operations", Operations);
             writer.WriteCollectionOfObjectValues<Printer>("printers", Printers);
             writer.WriteCollectionOfObjectValues<PrinterShare>("printerShares", PrinterShares);
-            writer.WriteObjectValue<ReportRoot>("reports", Reports);
             writer.WriteCollectionOfObjectValues<PrintService>("services", Services);
             writer.WriteObjectValue<PrintSettings>("settings", Settings);
             writer.WriteCollectionOfObjectValues<PrinterShare>("shares", Shares);

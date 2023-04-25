@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.TranslateExchangeIds {
         public TranslateExchangeIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/translateExchangeIds", rawUrl) {
         }
         /// <summary>
-        /// Translate identifiers of Outlook-related resources between formats.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
+        /// Invoke action translateExchangeIds
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.TranslateExchangeIds {
             return await RequestAdapter.SendAsync<TranslateExchangeIdsResponse>(requestInfo, TranslateExchangeIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Translate identifiers of Outlook-related resources between formats.
+        /// Invoke action translateExchangeIds
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

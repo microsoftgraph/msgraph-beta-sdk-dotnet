@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Troubleshoot {
         public TroubleshootRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}/troubleshoot", rawUrl) {
         }
         /// <summary>
-        /// Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0" />
+        /// Invoke action troubleshoot
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Troubleshoot {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
+        /// Invoke action troubleshoot
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

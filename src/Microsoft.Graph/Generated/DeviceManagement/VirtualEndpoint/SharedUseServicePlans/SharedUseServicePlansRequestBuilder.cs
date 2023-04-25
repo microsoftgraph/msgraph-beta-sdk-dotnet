@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseService
         public SharedUseServicePlansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/sharedUseServicePlans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the cloudPcSharedUseServicePlan objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-1.0" />
+        /// Cloud PC shared-use service plans.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseService
             return await RequestAdapter.SendAsync<CloudPcSharedUseServicePlan>(requestInfo, CloudPcSharedUseServicePlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the cloudPcSharedUseServicePlan objects and their properties.
+        /// Cloud PC shared-use service plans.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseService
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the cloudPcSharedUseServicePlan objects and their properties.
+        /// Cloud PC shared-use service plans.
         /// </summary>
         public class SharedUseServicePlansRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

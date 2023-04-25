@@ -29,7 +29,6 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.FilesFolder.Content {
         }
         /// <summary>
         /// The content stream, if the item represents a file.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

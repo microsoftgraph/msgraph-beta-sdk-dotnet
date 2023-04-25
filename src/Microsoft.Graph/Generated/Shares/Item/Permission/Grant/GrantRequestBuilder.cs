@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Permission.Grant {
         public GrantRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/permission/grant", rawUrl) {
         }
         /// <summary>
-        /// Grant users access to a link represented by a [permission][].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0" />
+        /// Invoke action grant
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Permission.Grant {
             return await RequestAdapter.SendAsync<GrantResponse>(requestInfo, GrantResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Grant users access to a link represented by a [permission][].
+        /// Invoke action grant
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

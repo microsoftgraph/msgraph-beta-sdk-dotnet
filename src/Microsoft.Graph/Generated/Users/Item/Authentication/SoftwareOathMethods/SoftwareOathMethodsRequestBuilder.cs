@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods {
         public SoftwareOathMethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/softwareOathMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-1.0" />
+        /// Get softwareOathMethods from users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods {
             return await RequestAdapter.SendAsync<SoftwareOathAuthenticationMethodCollectionResponse>(requestInfo, SoftwareOathAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
+        /// Get softwareOathMethods from users
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
+        /// Get softwareOathMethods from users
         /// </summary>
         public class SoftwareOathMethodsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

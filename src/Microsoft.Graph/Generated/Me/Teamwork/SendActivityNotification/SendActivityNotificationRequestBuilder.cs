@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.SendActivityNotification {
         public SendActivityNotificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/teamwork/sendActivityNotification", rawUrl) {
         }
         /// <summary>
-        /// Send an activity feed notification to a user. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userteamwork-sendactivitynotification?view=graph-rest-1.0" />
+        /// Invoke action sendActivityNotification
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.SendActivityNotification {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Send an activity feed notification to a user. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+        /// Invoke action sendActivityNotification
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.Cancel {
         public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest%2Did}/cancel", rawUrl) {
         }
         /// <summary>
-        /// Cancel a privilegedRoleAssignmentRequest.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedroleassignmentrequest-cancel?view=graph-rest-1.0" />
+        /// Invoke action cancel
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +47,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.Cancel {
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Cancel a privilegedRoleAssignmentRequest.
+        /// Invoke action cancel
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

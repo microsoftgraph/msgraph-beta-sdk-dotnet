@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
         public MonthlyPrintUsageByUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/monthlyPrintUsageByUser{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of monthly print usage summaries, grouped by user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyuser?view=graph-rest-1.0" />
+        /// Get monthlyPrintUsageByUser from reports
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
             return await RequestAdapter.SendAsync<PrintUsageByUser>(requestInfo, PrintUsageByUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of monthly print usage summaries, grouped by user.
+        /// Get monthlyPrintUsageByUser from reports
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of monthly print usage summaries, grouped by user.
+        /// Get monthlyPrintUsageByUser from reports
         /// </summary>
         public class MonthlyPrintUsageByUserRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

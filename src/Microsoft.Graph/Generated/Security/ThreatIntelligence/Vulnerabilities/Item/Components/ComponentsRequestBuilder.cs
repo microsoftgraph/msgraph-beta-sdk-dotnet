@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
         public ComponentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/vulnerabilities/{vulnerability%2Did}/components{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0" />
+        /// Components related to this vulnerability article.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
             return await RequestAdapter.SendAsync<VulnerabilityComponent>(requestInfo, VulnerabilityComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
+        /// Components related to this vulnerability article.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
+        /// Components related to this vulnerability article.
         /// </summary>
         public class ComponentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles.Item.Indicat
         public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/articles/{article%2Did}/indicators{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-article-list-indicators?view=graph-rest-1.0" />
+        /// Indicators related to this article.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles.Item.Indicat
             return await RequestAdapter.SendAsync<ArticleIndicatorCollectionResponse>(requestInfo, ArticleIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
+        /// Indicators related to this article.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles.Item.Indicat
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of articleIndicator objects that represent indicators of threat or compromise related to the contents of an article.
+        /// Indicators related to this article.
         /// </summary>
         public class IndicatorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

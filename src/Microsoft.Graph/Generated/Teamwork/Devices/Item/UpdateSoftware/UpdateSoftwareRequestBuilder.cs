@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware {
         public UpdateSoftwareRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/updateSoftware", rawUrl) {
         }
         /// <summary>
-        /// Update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamworkdevice-updatesoftware?view=graph-rest-1.0" />
+        /// Invoke action updateSoftware
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
+        /// Invoke action updateSoftware
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

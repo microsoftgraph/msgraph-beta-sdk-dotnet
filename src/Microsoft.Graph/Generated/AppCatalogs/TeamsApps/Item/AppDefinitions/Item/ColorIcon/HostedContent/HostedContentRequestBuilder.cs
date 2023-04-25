@@ -52,8 +52,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Co
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the hosted content in an app&apos;s icon.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamworkhostedcontent-get?view=graph-rest-1.0" />
+        /// The contents of the app icon if the icon is hosted within the Teams infrastructure.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +116,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Co
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the hosted content in an app&apos;s icon.
+        /// The contents of the app icon if the icon is hosted within the Teams infrastructure.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,7 +186,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Co
             }
         }
         /// <summary>
-        /// Retrieve the hosted content in an app&apos;s icon.
+        /// The contents of the app icon if the icon is hosted within the Teams infrastructure.
         /// </summary>
         public class HostedContentRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Use
         public UserPreferencePayloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/officeConfiguration/clientConfigurations/{officeClientConfiguration%2Did}/userPreferencePayload", rawUrl) {
         }
         /// <summary>
-        /// Preference settings JSON string in binary format, these values can be overridden by the user.
+        /// Get userPreferencePayload for the navigation property clientConfigurations from officeConfiguration
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Use
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Preference settings JSON string in binary format, these values can be overridden by the user.
+        /// Update userPreferencePayload for the navigation property clientConfigurations in officeConfiguration
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Use
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Preference settings JSON string in binary format, these values can be overridden by the user.
+        /// Get userPreferencePayload for the navigation property clientConfigurations from officeConfiguration
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Use
             return requestInfo;
         }
         /// <summary>
-        /// Preference settings JSON string in binary format, these values can be overridden by the user.
+        /// Update userPreferencePayload for the navigation property clientConfigurations in officeConfiguration
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

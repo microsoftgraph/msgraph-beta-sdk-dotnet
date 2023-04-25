@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.FileThreats {
         public FileThreatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatSubmission/fileThreats{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the fileThreatSubmission objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-filethreatsubmission-list?view=graph-rest-1.0" />
+        /// Get fileThreats from security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.FileThreats {
             return await RequestAdapter.SendAsync<FileThreatSubmission>(requestInfo, FileThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the fileThreatSubmission objects and their properties.
+        /// Get fileThreats from security
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.FileThreats {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the fileThreatSubmission objects and their properties.
+        /// Get fileThreats from security
         /// </summary>
         public class FileThreatsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

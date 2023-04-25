@@ -312,7 +312,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registration", value); }
         }
 #endif
-        /// <summary>The shareMeetingChatHistoryDefault property</summary>
+        /// <summary>Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.</summary>
         public MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault {
             get { return BackingStore?.Get<MeetingChatHistoryDefaultMode?>("shareMeetingChatHistoryDefault"); }
             set { BackingStore?.Set("shareMeetingChatHistoryDefault", value); }

@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
         public PayloadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/payloads{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter **source** to filter and query the respective data source.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/attacksimulationroot-list-payloads?view=graph-rest-1.0" />
+        /// Represents an attack simulation training campaign payload in a tenant.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter **source** to filter and query the respective data source.
+        /// Represents an attack simulation training campaign payload in a tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter **source** to filter and query the respective data source.
+        /// Represents an attack simulation training campaign payload in a tenant.
         /// </summary>
         public class PayloadsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

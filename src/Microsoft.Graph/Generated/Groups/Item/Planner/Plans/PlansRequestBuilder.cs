@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans {
         public PlansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/planner/plans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of **plannerPlan** objects owned by a group object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns the plannerPlans owned by the group.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans {
             return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of **plannerPlan** objects owned by a group object.
+        /// Read-only. Nullable. Returns the plannerPlans owned by the group.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +139,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of **plannerPlan** objects owned by a group object.
+        /// Read-only. Nullable. Returns the plannerPlans owned by the group.
         /// </summary>
         public class PlansRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

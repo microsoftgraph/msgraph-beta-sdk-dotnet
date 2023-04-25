@@ -4,7 +4,6 @@ using Microsoft.Graph.Beta.Print.Connectors;
 using Microsoft.Graph.Beta.Print.Operations;
 using Microsoft.Graph.Beta.Print.PrinterShares;
 using Microsoft.Graph.Beta.Print.Printers;
-using Microsoft.Graph.Beta.Print.Reports;
 using Microsoft.Graph.Beta.Print.Services;
 using Microsoft.Graph.Beta.Print.Shares;
 using Microsoft.Graph.Beta.Print.TaskDefinitions;
@@ -36,10 +35,6 @@ namespace Microsoft.Graph.Beta.Print {
         /// <summary>Provides operations to manage the printerShares property of the microsoft.graph.print entity.</summary>
         public PrinterSharesRequestBuilder PrinterShares { get =>
             new PrinterSharesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the reports property of the microsoft.graph.print entity.</summary>
-        public ReportsRequestBuilder Reports { get =>
-            new ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the services property of the microsoft.graph.print entity.</summary>
         public ServicesRequestBuilder Services { get =>

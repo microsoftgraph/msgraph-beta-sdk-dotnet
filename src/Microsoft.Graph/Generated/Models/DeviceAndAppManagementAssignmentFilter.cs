@@ -8,12 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     /// A class containing the properties used for Assignment Filter.
     /// </summary>
     public class DeviceAndAppManagementAssignmentFilter : Entity, IParsable {
-        /// <summary>Creation time of the Assignment Filter.</summary>
+        /// <summary>The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Description of the Assignment Filter.</summary>
+        /// <summary>Optional description of the Assignment Filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>DisplayName of the Assignment Filter.</summary>
+        /// <summary>The name of the Assignment Filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -41,12 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Last modified time of the Assignment Filter.</summary>
+        /// <summary>Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Associated assignments for a specific filter</summary>
+        /// <summary>Indicates associated assignments for a specific filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PayloadByFilter>? Payloads {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
-        /// <summary>RoleScopeTags of the Assignment Filter.</summary>
+        /// <summary>Indicates role scope tags assigned for the assignment filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RoleScopeTags {
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleScopeTags", value); }
         }
 #endif
-        /// <summary>Rule definition of the Assignment Filter.</summary>
+        /// <summary>Rule definition of the assignment filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Rule {
