@@ -7,6 +7,11 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.28.0-preview] - 2023-04-27
+
+- Latest metadata updates from 25th April 2023
+- Drops orphaned collection models unnecessarily generated due to inheritance (https://github.com/microsoft/kiota/issues/2543)
+
 ## [5.27.0-preview] - 2023-04-18
 
 - Latest metadata updates from 18th April 2023
