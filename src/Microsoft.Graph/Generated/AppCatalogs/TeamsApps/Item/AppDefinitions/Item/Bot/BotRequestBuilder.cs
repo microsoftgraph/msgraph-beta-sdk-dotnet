@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Bo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the bot associated with a specific definition of the  TeamsApp.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamworkbot-get?view=graph-rest-1.0" />
+        /// The details of the bot specified in the Teams app manifest.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +111,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Bo
             return requestInfo;
         }
         /// <summary>
-        /// Get the bot associated with a specific definition of the  TeamsApp.
+        /// The details of the bot specified in the Teams app manifest.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,7 +181,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Bo
             }
         }
         /// <summary>
-        /// Get the bot associated with a specific definition of the  TeamsApp.
+        /// The details of the bot specified in the Teams app manifest.
         /// </summary>
         public class BotRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

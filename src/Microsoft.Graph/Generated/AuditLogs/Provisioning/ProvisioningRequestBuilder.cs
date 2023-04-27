@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.Provisioning {
         public ProvisioningRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs/provisioning{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0" />
+        /// Get provisioning from auditLogs
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.Provisioning {
             return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, ProvisioningObjectSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
+        /// Get provisioning from auditLogs
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.Provisioning {
             return requestInfo;
         }
         /// <summary>
-        /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
+        /// Get provisioning from auditLogs
         /// </summary>
         public class ProvisioningRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

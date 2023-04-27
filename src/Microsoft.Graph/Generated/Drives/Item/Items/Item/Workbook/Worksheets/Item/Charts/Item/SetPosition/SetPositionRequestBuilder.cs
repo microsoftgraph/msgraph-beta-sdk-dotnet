@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         public SetPositionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/setPosition", rawUrl) {
         }
         /// <summary>
-        /// Positions the chart relative to cells on the worksheet.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chart-setposition?view=graph-rest-1.0" />
+        /// Invoke action setPosition
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Positions the chart relative to cells on the worksheet.
+        /// Invoke action setPosition
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

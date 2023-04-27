@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders {
         public IdentityProvidersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the identity providers in a b2cIdentityUserFlow object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-1.0" />
+        /// Get identityProviders from identity
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,7 +64,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders {
             return await RequestAdapter.SendAsync<IdentityProviderCollectionResponse>(requestInfo, IdentityProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the identity providers in a b2cIdentityUserFlow object.
+        /// Get identityProviders from identity
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +90,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders {
             return requestInfo;
         }
         /// <summary>
-        /// Get the identity providers in a b2cIdentityUserFlow object.
+        /// Get identityProviders from identity
         /// </summary>
         public class IdentityProvidersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

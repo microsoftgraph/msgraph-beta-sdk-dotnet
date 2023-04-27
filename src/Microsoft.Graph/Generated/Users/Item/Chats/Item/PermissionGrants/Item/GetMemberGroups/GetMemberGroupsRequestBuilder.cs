@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants.Item.GetMe
         public GetMemberGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/permissionGrants/{resourceSpecificPermissionGrant%2Did}/getMemberGroups", rawUrl) {
         }
         /// <summary>
-        /// Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0" />
+        /// Invoke action getMemberGroups
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants.Item.GetMe
             return await RequestAdapter.SendAsync<GetMemberGroupsResponse>(requestInfo, GetMemberGroupsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+        /// Invoke action getMemberGroups
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

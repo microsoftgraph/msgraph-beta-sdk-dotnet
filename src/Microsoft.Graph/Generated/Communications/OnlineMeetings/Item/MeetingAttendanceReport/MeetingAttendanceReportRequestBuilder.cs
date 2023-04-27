@@ -52,8 +52,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.MeetingAttenda
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0" />
+        /// Get meetingAttendanceReport from communications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +116,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.MeetingAttenda
             return requestInfo;
         }
         /// <summary>
-        /// Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
+        /// Get meetingAttendanceReport from communications
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,7 +186,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.MeetingAttenda
             }
         }
         /// <summary>
-        /// Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
+        /// Get meetingAttendanceReport from communications
         /// </summary>
         public class MeetingAttendanceReportRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

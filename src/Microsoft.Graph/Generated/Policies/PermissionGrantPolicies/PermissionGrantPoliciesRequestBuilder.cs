@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
         public PermissionGrantPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/permissionGrantPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the list of permissionGrantPolicy objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list?view=graph-rest-1.0" />
+        /// The policy that specifies the conditions under which consent can be granted.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
             return await RequestAdapter.SendAsync<PermissionGrantPolicyCollectionResponse>(requestInfo, PermissionGrantPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Creates a permissionGrantPolicy. A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent). After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-permissiongrantpolicies?view=graph-rest-1.0" />
+        /// Create new navigation property to permissionGrantPolicies for policies
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
             return await RequestAdapter.SendAsync<PermissionGrantPolicy>(requestInfo, PermissionGrantPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the list of permissionGrantPolicy objects.
+        /// The policy that specifies the conditions under which consent can be granted.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a permissionGrantPolicy. A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent). After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules.
+        /// Create new navigation property to permissionGrantPolicies for policies
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the list of permissionGrantPolicy objects.
+        /// The policy that specifies the conditions under which consent can be granted.
         /// </summary>
         public class PermissionGrantPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

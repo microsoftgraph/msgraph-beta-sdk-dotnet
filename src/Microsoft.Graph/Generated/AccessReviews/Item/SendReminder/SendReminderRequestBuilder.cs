@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.SendReminder {
         public SendReminderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/sendReminder", rawUrl) {
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreview-sendreminder?view=graph-rest-1.0" />
+        /// Invoke action sendReminder
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.SendReminder {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review. 
+        /// Invoke action sendReminder
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
         public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/messages/{serviceUpdateMessage%2Did}/attachments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of attachments associated with a service message.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0" />
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
             return await RequestAdapter.SendAsync<ServiceAnnouncementAttachment>(requestInfo, ServiceAnnouncementAttachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of attachments associated with a service message.
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of attachments associated with a service message.
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

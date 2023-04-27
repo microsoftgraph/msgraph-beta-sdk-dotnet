@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Sections {
         public SectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/sections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of section objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0" />
+        /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Sections {
             return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, OnenoteSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of section objects.
+        /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Sections {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of section objects.
+        /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         /// </summary>
         public class SectionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

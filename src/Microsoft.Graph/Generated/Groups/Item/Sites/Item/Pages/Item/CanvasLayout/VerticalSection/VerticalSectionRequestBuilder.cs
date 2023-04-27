@@ -52,8 +52,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ve
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of a verticalSection object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/verticalsection-get?view=graph-rest-1.0" />
+        /// Vertical section on the SharePoint page.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +116,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ve
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a verticalSection object.
+        /// Vertical section on the SharePoint page.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,7 +186,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ve
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a verticalSection object.
+        /// Vertical section on the SharePoint page.
         /// </summary>
         public class VerticalSectionRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

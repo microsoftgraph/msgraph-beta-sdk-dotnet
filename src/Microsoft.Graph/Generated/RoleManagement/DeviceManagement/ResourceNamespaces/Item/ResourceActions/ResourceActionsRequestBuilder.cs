@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
         public ResourceActionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement/deviceManagement/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the unifiedRbacResourceAction objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0" />
+        /// Operations that an authorized principal are allowed to perform.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
             return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the unifiedRbacResourceAction objects and their properties.
+        /// Operations that an authorized principal are allowed to perform.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the unifiedRbacResourceAction objects and their properties.
+        /// Operations that an authorized principal are allowed to perform.
         /// </summary>
         public class ResourceActionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

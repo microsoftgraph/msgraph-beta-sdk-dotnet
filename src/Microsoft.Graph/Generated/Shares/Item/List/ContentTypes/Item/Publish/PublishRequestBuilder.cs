@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Publish {
         public PublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/publish", rawUrl) {
         }
         /// <summary>
-        /// Publishes a [contentType][] present in a content type hub site.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0" />
+        /// Invoke action publish
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Publish {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Publishes a [contentType][] present in a content type hub site.
+        /// Invoke action publish
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

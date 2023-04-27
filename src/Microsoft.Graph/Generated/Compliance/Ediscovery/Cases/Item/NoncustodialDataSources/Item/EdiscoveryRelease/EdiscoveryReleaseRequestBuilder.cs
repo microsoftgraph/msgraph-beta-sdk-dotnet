@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
         public EdiscoveryReleaseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/noncustodialDataSources/{noncustodialDataSource%2Did}/ediscovery.release", rawUrl) {
         }
         /// <summary>
-        /// Releases the non-custodial data source from the case.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-release?view=graph-rest-1.0" />
+        /// Invoke action release
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Releases the non-custodial data source from the case.
+        /// Invoke action release
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

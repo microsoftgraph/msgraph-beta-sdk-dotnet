@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Unpublish {
         public UnpublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/unpublish", rawUrl) {
         }
         /// <summary>
-        /// Make the scheduling page of this business not available to external customers. Set the **isPublished** property to false, and **publicUrl** property to null.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0" />
+        /// Prevents the general public from seeing the scheduling page of this business.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Unpublish {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Make the scheduling page of this business not available to external customers. Set the **isPublished** property to false, and **publicUrl** property to null.
+        /// Prevents the general public from seeing the scheduling page of this business.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

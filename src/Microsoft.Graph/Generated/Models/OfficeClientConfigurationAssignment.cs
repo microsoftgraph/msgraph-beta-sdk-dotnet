@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OfficeClientConfigurationAssignment : Entity, IParsable {
-        /// <summary>The target assignment defined by the admin.</summary>
+        /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public OfficeConfigurationAssignmentTarget? Target {

@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         public ManagedTenantsApplyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managementActions/{managementAction%2Did}/managedTenants.apply", rawUrl) {
         }
         /// <summary>
-        /// Applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/managedtenants-managementaction-apply?view=graph-rest-1.0" />
+        /// Invoke action apply
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             return await RequestAdapter.SendAsync<ManagementActionDeploymentStatus>(requestInfo, ManagementActionDeploymentStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
+        /// Invoke action apply
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -49,8 +49,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0" />
+        /// Get roleAssignmentScheduleInstances from roleManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +89,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
             return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleInstance>(requestInfo, UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
+        /// Get roleAssignmentScheduleInstances from roleManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +143,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
             return requestInfo;
         }
         /// <summary>
-        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
+        /// Get roleAssignmentScheduleInstances from roleManagement
         /// </summary>
         public class RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

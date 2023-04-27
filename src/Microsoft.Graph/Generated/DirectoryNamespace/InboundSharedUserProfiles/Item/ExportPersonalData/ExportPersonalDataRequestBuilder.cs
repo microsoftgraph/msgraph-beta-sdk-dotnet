@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         public ExportPersonalDataRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}/exportPersonalData", rawUrl) {
         }
         /// <summary>
-        /// Create a request to export the personal data for an inboundSharedUserProfile.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/inboundshareduserprofile-exportpersonaldata?view=graph-rest-1.0" />
+        /// Invoke action exportPersonalData
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a request to export the personal data for an inboundSharedUserProfile.
+        /// Invoke action exportPersonalData
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

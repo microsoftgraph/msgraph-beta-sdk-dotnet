@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.GetMailTips {
         public GetMailTipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/getMailTips", rawUrl) {
         }
         /// <summary>
-        /// Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a `POST` call to the `getMailTips` action, you can request specific types of MailTips to be returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0" />
+        /// Invoke action getMailTips
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.GetMailTips {
             return await RequestAdapter.SendAsync<GetMailTipsResponse>(requestInfo, GetMailTipsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a `POST` call to the `getMailTips` action, you can request specific types of MailTips to be returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
+        /// Invoke action getMailTips
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

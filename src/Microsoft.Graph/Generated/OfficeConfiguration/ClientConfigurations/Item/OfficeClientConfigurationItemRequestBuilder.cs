@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of office Client configuration.
+        /// Get clientConfigurations from officeConfiguration
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// List of office Client configuration.
+        /// Get clientConfigurations from officeConfiguration
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             }
         }
         /// <summary>
-        /// List of office Client configuration.
+        /// Get clientConfigurations from officeConfiguration
         /// </summary>
         public class OfficeClientConfigurationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

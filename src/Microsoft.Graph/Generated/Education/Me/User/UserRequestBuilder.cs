@@ -33,8 +33,7 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
         public UserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/me/user{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the simple directory **user** that corresponds to this **educationUser**.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0" />
+        /// Get user from education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +52,7 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the simple directory **user** that corresponds to this **educationUser**.
+        /// Get user from education
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +78,7 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the simple directory **user** that corresponds to this **educationUser**.
+        /// Get user from education
         /// </summary>
         public class UserRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

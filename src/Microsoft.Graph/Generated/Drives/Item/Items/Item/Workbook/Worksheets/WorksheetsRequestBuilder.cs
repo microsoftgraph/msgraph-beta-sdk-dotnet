@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets {
         public WorksheetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of worksheet objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/worksheet-list?view=graph-rest-1.0" />
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets {
             return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of worksheet objects.
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +139,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of worksheet objects.
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         public class WorksheetsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

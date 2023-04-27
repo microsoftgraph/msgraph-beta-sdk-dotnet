@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
         public AssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/assignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of privilegedRoleAssignment objects that are associated with the role. Each privilegedRoleAssignment represents a role assignment to a user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedrole-list-assignments?view=graph-rest-1.0" />
+        /// The assignments for this role. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +59,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentCollectionResponse>(requestInfo, PrivilegedRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of privilegedRoleAssignment objects that are associated with the role. Each privilegedRoleAssignment represents a role assignment to a user.
+        /// The assignments for this role. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of privilegedRoleAssignment objects that are associated with the role. Each privilegedRoleAssignment represents a role assignment to a user.
+        /// The assignments for this role. Read-only. Nullable.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

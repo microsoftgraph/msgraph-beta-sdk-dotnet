@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OfficeClientConfiguration : Entity, IParsable {
-        /// <summary>The list of group assignments for the policy.</summary>
+        /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OfficeClientConfigurationAssignment>? Assignments {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
-        /// <summary>List of office Client check-in status.</summary>
+        /// <summary>The checkinStatuses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OfficeClientCheckinStatus>? CheckinStatuses {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("checkinStatuses", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Admin provided description of the office client configuration policy.</summary>
+        /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Policy settings JSON string in binary format, these values cannot be changed by the user.</summary>
+        /// <summary>The policyPayload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? PolicyPayload {
@@ -75,12 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("policyPayload", value); }
         }
 #endif
-        /// <summary>Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.</summary>
+        /// <summary>The priority property</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
-        /// <summary>User check-in summary for the policy.</summary>
+        /// <summary>The userCheckinSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public OfficeUserCheckinSummary? UserCheckinSummary {
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userCheckinSummary", value); }
         }
 #endif
-        /// <summary>Preference settings JSON string in binary format, these values can be overridden by the user.</summary>
+        /// <summary>The userPreferencePayload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? UserPreferencePayload {

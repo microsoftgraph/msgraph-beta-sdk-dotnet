@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OfferShiftRequests {
         public OfferShiftRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/offerShiftRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0" />
+        /// Get offerShiftRequests from groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OfferShiftRequests {
             return await RequestAdapter.SendAsync<OfferShiftRequest>(requestInfo, OfferShiftRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team.
+        /// Get offerShiftRequests from groups
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OfferShiftRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of all offerShiftRequest objects in a team.
+        /// Get offerShiftRequests from groups
         /// </summary>
         public class OfferShiftRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

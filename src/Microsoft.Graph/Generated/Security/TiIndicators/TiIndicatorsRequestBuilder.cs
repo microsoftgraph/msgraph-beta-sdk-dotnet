@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         public TiIndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of tiIndicator objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tiindicators-list?view=graph-rest-1.0" />
+        /// Get tiIndicators from security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,8 +79,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return await RequestAdapter.SendAsync<TiIndicatorCollectionResponse>(requestInfo, TiIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new tiIndicator object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tiindicators-post?view=graph-rest-1.0" />
+        /// Create new navigation property to tiIndicators for security
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +100,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, TiIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of tiIndicator objects.
+        /// Get tiIndicators from security
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +126,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new tiIndicator object.
+        /// Create new navigation property to tiIndicators for security
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of tiIndicator objects.
+        /// Get tiIndicators from security
         /// </summary>
         public class TiIndicatorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

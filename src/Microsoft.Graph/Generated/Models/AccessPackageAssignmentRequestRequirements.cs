@@ -131,6 +131,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
+        /// <summary>The status of the process to process the verifiable credential, if any.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus? VerifiableCredentialRequirementStatus {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus?>("verifiableCredentialRequirementStatus"); }
+            set { BackingStore?.Set("verifiableCredentialRequirementStatus", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus VerifiableCredentialRequirementStatus {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus>("verifiableCredentialRequirementStatus"); }
+            set { BackingStore?.Set("verifiableCredentialRequirementStatus", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new accessPackageAssignmentRequestRequirements and sets the default values.
         /// </summary>
@@ -162,6 +176,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"policyId", n => { PolicyId = n.GetStringValue(); } },
                 {"questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                {"verifiableCredentialRequirementStatus", n => { VerifiableCredentialRequirementStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus>(Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -181,6 +196,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteCollectionOfObjectValues<AccessPackageQuestion>("questions", Questions);
             writer.WriteObjectValue<RequestSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus>("verifiableCredentialRequirementStatus", VerifiableCredentialRequirementStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

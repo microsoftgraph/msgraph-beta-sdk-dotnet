@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         public RepliesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0" />
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,8 +64,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Send a new reply to a chatMessage in a specified channel.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0" />
+        /// Create new navigation property to replies for teamwork
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +85,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return await RequestAdapter.SendAsync<ChatMessage>(requestInfo, ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
-        /// Send a new reply to a chatMessage in a specified channel.
+        /// Create new navigation property to replies for teamwork
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +139,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
-        /// List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
+        /// Replies for a specified message. Supports $expand for channel messages.
         /// </summary>
         public class RepliesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

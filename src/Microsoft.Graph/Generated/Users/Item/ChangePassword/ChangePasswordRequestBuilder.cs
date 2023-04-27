@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ChangePassword {
         public ChangePasswordRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/changePassword", rawUrl) {
         }
         /// <summary>
-        /// Enable the user to update their password. Any user can update their password without belonging to any administrator role.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0" />
+        /// Invoke action changePassword
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ChangePassword {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Enable the user to update their password. Any user can update their password without belonging to any administrator role.
+        /// Invoke action changePassword
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
         public AlertRecordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/monitoring/alertRecords{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the alertRecord objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-list?view=graph-rest-1.0" />
+        /// The collection of records of alert events.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
             return await RequestAdapter.SendAsync<AlertRecord>(requestInfo, AlertRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the alertRecord objects and their properties.
+        /// The collection of records of alert events.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +139,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the alertRecord objects and their properties.
+        /// The collection of records of alert events.
         /// </summary>
         public class AlertRecordsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

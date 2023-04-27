@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the properties of a regionalAndLanguageSettings object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0" />
+        /// The user&apos;s preferences for languages, regional locale and date/time formatting.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(requestInfo, Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update some or all of the properties of a regionalAndLanguageSettings object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property regionalAndLanguageSettings in me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of a regionalAndLanguageSettings object.
+        /// The user&apos;s preferences for languages, regional locale and date/time formatting.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Update some or all of the properties of a regionalAndLanguageSettings object.
+        /// Update the navigation property regionalAndLanguageSettings in me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
             }
         }
         /// <summary>
-        /// Get the properties of a regionalAndLanguageSettings object.
+        /// The user&apos;s preferences for languages, regional locale and date/time formatting.
         /// </summary>
         public class RegionalAndLanguageSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

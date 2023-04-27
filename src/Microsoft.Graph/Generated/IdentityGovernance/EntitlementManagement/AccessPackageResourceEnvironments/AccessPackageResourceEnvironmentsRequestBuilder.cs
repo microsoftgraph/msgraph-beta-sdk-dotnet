@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public AccessPackageResourceEnvironmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceEnvironments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of accessPackageResourceEnvironment objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageresourceenvironment?view=graph-rest-1.0" />
+        /// A reference to the geolocation environment in which a resource is located.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of accessPackageResourceEnvironment objects and their properties.
+        /// A reference to the geolocation environment in which a resource is located.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of accessPackageResourceEnvironment objects and their properties.
+        /// A reference to the geolocation environment in which a resource is located.
         /// </summary>
         public class AccessPackageResourceEnvironmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

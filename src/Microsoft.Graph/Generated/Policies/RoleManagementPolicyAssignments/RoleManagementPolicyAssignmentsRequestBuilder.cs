@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments {
         public RoleManagementPolicyAssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/roleManagementPolicyAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-1.0" />
+        /// Represents the role management policy assignments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments {
             return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicyAssignment>(requestInfo, UnifiedRoleManagementPolicyAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
+        /// Represents the role management policy assignments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments {
             return requestInfo;
         }
         /// <summary>
-        /// Get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
+        /// Represents the role management policy assignments.
         /// </summary>
         public class RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

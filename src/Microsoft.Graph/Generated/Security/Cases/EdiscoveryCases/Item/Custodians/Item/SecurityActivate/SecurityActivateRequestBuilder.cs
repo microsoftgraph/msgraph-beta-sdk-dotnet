@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
         public SecurityActivateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/security.activate", rawUrl) {
         }
         /// <summary>
-        /// Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an eDiscovery (Premium) case.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-ediscoverycustodian-activate?view=graph-rest-1.0" />
+        /// Invoke action activate
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an eDiscovery (Premium) case.
+        /// Invoke action activate
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

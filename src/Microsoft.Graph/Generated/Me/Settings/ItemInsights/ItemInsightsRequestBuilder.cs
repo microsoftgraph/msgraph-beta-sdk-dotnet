@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ItemInsights {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the user-customizable privacy settings for itemInsights and meeting hours insights.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0" />
+        /// The user&apos;s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ItemInsights {
             return await RequestAdapter.SendAsync<UserInsightsSettings>(requestInfo, UserInsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the privacy settings for itemInsights and meeting hours insights of a user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property itemInsights in me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ItemInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Get the user-customizable privacy settings for itemInsights and meeting hours insights.
+        /// The user&apos;s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ItemInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Update the privacy settings for itemInsights and meeting hours insights of a user.
+        /// Update the navigation property itemInsights in me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ItemInsights {
             }
         }
         /// <summary>
-        /// Get the user-customizable privacy settings for itemInsights and meeting hours insights.
+        /// The user&apos;s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
         /// </summary>
         public class ItemInsightsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// List the tokenIssuancePolicy objects that are assigned to an application.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0" />
+        /// Get ref of tokenIssuancePolicies from applications
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +68,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List the tokenIssuancePolicy objects that are assigned to an application.
+        /// Get ref of tokenIssuancePolicies from applications
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// List the tokenIssuancePolicy objects that are assigned to an application.
+        /// Get ref of tokenIssuancePolicies from applications
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

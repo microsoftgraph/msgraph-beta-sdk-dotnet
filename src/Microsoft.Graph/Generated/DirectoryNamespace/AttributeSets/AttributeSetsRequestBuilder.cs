@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
         public AttributeSetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/attributeSets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the attributeSet objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0" />
+        /// Group of related custom security attribute definitions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
             return await RequestAdapter.SendAsync<AttributeSetCollectionResponse>(requestInfo, AttributeSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new attributeSet object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0" />
+        /// Create new navigation property to attributeSets for directory
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
             return await RequestAdapter.SendAsync<AttributeSet>(requestInfo, AttributeSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the attributeSet objects and their properties.
+        /// Group of related custom security attribute definitions.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new attributeSet object.
+        /// Create new navigation property to attributeSets for directory
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the attributeSet objects and their properties.
+        /// Group of related custom security attribute definitions.
         /// </summary>
         public class AttributeSetsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

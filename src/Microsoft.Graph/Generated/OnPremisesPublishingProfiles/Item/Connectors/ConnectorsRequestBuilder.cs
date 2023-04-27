@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors {
         public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of connector objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connector-list?view=graph-rest-1.0" />
+        /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors {
             return await RequestAdapter.SendAsync<Connector>(requestInfo, Connector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of connector objects.
+        /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of connector objects.
+        /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         public class ConnectorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

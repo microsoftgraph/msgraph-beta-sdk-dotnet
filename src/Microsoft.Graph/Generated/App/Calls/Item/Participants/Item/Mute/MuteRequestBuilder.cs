@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.Mute {
         public MuteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/participants/{participant%2Did}/mute", rawUrl) {
         }
         /// <summary>
-        /// Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0" />
+        /// Invoke action mute
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.Mute {
             return await RequestAdapter.SendAsync<MuteParticipantOperation>(requestInfo, MuteParticipantOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.
+        /// Invoke action mute
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

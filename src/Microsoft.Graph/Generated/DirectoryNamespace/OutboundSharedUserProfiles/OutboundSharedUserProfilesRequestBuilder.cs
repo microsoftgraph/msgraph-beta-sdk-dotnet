@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles {
         public OutboundSharedUserProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/outboundSharedUserProfiles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties of all outboundSharedUserProfiles.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directory-list-outboundshareduserprofiles?view=graph-rest-1.0" />
+        /// Get outboundSharedUserProfiles from directory
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles {
             return await RequestAdapter.SendAsync<OutboundSharedUserProfile>(requestInfo, OutboundSharedUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties of all outboundSharedUserProfiles.
+        /// Get outboundSharedUserProfiles from directory
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of all outboundSharedUserProfiles.
+        /// Get outboundSharedUserProfiles from directory
         /// </summary>
         public class OutboundSharedUserProfilesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

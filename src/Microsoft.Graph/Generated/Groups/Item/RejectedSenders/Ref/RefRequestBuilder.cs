@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.RejectedSenders.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref{?%24top,%24skip,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of users or groups that are in the rejected-senders list for this group. Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0" />
+        /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +68,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.RejectedSenders.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of users or groups that are in the rejected-senders list for this group. Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+        /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.RejectedSenders.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of users or groups that are in the rejected-senders list for this group. Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+        /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
         public ClearRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/columns/{workbookTableColumn%2Did}/filter/clear", rawUrl) {
         }
         /// <summary>
-        /// Clear the filter on the given column.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/filter-clear?view=graph-rest-1.0" />
+        /// Invoke action clear
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Clear the filter on the given column.
+        /// Invoke action clear
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public IncompatibleAccessPackagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackage/incompatibleAccessPackages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0" />
+        /// The  access packages whose assigned users are ineligible to be assigned this access package.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,7 +64,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<AccessPackageCollectionResponse>(requestInfo, AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+        /// The  access packages whose assigned users are ineligible to be assigned this access package.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +90,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+        /// The  access packages whose assigned users are ineligible to be assigned this access package.
         /// </summary>
         public class IncompatibleAccessPackagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

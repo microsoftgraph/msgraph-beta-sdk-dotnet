@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
         public ClearRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tables/{workbookTable%2Did}/sort/clear", rawUrl) {
         }
         /// <summary>
-        /// Clears the sorting that is currently on the table. While this doesn&apos;t modify the table&apos;s ordering, it clears the state of the header buttons.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tablesort-clear?view=graph-rest-1.0" />
+        /// Invoke action clear
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Clears the sorting that is currently on the table. While this doesn&apos;t modify the table&apos;s ordering, it clears the state of the header buttons.
+        /// Invoke action clear
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks {
         public TasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/todo/lists/{todoTaskList%2Did}/tasks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0" />
+        /// The tasks in this task list. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,8 +64,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks {
             return await RequestAdapter.SendAsync<TodoTaskCollectionResponse>(requestInfo, TodoTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new task object in a specified todoTaskList.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0" />
+        /// Create new navigation property to tasks for me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +85,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks {
             return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
+        /// The tasks in this task list. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new task object in a specified todoTaskList.
+        /// Create new navigation property to tasks for me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +139,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks {
             return requestInfo;
         }
         /// <summary>
-        /// Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
+        /// The tasks in this task list. Read-only. Nullable.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the delegatedAdminRelationshipOperation objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0" />
+        /// The long running operations associated with the delegated admin relationship.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return await RequestAdapter.SendAsync<DelegatedAdminRelationshipOperation>(requestInfo, DelegatedAdminRelationshipOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the delegatedAdminRelationshipOperation objects and their properties.
+        /// The long running operations associated with the delegated admin relationship.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the delegatedAdminRelationshipOperation objects and their properties.
+        /// The long running operations associated with the delegated admin relationship.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         public TimeCardsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of timeCard entries in a schedule.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timecard-list?view=graph-rest-1.0" />
+        /// Get timeCards from teamTemplateDefinition
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,8 +64,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return await RequestAdapter.SendAsync<TimeCardCollectionResponse>(requestInfo, TimeCardCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a timeCard instance in a schedule.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timecard-post?view=graph-rest-1.0" />
+        /// Create new navigation property to timeCards for teamTemplateDefinition
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +85,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of timeCard entries in a schedule.
+        /// Get timeCards from teamTemplateDefinition
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return requestInfo;
         }
         /// <summary>
-        /// Create a timeCard instance in a schedule.
+        /// Create new navigation property to timeCards for teamTemplateDefinition
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +139,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of timeCard entries in a schedule.
+        /// Get timeCards from teamTemplateDefinition
         /// </summary>
         public class TimeCardsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

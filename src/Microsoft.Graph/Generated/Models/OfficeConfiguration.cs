@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>List of office Client configuration.</summary>
+        /// <summary>The clientConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OfficeClientConfiguration>? ClientConfigurations {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>List of office Client check-in status.</summary>
+        /// <summary>The tenantCheckinStatuses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OfficeClientCheckinStatus>? TenantCheckinStatuses {
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantCheckinStatuses", value); }
         }
 #endif
-        /// <summary>Entity that describes tenant check-in statues</summary>
+        /// <summary>The tenantUserCheckinSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public OfficeUserCheckinSummary? TenantUserCheckinSummary {

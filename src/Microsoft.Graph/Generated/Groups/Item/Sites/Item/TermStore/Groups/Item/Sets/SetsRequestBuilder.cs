@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets
         public SetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/groups/{group%2Did1}/sets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the set objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0" />
+        /// All sets under the group in a term [store].
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the set objects and their properties.
+        /// All sets under the group in a term [store].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the set objects and their properties.
+        /// All sets under the group in a term [store].
         /// </summary>
         public class SetsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Invite {
         public InviteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/participants/invite", rawUrl) {
         }
         /// <summary>
-        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0" />
+        /// Invoke action invite
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Invite {
             return await RequestAdapter.SendAsync<InviteParticipantsOperation>(requestInfo, InviteParticipantsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.
+        /// Invoke action invite
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

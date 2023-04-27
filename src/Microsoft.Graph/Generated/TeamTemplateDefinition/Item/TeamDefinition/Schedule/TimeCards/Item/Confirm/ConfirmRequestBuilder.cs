@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         public ConfirmRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards/{timeCard%2Did}/confirm", rawUrl) {
         }
         /// <summary>
-        /// Confirm a specific timeCard.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0" />
+        /// Invoke action confirm
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +47,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Confirm a specific timeCard.
+        /// Invoke action confirm
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

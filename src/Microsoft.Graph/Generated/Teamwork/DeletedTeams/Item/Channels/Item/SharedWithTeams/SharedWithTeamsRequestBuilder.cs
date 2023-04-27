@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWi
         public SharedWithTeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/sharedWithTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0" />
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWi
             return await RequestAdapter.SendAsync<SharedWithChannelTeamInfo>(requestInfo, SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWi
             return requestInfo;
         }
         /// <summary>
-        /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+        /// A collection of teams with which a channel is shared.
         /// </summary>
         public class SharedWithTeamsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

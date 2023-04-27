@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public AccessPackagesIncompatibleWithRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/accessPackagesIncompatibleWith{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-1.0" />
+        /// The access packages that are incompatible with this package. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +59,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<AccessPackageCollectionResponse>(requestInfo, AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
+        /// The access packages that are incompatible with this package. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of the accessPackage objects that have marked a specified accessPackage as incompatible.
+        /// The access packages that are incompatible with this package. Read-only.
         /// </summary>
         public class AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -59,8 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarPermissions {
             return await RequestAdapter.SendAsync<CalendarPermissionCollectionResponse>(requestInfo, CalendarPermissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0" />
+        /// Create new navigation property to calendarPermissions for users
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +106,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarPermissions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
+        /// Create new navigation property to calendarPermissions for users
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

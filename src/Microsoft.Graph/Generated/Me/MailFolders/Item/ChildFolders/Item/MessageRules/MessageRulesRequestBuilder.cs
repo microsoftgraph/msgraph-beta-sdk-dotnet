@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MessageRule
         public MessageRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messageRules{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get all the messageRule objects defined for the user&apos;s inbox.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0" />
+        /// The collection of rules that apply to the user&apos;s Inbox folder.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MessageRule
             return await RequestAdapter.SendAsync<MessageRuleCollectionResponse>(requestInfo, MessageRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user&apos;s Inbox meets the specified conditions.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0" />
+        /// Create new navigation property to messageRules for me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MessageRule
             return await RequestAdapter.SendAsync<MessageRule>(requestInfo, MessageRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get all the messageRule objects defined for the user&apos;s inbox.
+        /// The collection of rules that apply to the user&apos;s Inbox folder.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MessageRule
             return requestInfo;
         }
         /// <summary>
-        /// Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user&apos;s Inbox meets the specified conditions.
+        /// Create new navigation property to messageRules for me
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MessageRule
             return requestInfo;
         }
         /// <summary>
-        /// Get all the messageRule objects defined for the user&apos;s inbox.
+        /// The collection of rules that apply to the user&apos;s Inbox folder.
         /// </summary>
         public class MessageRulesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

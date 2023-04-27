@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.AcquireAccessTo
         public AcquireAccessTokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/synchronization/acquireAccessToken", rawUrl) {
         }
         /// <summary>
-        /// Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0" />
+        /// Invoke action acquireAccessToken
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.AcquireAccessTo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
+        /// Invoke action acquireAccessToken
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

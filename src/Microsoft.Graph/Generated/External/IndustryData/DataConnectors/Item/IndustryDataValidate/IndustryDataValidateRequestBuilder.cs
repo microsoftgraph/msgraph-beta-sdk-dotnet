@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.Industr
         public IndustryDataValidateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/industryData.validate", rawUrl) {
         }
         /// <summary>
-        /// Perform validations applicable for the specific instance of the data connector.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0" />
+        /// Invoke action validate
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.Industr
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Perform validations applicable for the specific instance of the data connector.
+        /// Invoke action validate
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

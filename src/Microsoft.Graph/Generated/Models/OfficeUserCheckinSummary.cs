@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Total failed user check ins for the last 3 months.</summary>
+        /// <summary>The failedUserCount property</summary>
         public int? FailedUserCount {
             get { return BackingStore?.Get<int?>("failedUserCount"); }
             set { BackingStore?.Set("failedUserCount", value); }
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Total successful user check ins for the last 3 months.</summary>
+        /// <summary>The succeededUserCount property</summary>
         public int? SucceededUserCount {
             get { return BackingStore?.Get<int?>("succeededUserCount"); }
             set { BackingStore?.Set("succeededUserCount", value); }

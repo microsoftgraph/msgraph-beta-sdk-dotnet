@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies.Ref 
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0" />
+        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +68,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

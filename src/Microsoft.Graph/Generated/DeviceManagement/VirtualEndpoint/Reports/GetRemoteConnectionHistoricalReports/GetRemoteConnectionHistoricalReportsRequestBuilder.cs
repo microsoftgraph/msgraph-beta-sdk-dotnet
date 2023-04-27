@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemot
         public GetRemoteConnectionHistoricalReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getRemoteConnectionHistoricalReports", rawUrl) {
         }
         /// <summary>
-        /// Get the remote connection history records of a Cloud PC during a given period.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-1.0" />
+        /// Invoke action getRemoteConnectionHistoricalReports
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemot
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the remote connection history records of a Cloud PC during a given period.
+        /// Invoke action getRemoteConnectionHistoricalReports
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

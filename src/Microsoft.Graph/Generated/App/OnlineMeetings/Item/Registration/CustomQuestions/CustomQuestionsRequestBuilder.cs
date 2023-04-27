@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.CustomQuesti
         public CustomQuestionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/registration/customQuestions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the custom registration questions associated with a meetingRegistration object on behalf of the organizer.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0" />
+        /// Custom registration questions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.CustomQuesti
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestionCollectionResponse>(requestInfo, MeetingRegistrationQuestionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0" />
+        /// Create new navigation property to customQuestions for app
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.CustomQuesti
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the custom registration questions associated with a meetingRegistration object on behalf of the organizer.
+        /// Custom registration questions.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +106,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.CustomQuesti
             return requestInfo;
         }
         /// <summary>
-        /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Create new navigation property to customQuestions for app
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +134,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.CustomQuesti
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the custom registration questions associated with a meetingRegistration object on behalf of the organizer.
+        /// Custom registration questions.
         /// </summary>
         public class CustomQuestionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

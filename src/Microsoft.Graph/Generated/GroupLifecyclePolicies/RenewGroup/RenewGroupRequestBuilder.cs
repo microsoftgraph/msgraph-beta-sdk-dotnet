@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
         public RenewGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupLifecyclePolicies/renewGroup", rawUrl) {
         }
         /// <summary>
-        /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0" />
+        /// Invoke action renewGroup
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
             return await RequestAdapter.SendAsync<RenewGroupResponse>(requestInfo, RenewGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+        /// Invoke action renewGroup
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

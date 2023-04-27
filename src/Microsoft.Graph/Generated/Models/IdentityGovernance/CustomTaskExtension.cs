@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class CustomTaskExtension : CustomCalloutExtension, IParsable {
-        /// <summary>The callback configuration for a custom extension.</summary>
+        /// <summary>The callback configuration for a custom task extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration? CallbackConfiguration {

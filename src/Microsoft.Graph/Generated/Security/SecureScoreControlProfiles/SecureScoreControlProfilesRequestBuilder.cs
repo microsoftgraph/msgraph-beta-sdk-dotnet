@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScoreControlProfiles {
         public SecureScoreControlProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/secureScoreControlProfiles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieves a list of secureScoreControlProfile objects for a tenant.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/securescorecontrolprofiles-list?view=graph-rest-1.0" />
+        /// Get secureScoreControlProfiles from security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScoreControlProfiles {
             return await RequestAdapter.SendAsync<SecureScoreControlProfile>(requestInfo, SecureScoreControlProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieves a list of secureScoreControlProfile objects for a tenant.
+        /// Get secureScoreControlProfiles from security
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScoreControlProfiles {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves a list of secureScoreControlProfile objects for a tenant.
+        /// Get secureScoreControlProfiles from security
         /// </summary>
         public class SecureScoreControlProfilesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
         public MakePermanentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/makePermanent", rawUrl) {
         }
         /// <summary>
-        /// Make the role assignment permanent.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedroleassignment-makepermanent?view=graph-rest-1.0" />
+        /// Invoke action makePermanent
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignment>(requestInfo, PrivilegedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Make the role assignment permanent.
+        /// Invoke action makePermanent
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

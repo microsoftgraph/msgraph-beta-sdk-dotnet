@@ -90,6 +90,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registrationEnforcement", value); }
         }
 #endif
+        /// <summary>Prompt users with their most-preferred credential for multifactor authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.SystemCredentialPreferences? SystemCredentialPreferences {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SystemCredentialPreferences?>("systemCredentialPreferences"); }
+            set { BackingStore?.Set("systemCredentialPreferences", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.SystemCredentialPreferences SystemCredentialPreferences {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SystemCredentialPreferences>("systemCredentialPreferences"); }
+            set { BackingStore?.Set("systemCredentialPreferences", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -111,6 +125,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"policyVersion", n => { PolicyVersion = n.GetStringValue(); } },
                 {"reconfirmationInDays", n => { ReconfirmationInDays = n.GetIntValue(); } },
                 {"registrationEnforcement", n => { RegistrationEnforcement = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegistrationEnforcement>(Microsoft.Graph.Beta.Models.RegistrationEnforcement.CreateFromDiscriminatorValue); } },
+                {"systemCredentialPreferences", n => { SystemCredentialPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.SystemCredentialPreferences>(Microsoft.Graph.Beta.Models.SystemCredentialPreferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -128,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("policyVersion", PolicyVersion);
             writer.WriteIntValue("reconfirmationInDays", ReconfirmationInDays);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RegistrationEnforcement>("registrationEnforcement", RegistrationEnforcement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SystemCredentialPreferences>("systemCredentialPreferences", SystemCredentialPreferences);
         }
     }
 }

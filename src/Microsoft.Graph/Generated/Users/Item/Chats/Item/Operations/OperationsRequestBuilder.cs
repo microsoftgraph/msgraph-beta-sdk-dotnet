@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Operations {
         public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all Teams async operations that ran or are running on the specified chat.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-list-operations?view=graph-rest-1.0" />
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Operations {
             return await RequestAdapter.SendAsync<TeamsAsyncOperation>(requestInfo, TeamsAsyncOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List all Teams async operations that ran or are running on the specified chat.
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Operations {
             return requestInfo;
         }
         /// <summary>
-        /// List all Teams async operations that ran or are running on the specified chat.
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

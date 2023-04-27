@@ -49,8 +49,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// In Azure AD entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignmentrequests?view=graph-rest-1.0" />
+        /// Represents access package assignment requests created by or on behalf of a user.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,8 +68,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<AccessPackageAssignmentRequestCollectionResponse>(requestInfo, AccessPackageAssignmentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, or to remove an access package assignment.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/entitlementmanagement-post-accesspackageassignmentrequests?view=graph-rest-1.0" />
+        /// Create new navigation property to accessPackageAssignmentRequests for identityGovernance
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,7 +89,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<AccessPackageAssignmentRequest>(requestInfo, AccessPackageAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// In Azure AD entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
+        /// Represents access package assignment requests created by or on behalf of a user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +115,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, or to remove an access package assignment.
+        /// Create new navigation property to accessPackageAssignmentRequests for identityGovernance
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +143,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// In Azure AD entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
+        /// Represents access package assignment requests created by or on behalf of a user.
         /// </summary>
         public class AccessPackageAssignmentRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

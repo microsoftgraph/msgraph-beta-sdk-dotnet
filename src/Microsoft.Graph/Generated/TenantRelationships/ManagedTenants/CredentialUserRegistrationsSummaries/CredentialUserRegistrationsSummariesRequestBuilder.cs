@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
         public CredentialUserRegistrationsSummariesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/credentialUserRegistrationsSummaries{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the credentialUserRegistrationsSummary objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-credentialuserregistrationssummaries?view=graph-rest-1.0" />
+        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             return await RequestAdapter.SendAsync<CredentialUserRegistrationsSummary>(requestInfo, CredentialUserRegistrationsSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the credentialUserRegistrationsSummary objects and their properties.
+        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the credentialUserRegistrationsSummary objects and their properties.
+        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
         /// </summary>
         public class CredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

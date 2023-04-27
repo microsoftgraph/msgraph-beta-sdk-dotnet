@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AddLargeGalleryView {
         public AddLargeGalleryViewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/addLargeGalleryView", rawUrl) {
         }
         /// <summary>
-        /// Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0" />
+        /// Invoke action addLargeGalleryView
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AddLargeGalleryView {
             return await RequestAdapter.SendAsync<AddLargeGalleryViewOperation>(requestInfo, AddLargeGalleryViewOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
+        /// Invoke action addLargeGalleryView
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

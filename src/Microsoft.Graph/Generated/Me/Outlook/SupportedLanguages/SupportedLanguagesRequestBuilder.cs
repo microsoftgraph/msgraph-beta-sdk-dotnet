@@ -27,8 +27,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.SupportedLanguages {
         public SupportedLanguagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/supportedLanguages(){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of locales and languages that are supported for the user, as configured on the user&apos;s mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user&apos;s mailbox settings.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0" />
+        /// Invoke function supportedLanguages
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.SupportedLanguages {
             return await RequestAdapter.SendAsync<SupportedLanguagesResponse>(requestInfo, SupportedLanguagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the list of locales and languages that are supported for the user, as configured on the user&apos;s mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user&apos;s mailbox settings.
+        /// Invoke function supportedLanguages
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +72,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.SupportedLanguages {
             return requestInfo;
         }
         /// <summary>
-        /// Get the list of locales and languages that are supported for the user, as configured on the user&apos;s mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user&apos;s mailbox settings.
+        /// Invoke function supportedLanguages
         /// </summary>
         public class SupportedLanguagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

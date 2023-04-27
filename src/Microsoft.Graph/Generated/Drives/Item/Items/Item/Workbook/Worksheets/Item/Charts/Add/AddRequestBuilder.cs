@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         public AddRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/add", rawUrl) {
         }
         /// <summary>
-        /// Creates a new chart.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chartcollection-add?view=graph-rest-1.0" />
+        /// Invoke action add
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +49,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return await RequestAdapter.SendAsync<WorkbookChart>(requestInfo, WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Creates a new chart.
+        /// Invoke action add
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

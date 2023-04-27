@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitio
         public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/historyDefinitions/{accessReviewHistoryDefinition%2Did}/instances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the instances of an access review history definition created in the last 30 days.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewhistorydefinition-list-instances?view=graph-rest-1.0" />
+        /// If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitio
             return await RequestAdapter.SendAsync<AccessReviewHistoryInstance>(requestInfo, AccessReviewHistoryInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the instances of an access review history definition created in the last 30 days.
+        /// If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitio
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the instances of an access review history definition created in the last 30 days.
+        /// If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
