@@ -8,6 +8,11 @@ namespace Microsoft.Graph.Beta.Models {
     /// A class containing the properties used for Assignment Filter.
     /// </summary>
     public class DeviceAndAppManagementAssignmentFilter : Entity, IParsable {
+        /// <summary>Supported filter management types whether its devices or apps.</summary>
+        public Microsoft.Graph.Beta.Models.AssignmentFilterManagementType? AssignmentFilterManagementType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssignmentFilterManagementType?>("assignmentFilterManagementType"); }
+            set { BackingStore?.Set("assignmentFilterManagementType", value); }
+        }
         /// <summary>The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -110,6 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"assignmentFilterManagementType", n => { AssignmentFilterManagementType = n.GetEnumValue<AssignmentFilterManagementType>(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -127,6 +133,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<AssignmentFilterManagementType>("assignmentFilterManagementType", AssignmentFilterManagementType);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

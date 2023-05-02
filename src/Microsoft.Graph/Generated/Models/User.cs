@@ -558,6 +558,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("drives", value); }
         }
 #endif
+        /// <summary>The employeeExperience property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public EmployeeExperienceUser? EmployeeExperience {
+            get { return BackingStore?.Get<EmployeeExperienceUser?>("employeeExperience"); }
+            set { BackingStore?.Set("employeeExperience", value); }
+        }
+#nullable restore
+#else
+        public EmployeeExperienceUser EmployeeExperience {
+            get { return BackingStore?.Get<EmployeeExperienceUser>("employeeExperience"); }
+            set { BackingStore?.Set("employeeExperience", value); }
+        }
+#endif
         /// <summary>The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).</summary>
         public DateTimeOffset? EmployeeHireDate {
             get { return BackingStore?.Get<DateTimeOffset?>("employeeHireDate"); }
@@ -1902,7 +1916,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new User and sets the default values.
+        /// Instantiates a new user and sets the default values.
         /// </summary>
         public User() : base() {
             OdataType = "#microsoft.graph.user";
@@ -1962,6 +1976,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"drive", n => { Drive = n.GetObjectValue<Microsoft.Graph.Beta.Models.Drive>(Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
                 {"drives", n => { Drives = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Drive>(Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"employeeExperience", n => { EmployeeExperience = n.GetObjectValue<EmployeeExperienceUser>(EmployeeExperienceUser.CreateFromDiscriminatorValue); } },
                 {"employeeHireDate", n => { EmployeeHireDate = n.GetDateTimeOffsetValue(); } },
                 {"employeeId", n => { EmployeeId = n.GetStringValue(); } },
                 {"employeeLeaveDateTime", n => { EmployeeLeaveDateTime = n.GetDateTimeOffsetValue(); } },
@@ -2116,6 +2131,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Drive>("drives", Drives);
+            writer.WriteObjectValue<EmployeeExperienceUser>("employeeExperience", EmployeeExperience);
             writer.WriteDateTimeOffsetValue("employeeHireDate", EmployeeHireDate);
             writer.WriteStringValue("employeeId", EmployeeId);
             writer.WriteDateTimeOffsetValue("employeeLeaveDateTime", EmployeeLeaveDateTime);

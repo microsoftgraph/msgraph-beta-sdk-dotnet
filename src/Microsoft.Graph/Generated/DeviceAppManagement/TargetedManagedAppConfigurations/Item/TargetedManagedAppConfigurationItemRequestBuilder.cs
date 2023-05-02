@@ -1,6 +1,7 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Apps;
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assign;
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.ChangeSettings;
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.DeploymentSummary;
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.TargetApps;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -29,6 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the changeSettings method.</summary>
+        public ChangeSettingsRequestBuilder ChangeSettings { get =>
+            new ChangeSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deploymentSummary property of the microsoft.graph.targetedManagedAppConfiguration entity.</summary>
         public DeploymentSummaryRequestBuilder DeploymentSummary { get =>

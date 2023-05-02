@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("participants", value); }
         }
 #endif
-        /// <summary>The sequenceNumber property</summary>
+        /// <summary>The sequence number for the roster update that is used to identify the notification order.</summary>
         public long? SequenceNumber {
             get { return BackingStore?.Get<long?>("sequenceNumber"); }
             set { BackingStore?.Set("sequenceNumber", value); }

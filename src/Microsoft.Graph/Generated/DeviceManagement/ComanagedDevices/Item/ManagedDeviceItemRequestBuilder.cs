@@ -3,7 +3,6 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.AssignmentFilt
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.BypassActivationLock;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CleanWindowsDevice;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CreateDeviceLogCollectionRequest;
-using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CreateRemoteHelpSession;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DeleteUserFromSharedAppleDevice;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Deprovision;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DetectedApps;
@@ -14,7 +13,6 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DeviceHealthSc
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Disable;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DisableLostMode;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.EnableLostMode;
-using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.EndRemoteHelpSession;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.EnrollNowAction;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetCloudPcRemoteActionResults;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetCloudPcReviewStatus;
@@ -36,12 +34,10 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoteLock;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ReprovisionCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRemoteAssistance;
-using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRemoteHelpSessionAccess;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResetPasscode;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire;
-using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveRemoteHelpSessionWithSessionKey;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RevokeAppleVppLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateBitLockerKeys;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateFileVaultKey;
@@ -94,10 +90,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item {
         public CreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest { get =>
             new CreateDeviceLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the createRemoteHelpSession method.</summary>
-        public CreateRemoteHelpSessionRequestBuilder CreateRemoteHelpSession { get =>
-            new CreateRemoteHelpSessionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the deleteUserFromSharedAppleDevice method.</summary>
         public DeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice { get =>
             new DeleteUserFromSharedAppleDeviceRequestBuilder(PathParameters, RequestAdapter);
@@ -137,10 +129,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item {
         /// <summary>Provides operations to call the enableLostMode method.</summary>
         public EnableLostModeRequestBuilder EnableLostMode { get =>
             new EnableLostModeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the endRemoteHelpSession method.</summary>
-        public EndRemoteHelpSessionRequestBuilder EndRemoteHelpSession { get =>
-            new EndRemoteHelpSessionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enrollNowAction method.</summary>
         public EnrollNowActionRequestBuilder EnrollNowAction { get =>
@@ -225,10 +213,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item {
         /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
         public RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance { get =>
             new RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the requestRemoteHelpSessionAccess method.</summary>
-        public RequestRemoteHelpSessionAccessRequestBuilder RequestRemoteHelpSessionAccess { get =>
-            new RequestRemoteHelpSessionAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetPasscode method.</summary>
         public ResetPasscodeRequestBuilder ResetPasscode { get =>
@@ -386,14 +370,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedDevice>(requestInfo, Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the retrieveRemoteHelpSession method.
-        /// </summary>
-        /// <param name="sessionKey">Usage: sessionKey=&apos;{sessionKey}&apos;</param>
-        public RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder RetrieveRemoteHelpSessionWithSessionKey(string sessionKey) {
-            if(string.IsNullOrEmpty(sessionKey)) throw new ArgumentNullException(nameof(sessionKey));
-            return new RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder(PathParameters, RequestAdapter, sessionKey);
         }
         /// <summary>
         /// Delete navigation property comanagedDevices for deviceManagement

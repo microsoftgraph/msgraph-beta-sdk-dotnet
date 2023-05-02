@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item.LearningContents;
+using Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item.LearningCourseActivities;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item {
         /// <summary>Provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.</summary>
         public LearningContentsRequestBuilder LearningContents { get =>
             new LearningContentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the learningCourseActivities property of the microsoft.graph.learningProvider entity.</summary>
+        public LearningCourseActivitiesRequestBuilder LearningCourseActivities { get =>
+            new LearningCourseActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new LearningProviderItemRequestBuilder and sets the default values.

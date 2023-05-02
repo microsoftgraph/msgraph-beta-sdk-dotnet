@@ -42,6 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.customAppScopeAttributesDictionary" => new CustomAppScopeAttributesDictionary(),
                 "#microsoft.graph.resultTemplateDictionary" => new ResultTemplateDictionary(),
                 _ => new Dictionary(),
             };

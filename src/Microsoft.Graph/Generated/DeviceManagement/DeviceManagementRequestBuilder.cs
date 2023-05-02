@@ -91,8 +91,6 @@ using Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.Monitoring;
 using Microsoft.Graph.Beta.DeviceManagement.NdesConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates;
-using Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding;
-using Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings;
@@ -110,6 +108,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ServiceNowConnections;
 using Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions;
 using Microsoft.Graph.Beta.DeviceManagement.SoftwareUpdateStatusSummary;
 using Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners;
+using Microsoft.Graph.Beta.DeviceManagement.TemplateInsights;
 using Microsoft.Graph.Beta.DeviceManagement.TemplateSettings;
 using Microsoft.Graph.Beta.DeviceManagement.Templates;
 using Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC;
@@ -547,14 +546,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public NotificationMessageTemplatesRequestBuilder NotificationMessageTemplates { get =>
             new NotificationMessageTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the oemWarrantyInformationOnboarding property of the microsoft.graph.deviceManagement entity.</summary>
-        public OemWarrantyInformationOnboardingRequestBuilder OemWarrantyInformationOnboarding { get =>
-            new OemWarrantyInformationOnboardingRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the privilegeManagementElevations property of the microsoft.graph.deviceManagement entity.</summary>
-        public PrivilegeManagementElevationsRequestBuilder PrivilegeManagementElevations { get =>
-            new PrivilegeManagementElevationsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.</summary>
         public RemoteActionAuditsRequestBuilder RemoteActionAudits { get =>
             new RemoteActionAuditsRequestBuilder(PathParameters, RequestAdapter);
@@ -618,6 +609,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>Provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.</summary>
         public TelecomExpenseManagementPartnersRequestBuilder TelecomExpenseManagementPartners { get =>
             new TelecomExpenseManagementPartnersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.</summary>
+        public TemplateInsightsRequestBuilder TemplateInsights { get =>
+            new TemplateInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.</summary>
         public TemplatesRequestBuilder Templates { get =>
