@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.deviceManagementConfigurationApplicationSettingApplicability" => new DeviceManagementConfigurationApplicationSettingApplicability(),
                 "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability" => new DeviceManagementConfigurationExchangeOnlineSettingApplicability(),
                 "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability" => new DeviceManagementConfigurationWindowsSettingApplicability(),
                 _ => new DeviceManagementConfigurationSettingApplicability(),

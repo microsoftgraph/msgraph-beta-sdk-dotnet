@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.Count;
 using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.Item;
-using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.SecurityEvaluateApplication;
-using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.SecurityEvaluateClassificationResults;
-using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.SecurityEvaluateRemoval;
-using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.SecurityExtractContentLabel;
+using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateApplication;
+using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults;
+using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateRemoval;
+using Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,20 +24,20 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateApplication method.</summary>
-        public SecurityEvaluateApplicationRequestBuilder SecurityEvaluateApplication { get =>
-            new SecurityEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityEvaluateApplicationRequestBuilder MicrosoftGraphSecurityEvaluateApplication { get =>
+            new MicrosoftGraphSecurityEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
-        public SecurityEvaluateClassificationResultsRequestBuilder SecurityEvaluateClassificationResults { get =>
-            new SecurityEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder MicrosoftGraphSecurityEvaluateClassificationResults { get =>
+            new MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateRemoval method.</summary>
-        public SecurityEvaluateRemovalRequestBuilder SecurityEvaluateRemoval { get =>
-            new SecurityEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityEvaluateRemovalRequestBuilder MicrosoftGraphSecurityEvaluateRemoval { get =>
+            new MicrosoftGraphSecurityEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the extractContentLabel method.</summary>
-        public SecurityExtractContentLabelRequestBuilder SecurityExtractContentLabel { get =>
-            new SecurityExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder MicrosoftGraphSecurityExtractContentLabel { get =>
+            new MicrosoftGraphSecurityExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.</summary>
         public SensitivityLabelItemRequestBuilder this[string position] { get {

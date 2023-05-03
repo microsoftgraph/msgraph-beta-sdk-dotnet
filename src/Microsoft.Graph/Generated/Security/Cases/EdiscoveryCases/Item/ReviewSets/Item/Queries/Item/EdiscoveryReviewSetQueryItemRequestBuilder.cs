@@ -1,8 +1,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.SecurityApplyTags;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.SecurityExport;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.SecurityRun;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityApplyTags;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityExport;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityRun;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -17,16 +17,16 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
     /// </summary>
     public class EdiscoveryReviewSetQueryItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the applyTags method.</summary>
-        public SecurityApplyTagsRequestBuilder SecurityApplyTags { get =>
-            new SecurityApplyTagsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityApplyTagsRequestBuilder MicrosoftGraphSecurityApplyTags { get =>
+            new MicrosoftGraphSecurityApplyTagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the export method.</summary>
-        public SecurityExportRequestBuilder SecurityExport { get =>
-            new SecurityExportRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityExportRequestBuilder MicrosoftGraphSecurityExport { get =>
+            new MicrosoftGraphSecurityExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the run method.</summary>
-        public SecurityRunRequestBuilder SecurityRun { get =>
-            new SecurityRunRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityRunRequestBuilder MicrosoftGraphSecurityRun { get =>
+            new MicrosoftGraphSecurityRunRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new EdiscoveryReviewSetQueryItemRequestBuilder and sets the default values.

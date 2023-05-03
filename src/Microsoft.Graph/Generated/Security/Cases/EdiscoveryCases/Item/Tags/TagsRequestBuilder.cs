@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Count;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.SecurityAsHierarchy;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the asHierarchy method.</summary>
-        public SecurityAsHierarchyRequestBuilder SecurityAsHierarchy { get =>
-            new SecurityAsHierarchyRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityAsHierarchyRequestBuilder MicrosoftGraphSecurityAsHierarchy { get =>
+            new MicrosoftGraphSecurityAsHierarchyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tags property of the microsoft.graph.security.ediscoveryCase entity.</summary>
         public EdiscoveryReviewTagItemRequestBuilder this[string position] { get {

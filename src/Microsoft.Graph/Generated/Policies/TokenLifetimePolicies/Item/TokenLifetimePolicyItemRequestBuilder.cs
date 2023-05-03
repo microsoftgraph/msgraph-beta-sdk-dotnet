@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.Item.AppliesTo;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.Item {
     /// Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.policyRoot entity.
     /// </summary>
     public class TokenLifetimePolicyItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.</summary>
+        public AppliesToRequestBuilder AppliesTo { get =>
+            new AppliesToRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new TokenLifetimePolicyItemRequestBuilder and sets the default values.
         /// </summary>

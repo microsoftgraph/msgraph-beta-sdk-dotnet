@@ -19,6 +19,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("actionVerb", value); }
         }
 #endif
+        /// <summary>The authenticationContext property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public AuthenticationContextClassReference? AuthenticationContext {
+            get { return BackingStore?.Get<AuthenticationContextClassReference?>("authenticationContext"); }
+            set { BackingStore?.Set("authenticationContext", value); }
+        }
+#nullable restore
+#else
+        public AuthenticationContextClassReference AuthenticationContext {
+            get { return BackingStore?.Get<AuthenticationContextClassReference>("authenticationContext"); }
+            set { BackingStore?.Set("authenticationContext", value); }
+        }
+#endif
         /// <summary>The authenticationContextId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +122,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"actionVerb", n => { ActionVerb = n.GetStringValue(); } },
+                {"authenticationContext", n => { AuthenticationContext = n.GetObjectValue<AuthenticationContextClassReference>(AuthenticationContextClassReference.CreateFromDiscriminatorValue); } },
                 {"authenticationContextId", n => { AuthenticationContextId = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"isAuthenticationContextSettable", n => { IsAuthenticationContextSettable = n.GetBoolValue(); } },
@@ -124,6 +139,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("actionVerb", ActionVerb);
+            writer.WriteObjectValue<AuthenticationContextClassReference>("authenticationContext", AuthenticationContext);
             writer.WriteStringValue("authenticationContextId", AuthenticationContextId);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isAuthenticationContextSettable", IsAuthenticationContextSettable);

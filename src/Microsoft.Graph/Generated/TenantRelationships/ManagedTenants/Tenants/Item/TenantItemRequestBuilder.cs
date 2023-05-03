@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.ManagedTenantsOffboardTenant;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.ManagedTenantsResetTenantOnboardingStatus;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsOffboardTenant;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.MicrosoftGraphManagedTenantsResetTenantOnboardingStatus;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item {
     /// </summary>
     public class TenantItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the offboardTenant method.</summary>
-        public ManagedTenantsOffboardTenantRequestBuilder ManagedTenantsOffboardTenant { get =>
-            new ManagedTenantsOffboardTenantRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsOffboardTenantRequestBuilder MicrosoftGraphManagedTenantsOffboardTenant { get =>
+            new MicrosoftGraphManagedTenantsOffboardTenantRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetTenantOnboardingStatus method.</summary>
-        public ManagedTenantsResetTenantOnboardingStatusRequestBuilder ManagedTenantsResetTenantOnboardingStatus { get =>
-            new ManagedTenantsResetTenantOnboardingStatusRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder MicrosoftGraphManagedTenantsResetTenantOnboardingStatus { get =>
+            new MicrosoftGraphManagedTenantsResetTenantOnboardingStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new TenantItemRequestBuilder and sets the default values.

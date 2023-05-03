@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIndicators.Item.Artifact;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIn
     /// Provides operations to manage the intelligenceProfileIndicators property of the microsoft.graph.security.threatIntelligence entity.
     /// </summary>
     public class IntelligenceProfileIndicatorItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the artifact property of the microsoft.graph.security.indicator entity.</summary>
+        public ArtifactRequestBuilder Artifact { get =>
+            new ArtifactRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new IntelligenceProfileIndicatorItemRequestBuilder and sets the default values.
         /// </summary>

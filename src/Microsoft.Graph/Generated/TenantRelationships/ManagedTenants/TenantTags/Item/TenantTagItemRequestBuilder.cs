@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.ManagedTenantsAssignTag;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.ManagedTenantsUnassignTag;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.MicrosoftGraphManagedTenantsAssignTag;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Item.MicrosoftGraphManagedTenantsUnassignTag;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
     /// </summary>
     public class TenantTagItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the assignTag method.</summary>
-        public ManagedTenantsAssignTagRequestBuilder ManagedTenantsAssignTag { get =>
-            new ManagedTenantsAssignTagRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsAssignTagRequestBuilder MicrosoftGraphManagedTenantsAssignTag { get =>
+            new MicrosoftGraphManagedTenantsAssignTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unassignTag method.</summary>
-        public ManagedTenantsUnassignTagRequestBuilder ManagedTenantsUnassignTag { get =>
-            new ManagedTenantsUnassignTagRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsUnassignTagRequestBuilder MicrosoftGraphManagedTenantsUnassignTag { get =>
+            new MicrosoftGraphManagedTenantsUnassignTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new TenantTagItemRequestBuilder and sets the default values.

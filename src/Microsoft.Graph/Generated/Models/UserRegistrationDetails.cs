@@ -45,6 +45,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSsprRegistered"); }
             set { BackingStore?.Set("isSsprRegistered", value); }
         }
+        /// <summary>The lastUpdatedDateTime property</summary>
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
+        }
         /// <summary>Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isSsprCapable", n => { IsSsprCapable = n.GetBoolValue(); } },
                 {"isSsprEnabled", n => { IsSsprEnabled = n.GetBoolValue(); } },
                 {"isSsprRegistered", n => { IsSsprRegistered = n.GetBoolValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"methodsRegistered", n => { MethodsRegistered = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -134,6 +140,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isSsprCapable", IsSsprCapable);
             writer.WriteBoolValue("isSsprEnabled", IsSsprEnabled);
             writer.WriteBoolValue("isSsprRegistered", IsSsprRegistered);
+            writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("methodsRegistered", MethodsRegistered);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

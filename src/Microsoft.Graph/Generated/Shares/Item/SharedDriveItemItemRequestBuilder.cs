@@ -1,7 +1,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Shares.Item.CreatedByUser;
 using Microsoft.Graph.Beta.Shares.Item.DriveItem;
 using Microsoft.Graph.Beta.Shares.Item.Items;
+using Microsoft.Graph.Beta.Shares.Item.LastModifiedByUser;
 using Microsoft.Graph.Beta.Shares.Item.List;
 using Microsoft.Graph.Beta.Shares.Item.ListItem;
 using Microsoft.Graph.Beta.Shares.Item.Permission;
@@ -20,6 +22,10 @@ namespace Microsoft.Graph.Beta.Shares.Item {
     /// Provides operations to manage the collection of sharedDriveItem entities.
     /// </summary>
     public class SharedDriveItemItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.</summary>
+        public CreatedByUserRequestBuilder CreatedByUser { get =>
+            new CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the driveItem property of the microsoft.graph.sharedDriveItem entity.</summary>
         public DriveItemRequestBuilder DriveItem { get =>
             new DriveItemRequestBuilder(PathParameters, RequestAdapter);
@@ -27,6 +33,10 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         /// <summary>Provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.</summary>
         public ItemsRequestBuilder Items { get =>
             new ItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.</summary>
+        public LastModifiedByUserRequestBuilder LastModifiedByUser { get =>
+            new LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.</summary>
         public ListRequestBuilder List { get =>

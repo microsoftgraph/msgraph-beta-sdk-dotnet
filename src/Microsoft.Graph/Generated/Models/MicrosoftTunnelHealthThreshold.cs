@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Entity that represents the health thresholds of a health metric
-    /// </summary>
     public class MicrosoftTunnelHealthThreshold : Entity, IParsable {
         /// <summary>The threshold for being healthy based on default health status metrics: CPU usage healthy &lt; 50%, Memory usage healthy &lt; 50%, Disk space healthy &gt; 5GB, Latency healthy &lt; 10ms, health metrics can be customized. Read-only.</summary>
         public long? DefaultHealthyThreshold {

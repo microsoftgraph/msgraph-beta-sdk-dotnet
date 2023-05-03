@@ -1,4 +1,6 @@
 using Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item.Chat;
+using Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item.TeamsApp;
+using Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item.TeamsAppDefinition;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,6 +19,14 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item {
         /// <summary>Provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.</summary>
         public ChatRequestBuilder Chat { get =>
             new ChatRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.</summary>
+        public TeamsAppRequestBuilder TeamsApp { get =>
+            new TeamsAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.</summary>
+        public TeamsAppDefinitionRequestBuilder TeamsAppDefinition { get =>
+            new TeamsAppDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new UserScopeTeamsAppInstallationItemRequestBuilder and sets the default values.

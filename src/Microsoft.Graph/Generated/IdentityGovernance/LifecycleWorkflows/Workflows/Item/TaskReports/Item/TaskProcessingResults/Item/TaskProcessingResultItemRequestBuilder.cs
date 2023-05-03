@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskProcessingResults.Item.IdentityGovernanceResume;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskProcessingResults.Item.MicrosoftGraphIdentityGovernanceResume;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskProcessingResults.Item.Subject;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports.Item.TaskProcessingResults.Item.TaskNamespace;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
@@ -17,8 +17,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
     /// </summary>
     public class TaskProcessingResultItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the resume method.</summary>
-        public IdentityGovernanceResumeRequestBuilder IdentityGovernanceResume { get =>
-            new IdentityGovernanceResumeRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphIdentityGovernanceResumeRequestBuilder MicrosoftGraphIdentityGovernanceResume { get =>
+            new MicrosoftGraphIdentityGovernanceResumeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subject property of the microsoft.graph.identityGovernance.taskProcessingResult entity.</summary>
         public SubjectRequestBuilder Subject { get =>

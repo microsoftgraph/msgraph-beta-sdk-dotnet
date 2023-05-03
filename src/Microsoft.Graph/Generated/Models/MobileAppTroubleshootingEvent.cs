@@ -33,6 +33,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appLogCollectionRequests", value); }
         }
 #endif
+        /// <summary>Device identifier created or collected by Intune.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#nullable restore
+#else
+        public string DeviceId {
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#endif
         /// <summary>Intune Mobile Application Troubleshooting History Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
                 {"appLogCollectionRequests", n => { AppLogCollectionRequests = n.GetCollectionOfObjectValues<AppLogCollectionRequest>(AppLogCollectionRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"history", n => { History = n.GetCollectionOfObjectValues<MobileAppTroubleshootingHistoryItem>(MobileAppTroubleshootingHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDeviceIdentifier", n => { ManagedDeviceIdentifier = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
@@ -104,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("applicationId", ApplicationId);
             writer.WriteCollectionOfObjectValues<AppLogCollectionRequest>("appLogCollectionRequests", AppLogCollectionRequests);
+            writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteCollectionOfObjectValues<MobileAppTroubleshootingHistoryItem>("history", History);
             writer.WriteStringValue("managedDeviceIdentifier", ManagedDeviceIdentifier);
             writer.WriteStringValue("userId", UserId);

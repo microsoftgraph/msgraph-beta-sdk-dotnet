@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories.Item.SettingDefinitions;
 using Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories.Item.Settings;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -14,6 +15,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories.Item {
     /// Provides operations to manage the categories property of the microsoft.graph.deviceManagementIntent entity.
     /// </summary>
     public class DeviceManagementIntentSettingCategoryItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.</summary>
+        public SettingDefinitionsRequestBuilder SettingDefinitions { get =>
+            new SettingDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementIntentSettingCategory entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);

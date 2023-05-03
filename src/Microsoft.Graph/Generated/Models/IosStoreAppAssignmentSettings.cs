@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class IosStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
-        /// <summary>Whether or not the app can be removed by the user.</summary>
+        /// <summary>When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.</summary>
         public bool? IsRemovable {
             get { return BackingStore?.Get<bool?>("isRemovable"); }
             set { BackingStore?.Set("isRemovable", value); }

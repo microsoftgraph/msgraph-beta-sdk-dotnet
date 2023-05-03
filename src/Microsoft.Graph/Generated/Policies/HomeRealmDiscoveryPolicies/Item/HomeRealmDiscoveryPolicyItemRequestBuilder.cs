@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.Item.AppliesTo;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.Item {
     /// Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.policyRoot entity.
     /// </summary>
     public class HomeRealmDiscoveryPolicyItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.</summary>
+        public AppliesToRequestBuilder AppliesTo { get =>
+            new AppliesToRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new HomeRealmDiscoveryPolicyItemRequestBuilder and sets the default values.
         /// </summary>

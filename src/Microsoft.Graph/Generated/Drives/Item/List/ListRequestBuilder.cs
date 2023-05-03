@@ -1,8 +1,10 @@
 using Microsoft.Graph.Beta.Drives.Item.List.Activities;
 using Microsoft.Graph.Beta.Drives.Item.List.Columns;
 using Microsoft.Graph.Beta.Drives.Item.List.ContentTypes;
+using Microsoft.Graph.Beta.Drives.Item.List.CreatedByUser;
 using Microsoft.Graph.Beta.Drives.Item.List.Drive;
 using Microsoft.Graph.Beta.Drives.Item.List.Items;
+using Microsoft.Graph.Beta.Drives.Item.List.LastModifiedByUser;
 using Microsoft.Graph.Beta.Drives.Item.List.Operations;
 using Microsoft.Graph.Beta.Drives.Item.List.Subscriptions;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -32,6 +34,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.List {
         public ContentTypesRequestBuilder ContentTypes { get =>
             new ContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.</summary>
+        public CreatedByUserRequestBuilder CreatedByUser { get =>
+            new CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.list entity.</summary>
         public DriveRequestBuilder Drive { get =>
             new DriveRequestBuilder(PathParameters, RequestAdapter);
@@ -39,6 +45,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.List {
         /// <summary>Provides operations to manage the items property of the microsoft.graph.list entity.</summary>
         public ItemsRequestBuilder Items { get =>
             new ItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.</summary>
+        public LastModifiedByUserRequestBuilder LastModifiedByUser { get =>
+            new LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.list entity.</summary>
         public OperationsRequestBuilder Operations { get =>

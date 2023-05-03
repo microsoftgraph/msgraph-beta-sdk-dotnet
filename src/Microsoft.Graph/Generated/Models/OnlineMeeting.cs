@@ -30,10 +30,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowParticipantsToChangeName"); }
             set { BackingStore?.Set("allowParticipantsToChangeName", value); }
         }
+        /// <summary>The allowRecording property</summary>
+        public bool? AllowRecording {
+            get { return BackingStore?.Get<bool?>("allowRecording"); }
+            set { BackingStore?.Set("allowRecording", value); }
+        }
         /// <summary>Indicates if Teams reactions are enabled for the meeting.</summary>
         public bool? AllowTeamworkReactions {
             get { return BackingStore?.Get<bool?>("allowTeamworkReactions"); }
             set { BackingStore?.Set("allowTeamworkReactions", value); }
+        }
+        /// <summary>The allowTranscription property</summary>
+        public bool? AllowTranscription {
+            get { return BackingStore?.Get<bool?>("allowTranscription"); }
+            set { BackingStore?.Set("allowTranscription", value); }
         }
         /// <summary>The content stream of the alternative recording of a Microsoft Teams live event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -410,7 +420,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
                 {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
                 {"allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
+                {"allowRecording", n => { AllowRecording = n.GetBoolValue(); } },
                 {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
+                {"allowTranscription", n => { AllowTranscription = n.GetBoolValue(); } },
                 {"alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
                 {"anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfEnumValues<OnlineMeetingRole>()?.ToList(); } },
                 {"attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -455,7 +467,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
             writer.WriteEnumValue<MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
             writer.WriteBoolValue("allowParticipantsToChangeName", AllowParticipantsToChangeName);
+            writer.WriteBoolValue("allowRecording", AllowRecording);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
+            writer.WriteBoolValue("allowTranscription", AllowTranscription);
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);
             writer.WriteCollectionOfEnumValues<OnlineMeetingRole>("anonymizeIdentityForRoles", AnonymizeIdentityForRoles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>("attendanceReports", AttendanceReports);

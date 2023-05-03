@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.ManagedTenantsChangeDeploymentStatus;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.MicrosoftGraphManagedTenantsChangeDeploymentStatus;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.TemplateStepVersion;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
     /// </summary>
     public class ManagementTemplateStepDeploymentItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the changeDeploymentStatus method.</summary>
-        public ManagedTenantsChangeDeploymentStatusRequestBuilder ManagedTenantsChangeDeploymentStatus { get =>
-            new ManagedTenantsChangeDeploymentStatusRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilder MicrosoftGraphManagedTenantsChangeDeploymentStatus { get =>
+            new MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templateStepVersion property of the microsoft.graph.managedTenants.managementTemplateStepDeployment entity.</summary>
         public TemplateStepVersionRequestBuilder TemplateStepVersion { get =>

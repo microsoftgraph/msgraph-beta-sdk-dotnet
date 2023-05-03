@@ -1,3 +1,6 @@
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Versions.Item.CreatedBy;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Versions.Item.LastModifiedBy;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Versions.Item.Tasks;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -13,6 +16,18 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
     /// Provides operations to manage the versions property of the microsoft.graph.identityGovernance.workflow entity.
     /// </summary>
     public class WorkflowVersionVersionNumberItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the createdBy property of the microsoft.graph.identityGovernance.workflowBase entity.</summary>
+        public CreatedByRequestBuilder CreatedBy { get =>
+            new CreatedByRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the lastModifiedBy property of the microsoft.graph.identityGovernance.workflowBase entity.</summary>
+        public LastModifiedByRequestBuilder LastModifiedBy { get =>
+            new LastModifiedByRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowBase entity.</summary>
+        public TasksRequestBuilder Tasks { get =>
+            new TasksRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new WorkflowVersionVersionNumberItemRequestBuilder and sets the default values.
         /// </summary>

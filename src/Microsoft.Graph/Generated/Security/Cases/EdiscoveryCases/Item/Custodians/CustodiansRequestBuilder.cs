@@ -2,8 +2,8 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Count;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.SecurityApplyHold;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.SecurityRemoveHold;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.MicrosoftGraphSecurityApplyHold;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.MicrosoftGraphSecurityRemoveHold;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyHold method.</summary>
-        public SecurityApplyHoldRequestBuilder SecurityApplyHold { get =>
-            new SecurityApplyHoldRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityApplyHoldRequestBuilder MicrosoftGraphSecurityApplyHold { get =>
+            new MicrosoftGraphSecurityApplyHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeHold method.</summary>
-        public SecurityRemoveHoldRequestBuilder SecurityRemoveHold { get =>
-            new SecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphSecurityRemoveHoldRequestBuilder MicrosoftGraphSecurityRemoveHold { get =>
+            new MicrosoftGraphSecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.</summary>
         public EdiscoveryCustodianItemRequestBuilder this[string position] { get {

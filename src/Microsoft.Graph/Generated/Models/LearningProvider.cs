@@ -33,6 +33,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("learningContents", value); }
         }
 #endif
+        /// <summary>The learningCourseActivities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<LearningCourseActivity>? LearningCourseActivities {
+            get { return BackingStore?.Get<List<LearningCourseActivity>?>("learningCourseActivities"); }
+            set { BackingStore?.Set("learningCourseActivities", value); }
+        }
+#nullable restore
+#else
+        public List<LearningCourseActivity> LearningCourseActivities {
+            get { return BackingStore?.Get<List<LearningCourseActivity>>("learningCourseActivities"); }
+            set { BackingStore?.Set("learningCourseActivities", value); }
+        }
+#endif
         /// <summary>Authentication URL to access the courses for the provider. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"learningContents", n => { LearningContents = n.GetCollectionOfObjectValues<LearningContent>(LearningContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<LearningCourseActivity>(LearningCourseActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"loginWebUrl", n => { LoginWebUrl = n.GetStringValue(); } },
                 {"longLogoWebUrlForDarkTheme", n => { LongLogoWebUrlForDarkTheme = n.GetStringValue(); } },
                 {"longLogoWebUrlForLightTheme", n => { LongLogoWebUrlForLightTheme = n.GetStringValue(); } },
@@ -134,6 +149,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<LearningContent>("learningContents", LearningContents);
+            writer.WriteCollectionOfObjectValues<LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
             writer.WriteStringValue("loginWebUrl", LoginWebUrl);
             writer.WriteStringValue("longLogoWebUrlForDarkTheme", LongLogoWebUrlForDarkTheme);
             writer.WriteStringValue("longLogoWebUrlForLightTheme", LongLogoWebUrlForLightTheme);

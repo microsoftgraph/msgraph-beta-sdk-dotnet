@@ -4,7 +4,7 @@ using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlert
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.AlertRule;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.ApiNotifications;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.EmailNotifications;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.ManagedTenantsAddUserInputLog;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts.Item.MicrosoftGraphManagedTenantsAddUserInputLog;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
             new EmailNotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the addUserInputLog method.</summary>
-        public ManagedTenantsAddUserInputLogRequestBuilder ManagedTenantsAddUserInputLog { get =>
-            new ManagedTenantsAddUserInputLogRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilder MicrosoftGraphManagedTenantsAddUserInputLog { get =>
+            new MicrosoftGraphManagedTenantsAddUserInputLogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ManagedTenantAlertItemRequestBuilder and sets the default values.

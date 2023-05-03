@@ -1,5 +1,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.Item.AppScope;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.Item.DirectoryScope;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.Item.Principal;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances.Item.RoleDefinition;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -13,6 +17,22 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibil
     /// Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
     /// </summary>
     public class UnifiedRoleEligibilityScheduleInstanceItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleScheduleInstanceBase entity.</summary>
+        public AppScopeRequestBuilder AppScope { get =>
+            new AppScopeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleScheduleInstanceBase entity.</summary>
+        public DirectoryScopeRequestBuilder DirectoryScope { get =>
+            new DirectoryScopeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the principal property of the microsoft.graph.unifiedRoleScheduleInstanceBase entity.</summary>
+        public PrincipalRequestBuilder Principal { get =>
+            new PrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleScheduleInstanceBase entity.</summary>
+        public RoleDefinitionRequestBuilder RoleDefinition { get =>
+            new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new UnifiedRoleEligibilityScheduleInstanceItemRequestBuilder and sets the default values.
         /// </summary>

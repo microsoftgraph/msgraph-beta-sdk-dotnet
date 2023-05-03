@@ -61,6 +61,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>Specifies the setting for Local Admin Password Solution (LAPS) within your organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public LocalAdminPasswordSettings? LocalAdminPassword {
+            get { return BackingStore?.Get<LocalAdminPasswordSettings?>("localAdminPassword"); }
+            set { BackingStore?.Set("localAdminPassword", value); }
+        }
+#nullable restore
+#else
+        public LocalAdminPasswordSettings LocalAdminPassword {
+            get { return BackingStore?.Get<LocalAdminPasswordSettings>("localAdminPassword"); }
+            set { BackingStore?.Set("localAdminPassword", value); }
+        }
+#endif
         /// <summary>The multiFactorAuthConfiguration property</summary>
         public Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration? MultiFactorAuthConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration?>("multiFactorAuthConfiguration"); }
@@ -88,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"azureADRegistration", n => { AzureADRegistration = n.GetObjectValue<AzureADRegistrationPolicy>(AzureADRegistrationPolicy.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"localAdminPassword", n => { LocalAdminPassword = n.GetObjectValue<LocalAdminPasswordSettings>(LocalAdminPasswordSettings.CreateFromDiscriminatorValue); } },
                 {"multiFactorAuthConfiguration", n => { MultiFactorAuthConfiguration = n.GetEnumValue<MultiFactorAuthConfiguration>(); } },
                 {"userDeviceQuota", n => { UserDeviceQuota = n.GetIntValue(); } },
             };
@@ -103,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<AzureADRegistrationPolicy>("azureADRegistration", AzureADRegistration);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteObjectValue<LocalAdminPasswordSettings>("localAdminPassword", LocalAdminPassword);
             writer.WriteEnumValue<MultiFactorAuthConfiguration>("multiFactorAuthConfiguration", MultiFactorAuthConfiguration);
             writer.WriteIntValue("userDeviceQuota", UserDeviceQuota);
         }

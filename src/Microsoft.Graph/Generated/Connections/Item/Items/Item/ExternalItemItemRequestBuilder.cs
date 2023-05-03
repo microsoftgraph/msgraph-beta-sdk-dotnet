@@ -1,5 +1,5 @@
 using Microsoft.Graph.Beta.Connections.Item.Items.Item.Activities;
-using Microsoft.Graph.Beta.Connections.Item.Items.Item.ExternalConnectorsAddActivities;
+using Microsoft.Graph.Beta.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities;
 using Microsoft.Graph.Beta.Models.ExternalConnectors;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -20,8 +20,8 @@ namespace Microsoft.Graph.Beta.Connections.Item.Items.Item {
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the addActivities method.</summary>
-        public ExternalConnectorsAddActivitiesRequestBuilder ExternalConnectorsAddActivities { get =>
-            new ExternalConnectorsAddActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder MicrosoftGraphExternalConnectorsAddActivities { get =>
+            new MicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ExternalItemItemRequestBuilder and sets the default values.

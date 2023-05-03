@@ -1,5 +1,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.AssignedToTaskBoardFormat;
+using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.BucketTaskBoardFormat;
+using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.Details;
+using Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.Item.ProgressTaskBoardFormat;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -13,6 +17,22 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
     /// Provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.
     /// </summary>
     public class BusinessScenarioTaskItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
+        public AssignedToTaskBoardFormatRequestBuilder AssignedToTaskBoardFormat { get =>
+            new AssignedToTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
+        public BucketTaskBoardFormatRequestBuilder BucketTaskBoardFormat { get =>
+            new BucketTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the details property of the microsoft.graph.plannerTask entity.</summary>
+        public DetailsRequestBuilder Details { get =>
+            new DetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.</summary>
+        public ProgressTaskBoardFormatRequestBuilder ProgressTaskBoardFormat { get =>
+            new ProgressTaskBoardFormatRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new BusinessScenarioTaskItemRequestBuilder and sets the default values.
         /// </summary>

@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Complete;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Dismiss;
+using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedResources;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Reactivate;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -24,6 +25,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item {
         /// <summary>Provides operations to call the dismiss method.</summary>
         public DismissRequestBuilder Dismiss { get =>
             new DismissRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the impactedResources property of the microsoft.graph.recommendationBase entity.</summary>
+        public ImpactedResourcesRequestBuilder ImpactedResources { get =>
+            new ImpactedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the postpone method.</summary>
         public PostponeRequestBuilder Postpone { get =>

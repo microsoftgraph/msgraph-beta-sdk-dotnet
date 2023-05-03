@@ -55,6 +55,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("directory", value); }
         }
 #endif
+        /// <summary>The enterpriseApps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<RbacApplication>? EnterpriseApps {
+            get { return BackingStore?.Get<List<RbacApplication>?>("enterpriseApps"); }
+            set { BackingStore?.Set("enterpriseApps", value); }
+        }
+#nullable restore
+#else
+        public List<RbacApplication> EnterpriseApps {
+            get { return BackingStore?.Get<List<RbacApplication>>("enterpriseApps"); }
+            set { BackingStore?.Set("enterpriseApps", value); }
+        }
+#endif
         /// <summary>The RbacApplication for Entitlement Management</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"cloudPC", n => { CloudPC = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
                 {"deviceManagement", n => { DeviceManagement = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
                 {"directory", n => { Directory = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
+                {"enterpriseApps", n => { EnterpriseApps = n.GetCollectionOfObjectValues<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
                 {"exchange", n => { Exchange = n.GetObjectValue<UnifiedRbacApplication>(UnifiedRbacApplication.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -134,6 +149,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<RbacApplicationMultiple>("cloudPC", CloudPC);
             writer.WriteObjectValue<RbacApplicationMultiple>("deviceManagement", DeviceManagement);
             writer.WriteObjectValue<RbacApplication>("directory", Directory);
+            writer.WriteCollectionOfObjectValues<RbacApplication>("enterpriseApps", EnterpriseApps);
             writer.WriteObjectValue<RbacApplication>("entitlementManagement", EntitlementManagement);
             writer.WriteObjectValue<UnifiedRbacApplication>("exchange", Exchange);
             writer.WriteStringValue("@odata.type", OdataType);

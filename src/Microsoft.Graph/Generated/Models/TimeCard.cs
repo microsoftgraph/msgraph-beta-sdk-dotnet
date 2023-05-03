@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("clockOutEvent", value); }
         }
 #endif
-        /// <summary>Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.</summary>
+        /// <summary>Indicates whether this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ConfirmedBy? ConfirmedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfirmedBy?>("confirmedBy"); }
             set { BackingStore?.Set("confirmedBy", value); }

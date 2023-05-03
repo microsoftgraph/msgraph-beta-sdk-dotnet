@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.EdiscoveryApplyTags;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphEdiscoveryApplyTags;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
     /// </summary>
     public class ReviewSetQueryItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the applyTags method.</summary>
-        public EdiscoveryApplyTagsRequestBuilder EdiscoveryApplyTags { get =>
-            new EdiscoveryApplyTagsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryApplyTagsRequestBuilder MicrosoftGraphEdiscoveryApplyTags { get =>
+            new MicrosoftGraphEdiscoveryApplyTagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ReviewSetQueryItemRequestBuilder and sets the default values.

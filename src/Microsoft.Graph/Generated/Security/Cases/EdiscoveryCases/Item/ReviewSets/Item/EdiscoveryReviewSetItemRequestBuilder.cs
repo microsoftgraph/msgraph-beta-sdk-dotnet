@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Files;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityAddToReviewSet;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.MicrosoftGraphSecurityExport;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.SecurityAddToReviewSet;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.SecurityExport;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -21,17 +21,17 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         public FilesRequestBuilder Files { get =>
             new FilesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the addToReviewSet method.</summary>
+        public MicrosoftGraphSecurityAddToReviewSetRequestBuilder MicrosoftGraphSecurityAddToReviewSet { get =>
+            new MicrosoftGraphSecurityAddToReviewSetRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the export method.</summary>
+        public MicrosoftGraphSecurityExportRequestBuilder MicrosoftGraphSecurityExport { get =>
+            new MicrosoftGraphSecurityExportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.</summary>
         public QueriesRequestBuilder Queries { get =>
             new QueriesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the addToReviewSet method.</summary>
-        public SecurityAddToReviewSetRequestBuilder SecurityAddToReviewSet { get =>
-            new SecurityAddToReviewSetRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the export method.</summary>
-        public SecurityExportRequestBuilder SecurityExport { get =>
-            new SecurityExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new EdiscoveryReviewSetItemRequestBuilder and sets the default values.

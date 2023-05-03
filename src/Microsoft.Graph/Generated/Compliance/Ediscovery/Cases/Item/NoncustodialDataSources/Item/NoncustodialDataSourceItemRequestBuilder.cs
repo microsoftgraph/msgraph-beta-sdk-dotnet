@@ -1,8 +1,9 @@
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.DataSource;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.EdiscoveryApplyHold;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.EdiscoveryRelease;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.EdiscoveryRemoveHold;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.EdiscoveryUpdateIndex;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.LastIndexOperation;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.MicrosoftGraphEdiscoveryApplyHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.MicrosoftGraphEdiscoveryRelease;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.MicrosoftGraphEdiscoveryRemoveHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.MicrosoftGraphEdiscoveryUpdateIndex;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -22,21 +23,25 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
         public DataSourceRequestBuilder DataSource { get =>
             new DataSourceRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the lastIndexOperation property of the microsoft.graph.ediscovery.dataSourceContainer entity.</summary>
+        public LastIndexOperationRequestBuilder LastIndexOperation { get =>
+            new LastIndexOperationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the applyHold method.</summary>
-        public EdiscoveryApplyHoldRequestBuilder EdiscoveryApplyHold { get =>
-            new EdiscoveryApplyHoldRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryApplyHoldRequestBuilder MicrosoftGraphEdiscoveryApplyHold { get =>
+            new MicrosoftGraphEdiscoveryApplyHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the release method.</summary>
-        public EdiscoveryReleaseRequestBuilder EdiscoveryRelease { get =>
-            new EdiscoveryReleaseRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryReleaseRequestBuilder MicrosoftGraphEdiscoveryRelease { get =>
+            new MicrosoftGraphEdiscoveryReleaseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeHold method.</summary>
-        public EdiscoveryRemoveHoldRequestBuilder EdiscoveryRemoveHold { get =>
-            new EdiscoveryRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder MicrosoftGraphEdiscoveryRemoveHold { get =>
+            new MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateIndex method.</summary>
-        public EdiscoveryUpdateIndexRequestBuilder EdiscoveryUpdateIndex { get =>
-            new EdiscoveryUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryUpdateIndexRequestBuilder MicrosoftGraphEdiscoveryUpdateIndex { get =>
+            new MicrosoftGraphEdiscoveryUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new NoncustodialDataSourceItemRequestBuilder and sets the default values.

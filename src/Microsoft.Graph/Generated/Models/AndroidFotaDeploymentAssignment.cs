@@ -14,6 +14,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
+        /// <summary>The Azure Active Directory (Azure AD) we are deploying firmware updates to (e.g.: d93c8f48-bd42-4514-ba40-bc6b84780930). NOTE: Use this property moving forward because the existing property, target, is deprecated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public DeviceAndAppManagementAssignmentTarget? AssignmentTarget {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("assignmentTarget"); }
+            set { BackingStore?.Set("assignmentTarget", value); }
+        }
+#nullable restore
+#else
+        public DeviceAndAppManagementAssignmentTarget AssignmentTarget {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("assignmentTarget"); }
+            set { BackingStore?.Set("assignmentTarget", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The display name of the Azure AD security group used for the assignment.</summary>
@@ -92,6 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"assignmentTarget", n => { AssignmentTarget = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -104,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("assignmentTarget", AssignmentTarget);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);

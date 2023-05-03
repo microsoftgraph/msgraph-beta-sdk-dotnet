@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.AddLanguageFiles;
+using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.Definitions;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.GroupPolicyOperations;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.Remove;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.RemoveLanguageFiles;
@@ -22,6 +23,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         /// <summary>Provides operations to call the addLanguageFiles method.</summary>
         public AddLanguageFilesRequestBuilder AddLanguageFiles { get =>
             new AddLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.</summary>
+        public DefinitionsRequestBuilder Definitions { get =>
+            new DefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyOperations property of the microsoft.graph.groupPolicyUploadedDefinitionFile entity.</summary>
         public GroupPolicyOperationsRequestBuilder GroupPolicyOperations { get =>

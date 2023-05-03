@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Count;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.EdiscoveryAsHierarchy;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.MicrosoftGraphEdiscoveryAsHierarchy;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the asHierarchy method.</summary>
-        public EdiscoveryAsHierarchyRequestBuilder EdiscoveryAsHierarchy { get =>
-            new EdiscoveryAsHierarchyRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryAsHierarchyRequestBuilder MicrosoftGraphEdiscoveryAsHierarchy { get =>
+            new MicrosoftGraphEdiscoveryAsHierarchyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.</summary>
         public TagItemRequestBuilder this[string position] { get {

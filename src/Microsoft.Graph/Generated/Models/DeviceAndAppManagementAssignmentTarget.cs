@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.allDevicesAssignmentTarget" => new AllDevicesAssignmentTarget(),
                 "#microsoft.graph.allLicensedUsersAssignmentTarget" => new AllLicensedUsersAssignmentTarget(),
+                "#microsoft.graph.androidFotaDeploymentAssignmentTarget" => new AndroidFotaDeploymentAssignmentTarget(),
                 "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new ConfigurationManagerCollectionAssignmentTarget(),
                 "#microsoft.graph.exclusionGroupAssignmentTarget" => new ExclusionGroupAssignmentTarget(),
                 "#microsoft.graph.groupAssignmentTarget" => new GroupAssignmentTarget(),

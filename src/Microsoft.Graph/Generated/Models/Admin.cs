@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("serviceAnnouncement", value); }
         }
 #endif
-        /// <summary>A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.</summary>
+        /// <summary>The sharepoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Sharepoint? Sharepoint {

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether the idle session sign-out policy is enabled.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
@@ -32,12 +32,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The signOutAfterInSeconds property</summary>
+        /// <summary>Number of seconds of inactivity after which a user is signed out.</summary>
         public long? SignOutAfterInSeconds {
             get { return BackingStore?.Get<long?>("signOutAfterInSeconds"); }
             set { BackingStore?.Set("signOutAfterInSeconds", value); }
         }
-        /// <summary>The warnAfterInSeconds property</summary>
+        /// <summary>Number of seconds of inactivity after which a user is notified that they&apos;ll be signed out.</summary>
         public long? WarnAfterInSeconds {
             get { return BackingStore?.Get<long?>("warnAfterInSeconds"); }
             set { BackingStore?.Set("warnAfterInSeconds", value); }
