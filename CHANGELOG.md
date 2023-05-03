@@ -7,6 +7,13 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.29.0-preview] - 2023-05-03
+
+- Latest metadata updates from 2nd May 2023
+- Fixes missing printJob paths in metadata (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1823)
+- Fixes incorrect path for methods in security namespace (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1823, https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1691)
+- Fixes incorrect paths for methods in call records namespace (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1787)
+
 ## [5.28.0-preview] - 2023-04-27
 
 - Latest metadata updates from 25th April 2023
