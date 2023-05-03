@@ -1,5 +1,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Users.Item.Insights.Shared;
+using Microsoft.Graph.Beta.Users.Item.Insights.Trending;
+using Microsoft.Graph.Beta.Users.Item.Insights.Used;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -13,6 +16,18 @@ namespace Microsoft.Graph.Beta.Users.Item.Insights {
     /// Provides operations to manage the insights property of the microsoft.graph.user entity.
     /// </summary>
     public class InsightsRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.</summary>
+        public SharedRequestBuilder Shared { get =>
+            new SharedRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.</summary>
+        public TrendingRequestBuilder Trending { get =>
+            new TrendingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.</summary>
+        public UsedRequestBuilder Used { get =>
+            new UsedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new InsightsRequestBuilder and sets the default values.
         /// </summary>

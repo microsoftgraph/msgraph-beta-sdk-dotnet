@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Describes the installation status details of the child app in the context of UPN and device id.
+    /// Describes the installation status details of the child app in the context of UPN and device id. This will be deprecated starting May, 2023 (Intune Release 2305). 
     /// </summary>
     public class MobileAppRelationshipState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

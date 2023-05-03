@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.Item.AllowedMembers;
+using Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.Item.Team;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.I
         /// <summary>Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.</summary>
         public AllowedMembersRequestBuilder AllowedMembers { get =>
             new AllowedMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the team property of the microsoft.graph.teamInfo entity.</summary>
+        public Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.Item.Team.TeamRequestBuilder Team { get =>
+            new Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.Item.Team.TeamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new SharedWithChannelTeamInfoItemRequestBuilder and sets the default values.

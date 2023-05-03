@@ -1,6 +1,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWithTeams.Item.AllowedMembers;
+using Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWithTeams.Item.Team;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWi
         /// <summary>Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.</summary>
         public AllowedMembersRequestBuilder AllowedMembers { get =>
             new AllowedMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the team property of the microsoft.graph.teamInfo entity.</summary>
+        public TeamRequestBuilder Team { get =>
+            new TeamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new SharedWithChannelTeamInfoItemRequestBuilder and sets the default values.

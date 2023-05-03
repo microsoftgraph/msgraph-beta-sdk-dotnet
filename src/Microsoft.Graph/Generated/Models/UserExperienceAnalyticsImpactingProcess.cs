@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics top impacting process entity.
-    /// </summary>
     public class UserExperienceAnalyticsImpactingProcess : Entity, IParsable {
         /// <summary>The category of impacting process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

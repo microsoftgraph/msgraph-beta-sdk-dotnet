@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics device event entity contains NRT device event details.
-    /// </summary>
     public class UserExperienceAnalyticsDeviceTimelineEvent : Entity, IParsable {
         /// <summary>The id of the device where the event occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

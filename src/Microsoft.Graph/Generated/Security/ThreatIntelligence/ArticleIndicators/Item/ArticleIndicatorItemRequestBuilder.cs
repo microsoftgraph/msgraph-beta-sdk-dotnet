@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.ArticleIndicators.Item.Artifact;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.ArticleIndicators.Ite
     /// Provides operations to manage the articleIndicators property of the microsoft.graph.security.threatIntelligence entity.
     /// </summary>
     public class ArticleIndicatorItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the artifact property of the microsoft.graph.security.indicator entity.</summary>
+        public ArtifactRequestBuilder Artifact { get =>
+            new ArtifactRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new ArticleIndicatorItemRequestBuilder and sets the default values.
         /// </summary>

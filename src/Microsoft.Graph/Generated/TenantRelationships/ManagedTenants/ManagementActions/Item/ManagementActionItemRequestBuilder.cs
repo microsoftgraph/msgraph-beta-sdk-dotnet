@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.Item.ManagedTenantsApply;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.Item.MicrosoftGraphManagedTenantsApply;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
     /// </summary>
     public class ManagementActionItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the apply method.</summary>
-        public ManagedTenantsApplyRequestBuilder ManagedTenantsApply { get =>
-            new ManagedTenantsApplyRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsApplyRequestBuilder MicrosoftGraphManagedTenantsApply { get =>
+            new MicrosoftGraphManagedTenantsApplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ManagementActionItemRequestBuilder and sets the default values.

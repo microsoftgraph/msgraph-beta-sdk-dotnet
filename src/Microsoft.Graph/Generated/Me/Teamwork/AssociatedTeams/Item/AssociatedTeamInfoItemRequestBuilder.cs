@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Me.Teamwork.AssociatedTeams.Item.Team;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.AssociatedTeams.Item {
     /// Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
     /// </summary>
     public class AssociatedTeamInfoItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the team property of the microsoft.graph.teamInfo entity.</summary>
+        public TeamRequestBuilder Team { get =>
+            new TeamRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new AssociatedTeamInfoItemRequestBuilder and sets the default values.
         /// </summary>

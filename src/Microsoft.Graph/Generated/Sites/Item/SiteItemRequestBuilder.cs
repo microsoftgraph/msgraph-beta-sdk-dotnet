@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Analytics;
 using Microsoft.Graph.Beta.Sites.Item.Columns;
 using Microsoft.Graph.Beta.Sites.Item.ContentTypes;
+using Microsoft.Graph.Beta.Sites.Item.CreatedByUser;
 using Microsoft.Graph.Beta.Sites.Item.Drive;
 using Microsoft.Graph.Beta.Sites.Item.Drives;
 using Microsoft.Graph.Beta.Sites.Item.ExternalColumns;
@@ -11,6 +12,7 @@ using Microsoft.Graph.Beta.Sites.Item.GetApplicableContentTypesForListWithListId
 using Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath;
 using Microsoft.Graph.Beta.Sites.Item.InformationProtection;
 using Microsoft.Graph.Beta.Sites.Item.Items;
+using Microsoft.Graph.Beta.Sites.Item.LastModifiedByUser;
 using Microsoft.Graph.Beta.Sites.Item.Lists;
 using Microsoft.Graph.Beta.Sites.Item.Onenote;
 using Microsoft.Graph.Beta.Sites.Item.Operations;
@@ -43,6 +45,10 @@ namespace Microsoft.Graph.Beta.Sites.Item {
         public ContentTypesRequestBuilder ContentTypes { get =>
             new ContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.</summary>
+        public CreatedByUserRequestBuilder CreatedByUser { get =>
+            new CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.site entity.</summary>
         public DriveRequestBuilder Drive { get =>
             new DriveRequestBuilder(PathParameters, RequestAdapter);
@@ -62,6 +68,10 @@ namespace Microsoft.Graph.Beta.Sites.Item {
         /// <summary>Provides operations to manage the items property of the microsoft.graph.site entity.</summary>
         public ItemsRequestBuilder Items { get =>
             new ItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.</summary>
+        public LastModifiedByUserRequestBuilder LastModifiedByUser { get =>
+            new LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lists property of the microsoft.graph.site entity.</summary>
         public ListsRequestBuilder Lists { get =>

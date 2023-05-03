@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.EdiscoveryClose;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.EdiscoveryReopen;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.MicrosoftGraphEdiscoveryClose;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.MicrosoftGraphEdiscoveryReopen;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets;
@@ -27,17 +27,17 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
         public CustodiansRequestBuilder Custodians { get =>
             new CustodiansRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the close method.</summary>
-        public EdiscoveryCloseRequestBuilder EdiscoveryClose { get =>
-            new EdiscoveryCloseRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the reopen method.</summary>
-        public EdiscoveryReopenRequestBuilder EdiscoveryReopen { get =>
-            new EdiscoveryReopenRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.</summary>
         public LegalHoldsRequestBuilder LegalHolds { get =>
             new LegalHoldsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the close method.</summary>
+        public MicrosoftGraphEdiscoveryCloseRequestBuilder MicrosoftGraphEdiscoveryClose { get =>
+            new MicrosoftGraphEdiscoveryCloseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the reopen method.</summary>
+        public MicrosoftGraphEdiscoveryReopenRequestBuilder MicrosoftGraphEdiscoveryReopen { get =>
+            new MicrosoftGraphEdiscoveryReopenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.</summary>
         public NoncustodialDataSourcesRequestBuilder NoncustodialDataSources { get =>

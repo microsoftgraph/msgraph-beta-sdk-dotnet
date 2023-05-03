@@ -1,7 +1,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout;
+using Microsoft.Graph.Beta.Sites.Item.Pages.Item.CreatedByUser;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Item.GetWebPartsByPosition;
+using Microsoft.Graph.Beta.Sites.Item.Pages.Item.LastModifiedByUser;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Item.Publish;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Item.WebParts;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -21,9 +23,17 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item {
         public CanvasLayoutRequestBuilder CanvasLayout { get =>
             new CanvasLayoutRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.</summary>
+        public CreatedByUserRequestBuilder CreatedByUser { get =>
+            new CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getWebPartsByPosition method.</summary>
         public GetWebPartsByPositionRequestBuilder GetWebPartsByPosition { get =>
             new GetWebPartsByPositionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.</summary>
+        public LastModifiedByUserRequestBuilder LastModifiedByUser { get =>
+            new LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
         public PublishRequestBuilder Publish { get =>

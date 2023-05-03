@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.RoleManagement.CloudPC;
 using Microsoft.Graph.Beta.RoleManagement.DeviceManagement;
 using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace;
+using Microsoft.Graph.Beta.RoleManagement.EnterpriseApps;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement;
 using Microsoft.Graph.Beta.RoleManagement.Exchange;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -29,6 +30,10 @@ namespace Microsoft.Graph.Beta.RoleManagement {
         /// <summary>Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.</summary>
         public DirectoryRequestBuilder Directory { get =>
             new DirectoryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.</summary>
+        public EnterpriseAppsRequestBuilder EnterpriseApps { get =>
+            new EnterpriseAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.</summary>
         public EntitlementManagementRequestBuilder EntitlementManagement { get =>

@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.
+        /// Get sharepoint from admin
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint {
             return requestInfo;
         }
         /// <summary>
-        /// A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.
+        /// Get sharepoint from admin
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint {
             }
         }
         /// <summary>
-        /// A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.
+        /// Get sharepoint from admin
         /// </summary>
         public class SharepointRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

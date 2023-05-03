@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.External.IndustryData.Runs.Count;
-using Microsoft.Graph.Beta.External.IndustryData.Runs.IndustryDataGetStatistics;
 using Microsoft.Graph.Beta.External.IndustryData.Runs.Item;
+using Microsoft.Graph.Beta.External.IndustryData.Runs.MicrosoftGraphIndustryDataGetStatistics;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getStatistics method.</summary>
-        public IndustryDataGetStatisticsRequestBuilder IndustryDataGetStatistics { get =>
-            new IndustryDataGetStatisticsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphIndustryDataGetStatisticsRequestBuilder MicrosoftGraphIndustryDataGetStatistics { get =>
+            new MicrosoftGraphIndustryDataGetStatisticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
         public IndustryDataRunItemRequestBuilder this[string position] { get {

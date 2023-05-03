@@ -2,6 +2,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Print.Printers.Item.Connectors;
 using Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities;
+using Microsoft.Graph.Beta.Print.Printers.Item.Jobs;
 using Microsoft.Graph.Beta.Print.Printers.Item.ResetDefaults;
 using Microsoft.Graph.Beta.Print.Printers.Item.RestoreFactoryDefaults;
 using Microsoft.Graph.Beta.Print.Printers.Item.Share;
@@ -27,6 +28,10 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         /// <summary>Provides operations to call the getCapabilities method.</summary>
         public GetCapabilitiesRequestBuilder GetCapabilities { get =>
             new GetCapabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the jobs property of the microsoft.graph.printerBase entity.</summary>
+        public JobsRequestBuilder Jobs { get =>
+            new JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetDefaults method.</summary>
         public ResetDefaultsRequestBuilder ResetDefaults { get =>

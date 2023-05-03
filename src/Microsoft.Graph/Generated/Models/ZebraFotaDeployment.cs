@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The Zebra FOTA deployment entity that describes settings, deployment device groups required to create a FOTA deployment, and deployment status.
-    /// </summary>
     public class ZebraFotaDeployment : Entity, IParsable {
         /// <summary>Collection of Android FOTA Assignment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,6 +75,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>List of Scope Tags for this Entity instance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deploymentStatus", n => { DeploymentStatus = n.GetObjectValue<ZebraFotaDeploymentStatus>(ZebraFotaDeploymentStatus.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -110,6 +122,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<ZebraFotaDeploymentStatus>("deploymentStatus", DeploymentStatus);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
         }
     }
 }

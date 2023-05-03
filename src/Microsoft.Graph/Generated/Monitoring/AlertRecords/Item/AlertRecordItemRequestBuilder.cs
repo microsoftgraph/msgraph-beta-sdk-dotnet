@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Monitoring.AlertRecords.Item.DeviceManagementSetPortalNotificationAsSent;
+using Microsoft.Graph.Beta.Monitoring.AlertRecords.Item.MicrosoftGraphDeviceManagementSetPortalNotificationAsSent;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.Item {
     /// </summary>
     public class AlertRecordItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the setPortalNotificationAsSent method.</summary>
-        public DeviceManagementSetPortalNotificationAsSentRequestBuilder DeviceManagementSetPortalNotificationAsSent { get =>
-            new DeviceManagementSetPortalNotificationAsSentRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDeviceManagementSetPortalNotificationAsSentRequestBuilder MicrosoftGraphDeviceManagementSetPortalNotificationAsSent { get =>
+            new MicrosoftGraphDeviceManagementSetPortalNotificationAsSentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AlertRecordItemRequestBuilder and sets the default values.

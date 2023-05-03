@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// CartToClassAssociation for associating device carts with classrooms.
-    /// </summary>
     public class CartToClassAssociation : Entity, IParsable {
         /// <summary>Identifiers of classrooms to be associated with device carts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

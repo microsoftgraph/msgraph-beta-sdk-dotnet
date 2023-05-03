@@ -5,7 +5,6 @@ using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEvalua
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.BypassActivationLock;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.CleanWindowsDevice;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.CreateDeviceLogCollectionRequest;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.CreateRemoteHelpSession;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeleteUserFromSharedAppleDevice;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Deprovision;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps;
@@ -16,7 +15,6 @@ using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceHealthScriptStat
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Disable;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DisableLostMode;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnableLostMode;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EndRemoteHelpSession;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.EnrollNowAction;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcRemoteActionResults;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcReviewStatus;
@@ -38,12 +36,10 @@ using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RemoteLock;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ReprovisionCloudPc;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RequestRemoteAssistance;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RequestRemoteHelpSessionAccess;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ResetPasscode;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ResizeCloudPc;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RestoreCloudPc;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.Retire;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RetrieveRemoteHelpSessionWithSessionKey;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RevokeAppleVppLicenses;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateBitLockerKeys;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RotateFileVaultKey;
@@ -94,10 +90,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
         public CreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest { get =>
             new CreateDeviceLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the createRemoteHelpSession method.</summary>
-        public CreateRemoteHelpSessionRequestBuilder CreateRemoteHelpSession { get =>
-            new CreateRemoteHelpSessionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the deleteUserFromSharedAppleDevice method.</summary>
         public DeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice { get =>
             new DeleteUserFromSharedAppleDeviceRequestBuilder(PathParameters, RequestAdapter);
@@ -137,10 +129,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
         /// <summary>Provides operations to call the enableLostMode method.</summary>
         public EnableLostModeRequestBuilder EnableLostMode { get =>
             new EnableLostModeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the endRemoteHelpSession method.</summary>
-        public EndRemoteHelpSessionRequestBuilder EndRemoteHelpSession { get =>
-            new EndRemoteHelpSessionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enrollNowAction method.</summary>
         public EnrollNowActionRequestBuilder EnrollNowAction { get =>
@@ -225,10 +213,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
         /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
         public RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance { get =>
             new RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the requestRemoteHelpSessionAccess method.</summary>
-        public RequestRemoteHelpSessionAccessRequestBuilder RequestRemoteHelpSessionAccess { get =>
-            new RequestRemoteHelpSessionAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetPasscode method.</summary>
         public ResetPasscodeRequestBuilder ResetPasscode { get =>
@@ -386,14 +370,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedDevice>(requestInfo, Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the retrieveRemoteHelpSession method.
-        /// </summary>
-        /// <param name="sessionKey">Usage: sessionKey=&apos;{sessionKey}&apos;</param>
-        public RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder RetrieveRemoteHelpSessionWithSessionKey(string sessionKey) {
-            if(string.IsNullOrEmpty(sessionKey)) throw new ArgumentNullException(nameof(sessionKey));
-            return new RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder(PathParameters, RequestAdapter, sessionKey);
         }
         /// <summary>
         /// Delete navigation property managedDevices for users

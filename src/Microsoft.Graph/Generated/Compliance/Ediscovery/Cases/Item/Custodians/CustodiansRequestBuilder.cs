@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Count;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.EdiscoveryApplyHold;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.EdiscoveryRemoveHold;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.MicrosoftGraphEdiscoveryApplyHold;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.MicrosoftGraphEdiscoveryRemoveHold;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -22,12 +22,12 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyHold method.</summary>
-        public EdiscoveryApplyHoldRequestBuilder EdiscoveryApplyHold { get =>
-            new EdiscoveryApplyHoldRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryApplyHoldRequestBuilder MicrosoftGraphEdiscoveryApplyHold { get =>
+            new MicrosoftGraphEdiscoveryApplyHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeHold method.</summary>
-        public EdiscoveryRemoveHoldRequestBuilder EdiscoveryRemoveHold { get =>
-            new EdiscoveryRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder MicrosoftGraphEdiscoveryRemoveHold { get =>
+            new MicrosoftGraphEdiscoveryRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.</summary>
         public CustodianItemRequestBuilder this[string position] { get {

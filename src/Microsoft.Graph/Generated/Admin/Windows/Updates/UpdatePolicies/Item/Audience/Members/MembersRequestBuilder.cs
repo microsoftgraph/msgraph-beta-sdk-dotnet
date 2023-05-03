@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.Count;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.Item;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.WindowsUpdatesEnrollAssets;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.WindowsUpdatesEnrollAssetsById;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.WindowsUpdatesUnenrollAssets;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.WindowsUpdatesUnenrollAssetsById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.MicrosoftGraphWindowsUpdatesEnrollAssets;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.MicrosoftGraphWindowsUpdatesEnrollAssetsById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.MicrosoftGraphWindowsUpdatesUnenrollAssets;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Members.MicrosoftGraphWindowsUpdatesUnenrollAssetsById;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,20 +24,20 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enrollAssets method.</summary>
-        public WindowsUpdatesEnrollAssetsRequestBuilder WindowsUpdatesEnrollAssets { get =>
-            new WindowsUpdatesEnrollAssetsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder MicrosoftGraphWindowsUpdatesEnrollAssets { get =>
+            new MicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enrollAssetsById method.</summary>
-        public WindowsUpdatesEnrollAssetsByIdRequestBuilder WindowsUpdatesEnrollAssetsById { get =>
-            new WindowsUpdatesEnrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder MicrosoftGraphWindowsUpdatesEnrollAssetsById { get =>
+            new MicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unenrollAssets method.</summary>
-        public WindowsUpdatesUnenrollAssetsRequestBuilder WindowsUpdatesUnenrollAssets { get =>
-            new WindowsUpdatesUnenrollAssetsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder MicrosoftGraphWindowsUpdatesUnenrollAssets { get =>
+            new MicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unenrollAssetsById method.</summary>
-        public WindowsUpdatesUnenrollAssetsByIdRequestBuilder WindowsUpdatesUnenrollAssetsById { get =>
-            new WindowsUpdatesUnenrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder MicrosoftGraphWindowsUpdatesUnenrollAssetsById { get =>
+            new MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.</summary>
         public UpdatableAssetItemRequestBuilder this[string position] { get {

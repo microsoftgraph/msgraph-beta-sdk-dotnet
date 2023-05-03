@@ -4,9 +4,9 @@ using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.Add
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.AdditionalSources;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.LastEstimateStatisticsOperation;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityEstimateStatistics;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.NoncustodialSources;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.SecurityEstimateStatistics;
-using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.SecurityPurgeData;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -36,17 +36,17 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         public LastEstimateStatisticsOperationRequestBuilder LastEstimateStatisticsOperation { get =>
             new LastEstimateStatisticsOperationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the estimateStatistics method.</summary>
+        public MicrosoftGraphSecurityEstimateStatisticsRequestBuilder MicrosoftGraphSecurityEstimateStatistics { get =>
+            new MicrosoftGraphSecurityEstimateStatisticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the purgeData method.</summary>
+        public MicrosoftGraphSecurityPurgeDataRequestBuilder MicrosoftGraphSecurityPurgeData { get =>
+            new MicrosoftGraphSecurityPurgeDataRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the noncustodialSources property of the microsoft.graph.security.ediscoverySearch entity.</summary>
         public NoncustodialSourcesRequestBuilder NoncustodialSources { get =>
             new NoncustodialSourcesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the estimateStatistics method.</summary>
-        public SecurityEstimateStatisticsRequestBuilder SecurityEstimateStatistics { get =>
-            new SecurityEstimateStatisticsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the purgeData method.</summary>
-        public SecurityPurgeDataRequestBuilder SecurityPurgeData { get =>
-            new SecurityPurgeDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new EdiscoverySearchItemRequestBuilder and sets the default values.

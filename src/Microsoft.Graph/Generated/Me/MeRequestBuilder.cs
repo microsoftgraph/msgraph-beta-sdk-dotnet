@@ -25,6 +25,7 @@ using Microsoft.Graph.Beta.Me.Devices;
 using Microsoft.Graph.Beta.Me.DirectReports;
 using Microsoft.Graph.Beta.Me.Drive;
 using Microsoft.Graph.Beta.Me.Drives;
+using Microsoft.Graph.Beta.Me.EmployeeExperience;
 using Microsoft.Graph.Beta.Me.Events;
 using Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementData;
 using Microsoft.Graph.Beta.Me.ExportDeviceAndAppManagementDataWithSkipWithTop;
@@ -220,6 +221,10 @@ namespace Microsoft.Graph.Beta.Me {
         /// <summary>Provides operations to manage the drives property of the microsoft.graph.user entity.</summary>
         public DrivesRequestBuilder Drives { get =>
             new DrivesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the employeeExperience property of the microsoft.graph.user entity.</summary>
+        public EmployeeExperienceRequestBuilder EmployeeExperience { get =>
+            new EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the events property of the microsoft.graph.user entity.</summary>
         public EventsRequestBuilder Events { get =>

@@ -1,4 +1,6 @@
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Activate;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Deactivate;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Publish;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Rubric;
@@ -20,9 +22,17 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
     /// Provides operations to manage the assignments property of the microsoft.graph.educationUser entity.
     /// </summary>
     public class EducationAssignmentItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to call the activate method.</summary>
+        public ActivateRequestBuilder Activate { get =>
+            new ActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.</summary>
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the deactivate method.</summary>
+        public DeactivateRequestBuilder Deactivate { get =>
+            new DeactivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
         public PublishRequestBuilder Publish { get =>

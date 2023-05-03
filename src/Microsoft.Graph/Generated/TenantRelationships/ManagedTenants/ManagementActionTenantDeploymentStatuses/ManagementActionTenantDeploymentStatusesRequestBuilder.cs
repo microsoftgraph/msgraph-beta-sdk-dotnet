@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.Count;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.Item;
-using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ManagedTenantsChangeDeploymentStatus;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.MicrosoftGraphManagedTenantsChangeDeploymentStatus;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the changeDeploymentStatus method.</summary>
-        public ManagedTenantsChangeDeploymentStatusRequestBuilder ManagedTenantsChangeDeploymentStatus { get =>
-            new ManagedTenantsChangeDeploymentStatusRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilder MicrosoftGraphManagedTenantsChangeDeploymentStatus { get =>
+            new MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementActionTenantDeploymentStatuses property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
         public ManagementActionTenantDeploymentStatusItemRequestBuilder this[string position] { get {

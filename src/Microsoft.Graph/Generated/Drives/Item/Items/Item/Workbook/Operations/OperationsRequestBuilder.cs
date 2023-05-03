@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Operations.Count;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Operations.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -15,10 +14,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Operations {
     /// Provides operations to manage the operations property of the microsoft.graph.workbook entity.
     /// </summary>
     public class OperationsRequestBuilder : BaseRequestBuilder {
-        /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.workbook entity.</summary>
         public WorkbookOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

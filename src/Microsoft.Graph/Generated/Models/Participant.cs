@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recordingInfo", value); }
         }
 #endif
-        /// <summary>The removedState property</summary>
+        /// <summary>Indicates the reason why the participant was removed from the roster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.RemovedState? RemovedState {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("restrictedExperience", value); }
         }
 #endif
-        /// <summary>The rosterSequenceNumber property</summary>
+        /// <summary>Indicates the roster sequence number the participant was last updated in.</summary>
         public long? RosterSequenceNumber {
             get { return BackingStore?.Get<long?>("rosterSequenceNumber"); }
             set { BackingStore?.Set("rosterSequenceNumber", value); }

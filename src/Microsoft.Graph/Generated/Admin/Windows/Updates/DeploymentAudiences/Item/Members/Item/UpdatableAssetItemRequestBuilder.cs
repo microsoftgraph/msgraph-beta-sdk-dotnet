@@ -1,7 +1,7 @@
-using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.WindowsUpdatesAddMembers;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.WindowsUpdatesAddMembersById;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.WindowsUpdatesRemoveMembers;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.WindowsUpdatesRemoveMembersById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.MicrosoftGraphWindowsUpdatesAddMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.MicrosoftGraphWindowsUpdatesAddMembersById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.MicrosoftGraphWindowsUpdatesRemoveMembers;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.MicrosoftGraphWindowsUpdatesRemoveMembersById;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -18,20 +18,20 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Me
     /// </summary>
     public class UpdatableAssetItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the addMembers method.</summary>
-        public WindowsUpdatesAddMembersRequestBuilder WindowsUpdatesAddMembers { get =>
-            new WindowsUpdatesAddMembersRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesAddMembersRequestBuilder MicrosoftGraphWindowsUpdatesAddMembers { get =>
+            new MicrosoftGraphWindowsUpdatesAddMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the addMembersById method.</summary>
-        public WindowsUpdatesAddMembersByIdRequestBuilder WindowsUpdatesAddMembersById { get =>
-            new WindowsUpdatesAddMembersByIdRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder MicrosoftGraphWindowsUpdatesAddMembersById { get =>
+            new MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeMembers method.</summary>
-        public WindowsUpdatesRemoveMembersRequestBuilder WindowsUpdatesRemoveMembers { get =>
-            new WindowsUpdatesRemoveMembersRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilder MicrosoftGraphWindowsUpdatesRemoveMembers { get =>
+            new MicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeMembersById method.</summary>
-        public WindowsUpdatesRemoveMembersByIdRequestBuilder WindowsUpdatesRemoveMembersById { get =>
-            new WindowsUpdatesRemoveMembersByIdRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder MicrosoftGraphWindowsUpdatesRemoveMembersById { get =>
+            new MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new UpdatableAssetItemRequestBuilder and sets the default values.

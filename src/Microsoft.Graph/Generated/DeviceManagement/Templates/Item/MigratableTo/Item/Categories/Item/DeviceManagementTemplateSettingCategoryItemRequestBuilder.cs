@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.Categories.Item.RecommendedSettings;
+using Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.Categories.Item.SettingDefinitions;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         /// <summary>Provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.</summary>
         public RecommendedSettingsRequestBuilder RecommendedSettings { get =>
             new RecommendedSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.</summary>
+        public SettingDefinitionsRequestBuilder SettingDefinitions { get =>
+            new SettingDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DeviceManagementTemplateSettingCategoryItemRequestBuilder and sets the default values.

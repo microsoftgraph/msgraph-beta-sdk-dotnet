@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SharepointSettings : Entity, IParsable {
-        /// <summary>The allowedDomainGuidsForSyncApp property</summary>
+        /// <summary>Collection of trusted domain GUIDs for the OneDrive sync app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Guid?>? AllowedDomainGuidsForSyncApp {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedDomainGuidsForSyncApp", value); }
         }
 #endif
-        /// <summary>The availableManagedPathsForSiteCreation property</summary>
+        /// <summary>Collection of managed paths available for site creation. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AvailableManagedPathsForSiteCreation {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("availableManagedPathsForSiteCreation", value); }
         }
 #endif
-        /// <summary>The deletedUserPersonalSiteRetentionPeriodInDays property</summary>
+        /// <summary>The number of days for preserving a deleted user&apos;s OneDrive.</summary>
         public int? DeletedUserPersonalSiteRetentionPeriodInDays {
             get { return BackingStore?.Get<int?>("deletedUserPersonalSiteRetentionPeriodInDays"); }
             set { BackingStore?.Set("deletedUserPersonalSiteRetentionPeriodInDays", value); }
         }
-        /// <summary>The excludedFileExtensionsForSyncApp property</summary>
+        /// <summary>Collection of file extensions not uploaded by the OneDrive sync app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ExcludedFileExtensionsForSyncApp {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("excludedFileExtensionsForSyncApp", value); }
         }
 #endif
-        /// <summary>The idleSessionSignOut property</summary>
+        /// <summary>Specifies the idle session sign-out policies for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.IdleSessionSignOut? IdleSessionSignOut {
@@ -66,92 +66,92 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("idleSessionSignOut", value); }
         }
 #endif
-        /// <summary>The imageTaggingOption property</summary>
+        /// <summary>Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.</summary>
         public ImageTaggingChoice? ImageTaggingOption {
             get { return BackingStore?.Get<ImageTaggingChoice?>("imageTaggingOption"); }
             set { BackingStore?.Set("imageTaggingOption", value); }
         }
-        /// <summary>The isCommentingOnSitePagesEnabled property</summary>
+        /// <summary>Indicates whether comments are allowed on modern site pages in SharePoint.</summary>
         public bool? IsCommentingOnSitePagesEnabled {
             get { return BackingStore?.Get<bool?>("isCommentingOnSitePagesEnabled"); }
             set { BackingStore?.Set("isCommentingOnSitePagesEnabled", value); }
         }
-        /// <summary>The isFileActivityNotificationEnabled property</summary>
+        /// <summary>Indicates whether push notifications are enabled for OneDrive events.</summary>
         public bool? IsFileActivityNotificationEnabled {
             get { return BackingStore?.Get<bool?>("isFileActivityNotificationEnabled"); }
             set { BackingStore?.Set("isFileActivityNotificationEnabled", value); }
         }
-        /// <summary>The isLegacyAuthProtocolsEnabled property</summary>
+        /// <summary>Indicates whether legacy authentication protocols are enabled for the tenant.</summary>
         public bool? IsLegacyAuthProtocolsEnabled {
             get { return BackingStore?.Get<bool?>("isLegacyAuthProtocolsEnabled"); }
             set { BackingStore?.Set("isLegacyAuthProtocolsEnabled", value); }
         }
-        /// <summary>The isLoopEnabled property</summary>
+        /// <summary>Indicates whetherif Fluid Framework is allowed on SharePoint sites.</summary>
         public bool? IsLoopEnabled {
             get { return BackingStore?.Get<bool?>("isLoopEnabled"); }
             set { BackingStore?.Set("isLoopEnabled", value); }
         }
-        /// <summary>The isMacSyncAppEnabled property</summary>
+        /// <summary>Indicates whether files can be synced using the OneDrive sync app for Mac.</summary>
         public bool? IsMacSyncAppEnabled {
             get { return BackingStore?.Get<bool?>("isMacSyncAppEnabled"); }
             set { BackingStore?.Set("isMacSyncAppEnabled", value); }
         }
-        /// <summary>The isRequireAcceptingUserToMatchInvitedUserEnabled property</summary>
+        /// <summary>Indicates whether guests must sign in using the same account to which sharing invitations are sent.</summary>
         public bool? IsRequireAcceptingUserToMatchInvitedUserEnabled {
             get { return BackingStore?.Get<bool?>("isRequireAcceptingUserToMatchInvitedUserEnabled"); }
             set { BackingStore?.Set("isRequireAcceptingUserToMatchInvitedUserEnabled", value); }
         }
-        /// <summary>The isResharingByExternalUsersEnabled property</summary>
+        /// <summary>Indicates whether guests are allowed to reshare files, folders, and sites they don&apos;t own.</summary>
         public bool? IsResharingByExternalUsersEnabled {
             get { return BackingStore?.Get<bool?>("isResharingByExternalUsersEnabled"); }
             set { BackingStore?.Set("isResharingByExternalUsersEnabled", value); }
         }
-        /// <summary>The isSharePointMobileNotificationEnabled property</summary>
+        /// <summary>Indicates whether mobile push notifications are enabled for SharePoint.</summary>
         public bool? IsSharePointMobileNotificationEnabled {
             get { return BackingStore?.Get<bool?>("isSharePointMobileNotificationEnabled"); }
             set { BackingStore?.Set("isSharePointMobileNotificationEnabled", value); }
         }
-        /// <summary>The isSharePointNewsfeedEnabled property</summary>
+        /// <summary>Indicates whether the newsfeed is allowed on the modern site pages in SharePoint.</summary>
         public bool? IsSharePointNewsfeedEnabled {
             get { return BackingStore?.Get<bool?>("isSharePointNewsfeedEnabled"); }
             set { BackingStore?.Set("isSharePointNewsfeedEnabled", value); }
         }
-        /// <summary>The isSiteCreationEnabled property</summary>
+        /// <summary>Indicates whether users are allowed to create sites.</summary>
         public bool? IsSiteCreationEnabled {
             get { return BackingStore?.Get<bool?>("isSiteCreationEnabled"); }
             set { BackingStore?.Set("isSiteCreationEnabled", value); }
         }
-        /// <summary>The isSiteCreationUIEnabled property</summary>
+        /// <summary>Indicates whether the UI commands for creating sites are shown.</summary>
         public bool? IsSiteCreationUIEnabled {
             get { return BackingStore?.Get<bool?>("isSiteCreationUIEnabled"); }
             set { BackingStore?.Set("isSiteCreationUIEnabled", value); }
         }
-        /// <summary>The isSitePagesCreationEnabled property</summary>
+        /// <summary>Indicates whether creating new modern pages is allowed on SharePoint sites.</summary>
         public bool? IsSitePagesCreationEnabled {
             get { return BackingStore?.Get<bool?>("isSitePagesCreationEnabled"); }
             set { BackingStore?.Set("isSitePagesCreationEnabled", value); }
         }
-        /// <summary>The isSitesStorageLimitAutomatic property</summary>
+        /// <summary>Indicates whether site storage space is automatically managed or if specific storage limits are set per site.</summary>
         public bool? IsSitesStorageLimitAutomatic {
             get { return BackingStore?.Get<bool?>("isSitesStorageLimitAutomatic"); }
             set { BackingStore?.Set("isSitesStorageLimitAutomatic", value); }
         }
-        /// <summary>The isSyncButtonHiddenOnPersonalSite property</summary>
+        /// <summary>Indicates whether the sync button in OneDrive is hidden.</summary>
         public bool? IsSyncButtonHiddenOnPersonalSite {
             get { return BackingStore?.Get<bool?>("isSyncButtonHiddenOnPersonalSite"); }
             set { BackingStore?.Set("isSyncButtonHiddenOnPersonalSite", value); }
         }
-        /// <summary>The isUnmanagedSyncAppForTenantRestricted property</summary>
+        /// <summary>Indicates whether users are allowed to sync files only on PCs joined to specific domains.</summary>
         public bool? IsUnmanagedSyncAppForTenantRestricted {
             get { return BackingStore?.Get<bool?>("isUnmanagedSyncAppForTenantRestricted"); }
             set { BackingStore?.Set("isUnmanagedSyncAppForTenantRestricted", value); }
         }
-        /// <summary>The personalSiteDefaultStorageLimitInMB property</summary>
+        /// <summary>The default OneDrive storage limit for all new and existing users who are assigned a qualifying license. Measured in megabytes (MB).</summary>
         public long? PersonalSiteDefaultStorageLimitInMB {
             get { return BackingStore?.Get<long?>("personalSiteDefaultStorageLimitInMB"); }
             set { BackingStore?.Set("personalSiteDefaultStorageLimitInMB", value); }
         }
-        /// <summary>The sharingAllowedDomainList property</summary>
+        /// <summary>Collection of email domains that are allowed for sharing outside the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SharingAllowedDomainList {
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharingAllowedDomainList", value); }
         }
 #endif
-        /// <summary>The sharingBlockedDomainList property</summary>
+        /// <summary>Collection of email domains that are blocked for sharing outside the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SharingBlockedDomainList {
@@ -179,17 +179,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharingBlockedDomainList", value); }
         }
 #endif
-        /// <summary>The sharingCapability property</summary>
+        /// <summary>Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.</summary>
         public SharingCapabilities? SharingCapability {
             get { return BackingStore?.Get<SharingCapabilities?>("sharingCapability"); }
             set { BackingStore?.Set("sharingCapability", value); }
         }
-        /// <summary>The sharingDomainRestrictionMode property</summary>
+        /// <summary>Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.</summary>
         public Microsoft.Graph.Beta.Models.SharingDomainRestrictionMode? SharingDomainRestrictionMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharingDomainRestrictionMode?>("sharingDomainRestrictionMode"); }
             set { BackingStore?.Set("sharingDomainRestrictionMode", value); }
         }
-        /// <summary>The siteCreationDefaultManagedPath property</summary>
+        /// <summary>The value of the team site managed path. This is the path under which new team sites will be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SiteCreationDefaultManagedPath {
@@ -203,12 +203,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("siteCreationDefaultManagedPath", value); }
         }
 #endif
-        /// <summary>The siteCreationDefaultStorageLimitInMB property</summary>
+        /// <summary>The default storage quota for a new site upon creation. Measured in megabytes (MB).</summary>
         public int? SiteCreationDefaultStorageLimitInMB {
             get { return BackingStore?.Get<int?>("siteCreationDefaultStorageLimitInMB"); }
             set { BackingStore?.Set("siteCreationDefaultStorageLimitInMB", value); }
         }
-        /// <summary>The tenantDefaultTimezone property</summary>
+        /// <summary>The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantDefaultTimezone {

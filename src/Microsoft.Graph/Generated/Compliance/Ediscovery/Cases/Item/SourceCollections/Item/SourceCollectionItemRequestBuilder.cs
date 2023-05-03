@@ -1,9 +1,9 @@
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.AddToReviewSetOperation;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.AdditionalSources;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.CustodianSources;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.EdiscoveryEstimateStatistics;
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.EdiscoveryPurgeData;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.LastEstimateStatisticsOperation;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.MicrosoftGraphEdiscoveryEstimateStatistics;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.MicrosoftGraphEdiscoveryPurgeData;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -32,17 +32,17 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
         public CustodianSourcesRequestBuilder CustodianSources { get =>
             new CustodianSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the estimateStatistics method.</summary>
-        public EdiscoveryEstimateStatisticsRequestBuilder EdiscoveryEstimateStatistics { get =>
-            new EdiscoveryEstimateStatisticsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the purgeData method.</summary>
-        public EdiscoveryPurgeDataRequestBuilder EdiscoveryPurgeData { get =>
-            new EdiscoveryPurgeDataRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the lastEstimateStatisticsOperation property of the microsoft.graph.ediscovery.sourceCollection entity.</summary>
         public LastEstimateStatisticsOperationRequestBuilder LastEstimateStatisticsOperation { get =>
             new LastEstimateStatisticsOperationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the estimateStatistics method.</summary>
+        public MicrosoftGraphEdiscoveryEstimateStatisticsRequestBuilder MicrosoftGraphEdiscoveryEstimateStatistics { get =>
+            new MicrosoftGraphEdiscoveryEstimateStatisticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the purgeData method.</summary>
+        public MicrosoftGraphEdiscoveryPurgeDataRequestBuilder MicrosoftGraphEdiscoveryPurgeData { get =>
+            new MicrosoftGraphEdiscoveryPurgeDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the noncustodialSources property of the microsoft.graph.ediscovery.sourceCollection entity.</summary>
         public NoncustodialSourcesRequestBuilder NoncustodialSources { get =>

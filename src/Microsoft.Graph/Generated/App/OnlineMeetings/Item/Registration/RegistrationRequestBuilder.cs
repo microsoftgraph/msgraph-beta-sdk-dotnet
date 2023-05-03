@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.CustomQuestions;
+using Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.Registrants;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
         /// <summary>Provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.</summary>
         public CustomQuestionsRequestBuilder CustomQuestions { get =>
             new CustomQuestionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.</summary>
+        public RegistrantsRequestBuilder Registrants { get =>
+            new RegistrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new RegistrationRequestBuilder and sets the default values.

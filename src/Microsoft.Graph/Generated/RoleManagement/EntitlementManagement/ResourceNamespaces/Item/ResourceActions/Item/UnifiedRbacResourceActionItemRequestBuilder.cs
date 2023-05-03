@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces.Item.ResourceActions.Item.ResourceScope;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -14,6 +15,10 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
     /// Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
     /// </summary>
     public class UnifiedRbacResourceActionItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the authenticationContext property of the microsoft.graph.unifiedRbacResourceAction entity.</summary>
+        public AuthenticationContextRequestBuilder AuthenticationContext { get =>
+            new AuthenticationContextRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the resourceScope property of the microsoft.graph.unifiedRbacResourceAction entity.</summary>
         public ResourceScopeRequestBuilder ResourceScope { get =>
             new ResourceScopeRequestBuilder(PathParameters, RequestAdapter);

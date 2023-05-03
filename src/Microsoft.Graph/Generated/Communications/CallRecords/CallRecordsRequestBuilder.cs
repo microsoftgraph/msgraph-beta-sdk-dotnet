@@ -1,10 +1,10 @@
-using Microsoft.Graph.Beta.Communications.CallRecords.CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime;
-using Microsoft.Graph.Beta.Communications.CallRecords.CallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime;
-using Microsoft.Graph.Beta.Communications.CallRecords.CallRecordsGetPstnCallsWithFromDateTimeWithToDateTime;
-using Microsoft.Graph.Beta.Communications.CallRecords.CallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime;
-using Microsoft.Graph.Beta.Communications.CallRecords.CallRecordsGetSmsLogWithFromDateTimeWithToDateTime;
 using Microsoft.Graph.Beta.Communications.CallRecords.Count;
 using Microsoft.Graph.Beta.Communications.CallRecords.Item;
+using Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime;
+using Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime;
+using Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime;
+using Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime;
+using Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime;
 using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -30,56 +30,6 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("callRecord%2Did", position);
             return new CallRecordItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>
-        /// Provides operations to call the getDirectRoutingCalls method.
-        /// </summary>
-        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
-        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
-        public CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
-            return new CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
-        }
-        /// <summary>
-        /// Provides operations to call the getPstnBlockedUsersLog method.
-        /// </summary>
-        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
-        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
-        public CallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilder CallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
-            return new CallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
-        }
-        /// <summary>
-        /// Provides operations to call the getPstnCalls method.
-        /// </summary>
-        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
-        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
-        public CallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder CallRecordsGetPstnCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
-            return new CallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
-        }
-        /// <summary>
-        /// Provides operations to call the getPstnOnlineMeetingDialoutReport method.
-        /// </summary>
-        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
-        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
-        public CallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilder CallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
-            return new CallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
-        }
-        /// <summary>
-        /// Provides operations to call the getSmsLog method.
-        /// </summary>
-        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
-        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
-        public CallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder CallRecordsGetSmsLogWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
-            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
-            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
-            return new CallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
-        }
         /// <summary>
         /// Instantiates a new CallRecordsRequestBuilder and sets the default values.
         /// </summary>
@@ -112,6 +62,56 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CallRecordCollectionResponse>(requestInfo, CallRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the getDirectRoutingCalls method.
+        /// </summary>
+        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
+        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
+        public MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
+            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
+            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            return new MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getPstnBlockedUsersLog method.
+        /// </summary>
+        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
+        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
+        public MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
+            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
+            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            return new MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getPstnCalls method.
+        /// </summary>
+        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
+        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
+        public MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
+            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
+            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            return new MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getPstnOnlineMeetingDialoutReport method.
+        /// </summary>
+        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
+        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
+        public MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
+            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
+            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            return new MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the getSmsLog method.
+        /// </summary>
+        /// <param name="fromDateTime">Usage: fromDateTime={fromDateTime}</param>
+        /// <param name="toDateTime">Usage: toDateTime={toDateTime}</param>
+        public MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime(DateTimeOffset? fromDateTime, DateTimeOffset? toDateTime) {
+            _ = fromDateTime ?? throw new ArgumentNullException(nameof(fromDateTime));
+            _ = toDateTime ?? throw new ArgumentNullException(nameof(toDateTime));
+            return new MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder(PathParameters, RequestAdapter, fromDateTime, toDateTime);
         }
         /// <summary>
         /// Create new navigation property to callRecords for communications

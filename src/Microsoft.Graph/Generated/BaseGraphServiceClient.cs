@@ -30,6 +30,7 @@ using Microsoft.Graph.Beta.Contracts;
 using Microsoft.Graph.Beta.DataClassification;
 using Microsoft.Graph.Beta.DataPolicyOperations;
 using Microsoft.Graph.Beta.DeviceAppManagement;
+using Microsoft.Graph.Beta.DeviceLocalCredentials;
 using Microsoft.Graph.Beta.DeviceManagement;
 using Microsoft.Graph.Beta.Devices;
 using Microsoft.Graph.Beta.DirectoryNamespace;
@@ -67,7 +68,6 @@ using Microsoft.Graph.Beta.MessageTraces;
 using Microsoft.Graph.Beta.MobilityManagementPolicies;
 using Microsoft.Graph.Beta.Monitoring;
 using Microsoft.Graph.Beta.Oauth2PermissionGrants;
-using Microsoft.Graph.Beta.OfficeConfiguration;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles;
 using Microsoft.Graph.Beta.Organization;
 using Microsoft.Graph.Beta.PayloadResponse;
@@ -255,6 +255,10 @@ namespace Microsoft.Graph.Beta {
         public DeviceAppManagementRequestBuilder DeviceAppManagement { get =>
             new DeviceAppManagementRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the collection of deviceLocalCredentialInfo entities.</summary>
+        public DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials { get =>
+            new DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
         public DeviceManagementRequestBuilder DeviceManagement { get =>
             new DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
@@ -402,10 +406,6 @@ namespace Microsoft.Graph.Beta {
         /// <summary>Provides operations to manage the collection of oAuth2PermissionGrant entities.</summary>
         public Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants { get =>
             new Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the officeConfiguration singleton.</summary>
-        public OfficeConfigurationRequestBuilder OfficeConfiguration { get =>
-            new OfficeConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
         public OnPremisesPublishingProfilesRequestBuilder OnPremisesPublishingProfiles { get =>

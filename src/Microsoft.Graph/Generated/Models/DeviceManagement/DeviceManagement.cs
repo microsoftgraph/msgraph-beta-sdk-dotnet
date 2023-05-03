@@ -1239,34 +1239,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("notificationMessageTemplates", value); }
         }
 #endif
-        /// <summary>List of OEM Warranty Statuses</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>? OemWarrantyInformationOnboarding {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>?>("oemWarrantyInformationOnboarding"); }
-            set { BackingStore?.Set("oemWarrantyInformationOnboarding", value); }
-        }
-#nullable restore
-#else
-        public List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding> OemWarrantyInformationOnboarding {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>>("oemWarrantyInformationOnboarding"); }
-            set { BackingStore?.Set("oemWarrantyInformationOnboarding", value); }
-        }
-#endif
-        /// <summary>The endpoint privilege management elevation event entity contains elevation details.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>? PrivilegeManagementElevations {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>?>("privilegeManagementElevations"); }
-            set { BackingStore?.Set("privilegeManagementElevations", value); }
-        }
-#nullable restore
-#else
-        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation> PrivilegeManagementElevations {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>>("privilegeManagementElevations"); }
-            set { BackingStore?.Set("privilegeManagementElevations", value); }
-        }
-#endif
         /// <summary>The list of device remote action audits with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1499,6 +1471,20 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         public List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner> TelecomExpenseManagementPartners {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>>("telecomExpenseManagementPartners"); }
             set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
+        }
+#endif
+        /// <summary>List of setting insights in a template</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>? TemplateInsights {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>?>("templateInsights"); }
+            set { BackingStore?.Set("templateInsights", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition> TemplateInsights {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>>("templateInsights"); }
+            set { BackingStore?.Set("templateInsights", value); }
         }
 #endif
         /// <summary>The available templates</summary>
@@ -2535,8 +2521,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"monitoring", n => { Monitoring = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>(Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring.CreateFromDiscriminatorValue); } },
                 {"ndesConnectors", n => { NdesConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>(Microsoft.Graph.Beta.Models.NdesConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"notificationMessageTemplates", n => { NotificationMessageTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>(Microsoft.Graph.Beta.Models.NotificationMessageTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"oemWarrantyInformationOnboarding", n => { OemWarrantyInformationOnboarding = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>(Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"privilegeManagementElevations", n => { PrivilegeManagementElevations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>(Microsoft.Graph.Beta.Models.PrivilegeManagementElevation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteActionAudits", n => { RemoteActionAudits = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>(Microsoft.Graph.Beta.Models.RemoteActionAudit.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteAssistancePartners", n => { RemoteAssistancePartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>(Microsoft.Graph.Beta.Models.RemoteAssistancePartner.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteAssistanceSettings", n => { RemoteAssistanceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>(Microsoft.Graph.Beta.Models.RemoteAssistanceSettings.CreateFromDiscriminatorValue); } },
@@ -2555,6 +2539,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"subscriptions", n => { Subscriptions = n.GetEnumValue<DeviceManagementSubscriptions>(); } },
                 {"subscriptionState", n => { SubscriptionState = n.GetEnumValue<DeviceManagementSubscriptionState>(); } },
                 {"telecomExpenseManagementPartners", n => { TelecomExpenseManagementPartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>(Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"templateInsights", n => { TemplateInsights = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"templates", n => { Templates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"templateSettings", n => { TemplateSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tenantAttachRBAC", n => { TenantAttachRBAC = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAttachRBAC>(Microsoft.Graph.Beta.Models.TenantAttachRBAC.CreateFromDiscriminatorValue); } },
@@ -2720,8 +2705,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>("monitoring", Monitoring);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>("ndesConnectors", NdesConnectors);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>("notificationMessageTemplates", NotificationMessageTemplates);
-            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>("oemWarrantyInformationOnboarding", OemWarrantyInformationOnboarding);
-            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>("privilegeManagementElevations", PrivilegeManagementElevations);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>("remoteActionAudits", RemoteActionAudits);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>("remoteAssistancePartners", RemoteAssistancePartners);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>("remoteAssistanceSettings", RemoteAssistanceSettings);
@@ -2740,6 +2723,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteEnumValue<DeviceManagementSubscriptions>("subscriptions", Subscriptions);
             writer.WriteEnumValue<DeviceManagementSubscriptionState>("subscriptionState", SubscriptionState);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>("telecomExpenseManagementPartners", TelecomExpenseManagementPartners);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>("templateInsights", TemplateInsights);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>("templates", Templates);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>("templateSettings", TemplateSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAttachRBAC>("tenantAttachRBAC", TenantAttachRBAC);

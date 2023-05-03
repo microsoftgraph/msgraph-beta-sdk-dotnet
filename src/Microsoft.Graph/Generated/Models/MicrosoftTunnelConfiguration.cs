@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Entity that represents a collection of Microsoft Tunnel settings
-    /// </summary>
     public class MicrosoftTunnelConfiguration : Entity, IParsable {
         /// <summary>Additional settings that may be applied to the server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

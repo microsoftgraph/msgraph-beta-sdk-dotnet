@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// A ConfigManager defined collection of devices or users.
-    /// </summary>
     public class ConfigManagerCollection : Entity, IParsable {
         /// <summary>The collection identifier in SCCM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

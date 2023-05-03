@@ -1,6 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Count;
-using Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.DeviceManagementGetPortalNotifications;
 using Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item;
+using Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications;
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPortalNotifications method.</summary>
-        public DeviceManagementGetPortalNotificationsRequestBuilder DeviceManagementGetPortalNotifications { get =>
-            new DeviceManagementGetPortalNotificationsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder MicrosoftGraphDeviceManagementGetPortalNotifications { get =>
+            new MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.</summary>
         public AlertRecordItemRequestBuilder this[string position] { get {

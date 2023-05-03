@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
@@ -37,6 +38,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Wipe {
             set { BackingStore?.Set("macOsUnlockCode", value); }
         }
 #endif
+        /// <summary>The obliterationBehavior property</summary>
+        public Microsoft.Graph.Beta.Models.ObliterationBehavior? ObliterationBehavior {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ObliterationBehavior?>("obliterationBehavior"); }
+            set { BackingStore?.Set("obliterationBehavior", value); }
+        }
         /// <summary>The persistEsimDataPlan property</summary>
         public bool? PersistEsimDataPlan {
             get { return BackingStore?.Get<bool?>("persistEsimDataPlan"); }
@@ -70,6 +76,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Wipe {
                 {"keepEnrollmentData", n => { KeepEnrollmentData = n.GetBoolValue(); } },
                 {"keepUserData", n => { KeepUserData = n.GetBoolValue(); } },
                 {"macOsUnlockCode", n => { MacOsUnlockCode = n.GetStringValue(); } },
+                {"obliterationBehavior", n => { ObliterationBehavior = n.GetEnumValue<ObliterationBehavior>(); } },
                 {"persistEsimDataPlan", n => { PersistEsimDataPlan = n.GetBoolValue(); } },
                 {"useProtectedWipe", n => { UseProtectedWipe = n.GetBoolValue(); } },
             };
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Wipe {
             writer.WriteBoolValue("keepEnrollmentData", KeepEnrollmentData);
             writer.WriteBoolValue("keepUserData", KeepUserData);
             writer.WriteStringValue("macOsUnlockCode", MacOsUnlockCode);
+            writer.WriteEnumValue<ObliterationBehavior>("obliterationBehavior", ObliterationBehavior);
             writer.WriteBoolValue("persistEsimDataPlan", PersistEsimDataPlan);
             writer.WriteBoolValue("useProtectedWipe", UseProtectedWipe);
             writer.WriteAdditionalData(AdditionalData);

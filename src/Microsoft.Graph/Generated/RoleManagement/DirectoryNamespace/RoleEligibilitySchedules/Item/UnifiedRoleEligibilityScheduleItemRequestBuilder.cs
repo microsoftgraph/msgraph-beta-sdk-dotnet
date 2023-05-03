@@ -1,5 +1,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilitySchedules.Item.AppScope;
+using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilitySchedules.Item.DirectoryScope;
+using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilitySchedules.Item.Principal;
+using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilitySchedules.Item.RoleDefinition;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -13,6 +17,22 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
     /// Provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
     /// </summary>
     public class UnifiedRoleEligibilityScheduleItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleScheduleBase entity.</summary>
+        public AppScopeRequestBuilder AppScope { get =>
+            new AppScopeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleScheduleBase entity.</summary>
+        public DirectoryScopeRequestBuilder DirectoryScope { get =>
+            new DirectoryScopeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the principal property of the microsoft.graph.unifiedRoleScheduleBase entity.</summary>
+        public PrincipalRequestBuilder Principal { get =>
+            new PrincipalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleScheduleBase entity.</summary>
+        public RoleDefinitionRequestBuilder RoleDefinition { get =>
+            new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new UnifiedRoleEligibilityScheduleItemRequestBuilder and sets the default values.
         /// </summary>

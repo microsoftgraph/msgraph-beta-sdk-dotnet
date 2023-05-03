@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleDefinition;
 using Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTags;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -14,6 +15,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item {
     /// Provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
     /// </summary>
     public class DeviceAndAppManagementRoleAssignmentItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the roleDefinition property of the microsoft.graph.roleAssignment entity.</summary>
+        public RoleDefinitionRequestBuilder RoleDefinition { get =>
+            new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.</summary>
         public RoleScopeTagsRequestBuilder RoleScopeTags { get =>
             new RoleScopeTagsRequestBuilder(PathParameters, RequestAdapter);

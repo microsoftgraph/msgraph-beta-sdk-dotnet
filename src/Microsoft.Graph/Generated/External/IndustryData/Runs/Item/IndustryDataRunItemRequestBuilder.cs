@@ -1,5 +1,5 @@
 using Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities;
-using Microsoft.Graph.Beta.External.IndustryData.Runs.Item.IndustryDataGetStatistics;
+using Microsoft.Graph.Beta.External.IndustryData.Runs.Item.MicrosoftGraphIndustryDataGetStatistics;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -20,8 +20,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item {
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getStatistics method.</summary>
-        public IndustryDataGetStatisticsRequestBuilder IndustryDataGetStatistics { get =>
-            new IndustryDataGetStatisticsRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphIndustryDataGetStatisticsRequestBuilder MicrosoftGraphIndustryDataGetStatistics { get =>
+            new MicrosoftGraphIndustryDataGetStatisticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new IndustryDataRunItemRequestBuilder and sets the default values.

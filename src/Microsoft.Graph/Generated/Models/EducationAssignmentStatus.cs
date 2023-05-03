@@ -10,5 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
         Assigned,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "inactive")]
+        Inactive,
     }
 }

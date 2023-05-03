@@ -1,9 +1,12 @@
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.CreatedBy;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.ExecutionScope;
-using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.IdentityGovernanceActivate;
-using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.IdentityGovernanceCreateNewVersion;
-using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.IdentityGovernanceRestore;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.LastModifiedBy;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports;
+using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Tasks;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.UserProcessingResults;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Versions;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
@@ -21,21 +24,29 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
     /// Provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
     /// </summary>
     public class WorkflowItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the createdBy property of the microsoft.graph.identityGovernance.workflowBase entity.</summary>
+        public CreatedByRequestBuilder CreatedBy { get =>
+            new CreatedByRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.</summary>
         public ExecutionScopeRequestBuilder ExecutionScope { get =>
             new ExecutionScopeRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the lastModifiedBy property of the microsoft.graph.identityGovernance.workflowBase entity.</summary>
+        public LastModifiedByRequestBuilder LastModifiedBy { get =>
+            new LastModifiedByRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the activate method.</summary>
-        public IdentityGovernanceActivateRequestBuilder IdentityGovernanceActivate { get =>
-            new IdentityGovernanceActivateRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphIdentityGovernanceActivateRequestBuilder MicrosoftGraphIdentityGovernanceActivate { get =>
+            new MicrosoftGraphIdentityGovernanceActivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createNewVersion method.</summary>
-        public IdentityGovernanceCreateNewVersionRequestBuilder IdentityGovernanceCreateNewVersion { get =>
-            new IdentityGovernanceCreateNewVersionRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder MicrosoftGraphIdentityGovernanceCreateNewVersion { get =>
+            new MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public IdentityGovernanceRestoreRequestBuilder IdentityGovernanceRestore { get =>
-            new IdentityGovernanceRestoreRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphIdentityGovernanceRestoreRequestBuilder MicrosoftGraphIdentityGovernanceRestore { get =>
+            new MicrosoftGraphIdentityGovernanceRestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.</summary>
         public RunsRequestBuilder Runs { get =>
@@ -44,6 +55,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         /// <summary>Provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.</summary>
         public TaskReportsRequestBuilder TaskReports { get =>
             new TaskReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowBase entity.</summary>
+        public TasksRequestBuilder Tasks { get =>
+            new TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.</summary>
         public UserProcessingResultsRequestBuilder UserProcessingResults { get =>

@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.Item.Apps;
+using Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.Item.DeploymentSummary;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -18,6 +19,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.Item
         /// <summary>Provides operations to manage the apps property of the microsoft.graph.iosManagedAppProtection entity.</summary>
         public AppsRequestBuilder Apps { get =>
             new AppsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppProtection entity.</summary>
+        public AssignmentsRequestBuilder Assignments { get =>
+            new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deploymentSummary property of the microsoft.graph.iosManagedAppProtection entity.</summary>
         public DeploymentSummaryRequestBuilder DeploymentSummary { get =>

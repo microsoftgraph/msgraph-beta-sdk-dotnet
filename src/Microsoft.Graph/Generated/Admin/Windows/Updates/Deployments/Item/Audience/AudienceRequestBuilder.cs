@@ -1,7 +1,7 @@
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.WindowsUpdatesUpdateAudience;
-using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.WindowsUpdatesUpdateAudienceById;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.MicrosoftGraphWindowsUpdatesUpdateAudience;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.MicrosoftGraphWindowsUpdatesUpdateAudienceById;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateAudience method.</summary>
-        public WindowsUpdatesUpdateAudienceRequestBuilder WindowsUpdatesUpdateAudience { get =>
-            new WindowsUpdatesUpdateAudienceRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesUpdateAudienceRequestBuilder MicrosoftGraphWindowsUpdatesUpdateAudience { get =>
+            new MicrosoftGraphWindowsUpdatesUpdateAudienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateAudienceById method.</summary>
-        public WindowsUpdatesUpdateAudienceByIdRequestBuilder WindowsUpdatesUpdateAudienceById { get =>
-            new WindowsUpdatesUpdateAudienceByIdRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder MicrosoftGraphWindowsUpdatesUpdateAudienceById { get =>
+            new MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AudienceRequestBuilder and sets the default values.

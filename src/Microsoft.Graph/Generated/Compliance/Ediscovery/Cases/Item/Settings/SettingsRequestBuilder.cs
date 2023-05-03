@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings.EdiscoveryResetToDefault;
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings.MicrosoftGraphEdiscoveryResetToDefault;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
     /// </summary>
     public class SettingsRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the resetToDefault method.</summary>
-        public EdiscoveryResetToDefaultRequestBuilder EdiscoveryResetToDefault { get =>
-            new EdiscoveryResetToDefaultRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphEdiscoveryResetToDefaultRequestBuilder MicrosoftGraphEdiscoveryResetToDefault { get =>
+            new MicrosoftGraphEdiscoveryResetToDefaultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new SettingsRequestBuilder and sets the default values.

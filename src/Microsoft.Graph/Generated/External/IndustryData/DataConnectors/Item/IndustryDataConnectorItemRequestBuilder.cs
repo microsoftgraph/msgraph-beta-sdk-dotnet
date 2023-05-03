@@ -1,4 +1,4 @@
-using Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.IndustryDataValidate;
+using Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.MicrosoftGraphIndustryDataValidate;
 using Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.SourceSystem;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
     /// </summary>
     public class IndustryDataConnectorItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the validate method.</summary>
-        public IndustryDataValidateRequestBuilder IndustryDataValidate { get =>
-            new IndustryDataValidateRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphIndustryDataValidateRequestBuilder MicrosoftGraphIndustryDataValidate { get =>
+            new MicrosoftGraphIndustryDataValidateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sourceSystem property of the microsoft.graph.industryData.industryDataConnector entity.</summary>
         public SourceSystemRequestBuilder SourceSystem { get =>
