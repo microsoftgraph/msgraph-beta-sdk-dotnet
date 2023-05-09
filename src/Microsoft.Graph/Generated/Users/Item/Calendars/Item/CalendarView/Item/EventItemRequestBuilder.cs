@@ -10,8 +10,6 @@ using Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item.Exception
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item.Extensions;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item.Forward;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item.Instances;
-using Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item.MultiValueExtendedProperties;
-using Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item.SnoozeReminder;
 using Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item.TentativelyAccept;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -66,14 +64,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarView.Item {
         /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
         public InstancesRequestBuilder Instances { get =>
             new InstancesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.</summary>
-        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
-            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.</summary>
-        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
-            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
         public SnoozeReminderRequestBuilder SnoozeReminder { get =>

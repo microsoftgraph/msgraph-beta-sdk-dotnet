@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("acl", value); }
         }
 #endif
-        /// <summary>Write-only property. Returns results.</summary>
+        /// <summary>Returns a list of activities performed on the item. Write-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ExternalActivity>? Activities {

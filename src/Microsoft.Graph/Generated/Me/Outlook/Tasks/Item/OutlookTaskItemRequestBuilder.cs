@@ -1,7 +1,5 @@
 using Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.Attachments;
 using Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.Complete;
-using Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.MultiValueExtendedProperties;
-using Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,14 +22,6 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item {
         /// <summary>Provides operations to call the complete method.</summary>
         public CompleteRequestBuilder Complete { get =>
             new CompleteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTask entity.</summary>
-        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
-            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTask entity.</summary>
-        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
-            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new OutlookTaskItemRequestBuilder and sets the default values.

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity used to retrieve information about Intune Certificate Connectors.
+    /// </summary>
     public class CertificateConnectorDetails : Entity, IParsable {
         /// <summary>Connector name (set during enrollment).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccessGroupAssignmentScheduleRequest : PrivilegedAccessScheduleRequest, IParsable {
-        /// <summary>The accessId property</summary>
+        /// <summary>The identifier of a membership or ownership assignment relationship to the group. Required. The possible values are: owner, member, unknownFutureValue.</summary>
         public PrivilegedAccessGroupRelationships? AccessId {
             get { return BackingStore?.Get<PrivilegedAccessGroupRelationships?>("accessId"); }
             set { BackingStore?.Set("accessId", value); }
         }
-        /// <summary>The activatedUsing property</summary>
+        /// <summary>When the request activates a membership or ownership assignment in PIM for groups, this object represents the eligibility policy for the group. Otherwise, it is null. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrivilegedAccessGroupEligibilitySchedule? ActivatedUsing {
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activatedUsing", value); }
         }
 #endif
-        /// <summary>The group property</summary>
+        /// <summary>References the group that is the scope of the membership or ownership assignment request through PIM for groups. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Group? Group {
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>The groupId property</summary>
+        /// <summary>The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("groupId", value); }
         }
 #endif
-        /// <summary>The principal property</summary>
+        /// <summary>References the principal that&apos;s in the scope of this membership or ownership assignment request through the group that&apos;s governed by PIM. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DirectoryObject? Principal {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("principal", value); }
         }
 #endif
-        /// <summary>The principalId property</summary>
+        /// <summary>The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrincipalId {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("principalId", value); }
         }
 #endif
-        /// <summary>The targetSchedule property</summary>
+        /// <summary>Schedule created by this request. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrivilegedAccessGroupEligibilitySchedule? TargetSchedule {
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetSchedule", value); }
         }
 #endif
-        /// <summary>The targetScheduleId property</summary>
+        /// <summary>The identifier of the schedule that&apos;s created from the membership or ownership assignment request. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetScheduleId {

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedOperationEvent : Entity, IParsable {
-        /// <summary>Detailed human readable information for the event.</summary>
+        /// <summary>The additionalInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdditionalInformation {
@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #endif
-        /// <summary>Indicates the time when the event is created.</summary>
+        /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
-        /// <summary>This is only used when the requestType is Activate, and it indicates the expiration time for the role activation.</summary>
+        /// <summary>The expirationDateTime property</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.</summary>
+        /// <summary>The referenceKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferenceKey {
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("referenceKey", value); }
         }
 #endif
-        /// <summary>Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.</summary>
+        /// <summary>The referenceSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferenceSystem {
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("referenceSystem", value); }
         }
 #endif
-        /// <summary>The user id of the requestor who initiates the operation.</summary>
+        /// <summary>The requestorId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestorId {
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestorId", value); }
         }
 #endif
-        /// <summary>The user name of the requestor who initiates the operation.</summary>
+        /// <summary>The requestorName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestorName {
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestorName", value); }
         }
 #endif
-        /// <summary>The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlertsNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue),  AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review) , AccessReview_Update (update an Access Review), AccessReview_Delete (delete an Access Review).</summary>
+        /// <summary>The requestType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestType {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestType", value); }
         }
 #endif
-        /// <summary>The id of the role that is associated with the operation.</summary>
+        /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleId {
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleId", value); }
         }
 #endif
-        /// <summary>The name of the role.</summary>
+        /// <summary>The roleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleName {
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleName", value); }
         }
 #endif
-        /// <summary>The tenant (organization) id.</summary>
+        /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId {
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>The id of the user that is associated with the operation.</summary>
+        /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>The user&apos;s email.</summary>
+        /// <summary>The userMail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserMail {
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userMail", value); }
         }
 #endif
-        /// <summary>The user&apos;s display name.</summary>
+        /// <summary>The userName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserName {

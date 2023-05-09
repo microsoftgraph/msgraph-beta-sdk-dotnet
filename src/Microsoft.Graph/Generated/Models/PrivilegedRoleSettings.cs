@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedRoleSettings : Entity, IParsable {
-        /// <summary>true if the approval is required when activate the role. false if the approval is not required when activate the role.</summary>
+        /// <summary>The approvalOnElevation property</summary>
         public bool? ApprovalOnElevation {
             get { return BackingStore?.Get<bool?>("approvalOnElevation"); }
             set { BackingStore?.Set("approvalOnElevation", value); }
         }
-        /// <summary>List of Approval ids, if approval is required for activation.</summary>
+        /// <summary>The approverIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ApproverIds {
@@ -24,42 +24,42 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("approverIds", value); }
         }
 #endif
-        /// <summary>The duration when the role is activated.</summary>
+        /// <summary>The elevationDuration property</summary>
         public TimeSpan? ElevationDuration {
             get { return BackingStore?.Get<TimeSpan?>("elevationDuration"); }
             set { BackingStore?.Set("elevationDuration", value); }
         }
-        /// <summary>true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.</summary>
+        /// <summary>The isMfaOnElevationConfigurable property</summary>
         public bool? IsMfaOnElevationConfigurable {
             get { return BackingStore?.Get<bool?>("isMfaOnElevationConfigurable"); }
             set { BackingStore?.Set("isMfaOnElevationConfigurable", value); }
         }
-        /// <summary>Internal used only.</summary>
+        /// <summary>The lastGlobalAdmin property</summary>
         public bool? LastGlobalAdmin {
             get { return BackingStore?.Get<bool?>("lastGlobalAdmin"); }
             set { BackingStore?.Set("lastGlobalAdmin", value); }
         }
-        /// <summary>Maximal duration for the activated role.</summary>
+        /// <summary>The maxElavationDuration property</summary>
         public TimeSpan? MaxElavationDuration {
             get { return BackingStore?.Get<TimeSpan?>("maxElavationDuration"); }
             set { BackingStore?.Set("maxElavationDuration", value); }
         }
-        /// <summary>true if MFA is required to activate the role. false if MFA is not required to activate the role.</summary>
+        /// <summary>The mfaOnElevation property</summary>
         public bool? MfaOnElevation {
             get { return BackingStore?.Get<bool?>("mfaOnElevation"); }
             set { BackingStore?.Set("mfaOnElevation", value); }
         }
-        /// <summary>Minimal duration for the activated role.</summary>
+        /// <summary>The minElevationDuration property</summary>
         public TimeSpan? MinElevationDuration {
             get { return BackingStore?.Get<TimeSpan?>("minElevationDuration"); }
             set { BackingStore?.Set("minElevationDuration", value); }
         }
-        /// <summary>true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.</summary>
+        /// <summary>The notificationToUserOnElevation property</summary>
         public bool? NotificationToUserOnElevation {
             get { return BackingStore?.Get<bool?>("notificationToUserOnElevation"); }
             set { BackingStore?.Set("notificationToUserOnElevation", value); }
         }
-        /// <summary>true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.</summary>
+        /// <summary>The ticketingInfoOnElevation property</summary>
         public bool? TicketingInfoOnElevation {
             get { return BackingStore?.Get<bool?>("ticketingInfoOnElevation"); }
             set { BackingStore?.Set("ticketingInfoOnElevation", value); }

@@ -6,8 +6,6 @@ using Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccurren
 using Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.DismissReminder;
 using Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.Extensions;
 using Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.Forward;
-using Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.MultiValueExtendedProperties;
-using Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.SnoozeReminder;
 using Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.TentativelyAccept;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -56,14 +54,6 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item.ExceptionOccu
         /// <summary>Provides operations to call the forward method.</summary>
         public ForwardRequestBuilder Forward { get =>
             new ForwardRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.</summary>
-        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
-            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.</summary>
-        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
-            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
         public SnoozeReminderRequestBuilder SnoozeReminder { get =>

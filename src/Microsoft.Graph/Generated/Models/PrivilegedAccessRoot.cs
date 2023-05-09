@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccessRoot : Entity, IParsable {
-        /// <summary>The group property</summary>
+        /// <summary>A group that&apos;s governed through Privileged Identity Management (PIM).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrivilegedAccessGroup? Group {

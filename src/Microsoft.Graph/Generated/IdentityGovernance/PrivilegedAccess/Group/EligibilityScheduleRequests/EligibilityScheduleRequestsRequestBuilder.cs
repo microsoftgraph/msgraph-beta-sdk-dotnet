@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get eligibilityScheduleRequests from identityGovernance
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilityScheduleRequest>(requestInfo, PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get eligibilityScheduleRequests from identityGovernance
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return requestInfo;
         }
         /// <summary>
-        /// Get eligibilityScheduleRequests from identityGovernance
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         public class EligibilityScheduleRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

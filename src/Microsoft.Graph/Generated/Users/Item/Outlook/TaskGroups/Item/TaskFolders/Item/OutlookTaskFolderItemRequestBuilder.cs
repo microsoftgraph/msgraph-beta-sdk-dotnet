@@ -1,7 +1,5 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
-using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.MultiValueExtendedProperties;
-using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item.Tasks;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -16,14 +14,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item.TaskFolders.It
     /// Provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.
     /// </summary>
     public class OutlookTaskFolderItemRequestBuilder : BaseRequestBuilder {
-        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.</summary>
-        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
-            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTaskFolder entity.</summary>
-        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
-            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.</summary>
         public TasksRequestBuilder Tasks { get =>
             new TasksRequestBuilder(PathParameters, RequestAdapter);

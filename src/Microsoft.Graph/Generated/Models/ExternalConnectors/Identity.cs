@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class Identity : Entity, IParsable {
-        /// <summary>The type property</summary>
+        /// <summary>The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.</summary>
         public IdentityType? Type {
             get { return BackingStore?.Get<IdentityType?>("type"); }
             set { BackingStore?.Set("type", value); }

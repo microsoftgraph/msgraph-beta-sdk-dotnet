@@ -576,6 +576,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.educationClass" => new EducationClass(),
                 "#microsoft.graph.educationFeedbackOutcome" => new EducationFeedbackOutcome(),
                 "#microsoft.graph.educationFeedbackResourceOutcome" => new EducationFeedbackResourceOutcome(),
+                "#microsoft.graph.educationGradingCategory" => new EducationGradingCategory(),
                 "#microsoft.graph.educationOrganization" => new EducationOrganization(),
                 "#microsoft.graph.educationOutcome" => new EducationOutcome(),
                 "#microsoft.graph.educationPointsOutcome" => new EducationPointsOutcome(),

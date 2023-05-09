@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("attendanceIntervals", value); }
         }
 #endif
-        /// <summary>Email address of the user associated with this atttendance record.</summary>
+        /// <summary>Email address of the user associated with this attendance record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailAddress {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
-        /// <summary>Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.</summary>
+        /// <summary>Identity of the user associated with this attendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Identity? Identity {

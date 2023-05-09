@@ -5,17 +5,17 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedRoleAssignment : Entity, IParsable {
-        /// <summary>The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.</summary>
+        /// <summary>The expirationDateTime property</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>true if the role assignment is activated. false if the role assignment is deactivated.</summary>
+        /// <summary>The isElevated property</summary>
         public bool? IsElevated {
             get { return BackingStore?.Get<bool?>("isElevated"); }
             set { BackingStore?.Set("isElevated", value); }
         }
-        /// <summary>Result message set by the service.</summary>
+        /// <summary>The resultMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResultMessage {
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resultMessage", value); }
         }
 #endif
-        /// <summary>Role identifier. In GUID string format.</summary>
+        /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleId {
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleId", value); }
         }
 #endif
-        /// <summary>Read-only. Nullable. The associated role information.</summary>
+        /// <summary>The roleInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrivilegedRole? RoleInfo {
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleInfo", value); }
         }
 #endif
-        /// <summary>User identifier. In GUID string format.</summary>
+        /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {

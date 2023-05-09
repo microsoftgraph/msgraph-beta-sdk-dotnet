@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccessSchedule : Entity, IParsable {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>When the schedule was created. Optional.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The createdUsing property</summary>
+        /// <summary>The identifier of the access assignment or eligibility request that created this schedule. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedUsing {
@@ -24,12 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdUsing", value); }
         }
 #endif
-        /// <summary>The modifiedDateTime property</summary>
+        /// <summary>When the schedule was last modified. Optional.</summary>
         public DateTimeOffset? ModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
-        /// <summary>The scheduleInfo property</summary>
+        /// <summary>Represents the period of the access assignment or eligibility. The scheduleInfo can represent a single occurrence or multiple recurring instances. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestSchedule? ScheduleInfo {
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The status of the access assignment or eligibility request. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status {

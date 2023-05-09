@@ -524,7 +524,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("preferredSingleSignOnMode", value); }
         }
 #endif
-        /// <summary>Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.</summary>
+        /// <summary>Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.</summary>
         public DateTimeOffset? PreferredTokenSigningKeyEndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("preferredTokenSigningKeyEndDateTime"); }
             set { BackingStore?.Set("preferredTokenSigningKeyEndDateTime", value); }

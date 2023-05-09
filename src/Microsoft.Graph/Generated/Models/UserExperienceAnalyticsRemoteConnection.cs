@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analyte remote connection entity.
+    /// </summary>
     public class UserExperienceAnalyticsRemoteConnection : Entity, IParsable {
         /// <summary>The sign in failure percentage of Cloud PC Device. Valid values 0 to 100</summary>
         public double? CloudPcFailurePercentage {

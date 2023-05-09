@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get eligibilitySchedules from identityGovernance
+        /// The eligibility schedules to activate a just-in-time access.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return requestInfo;
         }
         /// <summary>
-        /// Get eligibilitySchedules from identityGovernance
+        /// The eligibility schedules to activate a just-in-time access.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             }
         }
         /// <summary>
-        /// Get eligibilitySchedules from identityGovernance
+        /// The eligibility schedules to activate a just-in-time access.
         /// </summary>
         public class PrivilegedAccessGroupEligibilityScheduleItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

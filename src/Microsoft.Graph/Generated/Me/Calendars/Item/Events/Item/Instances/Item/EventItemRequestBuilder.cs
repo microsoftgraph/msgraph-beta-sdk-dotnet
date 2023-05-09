@@ -7,8 +7,6 @@ using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item.DismissR
 using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item.ExceptionOccurrences;
 using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item.Extensions;
 using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item.Forward;
-using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item.MultiValueExtendedProperties;
-using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item.SnoozeReminder;
 using Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item.TentativelyAccept;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -61,14 +59,6 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.Instances.Item {
         /// <summary>Provides operations to call the forward method.</summary>
         public ForwardRequestBuilder Forward { get =>
             new ForwardRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.</summary>
-        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
-            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.</summary>
-        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
-            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
         public SnoozeReminderRequestBuilder SnoozeReminder { get =>

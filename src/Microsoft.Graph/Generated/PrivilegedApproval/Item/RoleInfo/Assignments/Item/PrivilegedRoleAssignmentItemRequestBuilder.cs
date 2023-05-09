@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Assignments.Item
         public PrivilegedRoleAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/roleInfo/assignments/{privilegedRoleAssignment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The assignments for this role. Read-only. Nullable.
+        /// Get assignments from privilegedApproval
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Assignments.Item
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignment>(requestInfo, PrivilegedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The assignments for this role. Read-only. Nullable.
+        /// Get assignments from privilegedApproval
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Assignments.Item
             return requestInfo;
         }
         /// <summary>
-        /// The assignments for this role. Read-only. Nullable.
+        /// Get assignments from privilegedApproval
         /// </summary>
         public class PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

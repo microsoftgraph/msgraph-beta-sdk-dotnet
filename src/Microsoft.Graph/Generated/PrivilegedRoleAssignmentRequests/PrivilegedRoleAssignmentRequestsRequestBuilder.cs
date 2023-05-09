@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
         public PrivilegedRoleAssignmentRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedRoleAssignmentRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedroleassignmentrequest-list?view=graph-rest-1.0" />
+        /// Get entities from privilegedRoleAssignmentRequests
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,8 +64,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequestCollectionResponse>(requestInfo, PrivilegedRoleAssignmentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a privilegedroleassignmentrequest object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedroleassignmentrequest-post?view=graph-rest-1.0" />
+        /// Add new entity to privilegedRoleAssignmentRequests
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +85,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.
+        /// Get entities from privilegedRoleAssignmentRequests
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create a privilegedroleassignmentrequest object.
+        /// Add new entity to privilegedRoleAssignmentRequests
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +139,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.
+        /// Get entities from privilegedRoleAssignmentRequests
         /// </summary>
         public class PrivilegedRoleAssignmentRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

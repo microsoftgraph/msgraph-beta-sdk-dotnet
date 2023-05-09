@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get assignmentScheduleRequests from identityGovernance
+        /// The schedule requests for operations to create, update, delete, extend, and renew an assignment.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupAssignmentScheduleRequest>(requestInfo, PrivilegedAccessGroupAssignmentScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get assignmentScheduleRequests from identityGovernance
+        /// The schedule requests for operations to create, update, delete, extend, and renew an assignment.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return requestInfo;
         }
         /// <summary>
-        /// Get assignmentScheduleRequests from identityGovernance
+        /// The schedule requests for operations to create, update, delete, extend, and renew an assignment.
         /// </summary>
         public class AssignmentScheduleRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

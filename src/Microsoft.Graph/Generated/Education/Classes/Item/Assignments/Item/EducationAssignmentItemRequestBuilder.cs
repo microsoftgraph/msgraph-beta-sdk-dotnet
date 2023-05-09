@@ -1,6 +1,7 @@
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Activate;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Deactivate;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingCategory;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Publish;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric;
@@ -33,6 +34,10 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         /// <summary>Provides operations to call the deactivate method.</summary>
         public DeactivateRequestBuilder Deactivate { get =>
             new DeactivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.</summary>
+        public GradingCategoryRequestBuilder GradingCategory { get =>
+            new GradingCategoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
         public PublishRequestBuilder Publish { get =>

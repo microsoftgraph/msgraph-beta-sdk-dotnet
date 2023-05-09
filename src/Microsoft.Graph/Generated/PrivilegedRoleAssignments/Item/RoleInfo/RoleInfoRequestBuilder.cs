@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Nullable. The associated role information.
+        /// Get roleInfo from privilegedRoleAssignments
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable. The associated role information.
+        /// Get roleInfo from privilegedRoleAssignments
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -206,7 +206,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo {
             }
         }
         /// <summary>
-        /// Read-only. Nullable. The associated role information.
+        /// Get roleInfo from privilegedRoleAssignments
         /// </summary>
         public class RoleInfoRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
